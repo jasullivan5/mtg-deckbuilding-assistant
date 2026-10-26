@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "stage": "baseline",
+      "tests": 170,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "stage": "final",
+      "tests": 210,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "java": "openjdk version \"21.0.13\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)\n",
+  "gradle": "9.6.1",
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "upstreamStatus": "",
+  "sourceArchiveSHA256": "80ec101e5aa22877250569b991edc83f6acbdcdaa32255257aa67c71e6b9adf9",
+  "benchmarkSHA256": "b16589779c7bd63c8042598d601921c761ef157ffa445534bc51c03e0ee501e3"
+}

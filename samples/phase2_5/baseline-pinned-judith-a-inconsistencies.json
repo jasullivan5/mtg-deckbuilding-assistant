@@ -1,0 +1,2047 @@
+{
+  "categorizedCounts": {
+    "ELIGIBILITY_DATA_PROBLEM": 1053,
+    "EXPECTED_POLICY_EXCLUSION": 790,
+    "INCOMPLETE_INTERPRETATION": 101,
+    "POSSIBLE_POLICY_FALSE_NEGATIVE": 3,
+    "PROBABLE_EXTRACTION_OMISSION": 6,
+    "UNSUPPORTED_BUT_LIKELY_UNRELATED": 1619,
+    "UNVERIFIED_WARNING": 685
+  },
+  "commander": "Judith, the Scourge Diva",
+  "counts": {
+    "A_POTENTIAL_MISS": 2059,
+    "B_INCOMPLETE_ACCEPTED_ACTION": 221,
+    "D_SUSPICIOUS_EXCLUSION": 924,
+    "E_ELIGIBILITY_DATA_GAP": 1053
+  },
+  "engineeringTaskCount": 68,
+  "groupedRootIssues": 1040,
+  "limitations": [
+    "Warnings never admit cards into discovery. Potential misses use native structural clues and can include nonbattlefield/player-only operations.",
+    "Contradictions use strict action+scope+prerequisite equivalence; this deliberately misses some semantic equivalences.",
+    "Action completeness is separate from supported local pathway compatibility; no gameplay or exhaustiveness claim."
+  ],
+  "objective": "own-nontoken-creature-deaths",
+  "priorityTasks": [
+    {
+      "categories": [
+        "ELIGIBILITY_DATA_PROBLEM"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 0,
+      "distinctCards": 700,
+      "family": "COLOR_IDENTITY:E_ELIGIBILITY_DATA_GAP",
+      "feasibleGenericWork": [
+        "NEEDS_AUTHORITATIVE_METADATA"
+      ],
+      "proposedNextStep": "Repair verified format/identity metadata without changing mechanical extraction",
+      "rawRecordCount": 700,
+      "representatives": [
+        {
+          "actionId": null,
+          "card": "A-The One Ring",
+          "face": "front",
+          "findingIndex": 3204,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Aberrant Mind Sorcerer",
+          "face": "front",
+          "findingIndex": 3205,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Abzan Monument",
+          "face": "front",
+          "findingIndex": 3206,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Academy Manufactor",
+          "face": "front",
+          "findingIndex": 3208,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Accomplished Automaton",
+          "face": "front",
+          "findingIndex": 3209,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "f1b6517d570ff0f1dc0e"
+      ]
+    },
+    {
+      "categories": [
+        "ELIGIBILITY_DATA_PROBLEM"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 0,
+      "distinctCards": 353,
+      "family": "FORMAT_LEGALITY:E_ELIGIBILITY_DATA_GAP",
+      "feasibleGenericWork": [
+        "NEEDS_AUTHORITATIVE_METADATA"
+      ],
+      "proposedNextStep": "Repair verified format/identity metadata without changing mechanical extraction",
+      "rawRecordCount": 353,
+      "representatives": [
+        {
+          "actionId": null,
+          "card": "Academic Ascent",
+          "face": "front",
+          "findingIndex": 3207,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Aerid Konstrari",
+          "face": "front",
+          "findingIndex": 3211,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Afterthought Sentry",
+          "face": "front",
+          "findingIndex": 3214,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Ajani Unrelenting",
+          "face": "front",
+          "findingIndex": 3217,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Ajani's Anguish",
+          "face": "front",
+          "findingIndex": 3218,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "f2ce4857ccc380664fa0"
+      ]
+    },
+    {
+      "categories": [
+        "INCOMPLETE_INTERPRETATION",
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 282,
+      "distinctCards": 269,
+      "family": "INTERPRETATION:MoveCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 300,
+      "representatives": [
+        {
+          "actionId": "Beseech the Mirror|front|keywordAbilities[0]",
+          "card": "Beseech the Mirror",
+          "face": "front",
+          "findingIndex": 2070,
+          "path": "keywordAbilities[0].additionalCost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/BeseechTheMirror.kt",
+            "native:front.keywordAbilities[0].additionalCost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[1]",
+          "card": "Abbot of Keral Keep",
+          "face": "front",
+          "findingIndex": 1,
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[1].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Alania's Pathmaker|front|script.triggeredAbilities[0]",
+          "card": "Alania's Pathmaker",
+          "face": "front",
+          "findingIndex": 25,
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Amped Raptor|front|script.triggeredAbilities[0]",
+          "card": "Amped Raptor",
+          "face": "front",
+          "findingIndex": 35,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[1].then.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Ardent Dustspeaker|front|script.triggeredAbilities[0]",
+          "card": "Ardent Dustspeaker",
+          "face": "front",
+          "findingIndex": 62,
+          "path": "script.triggeredAbilities[0].effect.then.effects[1]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.effects[1]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "41986deb13c222d6a9c1",
+        "d8aea7470e0f075bf7ac",
+        "8dd849fd42217f2d9830",
+        "fd0a7294de76d696526e",
+        "0dc45ab9a0054fc679fe",
+        "d780a9f1a531d113a17c",
+        "704e655df174d6d3e330",
+        "7dfa02a2385436f11f87",
+        "c4745c05d59d4a906f3c",
+        "5e8ee4c5c063ec9f7662",
+        "743eb10f8f636cf28a65",
+        "35c98caff83f9f8a9d47",
+        "48e0380d09586390f5f3",
+        "a0e9b4105ad25a41c6ac",
+        "f911ca35e1c48d2be2af",
+        "0dfc264798505951dc0a",
+        "3dea4be9bc3f4dd80a33",
+        "6f43a2e7e7c3c4369fd0",
+        "da08ec0d93b22a54a745",
+        "332aca42ffcb8f6e50b7",
+        "1b22cfbc00f57faf6f51",
+        "359035b91257834c1f2c",
+        "3718e0a38129525725fc",
+        "483b727c33b2c2f37297",
+        "6175d18cc43c1923d794",
+        "ca7a901c6fc791f7f2be",
+        "07bd2b850a8f94598762",
+        "0f6166ca430b623fcd89",
+        "1895d078d92277fd0597",
+        "20f42f65f55e24fb3d69",
+        "21ba54aaa6437c246fa2",
+        "26c1b401a2ff37d3ec40",
+        "29ce661ea53d1099d4f2",
+        "2f77743e0da1b927cb6d",
+        "3074f7372ea2d19e867e",
+        "349bad255b84bc345f40",
+        "384d2bd8399140000988",
+        "3ae7808f28e7f601305a",
+        "3e32aca28c15c94994a9",
+        "43090d5c0e60446ad552",
+        "437128671aae9380b660",
+        "4a04c6c0827ff0c72a71",
+        "5163b3c5edac2d34d709",
+        "574623b8c6176b74f4bf",
+        "6d4c6a99f4ef3443e30c",
+        "7aa62e2e0d07ca8f5471",
+        "82d011155c0f9b941d9b",
+        "89630cb2addced59582a",
+        "8bd157c29a611f1f0243",
+        "9aaf15632c6a2a35edaa",
+        "9d7bb17854f361a28139",
+        "ac2864b71c25ac139e68",
+        "b43a38525dcf73a19a32",
+        "bb94dc1d75cf37327c91",
+        "bc1068220624b120480a",
+        "bdc2c9567225ad7c3ec7",
+        "c3ab57d6fdd63b20f5bc",
+        "cde068185491d532ed50",
+        "d23538e213e111cb1586",
+        "d83257b3d1ed575f7e10",
+        "da6695fb62b7a46f5f15",
+        "db660960ae6108ed4e9d",
+        "ed0560782d46fd218333",
+        "ee2c550eb91a3465d39b",
+        "f68fb719bdda77379d60",
+        "fd20c47266d7d6d22cb3"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 184,
+      "distinctCards": 176,
+      "family": "INTERPRETATION:MoveToZone",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 195,
+      "representatives": [
+        {
+          "actionId": "Aim for the Head|front|script.spell",
+          "card": "Aim for the Head",
+          "face": "front",
+          "findingIndex": 21,
+          "path": "script.spellEffect.modes[0].effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.modes[0].effect"
+          ]
+        },
+        {
+          "actionId": "Anoint with Affliction|front|script.spell",
+          "card": "Anoint with Affliction",
+          "face": "front",
+          "findingIndex": 43,
+          "path": "script.spellEffect.then",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/AnointWithAffliction.kt",
+            "native:front.script.spellEffect.gate.condition",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Archenemy's Charm|front|script.spell",
+          "card": "Archenemy's Charm",
+          "face": "front",
+          "findingIndex": 54,
+          "path": "script.spellEffect.modes[0].effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.modes[0].effect"
+          ]
+        },
+        {
+          "actionId": "Baleful Mastery|front|script.spell",
+          "card": "Baleful Mastery",
+          "face": "front",
+          "findingIndex": 102,
+          "path": "script.spellEffect.effects[1]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Bogslither's Embrace|front|script.spell",
+          "card": "Bogslither's Embrace",
+          "face": "front",
+          "findingIndex": 190,
+          "path": "script.spellEffect",
+          "sourceReferences": [
+            "native:front.script.spellEffect"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "f9d577fbf2b67fdb59ba",
+        "35ba88d958f45732993a",
+        "1113ef616caa73cfe9e5",
+        "8721c31d0adfea95f29b",
+        "d5b090a34683404376d3",
+        "14f4bef6ce2dec93d742",
+        "d6f84ad3393780b3e146",
+        "d8119ccf84d4f0a3317e",
+        "f8069fad609d7311459f",
+        "1f26d1809dc34fbc1e13",
+        "84ca3c3cfca263c9704b",
+        "1072d8216e07655c11d4",
+        "1dc24140680cbcc5fcee",
+        "22113288e502a83279ce",
+        "745724236ac008d0785c",
+        "7eea433e8a4fa30d00b1",
+        "e966cfffb2eaee1d0393",
+        "f468cfee5f87e282aa44",
+        "162e69e2340e36287c50",
+        "230539cbc7aab2716183",
+        "46a375cc04585fa14afe",
+        "6b8ed4e866d36ec0fc99",
+        "6d4b95bb40c5fc1e825f",
+        "9868d3313dffd619766b",
+        "b9c3a636b8204985d8fd",
+        "cca3cdfa682d927d9f67",
+        "d5936f71f7de76a7bd8b",
+        "e54436c8af6b6d8c207f",
+        "f28d4e2f4e758b0bd6fd",
+        "02de5adb0fa4fc8e670f",
+        "08f44bf9809c40d0de07",
+        "15ba4a82f1431733995f",
+        "1a78576af413a52de2e9",
+        "1b856b50a9a10e2d45ea",
+        "1d8e8836a753157a5ffa",
+        "1e3c978d1e0524fa9ecf",
+        "2151a9696e49be273c90",
+        "272a9f66640fb44cb6f9",
+        "34198e9d2795d341e41c",
+        "378fdfa34f47167fc390",
+        "4a6cdb766dc0c203a48f",
+        "60194164e02e17fa436c",
+        "621683e57b6f41a49082",
+        "6360d4a8f21417524494",
+        "6d6f5f0047918dc3aed5",
+        "7727d79127f0d44825c8",
+        "7d5899f0de15a9c58207",
+        "7e48cfda4f9dd36b39dc",
+        "8502ce913730d9482dc0",
+        "8654c8029150d08d77fd",
+        "92d2c206308434329e8e",
+        "9eb466f93deda162860e",
+        "9eb4e446a632881e08fa",
+        "bf58aa665281dc138017",
+        "c096596246c2db47d12b",
+        "c481fe610accd6d9abc8",
+        "daa297e8a3ccd3196baa",
+        "ecd8d9b6b5aa92f0aa45"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 51,
+      "distinctCards": 48,
+      "family": "TRAVERSE_PAY_OR_SUFFER_BRANCHES",
+      "feasibleGenericWork": [
+        "EXISTING_SDK_INTERPRETATION_POSSIBLE",
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Traverse typed payment and failure branches with payer and condition evidence",
+      "rawRecordCount": 53,
+      "representatives": [
+        {
+          "actionId": "Archway Commons|front|script.triggeredAbilities[0]",
+          "card": "Archway Commons",
+          "face": "front",
+          "findingIndex": 60,
+          "path": "script.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/ArchwayCommons.kt",
+            "native:front.script.triggeredAbilities[0].effect.suffer",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Rupture Spire|front|script.triggeredAbilities[0]",
+          "card": "Rupture Spire",
+          "face": "front",
+          "findingIndex": 1546,
+          "path": "script.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/conflux/cards/RuptureSpire.kt",
+            "native:front.script.triggeredAbilities[0].effect.suffer",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Transguild Promenade|front|script.triggeredAbilities[0]",
+          "card": "Transguild Promenade",
+          "face": "front",
+          "findingIndex": 1854,
+          "path": "script.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/TransguildPromenade.kt",
+            "native:front.script.triggeredAbilities[0].effect.suffer",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Meathook Massacre II|front|script.triggeredAbilities[1]",
+          "card": "Meathook Massacre II",
+          "face": "front",
+          "findingIndex": 1161,
+          "path": "script.triggeredAbilities[1].effect.then.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/MeathookMassacreII.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Meathook Massacre II|front|script.triggeredAbilities[2]",
+          "card": "Meathook Massacre II",
+          "face": "front",
+          "findingIndex": 1163,
+          "path": "script.triggeredAbilities[2].effect.suffer.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/MeathookMassacreII.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "4d1a8b9f359bbfc198b8",
+        "246ff7a0c73b35b6cb92",
+        "0719ebb24d8191ea67a7",
+        "0e1c0f110f1bc8b99b12",
+        "aae50a4e9289ac599005",
+        "ea56b29f62b566a91c64",
+        "dc20d8b2b2c97311f0f5",
+        "072130c24d7954c9e67c",
+        "0a4dfba32a8414726e8d",
+        "0adf43635e8564da2b15",
+        "0f763360b49b72fd30d2",
+        "1027ccdf5f15b21a8612",
+        "144d2da15b8a0e59d5de",
+        "1a73728ad6c6bf2bf158",
+        "2405e79bf60e6832a84a",
+        "2defcbf2a12e18e82ed7",
+        "46fb083ef911238eeba2",
+        "47a2ef8431e3b24cb0f7",
+        "4c0ef2156ffb1f669bec",
+        "53f1d42948298f934739",
+        "540b9d24a3bd5cc62827",
+        "598e1c29e60640265fce",
+        "5d5dde60d2e425ad3f7e",
+        "6e79d50d1b13dae78e01",
+        "82b2329086dc85111d22",
+        "90c3ef625eea8f85ec10",
+        "9317c710db8b0ad078d9",
+        "93a2c907027efdb7d069",
+        "9b4c53150a3f03615e55",
+        "a53518b7292f360e79b9",
+        "a5858c830388efc89429",
+        "a73fc21a588264074ec7",
+        "ae646aca5e34ef4e221a",
+        "b0f5a3e78a15570be642",
+        "c0dea4ae72e00ea93dcc",
+        "c16dbc4136d52d29a37f",
+        "c78fe133a1b6342fd8f8",
+        "c9197d38fceb3666c4ec",
+        "d46dd8999e1dd7743dd0",
+        "d6af70629bf90c5e85b2",
+        "efc4625a3855c1346d5a",
+        "f0e35d87ea38e7600a76",
+        "f17323dcabd51a6d7a9c",
+        "f40ef31e8cf2da3b519e"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 39,
+      "distinctCards": 38,
+      "family": "PROVE_DYNAMIC_MODIFIER_SIGN",
+      "feasibleGenericWork": [
+        "EXISTING_SDK_INTERPRETATION_POSSIBLE"
+      ],
+      "proposedNextStep": "Establish dynamic modifier sign; keep unsupported signs UNKNOWN rather than infer a reduction",
+      "rawRecordCount": 42,
+      "representatives": [
+        {
+          "actionId": "Dead Weight|front|script.staticAbilities[0]",
+          "card": "Dead Weight",
+          "face": "front",
+          "findingIndex": 447,
+          "path": "script.staticAbilities[0]",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]"
+          ]
+        },
+        {
+          "actionId": "Debilitating Injury|front|script.staticAbilities[0]",
+          "card": "Debilitating Injury",
+          "face": "front",
+          "findingIndex": 459,
+          "path": "script.staticAbilities[0]",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]"
+          ]
+        },
+        {
+          "actionId": "Enfeeblement|front|script.staticAbilities[0]",
+          "card": "Enfeeblement",
+          "face": "front",
+          "findingIndex": 593,
+          "path": "script.staticAbilities[0]",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]"
+          ]
+        },
+        {
+          "actionId": "Gift of Fangs|front|script.staticAbilities[1]",
+          "card": "Gift of Fangs",
+          "face": "front",
+          "findingIndex": 755,
+          "path": "script.staticAbilities[1].ability",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[1].ability"
+          ]
+        },
+        {
+          "actionId": "Precipitous Drop|front|script.staticAbilities[0]",
+          "card": "Precipitous Drop",
+          "face": "front",
+          "findingIndex": 1394,
+          "path": "script.staticAbilities[0].ability",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0].ability"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "db2e45beb6a6448c283d",
+        "222a9cb037a343f280d4",
+        "070caa82f829f720271d",
+        "214aadb3ad389a6526e4",
+        "35a2355dc472259048ee",
+        "55175520f57b316a03ca",
+        "fb23f18923d2f0712fce",
+        "fdfb7ad19e7fa8104bba",
+        "1b87abcef575c2e7a1e7",
+        "205665d0b7fe59a88d5a",
+        "259439839821e36529d7",
+        "26223d727bd5389c1e87",
+        "2aab8cad7aab07fcca99",
+        "2bf355be23505b3a65d0",
+        "4bd93b29ddaf9f96949d",
+        "553b2583b042193b0b4f",
+        "60816677b8a4db94d6d1",
+        "8f600b720cc9c39ba1b5",
+        "98553fd2965799756bc5",
+        "a175d7bfade1fb739c46",
+        "a293260aba518fc87a74",
+        "a7348e0793d4280393f0",
+        "b0d006fea823491c4cce",
+        "d086ac208e828140c3ba",
+        "d807952f9b7720318119",
+        "e8a7856345000f39a910",
+        "f7c0d097674f5be4bfdd"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 34,
+      "distinctCards": 34,
+      "family": "INTERPRETATION:DealDamage",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 35,
+      "representatives": [
+        {
+          "actionId": "Burn Down the House|front|script.spell",
+          "card": "Burn Down the House",
+          "face": "front",
+          "findingIndex": 237,
+          "path": "script.spellEffect.modes[1].effect.effects[0].triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BurnDownTheHouse.kt",
+            "native:front.script.spellEffect.modes[0].effect.body",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Dance with Devils|front|script.spell",
+          "card": "Dance with Devils",
+          "face": "front",
+          "findingIndex": 426,
+          "path": "script.spellEffect.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Mana Clash|front|script.spell",
+          "card": "Mana Clash",
+          "face": "front",
+          "findingIndex": 1144,
+          "path": "script.spellEffect.body.effects[3].then",
+          "sourceReferences": [
+            "native:front.script.spellEffect.body.effects[3].then"
+          ]
+        },
+        {
+          "actionId": "Chain Lightning|front|script.spell",
+          "card": "Chain Lightning",
+          "face": "front",
+          "findingIndex": 283,
+          "path": "script.spellEffect.action",
+          "sourceReferences": [
+            "native:front.script.spellEffect.action"
+          ]
+        },
+        {
+          "actionId": "Chain of Plasma|front|script.spell",
+          "card": "Chain of Plasma",
+          "face": "front",
+          "findingIndex": 284,
+          "path": "script.spellEffect.action",
+          "sourceReferences": [
+            "native:front.script.spellEffect.action"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "119053be4a6f23ff6ce9",
+        "17a956a80b6e2c608fbb",
+        "ca3b411c4a67f3516fa5",
+        "da73378936c99d466d84",
+        "df2ed20053db7fa7587d",
+        "04aba60c06d43ad210c8",
+        "0e23987360509907999d",
+        "2007323516211f061272",
+        "2cc056c3adcc56241034",
+        "3526a946bb54cae13836",
+        "46ea4608e4108308c763",
+        "4c089259d74abf4ee367",
+        "5d166ccd23a7705d5545",
+        "616d4b59fcb2acaead2a",
+        "66597b9774a445b81d69",
+        "6af2374b58f93bf26b59",
+        "894a34345b33bea7c45d",
+        "908c15dbe6d121927245",
+        "9679340cffd04dc79821",
+        "98e54cfeef0a767e4f59",
+        "a04af5c5af4db132d1f3",
+        "b62a0346b5195a8dacf4",
+        "c9b03a070bd04aa74a4a",
+        "cd2e51a319bfe4ce0307",
+        "dd0b33dbfe970487be15",
+        "df74ed9b9c1c338af2a9",
+        "ee23b318402a5f661598",
+        "f4db6099e874ff27a671",
+        "fd5f723ad2bb2a77908a"
+      ]
+    },
+    {
+      "categories": [
+        "INCOMPLETE_INTERPRETATION"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 31,
+      "distinctCards": 31,
+      "family": "INTERPRETATION:AddCounters",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 31,
+      "representatives": [
+        {
+          "actionId": "Blood Host|front|script.activatedAbilities[0]",
+          "card": "Blood Host",
+          "face": "front",
+          "findingIndex": 2077,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m15/cards/BloodHost.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Bloodflow Connoisseur|front|script.activatedAbilities[0]",
+          "card": "Bloodflow Connoisseur",
+          "face": "front",
+          "findingIndex": 2079,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/BloodflowConnoisseur.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Boneyard Desecrator|front|script.activatedAbilities[0]",
+          "card": "Boneyard Desecrator",
+          "face": "front",
+          "findingIndex": 2086,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/BoneyardDesecrator.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Carrion Feeder|front|script.activatedAbilities[0]",
+          "card": "Carrion Feeder",
+          "face": "front",
+          "findingIndex": 2092,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/CarrionFeeder.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Falkenrath Torturer|front|script.activatedAbilities[0]",
+          "card": "Falkenrath Torturer",
+          "face": "front",
+          "findingIndex": 2133,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/FalkenrathTorturer.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "e37d592c60ca1db1976a",
+        "c6f7c6705eda334f1822",
+        "658fe4ae28602bdfd869",
+        "1c8647f13cf6ddc0cfcd",
+        "232f0e5345bc4f136fc2",
+        "a8b348247f3af87d7c7e",
+        "0e1884741646020770fe",
+        "3213aef6c6f73e05b209",
+        "a10a4f09d96b28179943",
+        "a9742e8cb03ec691a52c"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 31,
+      "distinctCards": 29,
+      "family": "INTERPRETATION:ConditionalOnCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 31,
+      "representatives": [
+        {
+          "actionId": "Academic Dispute|front|script.spell",
+          "card": "Academic Dispute",
+          "face": "front",
+          "findingIndex": 5,
+          "path": "script.spellEffect.effects[2].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Enthusiastic Study|front|script.spell",
+          "card": "Enthusiastic Study",
+          "face": "front",
+          "findingIndex": 599,
+          "path": "script.spellEffect.effects[2].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "First Day of Class|front|script.spell",
+          "card": "First Day of Class",
+          "face": "front",
+          "findingIndex": 676,
+          "path": "script.spellEffect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Hunt for Specimens|front|script.spell",
+          "card": "Hunt for Specimens",
+          "face": "front",
+          "findingIndex": 930,
+          "path": "script.spellEffect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Igneous Inspiration|front|script.spell",
+          "card": "Igneous Inspiration",
+          "face": "front",
+          "findingIndex": 937,
+          "path": "script.spellEffect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/IgneousInspiration.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "4bfc2629fcaab8b9434b",
+        "e19d2aa5c9a4626edc3b",
+        "4d968e87c5fb25360d44",
+        "3421fe926c677cc21e75",
+        "d2294e4e6e7941edd555",
+        "e97f8170f7d085ce90b4",
+        "04f9f259fcdc65504cac",
+        "29364d6e8b2996777335",
+        "4e3491a66e6876db12c8",
+        "5114ffa9896d4c244f67",
+        "5e2043cd04a51fec092a",
+        "65fb2dd7f93f81376a7f",
+        "692888ef88b470d45e58",
+        "a612f1535f15b56832a9",
+        "ad3c53a82949f599ff92",
+        "b685d92f6556b3e7e0c1",
+        "c4347fcaeee6d0c55a7c",
+        "f3fa387ae7c199f8f6b0"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 10,
+      "distinctCards": 10,
+      "family": "INTERPRETATION:SacrificeTarget",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 10,
+      "representatives": [
+        {
+          "actionId": "Devastating Onslaught|front|script.spell",
+          "card": "Devastating Onslaught",
+          "face": "front",
+          "findingIndex": 485,
+          "path": "script.spellEffect.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Kindle the Inner Flame|front|script.spell",
+          "card": "Kindle the Inner Flame",
+          "face": "front",
+          "findingIndex": 1030,
+          "path": "script.spellEffect.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Makeshift Mannequin|front|script.spell",
+          "card": "Makeshift Mannequin",
+          "face": "front",
+          "findingIndex": 1137,
+          "path": "script.spellEffect.effects[2].ability.effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].ability.effect"
+          ]
+        },
+        {
+          "actionId": "Terminal Velocity|front|script.spell",
+          "card": "Terminal Velocity",
+          "face": "front",
+          "findingIndex": 1773,
+          "path": "script.spellEffect.effects[1].ifNotEmpty.effects[2].ability.effect",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].ifNotEmpty.effects[2].ability.effect"
+          ]
+        },
+        {
+          "actionId": "Instill Furor|front|script.staticAbilities[0]",
+          "card": "Instill Furor",
+          "face": "front",
+          "findingIndex": 970,
+          "path": "script.staticAbilities[0].ability.effect.then",
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0].ability.effect.then"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "280da3c0e96375acb94d",
+        "5ea5e51e44727c100a69",
+        "a49738814f4e9c551126",
+        "13f8b014cd139d18bc2a",
+        "2e2f492efcbbe3fcbe3c"
+      ]
+    },
+    {
+      "categories": [
+        "INCOMPLETE_INTERPRETATION"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 9,
+      "distinctCards": 9,
+      "family": "INTERPRETATION:GatherCards",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 9,
+      "representatives": [
+        {
+          "actionId": "Dark-Dweller Oracle|front|script.activatedAbilities[0]",
+          "card": "Dark-Dweller Oracle",
+          "face": "front",
+          "findingIndex": 2108,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m19/cards/DarkDwellerOracle.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Diversion Specialist|front|script.activatedAbilities[0]",
+          "card": "Diversion Specialist",
+          "face": "front",
+          "findingIndex": 2120,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/DiversionSpecialist.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Snowslope Hunter|front|script.activatedAbilities[0]",
+          "card": "Snowslope Hunter",
+          "face": "front",
+          "findingIndex": 2241,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/SnowslopeHunter.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Memorial Vault|front|script.activatedAbilities[0]",
+          "card": "Memorial Vault",
+          "face": "front",
+          "findingIndex": 2193,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/MemorialVault.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Reno and Rude|front|script.triggeredAbilities[0]",
+          "card": "Reno and Rude",
+          "face": "front",
+          "findingIndex": 2223,
+          "path": "script.triggeredAbilities[0].effect.effects[2].gate.cost",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/RenoAndRude.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2].gate.cost",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "fa5e53f65ac6cda8ba0b",
+        "0f3ef908c7a81a5156bb",
+        "30abf0ab6d9039179164",
+        "45cb40e5d2ff6469e75d",
+        "4af08176e221a2684b40",
+        "4f732f919a846c1046c9",
+        "b2b5acff515c0a3849e4"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 8,
+      "distinctCards": 8,
+      "family": "INTERPRETATION:AtomSacrifice",
+      "feasibleGenericWork": [
+        "EXISTING_SDK_INTERPRETATION_POSSIBLE"
+      ],
+      "proposedNextStep": "Preserve mechanical compatibility independently of mandatory timing and discovery-policy relationships",
+      "rawRecordCount": 8,
+      "representatives": [
+        {
+          "actionId": "Desecration Demon|front|script.triggeredAbilities[0]",
+          "card": "Desecration Demon",
+          "face": "front",
+          "findingIndex": 479,
+          "path": "script.triggeredAbilities[0].effect.cost.atom",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.cost.atom"
+          ]
+        },
+        {
+          "actionId": "Innocent Traveler|front|script.triggeredAbilities[0]",
+          "card": "Innocent Traveler",
+          "face": "front",
+          "findingIndex": 966,
+          "path": "script.triggeredAbilities[0].effect.cost.atom",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.cost.atom"
+          ]
+        },
+        {
+          "actionId": "Betrayal of Flesh|front|script.spell",
+          "card": "Betrayal of Flesh",
+          "face": "front",
+          "findingIndex": 128,
+          "path": "script.spellEffect.additionalCostPerExtraMode",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/BetrayalOfFlesh.kt",
+            "native:front.script.spellEffect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Rite of Belzenlok|front|script.sagaChapters[2]",
+          "card": "Rite of Belzenlok",
+          "face": "front",
+          "findingIndex": 1519,
+          "path": "script.sagaChapters[2].effect.triggeredAbilities[0].effect.cost.atom",
+          "sourceReferences": [
+            "native:front.script.sagaChapters[2].effect.triggeredAbilities[0].effect.cost.atom"
+          ]
+        },
+        {
+          "actionId": "Prowling Pangolin|front|script.triggeredAbilities[0]",
+          "card": "Prowling Pangolin",
+          "face": "front",
+          "findingIndex": 1409,
+          "path": "script.triggeredAbilities[0].effect.cost.atom",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.cost.atom"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "d13045f0fb62f7dee146",
+        "03ca3c01adc91fec753c",
+        "6b15d5104f89d782a58f",
+        "81c472612bcebb3ed8e3",
+        "b81551bbb8a278ccc967",
+        "cab7d8c50deee31afbdb",
+        "f44deff496d247294be5"
+      ]
+    }
+  ],
+  "representativeFindings": [
+    {
+      "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[0]",
+      "card": "Abbot of Keral Keep",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "powerModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "target": {
+          "type": "Self"
+        },
+        "toughnessModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "type": "ModifyStats"
+      },
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[1]",
+      "card": "Abbot of Keral Keep",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Exile"
+        },
+        "from": "impulseExiled",
+        "type": "MoveCollection"
+      },
+      "face": "front",
+      "path": "script.triggeredAbilities[1].effect.effects[1]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Abyssal Harvester|front|script.activatedAbilities[0]",
+      "card": "Abyssal Harvester",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "destination": "Exile",
+        "fromZone": "Graveyard",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "face": "front",
+      "path": "script.activatedAbilities[0].effect.effects[1]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Abzan Devotee|front|script.activatedAbilities[1]",
+      "card": "Abzan Devotee",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "destination": "Hand",
+        "target": {
+          "type": "Self"
+        },
+        "type": "MoveToZone"
+      },
+      "face": "front",
+      "path": "script.activatedAbilities[1].effect",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Academic Dispute|front|script.spell",
+      "card": "Academic Dispute",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "from": "learn_discarded",
+        "moveType": "Discard",
+        "type": "MoveCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[2].body.effects[2]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Academic Dispute|front|script.spell",
+      "card": "Academic Dispute",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "collection": "learn_discarded",
+        "ifEmpty": {
+          "effects": [
+            {
+              "source": {
+                "filter": {
+                  "cardPredicates": [
+                    {
+                      "subtype": "Lesson",
+                      "type": "HasSubtype"
+                    }
+                  ]
+                },
+                "type": "FromZone",
+                "zone": "Sideboard"
+              },
+              "storeAs": "learn_lessons",
+              "type": "GatherCards"
+            },
+            {
+              "from": "learn_lessons",
+              "selection": {
+                "count": {
+                  "amount": 1,
+                  "type": "Fixed"
+                },
+                "type": "ChooseUpTo"
+              },
+              "storeSelected": "learn_lessonsFound",
+              "type": "SelectFromCollection"
+            },
+            {
+              "destination": {
+                "type": "ToZone",
+                "zone": "Hand"
+              },
+              "from": "learn_lessonsFound",
+              "revealed": true,
+              "type": "MoveCollection"
+            }
+          ],
+          "type": "Composite"
+        },
+        "ifNotEmpty": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "DrawCards"
+        },
+        "type": "ConditionalOnCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[2].body.effects[3]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    }
+  ],
+  "representativeRootIssues": [
+    {
+      "category": "PROBABLE_EXTRACTION_OMISSION",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 2,
+      "distinctCards": 2,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "EXISTING_SDK_INTERPRETATION_POSSIBLE",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "c6ba8896a929cf54191a",
+      "nativeType": "SacrificeSelf",
+      "priorityBand": "PROBABLE_NATIVE_GAP",
+      "proposedFix": "Preserve mechanical compatibility independently of mandatory timing and discovery-policy relationships",
+      "reason": "Native sacrifice node is present in an executable action but no local pathway was emitted; binding/zone still requires review",
+      "recordCount": 2,
+      "representatives": [
+        {
+          "actionId": "Carnage, Crimson Chaos|front|script.triggeredAbilities[0]",
+          "card": "Carnage, Crimson Chaos",
+          "face": "front",
+          "findingIndex": 263,
+          "path": "script.triggeredAbilities[0].effect.effects[2].ability.effect",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[2].ability.effect"
+          ]
+        },
+        {
+          "actionId": "Prowling Pangolin|front|script.triggeredAbilities[0]",
+          "card": "Prowling Pangolin",
+          "face": "front",
+          "findingIndex": 1408,
+          "path": "script.triggeredAbilities[0].effect.consequence",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.consequence"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "type": "SacrificeSelf"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "PROBABLE_EXTRACTION_OMISSION",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "5850c447c91a512b271f",
+      "nativeType": "ForceSacrifice",
+      "priorityBand": "PROBABLE_NATIVE_GAP",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native sacrifice node is present in an executable action but no local pathway was emitted; binding/zone still requires review",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Goblin Assassin|front|script.triggeredAbilities[0]",
+          "card": "Goblin Assassin",
+          "face": "front",
+          "findingIndex": 776,
+          "path": "script.triggeredAbilities[0].effect.body.lostEffect",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.body.lostEffect"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsCreature"
+            }
+          ]
+        },
+        "target": {
+          "type": "Controller"
+        },
+        "type": "ForceSacrifice"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "PROBABLE_EXTRACTION_OMISSION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "83a5c0eaad768d0ae818",
+      "nativeType": "ForceSacrifice",
+      "priorityBand": "PROBABLE_NATIVE_GAP",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native sacrifice node is present in an executable action but no local pathway was emitted; binding/zone still requires review",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Polygraph Orb|front|script.activatedAbilities[0]",
+          "card": "Polygraph Orb",
+          "face": "front",
+          "findingIndex": 1386,
+          "path": "script.activatedAbilities[0].effect.body.choices[1].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/PolygraphOrb.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsCreature"
+            }
+          ]
+        },
+        "target": {
+          "type": "Controller"
+        },
+        "type": "ForceSacrifice"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "PROBABLE_EXTRACTION_OMISSION",
+      "context": "script.spell",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "cf315209aa6e80f3701b",
+      "nativeType": "ForceSacrifice",
+      "priorityBand": "PROBABLE_NATIVE_GAP",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native sacrifice node is present in an executable action but no local pathway was emitted; binding/zone still requires review",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Season of Loss|front|script.spell",
+          "card": "Season of Loss",
+          "face": "front",
+          "findingIndex": 1591,
+          "path": "script.spellEffect.modes[0].effect.body",
+          "sourceReferences": [
+            "native:front.script.spellEffect.modes[0].effect.body"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsCreature"
+            }
+          ]
+        },
+        "target": {
+          "type": "Controller"
+        },
+        "type": "ForceSacrifice"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "PROBABLE_EXTRACTION_OMISSION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "EXISTING_SDK_INTERPRETATION_POSSIBLE",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "fe797389a64b82404ffe",
+      "nativeType": "SacrificeSelf",
+      "priorityBand": "PROBABLE_NATIVE_GAP",
+      "proposedFix": "Preserve mechanical compatibility independently of mandatory timing and discovery-policy relationships",
+      "reason": "Native sacrifice node is present in an executable action but no local pathway was emitted; binding/zone still requires review",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Dropkick Bomber|front|script.activatedAbilities[0]",
+          "card": "Dropkick Bomber",
+          "face": "front",
+          "findingIndex": 550,
+          "path": "script.activatedAbilities[0].effect.effects[1].ability.effect",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect.effects[1].ability.effect"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "type": "SacrificeSelf"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "POSSIBLE_POLICY_FALSE_NEGATIVE",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "3154556869aee4698096",
+      "nativeType": "SacrificeTarget",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Mechanically compatible sacrifice excluded without a source-established removal qualification",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Woebringer Demon|front|script.triggeredAbilities[0]",
+          "card": "Woebringer Demon",
+          "face": "front",
+          "findingIndex": 3195,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/WoebringerDemon.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.script.triggeredAbilities[0].effect.effects[1].then"
+          ]
+        }
+      ],
+      "stage": "POLICY",
+      "structuralPattern": {
+        "target": {
+          "type": "Self"
+        },
+        "type": "SacrificeTarget"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "POSSIBLE_POLICY_FALSE_NEGATIVE",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "EXISTING_SDK_INTERPRETATION_POSSIBLE",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "e13c3591d21acba539d0",
+      "nativeType": "SacrificeSelf",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Preserve mechanical compatibility independently of mandatory timing and discovery-policy relationships",
+      "reason": "Mechanically compatible sacrifice excluded without a source-established removal qualification",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Necrite|front|script.triggeredAbilities[0]",
+          "card": "Necrite",
+          "face": "front",
+          "findingIndex": 2833,
+          "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fem/cards/Necrite.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[1].effects[1]"
+          ]
+        }
+      ],
+      "stage": "POLICY",
+      "structuralPattern": {
+        "type": "SacrificeSelf"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "POSSIBLE_POLICY_FALSE_NEGATIVE",
+      "context": "script.spell",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "fc5c52f3f36ad3a3c797",
+      "nativeType": "SacrificeTarget",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Mechanically compatible sacrifice excluded without a source-established removal qualification",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Callous Sell-Sword|front.cardFaces[0]:Burn Together|script.spell",
+          "card": "Callous Sell-Sword",
+          "face": "front.cardFaces[0]:Burn Together",
+          "findingIndex": 2399,
+          "path": "script.spellEffect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/CallousSellSword.kt",
+            "native:front.cardFaces[0]:Burn Together.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.cardFaces[0]:Burn Together.script.spellEffect.effects[1]"
+          ]
+        }
+      ],
+      "stage": "POLICY",
+      "structuralPattern": {
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "SacrificeTarget"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "INCOMPLETE_INTERPRETATION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 14,
+      "distinctCards": 14,
+      "evidence": {
+        "acceptedActions": 14,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "e37d592c60ca1db1976a",
+      "nativeType": "AddCounters",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Accepted local pathway has unresolved enclosing mechanics; no whole-action verification claimed",
+      "recordCount": 14,
+      "representatives": [
+        {
+          "actionId": "Blood Host|front|script.activatedAbilities[0]",
+          "card": "Blood Host",
+          "face": "front",
+          "findingIndex": 2077,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m15/cards/BloodHost.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Bloodflow Connoisseur|front|script.activatedAbilities[0]",
+          "card": "Bloodflow Connoisseur",
+          "face": "front",
+          "findingIndex": 2079,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/BloodflowConnoisseur.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Boneyard Desecrator|front|script.activatedAbilities[0]",
+          "card": "Boneyard Desecrator",
+          "face": "front",
+          "findingIndex": 2086,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/BoneyardDesecrator.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Carrion Feeder|front|script.activatedAbilities[0]",
+          "card": "Carrion Feeder",
+          "face": "front",
+          "findingIndex": 2092,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/CarrionFeeder.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Falkenrath Torturer|front|script.activatedAbilities[0]",
+          "card": "Falkenrath Torturer",
+          "face": "front",
+          "findingIndex": 2133,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/FalkenrathTorturer.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "stage": "INTERPRETATION",
+      "structuralPattern": {
+        "count": 1,
+        "counterType": "PLUS_ONE_PLUS_ONE",
+        "target": {
+          "type": "Self"
+        },
+        "type": "AddCounters"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "INCOMPLETE_INTERPRETATION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 7,
+      "distinctCards": 7,
+      "evidence": {
+        "acceptedActions": 7,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "0dd4625e2285ebc5e866",
+      "nativeType": "Regenerate",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Accepted local pathway has unresolved enclosing mechanics; no whole-action verification claimed",
+      "recordCount": 7,
+      "representatives": [
+        {
+          "actionId": "Cateran Overlord|front|script.activatedAbilities[0]",
+          "card": "Cateran Overlord",
+          "face": "front",
+          "findingIndex": 2095,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mmq/cards/CateranOverlord.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Corrupted Harvester|front|script.activatedAbilities[0]",
+          "card": "Corrupted Harvester",
+          "face": "front",
+          "findingIndex": 2104,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/som/cards/CorruptedHarvester.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Devouring Strossus|front|script.activatedAbilities[0]",
+          "card": "Devouring Strossus",
+          "face": "front",
+          "findingIndex": 2114,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/DevouringStrossus.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.script.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Dimir House Guard|front|script.activatedAbilities[0]",
+          "card": "Dimir House Guard",
+          "face": "front",
+          "findingIndex": 2118,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/DimirHouseGuard.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Nim Shambler|front|script.activatedAbilities[0]",
+          "card": "Nim Shambler",
+          "face": "front",
+          "findingIndex": 2202,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/NimShambler.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "stage": "INTERPRETATION",
+      "structuralPattern": {
+        "target": {
+          "type": "Self"
+        },
+        "type": "Regenerate"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "INCOMPLETE_INTERPRETATION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 5,
+      "distinctCards": 5,
+      "evidence": {
+        "acceptedActions": 5,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "8614e6482aaca6bd736b",
+      "nativeType": "TapUntap",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Accepted local pathway has unresolved enclosing mechanics; no whole-action verification claimed",
+      "recordCount": 5,
+      "representatives": [
+        {
+          "actionId": "Immersturm Predator|front|script.activatedAbilities[0]",
+          "card": "Immersturm Predator",
+          "face": "front",
+          "findingIndex": 2162,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/ImmersturmPredator.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Popular Egotist|front|script.activatedAbilities[0]",
+          "card": "Popular Egotist",
+          "face": "front",
+          "findingIndex": 2215,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/PopularEgotist.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Rakdos, the Muscle|front|script.activatedAbilities[0]",
+          "card": "Rakdos, the Muscle",
+          "face": "front",
+          "findingIndex": 2217,
+          "path": "script.activatedAbilities[0].cost.atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/RakdosTheMuscle.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Sidequest: Hunt the Mark|front.backFace|script.activatedAbilities[0]",
+          "card": "Sidequest: Hunt the Mark",
+          "face": "front.backFace",
+          "findingIndex": 2238,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/SidequestHuntTheMark.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.backFace.script.activatedAbilities[0].cost.costs[1].atom"
+          ]
+        },
+        {
+          "actionId": "Unrooted Ancestor|front|script.activatedAbilities[0]",
+          "card": "Unrooted Ancestor",
+          "face": "front",
+          "findingIndex": 2263,
+          "path": "script.activatedAbilities[0].cost.costs[1].atom",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/UnrootedAncestor.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        }
+      ],
+      "stage": "INTERPRETATION",
+      "structuralPattern": {
+        "target": {
+          "type": "Self"
+        },
+        "type": "TapUntap"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "INCOMPLETE_INTERPRETATION",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 5,
+      "distinctCards": 5,
+      "evidence": {
+        "acceptedActions": 5,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "d65afdf63c5567d2c029",
+      "nativeType": "EmitExploitedEvent",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Accepted local pathway has unresolved enclosing mechanics; no whole-action verification claimed",
+      "recordCount": 5,
+      "representatives": [
+        {
+          "actionId": "Fell Stinger|front|script.triggeredAbilities[0]",
+          "card": "Fell Stinger",
+          "face": "front",
+          "findingIndex": 2137,
+          "path": "script.triggeredAbilities[0].effect.action.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/FellStinger.kt",
+            "native:front.script.triggeredAbilities[0].effect.action.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Graf Reaver|front|script.triggeredAbilities[0]",
+          "card": "Graf Reaver",
+          "face": "front",
+          "findingIndex": 2151,
+          "path": "script.triggeredAbilities[0].effect.action.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/GrafReaver.kt",
+            "native:front.script.triggeredAbilities[0].effect.action.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.script.triggeredAbilities[0].effect.reflexiveEffect",
+            "native:front.script.triggeredAbilities[1].effect"
+          ]
+        },
+        {
+          "actionId": "Infernal Captor|front|script.triggeredAbilities[0]",
+          "card": "Infernal Captor",
+          "face": "front",
+          "findingIndex": 2165,
+          "path": "script.triggeredAbilities[0].effect.action.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/InfernalCaptor.kt",
+            "native:front.script.triggeredAbilities[0].effect.action.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Mindleech Ghoul|front|script.triggeredAbilities[0]",
+          "card": "Mindleech Ghoul",
+          "face": "front",
+          "findingIndex": 2195,
+          "path": "script.triggeredAbilities[0].effect.action.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/MindleechGhoul.kt",
+            "native:front.script.triggeredAbilities[0].effect.action.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ]
+        },
+        {
+          "actionId": "Rot-Tide Gargantua|front|script.triggeredAbilities[0]",
+          "card": "Rot-Tide Gargantua",
+          "face": "front",
+          "findingIndex": 2225,
+          "path": "script.triggeredAbilities[0].effect.action.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/RotTideGargantua.kt",
+            "native:front.script.triggeredAbilities[0].effect.action.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting",
+            "native:front.script.triggeredAbilities[0].effect.reflexiveEffect"
+          ]
+        }
+      ],
+      "stage": "INTERPRETATION",
+      "structuralPattern": {
+        "type": "EmitExploitedEvent"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    }
+  ]
+}

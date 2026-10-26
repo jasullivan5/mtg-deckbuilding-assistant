@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:48:39.025Z" hostname="5fc36fab9608" time="2.767">
+  <properties/>
+  <testcase name="static anthem applies to our other creatures only" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.094"/>
+  <testcase name="own death produces exactly the proper trigger and player damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.306"/>
+  <testcase name="token death produces exactly the proper trigger and player damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.008"/>
+  <testcase name="opponent death produces exactly the proper trigger and player damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.008"/>
+  <testcase name="self death produces exactly the proper trigger and player damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.01"/>
+  <testcase name="self-token death produces exactly the proper trigger and player damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.007"/>
+  <testcase name="Judith and two own nontokens die simultaneously: three triggers using last known information" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.064"/>
+  <testcase name="damage may target a creature and resolves as one actual damage" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.045"/>
+  <testcase name="noncreature artifact is not a legal any-target damage selection" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.014"/>
+  <testcase name="damage can target Judith herself without being lethal" classname="dev.mtg.assistant.JudithTheScourgeDivaScenarioTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

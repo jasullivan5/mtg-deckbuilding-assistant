@@ -1,0 +1,577 @@
+{
+  "afterCommander": "Krenko, Mob Boss",
+  "afterStageCounts": {
+    "accepted_reanimation_cards": 14,
+    "accepted_reanimation_pathways": 15,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 2382,
+    "commander_eligible_cards": 3466,
+    "commander_legal_cards": 16630,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mechanical_facts": 2897,
+    "mechanical_input_cards_after_conventional_search": 3466,
+    "movement_facts": 864,
+    "registry_names_including_faces": 17352,
+    "rejected_movement_pathways": 814,
+    "unknown_query_pathways": 35,
+    "unsupported_structure_records": 4750,
+    "upstream_authored_physical_cards": 16995
+  },
+  "ambiguousPathwayBases": [
+    "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+    "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+  ],
+  "beforeCommander": "Krenko, Mob Boss",
+  "beforeStageCounts": {
+    "accepted_reanimation_cards": 14,
+    "accepted_reanimation_pathways": 15,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 2513,
+    "commander_eligible_cards": 3466,
+    "commander_legal_cards": 16630,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mechanical_facts": 2536,
+    "mechanical_input_cards_after_conventional_search": 3466,
+    "movement_facts": 864,
+    "registry_names_including_faces": 17352,
+    "rejected_movement_pathways": 814,
+    "unknown_query_pathways": 35,
+    "unsupported_structure_records": 5063,
+    "upstream_authored_physical_cards": 16995
+  },
+  "comparablePool": true,
+  "counts": {
+    "PATHWAY_CHANGED": 2,
+    "UNSUPPORTED_ADDED": 48,
+    "UNSUPPORTED_REMOVED": 361
+  },
+  "limitations": [
+    "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+    "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+    "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+  ],
+  "representativeChangesByKind": {
+    "PATHWAY_CHANGED": [
+      {
+        "after": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Survey the Wreckage|front|script.spell",
+          "affectedScope": "source=BATTLEFIELD; graveyard/zone-player=UNKNOWN; native ownership/filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=BATTLEFIELD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Survey the Wreckage",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "RTR:107:Survey the Wreckage",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "UNKNOWN",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Survey the Wreckage|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/SurveyTheWreckage.kt",
+            "native:front.script.spellEffect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Survey the Wreckage|front|script.spell",
+          "affectedScope": "source=BATTLEFIELD; graveyard/zone-player=UNKNOWN; native ownership/filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=BATTLEFIELD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Survey the Wreckage",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "RTR:107:Survey the Wreckage",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "UNKNOWN",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Survey the Wreckage|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/SurveyTheWreckage.kt",
+            "native:front.script.spellEffect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "RTR:107:Survey the Wreckage|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.activatedAbilities[0].effect.effects[1].effects[2]",
+          "actionId": "Collector's Vault|front|script.activatedAbilities[0]",
+          "affectedScope": "source=HAND; graveyard/zone-player=YOU; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=YOU; selection=collectionMax=1; [Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false]; operation=Discard; binding=discarded",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Collector's Vault",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false"
+            ],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "WOE:244:Collector's Vault",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Graveyard"
+            },
+            "from": "discarded",
+            "moveType": "Discard",
+            "type": "MoveCollection"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+            "Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+            "Associated native action=Collector's Vault|front|script.activatedAbilities[0]; prerequisites=[Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/CollectorsVault.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[1].effects[2]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.activatedAbilities[0].effect.effects[1].effects[2]",
+          "actionId": "Collector's Vault|front|script.activatedAbilities[0]",
+          "affectedScope": "source=HAND; graveyard/zone-player=YOU; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=YOU; selection=collectionMax=1; [Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false]; operation=Discard; binding=discarded",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Collector's Vault",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false"
+            ],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=HAND/YOU; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=discarded; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "WOE:244:Collector's Vault",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Graveyard"
+            },
+            "from": "discarded",
+            "moveType": "Discard",
+            "type": "MoveCollection"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+            "Selection=ChooseExactly(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+            "Associated native action=Collector's Vault|front|script.activatedAbilities[0]; prerequisites=[Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/CollectorsVault.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[1].effects[2]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "WOE:244:Collector's Vault|front|script.activatedAbilities[0].effect.effects[1].effects[2]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "kind": "PATHWAY_CHANGED"
+      }
+    ],
+    "UNSUPPORTED_ADDED": [
+      {
+        "after": [
+          {
+            "actionId": "Blooming Blast|front|script.spell",
+            "card": "Blooming Blast",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.spellEffect.modes[1].effect.effects[1].effects[0].tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=UNKNOWN; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Blooming Blast|front|script.spellEffect.modes[1].effect.effects[1].effects[0].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bonehoard Dracosaur|front|script.triggeredAbilities[0]",
+            "card": "Bonehoard Dracosaur",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[1].then.tokenConstraints",
+            "reason": "Unresolved token variant: creature=MATCH; controller=YOU; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bonehoard Dracosaur|front|script.triggeredAbilities[0].effect.effects[1].then.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bonehoard Dracosaur|front|script.triggeredAbilities[0]",
+            "card": "Bonehoard Dracosaur",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[2].then.tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=YOU; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bonehoard Dracosaur|front|script.triggeredAbilities[0].effect.effects[2].then.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      }
+    ],
+    "UNSUPPORTED_REMOVED": [
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Agate Instigator|front|script.triggeredAbilities[0]",
+            "card": "Agate Instigator",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfSourceEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Agate Instigator|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfSourceEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Akki Ember-Keeper|front|script.triggeredAbilities[0]",
+            "card": "Akki Ember-Keeper",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Akki Ember-Keeper|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Alchemist's Talent|front|script.triggeredAbilities[0]",
+            "card": "Alchemist's Talent",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Alchemist's Talent|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      }
+    ]
+  },
+  "totalChanges": 411,
+  "transitions": {
+    "EXPLANATION_ONLY_CHANGED": 2
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "afterCommander": "Judith, the Scourge Diva",
+  "afterStageCounts": {
+    "accepted_reanimation_cards": 95,
+    "accepted_reanimation_pathways": 97,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 4215,
+    "commander_eligible_cards": 6104,
+    "commander_legal_cards": 16630,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mechanical_facts": 5629,
+    "mechanical_input_cards_after_conventional_search": 6104,
+    "movement_facts": 2055,
+    "registry_names_including_faces": 17352,
+    "rejected_movement_pathways": 1865,
+    "unknown_query_pathways": 93,
+    "unsupported_structure_records": 8308,
+    "upstream_authored_physical_cards": 16995
+  },
+  "ambiguousPathwayBases": [
+    "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+    "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+  ],
+  "beforeCommander": "Judith, the Scourge Diva",
+  "beforeStageCounts": {
+    "accepted_reanimation_cards": 95,
+    "accepted_reanimation_pathways": 97,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 4445,
+    "commander_eligible_cards": 6104,
+    "commander_legal_cards": 16630,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mechanical_facts": 4982,
+    "mechanical_input_cards_after_conventional_search": 6104,
+    "movement_facts": 2055,
+    "registry_names_including_faces": 17352,
+    "rejected_movement_pathways": 1865,
+    "unknown_query_pathways": 93,
+    "unsupported_structure_records": 8874,
+    "upstream_authored_physical_cards": 16995
+  },
+  "comparablePool": true,
+  "counts": {
+    "PATHWAY_CHANGED": 24,
+    "UNSUPPORTED_ADDED": 81,
+    "UNSUPPORTED_REMOVED": 647
+  },
+  "limitations": [
+    "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+    "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+    "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+  ],
+  "representativeChangesByKind": {
+    "PATHWAY_CHANGED": [
+      {
+        "after": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Grim Bounty|front|script.spell",
+          "affectedScope": "source=null; graveyard/zone-player=UNKNOWN; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetCreatureOrPlaneswalker(count=1, optional=false, id=t0); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Grim Bounty",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "AFR:106:Grim Bounty",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Grim Bounty|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/GrimBounty.kt",
+            "native:front.script.spellEffect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Grim Bounty|front|script.spell",
+          "affectedScope": "source=null; graveyard/zone-player=UNKNOWN; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetCreatureOrPlaneswalker(count=1, optional=false, id=t0); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Grim Bounty",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "AFR:106:Grim Bounty",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Grim Bounty|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/GrimBounty.kt",
+            "native:front.script.spellEffect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "AFR:106:Grim Bounty|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+          "actionId": "Hazel's Brewmaster|front|script.triggeredAbilities[0]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=EXILE; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=true; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=true, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Hazel's Brewmaster",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "BLC:17:Hazel's Brewmaster",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Exile",
+            "linkToSource": true,
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Hazel's Brewmaster|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/HazelsBrewmaster.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+          "actionId": "Hazel's Brewmaster|front|script.triggeredAbilities[0]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=EXILE; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=true; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=true, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Hazel's Brewmaster",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "BLC:17:Hazel's Brewmaster",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Exile",
+            "linkToSource": true,
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Hazel's Brewmaster|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/HazelsBrewmaster.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "BLC:17:Hazel's Brewmaster|front|script.triggeredAbilities[0].effect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+          "actionId": "Hazel's Brewmaster|front|script.triggeredAbilities[1]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=EXILE; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=true; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=true, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t1, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t1)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Hazel's Brewmaster",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "BLC:17:Hazel's Brewmaster",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Exile",
+            "linkToSource": true,
+            "target": {
+              "name": "t1",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Hazel's Brewmaster|front|script.triggeredAbilities[1]; prerequisites=[Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/HazelsBrewmaster.kt",
+            "native:front.script.triggeredAbilities[1].effect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+          "actionId": "Hazel's Brewmaster|front|script.triggeredAbilities[1]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=EXILE; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=true; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=true, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t1, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t1)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Hazel's Brewmaster",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t1); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "BLC:17:Hazel's Brewmaster",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Exile",
+            "linkToSource": true,
+            "target": {
+              "name": "t1",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Hazel's Brewmaster|front|script.triggeredAbilities[1]; prerequisites=[Trigger=AttackEvent(filter=null, requires=[]); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/HazelsBrewmaster.kt",
+            "native:front.script.triggeredAbilities[1].effect.effects[0]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "BLC:17:Hazel's Brewmaster|front|script.triggeredAbilities[1].effect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "kind": "PATHWAY_CHANGED"
+      }
+    ],
+    "UNSUPPORTED_ADDED": [
+      {
+        "after": [
+          {
+            "actionId": "Abyssal Harvester|front|script.activatedAbilities[0]",
+            "card": "Abyssal Harvester",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.activatedAbilities[0].effect.effects[2].tokenConstraints",
+            "reason": "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; [Copy source was moved earlier; last known copiable characteristics unresolved]"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Abyssal Harvester|front|script.activatedAbilities[0].effect.effects[2].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Ardyn, the Usurper|front|script.triggeredAbilities[0]",
+            "card": "Ardyn, the Usurper",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[1].tokenConstraints",
+            "reason": "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; [Copy source was moved earlier; last known copiable characteristics unresolved]"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Ardyn, the Usurper|front|script.triggeredAbilities[0].effect.effects[1].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bloodvial Purveyor|front|script.triggeredAbilities[0]",
+            "card": "Bloodvial Purveyor",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=UNKNOWN; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bloodvial Purveyor|front|script.triggeredAbilities[0].effect.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      }
+    ],
+    "UNSUPPORTED_REMOVED": [
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Abyssal Harvester|front|script.activatedAbilities[0]",
+            "card": "Abyssal Harvester",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.activatedAbilities[0].effect.effects[2]",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Abyssal Harvester|front|script.activatedAbilities[0].effect.effects[2]|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Aclazotz, Deepest Betrayal|front|script.triggeredAbilities[1]",
+            "card": "Aclazotz, Deepest Betrayal",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[1].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Aclazotz, Deepest Betrayal|front|script.triggeredAbilities[1].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Adorned Crocodile|front|script.triggeredAbilities[0]",
+            "card": "Adorned Crocodile",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Adorned Crocodile|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      }
+    ]
+  },
+  "totalChanges": 752,
+  "transitions": {
+    "EXPLANATION_ONLY_CHANGED": 24
+  }
+}

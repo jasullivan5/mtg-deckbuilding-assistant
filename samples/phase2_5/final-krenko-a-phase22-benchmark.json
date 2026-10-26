@@ -1,0 +1,1849 @@
+{
+  "cards": [
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Goblin Bombardment",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "bombardment-cost",
+        "bombardment-friendly-damage"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Viscera Seer",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "seer-cost"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Village Rites",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "rites-cost"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Bone Splinters",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "splinters-cost",
+        "splinters-destruction"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Victimize",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "victimize-resolution"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Ball Lightning",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "ball-end-step"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Spark Elemental",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "spark-end-step"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Accursed Centaur",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "centaur-etb"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Demonic Taskmaster",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "taskmaster-upkeep"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Fleshbag Marauder",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "fleshbag-symmetry"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Murder",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "murder-own-target"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Tragic Slip",
+      "expectedAcceptedCategories": [
+        "DEATH_ENHANCED_REMOVAL"
+      ],
+      "reviewedCaseIds": [
+        "slip-morbid-direct",
+        "slip-normal-direct",
+        "slip-enhancement"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Carrion Howler",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "howler-self-shrink"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Flowstone Wall",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "wall-self-shrink"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Blood Artist",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "artist-no-generator",
+        "artist-no-removal"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Gravecrawler",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "crawler-no-generator"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Judith, the Scourge Diva",
+      "expectedAcceptedCategories": [
+        "DEATH_ENHANCED_REMOVAL"
+      ],
+      "reviewedCaseIds": [
+        "judith-not-direct",
+        "judith-consumer"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Bloodline Culling",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "culling-token-mode"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Ambush Gigapede",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "gigapede-opponent"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Pit Raptor",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "pit-raptor-unless"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Lord of the Pit",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "lord-pit-mandatory"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Muxus, Goblin Grandee",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "muxus-positive-count"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Erg Raiders",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "erg-player-damage"
+      ],
+      "status": "UNRESOLVED"
+    }
+  ],
+  "cases": [
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].cost.atom",
+          "actionId": "Goblin Bombardment|front|script.activatedAbilities[0]",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Goblin Bombardment",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "ACTIVATION_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "TMP:179:Goblin Bombardment",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt",
+            "native:front.script.activatedAbilities[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Goblin Bombardment",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Goblin Bombardment",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "ACTIVATION_COST",
+        "face": "front",
+        "id": "bombardment-cost",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+        "path": "script.activatedAbilities[0].cost.atom",
+        "prerequisites": [],
+        "reason": "Sacrificing an own creature is the activation cost, paid before damage; nontokens are allowed.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/e262f55e-9239-4a97-a19e-9b08fb34502e",
+          "benchmark/oracle/00-card.json",
+          "benchmark/oracle/00-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt"
+        ]
+      },
+      "id": "bombardment-cost",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect",
+          "actionId": "Goblin Bombardment|front|script.activatedAbilities[0]",
+          "affectedScope": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Goblin Bombardment",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Damage amount must be positive and lethal in the actual state",
+              "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "TMP:179:Goblin Bombardment",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "amount": {
+              "amount": 1,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "DealDamage"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "DAMAGE_POTENTIALLY_LETHAL",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Damage amount must be positive and lethal in the actual state",
+            "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Goblin Bombardment",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Goblin Bombardment",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "bombardment-friendly-damage",
+        "mapping": "EXACT",
+        "operation": "DAMAGE_POTENTIALLY_LETHAL",
+        "oracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+        "path": "script.activatedAbilities[0].effect",
+        "prerequisites": [
+          "damage must actually be lethal; legal own creature target"
+        ],
+        "reason": "Damage can kill an own nontoken, but that target death is not the sacrifice cost; do not donate cost causality to the damage pathway.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/e262f55e-9239-4a97-a19e-9b08fb34502e",
+          "benchmark/oracle/00-card.json",
+          "benchmark/oracle/00-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt"
+        ]
+      },
+      "id": "bombardment-friendly-damage",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Viscera Seer",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Viscera Seer",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "ACTIVATION_COST",
+        "face": "front",
+        "id": "seer-cost",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "path": "script.activatedAbilities[0].cost.atom",
+        "prerequisites": [],
+        "reason": "Generic own creature cost includes Seer itself; not restricted to tokens.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/f511830b-1c1f-4d30-aa5d-4314726d142e",
+          "benchmark/oracle/01-card.json",
+          "benchmark/oracle/01-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt"
+        ]
+      },
+      "id": "seer-cost",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Village Rites",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Village Rites",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "rites-cost",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "365548fb-5acc-4a8a-b20b-26d28b7d029f",
+        "path": "script.additionalCosts[0].atom",
+        "prerequisites": [],
+        "reason": "Additional casting sacrifice is required even though the outcome is draw, not removal.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/42ed35e9-51cd-468a-86a9-9412553cf50d",
+          "benchmark/oracle/02-card.json",
+          "benchmark/oracle/02-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m21/cards/VillageRites.kt"
+        ]
+      },
+      "id": "rites-cost",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Bone Splinters",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Bone Splinters",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "splinters-cost",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "0c936582-d4c0-4da8-bc7e-49da5a433939",
+        "path": "script.additionalCosts[0].atom",
+        "prerequisites": [],
+        "reason": "Own sacrifice pays for the spell that destroys a separate legal target.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/106b5c96-d1bd-433d-955e-ace0b60d3bc3",
+          "benchmark/oracle/03-card.json",
+          "benchmark/oracle/03-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/BoneSplinters.kt"
+        ]
+      },
+      "id": "splinters-cost",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Bone Splinters",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Bone Splinters",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "splinters-destruction",
+        "mapping": "EXACT",
+        "operation": "DESTROY",
+        "oracleId": "0c936582-d4c0-4da8-bc7e-49da5a433939",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "legal creature target; destruction succeeds"
+        ],
+        "reason": "The destruction can target an own creature, but its death does not pay for the spell. The separate cost pathway qualifies.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/106b5c96-d1bd-433d-955e-ace0b60d3bc3",
+          "benchmark/oracle/03-card.json",
+          "benchmark/oracle/03-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/BoneSplinters.kt"
+        ]
+      },
+      "id": "splinters-destruction",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Victimize",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Victimize",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "victimize-resolution",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "240e85d3-e495-4877-8609-4b4056c402f7",
+        "path": "script.spellEffect.gate.action",
+        "prerequisites": [
+          "two creature-card targets in own graveyard chosen when cast; at least one remains legal; own creature at resolution"
+        ],
+        "reason": "Mandatory sacrifice during resolution, not a casting cost. Returning cards is gated on the sacrifice succeeding.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/ee008d81-df28-49a8-917d-44f66527e469",
+          "benchmark/oracle/04-card.json",
+          "benchmark/oracle/04-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/Victimize.kt"
+        ]
+      },
+      "id": "victimize-resolution",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Ball Lightning|front|script.triggeredAbilities[0]",
+          "affectedScope": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Ball Lightning",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": true,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Trigger=StepEvent(step=END, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+          "face": "front",
+          "identifier": "DRK:57:Ball Lightning",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "type": "SacrificeSelf"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Trigger=StepEvent(step=END, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/drk/cards/BallLightning.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Ball Lightning",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Ball Lightning",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "ball-end-step",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "7485cf25-eb41-4397-be13-7f0b8c10c70a",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "beginning of any end step; source remains a nontoken creature on battlefield at resolution; trigger resolves; no replacement"
+        ],
+        "reason": "Mandatory end-step self-sacrifice is a death generator without a separate payoff. It is not a delayed-trigger object or a sacrifice cost.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/5f27dbf0-6818-40ea-832d-10686b4c2900",
+          "benchmark/oracle/05-card.json",
+          "benchmark/oracle/05-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/drk/cards/BallLightning.kt"
+        ]
+      },
+      "id": "ball-end-step",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Spark Elemental|front|script.triggeredAbilities[0]",
+          "affectedScope": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Spark Elemental",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": true,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Trigger=StepEvent(step=END, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+          "face": "front",
+          "identifier": "5DN:79:Spark Elemental",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "type": "SacrificeSelf"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Trigger=StepEvent(step=END, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/5dn/cards/SparkElemental.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Spark Elemental",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Spark Elemental",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "spark-end-step",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "50608b7e-b6b2-40ca-91ec-db3e03dbb1af",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "beginning of any end step; source remains a nontoken creature on battlefield at resolution; trigger resolves; no replacement"
+        ],
+        "reason": "Mandatory end-step self-sacrifice is a death generator without a separate payoff. It is not a delayed-trigger object or a sacrifice cost.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/09e7dfad-aca9-498d-bd1c-5503b411ca5f",
+          "benchmark/oracle/06-card.json",
+          "benchmark/oracle/06-rulings.json",
+          "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/5dn/cards/SparkElemental.kt"
+        ]
+      },
+      "id": "spark-end-step",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Accursed Centaur",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Accursed Centaur",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "centaur-etb",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "b1e6921e-e460-4e58-82b0-d98ee31c279d",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "ETB trigger resolves; own creature exists; Centaur itself may be chosen"
+        ],
+        "reason": "Mandatory own sacrifice, including self if only creature. No utility judgment is needed.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/894556d8-6d5c-431b-a45d-26cd37c5f456",
+          "benchmark/oracle/07-card.json",
+          "benchmark/oracle/07-rulings.json",
+          "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/AccursedCentaur.kt"
+        ]
+      },
+      "id": "centaur-etb",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Demonic Taskmaster",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Demonic Taskmaster",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "taskmaster-upkeep",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "162e45f5-edb8-4a13-acdc-8980ce5ba8ac",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "own upkeep trigger; another own creature exists"
+        ],
+        "reason": "Other own creature is sacrificed; source leaving does not necessarily stop its trigger.",
+        "requiredNative": {
+          "excludeSource": "true"
+        },
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/af33e187-b535-49ac-90fa-17a5ed72d920",
+          "benchmark/oracle/08-card.json",
+          "benchmark/oracle/08-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/DemonicTaskmaster.kt"
+        ]
+      },
+      "id": "taskmaster-upkeep",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Fleshbag Marauder",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Fleshbag Marauder",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "fleshbag-symmetry",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "ETB trigger resolves; each player chooses own creature; simultaneous sacrifices"
+        ],
+        "reason": "Own death is real but is not a cost enabling opposing removal. Keep compatibility while excluding the incidental symmetric relationship.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/fce2baa4-2976-4bbd-b6c5-a5a3c6a901be",
+          "benchmark/oracle/09-card.json",
+          "benchmark/oracle/09-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/FleshbagMarauder.kt"
+        ]
+      },
+      "id": "fleshbag-symmetry",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Murder",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Murder",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "murder-own-target",
+        "mapping": "EXACT",
+        "operation": "DESTROY",
+        "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "legal own nontoken creature; destruction succeeds"
+        ],
+        "reason": "Ordinary friendly-target removal is mechanically possible, policy-excluded.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/2c249609-9cf7-46f1-b94c-9329add966bb",
+          "benchmark/oracle/10-card.json",
+          "benchmark/oracle/10-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/Murder.kt"
+        ]
+      },
+      "id": "murder-own-target",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Tragic Slip",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Tragic Slip",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "slip-morbid-direct",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "path": "script.spellEffect.then",
+        "prerequisites": [
+          "legal own creature target; final toughness/damage sufficient for death"
+        ],
+        "reason": "Friendly-target stat reduction remains ordinary removal, even on the morbid branch.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/132ccc20-cb42-4474-b747-7e41a661060e",
+          "benchmark/oracle/11-card.json",
+          "benchmark/oracle/11-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt"
+        ]
+      },
+      "id": "slip-morbid-direct",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Tragic Slip",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Tragic Slip",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "slip-normal-direct",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "path": "script.spellEffect.otherwise",
+        "prerequisites": [
+          "legal own creature target; final toughness/damage sufficient for death"
+        ],
+        "reason": "Friendly-target stat reduction remains ordinary removal, even on the morbid branch.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/132ccc20-cb42-4474-b747-7e41a661060e",
+          "benchmark/oracle/11-card.json",
+          "benchmark/oracle/11-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt"
+        ]
+      },
+      "id": "slip-normal-direct",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Tragic Slip",
+      "expected": {
+        "branch": "DEATH_ENHANCED_REMOVAL",
+        "card": "Tragic Slip",
+        "expectedCategory": "DEATH_ENHANCED_REMOVAL",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "DEPENDENCY",
+        "face": "front",
+        "id": "slip-enhancement",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "path": "script.spellEffect.gate.condition",
+        "prerequisites": [
+          "a creature died this turn; does not specifically require ours or a nontoken"
+        ],
+        "reason": "Desired death can satisfy generic morbid and change -1/-1 to -13/-13; this consumes the earlier event.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/132ccc20-cb42-4474-b747-7e41a661060e",
+          "benchmark/oracle/11-card.json",
+          "benchmark/oracle/11-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt"
+        ]
+      },
+      "id": "slip-enhancement",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Carrion Howler",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Carrion Howler",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "howler-self-shrink",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "e139176f-483f-4f05-af3d-0176d0048b62",
+        "path": "script.activatedAbilities[0].effect",
+        "prerequisites": [
+          "sufficient life/mana and repeated activations; source still present; toughness reaches zero"
+        ],
+        "reason": "An activated self-only toughness reduction permits own nontoken death; extra power is not required as a utility reward.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/0ff031f4-df27-40de-8615-f3ea225f9830",
+          "benchmark/oracle/12-card.json",
+          "benchmark/oracle/12-rulings.json",
+          "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/CarrionHowler.kt"
+        ]
+      },
+      "id": "howler-self-shrink",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect",
+          "actionId": "Flowstone Wall|front|script.activatedAbilities[0]",
+          "affectedScope": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Flowstone Wall",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+              "Toughness must reach zero or damage become lethal in the actual game state"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Intrinsic own-source death operation; its timing, resources and state requirements are retained without utility scoring",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SELECTABLE_SELF_TOUGHNESS_EXCHANGE",
+          "face": "front",
+          "identifier": "NEM:86:Flowstone Wall",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "powerModifier": {
+              "amount": 1,
+              "type": "Fixed"
+            },
+            "target": {
+              "type": "Self"
+            },
+            "toughnessModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "type": "ModifyStats"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "TOUGHNESS_REDUCTION",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Toughness must reach zero or damage become lethal in the actual game state",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nem/cards/FlowstoneWall.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Flowstone Wall",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Flowstone Wall",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "wall-self-shrink",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "5fa86b45-1d5b-42df-8811-6a10903f3039",
+        "path": "script.activatedAbilities[0].effect",
+        "prerequisites": [
+          "sufficient life/mana and repeated activations; source still present; toughness reaches zero"
+        ],
+        "reason": "An activated self-only toughness reduction permits own nontoken death; extra power is not required as a utility reward.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/89844c2f-f0a4-41c6-ad8c-d559fcaec85c",
+          "benchmark/oracle/13-card.json",
+          "benchmark/oracle/13-rulings.json",
+          "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nem/cards/FlowstoneWall.kt"
+        ]
+      },
+      "id": "wall-self-shrink",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Blood Artist",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Blood Artist",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": null,
+        "face": "front",
+        "id": "artist-no-generator",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "310f141c-7f37-4729-aed6-dd9c09db448d",
+        "path": "script",
+        "prerequisites": [],
+        "reason": "Reviewed Oracle and native abilities are life changes or graveyard permission, not a creature-death action or death-dependent creature removal.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/b5275d76-2947-4219-be21-614c7421614a",
+          "benchmark/oracle/14-card.json",
+          "benchmark/oracle/14-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/BloodArtist.kt"
+        ]
+      },
+      "id": "artist-no-generator",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Blood Artist",
+      "expected": {
+        "branch": "DEATH_ENHANCED_REMOVAL",
+        "card": "Blood Artist",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": null,
+        "face": "front",
+        "id": "artist-no-removal",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "310f141c-7f37-4729-aed6-dd9c09db448d",
+        "path": "script",
+        "prerequisites": [],
+        "reason": "Reviewed Oracle and native abilities are life changes or graveyard permission, not a creature-death action or death-dependent creature removal.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/b5275d76-2947-4219-be21-614c7421614a",
+          "benchmark/oracle/14-card.json",
+          "benchmark/oracle/14-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/BloodArtist.kt"
+        ]
+      },
+      "id": "artist-no-removal",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Gravecrawler",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Gravecrawler",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": null,
+        "face": "front",
+        "id": "crawler-no-generator",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "09ff28b1-b6c9-48e6-b12e-2f0e644f709f",
+        "path": "script",
+        "prerequisites": [],
+        "reason": "Reviewed Oracle and native abilities are life changes or graveyard permission, not a creature-death action or death-dependent creature removal.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/6987d609-ba0f-42bf-9b61-bdfb943c03b5",
+          "benchmark/oracle/15-card.json",
+          "benchmark/oracle/15-rulings.json",
+          "argentum/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/Gravecrawler.kt"
+        ]
+      },
+      "id": "crawler-no-generator",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Judith, the Scourge Diva",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Judith, the Scourge Diva",
+        "expectedCategory": null,
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "judith-not-direct",
+        "mapping": "EXACT",
+        "operation": "DAMAGE_POTENTIALLY_LETHAL",
+        "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "earlier own nontoken death; legal target; lethal damage assumption"
+        ],
+        "reason": "The triggered damage can target ours, but does not create its own triggering event and ordinary self-target removal is excluded.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/d6fb929c-1b8d-4d1d-aa69-ac6189cd7ebf",
+          "benchmark/oracle/16-card.json",
+          "benchmark/oracle/16-rulings.json",
+          "cli/src/main/kotlin/dev/mtg/assistant/extensions/JudithTheScourgeDiva.kt"
+        ]
+      },
+      "id": "judith-not-direct",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Judith, the Scourge Diva",
+      "expected": {
+        "branch": "DEATH_ENHANCED_REMOVAL",
+        "card": "Judith, the Scourge Diva",
+        "expectedCategory": "DEATH_ENHANCED_REMOVAL",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "DEPENDENCY",
+        "face": "front",
+        "id": "judith-consumer",
+        "mapping": "EXACT",
+        "operation": "DAMAGE_POTENTIALLY_LETHAL",
+        "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+        "path": "script.triggeredAbilities[0].trigger",
+        "prerequisites": [
+          "own nontoken creature dies, including Judith; one trigger per death; a removable creature target"
+        ],
+        "reason": "Desired event enables a damage ability. Preserve nontoken/own trigger restrictions; classify separately from direct generation.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/d6fb929c-1b8d-4d1d-aa69-ac6189cd7ebf",
+          "benchmark/oracle/16-card.json",
+          "benchmark/oracle/16-rulings.json",
+          "cli/src/main/kotlin/dev/mtg/assistant/extensions/JudithTheScourgeDiva.kt"
+        ]
+      },
+      "id": "judith-consumer",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Bloodline Culling",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Bloodline Culling",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "culling-token-mode",
+        "mapping": "PREFIX",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "0b7fabe8-bc44-47b1-93bb-b895a1bd0aa9",
+        "path": "script.spellEffect.modes[1]",
+        "prerequisites": [],
+        "reason": "Token-only mode cannot affect desired nontokens. Review this mode independently from targeted mode 0.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/fac827f7-a587-4adf-8408-2d9ccd9c1343",
+          "benchmark/oracle/17-card.json",
+          "benchmark/oracle/17-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BloodlineCulling.kt"
+        ]
+      },
+      "id": "culling-token-mode",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Ambush Gigapede",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Ambush Gigapede",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "gigapede-opponent",
+        "mapping": "EXACT",
+        "operation": "TOUGHNESS_REDUCTION",
+        "oracleId": "4faf62c3-3ba7-4540-be26-777305ef184e",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [],
+        "reason": "Only opponents creatures can be targeted, so our nontoken compatibility fails.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/93b17d09-974a-4e33-b14d-5fe4230ab241",
+          "benchmark/oracle/18-card.json",
+          "benchmark/oracle/18-rulings.json",
+          "argentum/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AmbushGigapede.kt"
+        ]
+      },
+      "id": "gigapede-opponent",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Pit Raptor",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Pit Raptor",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "pit-raptor-unless",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "92cdcafc-ffeb-436d-b2bd-d6ad895d0e08",
+        "path": "script.triggeredAbilities[0].effect.suffer",
+        "prerequisites": [
+          "own upkeep; {2}{B}{B} not paid; source remains a nontoken creature; trigger resolves"
+        ],
+        "reason": "Native PayOrSuffer contains a real self-sacrifice failure branch, not a spell/activation cost.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/e37cd150-1064-43b7-919b-8922d8a18f21",
+          "benchmark/oracle/19-card.json",
+          "benchmark/oracle/19-rulings.json",
+          "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pcy/cards/PitRaptor.kt"
+        ]
+      },
+      "id": "pit-raptor-unless",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Lord of the Pit",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Lord of the Pit",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "lord-pit-mandatory",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "ea152809-85a2-4fde-8251-3b1f267e4443",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "prerequisites": [
+          "own upkeep; another own creature exists; sacrifice is mandatory if able"
+        ],
+        "reason": "Damage to controller on failure is not opposing creature removal; do not use it to exclude the sacrifice branch.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/5b626ab2-4cf6-42e8-a7e2-9c9f310d2f00",
+          "benchmark/oracle/20-card.json",
+          "benchmark/oracle/20-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/LordOfThePit.kt"
+        ]
+      },
+      "id": "lord-pit-mandatory",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [],
+      "card": "Muxus, Goblin Grandee",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Muxus, Goblin Grandee",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "muxus-positive-count",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "07c82cde-f00d-4454-9df4-9286e344c9bb",
+        "path": "script.triggeredAbilities[1].effect",
+        "prerequisites": [],
+        "reason": "A count of other Goblins is nonnegative; +N/+N cannot be interpreted as a toughness-reduction death operation.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://api.scryfall.com/cards/2c716d10-2130-43b7-a939-349d437e1091",
+          "benchmark/oracle/21-card.json",
+          "benchmark/oracle/21-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jmp/cards/MuxusGoblinGrandee.kt"
+        ]
+      },
+      "id": "muxus-positive-count",
+      "issues": [],
+      "mappingStatus": "ABSENCE_CONFIRMED",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Erg Raiders",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Erg Raiders",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": "NO_MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "erg-player-damage",
+        "mapping": "EXACT",
+        "operation": "DAMAGE_POTENTIALLY_LETHAL",
+        "oracleId": "7feba745-7d27-4225-bc9d-9b7a8692872d",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "native entered-this-turn history is an incomplete proxy for gained-control-this-turn"
+        ],
+        "reason": "Player-only damage cannot be a creature death. History-fidelity uncertainty is retained separately.",
+        "requiredNative": {},
+        "reviewStatus": "UNRESOLVED",
+        "sources": [
+          "https://api.scryfall.com/cards/b29d88ad-5074-4f37-bb6a-2a7fe75c5771",
+          "benchmark/oracle/22-card.json",
+          "benchmark/oracle/22-rulings.json",
+          "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arn/cards/ErgRaiders.kt"
+        ]
+      },
+      "id": "erg-player-damage",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "UNRESOLVED_REVIEW",
+          "reason": "Player-only damage cannot be a creature death. History-fidelity uncertainty is retained separately."
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "commander": "Krenko, Mob Boss",
+  "denominators": {
+    "confirmed_evaluable_cases": 6,
+    "confirmed_expected_accepted_pathways": 4,
+    "confirmed_expected_excluded_cases": 2,
+    "confirmed_expected_mechanical_nonmatches": 1,
+    "confirmed_mechanical_positive_cases": 5,
+    "expected_unknown_interpretation_boundaries": 0,
+    "reviewed_cards": 23,
+    "reviewed_cases": 29
+  },
+  "limitations": [
+    "Source-led reviewed sample, not corpus recall or an independently adjudicated human gold standard.",
+    "Unreviewed accepted paths are suspected review gaps, never confirmed false positives. Mapping ambiguity and unsupported evidence are explicit.",
+    "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."
+  ],
+  "numerators": {
+    "confirmed_mechanical_positive_recovered": 5,
+    "confirmed_mismatch_cases": 0,
+    "excluded_correctly_not_accepted": 2,
+    "expected_accepted_missed": 0,
+    "expected_accepted_recovered": 4,
+    "incorrect_accepted_reviewed_cases": 0,
+    "suspected_or_incomplete_cases": 0,
+    "unknown_boundaries_preserved": 0,
+    "unresolved_cases": 23,
+    "unreviewed_accepted_paths": 0
+  },
+  "reviewSha256": "3f28796f6beda350e38f85c56886d47c44ddf6cea0edb5c4eae1007e67932f30",
+  "reviewVersion": "source-review-v1",
+  "unreviewedAcceptedPathways": []
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase24EngineTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:21:11.320Z" hostname="5fc36fab9608" time="0.046">
+  <properties/>
+  <testcase name="Reanimate returns our original graveyard creature and loses its mana value" classname="dev.mtg.assistant.Phase24EngineTest" time="0.012"/>
+  <testcase name="Reanimate can return an opponents card under our control without changing ownership" classname="dev.mtg.assistant.Phase24EngineTest" time="0.004"/>
+  <testcase name="Zombify rejects a target from an opponents graveyard" classname="dev.mtg.assistant.Phase24EngineTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+/argentum/
+.gradle/
+.kotlin/
+**/build/
+*.hprof
+/generated/
+*.zip

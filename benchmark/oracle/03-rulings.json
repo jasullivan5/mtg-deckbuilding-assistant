@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "0c936582-d4c0-4da8-bc7e-49da5a433939",
+      "source": "wotc",
+      "published_at": "2022-09-09",
+      "comment": "You must sacrifice exactly one creature to cast this spell; you can’t cast it without sacrificing a creature, and you can’t sacrifice additional creatures."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "0c936582-d4c0-4da8-bc7e-49da5a433939",
+      "source": "wotc",
+      "published_at": "2022-09-09",
+      "comment": "Once you begin to cast Bone Splinters, no player may take actions until you’re done. Notably, opponents can’t try to remove the creature you wish to sacrifice."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Big Score",
+  "oracle_id": "a5cbd257-c836-493e-bb1a-76242619dea2",
+  "oracle_text": "As an additional cost to cast this spell, discard a card.\nDraw two cards and create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+  "mana_cost": "{3}{R}",
+  "type_line": "Instant",
+  "power": null,
+  "toughness": null,
+  "color_identity": [
+    "R"
+  ],
+  "scryfall_uri": "https://scryfall.com/card/msc/802/big-score?utm_source=api",
+  "source": "https://api.scryfall.com/cards/named?exact=Big%20Score",
+  "retrieved": "2026-10-26",
+  "rulings": []
+}

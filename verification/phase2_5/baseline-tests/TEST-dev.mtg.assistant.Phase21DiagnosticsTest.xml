@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase21DiagnosticsTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:20:53.623Z" hostname="5fc36fab9608" time="0.361">
+  <properties/>
+  <testcase name="Judith has verified original printing metadata and authoritative eligibility" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.252"/>
+  <testcase name="extension collisions fail for name and Oracle ID without overwriting" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.011"/>
+  <testcase name="extension requires verified identity and legality" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.001"/>
+  <testcase name="Judith consumes death events but cannot be accepted as own death generator" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.003"/>
+  <testcase name="fingerprints normalize variable names and UI text but retain source and destination zones" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.008"/>
+  <testcase name="independent native traversal sees nested effects even when extraction declines their container" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.032"/>
+  <testcase name="accepted local costs with unresolved outcomes are flagged as incomplete" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.004"/>
+  <testcase name="cross-examiner keeps eligibility gaps separate" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.001"/>
+  <testcase name="diff is stable for identical snapshots and exposes classification and policy changes" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.014"/>
+  <testcase name="equivalent actions with contradictory decisions are flagged but distinct controllers are not conflated" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.004"/>
+  <testcase name="duplicate pathway bases retain every independent outcome and do not invent transitions" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.008"/>
+  <testcase name="coverage ranks are deterministic and retain meaningful movement differences" classname="dev.mtg.assistant.Phase21DiagnosticsTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

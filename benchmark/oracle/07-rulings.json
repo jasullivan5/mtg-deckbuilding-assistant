@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "b1e6921e-e460-4e58-82b0-d98ee31c279d",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "If Accursed Centaur is the only creature on the battlefield, you must sacrifice it."
+    }
+  ]
+}

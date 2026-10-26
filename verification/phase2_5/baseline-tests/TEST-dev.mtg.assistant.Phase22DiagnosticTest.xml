@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase22DiagnosticTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:21:02.922Z" hostname="5fc36fab9608" time="0.66">
+  <properties/>
+  <testcase name="confirmed missing path is separate from ambiguity and unreviewed acceptance" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.288"/>
+  <testcase name="policy disagreement preserves recovered mechanical capability and cost-effect mismatch is explicit" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.006"/>
+  <testcase name="controller and token explanation contradictions are explicitly reported" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.003"/>
+  <testcase name="root grouping ignores card names and presentation text but retains controller restrictions" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.002"/>
+  <testcase name="probable omissions require creature and battlefield-context evidence rather than a type name alone" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.005"/>
+  <testcase name="eligibility gaps group by missing data and never become mechanical omission claims" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.001"/>
+  <testcase name="Murder's single ordinary removal is not suspicious merely because it contains itself" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.102"/>
+  <testcase name="benchmark diff preserves denominators and discovery diff identifies policy attribution" classname="dev.mtg.assistant.Phase22DiagnosticTest" time="0.23"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

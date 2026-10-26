@@ -1,0 +1,38 @@
+{
+  "name": "Ophiomancer",
+  "oracle_id": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+  "oracle_text": "At the beginning of each upkeep, if you control no Snakes, create a 1/1 black Snake creature token with deathtouch.",
+  "mana_cost": "{2}{B}",
+  "type_line": "Creature \u2014 Human Shaman",
+  "power": "2",
+  "toughness": "2",
+  "color_identity": [
+    "B"
+  ],
+  "scryfall_uri": "https://scryfall.com/card/soc/118/ophiomancer?utm_source=api",
+  "source": "https://api.scryfall.com/cards/named?exact=Ophiomancer",
+  "retrieved": "2026-10-26",
+  "rulings": [
+    {
+      "object": "ruling",
+      "oracle_id": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+      "source": "wotc",
+      "published_at": "2013-10-17",
+      "comment": "Ophiomancer's ability checks if you control a Snake at the beginning of each upkeep. If you do, the ability won't trigger."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+      "source": "wotc",
+      "published_at": "2013-10-17",
+      "comment": "Ophiomancer's ability considers any creature you control with the creature type Snake, not just the tokens Ophiomancer creates."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+      "source": "wotc",
+      "published_at": "2013-10-17",
+      "comment": "If the ability does trigger, but you control a Snake when it tries to resolve, the ability will do nothing. No Snake token will be created."
+    }
+  ]
+}

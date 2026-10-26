@@ -1,0 +1,75 @@
+{
+  "sameFactsAllObjectivesBothPools": true,
+  "components": [
+    {
+      "component": "PathwayExtractor.walk / Frame / ActionEvidence",
+      "objectives": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reuse": "Shared native traversal, branch/binding/cost/action relationships"
+    },
+    {
+      "component": "targetScope / playerScope / amountBounds",
+      "objectives": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reuse": "Native object/player/bounds interpretation; C adds conservative creation-specific positive-count potential"
+    },
+    {
+      "component": "MechanicalFact / FactQuery / factObjectiveReport",
+      "objectives": [
+        "B",
+        "C"
+      ],
+      "reuse": "Same typed fact predicates and result/action/source projection; A exports the same facts and retains legacy policy projection"
+    },
+    {
+      "component": "TokenCreation / tokenCreationFacts",
+      "objectives": [
+        "C"
+      ],
+      "reuse": "New native operation facts; fourth noncreature composition changes created-object predicate, with no walker"
+    },
+    {
+      "component": "MechanicalQuery / death-removal dependency policy",
+      "objectives": [
+        "A"
+      ],
+      "reuse": "Preserved objective-specific policy; not falsely generalized"
+    }
+  ],
+  "sharedAcceptedActions": {
+    "judith": {
+      "a-c": [
+        "Castle Doom|front|script.activatedAbilities[2]",
+        "Joo Dee, One of Many|front|script.activatedAbilities[0]",
+        "Kuldotha Rebirth|front|script.spell",
+        "Legion Extruder|front|script.activatedAbilities[0]",
+        "Lord Skitter's Butcher|front|script.triggeredAbilities[0]",
+        "Sokenzan Smelter|front|script.triggeredAbilities[0]",
+        "Transmogrant Altar|front|script.activatedAbilities[1]"
+      ],
+      "b-c": [
+        "Back on Track|front|script.spell"
+      ]
+    },
+    "krenko": {
+      "a-c": [
+        "Castle Doom|front|script.activatedAbilities[2]",
+        "Kuldotha Rebirth|front|script.spell",
+        "Legion Extruder|front|script.activatedAbilities[0]",
+        "Sokenzan Smelter|front|script.triggeredAbilities[0]"
+      ],
+      "b-c": []
+    }
+  },
+  "limitations": [
+    "Shared loader/eligibility alone is not counted as mechanical reuse",
+    "Operation kinds may differ despite identical source action",
+    "No implementation time/cost decrease is quantitatively claimed"
+  ]
+}

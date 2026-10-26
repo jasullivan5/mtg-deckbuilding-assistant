@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase22CorrectnessTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:20:54.250Z" hostname="5fc36fab9608" time="8.671">
+  <properties/>
+  <testcase name="Ball Lightning mandatory sacrifice is a capability without a payoff requirement" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.23"/>
+  <testcase name="Spark Elemental mandatory sacrifice is a capability without a payoff requirement" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.002"/>
+  <testcase name="Accursed Centaur mandatory sacrifice is a capability without a payoff requirement" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.002"/>
+  <testcase name="Demonic Taskmaster mandatory sacrifice is a capability without a payoff requirement" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.002"/>
+  <testcase name="Lord of the Pit mandatory sacrifice is a capability without a payoff requirement" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.002"/>
+  <testcase name="Murder and Fleshbag retain mechanical compatibility despite policy rejection" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.003"/>
+  <testcase name="mandatory exclusion can be configured without changing mechanical truth" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.003"/>
+  <testcase name="PayOrSuffer exposes Pit Raptor failure as an effect with conditional prerequisites" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.003"/>
+  <testcase name="PayOrSuffer payment is a resolution cost and opponent payer cannot sacrifice our creature" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.003"/>
+  <testcase name="cardinality bounds remove Muxus buff and preserve unknown entity-power signs" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.006"/>
+  <testcase name="unknown sign cannot silently become a mechanically certain reduction" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.007"/>
+  <testcase name="intrinsic self-toughness loss does not need a power bonus or beneficial outcome" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.008"/>
+  <testcase name="negative and positive conditional signs remain unresolved until the branch is known" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="0.0"/>
+  <testcase name="frozen reviewed benchmark matches current Judith catalog with explicit denominators" classname="dev.mtg.assistant.Phase22CorrectnessTest" time="8.384"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

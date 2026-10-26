@@ -1,0 +1,725 @@
+{
+  "afterCommander": "Krenko, Mob Boss",
+  "afterStageCounts": {
+    "accepted_death_enhanced_removal_cards": 8,
+    "accepted_death_enhanced_removal_pathways": 8,
+    "accepted_direct_cards": 195,
+    "accepted_direct_pathways": 200,
+    "accepted_self_toughness_exchange_pathways": 10,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 2423,
+    "commander_eligible_cards": 3466,
+    "commander_legal_cards": 16630,
+    "controller_incompatible_pathways": 59,
+    "extracted_potential_death_operations": 1669,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mandatory_unlinked_sacrifice_pathways": 55,
+    "mechanical_input_cards_after_conventional_search": 3466,
+    "mechanically_compatible_direct_pathways": 722,
+    "mechanically_compatible_policy_rejected_pathways": 522,
+    "nontoken_incompatible_pathways": 3,
+    "our_creature_pathways": 725,
+    "our_nontoken_creature_pathways": 722,
+    "pathways_with_any_unknown_decision": 568,
+    "policy_rejected_removal_pathways": 522,
+    "policy_unknown_compatible_pathways": 0,
+    "potential_creature_death_pathways": 780,
+    "registry_names_including_faces": 17352,
+    "unknown_query_pathways": 190,
+    "unsupported_structure_records": 4851,
+    "upstream_authored_physical_cards": 16995
+  },
+  "ambiguousPathwayBases": [],
+  "beforeCommander": "Krenko, Mob Boss",
+  "beforeStageCounts": {
+    "accepted_death_enhanced_removal_cards": 8,
+    "accepted_death_enhanced_removal_pathways": 8,
+    "accepted_direct_cards": 195,
+    "accepted_direct_pathways": 200,
+    "accepted_self_toughness_exchange_pathways": 10,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 2553,
+    "commander_eligible_cards": 3466,
+    "commander_legal_cards": 16630,
+    "controller_incompatible_pathways": 59,
+    "extracted_potential_death_operations": 1669,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mandatory_unlinked_sacrifice_pathways": 55,
+    "mechanical_input_cards_after_conventional_search": 3466,
+    "mechanically_compatible_direct_pathways": 722,
+    "mechanically_compatible_policy_rejected_pathways": 522,
+    "nontoken_incompatible_pathways": 3,
+    "our_creature_pathways": 725,
+    "our_nontoken_creature_pathways": 722,
+    "pathways_with_any_unknown_decision": 568,
+    "policy_rejected_removal_pathways": 522,
+    "policy_unknown_compatible_pathways": 0,
+    "potential_creature_death_pathways": 780,
+    "registry_names_including_faces": 17352,
+    "unknown_query_pathways": 190,
+    "unsupported_structure_records": 5164,
+    "upstream_authored_physical_cards": 16995
+  },
+  "comparablePool": true,
+  "counts": {
+    "PATHWAY_CHANGED": 30,
+    "UNSUPPORTED_ADDED": 48,
+    "UNSUPPORTED_REMOVED": 361
+  },
+  "limitations": [
+    "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+    "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+    "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+  ],
+  "representativeChangesByKind": {
+    "PATHWAY_CHANGED": [
+      {
+        "after": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Improvised Weaponry|front|script.spell",
+          "affectedScope": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Improvised Weaponry",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Damage amount must be positive and lethal in the actual state",
+              "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "AFR:150:Improvised Weaponry",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "amount": {
+              "amount": 2,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "DealDamage"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "DAMAGE_POTENTIALLY_LETHAL",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Damage amount must be positive and lethal in the actual state",
+            "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ImprovisedWeaponry.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Improvised Weaponry|front|script.spell",
+          "affectedScope": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Improvised Weaponry",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Damage amount must be positive and lethal in the actual state",
+              "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "AFR:150:Improvised Weaponry",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "amount": {
+              "amount": 2,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "DealDamage"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "DAMAGE_POTENTIALLY_LETHAL",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Damage amount must be positive and lethal in the actual state",
+            "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ImprovisedWeaponry.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "AFR:150:Improvised Weaponry|front|script.spellEffect.effects[0]|DAMAGE_POTENTIALLY_LETHAL|DIRECT_DEATH_GENERATOR",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.activatedAbilities[1].cost.costs[2]",
+          "actionId": "Treasure Vault|front|script.activatedAbilities[1]",
+          "affectedScope": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Treasure Vault",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "NO_MATCH",
+          "costOrEffect": "ACTIVATION_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "AFR:261:Treasure Vault",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "type": "CostSacrificeSelf"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/TreasureVault.kt",
+            "native:front.script.activatedAbilities[1].cost.costs[2]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.activatedAbilities[1].cost.costs[2]",
+          "actionId": "Treasure Vault|front|script.activatedAbilities[1]",
+          "affectedScope": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Treasure Vault",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "NO_MATCH",
+          "costOrEffect": "ACTIVATION_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "AFR:261:Treasure Vault",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "type": "CostSacrificeSelf"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/TreasureVault.kt",
+            "native:front.script.activatedAbilities[1].cost.costs[2]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "AFR:261:Treasure Vault|front|script.activatedAbilities[1].cost.costs[2]|SACRIFICE|DIRECT_DEATH_GENERATOR",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.activatedAbilities[0].cost.costs[2].atom",
+          "actionId": "Legion Extruder|front|script.activatedAbilities[0]",
+          "affectedScope": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Legion Extruder",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=true; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "ACTIVATION_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "BIG:12:Legion Extruder",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "excludeSelf": true,
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsArtifact"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=true; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/big/cards/LegionExtruder.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[2].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.activatedAbilities[0].cost.costs[2].atom",
+          "actionId": "Legion Extruder|front|script.activatedAbilities[0]",
+          "affectedScope": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Legion Extruder",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=true; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "ACTIVATION_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "BIG:12:Legion Extruder",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "excludeSelf": true,
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsArtifact"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=true; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/big/cards/LegionExtruder.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[2].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        },
+        "key": "BIG:12:Legion Extruder|front|script.activatedAbilities[0].cost.costs[2].atom|SACRIFICE|DIRECT_DEATH_GENERATOR",
+        "kind": "PATHWAY_CHANGED"
+      }
+    ],
+    "UNSUPPORTED_ADDED": [
+      {
+        "after": [
+          {
+            "actionId": "Blooming Blast|front|script.spell",
+            "card": "Blooming Blast",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.spellEffect.modes[1].effect.effects[1].effects[0].tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=UNKNOWN; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Blooming Blast|front|script.spellEffect.modes[1].effect.effects[1].effects[0].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bonehoard Dracosaur|front|script.triggeredAbilities[0]",
+            "card": "Bonehoard Dracosaur",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[1].then.tokenConstraints",
+            "reason": "Unresolved token variant: creature=MATCH; controller=YOU; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bonehoard Dracosaur|front|script.triggeredAbilities[0].effect.effects[1].then.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bonehoard Dracosaur|front|script.triggeredAbilities[0]",
+            "card": "Bonehoard Dracosaur",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[2].then.tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=YOU; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bonehoard Dracosaur|front|script.triggeredAbilities[0].effect.effects[2].then.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      }
+    ],
+    "UNSUPPORTED_REMOVED": [
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Agate Instigator|front|script.triggeredAbilities[0]",
+            "card": "Agate Instigator",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfSourceEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Agate Instigator|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfSourceEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Akki Ember-Keeper|front|script.triggeredAbilities[0]",
+            "card": "Akki Ember-Keeper",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Akki Ember-Keeper|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Alchemist's Talent|front|script.triggeredAbilities[0]",
+            "card": "Alchemist's Talent",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Alchemist's Talent|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      }
+    ]
+  },
+  "totalChanges": 439,
+  "transitions": {
+    "EXPLANATION_ONLY_CHANGED": 30
+  }
+}

@@ -1,0 +1,1770 @@
+{
+  "cards": [
+    {
+      "actualAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "card": "Reanimate",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "reanimate"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "card": "Zombify",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "zombify"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "card": "Dread Return",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "dread-return"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "card": "Victimize",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "victimize"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Raise Dead",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "raise-dead"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Gravecrawler",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "gravecrawler"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Animate Dead",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "animate-dead"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Living Death",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "living-death"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Unearth",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "unearth"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Disentomb",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "disentomb"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "card": "Reassembling Skeleton",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "reassembling-skeleton"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Breath of Life",
+      "expectedAcceptedCategories": [
+        "REANIMATE_OWN_CREATURE"
+      ],
+      "reviewedCaseIds": [
+        "breath-of-life"
+      ],
+      "status": "UNRESOLVED"
+    }
+  ],
+  "cases": [
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.effects[1]",
+          "actionId": "Reanimate|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=BATTLEFIELD; entry-controller=YOU; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Reanimate",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "REANIMATE_OWN_CREATURE",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "TMP:151:Reanimate",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "controllerOverride": {
+              "type": "Controller"
+            },
+            "destination": "Battlefield",
+            "fromZone": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Reanimate|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/Reanimate.kt",
+            "native:front.script.spellEffect.effects[1]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Reanimate",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Reanimate",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "reanimate",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+        "path": "script.spellEffect.effects[1]",
+        "prerequisites": [
+          "Any graveyard includes ours; explicit effect-controller entry; life loss retained."
+        ],
+        "reason": "Any graveyard includes ours; explicit effect-controller entry; life loss retained.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/dsc/155/reanimate?utm_source=api"
+        ]
+      },
+      "id": "reanimate",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Zombify|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Zombify",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "REANIMATE_OWN_CREATURE",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ODY:171:Zombify",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "destination": "Battlefield",
+            "fromZone": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Zombify|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ody/cards/Zombify.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Zombify",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Zombify",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "zombify",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "bb95db4d-5017-4121-bf79-d68476602d8c",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native own graveyard target; owner-default entry returns our card under our control."
+        ],
+        "reason": "Native own graveyard target; owner-default entry returns our card under our control.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/fdn/187/zombify?utm_source=api"
+        ]
+      },
+      "id": "zombify",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Dread Return|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Dread Return",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "REANIMATE_OWN_CREATURE",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "TSP:104:Dread Return",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "destination": "Battlefield",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Dread Return|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence",
+            "Associated ALTERNATIVE_CASTING_COST route Dread Return|front|keywordAbilities[0]: SACRIFICE; {\"type\":\"AtomSacrifice\",\"filter\":{\"cardPredicates\":[{\"type\":\"IsCreature\"}]},\"count\":3}; prerequisites=[Flashback route: cast this card from GRAVEYARD; mana=; condition=null; minimumX=0; exile if it leaves stack; spell timing and legal targets still required, Sacrifice count=3; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable]; alternative routes are alternatives, not cumulative costs"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/DreadReturn.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Dread Return",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Dread Return",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "dread-return",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "352b64d2-2ae5-44ee-a64f-94932ef545d3",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Own graveyard target; flashback sacrifices three creatures as an alternative route; targets chosen before costs."
+        ],
+        "reason": "Own graveyard target; flashback sacrifices three creatures as an alternative route; targets chosen before costs.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/cmm/153/dread-return?utm_source=api"
+        ]
+      },
+      "id": "dread-return",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.then.body",
+          "actionId": "Victimize|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=targeted=true; count=2; min=2; optional=false; chooser=Controller; native=TargetObject(count=2, unlimited=false, minCount=2, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=ContextTarget(index=0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Victimize",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Gate={\"type\":\"Gate.DoAction\",\"action\":{\"type\":\"Sacrifice\",\"filter\":{\"cardPredicates\":[{\"type\":\"IsCreature\"}]}},\"successCriterion\":{\"type\":\"SuccessCriterion.PermanentsSacrificed\"}}; success branch",
+              "Iteration=Targets"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "REANIMATE_OWN_CREATURE",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=ContextTarget(index=0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "USG:166:Victimize",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "destination": "Battlefield",
+            "fromZone": "Graveyard",
+            "placement": "Tapped",
+            "target": {
+              "index": 0,
+              "type": "ContextTarget"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Gate={\"type\":\"Gate.DoAction\",\"action\":{\"type\":\"Sacrifice\",\"filter\":{\"cardPredicates\":[{\"type\":\"IsCreature\"}]}},\"successCriterion\":{\"type\":\"SuccessCriterion.PermanentsSacrificed\"}}; success branch",
+            "Iteration=Targets",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Victimize|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/Victimize.kt",
+            "native:front.script.spellEffect.then.body"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Victimize",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Victimize",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "victimize",
+        "mapping": "PREFIX",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "240e85d3-e495-4877-8609-4b4056c402f7",
+        "path": "script.spellEffect.then.body",
+        "prerequisites": [
+          "Return requires actual sacrifice success; two graveyard targets announced first; tapped entry."
+        ],
+        "reason": "Return requires actual sacrifice success; two graveyard targets announced first; tapped entry.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/tdc/198/victimize?utm_source=api"
+        ]
+      },
+      "id": "victimize",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Raise Dead|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=HAND; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Raise Dead",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "LEA:122:Raise Dead",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Hand",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Raise Dead|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/RaiseDead.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Raise Dead",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Raise Dead",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "raise-dead",
+        "mapping": "PREFIX",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "cbc9c731-181a-4f00-a7b0-eb7e56eac2ea",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Movement destination is hand, not battlefield."
+        ],
+        "reason": "Movement destination is hand, not battlefield.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/w17/18/raise-dead?utm_source=api"
+        ]
+      },
+      "id": "raise-dead",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Gravecrawler",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Gravecrawler",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": null,
+        "face": "front",
+        "id": "gravecrawler",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "09ff28b1-b6c9-48e6-b12e-2f0e644f709f",
+        "path": "script",
+        "prerequisites": [
+          "Casting permission requires Zombie, not direct movement; does not qualify as reanimation."
+        ],
+        "reason": "Casting permission requires Zombie, not direct movement; does not qualify as reanimation.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/tdc/93/gravecrawler?utm_source=api"
+        ]
+      },
+      "id": "gravecrawler",
+      "issues": [],
+      "mappingStatus": "ABSENCE_CONFIRMED",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+          "actionId": "Animate Dead|front|script.triggeredAbilities[0]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); destination=BATTLEFIELD; entry-controller=YOU; selection=collectionMax=null; [Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)]; operation=Default; binding=gathered0",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Animate Dead",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)"
+            ],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=SourceInZone(zones=[BATTLEFIELD]); restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "LEA:92:Animate Dead",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Battlefield"
+            },
+            "from": "gathered0",
+            "type": "MoveCollection"
+          },
+          "nontokenCompatibility": "UNKNOWN",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=SourceInZone(zones=[BATTLEFIELD]); restriction=null; cap=null",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[IsAttachedToBySource], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+            "Associated native action=Animate Dead|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=SourceInZone(zones=[BATTLEFIELD]); restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/AnimateDead.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "card": "Animate Dead",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Animate Dead",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "animate-dead",
+        "mapping": "PREFIX",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "c0d8fef4-65f4-4769-982d-b397d2b7e977",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Aura attachment/source-survival and attachedToBySource object predicate need interpretation; source capability exists but boundary remains unresolved."
+        ],
+        "reason": "Aura attachment/source-survival and attachedToBySource object predicate need interpretation; source capability exists but boundary remains unresolved.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/soc/207/animate-dead?utm_source=api"
+        ]
+      },
+      "id": "animate-dead",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.effects[1]",
+          "actionId": "Living Death|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=EXILE; entry-controller=YOU; selection=collectionMax=null; [Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)]; operation=Default; binding=gathered0",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Living Death",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)"
+            ],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=EXILE/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered0; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "TMP:142:Living Death",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Exile"
+            },
+            "from": "gathered0",
+            "storeMovedAs": "moved1",
+            "type": "MoveCollection"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+            "Associated native action=Living Death|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/LivingDeath.kt",
+            "native:front.script.spellEffect.effects[1]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        {
+          "abilityPath": "script.spellEffect.effects[3]",
+          "actionId": "Living Death|front|script.spell",
+          "affectedScope": "source=BATTLEFIELD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=YOU; selection=collectionMax=null; [Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)]; operation=Sacrifice; binding=gathered2",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Living Death",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)"
+            ],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=BATTLEFIELD/ANY; destination=GRAVEYARD/YOU; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=gathered2; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "TMP:142:Living Death",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Graveyard"
+            },
+            "from": "gathered2",
+            "moveType": "Sacrifice",
+            "type": "MoveCollection"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)",
+            "Associated native action=Living Death|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/LivingDeath.kt",
+            "native:front.script.spellEffect.effects[3]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        {
+          "abilityPath": "script.spellEffect.effects[4]",
+          "actionId": "Living Death|front|script.spell",
+          "affectedScope": "source=EXILE; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=collectionMax=null; [Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Collection gathered0 move: sourceBattlefield=false; destination=ToZone(zone=EXILE, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]; operation=Default; binding=moved1",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Living Death",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Collection gathered0 move: sourceBattlefield=false; destination=ToZone(zone=EXILE, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+            ],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=EXILE/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=moved1; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "TMP:142:Living Death",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": {
+              "type": "ToZone",
+              "zone": "Battlefield"
+            },
+            "from": "moved1",
+            "type": "MoveCollection",
+            "underOwnersControl": true
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Native source restrictions: FromZone(zone=GRAVEYARD, player=Each, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+            "Collection gathered0 move: sourceBattlefield=false; destination=ToZone(zone=EXILE, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death",
+            "Associated native action=Living Death|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/LivingDeath.kt",
+            "native:front.script.spellEffect.effects[4]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Living Death",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Living Death",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "living-death",
+        "mapping": "PREFIX",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "9e6a3df4-67a3-452e-a6ef-f04dbadb21ef",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Source-positive indirect sequence via exile; direct GY-to-BF query must not call EXILE-to-BF a direct movement. Multi-step objective composition remains unsupported."
+        ],
+        "reason": "Source-positive indirect sequence via exile; direct GY-to-BF query must not call EXILE-to-BF a direct movement. Multi-step objective composition remains unsupported.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/tdc/185/living-death?utm_source=api"
+        ]
+      },
+      "id": "living-death",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "AMBIGUOUS_MAPPING"
+        }
+      ],
+      "mappingStatus": "AMBIGUOUS_MAPPING",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Unearth|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Unearth",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature, ManaValueAtMost(max=3)], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ULG:72:Unearth",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "destination": "Battlefield",
+            "fromZone": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "UNKNOWN",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Unearth|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ulg/cards/Unearth.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "card": "Unearth",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Unearth",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "unearth",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "4e0b647a-6e1a-421b-bca9-8d5e346bda80",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Source positive; mana-value-at-most-three predicate not solved by this bounded interpreter."
+        ],
+        "reason": "Source positive; mana-value-at-most-three predicate not solved by this bounded interpreter.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/2x2/96/unearth?utm_source=api"
+        ]
+      },
+      "id": "unearth",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Disentomb|front|script.spell",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=HAND; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Disentomb",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "M10:92:Disentomb",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "destination": "Hand",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Disentomb|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m10/cards/Disentomb.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Disentomb",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Disentomb",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "disentomb",
+        "mapping": "PREFIX",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "e4ab986d-662c-4879-b6f1-6887a2ec4d7c",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Graveyard to hand only."
+        ],
+        "reason": "Graveyard to hand only.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/m20/322/disentomb?utm_source=api"
+        ]
+      },
+      "id": "disentomb",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect",
+          "actionId": "Reassembling Skeleton|front|script.activatedAbilities[0]",
+          "affectedScope": "source=GRAVEYARD; graveyard/zone-player=YOU; native ownership/filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=BATTLEFIELD; entry-controller=OWNER; selection=Binding=Self; selection not inferred as targeting; binding=Self",
+          "branch": "REANIMATE_OWN_CREATURE",
+          "card": "Reassembling Skeleton",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "REANIMATE_OWN_CREATURE",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "operation-MOVE_OBJECT",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "creature-card",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "source-GRAVEYARD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "owner-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "destination-BATTLEFIELD",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "MOVE_OBJECT; source=GRAVEYARD/YOU; destination=BATTLEFIELD/OWNER; filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=Self; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ARC:22:Reassembling Skeleton",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "destination": "Battlefield",
+            "fromZone": "Graveyard",
+            "placement": "Tapped",
+            "target": {
+              "type": "Self"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "MOVE_OBJECT",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD",
+            "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+            "Associated native action=Reassembling Skeleton|front|script.activatedAbilities[0]; prerequisites=[Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arc/cards/ReassemblingSkeleton.kt",
+            "native:front.script.activatedAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Reassembling Skeleton",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Reassembling Skeleton",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "reassembling-skeleton",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+        "path": "script.activatedAbilities[0].effect",
+        "prerequisites": [
+          "Native own-card graveyard activation and guarded tapped return; mana cost remains."
+        ],
+        "reason": "Native own-card graveyard activation and guarded tapped return; mana cost remains.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/tdc/195/reassembling-skeleton?utm_source=api"
+        ]
+      },
+      "id": "reassembling-skeleton",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Breath of Life",
+      "expected": {
+        "branch": "REANIMATE_OWN_CREATURE",
+        "card": "Breath of Life",
+        "expectedCategory": "REANIMATE_OWN_CREATURE",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "breath-of-life",
+        "mapping": "EXACT",
+        "operation": "MOVE_OBJECT",
+        "oracleId": "30d9e200-b944-43ff-89b8-a550a788ae03",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Own graveyard targeted return; white card ineligible under Judith, evaluate separately under white commander or native extraction."
+        ],
+        "reason": "Own graveyard targeted return; white card ineligible under Judith, evaluate separately under white commander or native extraction.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/vma/18/breath-of-life?utm_source=api"
+        ]
+      },
+      "id": "breath-of-life",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "MAPPING_PROBLEM",
+          "reason": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY"
+        }
+      ],
+      "mappingStatus": "INELIGIBLE_OR_UNKNOWN_ELIGIBILITY",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "commander": "Judith, the Scourge Diva",
+  "denominators": {
+    "confirmed_evaluable_cases": 10,
+    "confirmed_expected_accepted_pathways": 5,
+    "confirmed_expected_excluded_cases": 5,
+    "confirmed_expected_mechanical_nonmatches": 3,
+    "confirmed_mechanical_positive_cases": 5,
+    "expected_unknown_interpretation_boundaries": 2,
+    "reviewed_cards": 12,
+    "reviewed_cases": 12
+  },
+  "limitations": [
+    "Source-led reviewed sample, not corpus recall or an independently adjudicated human gold standard.",
+    "Unreviewed accepted paths are suspected review gaps, never confirmed false positives. Mapping ambiguity and unsupported evidence are explicit.",
+    "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."
+  ],
+  "numerators": {
+    "confirmed_mechanical_positive_recovered": 5,
+    "confirmed_mismatch_cases": 0,
+    "excluded_correctly_not_accepted": 5,
+    "expected_accepted_missed": 0,
+    "expected_accepted_recovered": 5,
+    "incorrect_accepted_reviewed_cases": 0,
+    "suspected_or_incomplete_cases": 0,
+    "unknown_boundaries_preserved": 2,
+    "unresolved_cases": 2,
+    "unreviewed_accepted_paths": 0
+  },
+  "reviewSha256": "ea93c2c1fb71ef3da65f7f3da273cf73670bf2e80412013404ad8649c884770f",
+  "reviewVersion": "phase24-frozen-v1",
+  "unreviewedAcceptedPathways": []
+}

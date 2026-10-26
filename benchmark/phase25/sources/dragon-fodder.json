@@ -1,0 +1,16 @@
+{
+  "name": "Dragon Fodder",
+  "oracle_id": "d0d2c45b-b6e3-4999-bdab-976e8f0d6617",
+  "oracle_text": "Create two 1/1 red Goblin creature tokens.",
+  "mana_cost": "{1}{R}",
+  "type_line": "Sorcery",
+  "power": null,
+  "toughness": null,
+  "color_identity": [
+    "R"
+  ],
+  "scryfall_uri": "https://scryfall.com/card/fdn/535/dragon-fodder?utm_source=api",
+  "source": "https://api.scryfall.com/cards/named?exact=Dragon%20Fodder",
+  "retrieved": "2026-10-26",
+  "rulings": []
+}

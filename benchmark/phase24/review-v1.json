@@ -1,0 +1,284 @@
+{
+  "reviewVersion": "phase24-frozen-v1",
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "reviewMethod": "Source-led review before extractor changes; same implementing reviewer, not external adjudication. Development and held-out assignment in splits.json. UNKNOWN is an interpreter contract, not Oracle noncapability.",
+  "frozenAt": "2026-10-25",
+  "cases": [
+    {
+      "id": "reanimate",
+      "card": "Reanimate",
+      "oracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+      "face": "front",
+      "path": "script.spellEffect.effects[1]",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Any graveyard includes ours; explicit effect-controller entry; life loss retained."
+      ],
+      "requiredNative": {},
+      "reason": "Any graveyard includes ours; explicit effect-controller entry; life loss retained.",
+      "sources": [
+        "https://scryfall.com/card/dsc/155/reanimate?utm_source=api"
+      ]
+    },
+    {
+      "id": "zombify",
+      "card": "Zombify",
+      "oracleId": "bb95db4d-5017-4121-bf79-d68476602d8c",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native own graveyard target; owner-default entry returns our card under our control."
+      ],
+      "requiredNative": {},
+      "reason": "Native own graveyard target; owner-default entry returns our card under our control.",
+      "sources": [
+        "https://scryfall.com/card/fdn/187/zombify?utm_source=api"
+      ]
+    },
+    {
+      "id": "dread-return",
+      "card": "Dread Return",
+      "oracleId": "352b64d2-2ae5-44ee-a64f-94932ef545d3",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Own graveyard target; flashback sacrifices three creatures as an alternative route; targets chosen before costs."
+      ],
+      "requiredNative": {},
+      "reason": "Own graveyard target; flashback sacrifices three creatures as an alternative route; targets chosen before costs.",
+      "sources": [
+        "https://scryfall.com/card/cmm/153/dread-return?utm_source=api"
+      ]
+    },
+    {
+      "id": "victimize",
+      "card": "Victimize",
+      "oracleId": "240e85d3-e495-4877-8609-4b4056c402f7",
+      "face": "front",
+      "path": "script.spellEffect.then.body",
+      "mapping": "PREFIX",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Return requires actual sacrifice success; two graveyard targets announced first; tapped entry."
+      ],
+      "requiredNative": {},
+      "reason": "Return requires actual sacrifice success; two graveyard targets announced first; tapped entry.",
+      "sources": [
+        "https://scryfall.com/card/tdc/198/victimize?utm_source=api"
+      ]
+    },
+    {
+      "id": "raise-dead",
+      "card": "Raise Dead",
+      "oracleId": "cbc9c731-181a-4f00-a7b0-eb7e56eac2ea",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "PREFIX",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Movement destination is hand, not battlefield."
+      ],
+      "requiredNative": {},
+      "reason": "Movement destination is hand, not battlefield.",
+      "sources": [
+        "https://scryfall.com/card/w17/18/raise-dead?utm_source=api"
+      ]
+    },
+    {
+      "id": "gravecrawler",
+      "card": "Gravecrawler",
+      "oracleId": "09ff28b1-b6c9-48e6-b12e-2f0e644f709f",
+      "face": "front",
+      "path": "script",
+      "mapping": "ABSENT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": null,
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": null,
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Casting permission requires Zombie, not direct movement; does not qualify as reanimation."
+      ],
+      "requiredNative": {},
+      "reason": "Casting permission requires Zombie, not direct movement; does not qualify as reanimation.",
+      "sources": [
+        "https://scryfall.com/card/tdc/93/gravecrawler?utm_source=api"
+      ]
+    },
+    {
+      "id": "animate-dead",
+      "card": "Animate Dead",
+      "oracleId": "c0d8fef4-65f4-4769-982d-b397d2b7e977",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "PREFIX",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "UNKNOWN",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Aura attachment/source-survival and attachedToBySource object predicate need interpretation; source capability exists but boundary remains unresolved."
+      ],
+      "requiredNative": {},
+      "reason": "Aura attachment/source-survival and attachedToBySource object predicate need interpretation; source capability exists but boundary remains unresolved.",
+      "sources": [
+        "https://scryfall.com/card/soc/207/animate-dead?utm_source=api"
+      ]
+    },
+    {
+      "id": "living-death",
+      "card": "Living Death",
+      "oracleId": "9e6a3df4-67a3-452e-a6ef-f04dbadb21ef",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "PREFIX",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Source-positive indirect sequence via exile; direct GY-to-BF query must not call EXILE-to-BF a direct movement. Multi-step objective composition remains unsupported."
+      ],
+      "requiredNative": {},
+      "reason": "Source-positive indirect sequence via exile; direct GY-to-BF query must not call EXILE-to-BF a direct movement. Multi-step objective composition remains unsupported.",
+      "sources": [
+        "https://scryfall.com/card/tdc/185/living-death?utm_source=api"
+      ]
+    },
+    {
+      "id": "unearth",
+      "card": "Unearth",
+      "oracleId": "4e0b647a-6e1a-421b-bca9-8d5e346bda80",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "UNKNOWN",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Source positive; mana-value-at-most-three predicate not solved by this bounded interpreter."
+      ],
+      "requiredNative": {},
+      "reason": "Source positive; mana-value-at-most-three predicate not solved by this bounded interpreter.",
+      "sources": [
+        "https://scryfall.com/card/2x2/96/unearth?utm_source=api"
+      ]
+    },
+    {
+      "id": "disentomb",
+      "card": "Disentomb",
+      "oracleId": "e4ab986d-662c-4879-b6f1-6887a2ec4d7c",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "PREFIX",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Graveyard to hand only."
+      ],
+      "requiredNative": {},
+      "reason": "Graveyard to hand only.",
+      "sources": [
+        "https://scryfall.com/card/m20/322/disentomb?utm_source=api"
+      ]
+    },
+    {
+      "id": "reassembling-skeleton",
+      "card": "Reassembling Skeleton",
+      "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "face": "front",
+      "path": "script.activatedAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native own-card graveyard activation and guarded tapped return; mana cost remains."
+      ],
+      "requiredNative": {},
+      "reason": "Native own-card graveyard activation and guarded tapped return; mana cost remains.",
+      "sources": [
+        "https://scryfall.com/card/tdc/195/reassembling-skeleton?utm_source=api"
+      ]
+    },
+    {
+      "id": "breath-of-life",
+      "card": "Breath of Life",
+      "oracleId": "30d9e200-b944-43ff-89b8-a550a788ae03",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "REANIMATE_OWN_CREATURE",
+      "operation": "MOVE_OBJECT",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "REANIMATE_OWN_CREATURE",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Own graveyard targeted return; white card ineligible under Judith, evaluate separately under white commander or native extraction."
+      ],
+      "requiredNative": {},
+      "reason": "Own graveyard targeted return; white card ineligible under Judith, evaluate separately under white commander or native extraction.",
+      "sources": [
+        "https://scryfall.com/card/vma/18/breath-of-life?utm_source=api"
+      ]
+    }
+  ]
+}

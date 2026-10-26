@@ -1,0 +1,2186 @@
+{
+  "cards": [
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Dragon Fodder",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "dragon-fodder"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Krenko, Mob Boss",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "krenko--mob-boss"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Young Pyromancer",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "young-pyromancer"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Siege-Gang Commander",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "siege-gang-commander"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Ophiomancer",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "ophiomancer"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Heat Shimmer",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "heat-shimmer"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Hunted Horror",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "hunted-horror"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Big Score",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "big-score"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Kuldotha Rebirth",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "kuldotha-rebirth"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Haunted Dead",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "haunted-dead"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Rite of Replication",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "rite-of-replication",
+        "rite-of-replication-else"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Dreadhorde Invasion",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "dreadhorde-invasion"
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Hordeling Outburst",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "hordeling-outburst"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Goblin Rabblemaster",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "goblin-rabblemaster"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "card": "Raise the Alarm",
+      "expectedAcceptedCategories": [
+        "CREATE_CREATURE_TOKEN"
+      ],
+      "reviewedCaseIds": [
+        "raise-the-alarm"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    }
+  ],
+  "cases": [
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Dragon Fodder|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=2), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.spellEffect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Dragon Fodder",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ALA:97:Dragon Fodder",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "count": {
+              "amount": 2,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "imageUri": "https://cards.scryfall.io/normal/front/e/d/ed418a8b-f158-492d-a323-6265b3175292.jpg?1562640121",
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=2); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Dragon Fodder|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/DragonFodder.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Dragon Fodder",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Dragon Fodder",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "dragon-fodder",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "d0d2c45b-b6e3-4999-bdab-976e8f0d6617",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/fdn/535/dragon-fodder?utm_source=api"
+        ]
+      },
+      "id": "dragon-fodder",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect",
+          "actionId": "Krenko, Mob Boss|front|script.activatedAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=AggregateBattlefield(player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Goblin)], statePredicates=[], controllerPredicate=null, anyOf=[]), aggregation=COUNT, property=null, excludeSelf=false, counterType=null, excludeTriggeringEntity=false), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.activatedAbilities[0].effect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Krenko, Mob Boss",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "M13:138:Krenko, Mob Boss",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "count": {
+              "filter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsCreature"
+                  },
+                  {
+                    "subtype": "Goblin",
+                    "type": "HasSubtype"
+                  }
+                ]
+              },
+              "player": {
+                "type": "You"
+              },
+              "type": "AggregateBattlefield"
+            },
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: AggregateBattlefield(player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Goblin)], statePredicates=[], controllerPredicate=null, anyOf=[]), aggregation=COUNT, property=null, excludeSelf=false, counterType=null, excludeTriggeringEntity=false); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Krenko, Mob Boss|front|script.activatedAbilities[0]; prerequisites=[Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/KrenkoMobBoss.kt",
+            "native:front.script.activatedAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Krenko, Mob Boss",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Krenko, Mob Boss",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "krenko--mob-boss",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "68418069-f615-40ef-ae0d-764192acae00",
+        "path": "script.activatedAbilities[0].effect",
+        "prerequisites": [
+          "Tap ability; Goblin count must be positive; count not guaranteed in arbitrary game state."
+        ],
+        "reason": "Tap ability; Goblin count must be positive; count not guaranteed in arbitrary game state.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/fdn/204/krenko-mob-boss?utm_source=api"
+        ]
+      },
+      "id": "krenko--mob-boss",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Young Pyromancer|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Elemental, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[RED], subtypes=[Elemental], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Young Pyromancer",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=SpellCastEvent(spellFilter=GameObjectFilter(cardPredicates=[Or(predicates=[IsInstant, IsSorcery])], statePredicates=[], controllerPredicate=null, anyOf=[]), player=You, requires=[]); binding=ANY; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "M14:163:Young Pyromancer",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "creatureTypes": [
+              "Elemental"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=SpellCastEvent(spellFilter=GameObjectFilter(cardPredicates=[Or(predicates=[IsInstant, IsSorcery])], statePredicates=[], controllerPredicate=null, anyOf=[]), player=You, requires=[]); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Young Pyromancer|front|script.triggeredAbilities[0]; prerequisites=[Trigger=SpellCastEvent(spellFilter=GameObjectFilter(cardPredicates=[Or(predicates=[IsInstant, IsSorcery])], statePredicates=[], controllerPredicate=null, anyOf=[]), player=You, requires=[]); binding=ANY; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/YoungPyromancer.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Young Pyromancer",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Young Pyromancer",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "young-pyromancer",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "5fac139a-07d3-4e6c-98e3-d98b199f7a6f",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/tdc/95/young-pyromancer?utm_source=api"
+        ]
+      },
+      "id": "young-pyromancer",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Siege-Gang Commander|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=3), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Siege-Gang Commander",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "SCG:103:Siege-Gang Commander",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "count": {
+              "amount": 3,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "imageUri": "https://cards.scryfall.io/normal/front/b/d/bd79264f-0734-48b7-8333-4035e518d46c.jpg?1562702307",
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=3); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Siege-Gang Commander|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/SiegeGangCommander.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Siege-Gang Commander",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Siege-Gang Commander",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "siege-gang-commander",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "ddc7f59a-bbb1-4ba1-82c8-6813fd191940",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/plst/DMR-136/siege-gang-commander?utm_source=api"
+        ]
+      },
+      "id": "siege-gang-commander",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Ophiomancer|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Snake, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[BLACK], subtypes=[Snake], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Ophiomancer",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": true,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=StepEvent(step=UPKEEP, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+              "InterveningIf=Exists(player=You, zone=BATTLEFIELD, filter=GameObjectFilter(cardPredicates=[IsPermanent, HasSubtype(subtype=Snake)], statePredicates=[], controllerPredicate=null, anyOf=[]), negate=true, excludeSelf=false); restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "C13:84:Ophiomancer",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "BLACK"
+            ],
+            "creatureTypes": [
+              "Snake"
+            ],
+            "imageUri": "https://cards.scryfall.io/normal/front/8/b/8b9be7c2-efe5-4d37-a43e-ddcd50a77aa9.jpg?1783911114",
+            "keywords": [
+              "DEATHTOUCH"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=StepEvent(step=UPKEEP, player=Each); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=Exists(player=You, zone=BATTLEFIELD, filter=GameObjectFilter(cardPredicates=[IsPermanent, HasSubtype(subtype=Snake)], statePredicates=[], controllerPredicate=null, anyOf=[]), negate=true, excludeSelf=false); restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Ophiomancer|front|script.triggeredAbilities[0]; prerequisites=[Trigger=StepEvent(step=UPKEEP, player=Each); binding=ANY; activeZones=[BATTLEFIELD], InterveningIf=Exists(player=You, zone=BATTLEFIELD, filter=GameObjectFilter(cardPredicates=[IsPermanent, HasSubtype(subtype=Snake)], statePredicates=[], controllerPredicate=null, anyOf=[]), negate=true, excludeSelf=false); restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/c13/cards/Ophiomancer.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Ophiomancer",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Ophiomancer",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "ophiomancer",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Upkeep intervening condition: no Snake controlled; condition must hold as required at trigger and resolution."
+        ],
+        "reason": "Upkeep intervening condition: no Snake controlled; condition must hold as required at trigger and resolution.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/soc/118/ophiomancer?utm_source=api"
+        ]
+      },
+      "id": "ophiomancer",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Heat Shimmer|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native target copy; merged exceptions=CopyExceptions(nameOverride=null, addedKeywords=[HASTE], addedSupertypes=[], removedSupertypes=[], addedCardTypes=[], overrideCardTypes=null, addedSubtypes=[], overrideSubtypes=null, addedColors=[], overrideColors=null, retainColors=false, powerOverride=null, toughnessOverride=null, retainPowerToughness=false, noManaCost=false, addedNumericKeywords=[], retainResolvingTriggeredAbility=false, addedTriggeredAbilities=[], addedActivatedAbilities=[]), copySource=BoundVariable(name=t0), creationEvent=script.spellEffect, characteristics=[Copy source filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); zone=BATTLEFIELD; source controller=ANY]); entry-controller=YOU; binding=BoundVariable(name=t0)",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Heat Shimmer",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "LRW:175:Heat Shimmer",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "addedKeywords": [
+              "HASTE"
+            ],
+            "exileAtStep": "END",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "CreateTokenCopyOfTarget"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Copy requires a legal available source with appropriate copiable characteristics, not merely a temporary animation",
+            "Associated native action=Heat Shimmer|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/HeatShimmer.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Heat Shimmer",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Heat Shimmer",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "heat-shimmer",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "5c80d39e-f3af-4d24-bca0-19f0bd0f5082",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/2xm/130/heat-shimmer?utm_source=api"
+        ]
+      },
+      "id": "heat-shimmer",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Hunted Horror|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=2), positiveQuantity=MATCH, templateReference=Native creature template: Centaur, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[GREEN], subtypes=[Centaur], P/T=3/3, entry/delayed riders and granted abilities retained in native node]); entry-controller=OPPONENT; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Hunted Horror",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "NO_MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "RAV:90:Hunted Horror",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "colors": [
+              "GREEN"
+            ],
+            "controller": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "count": {
+              "amount": 2,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Centaur"
+            ],
+            "power": 3,
+            "staticAbilities": [
+              {
+                "color": "BLACK",
+                "filter": {
+                  "baseFilter": {
+                    "cardPredicates": [
+                      {
+                        "type": "IsPermanent"
+                      }
+                    ]
+                  },
+                  "scope": {
+                    "type": "Self"
+                  }
+                },
+                "type": "GrantProtection"
+              }
+            ],
+            "toughness": 3,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=2); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Hunted Horror|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/HuntedHorror.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Hunted Horror",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Hunted Horror",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "hunted-horror",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "3469463e-ed4d-44bb-81f3-42bbe09d34ad",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Native token receiver is targeted opponent, not us."
+        ],
+        "reason": "Native token receiver is targeted opponent, not us.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/clb/758/hunted-horror?utm_source=api"
+        ]
+      },
+      "id": "hunted-horror",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.effects[1]",
+          "actionId": "Big Score|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=NO_MATCH, quantity=Fixed(amount=2), positiveQuantity=MATCH, templateReference=PredefinedTokens:Treasure, copySource=null, creationEvent=script.spellEffect.effects[1], characteristics=[Native type line=Artifact \u2014 Treasure, Native template=Treasure]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Big Score",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "SNC:102:Big Score",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "count": 2,
+            "tokenType": "Treasure",
+            "type": "CreatePredefinedToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=2); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Big Score|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/BigScore.kt",
+            "native:front.script.spellEffect.effects[1]"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        }
+      ],
+      "card": "Big Score",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Big Score",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "big-score",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "a5cbd257-c836-493e-bb1a-76242619dea2",
+        "path": "script.spellEffect.effects[1]",
+        "prerequisites": [
+          "Native Treasure template is an artifact without creature type."
+        ],
+        "reason": "Native Treasure template is an artifact without creature type.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/msc/802/big-score?utm_source=api"
+        ]
+      },
+      "id": "big-score",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Kuldotha Rebirth|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=3), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.spellEffect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Kuldotha Rebirth",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "SOM:96:Kuldotha Rebirth",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "count": {
+              "amount": 3,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=3); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Kuldotha Rebirth|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence",
+            "Associated CASTING_COST route Kuldotha Rebirth|front|script.spell: SACRIFICE; {\"type\":\"AtomSacrifice\",\"filter\":{\"cardPredicates\":[{\"type\":\"IsArtifact\"}]}}; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script, Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable]; alternative routes are alternatives, not cumulative costs"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/som/cards/KuldothaRebirth.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Kuldotha Rebirth",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Kuldotha Rebirth",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "kuldotha-rebirth",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "f3e28778-0149-4dbd-badb-ba5aeacacd76",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/som/96/kuldotha-rebirth?utm_source=api"
+        ]
+      },
+      "id": "kuldotha-rebirth",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Haunted Dead|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Spirit, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[WHITE], subtypes=[Spirit], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Haunted Dead",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "EMN:92:Haunted Dead",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "WHITE"
+            ],
+            "creatureTypes": [
+              "Spirit"
+            ],
+            "keywords": [
+              "FLYING"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Haunted Dead|front|script.triggeredAbilities[0]; prerequisites=[Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/HauntedDead.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Haunted Dead",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Haunted Dead",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "haunted-dead",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "03259490-a789-4f96-8c5b-b410425bdd02",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/inr/116/haunted-dead?utm_source=api"
+        ]
+      },
+      "id": "haunted-dead",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.then",
+          "actionId": "Rite of Replication|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=5), positiveQuantity=MATCH, templateReference=Native target copy; merged exceptions=CopyExceptions(nameOverride=null, addedKeywords=[], addedSupertypes=[], removedSupertypes=[], addedCardTypes=[], overrideCardTypes=null, addedSubtypes=[], overrideSubtypes=null, addedColors=[], overrideColors=null, retainColors=false, powerOverride=null, toughnessOverride=null, retainPowerToughness=false, noManaCost=false, addedNumericKeywords=[], retainResolvingTriggeredAbility=false, addedTriggeredAbilities=[], addedActivatedAbilities=[]), copySource=BoundVariable(name=t0), creationEvent=script.spellEffect.then, characteristics=[Copy source filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); zone=BATTLEFIELD; source controller=ANY]); entry-controller=YOU; binding=BoundVariable(name=t0)",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Rite of Replication",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Gate={\"type\":\"Gate.WhenCondition\",\"condition\":{\"type\":\"WasKicked\"}}; success branch"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ZEN:61:Rite of Replication",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "count": {
+              "amount": 5,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "CreateTokenCopyOfTarget"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Gate={\"type\":\"Gate.WhenCondition\",\"condition\":{\"type\":\"WasKicked\"}}; success branch",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=5); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Copy requires a legal available source with appropriate copiable characteristics, not merely a temporary animation",
+            "Associated native action=Rite of Replication|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/RiteOfReplication.kt",
+            "native:front.script.spellEffect.then"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "card": "Rite of Replication",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Rite of Replication",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "rite-of-replication",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "fb60739e-1dc3-481d-a056-ad72e665c680",
+        "path": "script.spellEffect.then",
+        "prerequisites": [
+          "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract."
+        ],
+        "reason": "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/soc/202/rite-of-replication?utm_source=api"
+        ]
+      },
+      "id": "rite-of-replication",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.otherwise",
+          "actionId": "Rite of Replication|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native target copy; merged exceptions=CopyExceptions(nameOverride=null, addedKeywords=[], addedSupertypes=[], removedSupertypes=[], addedCardTypes=[], overrideCardTypes=null, addedSubtypes=[], overrideSubtypes=null, addedColors=[], overrideColors=null, retainColors=false, powerOverride=null, toughnessOverride=null, retainPowerToughness=false, noManaCost=false, addedNumericKeywords=[], retainResolvingTriggeredAbility=false, addedTriggeredAbilities=[], addedActivatedAbilities=[]), copySource=BoundVariable(name=t0), creationEvent=script.spellEffect.otherwise, characteristics=[Copy source filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]); zone=BATTLEFIELD; source controller=ANY]); entry-controller=YOU; binding=BoundVariable(name=t0)",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Rite of Replication",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Gate failed: WhenCondition(condition=WasKicked)"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=BoundVariable(name=t0); confidence=UNKNOWN; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "ZEN:61:Rite of Replication",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "CreateTokenCopyOfTarget"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Gate failed: WhenCondition(condition=WasKicked)",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Copy requires a legal available source with appropriate copiable characteristics, not merely a temporary animation",
+            "Associated native action=Rite of Replication|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/RiteOfReplication.kt",
+            "native:front.script.spellEffect.otherwise"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "card": "Rite of Replication",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Rite of Replication",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "rite-of-replication-else",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "fb60739e-1dc3-481d-a056-ad72e665c680",
+        "path": "script.spellEffect.otherwise",
+        "prerequisites": [
+          "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract."
+        ],
+        "reason": "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/soc/202/rite-of-replication?utm_source=api"
+        ]
+      },
+      "id": "rite-of-replication-else",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Dreadhorde Invasion",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Dreadhorde Invasion",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "dreadhorde-invasion",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "01deabbb-af6a-4998-99a7-35b7cfa9ef77",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "prerequisites": [
+          "Native Amass primitive not interpreted; Oracle permits conditional creation but no primitive token fact is claimed."
+        ],
+        "reason": "Native Amass primitive not interpreted; Oracle permits conditional creation but no primitive token fact is claimed.",
+        "requiredNative": {},
+        "reviewStatus": "UNRESOLVED",
+        "sources": [
+          "https://scryfall.com/card/frc/48/dreadhorde-invasion?utm_source=api"
+        ]
+      },
+      "id": "dreadhorde-invasion",
+      "issues": [
+        {
+          "certainty": "INSUFFICIENT_EVIDENCE",
+          "kind": "UNRESOLVED_REVIEW",
+          "reason": "Native Amass primitive not interpreted; Oracle permits conditional creation but no primitive token fact is claimed."
+        }
+      ],
+      "mappingStatus": "MISSING_PATHWAY",
+      "status": "UNRESOLVED"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Hordeling Outburst|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=3), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.spellEffect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Hordeling Outburst",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "KTK:111:Hordeling Outburst",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "count": {
+              "amount": 3,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "imageUri": "https://cards.scryfall.io/normal/front/e/d/ed418a8b-f158-492d-a323-6265b3175292.jpg?1562640121",
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=3); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Hordeling Outburst|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HordelingOutburst.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Hordeling Outburst",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Hordeling Outburst",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "hordeling-outburst",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "a6450b8e-eb18-431c-9eb7-7daf107978b2",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/a25/134/hordeling-outburst?utm_source=api"
+        ]
+      },
+      "id": "hordeling-outburst",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.triggeredAbilities[0].effect",
+          "actionId": "Goblin Rabblemaster|front|script.triggeredAbilities[0]",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Goblin, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[RED], subtypes=[Goblin], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Goblin Rabblemaster",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": true,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=StepEvent(step=BEGIN_COMBAT, player=You); binding=ANY; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "M15:145:Goblin Rabblemaster",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "RED"
+            ],
+            "creatureTypes": [
+              "Goblin"
+            ],
+            "imageUri": "https://cards.scryfall.io/normal/front/9/8/98993a45-4aff-4f9b-a030-7d72fbb4ec6c.jpg?1783939141",
+            "keywords": [
+              "HASTE"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=StepEvent(step=BEGIN_COMBAT, player=You); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Goblin Rabblemaster|front|script.triggeredAbilities[0]; prerequisites=[Trigger=StepEvent(step=BEGIN_COMBAT, player=You); binding=ANY; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m15/cards/GoblinRabblemaster.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Goblin Rabblemaster",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Goblin Rabblemaster",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "goblin-rabblemaster",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "24661b81-6bee-4ad8-b3ab-53cb65005c51",
+        "path": "script.triggeredAbilities[0].effect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/ddt/46/goblin-rabblemaster?utm_source=api"
+        ]
+      },
+      "id": "goblin-rabblemaster",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect",
+          "actionId": "Raise the Alarm|front|script.spell",
+          "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=2), positiveQuantity=MATCH, templateReference=Native creature template: Soldier, copySource=null, creationEvent=script.spellEffect, characteristics=[Creature, colors=[WHITE], subtypes=[Soldier], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+          "branch": "CREATE_CREATURE_TOKEN",
+          "card": "Raise the Alarm",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "CREATE_CREATURE_TOKEN",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "operation-CREATE_TOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "created-creature-true",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "entry-controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]",
+              "stage": "positive-quantity-potential",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+          "face": "front",
+          "identifier": "MRD:16:Raise the Alarm",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "colors": [
+              "WHITE"
+            ],
+            "count": {
+              "amount": 2,
+              "type": "Fixed"
+            },
+            "creatureTypes": [
+              "Soldier"
+            ],
+            "power": 1,
+            "toughness": 1,
+            "type": "CreateToken"
+          },
+          "nontokenCompatibility": "NO_MATCH",
+          "operation": "CREATE_TOKEN",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+            "Quantity must evaluate strictly positive at resolution: Fixed(amount=2); a conditional capability is not a guaranteed outcome",
+            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+            "Associated native action=Raise the Alarm|front|script.spell; prerequisites=[Cast timing, mana and additional costs, cast restrictions and legal targets from native script]; native costs/targets retained in action evidence"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/RaiseTheAlarm.kt",
+            "native:front.script.spellEffect"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Raise the Alarm",
+      "expected": {
+        "branch": "CREATE_CREATURE_TOKEN",
+        "card": "Raise the Alarm",
+        "expectedCategory": "CREATE_CREATURE_TOKEN",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "raise-the-alarm",
+        "mapping": "EXACT",
+        "operation": "CREATE_TOKEN",
+        "oracleId": "5b2364d7-a811-4595-a1b4-224c70555ffa",
+        "path": "script.spellEffect",
+        "prerequisites": [
+          "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+        ],
+        "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/cmr/41/raise-the-alarm?utm_source=api"
+        ]
+      },
+      "id": "raise-the-alarm",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    }
+  ],
+  "commander": "Kenrith, the Returned King",
+  "denominators": {
+    "confirmed_evaluable_cases": 15,
+    "confirmed_expected_accepted_pathways": 11,
+    "confirmed_expected_excluded_cases": 4,
+    "confirmed_expected_mechanical_nonmatches": 2,
+    "confirmed_mechanical_positive_cases": 11,
+    "expected_unknown_interpretation_boundaries": 2,
+    "reviewed_cards": 15,
+    "reviewed_cases": 16
+  },
+  "limitations": [
+    "Source-led reviewed sample, not corpus recall or an independently adjudicated human gold standard.",
+    "Unreviewed accepted paths are suspected review gaps, never confirmed false positives. Mapping ambiguity and unsupported evidence are explicit.",
+    "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."
+  ],
+  "numerators": {
+    "confirmed_mechanical_positive_recovered": 11,
+    "confirmed_mismatch_cases": 0,
+    "excluded_correctly_not_accepted": 4,
+    "expected_accepted_missed": 0,
+    "expected_accepted_recovered": 11,
+    "incorrect_accepted_reviewed_cases": 0,
+    "suspected_or_incomplete_cases": 0,
+    "unknown_boundaries_preserved": 2,
+    "unresolved_cases": 1,
+    "unreviewed_accepted_paths": 0
+  },
+  "reviewSha256": "b16589779c7bd63c8042598d601921c761ef157ffa445534bc51c03e0ee501e3",
+  "reviewVersion": "phase25-frozen-v1",
+  "unreviewedAcceptedPathways": []
+}

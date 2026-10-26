@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase24IntegrationTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:21:11.422Z" hostname="5fc36fab9608" time="0.187">
+  <properties/>
+  <testcase name="development authored targeted returns preserve own graveyard and owner-default control" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.154"/>
+  <testcase name="Victimize action links conditional sacrifice generation and actual gated reanimation" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.003"/>
+  <testcase name="alternative flashback payment stays associated without asserting it is the normal casting cost" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.002"/>
+  <testcase name="held-out hand return is recognized movement but excluded from B" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.001"/>
+  <testcase name="held-out self activation preserves graveyard source and tapped entry" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.001"/>
+  <testcase name="held-out different color uses same facts while remaining ineligible under Judith" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.005"/>
+  <testcase name="held-out indirect Living Death sequence is visible without conflating exile with graveyard" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.002"/>
+  <testcase name="native casting permission is never direct reanimation" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.001"/>
+  <testcase name="attachment and mana-value boundaries remain unresolved" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.003"/>
+  <testcase name="normal combined catalog retains Judith as death consumer" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.003"/>
+  <testcase name="requested unavailable examples are real corpus gaps" classname="dev.mtg.assistant.Phase24IntegrationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,24 @@
+{
+  "name": "Krenko, Mob Boss",
+  "oracle_id": "68418069-f615-40ef-ae0d-764192acae00",
+  "oracle_text": "{T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.",
+  "mana_cost": "{2}{R}{R}",
+  "type_line": "Legendary Creature \u2014 Goblin Warrior",
+  "power": "3",
+  "toughness": "3",
+  "color_identity": [
+    "R"
+  ],
+  "scryfall_uri": "https://scryfall.com/card/fdn/204/krenko-mob-boss?utm_source=api",
+  "source": "https://api.scryfall.com/cards/named?exact=Krenko%2C%20Mob%20Boss",
+  "retrieved": "2026-10-26",
+  "rulings": [
+    {
+      "object": "ruling",
+      "oracle_id": "68418069-f615-40ef-ae0d-764192acae00",
+      "source": "wotc",
+      "published_at": "2012-07-01",
+      "comment": "The ability counts each Goblin you control, including Krenko itself, not just the tokens it creates."
+    }
+  ]
+}

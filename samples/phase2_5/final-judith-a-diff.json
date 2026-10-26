@@ -1,0 +1,767 @@
+{
+  "afterCommander": "Judith, the Scourge Diva",
+  "afterStageCounts": {
+    "accepted_death_enhanced_removal_cards": 25,
+    "accepted_death_enhanced_removal_pathways": 25,
+    "accepted_direct_cards": 462,
+    "accepted_direct_pathways": 474,
+    "accepted_self_toughness_exchange_pathways": 12,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 4353,
+    "commander_eligible_cards": 6104,
+    "commander_legal_cards": 16630,
+    "controller_incompatible_pathways": 164,
+    "extracted_potential_death_operations": 2916,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mandatory_unlinked_sacrifice_pathways": 157,
+    "mechanical_input_cards_after_conventional_search": 6104,
+    "mechanically_compatible_direct_pathways": 1327,
+    "mechanically_compatible_policy_rejected_pathways": 850,
+    "nontoken_incompatible_pathways": 6,
+    "our_creature_pathways": 1333,
+    "our_nontoken_creature_pathways": 1327,
+    "pathways_with_any_unknown_decision": 1045,
+    "policy_rejected_removal_pathways": 850,
+    "policy_unknown_compatible_pathways": 3,
+    "potential_creature_death_pathways": 1471,
+    "registry_names_including_faces": 17352,
+    "unknown_query_pathways": 411,
+    "unsupported_structure_records": 8692,
+    "upstream_authored_physical_cards": 16995
+  },
+  "ambiguousPathwayBases": [
+    "WOE:90:Faerie Fencing|front|script.spellEffect.gate.condition|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL"
+  ],
+  "beforeCommander": "Judith, the Scourge Diva",
+  "beforeStageCounts": {
+    "accepted_death_enhanced_removal_cards": 25,
+    "accepted_death_enhanced_removal_pathways": 25,
+    "accepted_direct_cards": 462,
+    "accepted_direct_pathways": 474,
+    "accepted_self_toughness_exchange_pathways": 12,
+    "application_extension_physical_cards": 1,
+    "authored_physical_cards": 16996,
+    "cards_with_unsupported_structures": 4572,
+    "commander_eligible_cards": 6104,
+    "commander_legal_cards": 16630,
+    "controller_incompatible_pathways": 164,
+    "extracted_potential_death_operations": 2916,
+    "format_legality_unknown_cards": 353,
+    "identity_unknown_legal_cards": 698,
+    "mandatory_unlinked_sacrifice_pathways": 157,
+    "mechanical_input_cards_after_conventional_search": 6104,
+    "mechanically_compatible_direct_pathways": 1327,
+    "mechanically_compatible_policy_rejected_pathways": 850,
+    "nontoken_incompatible_pathways": 6,
+    "our_creature_pathways": 1333,
+    "our_nontoken_creature_pathways": 1327,
+    "pathways_with_any_unknown_decision": 1045,
+    "policy_rejected_removal_pathways": 850,
+    "policy_unknown_compatible_pathways": 3,
+    "potential_creature_death_pathways": 1471,
+    "registry_names_including_faces": 17352,
+    "unknown_query_pathways": 411,
+    "unsupported_structure_records": 9258,
+    "upstream_authored_physical_cards": 16995
+  },
+  "comparablePool": true,
+  "counts": {
+    "PATHWAY_CHANGED": 63,
+    "UNSUPPORTED_ADDED": 81,
+    "UNSUPPORTED_REMOVED": 647
+  },
+  "limitations": [
+    "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+    "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+    "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+  ],
+  "representativeChangesByKind": {
+    "PATHWAY_CHANGED": [
+      {
+        "after": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Grim Bounty|front|script.spell",
+          "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Grim Bounty",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "AFR:106:Grim Bounty",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "DESTROY",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/GrimBounty.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.spellEffect.effects[0]",
+          "actionId": "Grim Bounty|front|script.spell",
+          "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Grim Bounty",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "AFR:106:Grim Bounty",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "byDestruction": true,
+            "destination": "Graveyard",
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "type": "MoveToZone"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "DESTROY",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/GrimBounty.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "AFR:106:Grim Bounty|front|script.spellEffect.effects[0]|DESTROY|DIRECT_DEATH_GENERATOR",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect",
+          "actionId": "Shambling Ghast|front|script.triggeredAbilities[0]",
+          "affectedScope": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Shambling Ghast",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null",
+              "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+              "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+              "Toughness must reach zero or damage become lethal in the actual game state"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "NO_MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+          "face": "front",
+          "identifier": "AFR:119:Shambling Ghast",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "powerModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "toughnessModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "type": "ModifyStats"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "TOUGHNESS_REDUCTION",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Toughness must reach zero or damage become lethal in the actual game state",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ShamblingGhast.kt",
+            "native:front.script.triggeredAbilities[0].effect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect",
+          "actionId": "Shambling Ghast|front|script.triggeredAbilities[0]",
+          "affectedScope": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Shambling Ghast",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null",
+              "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+              "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+              "Toughness must reach zero or damage become lethal in the actual game state"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "NO_MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "an opponent controls creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "NO_MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify",
+              "stage": "death-generation-policy",
+              "verdict": "NO_MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+          "face": "front",
+          "identifier": "AFR:119:Shambling Ghast",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "NO_MATCH",
+          "nativeOperation": {
+            "powerModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "toughnessModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "type": "ModifyStats"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "TOUGHNESS_REDUCTION",
+          "policyAcceptance": "NO_MATCH",
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Toughness must reach zero or damage become lethal in the actual game state",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ShamblingGhast.kt",
+            "native:front.script.triggeredAbilities[0].effect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "NO_MATCH"
+        },
+        "key": "AFR:119:Shambling Ghast|front|script.triggeredAbilities[0].effect.modes[0].effect|TOUGHNESS_REDUCTION|DIRECT_DEATH_GENERATOR",
+        "kind": "PATHWAY_CHANGED"
+      },
+      {
+        "after": {
+          "abilityPath": "script.triggeredAbilities[0].trigger",
+          "actionId": "Shambling Ghast|front|script.triggeredAbilities[0]",
+          "affectedScope": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DEATH_ENHANCED_REMOVAL",
+          "card": "Shambling Ghast",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "DEPENDENCY",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false)",
+              "stage": "death-enhancement",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": "ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false)",
+          "enablingRelationship": "UNRESOLVED",
+          "face": "front",
+          "identifier": "AFR:119:Shambling Ghast",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "powerModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "toughnessModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "type": "ModifyStats"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "TOUGHNESS_REDUCTION",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Death event must precede/trigger the removal action; all other native requirements still apply"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ShamblingGhast.kt",
+            "native:front.script.triggeredAbilities[0].trigger",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        },
+        "attribution": [
+          "EXPLANATION_ONLY"
+        ],
+        "before": {
+          "abilityPath": "script.triggeredAbilities[0].trigger",
+          "actionId": "Shambling Ghast|front|script.triggeredAbilities[0]",
+          "affectedScope": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DEATH_ENHANCED_REMOVAL",
+          "card": "Shambling Ghast",
+          "circumstances": {
+            "actionKind": "TRIGGERED",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": true,
+            "timingAndConditions": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "DEPENDENCY",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=true; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false)",
+              "stage": "death-enhancement",
+              "verdict": "UNKNOWN"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": "ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false)",
+          "enablingRelationship": "UNRESOLVED",
+          "face": "front",
+          "identifier": "AFR:119:Shambling Ghast",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "powerModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "target": {
+              "name": "t0",
+              "type": "BoundVariable"
+            },
+            "toughnessModifier": {
+              "amount": -1,
+              "type": "Fixed"
+            },
+            "type": "ModifyStats"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "TOUGHNESS_REDUCTION",
+          "policyAcceptance": null,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Death event must precede/trigger the removal action; all other native requirements still apply"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/ShamblingGhast.kt",
+            "native:front.script.triggeredAbilities[0].trigger",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        },
+        "key": "AFR:119:Shambling Ghast|front|script.triggeredAbilities[0].trigger|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL",
+        "kind": "PATHWAY_CHANGED"
+      }
+    ],
+    "UNSUPPORTED_ADDED": [
+      {
+        "after": [
+          {
+            "actionId": "Abyssal Harvester|front|script.activatedAbilities[0]",
+            "card": "Abyssal Harvester",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.activatedAbilities[0].effect.effects[2].tokenConstraints",
+            "reason": "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; [Copy source was moved earlier; last known copiable characteristics unresolved]"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Abyssal Harvester|front|script.activatedAbilities[0].effect.effects[2].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Ardyn, the Usurper|front|script.triggeredAbilities[0]",
+            "card": "Ardyn, the Usurper",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.triggeredAbilities[0].effect.effects[1].tokenConstraints",
+            "reason": "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; [Copy source was moved earlier; last known copiable characteristics unresolved]"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Ardyn, the Usurper|front|script.triggeredAbilities[0].effect.effects[1].tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      },
+      {
+        "after": [
+          {
+            "actionId": "Bloodvial Purveyor|front|script.triggeredAbilities[0]",
+            "card": "Bloodvial Purveyor",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+            "path": "script.triggeredAbilities[0].effect.tokenConstraints",
+            "reason": "Unresolved token variant: creature=NO_MATCH; controller=UNKNOWN; quantity=MATCH; []"
+          }
+        ],
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": null,
+        "key": "Bloodvial Purveyor|front|script.triggeredAbilities[0].effect.tokenConstraints|com.wingedsheep.sdk.scripting.effects.CreatePredefinedTokenEffect",
+        "kind": "UNSUPPORTED_ADDED"
+      }
+    ],
+    "UNSUPPORTED_REMOVED": [
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Abyssal Harvester|front|script.activatedAbilities[0]",
+            "card": "Abyssal Harvester",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+            "path": "script.activatedAbilities[0].effect.effects[2]",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Abyssal Harvester|front|script.activatedAbilities[0].effect.effects[2]|com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfTargetEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Aclazotz, Deepest Betrayal|front|script.triggeredAbilities[1]",
+            "card": "Aclazotz, Deepest Betrayal",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[1].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Aclazotz, Deepest Betrayal|front|script.triggeredAbilities[1].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      },
+      {
+        "after": null,
+        "attribution": [
+          "DIAGNOSTIC_INTERPRETATION"
+        ],
+        "before": [
+          {
+            "actionId": "Adorned Crocodile|front|script.triggeredAbilities[0]",
+            "card": "Adorned Crocodile",
+            "face": "front",
+            "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+            "path": "script.triggeredAbilities[0].effect",
+            "reason": "Effect not interpreted; native action retained (may contain further capabilities)"
+          }
+        ],
+        "key": "Adorned Crocodile|front|script.triggeredAbilities[0].effect|com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+        "kind": "UNSUPPORTED_REMOVED"
+      }
+    ]
+  },
+  "totalChanges": 791,
+  "transitions": {
+    "EXPLANATION_ONLY_CHANGED": 63
+  }
+}

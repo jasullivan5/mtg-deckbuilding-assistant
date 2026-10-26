@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase23ReportingTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:49:03.507Z" hostname="5fc36fab9608" time="8.841">
+  <properties/>
+  <testcase name="rewritten decision reasons are explanation-only not policy or mechanical changes" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.441"/>
+  <testcase name="constraint and structural evidence changes are independent of verdict changes" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.057"/>
+  <testcase name="variant coverage does not claim a whole type from one supported instance" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.106"/>
+  <testcase name="both frozen reviews remain inspectable without treating unreviewed paths as confirmed errors" classname="dev.mtg.assistant.Phase23ReportingTest" time="7.95"/>
+  <testcase name="recognized sacrifice cost with unresolved filter is partial at both cost and keyword variants" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.13"/>
+  <testcase name="scope presentation and new annotation schemas do not inflate structural or policy changes" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.065"/>
+  <testcase name="accepted keyword cost remains incomplete when its associated spell resolution is unresolved" classname="dev.mtg.assistant.Phase23ReportingTest" time="0.079"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

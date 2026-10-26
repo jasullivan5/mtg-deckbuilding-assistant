@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "7feba745-7d27-4225-bc9d-9b7a8692872d",
+      "source": "wotc",
+      "published_at": "2018-03-16",
+      "comment": "A creature \"comes under your control\" if it enters the battlefield under your control or if you gain control of it while it's already on the battlefield."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase24ReportingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:49:12.608Z" hostname="5fc36fab9608" time="0.568">
+  <properties/>
+  <testcase name="both objectives export identical facts and use one eligibility pipeline" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.365"/>
+  <testcase name="objective B normal result is fully inspectable by existing reports" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.023"/>
+  <testcase name="different objective snapshots cannot appear as a controlled same-objective regression" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.046"/>
+  <testcase name="reason-only differences remain separate from mechanical verdict changes for B" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.036"/>
+  <testcase name="ownership binding uncertainty is not reported as a confirmed omission" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.083"/>
+  <testcase name="frozen B review maps expected movement while absent casting remains distinct" classname="dev.mtg.assistant.Phase24ReportingTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

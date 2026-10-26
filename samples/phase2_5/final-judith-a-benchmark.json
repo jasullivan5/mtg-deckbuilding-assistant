@@ -1,0 +1,1751 @@
+{
+  "cards": [
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Dread Return",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "dread-flashback"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Vicious Offering",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "offering-kicker"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Final Flourish",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "flourish-held-out"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Lash of the Balrog",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "lash-branch"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Eaten Alive",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "eaten-or-pay"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Dusk Mangler",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "mangler-choice"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Souls of the Lost",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "souls-held-out"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Morkrut Behemoth",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "behemoth-held-out"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Arms Race",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "arms-delayed"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Through the Breach",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "breach-held-out"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "card": "Cauldron Dance",
+      "expectedAcceptedCategories": [
+        "DIRECT_DEATH_GENERATOR"
+      ],
+      "reviewedCaseIds": [
+        "dance-hand-only"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Incandescent Soulstoke",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "soulstoke-restricted"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    },
+    {
+      "actualAcceptedCategories": [],
+      "card": "Diregraf Scavenger",
+      "expectedAcceptedCategories": [],
+      "reviewedCaseIds": [
+        "scavenger-negative"
+      ],
+      "status": "REVIEWED_CASES_MATCH"
+    }
+  ],
+  "cases": [
+    {
+      "actual": [
+        {
+          "abilityPath": "keywordAbilities[0].additionalCost.atom",
+          "actionId": "Dread Return|front|keywordAbilities[0]",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Dread Return",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Flashback route: cast this card from GRAVEYARD; mana=; condition=null; minimumX=0; exile if it leaves stack; spell timing and legal targets still required",
+              "Sacrifice count=3; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "ALTERNATIVE_CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "TSP:104:Dread Return",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "count": 3,
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Flashback route: cast this card from GRAVEYARD; mana=; condition=null; minimumX=0; exile if it leaves stack; spell timing and legal targets still required",
+            "Sacrifice count=3; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/DreadReturn.kt",
+            "native:front.keywordAbilities[0].additionalCost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Dread Return",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Dread Return",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "ALTERNATIVE_CASTING_COST",
+        "face": "front",
+        "id": "dread-flashback",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "352b64d2-2ae5-44ee-a64f-94932ef545d3",
+        "path": "keywordAbilities[0].additionalCost.atom",
+        "prerequisites": [],
+        "reason": "Three separate own creatures are sacrificed before resolution when cast from graveyard via flashback; target chosen before sacrifice cannot be one of them. Flashback timing and exile replacement remain prerequisites.",
+        "requiredNative": {
+          "count": "3"
+        },
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/cmm/153/dread-return?utm_source=api",
+          "benchmark/phase23/oracle/00-card.json",
+          "benchmark/phase23/oracle/00-rulings.json",
+          "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/DreadReturn.kt"
+        ]
+      },
+      "id": "dread-flashback",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "keywordAbilities[0].additionalCost.atom",
+          "actionId": "Vicious Offering|front|keywordAbilities[0]",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Vicious Offering",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Optional additional casting route chosen: mana=null; multi=false; native choice slot and conditions retained",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "OPTIONAL_CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "DOM:110:Vicious Offering",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Optional additional casting route chosen: mana=null; multi=false; native choice slot and conditions retained",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/ViciousOffering.kt",
+            "native:front.keywordAbilities[0].additionalCost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Vicious Offering",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Vicious Offering",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "OPTIONAL_CASTING_COST",
+        "face": "front",
+        "id": "offering-kicker",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "c6adfaa7-d9cf-4501-8e7d-e035369390d2",
+        "path": "keywordAbilities[0].additionalCost.atom",
+        "prerequisites": [],
+        "reason": "Optional additional sacrifice cost; ordinary or kicked removal never becomes a direct generator on its own.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/dom/110/vicious-offering?utm_source=api",
+          "benchmark/phase23/oracle/11-card.json",
+          "benchmark/phase23/oracle/11-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/ViciousOffering.kt"
+        ]
+      },
+      "id": "offering-kicker",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "keywordAbilities[0].additionalCost.atom",
+          "actionId": "Final Flourish|front|keywordAbilities[0]",
+          "affectedScope": "artifact or creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Final Flourish",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Optional additional casting route chosen: mana=null; multi=false; native choice slot and conditions retained",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "OPTIONAL_CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact or creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact or creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact or creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "MOM:104:Final Flourish",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "predicates": [
+                    {
+                      "type": "IsArtifact"
+                    },
+                    {
+                      "type": "IsCreature"
+                    }
+                  ],
+                  "type": "Or"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Optional additional casting route chosen: mana=null; multi=false; native choice slot and conditions retained",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/FinalFlourish.kt",
+            "native:front.keywordAbilities[0].additionalCost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Final Flourish",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Final Flourish",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "OPTIONAL_CASTING_COST",
+        "face": "front",
+        "id": "flourish-held-out",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "63a85361-56bc-4209-aea8-b49319bc7b92",
+        "path": "keywordAbilities[0].additionalCost.atom",
+        "prerequisites": [],
+        "reason": "Held-out optional cost allows an artifact OR creature, including an own nontoken creature.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/mom/104/final-flourish?utm_source=api",
+          "benchmark/phase23/oracle/12-card.json",
+          "benchmark/phase23/oracle/12-rulings.json",
+          "argentum/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/FinalFlourish.kt"
+        ]
+      },
+      "id": "flourish-held-out",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.modes[0].additionalCosts[0].atom",
+          "actionId": "Lash of the Balrog|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Lash of the Balrog",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+              "Mode costs override base costs when present",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "LTR:92:Lash of the Balrog",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Mode 0 selected; chooseCount=1; mode mana=null; extra-mode cost=null",
+            "Mode costs override base costs when present",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/LashOfTheBalrog.kt",
+            "native:front.script.spellEffect.modes[0].additionalCosts[0].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Lash of the Balrog",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Lash of the Balrog",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "lash-branch",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "66499407-3ad2-464b-bbfe-95d860f53616",
+        "path": "script.spellEffect.modes[0].additionalCosts[0].atom",
+        "prerequisites": [],
+        "reason": "Native cost fork uses one mode with sacrifice, another with mana; only sacrifice branch generates cost deaths.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/ltr/92/lash-of-the-balrog?utm_source=api",
+          "benchmark/phase23/oracle/02-card.json",
+          "benchmark/phase23/oracle/02-rulings.json"
+        ]
+      },
+      "id": "lash-branch",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.additionalCosts[0].cost.atom",
+          "actionId": "Eaten Alive|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Eaten Alive",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Pay native non-mana branch rather than extra {3}{B}",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "MID:99:Eaten Alive",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Pay native non-mana branch rather than extra {3}{B}",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/EatenAlive.kt",
+            "native:front.script.additionalCosts[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Eaten Alive",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Eaten Alive",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "eaten-or-pay",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "d437ecc2-2fd3-4ad3-b23e-217f55e58dae",
+        "path": "script.additionalCosts[0].cost.atom",
+        "prerequisites": [],
+        "reason": "Sacrifice alternative additional cost qualifies even though the associated removal exiles rather than destroys.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/inr/106/eaten-alive?utm_source=api",
+          "benchmark/phase23/oracle/04-card.json",
+          "benchmark/phase23/oracle/04-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/EatenAlive.kt"
+        ]
+      },
+      "id": "eaten-or-pay",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.additionalCosts[0].options[0].atom",
+          "actionId": "Dusk Mangler|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Dusk Mangler",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Additional-cost choice 0 selected; other branches not paid; slot=ADDITIONAL_COST_BRANCH",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "SNC:77:Dusk Mangler",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Additional-cost choice 0 selected; other branches not paid; slot=ADDITIONAL_COST_BRANCH",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/DuskMangler.kt",
+            "native:front.script.additionalCosts[0].options[0].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Dusk Mangler",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Dusk Mangler",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "mangler-choice",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "74de3356-9779-40f9-9881-fe795a1d5bbd",
+        "path": "script.additionalCosts[0].options[0].atom",
+        "prerequisites": [],
+        "reason": "Sacrifice is one additional-cost choice, alongside discard/life; the ETB is not the same action as payment.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/clb/751/dusk-mangler?utm_source=api",
+          "benchmark/phase23/oracle/03-card.json",
+          "benchmark/phase23/oracle/03-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/DuskMangler.kt"
+        ]
+      },
+      "id": "mangler-choice",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.additionalCosts[0].options[1].atom",
+          "actionId": "Souls of the Lost|front|script.spell",
+          "affectedScope": "card; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Souls of the Lost",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Additional-cost choice 1 selected; other branches not paid; slot=null",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "card; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "LCI:121:Souls of the Lost",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Additional-cost choice 1 selected; other branches not paid; slot=null",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/SoulsOfTheLost.kt",
+            "native:front.script.additionalCosts[0].options[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Souls of the Lost",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Souls of the Lost",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "souls-held-out",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "c05d5a51-8e39-4475-9743-1adc60283c5a",
+        "path": "script.additionalCosts[0].options[1].atom",
+        "prerequisites": [],
+        "reason": "Held-out cost choice permits a permanent, hence own nontoken creature, or discard; no sacrifice in discard branch.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/lci/121/souls-of-the-lost?utm_source=api",
+          "benchmark/phase23/oracle/13-card.json",
+          "benchmark/phase23/oracle/13-rulings.json"
+        ]
+      },
+      "id": "souls-held-out",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.additionalCosts[0].cost.atom",
+          "actionId": "Morkrut Behemoth|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Morkrut Behemoth",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": false,
+            "delayedTrigger": false,
+            "mandatory": "NO_MATCH",
+            "objectRestrictions": [],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Pay native non-mana branch rather than extra {1}{B}",
+              "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "CASTING_COST",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Sacrifice is a cost of this action; no utility assumption",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+          "face": "front",
+          "identifier": "MID:114:Morkrut Behemoth",
+          "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "type": "AtomSacrifice"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Pay native non-mana branch rather than extra {1}{B}",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/MorkrutBehemoth.kt",
+            "native:front.script.additionalCosts[0].cost.atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Morkrut Behemoth",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Morkrut Behemoth",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "CASTING_COST",
+        "face": "front",
+        "id": "behemoth-held-out",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "76c2571d-7d45-4c7a-99d1-302e2b26f8f6",
+        "path": "script.additionalCosts[0].cost.atom",
+        "prerequisites": [],
+        "reason": "Held-out sacrifice-or-pay wrapper: sacrifice is optional payment branch, not resolution.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/mid/114/morkrut-behemoth?utm_source=api",
+          "benchmark/phase23/oracle/14-card.json",
+          "benchmark/phase23/oracle/14-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/MorkrutBehemoth.kt"
+        ]
+      },
+      "id": "behemoth-held-out",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+          "actionId": "Arms Race|front|script.activatedAbilities[0]",
+          "affectedScope": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsArtifact], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Arms Race",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": true,
+            "delayedTrigger": true,
+            "mandatory": "MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsArtifact], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+              "Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+            ],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+              "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+              "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsArtifact], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsArtifact], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "artifact; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsArtifact], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "BRO:126:Arms Race",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "target": {
+              "collectionName": "selected1",
+              "type": "PipelineTarget"
+            },
+            "type": "SacrificeTarget"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+            "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+            "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/ArmsRace.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Arms Race",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Arms Race",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "arms-delayed",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "e801c5bd-68e6-4a74-bed3-addd18db3b2b",
+        "path": "script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+        "prerequisites": [],
+        "reason": "May put a nontoken artifact creature from hand onto battlefield; same object must remain and be controlled by us at end step; optional selection and actual entry are prerequisites.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/bro/126/arms-race?utm_source=api",
+          "benchmark/phase23/oracle/05-card.json",
+          "benchmark/phase23/oracle/05-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/ArmsRace.kt"
+        ]
+      },
+      "id": "arms-delayed",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.effects[3].ifNotEmpty.effects[1].effect",
+          "actionId": "Through the Breach|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Through the Breach",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": true,
+            "delayedTrigger": true,
+            "mandatory": "MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+              "Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+            ],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+              "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+              "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "CHK:193:Through the Breach",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "target": {
+              "collectionName": "selected1",
+              "type": "PipelineTarget"
+            },
+            "type": "SacrificeTarget"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+            "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+            "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/ThroughTheBreach.kt",
+            "native:front.script.spellEffect.effects[3].ifNotEmpty.effects[1].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Through the Breach",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Through the Breach",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "breach-held-out",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "c207aaee-0b67-4520-ad02-2c289228be2a",
+        "path": "script.spellEffect.effects[3].ifNotEmpty.effects[1].effect",
+        "prerequisites": [],
+        "reason": "Held-out creature from hand enters under us, and delayed sacrifice can cause a nontoken death; not recursion discovery.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/inr/175/through-the-breach?utm_source=api",
+          "benchmark/phase23/oracle/06-card.json",
+          "benchmark/phase23/oracle/06-rulings.json"
+        ]
+      },
+      "id": "breach-held-out",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.spellEffect.effects[6].ifNotEmpty.effects[1].effect",
+          "actionId": "Cauldron Dance|front|script.spell",
+          "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected5 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Cauldron Dance",
+          "circumstances": {
+            "actionKind": "SPELL",
+            "deferredTiming": true,
+            "delayedTrigger": true,
+            "mandatory": "MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+              "Collection selected5 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+            ],
+            "repeatability": "Each cast subject to native costs/timing/permissions",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+              "Collection guard selected5: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+              "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected5, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+              "Pipeline target selected5[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": "DIRECT_DEATH_GENERATOR",
+          "controllerCompatibility": "MATCH",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected5 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "potential-creature-death",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected5 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "controller-YOU",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected5 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "token-NONTOKEN",
+              "verdict": "MATCH"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "INV:238:Cauldron Dance",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "SUPPORTED",
+          "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+          "mechanicalCompatibility": "MATCH",
+          "nativeOperation": {
+            "target": {
+              "collectionName": "selected5",
+              "type": "PipelineTarget"
+            },
+            "type": "SacrificeTarget"
+          },
+          "nontokenCompatibility": "MATCH",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Collection guard selected5: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+            "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected5, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+            "Pipeline target selected5[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/CauldronDance.kt",
+            "native:front.script.spellEffect.effects[6].ifNotEmpty.effects[1].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "MATCH"
+        }
+      ],
+      "card": "Cauldron Dance",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Cauldron Dance",
+        "expectedCategory": "DIRECT_DEATH_GENERATOR",
+        "expectedMechanical": "MATCH",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "dance-hand-only",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "e9784eb4-96f2-409e-a7b5-eb6478644943",
+        "path": "script.spellEffect.effects[6].ifNotEmpty.effects[1].effect",
+        "prerequisites": [],
+        "reason": "Hand creature is sacrificed at end step; the separately returned graveyard creature returns to hand, so must not be conflated.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/c17/166/cauldron-dance?utm_source=api",
+          "benchmark/phase23/oracle/07-card.json",
+          "benchmark/phase23/oracle/07-rulings.json",
+          "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/CauldronDance.kt"
+        ]
+      },
+      "id": "dance-hand-only",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [
+        {
+          "abilityPath": "script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+          "actionId": "Incandescent Soulstoke|front|script.activatedAbilities[0]",
+          "affectedScope": "Elemental creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Elemental)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+          "branch": "DIRECT_DEATH_GENERATOR",
+          "card": "Incandescent Soulstoke",
+          "circumstances": {
+            "actionKind": "ACTIVATED",
+            "deferredTiming": true,
+            "delayedTrigger": true,
+            "mandatory": "MATCH",
+            "objectRestrictions": [
+              "Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Elemental)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false)",
+              "Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false",
+              "Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+            ],
+            "repeatability": "Each activation subject to native costs/timing/limits",
+            "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed",
+            "sourceMustRemainOnBattlefield": false,
+            "timingAndConditions": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+              "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+              "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+              "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation"
+            ]
+          },
+          "commanderLegality": "MATCH",
+          "contributionClassification": null,
+          "controllerCompatibility": "UNKNOWN",
+          "costOrEffect": "EFFECT",
+          "decisions": [
+            {
+              "basis": "MECHANICAL",
+              "reason": "Elemental creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Elemental)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "potential-creature-death",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "Elemental creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Elemental)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "controller-YOU",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "MECHANICAL",
+              "reason": "Elemental creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: FromZone(zone=HAND, player=You, filter=GameObjectFilter(cardPredicates=[IsCreature, HasSubtype(subtype=Elemental)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false, Collection selected1 move: sourceBattlefield=false; destination=ToZone(zone=BATTLEFIELD, player=You, placement=Default); operation=Default; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death]",
+              "stage": "token-NONTOKEN",
+              "verdict": "UNKNOWN"
+            },
+            {
+              "basis": "POLICY",
+              "reason": "Non-removal sacrifice capability; mandatory, conditional, delayed or unlinked timing does not require a beneficial payoff",
+              "stage": "death-generation-policy",
+              "verdict": "MATCH"
+            }
+          ],
+          "deckEligibility": "MATCH",
+          "dependency": null,
+          "enablingRelationship": "UNLINKED_RESOLUTION",
+          "face": "front",
+          "identifier": "LRW:178:Incandescent Soulstoke",
+          "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+          "localSupport": "PARTIALLY_SUPPORTED",
+          "mechanicalCapability": null,
+          "mechanicalCompatibility": "UNKNOWN",
+          "nativeOperation": {
+            "target": {
+              "collectionName": "selected1",
+              "type": "PipelineTarget"
+            },
+            "type": "SacrificeTarget"
+          },
+          "nontokenCompatibility": "UNKNOWN",
+          "operation": "SACRIFICE",
+          "policyAcceptance": "MATCH",
+          "prerequisites": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Collection guard selected1: threshold=1; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); distinctTypes=false; knownMax=1; branch must actually satisfy native measurement; measured size >= threshold",
+            "Delayed trigger: CreateDelayedTriggerEffect(step=END, effect=SacrificeTargetEffect(target=PipelineTarget(collectionName=selected1, index=0), sacrificedByItsController=false), trigger=null, watchedTarget=null, watchedRecipient=null, expiry=EndOfTurn, fireOnce=false, repeatAtEachMatchingStep=false, timing=CURRENT_TURN_OR_LATER, stepScope=STEP, targetRequirement=null, additionalTargetRequirements=[], fireOnPlayer=null, carryCollections=[])",
+            "Pipeline target selected1[0] must exist, actually have entered/remained on battlefield under the required controller, and still be the same game object; leaving and returning does not preserve a delayed obligation",
+            "Face front must be available; transformation/flip prerequisites are not simulated",
+            "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+          ],
+          "provenance": {
+            "origin": "UPSTREAM_ARGENTUM",
+            "source": "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+            "verifiedAt": null
+          },
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/IncandescentSoulstoke.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "strategicDesirability": "NOT_EVALUATED",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "card": "Incandescent Soulstoke",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Incandescent Soulstoke",
+        "expectedCategory": null,
+        "expectedMechanical": "UNKNOWN",
+        "expectedPolicy": "MATCH",
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "soulstoke-restricted",
+        "mapping": "EXACT",
+        "operation": "SACRIFICE",
+        "oracleId": "934bd9f9-937b-4c6b-a849-012ae6bd3321",
+        "path": "script.activatedAbilities[0].effect.effects[3].ifNotEmpty.effects[1].effect",
+        "prerequisites": [],
+        "reason": "Held-out delayed sacrifice is real, but current subtype satisfiability is deliberately UNKNOWN; retain Elemental filter rather than assume an object exists.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/ecc/94/incandescent-soulstoke?utm_source=api",
+          "benchmark/phase23/oracle/08-card.json",
+          "benchmark/phase23/oracle/08-rulings.json",
+          "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/IncandescentSoulstoke.kt"
+        ]
+      },
+      "id": "soulstoke-restricted",
+      "issues": [],
+      "mappingStatus": "UNIQUE_PATHWAY",
+      "status": "MATCH"
+    },
+    {
+      "actual": [],
+      "card": "Diregraf Scavenger",
+      "expected": {
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "card": "Diregraf Scavenger",
+        "expectedCategory": null,
+        "expectedMechanical": "NO_MATCH",
+        "expectedPolicy": null,
+        "expectedRole": "EFFECT",
+        "face": "front",
+        "id": "scavenger-negative",
+        "mapping": "ABSENT",
+        "operation": null,
+        "oracleId": "54731e3f-a84a-4fc9-8c02-2f769133c71c",
+        "path": "script.triggeredAbilities[0].effect.effects[2]",
+        "prerequisites": [],
+        "reason": "Exiled creature card is not a death; player life loss/gain is not removal. No direct pathway should be extracted.",
+        "requiredNative": {},
+        "reviewStatus": "CONFIRMED",
+        "sources": [
+          "https://scryfall.com/card/vow/105/diregraf-scavenger?utm_source=api",
+          "benchmark/phase23/oracle/09-card.json",
+          "benchmark/phase23/oracle/09-rulings.json",
+          "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/DiregrafScavenger.kt"
+        ]
+      },
+      "id": "scavenger-negative",
+      "issues": [],
+      "mappingStatus": "ABSENCE_CONFIRMED",
+      "status": "MATCH"
+    }
+  ],
+  "commander": "Judith, the Scourge Diva",
+  "denominators": {
+    "confirmed_evaluable_cases": 13,
+    "confirmed_expected_accepted_pathways": 11,
+    "confirmed_expected_excluded_cases": 2,
+    "confirmed_expected_mechanical_nonmatches": 1,
+    "confirmed_mechanical_positive_cases": 11,
+    "expected_unknown_interpretation_boundaries": 1,
+    "reviewed_cards": 13,
+    "reviewed_cases": 13
+  },
+  "limitations": [
+    "Source-led reviewed sample, not corpus recall or an independently adjudicated human gold standard.",
+    "Unreviewed accepted paths are suspected review gaps, never confirmed false positives. Mapping ambiguity and unsupported evidence are explicit.",
+    "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."
+  ],
+  "numerators": {
+    "confirmed_mechanical_positive_recovered": 11,
+    "confirmed_mismatch_cases": 0,
+    "excluded_correctly_not_accepted": 2,
+    "expected_accepted_missed": 0,
+    "expected_accepted_recovered": 11,
+    "incorrect_accepted_reviewed_cases": 0,
+    "suspected_or_incomplete_cases": 0,
+    "unknown_boundaries_preserved": 1,
+    "unresolved_cases": 0,
+    "unreviewed_accepted_paths": 0
+  },
+  "reviewSha256": "988a48b7e8d08874b6495a22753325cb2a52876ede2e42c4b7a5259bf15efe6c",
+  "reviewVersion": "phase23-source-review-v1",
+  "unreviewedAcceptedPathways": []
+}

@@ -1,0 +1,2146 @@
+{
+  "categorizedCounts": {
+    "ELIGIBILITY_DATA_PROBLEM": 1053,
+    "INCOMPLETE_INTERPRETATION": 9,
+    "MISSING_MECHANICAL_FACT": 37,
+    "MISSING_OBJECTIVE_INTERPRETATION": 6,
+    "UNRESOLVED_OWNERSHIP_OR_CONTROL": 29,
+    "UNVERIFIED_WARNING": 590
+  },
+  "commander": "Krenko, Mob Boss",
+  "counts": {
+    "A_POTENTIAL_MISS": 627,
+    "B_INCOMPLETE_ACCEPTED_ACTION": 9,
+    "E_ELIGIBILITY_DATA_GAP": 1053,
+    "G_UNRESOLVED_OBJECTIVE_CONSTRAINT": 35
+  },
+  "engineeringTaskCount": 16,
+  "groupedRootIssues": 249,
+  "limitations": [
+    "Warnings never admit cards into discovery. Potential misses use native structural clues and can include nonbattlefield/player-only operations.",
+    "Contradictions use strict action+scope+prerequisite equivalence; this deliberately misses some semantic equivalences.",
+    "Action completeness is separate from supported local pathway compatibility; no gameplay or exhaustiveness claim."
+  ],
+  "objective": "reanimate-own-creatures",
+  "priorityTasks": [
+    {
+      "categories": [
+        "ELIGIBILITY_DATA_PROBLEM"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 0,
+      "distinctCards": 700,
+      "family": "COLOR_IDENTITY:E_ELIGIBILITY_DATA_GAP",
+      "feasibleGenericWork": [
+        "NEEDS_AUTHORITATIVE_METADATA"
+      ],
+      "proposedNextStep": "Repair verified format/identity metadata without changing mechanical extraction",
+      "rawRecordCount": 700,
+      "representatives": [
+        {
+          "actionId": null,
+          "card": "A-The One Ring",
+          "face": "front",
+          "findingIndex": 636,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Aberrant Mind Sorcerer",
+          "face": "front",
+          "findingIndex": 637,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Abzan Monument",
+          "face": "front",
+          "findingIndex": 638,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Academy Manufactor",
+          "face": "front",
+          "findingIndex": 640,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Accomplished Automaton",
+          "face": "front",
+          "findingIndex": 641,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "f1b6517d570ff0f1dc0e"
+      ]
+    },
+    {
+      "categories": [
+        "ELIGIBILITY_DATA_PROBLEM"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 0,
+      "distinctCards": 353,
+      "family": "FORMAT_LEGALITY:E_ELIGIBILITY_DATA_GAP",
+      "feasibleGenericWork": [
+        "NEEDS_AUTHORITATIVE_METADATA"
+      ],
+      "proposedNextStep": "Repair verified format/identity metadata without changing mechanical extraction",
+      "rawRecordCount": 353,
+      "representatives": [
+        {
+          "actionId": null,
+          "card": "Academic Ascent",
+          "face": "front",
+          "findingIndex": 639,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Aerid Konstrari",
+          "face": "front",
+          "findingIndex": 643,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Afterthought Sentry",
+          "face": "front",
+          "findingIndex": 646,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Ajani Unrelenting",
+          "face": "front",
+          "findingIndex": 649,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        },
+        {
+          "actionId": null,
+          "card": "Ajani's Anguish",
+          "face": "front",
+          "findingIndex": 650,
+          "path": "eligibility",
+          "sourceReferences": [
+            "native:front.eligibility"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "f2ce4857ccc380664fa0"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 296,
+      "distinctCards": 284,
+      "family": "INTERPRETATION:SelectFromCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 326,
+      "representatives": [
+        {
+          "actionId": "Adventurer's Airship|front|script.triggeredAbilities[0]",
+          "card": "Adventurer's Airship",
+          "face": "front",
+          "findingIndex": 12,
+          "path": "script.triggeredAbilities[0].effect.effects[1].effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/AdventurersAirship.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1].effects[2]"
+          ]
+        },
+        {
+          "actionId": "Akki Ronin|front|script.triggeredAbilities[0]",
+          "card": "Akki Ronin",
+          "face": "front",
+          "findingIndex": 13,
+          "path": "script.triggeredAbilities[0].effect.then.gate.action.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/AkkiRonin.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.gate.action.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Argentum Masticore|front|script.triggeredAbilities[0]",
+          "card": "Argentum Masticore",
+          "face": "front",
+          "findingIndex": 26,
+          "path": "script.triggeredAbilities[0].effect.then.action.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/ArgentumMasticore.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.action.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.then.reflexiveEffect"
+          ]
+        },
+        {
+          "actionId": "Artist's Talent|front|script.triggeredAbilities[0]",
+          "card": "Artist's Talent",
+          "face": "front",
+          "findingIndex": 31,
+          "path": "script.triggeredAbilities[0].effect.then.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/ArtistsTalent.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Ashling, Flame Dancer|front|script.triggeredAbilities[0]",
+          "card": "Ashling, Flame Dancer",
+          "face": "front",
+          "findingIndex": 32,
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/AshlingFlameDancer.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "7eb9b0f968f1eb0f2de9",
+        "31ca6e366dc8cddbd666",
+        "5ceb0245cc7c32b53c1d",
+        "62d68d0489d98abcf63b",
+        "236ff4c13fbcafc7b450",
+        "4b7c811b02915003a9c2",
+        "83f6031a340689c9a39f",
+        "e4813f8d9e1024ac2eb6",
+        "5e431fdb0c0f76b16767",
+        "f780c91f0ccc15ad7144",
+        "b1f0ea7c87f7de9b5b34",
+        "d57d89e7b375298c32de",
+        "e1eee9dc6e6864ef6e05",
+        "575f05c0b4514bca4c40",
+        "01da2c6d67dd45f99686",
+        "04ea23b7921fa9ceb4fc",
+        "19679b4582e796aa5e30",
+        "5af3364c0051472b9139",
+        "849577bf007d716cec8e",
+        "f6c49bde44e9fcf570b6",
+        "0416b135774ca39804e1",
+        "16ef3cbd1c1f6705e4c8",
+        "2e98d3f6dfae50357aaa",
+        "40d9beb929b31d45f59d",
+        "463b53e0b412eccdfb26",
+        "4c9ed2fc2b2d2b504126",
+        "4d07745bce0a31132207",
+        "55c5660146f321d59353",
+        "6b287c6960cb5936100e",
+        "73d6dc297dc4076e8eb1",
+        "8960ad020cd2e1988fdc",
+        "b688ad9489d0087639c8",
+        "cff06576e6de8d9928a4",
+        "e248a11e19203d62a299",
+        "f3e86135d67797e19aea",
+        "f4645688dfe51ee96b59",
+        "9dcf272e4e2d5c67e41e",
+        "ac01e95a0345d685cb32",
+        "c6365e791a719709b3da",
+        "d4f1e450b070926f442f",
+        "01416d3d460c390ad22f",
+        "0bc428b817f61f543f59",
+        "0d7672f7540d5db11236",
+        "1692c15d34971d5f6519",
+        "173c76cda99916134940",
+        "25895db8ce98f57c8e3f",
+        "28ddc40eac3d9b3409f6",
+        "2cd39453a2b87ab2b56b",
+        "30b4de8eedd421d375a4",
+        "361bc1c5e151b14519bb",
+        "3abc87233539a03a0ea7",
+        "3d32633c36c465c873e3",
+        "4096af9f4ea530d56745",
+        "4169d21959899d126eae",
+        "49bb3f3d292c43e483ca",
+        "4c1d9906223a91ca7e07",
+        "51888155b4067172cc8f",
+        "51e56b6c4f77e64a382d",
+        "5335bcbfb3fc8ca71c39",
+        "537b7e02aeb126093755",
+        "5434ff087853a1bdb5cf",
+        "54ab6325647f04839976",
+        "56007e9b21f2784c2a61",
+        "5ad83118c86946dfab14",
+        "5b6d558a48313300ffcd",
+        "5c85a109eb31dee7755b",
+        "5e27b43bea76a8a0c43f",
+        "648ccc59d840cf6a3fba",
+        "65a298063045eae942d0",
+        "6683d1d791aaef52fe17",
+        "66a90515f123af7caa67",
+        "676706cbbe1edc00122b",
+        "6bef71d98f5e4c8248fd",
+        "721e7aba966ae79818c3",
+        "746c5a1b771bd2cf4ab0",
+        "7bcbd7f83cafb9e81051",
+        "80c82f22c23b8163f7b7",
+        "87f4d6f72bfdcb7de6d3",
+        "8a7c69852e30996c68df",
+        "8b1bc7986707ab8cc6d7",
+        "8dd842642a4ff9301618",
+        "8ef0669c5f99bfdd430c",
+        "91a1b14e5bc0739741b8",
+        "91cd283b2ad47ed4483d",
+        "94a40736a3c2440b4dba",
+        "95563f38644cb8db45ab",
+        "99c8f12a1b84ca106d96",
+        "9cdcbce2197b366fcb39",
+        "9e63f2937ce3bf909da8",
+        "a2342d29e98884b792ed",
+        "a54ccd275ea509bf8bdd",
+        "af75b3dbedeff4fd314f",
+        "b3117ee5b84b2eeae31e",
+        "b3bef7e01eeacf5b41f2",
+        "bceb11afc4ee2110c8ce",
+        "c5a165a0c51a4a1b1e8a",
+        "ca4123db1cc28e354bb6",
+        "ccbdcf6e88a63feb50d9",
+        "cdae1aa172213e148af9",
+        "d12eefa62d499065e7ea",
+        "d1d12b147097abc2475e",
+        "d2062685149a5b35dc3c",
+        "d266de1a2e1af3b75304",
+        "d4461ee4e2a801651da7",
+        "d823f752571f7b054199",
+        "dd2a30a6386bef9c5fdd",
+        "e0ea10d5df7bf85fafae",
+        "e5bdc7a407404c32808e",
+        "e8ee00e4e07561d2ee6a",
+        "f069ff30e93cd27cdf03",
+        "f3df1b6cc30cc593c466",
+        "f95e7349ef6d35851f8d"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 225,
+      "distinctCards": 208,
+      "family": "INTERPRETATION:GatherCards",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 237,
+      "representatives": [
+        {
+          "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[1]",
+          "card": "Abbot of Keral Keep",
+          "face": "front",
+          "findingIndex": 3,
+          "path": "script.triggeredAbilities[1].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ori/cards/AbbotOfKeralKeep.kt",
+            "native:front.script.triggeredAbilities[1].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Alania's Pathmaker|front|script.triggeredAbilities[0]",
+          "card": "Alania's Pathmaker",
+          "face": "front",
+          "findingIndex": 14,
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/AlaniasPathmaker.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Brazen Cannonade|front|script.triggeredAbilities[1]",
+          "card": "Brazen Cannonade",
+          "face": "front",
+          "findingIndex": 55,
+          "path": "script.triggeredAbilities[1].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j22/cards/BrazenCannonade.kt",
+            "native:front.script.triggeredAbilities[1].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Breeches, Eager Pillager|front|script.triggeredAbilities[0]",
+          "card": "Breeches, Eager Pillager",
+          "face": "front",
+          "findingIndex": 57,
+          "path": "script.triggeredAbilities[0].effect.modes[2].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/BreechesEagerPillager.kt",
+            "native:front.script.triggeredAbilities[0].effect.modes[2].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Charred Foyer // Warped Space|front.cardFaces[0]:Charred Foyer|script.triggeredAbilities[0]",
+          "card": "Charred Foyer // Warped Space",
+          "face": "front.cardFaces[0]:Charred Foyer",
+          "findingIndex": 102,
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/CharredFoyerWarpedSpace.kt",
+            "native:front.cardFaces[0]:Charred Foyer.script.triggeredAbilities[0].effect.effects[1]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "a31daab055a32ea27431",
+        "628929974f325e90a6c4",
+        "bc39fd47bfe39ba3d2fe",
+        "eff8bf188a3073cc46b0",
+        "fed23fae066c077c56ea",
+        "bd08cbf243b75da09427",
+        "189521217c7a036bdae9",
+        "6db1257464637963b74d",
+        "0eba4a9dce7bd932b403",
+        "30a2c33f500134c91cfd",
+        "60bb477441f13b992a12",
+        "8166354d25c5f649784d",
+        "8c7954265eee4116adea",
+        "a12efc352aed57f20350",
+        "46dbce2c7cb9f985e803",
+        "7a7474a0721fd16f6650",
+        "b0afcff4016167dd79db",
+        "dcf94edcadbd52e6dd3c",
+        "2ad10155cae305f8360e",
+        "3171464106ed226ebc40",
+        "3739e6ecab3697eaf333",
+        "37713d20716d2ef5abd1",
+        "3ae86e77aa53d5651f46",
+        "9059cf785c8ce1cbdeec",
+        "daba5fdc42c8bd5b4202",
+        "e0c0fe965c9076475c2b",
+        "eb15e6cfb094be6a5d08",
+        "64194167f279483606a9",
+        "df9fe5aa8a5326a710d0",
+        "04fe167e406b5933b712",
+        "0f1f99dab43698dd59e5",
+        "16e8a0988fee6e127912",
+        "1eabaff04218dadc64fd",
+        "1f71d8012a03adb0dff5",
+        "2268ed23079f942ee448",
+        "22f7a5085c1756049d5a",
+        "30ad7e44476881747116",
+        "3127608cb96f78c18120",
+        "3ccf58a24ab2613654cc",
+        "3e1ec85d8cea5e5938b8",
+        "42fe10fd94284527b9e0",
+        "43f8be81b2f24c2225d0",
+        "4ab688eb1904c58841e4",
+        "51c2a2e77b1c1aea0090",
+        "53509282abd4cc10958a",
+        "5a3208f180fb141cb3ad",
+        "5e274e87b080bd34acad",
+        "69c1c708f0c6c177dee9",
+        "6d789c107265765c4bbd",
+        "725aeaee285e69bbaf01",
+        "7d22c7d4018dc129891b",
+        "8013b9a0b534c5032b89",
+        "90059bc6b02244e1bf75",
+        "92e51615f7bd547e5fe5",
+        "934f23fd36dcde59624e",
+        "9690789a895d2c7521df",
+        "96b0d91ead705f641e00",
+        "973747dd7c1a52828ade",
+        "9ad76ea3aeb0c7275914",
+        "a1a355e48b95797220f9",
+        "aa770323a5d4f33d06ed",
+        "b1f8a7a2d54c67a22ea5",
+        "ba8fa9ed909a79567b0f",
+        "c1d3a30148723f07ab00",
+        "c1f9171bac53e9c7a948",
+        "c6fbcd34d2a0982a9202",
+        "d352ce1f479b6fd674d8",
+        "d85020c6062a6e9bc277",
+        "d961e1e17cffc2ca6024",
+        "dae876a27df8e43f5ae8",
+        "deffcd4594ac16aaf7ff",
+        "e09f531673436c27f3ab",
+        "ee530b5f6b80e7deeed7",
+        "ef71a226e7068c2d68de",
+        "f0728912e2b26f26a29c",
+        "f317913279137a9665f8",
+        "f50e113b252d8988c51d",
+        "fb050b94d124c37cb45c",
+        "fb9bf4329ee22923827f",
+        "fb9fcfda10e950962eea"
+      ]
+    },
+    {
+      "categories": [
+        "UNRESOLVED_OWNERSHIP_OR_CONTROL"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 25,
+      "distinctCards": 23,
+      "family": "OWNERSHIP_OR_CONTROL:MoveCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 27,
+      "representatives": [
+        {
+          "actionId": "Getaway Barrel|front|script.triggeredAbilities[0]",
+          "card": "Getaway Barrel",
+          "face": "front",
+          "findingIndex": 1698,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/GetawayBarrel.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Last Light of Durin's Day|front|script.triggeredAbilities[0]",
+          "card": "Last Light of Durin's Day",
+          "face": "front",
+          "findingIndex": 1706,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[1].effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/LastLightOfDurinsDay.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1].then.effects[1].effects[2]"
+          ]
+        },
+        {
+          "actionId": "Muxus, Goblin Grandee|front|script.triggeredAbilities[0]",
+          "card": "Muxus, Goblin Grandee",
+          "face": "front",
+          "findingIndex": 1709,
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jmp/cards/MuxusGoblinGrandee.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "native:front.script.triggeredAbilities[0].effect.effects[4]"
+          ]
+        },
+        {
+          "actionId": "Skirk Drill Sergeant|front|script.triggeredAbilities[0]",
+          "card": "Skirk Drill Sergeant",
+          "face": "front",
+          "findingIndex": 1716,
+          "path": "script.triggeredAbilities[0].effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lgn/cards/SkirkDrillSergeant.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Skirk Drill Sergeant|front|script.triggeredAbilities[1]",
+          "card": "Skirk Drill Sergeant",
+          "face": "front",
+          "findingIndex": 1717,
+          "path": "script.triggeredAbilities[1].effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lgn/cards/SkirkDrillSergeant.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[3]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "7185dd8184f2d8609819",
+        "ef78d5a7fbbc50a1a48f",
+        "4cfd04f152108d162519",
+        "5c6fa17a704825bc9458",
+        "a4ff919acc8b0e23b6cd",
+        "a56208567e7f8fc8e4f5",
+        "055cf145d6f017d7c567",
+        "2a62a160f9cc7b6ad278",
+        "472a5cb908e249b15a7e",
+        "4c0d09691425cb7599d9",
+        "596c9664d5b26a120fe1",
+        "a55a8086e756a0e8aef7"
+      ]
+    },
+    {
+      "categories": [
+        "MISSING_MECHANICAL_FACT"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 21,
+      "distinctCards": 21,
+      "family": "EXTRACTION:MoveCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 27,
+      "representatives": [
+        {
+          "actionId": "Hangar Scrounger|front|script.triggeredAbilities[0]",
+          "card": "Hangar Scrounger",
+          "face": "front",
+          "findingIndex": 255,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.ability.effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/HangarScrounger.kt",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]"
+          ]
+        },
+        {
+          "actionId": "K'un-Lun Warrior|front|script.triggeredAbilities[0]",
+          "card": "K'un-Lun Warrior",
+          "face": "front",
+          "findingIndex": 313,
+          "path": "script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Mechanical Mobster|front|script.triggeredAbilities[0]",
+          "card": "Mechanical Mobster",
+          "face": "front",
+          "findingIndex": 359,
+          "path": "script.triggeredAbilities[0].effect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/MechanicalMobster.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Reckless Detective|front|script.triggeredAbilities[0]",
+          "card": "Reckless Detective",
+          "face": "front",
+          "findingIndex": 427,
+          "path": "script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Retriever Phoenix|front|script.triggeredAbilities[0]",
+          "card": "Retriever Phoenix",
+          "face": "front",
+          "findingIndex": 436,
+          "path": "script.triggeredAbilities[0].effect.body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.body.effects[2]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "24df20684da91c7d6bbe",
+        "b9791a6792dc3b9b1b12",
+        "1ff98d5d2bd3d2f178a0",
+        "d265ad6de449f954070c",
+        "237cf2aa0cbfa7599bc3",
+        "262df889b8d6144c6932",
+        "4129a52beec5e71e2210",
+        "73c38eb4dd88448f6c61",
+        "75264b944f77d50586de",
+        "812a0ab3bf043a64b749",
+        "89a05d970f4bd79282b1",
+        "eb2b40a4d68f74873232",
+        "f36d3943af5a040394da"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 17,
+      "distinctCards": 17,
+      "family": "TRAVERSE_PAY_OR_SUFFER_BRANCHES",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 17,
+      "representatives": [
+        {
+          "actionId": "Bag of Holding|front|script.activatedAbilities[0]",
+          "card": "Bag of Holding",
+          "face": "front",
+          "findingIndex": 40,
+          "path": "script.activatedAbilities[0].effect.effects[1].effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m20/cards/BagOfHolding.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[1].effects[2]",
+            "native:front.script.activatedAbilities[1].effect.effects[1]",
+            "native:front.script.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Chandra, Flameshaper|front|script.activatedAbilities[0]",
+          "card": "Chandra, Flameshaper",
+          "face": "front",
+          "findingIndex": 88,
+          "path": "script.activatedAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fdn/cards/ChandraFlameshaper.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Chandra, Spark Hunter|front|script.activatedAbilities[0]",
+          "card": "Chandra, Spark Hunter",
+          "face": "front",
+          "findingIndex": 91,
+          "path": "script.activatedAbilities[0].effect.then.choices[1].effect.effects[1]",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect.then.choices[1].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Collector's Vault|front|script.activatedAbilities[0]",
+          "card": "Collector's Vault",
+          "face": "front",
+          "findingIndex": 107,
+          "path": "script.activatedAbilities[0].effect.effects[1].effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/CollectorsVault.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[1].effects[2]"
+          ]
+        },
+        {
+          "actionId": "Emmessi Tome|front|script.activatedAbilities[0]",
+          "card": "Emmessi Tome",
+          "face": "front",
+          "findingIndex": 153,
+          "path": "script.activatedAbilities[0].effect.effects[1].effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/EmmessiTome.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[1].effects[2]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "1ea3a2868a0880e46c3d"
+      ]
+    },
+    {
+      "categories": [
+        "UNVERIFIED_WARNING"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 10,
+      "distinctCards": 10,
+      "family": "INTERPRETATION:ConditionalOnCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 10,
+      "representatives": [
+        {
+          "actionId": "Academic Dispute|front|script.spell",
+          "card": "Academic Dispute",
+          "face": "front",
+          "findingIndex": 7,
+          "path": "script.spellEffect.effects[2].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Enthusiastic Study|front|script.spell",
+          "card": "Enthusiastic Study",
+          "face": "front",
+          "findingIndex": 160,
+          "path": "script.spellEffect.effects[2].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "First Day of Class|front|script.spell",
+          "card": "First Day of Class",
+          "face": "front",
+          "findingIndex": 199,
+          "path": "script.spellEffect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Igneous Inspiration|front|script.spell",
+          "card": "Igneous Inspiration",
+          "face": "front",
+          "findingIndex": 277,
+          "path": "script.spellEffect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Mechanical Mobster|front|script.triggeredAbilities[0]",
+          "card": "Mechanical Mobster",
+          "face": "front",
+          "findingIndex": 360,
+          "path": "script.triggeredAbilities[0].effect.effects[1].body.effects[4]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/MechanicalMobster.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "4bfc2629fcaab8b9434b",
+        "04f9f259fcdc65504cac",
+        "4d968e87c5fb25360d44",
+        "4e3491a66e6876db12c8",
+        "5e2043cd04a51fec092a",
+        "65fb2dd7f93f81376a7f",
+        "f3fa387ae7c199f8f6b0"
+      ]
+    },
+    {
+      "categories": [
+        "MISSING_MECHANICAL_FACT"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 8,
+      "distinctCards": 8,
+      "family": "EXTRACTION:MoveToZone",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 10,
+      "representatives": [
+        {
+          "actionId": "Scoria Wurm|front|script.triggeredAbilities[0]",
+          "card": "Scoria Wurm",
+          "face": "front",
+          "findingIndex": 461,
+          "path": "script.triggeredAbilities[0].effect.lostEffect",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.lostEffect"
+          ]
+        },
+        {
+          "actionId": "The Cave of Two Lovers|front|script.sagaChapters[2]",
+          "card": "The Cave of Two Lovers",
+          "face": "front",
+          "findingIndex": 534,
+          "path": "script.sagaChapters[2].effect.effects[3].ability.effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TheCaveOfTwoLovers.kt",
+            "native:front.script.sagaChapters[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Combustion Man|front|script.triggeredAbilities[0]",
+          "card": "Combustion Man",
+          "face": "front",
+          "findingIndex": 108,
+          "path": "script.triggeredAbilities[0].effect.choices[1].effect",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.choices[1].effect"
+          ]
+        },
+        {
+          "actionId": "Retriever Phoenix|front|script",
+          "card": "Retriever Phoenix",
+          "face": "front",
+          "findingIndex": 433,
+          "path": "script.replacementEffects[0].replacementEffect",
+          "sourceReferences": [
+            "native:front.script.replacementEffects[0].replacementEffect"
+          ]
+        },
+        {
+          "actionId": "Plasma Caster|front|script.activatedAbilities[0]",
+          "card": "Plasma Caster",
+          "face": "front",
+          "findingIndex": 405,
+          "path": "script.activatedAbilities[0].effect.wonEffect",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect.wonEffect"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "0d800b7d37fdfcc91361",
+        "2bcf25ee49cad5e8d834",
+        "7936c7ba6da8a102eab5",
+        "7dcc7433cf42d3a5f466",
+        "8f00781ea17b49a36606",
+        "a0bd89a3c9ac1cd9807b",
+        "b3c8c7164170c60ef81a",
+        "c6eecc12d05a5205d5c7",
+        "d9d008e5ca9bc9318e73",
+        "ee6a061fa440e2871329"
+      ]
+    },
+    {
+      "categories": [
+        "INCOMPLETE_INTERPRETATION"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 6,
+      "distinctCards": 6,
+      "family": "INTERPRETATION:MoveTrackedBattlefieldObject",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 6,
+      "representatives": [
+        {
+          "actionId": "Artificer's Dragon|front|script.activatedAbilities[1]",
+          "card": "Artificer's Dragon",
+          "face": "front",
+          "findingIndex": 627,
+          "path": "script.activatedAbilities[1].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/ArtificersDragon.kt",
+            "native:front.script.activatedAbilities[1].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Cityscape Leveler|front|script.activatedAbilities[0]",
+          "card": "Cityscape Leveler",
+          "face": "front",
+          "findingIndex": 628,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/CityscapeLeveler.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]",
+            "native:front.script.triggeredAbilities[0].effect.body.effects[0]",
+            "native:front.script.triggeredAbilities[1].effect.body.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Heavyweight Demolisher|front|script.activatedAbilities[0]",
+          "card": "Heavyweight Demolisher",
+          "face": "front",
+          "findingIndex": 629,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/HeavyweightDemolisher.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Mishra's Juggernaut|front|script.activatedAbilities[0]",
+          "card": "Mishra's Juggernaut",
+          "face": "front",
+          "findingIndex": 631,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/MishrasJuggernaut.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Phyrexian Dragon Engine|front|script.activatedAbilities[0]",
+          "card": "Phyrexian Dragon Engine",
+          "face": "front",
+          "findingIndex": 632,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/PhyrexianDragonEngine.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]",
+            "native:front.script.triggeredAbilities[0].effect.then.gate.action.effects[1]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "e49b1bf80159bfbec4b3"
+      ]
+    },
+    {
+      "categories": [
+        "MISSING_OBJECTIVE_INTERPRETATION"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "family": "OBJECTIVE_COMPATIBILITY:MoveCollection",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 3,
+      "representatives": [
+        {
+          "actionId": "Kami of Industry|front|script.triggeredAbilities[0]",
+          "card": "Kami of Industry",
+          "face": "front",
+          "findingIndex": 1705,
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/KamiOfIndustry.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Push the Limit|front|script.spell",
+          "card": "Push the Limit",
+          "face": "front",
+          "findingIndex": 1712,
+          "path": "script.spellEffect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/PushTheLimit.kt",
+            "native:front.script.spellEffect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Random Encounter|front|script.spell",
+          "card": "Random Encounter",
+          "face": "front",
+          "findingIndex": 1713,
+          "path": "script.spellEffect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/RandomEncounter.kt",
+            "native:front.script.spellEffect.effects[2]",
+            "native:front.script.spellEffect.effects[3]",
+            "native:front.script.spellEffect.effects[4].body.effects[1].effect"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "7ae64ddc7ac30e811796",
+        "acde39388d614f56c278",
+        "b7f04eadb156c6bceaa6"
+      ]
+    },
+    {
+      "categories": [
+        "MISSING_OBJECTIVE_INTERPRETATION"
+      ],
+      "confirmedBenchmarkCases": [],
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "family": "OBJECTIVE_COMPATIBILITY:MoveToZone",
+      "feasibleGenericWork": [
+        "REQUIRES_SOURCE_REVIEW"
+      ],
+      "proposedNextStep": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "rawRecordCount": 3,
+      "representatives": [
+        {
+          "actionId": "Molten Gatekeeper|front|script.activatedAbilities[0]",
+          "card": "Molten Gatekeeper",
+          "face": "front",
+          "findingIndex": 1708,
+          "path": "script.activatedAbilities[0].effect.then.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/MoltenGatekeeper.kt",
+            "native:front.script.activatedAbilities[0].effect.then.effects[0]",
+            "native:front.script.activatedAbilities[0].effect.then.effects[3].effect"
+          ]
+        },
+        {
+          "actionId": "Ashcloud Phoenix|front|script.triggeredAbilities[0]",
+          "card": "Ashcloud Phoenix",
+          "face": "front",
+          "findingIndex": 1689,
+          "path": "script.triggeredAbilities[0].effect",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/AshcloudPhoenix.kt",
+            "native:front.script.triggeredAbilities[0].effect"
+          ]
+        },
+        {
+          "actionId": "Scrap Welder|front|script.activatedAbilities[0]",
+          "card": "Scrap Welder",
+          "face": "front",
+          "findingIndex": 1714,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/ScrapWelder.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]"
+          ]
+        }
+      ],
+      "rootFingerprints": [
+        "2ccf6d3d4c38ce0f8a36",
+        "324d55be0bcfec860ddf",
+        "7426936cdfdc250f29c2"
+      ]
+    }
+  ],
+  "representativeFindings": [
+    {
+      "actionId": "Aang's Journey|front|script.spell",
+      "card": "Aang's Journey",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "from": "searchable",
+        "prompt": "Search your library for a basic land card to put into your hand",
+        "selectedLabel": "Put into your hand",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseUpTo"
+        },
+        "storeSelected": "found",
+        "type": "SelectFromCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[0].otherwise.effects[1]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Aang's Journey|front|script.spell",
+      "card": "Aang's Journey",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "from": "gathered0",
+        "prompt": "Search your library for a basic land card",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseUpTo"
+        },
+        "storeSelected": "selected1",
+        "type": "SelectFromCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[0].then.effects[1]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Aang's Journey|front|script.spell",
+      "card": "Aang's Journey",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "from": "gathered2",
+        "prompt": "Search your library for a Shrine card",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseUpTo"
+        },
+        "storeSelected": "selected3",
+        "type": "SelectFromCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[0].then.effects[3]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[1]",
+      "card": "Abbot of Keral Keep",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "source": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "TopOfLibrary"
+        },
+        "storeAs": "impulseExiled",
+        "type": "GatherCards"
+      },
+      "face": "front",
+      "path": "script.triggeredAbilities[1].effect.effects[0]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Academic Dispute|front|script.spell",
+      "card": "Academic Dispute",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "source": {
+          "type": "FromZone",
+          "zone": "Hand"
+        },
+        "storeAs": "learn_hand",
+        "type": "GatherCards"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[2].body.effects[0]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    },
+    {
+      "actionId": "Academic Dispute|front|script.spell",
+      "card": "Academic Dispute",
+      "check": "A_POTENTIAL_MISS",
+      "evidence": {
+        "from": "learn_hand",
+        "prompt": "Learn \u2014 you may discard a card to draw a card",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseUpTo"
+        },
+        "storeSelected": "learn_discarded",
+        "type": "SelectFromCollection"
+      },
+      "face": "front",
+      "path": "script.spellEffect.effects[2].body.effects[1]",
+      "reason": "Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",
+      "severity": "REVIEW"
+    }
+  ],
+  "representativeRootIssues": [
+    {
+      "category": "INCOMPLETE_INTERPRETATION",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 6,
+      "distinctCards": 6,
+      "evidence": {
+        "acceptedActions": 6,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "e49b1bf80159bfbec4b3",
+      "nativeType": "MoveTrackedBattlefieldObject",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Accepted local pathway has unresolved enclosing mechanics; no whole-action verification claimed",
+      "recordCount": 6,
+      "representatives": [
+        {
+          "actionId": "Artificer's Dragon|front|script.activatedAbilities[1]",
+          "card": "Artificer's Dragon",
+          "face": "front",
+          "findingIndex": 627,
+          "path": "script.activatedAbilities[1].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/ArtificersDragon.kt",
+            "native:front.script.activatedAbilities[1].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Cityscape Leveler|front|script.activatedAbilities[0]",
+          "card": "Cityscape Leveler",
+          "face": "front",
+          "findingIndex": 628,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/CityscapeLeveler.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]",
+            "native:front.script.triggeredAbilities[0].effect.body.effects[0]",
+            "native:front.script.triggeredAbilities[1].effect.body.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Heavyweight Demolisher|front|script.activatedAbilities[0]",
+          "card": "Heavyweight Demolisher",
+          "face": "front",
+          "findingIndex": 629,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/HeavyweightDemolisher.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Mishra's Juggernaut|front|script.activatedAbilities[0]",
+          "card": "Mishra's Juggernaut",
+          "face": "front",
+          "findingIndex": 631,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/MishrasJuggernaut.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Phyrexian Dragon Engine|front|script.activatedAbilities[0]",
+          "card": "Phyrexian Dragon Engine",
+          "face": "front",
+          "findingIndex": 632,
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/PhyrexianDragonEngine.kt",
+            "native:front.script.activatedAbilities[0].effect.effects[0]",
+            "native:front.script.triggeredAbilities[0].effect.then.gate.action.effects[1]"
+          ]
+        }
+      ],
+      "stage": "INTERPRETATION",
+      "structuralPattern": {
+        "destination": "Exile",
+        "target": {
+          "type": "Self"
+        },
+        "type": "MoveTrackedBattlefieldObject"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "MISSING_MECHANICAL_FACT",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 5,
+      "distinctCards": 5,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "24df20684da91c7d6bbe",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Movement-like native node was not visited into a local movement fact; suspected gap, not confirmed satisfiable capability",
+      "recordCount": 5,
+      "representatives": [
+        {
+          "actionId": "Hangar Scrounger|front|script.triggeredAbilities[0]",
+          "card": "Hangar Scrounger",
+          "face": "front",
+          "findingIndex": 255,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.ability.effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/HangarScrounger.kt",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]"
+          ]
+        },
+        {
+          "actionId": "K'un-Lun Warrior|front|script.triggeredAbilities[0]",
+          "card": "K'un-Lun Warrior",
+          "face": "front",
+          "findingIndex": 313,
+          "path": "script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Mechanical Mobster|front|script.triggeredAbilities[0]",
+          "card": "Mechanical Mobster",
+          "face": "front",
+          "findingIndex": 359,
+          "path": "script.triggeredAbilities[0].effect.effects[1].body.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/MechanicalMobster.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[0]"
+          ]
+        },
+        {
+          "actionId": "Reckless Detective|front|script.triggeredAbilities[0]",
+          "card": "Reckless Detective",
+          "face": "front",
+          "findingIndex": 427,
+          "path": "script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.choices[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Retriever Phoenix|front|script.triggeredAbilities[0]",
+          "card": "Retriever Phoenix",
+          "face": "front",
+          "findingIndex": 436,
+          "path": "script.triggeredAbilities[0].effect.body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.body.effects[2]"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "from": "symbol0",
+        "moveType": "Discard",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "MISSING_MECHANICAL_FACT",
+      "context": "script.spell",
+      "distinctActions": 5,
+      "distinctCards": 5,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "b9791a6792dc3b9b1b12",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Movement-like native node was not visited into a local movement fact; suspected gap, not confirmed satisfiable capability",
+      "recordCount": 5,
+      "representatives": [
+        {
+          "actionId": "Academic Dispute|front|script.spell",
+          "card": "Academic Dispute",
+          "face": "front",
+          "findingIndex": 6,
+          "path": "script.spellEffect.effects[2].body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Enthusiastic Study|front|script.spell",
+          "card": "Enthusiastic Study",
+          "face": "front",
+          "findingIndex": 159,
+          "path": "script.spellEffect.effects[2].body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[2]"
+          ]
+        },
+        {
+          "actionId": "First Day of Class|front|script.spell",
+          "card": "First Day of Class",
+          "face": "front",
+          "findingIndex": 198,
+          "path": "script.spellEffect.effects[1].body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Igneous Inspiration|front|script.spell",
+          "card": "Igneous Inspiration",
+          "face": "front",
+          "findingIndex": 276,
+          "path": "script.spellEffect.effects[1].body.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Vision of Love|front|script.spell",
+          "card": "Vision of Love",
+          "face": "front",
+          "findingIndex": 597,
+          "path": "script.spellEffect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.then.choices[1].effect.effects[2]"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "from": "symbol0",
+        "moveType": "Discard",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 5,
+      "distinctCards": 4,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "7185dd8184f2d8609819",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 5,
+      "representatives": [
+        {
+          "actionId": "Getaway Barrel|front|script.triggeredAbilities[0]",
+          "card": "Getaway Barrel",
+          "face": "front",
+          "findingIndex": 1698,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/GetawayBarrel.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Last Light of Durin's Day|front|script.triggeredAbilities[0]",
+          "card": "Last Light of Durin's Day",
+          "face": "front",
+          "findingIndex": 1706,
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[1].effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/LastLightOfDurinsDay.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1].then.effects[1].effects[2]"
+          ]
+        },
+        {
+          "actionId": "Muxus, Goblin Grandee|front|script.triggeredAbilities[0]",
+          "card": "Muxus, Goblin Grandee",
+          "face": "front",
+          "findingIndex": 1709,
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jmp/cards/MuxusGoblinGrandee.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "native:front.script.triggeredAbilities[0].effect.effects[4]"
+          ]
+        },
+        {
+          "actionId": "Skirk Drill Sergeant|front|script.triggeredAbilities[0]",
+          "card": "Skirk Drill Sergeant",
+          "face": "front",
+          "findingIndex": 1716,
+          "path": "script.triggeredAbilities[0].effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lgn/cards/SkirkDrillSergeant.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Skirk Drill Sergeant|front|script.triggeredAbilities[1]",
+          "card": "Skirk Drill Sergeant",
+          "face": "front",
+          "findingIndex": 1717,
+          "path": "script.triggeredAbilities[1].effect.then.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lgn/cards/SkirkDrillSergeant.kt",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.then.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[3]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "from": "symbol0",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "MISSING_MECHANICAL_FACT",
+      "context": "script.spell",
+      "distinctActions": 4,
+      "distinctCards": 4,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "1ff98d5d2bd3d2f178a0",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Movement-like native node was not visited into a local movement fact; suspected gap, not confirmed satisfiable capability",
+      "recordCount": 4,
+      "representatives": [
+        {
+          "actionId": "Academic Dispute|front|script.spell",
+          "card": "Academic Dispute",
+          "face": "front",
+          "findingIndex": 10,
+          "path": "script.spellEffect.effects[2].body.effects[3].ifEmpty.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3].ifEmpty.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Enthusiastic Study|front|script.spell",
+          "card": "Enthusiastic Study",
+          "face": "front",
+          "findingIndex": 163,
+          "path": "script.spellEffect.effects[2].body.effects[3].ifEmpty.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[2].body.effects[3].ifEmpty.effects[2]"
+          ]
+        },
+        {
+          "actionId": "First Day of Class|front|script.spell",
+          "card": "First Day of Class",
+          "face": "front",
+          "findingIndex": 202,
+          "path": "script.spellEffect.effects[1].body.effects[3].ifEmpty.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3].ifEmpty.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Igneous Inspiration|front|script.spell",
+          "card": "Igneous Inspiration",
+          "face": "front",
+          "findingIndex": 280,
+          "path": "script.spellEffect.effects[1].body.effects[3].ifEmpty.effects[2]",
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1].body.effects[3].ifEmpty.effects[2]"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Hand"
+        },
+        "from": "symbol0",
+        "revealed": true,
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 4,
+      "distinctCards": 4,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "ef78d5a7fbbc50a1a48f",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 4,
+      "representatives": [
+        {
+          "actionId": "Changeling Berserker|front|script.triggeredAbilities[1]",
+          "card": "Changeling Berserker",
+          "face": "front",
+          "findingIndex": 1690,
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ChangelingBerserker.kt",
+            "native:front.script.triggeredAbilities[0].effect.gate.action.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Colfenor's Urn|front|script.triggeredAbilities[1]",
+          "card": "Colfenor's Urn",
+          "face": "front",
+          "findingIndex": 1693,
+          "path": "script.triggeredAbilities[1].effect.then.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ColfenorsUrn.kt",
+            "native:front.script.triggeredAbilities[0].effect.then",
+            "native:front.script.triggeredAbilities[1].effect.then.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Helvault|front|script.triggeredAbilities[0]",
+          "card": "Helvault",
+          "face": "front",
+          "findingIndex": 1702,
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/Helvault.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Nova Chaser|front|script.triggeredAbilities[1]",
+          "card": "Nova Chaser",
+          "face": "front",
+          "findingIndex": 1710,
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/NovaChaser.kt",
+            "native:front.script.triggeredAbilities[0].effect.gate.action.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.effects[1]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "from": "symbol0",
+        "type": "MoveCollection",
+        "underOwnersControl": true
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "4cfd04f152108d162519",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 3,
+      "representatives": [
+        {
+          "actionId": "Explorer's Scope|front|script.triggeredAbilities[0]",
+          "card": "Explorer's Scope",
+          "face": "front",
+          "findingIndex": 1696,
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/ExplorersScope.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Mobile Homestead|front|script.triggeredAbilities[0]",
+          "card": "Mobile Homestead",
+          "face": "front",
+          "findingIndex": 1707,
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/MobileHomestead.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "The Regalia|front|script.triggeredAbilities[0]",
+          "card": "The Regalia",
+          "face": "front",
+          "findingIndex": 1719,
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/TheRegalia.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "native:front.script.triggeredAbilities[0].effect.effects[4]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "placement": "Tapped",
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "from": "symbol0",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.spell",
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "5c6fa17a704825bc9458",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 4,
+      "representatives": [
+        {
+          "actionId": "Chaos Warp|front|script.spell",
+          "card": "Chaos Warp",
+          "face": "front",
+          "findingIndex": 1691,
+          "path": "script.spellEffect.effects[3]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/ChaosWarp.kt",
+            "native:front.script.spellEffect.effects[0]",
+            "native:front.script.spellEffect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Over the Top|front|script.spell",
+          "card": "Over the Top",
+          "face": "front",
+          "findingIndex": 1711,
+          "path": "script.spellEffect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/OverTheTop.kt",
+            "native:front.script.spellEffect.effects[1]",
+            "native:front.script.spellEffect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Warp World|front|script.spell",
+          "card": "Warp World",
+          "face": "front",
+          "findingIndex": 1722,
+          "path": "script.spellEffect.effects[1]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/WarpWorld.kt",
+            "native:front.script.spellEffect.effects[0].body.effects[2]",
+            "native:front.script.spellEffect.effects[0].body.effects[3]",
+            "native:front.script.spellEffect.effects[0].body.effects[8]",
+            "native:front.script.spellEffect.effects[1]",
+            "native:front.script.spellEffect.effects[2]",
+            "native:front.script.spellEffect.effects[4]"
+          ]
+        },
+        {
+          "actionId": "Warp World|front|script.spell",
+          "card": "Warp World",
+          "face": "front",
+          "findingIndex": 1723,
+          "path": "script.spellEffect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/WarpWorld.kt",
+            "native:front.script.spellEffect.effects[0].body.effects[2]",
+            "native:front.script.spellEffect.effects[0].body.effects[3]",
+            "native:front.script.spellEffect.effects[0].body.effects[8]",
+            "native:front.script.spellEffect.effects[1]",
+            "native:front.script.spellEffect.effects[2]",
+            "native:front.script.spellEffect.effects[4]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "from": "symbol0",
+        "type": "MoveCollection",
+        "underOwnersControl": true
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "a4ff919acc8b0e23b6cd",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 3,
+      "representatives": [
+        {
+          "actionId": "Conductive Machete|front|script.triggeredAbilities[0]",
+          "card": "Conductive Machete",
+          "face": "front",
+          "findingIndex": 1694,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/ConductiveMachete.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Dissection Tools|front|script.triggeredAbilities[0]",
+          "card": "Dissection Tools",
+          "face": "front",
+          "findingIndex": 1695,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/DissectionTools.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Ticket Booth // Tunnel of Hate|front.cardFaces[0]:Ticket Booth|script.triggeredAbilities[0]",
+          "card": "Ticket Booth // Tunnel of Hate",
+          "face": "front.cardFaces[0]:Ticket Booth",
+          "findingIndex": 1720,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/TicketBoothTunnelOfHate.kt",
+            "native:front.cardFaces[0]:Ticket Booth.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.cardFaces[0]:Ticket Booth.script.triggeredAbilities[0].effect.effects[3]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "faceDown": "MANIFEST",
+        "from": "symbol0",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "MISSING_MECHANICAL_FACT",
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 3,
+      "distinctCards": 3,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "d265ad6de449f954070c",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Movement-like native node was not visited into a local movement fact; suspected gap, not confirmed satisfiable capability",
+      "recordCount": 3,
+      "representatives": [
+        {
+          "actionId": "Chandra, Spark Hunter|front|script.activatedAbilities[0]",
+          "card": "Chandra, Spark Hunter",
+          "face": "front",
+          "findingIndex": 92,
+          "path": "script.activatedAbilities[0].effect.then.choices[1].effect.effects[2]",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect.then.choices[1].effect.effects[2]"
+          ]
+        },
+        {
+          "actionId": "Sarkhan, the Dragonspeaker|front|script.activatedAbilities[2]",
+          "card": "Sarkhan, the Dragonspeaker",
+          "face": "front",
+          "findingIndex": 458,
+          "path": "script.activatedAbilities[2].effect.effects[1].ability.effect.effects[1]",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[2].effect.effects[1].ability.effect.effects[1]"
+          ]
+        },
+        {
+          "actionId": "Villainous Hideout|front|script.activatedAbilities[2]",
+          "card": "Villainous Hideout",
+          "face": "front",
+          "findingIndex": 592,
+          "path": "script.activatedAbilities[2].effect.body.effects[3]",
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[2].effect.body.effects[3]"
+          ]
+        }
+      ],
+      "stage": "EXTRACTION",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "from": "symbol0",
+        "moveType": "Discard",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 2,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "a56208567e7f8fc8e4f5",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 2,
+      "representatives": [
+        {
+          "actionId": "Gilgamesh, Master-at-Arms|front|script.triggeredAbilities[0]",
+          "card": "Gilgamesh, Master-at-Arms",
+          "face": "front",
+          "findingIndex": 1700,
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/GilgameshMasterAtArms.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.effects[3]"
+          ]
+        },
+        {
+          "actionId": "Gilgamesh, Master-at-Arms|front|script.triggeredAbilities[1]",
+          "card": "Gilgamesh, Master-at-Arms",
+          "face": "front",
+          "findingIndex": 1701,
+          "path": "script.triggeredAbilities[1].effect.effects[2]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/GilgameshMasterAtArms.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[2]",
+            "native:front.script.triggeredAbilities[0].effect.effects[3]",
+            "native:front.script.triggeredAbilities[1].effect.effects[2]",
+            "native:front.script.triggeredAbilities[1].effect.effects[3]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "from": "symbol0",
+        "storeMovedAs": "moved2",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    },
+    {
+      "category": "UNRESOLVED_OWNERSHIP_OR_CONTROL",
+      "context": "script.spell",
+      "distinctActions": 1,
+      "distinctCards": 1,
+      "evidence": {
+        "acceptedActions": 0,
+        "benchmarkCases": [],
+        "confirmedBenchmarkCases": [],
+        "genericInterpretationFeasibility": "REQUIRES_SOURCE_REVIEW",
+        "mechanicallyCompatibleRejectedActions": 0,
+        "rankingRule": "Confirmed benchmark cases first, then category, distinct cards, distinct actions, stable fingerprint; no aggregate score",
+        "relevantNativeContext": true
+      },
+      "fingerprint": "055cf145d6f017d7c567",
+      "nativeType": "MoveCollection",
+      "priorityBand": "REVIEW_RELEVANT",
+      "proposedFix": "Review representative native nodes; implement one reusable interpreter only after positive/negative validation",
+      "reason": "Native movement is recognized but required player/owner binding remains unresolved",
+      "recordCount": 1,
+      "representatives": [
+        {
+          "actionId": "Hew the Entwood|front|script.spell",
+          "card": "Hew the Entwood",
+          "face": "front",
+          "findingIndex": 1703,
+          "path": "script.spellEffect.effects[4]",
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/HewTheEntwood.kt",
+            "native:front.script.spellEffect.effects[4]",
+            "native:front.script.spellEffect.effects[5]",
+            "native:front.script.spellEffect.effects[6]"
+          ]
+        }
+      ],
+      "stage": "OWNERSHIP_OR_CONTROL",
+      "structuralPattern": {
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsNonland"
+            }
+          ]
+        },
+        "from": "symbol0",
+        "type": "MoveCollection"
+      },
+      "uncertainty": "Relevance is diagnostic, not an MTG proof or confirmed corpus false-negative count; individual native records remain linked"
+    }
+  ]
+}

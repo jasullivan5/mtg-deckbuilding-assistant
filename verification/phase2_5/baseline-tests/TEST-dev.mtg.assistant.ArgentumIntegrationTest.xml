@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.ArgentumIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:20:17.269Z" hostname="5fc36fab9608" time="29.105">
+  <properties/>
+  <testcase name="real authored catalog is discovered and registered" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="28.343"/>
+  <testcase name="retrieval exposes native script and actual damage effect" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.18"/>
+  <testcase name="existing mtg-search combines conventional type color cost and name filters" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.269"/>
+  <testcase name="search projection preserves creature stats keywords and identity" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.05"/>
+  <testcase name="malformed queries fail instead of silently returning misleading matches" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.007"/>
+  <testcase name="CLI emits actual script and search results" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.049"/>
+  <testcase name="CLI reports missing names and invalid commands" classname="dev.mtg.assistant.ArgentumIntegrationTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

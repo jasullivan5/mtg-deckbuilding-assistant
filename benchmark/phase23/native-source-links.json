@@ -1,0 +1,96 @@
+[
+  {
+    "card": "Dread Return",
+    "nativeSource": [
+      "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/DreadReturn.kt"
+    ]
+  },
+  {
+    "card": "Cabal Therapy",
+    "nativeSource": []
+  },
+  {
+    "card": "Lash of the Balrog",
+    "nativeSource": [
+      "argentum/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/LashOfTheBalrog.kt"
+    ]
+  },
+  {
+    "card": "Dusk Mangler",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/DuskMangler.kt"
+    ]
+  },
+  {
+    "card": "Eaten Alive",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/EatenAlive.kt"
+    ]
+  },
+  {
+    "card": "Arms Race",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/ArmsRace.kt"
+    ]
+  },
+  {
+    "card": "Through the Breach",
+    "nativeSource": [
+      "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/ThroughTheBreach.kt"
+    ]
+  },
+  {
+    "card": "Cauldron Dance",
+    "nativeSource": [
+      "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/CauldronDance.kt"
+    ]
+  },
+  {
+    "card": "Incandescent Soulstoke",
+    "nativeSource": [
+      "argentum/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/IncandescentSoulstoke.kt"
+    ]
+  },
+  {
+    "card": "Diregraf Scavenger",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/DiregrafScavenger.kt"
+    ]
+  },
+  {
+    "card": "Unearth",
+    "nativeSource": [
+      "argentum/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ulg/cards/Unearth.kt"
+    ]
+  },
+  {
+    "card": "Vicious Offering",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/ViciousOffering.kt"
+    ]
+  },
+  {
+    "card": "Final Flourish",
+    "nativeSource": [
+      "argentum/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/FinalFlourish.kt"
+    ]
+  },
+  {
+    "card": "Souls of the Lost",
+    "nativeSource": [
+      "argentum/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/SoulsOfTheLost.kt"
+    ]
+  },
+  {
+    "card": "Morkrut Behemoth",
+    "nativeSource": [
+      "argentum/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/MorkrutBehemoth.kt"
+    ]
+  },
+  {
+    "card": "Lava Dart",
+    "nativeSource": [
+      "argentum/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jud/cards/LavaDart.kt"
+    ]
+  }
+]

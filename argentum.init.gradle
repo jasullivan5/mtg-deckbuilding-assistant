@@ -1,0 +1,7 @@
+// Add our external module without editing the pinned upstream checkout.
+def foundation = new File(initscript.sourceFile.parentFile, '.')
+settingsEvaluated { settings ->
+    if (settings.settingsDir.canonicalFile != new File(foundation, 'argentum').canonicalFile) return
+    settings.include(':assistant-cli')
+    settings.project(':assistant-cli').projectDir = new File(foundation, 'cli')
+}

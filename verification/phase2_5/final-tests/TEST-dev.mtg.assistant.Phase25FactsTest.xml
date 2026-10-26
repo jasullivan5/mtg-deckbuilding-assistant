@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase25FactsTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:49:13.249Z" hostname="5fc36fab9608" time="0.094">
+  <properties/>
+  <testcase name="creature template is a correlated fact with original action and native source" classname="dev.mtg.assistant.Phase25FactsTest" time="0.033"/>
+  <testcase name="predefined Treasure is a noncreature fourth-objective composition" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="unknown native predefined template remains visible and unknown" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <testcase name="opposing receiver does not qualify" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="zero quantity does not qualify" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="negative quantity does not qualify" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="X preserves positive-quantity and resource prerequisite" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <testcase name="zero multiplier cannot create positive quantity" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <testcase name="unbound copy target does not become certain even with a creature override" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="source copy uses native exceptions type replacement precedence" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="batch keeps one event and independent template groups" classname="dev.mtg.assistant.Phase25FactsTest" time="0.003"/>
+  <testcase name="batch shared opposing controller excludes all creature groups" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="correlated composite cannot combine enemy creature with our noncreature token" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="multiple token effects remain distinguishable" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="movement is not creation" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <testcase name="one composite movement and creation supports B and C with identical action" classname="dev.mtg.assistant.Phase25FactsTest" time="0.003"/>
+  <testcase name="generic condition preserves branch uncertainty and never merges incompatible outcomes" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="conditional creation remains unknown with explicit branch prerequisites" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="optional choice retains circumstances and does not imply mandatory generation" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <testcase name="copy of unconstrained permanent remains unknown rather than inferring creature by name" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="copy override does not erase unresolved or contradictory selection prerequisites" classname="dev.mtg.assistant.Phase25FactsTest" time="0.002"/>
+  <testcase name="contradictory creature requirements cannot be overwritten into a match" classname="dev.mtg.assistant.Phase25FactsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

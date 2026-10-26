@@ -1,0 +1,1181 @@
+{
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "commander": "Judith, the Scourge Diva",
+  "encounteredTypedNodes": 69119,
+  "factCounts": {
+    "CAST_PERMISSION": 11,
+    "CREATE_TOKEN": 647,
+    "DAMAGE": 1126,
+    "MOVE_OBJECT": 2055,
+    "OTHER_OPERATION": 590,
+    "SACRIFICE": 956,
+    "TOUGHNESS_CHANGE": 244
+  },
+  "inputCards": 6104,
+  "limitations": [
+    "Independent traversal of serialized authored native definitions, including nested faces, grants and script fields. Does not enumerate every possible SDK subtype or keyword-lowered engine behavior.",
+    "Observed nodes without an extracted pathway are not necessarily gaps. Relevance and rank are review aids, not MTG conclusions.",
+    "Fingerprints remove incidental text and alpha-rename local IDs; retain native amounts, zones, filters and branch shape. Versioned fingerprint rules may change grouping."
+  ],
+  "objective": "own-nontoken-creature-deaths",
+  "representativeGroups": [
+    {
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 87,
+      "distinctCards": 87,
+      "fingerprint": "2b7fccc6980d0eb5fac2",
+      "insideAcceptedActions": 3,
+      "nativeType": "SelectFromCollection",
+      "occurrences": 88,
+      "proposedWork": "Trace collection provenance, selection bounds, filters and movement zones within the same branch",
+      "reasons": [],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Aclazotz, Deepest Betrayal|front|script.triggeredAbilities[0]",
+          "card": "Aclazotz, Deepest Betrayal",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].body.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[1].body.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/AclazotzDeepestBetrayal.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Adventurer's Airship|front|script.triggeredAbilities[0]",
+          "card": "Adventurer's Airship",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[1].effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/AdventurersAirship.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Akki Ronin|front|script.triggeredAbilities[0]",
+          "card": "Akki Ronin",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then.gate.action.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.gate.action.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/AkkiRonin.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Arbiter of Woe|front|script.triggeredAbilities[0]",
+          "card": "Arbiter of Woe",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[0].body.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[0].body.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fdn/cards/ArbiterOfWoe.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Argentum Masticore|front|script.triggeredAbilities[0]",
+          "card": "Argentum Masticore",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then.action.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/ArgentumMasticore.kt",
+            "native:front.script.triggeredAbilities[0].effect.otherwise",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        }
+      ],
+      "shape": {
+        "from": "symbol0",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseExactly"
+        },
+        "storeSelected": "symbol1",
+        "type": "SelectFromCollection"
+      },
+      "supportStatus": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+    },
+    {
+      "context": "script",
+      "distinctActions": 77,
+      "distinctCards": 77,
+      "fingerprint": "b29b6cdc759e7285afe9",
+      "insideAcceptedActions": 1,
+      "nativeType": "MoveToZone",
+      "occurrences": 77,
+      "proposedWork": "Check source/destination, object ownership and entry controller before objective-specific inference",
+      "reasons": [
+        "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Active Volcano|front|script.spell",
+          "card": "Active Volcano",
+          "face": "front",
+          "path": "script.spellEffect.modes[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/leg/cards/ActiveVolcano.kt",
+            "native:front.script.spellEffect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Agonizing Demise|front|script.spell",
+          "card": "Agonizing Demise",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/AgonizingDemise.kt",
+            "native:front.script.spellEffect.effects[1].gate.condition",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Annihilate|front|script.spell",
+          "card": "Annihilate",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/Annihilate.kt",
+            "native:front.script.spellEffect.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Assassin's Blade|front|script.spell",
+          "card": "Assassin's Blade",
+          "face": "front",
+          "path": "script.spellEffect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/por/cards/AssassinsBlade.kt",
+            "native:front.script.spellEffect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Assassinate|front|script.spell",
+          "card": "Assassinate",
+          "face": "front",
+          "path": "script.spellEffect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/Assassinate.kt",
+            "native:front.script.spellEffect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        }
+      ],
+      "shape": {
+        "byDestruction": true,
+        "destination": "Graveyard",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "supportStatus": "PARTIALLY_SUPPORTED"
+    },
+    {
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 65,
+      "distinctCards": 64,
+      "fingerprint": "ffd91735a605c90352ca",
+      "insideAcceptedActions": 2,
+      "nativeType": "ModifyStats",
+      "occurrences": 65,
+      "proposedWork": "Check modifier sign/dynamic amount and target scope before inferring potential toughness death",
+      "reasons": [
+        "Effect not interpreted; native action retained (may contain further capabilities)"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Akroma, Angel of Fury|front|script.activatedAbilities[0]",
+          "card": "Akroma, Angel of Fury",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/AkromaAngelOfFury.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Alluring Suitor|front.backFace|script.activatedAbilities[0]",
+          "card": "Alluring Suitor",
+          "face": "front.backFace",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.backFace.script.activatedAbilities[0].effect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/AlluringSuitor.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Arcbound Whelp|front|script.activatedAbilities[0]",
+          "card": "Arcbound Whelp",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh2/cards/ArcboundWhelp.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Avarax|front|script.activatedAbilities[0]",
+          "card": "Avarax",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/Avarax.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Barrow Naughty|front|script.activatedAbilities[0]",
+          "card": "Barrow Naughty",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/BarrowNaughty.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "powerModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "target": {
+          "type": "Self"
+        },
+        "toughnessModifier": {
+          "amount": 0,
+          "type": "Fixed"
+        },
+        "type": "ModifyStats"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script.staticAbilities[]",
+      "distinctActions": 45,
+      "distinctCards": 45,
+      "fingerprint": "a57205c3a08759dd4316",
+      "insideAcceptedActions": 0,
+      "nativeType": "ModifyStats",
+      "occurrences": 45,
+      "proposedWork": "Check modifier sign/dynamic amount and target scope before inferring potential toughness death",
+      "reasons": [
+        "Static ability not interpreted for this objective"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Agility|front|script.staticAbilities[0]",
+          "card": "Agility",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mir/cards/Agility.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Alien Symbiosis|front|script.staticAbilities[0]",
+          "card": "Alien Symbiosis",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/AlienSymbiosis.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Cartouche of Ambition|front|script.staticAbilities[0]",
+          "card": "Cartouche of Ambition",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/CartoucheOfAmbition.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Cartouche of Zeal|front|script.staticAbilities[0]",
+          "card": "Cartouche of Zeal",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/CartoucheOfZeal.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Cave Sense|front|script.staticAbilities[0]",
+          "card": "Cave Sense",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mmq/cards/CaveSense.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "powerBonus": 1,
+        "toughnessBonus": 1,
+        "type": "ModifyStats"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script",
+      "distinctActions": 41,
+      "distinctCards": 41,
+      "fingerprint": "abeb223a118e8200b972",
+      "insideAcceptedActions": 3,
+      "nativeType": "MoveToZone",
+      "occurrences": 41,
+      "proposedWork": "Check source/destination, object ownership and entry controller before objective-specific inference",
+      "reasons": [],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Aim for the Head|front|script.spell",
+          "card": "Aim for the Head",
+          "face": "front",
+          "path": "script.spellEffect.modes[0].effect",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.spellEffect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/AimForTheHead.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Anoint with Affliction|front|script.spell",
+          "card": "Anoint with Affliction",
+          "face": "front",
+          "path": "script.spellEffect.then",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/AnointWithAffliction.kt",
+            "native:front.script.spellEffect.gate.condition",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Archenemy's Charm|front|script.spell",
+          "card": "Archenemy's Charm",
+          "face": "front",
+          "path": "script.spellEffect.modes[0].effect",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.spellEffect.modes[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/ArchenemysCharm.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Baleful Mastery|front|script.spell",
+          "card": "Baleful Mastery",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.spellEffect.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/BalefulMastery.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Bogslither's Embrace|front|script.spell",
+          "card": "Bogslither's Embrace",
+          "face": "front",
+          "path": "script.spellEffect",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.spellEffect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/BogslithersEmbrace.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        }
+      ],
+      "shape": {
+        "destination": "Exile",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "supportStatus": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+    },
+    {
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 39,
+      "distinctCards": 39,
+      "fingerprint": "1ce908b000afce1ecd7b",
+      "insideAcceptedActions": 8,
+      "nativeType": "MoveToZone",
+      "occurrences": 39,
+      "proposedWork": "Check source/destination, object ownership and entry controller before objective-specific inference",
+      "reasons": [
+        "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Ark of Blight|front|script.activatedAbilities[0]",
+          "card": "Ark of Blight",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/ArkOfBlight.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Attrition|front|script.activatedAbilities[0]",
+          "card": "Attrition",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/uds/cards/Attrition.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Barbarian Riftcutter|front|script.activatedAbilities[0]",
+          "card": "Barbarian Riftcutter",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/BarbarianRiftcutter.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Blaster Mage|front|script.activatedAbilities[0]",
+          "card": "Blaster Mage",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mmq/cards/BlasterMage.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Boggart Loggers|front|script.activatedAbilities[0]",
+          "card": "Boggart Loggers",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/BoggartLoggers.kt",
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        }
+      ],
+      "shape": {
+        "byDestruction": true,
+        "destination": "Graveyard",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "supportStatus": "PARTIALLY_SUPPORTED"
+    },
+    {
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 39,
+      "distinctCards": 39,
+      "fingerprint": "aabebc10151c0141bc84",
+      "insideAcceptedActions": 0,
+      "nativeType": "MoveToZone",
+      "occurrences": 41,
+      "proposedWork": "Check source/destination, object ownership and entry controller before objective-specific inference",
+      "reasons": [
+        "Effect not interpreted; native action retained (may contain further capabilities)"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Along the Crooked Way|front|script.triggeredAbilities[0]",
+          "card": "Along the Crooked Way",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/AlongTheCrookedWay.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Anarchist|front|script.triggeredAbilities[0]",
+          "card": "Anarchist",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/exo/cards/Anarchist.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Ardent Elementalist|front|script.triggeredAbilities[0]",
+          "card": "Ardent Elementalist",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/ArdentElementalist.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Arid Archway|front|script.triggeredAbilities[0]",
+          "card": "Arid Archway",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.then.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AridArchway.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Arid Archway|front|script.triggeredAbilities[0]",
+          "card": "Arid Archway",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.otherwise",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.otherwise",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AridArchway.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "destination": "Hand",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 37,
+      "distinctCards": 37,
+      "fingerprint": "cc9df7f93301f0bf9de3",
+      "insideAcceptedActions": 1,
+      "nativeType": "MoveToZone",
+      "occurrences": 37,
+      "proposedWork": "Check source/destination, object ownership and entry controller before objective-specific inference",
+      "reasons": [
+        "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Bala Ged Scorpion|front|script.triggeredAbilities[0]",
+          "card": "Bala Ged Scorpion",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/roe/cards/BalaGedScorpion.kt",
+            "native:front.script.triggeredAbilities[0].effect.then",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Big Game Hunter|front|script.triggeredAbilities[0]",
+          "card": "Big Game Hunter",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/BigGameHunter.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Case of the Gorgon's Kiss|front|script.triggeredAbilities[0]",
+          "card": "Case of the Gorgon's Kiss",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/CaseOfTheGorgonsKiss.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Dakmor Lancer|front|script.triggeredAbilities[0]",
+          "card": "Dakmor Lancer",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/s99/cards/DakmorLancer.kt",
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        },
+        {
+          "actionId": "Dark Hatchling|front|script.triggeredAbilities[0]",
+          "card": "Dark Hatchling",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "reasons": [
+            "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+          ],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/DarkHatchling.kt",
+            "native:front.script.triggeredAbilities[0].effect.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "PARTIALLY_SUPPORTED"
+        }
+      ],
+      "shape": {
+        "byDestruction": true,
+        "destination": "Graveyard",
+        "target": {
+          "name": "t0",
+          "type": "BoundVariable"
+        },
+        "type": "MoveToZone"
+      },
+      "supportStatus": "PARTIALLY_SUPPORTED"
+    },
+    {
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 35,
+      "distinctCards": 35,
+      "fingerprint": "0817742b0b5a21ce20dc",
+      "insideAcceptedActions": 2,
+      "nativeType": "ModifyStats",
+      "occurrences": 35,
+      "proposedWork": "Check modifier sign/dynamic amount and target scope before inferring potential toughness death",
+      "reasons": [
+        "Effect not interpreted; native action retained (may contain further capabilities)"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Andradite Leech|front|script.activatedAbilities[0]",
+          "card": "Andradite Leech",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/AndraditeLeech.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Battlefield Percher|front|script.activatedAbilities[0]",
+          "card": "Battlefield Percher",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nem/cards/BattlefieldPercher.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Burrog Banemaker|front|script.activatedAbilities[0]",
+          "card": "Burrog Banemaker",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/BurrogBanemaker.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Carrion Ants|front|script.activatedAbilities[0]",
+          "card": "Carrion Ants",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/leg/cards/CarrionAnts.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Cinder Shade|front|script.activatedAbilities[0]",
+          "card": "Cinder Shade",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/CinderShade.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "powerModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "target": {
+          "type": "Self"
+        },
+        "toughnessModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "type": "ModifyStats"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script.triggeredAbilities[]",
+      "distinctActions": 35,
+      "distinctCards": 34,
+      "fingerprint": "06d7f83df30ba16d3722",
+      "insideAcceptedActions": 0,
+      "nativeType": "ModifyStats",
+      "occurrences": 35,
+      "proposedWork": "Check modifier sign/dynamic amount and target scope before inferring potential toughness death",
+      "reasons": [
+        "Effect not interpreted; native action retained (may contain further capabilities)"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Abbot of Keral Keep|front|script.triggeredAbilities[0]",
+          "card": "Abbot of Keral Keep",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ori/cards/AbbotOfKeralKeep.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bedlam Reveler|front|script.triggeredAbilities[0]",
+          "card": "Bedlam Reveler",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/BedlamReveler.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bloodfire Expert|front|script.triggeredAbilities[0]",
+          "card": "Bloodfire Expert",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/BloodfireExpert.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bloodhaze Wolverine|front|script.triggeredAbilities[0]",
+          "card": "Bloodhaze Wolverine",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eld/cards/BloodhazeWolverine.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bloodstone Goblin|front|script.triggeredAbilities[0]",
+          "card": "Bloodstone Goblin",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "reasons": [
+            "Effect not interpreted; native action retained (may contain further capabilities)"
+          ],
+          "sourceReferences": [
+            "native:front.script.triggeredAbilities[0].effect.effects[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/BloodstoneGoblin.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "powerModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "target": {
+          "type": "Self"
+        },
+        "toughnessModifier": {
+          "amount": 1,
+          "type": "Fixed"
+        },
+        "type": "ModifyStats"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script.staticAbilities[]",
+      "distinctActions": 31,
+      "distinctCards": 31,
+      "fingerprint": "4e3b6118ad16a471a07c",
+      "insideAcceptedActions": 0,
+      "nativeType": "ModifyStats",
+      "occurrences": 31,
+      "proposedWork": "Check modifier sign/dynamic amount and target scope before inferring potential toughness death",
+      "reasons": [
+        "Static ability not interpreted for this objective"
+      ],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Bespoke Battlegarb|front|script.staticAbilities[0]",
+          "card": "Bespoke Battlegarb",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/BespokeBattlegarb.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bloodforged Battle-Axe|front|script.staticAbilities[0]",
+          "card": "Bloodforged Battle-Axe",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/c17/cards/BloodforgedBattleAxe.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bonesplitter|front|script.staticAbilities[0]",
+          "card": "Bonesplitter",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/Bonesplitter.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Bronze Sword|front|script.staticAbilities[0]",
+          "card": "Bronze Sword",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/BronzeSword.kt"
+          ],
+          "status": "UNSUPPORTED"
+        },
+        {
+          "actionId": "Darksteel Axe|front|script.staticAbilities[0]",
+          "card": "Darksteel Axe",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "reasons": [
+            "Static ability not interpreted for this objective"
+          ],
+          "sourceReferences": [
+            "native:front.script.staticAbilities[0]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/som/cards/DarksteelAxe.kt"
+          ],
+          "status": "UNSUPPORTED"
+        }
+      ],
+      "shape": {
+        "powerBonus": 2,
+        "toughnessBonus": 0,
+        "type": "ModifyStats"
+      },
+      "supportStatus": "UNSUPPORTED"
+    },
+    {
+      "context": "script.activatedAbilities[]",
+      "distinctActions": 31,
+      "distinctCards": 31,
+      "fingerprint": "d9067ad5bb34201e58ae",
+      "insideAcceptedActions": 1,
+      "nativeType": "SelectFromCollection",
+      "occurrences": 32,
+      "proposedWork": "Trace collection provenance, selection bounds, filters and movement zones within the same branch",
+      "reasons": [],
+      "relevance": "POTENTIALLY_RELEVANT",
+      "representatives": [
+        {
+          "actionId": "Arid Mesa|front|script.activatedAbilities[0]",
+          "card": "Arid Mesa",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/AridMesa.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[2]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Bad River|front|script.activatedAbilities[0]",
+          "card": "Bad River",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mir/cards/BadRiver.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Blightspeaker|front|script.activatedAbilities[1]",
+          "card": "Blightspeaker",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "native:front.script.activatedAbilities[1].effect.effects[1]",
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/Blightspeaker.kt"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Bloodstained Mire|front|script.activatedAbilities[0]",
+          "card": "Bloodstained Mire",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/BloodstainedMire.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[2]",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        },
+        {
+          "actionId": "Bog Glider|front|script.activatedAbilities[0]",
+          "card": "Bog Glider",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "reasons": [],
+          "sourceReferences": [
+            "https://github.com/wingedsheep/argentum-engine/blob/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pcy/cards/BogGlider.kt",
+            "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+            "https://github.com/wingedsheep/argentum-engine/tree/ebf5bf2e9fbb80d13a556d75491dd462e10c206f/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+          ],
+          "status": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+        }
+      ],
+      "shape": {
+        "from": "symbol0",
+        "selectedLabel": "Put onto the battlefield",
+        "selection": {
+          "count": {
+            "amount": 1,
+            "type": "Fixed"
+          },
+          "type": "ChooseUpTo"
+        },
+        "storeSelected": "symbol1",
+        "type": "SelectFromCollection"
+      },
+      "supportStatus": "OBSERVED_WITHOUT_LOCAL_PATHWAY"
+    }
+  ],
+  "statusGroups": {
+    "OBSERVED_WITHOUT_LOCAL_PATHWAY": 10487,
+    "PARTIALLY_SUPPORTED": 933,
+    "PATHWAY_EXTRACTED": 314,
+    "SUPPORTED": 916,
+    "UNSUPPORTED": 2889,
+    "UNSUPPORTED_OR_UNRESOLVED": 3280
+  },
+  "uniqueStructuralGroups": 18819
+}

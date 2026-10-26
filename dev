@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root=$(cd "$(dirname "$0")" && pwd)
+if [ ! -d "$root/argentum/.git" ]; then
+  echo 'Run bash scripts/setup.sh first.' >&2; exit 1
+fi
+sha=$(tr -d '\r\n' < "$root/ARGENTUM_COMMIT")
+[ "$(git -C "$root/argentum" rev-parse HEAD)" = "$sha" ] || { echo 'Argentum revision mismatch. Run setup.' >&2; exit 1; }
+[ -z "$(git -C "$root/argentum" status --porcelain)" ] || { echo 'Argentum source files are modified.' >&2; exit 1; }
+task=${1:-help}
+if [ "$#" -gt 0 ]; then shift; fi
+case "$task" in
+  build|test|run|installDist|clean|help) task=":assistant-cli:$task" ;;
+  *) echo 'Usage: ./dev {build|test|run|installDist|clean|help} [Gradle options]' >&2; exit 2 ;;
+esac
+# Conservative defaults for the large native Kotlin corpus; override with later Gradle options.
+exec "$root/gradlew" -p "$root/argentum" -I "$root/argentum.init.gradle" \
+  --no-daemon --no-configuration-cache --max-workers=2 \
+  -PkotlinCompileParallelism=1 -Pkotlin.daemon.jvmargs=-Xmx4g "$task" "$@"

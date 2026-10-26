@@ -1,0 +1,24 @@
+{
+  "development": [
+    "dragon-fodder",
+    "krenko--mob-boss",
+    "young-pyromancer",
+    "siege-gang-commander",
+    "ophiomancer",
+    "heat-shimmer",
+    "hunted-horror",
+    "big-score",
+    "kuldotha-rebirth",
+    "haunted-dead",
+    "rite-of-replication",
+    "rite-of-replication-else"
+  ],
+  "held-out": [
+    "hordeling-outburst",
+    "goblin-rabblemaster",
+    "raise-the-alarm"
+  ],
+  "unresolved": [
+    "dreadhorde-invasion"
+  ]
+}

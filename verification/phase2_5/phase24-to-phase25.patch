@@ -1,0 +1,718 @@
+--- a/cli/src/main/kotlin/dev/mtg/assistant/Main.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/Main.kt
+@@ -24,7 +24,7 @@
+     appendLine(scriptJson.encodeToString(CardScript.serializer(), card.script))
+ }
+ 
+-private const val HELP = """MTG Deckbuilding Assistant — Phase 2.4
++private const val HELP = """MTG Deckbuilding Assistant — Phase 2.5
+ Usage:
+   mtg-assistant audit cross-objective --snapshot <objective-a.json> --other-snapshot <objective-b.json> [--json] [--output <path>]
+   mtg-assistant audit benchmark --snapshot <discovery.json> --benchmark <review.json> [--json] [--output <path>]
+@@ -35,7 +35,7 @@
+   mtg-assistant card <exact card name>
+   mtg-assistant search <Argentum query>
+   mtg-assistant discover --commander <exact name> [--search <Argentum query>]
+-      [--objective {own-nontoken-creature-deaths|reanimate-own-creatures}] [--json] [--diagnostics] [--output <path>]
++      [--objective {own-nontoken-creature-deaths|reanimate-own-creatures|create-creature-tokens}] [--json] [--diagnostics] [--output <path>]
+ Examples:
+   mtg-assistant card "Lightning Bolt"
+   mtg-assistant search 't:instant c:r mv=1 name:bolt'
+--- a/cli/src/main/kotlin/dev/mtg/assistant/audit/Benchmark.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/audit/Benchmark.kt
+@@ -68,7 +68,7 @@
+                 val r=matches.single()
+                 if(c.expectedMechanical==Verdict.MATCH && r.controllerCompatibility==Verdict.NO_MATCH)
+                     issue("INCORRECT_CONTROLLER_COMPATIBILITY","Source-reviewed desired-event compatibility requires our controller to be possible")
+-                if(c.expectedMechanical==Verdict.MATCH && r.nontokenCompatibility==Verdict.NO_MATCH)
++                if(c.branch!=Contribution.CREATE_CREATURE_TOKEN && c.expectedMechanical==Verdict.MATCH && r.nontokenCompatibility==Verdict.NO_MATCH)
+                     issue("INCORRECT_TOKEN_COMPATIBILITY","Source-reviewed desired-event compatibility requires a nontoken to be possible")
+                 if(mechanicalVerdict(r)!=c.expectedMechanical) issue("MECHANICAL_COMPATIBILITY","Expected ${c.expectedMechanical}; actual ${mechanicalVerdict(r)}")
+                 if(c.expectedPolicy!=null && policyVerdict(r)!=c.expectedPolicy) issue("POLICY_DISAGREEMENT","Expected ${c.expectedPolicy}; actual ${policyVerdict(r)}")
+--- a/cli/src/main/kotlin/dev/mtg/assistant/audit/Diagnostics.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/audit/Diagnostics.kt
+@@ -78,13 +78,15 @@
+     }
+     cards.forEach { face(it,"front",it.name) }
+ }
+-private fun suspect(type: String,objective: String = "own-nontoken-creature-deaths") = if(objective=="reanimate-own-creatures") type in setOf("MoveToZone","MoveCollection","GatherCards","SelectFromCollection","ConditionalOnCollection") else type in setOf("Sacrifice","SacrificeSelf","SacrificeTarget","ForceSacrifice","DealDamage","ModifyStats","MoveToZone","MoveCollection","AtomSacrifice","SacrificeSelfCost","ConditionalOnCollection","PayOrSuffer")
++private fun suspect(type: String,objective: String = "own-nontoken-creature-deaths") = if(objective=="create-creature-tokens") type.startsWith("CreateToken") || type in setOf("CreatePredefinedToken","Amass","Populate","CreateAuraToken","CreateRandomCreatureToken") else if(objective=="reanimate-own-creatures") type in setOf("MoveToZone","MoveCollection","GatherCards","SelectFromCollection","ConditionalOnCollection") else type in setOf("Sacrifice","SacrificeSelf","SacrificeTarget","ForceSacrifice","DealDamage","ModifyStats","MoveToZone","MoveCollection","AtomSacrifice","SacrificeSelfCost","ConditionalOnCollection","PayOrSuffer")
+ private fun relevance(type: String, shape: JsonElement): String = when {
+     suspect(type) || type in setOf("SelectFromCollection","FilterCollection","Gate.DoAction","Gate.MayPay","ReflexiveTrigger") -> "POTENTIALLY_RELEVANT"
+     type in setOf("GainLife","Scry","ShuffleLibrary","EmitLibrarySearchedEvent","AttachEquipment") -> "LIKELY_UNRELATED"
+     else -> "UNRESOLVED"
+ }
+ private fun work(type: String) = when(type) {
++    "Amass","Populate","CreateTokenCopyOfChosenPermanent","CreateTokenCopyOfEquippedCreature" -> "Resolve native copy/army choice and resulting creature characteristics/controller with action bindings; do not infer creation from a text clue"
++    "CreateToken","CreatePredefinedToken","CreateTokenCopyOfSource","CreateTokenCopyOfTarget","CreateTokenBatch" -> "Review correlated native template, merged copy exceptions, receiver, quantity expression and enclosing branch"
+     "SelectFromCollection","FilterCollection","MoveCollection" -> "Trace collection provenance, selection bounds, filters and movement zones within the same branch"
+     "PayOrSuffer","ConditionalOnCollection" -> "Traverse conditional child effects with branch prerequisites; never infer causal payment from mere sequencing"
+     "MoveToZone" -> "Check source/destination, object ownership and entry controller before objective-specific inference"
+@@ -124,7 +126,7 @@
+     val groups=entries.groupBy { "${it.n.nativeType}|${it.n.context}|${it.status}|${it.reasons}|${it.shape}" }.map { (key,es) ->
+         val e=es.first(); val n=e.n
+         CoverageGroup(hash(key),n.nativeType,n.context,e.shape,es.size,es.map { it.n.card }.distinct().size,
+-            es.mapNotNull { it.n.actionId }.distinct().size,e.status,e.reasons,if(report.objective=="reanimate-own-creatures" && suspect(n.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && n.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(n.nativeType,e.shape),
++            es.mapNotNull { it.n.actionId }.distinct().size,e.status,e.reasons,if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(n.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && n.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(n.nativeType,e.shape),
+             es.count { it.n.actionId in accepted },es.take(5).map { x -> CoverageOccurrence(x.n.card,x.n.face,x.n.path,x.n.actionId,x.status,x.reasons,
+                 sources[x.n.actionId] ?: listOfNotNull("native:${x.n.face}.${x.n.path}", DefinitionSources.paths[x.n.card]?.let { "https://github.com/wingedsheep/argentum-engine/blob/$ARGENTUM_SHA/$it" },provenanceByCard[x.n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source)) },work(n.nativeType))
+     }.sortedWith(compareBy<CoverageGroup> { if(it.relevance == "POTENTIALLY_RELEVANT" && it.supportStatus !in setOf("PATHWAY_EXTRACTED","SUPPORTED")) 0 else 1 }.thenByDescending { it.distinctCards }.thenBy { it.fingerprint })
+@@ -140,11 +142,11 @@
+         if(Triple(n.card,n.face,n.path) !in paths && report.structuralSupport.none { it.card==n.card && it.face==n.face && it.path==n.path && it.status==SupportStatus.SUPPORTED })
+             findings += Finding("A_POTENTIAL_MISS",n.card,n.face,n.path,n.actionId,"REVIEW","Relevant-looking native node has no local pathway; scope/zone/sign or enclosing semantics may make this correct",n.native)
+     }
+-    if(report.objective=="reanimate-own-creatures") {
++    if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens")) {
+         report.results.filter { it.verdict==Verdict.UNKNOWN }.forEach { r ->
+-            val fact=report.facts.firstOrNull { it.card==r.card && it.face==r.face && it.path==r.abilityPath && it.kind==FactKind.MOVE_OBJECT }
++            val fact=report.facts.firstOrNull { it.card==r.card && it.face==r.face && it.path==r.abilityPath && it.kind==if(report.objective=="create-creature-tokens") FactKind.CREATE_TOKEN else FactKind.MOVE_OBJECT }
+             findings += Finding("G_UNRESOLVED_OBJECTIVE_CONSTRAINT",r.card,r.face,r.abilityPath,r.actionId,"UNKNOWN",
+-                "Movement fact exists; ownership/control, zone binding, filter or branch compatibility remains unresolved; not a proven extraction omission",
++                "Generic fact exists; objective object/controller, quantity, zone/binding/filter or branch compatibility remains unresolved; not a proven extraction omission",
+                 buildJsonObject { put("pathway",reportJson.encodeToJsonElement(r));put("fact",reportJson.encodeToJsonElement(fact)) })
+         }
+     }
+--- a/cli/src/main/kotlin/dev/mtg/assistant/audit/RootDiagnostics.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/audit/RootDiagnostics.kt
+@@ -112,22 +112,22 @@
+         val category=when {
+             f.check=="E_ELIGIBILITY_DATA_GAP" -> DiagnosticCategory.ELIGIBILITY_DATA_PROBLEM
+             f.check=="F_BENCHMARK_MISMATCH" && f.severity=="CONFIRMED_MISMATCH" -> DiagnosticCategory.CONFIRMED_BENCHMARK_MISMATCH
+-            bare!=null && report.objective!="reanimate-own-creatures" && unrelatedNode(bare,a) -> DiagnosticCategory.UNSUPPORTED_BUT_LIKELY_UNRELATED
+-            report.objective!="reanimate-own-creatures" && f.check=="A_POTENTIAL_MISS" && probableSacrifice(bare,a,f.path,f.card in printedCreatures) -> DiagnosticCategory.PROBABLE_EXTRACTION_OMISSION
++            bare!=null && report.objective=="own-nontoken-creature-deaths" && unrelatedNode(bare,a) -> DiagnosticCategory.UNSUPPORTED_BUT_LIKELY_UNRELATED
++            report.objective=="own-nontoken-creature-deaths" && f.check=="A_POTENTIAL_MISS" && probableSacrifice(bare,a,f.path,f.card in printedCreatures) -> DiagnosticCategory.PROBABLE_EXTRACTION_OMISSION
+             f.check=="D_SUSPICIOUS_EXCLUSION" && result!=null && mechanicalVerdict(result)==Verdict.MATCH && (result.operation=="SACRIFICE" || type((result.nativeOperation as? JsonObject)?.get("target"))=="Self") &&
+                 result.enablingRelationship!="INCIDENTAL_SYMMETRIC_REMOVAL" && !result.decisions.last().reason.contains("symmetrical",true) -> DiagnosticCategory.POSSIBLE_POLICY_FALSE_NEGATIVE
+             f.check=="D_SUSPICIOUS_EXCLUSION" && result!=null && result.operation in setOf("DESTROY","DAMAGE_POTENTIALLY_LETHAL","TOUGHNESS_REDUCTION","SACRIFICE") -> DiagnosticCategory.EXPECTED_POLICY_EXCLUSION
+-            report.objective=="reanimate-own-creatures" && f.check=="A_POTENTIAL_MISS" && t in setOf("MoveToZone","MoveCollection") -> DiagnosticCategory.MISSING_MECHANICAL_FACT
++            (report.objective=="reanimate-own-creatures" && t in setOf("MoveToZone","MoveCollection") || report.objective=="create-creature-tokens" && (t.startsWith("CreateToken") || t=="CreatePredefinedToken")) && f.check=="A_POTENTIAL_MISS" -> DiagnosticCategory.MISSING_MECHANICAL_FACT
+             f.check=="G_UNRESOLVED_OBJECTIVE_CONSTRAINT" -> {
+                 val fact=obj?.get("fact") as? JsonObject
+-                if(fact?.get("sourcePlayer")?.jsonPrimitive?.contentOrNull=="UNKNOWN" || fact?.get("destinationController")?.jsonPrimitive?.contentOrNull=="UNKNOWN") DiagnosticCategory.UNRESOLVED_OWNERSHIP_OR_CONTROL
++                if(fact?.get("kind")?.jsonPrimitive?.contentOrNull=="MOVE_OBJECT" && fact["sourcePlayer"]?.jsonPrimitive?.contentOrNull=="UNKNOWN" || fact?.get("destinationController")?.jsonPrimitive?.contentOrNull=="UNKNOWN") DiagnosticCategory.UNRESOLVED_OWNERSHIP_OR_CONTROL
+                 else DiagnosticCategory.MISSING_OBJECTIVE_INTERPRETATION
+             }
+             f.check=="B_INCOMPLETE_ACCEPTED_ACTION" -> {
+                 val issues=(obj?.get("unsupported") as? JsonArray).orEmpty()
+                 val unrelated=issues.isNotEmpty() && issues.all { x ->
+                     val u=x.jsonObject["nativeType"]?.jsonPrimitive?.contentOrNull?.substringAfterLast('.')
+-                    u in setOf("GainLifeEffect","LoseLifeEffect","CreateTokenEffect","CreatePredefinedTokenEffect","GrantKeywordEffect","AttachEquipmentEffect")
++                    u in setOf("GainLifeEffect","LoseLifeEffect","GrantKeywordEffect","AttachEquipmentEffect")
+                 }
+                 if(unrelated) DiagnosticCategory.UNSUPPORTED_BUT_LIKELY_UNRELATED else DiagnosticCategory.INCOMPLETE_INTERPRETATION
+             }
+--- a/cli/src/main/kotlin/dev/mtg/assistant/discovery/Discovery.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/Discovery.kt
+@@ -46,7 +46,7 @@
+     "No card-name matching or Oracle-text matching is used by mechanical extraction. Native commander designation and the unsupported chosen-color selection guard are the only text-based eligibility checks."
+ )
+ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String? = null, objective: String = "own-nontoken-creature-deaths"): DiscoveryReport {
+-    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures")) { "Unsupported objective: $objective" }
++    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) { "Unsupported objective: $objective" }
+     val commander=resolveCommander(catalog,commanderName)
+     val allowed=fullIdentity(commander)
+     val roots=physicalCards(catalog.cards)
+@@ -63,12 +63,12 @@
+     val conventionalNames=conventionalQuery?.let { catalog.search(it).map { it.name }.toSet() }
+     val input=eligible.filter { conventionalNames == null || it.name in conventionalNames }
+     val extracted=PathwayExtractor().extract(input)
+-    if(objective=="reanimate-own-creatures") return reanimationReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
++    if(objective in setOf("reanimate-own-creatures","create-creature-tokens")) return factObjectiveReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
+         linkedMapOf("authored_physical_cards" to roots.size,"upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin=="UPSTREAM_ARGENTUM" },
+             "application_extension_physical_cards" to roots.count { catalog.provenance(it.name).origin=="APPLICATION_EXTENSION" },"registry_names_including_faces" to catalog.cards.size,
+             "commander_legal_cards" to legal.size,"format_legality_unknown_cards" to eligibility.count { it.format==Verdict.UNKNOWN },
+             "commander_eligible_cards" to eligible.size,"identity_unknown_legal_cards" to legal.count { byName.getValue(it.name).deck==Verdict.UNKNOWN },
+-            "mechanical_input_cards_after_conventional_search" to input.size),extracted,input.map { it.name })
++            "mechanical_input_cards_after_conventional_search" to input.size),extracted,input.map { it.name },objective)
+     val direct=creatureDeathPathways(extracted.pathways).where(canAffectCreature())
+         .where(canAffectController(Controller.YOU)).where(canAffectTokenStatus(TokenStatus.NONTOKEN))
+         .where(satisfiesDeathGenerationPolicy()).execute()
+--- a/cli/src/main/kotlin/dev/mtg/assistant/discovery/Evidence.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/Evidence.kt
+@@ -16,7 +16,7 @@
+ @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }
+ @Serializable data class StructuralSupport(val card: String,val face: String,val path: String,val nativeType: String,
+     val status: SupportStatus,val reason: String,val actionId: String)
+-@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE }
++@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN }
+ @Serializable data class ActionEvidence(val id: String, val card: String, val face: String, val path: String,
+     val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null)
+ @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
+--- a/cli/src/main/kotlin/dev/mtg/assistant/discovery/MechanicalFacts.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/MechanicalFacts.kt
+@@ -7,7 +7,7 @@
+ import kotlinx.serialization.json.JsonElement
+ 
+ /** Small operation view of native SDK nodes. No card model, strategy labels, or second walker. */
+-@Serializable enum class FactKind { MOVE_OBJECT, SACRIFICE, DAMAGE, TOUGHNESS_CHANGE, CAST_PERMISSION, OTHER_OPERATION }
++@Serializable enum class FactKind { MOVE_OBJECT, SACRIFICE, DAMAGE, TOUGHNESS_CHANGE, CAST_PERMISSION, CREATE_TOKEN, OTHER_OPERATION }
+ @Serializable data class MechanicalFact(
+     val id: String, val card: String, val face: String, val actionId: String, val path: String,
+     val kind: FactKind, val operation: String, val costOrEffect: String,
+@@ -19,11 +19,13 @@
+     val binding: String? = null, val selection: String = "Native node/targets define quantity and chooser",
+     val circumstances: Circumstances? = null, val unresolved: List<String> = emptyList(),
+     /** Original physical card, not a token copy; zone changes still create a new game object (CR 400.7). */
+-    val movesOriginalCard: Boolean = true, val ownerScope: String = "ANY"
++    val movesOriginalCard: Boolean = true, val ownerScope: String = "ANY",
++    val tokenCreation: TokenCreation? = null
+ )
+ 
+-data class FactConstraints(val kind: FactKind? = null, val creature: Boolean = false,
++data class FactConstraints(val impossible: Boolean = false, val kind: FactKind? = null, val creature: Boolean = false,
+     val token: TokenStatus? = null, val owner: Controller? = null, val controller: Controller? = null,
++    val createdCreature: Boolean? = null, val positiveQuantity: Boolean = false,
+     val from: Zone? = null, val to: Zone? = null, val role: String? = null, val sourceController: Controller? = null)
+ data class FactPredicate(val name: String, val constrain: (FactConstraints)->FactConstraints)
+ data class EvaluatedFact(val fact: MechanicalFact,val decisions: List<Decision>) {
+@@ -43,7 +45,7 @@
+ fun sourceZoneIs(zone: Zone)=FactPredicate("source-$zone") { it.copy(from=zone) }
+ fun destinationZoneIs(zone: Zone)=FactPredicate("destination-$zone") { it.copy(to=zone) }
+ fun ownedBy(player: Controller)=FactPredicate("owner-$player") { it.copy(owner=player) }
+-fun entersUnder(player: Controller)=FactPredicate("entry-controller-$player") { it.copy(controller=player) }
++fun entersUnder(player: Controller)=FactPredicate("entry-controller-$player") { it.copy(controller=player,impossible=it.impossible || it.controller!=null && it.controller!=player) }
+ fun sourceControlledBy(player: Controller)=FactPredicate("source-controller-$player") { it.copy(sourceController=player) }
+ fun operationRoleIs(role: String)=FactPredicate("role-$role") { it.copy(role=role) }
+ fun reanimationFacts(facts: List<MechanicalFact>)=FactQuery(facts.filter { it.kind==FactKind.MOVE_OBJECT })
+@@ -56,10 +58,27 @@
+  * Negation is evaluated on a specific assignment, never on an existential result.
+  */
+ fun MechanicalFact.compatible(c: FactConstraints): Verdict {
++    if(c.impossible) return Verdict.NO_MATCH
+     fun eq(actual: Any?,expected: Any?)=if(expected==null) Verdict.MATCH else if(actual==null) Verdict.UNKNOWN else if(actual==expected) Verdict.MATCH else Verdict.NO_MATCH
+     val structural=all(listOf(eq(kind,c.kind),eq(sourceZone,c.from),eq(destinationZone,c.to),eq(costOrEffect,c.role),confidence,
+         if(unresolved.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN))
+     if(structural==Verdict.NO_MATCH) return structural
++    if(kind==FactKind.CREATE_TOKEN) {
++        val token=tokenCreation
++        val type=if(c.createdCreature==null) Verdict.MATCH else token?.creature?.let {
++            if(c.createdCreature) it else when(it) { Verdict.MATCH->Verdict.NO_MATCH;Verdict.NO_MATCH->Verdict.MATCH;else->Verdict.UNKNOWN }
++        } ?: Verdict.UNKNOWN
++        val controller=when { c.controller==null -> Verdict.MATCH; destinationController=="UNKNOWN" -> Verdict.UNKNOWN
++            destinationController=="ANY" -> Verdict.MATCH
++            destinationController==c.controller.name -> Verdict.MATCH; else -> Verdict.NO_MATCH }
++        // Token ownership is the creating player's (CR 111.2), not ownership of a copied object.
++        val ownership=if(c.owner==null) Verdict.MATCH else if(destinationController=="UNKNOWN") Verdict.UNKNOWN
++            else if(destinationController=="ANY" || destinationController==c.owner.name) Verdict.MATCH else Verdict.NO_MATCH
++        return all(listOf(structural,type,controller,ownership,
++            if(c.positiveQuantity) token?.positiveQuantity ?: Verdict.UNKNOWN else Verdict.MATCH,
++            if(c.token==TokenStatus.NONTOKEN || c.sourceController!=null || c.from!=null) Verdict.NO_MATCH else Verdict.MATCH,
++            if(c.creature) token?.creature ?: Verdict.UNKNOWN else Verdict.MATCH))
++    }
+     val matches=Controller.entries.map { owner ->
+         fun player(actual: String,required: Controller?): Verdict = when {
+             required==null -> Verdict.MATCH
+--- a/cli/src/main/kotlin/dev/mtg/assistant/discovery/PathwayExtractor.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/PathwayExtractor.kt
+@@ -13,7 +13,7 @@
+ import kotlinx.serialization.json.*
+ 
+ private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), this)
+-private data class Frame(val targets: List<TargetRequirement>, val actor: String = "YOU",
++private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
+     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
+     val movementTargets: MutableMap<String,List<ObjectScope>> = mutableMapOf(),
+     val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList())
+@@ -397,7 +397,89 @@
+             battlefield=e.destination==Zone.BATTLEFIELD,
+             unresolved=listOfNotNull(obj.unresolved,"Later reference requires the same tracked card and successful earlier movement; original targeting restrictions are retained").joinToString("; ")) }
+     }
++    /** Called only by the shared native effect walk; token facts do not project death pathways. */
++    private fun recordToken(e: Effect,path: String,frame: Frame): Boolean {
++        var receiver: EffectTarget? = null
++        var amount: DynamicAmount = DynamicAmount.Fixed(1)
++        var creature = Verdict.UNKNOWN
++        var template = e.javaClass.simpleName
++        var copySource: String? = null
++        var unresolved = emptyList<String>()
++        var characteristics = emptyList<String>()
++        fun copiedType(ex: CopyExceptions,base: Verdict): Verdict = ex.overrideCardTypes?.let {
++            if(com.wingedsheep.sdk.core.CardType.CREATURE in it) Verdict.MATCH else Verdict.NO_MATCH
++        } ?: if(com.wingedsheep.sdk.core.CardType.CREATURE in ex.addedCardTypes) Verdict.MATCH else base
++        fun explicitCreature(filter: GameObjectFilter): Verdict {
++            val ps=filter.cardPredicates
++            val yes=ps.any { it==com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsCreature }
++            val no=ps.any { it==com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNoncreature }
++            val own=when { yes && no -> Verdict.UNKNOWN;yes -> Verdict.MATCH;no -> Verdict.NO_MATCH;else -> Verdict.UNKNOWN }
++            if(filter.anyOf.isEmpty()) return own
++            val bs=filter.anyOf.map(::explicitCreature)
++            return if(own!=Verdict.UNKNOWN) own else if(bs.all { it==Verdict.MATCH }) Verdict.MATCH else if(bs.all { it==Verdict.NO_MATCH }) Verdict.NO_MATCH else Verdict.UNKNOWN
++        }
++        when(e) {
++            is CreateTokenEffect -> {
++                receiver=e.controller;amount=e.count;creature=Verdict.MATCH
++                template="Native creature template: ${e.name ?: e.creatureTypes.joinToString()}"
++                characteristics=listOf("Creature", "colors=${e.colors}","subtypes=${e.creatureTypes}","P/T=${e.dynamicPower ?: e.power}/${e.dynamicToughness ?: e.toughness}","entry/delayed riders and granted abilities retained in native node")
++            }
++            is CreatePredefinedTokenEffect -> {
++                receiver=e.controller;amount=e.dynamicCount ?: DynamicAmount.Fixed(e.count)
++                val def=com.wingedsheep.mtg.sets.tokens.PredefinedTokens.allTokens.firstOrNull { it.name==e.tokenType }
++                creature=def?.let { if(it.isCreature) Verdict.MATCH else Verdict.NO_MATCH } ?: Verdict.UNKNOWN
++                template="PredefinedTokens:${e.tokenType}"
++                characteristics=def?.let { listOf("Native type line=${it.typeLine}","Native template=${it.name}") } ?: emptyList()
++                if(def==null) unresolved=listOf("Unregistered predefined token template ${e.tokenType}")
++            }
++            is CreateTokenCopyOfSourceEffect -> {
++                amount=DynamicAmount.Fixed(e.count);copySource="Self copiable values"
++                creature=copiedType(e.copyExceptions,if(selfCreature) Verdict.MATCH else Verdict.NO_MATCH)
++                template="Native source copy; merged exceptions=${e.copyExceptions}"
++            }
++            is CreateTokenCopyOfTargetEffect -> {
++                receiver=e.controller;amount=e.count;copySource=e.target.toString()
++                val requirement=when(val t=e.target) { is EffectTarget.ContextTarget->frame.targets.getOrNull(t.index);is EffectTarget.BoundVariable->frame.targets.find { it.id==t.name };else->null }
++                val moved=frame.movementTargets[requirement?.id?.let { "target:$it" } ?: e.target.toString()]
++                val obj=if(moved!=null) ObjectScope(unresolved="Copy source was moved earlier; last known copiable characteristics unresolved") else targetScope(e.target,frame,selfCreature)
++                creature=copiedType(e.copyExceptions,if(obj.printedSelfCreature!=null) { if(obj.printedSelfCreature) Verdict.MATCH else Verdict.NO_MATCH } else explicitCreature(obj.filter))
++                val ps=obj.filter.cardPredicates
++                val simple=ps.all { it in setOf(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsCreature,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNoncreature,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsPermanent,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsArtifact,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsToken,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNontoken) }
++                val contradiction=ps.contains(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsCreature) && ps.contains(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNoncreature) || ps.contains(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsToken) && ps.contains(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNontoken)
++                unresolved=listOfNotNull(obj.unresolved,if(!obj.possible || requirement?.count==0) "Copy selection is impossible or zero-sized" else null,
++                    if(!simple || contradiction || obj.filter.anyOf.isNotEmpty() || obj.filter.statePredicates.isNotEmpty()) "Complex/contradictory copy-source selection restrictions require correlated interpretation" else null)
++                template="Native target copy; merged exceptions=${e.copyExceptions}"
++                characteristics=listOf("Copy source filter=${obj.filter}; zone=${obj.zone}; source controller=${obj.actor}")
++            }
++            else -> return false
++        }
++        val controller=receiver?.let { if(it is EffectTarget.PlayerRef) relativeActor(it.player,frame) else playerScope(it,frame) } ?: frame.tokenController ?: frame.actor
++        val positive=tokenQuantityPotential(amount)
++        val confidence=all(listOf(frame.guardConfidence,frame.factGuard,
++            if((actionNative as? JsonObject)?.get("controlledByTriggeringEntityController")==JsonPrimitive(true)) Verdict.UNKNOWN else Verdict.MATCH))
++        val prerequisites=frame.assumptions+listOf("Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
++            "Quantity must evaluate strictly positive at resolution: $amount; a conditional capability is not a guaranteed outcome",
++            "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed")+
++            if(copySource!=null) listOf("Copy requires a legal available source with appropriate copiable characteristics, not merely a temporary animation") else emptyList()
++        val detail=TokenCreation(creature,amount,positive,template,copySource,frame.tokenEvent ?: path,characteristics)
++        facts+=MechanicalFact("$actionId|$path|CREATE_TOKEN",card.name,face,actionId,path,FactKind.CREATE_TOKEN,"CREATE_TOKEN","EFFECT",
++            GameObjectFilter.Any,destinationZone=Zone.BATTLEFIELD,destinationController=controller,confidence=confidence,
++            prerequisites=prerequisites,native=e.tree(),binding=copySource,selection="One correlated native token template/group; quantity=$amount",
++            circumstances=circumstances("EFFECT",ObjectScope(battlefield=false),frame).let { if(actionKind in setOf("TRIGGERED","STATE_TRIGGERED")) it.copy(repeatability="Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed") else it },unresolved=unresolved,movesOriginalCard=false,tokenCreation=detail)
++        val partial=confidence==Verdict.UNKNOWN || creature==Verdict.UNKNOWN || controller=="UNKNOWN" || positive==Verdict.UNKNOWN || unresolved.isNotEmpty()
++        support(path,e,if(partial) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
++            "Token variant retains correlated template/controller/quantity and native action; granted token abilities are retained but not recursively claimed as source-card actions")
++        if(partial) issue("$path.tokenConstraints",e,"Unresolved token variant: creature=$creature; controller=$controller; quantity=$positive; $unresolved",SupportStatus.PARTIALLY_SUPPORTED)
++        return true
++    }
+     private fun walk(e: Effect,path: String,frame: Frame) {
++        if(recordToken(e,path,frame)) return
++        if(e is CreateTokenBatchEffect) {
++            val controller=e.controller?.let { playerScope(it,frame) } ?: frame.actor
++            support(path,e,SupportStatus.SUPPORTED,"One creation event; each native group retains its own characteristics/quantity and shared receiver")
++            e.groups.forEachIndexed { i,group -> walk(group,"$path.groups[$i]",frame.copy(tokenController=controller,tokenEvent=path)) }
++            return
++        }
+         if(e is MoveToZoneEffect) recordTargetMove(e,path,frame)
+         when(e) {
+             is ConditionalOnCollectionEffect -> {
+--- a/cli/src/main/kotlin/dev/mtg/assistant/discovery/Reanimation.kt
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/Reanimation.kt
+@@ -4,9 +4,11 @@
+ import kotlinx.serialization.json.*
+ 
+ /** Objective B is only a composition of facts/predicates; native traversal lives in PathwayExtractor. */
+-fun reanimationReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,
+-    eligibility: List<EligibilityEvidence>,counts: Map<String,Int>,extracted: PathwayExtractor,inputCards: List<String>): DiscoveryReport {
+-    val evaluated=reanimationFacts(extracted.facts).execute()
++fun factObjectiveReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,
++    eligibility: List<EligibilityEvidence>,counts: Map<String,Int>,extracted: PathwayExtractor,inputCards: List<String>,objective: String = "reanimate-own-creatures"): DiscoveryReport {
++    val tokens=objective=="create-creature-tokens"
++    val category=if(tokens) Contribution.CREATE_CREATURE_TOKEN else Contribution.REANIMATE_OWN_CREATURE
++    val evaluated=if(tokens) tokenCreationFacts(extracted.facts).execute() else reanimationFacts(extracted.facts).execute()
+     val byName=eligibility.associateBy { it.card }
+     val actions=extracted.actions.associateBy { it.id }
+     val results=evaluated.map { e ->
+@@ -14,36 +16,44 @@
+         val related=extracted.facts.filter { it.costOrEffect.endsWith("COST") && (it.actionId==f.actionId || associatedSpellAction(actions,it.actionId)==f.actionId) }
+         val nativeSource=DefinitionSources.paths[f.card]?.let { "https://github.com/wingedsheep/argentum-engine/blob/$ARGENTUM_SHA/$it" }
+         ResultEvidence(f.card,card.oracleId ?: "${card.setCode}:${card.metadata.collectorNumber}:${card.name}",f.face,f.actionId,f.path,
+-            Contribution.REANIMATE_OWN_CREATURE,e.verdict,f.operation,f.costOrEffect,
+-            "source=${f.sourceZone}; graveyard/zone-player=${f.sourcePlayer}; native ownership/filter=${f.objectFilter}; destination=${f.destinationZone}; entry-controller=${f.destinationController}; selection=${f.selection}; binding=${f.binding}",
++            category,e.verdict,f.operation,f.costOrEffect,
++            if(tokens) "created=${f.tokenCreation}; entry-controller=${f.destinationController}; binding=${f.binding}" else "source=${f.sourceZone}; graveyard/zone-player=${f.sourcePlayer}; native ownership/filter=${f.objectFilter}; destination=${f.destinationZone}; entry-controller=${f.destinationController}; selection=${f.selection}; binding=${f.binding}",
+             f.prerequisites+listOfNotNull(actions[f.actionId]?.let { "Associated native action=${it.id}; prerequisites=${it.prerequisites}; native costs/targets retained in action evidence" })+
+                 related.map { "Associated ${it.costOrEffect} route ${it.actionId}: ${it.operation}; ${it.native}; prerequisites=${it.prerequisites}; alternative routes are alternatives, not cumulative costs" },
+             null,f.native,e.decisions,listOfNotNull(nativeSource,if(provenance.origin=="APPLICATION_EXTENSION") provenance.source else "native:${f.face}.${f.path}"),
+             eligible.format,eligible.deck,interpretation=if(extracted.unsupported.any { it.actionId==f.actionId && !(it.path==f.path && it.reason.startsWith("Effect not interpreted;")) }) "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED" else "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+-            contributionClassification=if(e.verdict==Verdict.MATCH) Contribution.REANIMATE_OWN_CREATURE else null,
+-            controllerCompatibility=f.compatible(FactConstraints(controller=Controller.YOU,owner=Controller.YOU)),
++            contributionClassification=if(e.verdict==Verdict.MATCH) category else null,
++            controllerCompatibility=f.compatible(FactConstraints(controller=Controller.YOU,owner=if(tokens) null else Controller.YOU)),
+             nontokenCompatibility=f.compatible(FactConstraints(creature=true,token=TokenStatus.NONTOKEN)),provenance=provenance,
+-            enablingRelationship="NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",mechanicalCompatibility=e.verdict,
+-            mechanicalCapability=if(e.verdict==Verdict.MATCH) "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD" else null,
++            enablingRelationship=if(tokens) "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES" else "NATIVE_MOVEMENT_WITH_RETAINED_BRANCH_PREREQUISITES",mechanicalCompatibility=e.verdict,
++            mechanicalCapability=if(e.verdict==Verdict.MATCH) if(tokens) "CREATURE_TOKEN_CREATED_UNDER_OUR_CONTROL" else "OWN_GRAVEYARD_CREATURE_CARD_TO_OWN_BATTLEFIELD" else null,
+             circumstances=f.circumstances,localSupport=if(e.verdict==Verdict.UNKNOWN) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED)
+     }
+     // A recognized movement is not an unsupported SDK effect simply because A has no death projection.
+     val movements=evaluated.groupBy { Triple(it.fact.card,it.fact.face,it.fact.path) }
+     val support=extracted.structuralSupport.filterNot { it.reason.startsWith("Effect not interpreted;") && movements.containsKey(Triple(it.card,it.face,it.path)) }.toMutableList()
+     movements.forEach { (key,es) -> support += StructuralSupport(key.first,key.second,key.third,
+-        if(es.first().fact.native.jsonObject["type"]?.jsonPrimitive?.content=="MoveCollection") "MoveCollectionEffect" else "MoveToZoneEffect",
++        if(tokens) es.first().fact.native.jsonObject["type"]!!.jsonPrimitive.content else if(es.first().fact.native.jsonObject["type"]?.jsonPrimitive?.content=="MoveCollection") "MoveCollectionEffect" else "MoveToZoneEffect",
+         if(es.any { it.verdict==Verdict.UNKNOWN }) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
+-        "Generic movement facts retained; objective compatibility assessed per correlated branch; no whole-action/gameplay verification",es.first().fact.actionId) }
++        if(tokens) "Generic token facts retained per correlated variant; no whole-action/gameplay verification" else "Generic movement facts retained; objective compatibility assessed per correlated branch; no whole-action/gameplay verification",es.first().fact.actionId) }
+     val unsupported=extracted.unsupported.filterNot { u -> u.reason.startsWith("Effect not interpreted;") && movements[Triple(u.card,u.face,u.path)]?.isNotEmpty()==true }
+     val accepted=results.filter { it.verdict==Verdict.MATCH }
+-    return DiscoveryReport(objective="reanimate-own-creatures",commander=commander,allowedIdentity=identity,conventionalQuery=query,
+-        counts=counts+linkedMapOf("mechanical_facts" to extracted.facts.size,"movement_facts" to evaluated.size,
+-            "accepted_reanimation_pathways" to accepted.size,"accepted_reanimation_cards" to accepted.map { it.card }.distinct().size,
+-            "unknown_query_pathways" to results.count { it.verdict==Verdict.UNKNOWN },"rejected_movement_pathways" to results.count { it.verdict==Verdict.NO_MATCH },
+-            "unsupported_structure_records" to unsupported.size,"cards_with_unsupported_structures" to unsupported.map { it.card }.distinct().size),
++    return DiscoveryReport(objective=objective,commander=commander,allowedIdentity=identity,conventionalQuery=query,
++        counts=counts+linkedMapOf("mechanical_facts" to extracted.facts.size,(if(tokens) "token_creation_facts" else "movement_facts") to evaluated.size,
++            (if(tokens) "accepted_token_creation_pathways" else "accepted_reanimation_pathways") to accepted.size,(if(tokens) "accepted_token_creation_cards" else "accepted_reanimation_cards") to accepted.map { it.card }.distinct().size,
++            "unknown_query_pathways" to results.count { it.verdict==Verdict.UNKNOWN },(if(tokens) "rejected_token_creation_pathways" else "rejected_movement_pathways") to results.count { it.verdict==Verdict.NO_MATCH },
++            "unsupported_structure_records" to unsupported.size,"cards_with_unsupported_structures" to unsupported.map { it.card }.distinct().size)+(if(tokens) linkedMapOf(
++            "creature_compatible_creation_pathways" to evaluated.count { all(it.decisions.take(2).map { d -> d.verdict })==Verdict.MATCH },
++            "our_controller_compatible_creation_pathways" to evaluated.count { all(it.decisions.take(3).map { d -> d.verdict })==Verdict.MATCH },
++            "accepted_fixed_quantity_pathways" to evaluated.count { it.verdict==Verdict.MATCH && it.fact.tokenCreation?.quantity is com.wingedsheep.sdk.scripting.values.DynamicAmount.Fixed },
++            "accepted_dynamic_quantity_pathways" to evaluated.count { it.verdict==Verdict.MATCH && it.fact.tokenCreation?.quantity !is com.wingedsheep.sdk.scripting.values.DynamicAmount.Fixed }) else emptyMap()),
+         eligibility=eligibility,results=results,actions=extracted.actions,unsupported=unsupported,
+-        limitations=discoveryLimitations+listOf("Reanimation query recognizes direct original-card graveyard-to-battlefield movement only; linked intermediate-zone sequences are retained as separate facts, not composed into reanimation.",
++        limitations=discoveryLimitations+(if(tokens) listOf("Creature/predefined/batch/source-copy/target-copy token variants recognized. Specialized amass/populate/chosen-copy and token-granted abilities are not automatically interpreted.","Quantity/controller/type are correlated per native variant. Positive count and copiable characteristics are prerequisites, not guaranteed gameplay outcomes.") else listOf("Reanimation query recognizes direct original-card graveyard-to-battlefield movement only; linked intermediate-zone sequences are retained as separate facts, not composed into reanimation.",
+             "Ownership is distinct from battlefield control. Owner-default entry is evaluated using the same chosen owner assignment as source-graveyard compatibility.",
+-            "Unsupported predicates/bindings/selection restrictions retain UNKNOWN. Card availability, target legality, timing, resources and actual resolution are not guaranteed."),
++            "Unsupported predicates/bindings/selection restrictions retain UNKNOWN. Card availability, target legality, timing, resources and actual resolution are not guaranteed.")),
+         structuralSupport=support,facts=extracted.facts,mechanicalInputCards=inputCards)
+ }
++
++fun reanimationReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,
++    eligibility: List<EligibilityEvidence>,counts: Map<String,Int>,extracted: PathwayExtractor,inputCards: List<String>) =
++    factObjectiveReport(catalog,commander,identity,query,eligibility,counts,extracted,inputCards)
+--- /dev/null
++++ b/cli/src/main/kotlin/dev/mtg/assistant/discovery/TokenFacts.kt
+@@ -0,0 +1,39 @@
++package dev.mtg.assistant.discovery
++
++import com.wingedsheep.sdk.scripting.values.DynamicAmount
++import com.wingedsheep.sdk.scripting.values.Aggregation
++import kotlinx.serialization.Serializable
++
++/** One correlated creation variant, never an aggregate of different branches/templates. */
++@Serializable data class TokenCreation(
++    val creature: Verdict,
++    val quantity: DynamicAmount,
++    val positiveQuantity: Verdict,
++    val templateReference: String,
++    val copySource: String? = null,
++    val creationEvent: String? = null,
++    val characteristics: List<String> = emptyList()
++)
++
++fun createdObjectIsCreature(required: Boolean = true)=FactPredicate("created-creature-$required") { it.copy(createdCreature=required,impossible=it.impossible || it.createdCreature!=null && it.createdCreature!=required) }
++fun quantityCanBePositive()=FactPredicate("positive-quantity-potential") { it.copy(positiveQuantity=true) }
++fun tokenCreationFacts(facts: List<MechanicalFact>,creature: Boolean = true)=FactQuery(facts.filter { it.kind==FactKind.CREATE_TOKEN })
++    .where(operationIs(FactKind.CREATE_TOKEN)).where(createdObjectIsCreature(creature))
++    .where(entersUnder(Controller.YOU)).where(quantityCanBePositive())
++
++/** Conditional existential potential, not the number of tokens in an arbitrary state.
++ * This deliberately does not change AmountBounds' stricter death-magnitude interpretation.
++ * Only explicit count/X expressions get a satisfiable positive-count prerequisite. */
++fun tokenQuantityPotential(a: DynamicAmount): Verdict {
++    val bounds=amountBounds(a)
++    if(bounds.upper!=null && bounds.upper<=0) return Verdict.NO_MATCH
++    if(bounds.lower!=null && bounds.lower>0) return Verdict.MATCH
++    return when(a) {
++        DynamicAmount.XValue, is DynamicAmount.Count, is DynamicAmount.PlayerCount, is DynamicAmount.CountPlayersWith -> Verdict.MATCH
++        is DynamicAmount.AggregateBattlefield -> if(a.aggregation==Aggregation.COUNT) Verdict.MATCH else Verdict.UNKNOWN
++        is DynamicAmount.AggregateZone -> if(a.aggregation==Aggregation.COUNT) Verdict.MATCH else Verdict.UNKNOWN
++        is DynamicAmount.Multiply -> if(a.multiplier>0) tokenQuantityPotential(a.amount) else Verdict.UNKNOWN
++        // Do not merge branches or assume stored/bound quantities can be positive.
++        else -> Verdict.UNKNOWN
++    }
++}
+--- /dev/null
++++ b/cli/src/test/kotlin/dev/mtg/assistant/Phase25EngineTest.kt
+@@ -0,0 +1,36 @@
++package dev.mtg.assistant
++
++import com.wingedsheep.engine.support.ScenarioTestBase
++import com.wingedsheep.sdk.core.Keyword
++import io.kotest.matchers.shouldBe
++
++/** Actual pinned ActionProcessor scenarios, separate from fact/benchmark assertions. */
++class Phase25EngineTest : ScenarioTestBase() {
++    init {
++        test("Dragon Fodder resolves into two creature tokens under our control") {
++            val g=scenario().withPlayers().withCardInHand(1,"Dragon Fodder").withLandsOnBattlefield(1,"Mountain",2).build()
++            g.castSpell(1,"Dragon Fodder").error shouldBe null
++            g.resolveStack().forEach { it.error shouldBe null }
++            val ts=g.findPermanents("Goblin Token")
++            ts.size shouldBe 2
++            ts.forEach { t -> g.state.getBattlefield(g.player1Id).contains(t) shouldBe true;g.state.projectedState.getPower(t) shouldBe 1;g.state.projectedState.getToughness(t) shouldBe 1 }
++        }
++        test("Hunted Horror creates its two creature tokens for the opponent") {
++            val g=scenario().withPlayers().withCardInHand(1,"Hunted Horror").withLandsOnBattlefield(1,"Swamp",2).build()
++            g.castSpell(1,"Hunted Horror").error shouldBe null
++            g.resolveStack().forEach { it.error shouldBe null }
++            val ts=g.findPermanents("Centaur Token");ts.size shouldBe 2
++            ts.forEach { g.state.getBattlefield(g.player2Id).contains(it) shouldBe true }
++        }
++        test("Heat Shimmer copying an opposing creature creates our creature with haste") {
++            val g=scenario().withPlayers().withCardInHand(1,"Heat Shimmer").withLandsOnBattlefield(1,"Mountain",3).withCardOnBattlefield(2,"Grizzly Bears").build()
++            val original=g.findPermanent("Grizzly Bears")!!
++            g.castSpell(1,"Heat Shimmer",original).error shouldBe null
++            g.resolveStack().forEach { it.error shouldBe null }
++            val copy=g.findPermanents("Grizzly Bears").single { it!=original }
++            g.state.getBattlefield(g.player1Id).contains(copy) shouldBe true
++            g.state.projectedState.hasKeyword(copy,Keyword.HASTE) shouldBe true
++            g.state.getBattlefield(g.player2Id).contains(original) shouldBe true
++        }
++    }
++}
+--- /dev/null
++++ b/cli/src/test/kotlin/dev/mtg/assistant/Phase25FactsTest.kt
+@@ -0,0 +1,109 @@
++package dev.mtg.assistant
++
++import com.wingedsheep.sdk.core.*
++import com.wingedsheep.sdk.dsl.*
++import com.wingedsheep.sdk.scripting.*
++import com.wingedsheep.sdk.scripting.effects.*
++import com.wingedsheep.sdk.scripting.targets.*
++import com.wingedsheep.sdk.scripting.filters.unified.TargetFilter
++import com.wingedsheep.sdk.scripting.references.Player
++import com.wingedsheep.sdk.scripting.values.DynamicAmount
++import dev.mtg.assistant.discovery.*
++import io.kotest.core.spec.style.FunSpec
++import io.kotest.matchers.shouldBe
++
++/** Explicit synthetic native fixtures, not evidence of authored-card coverage. */
++class Phase25FactsTest : FunSpec({
++    fun creature(n: Int=1,receiver: EffectTarget?=null)=CreateTokenEffect(DynamicAmount.Fixed(n),1,1,emptySet(),setOf("Goblin"),controller=receiver)
++    fun fixture(e: Effect)=card("Synthetic token action") { typeLine="Sorcery";spell { effect=e } }
++    fun extract(e: Effect)=PathwayExtractor().extract(listOf(fixture(e)))
++    fun rows(e: Effect)=tokenCreationFacts(extract(e).facts).execute()
++    test("creature template is a correlated fact with original action and native source") {
++        val x=extract(creature(2));val r=tokenCreationFacts(x.facts).execute().single()
++        r.verdict shouldBe Verdict.MATCH;r.fact.tokenCreation!!.quantity shouldBe DynamicAmount.Fixed(2)
++        r.fact.actionId shouldBe x.actions.single { it.path=="script.spell" }.id
++        r.fact.native.toString().contains("CreateToken") shouldBe true
++        r.fact.circumstances!!.actionKind shouldBe "SPELL"
++    }
++    test("predefined Treasure is a noncreature fourth-objective composition") {
++        val x=extract(CreatePredefinedTokenEffect("Treasure",2))
++        tokenCreationFacts(x.facts).execute().single().verdict shouldBe Verdict.NO_MATCH
++        tokenCreationFacts(x.facts,creature=false).execute().single().verdict shouldBe Verdict.MATCH
++    }
++    test("unknown native predefined template remains visible and unknown") {
++        val x=extract(CreatePredefinedTokenEffect("Synthetic unregistered template"))
++        tokenCreationFacts(x.facts).execute().single().verdict shouldBe Verdict.UNKNOWN
++        x.unsupported.isNotEmpty() shouldBe true
++    }
++    test("opposing receiver does not qualify") { rows(creature(receiver=EffectTarget.PlayerRef(Player.AnOpponent))).single().verdict shouldBe Verdict.NO_MATCH }
++    test("zero quantity does not qualify") { rows(creature(0)).single().verdict shouldBe Verdict.NO_MATCH }
++    test("negative quantity does not qualify") { rows(creature(-2)).single().verdict shouldBe Verdict.NO_MATCH }
++    test("X preserves positive-quantity and resource prerequisite") {
++        val r=rows(creature().copy(count=DynamicAmount.XValue)).single()
++        r.verdict shouldBe Verdict.MATCH;r.fact.prerequisites.any { it.contains("strictly positive") } shouldBe true
++    }
++    test("zero multiplier cannot create positive quantity") { rows(creature().copy(count=DynamicAmount.Multiply(DynamicAmount.XValue,0))).single().verdict shouldBe Verdict.NO_MATCH }
++    test("unbound copy target does not become certain even with a creature override") {
++        rows(CreateTokenCopyOfTargetEffect(EffectTarget.ContextTarget(9),overrideCardTypes=setOf(CardType.CREATURE))).single().verdict shouldBe Verdict.UNKNOWN
++    }
++    test("source copy uses native exceptions type replacement precedence") {
++        val c=card("Synthetic creature copy") { typeLine="Creature — Beast";power=2;toughness=2;spell { effect=CreateTokenCopyOfSourceEffect(exceptions=CopyExceptions(addedCardTypes=setOf(CardType.CREATURE),overrideCardTypes=setOf(CardType.ARTIFACT))) } }
++        val fs=PathwayExtractor().extract(listOf(c)).facts
++        tokenCreationFacts(fs).execute().single().verdict shouldBe Verdict.NO_MATCH
++        tokenCreationFacts(fs,false).execute().single().verdict shouldBe Verdict.MATCH
++    }
++    test("batch keeps one event and independent template groups") {
++        val x=extract(CreateTokenBatchEffect(listOf(creature(2),CreatePredefinedTokenEffect("Treasure",1))))
++        val rs=tokenCreationFacts(x.facts).execute()
++        rs.map { it.verdict } shouldBe listOf(Verdict.MATCH,Verdict.NO_MATCH)
++        rs.map { it.fact.tokenCreation!!.creationEvent }.distinct().size shouldBe 1
++    }
++    test("batch shared opposing controller excludes all creature groups") {
++        rows(CreateTokenBatchEffect(listOf(creature()),EffectTarget.PlayerRef(Player.AnOpponent))).single().verdict shouldBe Verdict.NO_MATCH
++    }
++    test("correlated composite cannot combine enemy creature with our noncreature token") {
++        val rs=rows(CompositeEffect(listOf(creature(receiver=EffectTarget.PlayerRef(Player.AnOpponent)),CreatePredefinedTokenEffect("Treasure"))))
++        rs.all { it.verdict==Verdict.NO_MATCH } shouldBe true
++    }
++    test("multiple token effects remain distinguishable") {
++        val rs=rows(CompositeEffect(listOf(creature(1),creature(3))))
++        rs.size shouldBe 2;rs.map { it.fact.id }.distinct().size shouldBe 2
++        rs.map { it.fact.actionId }.distinct().size shouldBe 1
++    }
++    test("movement is not creation") {
++        rows(MoveToZoneEffect(EffectTarget.Self,Zone.BATTLEFIELD,fromZone=Zone.GRAVEYARD)).isEmpty() shouldBe true
++    }
++    test("one composite movement and creation supports B and C with identical action") {
++        val c=card("Synthetic return and create") { typeLine="Sorcery";spell { val t=target(TargetFilter.CreatureInYourGraveyard);effect=CompositeEffect(listOf(MoveToZoneEffect(t,Zone.BATTLEFIELD,fromZone=Zone.GRAVEYARD),creature())) } }
++        val fs=PathwayExtractor().extract(listOf(c)).facts
++        val b=reanimationFacts(fs).execute().single();val cc=tokenCreationFacts(fs).execute().single()
++        b.verdict shouldBe Verdict.MATCH;cc.verdict shouldBe Verdict.MATCH;b.fact.actionId shouldBe cc.fact.actionId
++    }
++    test("generic condition preserves branch uncertainty and never merges incompatible outcomes") {
++        val gated=GatedEffect(Gate.WhenCondition(com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition),
++            creature(receiver=EffectTarget.PlayerRef(Player.AnOpponent)),CreatePredefinedTokenEffect("Treasure"))
++        rows(gated).all { it.verdict==Verdict.NO_MATCH } shouldBe true
++    }
++    test("conditional creation remains unknown with explicit branch prerequisites") {
++        val r=rows(GatedEffect(Gate.WhenCondition(com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition),creature())).single()
++        r.verdict shouldBe Verdict.UNKNOWN;r.fact.prerequisites.any { it.contains("Gate") } shouldBe true
++    }
++    test("optional choice retains circumstances and does not imply mandatory generation") {
++        val r=rows(GatedEffect(Gate.MayDecide(),creature())).single()
++        r.fact.circumstances!!.mandatory shouldBe Verdict.NO_MATCH
++    }
++    test("copy of unconstrained permanent remains unknown rather than inferring creature by name") {
++        val c=card("Synthetic copy") { typeLine="Sorcery";spell { val t=target(TargetFilter.Permanent);effect=CreateTokenCopyOfTargetEffect(t) } }
++        tokenCreationFacts(PathwayExtractor().extract(listOf(c)).facts).execute().single().verdict shouldBe Verdict.UNKNOWN
++    }
++    test("copy override does not erase unresolved or contradictory selection prerequisites") {
++        val c=card("Synthetic contradictory copy") { typeLine="Sorcery";spell {
++            val t=target(TargetFilter(GameObjectFilter(cardPredicates=listOf(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsCreature,com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNoncreature))))
++            effect=CreateTokenCopyOfTargetEffect(t,overrideCardTypes=setOf(CardType.CREATURE))
++        } }
++        tokenCreationFacts(PathwayExtractor().extract(listOf(c)).facts).execute().single().verdict shouldBe Verdict.UNKNOWN
++    }
++    test("contradictory creature requirements cannot be overwritten into a match") {
++        FactQuery(extract(creature()).facts).where(createdObjectIsCreature()).where(createdObjectIsCreature(false)).execute().single().verdict shouldBe Verdict.NO_MATCH
++    }
++})
+--- /dev/null
++++ b/cli/src/test/kotlin/dev/mtg/assistant/Phase25IntegrationTest.kt
+@@ -0,0 +1,73 @@
++package dev.mtg.assistant
++
++import dev.mtg.assistant.discovery.*
++import dev.mtg.assistant.audit.*
++import io.kotest.core.spec.style.FunSpec
++import io.kotest.matchers.shouldBe
++
++class Phase25IntegrationTest : FunSpec({
++    val catalog by lazy { Catalog() }
++    fun extract(n: String)=PathwayExtractor().extract(listOf(requireNotNull(catalog.card(n))))
++    fun rows(n: String)=tokenCreationFacts(extract(n).facts).execute()
++    test("reviewed fixed and triggered creation definitions qualify with native action paths") {
++        for(n in listOf("Dragon Fodder","Young Pyromancer","Siege-Gang Commander")) {
++            val r=rows(n).single();r.verdict shouldBe Verdict.MATCH
++            r.fact.path.startsWith("script.") shouldBe true;(r.fact.circumstances!=null) shouldBe true
++            r.fact.prerequisites.isNotEmpty() shouldBe true
++        }
++    }
++    test("Krenko aggregate quantity remains native and conditional") {
++        val r=rows("Krenko, Mob Boss").single();r.verdict shouldBe Verdict.MATCH
++        r.fact.tokenCreation!!.quantity.toString().contains("AggregateBattlefield") shouldBe true
++        r.fact.circumstances!!.actionKind shouldBe "ACTIVATED"
++    }
++    test("Ophiomancer retains the intervening condition") {
++        val r=rows("Ophiomancer").single();r.verdict shouldBe Verdict.MATCH
++        r.fact.prerequisites.any { it.contains("Snake") } shouldBe true
++    }
++    test("Heat Shimmer copy source can be an opponent without changing token receiver") {
++        val r=rows("Heat Shimmer").single();r.verdict shouldBe Verdict.MATCH
++        r.fact.destinationController shouldBe "YOU";r.fact.tokenCreation!!.copySource.isNullOrEmpty() shouldBe false
++    }
++    test("Hunted Horror controller exclusion and Treasure type exclusion remain separate") {
++        val enemy=rows("Hunted Horror").single();enemy.verdict shouldBe Verdict.NO_MATCH
++        enemy.fact.tokenCreation!!.creature shouldBe Verdict.MATCH;enemy.fact.destinationController shouldBe "OPPONENT"
++        val treasure=rows("Big Score").single();treasure.verdict shouldBe Verdict.NO_MATCH
++        treasure.fact.destinationController shouldBe "YOU";treasure.fact.tokenCreation!!.creature shouldBe Verdict.NO_MATCH
++    }
++    test("Kuldotha Rebirth native sacrifice and token facts preserve one action") {
++        val x=extract("Kuldotha Rebirth");val c=tokenCreationFacts(x.facts).execute().single()
++        c.verdict shouldBe Verdict.MATCH
++        val sac=x.facts.single { it.kind==FactKind.SACRIFICE }
++        sac.actionId shouldBe c.fact.actionId;sac.costOrEffect shouldBe "CASTING_COST"
++        creatureDeathPathways(x.pathways).where(canAffectCreature()).where(canAffectController(Controller.YOU)).where(canAffectTokenStatus(TokenStatus.NONTOKEN)).where(satisfiesDeathGenerationPolicy()).execute().any { it.verdict==Verdict.MATCH } shouldBe true
++    }
++    test("Haunted Dead returns and creates through distinct linked game events not one fabricated action") {
++        val fs=extract("Haunted Dead").facts
++        val b=reanimationFacts(fs).execute().single { it.verdict==Verdict.MATCH };val c=tokenCreationFacts(fs).execute().single()
++        c.verdict shouldBe Verdict.MATCH;(b.fact.actionId==c.fact.actionId) shouldBe false
++    }
++    test("conditional copy branches retain unknown rather than unconditional creation") {
++        val rs=rows("Rite of Replication");rs.size shouldBe 2
++        rs.all { it.verdict==Verdict.UNKNOWN } shouldBe true
++        rs.all { it.fact.prerequisites.any { p -> p.contains("Gate") } } shouldBe true
++    }
++    test("specialized Amass remains unsupported instead of a fabricated template") {
++        val x=extract("Dreadhorde Invasion")
++        tokenCreationFacts(x.facts).execute().isEmpty() shouldBe true
++        x.unsupported.any { it.nativeType.contains("Amass") } shouldBe true
++    }
++    test("held-out fixed quantity and combat trigger transfer to generic interpretation") {
++        for((n,q) in listOf("Hordeling Outburst" to 3,"Goblin Rabblemaster" to 1,"Raise the Alarm" to 2)) {
++            val r=rows(n).single();r.verdict shouldBe Verdict.MATCH
++            r.fact.tokenCreation!!.quantity shouldBe com.wingedsheep.sdk.scripting.values.DynamicAmount.Fixed(q)
++        }
++    }
++    test("candidate examples missing from authored catalog remain recorded gaps") {
++        listOf("Krenko's Command","Bitterblossom","Tempt with Vengeance").forEach { catalog.card(it) shouldBe null }
++    }
++    test("Judith remains an extension consumer without token-generation fact") {
++        rows("Judith, the Scourge Diva").isEmpty() shouldBe true
++        catalog.provenance("Judith, the Scourge Diva").origin shouldBe "APPLICATION_EXTENSION"
++    }
++})
+--- /dev/null
++++ b/cli/src/test/kotlin/dev/mtg/assistant/Phase25ReportingTest.kt
+@@ -0,0 +1,52 @@
++package dev.mtg.assistant
++
++import dev.mtg.assistant.discovery.*
++import dev.mtg.assistant.audit.*
++import com.wingedsheep.sdk.dsl.card
++import com.wingedsheep.sdk.scripting.effects.*
++import com.wingedsheep.sdk.scripting.values.DynamicAmount
++import io.kotest.core.spec.style.FunSpec
++import io.kotest.matchers.shouldBe
++import java.nio.file.Path
++import java.nio.file.Files
++import kotlinx.serialization.encodeToString
++
++class Phase25ReportingTest : FunSpec({
++    val catalog by lazy { Catalog() }
++    val root=if(Files.exists(Path.of("benchmark"))) Path.of(".") else Path.of("..")
++    fun report(): DiscoveryReport {
++        val review=readBenchmark(root.resolve("benchmark/phase25/review-v1.json"))
++        val names=review.cases.map { it.card }.distinct()
++        val commander=resolveCommander(catalog,"Kenrith, the Returned King")
++        val identity=fullIdentity(commander)
++        val cards=names.map { requireNotNull(catalog.card(it)) }
++        val eligibility=cards.map { EligibilityEvidence(it.name,commanderFormatLegality(it),selectedCommanderEligibility(it,identity),fullIdentity(it).map { x -> x.name },"Actual native Commander filters applied before reviewed subset extraction") }
++        val input=cards.filter { c -> eligibility.single { it.card==c.name }.let { it.format==Verdict.MATCH && it.deck==Verdict.MATCH } }
++        return factObjectiveReport(catalog,commander.name,identity.map { it.name },null,eligibility,emptyMap(),PathwayExtractor().extract(input),input.map { it.name },"create-creature-tokens")
++    }
++    test("frozen source-reviewed benchmark evaluates development and held-out examples without mismatches") {
++        val r=evaluateBenchmark(report(),root.resolve("benchmark/phase25/review-v1.json"))
++        r.cases.filter { it.status=="CONFIRMED_MISMATCH" }.map { it.id to it.issues } shouldBe emptyList()
++        r.denominators["reviewed_cases"] shouldBe 16
++        val output=root.resolve("generated/phase25/benchmark-all-colors.json")
++        Files.createDirectories(output.parent);Files.writeString(output,reportJson.encodeToString(r))
++        r.cases.single { it.id=="dreadhorde-invasion" }.status shouldBe "UNRESOLVED"
++    }
++    test("token diagnostics use the existing independent SDK traversal and root grouping") {
++        val r=report();val cards=r.mechanicalInputCards!!.map { catalog.card(it)!! }
++        val c=coverage(cards,r);c.objective shouldBe "create-creature-tokens"
++        (c.factCounts["CREATE_TOKEN"]!! > 0) shouldBe true
++        val e=examine(cards,r)
++        e.findings.any { it.card=="Dreadhorde Invasion" && it.check=="A_POTENTIAL_MISS" } shouldBe true
++        e.rootIssues.any { it.category==DiagnosticCategory.MISSING_OBJECTIVE_INTERPRETATION && it.representatives.any { r -> r.card=="Rite of Replication" } } shouldBe true
++        e.rootIssues.map { it.fingerprint } shouldBe examine(cards,r).rootIssues.map { it.fingerprint }
++    }
++    test("three objectives share the exact same facts on the same eligible pool") {
++        val reports=listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens").map {
++            discover(catalog,"Judith, the Scourge Diva","name:Kuldotha",it)
++        }
++        reports.map { it.facts }.distinct().size shouldBe 1
++        crossObjective(reports[0],reports[2]).identicalFactEvidence shouldBe true
++        crossObjective(reports[1],reports[2]).identicalFactEvidence shouldBe true
++    }
++})
+--- a/cli/build.gradle.kts
++++ b/cli/build.gradle.kts
+@@ -24,6 +24,8 @@
+ }
+ 
+ tasks.test {
++    // Frozen reviews are runtime test inputs; edits must invalidate Gradle test caching.
++    inputs.dir(layout.projectDirectory.dir("../benchmark")).withPathSensitivity(PathSensitivity.RELATIVE)
+     maxHeapSize = "1g"
+     jvmArgs("-XX:ActiveProcessorCount=4")
+     testLogging { events("passed", "failed", "skipped") }

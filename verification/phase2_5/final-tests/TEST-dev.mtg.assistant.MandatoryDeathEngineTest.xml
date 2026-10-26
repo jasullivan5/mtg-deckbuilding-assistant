@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.MandatoryDeathEngineTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:48:41.794Z" hostname="5fc36fab9608" time="0.191">
+  <properties/>
+  <testcase name="Ball Lightning remains until end step then sacrifices itself" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.013"/>
+  <testcase name="Spark Elemental remains until end step then sacrifices itself" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.006"/>
+  <testcase name="Pit Raptor without payable mana sacrifices on upkeep through native PayOrSuffer" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.047"/>
+  <testcase name="Demonic Taskmaster cannot sacrifice itself when no other creature exists" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.006"/>
+  <testcase name="Taskmaster leaving after upkeep trigger does not remove the sacrifice obligation" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.037"/>
+  <testcase name="Accursed Centaur alone must sacrifice itself after its ETB resolves" classname="dev.mtg.assistant.MandatoryDeathEngineTest" time="0.03"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

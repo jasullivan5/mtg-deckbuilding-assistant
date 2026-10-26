@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase25ReportingTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:49:13.533Z" hostname="5fc36fab9608" time="0.66">
+  <properties/>
+  <testcase name="frozen source-reviewed benchmark evaluates development and held-out examples without mismatches" classname="dev.mtg.assistant.Phase25ReportingTest" time="0.167"/>
+  <testcase name="token diagnostics use the existing independent SDK traversal and root grouping" classname="dev.mtg.assistant.Phase25ReportingTest" time="0.054"/>
+  <testcase name="three objectives share the exact same facts on the same eligible pool" classname="dev.mtg.assistant.Phase25ReportingTest" time="0.432"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

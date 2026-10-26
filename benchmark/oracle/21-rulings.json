@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "07c82cde-f00d-4454-9df4-9286e344c9bb",
+      "source": "wotc",
+      "published_at": "2020-06-23",
+      "comment": "If a card in a player's library has {X} in its mana cost, X is considered to be 0."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "07c82cde-f00d-4454-9df4-9286e344c9bb",
+      "source": "wotc",
+      "published_at": "2020-06-23",
+      "comment": "The bonus Muxus gets is determined only as its last ability resolves. Once that happens, the bonus won't change later in the turn even if the number of Goblins you control changes."
+    }
+  ]
+}

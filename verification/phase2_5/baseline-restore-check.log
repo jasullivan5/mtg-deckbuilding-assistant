@@ -1,0 +1,18 @@
+patching file cli/src/main/kotlin/dev/mtg/assistant/Main.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/audit/Benchmark.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/audit/Diagnostics.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/audit/RootDiagnostics.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/Discovery.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/Evidence.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/MechanicalFacts.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/PathwayExtractor.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/Reanimation.kt
+patching file cli/src/main/kotlin/dev/mtg/assistant/discovery/TokenFacts.kt
+patching file cli/src/test/kotlin/dev/mtg/assistant/Phase25EngineTest.kt
+patching file cli/src/test/kotlin/dev/mtg/assistant/Phase25FactsTest.kt
+patching file cli/src/test/kotlin/dev/mtg/assistant/Phase25IntegrationTest.kt
+patching file cli/src/test/kotlin/dev/mtg/assistant/Phase25ReportingTest.kt
+patching file cli/build.gradle.kts
+Restored baseline sources: /tmp/mtg-phase24-final-restoration
+Use JDK 21; run bash scripts/setup.sh (if no reused checkout), then ./dev build installDist.
+PASS: every restored original main/test byte and cli/build.gradle.kts matches Phase2.4

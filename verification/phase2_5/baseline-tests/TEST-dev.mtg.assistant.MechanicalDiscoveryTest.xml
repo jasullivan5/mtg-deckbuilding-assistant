@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.MechanicalDiscoveryTest" tests="33" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:20:50.104Z" hostname="5fc36fab9608" time="3.517">
+  <properties/>
+  <testcase name="all named integration fixtures actually exist at pinned revision" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.281"/>
+  <testcase name="format legality is independent of serving as commander and unknown is fail closed" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.014"/>
+  <testcase name="real mono multi and colorless commanders resolve their complete identities" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.045"/>
+  <testcase name="hybrid requires both colors while colorless candidates fit a mono commander" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="invalid commanders and face aliases fail clearly" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.017"/>
+  <testcase name="Goblin Bombardment retains its activation sacrifice and associated action" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.043"/>
+  <testcase name="Viscera Seer retains its activation sacrifice and associated action" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="Phyrexian Tower retains its activation sacrifice and associated action" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.005"/>
+  <testcase name="Village Rites retains its additional casting sacrifice" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.004"/>
+  <testcase name="Bone Splinters retains its additional casting sacrifice" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.046"/>
+  <testcase name="Victimize resolution sacrifice retains success gate and exact target prerequisites" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.028"/>
+  <testcase name="Murder can mechanically affect our nontoken creatures but is rejected by policy" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.004"/>
+  <testcase name="Tragic Slip enhances removal through morbid but is not a direct generator" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.011"/>
+  <testcase name="symmetrical Fleshbag sacrifice is a policy rejection not a controller rejection" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.003"/>
+  <testcase name="Blood Artist is not a direct generator or death-enhanced creature removal" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.003"/>
+  <testcase name="Gravecrawler is not a direct generator or death-enhanced creature removal" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.009"/>
+  <testcase name="generic predicates reject opponent and token only filters" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.0"/>
+  <testcase name="query conjunction preserves correlated OR scope instead of matching unrelated alternatives" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="unsupported scope retains UNKNOWN with independently inspectable decisions" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="synthetic nested composite and condition keep paths and prerequisites" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.003"/>
+  <testcase name="synthetic independent abilities cannot donate sacrifice costs to another action" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.004"/>
+  <testcase name="synthetic unsupported native effect is retained with action evidence" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.001"/>
+  <testcase name="unchanged removal in both conditional branches is not a positive enhancement" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.006"/>
+  <testcase name="alternative face executable scripts are inspected without granting separate card eligibility" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.004"/>
+  <testcase name="real damage is conditional and does not guarantee or qualify ordinary friendly-target death" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="full discovery uses eligible input and produces serializable inspectable evidence" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="2.89"/>
+  <testcase name="synthetic token-only and opponent-only operations are rejected after actual extraction" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.005"/>
+  <testcase name="synthetic death-gated enabling and resolution-payment removal are separate contributions" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.01"/>
+  <testcase name="synthetic unrelated conditional draw does not enhance removal outside that branch" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.004"/>
+  <testcase name="synthetic death-triggered opposing sacrifice is removal, not damage to a player" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="synthetic self-cast death discount applies only when this action has a removal effect" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.015"/>
+  <testcase name="real Cyclopean Mummy exiling its already-dead self is not battlefield removal" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <testcase name="synthetic attached death-event binding stays unknown without attachment constraints" classname="dev.mtg.assistant.MechanicalDiscoveryTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,24 @@
+{
+  "name": "Young Pyromancer",
+  "oracle_id": "5fac139a-07d3-4e6c-98e3-d98b199f7a6f",
+  "oracle_text": "Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token.",
+  "mana_cost": "{1}{R}",
+  "type_line": "Creature \u2014 Human Shaman",
+  "power": "2",
+  "toughness": "1",
+  "color_identity": [
+    "R"
+  ],
+  "scryfall_uri": "https://scryfall.com/card/tdc/95/young-pyromancer?utm_source=api",
+  "source": "https://api.scryfall.com/cards/named?exact=Young%20Pyromancer",
+  "retrieved": "2026-10-26",
+  "rulings": [
+    {
+      "object": "ruling",
+      "oracle_id": "5fac139a-07d3-4e6c-98e3-d98b199f7a6f",
+      "source": "wotc",
+      "published_at": "2021-03-19",
+      "comment": "An ability that triggers when a player casts a spell resolves before the spell that caused it to trigger, but after targets have been chosen for that spell. It resolves even if that spell is countered."
+    }
+  ]
+}

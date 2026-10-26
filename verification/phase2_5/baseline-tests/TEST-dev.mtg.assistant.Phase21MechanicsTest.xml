@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mtg.assistant.Phase21MechanicsTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-26T14:20:53.985Z" hostname="5fc36fab9608" time="0.263">
+  <properties/>
+  <testcase name="mandatory sacrifice remains mechanically possible and acceptance is a separate configurable policy" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.205"/>
+  <testcase name="real self-only toughness exchanges are potential generators with action constraints preserved" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.012"/>
+  <testcase name="sacrifice enables Victimize and exploit while ordinary symmetry stays excluded" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.005"/>
+  <testcase name="actual artifact-or-creature sacrifice costs recover the exact payable pathways" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.002"/>
+  <testcase name="Wicked Guardian selection is resolved locally but damage enabling draw is not death enabling removal" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.002"/>
+  <testcase name="selection propagates our nontoken scope and movement into the same action" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.006"/>
+  <testcase name="selection excludes opponent-only token-only zero-count and nonbattlefield deaths" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.006"/>
+  <testcase name="nested logical card predicates preserve supported positive and negative compatibility" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.0"/>
+  <testcase name="unresolved selection restrictions remain visible rather than becoming broad matches" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.007"/>
+  <testcase name="query predicate ordering gives the same final conjunction" classname="dev.mtg.assistant.Phase21MechanicsTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

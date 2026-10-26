@@ -1,0 +1,136 @@
+{
+  "object": "card",
+  "id": "e37cd150-1064-43b7-919b-8922d8a18f21",
+  "oracle_id": "92cdcafc-ffeb-436d-b2bd-d6ad895d0e08",
+  "multiverse_ids": [
+    24612
+  ],
+  "mtgo_id": 14301,
+  "mtgo_foil_id": 14302,
+  "tcgplayer_id": 7342,
+  "cardmarket_id": 3966,
+  "name": "Pit Raptor",
+  "lang": "en",
+  "released_at": "2000-06-05",
+  "uri": "https://api.scryfall.com/cards/e37cd150-1064-43b7-919b-8922d8a18f21",
+  "scryfall_uri": "https://scryfall.com/card/pcy/72/pit-raptor?utm_source=api",
+  "layout": "normal",
+  "highres_image": true,
+  "image_status": "highres_scan",
+  "image_updated_at": "2026-07-13T12:29:43Z",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783",
+    "normal": "https://cards.scryfall.io/normal/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783",
+    "large": "https://cards.scryfall.io/large/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783",
+    "png": "https://cards.scryfall.io/png/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.png?1783945783",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783",
+    "thumb": "https://cards.scryfall.io/thumb/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.webp?1783945783",
+    "grid": "https://cards.scryfall.io/grid/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.webp?1783945783",
+    "display": "https://cards.scryfall.io/display/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.webp?1783945783",
+    "art": "https://cards.scryfall.io/art/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.webp?1783945783",
+    "crop": "https://cards.scryfall.io/crop/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.webp?1783945783",
+    "jpeg": "https://cards.scryfall.io/normal/front/e/3/e37cd150-1064-43b7-919b-8922d8a18f21.jpg?1783945783"
+  },
+  "mana_cost": "{2}{B}{B}",
+  "cmc": 4.0,
+  "type_line": "Creature — Bird Mercenary",
+  "oracle_text": "Flying, first strike\nAt the beginning of your upkeep, sacrifice this creature unless you pay {2}{B}{B}.",
+  "power": "4",
+  "toughness": "3",
+  "colors": [
+    "B"
+  ],
+  "color_identity": [
+    "B"
+  ],
+  "keywords": [
+    "Flying",
+    "First strike"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "modern": "not_legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "competitivebrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "legal",
+    "predh": "legal",
+    "tlr": "not_legal"
+  },
+  "games": [
+    "paper",
+    "mtgo"
+  ],
+  "reserved": false,
+  "game_changer": false,
+  "foil": true,
+  "nonfoil": true,
+  "finishes": [
+    "nonfoil",
+    "foil"
+  ],
+  "oversized": false,
+  "promo": false,
+  "reprint": false,
+  "variation": false,
+  "set_id": "c233bd36-57c0-4aa2-ae6c-7aeabfb4e3ce",
+  "set": "pcy",
+  "set_name": "Prophecy",
+  "set_type": "expansion",
+  "set_uri": "https://api.scryfall.com/sets/c233bd36-57c0-4aa2-ae6c-7aeabfb4e3ce",
+  "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apcy&unique=prints",
+  "scryfall_set_uri": "https://scryfall.com/sets/pcy?utm_source=api",
+  "rulings_uri": "https://api.scryfall.com/cards/e37cd150-1064-43b7-919b-8922d8a18f21/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A92cdcafc-ffeb-436d-b2bd-d6ad895d0e08&unique=prints",
+  "collector_number": "72",
+  "digital": false,
+  "rarity": "uncommon",
+  "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+  "artist": "Thomas Gianni",
+  "artist_ids": [
+    "d7f03c52-e573-4082-9937-6c039b11ca70"
+  ],
+  "illustration_id": "cc2d7d8a-ad44-4aeb-8deb-4a3c5e933688",
+  "border_color": "black",
+  "frame": "1997",
+  "full_art": false,
+  "textless": false,
+  "booster": true,
+  "story_spotlight": false,
+  "edhrec_rank": 31757,
+  "prices": {
+    "usd": "0.22",
+    "usd_foil": "1.55",
+    "usd_etched": null,
+    "eur": "0.14",
+    "eur_foil": "1.13",
+    "tix": "0.04"
+  },
+  "related_uris": {
+    "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=24612&printed=false",
+    "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DPit%2BRaptor",
+    "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DPit%2BRaptor",
+    "edhrec": "https://edhrec.com/route/?cc=Pit+Raptor"
+  },
+  "purchase_uris": {
+    "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F7342%3Fpage%3D1",
+    "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=3966&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+    "cardhoarder": "https://www.cardhoarder.com/cards/14301?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+  }
+}

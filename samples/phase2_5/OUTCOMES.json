@@ -1,0 +1,399 @@
+{
+  "benchmark": {
+    "confirmed_mechanical_positive_recovered": 11,
+    "confirmed_mismatch_cases": 0,
+    "excluded_correctly_not_accepted": 4,
+    "expected_accepted_missed": 0,
+    "expected_accepted_recovered": 11,
+    "incorrect_accepted_reviewed_cases": 0,
+    "suspected_or_incomplete_cases": 0,
+    "unknown_boundaries_preserved": 2,
+    "unresolved_cases": 1,
+    "unreviewed_accepted_paths": 0
+  },
+  "benchmarkDenominators": {
+    "confirmed_evaluable_cases": 15,
+    "confirmed_expected_accepted_pathways": 11,
+    "confirmed_expected_excluded_cases": 4,
+    "confirmed_expected_mechanical_nonmatches": 2,
+    "confirmed_mechanical_positive_cases": 11,
+    "expected_unknown_interpretation_boundaries": 2,
+    "reviewed_cards": 15,
+    "reviewed_cases": 16
+  },
+  "judith": {
+    "a": {
+      "accepted_death_enhanced_removal_cards": 25,
+      "accepted_death_enhanced_removal_pathways": 25,
+      "accepted_direct_cards": 462,
+      "accepted_direct_pathways": 474,
+      "accepted_self_toughness_exchange_pathways": 12,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 4353,
+      "commander_eligible_cards": 6104,
+      "commander_legal_cards": 16630,
+      "controller_incompatible_pathways": 164,
+      "extracted_potential_death_operations": 2916,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mandatory_unlinked_sacrifice_pathways": 157,
+      "mechanical_input_cards_after_conventional_search": 6104,
+      "mechanically_compatible_direct_pathways": 1327,
+      "mechanically_compatible_policy_rejected_pathways": 850,
+      "nontoken_incompatible_pathways": 6,
+      "our_creature_pathways": 1333,
+      "our_nontoken_creature_pathways": 1327,
+      "pathways_with_any_unknown_decision": 1045,
+      "policy_rejected_removal_pathways": 850,
+      "policy_unknown_compatible_pathways": 3,
+      "potential_creature_death_pathways": 1471,
+      "registry_names_including_faces": 17352,
+      "unknown_query_pathways": 411,
+      "unsupported_structure_records": 8692,
+      "upstream_authored_physical_cards": 16995
+    },
+    "b": {
+      "accepted_reanimation_cards": 95,
+      "accepted_reanimation_pathways": 97,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 4215,
+      "commander_eligible_cards": 6104,
+      "commander_legal_cards": 16630,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mechanical_facts": 5629,
+      "mechanical_input_cards_after_conventional_search": 6104,
+      "movement_facts": 2055,
+      "registry_names_including_faces": 17352,
+      "rejected_movement_pathways": 1865,
+      "unknown_query_pathways": 93,
+      "unsupported_structure_records": 8308,
+      "upstream_authored_physical_cards": 16995
+    },
+    "c": {
+      "accepted_dynamic_quantity_pathways": 9,
+      "accepted_fixed_quantity_pathways": 353,
+      "accepted_token_creation_cards": 345,
+      "accepted_token_creation_pathways": 362,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 4353,
+      "commander_eligible_cards": 6104,
+      "commander_legal_cards": 16630,
+      "creature_compatible_creation_pathways": 384,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mechanical_facts": 5629,
+      "mechanical_input_cards_after_conventional_search": 6104,
+      "our_controller_compatible_creation_pathways": 375,
+      "registry_names_including_faces": 17352,
+      "rejected_token_creation_pathways": 230,
+      "token_creation_facts": 647,
+      "unknown_query_pathways": 55,
+      "unsupported_structure_records": 8692,
+      "upstream_authored_physical_cards": 16995
+    }
+  },
+  "krenko": {
+    "a": {
+      "accepted_death_enhanced_removal_cards": 8,
+      "accepted_death_enhanced_removal_pathways": 8,
+      "accepted_direct_cards": 195,
+      "accepted_direct_pathways": 200,
+      "accepted_self_toughness_exchange_pathways": 10,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 2423,
+      "commander_eligible_cards": 3466,
+      "commander_legal_cards": 16630,
+      "controller_incompatible_pathways": 59,
+      "extracted_potential_death_operations": 1669,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mandatory_unlinked_sacrifice_pathways": 55,
+      "mechanical_input_cards_after_conventional_search": 3466,
+      "mechanically_compatible_direct_pathways": 722,
+      "mechanically_compatible_policy_rejected_pathways": 522,
+      "nontoken_incompatible_pathways": 3,
+      "our_creature_pathways": 725,
+      "our_nontoken_creature_pathways": 722,
+      "pathways_with_any_unknown_decision": 568,
+      "policy_rejected_removal_pathways": 522,
+      "policy_unknown_compatible_pathways": 0,
+      "potential_creature_death_pathways": 780,
+      "registry_names_including_faces": 17352,
+      "unknown_query_pathways": 190,
+      "unsupported_structure_records": 4851,
+      "upstream_authored_physical_cards": 16995
+    },
+    "b": {
+      "accepted_reanimation_cards": 14,
+      "accepted_reanimation_pathways": 15,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 2382,
+      "commander_eligible_cards": 3466,
+      "commander_legal_cards": 16630,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mechanical_facts": 2897,
+      "mechanical_input_cards_after_conventional_search": 3466,
+      "movement_facts": 864,
+      "registry_names_including_faces": 17352,
+      "rejected_movement_pathways": 814,
+      "unknown_query_pathways": 35,
+      "unsupported_structure_records": 4750,
+      "upstream_authored_physical_cards": 16995
+    },
+    "c": {
+      "accepted_dynamic_quantity_pathways": 4,
+      "accepted_fixed_quantity_pathways": 185,
+      "accepted_token_creation_cards": 181,
+      "accepted_token_creation_pathways": 189,
+      "application_extension_physical_cards": 1,
+      "authored_physical_cards": 16996,
+      "cards_with_unsupported_structures": 2423,
+      "commander_eligible_cards": 3466,
+      "commander_legal_cards": 16630,
+      "creature_compatible_creation_pathways": 200,
+      "format_legality_unknown_cards": 353,
+      "identity_unknown_legal_cards": 698,
+      "mechanical_facts": 2897,
+      "mechanical_input_cards_after_conventional_search": 3466,
+      "our_controller_compatible_creation_pathways": 196,
+      "registry_names_including_faces": 17352,
+      "rejected_token_creation_pathways": 139,
+      "token_creation_facts": 361,
+      "unknown_query_pathways": 33,
+      "unsupported_structure_records": 4851,
+      "upstream_authored_physical_cards": 16995
+    }
+  },
+  "limitations": [
+    "Counts measure this pinned authored corpus and Commander pool, not normalized strategic quality or whole-MTG recall.",
+    "A/B facts gain token evidence; no change in their objective pathways/decisions is required for that generic expansion.",
+    "Exact same facts are exported by A/B/C; each query uses different operation predicates; cross-objective action relationships are distinct from identical operation consumption."
+  ],
+  "regressions": {
+    "judith-a": {
+      "changedFields": {
+        "contributionClassification": 0,
+        "mechanicalCompatibility": 0,
+        "nativeOperation": 0,
+        "policyAcceptance": 0,
+        "prerequisites": 0,
+        "verdict": 0
+      },
+      "counts": {
+        "PATHWAY_CHANGED": 63,
+        "UNSUPPORTED_ADDED": 81,
+        "UNSUPPORTED_REMOVED": 647
+      },
+      "eligiblePoolUnchanged": true,
+      "pathwayIdentitiesUnchanged": true,
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 63
+      }
+    },
+    "judith-b": {
+      "changedFields": {
+        "contributionClassification": 0,
+        "mechanicalCompatibility": 0,
+        "nativeOperation": 0,
+        "policyAcceptance": 0,
+        "prerequisites": 0,
+        "verdict": 0
+      },
+      "counts": {
+        "PATHWAY_CHANGED": 24,
+        "UNSUPPORTED_ADDED": 81,
+        "UNSUPPORTED_REMOVED": 647
+      },
+      "eligiblePoolUnchanged": true,
+      "pathwayIdentitiesUnchanged": true,
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 24
+      }
+    },
+    "krenko-a": {
+      "changedFields": {
+        "contributionClassification": 0,
+        "mechanicalCompatibility": 0,
+        "nativeOperation": 0,
+        "policyAcceptance": 0,
+        "prerequisites": 0,
+        "verdict": 0
+      },
+      "counts": {
+        "PATHWAY_CHANGED": 30,
+        "UNSUPPORTED_ADDED": 48,
+        "UNSUPPORTED_REMOVED": 361
+      },
+      "eligiblePoolUnchanged": true,
+      "pathwayIdentitiesUnchanged": true,
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 30
+      }
+    },
+    "krenko-b": {
+      "changedFields": {
+        "contributionClassification": 0,
+        "mechanicalCompatibility": 0,
+        "nativeOperation": 0,
+        "policyAcceptance": 0,
+        "prerequisites": 0,
+        "verdict": 0
+      },
+      "counts": {
+        "PATHWAY_CHANGED": 2,
+        "UNSUPPORTED_ADDED": 48,
+        "UNSUPPORTED_REMOVED": 361
+      },
+      "eligiblePoolUnchanged": true,
+      "pathwayIdentitiesUnchanged": true,
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2
+      }
+    }
+  },
+  "tokenStructuralReach": {
+    "judith": {
+      "CreatePredefinedToken": {
+        "actions": 228,
+        "cards": 217,
+        "facts": 231,
+        "representatives": [
+          "Alchemist's Talent|script.triggeredAbilities[0].effect",
+          "Ancestors' Aid|script.spellEffect.effects[2]",
+          "Anje, Maid of Dishonor|script.triggeredAbilities[0].effect",
+          "Ashnod, Flesh Mechanist|script.triggeredAbilities[0].effect.then",
+          "Atsushi, the Blazing Sky|script.triggeredAbilities[0].effect.modes[1].effect"
+        ],
+        "verdicts": {
+          "MATCH": 9,
+          "NO_MATCH": 220,
+          "UNKNOWN": 2
+        }
+      },
+      "CreateToken": {
+        "actions": 360,
+        "cards": 342,
+        "facts": 363,
+        "representatives": [
+          "Aclazotz, Deepest Betrayal|script.triggeredAbilities[1].effect",
+          "Adorned Crocodile|script.triggeredAbilities[0].effect",
+          "Agents of HYDRA|script.triggeredAbilities[0].effect",
+          "Akki Ember-Keeper|script.triggeredAbilities[0].effect",
+          "Archdemon of Unx|script.triggeredAbilities[0].effect.effects[1]"
+        ],
+        "verdicts": {
+          "MATCH": 329,
+          "NO_MATCH": 7,
+          "UNKNOWN": 27
+        }
+      },
+      "CreateTokenCopyOfSource": {
+        "actions": 17,
+        "cards": 17,
+        "facts": 17,
+        "representatives": [
+          "Agate Instigator|script.triggeredAbilities[0].effect",
+          "Bloodforged Battle-Axe|script.triggeredAbilities[0].effect",
+          "Coruscation Mage|script.triggeredAbilities[0].effect",
+          "Darkstar Augur|script.triggeredAbilities[0].effect",
+          "Dreadfeast Demon|script.triggeredAbilities[0].effect.then"
+        ],
+        "verdicts": {
+          "MATCH": 14,
+          "NO_MATCH": 3
+        }
+      },
+      "CreateTokenCopyOfTarget": {
+        "actions": 34,
+        "cards": 31,
+        "facts": 36,
+        "representatives": [
+          "Abyssal Harvester|script.activatedAbilities[0].effect.effects[2]",
+          "Ardyn, the Usurper|script.triggeredAbilities[0].effect.effects[1]",
+          "Calamity, Galloping Inferno|script.triggeredAbilities[0].effect.effects[2]",
+          "Calamity, Galloping Inferno|script.triggeredAbilities[0].effect.effects[5]",
+          "Chandra, Flameshaper|script.activatedAbilities[1].effect"
+        ],
+        "verdicts": {
+          "MATCH": 10,
+          "UNKNOWN": 26
+        }
+      }
+    },
+    "krenko": {
+      "CreatePredefinedToken": {
+        "actions": 140,
+        "cards": 134,
+        "facts": 142,
+        "representatives": [
+          "Alchemist's Talent|script.triggeredAbilities[0].effect",
+          "Ancestors' Aid|script.spellEffect.effects[2]",
+          "Atsushi, the Blazing Sky|script.triggeredAbilities[0].effect.modes[1].effect",
+          "Axgard Artisan|script.triggeredAbilities[0].effect",
+          "Beamtown Beatstick|script.triggeredAbilities[0].effect"
+        ],
+        "verdicts": {
+          "MATCH": 5,
+          "NO_MATCH": 135,
+          "UNKNOWN": 2
+        }
+      },
+      "CreateToken": {
+        "actions": 182,
+        "cards": 174,
+        "facts": 184,
+        "representatives": [
+          "Akki Ember-Keeper|script.triggeredAbilities[0].effect",
+          "Ardoz, Cobbler of War|script.activatedAbilities[0].effect",
+          "Artistic Process|script.spellEffect.modes[2].effect.effects[0]",
+          "Barbed Batterfist|script.triggeredAbilities[0].effect.effects[0]",
+          "Beetleback Chief|script.triggeredAbilities[0].effect"
+        ],
+        "verdicts": {
+          "MATCH": 167,
+          "NO_MATCH": 2,
+          "UNKNOWN": 15
+        }
+      },
+      "CreateTokenCopyOfSource": {
+        "actions": 11,
+        "cards": 11,
+        "facts": 11,
+        "representatives": [
+          "Agate Instigator|script.triggeredAbilities[0].effect",
+          "Bloodforged Battle-Axe|script.triggeredAbilities[0].effect",
+          "Coruscation Mage|script.triggeredAbilities[0].effect",
+          "Improvised Arsenal|script.activatedAbilities[0].effect",
+          "Manifold Mouse|script.triggeredAbilities[0].effect"
+        ],
+        "verdicts": {
+          "MATCH": 9,
+          "NO_MATCH": 2
+        }
+      },
+      "CreateTokenCopyOfTarget": {
+        "actions": 22,
+        "cards": 21,
+        "facts": 24,
+        "representatives": [
+          "Calamity, Galloping Inferno|script.triggeredAbilities[0].effect.effects[2]",
+          "Calamity, Galloping Inferno|script.triggeredAbilities[0].effect.effects[5]",
+          "Chandra, Flameshaper|script.activatedAbilities[1].effect",
+          "Cogwork Assembler|script.activatedAbilities[0].effect",
+          "Devastating Onslaught|script.spellEffect"
+        ],
+        "verdicts": {
+          "MATCH": 8,
+          "UNKNOWN": 16
+        }
+      }
+    }
+  }
+}

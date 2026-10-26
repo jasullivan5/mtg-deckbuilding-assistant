@@ -1,0 +1,23 @@
+{
+  "development": {
+    "cases": 12,
+    "evaluated": 12,
+    "statuses": {
+      "MATCH": 12
+    }
+  },
+  "held-out": {
+    "cases": 3,
+    "evaluated": 3,
+    "statuses": {
+      "MATCH": 3
+    }
+  },
+  "unresolved": {
+    "cases": 1,
+    "evaluated": 1,
+    "statuses": {
+      "UNRESOLVED": 1
+    }
+  }
+}

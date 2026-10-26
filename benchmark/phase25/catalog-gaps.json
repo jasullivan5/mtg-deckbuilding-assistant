@@ -1,0 +1,8 @@
+{
+  "unavailableCandidateNames": [
+    "Krenko's Command",
+    "Bitterblossom",
+    "Tempt with Vengeance"
+  ],
+  "validation": "Confirmed by actual Catalog lookup in Phase25IntegrationTest; no substitute authored definitions"
+}
