@@ -11,6 +11,8 @@ import com.wingedsheep.search.SearchService
 class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionDefinition> = dev.mtg.assistant.extensions.Extensions.all) {
     private val origins = mutableMapOf<String, dev.mtg.assistant.extensions.Provenance>()
     fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", "https://github.com/wingedsheep/argentum-engine/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
+    private val reviews = mutableMapOf<String, dev.mtg.assistant.extensions.DefinitionReview>()
+    fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview()
     val registry = CardRegistry()
     private val printings = PrintingRegistry()
     val setCount: Int
@@ -34,8 +36,9 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
             registry.register(listOf(extension.definition))
             fun mark(def: CardDefinition) {
                 origins[def.name] = extension.provenance
+                reviews[def.name] = extension.review
                 def.backFace?.let(::mark); def.flipSide?.let(::mark)
-                def.cardFaces.forEach { origins[it.name] = extension.provenance }
+                def.cardFaces.forEach { origins[it.name] = extension.provenance; reviews[it.name] = extension.review }
             }
             mark(extension.definition)
         }

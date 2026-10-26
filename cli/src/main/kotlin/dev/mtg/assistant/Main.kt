@@ -24,13 +24,14 @@ fun describe(card: CardDefinition): String = buildString {
     appendLine(scriptJson.encodeToString(CardScript.serializer(), card.script))
 }
 
-private const val HELP = """MTG Deckbuilding Assistant — Phase 2.5
+private const val HELP = """MTG Deckbuilding Assistant
 Usage:
   mtg-assistant audit cross-objective --snapshot <objective-a.json> --other-snapshot <objective-b.json> [--json] [--output <path>]
   mtg-assistant audit benchmark --snapshot <discovery.json> --benchmark <review.json> [--json] [--output <path>]
   mtg-assistant audit benchmark-diff --before <benchmark.json> --after <benchmark.json> [--json] [--output <path>]
   mtg-assistant audit {coverage|inconsistencies} --commander <name> [--snapshot <discovery.json>] [--objective <objective>] [--benchmark <review.json>] [--json] [--output <path>]
   mtg-assistant audit diff --before <discovery.json> --after <discovery.json> [--before-coverage <coverage.json> --after-coverage <coverage.json>] [--json] [--output <path>]
+  mtg-assistant commander inspect <exact card name> [--json]
   mtg-assistant stats
   mtg-assistant card <exact card name>
   mtg-assistant search <Argentum query>
@@ -52,6 +53,7 @@ fun runCli(args: Array<String>, catalog: () -> Catalog = { Catalog() },
     return try {
         when (args[0]) {
             "audit" -> dev.mtg.assistant.audit.auditCommand(args.drop(1), catalog, out)
+            "commander" -> dev.mtg.assistant.discovery.commanderCommand(args.drop(1), catalog(), out)
             "discover" -> discoveryCommand(args.drop(1), catalog(), out)
             "stats" -> {
                 require(args.size == 1) { "stats takes no arguments" }

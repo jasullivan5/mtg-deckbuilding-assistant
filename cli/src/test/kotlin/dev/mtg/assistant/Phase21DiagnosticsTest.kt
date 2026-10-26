@@ -33,13 +33,13 @@ class Phase21DiagnosticsTest : FunSpec({
         catalog.search("name:\"Judith, the Scourge Diva\"").any { it.name == j.name } shouldBe true
     }
     test("extension collisions fail for name and Oracle ID without overwriting") {
-        val ext=Extensions.all.single()
+        val ext=Extensions.all.single { it.definition.name==JudithTheScourgeDiva.name }
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(ext.definition),listOf(ext)) }
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(ext.definition.copy(name="Different Name")),listOf(ext)) }
         catalog.registry.requireCard(ext.definition.name).script shouldBe ext.definition.script
     }
     test("extension requires verified identity and legality") {
-        val e=Extensions.all.single()
+        val e=Extensions.all.single { it.definition.name==JudithTheScourgeDiva.name }
         shouldThrow<IllegalArgumentException> { Extensions.validate(emptyList(),listOf(e.copy(definition=e.definition.copy(colorIdentityOverride=null)))) }
         shouldThrow<IllegalArgumentException> { Extensions.validate(emptyList(),listOf(e.copy(definition=e.definition.copy(legalFormats=emptySet())))) }
     }
