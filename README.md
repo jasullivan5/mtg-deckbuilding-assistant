@@ -88,4 +88,6 @@ python3 verification/phase2_5/compact-reports.py
 
 The source-restoration patch is verified against the original Phase2.4 application bytes. It requires Python3 and `patch` (Linux/macOS or Git Bash/WSL). Baseline setup reuses the clean pinned checkout when available. Full reports can be hundreds of MB; `generated/` is deliberately excluded from the delivery. `samples/phase2_5/OUTPUT_MANIFEST.json` records executed output hashes, sizes and regeneration commands. Compact samples preserve counts, identities, verdicts and representative native evidence, not complete snapshots usable directly by `audit diff`.
 
-See `PHASE2_5_IMPLEMENTATION.md`, `BUILD_VERIFICATION.md`, `KNOWN_LIMITATIONS.md`, and the frozen benchmark/source snapshots. All previous automated test sources and their benchmark dependencies are retained.
+See `docs/history/PHASE2_5_IMPLEMENTATION.md`, `docs/history/PHASE2_5_BUILD_VERIFICATION.md`, `KNOWN_LIMITATIONS.md`, and the frozen benchmark/source snapshots. All previous automated test sources and their benchmark dependencies are retained.
+
+When importing the ZIP on Windows, if Git reports executable-bit-only changes, set `git config core.fileMode false` locally before reviewing status. Native Windows execution is not claimed by the Linux verification record.

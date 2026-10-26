@@ -1,0 +1,435 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :assistant-cli:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk:compileKotlin UP-TO-DATE
+> Task :mtg-sdk:compileJava NO-SOURCE
+> Task :mtg-sdk-tooling:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk-tooling:compileKotlin UP-TO-DATE
+> Task :mtg-sdk-tooling:compileJava NO-SOURCE
+> Task :mtg-search:kmpPartiallyResolvedDependenciesChecker
+> Task :mtg-search:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-search:compileKotlinJvm UP-TO-DATE
+> Task :mtg-search:compileJvmMainJava NO-SOURCE
+> Task :mtg-search:jvmProcessResources NO-SOURCE
+> Task :mtg-search:processJvmMainResources SKIPPED
+> Task :mtg-search:jvmMainClasses UP-TO-DATE
+> Task :mtg-search:jvmJar UP-TO-DATE
+> Task :mtg-sets:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:1993-1999:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:core:compileKotlin UP-TO-DATE
+> Task :mtg-sets:core:compileJava NO-SOURCE
+> Task :mtg-sets:1993-1999:compileKotlin UP-TO-DATE
+> Task :mtg-sets:1993-1999:compileJava NO-SOURCE
+> Task :mtg-sets:2000-2002:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2000-2002:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2000-2002:compileJava NO-SOURCE
+> Task :mtg-sets:2003-2007:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2003-2007:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2003-2007:compileJava NO-SOURCE
+> Task :mtg-sets:2008-2016:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2008-2016:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2008-2016:compileJava NO-SOURCE
+> Task :mtg-sets:2017-2022:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2017-2022:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2017-2022:compileJava NO-SOURCE
+> Task :mtg-sets:2023:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2023:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2023:compileJava NO-SOURCE
+> Task :mtg-sets:2024:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2024:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2024:compileJava NO-SOURCE
+> Task :mtg-sets:2025:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2025:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2025:compileJava NO-SOURCE
+> Task :mtg-sets:2026:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2026:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2026:compileJava NO-SOURCE
+> Task :mtg-sets:compileKotlin UP-TO-DATE
+> Task :mtg-sets:compileJava NO-SOURCE
+> Task :rules-engine:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :rules-engine:compileKotlin UP-TO-DATE
+> Task :rules-engine:compileJava NO-SOURCE
+> Task :assistant-cli:compileKotlin UP-TO-DATE
+> Task :assistant-cli:compileJava NO-SOURCE
+> Task :assistant-cli:processResources NO-SOURCE
+> Task :assistant-cli:classes UP-TO-DATE
+> Task :assistant-cli:jar UP-TO-DATE
+> Task :rules-engine:processResources UP-TO-DATE
+> Task :rules-engine:classes UP-TO-DATE
+> Task :rules-engine:jar UP-TO-DATE
+> Task :rules-engine:compileTestFixturesKotlin UP-TO-DATE
+> Task :rules-engine:compileTestFixturesJava NO-SOURCE
+> Task :assistant-cli:compileTestKotlin UP-TO-DATE
+> Task :assistant-cli:compileTestJava NO-SOURCE
+> Task :assistant-cli:processTestResources NO-SOURCE
+> Task :assistant-cli:testClasses UP-TO-DATE
+> Task :mtg-sdk:processResources NO-SOURCE
+> Task :mtg-sdk:classes UP-TO-DATE
+> Task :mtg-sdk:jar UP-TO-DATE
+> Task :mtg-sdk-tooling:processResources NO-SOURCE
+> Task :mtg-sdk-tooling:classes UP-TO-DATE
+> Task :mtg-sdk-tooling:jar UP-TO-DATE
+> Task :mtg-sets:processResources UP-TO-DATE
+> Task :mtg-sets:classes UP-TO-DATE
+> Task :mtg-sets:jar UP-TO-DATE
+> Task :rules-engine:processTestFixturesResources NO-SOURCE
+> Task :rules-engine:testFixturesClasses UP-TO-DATE
+> Task :rules-engine:testFixturesJar UP-TO-DATE
+> Task :mtg-sets:1993-1999:processResources NO-SOURCE
+> Task :mtg-sets:1993-1999:classes UP-TO-DATE
+> Task :mtg-sets:1993-1999:jar UP-TO-DATE
+> Task :mtg-sets:2000-2002:processResources NO-SOURCE
+> Task :mtg-sets:2000-2002:classes UP-TO-DATE
+> Task :mtg-sets:2000-2002:jar UP-TO-DATE
+> Task :mtg-sets:2003-2007:processResources NO-SOURCE
+> Task :mtg-sets:2003-2007:classes UP-TO-DATE
+> Task :mtg-sets:2003-2007:jar UP-TO-DATE
+> Task :mtg-sets:2008-2016:processResources NO-SOURCE
+> Task :mtg-sets:2008-2016:classes UP-TO-DATE
+> Task :mtg-sets:2008-2016:jar UP-TO-DATE
+> Task :mtg-sets:2017-2022:processResources NO-SOURCE
+> Task :mtg-sets:2017-2022:classes UP-TO-DATE
+> Task :mtg-sets:2017-2022:jar UP-TO-DATE
+> Task :mtg-sets:2023:processResources NO-SOURCE
+> Task :mtg-sets:2023:classes UP-TO-DATE
+> Task :mtg-sets:2023:jar UP-TO-DATE
+> Task :mtg-sets:2024:processResources NO-SOURCE
+> Task :mtg-sets:2024:classes UP-TO-DATE
+> Task :mtg-sets:2024:jar UP-TO-DATE
+> Task :mtg-sets:2025:processResources NO-SOURCE
+> Task :mtg-sets:2025:classes UP-TO-DATE
+> Task :mtg-sets:2025:jar UP-TO-DATE
+> Task :mtg-sets:2026:processResources NO-SOURCE
+> Task :mtg-sets:2026:classes UP-TO-DATE
+> Task :mtg-sets:2026:jar UP-TO-DATE
+> Task :mtg-sets:core:processResources UP-TO-DATE
+> Task :mtg-sets:core:classes UP-TO-DATE
+> Task :mtg-sets:core:jar UP-TO-DATE
+
+> Task :assistant-cli:test
+
+ArgentumIntegrationTest > real authored catalog is discovered and registered PASSED
+
+ArgentumIntegrationTest > retrieval exposes native script and actual damage effect PASSED
+
+ArgentumIntegrationTest > existing mtg-search combines conventional type color cost and name filters PASSED
+
+ArgentumIntegrationTest > search projection preserves creature stats keywords and identity PASSED
+
+ArgentumIntegrationTest > malformed queries fail instead of silently returning misleading matches PASSED
+
+ArgentumIntegrationTest > CLI emits actual script and search results PASSED
+
+ArgentumIntegrationTest > CLI reports missing names and invalid commands PASSED
+
+Phase24FactsTest > native owner-default return from our graveyard qualifies PASSED
+
+Phase24FactsTest > any graveyard plus our entry control can choose our card PASSED
+
+Phase24FactsTest > opponent-owned cards cannot satisfy own graveyard even under our control PASSED
+
+Phase24FactsTest > entry to an opponent is excluded independently of ownership PASSED
+
+Phase24FactsTest > graveyard to hand is a reusable fact and a reanimation nonmatch PASSED
+
+Phase24FactsTest > exile to battlefield is not direct graveyard movement PASSED
+
+Phase24FactsTest > noncreature and token-only constraints exclude desired card PASSED
+
+Phase24FactsTest > correlated owner and creature branches cannot be independently combined PASSED
+
+Phase24FactsTest > negation and contradictory ownership use one owner assignment PASSED
+
+Phase24FactsTest > mixed zone target union preserves ownership and type per clause PASSED
+
+Phase24FactsTest > unknown property predicate remains unknown rather than guessed feasible PASSED
+
+Phase24FactsTest > selection without movement and token creation cannot reanimate PASSED
+
+Phase24FactsTest > collection source ownership and current zone survive filter selection and movement PASSED
+
+Phase24FactsTest > intermediate exile is kept as a separate current-zone fact PASSED
+
+Phase24FactsTest > one action exposes sacrifice and movement without a second effect traversal PASSED
+
+Phase24FactsTest > prior movement updates target zone rather than reusing original target legality PASSED
+
+Phase24FactsTest > unresolved conditional branch does not become an unconditional reanimation PASSED
+
+Phase24FactsTest > unbound pipeline target never supplies a known own graveyard creature PASSED
+
+Phase24FactsTest > zero collection selection cannot produce a return PASSED
+
+Phase25FactsTest > creature template is a correlated fact with original action and native source PASSED
+
+Phase25FactsTest > predefined Treasure is a noncreature fourth-objective composition PASSED
+
+Phase25FactsTest > unknown native predefined template remains visible and unknown PASSED
+
+Phase25FactsTest > opposing receiver does not qualify PASSED
+
+Phase25FactsTest > zero quantity does not qualify PASSED
+
+Phase25FactsTest > negative quantity does not qualify PASSED
+
+Phase25FactsTest > X preserves positive-quantity and resource prerequisite PASSED
+
+Phase25FactsTest > zero multiplier cannot create positive quantity PASSED
+
+Phase25FactsTest > unbound copy target does not become certain even with a creature override PASSED
+
+Phase25FactsTest > source copy uses native exceptions type replacement precedence PASSED
+
+Phase25FactsTest > batch keeps one event and independent template groups PASSED
+
+Phase25FactsTest > batch shared opposing controller excludes all creature groups PASSED
+
+Phase25FactsTest > correlated composite cannot combine enemy creature with our noncreature token PASSED
+
+Phase25FactsTest > multiple token effects remain distinguishable PASSED
+
+Phase25FactsTest > movement is not creation PASSED
+
+Phase25FactsTest > one composite movement and creation supports B and C with identical action PASSED
+
+Phase25FactsTest > generic condition preserves branch uncertainty and never merges incompatible outcomes PASSED
+
+Phase25FactsTest > conditional creation remains unknown with explicit branch prerequisites PASSED
+
+Phase25FactsTest > optional choice retains circumstances and does not imply mandatory generation PASSED
+
+Phase25FactsTest > copy of unconstrained permanent remains unknown rather than inferring creature by name PASSED
+
+Phase25FactsTest > copy override does not erase unresolved or contradictory selection prerequisites PASSED
+
+Phase25FactsTest > contradictory creature requirements cannot be overwritten into a match PASSED
+Kotlin build report is written to file:///workspace/scratch/06629ddb062c/handoff-recovered/mtg-assistant-phase2_5/argentum/build/reports/kotlin-build/argentum-engine-build-2026-10-26-13-34-17-0.txt
+
+[Incubating] Problems report is available at: file:///workspace/scratch/06629ddb062c/handoff-recovered/mtg-assistant-phase2_5/argentum/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 43s
+49 actionable tasks: 2 executed, 47 up-to-date
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :assistant-cli:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk:compileKotlin UP-TO-DATE
+> Task :mtg-sdk:compileJava NO-SOURCE
+> Task :mtg-sdk-tooling:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sdk-tooling:compileKotlin UP-TO-DATE
+> Task :mtg-sdk-tooling:compileJava NO-SOURCE
+> Task :mtg-search:kmpPartiallyResolvedDependenciesChecker
+> Task :mtg-search:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-search:compileKotlinJvm UP-TO-DATE
+> Task :mtg-search:compileJvmMainJava NO-SOURCE
+> Task :mtg-search:jvmProcessResources NO-SOURCE
+> Task :mtg-search:processJvmMainResources SKIPPED
+> Task :mtg-search:jvmMainClasses UP-TO-DATE
+> Task :mtg-search:jvmJar UP-TO-DATE
+> Task :mtg-sets:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:1993-1999:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:core:compileKotlin UP-TO-DATE
+> Task :mtg-sets:core:compileJava NO-SOURCE
+> Task :mtg-sets:1993-1999:compileKotlin UP-TO-DATE
+> Task :mtg-sets:1993-1999:compileJava NO-SOURCE
+> Task :mtg-sets:2000-2002:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2000-2002:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2000-2002:compileJava NO-SOURCE
+> Task :mtg-sets:2003-2007:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2003-2007:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2003-2007:compileJava NO-SOURCE
+> Task :mtg-sets:2008-2016:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2008-2016:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2008-2016:compileJava NO-SOURCE
+> Task :mtg-sets:2017-2022:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2017-2022:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2017-2022:compileJava NO-SOURCE
+> Task :mtg-sets:2023:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2023:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2023:compileJava NO-SOURCE
+> Task :mtg-sets:2024:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2024:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2024:compileJava NO-SOURCE
+> Task :mtg-sets:2025:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2025:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2025:compileJava NO-SOURCE
+> Task :mtg-sets:2026:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mtg-sets:2026:compileKotlin UP-TO-DATE
+> Task :mtg-sets:2026:compileJava NO-SOURCE
+> Task :mtg-sets:compileKotlin UP-TO-DATE
+> Task :mtg-sets:compileJava NO-SOURCE
+> Task :rules-engine:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :rules-engine:compileKotlin UP-TO-DATE
+> Task :rules-engine:compileJava NO-SOURCE
+> Task :assistant-cli:compileKotlin UP-TO-DATE
+> Task :assistant-cli:compileJava NO-SOURCE
+> Task :assistant-cli:processResources NO-SOURCE
+> Task :assistant-cli:classes UP-TO-DATE
+> Task :assistant-cli:jar UP-TO-DATE
+> Task :mtg-sdk:processResources NO-SOURCE
+> Task :mtg-sdk:classes UP-TO-DATE
+> Task :mtg-sdk:jar UP-TO-DATE
+> Task :mtg-sdk-tooling:processResources NO-SOURCE
+> Task :mtg-sdk-tooling:classes UP-TO-DATE
+> Task :mtg-sdk-tooling:jar UP-TO-DATE
+> Task :mtg-sets:processResources UP-TO-DATE
+> Task :mtg-sets:classes UP-TO-DATE
+> Task :mtg-sets:jar UP-TO-DATE
+> Task :rules-engine:processResources UP-TO-DATE
+> Task :rules-engine:classes UP-TO-DATE
+> Task :rules-engine:jar UP-TO-DATE
+> Task :mtg-sets:1993-1999:processResources NO-SOURCE
+> Task :mtg-sets:1993-1999:classes UP-TO-DATE
+> Task :mtg-sets:1993-1999:jar UP-TO-DATE
+> Task :mtg-sets:2000-2002:processResources NO-SOURCE
+> Task :mtg-sets:2000-2002:classes UP-TO-DATE
+> Task :mtg-sets:2000-2002:jar UP-TO-DATE
+> Task :mtg-sets:2003-2007:processResources NO-SOURCE
+> Task :mtg-sets:2003-2007:classes UP-TO-DATE
+> Task :mtg-sets:2003-2007:jar UP-TO-DATE
+> Task :mtg-sets:2008-2016:processResources NO-SOURCE
+> Task :mtg-sets:2008-2016:classes UP-TO-DATE
+> Task :mtg-sets:2008-2016:jar UP-TO-DATE
+> Task :mtg-sets:2017-2022:processResources NO-SOURCE
+> Task :mtg-sets:2017-2022:classes UP-TO-DATE
+> Task :mtg-sets:2017-2022:jar UP-TO-DATE
+> Task :mtg-sets:2023:processResources NO-SOURCE
+> Task :mtg-sets:2023:classes UP-TO-DATE
+> Task :mtg-sets:2023:jar UP-TO-DATE
+> Task :mtg-sets:2024:processResources NO-SOURCE
+> Task :mtg-sets:2024:classes UP-TO-DATE
+> Task :mtg-sets:2024:jar UP-TO-DATE
+> Task :mtg-sets:2025:processResources NO-SOURCE
+> Task :mtg-sets:2025:classes UP-TO-DATE
+> Task :mtg-sets:2025:jar UP-TO-DATE
+> Task :mtg-sets:2026:processResources NO-SOURCE
+> Task :mtg-sets:2026:classes UP-TO-DATE
+> Task :mtg-sets:2026:jar UP-TO-DATE
+> Task :mtg-sets:core:processResources UP-TO-DATE
+> Task :mtg-sets:core:classes UP-TO-DATE
+> Task :mtg-sets:core:jar UP-TO-DATE
+> Task :assistant-cli:startScripts UP-TO-DATE
+> Task :assistant-cli:installDist UP-TO-DATE
+Kotlin build report is written to file:///workspace/scratch/06629ddb062c/handoff-recovered/mtg-assistant-phase2_5/argentum/build/reports/kotlin-build/argentum-engine-build-2026-10-26-13-34-37-0.txt
+
+[Incubating] Problems report is available at: file:///workspace/scratch/06629ddb062c/handoff-recovered/mtg-assistant-phase2_5/argentum/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 19s
+47 actionable tasks: 1 executed, 46 up-to-date
+Provenance: Provenance(origin=APPLICATION_EXTENSION, source=cli/src/main/kotlin/dev/mtg/assistant/extensions/JudithTheScourgeDiva.kt, verifiedAt=2026-10-25)
+Name: Judith, the Scourge Diva
+Set: RNA #185
+Mana cost: {1}{B}{R}; mana value: 3
+Type: Legendary Creature — Human Shaman
+Colors: [BLACK, RED]; color identity: [BLACK, RED]
+Power/toughness: 2/2
+Keywords: []
+Oracle text: Other creatures you control get +1/+0.
+Whenever a nontoken creature you control dies, Judith deals 1 damage to any target.
+Native CardScript: com.wingedsheep.sdk.model.CardScript
+Has behavior: true
+Scripted abilities: 2
+Native CardScript JSON (non-default fields):
+{
+    "triggeredAbilities": [
+        {
+            "id": "Judith, the Scourge Diva:1",
+            "trigger": {
+                "type": "ZoneChangeEvent",
+                "filter": {
+                    "cardPredicates": [
+                        {
+                            "type": "IsCreature"
+                        },
+                        {
+                            "type": "IsNontoken"
+                        }
+                    ],
+                    "controllerPredicate": {
+                        "type": "ControlledByYou"
+                    }
+                },
+                "from": "Battlefield",
+                "to": "Graveyard"
+            },
+            "binding": "ANY",
+            "effect": {
+                "type": "DealDamage",
+                "amount": {
+                    "type": "Fixed",
+                    "amount": 1
+                },
+                "target": {
+                    "type": "BoundVariable",
+                    "name": "t0"
+                }
+            },
+            "targetRequirement": {
+                "type": "AnyTarget",
+                "id": "t0"
+            }
+        }
+    ],
+    "staticAbilities": [
+        {
+            "type": "ModifyStats",
+            "powerBonus": 1,
+            "toughnessBonus": 0,
+            "filter": {
+                "baseFilter": {
+                    "cardPredicates": [
+                        {
+                            "type": "IsCreature"
+                        }
+                    ],
+                    "controllerPredicate": {
+                        "type": "ControlledByYou"
+                    }
+                },
+                "excludeSelf": true
+            }
+        }
+    ]
+}
+
