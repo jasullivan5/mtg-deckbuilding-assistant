@@ -9,8 +9,8 @@ Under `cli/src/main/kotlin/dev/mtg/assistant/`:
 | Concern | Files |
 |---|---|
 | Catalog/conventional search | Catalog.kt, DefinitionSearchCard.kt (native registry/search) |
-| Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt (provenance/duplicates) |
-| Commander legality/full identity | discovery/Eligibility.kt |
+| Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt, OviyaPashiriSageLifecrafter.kt (provenance/duplicates) |
+| Commander legality/full identity | discovery/Eligibility.kt, CommanderInspection.kt |
 | Native effects, costs, branches/bindings | discovery/PathwayExtractor.kt (one walker) |
 | Reusable facts/predicates/quantities | discovery/MechanicalFacts.kt, TokenFacts.kt, AmountBounds.kt |
 | Objective A | Legacy projection in extractor plus MechanicalQuery.kt and Discovery.kt |
@@ -23,3 +23,5 @@ Add generic SDK handling to the existing walker after inspecting the pinned type
 Native extensions use Argentum CardDefinition objects and Extensions.all; verify metadata, duplicate detection/provenance and real engine scenarios. Reviewed cases live in benchmark/*/review-v1.json with source references and expected path/conditions; do not derive expectations from search output. Tests live in cli/src/test/kotlin/dev/mtg/assistant, using FunSpec and ScenarioTestBase; assert exact pathways/constraints.
 
 A is not completely fact-driven. Local support is not whole-action/card support; shared action IDs do not imply every branch executes. Unknown conditions/copy/collection bindings, Amass and multi-step reanimation remain incomplete. See KNOWN_LIMITATIONS.md. Migration must not expand mechanical coverage.
+
+Commander inspection has separate availability, selection-blocker and bounded mechanical-review fields. The same structured inspection drives selection; it does not add an effect walker or certify complete mechanical correctness. See [COMMANDER_AUTHORING.md](COMMANDER_AUTHORING.md).

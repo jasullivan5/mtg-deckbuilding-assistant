@@ -41,6 +41,10 @@ Windows PowerShell, after installing Git/JDK21 and setting `JAVA_HOME`:
 
 Linux was executed; macOS/Windows instructions are retained but not executed in this pass. Use `dev`/`dev.ps1`: the wrapper is attached to the pinned upstream build through `argentum.init.gradle`, without upstream edits. On a constrained machine append `-Pkotlin.daemon.jvmargs='-Xmx2g -XX:ActiveProcessorCount=4'` to the build/test command.
 
+## Commander integration
+
+Use `mtg-assistant commander inspect "<exact card name>" [--json]` before discovery. Inspection separates missing pinned definitions, metadata gaps, ineligible cards and unsupported construction from recorded native mechanical test coverage. Judith and Oviya Pashiri, Sage Lifecrafter are application-owned native extensions. See [the commander authoring guide](docs/COMMANDER_AUTHORING.md) for source verification, registration safeguards and engine-test requirements.
+
 ## Three objectives
 
 Use the same `discover --commander <exact-name> --objective <objective>` command:
