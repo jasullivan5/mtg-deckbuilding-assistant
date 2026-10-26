@@ -1,0 +1,9 @@
+{
+  "tests": 210,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "upstreamStatus": "",
+  "build": "SUCCESS; 10m21s; 53 tasks executed; --no-build-cache; fresh public upstream checkout and initially absent user Gradle cache"
+}

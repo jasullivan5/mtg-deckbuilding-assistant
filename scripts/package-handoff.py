@@ -7,12 +7,17 @@ assert not git('status','--porcelain'),'Commit reviewed changes before packaging
 with tempfile.TemporaryDirectory() as td:
  dest=pathlib.Path(td)/'mtg-deckbuilding-assistant'
  subprocess.run(['git','clone','--quiet','--no-local',str(root),str(dest)],check=True)
+ for line in git('for-each-ref','--format=%(refname) %(objectname)','refs/heads','refs/tags').splitlines():
+  ref,sha=line.split();subprocess.run(['git','-C',str(dest),'update-ref',ref,sha],check=True)
  subprocess.run(['git','-C',str(dest),'remote','remove','origin'],check=True)
+ assert not (dest/'.git/objects/info/alternates').exists()
  subprocess.run(['git','-C',str(dest),'fsck','--full'],check=True,stdout=subprocess.DEVNULL)
  assert not git('status','--porcelain',cwd=dest),'Exported checkout is not clean'
  receipt={'finalCommit':git('rev-parse','HEAD'),'baselineCommit':git('rev-parse','phase2.5-baseline^{commit}'),'fullGitHistoryIncluded':True,'upstreamPin':(root/'ARGENTUM_COMMIT').read_text().strip(),'publication':'NOT_PERFORMED','status':'RECOVERY_CHECKPOINT; see HANDOFF_VERIFICATION.md'}
  (dest/'REPOSITORY_STATE.json').write_text(json.dumps(receipt,indent=2)+'\n')
  files=[p for p in dest.rglob('*') if p.is_file() and not ('.git' in p.parts and any(x in p.relative_to(dest).parts for x in ['logs','hooks']))]
+ receipt['trackedBytes']=sum((dest/p).stat().st_size for p in git('ls-files','-z',cwd=dest).split('\0') if p)
+ receipt['gitMetadataBytes']=sum(p.stat().st_size for p in files if '.git' in p.relative_to(dest).parts)
  receipt['exportedUncompressedBytes']=sum(p.stat().st_size for p in files)
  (dest/'REPOSITORY_STATE.json').write_text(json.dumps(receipt,indent=2)+'\n')
  with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
