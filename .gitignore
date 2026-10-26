@@ -10,3 +10,4 @@ __pycache__/
 .env
 .env.*
 /REPOSITORY_STATE.json
+/verification/handoff/*.log
