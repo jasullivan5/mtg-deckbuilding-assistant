@@ -17,7 +17,9 @@ if ($LASTEXITCODE -ne 0 -or [IO.Path]::GetFullPath($Top) -ne [IO.Path]::GetFullP
     throw 'argentum must be its own Git checkout.'
 }
 Git-Checked -C $SourceDir config core.longpaths true
-$Current = (& git -C $SourceDir rev-parse HEAD 2>$null)
+$Current = (& git -C $SourceDir rev-parse --verify HEAD 2>$null)
+if ($LASTEXITCODE -ne 0) { $Current = $null }
+if ($Current -and $Current -ne $Sha) { throw "Wrong Argentum revision. Use a separate pinned checkout; no changes were made." }
 if ($Current -ne $Sha) {
     if (& git -C $SourceDir status --porcelain) { throw 'Refusing to switch a modified checkout.' }
     Git-Checked -C $SourceDir fetch --depth 1 origin $Sha

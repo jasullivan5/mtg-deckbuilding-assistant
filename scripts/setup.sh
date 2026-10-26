@@ -16,7 +16,10 @@ fi
 if [ "$(git -C "$source_dir" rev-parse --show-toplevel 2>/dev/null || true)" != "$(cd "$source_dir" && pwd -P)" ]; then
   echo 'argentum must be its own Git checkout.' >&2; exit 1
 fi
-current=$(git -C "$source_dir" rev-parse HEAD 2>/dev/null || true)
+current=$(git -C "$source_dir" rev-parse --verify HEAD 2>/dev/null || true)
+if [ -n "$current" ] && [ "$current" != "$sha" ]; then
+  echo "Wrong Argentum revision: $current. Use a separate pinned checkout; no changes were made." >&2; exit 1
+fi
 if [ "$current" != "$sha" ]; then
   if [ -n "$(git -C "$source_dir" status --porcelain)" ]; then
     echo 'Refusing to switch a modified Argentum checkout.' >&2; exit 1

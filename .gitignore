@@ -5,3 +5,8 @@
 *.hprof
 /generated/
 *.zip
+/argentum
+__pycache__/
+.env
+.env.*
+/REPOSITORY_STATE.json

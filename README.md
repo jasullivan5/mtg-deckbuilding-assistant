@@ -1,3 +1,9 @@
+# Codex development entry point
+
+Start with CODEX_HANDOFF.md and AGENTS.md. Current verification status is in HANDOFF_VERIFICATION.md; historical build reports alone are not current evidence. Initial setup: `./scripts/bootstrap.sh`; routine checks: `./scripts/verify.sh fast`; complete tests/catalog checks: `./scripts/verify.sh full`. Use Git branches/commits rather than replacing ZIP history. Architecture: docs/ARCHITECTURE.md; hosted setup: docs/CODEX_ENVIRONMENT.md.
+
+The original Phase2.5 usage guide follows; historical reports/manifests moved to docs/history. Scripts require Git/JDK21/Bash/Python3; PowerShell setup is retained. Do not use root gradlew test; dev attaches the application module to pinned upstream settings.
+
 # MTG Deckbuilding Assistant — Phase 2.5
 
 Kotlin CLI over real Argentum `CardRegistry`, `CardDefinition`, `CardScript`, and `mtg-search`. Continues Phase 2.4 with the unchanged upstream pin in `ARGENTUM_COMMIT`.

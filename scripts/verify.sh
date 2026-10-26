@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root=$(cd "$(dirname "$0")/.." && pwd)
+cd "$root"
+case "${1:-fast}" in
+ fast) ./dev test --tests dev.mtg.assistant.ArgentumIntegrationTest --tests '*FactsTest'; ./dev installDist; cli/build/install/mtg-assistant/bin/mtg-assistant card 'Judith, the Scourge Diva' ;;
+ full) ./dev test --rerun; ./dev installDist; bash scripts/check-catalog.sh ;;
+ catalog) bash scripts/check-catalog.sh ;;
+ *) echo 'Usage: scripts/verify.sh {fast|full|catalog}' >&2; exit 2 ;;
+esac
