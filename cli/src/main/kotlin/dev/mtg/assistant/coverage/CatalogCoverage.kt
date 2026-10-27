@@ -62,8 +62,8 @@ class NativeIndex(val cards: List<NativeIdentity>) {
         }
         val aliases = external.aliases.flatMap { byAlias[it].orEmpty() }.distinct()
         if(aliases.isNotEmpty()) return NativeMapping(
-            if(aliases.size==1 && aliases.single().oracleId==null) CatalogStatus.NATIVE_METADATA_UNRESOLVED else CatalogStatus.AMBIGUOUS_MAPPING,
-            "NAME_OR_FACE_CANDIDATE_ONLY",aliases,listOf("NO_AUTHORITATIVE_ORACLE_ID_MATCH"))
+            if(aliases.size==1 && aliases.single().oracleId==null && external.mappingNotes.isEmpty()) CatalogStatus.NATIVE_METADATA_UNRESOLVED else CatalogStatus.AMBIGUOUS_MAPPING,
+            "NAME_OR_FACE_CANDIDATE_ONLY",aliases,listOf("NO_AUTHORITATIVE_ORACLE_ID_MATCH")+external.mappingNotes)
         return NativeMapping(CatalogStatus.NATIVE_DEFINITION_MISSING,"NO_ID_OR_ALIAS_CANDIDATE",emptyList())
     }
 }
@@ -92,7 +92,9 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
         val support=report.structuralSupport.groupBy { it.card }
         report.mechanicalInputCards.orEmpty().associateWith { name ->
             val unknown=results[name].orEmpty().count { it.verdict==Verdict.UNKNOWN }
-            val missing=unsupported[name].orEmpty().size+support[name].orEmpty().count { it.status!=SupportStatus.SUPPORTED }
+            fun node(action: String,face: String,path: String,type: String) = listOf(action,face,path,type.substringAfterLast('.').substringAfterLast('$'))
+            val missing=(unsupported[name].orEmpty().map { node(it.actionId,it.face,it.path,it.nativeType) }+
+                support[name].orEmpty().filter { it.status!=SupportStatus.SUPPORTED }.map { node(it.actionId,it.face,it.path,it.nativeType) }).distinct().size
             val matches=results[name].orEmpty().count { it.verdict==Verdict.MATCH }
             ObjectiveEvaluation(if(unknown>0 || missing>0) "NATIVE_MECHANICALLY_UNRESOLVED" else if(matches>0) "EVALUATED_STRUCTURAL_MATCH" else "EVALUATED_NO_SUPPORTED_MATCH",matches,unknown,missing)
         }

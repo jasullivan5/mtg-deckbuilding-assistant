@@ -34,7 +34,8 @@ internal fun oracleId(value: String?): String? = value?.lowercase(Locale.ROOT)?.
     val oracleId: String?, val name: String?, val layout: String?, val colorIdentity: List<String>?,
     val typeLine: String?, val oracleText: String?, val manaCost: String?,
     val faces: List<OracleFace>, val legalities: Map<String,String>, val keywords: List<String>,
-    val relatedParts: List<String>, val source: OracleSource, val issues: List<String> = emptyList()
+    val relatedParts: List<String>, val source: OracleSource, val issues: List<String> = emptyList(),
+    val mappingNotes: List<String> = emptyList()
 ) {
     val aliases: Set<String> get() = (listOfNotNull(name) + faces.mapNotNull { it.name }).map { it.lowercase(Locale.ROOT) }.toSet()
     /** Printing metadata may differ; Oracle content and physical layout may not. */
@@ -109,7 +110,7 @@ fun loadOracleSnapshot(path: Path, manifestPath: Path = Path.of("$path.manifest.
     val collisions = aliasOwners.filterValues { it.distinct().size>1 }.keys
     val cards = distinctCards.map { c ->
         if(c.legalities["commander"]=="legal" && c.aliases.any { it in collisions })
-            c.copy(issues=(c.issues+"EXTERNAL_NAME_OR_FACE_COLLISION").distinct()) else c
+            c.copy(mappingNotes=(c.mappingNotes+"EXTERNAL_NAME_OR_FACE_COLLISION").distinct()) else c
     }
     return OracleSnapshot(manifest,cards.sortedWith(compareBy({it.name ?: ""},{it.oracleId ?: ""})),parsed.size,
         parsed.size-cards.size,(System.nanoTime()-started)/1_000_000)

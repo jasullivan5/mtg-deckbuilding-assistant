@@ -2,6 +2,9 @@ package dev.mtg.assistant
 
 import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.discovery.*
+import dev.mtg.assistant.extensions.*
+import com.wingedsheep.sdk.core.DeckFormat
+import com.wingedsheep.sdk.dsl.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
@@ -85,13 +88,15 @@ class CatalogCoverageTest : FunSpec({
             shouldThrow<IllegalArgumentException> { loadOracleSnapshot(p) }
         } finally { dir.toFile().deleteRecursively() }
     }
-    test("external name collisions across distinct Oracle IDs are explicit pool ambiguity") {
+    test("shared external face names preserve the Oracle pool and make name-only mappings ambiguous") {
         val a=Json.parseToJsonElement(Files.readString(fixture)).jsonArray.first().jsonObject
         val b=JsonObject(a+mapOf("oracle_id" to JsonPrimitive("11111111-1111-1111-1111-111111111111")))
         val s=load(JsonArray(listOf(a,b)).toString())
         s.cards.size shouldBe 2
-        s.cards.all { "EXTERNAL_NAME_OR_FACE_COLLISION" in it.issues } shouldBe true
-        s.cards.all { externalEligibility(it,br).state==PoolState.UNRESOLVED } shouldBe true
+        s.cards.all { "EXTERNAL_NAME_OR_FACE_COLLISION" in it.mappingNotes } shouldBe true
+        s.cards.all { externalEligibility(it,br).state==PoolState.ELIGIBLE } shouldBe true
+        s.cards.all { NativeIndex(listOf(native(id=null))).match(it).status==CatalogStatus.AMBIGUOUS_MAPPING } shouldBe true
+        NativeIndex(listOf(native())).match(s.cards.single { it.oracleId==native().oracleId }).status shouldBe CatalogStatus.NATIVE_AVAILABLE
     }
     test("Oracle ID is authoritative across renames while name-only candidates stay unresolved") {
         val c=card("Fixture Colorless")
@@ -126,6 +131,19 @@ class CatalogCoverageTest : FunSpec({
         before.records.all { it.objectives.isEmpty() } shouldBe true
         shouldThrow<IllegalArgumentException> { catalogCoverage(catalog,snapshot,"No Native Commander") }
         shouldThrow<IllegalArgumentException> { catalogCoverage(catalog,snapshot,"Judith, the Scourge Diva",listOf("new-objective")) }
+    }
+    test("a matched native definition with unsupported mechanics remains distinct and counts its node once") {
+        val c=card("Fixture Colorless")
+        val definition=com.wingedsheep.sdk.dsl.card("Fixture Colorless") {
+            manaCost="{0}"; colorIdentity="";typeLine="Artifact"
+            activatedAbility { cost=Costs.Tap;effect=Effects.Amass(1,"Zombie") }
+        }.copy(oracleId=c.oracleId,legalFormats=setOf(DeckFormat.COMMANDER))
+        val data=Catalog(Extensions.all+ExtensionDefinition(definition,Provenance("APPLICATION_EXTENSION","synthetic-fixture","2026-10-26")))
+        val r=catalogCoverage(data,snapshot,"Judith, the Scourge Diva",listOf("create-creature-tokens"))
+        val row=r.records.single { it.external.oracleId==c.oracleId }
+        row.mapping.status shouldBe CatalogStatus.NATIVE_AVAILABLE
+        row.status shouldBe CatalogStatus.NATIVE_MECHANICALLY_UNRESOLVED
+        row.objectives.values.single().unsupportedNodes shouldBe 1
     }
     test("translation review is snapshot-bound identity-unique and optional") {
         val c=card("Fixture Colorless")

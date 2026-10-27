@@ -38,6 +38,7 @@ class Phase27TranslationScenarioTest : ScenarioTestBase() {
             g.tokens(owner).size shouldBe 2;g.tokens(3-owner).size shouldBe 0
             g.tokens(owner).forEach { token ->
                 val card=g.state.getEntity(token)!!.get<CardComponent>()!!
+                card.ownerId shouldBe if(owner==1) g.player1Id else g.player2Id
                 card.typeLine.isCreature shouldBe true
                 g.state.projectedState.getSubtypes(token).contains("Goblin") shouldBe true
                 g.state.projectedState.getColors(token) shouldBe setOf("RED")
@@ -69,6 +70,7 @@ class Phase27TranslationScenarioTest : ScenarioTestBase() {
             g.getLifeTotal(owner) shouldBe 19;g.getLifeTotal(3-owner) shouldBe 20
             g.tokens(owner).size shouldBe 1;g.tokens(3-owner).size shouldBe 0
             val token=g.tokens(owner).single()
+            g.state.getEntity(token)!!.get<CardComponent>()!!.ownerId shouldBe if(owner==1) g.player1Id else g.player2Id
             g.state.projectedState.getColors(token) shouldBe setOf("BLACK")
             g.state.projectedState.getSubtypes(token) shouldBe setOf("Faerie","Rogue")
             g.state.projectedState.hasKeyword(token,Keyword.FLYING) shouldBe true
