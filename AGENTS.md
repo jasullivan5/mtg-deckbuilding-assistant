@@ -23,3 +23,5 @@ Use dev/dev.ps1, not root `gradlew test`: the upstream checkout owns Gradle sett
 Use focused tests; shared extraction/eligibility/policy changes require all tests and controlled discovery comparisons on unchanged pools. Inspect unexpected matches/exclusions/evidence changes. Frozen source-led samples are not whole-catalog recall or external adjudication. SDK construction is not engine-execution proof. Report blocked/unexecuted checks candidly.
 
 Keep source, tests, compact reviewed inputs and provenance in Git. Never commit upstream, caches/builds, generated full-catalog JSON, credentials or machine-specific config. Preserve real history; no force-push over unrelated work. See docs/ARCHITECTURE.md for actual extension points and CODEX_HANDOFF.md for known issues.
+
+- Commander eligibility consumers must use Catalog.eligibility effective metadata. Raw native identity/legality helpers remain diagnostics. Activate only individually reviewed, source-bound correction records; preserve native definitions and original discrepancy history. See docs/ELIGIBILITY_CORRECTIONS.md.
