@@ -35,7 +35,7 @@ internal object DefinitionSources {
     }
 }
 val discoveryLimitations = listOf(
-    "Format legality is the pinned Argentum snapshot. Empty legality is UNKNOWN and excluded, never assumed legal.",
+    "Format legality uses pinned native values plus explicitly reviewed source-bound corrections. Unresolved legality is UNKNOWN and excluded.",
     "Single, fixed-identity commanders supported through native eligibility. Pairs, pre-game chosen colors, newer Vehicle/Spacecraft commander forms, and special construction exceptions are unsupported.",
     "No whole-deck size, singleton, companion, or outside-game validation is performed by a candidate discovery query.",
     "Full identity uses native identity plus alternative faces; conventional color search is not used for eligibility.",
@@ -48,14 +48,15 @@ val discoveryLimitations = listOf(
 fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String? = null, objective: String = "own-nontoken-creature-deaths"): DiscoveryReport {
     require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) { "Unsupported objective: $objective" }
     val commander=resolveCommander(catalog,commanderName)
-    val allowed=fullIdentity(commander)
+    val allowed=catalog.eligibility.resolve(commander).colors + identityRestrictions(commander)
     val roots=physicalCards(catalog.cards)
     val eligibility=roots.map { card ->
-        val format=commanderFormatLegality(card)
+        val metadata=catalog.eligibility.resolve(card)
+        val format=metadata.commanderLegality
         // Filter B is independent; the actual pipeline below requires Filter A first.
-        val deck=selectedCommanderEligibility(card,allowed)
-        EligibilityEvidence(card.name,format,deck,fullIdentity(card).map { it.name }.sorted(),
-            "format from verified source legalFormats; identity must be a full subset of ${allowed.map { it.name }.sorted()}",catalog.provenance(card.name))
+        val deck=selectedCommanderEligibility(card,allowed,metadata)
+        EligibilityEvidence(card.name,format,deck,(if(metadata.authoritativeIdentity) metadata.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),
+            (if(metadata.corrections.isEmpty()) "format from verified source legalFormats; identity must be a full subset of ${allowed.map { it.name }.sorted()}" else "format/full identity from native metadata plus reviewed source-bound corrections; original values retained; identity subset of ${allowed.map { it.name }.sorted()}"),catalog.provenance(card.name),metadata.takeIf { it.corrections.isNotEmpty() })
     }
     val byName=eligibility.associateBy { it.card }
     val legal=roots.filter { byName.getValue(it.name).format == Verdict.MATCH }

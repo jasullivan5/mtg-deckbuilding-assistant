@@ -14,13 +14,15 @@ fun commanderFormatLegality(card: CardDefinition): Verdict = when {
 }
 private val intrinsicLandColors = mapOf(Subtype.PLAINS to Color.WHITE, Subtype.ISLAND to Color.BLUE,
     Subtype.SWAMP to Color.BLACK, Subtype.MOUNTAIN to Color.RED, Subtype.FOREST to Color.GREEN)
-fun fullIdentity(card: CardDefinition): Set<Color> = card.colorIdentity +
-    card.typeLine.subtypes.mapNotNull { intrinsicLandColors[it] } +
+fun identityRestrictions(card: CardDefinition): Set<Color> =
+    card.typeLine.subtypes.mapNotNull { intrinsicLandColors[it] }.toSet() +
     (card.backFace?.let(::fullIdentity) ?: emptySet()) +
     (card.flipSide?.let(::fullIdentity) ?: emptySet()) + card.cardFaces.flatMap { it.manaCost.colors }
-fun selectedCommanderEligibility(card: CardDefinition, allowed: Set<Color>): Verdict =
-    if (card.colorIdentityOverride == null) Verdict.UNKNOWN
-    else if (allowed.containsAll(fullIdentity(card))) Verdict.MATCH else Verdict.NO_MATCH
+fun fullIdentity(card: CardDefinition): Set<Color> = card.colorIdentity + identityRestrictions(card)
+fun selectedCommanderEligibility(card: CardDefinition, allowed: Set<Color>,
+    metadata: dev.mtg.assistant.eligibility.EffectiveEligibility = dev.mtg.assistant.eligibility.nativeEligibility(card)): Verdict =
+    if (!metadata.authoritativeIdentity) Verdict.UNKNOWN
+    else if (allowed.containsAll(metadata.colors + identityRestrictions(card))) Verdict.MATCH else Verdict.NO_MATCH
 
 /** Physical cards, excluding registry aliases for backs/flips and stand-alone meld results. */
 fun physicalCards(cards: List<CardDefinition>): List<CardDefinition> {

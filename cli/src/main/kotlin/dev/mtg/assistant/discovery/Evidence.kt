@@ -29,7 +29,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val dependencyVerdict: Verdict = Verdict.UNKNOWN, val relationship: String = "UNRESOLVED", val operationCompatibility: Verdict = Verdict.MATCH,
     val circumstances: Circumstances? = null, val opposingRemovalAssociation: Verdict = Verdict.NO_MATCH, val factId: String? = null)
 @Serializable data class EligibilityEvidence(val card: String, val format: Verdict, val deck: Verdict,
-    val identity: List<String>, val reason: String, val provenance: dev.mtg.assistant.extensions.Provenance? = null)
+    val identity: List<String>, val reason: String, val provenance: dev.mtg.assistant.extensions.Provenance? = null,
+    val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null)
 @Serializable data class ResultEvidence(val card: String, val identifier: String, val face: String,
     val actionId: String, val abilityPath: String, val branch: Contribution, val verdict: Verdict,
     val operation: String, val costOrEffect: String, val affectedScope: String,

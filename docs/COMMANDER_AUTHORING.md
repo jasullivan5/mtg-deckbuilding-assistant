@@ -49,3 +49,7 @@ Frozen reviews and the generated all-colors benchmark remain applicable; their d
 ## Ordinary native cards
 
 The same registration and verification workflow applies to noncommander cards. Phase 2.7 adds Krenko's Command and Bitterblossom through Extensions.all, with source/ruling evidence, validation, engine scenarios and cross-commander/objective tests. See CARD_COVERAGE.md for the external missing-card inventory and PHASE2_7_REPORT.md for the bounded Assay experiment. A generated proposal remains unverified until its consequential scenarios actually execute.
+
+## Reviewed eligibility metadata
+
+Existing native definitions can receive a small application-owned, individually approved eligibility correction without authoring a replacement definition. Commander inspection/selection and discovery use Catalog.eligibility; original native mechanics and metadata remain available. Inspection JSON/text records applied corrections and original values. Identity/Commander-format search filters and coverage share these values. See [ELIGIBILITY_CORRECTIONS.md](ELIGIBILITY_CORRECTIONS.md). Missing/unreviewed fields still block admission; corrected metadata does not certify mechanics or expand supported construction rules.
