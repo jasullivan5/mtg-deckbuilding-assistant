@@ -131,5 +131,10 @@ class EligibilityResolver(cards: List<CardDefinition>, val plan: CorrectionPlan?
     fun resolve(card: CardDefinition): EffectiveEligibility = effective[card.name]?.also {
         require(targets[card.name]?.singleOrNull()==card) { "Effective metadata requested for a changed native definition" }
     } ?: nativeEligibility(card)
+    fun requireSource(snapshotSha256: String, nativeNames: Collection<String>) {
+        require(plan==null || plan.context.snapshotSha256==snapshotSha256 || nativeNames.none { it in effective }) {
+            "Coverage source differs from approved correction snapshot; review corrections before using another source version"
+        }
+    }
     fun reviewed(): List<EffectiveEligibility> = effective.values.sortedBy { it.nativeName }
 }

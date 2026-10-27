@@ -6,6 +6,7 @@ import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.eligibility.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
+import io.kotest.assertions.throwables.shouldThrow
 import kotlinx.serialization.json.*
 
 class EligibilityCorrectionsCatalogTest : FunSpec({
@@ -63,6 +64,11 @@ class EligibilityCorrectionsCatalogTest : FunSpec({
         catalog.search("name:Afterthought f:commander").map { it.name } shouldBe listOf("Afterthought Sentry")
         catalog.card("Sunforger")!!.colorIdentityOverride shouldBe emptySet()
         commanderFormatLegality(catalog.card("Afterthought Sentry")!!) shouldBe Verdict.UNKNOWN
+    }
+    test("coverage cannot silently activate an approval against another source version") {
+        val plan=ApprovedEligibility.plan
+        val changed=OracleSnapshot(plan.snapshot.copy(sha256="b".repeat(64)),plan.sources,plan.sources.size,0,0)
+        shouldThrow<IllegalArgumentException> { catalogCoverage(catalog,changed,"Judith, the Scourge Diva") }
     }
     test("coverage retains original disagreement history and effective agreement") {
         val plan=ApprovedEligibility.plan

@@ -101,6 +101,7 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     require(objectives.distinct().size==objectives.size && objectives.all { it in coverageObjectives }) { "Unsupported/duplicate objective" }
     val commander = resolveCommander(catalog,commanderName)
     val resolver=catalog.eligibility
+    resolver.requireSource(snapshot.manifest.sha256,listOf(commander.name))
     val allowed = (resolver.resolve(commander).colors + identityRestrictions(commander)).map { it.symbol.toString() }.toSet()
     if(ledger!=null) {
         require(ledger.snapshotSha256==snapshot.manifest.sha256) { "Translation ledger snapshot mismatch" }
@@ -115,7 +116,10 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     val mappings = pool.filter { it.second.state==PoolState.ELIGIBLE }.map { (external,decision) ->
         val mapping=index.match(external)
         val associated=mapping.association?.takeIf { it.confidence==IdentityConfidence.CONFIDENT }
-        val effective=associated?.let { resolver.resolve(nativeCards.getValue(it.native.name)) }
+        val effective=associated?.let {
+            resolver.requireSource(snapshot.manifest.sha256,listOf(it.native.name))
+            resolver.resolve(nativeCards.getValue(it.native.name))
+        }
         val agreement=if(associated!=null && effective!=null) metadataAgreement(associated.native.copy(
             identity=effective.identity?.toSet(),commanderLegality=effective.commanderLegality.name),external) else null
         Triple(external,decision,if(agreement==null) mapping else mapping.copy(

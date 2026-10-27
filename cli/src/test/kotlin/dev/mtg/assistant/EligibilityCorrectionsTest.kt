@@ -123,6 +123,12 @@ class EligibilityCorrectionsTest : FunSpec({
         val c=native().copy(legalFormats=emptySet())
         invalid(plan(c,CorrectionField.COMMANDER_LEGALITY),c.copy(colorIdentityOverride=setOf(Color.BLUE)))
     }
+    test("a different observed source version requires review for affected corrections") {
+        val c=native();val resolver=EligibilityResolver(listOf(c),plan(c))
+        resolver.requireSource("a".repeat(64),listOf(c.name))
+        resolver.requireSource("b".repeat(64),listOf("Uncorrected Native Card"))
+        shouldThrow<IllegalArgumentException> { resolver.requireSource("b".repeat(64),listOf(c.name)) }
+    }
     test("resolved metadata cannot be reused for another definition with the same name") {
         val c=native();val resolver=EligibilityResolver(listOf(c),plan(c))
         shouldThrow<IllegalArgumentException> { resolver.resolve(c.copy(colorIdentityOverride=setOf(Color.BLUE))) }
