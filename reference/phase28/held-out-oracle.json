@@ -1,0 +1,472 @@
+[
+  {
+    "object": "card",
+    "id": "eedce8ab-771a-4247-9504-72ae0629df83",
+    "oracle_id": "feb4fcec-6f3a-4643-9ffb-69d3f5953322",
+    "name": "Prismite",
+    "layout": "normal",
+    "mana_cost": "{2}",
+    "type_line": "Artifact Creature — Golem",
+    "oracle_text": "{2}: Add one mana of any color.",
+    "color_identity": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "legal"
+    },
+    "keywords": [],
+    "set": "m21",
+    "collector_number": "235",
+    "released_at": "2020-07-03",
+    "scryfall_uri": "https://scryfall.com/card/m21/235/prismite?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/eedce8ab-771a-4247-9504-72ae0629df83/rulings"
+  },
+  {
+    "object": "card",
+    "id": "e01cc65a-0e38-4f41-b9ed-796ef0355d0b",
+    "oracle_id": "9842734c-1eac-4509-a731-4c22017ae586",
+    "name": "Wear // Tear",
+    "layout": "split",
+    "mana_cost": "{1}{R} // {W}",
+    "type_line": "Instant // Instant",
+    "color_identity": [
+      "R",
+      "W"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "legal"
+    },
+    "keywords": [
+      "Fuse"
+    ],
+    "card_faces": [
+      {
+        "name": "Wear",
+        "mana_cost": "{1}{R}",
+        "type_line": "Instant",
+        "oracle_text": "Destroy target artifact.\nFuse (You may cast one or both halves of this card from your hand.)"
+      },
+      {
+        "name": "Tear",
+        "mana_cost": "{W}",
+        "type_line": "Instant",
+        "oracle_text": "Destroy target enchantment.\nFuse (You may cast one or both halves of this card from your hand.)"
+      }
+    ],
+    "set": "moc",
+    "collector_number": "343",
+    "released_at": "2023-04-21",
+    "scryfall_uri": "https://scryfall.com/card/moc/343/wear-tear?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/e01cc65a-0e38-4f41-b9ed-796ef0355d0b/rulings"
+  },
+  {
+    "object": "card",
+    "id": "008782d2-72b0-4554-b1ce-2db99969a4d8",
+    "oracle_id": "3998a60d-9521-4100-8d41-3e612972a3de",
+    "name": "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+    "layout": "transform",
+    "type_line": "Legendary Creature — Human Mutant Wizard // Legendary Creature — Avatar Wizard",
+    "color_identity": [
+      "B",
+      "R"
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [
+      "Transform",
+      "Flare Star",
+      "Double"
+    ],
+    "card_faces": [
+      {
+        "name": "Kuja, Genome Sorcerer",
+        "mana_cost": "{2}{B}{R}",
+        "type_line": "Legendary Creature — Human Mutant Wizard",
+        "oracle_text": "At the beginning of your end step, create a tapped 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\" Then if you control four or more Wizards, transform Kuja."
+      },
+      {
+        "name": "Trance Kuja, Fate Defied",
+        "mana_cost": "",
+        "type_line": "Legendary Creature — Avatar Wizard",
+        "oracle_text": "Flare Star — If a Wizard you control would deal damage to a permanent or player, it deals double that damage instead.",
+        "color_indicator": [
+          "B",
+          "R"
+        ]
+      }
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "04ae24bf-0b24-4996-afae-7bf9f9d7471c",
+        "component": "token",
+        "name": "Wizard",
+        "type_line": "Token Creature — Wizard",
+        "uri": "https://api.scryfall.com/cards/04ae24bf-0b24-4996-afae-7bf9f9d7471c"
+      },
+      {
+        "object": "related_card",
+        "id": "65530632-5b09-4359-921b-a6d094937aff",
+        "component": "combo_piece",
+        "name": "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+        "type_line": "Legendary Creature — Human Mutant Wizard // Legendary Creature — Avatar Wizard",
+        "uri": "https://api.scryfall.com/cards/65530632-5b09-4359-921b-a6d094937aff"
+      }
+    ],
+    "set": "fin",
+    "collector_number": "232",
+    "released_at": "2025-06-13",
+    "scryfall_uri": "https://scryfall.com/card/fin/232/kuja-genome-sorcerer-trance-kuja-fate-defied?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/008782d2-72b0-4554-b1ce-2db99969a4d8/rulings"
+  },
+  {
+    "object": "card",
+    "id": "0a08e0d2-1e60-47f5-9228-4c11a127089d",
+    "oracle_id": "c52fc8a1-43c6-41f8-b010-03be7c89ef1d",
+    "name": "Bloodsoaked Insight // Sanguine Morass",
+    "layout": "modal_dfc",
+    "type_line": "Sorcery // Land",
+    "color_identity": [
+      "B",
+      "R"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [],
+    "card_faces": [
+      {
+        "name": "Bloodsoaked Insight",
+        "mana_cost": "{5}{B/R}{B/R}",
+        "type_line": "Sorcery",
+        "oracle_text": "This spell costs {1} less to cast for each 1 life your opponents have lost this turn.\nTarget opponent exiles the top three cards of their library. Until the end of your next turn, you may play those cards. If you cast a spell this way, mana of any type can be spent to cast it."
+      },
+      {
+        "name": "Sanguine Morass",
+        "mana_cost": "",
+        "type_line": "Land",
+        "oracle_text": "This land enters tapped.\n{T}: Add {B} or {R}."
+      }
+    ],
+    "set": "mh3",
+    "collector_number": "252",
+    "released_at": "2024-06-14",
+    "scryfall_uri": "https://scryfall.com/card/mh3/252/bloodsoaked-insight-sanguine-morass?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/0a08e0d2-1e60-47f5-9228-4c11a127089d/rulings"
+  },
+  {
+    "object": "card",
+    "id": "b3523b8e-065f-427c-8d5b-eb731ca91ede",
+    "oracle_id": "5b18d2fd-bc65-49a2-b812-c217f125571d",
+    "name": "Initiate of Blood // Goka the Unjust",
+    "layout": "flip",
+    "mana_cost": "{3}{R}",
+    "type_line": "Creature — Ogre Shaman // Legendary Creature — Ogre Shaman",
+    "color_identity": [
+      "R"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "competitivebrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [],
+    "card_faces": [
+      {
+        "name": "Initiate of Blood",
+        "mana_cost": "{3}{R}",
+        "type_line": "Creature — Ogre Shaman",
+        "oracle_text": "{T}: This creature deals 1 damage to target creature that was dealt damage this turn. When that creature dies this turn, flip this creature."
+      },
+      {
+        "name": "Goka the Unjust",
+        "mana_cost": "",
+        "type_line": "Legendary Creature — Ogre Shaman",
+        "oracle_text": "{T}: Goka deals 4 damage to target creature that was dealt damage this turn."
+      }
+    ],
+    "set": "chk",
+    "collector_number": "173",
+    "released_at": "2004-10-01",
+    "scryfall_uri": "https://scryfall.com/card/chk/173/initiate-of-blood-goka-the-unjust?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/b3523b8e-065f-427c-8d5b-eb731ca91ede/rulings"
+  },
+  {
+    "object": "card",
+    "id": "475d7e9a-759d-4523-a5cd-2a6e0d1b14ea",
+    "oracle_id": "68f36dfa-bbd2-4860-b09b-37e35136be72",
+    "name": "Bramble Familiar // Fetch Quest",
+    "layout": "adventure",
+    "mana_cost": "{1}{G} // {5}{G}{G}",
+    "type_line": "Creature — Elemental Raccoon // Sorcery — Adventure",
+    "color_identity": [
+      "G"
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [
+      "Mill"
+    ],
+    "card_faces": [
+      {
+        "name": "Bramble Familiar",
+        "mana_cost": "{1}{G}",
+        "type_line": "Creature — Elemental Raccoon",
+        "oracle_text": "{T}: Add {G}.\n{1}{G}, {T}, Discard a card: Return this creature to its owner's hand."
+      },
+      {
+        "name": "Fetch Quest",
+        "mana_cost": "{5}{G}{G}",
+        "type_line": "Sorcery — Adventure",
+        "oracle_text": "Mill seven cards. Then put a creature, enchantment, or land card from among the milled cards onto the battlefield."
+      }
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "1ee74605-63be-41cd-a6ba-1b33f8094ec9",
+        "component": "combo_piece",
+        "name": "Bramble Familiar // Fetch Quest",
+        "type_line": "Creature — Elemental Raccoon // Sorcery — Adventure",
+        "uri": "https://api.scryfall.com/cards/1ee74605-63be-41cd-a6ba-1b33f8094ec9"
+      },
+      {
+        "object": "related_card",
+        "id": "fcf4c7fb-7859-4c11-8552-6817f5119d2e",
+        "component": "combo_piece",
+        "name": "On an Adventure",
+        "type_line": "Card",
+        "uri": "https://api.scryfall.com/cards/fcf4c7fb-7859-4c11-8552-6817f5119d2e"
+      }
+    ],
+    "set": "woe",
+    "collector_number": "164",
+    "released_at": "2023-09-08",
+    "scryfall_uri": "https://scryfall.com/card/woe/164/bramble-familiar-fetch-quest?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/475d7e9a-759d-4523-a5cd-2a6e0d1b14ea/rulings"
+  },
+  {
+    "object": "card",
+    "id": "a7c62113-48c1-47ae-8ede-c05c1c914c3b",
+    "oracle_id": "3055381a-fb6b-47a3-8e77-a44768808e27",
+    "name": "Eater of Hope",
+    "layout": "normal",
+    "mana_cost": "{5}{B}{B}",
+    "type_line": "Creature — Demon",
+    "oracle_text": "Flying\n{B}, Sacrifice another creature: Regenerate this creature.\n{2}{B}, Sacrifice two other creatures: Destroy target creature.",
+    "color_identity": [
+      "B"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "competitivebrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [
+      "Flying",
+      "Regenerate"
+    ],
+    "set": "mic",
+    "collector_number": "115",
+    "released_at": "2021-09-24",
+    "scryfall_uri": "https://scryfall.com/card/mic/115/eater-of-hope?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/a7c62113-48c1-47ae-8ede-c05c1c914c3b/rulings"
+  },
+  {
+    "object": "card",
+    "id": "2c1dbad4-1105-4426-8d4d-a30f6fa95ce8",
+    "oracle_id": "a5dabc98-0db9-4b4f-b2d2-f74dbd022d22",
+    "name": "Repentant Vampire",
+    "layout": "normal",
+    "mana_cost": "{3}{B}{B}",
+    "type_line": "Creature — Vampire",
+    "oracle_text": "Flying\nWhenever a creature dealt damage by this creature this turn dies, put a +1/+1 counter on this creature.\nThreshold — As long as there are seven or more cards in your graveyard, this creature is white and has \"{T}: Destroy target black creature.\"",
+    "color_identity": [
+      "B"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "competitivebrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "legal",
+      "predh": "legal",
+      "tlr": "not_legal"
+    },
+    "keywords": [
+      "Flying",
+      "Threshold"
+    ],
+    "set": "ody",
+    "collector_number": "157",
+    "released_at": "2001-10-01",
+    "scryfall_uri": "https://scryfall.com/card/ody/157/repentant-vampire?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/2c1dbad4-1105-4426-8d4d-a30f6fa95ce8/rulings"
+  }
+]

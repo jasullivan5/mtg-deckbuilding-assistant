@@ -1,0 +1,1088 @@
+{
+  "snapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-10-27T14:28:28.079800+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "coverage": {
+    "judith": {
+      "before": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 12828,
+        "excluded_records": 26221,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 3,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 11,
+        "missing_uninvestigated": 6151,
+        "native_available": 1,
+        "native_metadata_unresolved": 6644,
+        "native_mechanically_unresolved": 2,
+        "native_definition_missing": 6162,
+        "ambiguous_mapping": 19
+      },
+      "after": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 12828,
+        "excluded_records": 26221,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 6652,
+        "confident_native_identity_associations": 6652,
+        "existing_native_oracle_id_matches": 3,
+        "enriched_identity_associations": 6649,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 6649,
+        "matched_application_extensions": 3,
+        "identity_review_required": 10,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 579,
+        "native_not_evaluated": 6753,
+        "native_mechanical_unresolved_any_objective": 4328,
+        "native_eligibility_disagreements": 579,
+        "missing_investigated": 11,
+        "missing_uninvestigated": 6154,
+        "native_available": 1747,
+        "native_metadata_unresolved": 579,
+        "native_mechanically_unresolved": 4326,
+        "native_definition_missing": 6165,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 10
+      },
+      "sameExternallyEligibleIds": true,
+      "nativePoolUnchanged": true,
+      "timingsMillis": {
+        "before": {
+          "snapshotLoadAndHash": 2717,
+          "catalogLoad": 19087,
+          "poolAndMapping": 368,
+          "objectiveEvaluation": 8750
+        },
+        "after": {
+          "snapshotLoadAndHash": 2600,
+          "catalogLoad": 17936,
+          "poolAndMapping": 1223,
+          "objectiveEvaluation": 7635
+        }
+      }
+    },
+    "krenko": {
+      "before": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7552,
+        "excluded_records": 31497,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 1,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 1,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 3,
+        "missing_uninvestigated": 3628,
+        "native_available": 1,
+        "native_metadata_unresolved": 3914,
+        "native_mechanically_unresolved": 0,
+        "native_definition_missing": 3631,
+        "ambiguous_mapping": 6
+      },
+      "after": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7552,
+        "excluded_records": 31497,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3914,
+        "confident_native_identity_associations": 3914,
+        "existing_native_oracle_id_matches": 1,
+        "enriched_identity_associations": 3913,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 3913,
+        "matched_application_extensions": 1,
+        "identity_review_required": 5,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 466,
+        "native_not_evaluated": 4104,
+        "native_mechanical_unresolved_any_objective": 2407,
+        "native_eligibility_disagreements": 466,
+        "missing_investigated": 3,
+        "missing_uninvestigated": 3629,
+        "native_available": 1041,
+        "native_metadata_unresolved": 466,
+        "native_mechanically_unresolved": 2407,
+        "native_definition_missing": 3632,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 5
+      },
+      "sameExternallyEligibleIds": true,
+      "nativePoolUnchanged": true,
+      "timingsMillis": {
+        "before": {
+          "snapshotLoadAndHash": 2612,
+          "catalogLoad": 18555,
+          "poolAndMapping": 370,
+          "objectiveEvaluation": 6122
+        },
+        "after": {
+          "snapshotLoadAndHash": 2583,
+          "catalogLoad": 18058,
+          "poolAndMapping": 1167,
+          "objectiveEvaluation": 6357
+        }
+      }
+    },
+    "oviya": {
+      "before": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7420,
+        "excluded_records": 31629,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 1,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 1,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 4,
+        "missing_uninvestigated": 3437,
+        "native_available": 1,
+        "native_metadata_unresolved": 3972,
+        "native_mechanically_unresolved": 0,
+        "native_definition_missing": 3441,
+        "ambiguous_mapping": 6
+      },
+      "after": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7420,
+        "excluded_records": 31629,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3971,
+        "confident_native_identity_associations": 3971,
+        "existing_native_oracle_id_matches": 1,
+        "enriched_identity_associations": 3970,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 3970,
+        "matched_application_extensions": 1,
+        "identity_review_required": 6,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 445,
+        "native_not_evaluated": 3893,
+        "native_mechanical_unresolved_any_objective": 2785,
+        "native_eligibility_disagreements": 445,
+        "missing_investigated": 4,
+        "missing_uninvestigated": 3438,
+        "native_available": 742,
+        "native_metadata_unresolved": 445,
+        "native_mechanically_unresolved": 2784,
+        "native_definition_missing": 3442,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 6
+      },
+      "sameExternallyEligibleIds": true,
+      "nativePoolUnchanged": true,
+      "timingsMillis": {
+        "before": {
+          "snapshotLoadAndHash": 3096,
+          "catalogLoad": 20131,
+          "poolAndMapping": 392,
+          "objectiveEvaluation": 5794
+        },
+        "after": {
+          "snapshotLoadAndHash": 2553,
+          "catalogLoad": 18155,
+          "poolAndMapping": 1229,
+          "objectiveEvaluation": 5386
+        }
+      }
+    }
+  },
+  "discovery": {
+    "judith-a": {
+      "identical": true,
+      "sha256": "542c8b9a5a7f7a42dcb3e80ba2628618866dfb48ad95c9bd15af3d06a39e96ba",
+      "bytes": 47300736,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "judith-b": {
+      "identical": true,
+      "sha256": "d7284850c2936e4545ee995c0bff075d50ef6a062d78bde6bef36e5b3c46ce98",
+      "bytes": 48264530,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "judith-c": {
+      "identical": true,
+      "sha256": "c05da10469f298ec42c95cccd7c1a68e50486ec832edec6b6c8b38abac906c0b",
+      "bytes": 39616284,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "krenko-a": {
+      "identical": true,
+      "sha256": "e8e1b7b9ecccc023f3e9a067a07606971dbb9f40347c4cf21e46f5d36e77716a",
+      "bytes": 28123675,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "krenko-b": {
+      "identical": true,
+      "sha256": "6b6d3f2661f6d095dd75a3ef2e00ad26a8e9cc24abcd6aa10f34d1dbb4e12c14",
+      "bytes": 27016701,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "krenko-c": {
+      "identical": true,
+      "sha256": "d0799d37a99cd1907074f375f89300bd1ca2e420c8e19e3dde37709ac156f784",
+      "bytes": 23776821,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "oviya-a": {
+      "identical": true,
+      "sha256": "7d220c8ed33acc05aeeea0d10aa4f0c16ac6150fa515c6c249829c267fb8a2f8",
+      "bytes": 26070147,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "oviya-b": {
+      "identical": true,
+      "sha256": "27a125fd07e51a5a53dcc13446939412725231b3f487c0e8525aae7618002f84",
+      "bytes": 29941418,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    },
+    "oviya-c": {
+      "identical": true,
+      "sha256": "66ea971d3c65574f4162d1479f1f52434048fe56db5a5df2fc93db66a46cd033",
+      "bytes": 24939648,
+      "compared": "Entire parsed discovery report: eligibility, actions, facts, verdicts, unsupported structures, support, counts and explanations"
+    }
+  },
+  "timings": {
+    "before": [
+      {
+        "command": "coverage-judith",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-judith.json"
+        ],
+        "wallSeconds": 33.654,
+        "peakWorkingSetBytes": 1884475392
+      },
+      {
+        "command": "missing-judith",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-judith.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\missing-judith.json"
+        ],
+        "wallSeconds": 0.964,
+        "peakWorkingSetBytes": 308998144
+      },
+      {
+        "command": "judith-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\judith-a.json"
+        ],
+        "wallSeconds": 32.92,
+        "peakWorkingSetBytes": 1530302464
+      },
+      {
+        "command": "judith-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\judith-b.json"
+        ],
+        "wallSeconds": 32.043,
+        "peakWorkingSetBytes": 1500995584
+      },
+      {
+        "command": "judith-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\judith-c.json"
+        ],
+        "wallSeconds": 34.223,
+        "peakWorkingSetBytes": 1756463104
+      },
+      {
+        "command": "coverage-krenko",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-krenko.json"
+        ],
+        "wallSeconds": 28.589,
+        "peakWorkingSetBytes": 1830813696
+      },
+      {
+        "command": "missing-krenko",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-krenko.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\missing-krenko.json"
+        ],
+        "wallSeconds": 0.709,
+        "peakWorkingSetBytes": 217243648
+      },
+      {
+        "command": "krenko-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\krenko-a.json"
+        ],
+        "wallSeconds": 26.502,
+        "peakWorkingSetBytes": 1443229696
+      },
+      {
+        "command": "krenko-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\krenko-b.json"
+        ],
+        "wallSeconds": 34.204,
+        "peakWorkingSetBytes": 1574928384
+      },
+      {
+        "command": "krenko-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\krenko-c.json"
+        ],
+        "wallSeconds": 31.034,
+        "peakWorkingSetBytes": 1621020672
+      },
+      {
+        "command": "coverage-oviya",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-oviya.json"
+        ],
+        "wallSeconds": 32.401,
+        "peakWorkingSetBytes": 1959514112
+      },
+      {
+        "command": "missing-oviya",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\coverage-oviya.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\missing-oviya.json"
+        ],
+        "wallSeconds": 0.71,
+        "peakWorkingSetBytes": 216293376
+      },
+      {
+        "command": "oviya-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\oviya-a.json"
+        ],
+        "wallSeconds": 29.547,
+        "peakWorkingSetBytes": 1636036608
+      },
+      {
+        "command": "oviya-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\oviya-b.json"
+        ],
+        "wallSeconds": 28.499,
+        "peakWorkingSetBytes": 1654784000
+      },
+      {
+        "command": "oviya-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\before\\oviya-c.json"
+        ],
+        "wallSeconds": 27.539,
+        "peakWorkingSetBytes": 1745891328
+      }
+    ],
+    "after": [
+      {
+        "command": "coverage-judith",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-judith.json",
+          "--enrichment-output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\enrichment.json"
+        ],
+        "wallSeconds": 32.307,
+        "peakWorkingSetBytes": 1995964416
+      },
+      {
+        "command": "missing-judith",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-judith.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\missing-judith.json"
+        ],
+        "wallSeconds": 0.811,
+        "peakWorkingSetBytes": 398794752
+      },
+      {
+        "command": "judith-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\judith-a.json"
+        ],
+        "wallSeconds": 29.067,
+        "peakWorkingSetBytes": 1621360640
+      },
+      {
+        "command": "judith-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\judith-b.json"
+        ],
+        "wallSeconds": 29.55,
+        "peakWorkingSetBytes": 1753903104
+      },
+      {
+        "command": "judith-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Judith, the Scourge Diva",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\judith-c.json"
+        ],
+        "wallSeconds": 27.827,
+        "peakWorkingSetBytes": 1578295296
+      },
+      {
+        "command": "coverage-krenko",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-krenko.json"
+        ],
+        "wallSeconds": 29.254,
+        "peakWorkingSetBytes": 2086162432
+      },
+      {
+        "command": "missing-krenko",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-krenko.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\missing-krenko.json"
+        ],
+        "wallSeconds": 0.711,
+        "peakWorkingSetBytes": 256274432
+      },
+      {
+        "command": "krenko-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\krenko-a.json"
+        ],
+        "wallSeconds": 28.826,
+        "peakWorkingSetBytes": 1588842496
+      },
+      {
+        "command": "krenko-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\krenko-b.json"
+        ],
+        "wallSeconds": 31.197,
+        "peakWorkingSetBytes": 1864474624
+      },
+      {
+        "command": "krenko-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Krenko, Mob Boss",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\krenko-c.json"
+        ],
+        "wallSeconds": 26.529,
+        "peakWorkingSetBytes": 1681518592
+      },
+      {
+        "command": "coverage-oviya",
+        "arguments": [
+          "audit",
+          "catalog-coverage",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--oracle-cards",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\oracle\\oracle-cards-20261026210159.jsonl.gz",
+          "--objective",
+          "create-creature-tokens",
+          "--translation-review",
+          "reference/phase27/translation-review.json",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-oviya.json"
+        ],
+        "wallSeconds": 28.342,
+        "peakWorkingSetBytes": 1914400768
+      },
+      {
+        "command": "missing-oviya",
+        "arguments": [
+          "audit",
+          "catalog-missing",
+          "--report",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\coverage-oviya.json",
+          "--limit",
+          "20",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\missing-oviya.json"
+        ],
+        "wallSeconds": 0.711,
+        "peakWorkingSetBytes": 253493248
+      },
+      {
+        "command": "oviya-a",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "own-nontoken-creature-deaths",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\oviya-a.json"
+        ],
+        "wallSeconds": 25.112,
+        "peakWorkingSetBytes": 1582751744
+      },
+      {
+        "command": "oviya-b",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "reanimate-own-creatures",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\oviya-b.json"
+        ],
+        "wallSeconds": 25.824,
+        "peakWorkingSetBytes": 1703899136
+      },
+      {
+        "command": "oviya-c",
+        "arguments": [
+          "discover",
+          "--commander",
+          "Oviya Pashiri, Sage Lifecrafter",
+          "--objective",
+          "create-creature-tokens",
+          "--json",
+          "--output",
+          "C:\\Users\\joes\\development\\mtg-deckbuilding-assistant\\generated\\phase28\\after\\oviya-c.json"
+        ],
+        "wallSeconds": 30.001,
+        "peakWorkingSetBytes": 1905664000
+      }
+    ]
+  },
+  "tests": {
+    "dev.mtg.assistant.ArgentumIntegrationTest": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.CatalogCoverageTest": {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.CommanderIntegrationTest": {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.JudithTheScourgeDivaScenarioTest": {
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.MandatoryDeathEngineTest": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.MechanicalDiscoveryTest": {
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.OracleEnrichmentCatalogTest": {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.OracleEnrichmentCoverageTest": {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.OracleEnrichmentHeldOutTest": {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.OracleEnrichmentTest": {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.OviyaPashiriSageLifecrafterScenarioTest": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase21DiagnosticsTest": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase21MechanicsTest": {
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase22CorrectnessTest": {
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase22DiagnosticTest": {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase23CollectionsTest": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase23CostsTest": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase23EngineTest": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase23ReportingTest": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase24EngineTest": {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase24FactsTest": {
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase24IntegrationTest": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase24ReportingTest": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase25EngineTest": {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase25FactsTest": {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase25IntegrationTest": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase25ReportingTest": {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase27TranslationIntegrationTest": {
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "dev.mtg.assistant.Phase27TranslationScenarioTest": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "artifacts": {
+    "before": {
+      "coverage-judith.json": {
+        "bytes": 25352935,
+        "sha256": "5159c5ed18f16a4ecf2c1e25330b38c177673f435fe3f5e9b485ba6baff9b45c"
+      },
+      "coverage-krenko.json": {
+        "bytes": 15948231,
+        "sha256": "695f9dce8bf716f809edae45f8fd5369187cce86194fa233210a0356ff71289e"
+      },
+      "coverage-oviya.json": {
+        "bytes": 15793772,
+        "sha256": "b37c6c8a83e8a63e80c09b149521ec0e7b30647114bb76352e1cd00f8e35a7d7"
+      },
+      "judith-a.json": {
+        "bytes": 47300736,
+        "sha256": "542c8b9a5a7f7a42dcb3e80ba2628618866dfb48ad95c9bd15af3d06a39e96ba"
+      },
+      "judith-b.json": {
+        "bytes": 48264530,
+        "sha256": "d7284850c2936e4545ee995c0bff075d50ef6a062d78bde6bef36e5b3c46ce98"
+      },
+      "judith-c.json": {
+        "bytes": 39616284,
+        "sha256": "c05da10469f298ec42c95cccd7c1a68e50486ec832edec6b6c8b38abac906c0b"
+      },
+      "krenko-a.json": {
+        "bytes": 28123675,
+        "sha256": "e8e1b7b9ecccc023f3e9a067a07606971dbb9f40347c4cf21e46f5d36e77716a"
+      },
+      "krenko-b.json": {
+        "bytes": 27016701,
+        "sha256": "6b6d3f2661f6d095dd75a3ef2e00ad26a8e9cc24abcd6aa10f34d1dbb4e12c14"
+      },
+      "krenko-c.json": {
+        "bytes": 23776821,
+        "sha256": "d0799d37a99cd1907074f375f89300bd1ca2e420c8e19e3dde37709ac156f784"
+      },
+      "missing-judith.json": {
+        "bytes": 33953,
+        "sha256": "782ba454ba803bda1e5d2137eae532ce4cb36971659e39e4ebc91ee81604fe5f"
+      },
+      "missing-krenko.json": {
+        "bytes": 34352,
+        "sha256": "97781dfd5665306371f3f30c2b5b6826ab9d2b3550dbf4d35be6349ecf456ad9"
+      },
+      "missing-oviya.json": {
+        "bytes": 33831,
+        "sha256": "e650a73f62ac1cf0cbdfef50799620347bd506b48b3c1021bbae1e1f57b3dc4b"
+      },
+      "oviya-a.json": {
+        "bytes": 26070147,
+        "sha256": "7d220c8ed33acc05aeeea0d10aa4f0c16ac6150fa515c6c249829c267fb8a2f8"
+      },
+      "oviya-b.json": {
+        "bytes": 29941418,
+        "sha256": "27a125fd07e51a5a53dcc13446939412725231b3f487c0e8525aae7618002f84"
+      },
+      "oviya-c.json": {
+        "bytes": 24939648,
+        "sha256": "66ea971d3c65574f4162d1479f1f52434048fe56db5a5df2fc93db66a46cd033"
+      },
+      "timings.json": {
+        "bytes": 7233,
+        "sha256": "b4f54be84e49b4766bbf1085f9aba47c70d69f8a15f88bd577fe8cdfc407fe69"
+      }
+    },
+    "after": {
+      "coverage-judith.json": {
+        "bytes": 33984958,
+        "sha256": "6f408b1c317fe6205dcac2672b034b317cd51295ae61fe37d2aef367ae78c0a2"
+      },
+      "coverage-krenko.json": {
+        "bytes": 19993224,
+        "sha256": "2328a9ba907d4c47b34d0410a805daf015a88aa4de5ea7560c8794e94d234fcf"
+      },
+      "coverage-oviya.json": {
+        "bytes": 19890466,
+        "sha256": "efd801d77e263d7b9900e4813e3d08b158874abbccc676c1567cbf9b508a417a"
+      },
+      "judith-a.json": {
+        "bytes": 47300736,
+        "sha256": "542c8b9a5a7f7a42dcb3e80ba2628618866dfb48ad95c9bd15af3d06a39e96ba"
+      },
+      "judith-b.json": {
+        "bytes": 48264530,
+        "sha256": "d7284850c2936e4545ee995c0bff075d50ef6a062d78bde6bef36e5b3c46ce98"
+      },
+      "judith-c.json": {
+        "bytes": 39616284,
+        "sha256": "c05da10469f298ec42c95cccd7c1a68e50486ec832edec6b6c8b38abac906c0b"
+      },
+      "krenko-a.json": {
+        "bytes": 28123675,
+        "sha256": "e8e1b7b9ecccc023f3e9a067a07606971dbb9f40347c4cf21e46f5d36e77716a"
+      },
+      "krenko-b.json": {
+        "bytes": 27016701,
+        "sha256": "6b6d3f2661f6d095dd75a3ef2e00ad26a8e9cc24abcd6aa10f34d1dbb4e12c14"
+      },
+      "krenko-c.json": {
+        "bytes": 23776821,
+        "sha256": "d0799d37a99cd1907074f375f89300bd1ca2e420c8e19e3dde37709ac156f784"
+      },
+      "missing-judith.json": {
+        "bytes": 37093,
+        "sha256": "a314967088df597698113b143280a2e81e8cadfbb29995bcf137cf5c693041f3"
+      },
+      "missing-krenko.json": {
+        "bytes": 37492,
+        "sha256": "cc060ca8cfd8377c8a1e81f76c85dcd4e42a835a03ed84973037b6e2720b7278"
+      },
+      "missing-oviya.json": {
+        "bytes": 36971,
+        "sha256": "57b46218d164515195d5ccd506e8eed5adc674e1ffe763a7897e31069b476b4a"
+      },
+      "oviya-a.json": {
+        "bytes": 26070147,
+        "sha256": "7d220c8ed33acc05aeeea0d10aa4f0c16ac6150fa515c6c249829c267fb8a2f8"
+      },
+      "oviya-b.json": {
+        "bytes": 29941418,
+        "sha256": "27a125fd07e51a5a53dcc13446939412725231b3f487c0e8525aae7618002f84"
+      },
+      "oviya-c.json": {
+        "bytes": 24939648,
+        "sha256": "66ea971d3c65574f4162d1479f1f52434048fe56db5a5df2fc93db66a46cd033"
+      },
+      "timings.json": {
+        "bytes": 7357,
+        "sha256": "00424778c122acf639d4085e541af521f1eb7060fa7d5a219e39df7c03551d78"
+      }
+    }
+  },
+  "enrichmentArtifact": {
+    "bytes": 16505374,
+    "sha256": "a1df4539b4a74bcbe32907705fe7358e77ab11ee5d4b6a80a0198b13557853f1",
+    "context": {
+      "algorithm": "physical-identity-v1",
+      "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+      "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+      "nativeIdentitySha256": "ceef411323fde4a1521b712402463977e246f8c14e83e9f7933abf3de77b2b21"
+    }
+  }
+}

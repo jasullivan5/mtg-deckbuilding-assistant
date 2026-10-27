@@ -1,0 +1,8 @@
+{
+  "tests": 272,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "baselineCommit": "fec9720",
+  "applicationJarSha256": "3650f66404932e2deda6ab4d1cb3ab4886878302d417467a5fe24e90f0719873"
+}
