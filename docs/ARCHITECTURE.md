@@ -8,7 +8,7 @@ Under `cli/src/main/kotlin/dev/mtg/assistant/`:
 
 | Concern | Files |
 |---|---|
-| External Oracle metadata and catalog mappings | coverage/OracleSnapshot.kt, coverage/CatalogCoverage.kt (offline input, identity indexes, independent coverage) |
+| External Oracle metadata and catalog mappings | coverage/OracleSnapshot.kt, coverage/CatalogCoverage.kt, coverage/OracleEnrichment.kt (offline input, identity indexes, independent coverage) |
 | Catalog/conventional search | Catalog.kt, DefinitionSearchCard.kt (native registry/search) |
 | Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt, OviyaPashiriSageLifecrafter.kt, KrenkosCommand.kt, Bitterblossom.kt (provenance/duplicates) |
 | Commander legality/full identity | discovery/Eligibility.kt, CommanderInspection.kt |
@@ -28,3 +28,5 @@ A is not completely fact-driven. Local support is not whole-action/card support;
 Commander inspection has separate availability, selection-blocker and bounded mechanical-review fields. The same structured inspection drives selection; it does not add an effect walker or certify complete mechanical correctness. See [COMMANDER_AUTHORING.md](COMMANDER_AUTHORING.md).
 
 External coverage retains the complete snapshot-eligible Oracle pool separately from native availability and optionally calls existing discovery objectives. Missing/uncertain mappings stay unevaluated; shared physical face names affect mapping uncertainty rather than removing eligible IDs. Snapshot updates and bounded research sampling are separate scripts. See CARD_COVERAGE.md and PHASE2_7_REPORT.md for data contracts, measured outcomes and native metadata limitations.
+
+Phase 2.8 adds a source-bound physical identity association layer over NativeIndex. It compares complete physical names/layouts/cast costs/card types globally, preserves existing Oracle IDs, and quarantines competing claims. It never edits Catalog definitions or discovery eligibility. Metadata agreement/correction candidates and native objective observations remain independent fields. Exported enrichment is versioned evidence, not a trusted metadata overlay or database. See [ORACLE_IDENTITY.md](ORACLE_IDENTITY.md) for review quality, current counts and reproduction.

@@ -5,6 +5,7 @@ This long-term Commander deckbuilding research project values mechanical accurac
 - Kotlin/JDK21/Gradle; preserve Argentum's exact ARGENTUM_COMMIT and native CardRegistry/CardDefinition/CardScript/mtg-search integration. Do not edit upstream or upgrade unrelated dependencies.
 - Extend existing shared native extraction/facts/predicates. Keep objective policies separate from mechanical compatibility. Preserve action/cost/effect/branch/controller/ownership/zone/target/quantity/timing relationships and explicit UNKNOWN/unsupported states.
 - No production card-name exceptions, new Oracle parser, subjective utility score, speculative ontology, database/UI or simulator without assignment. Judith's verified native extension and engine scenarios remain intact.
+- Oracle identity enrichment is observational: keep association, eligibility metadata and mechanical support separate. Bind it to the exact snapshot, native identity fingerprint and Argentum pin; increment the mapping algorithm version for rule changes. Metadata correction candidates require a separate reviewed assignment before affecting discovery.
 - A still has legacy death/removal-specific projection in PathwayExtractor/MechanicalQuery; B/C query shared facts. Do not portray the architecture as fully generalized.
 
 Commands from root:

@@ -1,0 +1,123 @@
+{
+  "frozenCommit": "e7741e9936af76189c7c59a31cf7e35b234a740e",
+  "frozenAlgorithmSha256": "2c001b816238d658df96a2e7c62d74c8140320f5242cd7ee2b995dd211d853b8",
+  "seed": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a|phase28-held-out-v1|",
+  "selection": "Lowest SHA256 per native layout with canonical printing fields and a represented physical name; development cases excluded; only native projection fields read, no association outcomes",
+  "cases": [
+    {
+      "nativeName": "Prismite",
+      "externalName": "Prismite",
+      "externalOracleId": "feb4fcec-6f3a-4643-9ffb-69d3f5953322",
+      "expected": "CONFIDENT",
+      "selectionSha256": "0008bf9a1740233d3e20a8db5b9e59b4164ab9f55055ac3a7e773c56d01b29ba",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "WAR",
+        "nativeCollectorNumber": "242",
+        "returnedPrintingOracleId": "feb4fcec-6f3a-4643-9ffb-69d3f5953322",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": "Wear // Tear",
+      "externalName": "Wear // Tear",
+      "externalOracleId": "9842734c-1eac-4509-a731-4c22017ae586",
+      "expected": "CONFIDENT",
+      "selectionSha256": "1c488e861530770b04d1d095df0acd895eb9a5ad4783105c1d48b2dcef2152b0",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "DGM",
+        "nativeCollectorNumber": "135",
+        "returnedPrintingOracleId": "9842734c-1eac-4509-a731-4c22017ae586",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": "Kuja, Genome Sorcerer",
+      "externalName": "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+      "externalOracleId": "3998a60d-9521-4100-8d41-3e612972a3de",
+      "expected": "CONFIDENT",
+      "selectionSha256": "00facd7bd5d388b911e35ce98d4513db2f3cb29815752c7e71217407e84436c9",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "FIN",
+        "nativeCollectorNumber": "232",
+        "returnedPrintingOracleId": "3998a60d-9521-4100-8d41-3e612972a3de",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": "Bloodsoaked Insight",
+      "externalName": "Bloodsoaked Insight // Sanguine Morass",
+      "externalOracleId": "c52fc8a1-43c6-41f8-b010-03be7c89ef1d",
+      "expected": "CONFIDENT",
+      "selectionSha256": "0b177570ac38896202a05d5535cd44eff6d8008b3be2282a803da9c266941ed3",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "MH3",
+        "nativeCollectorNumber": "252",
+        "returnedPrintingOracleId": "c52fc8a1-43c6-41f8-b010-03be7c89ef1d",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": "Initiate of Blood",
+      "externalName": "Initiate of Blood // Goka the Unjust",
+      "externalOracleId": "5b18d2fd-bc65-49a2-b812-c217f125571d",
+      "expected": "CONFIDENT",
+      "selectionSha256": "1fc1e1f428ca114ac68ec01b5f55220a3aac9ed6d77a58934d1636597cd9a9ad",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "CHK",
+        "nativeCollectorNumber": "173",
+        "returnedPrintingOracleId": "5b18d2fd-bc65-49a2-b812-c217f125571d",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": "Bramble Familiar",
+      "externalName": "Bramble Familiar // Fetch Quest",
+      "externalOracleId": "68f36dfa-bbd2-4860-b09b-37e35136be72",
+      "expected": "CONFIDENT",
+      "selectionSha256": "016f4fcb86350a93db151f36446590b53e129fccc547fcc048aac38686bfc904",
+      "independentBasis": {
+        "source": "https://api.scryfall.com/cards/collection",
+        "retrievedDate": "2026-10-27",
+        "nativePrintingSet": "WOE",
+        "nativeCollectorNumber": "164",
+        "returnedPrintingOracleId": "68f36dfa-bbd2-4860-b09b-37e35136be72",
+        "archivedOracleIdAgrees": true
+      }
+    },
+    {
+      "nativeName": null,
+      "externalName": "Eater of Hope",
+      "externalOracleId": "3055381a-fb6b-47a3-8e77-a44768808e27",
+      "expected": "MISSING",
+      "independentBasis": {
+        "baselineStatus": "NATIVE_DEFINITION_MISSING",
+        "baselineRevision": "fec9720",
+        "assertedScope": "No native ID or alias in accepted catalog; not a universal claim about card mechanics"
+      }
+    },
+    {
+      "nativeName": null,
+      "externalName": "Repentant Vampire",
+      "externalOracleId": "a5dabc98-0db9-4b4f-b2d2-f74dbd022d22",
+      "expected": "MISSING",
+      "independentBasis": {
+        "baselineStatus": "NATIVE_DEFINITION_MISSING",
+        "baselineRevision": "fec9720",
+        "assertedScope": "No native ID or alias in accepted catalog; not a universal claim about card mechanics"
+      }
+    }
+  ],
+  "reviewLimit": "Post-freeze source-led evaluation, canonical printings are independent identifying evidence not used by the algorithm. Not external human adjudication or a statistical accuracy estimate.",
+  "frozenAlgorithmWorkingTreeSha256": "df89f11c7cdb0642cc609e25e632a5b4306f3a7c91540158b78787d0b76008e4",
+  "hashEncoding": "frozenAlgorithmSha256 hashes UTF-8 LF Git blob bytes; original Windows working-tree hash retained separately"
+}
