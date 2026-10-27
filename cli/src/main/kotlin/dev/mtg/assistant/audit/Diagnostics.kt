@@ -275,6 +275,7 @@ fun coverageSummary(r: CoverageReport) = buildString {
     r.groups.filter { it.supportStatus !in setOf("PATHWAY_EXTRACTED","SUPPORTED") }.take(35).forEach { appendLine("${it.fingerprint} | ${it.nativeType} | ${it.supportStatus} | ${it.relevance} | ${it.distinctCards} cards / ${it.occurrences} nodes / ${it.distinctActions} actions / ${it.insideAcceptedActions} inside accepted actions\n  ${it.reasons}; ${it.proposedWork}\n  ${it.representatives.joinToString { x -> "${x.card}:${x.face}.${x.path}" }}") }
 }
 fun auditCommand(args: List<String>, catalog: () -> Catalog, out: (String)->Unit) {
+    if(args.firstOrNull() in setOf("catalog-coverage","catalog-missing")) { dev.mtg.assistant.coverage.catalogCoverageCommand(args,catalog,out); return }
     require(args.isNotEmpty()) { "audit requires coverage, inconsistencies, or diff" }
     val options=linkedMapOf<String,String>(); var json=false; var i=1
     while(i<args.size) { val k=args[i++]; if(k == "--json") json=true else { require(k.startsWith("--") && i<args.size) { "Missing option value: $k" }; require(k !in options) { "Duplicate $k" }; options[k]=args[i++] } }
