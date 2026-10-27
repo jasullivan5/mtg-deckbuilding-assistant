@@ -1,0 +1,165 @@
+{
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cards": [
+    {
+      "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+      "name": "Krenko's Command",
+      "stratum": "fixed-red-anchor",
+      "selectionHash": "0f2879bb4cd29bdcde21dea9064101a187e037b0a6cd0d1f7873a8cf210cd7ef",
+      "exitCode": 0,
+      "elapsedSeconds": 1.508,
+      "stdoutSha256": "312cdd763d56c5f64790f8b0ea2d01e8d1d2314d295baba874e55a3536042b51",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nnote: setCode \"CLU\" and metadata.imageUri describe the printing the Oracle bulk carried, NOT where this card's canonical belongs.\n      Place the canonical in the card's earliest real printing, and take rarity / collectorNumber / artist / imageUri from that set's own Scryfall payload."
+    },
+    {
+      "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+      "name": "Bitterblossom",
+      "stratum": "upkeep-life-loss-anchor",
+      "selectionHash": "e83a28796246fe2eec0c4229622547db1970281d494a0dbaefe7a64ebd23de40",
+      "exitCode": 0,
+      "elapsedSeconds": 1.691,
+      "stdoutSha256": "137b6fc4c74de0ffb2a125b472ab73fb481a3af9783127f9bd99f4c4db1499fb",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nnote: setCode \"2X2\" and metadata.imageUri describe the printing the Oracle bulk carried, NOT where this card's canonical belongs.\n      Place the canonical in the card's earliest real printing, and take rarity / collectorNumber / artist / imageUri from that set's own Scryfall payload."
+    },
+    {
+      "oracleId": "87217160-0687-4482-b9a3-91bad8527675",
+      "name": "Soul of Zendikar",
+      "stratum": "green-token",
+      "selectionHash": "0203351722b62c534a4220ec382e3c1e4d9df23ec2815b37c0027cfeafc49ff4",
+      "exitCode": 0,
+      "elapsedSeconds": 1.696,
+      "stdoutSha256": "6debaed308d6d5c0b40dc59c45b8310cfce87f8f99ccb0cd1d62f839794e2173",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nnote: setCode \"C19\" and metadata.imageUri describe the printing the Oracle bulk carried, NOT where this card's canonical belongs.\n      Place the canonical in the card's earliest real printing, and take rarity / collectorNumber / artist / imageUri from that set's own Scryfall payload."
+    },
+    {
+      "oracleId": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "name": "Mortarpod",
+      "stratum": "enters-token",
+      "selectionHash": "0207e2e7ab884f7d720d8879dc56ecbd2bfb969a8e192d3b2b971e7206a05fc3",
+      "exitCode": 1,
+      "elapsedSeconds": 1.519,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Mortarpod did not compile\n  LINE_DECLINED: no rule reads this line, from \"Living\" (line 0: \"Living weapon\")"
+    },
+    {
+      "oracleId": "650949ca-609b-46c5-bc6b-6f782cdcb6d2",
+      "name": "Rakdos Guildmage",
+      "stratum": "activated-token",
+      "selectionHash": "03885f4c2e4115439211111993d22121c1f75f7992ee35a3d5f756c16cc68faf",
+      "exitCode": 0,
+      "elapsedSeconds": 1.752,
+      "stdoutSha256": "ede797c1c9bf456f82aa6858b03f12e4a32d11dcd86e031d4f4392bfbace0b97",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nnote: setCode \"RVR\" and metadata.imageUri describe the printing the Oracle bulk carried, NOT where this card's canonical belongs.\n      Place the canonical in the card's earliest real printing, and take rarity / collectorNumber / artist / imageUri from that set's own Scryfall payload."
+    },
+    {
+      "oracleId": "cf4959bf-92ae-4c9b-b631-724ce100cbb8",
+      "name": "Pact of the Titan",
+      "stratum": "conditional-token",
+      "selectionHash": "01367f155fe95f50fc0ec5bb49c352a94e8d9891198d37ee4d8626759d5e7367",
+      "exitCode": 1,
+      "elapsedSeconds": 1.272,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Pact of the Titan did not compile\n  LINE_DECLINED: no rule reads this line, from \"next\" (line 1: \"At the beginning of your next upkeep, pay {4}{R}. If you don't, you lose the game.\")"
+    },
+    {
+      "oracleId": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "name": "Espers to Magicite",
+      "stratum": "token-copy",
+      "selectionHash": "04d144f6b6578619c1a76dd726938768b4f6dd891ed281c75bbcc8b28a112b88",
+      "exitCode": 1,
+      "elapsedSeconds": 1.146,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Espers to Magicite did not compile\n  LINE_DECLINED: no rule reads this line, from \"each\" (line 0: \"Exile each opponent's graveyard. When you do, choose up to one target creature card exiled this way. Create a token that's a copy of that card, except it's an artifact and it loses all other card types.\")"
+    },
+    {
+      "oracleId": "77d5f298-06b4-49d1-9b33-f1f176665ba2",
+      "name": "Transpose",
+      "stratum": "opponent-token",
+      "selectionHash": "06fd9818b9d53716a631a9c0f709b48131f26a8101c77f8bbdd4f98acf933e04",
+      "exitCode": 1,
+      "elapsedSeconds": 1.4,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Transpose did not compile\n  LINE_DECLINED: no rule reads this line, from \"this\" (line 0: \"Draw a card, then discard a card. You lose 1 life. If this spell was cast from your hand, create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, ~ deals 1 damage to each opponent.\"\")"
+    },
+    {
+      "oracleId": "883ad210-917b-40e6-8682-31d6eb3ed12a",
+      "name": "Burakos, Party Leader",
+      "stratum": "treasure-negative-review",
+      "selectionHash": "0187a44fc6c411c32628d05d2268f5f3543aebc148f4e4439ed7204d3a22f93d",
+      "exitCode": 1,
+      "elapsedSeconds": 1.204,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Burakos, Party Leader did not compile\n  LINE_DECLINED: no rule reads this line, from \"is\" (line 0: \"~ is also a Cleric, Rogue, Warrior, and Wizard.\")\n  LINE_DECLINED: no rule reads this line, from \"X\" (line 1: \"Whenever ~ attacks, defending player loses X life and you create X Treasure tokens, where X is the number of creatures in your party.\")\n  LINE_DECLINED: no rule reads this line, from \"Choose\" (line 2: \"Choose a Background\")"
+    },
+    {
+      "oracleId": "c3e4a6ce-4a36-43a4-8e80-3c16a9101b79",
+      "name": "Solemn Doomguide",
+      "stratum": "graveyard-movement",
+      "selectionHash": "0013c4ac67bc84a0eb5c4c862e023753a08b488469f98c51afede9612aefcc48",
+      "exitCode": 1,
+      "elapsedSeconds": 1.211,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Solemn Doomguide did not compile\n  LINE_DECLINED: no rule reads this line, from \"card\" (line 1: \"Each creature card in your graveyard that's a Cleric, Rogue, Warrior, and/or Wizard has unearth {1}{B}.\")"
+    },
+    {
+      "oracleId": "ae7e14cf-a275-4260-8d78-324429a042b7",
+      "name": "Sigil of Myrkul",
+      "stratum": "combat-timing",
+      "selectionHash": "0348794003f4223fd33a744f6a23f9ada65c748f53d32114fdf6b8db5bcc2d31",
+      "exitCode": 1,
+      "elapsedSeconds": 1.342,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Sigil of Myrkul did not compile\n  LINE_DECLINED: no rule reads this line, from \"When\" (line 0: \"At the beginning of combat on your turn, mill a card. When you do, if there are four or more creature cards in your graveyard, put a +1/+1 counter on target creature you control and it gains deathtouch until end of turn.\")"
+    },
+    {
+      "oracleId": "1bf04a2a-7f96-412c-9d91-034bef26e1b6",
+      "name": "Dread Linnorm // Scale Deflection",
+      "stratum": "multi-face",
+      "selectionHash": "007dbb3428df42a59de0e574f63c94c4b3619c6230cd78273032d61fa99b74c6",
+      "exitCode": 1,
+      "elapsedSeconds": 1.678,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Dread Linnorm // Scale Deflection did not compile\n  MULTI_FACE: a adventure card has 2 faces; the compiler reads single-faced cards"
+    },
+    {
+      "oracleId": "5bf9f397-0216-4ec9-a57b-406758dcc233",
+      "name": "Undead Servant",
+      "stratum": "dynamic-token-quantity",
+      "selectionHash": "0248a764ee9989535d3f3427fcf35fb4fd80621503563b701709866a749dacc1",
+      "exitCode": 1,
+      "elapsedSeconds": 1.349,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Undead Servant did not compile\n  LINE_DECLINED: no rule reads this line, from \"card\" (line 0: \"When ~ enters, create a 2/2 black Zombie creature token for each card named ~ in your graveyard.\")"
+    },
+    {
+      "oracleId": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "name": "Touch of the Void",
+      "stratum": "replacement-layer",
+      "selectionHash": "00abae2e0b7662c7bc06e121ccdb33453d8d63998a0a6456c10846a7a76cbf01",
+      "exitCode": 1,
+      "elapsedSeconds": 1.462,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Touch of the Void did not compile\n  LINE_DECLINED: no rule reads this line, from \"a\" (line 1: \"~ deals 3 damage to any target. If a creature dealt damage this way would die this turn, exile it instead.\")"
+    },
+    {
+      "oracleId": "61f09fcc-11cd-4999-a43a-54488b19861d",
+      "name": "Cloakwood Swarmkeeper",
+      "stratum": "token-reference-negative-review",
+      "selectionHash": "03db917bb877eb2f2f6e99a54217c95ce8baaa82637cfae8f11cdccd0d729aa1",
+      "exitCode": 1,
+      "elapsedSeconds": 1.368,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Cloakwood Swarmkeeper did not compile\n  LINE_DECLINED: no rule reads this line, from \"Gathered\" (line 0: \"Gathered Swarm — Whenever one or more tokens you control enter, put a +1/+1 counter on ~.\")"
+    },
+    {
+      "oracleId": "4608c663-e088-40ca-a915-b6e39253eb98",
+      "name": "Pain's Reward",
+      "stratum": "plain-non-token-control",
+      "selectionHash": "01b7a47afd0bf8684000c752eea5bf8ac9b913e95114ec8dbd00c3cf0fb0c5f0",
+      "exitCode": 1,
+      "elapsedSeconds": 1.488,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Picked up JAVA_TOOL_OPTIONS:  -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8\nassay: Pain's Reward did not compile\n  LINE_DECLINED: no rule reads this line, from \"player\" (line 0: \"Each player may bid life. You start the bidding with a bid of any number. In turn order, each player may top the high bid. The bidding ends if the high bid stands. The high bidder loses life equal to the high bid and draws four cards.\")"
+    }
+  ]
+}

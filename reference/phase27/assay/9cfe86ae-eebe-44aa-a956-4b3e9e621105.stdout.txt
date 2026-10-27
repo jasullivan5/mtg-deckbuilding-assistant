@@ -1,0 +1,28 @@
+{
+    "name": "Krenko's Command",
+    "manaCost": "{1}{R}",
+    "typeLine": "Sorcery",
+    "oracleText": "Create two 1/1 red Goblin creature tokens.",
+    "script": {
+        "spellEffect": {
+            "type": "CreateToken",
+            "count": {
+                "type": "Fixed",
+                "amount": 2
+            },
+            "power": 1,
+            "toughness": 1,
+            "colors": [
+                "RED"
+            ],
+            "creatureTypes": [
+                "Goblin"
+            ]
+        }
+    },
+    "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+    "setCode": "CLU",
+    "metadata": {
+        "imageUri": "https://cards.scryfall.io/normal/front/b/0/b07d96a1-87a0-45ff-ae6e-230deaf44dca.jpg?1783912539"
+    }
+}

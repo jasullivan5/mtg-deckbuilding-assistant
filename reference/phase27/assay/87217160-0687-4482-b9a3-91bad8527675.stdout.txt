@@ -1,0 +1,79 @@
+{
+    "name": "Soul of Zendikar",
+    "manaCost": "{4}{G}{G}",
+    "typeLine": "Creature — Avatar",
+    "oracleText": "Reach\n{3}{G}{G}: Create a 3/3 green Beast creature token.\n{3}{G}{G}, Exile this card from your graveyard: Create a 3/3 green Beast creature token.",
+    "creatureStats": {
+        "power": 6,
+        "toughness": 6
+    },
+    "keywords": [
+        "REACH"
+    ],
+    "keywordAbilities": [
+        {
+            "type": "Simple",
+            "keyword": "REACH"
+        }
+    ],
+    "script": {
+        "activatedAbilities": [
+            {
+                "id": "Soul of Zendikar:1",
+                "cost": {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                        "type": "AtomMana",
+                        "cost": "{3}{G}{G}"
+                    }
+                },
+                "effect": {
+                    "type": "CreateToken",
+                    "power": 3,
+                    "toughness": 3,
+                    "colors": [
+                        "GREEN"
+                    ],
+                    "creatureTypes": [
+                        "Beast"
+                    ]
+                }
+            },
+            {
+                "id": "Soul of Zendikar:2",
+                "cost": {
+                    "type": "CostComposite",
+                    "costs": [
+                        {
+                            "type": "CostAtomWrapper",
+                            "atom": {
+                                "type": "AtomMana",
+                                "cost": "{3}{G}{G}"
+                            }
+                        },
+                        {
+                            "type": "CostExileSelf"
+                        }
+                    ]
+                },
+                "effect": {
+                    "type": "CreateToken",
+                    "power": 3,
+                    "toughness": 3,
+                    "colors": [
+                        "GREEN"
+                    ],
+                    "creatureTypes": [
+                        "Beast"
+                    ]
+                },
+                "activateFromZone": "Graveyard"
+            }
+        ]
+    },
+    "oracleId": "87217160-0687-4482-b9a3-91bad8527675",
+    "setCode": "C19",
+    "metadata": {
+        "imageUri": "https://cards.scryfall.io/normal/front/1/0/108a4330-d9dd-429d-a2f8-c355ff914883.jpg?1783932740"
+    }
+}

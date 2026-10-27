@@ -1,0 +1,41 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "source": "wotc",
+      "published_at": "2025-06-06",
+      "comment": "The token is an artifact instead of its other types. This is a copiable value of the token that other effects may copy."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "source": "wotc",
+      "published_at": "2025-06-06",
+      "comment": "You don't choose a target for Espers to Magicite at the time you cast it. Rather, a second \"reflexive\" ability triggers when you exile each opponent's graveyard this way. You choose a target for that ability as it goes on the stack. Each player may respond to this triggered ability as normal."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "source": "wotc",
+      "published_at": "2025-06-06",
+      "comment": "If the copied card has {X} in its mana cost, X is 0."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "source": "wotc",
+      "published_at": "2025-06-06",
+      "comment": "If a card copied by the token had any \"when [this permanent] enters\" abilities, the token also has those abilities, and they'll trigger when it's created. Similarly, any \"as [this permanent] enters\" or \"[this permanent] enters with\" abilities that the token has copied will also work."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "06f7ec6d-d70e-44d8-bf43-ae667d244ab4",
+      "source": "wotc",
+      "published_at": "2025-06-06",
+      "comment": "Except for the listed exceptions, the token copies exactly what was printed on the original card and nothing else. It doesn't copy any information about the object the card may have been at any point before it was exiled."
+    }
+  ]
+}

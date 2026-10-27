@@ -4,6 +4,10 @@ Start with CODEX_HANDOFF.md and AGENTS.md. Current verification status is in HAN
 
 The original Phase2.5 usage guide follows; historical reports/manifests moved to docs/history. Scripts require Git/JDK21/Bash/Python3; PowerShell setup is retained. Do not use root gradlew test; dev attaches the application module to pinned upstream settings.
 
+## Phase 2.7 card coverage
+
+Commander-scoped Scryfall coverage, bounded missing-card inventories and the verified Krenko's Command/Bitterblossom native translations are documented in [CARD_COVERAGE.md](docs/CARD_COVERAGE.md). Executed counts, the 16-card Assay investigation and regression evidence are in [PHASE2_7_REPORT.md](docs/PHASE2_7_REPORT.md).
+
 # MTG Deckbuilding Assistant — Phase 2.5
 
 Kotlin CLI over real Argentum `CardRegistry`, `CardDefinition`, `CardScript`, and `mtg-search`. Continues Phase 2.4 with the unchanged upstream pin in `ARGENTUM_COMMIT`.

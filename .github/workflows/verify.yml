@@ -22,4 +22,5 @@ jobs:
             gradle/wrapper/gradle-wrapper.properties
             cli/build.gradle.kts
       - run: bash scripts/bootstrap.sh
+      - run: python3 scripts/test-oracle-snapshot.py
       - run: bash scripts/verify.sh fast
