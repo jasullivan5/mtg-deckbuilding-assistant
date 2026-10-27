@@ -1,0 +1,2140 @@
+{
+  "baseRevision": "463ce86f288db73486dcd0a712f4b8469bf3cd7f",
+  "phase26Pr": 1,
+  "implementationRevision": "2e943a18a777abee830b6d2a8c450c007d2c40f2",
+  "snapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-10-27T04:29:45.462260+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "coverage": {
+    "judith": {
+      "commander": "Judith, the Scourge Diva",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 12828,
+        "excluded_records": 26221,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 3,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 11,
+        "missing_uninvestigated": 6151,
+        "native_available": 1,
+        "native_metadata_unresolved": 6644,
+        "native_mechanically_unresolved": 2,
+        "native_definition_missing": 6162,
+        "ambiguous_mapping": 19
+      },
+      "poolExclusions": {
+        "COLOR_IDENTITY_OUTSIDE_COMMANDER": 19288,
+        "NOT_COMMANDER_LEGAL": 6933
+      },
+      "timingsMillis": {
+        "snapshotLoadAndHash": 2535,
+        "catalogLoad": 18163,
+        "poolAndMapping": 486,
+        "objectiveEvaluation": 8201
+      },
+      "reportBytes": 25352935,
+      "reportSha256": "4b50bc4c0db7b933f265fd623e25e82e0f1af93328a942ee7cb7b2021cf413a3",
+      "independentSourcePoolEqual": true,
+      "nameCandidateEligibilityDifferences": {
+        "native_full_identity_missing": 467,
+        "native_legality_unknown": 111,
+        "native_external_identity_disagreement": 2
+      },
+      "nameCandidateExamplesNotAuthoritativeMappings": {
+        "native_full_identity_missing": [
+          "Academy Manufactor",
+          "Accomplished Automaton",
+          "Adventurers' Guildhouse",
+          "Aeronaut's Wings",
+          "Agility Bobblehead",
+          "Aladdin's Lamp"
+        ],
+        "native_legality_unknown": [
+          "Afterthought Sentry",
+          "Ajani Unrelenting",
+          "Ajani's Anguish",
+          "Apex Witchstalker",
+          "Arc Reactor",
+          "Archive Arbiter"
+        ],
+        "native_external_identity_disagreement": [
+          "Firescreamer",
+          "Hooded Kavu"
+        ]
+      },
+      "nativeCandidateIncludedExternalExcluded": [
+        {
+          "nativeName": "Abzan Devotee",
+          "sourceOracleId": "3d02ee2f-b7bd-40b0-b9be-2420991b2be0",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Bloodletter Quill",
+          "sourceOracleId": "79cf9c52-56e0-4237-a595-ec07824e5eed",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Firebrand Ranger",
+          "sourceOracleId": "4ceb49f3-a997-468d-9653-8ca5ceb2bcfb",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Flash Conscription",
+          "sourceOracleId": "a2019c23-09b8-4b0f-8b91-d8137804cb95",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Haunted Screen",
+          "sourceOracleId": "49f92c0b-16ac-4cf0-8ec3-e3638990ee75",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Heartwood Shard",
+          "sourceOracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Iridescent Tiger",
+          "sourceOracleId": "ce09c5b0-9dd4-4f73-9f3f-dfbd829813e4",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Jeskai Devotee",
+          "sourceOracleId": "6dcdd313-6df7-4d44-a4cb-0346a4fdb4e1",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Narset's Rebuke",
+          "sourceOracleId": "247075c5-62f8-41a1-91b3-562ff0aabb30",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Nightscape Apprentice",
+          "sourceOracleId": "429de3c3-3f2e-4d55-a04a-f414912aff3a",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "R",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Nightscape Master",
+          "sourceOracleId": "e5f9bd6b-0aa6-4f61-b101-ec194af6d632",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "R",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Phyrexian Infiltrator",
+          "sourceOracleId": "f444a0f8-32d8-4748-af58-51a1a8ed72b4",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Plague Boiler",
+          "sourceOracleId": "fef502af-6e79-4c55-a86a-b45adb3fc64a",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Ribbons of Night",
+          "sourceOracleId": "f074c0d0-8455-484d-ae75-820fdfbc4740",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Sunforger",
+          "sourceOracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Thunderscape Apprentice",
+          "sourceOracleId": "34e325f0-b66f-44b9-a25c-da88357dbac4",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Toxrill, the Corrosive",
+          "sourceOracleId": "c71b2325-bde6-4364-a93b-8477ffeb25d8",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Urborg Phantom",
+          "sourceOracleId": "f8b5d2f4-58a8-408c-bb67-6b5f9ba5b678",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Viashino Grappler",
+          "sourceOracleId": "74c5bfb0-1375-46e9-9a6c-1b9fada2913b",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Vigor Mortis",
+          "sourceOracleId": "6de27cba-5500-4448-abef-68e69fe519dc",
+          "nativeIdentity": [
+            "B"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        }
+      ],
+      "ambiguousNativeExactNameDiagnostics": [
+        {
+          "nativeName": "Pick Your Poison",
+          "sourceOracleIds": [
+            "191634b4-42e5-499f-a1a8-1d0407626be8",
+            "9af4a832-d634-47aa-91ed-79d44fe08864"
+          ]
+        },
+        {
+          "nativeName": "Red Herring",
+          "sourceOracleIds": [
+            "0e99efaf-6402-44c5-ae8b-1f5bb1b68333",
+            "f0ee45b5-697b-48f8-b1a6-cb3ae75e4a29"
+          ]
+        }
+      ],
+      "missingFirst20": [
+        {
+          "oracleId": "7bf6f13a-3c90-4bda-bc84-e026828bf4d1",
+          "name": "\"Lifetime\" Pass Holder",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "acee1d16-1651-4e2c-8138-cc6456c4ee71",
+          "name": "\"Name Sticker\" Goblin",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "8adbba6e-03ef-4278-aec5-8a4496b377a8",
+          "name": "Abandon Hope",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "fa43793d-a215-4a64-a09c-ed9799f745a4",
+          "name": "Abandon Reason",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "a051dee0-60c8-4f58-84cb-55460c097115",
+          "name": "Abandoned Sarcophagus",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "3a92b235-196b-4f46-9d20-06f4d3653d36",
+          "name": "Aberrant Return",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "13f63240-a6bb-4333-a3dd-818725c6fb73",
+          "name": "Abhorrent Overlord",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "edbf1b87-2d1e-47e6-a04e-a2b1646af7d9",
+          "name": "Abnormal Endurance",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e0b12c48-7234-40b5-a84c-6901d2b4e5b0",
+          "name": "Abomination, World Ravager",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "8a810017-06ac-4824-bc2f-a7d303d58ad7",
+          "name": "About Face",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "d06a8026-1657-4404-8dff-64e44f1a14f8",
+          "name": "Abstergo Entertainment",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "0727dc95-03df-4a2c-aed5-73fb840f3db7",
+          "name": "Abstruse Archaic",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e3eb6f90-ccfc-41e7-bff6-0b378226bc7e",
+          "name": "Abundant Countryside",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "4954181c-cb46-4cac-adc3-2c8b7693a211",
+          "name": "Abyssal Gatekeeper",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "b96ccc2f-88e5-4522-924e-76fc76dc3b39",
+          "name": "Abyssal Hunter",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "b79c4066-66a9-4a53-8716-23f7a340a85f",
+          "name": "Abyssal Nocturnus",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "7282f643-191b-41be-9f6f-82360c915d6d",
+          "name": "Abyssal Persecutor",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "51833cff-6519-4806-8d91-0040e9a02189",
+          "name": "Abyssal Specter",
+          "colorIdentity": [
+            "B"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "75131d75-0703-44d0-b503-35190be8e66f",
+          "name": "Academy Raider",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "2b6d95b5-0680-43ae-9ff3-8e287a9eb837",
+          "name": "Acceptable Losses",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        }
+      ],
+      "ambiguousExamples": [
+        "Blazing Firesinger // Seething Song",
+        "Cheerful Osteomancer // Raise Dead",
+        "Demonic Tutor",
+        "Emeritus of Conflict // Lightning Bolt",
+        "Emeritus of Woe // Demonic Tutor",
+        "Exsanguinate",
+        "Grave Researcher // Reanimate",
+        "Hallway Heckler // Vicious Verse"
+      ]
+    },
+    "krenko": {
+      "commander": "Krenko, Mob Boss",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7552,
+        "excluded_records": 31497,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 1,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 1,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 3,
+        "missing_uninvestigated": 3628,
+        "native_available": 1,
+        "native_metadata_unresolved": 3914,
+        "native_mechanically_unresolved": 0,
+        "native_definition_missing": 3631,
+        "ambiguous_mapping": 6
+      },
+      "poolExclusions": {
+        "COLOR_IDENTITY_OUTSIDE_COMMANDER": 24564,
+        "NOT_COMMANDER_LEGAL": 6933
+      },
+      "timingsMillis": {
+        "snapshotLoadAndHash": 2575,
+        "catalogLoad": 18520,
+        "poolAndMapping": 403,
+        "objectiveEvaluation": 6406
+      },
+      "reportBytes": 15948231,
+      "reportSha256": "8208aa5568fe8603d0d8ec8c7c35b4a6e12a91ba8ee17dcb791f8721586aafab",
+      "independentSourcePoolEqual": true,
+      "nameCandidateEligibilityDifferences": {
+        "native_full_identity_missing": 408,
+        "native_legality_unknown": 62
+      },
+      "nameCandidateExamplesNotAuthoritativeMappings": {
+        "native_full_identity_missing": [
+          "Academy Manufactor",
+          "Accomplished Automaton",
+          "Adventurers' Guildhouse",
+          "Aeronaut's Wings",
+          "Agility Bobblehead",
+          "Aladdin's Lamp"
+        ],
+        "native_legality_unknown": [
+          "Afterthought Sentry",
+          "Ajani Unrelenting",
+          "Ajani's Anguish",
+          "Arc Reactor",
+          "Archive Arbiter",
+          "Arni, Renowned Champion"
+        ]
+      },
+      "nativeCandidateIncludedExternalExcluded": [
+        {
+          "nativeName": "Bloodletter Quill",
+          "sourceOracleId": "79cf9c52-56e0-4237-a595-ec07824e5eed",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Firebrand Ranger",
+          "sourceOracleId": "4ceb49f3-a997-468d-9653-8ca5ceb2bcfb",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Flash Conscription",
+          "sourceOracleId": "a2019c23-09b8-4b0f-8b91-d8137804cb95",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Haunted Screen",
+          "sourceOracleId": "49f92c0b-16ac-4cf0-8ec3-e3638990ee75",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Heartwood Shard",
+          "sourceOracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Hooded Kavu",
+          "sourceOracleId": "52934f16-eb9b-4d0a-b372-155461660f6e",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "B",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Iridescent Tiger",
+          "sourceOracleId": "ce09c5b0-9dd4-4f73-9f3f-dfbd829813e4",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Jeskai Devotee",
+          "sourceOracleId": "6dcdd313-6df7-4d44-a4cb-0346a4fdb4e1",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Narset's Rebuke",
+          "sourceOracleId": "247075c5-62f8-41a1-91b3-562ff0aabb30",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Plague Boiler",
+          "sourceOracleId": "fef502af-6e79-4c55-a86a-b45adb3fc64a",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Sunforger",
+          "sourceOracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Thunderscape Apprentice",
+          "sourceOracleId": "34e325f0-b66f-44b9-a25c-da88357dbac4",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Viashino Grappler",
+          "sourceOracleId": "74c5bfb0-1375-46e9-9a6c-1b9fada2913b",
+          "nativeIdentity": [
+            "R"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        }
+      ],
+      "ambiguousNativeExactNameDiagnostics": [
+        {
+          "nativeName": "Pick Your Poison",
+          "sourceOracleIds": [
+            "191634b4-42e5-499f-a1a8-1d0407626be8",
+            "9af4a832-d634-47aa-91ed-79d44fe08864"
+          ]
+        },
+        {
+          "nativeName": "Red Herring",
+          "sourceOracleIds": [
+            "0e99efaf-6402-44c5-ae8b-1f5bb1b68333",
+            "f0ee45b5-697b-48f8-b1a6-cb3ae75e4a29"
+          ]
+        }
+      ],
+      "missingFirst20": [
+        {
+          "oracleId": "acee1d16-1651-4e2c-8138-cc6456c4ee71",
+          "name": "\"Name Sticker\" Goblin",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "fa43793d-a215-4a64-a09c-ed9799f745a4",
+          "name": "Abandon Reason",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "a051dee0-60c8-4f58-84cb-55460c097115",
+          "name": "Abandoned Sarcophagus",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e0b12c48-7234-40b5-a84c-6901d2b4e5b0",
+          "name": "Abomination, World Ravager",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "8a810017-06ac-4824-bc2f-a7d303d58ad7",
+          "name": "About Face",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "d06a8026-1657-4404-8dff-64e44f1a14f8",
+          "name": "Abstergo Entertainment",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "0727dc95-03df-4a2c-aed5-73fb840f3db7",
+          "name": "Abstruse Archaic",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e3eb6f90-ccfc-41e7-bff6-0b378226bc7e",
+          "name": "Abundant Countryside",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "75131d75-0703-44d0-b503-35190be8e66f",
+          "name": "Academy Raider",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "2b6d95b5-0680-43ae-9ff3-8e287a9eb837",
+          "name": "Acceptable Losses",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "48edc348-93f6-4dce-9cc4-7244d76b6f4a",
+          "name": "Accursed Duneyard",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "3f47ec32-4ee9-4bc0-96f2-310a939cb973",
+          "name": "Ace's Baseball Bat",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "bf034a20-e362-4f38-9bf9-857777c62598",
+          "name": "Acidic Dagger",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "4ccc1ac5-db90-4fc9-9795-7afaf7466c3e",
+          "name": "Acidic Soil",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "998daf11-c0ed-4801-b013-d8b3136f16d1",
+          "name": "Acolyte Hybrid",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "35bf67e0-8141-4664-b762-2c613353e1eb",
+          "name": "Acolyte of the Inferno",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "56d13879-2dc5-4d84-918b-4bd1a5fc2a33",
+          "name": "Acorn Catapult",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "9d7624ea-ffff-470b-928b-bbac66ddbd1c",
+          "name": "Act of Aggression",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "18f34bfd-7675-49df-91ea-695c510cd3c3",
+          "name": "Adamaro, First to Desire",
+          "colorIdentity": [
+            "R"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e91240bc-4a13-4131-9379-5ddac6555f4a",
+          "name": "Adaptive Omnitool",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        }
+      ],
+      "ambiguousExamples": [
+        "Blazing Firesinger // Seething Song",
+        "Emeritus of Conflict // Lightning Bolt",
+        "Lightning Bolt",
+        "Naktamun Lorespinner // Wheel of Fortune",
+        "Seething Song",
+        "Wheel of Fortune"
+      ]
+    },
+    "oviya": {
+      "commander": "Oviya Pashiri, Sage Lifecrafter",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7420,
+        "excluded_records": 31629,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 1,
+        "native_physical_definitions": 16999,
+        "matched_upstream_definitions": 0,
+        "matched_application_extensions": 1,
+        "native_eligibility_disagreements": 0,
+        "missing_investigated": 4,
+        "missing_uninvestigated": 3437,
+        "native_available": 1,
+        "native_metadata_unresolved": 3972,
+        "native_mechanically_unresolved": 0,
+        "native_definition_missing": 3441,
+        "ambiguous_mapping": 6
+      },
+      "poolExclusions": {
+        "COLOR_IDENTITY_OUTSIDE_COMMANDER": 24696,
+        "NOT_COMMANDER_LEGAL": 6933
+      },
+      "timingsMillis": {
+        "snapshotLoadAndHash": 2641,
+        "catalogLoad": 18389,
+        "poolAndMapping": 448,
+        "objectiveEvaluation": 6292
+      },
+      "reportBytes": 15793772,
+      "reportSha256": "2d62542bfb0b0f9e5931343cb17a97dd03d1c2149c15dce25f9234b1536e5690",
+      "independentSourcePoolEqual": true,
+      "nameCandidateEligibilityDifferences": {
+        "native_full_identity_missing": 393,
+        "native_legality_unknown": 56,
+        "native_external_identity_disagreement": 1
+      },
+      "nameCandidateExamplesNotAuthoritativeMappings": {
+        "native_full_identity_missing": [
+          "Academy Manufactor",
+          "Accomplished Automaton",
+          "Adventurers' Guildhouse",
+          "Aeronaut's Wings",
+          "Agility Bobblehead",
+          "Aladdin's Lamp"
+        ],
+        "native_legality_unknown": [
+          "Afterthought Sentry",
+          "Arc Reactor",
+          "Arcane Amphisbaena",
+          "Archive Arbiter",
+          "Bestial Incursion",
+          "Budding Insurgent"
+        ],
+        "native_external_identity_disagreement": [
+          "Heartwood Shard"
+        ]
+      },
+      "nativeCandidateIncludedExternalExcluded": [
+        {
+          "nativeName": "Bloodletter Quill",
+          "sourceOracleId": "79cf9c52-56e0-4237-a595-ec07824e5eed",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "U"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Dragonbroods' Relic",
+          "sourceOracleId": "61822bbe-0407-4425-b8d7-0263a8c521ec",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Dryad's Caress",
+          "sourceOracleId": "7df07d16-e5cf-4c58-980a-632909aa1357",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Haunted Screen",
+          "sourceOracleId": "49f92c0b-16ac-4cf0-8ec3-e3638990ee75",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Kibo, Uktabi Prince",
+          "sourceOracleId": "0b9be4fa-5238-4afd-a9f6-f9022e67e5ab",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Llanowar Cavalry",
+          "sourceOracleId": "3e6e70eb-6638-4aa6-997b-90f5810e12a0",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Plague Boiler",
+          "sourceOracleId": "fef502af-6e79-4c55-a86a-b45adb3fc64a",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Rolling Spoil",
+          "sourceOracleId": "9abe09fb-17ab-41e8-9d89-1467ed62f87b",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Sunforger",
+          "sourceOracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "nativeIdentity": [],
+          "sourceIdentity": [
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Thornscape Apprentice",
+          "sourceOracleId": "ebb68e03-b2a5-4c5c-8e3b-968cd241d1f0",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Thornscape Master",
+          "sourceOracleId": "ea802eda-fc8d-45c7-b5a3-238a2cdc4dcb",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "R",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Transluminant",
+          "sourceOracleId": "f4d54a89-8409-4fbc-b01f-3b03f352820f",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "G",
+            "W"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        },
+        {
+          "nativeName": "Vanille, Cheerful l'Cie",
+          "sourceOracleId": "577725ae-290f-4081-8352-3317521a096f",
+          "nativeIdentity": [
+            "G"
+          ],
+          "sourceIdentity": [
+            "B",
+            "G"
+          ],
+          "sourceCommanderLegality": "legal",
+          "basis": "EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"
+        }
+      ],
+      "ambiguousNativeExactNameDiagnostics": [
+        {
+          "nativeName": "Pick Your Poison",
+          "sourceOracleIds": [
+            "191634b4-42e5-499f-a1a8-1d0407626be8",
+            "9af4a832-d634-47aa-91ed-79d44fe08864"
+          ]
+        },
+        {
+          "nativeName": "Red Herring",
+          "sourceOracleIds": [
+            "0e99efaf-6402-44c5-ae8b-1f5bb1b68333",
+            "f0ee45b5-697b-48f8-b1a6-cb3ae75e4a29"
+          ]
+        }
+      ],
+      "missingFirst20": [
+        {
+          "oracleId": "a051dee0-60c8-4f58-84cb-55460c097115",
+          "name": "Abandoned Sarcophagus",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "46b5f12e-9fe5-44f6-b895-ee8c33205521",
+          "name": "Aberrant",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e7436d37-c331-4524-b5d4-861e9d25bfc5",
+          "name": "Abomination, Irradiated Brute",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "28f70f86-19a9-4811-bc10-423a05842d39",
+          "name": "Aboroth",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "d06a8026-1657-4404-8dff-64e44f1a14f8",
+          "name": "Abstergo Entertainment",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "0727dc95-03df-4a2c-aed5-73fb840f3db7",
+          "name": "Abstruse Archaic",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "eccc9a54-2b56-4a02-9926-258d5b2e25fb",
+          "name": "Abundance",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "e3eb6f90-ccfc-41e7-bff6-0b378226bc7e",
+          "name": "Abundant Countryside",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "34841228-31ac-48ac-b6d6-486b5e1e07dd",
+          "name": "Abundant Harvest",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "aab463bb-e790-403b-a88d-06ef81c7302b",
+          "name": "Abzan Beastmaster",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "b292d183-1ba9-40b4-9cba-bd70bf1380ef",
+          "name": "Abzan Kin-Guard",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "6401d0ae-4635-497d-91ef-ce2eabefb893",
+          "name": "Accelerated Evolution",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "48edc348-93f6-4dce-9cc4-7244d76b6f4a",
+          "name": "Accursed Duneyard",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "3f47ec32-4ee9-4bc0-96f2-310a939cb973",
+          "name": "Ace's Baseball Bat",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "50d0d870-fe3d-44a2-ad6e-93307a1fb468",
+          "name": "Ace, Fearless Rebel",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "23d4f436-a417-4a26-b5b8-c698f11a186b",
+          "name": "Acid Web Spider",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "bf034a20-e362-4f38-9bf9-857777c62598",
+          "name": "Acidic Dagger",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "21f45043-5419-4019-8b6c-e5294bd5f549",
+          "name": "Acidic Slime",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "38477748-bc57-449c-afe1-c5f34caf8eff",
+          "name": "Acolyte of Bahamut",
+          "colorIdentity": [
+            "G"
+          ],
+          "translationStatus": "NOT_INVESTIGATED"
+        },
+        {
+          "oracleId": "56d13879-2dc5-4d84-918b-4bd1a5fc2a33",
+          "name": "Acorn Catapult",
+          "colorIdentity": [],
+          "translationStatus": "NOT_INVESTIGATED"
+        }
+      ],
+      "ambiguousExamples": [
+        "Emeritus of Abundance // Regrowth",
+        "Infirmary Healer // Stream of Life",
+        "Rampant Growth",
+        "Regrowth",
+        "Stream of Life",
+        "Studious First-Year // Rampant Growth"
+      ]
+    }
+  },
+  "regressions": {
+    "judith-a": {
+      "beforeSha256": "716c8a36dc2ce9351fc2183c4d7b6398403ffcd50d12b876b5e79defab17e1a8",
+      "afterSha256": "542c8b9a5a7f7a42dcb3e80ba2628618866dfb48ad95c9bd15af3d06a39e96ba",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Bitterblossom",
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [],
+      "auditDiffCounts": {
+        "ELIGIBILITY_ADDED": 2,
+        "UNSUPPORTED_ADDED": 1
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    },
+    "judith-b": {
+      "beforeSha256": "2b58996742e8881cc4f2e1af41eab1d52558e0454758528bbda619e07667cdfe",
+      "afterSha256": "d7284850c2936e4545ee995c0bff075d50ef6a062d78bde6bef36e5b3c46ce98",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Bitterblossom",
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [],
+      "auditDiffCounts": {
+        "ELIGIBILITY_ADDED": 2,
+        "UNSUPPORTED_ADDED": 1
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    },
+    "judith-c": {
+      "beforeSha256": "dd96c3fa7ffacafe7bea71c1e20b8081ae8ee1d283bfb8b3b99fd7e05020f4bc",
+      "afterSha256": "c05da10469f298ec42c95cccd7c1a68e50486ec832edec6b6c8b38abac906c0b",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Bitterblossom",
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [
+        {
+          "card": "Bitterblossom",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "verdict": "MATCH"
+        },
+        {
+          "card": "Krenko's Command",
+          "path": "script.spellEffect",
+          "verdict": "MATCH"
+        }
+      ],
+      "auditDiffCounts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 2,
+        "ELIGIBILITY_ADDED": 2,
+        "PATHWAY_ADDED": 2,
+        "UNSUPPORTED_ADDED": 1
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    },
+    "krenko-a": {
+      "beforeSha256": "a7039f9474051d38a79a8783e17abb13118cb7a106ace27da57d9cadf405b44b",
+      "afterSha256": "e8e1b7b9ecccc023f3e9a067a07606971dbb9f40347c4cf21e46f5d36e77716a",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [],
+      "auditDiffCounts": {
+        "ELIGIBILITY_ADDED": 2
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    },
+    "krenko-b": {
+      "beforeSha256": "e90a91c2af09c9561046e79d2490cda255977ec28c7a5cc19c97d449f91e5c60",
+      "afterSha256": "6b6d3f2661f6d095dd75a3ef2e00ad26a8e9cc24abcd6aa10f34d1dbb4e12c14",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [],
+      "auditDiffCounts": {
+        "ELIGIBILITY_ADDED": 2
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    },
+    "krenko-c": {
+      "beforeSha256": "044293e57a054fe2892175fbc8b5fd8b16765765649bc7d98fc61e7283f1b3cd",
+      "afterSha256": "d0799d37a99cd1907074f375f89300bd1ca2e420c8e19e3dde37709ac156f784",
+      "unchangedPreexistingFields": {
+        "eligibility": true,
+        "results": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "mechanicalInputCards": true
+      },
+      "newEligibleCards": [
+        "Krenko's Command"
+      ],
+      "newAcceptedPathways": [
+        {
+          "card": "Krenko's Command",
+          "path": "script.spellEffect",
+          "verdict": "MATCH"
+        }
+      ],
+      "auditDiffCounts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 1,
+        "ELIGIBILITY_ADDED": 2,
+        "PATHWAY_ADDED": 1
+      },
+      "auditDiffTransitions": {},
+      "unexpectedRegressions": 0
+    }
+  },
+  "tests": {
+    "totals": {
+      "tests": 272,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "dev.mtg.assistant.ArgentumIntegrationTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "fdee16445d2f9b316d9ab430392832c82cd9f6558ded74585066699c7188b52d"
+      },
+      {
+        "name": "dev.mtg.assistant.CatalogCoverageTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "0946c5e16867d3b57f7a8e4748ad87b71ea1e8b097da2b682db87cb26b1ec153"
+      },
+      {
+        "name": "dev.mtg.assistant.CommanderIntegrationTest",
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "eae4ac391d119f854d185ad5cf9c5763d68f41164fcb3192b80ecf8837f74c7d"
+      },
+      {
+        "name": "dev.mtg.assistant.JudithTheScourgeDivaScenarioTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "9d126dadbb846fa67e4f276e20290e8fb5dfd26ab002f09540c7f766202bdf06"
+      },
+      {
+        "name": "dev.mtg.assistant.MandatoryDeathEngineTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "418712bbee536427403dcd0504d2f5d84014ad12d381094df8cf13f1eadcf62d"
+      },
+      {
+        "name": "dev.mtg.assistant.MechanicalDiscoveryTest",
+        "tests": 33,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "be5c8bce1e126445410c9d214397cb3c1eade1580cd262e04eaa2703976102ec"
+      },
+      {
+        "name": "dev.mtg.assistant.OviyaPashiriSageLifecrafterScenarioTest",
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "d7555228ae8126556a9321a50654abd7628da0cea0c713eae37146a0abe63884"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase21DiagnosticsTest",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "0c7ea7466873ea59f108bc8d1eb5906598acb217bd0a9be64eff8a150e3095f4"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase21MechanicsTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "5052160db07fdf0d808c893c91e328890eb175647655dc3cc0934a166bd56ab1"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase22CorrectnessTest",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "5ab9f48a90d5c41c963ed91544129621b6b5fc21b6ce79fad098d84d4fe2fd1d"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase22DiagnosticTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "30a48a66d4c3570c7e99eba2c17a24b9dd5e185fc39b4d28900915d1cfc7df22"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase23CollectionsTest",
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "e7d33efd1b5f04c3c72a4491271a720975202c4a457e8491643b93c78fced81e"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase23CostsTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "cc461b6aa4de48f6503b1d2560a7b63243cf79187a7877975593cc3cb92d7d78"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase23EngineTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "bbcdae9ca109ecd822fa7b35ad047b1277e968a672b82eaaefb805b1ed6998e0"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase23ReportingTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "ef25139066df33e0109fa8c9a16f543d610771d05de47d8adf03cf9d9c0b8d02"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase24EngineTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "17c246ddae09b25ff087c2d1fe9e9bdd74976a400910574ae7754eb5ec8029d0"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase24FactsTest",
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "86a412b0ccd961fcc5effeb62dcb77866d7d64110ff7eb95a519c6ab22bf67f3"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase24IntegrationTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "5610d4be87522f4378f663cf41aac7b7be08d804d93c7ac1a429385704073196"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase24ReportingTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "546a789b31e9098169075cb44655fdc687368207ffdefd8252fcb14ca8c5e025"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase25EngineTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "315808433d0a6f948205c2617bfd36d431907bd6d671af692f6033efde5f54fe"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase25FactsTest",
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "7fc390c091143227085db16bd74ac52d833d75cca9ecd1c0deb08c6e998bac7f"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase25IntegrationTest",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "c64b4c425b48f6cfb50e6d96e6a59cfbb9bf4b8d3ce00517457c63cc430fc01f"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase25ReportingTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "9964e471b86a965d5e2691ade3ea7fb7efea1315d5d4f5274612ae0c3c36a535"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase27TranslationIntegrationTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "a92dc3e008e5aa49b7eab4bf83d9bc26ae277372c839606b00b258847a01b1fa"
+      },
+      {
+        "name": "dev.mtg.assistant.Phase27TranslationScenarioTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "xmlSha256": "0a11a67114afadf67c6262d3d5a4d374adddcef141265ccb8e2a53fd3d1a3e0b"
+      }
+    ],
+    "baselineTests": 240,
+    "newEngineScenarios": 11,
+    "offlineDownloaderTests": 3
+  },
+  "sourceRepresentatives": [
+    {
+      "name": "Sol Ring",
+      "oracle_id": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "color_identity": [],
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}{C}.",
+      "mana_cost": "{1}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": true,
+        "oviya": true
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Rakdos Guildmage",
+      "oracle_id": "650949ca-609b-46c5-bc6b-6f782cdcb6d2",
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Creature — Zombie Shaman",
+      "oracle_text": "({B/R} can be paid with either {B} or {R}.)\n{3}{B}, Discard a card: Target creature gets -2/-2 until end of turn.\n{3}{R}: Create a 2/1 red Goblin creature token with haste. Exile it at the beginning of the next end step.",
+      "mana_cost": "{B/R}{B/R}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Beseech the Queen",
+      "oracle_id": "cf94cafc-527e-4b27-8a28-7807435aaccf",
+      "color_identity": [
+        "B"
+      ],
+      "type_line": "Sorcery",
+      "oracle_text": "({2/B} can be paid with any two mana or with {B}. This card's mana value is 6.)\nSearch your library for a card with mana value less than or equal to the number of lands you control, reveal it, put it into your hand, then shuffle.",
+      "mana_cost": "{2/B}{2/B}{2/B}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Shatterskull Smashing // Shatterskull, the Hammer Pass",
+      "oracle_id": "78301998-fd9b-4cd5-afad-dbcb43cac2a7",
+      "color_identity": [
+        "R"
+      ],
+      "type_line": "Sorcery // Land",
+      "oracle_text": null,
+      "mana_cost": null,
+      "layout": "modal_dfc",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [
+        {
+          "name": "Shatterskull Smashing",
+          "type_line": "Sorcery",
+          "mana_cost": "{X}{R}{R}",
+          "oracle_text": "Shatterskull Smashing deals X damage divided as you choose among up to two target creatures and/or planeswalkers. If X is 6 or more, Shatterskull Smashing deals twice X damage divided as you choose among them instead.",
+          "color_indicator": null
+        },
+        {
+          "name": "Shatterskull, the Hammer Pass",
+          "type_line": "Land",
+          "mana_cost": "",
+          "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {R}.",
+          "color_indicator": null
+        }
+      ],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": true,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Bala Ged Recovery // Bala Ged Sanctuary",
+      "oracle_id": "d2075f58-b0e9-4e85-b7e6-0523a27a1d5b",
+      "color_identity": [
+        "G"
+      ],
+      "type_line": "Sorcery // Land",
+      "oracle_text": null,
+      "mana_cost": null,
+      "layout": "modal_dfc",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [
+        {
+          "name": "Bala Ged Recovery",
+          "type_line": "Sorcery",
+          "mana_cost": "{2}{G}",
+          "oracle_text": "Return target card from your graveyard to your hand.",
+          "color_indicator": null
+        },
+        {
+          "name": "Bala Ged Sanctuary",
+          "type_line": "Land",
+          "mana_cost": "",
+          "oracle_text": "This land enters tapped.\n{T}: Add {G}.",
+          "color_indicator": null
+        }
+      ],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": true
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Jeweled Lotus",
+      "oracle_id": "23216e59-f147-4bb7-a698-12777c2f8584",
+      "color_identity": [],
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Sacrifice this artifact: Add three mana of any one color. Spend this mana only to cast your commander.",
+      "mana_cost": "{0}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "banned",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "The Prismatic Piper",
+      "oracle_id": "b2aeee90-7b8d-47a6-9167-cc21f7fbfd43",
+      "color_identity": [],
+      "type_line": "Legendary Creature — Shapeshifter",
+      "oracle_text": "If The Prismatic Piper is your commander, choose a color before the game begins. The Prismatic Piper is the chosen color.\nPartner (You can have two commanders if both have partner.)",
+      "mana_cost": "{5}",
+      "layout": "normal",
+      "keywords": [
+        "Partner"
+      ],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": true,
+        "oviya": true
+      },
+      "constructionNotes": [
+        "PAIRING_NOT_EVALUATED; selected commander remains unchanged",
+        "PRE_GAME_CHOSEN_COLOR_COMMANDER_ROLE_NOT_EVALUATED; ordinary fixed-identity inclusion only"
+      ]
+    },
+    {
+      "name": "Burakos, Party Leader",
+      "oracle_id": "883ad210-917b-40e6-8682-31d6eb3ed12a",
+      "color_identity": [
+        "B"
+      ],
+      "type_line": "Legendary Creature — Orc",
+      "oracle_text": "Burakos is also a Cleric, Rogue, Warrior, and Wizard.\nWhenever Burakos attacks, defending player loses X life and you create X Treasure tokens, where X is the number of creatures in your party.\nChoose a Background (You can have a Background as a second commander.)",
+      "mana_cost": "{3}{B}",
+      "layout": "normal",
+      "keywords": [
+        "Choose a background",
+        "Treasure"
+      ],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": [
+        "PAIRING_NOT_EVALUATED; selected commander remains unchanged"
+      ]
+    },
+    {
+      "name": "Persistent Petitioners",
+      "oracle_id": "0e488c6c-aae2-450f-b969-7bb5a1b37a66",
+      "color_identity": [
+        "U"
+      ],
+      "type_line": "Creature — Human Advisor",
+      "oracle_text": "{1}, {T}: Target player mills a card. (They put the top card of their library into their graveyard.)\nTap four untapped Advisors you control: Target player mills twelve cards.\nA deck can have any number of cards named Persistent Petitioners.",
+      "mana_cost": "{1}{U}",
+      "layout": "normal",
+      "keywords": [
+        "Mill"
+      ],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Dragon's Approach",
+      "oracle_id": "47e191f7-6314-4875-b5ee-57e5daf089c4",
+      "color_identity": [
+        "R"
+      ],
+      "type_line": "Sorcery",
+      "oracle_text": "Dragon's Approach deals 3 damage to each opponent. You may exile this spell and four cards named Dragon's Approach from your graveyard. If you do, search your library for a Dragon creature card, put it onto the battlefield, then shuffle.\nA deck can have any number of cards named Dragon's Approach.",
+      "mana_cost": "{2}{R}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": true,
+        "oviya": false
+      },
+      "constructionNotes": [
+        "DECK_QUANTITY_EXCEPTION_NOT_EVALUATED; singleton/deck validation outside scope"
+      ]
+    },
+    {
+      "name": "Hallowed Fountain",
+      "oracle_id": "f1750962-a87c-49f6-b731-02ae971ac6ea",
+      "color_identity": [
+        "U",
+        "W"
+      ],
+      "type_line": "Land — Plains Island",
+      "oracle_text": "({T}: Add {W} or {U}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+      "mana_cost": "",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Transguild Courier",
+      "oracle_id": "86f94f8e-f45e-42fc-8ad6-e9bdfaaa997d",
+      "color_identity": [
+        "B",
+        "G",
+        "R",
+        "U",
+        "W"
+      ],
+      "type_line": "Artifact Creature — Golem",
+      "oracle_text": "Transguild Courier is all colors.",
+      "mana_cost": "{4}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Dryad Arbor",
+      "oracle_id": "e996cd67-739c-40f4-b276-0042acf26c71",
+      "color_identity": [
+        "G"
+      ],
+      "type_line": "Land Creature — Forest Dryad",
+      "oracle_text": "(This land isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {G}.\")",
+      "mana_cost": "",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": true
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Fire // Ice",
+      "oracle_id": "ae92942b-919c-4ea9-b693-85fcef765d5a",
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "type_line": "Instant // Instant",
+      "oracle_text": null,
+      "mana_cost": "{1}{R} // {1}{U}",
+      "layout": "split",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [
+        {
+          "name": "Fire",
+          "type_line": "Instant",
+          "mana_cost": "{1}{R}",
+          "oracle_text": "Fire deals 2 damage divided as you choose among one or two targets.",
+          "color_indicator": null
+        },
+        {
+          "name": "Ice",
+          "type_line": "Instant",
+          "mana_cost": "{1}{U}",
+          "oracle_text": "Tap target permanent.\nDraw a card.",
+          "color_indicator": null
+        }
+      ],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Firescreamer",
+      "oracle_id": "b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Creature — Kavu",
+      "oracle_text": "{R}: This creature gets +1/+0 until end of turn.",
+      "mana_cost": "{3}{B}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Hooded Kavu",
+      "oracle_id": "52934f16-eb9b-4d0a-b372-155461660f6e",
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Creature — Kavu",
+      "oracle_text": "{B}: This creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "mana_cost": "{2}{R}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": true,
+        "krenko": false,
+        "oviya": false
+      },
+      "constructionNotes": []
+    },
+    {
+      "name": "Heartwood Shard",
+      "oracle_id": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "color_identity": [
+        "G"
+      ],
+      "type_line": "Artifact",
+      "oracle_text": "{3}, {T} or {G}, {T}: Target creature gains trample until end of turn.",
+      "mana_cost": "{3}",
+      "layout": "normal",
+      "keywords": [],
+      "commanderLegality": "legal",
+      "faces": [],
+      "ordinaryInclusion": {
+        "judith": false,
+        "krenko": false,
+        "oviya": true
+      },
+      "constructionNotes": []
+    }
+  ],
+  "timings": [
+    {
+      "wallMilliseconds": 31014,
+      "command": "discovery-after-judith-a"
+    },
+    {
+      "wallMilliseconds": 30781,
+      "command": "discovery-after-judith-b"
+    },
+    {
+      "wallMilliseconds": 28256,
+      "command": "discovery-after-judith-c"
+    },
+    {
+      "wallMilliseconds": 62320,
+      "command": "discovery-after-krenko-a"
+    },
+    {
+      "wallMilliseconds": 76343,
+      "command": "discovery-after-krenko-b"
+    },
+    {
+      "wallMilliseconds": 69031,
+      "command": "discovery-after-krenko-c"
+    },
+    {
+      "wallMilliseconds": 31332,
+      "command": "coverage-after-judith"
+    },
+    {
+      "wallMilliseconds": 28844,
+      "command": "coverage-after-krenko"
+    },
+    {
+      "wallMilliseconds": 29969,
+      "command": "coverage-after-oviya"
+    }
+  ]
+}

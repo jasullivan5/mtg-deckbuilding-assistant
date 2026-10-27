@@ -8,8 +8,9 @@ Under `cli/src/main/kotlin/dev/mtg/assistant/`:
 
 | Concern | Files |
 |---|---|
+| External Oracle metadata and catalog mappings | coverage/OracleSnapshot.kt, coverage/CatalogCoverage.kt (offline input, identity indexes, independent coverage) |
 | Catalog/conventional search | Catalog.kt, DefinitionSearchCard.kt (native registry/search) |
-| Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt, OviyaPashiriSageLifecrafter.kt (provenance/duplicates) |
+| Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt, OviyaPashiriSageLifecrafter.kt, KrenkosCommand.kt, Bitterblossom.kt (provenance/duplicates) |
 | Commander legality/full identity | discovery/Eligibility.kt, CommanderInspection.kt |
 | Native effects, costs, branches/bindings | discovery/PathwayExtractor.kt (one walker) |
 | Reusable facts/predicates/quantities | discovery/MechanicalFacts.kt, TokenFacts.kt, AmountBounds.kt |
@@ -25,3 +26,5 @@ Native extensions use Argentum CardDefinition objects and Extensions.all; verify
 A is not completely fact-driven. Local support is not whole-action/card support; shared action IDs do not imply every branch executes. Unknown conditions/copy/collection bindings, Amass and multi-step reanimation remain incomplete. See KNOWN_LIMITATIONS.md. Migration must not expand mechanical coverage.
 
 Commander inspection has separate availability, selection-blocker and bounded mechanical-review fields. The same structured inspection drives selection; it does not add an effect walker or certify complete mechanical correctness. See [COMMANDER_AUTHORING.md](COMMANDER_AUTHORING.md).
+
+External coverage retains the complete snapshot-eligible Oracle pool separately from native availability and optionally calls existing discovery objectives. Missing/uncertain mappings stay unevaluated; shared physical face names affect mapping uncertainty rather than removing eligible IDs. Snapshot updates and bounded research sampling are separate scripts. See CARD_COVERAGE.md and PHASE2_7_REPORT.md for data contracts, measured outcomes and native metadata limitations.

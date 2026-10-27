@@ -29,7 +29,10 @@ def main(args):
     with gzip.open(args.snapshot,"rt",encoding="utf-8") as source:
         cards = [json.loads(line) for line in source]
     assert len({c.get("oracle_id") for c in cards}) == len(cards), "This independent check expects the actual unique-ID snapshot"
-    by_name = {c["name"]:c for c in cards}
+    by_name = collections.defaultdict(list)
+    for card in cards:
+        by_name[card["name"]].append(card)
+    non_deck_layouts = {"token","double_faced_token","emblem","art_series","vanguard","scheme","planar","front_card"}
     land_colors = {"Plains":"W","Island":"U","Swamp":"B","Mountain":"R","Forest":"G"}
     all_reports = {}
     for slug in ("judith","krenko","oviya"):
@@ -37,8 +40,9 @@ def main(args):
         report = read(path)
         assert report["snapshot"]["sha256"] == output["snapshot"]["sha256"] == digest(args.snapshot)
         allowed = set(report["allowedIdentity"])
-        assert set(by_name[report["commander"]]["color_identity"]) == allowed
-        assert by_name[report["commander"]]["legalities"]["commander"] == "legal"
+        commander_sources = [c for c in by_name[report["commander"]] if c["legalities"]["commander"]=="legal"]
+        assert len(commander_sources)==1, "Commander source identity ambiguous"
+        assert set(commander_sources[0]["color_identity"]) == allowed
         # Independent source-led ordinary inclusion. No native registry or application code is called.
         def include(c):
             types = " ".join([c.get("type_line","")]+[f.get("type_line","") for f in c.get("card_faces",[])]).replace("—"," ").split()
@@ -55,6 +59,8 @@ def main(args):
         assert counts["eligible_oracle_cards"]+counts["excluded_records"]+counts["unresolved_pool_records"] == len(cards)
         candidate_differences = collections.Counter()
         examples = {}
+        native_pool_extra = []
+        ambiguous_native_names = []
         for row in report["records"]:
             candidates = row["mapping"]["candidates"]
             if len(candidates) != 1:
@@ -72,23 +78,43 @@ def main(args):
                 examples.setdefault(reason,[])
                 if len(examples[reason]) < 6:
                     examples[reason].append(row["external"]["name"])
+        native_records = {n["name"]:n for n in report["nativeWithoutExternalMatch"]}
+        native_records.update({n["name"]:n for row in report["records"] for n in row["mapping"]["candidates"]})
+        for name,native in sorted(native_records.items()):
+            sources = [c for c in by_name.get(name,[]) if c.get("layout") not in non_deck_layouts]
+            if len(sources)>1:
+                ambiguous_native_names.append({"nativeName":name,"sourceOracleIds":[c["oracle_id"] for c in sources]})
+            if len(sources)!=1 or native["identity"] is None:
+                continue
+            source=sources[0]
+            if native["commanderLegality"] == "MATCH" and set(native["identity"]) <= allowed and not include(source):
+                native_pool_extra.append({"nativeName":name,"sourceOracleId":source["oracle_id"],
+                    "nativeIdentity":native["identity"],"sourceIdentity":source["color_identity"],
+                    "sourceCommanderLegality":source["legalities"]["commander"],
+                    "basis":"EXACT_NAME_DIAGNOSTIC_NOT_AUTHORITATIVE_ID_MAPPING"})
         missing = [r for r in report["records"] if r["status"] == "NATIVE_DEFINITION_MISSING"]
         output["coverage"][slug] = {"commander":report["commander"], "counts":counts, "poolExclusions":report["poolExclusions"],
             "timingsMillis":report["timingsMillis"], "reportBytes":path.stat().st_size, "reportSha256":digest(path),
             "independentSourcePoolEqual":True, "nameCandidateEligibilityDifferences":dict(candidate_differences),
             "nameCandidateExamplesNotAuthoritativeMappings":examples,
+            "nativeCandidateIncludedExternalExcluded":native_pool_extra,
+            "ambiguousNativeExactNameDiagnostics":ambiguous_native_names,
             "missingFirst20":[{"oracleId":r["external"]["oracleId"],"name":r["external"]["name"],
                                "colorIdentity":r["external"]["colorIdentity"],"translationStatus":r["translationStatus"]} for r in missing[:20]],
             "ambiguousExamples":[r["external"]["name"] for r in report["records"] if r["status"] == "AMBIGUOUS_MAPPING"][:8]}
         all_reports[slug] = report
     representative_names = ["Sol Ring","Rakdos Guildmage","Beseech the Queen","Shatterskull Smashing // Shatterskull, the Hammer Pass",
         "Bala Ged Recovery // Bala Ged Sanctuary","Jeweled Lotus","The Prismatic Piper","Burakos, Party Leader",
-        "Persistent Petitioners","Hallowed Fountain","Transguild Courier","Dryad Arbor","Fire // Ice"]
+        "Persistent Petitioners","Dragon's Approach","Hallowed Fountain","Transguild Courier","Dryad Arbor","Fire // Ice",
+        "Firescreamer","Hooded Kavu","Heartwood Shard"]
     output["sourceRepresentatives"] = []
     for name in representative_names:
-        card = by_name[name]
+        sources=[c for c in by_name[name] if c.get("layout") not in non_deck_layouts]
+        assert len(sources)==1, (name,"Representative physical source identity ambiguous")
+        card=sources[0]
         row = {k:card.get(k) for k in ("name","oracle_id","color_identity","type_line","oracle_text","mana_cost","layout","keywords")}
         row["commanderLegality"] = card["legalities"]["commander"]
+        row["faces"] = [{key:face.get(key) for key in ("name","type_line","mana_cost","oracle_text","color_indicator")} for face in card.get("card_faces",[])]
         row["ordinaryInclusion"] = {s:any(r["external"]["oracleId"]==card["oracle_id"] for r in report["records"]) for s,report in all_reports.items()}
         row["constructionNotes"] = next((r["constructionNotes"] for report in all_reports.values() for r in report["records"] if r["external"]["oracleId"]==card["oracle_id"]),[])
         output["sourceRepresentatives"].append(row)

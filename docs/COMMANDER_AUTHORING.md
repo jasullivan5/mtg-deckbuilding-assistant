@@ -45,3 +45,7 @@ The routine `scripts/verify.sh fast` gate includes commander integration, Oviya 
 Select the commander and run all three existing objectives. A commander need not contribute to any objective. Check full identity filtering and compare existing commanders on unchanged native input pools. Classify raw catalog/count changes separately from eligible-pool, mechanical-verdict and evidence changes. Oviya adds one green card to the catalog; Judith and Krenko cannot include her. `CommanderIntegrationTest` checks their entire eligibility lists (apart from that new excluded row) and controlled A/B/C action/fact/result evidence. Since the extractor and queries are unchanged, this bounded comparison does not require full-catalog regeneration. Broader shared extraction/eligibility changes require the existing full comparison workflow.
 
 Frozen reviews and the generated all-colors benchmark remain applicable; their documented UNKNOWN and unresolved cases must not be relabeled as mechanical nonmatches. Generated JSON, build outputs and upstream sources stay ignored.
+
+## Ordinary native cards
+
+The same registration and verification workflow applies to noncommander cards. Phase 2.7 adds Krenko's Command and Bitterblossom through Extensions.all, with source/ruling evidence, validation, engine scenarios and cross-commander/objective tests. See CARD_COVERAGE.md for the external missing-card inventory and PHASE2_7_REPORT.md for the bounded Assay experiment. A generated proposal remains unverified until its consequential scenarios actually execute.
