@@ -22,9 +22,16 @@ def fetch(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=120)
 
 
-def download(directory):
-    with fetch(ENDPOINT) as response:
-        metadata = json.load(response)
+def download(directory, replay=None):
+    expected = json.loads(replay.read_text(encoding="utf-8")) if replay else None
+    if expected:
+        if expected.get("schemaVersion") != 1 or expected.get("bulkType") != "oracle_cards":
+            raise ValueError("Unsupported replay manifest")
+        metadata = {"type": "oracle_cards", "id": expected["bulkId"], "updated_at": expected["updatedAt"]}
+        metadata["jsonl_download_uri" if expected["format"] == "jsonl" else "download_uri"] = expected["downloadUri"]
+    else:
+        with fetch(ENDPOINT) as response:
+            metadata = json.load(response)
     if metadata.get("type") != "oracle_cards":
         raise ValueError("Endpoint did not return Oracle Cards metadata")
     url = metadata.get("jsonl_download_uri") or metadata["download_uri"]
@@ -35,9 +42,12 @@ def download(directory):
         if not (destination.exists() and manifest_path.exists()):
             raise ValueError("Incomplete existing snapshot; choose a new directory")
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        digest = hashlib.file_digest(destination.open("rb"), "sha256").hexdigest()
+        with destination.open("rb") as source:
+            digest = hashlib.file_digest(source, "sha256").hexdigest()
         if manifest["sha256"] != digest or manifest["updatedAt"] != metadata["updated_at"]:
             raise ValueError("Existing snapshot differs; it was not overwritten")
+        if expected and (digest != expected["sha256"] or destination.stat().st_size != expected["bytes"]):
+            raise ValueError("Existing snapshot does not match replay manifest")
         print(destination)
         return
     temporary = pathlib.Path(str(destination) + ".part")
@@ -51,6 +61,8 @@ def download(directory):
                 size += len(chunk)
         if not size:
             raise ValueError("Empty bulk response")
+        if expected and (digest.hexdigest() != expected["sha256"] or size != expected["bytes"]):
+            raise ValueError("Downloaded snapshot does not match replay manifest")
         manifest = {
             "schemaVersion": 1, "bulkType": "oracle_cards", "bulkId": metadata["id"],
             "updatedAt": metadata["updated_at"],
@@ -73,5 +85,7 @@ if __name__ == "__main__":
     parser.add_argument("command", choices=["download"])
     parser.add_argument("--directory", type=pathlib.Path, required=True,
                         help="Ignored local directory, normally generated/oracle")
+    parser.add_argument("--manifest", type=pathlib.Path,
+                        help="Replay an archived version and enforce its size/SHA256 instead of fetching latest metadata")
     args = parser.parse_args()
-    download(args.directory)
+    download(args.directory, args.manifest)

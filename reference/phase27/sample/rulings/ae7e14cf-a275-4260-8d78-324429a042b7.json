@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "ae7e14cf-a275-4260-8d78-324429a042b7",
+      "source": "wotc",
+      "published_at": "2022-06-10",
+      "comment": "Sigil of Myrkul's triggered ability triggers and goes on the stack without a target. After you mill a card, if there are four or more creature cards in your graveyard, the reflexive triggered ability will trigger. You choose the target for that ability at that time."
+    }
+  ]
+}

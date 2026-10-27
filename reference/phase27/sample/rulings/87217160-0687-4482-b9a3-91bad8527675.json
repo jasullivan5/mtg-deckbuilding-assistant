@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "87217160-0687-4482-b9a3-91bad8527675",
+      "source": "wotc",
+      "published_at": "2014-07-18",
+      "comment": "You can activate the last ability only if the Soul is in your graveyard."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "87217160-0687-4482-b9a3-91bad8527675",
+      "source": "wotc",
+      "published_at": "2014-07-18",
+      "comment": "Exiling the Soul from your graveyard is part of the last ability's activation cost. A player can't remove the Soul in response to prevent you from activating the ability."
+    }
+  ]
+}

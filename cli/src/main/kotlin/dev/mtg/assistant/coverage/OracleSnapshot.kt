@@ -122,7 +122,8 @@ fun loadOracleSnapshot(path: Path, manifestPath: Path = Path.of("$path.manifest.
 fun externalEligibility(card: OracleIdentity, allowed: Set<String>): PoolDecision {
     val notes = buildList {
         if(card.keywords.any { it.equals("Companion",true) }) add("COMPANION_ROLE_NOT_EVALUATED; ordinary inclusion only")
-        if(card.keywords.any { it in setOf("Partner","Choose a Background","Friends forever","Doctor's companion") }) add("PAIRING_NOT_EVALUATED; selected commander remains unchanged")
+        if(card.keywords.any { it.lowercase(Locale.ROOT) in setOf("partner","choose a background","friends forever","doctor's companion") }) add("PAIRING_NOT_EVALUATED; selected commander remains unchanged")
+        if((listOfNotNull(card.oracleText)+card.faces.mapNotNull { it.oracleText }).any { it.contains("before the game begins",true) && it.contains("choose a color",true) }) add("PRE_GAME_CHOSEN_COLOR_COMMANDER_ROLE_NOT_EVALUATED; ordinary fixed-identity inclusion only")
         if((listOfNotNull(card.oracleText)+card.faces.mapNotNull { it.oracleText }).any { it.contains("A deck can have",true) }) add("DECK_QUANTITY_EXCEPTION_NOT_EVALUATED; singleton/deck validation outside scope")
     }
     if(card.legalities["commander"] in setOf("not_legal","banned")) return PoolDecision(PoolState.EXCLUDED,listOf("NOT_COMMANDER_LEGAL"),notes)

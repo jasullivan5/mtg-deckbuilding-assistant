@@ -1,0 +1,48 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "A creature doesn’t necessarily have to be dealt lethal damage by Touch of the Void to be exiled. After being dealt damage, if it would die for any reason that turn, it’ll be exiled instead."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "Cards with devoid use frames that are variations of the transparent frame traditionally used for Eldrazi. The top part of the card features some color over a background based on the texture of the hedrons that once imprisoned the Eldrazi. This coloration is intended to aid deckbuilding and game play."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "A card with devoid is just colorless. It’s not colorless and the colors of mana in its mana cost."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "Other cards and abilities can give a card with devoid color. If that happens, it’s just the new color, not that color and colorless."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "Devoid works in all zones, not just on the battlefield."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "6b530534-5c02-4874-9256-501102ef8a5f",
+      "source": "wotc",
+      "published_at": "2015-08-25",
+      "comment": "If a card loses devoid, it will still be colorless. This is because effects that change an object’s color (like the one created by devoid) are considered before the object loses devoid."
+    }
+  ]
+}

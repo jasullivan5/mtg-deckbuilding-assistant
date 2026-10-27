@@ -59,6 +59,8 @@ class CatalogCoverageTest : FunSpec({
         externalEligibility(card("Fixture Companion"),br).state shouldBe PoolState.ELIGIBLE
         externalEligibility(card("Fixture Companion"),br).constructionNotes.size shouldBe 1
         externalEligibility(card("Fixture Quantity Exception"),br).constructionNotes.size shouldBe 1
+        externalEligibility(card("Fixture Companion").copy(keywords=listOf("Choose a background")),br).constructionNotes.size shouldBe 1
+        externalEligibility(card("Fixture Colorless").copy(oracleText="If this is your commander, choose a color before the game begins."),br).constructionNotes.size shouldBe 1
     }
     test("loader supports JSON array and gzipped JSONL with identical projected identities") {
         val lines=Json.parseToJsonElement(Files.readString(fixture)).jsonArray.joinToString("\n")

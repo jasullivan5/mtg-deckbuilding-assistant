@@ -1,0 +1,41 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "source": "wotc",
+      "published_at": "2020-08-07",
+      "comment": "The Germ token enters the battlefield as a 0/0 creature and the Equipment becomes attached to it before state-based actions would cause the token to die. Abilities that trigger as the token enters the battlefield see that a 0/0 creature entered the battlefield."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "source": "wotc",
+      "published_at": "2020-08-07",
+      "comment": "Like other Equipment, each Equipment with living weapon has an equip cost. You can pay this cost to attach an Equipment to another creature you control. Once the Germ token is no longer equipped, it will be put into your graveyard and subsequently cease to exist, unless another effect raises its toughness above 0."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "source": "wotc",
+      "published_at": "2020-08-07",
+      "comment": "If the Germ token is destroyed, the Equipment remains on the battlefield as with any other Equipment."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "source": "wotc",
+      "published_at": "2020-08-07",
+      "comment": "If the living weapon trigger causes two Germs to be created (due to an effect such as that of Doubling Season), the Equipment becomes attached to one of them. The other will be put into your graveyard and subsequently cease to exist, unless another effect raises its toughness above 0."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+      "source": "wotc",
+      "published_at": "2011-06-01",
+      "comment": "If you sacrifice the equipped creature to deal 1 damage to a target permanent or player, the damage is dealt by the creature as it last existed on the battlefield."
+    }
+  ]
+}

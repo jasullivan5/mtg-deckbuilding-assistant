@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "5bf9f397-0216-4ec9-a57b-406758dcc233",
+      "source": "wotc",
+      "published_at": "2019-07-12",
+      "comment": "Count the number of Undead Servants in your graveyard as the ability resolves to determine how many tokens to put onto the battlefield. If Undead Servant dies in response to its own triggered ability and is in your graveyard as that ability resolves, it will count toward the number of Zombies you get."
+    }
+  ]
+}

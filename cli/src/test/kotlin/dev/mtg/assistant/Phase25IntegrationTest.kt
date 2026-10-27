@@ -63,8 +63,9 @@ class Phase25IntegrationTest : FunSpec({
             r.fact.tokenCreation!!.quantity shouldBe com.wingedsheep.sdk.scripting.values.DynamicAmount.Fixed(q)
         }
     }
-    test("candidate examples missing from authored catalog remain recorded gaps") {
-        listOf("Krenko's Command","Bitterblossom","Tempt with Vengeance").forEach { catalog.card(it) shouldBe null }
+    test("candidate examples missing from pinned upstream remain recorded gaps despite later extensions") {
+        val upstream = Catalog(emptyList())
+        listOf("Krenko's Command","Bitterblossom","Tempt with Vengeance").forEach { upstream.card(it) shouldBe null }
     }
     test("Judith remains an extension consumer without token-generation fact") {
         rows("Judith, the Scourge Diva").isEmpty() shouldBe true
