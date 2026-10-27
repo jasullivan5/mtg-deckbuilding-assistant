@@ -8,7 +8,9 @@ import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.search.SearchService
 
 /** Integration boundary: native definitions stay available for later mechanical-query functions. */
-class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionDefinition> = dev.mtg.assistant.extensions.Extensions.all) {
+class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionDefinition> = dev.mtg.assistant.extensions.Extensions.all,
+    private val correctionPlan: () -> dev.mtg.assistant.eligibility.CorrectionPlan? = { dev.mtg.assistant.eligibility.ApprovedEligibility.plan }) {
+    val eligibility by lazy { dev.mtg.assistant.eligibility.EligibilityResolver(dev.mtg.assistant.discovery.physicalCards(cards),correctionPlan()) }
     private val origins = mutableMapOf<String, dev.mtg.assistant.extensions.Provenance>()
     fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", "https://github.com/wingedsheep/argentum-engine/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
     private val reviews = mutableMapOf<String, dev.mtg.assistant.extensions.DefinitionReview>()
@@ -17,7 +19,9 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
     private val printings = PrintingRegistry()
     val setCount: Int
     val cards: List<CardDefinition>
-    private val searchable: List<DefinitionSearchCard>
+    private val searchable: List<DefinitionSearchCard> by lazy { cards.map {
+        DefinitionSearchCard(it, printings.printingsOf(it.name),eligibility.resolve(it).takeIf { m -> m.corrections.isNotEmpty() })
+    } }
 
     init {
         val sets = MtgSetCatalog.all
@@ -47,7 +51,6 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
             registry.getCardsByName(name).forEach(printings::registerSynthesizedDefault)
         }
         sets.forEach { printings.register(it.printings) }
-        searchable = cards.map { DefinitionSearchCard(it, printings.printingsOf(it.name)) }
     }
 
     /** Preserve upstream's exact, case-sensitive lookup, including its variant and face support. */

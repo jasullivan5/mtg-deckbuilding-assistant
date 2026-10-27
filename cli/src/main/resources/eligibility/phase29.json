@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "context": {
+    "algorithm": "physical-identity-v1",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "nativeIdentitySha256": "ceef411323fde4a1521b712402463977e246f8c14e83e9f7933abf3de77b2b21"
+  },
+  "snapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-10-27T04:29:45.462260+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "sources": [
+    {
+      "oracleId": "52934f16-eb9b-4d0a-b372-155461660f6e",
+      "name": "Hooded Kavu",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "typeLine": "Creature — Kavu",
+      "oracleText": "{B}: This creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "manaCost": "{2}{R}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "5464b80a-22fe-42c7-a839-31667712fb2d",
+        "uri": "https://scryfall.com/card/inv/147/hooded-kavu?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/5464b80a-22fe-42c7-a839-31667712fb2d/rulings",
+        "set": "inv",
+        "collectorNumber": "147",
+        "releasedAt": "2000-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "name": "Heartwood Shard",
+      "layout": "normal",
+      "colorIdentity": [
+        "G"
+      ],
+      "typeLine": "Artifact",
+      "oracleText": "{3}, {T} or {G}, {T}: Target creature gains trample until end of turn.",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "b13328a9-fc03-4c1b-b1b7-61cd41766300",
+        "uri": "https://scryfall.com/card/mrd/184/heartwood-shard?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/b13328a9-fc03-4c1b-b1b7-61cd41766300/rulings",
+        "set": "mrd",
+        "collectorNumber": "184",
+        "releasedAt": "2003-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "name": "Firescreamer",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "typeLine": "Creature — Kavu",
+      "oracleText": "{R}: This creature gets +1/+0 until end of turn.",
+      "manaCost": "{3}{B}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "not_legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "155a2213-bf6e-4a54-924b-e450b7d06f26",
+        "uri": "https://scryfall.com/card/inv/106/firescreamer?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/155a2213-bf6e-4a54-924b-e450b7d06f26/rulings",
+        "set": "inv",
+        "collectorNumber": "106",
+        "releasedAt": "2000-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "c71b2325-bde6-4364-a93b-8477ffeb25d8",
+      "name": "Toxrill, the Corrosive",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "U"
+      ],
+      "typeLine": "Legendary Creature — Slug Horror",
+      "oracleText": "At the beginning of each end step, put a slime counter on each creature you don't control.\nCreatures you don't control get -1/-1 for each slime counter on them.\nWhenever a creature you don't control with a slime counter on it dies, create a 1/1 black Slug creature token.\n{U}{B}, Sacrifice a Slug: Draw a card.",
+      "manaCost": "{5}{B}{B}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "not_legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "84e64f38-b1f3-47cd-8cfb-a4861369aca3",
+        "uri": "https://scryfall.com/card/vow/132/toxrill-the-corrosive?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/84e64f38-b1f3-47cd-8cfb-a4861369aca3/rulings",
+        "set": "vow",
+        "collectorNumber": "132",
+        "releasedAt": "2021-11-19"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "name": "Sunforger",
+      "layout": "normal",
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "typeLine": "Artifact — Equipment",
+      "oracleText": "Equipped creature gets +4/+0.\n{R}{W}, Unattach this Equipment: Search your library for a red or white instant card with mana value 4 or less and cast that card without paying its mana cost. Then shuffle.\nEquip {3}",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [
+        "Equip"
+      ],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "dd3e42ee-ab13-460b-90fd-86e677abce4f",
+        "uri": "https://scryfall.com/card/cmr/473/sunforger?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/dd3e42ee-ab13-460b-90fd-86e677abce4f/rulings",
+        "set": "cmr",
+        "collectorNumber": "473",
+        "releasedAt": "2020-11-20"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "f0c533a2-751a-4c5a-8cec-b83da3c8c62f",
+      "name": "Afterthought Sentry",
+      "layout": "normal",
+      "colorIdentity": [],
+      "typeLine": "Artifact Creature — Gargoyle",
+      "oracleText": "{2}: This creature gains flying until end of turn.\nWhenever this creature attacks, exile up to one target card from a graveyard.",
+      "manaCost": "{2}",
+      "faces": [],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "4d4b3bf7-a149-4099-b97d-4e36a87dfa60",
+        "uri": "https://scryfall.com/card/fra/166/afterthought-sentry?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/4d4b3bf7-a149-4099-b97d-4e36a87dfa60/rulings",
+        "set": "fra",
+        "collectorNumber": "166",
+        "releasedAt": "2026-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "f36d1d8b-8303-44a9-ab56-531931641ea2",
+      "name": "Academy Manufactor",
+      "layout": "normal",
+      "colorIdentity": [],
+      "typeLine": "Artifact Creature — Assembly-Worker",
+      "oracleText": "If you would create a Clue, Food, or Treasure token, instead create one of each.",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "keywords": [
+        "Treasure",
+        "Food"
+      ],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "76480f4d-ad6d-4ed6-82c6-fa12abc22557",
+        "uri": "https://scryfall.com/card/otc/251/academy-manufactor?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/76480f4d-ad6d-4ed6-82c6-fa12abc22557/rulings",
+        "set": "otc",
+        "collectorNumber": "251",
+        "releasedAt": "2024-04-19"
+      },
+      "issues": [],
+      "mappingNotes": []
+    }
+  ],
+  "currentSources": [
+    {
+      "oracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "name": "Heartwood Shard",
+      "layout": "normal",
+      "colorIdentity": [
+        "G"
+      ],
+      "typeLine": "Artifact",
+      "oracleText": "{3}, {T} or {G}, {T}: Target creature gains trample until end of turn.",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "b13328a9-fc03-4c1b-b1b7-61cd41766300",
+        "uri": "https://scryfall.com/card/mrd/184/heartwood-shard?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/b13328a9-fc03-4c1b-b1b7-61cd41766300/rulings",
+        "set": "mrd",
+        "collectorNumber": "184",
+        "releasedAt": "2003-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "52934f16-eb9b-4d0a-b372-155461660f6e",
+      "name": "Hooded Kavu",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "typeLine": "Creature — Kavu",
+      "oracleText": "{B}: This creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "manaCost": "{2}{R}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "5464b80a-22fe-42c7-a839-31667712fb2d",
+        "uri": "https://scryfall.com/card/inv/147/hooded-kavu?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/5464b80a-22fe-42c7-a839-31667712fb2d/rulings",
+        "set": "inv",
+        "collectorNumber": "147",
+        "releasedAt": "2000-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "name": "Firescreamer",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "typeLine": "Creature — Kavu",
+      "oracleText": "{R}: This creature gets +1/+0 until end of turn.",
+      "manaCost": "{3}{B}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "not_legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "155a2213-bf6e-4a54-924b-e450b7d06f26",
+        "uri": "https://scryfall.com/card/inv/106/firescreamer?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/155a2213-bf6e-4a54-924b-e450b7d06f26/rulings",
+        "set": "inv",
+        "collectorNumber": "106",
+        "releasedAt": "2000-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "name": "Sunforger",
+      "layout": "normal",
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "typeLine": "Artifact — Equipment",
+      "oracleText": "Equipped creature gets +4/+0.\n{R}{W}, Unattach this Equipment: Search your library for a red or white instant card with mana value 4 or less and cast that card without paying its mana cost. Then shuffle.\nEquip {3}",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "keywords": [
+        "Equip"
+      ],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "dd3e42ee-ab13-460b-90fd-86e677abce4f",
+        "uri": "https://scryfall.com/card/cmr/473/sunforger?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/dd3e42ee-ab13-460b-90fd-86e677abce4f/rulings",
+        "set": "cmr",
+        "collectorNumber": "473",
+        "releasedAt": "2020-11-20"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "c71b2325-bde6-4364-a93b-8477ffeb25d8",
+      "name": "Toxrill, the Corrosive",
+      "layout": "normal",
+      "colorIdentity": [
+        "B",
+        "U"
+      ],
+      "typeLine": "Legendary Creature — Slug Horror",
+      "oracleText": "At the beginning of each end step, put a slime counter on each creature you don't control.\nCreatures you don't control get -1/-1 for each slime counter on them.\nWhenever a creature you don't control with a slime counter on it dies, create a 1/1 black Slug creature token.\n{U}{B}, Sacrifice a Slug: Draw a card.",
+      "manaCost": "{5}{B}{B}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "not_legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "84e64f38-b1f3-47cd-8cfb-a4861369aca3",
+        "uri": "https://scryfall.com/card/vow/132/toxrill-the-corrosive?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/84e64f38-b1f3-47cd-8cfb-a4861369aca3/rulings",
+        "set": "vow",
+        "collectorNumber": "132",
+        "releasedAt": "2021-11-19"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "f36d1d8b-8303-44a9-ab56-531931641ea2",
+      "name": "Academy Manufactor",
+      "layout": "normal",
+      "colorIdentity": [],
+      "typeLine": "Artifact Creature — Assembly-Worker",
+      "oracleText": "If you would create a Clue, Food, or Treasure token, instead create one of each.",
+      "manaCost": "{3}",
+      "faces": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "keywords": [
+        "Treasure",
+        "Food"
+      ],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "76480f4d-ad6d-4ed6-82c6-fa12abc22557",
+        "uri": "https://scryfall.com/card/otc/251/academy-manufactor?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/76480f4d-ad6d-4ed6-82c6-fa12abc22557/rulings",
+        "set": "otc",
+        "collectorNumber": "251",
+        "releasedAt": "2024-04-19"
+      },
+      "issues": [],
+      "mappingNotes": []
+    },
+    {
+      "oracleId": "f0c533a2-751a-4c5a-8cec-b83da3c8c62f",
+      "name": "Afterthought Sentry",
+      "layout": "normal",
+      "colorIdentity": [],
+      "typeLine": "Artifact Creature — Gargoyle",
+      "oracleText": "{2}: This creature gains flying until end of turn.\nWhenever this creature attacks, exile up to one target card from a graveyard.",
+      "manaCost": "{2}",
+      "faces": [],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "keywords": [],
+      "relatedParts": [],
+      "source": {
+        "scryfallId": "4d4b3bf7-a149-4099-b97d-4e36a87dfa60",
+        "uri": "https://scryfall.com/card/fra/166/afterthought-sentry?utm_source=api",
+        "rulingsUri": "https://api.scryfall.com/cards/4d4b3bf7-a149-4099-b97d-4e36a87dfa60/rulings",
+        "set": "fra",
+        "collectorNumber": "166",
+        "releasedAt": "2026-10-02"
+      },
+      "issues": [],
+      "mappingNotes": []
+    }
+  ],
+  "corrections": [
+    {
+      "id": "phase29-52934f16-eb9b-4d0a-b372-155461660f6e",
+      "disposition": "APPROVED",
+      "oracleId": "52934f16-eb9b-4d0a-b372-155461660f6e",
+      "native": {
+        "name": "Hooded Kavu",
+        "oracleId": null,
+        "aliases": [
+          "hooded kavu"
+        ],
+        "identity": [
+          "R"
+        ],
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Hooded Kavu",
+            "manaCost": "{2}{R}",
+            "typeLine": "Creature — Kavu"
+          }
+        ],
+        "physicalName": "Hooded Kavu",
+        "scryfallId": null,
+        "setCode": "INV",
+        "collectorNumber": "147",
+        "derivedIdentity": [
+          "R",
+          "B"
+        ],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "647c50ee546262378ccb8f254f966d1b773e12cfb084e450ed99538e469b31f0",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": [
+        "R"
+      ],
+      "approved": [
+        "B",
+        "R"
+      ],
+      "sourceUri": "https://scryfall.com/card/inv/147/hooded-kavu?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "disposition": "APPROVED",
+      "oracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "native": {
+        "name": "Heartwood Shard",
+        "oracleId": null,
+        "aliases": [
+          "heartwood shard"
+        ],
+        "identity": [],
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Heartwood Shard",
+            "manaCost": "{3}",
+            "typeLine": "Artifact"
+          }
+        ],
+        "physicalName": "Heartwood Shard",
+        "scryfallId": null,
+        "setCode": "MRD",
+        "collectorNumber": "184",
+        "derivedIdentity": [
+          "G"
+        ],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "6cbfccdb9b89c4929b2b29c512812a75094e4d4f76cf0092358e1f74e6562817",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": [],
+      "approved": [
+        "G"
+      ],
+      "sourceUri": "https://scryfall.com/card/mrd/184/heartwood-shard?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "disposition": "APPROVED",
+      "oracleId": "b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "native": {
+        "name": "Firescreamer",
+        "oracleId": null,
+        "aliases": [
+          "firescreamer"
+        ],
+        "identity": [
+          "B"
+        ],
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Firescreamer",
+            "manaCost": "{3}{B}",
+            "typeLine": "Creature — Kavu"
+          }
+        ],
+        "physicalName": "Firescreamer",
+        "scryfallId": null,
+        "setCode": "INV",
+        "collectorNumber": "106",
+        "derivedIdentity": [
+          "B",
+          "R"
+        ],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "6b8d6dfc0f278336af5dd7b3b8a91f66b5f13a7396be62a55f4268052e765af6",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": [
+        "B"
+      ],
+      "approved": [
+        "B",
+        "R"
+      ],
+      "sourceUri": "https://scryfall.com/card/inv/106/firescreamer?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-c71b2325-bde6-4364-a93b-8477ffeb25d8",
+      "disposition": "APPROVED",
+      "oracleId": "c71b2325-bde6-4364-a93b-8477ffeb25d8",
+      "native": {
+        "name": "Toxrill, the Corrosive",
+        "oracleId": null,
+        "aliases": [
+          "toxrill, the corrosive"
+        ],
+        "identity": [
+          "B"
+        ],
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Toxrill, the Corrosive",
+            "manaCost": "{5}{B}{B}",
+            "typeLine": "Legendary Creature — Slug Horror"
+          }
+        ],
+        "physicalName": "Toxrill, the Corrosive",
+        "scryfallId": null,
+        "setCode": "VOW",
+        "collectorNumber": "132",
+        "derivedIdentity": [
+          "B",
+          "U"
+        ],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "01c4525c121067e8d3005d3e4b276ce1872f2b30700648cb06f25451d85fc19d",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": [
+        "B"
+      ],
+      "approved": [
+        "B",
+        "U"
+      ],
+      "sourceUri": "https://scryfall.com/card/vow/132/toxrill-the-corrosive?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "disposition": "APPROVED",
+      "oracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "native": {
+        "name": "Sunforger",
+        "oracleId": null,
+        "aliases": [
+          "sunforger"
+        ],
+        "identity": [],
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Sunforger",
+            "manaCost": "{3}",
+            "typeLine": "Artifact — Equipment"
+          }
+        ],
+        "physicalName": "Sunforger",
+        "scryfallId": null,
+        "setCode": "RAV",
+        "collectorNumber": "272",
+        "derivedIdentity": [
+          "R",
+          "W"
+        ],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "7ff7a40693e3718eaf30f80c9e7479e9685cbfa6509e7b51c8930532f430686a",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": [],
+      "approved": [
+        "R",
+        "W"
+      ],
+      "sourceUri": "https://scryfall.com/card/cmr/473/sunforger?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-f0c533a2-751a-4c5a-8cec-b83da3c8c62f",
+      "disposition": "APPROVED",
+      "oracleId": "f0c533a2-751a-4c5a-8cec-b83da3c8c62f",
+      "native": {
+        "name": "Afterthought Sentry",
+        "oracleId": null,
+        "aliases": [
+          "afterthought sentry"
+        ],
+        "identity": [],
+        "commanderLegality": "UNKNOWN",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Afterthought Sentry",
+            "manaCost": "{2}",
+            "typeLine": "Artifact Creature — Gargoyle"
+          }
+        ],
+        "physicalName": "Afterthought Sentry",
+        "scryfallId": null,
+        "setCode": "FRA",
+        "collectorNumber": "166",
+        "derivedIdentity": [],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "c41b04d65825afdb954700ed0b86230109e728fa93fb108d74e5eae57b92e268",
+      "field": "COMMANDER_LEGALITY",
+      "expected": [
+        "UNKNOWN"
+      ],
+      "approved": [
+        "MATCH"
+      ],
+      "sourceUri": "https://scryfall.com/card/fra/166/afterthought-sentry?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    },
+    {
+      "id": "phase29-f36d1d8b-8303-44a9-ab56-531931641ea2",
+      "disposition": "APPROVED",
+      "oracleId": "f36d1d8b-8303-44a9-ab56-531931641ea2",
+      "native": {
+        "name": "Academy Manufactor",
+        "oracleId": null,
+        "aliases": [
+          "academy manufactor"
+        ],
+        "identity": null,
+        "commanderLegality": "MATCH",
+        "origin": "UPSTREAM_ARGENTUM",
+        "layout": "normal",
+        "faces": [
+          {
+            "name": "Academy Manufactor",
+            "manaCost": "{3}",
+            "typeLine": "Artifact Creature — Assembly-Worker"
+          }
+        ],
+        "physicalName": "Academy Manufactor",
+        "scryfallId": null,
+        "setCode": "MH2",
+        "collectorNumber": "219",
+        "derivedIdentity": [],
+        "declaredOracleId": null
+      },
+      "definitionSha256": "04faf4e4d7499d930d8929a2945884df38ca6d436cdf808ce059da0b625646f8",
+      "field": "FULL_COLOR_IDENTITY",
+      "expected": null,
+      "approved": [],
+      "sourceUri": "https://scryfall.com/card/otc/251/academy-manufactor?utm_source=api",
+      "verifiedAt": "2026-10-27T16:33:53.135084+00:00",
+      "reviewEvidence": [
+        "Archived full-snapshot confident association: PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "Independent current Scryfall collection request agrees with archived identity and Commander legality",
+        "Bounded Phase 2.9 reviewed correction; mechanical completeness not certified"
+      ]
+    }
+  ]
+}

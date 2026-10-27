@@ -9,12 +9,13 @@ import com.wingedsheep.search.SearchView
 internal class DefinitionSearchCard(
     val definition: CardDefinition,
     printings: List<Printing>,
+    effective: dev.mtg.assistant.eligibility.EffectiveEligibility? = null,
 ) : SearchCard {
     override val name = definition.name
     override val manaCost = definition.manaCost.toString()
     override val cmc = definition.cmc
     override val colors = definition.colors.map { it.name }
-    override val colorIdentity = definition.colorIdentity.map { it.name }
+    override val colorIdentity = (effective?.colors ?: definition.colorIdentity).map { it.name }
     override val cardTypes = definition.typeLine.cardTypes.map { it.name }
     override val supertypes = definition.typeLine.supertypes.map { it.name }
     override val subtypes = definition.typeLine.subtypes.map { it.toString() }
@@ -27,7 +28,8 @@ internal class DefinitionSearchCard(
     override val toughness = definition.creatureStats?.toughness?.description
     override val loyalty = definition.startingLoyalty?.toString()
     override val keywords = definition.keywords.map { it.name }.sorted()
-    override val legalFormats = definition.legalFormats.map { it.name }.sorted()
+    override val legalFormats = (definition.legalFormats.map { it.name }.filter { effective==null || it!="COMMANDER" } +
+        if(effective?.commanderLegality==dev.mtg.assistant.discovery.Verdict.MATCH) listOf("COMMANDER") else emptyList()).distinct().sorted()
     override val isDoubleFaced = definition.isDoubleFaced
     override val printingSetCodes = printings.map { it.setCode }.distinct().sorted()
     override val printedNames = printings.mapNotNull { it.printedName }.distinct().sorted()

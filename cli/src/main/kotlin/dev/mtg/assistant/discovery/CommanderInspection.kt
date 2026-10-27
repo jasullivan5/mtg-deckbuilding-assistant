@@ -22,12 +22,14 @@ import kotlinx.serialization.encodeToString
     val nativeValidationErrors: List<String>, val scenarioReferences: List<String>, val knownLimitations: List<String>,
     val constructionScope: String = "Single fixed-identity commander; pairs and chosen-color construction unsupported",
     val mechanicalCaveat: String = "Selection eligibility and structural validation do not certify complete rules correctness; scenarios verify only their recorded cases",
-    val selectable: Boolean = blockers.isEmpty()
+    val selectable: Boolean = blockers.isEmpty(),
+    val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null
 )
 
 /** Pure inspection also accepts isolated SDK fixtures; no card-name exceptions or Oracle effect parser. */
 fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: Provenance? = null,
-    physicalFront: Boolean = true, review: DefinitionReview = DefinitionReview()): CommanderInspection {
+    physicalFront: Boolean = true, review: DefinitionReview = DefinitionReview(),
+    metadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null): CommanderInspection {
     val problems=mutableListOf<CommanderProblem>()
     fun block(code: CommanderBlocker, reason: String, action: String) { problems += CommanderProblem(code,reason,action) }
     if(name.isBlank()) block(CommanderBlocker.INVALID_REQUEST,"A single exact commander name is required; pairs are unsupported","Supply one physical card's exact front name")
@@ -35,12 +37,13 @@ fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: 
         block(CommanderBlocker.MISSING_DEFINITION,"No exact native definition for '$name' in the pinned catalog; this does not establish whether the Magic card exists","Check exact spelling/case, then verify authoritative sources and author a reviewed native extension if absent")
         return CommanderInspection(name,null,DefinitionAvailability.MISSING_FROM_PINNED_CATALOG,null,null,false,emptyList(),null,false,problems,MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED,emptyList(),emptyList(),emptyList())
     }
-    val legal=commanderFormatLegality(card)
+    val effective=metadata ?: dev.mtg.assistant.eligibility.nativeEligibility(card)
+    val legal=effective.commanderLegality
     val eligible=CommanderEligibility.isLegalCommander(card)
     if(!physicalFront) block(CommanderBlocker.NOT_PHYSICAL_FRONT,"Select the physical card's front name; back/flip/meld aliases cannot be commanders here","Inspect and select its physical front card")
     if(legal==Verdict.UNKNOWN) block(CommanderBlocker.LEGALITY_UNRESOLVED,"Commander legality metadata is unresolved","Verify current format legality before supplying metadata")
     if(legal==Verdict.NO_MATCH) block(CommanderBlocker.NOT_COMMANDER_LEGAL,"The definition's verified formats do not include Commander","Check current authoritative legality; do not infer legality from card type")
-    if(card.colorIdentityOverride==null) block(CommanderBlocker.IDENTITY_UNRESOLVED,"Commander has no authoritative full identity override","Verify full identity including all faces; heuristic colors are insufficient")
+    if(!effective.authoritativeIdentity) block(CommanderBlocker.IDENTITY_UNRESOLVED,"Commander has no authoritative full identity override","Verify full identity including all faces; heuristic colors are insufficient")
     val chosen=card.oracleText.contains("before the game begins",true) && card.oracleText.contains("color",true)
     val specialForm=Supertype.LEGENDARY in card.typeLine.supertypes && card.typeLine.subtypes.any { it.value in setOf("Vehicle","Spacecraft") }
     if(chosen || CommanderEligibility.isBackground(card) || (!eligible && specialForm))
@@ -54,13 +57,13 @@ fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: 
         else -> MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
     }
     return CommanderInspection(name,card.name,if(provenance?.origin=="APPLICATION_EXTENSION") DefinitionAvailability.APPLICATION_EXTENSION else DefinitionAvailability.UPSTREAM_NATIVE,
-        provenance,legal,card.colorIdentityOverride!=null,fullIdentity(card).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations)
+        provenance,legal,effective.authoritativeIdentity,(if(effective.authoritativeIdentity) effective.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations,effectiveMetadata=effective.takeIf { it.corrections.isNotEmpty() })
 }
 
 fun inspectCommander(catalog: Catalog, name: String): CommanderInspection {
     val card=catalog.card(name)
     return inspectCommanderDefinition(name,card,card?.let { catalog.provenance(it.name) },
-        card!=null && physicalCards(catalog.cards).any { it.name==card.name },catalog.definitionReview(name))
+        card!=null && physicalCards(catalog.cards).any { it.name==card.name },catalog.definitionReview(name),card?.takeIf { c -> physicalCards(catalog.cards).any { it.name==c.name } }?.let { catalog.eligibility.resolve(it) })
 }
 
 fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {
@@ -76,6 +79,7 @@ fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         appendLine("Provenance: ${report.provenance ?: "No native definition"}")
         appendLine("Commander legality: ${report.formatLegality}; authoritative identity: ${report.authoritativeIdentity}; colors: ${report.colorIdentity}")
         appendLine("Native commander eligibility: ${report.nativeCommanderEligible}; physical front: ${report.physicalFront}")
+        report.effectiveMetadata?.let { appendLine("Reviewed eligibility corrections: ${it.corrections.map { c -> c.record.id to c.state }}; original identity: ${it.originalIdentity}; original format: ${it.originalCommanderLegality}") }
         report.blockers.forEach { appendLine("${it.code}: ${it.reason}. Next: ${it.nextAction}") }
         appendLine("Mechanical review: ${report.mechanicalReview}")
         report.nativeValidationErrors.forEach { appendLine("Native validation: $it") }

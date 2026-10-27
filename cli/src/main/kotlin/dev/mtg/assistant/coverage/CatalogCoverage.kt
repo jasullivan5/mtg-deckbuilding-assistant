@@ -3,6 +3,7 @@ package dev.mtg.assistant.coverage
 import com.wingedsheep.sdk.model.CardDefinition
 import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.discovery.*
+import dev.mtg.assistant.eligibility.*
 import kotlinx.serialization.Serializable
 import java.nio.file.Files
 import java.nio.file.Path
@@ -18,7 +19,8 @@ val coverageObjectives = listOf("own-nontoken-creature-deaths","reanimate-own-cr
     val derivedIdentity: Set<String>? = null, val declaredOracleId: String? = null)
 @Serializable data class NativeMapping(val status: CatalogStatus, val method: String,
     val candidates: List<NativeIdentity>, val reasons: List<String> = emptyList(),
-    val association: IdentityAssociation? = null, val metadata: MetadataAgreement? = null)
+    val association: IdentityAssociation? = null, val metadata: MetadataAgreement? = null,
+    val effectiveMetadata: EffectiveEligibility? = null, val effectiveAgreement: MetadataAgreement? = null)
 @Serializable data class ObjectiveEvaluation(val state: String, val matchedPathways: Int = 0,
     val unknownPathways: Int = 0, val unsupportedNodes: Int = 0,
     val conditionalMatchedPathways: Int = 0, val partialMatchedPathways: Int = 0,
@@ -29,14 +31,17 @@ val coverageObjectives = listOf("own-nontoken-creature-deaths","reanimate-own-cr
     val mapping: NativeMapping, val constructionNotes: List<String>,
     val objectives: Map<String,ObjectiveEvaluation>, val translationStatus: String)
 @Serializable data class PoolIssue(val external: OracleIdentity, val decision: PoolDecision)
-@Serializable data class CatalogCoverageReport(val schemaVersion: Int = 2, val snapshot: SnapshotManifest,
+@Serializable data class CorrectionEligibilityImpact(val metadata: EffectiveEligibility, val beforeFormat: Verdict, val beforeDeck: Verdict,
+    val afterFormat: Verdict, val afterDeck: Verdict)
+@Serializable data class CatalogCoverageReport(val schemaVersion: Int = 3, val snapshot: SnapshotManifest,
     val argentumCommit: String = ARGENTUM_SHA, val commander: String, val allowedIdentity: List<String>,
     val counts: Map<String,Int>, val poolExclusions: Map<String,Int>, val records: List<CoverageCard>,
     val unresolvedPoolRecords: List<PoolIssue>, val nativeWithoutExternalMatch: List<NativeIdentity>,
-    val timingsMillis: Map<String,Long>, val enrichment: EnrichmentContext? = null, val limitations: List<String> = listOf(
-        "Snapshot legality/identity and pinned native eligibility are distinct sources; disagreement is reported, never silently repaired.",
+    val timingsMillis: Map<String,Long>, val enrichment: EnrichmentContext? = null, val eligibilityCorrections: List<CorrectionEligibilityImpact> = emptyList(),
+    val correctionValidationMillis: Long = 0, val limitations: List<String> = listOf(
+        "Snapshot legality/identity and pinned native eligibility are distinct sources; original disagreement remains visible; only explicitly reviewed corrections affect effective native eligibility.",
         "Native availability is authored coverage, not independent verification of all card behavior.",
-        "Missing or uncertain associations are not mechanical NO_MATCH. Confident associations may attach existing native evaluations even when metadata disagrees; native eligibility is never broadened.",
+        "Missing or uncertain associations are not mechanical NO_MATCH. Confident associations may attach existing native evaluations even when metadata disagrees; only explicitly reviewed corrections can change native eligibility.",
         "An evaluated native definition with no supported match is not proof that the Oracle card cannot contribute; unsupported native mechanics remain unresolved.",
         "Ordinary inclusion only. Pairing, companions as companions, singleton/quantity exceptions, outside-game and whole-deck construction are not validated.",
         "Unknown and conflicting external records remain outside the confirmed eligible denominator and are listed separately.",
@@ -95,7 +100,8 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     objectives: List<String> = emptyList(), ledger: TranslationLedger? = null, catalogLoadMillis: Long = 0): CatalogCoverageReport {
     require(objectives.distinct().size==objectives.size && objectives.all { it in coverageObjectives }) { "Unsupported/duplicate objective" }
     val commander = resolveCommander(catalog,commanderName)
-    val allowed = fullIdentity(commander).map { it.symbol.toString() }.toSet()
+    val resolver=catalog.eligibility
+    val allowed = (resolver.resolve(commander).colors + identityRestrictions(commander)).map { it.symbol.toString() }.toSet()
     if(ledger!=null) {
         require(ledger.snapshotSha256==snapshot.manifest.sha256) { "Translation ledger snapshot mismatch" }
         require(ledger.cards.map { it.oracleId }.distinct().size==ledger.cards.size && ledger.cards.all { oracleId(it.oracleId)!=null }) { "Translation ledger identity collision/invalid ID" }
@@ -105,7 +111,17 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     val native = physicalCards(catalog.cards).map { nativeIdentity(it,catalog.provenance(it.name).origin) }
     val index = NativeIndex(native,snapshot)
     val pool = snapshot.cards.map { it to externalEligibility(it,allowed) }
-    val mappings = pool.filter { it.second.state==PoolState.ELIGIBLE }.map { (external,decision) -> Triple(external,decision,index.match(external)) }
+    val nativeCards=physicalCards(catalog.cards).associateBy { it.name }
+    val mappings = pool.filter { it.second.state==PoolState.ELIGIBLE }.map { (external,decision) ->
+        val mapping=index.match(external)
+        val associated=mapping.association?.takeIf { it.confidence==IdentityConfidence.CONFIDENT }
+        val effective=associated?.let { resolver.resolve(nativeCards.getValue(it.native.name)) }
+        val agreement=if(associated!=null && effective!=null) metadataAgreement(associated.native.copy(
+            identity=effective.identity?.toSet(),commanderLegality=effective.commanderLegality.name),external) else null
+        Triple(external,decision,if(agreement==null) mapping else mapping.copy(
+            status=if(agreement.issues.isEmpty()) CatalogStatus.NATIVE_AVAILABLE else CatalogStatus.NATIVE_METADATA_UNRESOLVED,
+            effectiveMetadata=effective, effectiveAgreement=agreement))
+    }
     val matchingMillis = (System.nanoTime()-started)/1_000_000
     val evaluationStart = System.nanoTime()
     val reports = objectives.associateWith { discover(catalog,commanderName,objective=it) }
@@ -150,6 +166,8 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
         "identity_review_required" to records.count { it.mapping.association?.confidence==IdentityConfidence.REVIEW_REQUIRED },
         "identity_conflicts" to records.count { it.mapping.association?.confidence==IdentityConfidence.CONFLICT },
         "native_metadata_discrepancies" to confident.count { it.mapping.metadata?.issues?.isNotEmpty()==true },
+        "effective_metadata_discrepancies" to confident.count { it.mapping.effectiveAgreement?.issues?.isNotEmpty()==true },
+        "approved_corrections_in_external_pool" to confident.count { it.mapping.effectiveMetadata?.corrections?.any { c -> c.state=="APPLIED" }==true },
         "native_not_evaluated" to records.count { it.objectives.isEmpty() || it.objectives.values.all { o -> o.state.startsWith("NOT_EVALUATED") } },
         "native_mechanical_unresolved_any_objective" to records.count { it.objectives.values.any { o -> o.state=="NATIVE_MECHANICALLY_UNRESOLVED" } },
         "native_eligibility_disagreements" to confident.count { it.mapping.candidates.single().commanderLegality!=Verdict.MATCH.name || it.mapping.reasons.isNotEmpty() },
@@ -162,6 +180,12 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
         poolExclusions=exclusions,records=records,unresolvedPoolRecords=unresolved,
         nativeWithoutExternalMatch=index.enrichment!!.assignments.filter { it.confidence!=IdentityConfidence.CONFIDENT }.map { it.native },
         enrichment=index.enrichment!!.context,
+        eligibilityCorrections=resolver.reviewed().map { effective ->
+            val card=nativeCards.getValue(effective.nativeName)
+            val colors=allowed.map { symbol -> com.wingedsheep.sdk.core.Color.entries.single { it.symbol.toString()==symbol } }.toSet()
+            CorrectionEligibilityImpact(effective,commanderFormatLegality(card),selectedCommanderEligibility(card,colors),
+                effective.commanderLegality,selectedCommanderEligibility(card,colors,effective))
+        },correctionValidationMillis=resolver.validationMillis,
         timingsMillis=mapOf("snapshotLoadAndHash" to snapshot.loadMillis,"catalogLoad" to catalogLoadMillis,
             "poolAndMapping" to matchingMillis,"objectiveEvaluation" to (System.nanoTime()-evaluationStart)/1_000_000))
 }
