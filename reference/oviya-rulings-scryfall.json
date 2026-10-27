@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "41e03224-bcdd-4127-a19a-fe66196339b9",
+      "source": "wotc",
+      "published_at": "2016-09-20",
+      "comment": "The value of X is determined only as Oviya Pashiri's last ability resolves. The token's power and toughness won't change as the number of creatures you control changes."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "41e03224-bcdd-4127-a19a-fe66196339b9",
+      "source": "wotc",
+      "published_at": "2016-09-20",
+      "comment": "The Construct token you're creating doesn't count towards X for the ability that creates it."
+    }
+  ]
+}

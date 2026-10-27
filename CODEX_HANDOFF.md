@@ -1,5 +1,7 @@
 # Codex handoff
 
+Current development adds structured `commander inspect` diagnostics, recursive native-extension safeguards and the application-owned Oviya Pashiri, Sage Lifecrafter definition. See docs/COMMANDER_AUTHORING.md for the repeatable workflow and bounded engine-test coverage. The accepted Phase2.5 migration notes below describe the baseline delivery; they are historical publication/environment records, not the current GitHub or local setup state.
+
 Start with AGENTS.md, README.md and docs/ARCHITECTURE.md. This is accepted Phase2.5 prepared for Git development, not a new feature phase.
 
 Current objectives: A own nontoken creature deaths (direct vs enhanced-removal classifications/policy preserved); B own graveyard creature cards directly to our battlefield; C creature-token creation under our control. Native Argentum integration, shared MechanicalFact/FactQuery, Judith extension/gameplay tests, diagnostics, frozen reviews and all 210 Kotlin tests are preserved byte-for-byte. A retains legacy-specific projection.
