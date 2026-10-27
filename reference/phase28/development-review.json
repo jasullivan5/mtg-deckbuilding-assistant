@@ -1,0 +1,152 @@
+{
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "cases": [
+    {
+      "externalOracleId": "018107d1-ebf7-4657-bc91-c8374af55cc5",
+      "externalName": "Cabal Therapy",
+      "nativeName": null,
+      "expected": "MISSING",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "191634b4-42e5-499f-a1a8-1d0407626be8",
+      "externalName": "Pick Your Poison",
+      "nativeName": "Pick Your Poison",
+      "expected": "AMBIGUOUS",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "4457ed35-7c10-48c8-9776-456485fdf070",
+      "externalName": "Lightning Bolt",
+      "nativeName": "Lightning Bolt",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "4744b086-fea2-4992-bfef-68c58cdf9cf0",
+      "externalName": "Wax // Wane",
+      "nativeName": "Wax // Wane",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "4924b3a4-a218-4783-8a4d-82361fdecc78",
+      "externalName": "Riverglide Pathway // Lavaglide Pathway",
+      "nativeName": "Riverglide Pathway",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "52934f16-eb9b-4d0a-b372-155461660f6e",
+      "externalName": "Hooded Kavu",
+      "nativeName": "Hooded Kavu",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "64d4bdc5-ff40-469d-bb25-82de0a49dfa4",
+      "externalName": "Heartwood Shard",
+      "nativeName": "Heartwood Shard",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "externalName": "Sol Ring",
+      "nativeName": "Sol Ring",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "82959ca2-cd96-4cca-9ce0-afb8db209860",
+      "externalName": "Bushi Tenderfoot // Kenzo the Hardhearted",
+      "nativeName": "Bushi Tenderfoot",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "8e356df5-ca92-4be2-871e-8965c2510fbe",
+      "externalName": "Tempt with Vengeance",
+      "nativeName": null,
+      "expected": "MISSING",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "9af4a832-d634-47aa-91ed-79d44fe08864",
+      "externalName": "Pick Your Poison",
+      "nativeName": "Pick Your Poison",
+      "expected": "AMBIGUOUS",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "a1d17244-9c92-4094-9843-d7ee31c85ea4",
+      "externalName": "Realm-Cloaked Giant // Cast Off",
+      "nativeName": "Realm-Cloaked Giant",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "b86c0c23-bb29-4af0-bbd4-50b3ae634375",
+      "externalName": "Firescreamer",
+      "nativeName": "Firescreamer",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "bce7e45d-b2c5-43aa-91a6-3a3c24f30850",
+      "externalName": "Bruna, the Fading Light",
+      "nativeName": "Bruna, the Fading Light",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+      "externalName": "Judith, the Scourge Diva",
+      "nativeName": "Judith, the Scourge Diva",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "c71b2325-bde6-4364-a93b-8477ffeb25d8",
+      "externalName": "Toxrill, the Corrosive",
+      "nativeName": "Toxrill, the Corrosive",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "externalName": "Sunforger",
+      "nativeName": "Sunforger",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "edd531b9-f615-4399-8c8c-1c5e18c4acbf",
+      "externalName": "Delver of Secrets // Insectile Aberration",
+      "nativeName": "Delver of Secrets",
+      "expected": "CONFIDENT",
+      "basis": "Source-led full physical name, native source definition/cost/types and archived Oracle record; no matcher outcome used to select expectation"
+    },
+    {
+      "externalOracleId": "f0c533a2-751a-4c5a-8cec-b83da3c8c62f",
+      "externalName": "Afterthought Sentry",
+      "nativeName": "Afterthought Sentry",
+      "expected": "CONFIDENT",
+      "expectedMetadataIssues": [
+        "NATIVE_LEGALITY_MISSING"
+      ],
+      "basis": "Native source read before enrichment output: cost and physical card types match; the required eligibility field is absent, not the physical definition"
+    },
+    {
+      "externalOracleId": "f36d1d8b-8303-44a9-ab56-531931641ea2",
+      "externalName": "Academy Manufactor",
+      "nativeName": "Academy Manufactor",
+      "expected": "CONFIDENT",
+      "expectedMetadataIssues": [
+        "NATIVE_FULL_IDENTITY_MISSING"
+      ],
+      "basis": "Native source read before enrichment output: cost and physical card types match; the required eligibility field is absent, not the physical definition"
+    }
+  ]
+}
