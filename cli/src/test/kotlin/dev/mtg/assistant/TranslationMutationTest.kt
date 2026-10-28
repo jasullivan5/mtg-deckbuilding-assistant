@@ -92,7 +92,7 @@ class TranslationMutationTest : FunSpec({
         try {s.check(s.original)} catch(e: AssertionError) {controlFailure=e}
         // M7's source-correct control exposes the known pinned collection-counter gap.
         // It cannot count as successful execution discrimination. Keep both failures visible.
-        if(s.id=="M7") (controlFailure!=null) shouldBe true else controlFailure shouldBe null
+        if(s.id=="M7" && System.getenv("ARGENTUM_CANDIDATE_REVISION")==null) (controlFailure!=null) shouldBe true else controlFailure shouldBe null
         var failure: AssertionError?=null
         try {s.check(s.changed)} catch(e: AssertionError) {failure=e}
         val violations=requirementProbe(s.changed)
