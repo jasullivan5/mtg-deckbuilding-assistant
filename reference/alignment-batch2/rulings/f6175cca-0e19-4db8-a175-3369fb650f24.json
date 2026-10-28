@@ -1,0 +1,41 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "source": "wotc",
+      "published_at": "2009-10-01",
+      "comment": "The controller of the enchanted creature may activate the ability, not the controller of Predatory Urge."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "source": "wotc",
+      "published_at": "2009-10-01",
+      "comment": "If the enchanted creature’s ability is activated, that creature is the one that will deal and be dealt damage when the ability resolves. It doesn’t matter if Predatory Urge leaves the battlefield or somehow becomes attached to another creature by that time."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "source": "wotc",
+      "published_at": "2009-10-01",
+      "comment": "If the targeted creature leaves the battlefield (or otherwise becomes an illegal target) before the ability resolves, the ability doesn’t resolve. The enchanted creature isn’t dealt damage."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "source": "wotc",
+      "published_at": "2009-10-01",
+      "comment": "On the other hand, if the enchanted creature leaves the battlefield before the ability resolves, the ability continues to resolve. The enchanted creature deals damage to the targeted creature equal to the power the enchanted creature had as it last existed on the battlefield."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "source": "wotc",
+      "published_at": "2009-10-01",
+      "comment": "You may have the enchanted creature target itself with its own ability. If you do, it will deal damage to itself equal to its power, then immediately do it again."
+    }
+  ]
+}

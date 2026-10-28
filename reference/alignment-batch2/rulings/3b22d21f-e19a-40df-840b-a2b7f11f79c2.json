@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+      "source": "wotc",
+      "published_at": "2023-06-16",
+      "comment": "Galadhrim Ambush counts all attacking creatures no matter which player, planeswalker, or battle they're attacking, including attacking creatures you control if Galadhrim Ambush is cast during your combat phase."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+  "name": "Hour of Promise",
+  "layout": "normal",
+  "color_identity": [
+    "G"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "legal",
+    "timeless": "legal",
+    "gladiator": "legal",
+    "pioneer": "legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "legal",
+    "competitivebrawl": "legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "not_legal",
+    "tlr": "not_legal"
+  },
+  "oracle_text": "Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle. Then if you control three or more Deserts, create two 2/2 black Zombie creature tokens.",
+  "mana_cost": "{4}{G}",
+  "type_line": "Sorcery",
+  "keywords": [],
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A51ff3e53-90bb-41bf-80e4-bb3fd51d574a&unique=prints"
+}

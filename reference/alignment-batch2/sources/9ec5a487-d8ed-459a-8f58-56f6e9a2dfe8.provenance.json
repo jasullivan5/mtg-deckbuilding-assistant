@@ -1,0 +1,14 @@
+{
+  "wallSeconds": 1.146,
+  "projection": "Mechanics, printing and source links; market fields omitted",
+  "retrievedAt": "2026-10-28T05:05:05.989785+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8&unique=prints",
+  "earliestPrinting": {
+    "set": "thb",
+    "collectorNumber": "243",
+    "releasedAt": "2020-01-24",
+    "id": "ff0dd221-2660-43f6-8e28-8000e3fe72a4"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "3a0d7bc3d6bc5a56067dcc5d75ab56b95cafb40e3c1d3839f382cfee5ee0e203"
+}

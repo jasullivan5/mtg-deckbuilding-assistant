@@ -1,0 +1,87 @@
+{
+  "object": "card",
+  "id": "b88ab58b-918b-478a-8c6b-a213e2bc87ab",
+  "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+  "name": "Savage Conception",
+  "released_at": "2008-07-25",
+  "uri": "https://api.scryfall.com/cards/b88ab58b-918b-478a-8c6b-a213e2bc87ab",
+  "scryfall_uri": "https://scryfall.com/card/eve/75/savage-conception?utm_source=api",
+  "layout": "normal",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679",
+    "normal": "https://cards.scryfall.io/normal/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679",
+    "large": "https://cards.scryfall.io/large/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679",
+    "png": "https://cards.scryfall.io/png/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.png?1783942679",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679",
+    "thumb": "https://cards.scryfall.io/thumb/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.webp?1783942679",
+    "grid": "https://cards.scryfall.io/grid/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.webp?1783942679",
+    "display": "https://cards.scryfall.io/display/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.webp?1783942679",
+    "art": "https://cards.scryfall.io/art/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.webp?1783942679",
+    "crop": "https://cards.scryfall.io/crop/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.webp?1783942679",
+    "jpeg": "https://cards.scryfall.io/normal/front/b/8/b88ab58b-918b-478a-8c6b-a213e2bc87ab.jpg?1783942679"
+  },
+  "mana_cost": "{3}{G}{G}",
+  "type_line": "Sorcery",
+  "oracle_text": "Create a 3/3 green Beast creature token.\nRetrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)",
+  "colors": [
+    "G"
+  ],
+  "color_identity": [
+    "G"
+  ],
+  "keywords": [
+    "Retrace"
+  ],
+  "all_parts": [
+    {
+      "object": "related_card",
+      "id": "b88ab58b-918b-478a-8c6b-a213e2bc87ab",
+      "component": "combo_piece",
+      "name": "Savage Conception",
+      "type_line": "Sorcery",
+      "uri": "https://api.scryfall.com/cards/b88ab58b-918b-478a-8c6b-a213e2bc87ab"
+    },
+    {
+      "object": "related_card",
+      "id": "3fc3a29a-280d-4f2c-9a01-8cfead75f583",
+      "component": "token",
+      "name": "Beast",
+      "type_line": "Token Creature — Beast",
+      "uri": "https://api.scryfall.com/cards/3fc3a29a-280d-4f2c-9a01-8cfead75f583"
+    }
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "competitivebrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal",
+    "tlr": "not_legal"
+  },
+  "set": "eve",
+  "set_type": "expansion",
+  "rulings_uri": "https://api.scryfall.com/cards/b88ab58b-918b-478a-8c6b-a213e2bc87ab/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A494050f4-0a55-415d-9ae9-feb17e61c4e1&unique=prints",
+  "collector_number": "75",
+  "rarity": "uncommon",
+  "flavor_text": "Some beasts are born not of a mother, but of magic.",
+  "artist": "William O'Connor"
+}

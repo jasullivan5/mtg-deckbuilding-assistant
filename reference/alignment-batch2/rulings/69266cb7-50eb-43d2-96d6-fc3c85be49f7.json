@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "You may tap multiples of these in response to each other because the requirement for 7 cards is checked only at the time the ability is announced and not again when it resolves."
+    }
+  ]
+}

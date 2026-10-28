@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "2d09e689-c163-48c5-af5d-766f110d041e",
+      "source": "wotc",
+      "published_at": "2024-11-08",
+      "comment": "You don't choose a target for Spiked Tyrranax's ability at the time it triggers. Rather, a second \"reflexive\" ability triggers when you pay {2}{G} this way. You choose a target for that ability as it goes on the stack. Each player may respond to this triggered ability as normal."
+    }
+  ]
+}

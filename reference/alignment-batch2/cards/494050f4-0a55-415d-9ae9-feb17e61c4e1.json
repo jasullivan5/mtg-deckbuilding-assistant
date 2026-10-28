@@ -1,0 +1,40 @@
+{
+  "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+  "name": "Savage Conception",
+  "layout": "normal",
+  "color_identity": [
+    "G"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "competitivebrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal",
+    "tlr": "not_legal"
+  },
+  "oracle_text": "Create a 3/3 green Beast creature token.\nRetrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)",
+  "mana_cost": "{3}{G}{G}",
+  "type_line": "Sorcery",
+  "keywords": [
+    "Retrace"
+  ],
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A494050f4-0a55-415d-9ae9-feb17e61c4e1&unique=prints"
+}

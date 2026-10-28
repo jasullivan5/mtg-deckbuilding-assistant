@@ -1,0 +1,150 @@
+{
+  "baseCommit": "79d4b5cde31546cb29e6f529dd3a8faba5410d5d",
+  "commander": "Oviya Pashiri, Sage Lifecrafter",
+  "allowedIdentity": [
+    "G"
+  ],
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "coverageReportSha256": "6ec2c9a03dfbcdd3069f8f1da0a266baf7a67aab687ca6ac66ebd9395dbee39b",
+  "eligiblePool": 7420,
+  "missingPool": 3436,
+  "method": "Ordered slots ['Creature', 'Instant', 'Sorcery', 'Enchantment', 'Artifact', 'Land', 'Creature', 'Instant', 'Sorcery', 'Enchantment', 'Artifact', 'Land']; unused minimum SHA256(snapshotSha256 + :alignment-batch-2: + oracleId) among confirmed missing physical cards of that primary type. No mechanical, objective, popularity, familiarity or Assay filter; prior investigations do not affect ranking. Frozen before diagnosis.",
+  "cards": [
+    {
+      "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+      "name": "Spined Tyrranax",
+      "stratum": "Creature",
+      "selectionHash": "002ad995a0605da849620ead32f1000c91408ab51850a9fbb1bc1e89dc34c0a1",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+      "name": "Might of Murasa",
+      "stratum": "Instant",
+      "selectionHash": "018fd8369d31db113c89bbfa2004345173e0c116581eb98b33e5b15896194190",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+      "name": "Savage Conception",
+      "stratum": "Sorcery",
+      "selectionHash": "01f25c4eb25a8fce8eda234fe70bbaae8f5d9f666be8b079590f6c3baa3be35f",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "name": "Predatory Urge",
+      "stratum": "Enchantment",
+      "selectionHash": "0000c484093bd4cd6d89eb0a11deb898a4d547a3f1a33e649b8b7f1c641553d7",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+      "name": "Paradise Mantle",
+      "stratum": "Artifact",
+      "selectionHash": "0012cc0506959a0ebf950ad33f93dc5bc8fd5a9ad34ba03f3e3d9445625aa9f4",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "name": "Labyrinth of Skophos",
+      "stratum": "Land",
+      "selectionHash": "01bd0596518951f18db05a3edf13970cefbbff9483b500a5fd1ab3cddfceeb1e",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+      "name": "Magus of the Library",
+      "stratum": "Creature",
+      "selectionHash": "003c7498b698b66c6e90bdf7b6d5155547b6396def81feb8ea43196a7da18c10",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+      "name": "Galadhrim Ambush",
+      "stratum": "Instant",
+      "selectionHash": "01a0d7317cf2ff4afdaca9c731e55d97921d91cbf9c4549802304705abef59ab",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "name": "Hour of Promise",
+      "stratum": "Sorcery",
+      "selectionHash": "01f5abccdef127cb71867cb3c443cf64d946a7235e2900020f97d46610311807",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "80875914-df4c-4b05-8c4d-658ff477c956",
+      "name": "Momentum",
+      "stratum": "Enchantment",
+      "selectionHash": "00abe7e1d185fa621586726587f47bbd99a87bcd5ba1f9a98bc49eb5f2959bfb",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "name": "Sword of Truth and Justice",
+      "stratum": "Artifact",
+      "selectionHash": "0092b44bc74e309abcc5f72bab39078a3180c5d2b3ca79bca2c8e1e71b7f8f03",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    },
+    {
+      "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+      "name": "Throne of Makindi",
+      "stratum": "Land",
+      "selectionHash": "01fca1147aafb3a61e4e53db41611f3053a0070783b5af6a9b38f9ba9c7b9134",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "previouslyInvestigated": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "source": "wotc",
+      "published_at": "2018-01-19",
+      "comment": "There are many important moments in the story, but the most crucial—called \"story spotlights\"—are shown on cards. These cards have the Planeswalker symbol in their text box; this symbol has no effect on gameplay. You can read more about these events in the official Magic fiction at http://www.mtgstory.com."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "source": "wotc",
+      "published_at": "2017-07-14",
+      "comment": "When Hour of Promise checks the number of Deserts you control, it includes any Deserts you found earlier with Hour of Promise."
+    }
+  ]
+}

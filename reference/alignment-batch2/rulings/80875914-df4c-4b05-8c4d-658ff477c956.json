@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "80875914-df4c-4b05-8c4d-658ff477c956",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "Putting on a counter is optional. If you forget, you can't go back later even if it is something you usually do."
+    }
+  ]
+}

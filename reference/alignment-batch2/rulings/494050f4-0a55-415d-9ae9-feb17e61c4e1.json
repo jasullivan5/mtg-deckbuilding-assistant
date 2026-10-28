@@ -1,0 +1,34 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+      "source": "wotc",
+      "published_at": "2008-08-01",
+      "comment": "Casting a card by using its retrace ability works just like casting any other spell, with two exceptions: You’re casting it from your graveyard rather than your hand, and you must discard a land card in addition to any other costs."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+      "source": "wotc",
+      "published_at": "2008-08-01",
+      "comment": "A retrace card cast from your graveyard follows the normal timing rules for its card type."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+      "source": "wotc",
+      "published_at": "2008-08-01",
+      "comment": "When a retrace card you cast from your graveyard resolves, fails to resolve, or is countered, it’s put back into your graveyard. You may use the retrace ability to cast it again."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+      "source": "wotc",
+      "published_at": "2008-08-01",
+      "comment": "If the active player casts a spell that has retrace, that player may cast that card again after it resolves, before another player can remove the card from the graveyard. The active player has priority after the spell resolves, so they can immediately cast a new spell. Since casting a card with retrace from the graveyard moves that card onto the stack, no one else would have the chance to affect it while it’s still in the graveyard."
+    }
+  ]
+}

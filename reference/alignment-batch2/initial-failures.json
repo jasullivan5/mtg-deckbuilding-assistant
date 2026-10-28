@@ -1,0 +1,41 @@
+{
+  "focusedLogSha256": "3ca23d1f157ba38d192c74ecab79f4b9937f85cbcadce9c8104a14fa8d55591e",
+  "scenarioFailures": [
+    {
+      "suite": "dev.mtg.assistant.PredatoryUrgeScenarioTest",
+      "case": "granted sequential damage uses the original host and LKI after removal=true",
+      "type": "java.lang.NullPointerException",
+      "message": "java.lang.NullPointerException"
+    },
+    {
+      "suite": "dev.mtg.assistant.SwordOfTruthAndJusticeScenarioTest",
+      "case": "combat damage chooses a creature at resolution without targeting, then proliferates its new counter",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "org.opentest4j.AssertionFailedError: expected:<2> but was:<1>"
+    }
+  ],
+  "compileFailures": {
+    "classification": "AUTHORING_OR_TEST_HARNESS_API_ERRORS_NOT_ENGINE_FAILURES",
+    "details": [
+      "Initial kicker property and imports did not match the pin; corrected to KeywordAbility.kicker, SearchDestination and ComparisonOperator imports.",
+      "clearHand is a local helper in the upstream example, not a GameTestDriver member; reused that fixture helper explicitly.",
+      "The combat trigger facade is dealsCombatDamage(Recipient.AnyPlayer), not dealsCombatDamageToPlayer."
+    ]
+  },
+  "diagnosis": [
+    {
+      "card": "Predatory Urge",
+      "classification": "AUTHORING_COMPOSITION_REFERENCE_SEMANTICS",
+      "observation": "Explicit Self damage-source override resolves a live object and skips damage after host removal.",
+      "correction": "Use native implicit ability source for the first damage instruction; the return damage still explicitly names the other dealer.",
+      "verified": "Both normal and source-removed scenarios pass with a 3-power recipient; no SDK/engine change."
+    },
+    {
+      "card": "Sword of Truth and Justice",
+      "classification": "TEST_FIXTURE_EXPECTATION",
+      "observation": "One eligible creature was selected automatically, so only the proliferate dialog appeared.",
+      "correction": "Use two eligible creatures to exercise actual player choice; also test a green spell as a permitted protection control.",
+      "verified": "Corrected choice/counter/proliferate and all three color boundaries pass."
+    }
+  ]
+}
