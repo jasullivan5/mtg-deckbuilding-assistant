@@ -1,0 +1,118 @@
+{
+  "applicationBase": "6e1c26028fd9dffe6335d9494edce8aa362e32e7",
+  "engineRevision": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "command": "VERIFY_KNOWN_ENGINE_GAPS=1 dev.ps1 test --tests dev.mtg.assistant.TranslationReliabilityScenarioTest --tests dev.mtg.assistant.TatterkiteScenarioTest",
+  "logSha256": "25f3b64de469b234e78dc563a42635396671700e0664c6281318a6e59069896e",
+  "suites": [
+    {
+      "suite": "dev.mtg.assistant.TatterkiteScenarioTest",
+      "tests": "6",
+      "failures": "0",
+      "cases": [
+        {
+          "name": "PLUS_ONE_PLUS_ONE counter prohibition=true preserves other spell effects",
+          "failure": null
+        },
+        {
+          "name": "PLUS_ONE_PLUS_ONE counter prohibition=false preserves other spell effects",
+          "failure": null
+        },
+        {
+          "name": "MINUS_ONE_MINUS_ONE counter prohibition=true preserves other spell effects",
+          "failure": null
+        },
+        {
+          "name": "MINUS_ONE_MINUS_ONE counter prohibition=false preserves other spell effects",
+          "failure": null
+        },
+        {
+          "name": "CHARGE counter prohibition=true preserves other spell effects",
+          "failure": null
+        },
+        {
+          "name": "CHARGE counter prohibition=false preserves other spell effects",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "suite": "dev.mtg.assistant.TranslationReliabilityScenarioTest",
+      "tests": "18",
+      "failures": "1",
+      "cases": [
+        {
+          "name": "PU1 opponent host controls activation and pays tap",
+          "failure": null
+        },
+        {
+          "name": "PU2 illegal prey prevents all damage",
+          "failure": null
+        },
+        {
+          "name": "PU4 Aura removal preserves original host",
+          "failure": null
+        },
+        {
+          "name": "PU4 removed host deals last known damage",
+          "failure": null
+        },
+        {
+          "name": "HP1 zero search is legal and still shuffles",
+          "failure": null
+        },
+        {
+          "name": "HP2 opponent Deserts do not count",
+          "failure": null
+        },
+        {
+          "name": "HP3 condition follows fetched Deserts",
+          "failure": null
+        },
+        {
+          "name": "LW1 opponent can decline without shuffle",
+          "failure": null
+        },
+        {
+          "name": "LW1 accepted search reveals to all then shuffles",
+          "failure": null
+        },
+        {
+          "name": "LW2 absent named card can fail to find",
+          "failure": null
+        },
+        {
+          "name": "TK2 known pinned collection-counter failure remains reproducible",
+          "failure": "org.opentest4j.AssertionFailedError: expected:<0> but was:<1>"
+        },
+        {
+          "name": "SJ2 noncombat damage to player does not trigger Sword",
+          "failure": null
+        },
+        {
+          "name": "SJ3 shroud does not prevent nontargeting choice",
+          "failure": null
+        },
+        {
+          "name": "SJ3 counter prohibition skips placement but still proliferates",
+          "failure": null
+        },
+        {
+          "name": "SJ3 no creatures still proliferates",
+          "failure": null
+        },
+        {
+          "name": "PC3 all illegal targets prevent life modes",
+          "failure": null
+        },
+        {
+          "name": "PC1 PC3 partial legal targets and printed order",
+          "failure": null
+        },
+        {
+          "name": "PC2 repeated same target moves once without preventing life",
+          "failure": null
+        }
+      ]
+    }
+  ]
+}

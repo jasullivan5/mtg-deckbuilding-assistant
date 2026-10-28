@@ -1,0 +1,26 @@
+{
+  "configuration": "CANDIDATE_FOCUSED",
+  "fixtureSha256": "09ff80b5a79c7937e22ce0ca35017d3efb6187e79c28873a40a233ab725f8ac0",
+  "tests": 17,
+  "failures": 0,
+  "cases": [
+    "mixed recipients respect prohibition and continue for PLUS_ONE_PLUS_ONE",
+    "mixed recipients respect prohibition and continue for MINUS_ONE_MINUS_ONE",
+    "mixed recipients respect prohibition and continue for CHARGE",
+    "all prohibited recipients emit no placement events and later instruction resolves",
+    "multiple ordinary recipients receive correct counters and preserve unrelated kinds",
+    "single-object and collection state and events agree: prohibited=false",
+    "single-object and collection state and events agree: prohibited=true",
+    "additive replacement remains recipient and controller scoped after prohibition",
+    "doubling replacement does not override a prohibition",
+    "replacement reducing placement to zero emits no event or first-placement mark",
+    "at maximum counters collection placement is a no-op without an event",
+    "player placement records cap lock even when its source leaves",
+    "zero and negative amounts do not create events even with an additive replacement",
+    "empty and nonexistent collection members are skipped without stopping eligible recipients",
+    "dynamic amount overrides count and is evaluated once before any recipient changes",
+    "first-placement flags are tracked separately for recipient and counter kind",
+    "state-based deaths happen after the following instruction, not between collection recipients"
+  ],
+  "logSha256": "6be14b92b667b012f91ac23e27ce52db3dbb5d1edbc2f58a86e5e445c629c722"
+}
