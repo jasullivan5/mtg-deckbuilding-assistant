@@ -17,6 +17,8 @@ object Extensions {
     val all: List<ExtensionDefinition> by lazy { listOf(
         ExtensionDefinition(PredatoryUrge,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PredatoryUrge.kt","2026-10-28"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/PredatoryUrgeScenarioTest.kt"))),
+        ExtensionDefinition(SwordOfTruthAndJustice,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/SwordOfTruthAndJustice.kt","2026-10-28"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/SwordOfTruthAndJusticeScenarioTest.kt"))),
         ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
