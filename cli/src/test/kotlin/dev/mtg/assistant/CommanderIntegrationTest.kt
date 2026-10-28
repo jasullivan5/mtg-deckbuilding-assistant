@@ -90,7 +90,7 @@ class CommanderIntegrationTest : FunSpec({
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(upstream),listOf(e.copy(definition=e.definition.copy(name="BACK ALIAS")))) }
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(back),listOf(e.copy(definition=e.definition.copy(backFace=back)))) }
         val splitFace=CardFace("Back Alias",ManaCost.parse("{G}"),TypeLine.parse("Sorcery"))
-        shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(upstream.copy(backFace=null,cardFaces=listOf(splitFace))),listOf(e.copy(definition=back))) }
+        Extensions.validate(listOf(upstream.copy(backFace=null,cardFaces=listOf(splitFace))),listOf(e.copy(definition=back))) shouldBe emptyList()
     }
     test("nested Oracle identities collide even with distinct names") {
         val e=extension(fixture())

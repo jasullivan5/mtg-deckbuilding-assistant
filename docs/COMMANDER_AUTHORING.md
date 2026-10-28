@@ -26,7 +26,7 @@ Single fixed-identity commander selection is supported. A partner-capable legend
 
 Put a native `CardDefinition` in `cli/src/main/kotlin/dev/mtg/assistant/extensions/`, using the existing SDK DSL. Preserve authoritative identity/legality metadata and relevant faces; do not use card-name exceptions in extraction or queries. Add an `ExtensionDefinition` to `Extensions.all` with dated `APPLICATION_EXTENSION` provenance and a source path. Record scenario references in `DefinitionReview`; these describe bounded test coverage, not universal correctness.
 
-Registration validates every nested native definition, required metadata/provenance, case-insensitive names/face aliases and Oracle identities against both upstream and other additions before registering anything. Known-incomplete additions are refused. On a future pin change, a newly authored upstream version must cause a collision rather than silently override either definition: compare them, preserve tests/provenance, and deliberately retire the extension in a separately reviewed change.
+Registration validates every nested native definition, required metadata/provenance, case-insensitive root names and registered back/flip aliases (embedded spell-face names are not registrations) and Oracle identities against both upstream and other additions before registering anything. Known-incomplete additions are refused. Validator ERROR findings block; WARNING findings remain available through Catalog.validationWarnings and commander inspection nativeValidationWarnings, without marking mechanics incomplete. Embedded spell faces retain their mechanics without claiming a separate physical identity or provenance entry. On a future pin change, a newly authored upstream version must cause a collision rather than silently override either definition: compare them, preserve tests/provenance, and deliberately retire the extension in a separately reviewed change.
 
 ## Verify mechanics and discovery
 
@@ -53,3 +53,11 @@ The same registration and verification workflow applies to noncommander cards. P
 ## Reviewed eligibility metadata
 
 Existing native definitions can receive a small application-owned, individually approved eligibility correction without authoring a replacement definition. Commander inspection/selection and discovery use Catalog.eligibility; original native mechanics and metadata remain available. Inspection JSON/text records applied corrections and original values. Identity/Commander-format search filters and coverage share these values. See [ELIGIBILITY_CORRECTIONS.md](ELIGIBILITY_CORRECTIONS.md). Missing/unreviewed fields still block admission; corrected metadata does not certify mechanics or expand supported construction rules.
+
+## External-definition safeguards
+
+`ExtensionStructureTest` snapshots only `Extensions.all`, using native `CardExporter`, and checks `CardLoader.fromJsonPreservingIds` round-trips. It also exercises nested/embedded face structures and a focused facade/source boundary adapted from the pinned upstream test. `CardValidator` continues to own structural/dataflow lint.
+
+Run `dev.ps1 test --tests dev.mtg.assistant.ExtensionStructureTest`. Intentional snapshot updates: set `$env:UPDATE_EXTENSION_SNAPSHOTS='1'`, run that test with `--rerun`, then remove the environment variable and review every JSON diff under `cli/src/test/resources/extensions/`. Never accept a snapshot change as evidence that it matches Oracle.
+
+Simple compositions of established primitives can rely on independent Oracle/ruling review plus these structural nets. Add native per-card scenarios for first uses and consequential costs, choices, timing, resolution values, replacement/layer or linked interactions. Existing scenarios remain useful bounded evidence. Research-only partial findings belong in the batch ledger; known omissions still block executable extension admission.

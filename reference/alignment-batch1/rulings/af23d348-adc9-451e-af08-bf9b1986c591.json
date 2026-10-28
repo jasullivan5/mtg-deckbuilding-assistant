@@ -1,0 +1,69 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "If a permanent ever has both +1/+1 counters and -1/-1 counters on it at the same time, they're removed in pairs as a state-based action so that the permanent has only one of those kinds of counters on it."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "If a player or permanent has more than one kind of counter on it, and you choose for it to get additional counters, it must get one of each kind of counter it already has. You can't have it get just one kind of counter it already has and not the others."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "An ability that triggers \"Whenever you proliferate\" triggers even if you chose no permanents or players while doing so."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "Players can respond to a spell or ability whose effect includes proliferating. Once that spell or ability starts to resolve, however, and its controller chooses which permanents and players will get new counters, it's too late for anyone to respond."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "To proliferate, you can choose any permanent that has a counter, including ones controlled by opponents. You can choose any player who has a counter, including opponents. You can't choose cards in any zone other than the battlefield, even if they have counters on them."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2023-02-04",
+      "comment": "You don't have to choose every permanent or player that has a counter, only the ones you want to add another counter to. Since \"any number\" includes zero, you don't have to choose any permanents at all, and you don't have to choose any players at all."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2019-05-03",
+      "comment": "A permanent card is an artifact, creature, enchantment, land, or planeswalker card."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2019-05-03",
+      "comment": "If the second mode is chosen at least once, and every target permanent card is an illegal target by the time Planewide Celebration tries to resolve, the spell doesn't resolve. None of the other chosen modes happen. If only some of the targets are illegal targets but at least one is still legal, you still do as much as you can and the illegal targets aren't affected."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "source": "wotc",
+      "published_at": "2019-05-03",
+      "comment": "No matter which combination of modes you choose, you always follow the instructions of Planewide Celebration in the order they are written. If a mode is chosen more than once, you perform that mode's instruction that many times sequentially."
+    }
+  ]
+}

@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 1,
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "selection": "selection.json",
+  "cards": [
+    {
+      "oracleId": "67a10da3-76f2-4f4a-90d1-e77abb5842fe",
+      "name": "Experiment Twelve",
+      "stratum": "Creature",
+      "selectionHash": "0059bbaa535daaacb3717414f22a87f48ec7eb5bde9ace5f916b7c1819e7ccc6",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/67a10da3-76f2-4f4a-90d1-e77abb5842fe.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "Disguise + trample; creature-only controlled turn-face-up trigger; dynamic power read on the affected creature at resolution.",
+        "nativeComparators": [
+          "PineWalker.kt",
+          "DynamicAmounts.powerOf",
+          "Triggers.you.permanentTurnedFaceUp"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "ExperimentTwelveScenarioTest",
+        "passed": 2,
+        "cases": [
+          "self disguise turn-up creates a stack trigger and doubles resolution power",
+          "power is read at resolution and opposing face-up events do not trigger our Twelve"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 2
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 2
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 2
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "New scenarios cover turn-up, controller scope and resolution power. Face-down casting, ward payment and last-known power after the affected creature leaves were not independently exercised here."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "9566062028a788f5c59cc054004d8644f0e663ccdbc91d5ba6fb2be94902663c",
+        "rulingsSha256": "8669a76ec39f5280280f2c3f017f3cb5c0d74c3b8c635372cced91e17d0b8da2",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "905a6d6c-5ef8-4afa-89bb-9d85a854743f",
+      "name": "Revealing Wind",
+      "stratum": "Instant",
+      "selectionHash": "021cb710fade0a39b4e7dc8ace17751ccc6fb6062857279f22a96a74fbb43038",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/905a6d6c-5ef8-4afa-89bb-9d85a854743f.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "UNRESOLVED_COMPOSITION_AND_EXECUTION",
+        "newSdkTypes": false,
+        "partialFindings": [
+          {
+            "capability": "Prevent all combat damage this turn",
+            "status": "EXISTING_NATIVE_PREVENTION_FACILITIES_IDENTIFIED_NOT_EXECUTED"
+          },
+          {
+            "capability": "Look at face-down creatures",
+            "status": "SINGLE_TARGET_AND_PLAYER_SCOPES_EXIST_COMBAT_FILTERED_COMPOSITION_UNVERIFIED"
+          }
+        ]
+      },
+      "translationFidelity": {
+        "status": "NOT_COMPLETED",
+        "review": null,
+        "nativeComparators": []
+      },
+      "engineExecution": {
+        "status": "NOT_EXECUTED",
+        "scenarios": null
+      },
+      "discovery": {
+        "status": "NOT_EVALUATED_NATIVE_DEFINITION_MISSING"
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction."
+      ],
+      "blocker": {
+        "classification": "UNRESOLVED_SDK_COMPOSITION_AND_EXECUTION",
+        "evidence": [
+          "DrawingEffects.kt: FaceDownLookScope only SINGLE_TARGET and ALL_CONTROLLED_BY_TARGET_PLAYER",
+          "Effects.LookAtFaceDown",
+          "Effects.ForEachInGroup"
+        ],
+        "detail": "The fog portion is expressible. A faithful optional, nontargeting look at precisely attacking/blocking face-down creatures needs verified iteration/binding and hidden-information behavior; the existing two scope values alone are insufficient. No assertion that the SDK is categorically incapable.",
+        "smallestNextCheck": "Prototype a filtered group iteration using SINGLE_TARGET on its bound object; test combat restrictions, individual may choices and visibility. No new enum until composition is disproved."
+      },
+      "status": "INVESTIGATED_UNRESOLVED"
+    },
+    {
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "name": "Planewide Celebration",
+      "stratum": "Sorcery",
+      "selectionHash": "01245f6a9274a1846ecde637ffd484fb4aa9717cb4a2ac1d202b312effa69f90",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/af23d348-adc9-451e-af08-bf9b1986c591.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "Four repeatable modes in printed order; all-five-color 2/2 Citizen; own-graveyard permanent to hand; proliferate; gain four life.",
+        "nativeComparators": [
+          "CosmiumConfluence.kt",
+          "ModalEffectExecutor.kt",
+          "Effects.Proliferate"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "PlanewideCelebrationScenarioTest",
+        "passed": 5,
+        "cases": [
+          "four repeats of mode 0 execute separately",
+          "four repeats of mode 3 execute separately",
+          "targeted permanent returns to hand alongside three life modes",
+          "proliferation chosen at resolution adds every existing counter kind",
+          "three chosen modes cannot substitute for four"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 3
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [
+              "NO_MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "NO_MATCH",
+                "mechanicalCompatibility": "NO_MATCH",
+                "policyAcceptance": null,
+                "localSupport": "SUPPORTED",
+                "operation": "MOVE_OBJECT",
+                "branch": "REANIMATE_OWN_CREATURE",
+                "affectedScope": "source=GRAVEYARD; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); destination=HAND; entry-controller=OWNER; selection=targeted=true; count=1; min=1; optional=false; chooser=Controller; native=TargetObject(count=1, unlimited=false, minCount=1, optional=false, filter=TargetFilter(baseFilter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]), zone=GRAVEYARD, excludeSelf=false, excludeTriggeringEntity=false, alternatives=[]), id=t0, dynamicMaxCount=null, dynamicMinCount=null, sameController=false, sameOwner=false, ownerDistribution=null, sameNumericProperty=null, differentNumericProperty=null, sameCreatureType=false, sameCardType=false, totalManaValueAtMost=null, differentNames=false, differentControllers=false, onePerCardType=false, onePerColor=false, chooser=Controller); binding=BoundVariable(name=t0)",
+                "decisions": [
+                  {
+                    "stage": "operation-MOVE_OBJECT",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "creature-card",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "source-GRAVEYARD",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "owner-YOU",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "destination-BATTLEFIELD",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "entry-controller-YOU",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=GRAVEYARD/ANY; destination=HAND/OWNER; filter=GameObjectFilter(cardPredicates=[IsPermanent], statePredicates=[], controllerPredicate=OwnedByYou, anyOf=[]); binding=BoundVariable(name=t0); confidence=MATCH; unresolved=[]"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 2
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [
+              "MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "MATCH",
+                "mechanicalCompatibility": "MATCH",
+                "policyAcceptance": null,
+                "localSupport": "SUPPORTED",
+                "operation": "CREATE_TOKEN",
+                "branch": "CREATE_CREATURE_TOKEN",
+                "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Citizen, copySource=null, creationEvent=script.spellEffect.modes[0].effect, characteristics=[Creature, colors=[WHITE, BLUE, BLACK, RED, GREEN], subtypes=[Citizen], P/T=2/2, entry/delayed riders and granted abilities retained in native node]); entry-controller=YOU; binding=null",
+                "decisions": [
+                  {
+                    "stage": "operation-CREATE_TOKEN",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "created-creature-true",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "entry-controller-YOU",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "positive-quantity-potential",
+                    "verdict": "MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/YOU; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 3
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "New scenarios cover repeat choices, token colors, permanent-card return, proliferating multiple counter kinds, and rejecting too few modes. Whole-spell fizzle when all graveyard targets become illegal was not newly exercised."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "78e218d092e65f66ed16cf6a9e89d5e4f3fadb0577b1cb7d23370ebf3c558e72",
+        "rulingsSha256": "bdd1279adb1ffa1512cb63fdbed9ee8c416f61d23469556e6e3c4f660a256dbe",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
+      "name": "Mortal Wound",
+      "stratum": "Enchantment",
+      "selectionHash": "00d1557d4341eab43e3f42099f55480b11ef9e514f29e60422be4d0822261859",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/f7b70077-5518-45f9-9833-01a4f8afac71.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "Aura targets any creature; damage received triggers destruction of the enchanted creature, without targeting it again.",
+        "nativeComparators": [
+          "MireBlight.kt",
+          "Triggers.attached.isDealtDamage"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "MortalWoundScenarioTest",
+        "passed": 2,
+        "cases": [
+          "enchanted opponent creature: 0 damage tests actual damage trigger and destruction",
+          "enchanted opponent creature: 1 damage tests actual damage trigger and destruction"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [
+              "NO_MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "NO_MATCH",
+                "mechanicalCompatibility": "UNKNOWN",
+                "policyAcceptance": "NO_MATCH",
+                "localSupport": "PARTIALLY_SUPPORTED",
+                "operation": "DESTROY",
+                "branch": "DIRECT_DEATH_GENERATOR",
+                "affectedScope": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; Unresolved target: EnchantedCreature; constraints=[]",
+                "decisions": [
+                  {
+                    "stage": "potential-creature-death",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; Unresolved target: EnchantedCreature; constraints=[]"
+                  },
+                  {
+                    "stage": "controller-YOU",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; Unresolved target: EnchantedCreature; constraints=[]"
+                  },
+                  {
+                    "stage": "token-NONTOKEN",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=true; Unresolved target: EnchantedCreature; constraints=[]"
+                  },
+                  {
+                    "stage": "death-generation-policy",
+                    "verdict": "NO_MATCH",
+                    "basis": "POLICY",
+                    "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 1
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [
+              "NO_MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "NO_MATCH",
+                "mechanicalCompatibility": "NO_MATCH",
+                "policyAcceptance": null,
+                "localSupport": "SUPPORTED",
+                "operation": "MOVE_OBJECT",
+                "branch": "REANIMATE_OWN_CREATURE",
+                "affectedScope": "source=null; graveyard/zone-player=UNKNOWN; native ownership/filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=GRAVEYARD; entry-controller=OWNER; selection=Binding=EnchantedCreature; selection not inferred as targeting; binding=EnchantedCreature",
+                "decisions": [
+                  {
+                    "stage": "operation-MOVE_OBJECT",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  },
+                  {
+                    "stage": "creature-card",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  },
+                  {
+                    "stage": "source-GRAVEYARD",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  },
+                  {
+                    "stage": "owner-YOU",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  },
+                  {
+                    "stage": "destination-BATTLEFIELD",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  },
+                  {
+                    "stage": "entry-controller-YOU",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=null/UNKNOWN; destination=GRAVEYARD/OWNER; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=EnchantedCreature; confidence=MATCH; unresolved=[Unresolved target: EnchantedCreature]"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 1
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 2,
+            "unsupportedRecords": 1
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "New scenarios cover damage versus zero damage and the resulting destruction/Aura cleanup. Indestructible, regeneration, prevention and attachment changes were not newly exercised."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "b43bda76c5051d70a0fa6fa1b60173b926159afbcc2db2840a5c200e33394a4f",
+        "rulingsSha256": "e50d5ecf98f6f6b80bcbe436b82a78308bef7d6a1caf009b0f3219e152a34ca9",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "name": "Tatterkite",
+      "stratum": "Artifact",
+      "selectionHash": "00bc92ec8ff2180e179260041cac60986a5c40f93d81ec9f208252520e187ec9",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/9505f124-f152-48ce-b0d3-097abdda8e3e.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "2/1 flying artifact creature with an all-counter prohibition on the source; not a replacement limited to -1/-1 counters.",
+        "nativeComparators": [
+          "Blossombind.kt",
+          "CantReceiveCounters",
+          "GroupFilter.source"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "TatterkiteScenarioTest",
+        "passed": 6,
+        "cases": [
+          "PLUS_ONE_PLUS_ONE counter prohibition=true preserves other spell effects",
+          "PLUS_ONE_PLUS_ONE counter prohibition=false preserves other spell effects",
+          "MINUS_ONE_MINUS_ONE counter prohibition=true preserves other spell effects",
+          "MINUS_ONE_MINUS_ONE counter prohibition=false preserves other spell effects",
+          "CHARGE counter prohibition=true preserves other spell effects",
+          "CHARGE counter prohibition=false preserves other spell effects"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 1
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 1
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 0,
+            "unsupportedRecords": 1
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "New scenarios cover three counter kinds and preservation of another spell effect. Counter-placement costs and entry with counters rely on existing engine support and were not newly exercised."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082",
+        "rulingsSha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+      "name": "Tyrite Sanctum",
+      "stratum": "Land",
+      "selectionHash": "0012df81a09bda29098debc921b9d031adb0e87bbc4167f0a8aecc12a65f5fea",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/38c83332-2d21-450c-ae97-34109b565f59.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "Immediate colorless mana; mana/tap targeting any legendary creature adds God permanently then a +1/+1 counter; mana/tap/sacrifice targets any God permanent and adds an indestructible counter.",
+        "nativeComparators": [
+          "OkinaTempleToTheGrandfathers.kt",
+          "Effects.AddSubtype",
+          "CounterType.INDESTRUCTIBLE"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "TyriteSanctumScenarioTest",
+        "passed": 2,
+        "cases": [
+          "legendary target gains God and counter; nonlegendary target is rejected",
+          "sacrificing Sanctum is a cost and an existing God receives an indestructible counter"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [
+              "NO_MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "NO_MATCH",
+                "mechanicalCompatibility": "NO_MATCH",
+                "policyAcceptance": "MATCH",
+                "localSupport": "SUPPORTED",
+                "operation": "SACRIFICE",
+                "branch": "DIRECT_DEATH_GENERATOR",
+                "affectedScope": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]",
+                "decisions": [
+                  {
+                    "stage": "potential-creature-death",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]"
+                  },
+                  {
+                    "stage": "controller-YOU",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]"
+                  },
+                  {
+                    "stage": "token-NONTOKEN",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "card; actor=YOU; selfCreature=false; battlefieldCompatible=true; ; constraints=[]"
+                  },
+                  {
+                    "stage": "death-generation-policy",
+                    "verdict": "MATCH",
+                    "basis": "POLICY",
+                    "reason": "Sacrifice is a cost of this action; no utility assumption"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 3
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 3
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 3
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "New scenarios cover target restrictions, God/counter addition and sacrifice-as-cost with an indestructible counter. Mana production and persistence across later turns were not independently exercised."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "9d06241ee6465d76936349992ec1edffbed0385d7f53b1d7f4d413b417ed7bb2",
+        "rulingsSha256": "2b0d166cb279b016e4d845a9899c32eb0fbc97889c450494224c3107bd3f8cad",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "name": "Ley Weaver",
+      "stratum": "Creature",
+      "selectionHash": "008477453cc0b4a888c55c9c2540874a3ecd2db64f62d809cdda956a49e5ce28",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "COMPLETE_NATIVE_AUTHORED",
+        "newSdkTypes": false
+      },
+      "translationFidelity": {
+        "status": "SOURCE_LED_REVIEW",
+        "review": "Partner construction keyword plus explicit ETB target-player optional tutor with reveal and shuffle; target player is the chooser/searcher/recipient. Exactly two land targets, of either controller, untap for a tap cost.",
+        "nativeComparators": [
+          "KeywordAbility.kt: PartnerKind.With documentation",
+          "SettleTheWreckage.kt",
+          "ArgothianElder.kt"
+        ]
+      },
+      "engineExecution": {
+        "status": "EXECUTED_BOUNDED_SCENARIOS",
+        "scenarios": "LeyWeaverScenarioTest",
+        "passed": 2,
+        "cases": [
+          "partner search belongs to targeted opponent and can be accepted",
+          "untap requires two different lands and taps the Weaver"
+        ]
+      },
+      "discovery": {
+        "status": "EVALUATED_NATIVE_DEFINITION",
+        "contexts": {
+          "own-nontoken-creature-deaths": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 4
+          },
+          "reanimate-own-creatures": {
+            "resultVerdicts": [
+              "NO_MATCH"
+            ],
+            "resultEvidence": [
+              {
+                "verdict": "NO_MATCH",
+                "mechanicalCompatibility": "NO_MATCH",
+                "policyAcceptance": null,
+                "localSupport": "SUPPORTED",
+                "operation": "MOVE_OBJECT",
+                "branch": "REANIMATE_OWN_CREATURE",
+                "affectedScope": "source=LIBRARY; graveyard/zone-player=ANY; native ownership/filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); destination=HAND; entry-controller=ANY; selection=collectionMax=1; [Native source restrictions: FromZone(zone=LIBRARY, player=You, filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSacrificedThisWay=false), Selection=ChooseUpTo(count=Fixed(amount=1)); chooser=Controller; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); restrictions=[]; chosenType=false]; operation=Default; binding=found",
+                "decisions": [
+                  {
+                    "stage": "operation-MOVE_OBJECT",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "creature-card",
+                    "verdict": "UNKNOWN",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "source-GRAVEYARD",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "owner-YOU",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "destination-BATTLEFIELD",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  },
+                  {
+                    "stage": "entry-controller-YOU",
+                    "verdict": "NO_MATCH",
+                    "basis": "MECHANICAL",
+                    "reason": "MOVE_OBJECT; source=LIBRARY/ANY; destination=HAND/ANY; filter=GameObjectFilter(cardPredicates=[NameEquals(name=Lore Weaver)], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=found; confidence=MATCH; unresolved=[]"
+                  }
+                ]
+              }
+            ],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 4
+          },
+          "create-creature-tokens": {
+            "resultVerdicts": [],
+            "resultEvidence": [],
+            "mechanicalFacts": 1,
+            "unsupportedRecords": 4
+          }
+        }
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction.",
+        "Lore Weaver is a named tutor-target fixture, not a new implementation of Lore Weaver. The tests cover opponent search acceptance and two-land untapping, not every optional-decline, search restriction or summoning-sickness interaction."
+      ],
+      "status": "VERIFIED_NATIVE_EXTENSION",
+      "sourceVerification": {
+        "sourceSha256": "eb9724ad2456cfde9e6b601b500f06546ecaff561d40fbdeaf5735a3cff30187",
+        "rulingsSha256": "91f9c68de51018713049ac7b37cb9e3570bd95f452dc155b86847a839ebacbba",
+        "fieldAssertions": "BatchOneIntegrationTest; independent archived printing, Oracle text, mana cost, type, identity, legality and printing id"
+      }
+    },
+    {
+      "oracleId": "5a57fba3-01e3-4852-8c45-7c910502bd03",
+      "name": "Bitterthorn, Nissa's Animus",
+      "stratum": "Artifact",
+      "selectionHash": "0117177baaa108c867639327b86af43a1c684fbd6c8abe548c0029792e4a5738",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING",
+      "eligibility": {
+        "commanderLegal": true,
+        "withinFullIdentity": true,
+        "nativeMissingAtSelection": true,
+        "source": "cards/5a57fba3-01e3-4852-8c45-7c910502bd03.json"
+      },
+      "assay": {
+        "parse": "EXECUTED",
+        "explain": "EXECUTED",
+        "compile": "DECLINED",
+        "evidence": "assay.json"
+      },
+      "representation": {
+        "status": "UNRESOLVED_COMPOSITION_AND_EXECUTION",
+        "newSdkTypes": false,
+        "partialFindings": [
+          {
+            "capability": "Equip, equipped +1/+1 and basic-land search entering tapped",
+            "status": "EXISTING_NATIVE_FACILITIES_IDENTIFIED_NOT_EXECUTED"
+          },
+          {
+            "capability": "Create Phyrexian Germ and attach source Equipment atomically",
+            "status": "CREATION_AND_ATTACHMENT_EXIST_BINDING_AND_SBA_ORDER_UNVERIFIED"
+          }
+        ]
+      },
+      "translationFidelity": {
+        "status": "NOT_COMPLETED",
+        "review": null,
+        "nativeComparators": []
+      },
+      "engineExecution": {
+        "status": "NOT_EXECUTED",
+        "scenarios": null
+      },
+      "discovery": {
+        "status": "NOT_EVALUATED_NATIVE_DEFINITION_MISSING"
+      },
+      "limitations": [
+        "Source review is by the implementing reviewer against separately retrieved Oracle/rulings, not independent human adjudication.",
+        "Execution evidence covers only the recorded scenarios, not every interaction."
+      ],
+      "blocker": {
+        "classification": "UNRESOLVED_COMPOSITION_AND_EXECUTION",
+        "evidence": [
+          "TokenEffects.kt: CreateTokenEffect",
+          "Effects.Pipeline",
+          "Effects.AttachTargetEquipmentToCreature",
+          "Patterns.Library.searchLibrary"
+        ],
+        "detail": "Create a 0/0 black Phyrexian Germ and attach the source in one resolution before state-based actions; then preserve equipped attack optional basic-land search, entry tapped, shuffle, +1/+1 and equip sorcery timing. No native living-weapon shorthand found at the pin. Isolated creation would wrongly kill the Germ before attachment. Not admitted as an incomplete Equipment.",
+        "smallestNextCheck": "Prove a typed token-creation handle feeds source-equipment attachment atomically; then verify attack/search and equip timing. Existing primitives are plausible; no new SDK vocabulary proposed."
+      },
+      "status": "INVESTIGATED_UNRESOLVED"
+    }
+  ],
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a"
+}

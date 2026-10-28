@@ -1,0 +1,96 @@
+{
+  "baseCommit": "d07a16f7f328963f1b5d0babc4d18ac05965ab0f",
+  "commander": "Oviya Pashiri, Sage Lifecrafter",
+  "allowedIdentity": [
+    "G"
+  ],
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "coverageReportSha256": "7bdda5b04db3776c4a3dd0eb80d6051ea594d782b8e839335768f03320bab7a7",
+  "eligiblePool": 7420,
+  "missingPool": 3442,
+  "method": "In order Creature, Instant, Sorcery, Enchantment, Artifact, Land, Creature, Artifact: choose unused minimum SHA256(snapshotSha256 + :alignment-batch-1: + oracleId) among confirmed missing physical cards with that primary type. No Oracle-text, popularity, objective or Assay filter. Selection frozen before diagnosis.",
+  "cards": [
+    {
+      "oracleId": "67a10da3-76f2-4f4a-90d1-e77abb5842fe",
+      "name": "Experiment Twelve",
+      "stratum": "Creature",
+      "selectionHash": "0059bbaa535daaacb3717414f22a87f48ec7eb5bde9ace5f916b7c1819e7ccc6",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "905a6d6c-5ef8-4afa-89bb-9d85a854743f",
+      "name": "Revealing Wind",
+      "stratum": "Instant",
+      "selectionHash": "021cb710fade0a39b4e7dc8ace17751ccc6fb6062857279f22a96a74fbb43038",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "name": "Planewide Celebration",
+      "stratum": "Sorcery",
+      "selectionHash": "01245f6a9274a1846ecde637ffd484fb4aa9717cb4a2ac1d202b312effa69f90",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
+      "name": "Mortal Wound",
+      "stratum": "Enchantment",
+      "selectionHash": "00d1557d4341eab43e3f42099f55480b11ef9e514f29e60422be4d0822261859",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "name": "Tatterkite",
+      "stratum": "Artifact",
+      "selectionHash": "00bc92ec8ff2180e179260041cac60986a5c40f93d81ec9f208252520e187ec9",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+      "name": "Tyrite Sanctum",
+      "stratum": "Land",
+      "selectionHash": "0012df81a09bda29098debc921b9d031adb0e87bbc4167f0a8aecc12a65f5fea",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "name": "Ley Weaver",
+      "stratum": "Creature",
+      "selectionHash": "008477453cc0b4a888c55c9c2540874a3ecd2db64f62d809cdda956a49e5ce28",
+      "colorIdentity": [
+        "G"
+      ],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    },
+    {
+      "oracleId": "5a57fba3-01e3-4852-8c45-7c910502bd03",
+      "name": "Bitterthorn, Nissa's Animus",
+      "stratum": "Artifact",
+      "selectionHash": "0117177baaa108c867639327b86af43a1c684fbd6c8abe548c0029792e4a5738",
+      "colorIdentity": [],
+      "layout": "normal",
+      "coverageStatus": "NATIVE_DEFINITION_MISSING"
+    }
+  ]
+}

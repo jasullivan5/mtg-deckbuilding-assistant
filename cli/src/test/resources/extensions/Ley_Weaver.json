@@ -1,0 +1,145 @@
+{
+    "name": "Ley Weaver",
+    "manaCost": "{3}{G}",
+    "typeLine": "Creature — Human Druid",
+    "oracleText": "Partner with Lore Weaver (When this creature enters, target player may put Lore Weaver into their hand from their library, then shuffle.)\n{T}: Untap two target lands.",
+    "creatureStats": {
+        "power": 2,
+        "toughness": 2
+    },
+    "keywordAbilities": [
+        {
+            "type": "Partner",
+            "kind": {
+                "type": "With",
+                "name": "Lore Weaver"
+            }
+        }
+    ],
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Ley Weaver:1",
+                "trigger": {
+                    "type": "ZoneChangeEvent",
+                    "to": "Battlefield"
+                },
+                "effect": {
+                    "type": "ForEach",
+                    "space": {
+                        "type": "IterationSpace.Players",
+                        "players": "TargetPlayer"
+                    },
+                    "body": {
+                        "type": "Gated",
+                        "gate": "Gate.MayDecide",
+                        "then": {
+                            "type": "Composite",
+                            "effects": [
+                                {
+                                    "type": "GatherCards",
+                                    "source": {
+                                        "type": "FromZone",
+                                        "zone": "Library",
+                                        "filter": "name:Lore Weaver"
+                                    },
+                                    "storeAs": "searchable",
+                                    "search": true
+                                },
+                                {
+                                    "type": "SelectFromCollection",
+                                    "from": "searchable",
+                                    "selection": {
+                                        "type": "ChooseUpTo",
+                                        "count": {
+                                            "type": "Fixed",
+                                            "amount": 1
+                                        }
+                                    },
+                                    "storeSelected": "found",
+                                    "prompt": "Search your library for a card named Lore Weaver to put into your hand",
+                                    "selectedLabel": "Put into your hand"
+                                },
+                                {
+                                    "type": "MoveCollection",
+                                    "from": "found",
+                                    "destination": {
+                                        "type": "ToZone",
+                                        "zone": "Hand"
+                                    },
+                                    "revealed": true
+                                },
+                                "ShuffleLibrary",
+                                "EmitLibrarySearchedEvent"
+                            ]
+                        }
+                    }
+                },
+                "targetRequirement": {
+                    "type": "TargetPlayer",
+                    "id": "t0"
+                }
+            }
+        ],
+        "activatedAbilities": [
+            {
+                "id": "Ley Weaver:2",
+                "cost": "CostTap",
+                "effect": {
+                    "type": "ForEach",
+                    "space": "IterationSpace.Targets",
+                    "body": {
+                        "type": "TapUntap",
+                        "target": {
+                            "type": "ContextTarget",
+                            "index": 0
+                        },
+                        "tap": false
+                    }
+                },
+                "targetRequirements": [
+                    {
+                        "type": "TargetObject",
+                        "count": 2,
+                        "filter": {
+                            "baseFilter": "land"
+                        },
+                        "id": "t1"
+                    }
+                ]
+            }
+        ]
+    },
+    "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+    "setCode": "BBD",
+    "metadata": {
+        "collectorNumber": "21",
+        "rarity": "UNCOMMON",
+        "artist": "Livia Prima",
+        "imageUri": "https://cards.scryfall.io/normal/front/2/c/2c7e9d68-d419-4ec5-97e9-2478ecb7007f.jpg?1783934871",
+        "scryfallId": "2c7e9d68-d419-4ec5-97e9-2478ecb7007f",
+        "releaseDate": "2018-06-08",
+        "rulings": [
+            {
+                "date": "2018-06-08",
+                "text": "“Partner with [name]” represents two abilities. The first is a triggered ability: “When this permanent enters the battlefield, target player may search their library for a card named [name], reveal it, put it into their hand, then shuffle their library.”"
+            },
+            {
+                "date": "2018-06-08",
+                "text": "Note that the target player searches their library (which may be affected by effects such as that of Stranglehold) and that the card they find is revealed, even though these words aren’t included in the ability’s reminder text."
+            },
+            {
+                "date": "2018-06-08",
+                "text": "A nonlegendary creature can’t be your commander, even if it has a “partner with” ability."
+            }
+        ]
+    },
+    "legalFormats": [
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}

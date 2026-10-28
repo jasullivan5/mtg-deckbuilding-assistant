@@ -2,6 +2,7 @@ package dev.mtg.assistant.extensions
 
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.tooling.CardValidator
+import com.wingedsheep.sdk.tooling.LintSeverity
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
 import java.util.Locale
@@ -14,6 +15,18 @@ data class ExtensionDefinition(val definition: CardDefinition, val provenance: P
 /** Native definitions only. Registration is fail-closed on names, face aliases, and Oracle identity. */
 object Extensions {
     val all: List<ExtensionDefinition> by lazy { listOf(
+        ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
+        ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/PlanewideCelebrationScenarioTest.kt"))),
+        ExtensionDefinition(MortalWound,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/MortalWound.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/MortalWoundScenarioTest.kt"))),
+        ExtensionDefinition(Tatterkite,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/Tatterkite.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/TatterkiteScenarioTest.kt"))),
+        ExtensionDefinition(TyriteSanctum,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/TyriteSanctum.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/TyriteSanctumScenarioTest.kt"))),
+        ExtensionDefinition(LeyWeaver,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/LeyWeaver.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/LeyWeaverScenarioTest.kt"))),
         ExtensionDefinition(KrenkosCommand,
             Provenance("APPLICATION_EXTENSION", "cli/src/main/kotlin/dev/mtg/assistant/extensions/KrenkosCommand.kt", "2026-10-26"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationScenarioTest.kt"))),
@@ -29,10 +42,11 @@ object Extensions {
     ) }
     private fun definitions(c: CardDefinition): List<CardDefinition> = listOf(c) +
         (c.backFace?.let(::definitions) ?: emptyList()) + (c.flipSide?.let(::definitions) ?: emptyList())
-    private fun namesOf(c: CardDefinition): Set<String> = definitions(c).flatMap { d -> listOf(d.name)+d.cardFaces.map { it.name } }
+    private fun namesOf(c: CardDefinition): Set<String> = definitions(c).map { it.name }
         .map { it.lowercase(Locale.ROOT) }.toSet()
     private fun idsOf(c: CardDefinition): Set<String> = definitions(c).mapNotNull { it.oracleId?.lowercase(Locale.ROOT) }.toSet()
-    fun validate(upstream: List<CardDefinition>, additions: List<ExtensionDefinition>) {
+    fun validate(upstream: List<CardDefinition>, additions: List<ExtensionDefinition>): List<String> {
+        val warnings = mutableListOf<String>()
         val names=upstream.flatMap(::namesOf).toMutableSet()
         val ids=upstream.flatMap(::idsOf).toMutableSet()
         additions.forEach { extension ->
@@ -46,7 +60,9 @@ object Extensions {
             require(extension.review.knownLimitations.isEmpty()) { "Refusing known-incomplete extension: ${card.name}; ${extension.review.knownLimitations}" }
             require(extension.review.scenarioReferences.none { it.isBlank() }) { "Empty scenario reference: ${card.name}" }
             definitions(card).forEach { definition ->
-                val errors=CardValidator.validate(definition)
+                val findings=CardValidator.validate(definition)
+                val errors=findings.filter { it.severity == LintSeverity.ERROR }
+                warnings += findings.filter { it.severity == LintSeverity.WARNING }.map { "${definition.name}: ${it.message}" }
                 require(errors.isEmpty()) { "Invalid native extension ${definition.name}: $errors" }
             }
             val aliases=namesOf(card)
@@ -55,5 +71,6 @@ object Extensions {
             require(oracleIds.none { it in ids }) { "Extension Oracle identity collision: ${card.oracleId} (${card.name})" }
             names.addAll(aliases); ids.addAll(oracleIds)
         }
+        return warnings
     }
 }

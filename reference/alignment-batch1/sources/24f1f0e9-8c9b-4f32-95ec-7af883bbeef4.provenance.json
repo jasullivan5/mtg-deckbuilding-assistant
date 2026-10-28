@@ -1,0 +1,12 @@
+{
+  "retrievedAt": "2026-10-28T01:24:49.431191+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A24f1f0e9-8c9b-4f32-95ec-7af883bbeef4&unique=prints",
+  "earliestPrinting": {
+    "set": "bbd",
+    "collectorNumber": "21",
+    "releasedAt": "2018-06-08",
+    "id": "2c7e9d68-d419-4ec5-97e9-2478ecb7007f"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "eb9724ad2456cfde9e6b601b500f06546ecaff561d40fbdeaf5735a3cff30187"
+}

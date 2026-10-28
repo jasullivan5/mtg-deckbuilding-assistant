@@ -1,0 +1,13 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "905a6d6c-5ef8-4afa-89bb-9d85a854743f",
+      "source": "wotc",
+      "published_at": "2015-02-25",
+      "comment": "You can cast Revealing Wind even if there are no face-down creatures attacking or blocking. The damage-prevention effect will still apply."
+    }
+  ]
+}

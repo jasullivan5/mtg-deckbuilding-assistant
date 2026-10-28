@@ -1,0 +1,789 @@
+{
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "coverage": {
+    "judith": {
+      "eligibleOracleCards": 12828,
+      "newConfidentDefinitions": 2,
+      "missingBefore": 6165,
+      "missingAfter": 6163,
+      "retainedRecordsUnchangedApartFromReviewStatus": true
+    },
+    "krenko": {
+      "eligibleOracleCards": 7552,
+      "newConfidentDefinitions": 2,
+      "missingBefore": 3632,
+      "missingAfter": 3630,
+      "retainedRecordsUnchangedApartFromReviewStatus": true
+    },
+    "oviya": {
+      "eligibleOracleCards": 7420,
+      "newConfidentDefinitions": 6,
+      "missingBefore": 3442,
+      "missingAfter": 3436,
+      "retainedRecordsUnchangedApartFromReviewStatus": true
+    }
+  },
+  "discovery": {
+    "judith-a": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "0665948ade4386ce2bff0f83e2f3e3fb8760a19f104d4b0279c27da4daa682bc",
+      "afterSha256": "171739f9f1f5a9c4b813acf0b89fe67b3b5fcbc999f00113d1574e3e62d0968b",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6105,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6105,
+        "extracted_potential_death_operations": 2915,
+        "potential_creature_death_pathways": 1471,
+        "our_creature_pathways": 1333,
+        "our_nontoken_creature_pathways": 1327,
+        "mechanically_compatible_direct_pathways": 1327,
+        "mechanically_compatible_policy_rejected_pathways": 850,
+        "accepted_direct_pathways": 474,
+        "accepted_direct_cards": 462,
+        "accepted_self_toughness_exchange_pathways": 12,
+        "mandatory_unlinked_sacrifice_pathways": 157,
+        "policy_unknown_compatible_pathways": 3,
+        "accepted_death_enhanced_removal_pathways": 25,
+        "accepted_death_enhanced_removal_cards": 25,
+        "policy_rejected_removal_pathways": 850,
+        "controller_incompatible_pathways": 164,
+        "nontoken_incompatible_pathways": 6,
+        "unknown_query_pathways": 410,
+        "pathways_with_any_unknown_decision": 1044,
+        "unsupported_structure_records": 8686,
+        "cards_with_unsupported_structures": 4353
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6107,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6107,
+        "extracted_potential_death_operations": 2916,
+        "potential_creature_death_pathways": 1471,
+        "our_creature_pathways": 1333,
+        "our_nontoken_creature_pathways": 1327,
+        "mechanically_compatible_direct_pathways": 1327,
+        "mechanically_compatible_policy_rejected_pathways": 850,
+        "accepted_direct_pathways": 474,
+        "accepted_direct_cards": 462,
+        "accepted_self_toughness_exchange_pathways": 12,
+        "mandatory_unlinked_sacrifice_pathways": 157,
+        "policy_unknown_compatible_pathways": 3,
+        "accepted_death_enhanced_removal_pathways": 25,
+        "accepted_death_enhanced_removal_cards": 25,
+        "policy_rejected_removal_pathways": 850,
+        "controller_incompatible_pathways": 164,
+        "nontoken_incompatible_pathways": 6,
+        "unknown_query_pathways": 410,
+        "pathways_with_any_unknown_decision": 1044,
+        "unsupported_structure_records": 8690,
+        "cards_with_unsupported_structures": 4355
+      }
+    },
+    "judith-b": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "ed97e9586c0e304301e360b5d822441cf028eb7609058634c276f32592af9329",
+      "afterSha256": "abdd0d7f04902558cab142ffa7c85c48e311fe6a16f6886e7b70bfce611ca202",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6105,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6105,
+        "mechanical_facts": 5630,
+        "movement_facts": 2056,
+        "accepted_reanimation_pathways": 97,
+        "accepted_reanimation_cards": 95,
+        "unknown_query_pathways": 93,
+        "rejected_movement_pathways": 1866,
+        "unsupported_structure_records": 8302,
+        "cards_with_unsupported_structures": 4215
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6107,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6107,
+        "mechanical_facts": 5631,
+        "movement_facts": 2056,
+        "accepted_reanimation_pathways": 97,
+        "accepted_reanimation_cards": 95,
+        "unknown_query_pathways": 93,
+        "rejected_movement_pathways": 1866,
+        "unsupported_structure_records": 8306,
+        "cards_with_unsupported_structures": 4217
+      }
+    },
+    "judith-c": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "a7734b16e0b8db619c46e7862e62ed626baff3399214ab6bb44d3a1e33230377",
+      "afterSha256": "9b793d21a2d49857e555105e7ba6e3f65d478ea463d14d0ce66604b70a956acc",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6105,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6105,
+        "mechanical_facts": 5630,
+        "token_creation_facts": 648,
+        "accepted_token_creation_pathways": 363,
+        "accepted_token_creation_cards": 346,
+        "unknown_query_pathways": 55,
+        "rejected_token_creation_pathways": 230,
+        "unsupported_structure_records": 8686,
+        "cards_with_unsupported_structures": 4353,
+        "creature_compatible_creation_pathways": 385,
+        "our_controller_compatible_creation_pathways": 376,
+        "accepted_fixed_quantity_pathways": 354,
+        "accepted_dynamic_quantity_pathways": 9
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6107,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6107,
+        "mechanical_facts": 5631,
+        "token_creation_facts": 648,
+        "accepted_token_creation_pathways": 363,
+        "accepted_token_creation_cards": 346,
+        "unknown_query_pathways": 55,
+        "rejected_token_creation_pathways": 230,
+        "unsupported_structure_records": 8690,
+        "cards_with_unsupported_structures": 4355,
+        "creature_compatible_creation_pathways": 385,
+        "our_controller_compatible_creation_pathways": 376,
+        "accepted_fixed_quantity_pathways": 354,
+        "accepted_dynamic_quantity_pathways": 9
+      }
+    },
+    "krenko-a": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "fb4fd73251de3592a9b3239fab5c69664159d25e2a90e291efbc9521f1c06374",
+      "afterSha256": "95d12022e87b5891f5d107451c917d08714c04657d146669516a62a882d59e7e",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3466,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3466,
+        "extracted_potential_death_operations": 1669,
+        "potential_creature_death_pathways": 780,
+        "our_creature_pathways": 725,
+        "our_nontoken_creature_pathways": 722,
+        "mechanically_compatible_direct_pathways": 722,
+        "mechanically_compatible_policy_rejected_pathways": 522,
+        "accepted_direct_pathways": 200,
+        "accepted_direct_cards": 195,
+        "accepted_self_toughness_exchange_pathways": 10,
+        "mandatory_unlinked_sacrifice_pathways": 55,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 8,
+        "accepted_death_enhanced_removal_cards": 8,
+        "policy_rejected_removal_pathways": 522,
+        "controller_incompatible_pathways": 59,
+        "nontoken_incompatible_pathways": 3,
+        "unknown_query_pathways": 190,
+        "pathways_with_any_unknown_decision": 568,
+        "unsupported_structure_records": 4845,
+        "cards_with_unsupported_structures": 2422
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3468,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3468,
+        "extracted_potential_death_operations": 1670,
+        "potential_creature_death_pathways": 780,
+        "our_creature_pathways": 725,
+        "our_nontoken_creature_pathways": 722,
+        "mechanically_compatible_direct_pathways": 722,
+        "mechanically_compatible_policy_rejected_pathways": 522,
+        "accepted_direct_pathways": 200,
+        "accepted_direct_cards": 195,
+        "accepted_self_toughness_exchange_pathways": 10,
+        "mandatory_unlinked_sacrifice_pathways": 55,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 8,
+        "accepted_death_enhanced_removal_cards": 8,
+        "policy_rejected_removal_pathways": 522,
+        "controller_incompatible_pathways": 59,
+        "nontoken_incompatible_pathways": 3,
+        "unknown_query_pathways": 190,
+        "pathways_with_any_unknown_decision": 568,
+        "unsupported_structure_records": 4849,
+        "cards_with_unsupported_structures": 2424
+      }
+    },
+    "krenko-b": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "8f8affd8300c56b6828176af9f4d4a7225720d67500731636642b37f6d71f9a7",
+      "afterSha256": "898ea9b4d345117447f7c6fe62f8a3abb934bfa8fb474339d5a7e03cc9ae51b9",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3466,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3466,
+        "mechanical_facts": 2899,
+        "movement_facts": 865,
+        "accepted_reanimation_pathways": 15,
+        "accepted_reanimation_cards": 14,
+        "unknown_query_pathways": 35,
+        "rejected_movement_pathways": 815,
+        "unsupported_structure_records": 4744,
+        "cards_with_unsupported_structures": 2381
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3468,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3468,
+        "mechanical_facts": 2900,
+        "movement_facts": 865,
+        "accepted_reanimation_pathways": 15,
+        "accepted_reanimation_cards": 14,
+        "unknown_query_pathways": 35,
+        "rejected_movement_pathways": 815,
+        "unsupported_structure_records": 4748,
+        "cards_with_unsupported_structures": 2383
+      }
+    },
+    "krenko-c": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "e089619db95e7a9afed672f73d2c2cfab369f282bfe600a82539746da19788fd",
+      "afterSha256": "01b73d40edacc8694edca5d0d6bd74507a3990e4b63f1cc7a4386137b34535cb",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3466,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3466,
+        "mechanical_facts": 2899,
+        "token_creation_facts": 362,
+        "accepted_token_creation_pathways": 190,
+        "accepted_token_creation_cards": 182,
+        "unknown_query_pathways": 33,
+        "rejected_token_creation_pathways": 139,
+        "unsupported_structure_records": 4845,
+        "cards_with_unsupported_structures": 2422,
+        "creature_compatible_creation_pathways": 201,
+        "our_controller_compatible_creation_pathways": 197,
+        "accepted_fixed_quantity_pathways": 186,
+        "accepted_dynamic_quantity_pathways": 4
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3468,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3468,
+        "mechanical_facts": 2900,
+        "token_creation_facts": 362,
+        "accepted_token_creation_pathways": 190,
+        "accepted_token_creation_cards": 182,
+        "unknown_query_pathways": 33,
+        "rejected_token_creation_pathways": 139,
+        "unsupported_structure_records": 4849,
+        "cards_with_unsupported_structures": 2424,
+        "creature_compatible_creation_pathways": 201,
+        "our_controller_compatible_creation_pathways": 197,
+        "accepted_fixed_quantity_pathways": 186,
+        "accepted_dynamic_quantity_pathways": 4
+      }
+    },
+    "oviya-a": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "1bf0040db7edd0f052cd6aca57eed6c6280cf6a298878a0a5529f94f4e4e290b",
+      "afterSha256": "ab5f0a80b88e24c97cdc21fd368a42eb306498f42e006b523e9d82e7b9bf5ffc",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3548,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3548,
+        "extracted_potential_death_operations": 918,
+        "potential_creature_death_pathways": 297,
+        "our_creature_pathways": 273,
+        "our_nontoken_creature_pathways": 269,
+        "mechanically_compatible_direct_pathways": 269,
+        "mechanically_compatible_policy_rejected_pathways": 147,
+        "accepted_direct_pathways": 122,
+        "accepted_direct_cards": 120,
+        "accepted_self_toughness_exchange_pathways": 2,
+        "mandatory_unlinked_sacrifice_pathways": 51,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 1,
+        "accepted_death_enhanced_removal_cards": 1,
+        "policy_rejected_removal_pathways": 147,
+        "controller_incompatible_pathways": 58,
+        "nontoken_incompatible_pathways": 2,
+        "unknown_query_pathways": 223,
+        "pathways_with_any_unknown_decision": 426,
+        "unsupported_structure_records": 5965,
+        "cards_with_unsupported_structures": 2802
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3554,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3554,
+        "extracted_potential_death_operations": 920,
+        "potential_creature_death_pathways": 297,
+        "our_creature_pathways": 273,
+        "our_nontoken_creature_pathways": 269,
+        "mechanically_compatible_direct_pathways": 269,
+        "mechanically_compatible_policy_rejected_pathways": 147,
+        "accepted_direct_pathways": 122,
+        "accepted_direct_cards": 120,
+        "accepted_self_toughness_exchange_pathways": 2,
+        "mandatory_unlinked_sacrifice_pathways": 51,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 1,
+        "accepted_death_enhanced_removal_cards": 1,
+        "policy_rejected_removal_pathways": 147,
+        "controller_incompatible_pathways": 58,
+        "nontoken_incompatible_pathways": 2,
+        "unknown_query_pathways": 223,
+        "pathways_with_any_unknown_decision": 427,
+        "unsupported_structure_records": 5979,
+        "cards_with_unsupported_structures": 2808
+      }
+    },
+    "oviya-b": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "4ddbc53b43db9499551a41e0b3263b45701cfe295ba9ae499dd58bd3d9b875e2",
+      "afterSha256": "a09877171f6ccef44869e3393a40b75d2e0216874d830993c52b78f96b26e0a6",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3548,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3548,
+        "mechanical_facts": 2567,
+        "movement_facts": 1214,
+        "accepted_reanimation_pathways": 11,
+        "accepted_reanimation_cards": 11,
+        "unknown_query_pathways": 90,
+        "rejected_movement_pathways": 1113,
+        "unsupported_structure_records": 5800,
+        "cards_with_unsupported_structures": 2733
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3554,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3554,
+        "mechanical_facts": 2573,
+        "movement_facts": 1217,
+        "accepted_reanimation_pathways": 11,
+        "accepted_reanimation_cards": 11,
+        "unknown_query_pathways": 90,
+        "rejected_movement_pathways": 1116,
+        "unsupported_structure_records": 5813,
+        "cards_with_unsupported_structures": 2739
+      }
+    },
+    "oviya-c": {
+      "retainedEvidenceIdentical": true,
+      "beforeSha256": "cbba8ffcb331ff1b96415d9c4f5716369809caacf11fc51aa3fa3228617d1362",
+      "afterSha256": "a1b2d4df05b0fd7d379d26d0b17813e4f116ff19ee2d73f5b4ae27e2fea05e46",
+      "beforeCounts": {
+        "authored_physical_cards": 16999,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 4,
+        "registry_names_including_faces": 17355,
+        "commander_legal_cards": 16634,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3548,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3548,
+        "mechanical_facts": 2567,
+        "token_creation_facts": 434,
+        "accepted_token_creation_pathways": 273,
+        "accepted_token_creation_cards": 250,
+        "unknown_query_pathways": 39,
+        "rejected_token_creation_pathways": 122,
+        "unsupported_structure_records": 5965,
+        "cards_with_unsupported_structures": 2802,
+        "creature_compatible_creation_pathways": 291,
+        "our_controller_compatible_creation_pathways": 286,
+        "accepted_fixed_quantity_pathways": 261,
+        "accepted_dynamic_quantity_pathways": 12
+      },
+      "afterCounts": {
+        "authored_physical_cards": 17005,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 17361,
+        "commander_legal_cards": 16640,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3554,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3554,
+        "mechanical_facts": 2573,
+        "token_creation_facts": 435,
+        "accepted_token_creation_pathways": 274,
+        "accepted_token_creation_cards": 251,
+        "unknown_query_pathways": 39,
+        "rejected_token_creation_pathways": 122,
+        "unsupported_structure_records": 5979,
+        "cards_with_unsupported_structures": 2808,
+        "creature_compatible_creation_pathways": 292,
+        "our_controller_compatible_creation_pathways": 287,
+        "accepted_fixed_quantity_pathways": 262,
+        "accepted_dynamic_quantity_pathways": 12
+      }
+    }
+  },
+  "tests": {
+    "total": 386,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suiteCount": 40,
+    "batchScenarios": {
+      "dev.mtg.assistant.ExperimentTwelveScenarioTest": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 1.833,
+        "cases": [
+          "self disguise turn-up creates a stack trigger and doubles resolution power",
+          "power is read at resolution and opposing face-up events do not trigger our Twelve"
+        ]
+      },
+      "dev.mtg.assistant.LeyWeaverScenarioTest": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 0.264,
+        "cases": [
+          "partner search belongs to targeted opponent and can be accepted",
+          "untap requires two different lands and taps the Weaver"
+        ]
+      },
+      "dev.mtg.assistant.MortalWoundScenarioTest": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 0.13,
+        "cases": [
+          "enchanted opponent creature: 0 damage tests actual damage trigger and destruction",
+          "enchanted opponent creature: 1 damage tests actual damage trigger and destruction"
+        ]
+      },
+      "dev.mtg.assistant.PlanewideCelebrationScenarioTest": {
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 0.279,
+        "cases": [
+          "four repeats of mode 0 execute separately",
+          "four repeats of mode 3 execute separately",
+          "targeted permanent returns to hand alongside three life modes",
+          "proliferation chosen at resolution adds every existing counter kind",
+          "three chosen modes cannot substitute for four"
+        ]
+      },
+      "dev.mtg.assistant.TatterkiteScenarioTest": {
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 0.099,
+        "cases": [
+          "PLUS_ONE_PLUS_ONE counter prohibition=true preserves other spell effects",
+          "PLUS_ONE_PLUS_ONE counter prohibition=false preserves other spell effects",
+          "MINUS_ONE_MINUS_ONE counter prohibition=true preserves other spell effects",
+          "MINUS_ONE_MINUS_ONE counter prohibition=false preserves other spell effects",
+          "CHARGE counter prohibition=true preserves other spell effects",
+          "CHARGE counter prohibition=false preserves other spell effects"
+        ]
+      },
+      "dev.mtg.assistant.TyriteSanctumScenarioTest": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 0.109,
+        "cases": [
+          "legendary target gains God and counter; nonlegendary target is rejected",
+          "sacrificing Sanctum is a cost and an existing God receives an indestructible counter"
+        ]
+      }
+    }
+  },
+  "measurements": {
+    "before": [
+      {
+        "command": "coverage-judith",
+        "wallSeconds": 57.413,
+        "peakWorkingSetBytes": 1912676352
+      },
+      {
+        "command": "missing-judith",
+        "wallSeconds": 1.417,
+        "peakWorkingSetBytes": 432414720
+      },
+      {
+        "command": "judith-a",
+        "wallSeconds": 73.578,
+        "peakWorkingSetBytes": 1498005504
+      },
+      {
+        "command": "judith-b",
+        "wallSeconds": 73.908,
+        "peakWorkingSetBytes": 1507766272
+      },
+      {
+        "command": "judith-c",
+        "wallSeconds": 57.632,
+        "peakWorkingSetBytes": 1571446784
+      },
+      {
+        "command": "coverage-krenko",
+        "wallSeconds": 59.069,
+        "peakWorkingSetBytes": 1817022464
+      },
+      {
+        "command": "missing-krenko",
+        "wallSeconds": 0.818,
+        "peakWorkingSetBytes": 314023936
+      },
+      {
+        "command": "krenko-a",
+        "wallSeconds": 56.25,
+        "peakWorkingSetBytes": 1521971200
+      },
+      {
+        "command": "krenko-b",
+        "wallSeconds": 56.512,
+        "peakWorkingSetBytes": 1716969472
+      },
+      {
+        "command": "krenko-c",
+        "wallSeconds": 51.893,
+        "peakWorkingSetBytes": 1743872000
+      },
+      {
+        "command": "coverage-oviya",
+        "wallSeconds": 63.436,
+        "peakWorkingSetBytes": 1617391616
+      },
+      {
+        "command": "missing-oviya",
+        "wallSeconds": 1.033,
+        "peakWorkingSetBytes": 314945536
+      },
+      {
+        "command": "oviya-a",
+        "wallSeconds": 72.659,
+        "peakWorkingSetBytes": 1569652736
+      },
+      {
+        "command": "oviya-b",
+        "wallSeconds": 60.195,
+        "peakWorkingSetBytes": 1475817472
+      },
+      {
+        "command": "oviya-c",
+        "wallSeconds": 55.065,
+        "peakWorkingSetBytes": 1579573248
+      }
+    ],
+    "after": [
+      {
+        "command": "coverage-judith",
+        "wallSeconds": 77.359,
+        "peakWorkingSetBytes": 1911984128
+      },
+      {
+        "command": "missing-judith",
+        "wallSeconds": 1.115,
+        "peakWorkingSetBytes": 434483200
+      },
+      {
+        "command": "judith-a",
+        "wallSeconds": 71.149,
+        "peakWorkingSetBytes": 1561743360
+      },
+      {
+        "command": "diff-judith-a",
+        "wallSeconds": 2.547,
+        "peakWorkingSetBytes": 984096768
+      },
+      {
+        "command": "judith-b",
+        "wallSeconds": 64.436,
+        "peakWorkingSetBytes": 1628295168
+      },
+      {
+        "command": "diff-judith-b",
+        "wallSeconds": 2.454,
+        "peakWorkingSetBytes": 922284032
+      },
+      {
+        "command": "judith-c",
+        "wallSeconds": 59.915,
+        "peakWorkingSetBytes": 1559396352
+      },
+      {
+        "command": "diff-judith-c",
+        "wallSeconds": 2.135,
+        "peakWorkingSetBytes": 812498944
+      },
+      {
+        "command": "coverage-krenko",
+        "wallSeconds": 58.767,
+        "peakWorkingSetBytes": 2006216704
+      },
+      {
+        "command": "missing-krenko",
+        "wallSeconds": 0.732,
+        "peakWorkingSetBytes": 299888640
+      },
+      {
+        "command": "krenko-a",
+        "wallSeconds": 52.387,
+        "peakWorkingSetBytes": 1399427072
+      },
+      {
+        "command": "diff-krenko-a",
+        "wallSeconds": 2.03,
+        "peakWorkingSetBytes": 569819136
+      },
+      {
+        "command": "krenko-b",
+        "wallSeconds": 55.13,
+        "peakWorkingSetBytes": 1541861376
+      },
+      {
+        "command": "diff-krenko-b",
+        "wallSeconds": 1.821,
+        "peakWorkingSetBytes": 508178432
+      },
+      {
+        "command": "krenko-c",
+        "wallSeconds": 51.787,
+        "peakWorkingSetBytes": 1565184000
+      },
+      {
+        "command": "diff-krenko-c",
+        "wallSeconds": 1.637,
+        "peakWorkingSetBytes": 529211392
+      },
+      {
+        "command": "coverage-oviya",
+        "wallSeconds": 63.094,
+        "peakWorkingSetBytes": 1923166208
+      },
+      {
+        "command": "missing-oviya",
+        "wallSeconds": 0.923,
+        "peakWorkingSetBytes": 344084480
+      },
+      {
+        "command": "oviya-a",
+        "wallSeconds": 51.58,
+        "peakWorkingSetBytes": 1536958464
+      },
+      {
+        "command": "diff-oviya-a",
+        "wallSeconds": 1.938,
+        "peakWorkingSetBytes": 512139264
+      },
+      {
+        "command": "oviya-b",
+        "wallSeconds": 52.962,
+        "peakWorkingSetBytes": 1542623232
+      },
+      {
+        "command": "diff-oviya-b",
+        "wallSeconds": 1.943,
+        "peakWorkingSetBytes": 636555264
+      },
+      {
+        "command": "oviya-c",
+        "wallSeconds": 51.434,
+        "peakWorkingSetBytes": 1583099904
+      },
+      {
+        "command": "diff-oviya-c",
+        "wallSeconds": 1.82,
+        "peakWorkingSetBytes": 509538304
+      }
+    ]
+  }
+}

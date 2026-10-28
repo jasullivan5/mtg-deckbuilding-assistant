@@ -1,0 +1,129 @@
+{
+    "name": "Planewide Celebration",
+    "manaCost": "{5}{G}{G}",
+    "typeLine": "Sorcery",
+    "oracleText": "Choose four. You may choose the same mode more than once.\n• Create a 2/2 Citizen creature token that's all colors.\n• Return target permanent card from your graveyard to your hand.\n• Proliferate.\n• You gain 4 life.",
+    "script": {
+        "spellEffect": {
+            "type": "Modal",
+            "modes": [
+                {
+                    "effect": {
+                        "type": "CreateToken",
+                        "power": 2,
+                        "toughness": 2,
+                        "colors": [
+                            "WHITE",
+                            "BLUE",
+                            "BLACK",
+                            "RED",
+                            "GREEN"
+                        ],
+                        "creatureTypes": [
+                            "Citizen"
+                        ],
+                        "imageUri": "https://cards.scryfall.io/normal/front/d/e/de7ba875-f77b-404f-8b75-4ba6f81da410.jpg?1783933348"
+                    },
+                    "description": "Create a 2/2 Citizen creature token that's all colors"
+                },
+                {
+                    "effect": {
+                        "type": "MoveToZone",
+                        "target": {
+                            "type": "BoundVariable",
+                            "name": "t0"
+                        },
+                        "destination": "Hand",
+                        "fromZone": "Graveyard"
+                    },
+                    "targetRequirements": [
+                        {
+                            "type": "TargetObject",
+                            "filter": {
+                                "baseFilter": "permanent own:you",
+                                "zone": "Graveyard"
+                            },
+                            "id": "t0"
+                        }
+                    ],
+                    "description": "Return target permanent card from your graveyard to your hand"
+                },
+                {
+                    "effect": "Proliferate",
+                    "description": "Proliferate"
+                },
+                {
+                    "effect": {
+                        "type": "GainLife",
+                        "amount": {
+                            "type": "Fixed",
+                            "amount": 4
+                        }
+                    },
+                    "description": "You gain 4 life"
+                }
+            ],
+            "chooseCount": 4,
+            "allowRepeat": true
+        }
+    },
+    "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+    "setCode": "WAR",
+    "metadata": {
+        "collectorNumber": "172",
+        "rarity": "RARE",
+        "artist": "Wisnu Tan",
+        "imageUri": "https://cards.scryfall.io/normal/front/1/1/11016840-56b6-4759-bde6-3dc0e339e87e.jpg?1783933409",
+        "scryfallId": "11016840-56b6-4759-bde6-3dc0e339e87e",
+        "releaseDate": "2019-05-03",
+        "rulings": [
+            {
+                "date": "2023-02-04",
+                "text": "If a permanent ever has both +1/+1 counters and -1/-1 counters on it at the same time, they're removed in pairs as a state-based action so that the permanent has only one of those kinds of counters on it."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "If a player or permanent has more than one kind of counter on it, and you choose for it to get additional counters, it must get one of each kind of counter it already has. You can't have it get just one kind of counter it already has and not the others."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "An ability that triggers \"Whenever you proliferate\" triggers even if you chose no permanents or players while doing so."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "Players can respond to a spell or ability whose effect includes proliferating. Once that spell or ability starts to resolve, however, and its controller chooses which permanents and players will get new counters, it's too late for anyone to respond."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "To proliferate, you can choose any permanent that has a counter, including ones controlled by opponents. You can choose any player who has a counter, including opponents. You can't choose cards in any zone other than the battlefield, even if they have counters on them."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "You don't have to choose every permanent or player that has a counter, only the ones you want to add another counter to. Since \"any number\" includes zero, you don't have to choose any permanents at all, and you don't have to choose any players at all."
+            },
+            {
+                "date": "2019-05-03",
+                "text": "A permanent card is an artifact, creature, enchantment, land, or planeswalker card."
+            },
+            {
+                "date": "2019-05-03",
+                "text": "If the second mode is chosen at least once, and every target permanent card is an illegal target by the time Planewide Celebration tries to resolve, the spell doesn't resolve. None of the other chosen modes happen. If only some of the targets are illegal targets but at least one is still legal, you still do as much as you can and the illegal targets aren't affected."
+            },
+            {
+                "date": "2019-05-03",
+                "text": "No matter which combination of modes you choose, you always follow the instructions of Planewide Celebration in the order they are written. If a mode is chosen more than once, you perform that mode's instruction that many times sequentially."
+            }
+        ]
+    },
+    "legalFormats": [
+        "PIONEER",
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}
