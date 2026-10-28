@@ -7,6 +7,8 @@ if (!appProperty || !(candidate ==~ /[0-9a-f]{40}/)) {
 def appRoot = new File(appProperty).canonicalFile
 def engineRoot
 settingsEvaluated { settings ->
+    // Init scripts also run for buildSrc; never include the application in that build.
+    if (!new File(settings.settingsDir, 'rules-engine/build.gradle.kts').isFile()) return
     engineRoot = settings.settingsDir.canonicalFile
     if (engineRoot == new File(appRoot, 'argentum').canonicalFile) {
         throw new GradleException('Experimental integration must use a separate engine checkout')
