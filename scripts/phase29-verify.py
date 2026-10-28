@@ -29,7 +29,7 @@ def run(args):
   save(out/('coverage-recheck-timings.json' if args.coverage_only else 'timings.json'),measurements);print(label,measurements[-1]['wallSeconds'],flush=True)
  for slug,commander in COMMANDERS.items():
   path=out/f'coverage-{slug}.json'
-  argv=['audit','catalog-coverage','--commander',commander,'--oracle-cards',str(args.snapshot.resolve()),'--objective','create-creature-tokens','--translation-review','reference/phase27/translation-review.json','--json','--output',str(path)]
+  argv=['audit','catalog-coverage','--commander',commander,'--oracle-cards',str(args.snapshot.resolve()),'--objective','create-creature-tokens','--translation-review',str(args.translation_review),'--json','--output',str(path)]
   if slug=='judith':argv+=['--enrichment-output',str(out/'enrichment.json')]
   cli('coverage-'+slug,argv)
   cli('missing-'+slug,['audit','catalog-missing','--report',str(path),'--limit','20','--json','--output',str(out/f'missing-{slug}.json')])
@@ -38,5 +38,5 @@ def run(args):
    cli(f'{slug}-{letter}',['discover','--commander',commander,'--objective',objective,'--json','--output',str(out/f'{slug}-{letter}.json')])
    if args.stage=='after':cli(f'diff-{slug}-{letter}',['audit','diff','--before',str(base/'before'/f'{slug}-{letter}.json'),'--after',str(out/f'{slug}-{letter}.json'),'--json','--output',str(out/f'diff-{slug}-{letter}.json')])
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',choices=['before','after']);p.add_argument('--coverage-only',action='store_true');p.add_argument('--snapshot',type=pathlib.Path,required=True);p.add_argument('--dist',type=pathlib.Path,default=ROOT/'cli/build/install/mtg-assistant');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',choices=['before','after']);p.add_argument('--coverage-only',action='store_true');p.add_argument('--translation-review',type=pathlib.Path,default=ROOT/'reference/phase27/translation-review.json');p.add_argument('--snapshot',type=pathlib.Path,required=True);p.add_argument('--dist',type=pathlib.Path,default=ROOT/'cli/build/install/mtg-assistant');a=p.parse_args()
  run(a)

@@ -1,0 +1,12 @@
+{
+  "retrievedAt": "2026-10-28T01:24:46.723733+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A9505f124-f152-48ce-b0d3-097abdda8e3e&unique=prints",
+  "earliestPrinting": {
+    "set": "shm",
+    "collectorNumber": "264",
+    "releasedAt": "2008-05-02",
+    "id": "dfaf852c-b8a9-44d4-b2cd-3f1e071a8be9"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+}

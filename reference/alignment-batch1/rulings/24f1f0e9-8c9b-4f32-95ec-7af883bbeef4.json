@@ -1,0 +1,27 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "source": "wotc",
+      "published_at": "2018-06-08",
+      "comment": "“Partner with [name]” represents two abilities. The first is a triggered ability: “When this permanent enters the battlefield, target player may search their library for a card named [name], reveal it, put it into their hand, then shuffle their library.”"
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "source": "wotc",
+      "published_at": "2018-06-08",
+      "comment": "Note that the target player searches their library (which may be affected by effects such as that of Stranglehold) and that the card they find is revealed, even though these words aren’t included in the ability’s reminder text."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "source": "wotc",
+      "published_at": "2018-06-08",
+      "comment": "A nonlegendary creature can’t be your commander, even if it has a “partner with” ability."
+    }
+  ]
+}

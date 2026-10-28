@@ -1,0 +1,12 @@
+{
+  "retrievedAt": "2026-10-28T01:24:48.118899+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A38c83332-2d21-450c-ae97-34109b565f59&unique=prints",
+  "earliestPrinting": {
+    "set": "khm",
+    "collectorNumber": "272",
+    "releasedAt": "2021-02-05",
+    "id": "309ff3bf-acd3-4bea-b518-6e25f6cfce61"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "9d06241ee6465d76936349992ec1edffbed0385d7f53b1d7f4d413b417ed7bb2"
+}

@@ -1,0 +1,12 @@
+{
+  "retrievedAt": "2026-10-28T01:24:43.983045+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aaf23d348-adc9-451e-af08-bf9b1986c591&unique=prints",
+  "earliestPrinting": {
+    "set": "war",
+    "collectorNumber": "172",
+    "releasedAt": "2019-05-03",
+    "id": "11016840-56b6-4759-bde6-3dc0e339e87e"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "78e218d092e65f66ed16cf6a9e89d5e4f3fadb0577b1cb7d23370ebf3c558e72"
+}
