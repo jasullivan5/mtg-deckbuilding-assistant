@@ -2,6 +2,7 @@ package dev.mtg.assistant.extensions
 
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.tooling.CardValidator
+import com.wingedsheep.sdk.tooling.LintSeverity
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
 import java.util.Locale
@@ -29,10 +30,11 @@ object Extensions {
     ) }
     private fun definitions(c: CardDefinition): List<CardDefinition> = listOf(c) +
         (c.backFace?.let(::definitions) ?: emptyList()) + (c.flipSide?.let(::definitions) ?: emptyList())
-    private fun namesOf(c: CardDefinition): Set<String> = definitions(c).flatMap { d -> listOf(d.name)+d.cardFaces.map { it.name } }
+    private fun namesOf(c: CardDefinition): Set<String> = definitions(c).map { it.name }
         .map { it.lowercase(Locale.ROOT) }.toSet()
     private fun idsOf(c: CardDefinition): Set<String> = definitions(c).mapNotNull { it.oracleId?.lowercase(Locale.ROOT) }.toSet()
-    fun validate(upstream: List<CardDefinition>, additions: List<ExtensionDefinition>) {
+    fun validate(upstream: List<CardDefinition>, additions: List<ExtensionDefinition>): List<String> {
+        val warnings = mutableListOf<String>()
         val names=upstream.flatMap(::namesOf).toMutableSet()
         val ids=upstream.flatMap(::idsOf).toMutableSet()
         additions.forEach { extension ->
@@ -46,7 +48,9 @@ object Extensions {
             require(extension.review.knownLimitations.isEmpty()) { "Refusing known-incomplete extension: ${card.name}; ${extension.review.knownLimitations}" }
             require(extension.review.scenarioReferences.none { it.isBlank() }) { "Empty scenario reference: ${card.name}" }
             definitions(card).forEach { definition ->
-                val errors=CardValidator.validate(definition)
+                val findings=CardValidator.validate(definition)
+                val errors=findings.filter { it.severity == LintSeverity.ERROR }
+                warnings += findings.filter { it.severity == LintSeverity.WARNING }.map { "${definition.name}: ${it.message}" }
                 require(errors.isEmpty()) { "Invalid native extension ${definition.name}: $errors" }
             }
             val aliases=namesOf(card)
@@ -55,5 +59,6 @@ object Extensions {
             require(oracleIds.none { it in ids }) { "Extension Oracle identity collision: ${card.oracleId} (${card.name})" }
             names.addAll(aliases); ids.addAll(oracleIds)
         }
+        return warnings
     }
 }

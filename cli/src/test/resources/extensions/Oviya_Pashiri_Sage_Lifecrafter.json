@@ -1,0 +1,107 @@
+{
+    "name": "Oviya Pashiri, Sage Lifecrafter",
+    "manaCost": "{G}",
+    "typeLine": "Legendary Creature — Human Artificer",
+    "oracleText": "{2}{G}, {T}: Create a 1/1 colorless Servo artifact creature token.\n{4}{G}, {T}: Create an X/X colorless Construct artifact creature token, where X is the number of creatures you control.",
+    "creatureStats": {
+        "power": 1,
+        "toughness": 2
+    },
+    "script": {
+        "activatedAbilities": [
+            {
+                "id": "Oviya Pashiri, Sage Lifecrafter:1",
+                "cost": {
+                    "type": "CostComposite",
+                    "costs": [
+                        {
+                            "type": "CostAtomWrapper",
+                            "atom": {
+                                "type": "AtomMana",
+                                "cost": "{2}{G}"
+                            }
+                        },
+                        "CostTap"
+                    ]
+                },
+                "effect": {
+                    "type": "CreateToken",
+                    "power": 1,
+                    "toughness": 1,
+                    "colors": [],
+                    "creatureTypes": [
+                        "Servo"
+                    ],
+                    "artifactToken": true
+                }
+            },
+            {
+                "id": "Oviya Pashiri, Sage Lifecrafter:2",
+                "cost": {
+                    "type": "CostComposite",
+                    "costs": [
+                        {
+                            "type": "CostAtomWrapper",
+                            "atom": {
+                                "type": "AtomMana",
+                                "cost": "{4}{G}"
+                            }
+                        },
+                        "CostTap"
+                    ]
+                },
+                "effect": {
+                    "type": "CreateToken",
+                    "power": 0,
+                    "toughness": 0,
+                    "colors": [],
+                    "creatureTypes": [
+                        "Construct"
+                    ],
+                    "dynamicPower": {
+                        "type": "AggregateBattlefield",
+                        "player": "You",
+                        "filter": "creature"
+                    },
+                    "dynamicToughness": {
+                        "type": "AggregateBattlefield",
+                        "player": "You",
+                        "filter": "creature"
+                    },
+                    "artifactToken": true
+                }
+            }
+        ]
+    },
+    "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+    "setCode": "KLD",
+    "metadata": {
+        "collectorNumber": "165",
+        "rarity": "RARE",
+        "artist": "Magali Villeneuve",
+        "imageUri": "https://cards.scryfall.io/normal/front/2/7/27eb9d40-958b-41b8-b04b-7f45adc0a862.jpg",
+        "scryfallId": "27eb9d40-958b-41b8-b04b-7f45adc0a862",
+        "releaseDate": "2016-09-30",
+        "rulings": [
+            {
+                "date": "2016-09-20",
+                "text": "The value of X is determined only as Oviya Pashiri's last ability resolves. The token's power and toughness won't change as the number of creatures you control changes."
+            },
+            {
+                "date": "2016-09-20",
+                "text": "The Construct token you're creating doesn't count towards X for the ability that creates it."
+            }
+        ]
+    },
+    "legalFormats": [
+        "PIONEER",
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}

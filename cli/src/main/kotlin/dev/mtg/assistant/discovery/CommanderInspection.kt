@@ -4,6 +4,7 @@ import com.wingedsheep.sdk.core.Supertype
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.model.CommanderEligibility
 import com.wingedsheep.sdk.tooling.CardValidator
+import com.wingedsheep.sdk.tooling.LintSeverity
 import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.extensions.DefinitionReview
 import dev.mtg.assistant.extensions.Provenance
@@ -23,7 +24,8 @@ import kotlinx.serialization.encodeToString
     val constructionScope: String = "Single fixed-identity commander; pairs and chosen-color construction unsupported",
     val mechanicalCaveat: String = "Selection eligibility and structural validation do not certify complete rules correctness; scenarios verify only their recorded cases",
     val selectable: Boolean = blockers.isEmpty(),
-    val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null
+    val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null,
+    val nativeValidationWarnings: List<String> = emptyList()
 )
 
 /** Pure inspection also accepts isolated SDK fixtures; no card-name exceptions or Oracle effect parser. */
@@ -49,7 +51,9 @@ fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: 
     if(chosen || CommanderEligibility.isBackground(card) || (!eligible && specialForm))
         block(CommanderBlocker.UNSUPPORTED_CONSTRUCTION,"Commander construction requires unsupported chosen colors, pairing, or a special commander form","Use a supported single fixed-identity commander; do not approximate construction rules")
     else if(!eligible) block(CommanderBlocker.INELIGIBLE_COMMANDER,"Not a supported commander: native eligibility rejects this card","Choose a legendary creature or a native explicit commander override")
-    val errors=CardValidator.validate(card).map { it.toString() }
+    val findings=CardValidator.validate(card)
+    val errors=findings.filter { it.severity == LintSeverity.ERROR }.map { it.toString() }
+    val warnings=findings.filter { it.severity == LintSeverity.WARNING }.map { it.toString() }
     if(errors.isNotEmpty()) block(CommanderBlocker.INVALID_NATIVE_DEFINITION,"Native structural validation failed","Repair and test the application extension or report the upstream limitation")
     val mechanical=when {
         errors.isNotEmpty() || review.knownLimitations.isNotEmpty() -> MechanicalReviewStatus.KNOWN_INCOMPLETE
@@ -57,7 +61,7 @@ fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: 
         else -> MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
     }
     return CommanderInspection(name,card.name,if(provenance?.origin=="APPLICATION_EXTENSION") DefinitionAvailability.APPLICATION_EXTENSION else DefinitionAvailability.UPSTREAM_NATIVE,
-        provenance,legal,effective.authoritativeIdentity,(if(effective.authoritativeIdentity) effective.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations,effectiveMetadata=effective.takeIf { it.corrections.isNotEmpty() })
+        provenance,legal,effective.authoritativeIdentity,(if(effective.authoritativeIdentity) effective.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations,effectiveMetadata=effective.takeIf { it.corrections.isNotEmpty() },nativeValidationWarnings=warnings)
 }
 
 fun inspectCommander(catalog: Catalog, name: String): CommanderInspection {
@@ -82,6 +86,7 @@ fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         report.effectiveMetadata?.let { appendLine("Reviewed eligibility corrections: ${it.corrections.map { c -> c.record.id to c.state }}; original identity: ${it.originalIdentity}; original format: ${it.originalCommanderLegality}") }
         report.blockers.forEach { appendLine("${it.code}: ${it.reason}. Next: ${it.nextAction}") }
         appendLine("Mechanical review: ${report.mechanicalReview}")
+        report.nativeValidationWarnings.forEach { appendLine("Native warning: $it") }
         report.nativeValidationErrors.forEach { appendLine("Native validation: $it") }
         report.knownLimitations.forEach { appendLine("Known limitation: $it") }
         report.scenarioReferences.forEach { appendLine("Recorded scenarios: $it") }

@@ -28,6 +28,8 @@ tasks.test {
     inputs.dir(layout.projectDirectory.dir("../benchmark")).withPathSensitivity(PathSensitivity.RELATIVE)
     // Archived authoritative source snapshots are assertions in extension integration tests.
     inputs.dir(layout.projectDirectory.dir("../reference")).withPathSensitivity(PathSensitivity.RELATIVE)
+    // The source-text facade guard must rerun even when a source edit leaves bytecode unchanged.
+    inputs.dir(layout.projectDirectory.dir("src/main/kotlin/dev/mtg/assistant/extensions")).withPathSensitivity(PathSensitivity.RELATIVE)
     maxHeapSize = "1g"
     jvmArgs("-XX:ActiveProcessorCount=4")
     testLogging { events("passed", "failed", "skipped") }

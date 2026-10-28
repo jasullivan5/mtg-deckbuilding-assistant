@@ -1,0 +1,88 @@
+{
+    "name": "Bitterblossom",
+    "manaCost": "{1}{B}",
+    "typeLine": "Kindred Enchantment — Faerie",
+    "oracleText": "At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.",
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Bitterblossom:1",
+                "trigger": {
+                    "type": "StepEvent",
+                    "step": "UPKEEP"
+                },
+                "binding": "ANY",
+                "effect": {
+                    "type": "Composite",
+                    "effects": [
+                        {
+                            "type": "LoseLife",
+                            "amount": {
+                                "type": "Fixed",
+                                "amount": 1
+                            },
+                            "target": "Controller"
+                        },
+                        {
+                            "type": "CreateToken",
+                            "power": 1,
+                            "toughness": 1,
+                            "colors": [
+                                "BLACK"
+                            ],
+                            "creatureTypes": [
+                                "Faerie",
+                                "Rogue"
+                            ],
+                            "keywords": [
+                                "FLYING"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+    "setCode": "MOR",
+    "metadata": {
+        "collectorNumber": "58",
+        "rarity": "RARE",
+        "artist": "Rebecca Guay",
+        "imageUri": "https://cards.scryfall.io/normal/front/8/1/8145fed6-6b51-420a-84cf-4ea5e0aa1883.jpg",
+        "scryfallId": "8145fed6-6b51-420a-84cf-4ea5e0aa1883",
+        "releaseDate": "2008-02-01",
+        "rulings": [
+            {
+                "date": "2024-06-07",
+                "text": "This cards was originally printed with the \"tribal\" card type. That card type has been replaced with \"kindred\". This change does not affect the gameplay function of this card."
+            },
+            {
+                "date": "2024-06-07",
+                "text": "Kindred is a card type that allows noncreature cards to have creature types. For example, Echoes of Eternity is an Eldrazi (although not a creature) while on the battlefield and an Eldrazi card (although not a creature card) in zones other than the battlefield."
+            },
+            {
+                "date": "2024-06-07",
+                "text": "While it appears only on cards that already have other card types, kindred is a card type and will be counted by effects that refer to the number of card types among cards in a zone."
+            },
+            {
+                "date": "2008-04-01",
+                "text": "The effect is mandatory. You'll lose 1 life even if you have only 1 life left."
+            },
+            {
+                "date": "2008-04-01",
+                "text": "The life loss isn't a payment. You'll get a token even if you had 0 life (and another effect is stopping you from losing the game)."
+            }
+        ]
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "BLACK"
+    ]
+}

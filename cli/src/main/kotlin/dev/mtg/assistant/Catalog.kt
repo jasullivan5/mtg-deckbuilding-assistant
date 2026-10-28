@@ -17,6 +17,7 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
     fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview()
     val registry = CardRegistry()
     private val printings = PrintingRegistry()
+    val validationWarnings: List<String>
     val setCount: Int
     val cards: List<CardDefinition>
     private val searchable: List<DefinitionSearchCard> by lazy { cards.map {
@@ -35,14 +36,13 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
                 LegalityData.stamp(dated)
             })
         }
-        dev.mtg.assistant.extensions.Extensions.validate(registry.allCardNames().map(registry::requireCard), extensionDefinitions)
+        validationWarnings = dev.mtg.assistant.extensions.Extensions.validate(registry.allCardNames().map(registry::requireCard), extensionDefinitions)
         for (extension in extensionDefinitions) {
             registry.register(listOf(extension.definition))
             fun mark(def: CardDefinition) {
                 origins[def.name] = extension.provenance
                 reviews[def.name] = extension.review
                 def.backFace?.let(::mark); def.flipSide?.let(::mark)
-                def.cardFaces.forEach { origins[it.name] = extension.provenance; reviews[it.name] = extension.review }
             }
             mark(extension.definition)
         }
