@@ -1,0 +1,69 @@
+{
+  "object": "card",
+  "id": "42914fd9-e56e-4c3e-a445-fdfa45a45178",
+  "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+  "name": "Might of Murasa",
+  "released_at": "2020-09-25",
+  "uri": "https://api.scryfall.com/cards/42914fd9-e56e-4c3e-a445-fdfa45a45178",
+  "scryfall_uri": "https://scryfall.com/card/znr/194/might-of-murasa?utm_source=api",
+  "layout": "normal",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+    "normal": "https://cards.scryfall.io/normal/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+    "large": "https://cards.scryfall.io/large/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+    "png": "https://cards.scryfall.io/png/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.png?1783929336",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+    "thumb": "https://cards.scryfall.io/thumb/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.webp?1783929336",
+    "grid": "https://cards.scryfall.io/grid/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.webp?1783929336",
+    "display": "https://cards.scryfall.io/display/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.webp?1783929336",
+    "art": "https://cards.scryfall.io/art/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.webp?1783929336",
+    "crop": "https://cards.scryfall.io/crop/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.webp?1783929336",
+    "jpeg": "https://cards.scryfall.io/normal/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336"
+  },
+  "mana_cost": "{1}{G}",
+  "type_line": "Instant",
+  "oracle_text": "Kicker {2}{G} (You may pay an additional {2}{G} as you cast this spell.)\nTarget creature gets +3/+3 until end of turn. If this spell was kicked, that creature gets +5/+5 until end of turn instead.",
+  "colors": [
+    "G"
+  ],
+  "color_identity": [
+    "G"
+  ],
+  "keywords": [
+    "Kicker"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "legal",
+    "timeless": "legal",
+    "gladiator": "legal",
+    "pioneer": "legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "legal",
+    "competitivebrawl": "legal",
+    "alchemy": "not_legal",
+    "paupercommander": "legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "not_legal",
+    "tlr": "legal"
+  },
+  "set": "znr",
+  "set_type": "expansion",
+  "rulings_uri": "https://api.scryfall.com/cards/42914fd9-e56e-4c3e-a445-fdfa45a45178/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A902eb71f-62b3-40cb-816b-f6b7e92e91e7&unique=prints",
+  "collector_number": "194",
+  "rarity": "common",
+  "flavor_text": "The continent of Murasa is defined by irrepressible growth, both natural and otherwise.",
+  "artist": "Lie Setiawan"
+}

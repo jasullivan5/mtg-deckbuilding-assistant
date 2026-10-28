@@ -1,0 +1,160 @@
+{
+    "name": "Sword of Truth and Justice",
+    "manaCost": "{3}",
+    "typeLine": "Artifact — Equipment",
+    "oracleText": "Equipped creature gets +2/+2 and has protection from white and from blue.\nWhenever equipped creature deals combat damage to a player, put a +1/+1 counter on a creature you control, then proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)\nEquip {2}",
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Sword of Truth and Justice:1",
+                "trigger": {
+                    "type": "DealsDamageEvent",
+                    "damageType": "DamageCombat",
+                    "recipient": {
+                        "type": "RecipientPlayer",
+                        "player": "Any"
+                    }
+                },
+                "binding": "ATTACHED",
+                "effect": {
+                    "type": "Composite",
+                    "effects": [
+                        {
+                            "type": "GatherCards",
+                            "source": {
+                                "type": "BattlefieldMatching",
+                                "filter": "creature ctrl:you"
+                            },
+                            "storeAs": "gathered0"
+                        },
+                        {
+                            "type": "ConditionalOnCollection",
+                            "collection": "gathered0",
+                            "ifNotEmpty": {
+                                "type": "Composite",
+                                "effects": [
+                                    {
+                                        "type": "SelectFromCollection",
+                                        "from": "gathered0",
+                                        "selection": {
+                                            "type": "ChooseExactly",
+                                            "count": {
+                                                "type": "Fixed",
+                                                "amount": 1
+                                            }
+                                        },
+                                        "storeSelected": "selected2"
+                                    },
+                                    {
+                                        "type": "AddCountersToCollection",
+                                        "collectionName": "selected2",
+                                        "counterType": "PLUS_ONE_PLUS_ONE"
+                                    }
+                                ]
+                            }
+                        },
+                        "Proliferate"
+                    ]
+                }
+            }
+        ],
+        "activatedAbilities": [
+            {
+                "id": "Sword of Truth and Justice:2",
+                "cost": {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                        "type": "AtomMana",
+                        "cost": "{2}"
+                    }
+                },
+                "effect": {
+                    "type": "AttachEquipment",
+                    "target": {
+                        "type": "BoundVariable",
+                        "name": "creature you control"
+                    }
+                },
+                "targetRequirements": [
+                    {
+                        "type": "TargetObject",
+                        "filter": {
+                            "baseFilter": "creature ctrl:you"
+                        },
+                        "id": "creature you control"
+                    }
+                ],
+                "timing": "SorcerySpeed",
+                "isEquipAbility": true
+            }
+        ],
+        "staticAbilities": [
+            {
+                "type": "ModifyStats",
+                "powerBonus": 2,
+                "toughnessBonus": 2
+            },
+            {
+                "type": "GrantProtection",
+                "color": "WHITE"
+            },
+            {
+                "type": "GrantProtection",
+                "color": "BLUE"
+            }
+        ]
+    },
+    "equipCost": "{2}",
+    "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+    "setCode": "MH1",
+    "metadata": {
+        "collectorNumber": "229",
+        "rarity": "MYTHIC",
+        "artist": "Chris Rahn",
+        "imageUri": "https://cards.scryfall.io/normal/front/2/b/2be8d24e-1370-4e85-90f2-66b6d6e9c4a4.jpg?1783933072",
+        "scryfallId": "2be8d24e-1370-4e85-90f2-66b6d6e9c4a4",
+        "releaseDate": "2019-06-14",
+        "rulings": [
+            {
+                "date": "2023-02-04",
+                "text": "If a permanent ever has both +1/+1 counters and -1/-1 counters on it at the same time, they're removed in pairs as a state-based action so that the permanent has only one of those kinds of counters on it."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "An ability that triggers \"Whenever you proliferate\" triggers even if you chose no permanents or players while doing so."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "Players can respond to a spell or ability whose effect includes proliferating. Once that spell or ability starts to resolve, however, and its controller chooses which permanents and players will get new counters, it's too late for anyone to respond."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "To proliferate, you can choose any permanent that has a counter, including ones controlled by opponents. You can choose any player who has a counter, including opponents. You can't choose cards in any zone other than the battlefield, even if they have counters on them."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "You don't have to choose every permanent or player that has a counter, only the ones you want to add another counter to. Since \"any number\" includes zero, you don't have to choose any permanents at all, and you don't have to choose any players at all."
+            },
+            {
+                "date": "2023-02-04",
+                "text": "If a player or permanent has more than one kind of counter on it, and you choose for it to get additional counters, it must get one of each kind of counter it already has. You can't have it get just one kind of counter it already has and not the others."
+            },
+            {
+                "date": "2019-06-14",
+                "text": "If a permanent or player you choose while proliferating has more than one kind of counter on it, it will get one more of each of those kinds. This means that if you put a +1/+1 counter on a creature you control with a -1/-1 counter on it, then choose that creature while proliferating, you'll put another of each of those counters on it before state-based actions remove them."
+            },
+            {
+                "date": "2019-06-14",
+                "text": "Protection from a color means that the equipped creature can't be blocked by creatures of that color, can't be the target of spells of that color or abilities from sources of that color, can't be enchanted or equipped by Auras or Equipment of that color, and all damage that sources of that color would deal to it is prevented. Nothing other than these events is prevented or illegal."
+            }
+        ]
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": []
+}

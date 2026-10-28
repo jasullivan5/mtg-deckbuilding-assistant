@@ -1,0 +1,25 @@
+{
+  "id": "5e16386a-d478-475b-8e9b-edef62cae02b",
+  "name": "Zombie",
+  "type_line": "Token Creature — Zombie",
+  "power": "2",
+  "toughness": "2",
+  "colors": [
+    "B"
+  ],
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181",
+    "normal": "https://cards.scryfall.io/normal/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181",
+    "large": "https://cards.scryfall.io/large/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181",
+    "png": "https://cards.scryfall.io/png/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.png?1791637181",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181",
+    "thumb": "https://cards.scryfall.io/thumb/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.webp?1791637181",
+    "grid": "https://cards.scryfall.io/grid/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.webp?1791637181",
+    "display": "https://cards.scryfall.io/display/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.webp?1791637181",
+    "art": "https://cards.scryfall.io/art/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.webp?1791637181",
+    "crop": "https://cards.scryfall.io/crop/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.webp?1791637181",
+    "jpeg": "https://cards.scryfall.io/normal/front/5/e/5e16386a-d478-475b-8e9b-edef62cae02b.jpg?1791637181"
+  },
+  "uri": "https://api.scryfall.com/cards/5e16386a-d478-475b-8e9b-edef62cae02b"
+}

@@ -1,0 +1,100 @@
+{
+    "name": "Magus of the Library",
+    "manaCost": "{G}{G}",
+    "typeLine": "Creature — Human Wizard",
+    "oracleText": "{T}: Add {C}.\n{T}: Draw a card. Activate only if you have exactly seven cards in hand.",
+    "creatureStats": {
+        "power": 1,
+        "toughness": 1
+    },
+    "script": {
+        "activatedAbilities": [
+            {
+                "id": "Magus of the Library:1",
+                "cost": "CostTap",
+                "effect": {
+                    "type": "AddColorlessMana",
+                    "amount": {
+                        "type": "Fixed",
+                        "amount": 1
+                    }
+                },
+                "timing": "ManaAbility",
+                "isManaAbility": true
+            },
+            {
+                "id": "Magus of the Library:2",
+                "cost": "CostTap",
+                "effect": {
+                    "type": "DrawCards",
+                    "count": {
+                        "type": "Fixed",
+                        "amount": 1
+                    }
+                },
+                "restrictions": [
+                    {
+                        "type": "ActivationOnlyIfCondition",
+                        "condition": {
+                            "type": "All",
+                            "conditions": [
+                                {
+                                    "type": "Compare",
+                                    "left": {
+                                        "type": "Count",
+                                        "player": "You",
+                                        "zone": "Hand"
+                                    },
+                                    "operator": "GTE",
+                                    "right": {
+                                        "type": "Fixed",
+                                        "amount": 7
+                                    }
+                                },
+                                {
+                                    "type": "Compare",
+                                    "left": {
+                                        "type": "Count",
+                                        "player": "You",
+                                        "zone": "Hand"
+                                    },
+                                    "operator": "LTE",
+                                    "right": {
+                                        "type": "Fixed",
+                                        "amount": 7
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "oracleId": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+    "setCode": "PLC",
+    "metadata": {
+        "collectorNumber": "134",
+        "rarity": "RARE",
+        "artist": "Wayne Reynolds",
+        "imageUri": "https://cards.scryfall.io/normal/front/8/9/899db99b-df27-4848-a23d-5c645deae450.jpg?1783943140",
+        "scryfallId": "899db99b-df27-4848-a23d-5c645deae450",
+        "releaseDate": "2007-02-02",
+        "rulings": [
+            {
+                "date": "2004-10-04",
+                "text": "You may tap multiples of these in response to each other because the requirement for 7 cards is checked only at the time the ability is announced and not again when it resolves."
+            }
+        ]
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}

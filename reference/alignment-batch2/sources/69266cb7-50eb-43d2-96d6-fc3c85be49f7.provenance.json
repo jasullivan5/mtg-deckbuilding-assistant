@@ -1,0 +1,14 @@
+{
+  "wallSeconds": 1.49,
+  "projection": "Mechanics, printing and source links; market fields omitted",
+  "retrievedAt": "2026-10-28T05:05:07.511667+00:00",
+  "printsQuery": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A69266cb7-50eb-43d2-96d6-fc3c85be49f7&unique=prints",
+  "earliestPrinting": {
+    "set": "plc",
+    "collectorNumber": "134",
+    "releasedAt": "2007-02-02",
+    "id": "899db99b-df27-4848-a23d-5c645deae450"
+  },
+  "snapshotOracleTextMatches": true,
+  "sourceSha256": "b924262d7d6d739cc86b0497625d184af3e580f20894de04be124602a69c418a"
+}

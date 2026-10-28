@@ -1,0 +1,85 @@
+{
+  "object": "card",
+  "id": "c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+  "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+  "name": "Hour of Promise",
+  "released_at": "2017-07-14",
+  "uri": "https://api.scryfall.com/cards/c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+  "scryfall_uri": "https://scryfall.com/card/hou/120/hour-of-promise?utm_source=api",
+  "layout": "normal",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018",
+    "normal": "https://cards.scryfall.io/normal/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018",
+    "large": "https://cards.scryfall.io/large/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018",
+    "png": "https://cards.scryfall.io/png/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.png?1783936018",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018",
+    "thumb": "https://cards.scryfall.io/thumb/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.webp?1783936018",
+    "grid": "https://cards.scryfall.io/grid/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.webp?1783936018",
+    "display": "https://cards.scryfall.io/display/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.webp?1783936018",
+    "art": "https://cards.scryfall.io/art/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.webp?1783936018",
+    "crop": "https://cards.scryfall.io/crop/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.webp?1783936018",
+    "jpeg": "https://cards.scryfall.io/normal/front/c/5/c5ee374f-31dc-4b2c-beba-431d5b1126d0.jpg?1783936018"
+  },
+  "mana_cost": "{4}{G}",
+  "type_line": "Sorcery",
+  "oracle_text": "Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle. Then if you control three or more Deserts, create two 2/2 black Zombie creature tokens.",
+  "colors": [
+    "G"
+  ],
+  "color_identity": [
+    "G"
+  ],
+  "keywords": [],
+  "all_parts": [
+    {
+      "object": "related_card",
+      "id": "c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+      "component": "combo_piece",
+      "name": "Hour of Promise",
+      "type_line": "Sorcery",
+      "uri": "https://api.scryfall.com/cards/c5ee374f-31dc-4b2c-beba-431d5b1126d0"
+    },
+    {
+      "object": "related_card",
+      "id": "5e16386a-d478-475b-8e9b-edef62cae02b",
+      "component": "token",
+      "name": "Zombie",
+      "type_line": "Token Creature — Zombie",
+      "uri": "https://api.scryfall.com/cards/5e16386a-d478-475b-8e9b-edef62cae02b"
+    }
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "legal",
+    "timeless": "legal",
+    "gladiator": "legal",
+    "pioneer": "legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "legal",
+    "competitivebrawl": "legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "not_legal",
+    "tlr": "not_legal"
+  },
+  "set": "hou",
+  "set_type": "expansion",
+  "rulings_uri": "https://api.scryfall.com/cards/c5ee374f-31dc-4b2c-beba-431d5b1126d0/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A51ff3e53-90bb-41bf-80e4-bb3fd51d574a&unique=prints",
+  "collector_number": "120",
+  "rarity": "rare",
+  "flavor_text": "With the Hekma breached and its protection removed, the deserts swept in.",
+  "artist": "Jonas De Ro"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "3fc3a29a-280d-4f2c-9a01-8cfead75f583",
+  "name": "Beast",
+  "type_line": "Token Creature — Beast",
+  "power": "3",
+  "toughness": "3",
+  "colors": [
+    "G"
+  ],
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653",
+    "normal": "https://cards.scryfall.io/normal/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653",
+    "large": "https://cards.scryfall.io/large/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653",
+    "png": "https://cards.scryfall.io/png/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.png?1783942653",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653",
+    "thumb": "https://cards.scryfall.io/thumb/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.webp?1783942653",
+    "grid": "https://cards.scryfall.io/grid/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.webp?1783942653",
+    "display": "https://cards.scryfall.io/display/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.webp?1783942653",
+    "art": "https://cards.scryfall.io/art/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.webp?1783942653",
+    "crop": "https://cards.scryfall.io/crop/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.webp?1783942653",
+    "jpeg": "https://cards.scryfall.io/normal/front/3/f/3fc3a29a-280d-4f2c-9a01-8cfead75f583.jpg?1783942653"
+  },
+  "uri": "https://api.scryfall.com/cards/3fc3a29a-280d-4f2c-9a01-8cfead75f583"
+}

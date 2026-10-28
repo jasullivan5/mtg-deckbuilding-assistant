@@ -1,0 +1,85 @@
+{
+  "object": "card",
+  "id": "e69e06f0-6142-4f80-9208-362b3e74d51d",
+  "oracle_id": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+  "name": "Galadhrim Ambush",
+  "released_at": "2023-06-23",
+  "uri": "https://api.scryfall.com/cards/e69e06f0-6142-4f80-9208-362b3e74d51d",
+  "scryfall_uri": "https://scryfall.com/card/ltc/38/galadhrim-ambush?utm_source=api",
+  "layout": "normal",
+  "image_uris": {
+    "small": "https://cards.scryfall.io/small/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026",
+    "normal": "https://cards.scryfall.io/normal/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026",
+    "large": "https://cards.scryfall.io/large/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026",
+    "png": "https://cards.scryfall.io/png/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.png?1783916026",
+    "art_crop": "https://cards.scryfall.io/art_crop/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026",
+    "border_crop": "https://cards.scryfall.io/border_crop/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026",
+    "thumb": "https://cards.scryfall.io/thumb/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.webp?1783916026",
+    "grid": "https://cards.scryfall.io/grid/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.webp?1783916026",
+    "display": "https://cards.scryfall.io/display/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.webp?1783916026",
+    "art": "https://cards.scryfall.io/art/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.webp?1783916026",
+    "crop": "https://cards.scryfall.io/crop/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.webp?1783916026",
+    "jpeg": "https://cards.scryfall.io/normal/front/e/6/e69e06f0-6142-4f80-9208-362b3e74d51d.jpg?1783916026"
+  },
+  "mana_cost": "{3}{G}",
+  "type_line": "Instant",
+  "oracle_text": "Create X 1/1 green Elf Warrior creature tokens, where X is the number of attacking creatures.\nPrevent all combat damage that would be dealt this turn by non-Elf creatures.",
+  "colors": [
+    "G"
+  ],
+  "color_identity": [
+    "G"
+  ],
+  "keywords": [],
+  "all_parts": [
+    {
+      "object": "related_card",
+      "id": "6bbd1461-bd98-4ba9-a538-2dae0cf39b53",
+      "component": "combo_piece",
+      "name": "Galadhrim Ambush",
+      "type_line": "Instant",
+      "uri": "https://api.scryfall.com/cards/6bbd1461-bd98-4ba9-a538-2dae0cf39b53"
+    },
+    {
+      "object": "related_card",
+      "id": "023f668a-a8e6-4fcb-98d1-30adf343f050",
+      "component": "token",
+      "name": "Elf Warrior",
+      "type_line": "Token Creature — Elf Warrior",
+      "uri": "https://api.scryfall.com/cards/023f668a-a8e6-4fcb-98d1-30adf343f050"
+    }
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "modern": "not_legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "competitivebrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "not_legal",
+    "tlr": "not_legal"
+  },
+  "set": "ltc",
+  "set_type": "commander",
+  "rulings_uri": "https://api.scryfall.com/cards/e69e06f0-6142-4f80-9208-362b3e74d51d/rulings",
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A3b22d21f-e19a-40df-840b-a2b7f11f79c2&unique=prints",
+  "collector_number": "38",
+  "rarity": "rare",
+  "flavor_text": "\"None of the Orcs will ever return out of Lórien.\"\n—Haldir",
+  "artist": "John Di Giovanni"
+}

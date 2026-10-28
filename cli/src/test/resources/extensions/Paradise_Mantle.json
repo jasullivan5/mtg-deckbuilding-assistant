@@ -1,0 +1,68 @@
+{
+    "name": "Paradise Mantle",
+    "manaCost": "{0}",
+    "typeLine": "Artifact — Equipment",
+    "oracleText": "Equipped creature has \"{T}: Add one mana of any color.\"\nEquip {1}",
+    "script": {
+        "activatedAbilities": [
+            {
+                "id": "Paradise Mantle:2",
+                "cost": {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                        "type": "AtomMana",
+                        "cost": "{1}"
+                    }
+                },
+                "effect": {
+                    "type": "AttachEquipment",
+                    "target": {
+                        "type": "BoundVariable",
+                        "name": "creature you control"
+                    }
+                },
+                "targetRequirements": [
+                    {
+                        "type": "TargetObject",
+                        "filter": {
+                            "baseFilter": "creature ctrl:you"
+                        },
+                        "id": "creature you control"
+                    }
+                ],
+                "timing": "SorcerySpeed",
+                "isEquipAbility": true
+            }
+        ],
+        "staticAbilities": [
+            {
+                "type": "GrantActivatedAbility",
+                "ability": {
+                    "id": "Paradise Mantle:1",
+                    "cost": "CostTap",
+                    "effect": "AddManaOfChoice",
+                    "timing": "ManaAbility",
+                    "isManaAbility": true
+                }
+            }
+        ]
+    },
+    "equipCost": "{1}",
+    "oracleId": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+    "setCode": "5DN",
+    "metadata": {
+        "collectorNumber": "142",
+        "rarity": "UNCOMMON",
+        "artist": "Greg Hildebrandt",
+        "imageUri": "https://cards.scryfall.io/normal/front/1/2/1252e9e2-2dd5-4bd6-aa56-f0a0ba056a77.jpg?1783944376",
+        "scryfallId": "1252e9e2-2dd5-4bd6-aa56-f0a0ba056a77",
+        "releaseDate": "2004-06-04"
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": []
+}

@@ -1,0 +1,38 @@
+{
+  "oracle_id": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+  "name": "Paradise Mantle",
+  "layout": "normal",
+  "color_identity": [],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "not_legal",
+    "timeless": "not_legal",
+    "gladiator": "not_legal",
+    "pioneer": "not_legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "not_legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "not_legal",
+    "competitivebrawl": "not_legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal",
+    "tlr": "legal"
+  },
+  "oracle_text": "Equipped creature has \"{T}: Add one mana of any color.\"\nEquip {1}",
+  "mana_cost": "{0}",
+  "type_line": "Artifact — Equipment",
+  "keywords": [
+    "Equip"
+  ],
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac1121b83-1ba2-473d-89c9-e3bbd4529072&unique=prints"
+}

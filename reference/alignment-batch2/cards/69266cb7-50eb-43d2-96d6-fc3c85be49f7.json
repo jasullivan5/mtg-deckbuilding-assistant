@@ -1,0 +1,40 @@
+{
+  "oracle_id": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+  "name": "Magus of the Library",
+  "layout": "normal",
+  "color_identity": [
+    "G"
+  ],
+  "legalities": {
+    "standard": "not_legal",
+    "future": "not_legal",
+    "historic": "legal",
+    "timeless": "legal",
+    "gladiator": "legal",
+    "pioneer": "not_legal",
+    "modern": "legal",
+    "legacy": "legal",
+    "pauper": "not_legal",
+    "vintage": "legal",
+    "penny": "legal",
+    "commander": "legal",
+    "oathbreaker": "legal",
+    "standardbrawl": "not_legal",
+    "brawl": "legal",
+    "competitivebrawl": "legal",
+    "alchemy": "not_legal",
+    "paupercommander": "not_legal",
+    "duel": "legal",
+    "oldschool": "not_legal",
+    "premodern": "not_legal",
+    "predh": "legal",
+    "tlr": "legal"
+  },
+  "oracle_text": "{T}: Add {C}.\n{T}: Draw a card. Activate only if you have exactly seven cards in hand.",
+  "mana_cost": "{G}{G}",
+  "type_line": "Creature — Human Wizard",
+  "power": "1",
+  "toughness": "1",
+  "keywords": [],
+  "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A69266cb7-50eb-43d2-96d6-fc3c85be49f7&unique=prints"
+}

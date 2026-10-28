@@ -12,7 +12,7 @@ def digest(p):
 class Counters(ctypes.Structure):
  _fields_=[('cb',ctypes.c_ulong),('PageFaultCount',ctypes.c_ulong)]+[(k,ctypes.c_size_t) for k in ['PeakWorkingSetSize','WorkingSetSize','QuotaPeakPagedPoolUsage','QuotaPagedPoolUsage','QuotaPeakNonPagedPoolUsage','QuotaNonPagedPoolUsage','PagefileUsage','PeakPagefileUsage']]
 def run(args):
- base=ROOT/'generated/phase29';out=base/args.stage;out.mkdir(parents=True,exist_ok=True)
+ base=args.output_base;out=base/args.stage;out.mkdir(parents=True,exist_ok=True)
  java=pathlib.Path(os.environ['JAVA_HOME'])/'bin'/('java.exe' if os.name=='nt' else 'java')
  dist=args.dist.resolve();measurements=[]
  def cli(label,argv):
@@ -38,5 +38,5 @@ def run(args):
    cli(f'{slug}-{letter}',['discover','--commander',commander,'--objective',objective,'--json','--output',str(out/f'{slug}-{letter}.json')])
    if args.stage=='after':cli(f'diff-{slug}-{letter}',['audit','diff','--before',str(base/'before'/f'{slug}-{letter}.json'),'--after',str(out/f'{slug}-{letter}.json'),'--json','--output',str(out/f'diff-{slug}-{letter}.json')])
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',choices=['before','after']);p.add_argument('--coverage-only',action='store_true');p.add_argument('--translation-review',type=pathlib.Path,default=ROOT/'reference/phase27/translation-review.json');p.add_argument('--snapshot',type=pathlib.Path,required=True);p.add_argument('--dist',type=pathlib.Path,default=ROOT/'cli/build/install/mtg-assistant');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('stage',choices=['before','after']);p.add_argument('--coverage-only',action='store_true');p.add_argument('--output-base',type=pathlib.Path,default=ROOT/'generated/phase29');p.add_argument('--translation-review',type=pathlib.Path,default=ROOT/'reference/phase27/translation-review.json');p.add_argument('--snapshot',type=pathlib.Path,required=True);p.add_argument('--dist',type=pathlib.Path,default=ROOT/'cli/build/install/mtg-assistant');a=p.parse_args()
  run(a)

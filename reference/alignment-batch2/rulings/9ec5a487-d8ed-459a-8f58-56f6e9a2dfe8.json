@@ -1,0 +1,27 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "source": "wotc",
+      "published_at": "2020-01-24",
+      "comment": "A creature removed from combat by Labyrinth of Skophos remains tapped if it was tapped."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "source": "wotc",
+      "published_at": "2020-01-24",
+      "comment": "If a blocking creature is removed from combat, the creature it blocked remains blocked. Unless that creature has trample, it won't deal combat damage."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "source": "wotc",
+      "published_at": "2020-01-24",
+      "comment": "Once creatures attack or block, they remain attacking or blocking creatures through the end of combat step unless removed from combat (by Labyrinth of Skophos or a similar effect)."
+    }
+  ]
+}
