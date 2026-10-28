@@ -25,6 +25,8 @@ object Extensions {
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/TatterkiteScenarioTest.kt"))),
         ExtensionDefinition(TyriteSanctum,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/TyriteSanctum.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/TyriteSanctumScenarioTest.kt"))),
+        ExtensionDefinition(LeyWeaver,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/LeyWeaver.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/LeyWeaverScenarioTest.kt"))),
         ExtensionDefinition(KrenkosCommand,
             Provenance("APPLICATION_EXTENSION", "cli/src/main/kotlin/dev/mtg/assistant/extensions/KrenkosCommand.kt", "2026-10-26"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationScenarioTest.kt"))),
