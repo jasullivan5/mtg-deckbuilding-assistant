@@ -1,0 +1,13 @@
+{
+  "command": "VERIFY_KNOWN_ENGINE_GAPS=1 dev.ps1 test --tests dev.mtg.assistant.TranslationReliabilityScenarioTest",
+  "expectedExit": "nonzero",
+  "gradleElapsed": "38s",
+  "logSha256": "3a8da03869e3e2e84183509f05793d12fae25c93b0793ff38c9663ff6371a5fa",
+  "failures": [
+    {
+      "case": "TK2 known pinned collection-counter failure remains reproducible",
+      "message": "org.opentest4j.AssertionFailedError: expected:<0> but was:<1>",
+      "trace": "org.opentest4j.AssertionFailedError: expected:<0> but was:<1>\n\tat dev.mtg.assistant.ReliabilityChecks.kite(TranslationReliabilityScenarioTest.kt:89)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$11.invokeSuspend(TranslationReliabilityScenarioTest.kt:151)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$11.invoke(TranslationReliabilityScenarioTest.kt)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$11.invoke(TranslationReliabilityScenarioTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invok"
+    }
+  ]
+}

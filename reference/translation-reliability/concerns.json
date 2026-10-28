@@ -1,0 +1,102 @@
+{
+  "records": [
+    {
+      "id": "TK-COLLECTION-COUNTERS",
+      "scope": "REGISTERED_CARD_USING_PINNED_SHARED_ENGINE",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "sources": [
+        {
+          "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "e525068799f80024a6b3e3e24a61f0031ca5919c31bfdbf49d78a06eed49d356"
+        },
+        {
+          "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "b90262aa731f168036e6c2a7f84e05a2d9a4060139f42da8ccc7f1b16372a1ca"
+        }
+      ],
+      "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+      "definition": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Tatterkite.kt",
+      "mechanism": "AddCountersToCollectionExecutor",
+      "kind": "ENGINE_EXECUTION",
+      "state": "CONFIRMED",
+      "claim": "TK2: no counters may be placed on Tatterkite, including through collections",
+      "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter",
+      "reproduction": "VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
+      "evidence": [
+        "counter-gap-failure.json",
+        "cli/src/test/kotlin/dev/mtg/assistant/TranslationReliabilityScenarioTest.kt"
+      ],
+      "history": [
+        {
+          "state": "SUSPECTED",
+          "observation": "Two-recipient collection counter scenario failed against unmodified card"
+        },
+        {
+          "state": "CONFIRMED",
+          "observation": "AddCountersExecutor checks projectedState.canReceiveCounters; collection executor does not. Eight other mutation controls pass."
+        }
+      ],
+      "nextAction": "A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here.",
+      "resolutionEvidence": []
+    },
+    {
+      "id": "SWORD-COLLECTION-COUNTERS",
+      "scope": "REGISTERED_CARD_USING_PINNED_SHARED_ENGINE",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "sources": [
+        {
+          "path": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+          "sha256": "3fc64a40af6b8518abcc63aa19e3b44e0064d0e7445f982f1ccbc366b5e51072"
+        },
+        {
+          "path": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+          "sha256": "fffcefa36f2c4ea74ea89ca316e9d91578f05b6c6a7f329b04529026a02208e5"
+        }
+      ],
+      "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+      "definition": "cli/src/main/kotlin/dev/mtg/assistant/extensions/SwordOfTruthAndJustice.kt",
+      "mechanism": "AddCountersToCollection versus ForEachInCollection + AddCounters",
+      "kind": "ENGINE_EXECUTION",
+      "state": "RESOLVED",
+      "claim": "SJ3: chosen creature cannot receive prohibited counters; proliferate still happens",
+      "reason": "Original collection instruction bypasses the chosen Tatterkite counter prohibition",
+      "reproduction": "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+      "history": [
+        {
+          "state": "SUSPECTED",
+          "observation": "Collection gap might affect Sword path"
+        },
+        {
+          "state": "CONFIRMED",
+          "observation": "sword-failure.json records unchanged source expectation failing against original Sword"
+        },
+        {
+          "state": "RESOLVED",
+          "observation": "Existing ForEachInCollection + single-object AddCounters respects prohibition, retains nontargeting choice and unconditional proliferate; same assertion now passes"
+        }
+      ],
+      "evidence": [
+        "sword-failure.json",
+        "focused-execution.json"
+      ],
+      "nextAction": "Retain regression; review upstream collection executor separately. No independent promotion.",
+      "resolutionEvidence": [
+        "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+        "focused-execution.json"
+      ]
+    }
+  ],
+  "harnessCorrections": [
+    {
+      "record": "initial-execution.json",
+      "state": "DISPROVEN_AS_CARD_DEFECT",
+      "cause": "Shuffle totals included initialization; use post-setup event offset. Kotlin equality assertion needed parentheses. GroupRef was passed to a single-target counter effect; use native collection primitive, which then exposed the real engine gap."
+    },
+    {
+      "record": "generated/reliability-sword-failure.log",
+      "state": "HARNESS_COMMAND_FAILED",
+      "cause": "Kotest named-case Gradle filter found no tests; successful reproduction ran full class."
+    }
+  ],
+  "sourceHashFormat": "SHA256_UTF8_LF"
+}

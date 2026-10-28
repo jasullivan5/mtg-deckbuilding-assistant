@@ -9,7 +9,7 @@ import java.util.Locale
 
 @Serializable data class Provenance(val origin: String, val source: String, val verifiedAt: String? = null)
 /** Recorded review scope, never a certificate of complete mechanical correctness. */
-data class DefinitionReview(val scenarioReferences: List<String> = emptyList(), val knownLimitations: List<String> = emptyList())
+data class DefinitionReview(val scenarioReferences: List<String> = emptyList(), val knownLimitations: List<String> = emptyList(), val assuranceEvidence: TranslationEvidence? = null)
 data class ExtensionDefinition(val definition: CardDefinition, val provenance: Provenance, val review: DefinitionReview = DefinitionReview())
 
 /** Native definitions only. Registration is fail-closed on names, face aliases, and Oracle identity. */
@@ -63,7 +63,7 @@ object Extensions {
         ExtensionDefinition(OviyaPashiriSageLifecrafter,
             Provenance("APPLICATION_EXTENSION", "cli/src/main/kotlin/dev/mtg/assistant/extensions/OviyaPashiriSageLifecrafter.kt", "2026-10-26"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/OviyaPashiriSageLifecrafterScenarioTest.kt")))
-    ) }
+    ).map { it.copy(review=it.review.copy(assuranceEvidence=RecordedTranslationEvidence.find(it.definition.oracleId))) } }
     private fun definitions(c: CardDefinition): List<CardDefinition> = listOf(c) +
         (c.backFace?.let(::definitions) ?: emptyList()) + (c.flipSide?.let(::definitions) ?: emptyList())
     private fun namesOf(c: CardDefinition): Set<String> = definitions(c).map { it.name }

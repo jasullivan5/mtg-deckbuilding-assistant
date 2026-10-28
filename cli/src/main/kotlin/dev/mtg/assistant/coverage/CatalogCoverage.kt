@@ -29,7 +29,8 @@ val coverageObjectives = listOf("own-nontoken-creature-deaths","reanimate-own-cr
 @Serializable data class TranslationLedger(val snapshotSha256: String, val cards: List<TranslationEntry>)
 @Serializable data class CoverageCard(val external: OracleIdentity, val status: CatalogStatus,
     val mapping: NativeMapping, val constructionNotes: List<String>,
-    val objectives: Map<String,ObjectiveEvaluation>, val translationStatus: String)
+    val objectives: Map<String,ObjectiveEvaluation>, val translationStatus: String,
+    val translationAssurance: dev.mtg.assistant.extensions.TranslationAssurance? = null)
 @Serializable data class PoolIssue(val external: OracleIdentity, val decision: PoolDecision)
 @Serializable data class CorrectionEligibilityImpact(val metadata: EffectiveEligibility, val beforeFormat: Verdict, val beforeDeck: Verdict,
     val afterFormat: Verdict, val afterDeck: Verdict)
@@ -154,7 +155,7 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
             else evaluations[objective]?.get(nativeName) ?: ObjectiveEvaluation("NOT_EVALUATED_NATIVE_ELIGIBILITY_DISAGREEMENT")
         }
         val status = if(mapping.status==CatalogStatus.NATIVE_AVAILABLE && outcomes.values.any { it.state=="NATIVE_MECHANICALLY_UNRESOLVED" }) CatalogStatus.NATIVE_MECHANICALLY_UNRESOLVED else mapping.status
-        CoverageCard(external,status,mapping,decision.constructionNotes,outcomes,translation[external.oracleId] ?: "NOT_INVESTIGATED")
+        CoverageCard(external,status,mapping,decision.constructionNotes,outcomes,translation[external.oracleId] ?: "NOT_INVESTIGATED",nativeName?.let { catalog.translationAssurance(it) })
     }
     val unresolved = pool.filter { it.second.state==PoolState.UNRESOLVED }.map { PoolIssue(it.first,it.second) }
     val exclusions = pool.filter { it.second.state==PoolState.EXCLUDED }.flatMap { it.second.reasons }.groupingBy { it }.eachCount().toSortedMap()

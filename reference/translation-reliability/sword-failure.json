@@ -1,0 +1,10 @@
+{
+  "logSha256": "9d22751ea145bca267d4cfba9e1da772a05549232bd326062af707044d9e3350",
+  "failures": [
+    {
+      "case": "SJ3 counter prohibition skips placement but still proliferates",
+      "message": "org.opentest4j.AssertionFailedError: expected:<0> but was:<1>",
+      "trace": "org.opentest4j.AssertionFailedError: expected:<0> but was:<1>\n\tat dev.mtg.assistant.ReliabilityChecks.sword(TranslationReliabilityScenarioTest.kt:111)\n\tat dev.mtg.assistant.ReliabilityChecks.sword$default(TranslationReliabilityScenarioTest.kt:92)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$13.invokeSuspend(TranslationReliabilityScenarioTest.kt:161)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$13.invoke(TranslationReliabilityScenarioTest.kt)\n\tat dev.mtg.assistant.TranslationReliabilityScenarioTest$1$13.invoke(TranslationReliabilityScenarioTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeS"
+    }
+  ]
+}

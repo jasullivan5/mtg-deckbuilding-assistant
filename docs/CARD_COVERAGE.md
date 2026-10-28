@@ -85,7 +85,7 @@ python scripts/phase27-sample.py assay --sample generated/phase27/reproduced-sam
 
 The rulings command fetches only the sixteen selected cards' rulings, caches them and spaces requests by 150 ms. Oracle information comes from the bulk snapshot, not thousands of individual requests. The Assay command executes the pinned supported `oracle-assay compile --file` path offline and archives stdout, decline/warning diagnostics and timings. Explicit UTF-8 stream properties preserve Windows punctuation. `mtgish-tooling` is not used.
 
-Assay success is guidance, not a verified definition. Review the native structure and rulings, preserve authoritative metadata, author a Kotlin definition, validate/register through `Extensions`, and execute consequential engine scenarios. Only then mark it verified. The same definition is reused by every eligible commander and all mechanically applicable objective queries; future upstream Oracle-ID/name collisions still fail registration.
+Assay success is guidance, not a verified definition. Review the native structure and rulings, preserve authoritative metadata, author a Kotlin definition, validate/register through `Extensions`, and execute consequential engine scenarios. Record that as bounded completed-authoring evidence; independent qualification still requires the separate approval process in TRANSLATION_RELIABILITY.md. The same definition is reused by every eligible commander and all mechanically applicable objective queries; future upstream Oracle-ID/name collisions still fail registration.
 
 ## Verification and retained evidence
 
@@ -104,3 +104,7 @@ Large bulk files, full coverage/discovery reports, build outputs and upstream so
 ## Reviewed effective eligibility (Phase 2.9)
 
 Current reports use schema 3 and explicitly reviewed corrections. Original `mapping.metadata` and `native_metadata_discrepancies` remain historical native evidence; `mapping.effectiveMetadata`, `mapping.effectiveAgreement` and `effective_metadata_discrepancies` expose the source-backed effective values and remaining issues. Root `eligibilityCorrections` includes affected cards outside the external eligible pool. Combined statuses use effective agreement. Identity association rules and external ordinary eligibility remain unchanged. See [ELIGIBILITY_CORRECTIONS.md](ELIGIBILITY_CORRECTIONS.md) for actual pool changes, sources and reproduction.
+
+## Translation assurance
+
+Coverage records now include application-owned `translationAssurance` separately from mapping, eligibility, objective interpretation and historical `translationStatus`. `VERIFIED_NATIVE_EXTENSION` remains historical authoring evidence; it does not grant independently qualified status. Provisional and blocked mechanics remain available for research. Upstream assurance is not assessed here. See [TRANSLATION_RELIABILITY.md](TRANSLATION_RELIABILITY.md).

@@ -1,0 +1,76 @@
+{
+  "command": "dev.ps1 test --tests dev.mtg.assistant.TranslationReliabilityScenarioTest --tests dev.mtg.assistant.TranslationMutationTest --tests dev.mtg.assistant.TranslationAssuranceTest --tests dev.mtg.assistant.ExtensionStructureTest :assistant-cli:installDist",
+  "logSha256": "4448cd4e721d5f6153abcd16998323980fabef72b6a360e63e728e36037e278e",
+  "gradleElapsed": "1m 19s",
+  "suiteContract": "Includes explicit known-failure contract for TK2; not a correctness pass for that claim",
+  "tests": 39,
+  "suites": [
+    {
+      "suite": "dev.mtg.assistant.ExtensionStructureTest",
+      "tests": 4,
+      "seconds": 17.94,
+      "cases": [
+        "registered extension trees match explicitly reviewed goldens and round-trip preserving ids",
+        "nested transform and embedded spell structures survive the SDK round-trip",
+        "external definitions use facade and typed pipeline boundaries",
+        "authoring boundary catches raw effects costs triggers amounts and string slots"
+      ]
+    },
+    {
+      "suite": "dev.mtg.assistant.TranslationAssuranceTest",
+      "tests": 8,
+      "seconds": 1.557,
+      "cases": [
+        "new definitions and passing author scenarios remain provisional",
+        "only explicit separate human approval of the exact evidence bundle qualifies isolated fixture",
+        "definition SDK source requirement and test evidence changes revoke previous approval",
+        "suspected confirmed disproven and resolved histories remain visible and gate promotion",
+        "complete representation and positive author tests cannot override discrepancy or failure",
+        "historical evidence stays current with one explicit blocked engine concern and upstream unassessed",
+        "recorded references match retained files and physical identity",
+        "inspection discovery and coverage consumers retain explicit provisional status"
+      ]
+    },
+    {
+      "suite": "dev.mtg.assistant.TranslationMutationTest",
+      "tests": 9,
+      "seconds": 1.603,
+      "cases": [
+        "M1 structurally valid semantic defect detected with unchanged control",
+        "M2 structurally valid semantic defect detected with unchanged control",
+        "M3 structurally valid semantic defect detected with unchanged control",
+        "M4 structurally valid semantic defect detected with unchanged control",
+        "M5 structurally valid semantic defect detected with unchanged control",
+        "M6 structurally valid semantic defect detected with unchanged control",
+        "M7 structurally valid semantic defect detected with unchanged control",
+        "M8 structurally valid semantic defect detected with unchanged control",
+        "M9 structurally valid semantic defect detected with unchanged control"
+      ]
+    },
+    {
+      "suite": "dev.mtg.assistant.TranslationReliabilityScenarioTest",
+      "tests": 18,
+      "seconds": 0.399,
+      "cases": [
+        "PU1 opponent host controls activation and pays tap",
+        "PU2 illegal prey prevents all damage",
+        "PU4 Aura removal preserves original host",
+        "PU4 removed host deals last known damage",
+        "HP1 zero search is legal and still shuffles",
+        "HP2 opponent Deserts do not count",
+        "HP3 condition follows fetched Deserts",
+        "LW1 opponent can decline without shuffle",
+        "LW1 accepted search reveals to all then shuffles",
+        "LW2 absent named card can fail to find",
+        "TK2 known pinned collection-counter failure remains reproducible",
+        "SJ2 noncombat damage to player does not trigger Sword",
+        "SJ3 shroud does not prevent nontargeting choice",
+        "SJ3 counter prohibition skips placement but still proliferates",
+        "SJ3 no creatures still proliferates",
+        "PC3 all illegal targets prevent life modes",
+        "PC1 PC3 partial legal targets and printed order",
+        "PC2 repeated same target moves once without preventing life"
+      ]
+    }
+  ]
+}

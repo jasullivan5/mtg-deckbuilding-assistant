@@ -15,6 +15,10 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
     fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", "https://github.com/wingedsheep/argentum-engine/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
     private val reviews = mutableMapOf<String, dev.mtg.assistant.extensions.DefinitionReview>()
     fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview()
+    fun translationAssurance(name: String): dev.mtg.assistant.extensions.TranslationAssurance? =
+        card(name)?.takeIf { provenance(name).origin=="APPLICATION_EXTENSION" }?.let {
+            dev.mtg.assistant.extensions.assessTranslation(it,definitionReview(name).assuranceEvidence)
+        }
     val registry = CardRegistry()
     private val printings = PrintingRegistry()
     val validationWarnings: List<String>

@@ -137,7 +137,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     )
     return DiscoveryReport(objective="own-nontoken-creature-deaths",commander=commander.name,
         allowedIdentity=allowed.map { it.name }.sorted(),conventionalQuery=conventionalQuery,counts=counts,
-        eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name })
+        eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name },translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) })
 }
 
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {
@@ -162,6 +162,7 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         appendLine("Objective: ${report.objective}")
         appendLine("Commander: ${report.commander}; allowed identity: ${report.allowedIdentity}")
         report.counts.forEach { (k,v)-> appendLine("$k: $v") }
+        report.translationAssurance.forEach { appendLine("Translation assurance: ${it.card}: ${it.qualification}; fidelity=${it.sourceFidelity}; engine=${it.engineExecution}; ${it.reasons}") }
         for(branch in Contribution.entries) {
             appendLine("\n$branch")
             report.results.filter { it.branch == branch && it.verdict == Verdict.MATCH }.forEach { r ->

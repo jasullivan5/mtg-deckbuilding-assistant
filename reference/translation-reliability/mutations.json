@@ -1,0 +1,167 @@
+{
+  "separation": "Assertion helpers receive only the native definition; labels/descriptions are not source-probe inputs. Same agent constructed and tested mutations; not blind independent adjudication.",
+  "outcomes": [
+    {
+      "id": "M1",
+      "defect": "live reference loses last-known damage",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU4"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M2",
+      "defect": "tap cost omitted",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<true> but was:<false>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M3",
+      "defect": "optional search made mandatory",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-optional"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<1> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M4",
+      "defect": "targeted player's choice assigned to controller",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-controller"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<e1> but was:<e0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M5",
+      "defect": "condition moved before fetched lands",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M6",
+      "defect": "fetched cards go to hand instead of battlefield",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M7",
+      "defect": "counter prohibition omitted",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "TK2"
+      ],
+      "executionDetected": false,
+      "executionConfounded": true,
+      "controlAssertion": "expected:<0> but was:<1>",
+      "assertion": "expected:<0> but was:<1>",
+      "controlPassed": false,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M8",
+      "defect": "nontargeting choice replaced by a target",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "SJ3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "SJ3 is nontargeting at resolution",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M9",
+      "defect": "required reveal omitted",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-reveal"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<true> but was:<false>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    }
+  ]
+}

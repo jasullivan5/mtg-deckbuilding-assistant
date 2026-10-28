@@ -24,7 +24,8 @@ val SwordOfTruthAndJustice=card("Sword of Truth and Justice") {
             val creatures=gather(GameObjectFilter.Creature.youControl())
             ifNotEmpty(creatures) {
                 val chosen=chooseExactly(1,from=creatures)
-                run(Effects.AddCountersToCollection(chosen,CounterType.PLUS_ONE_PLUS_ONE))
+                // Use the single-entity placement path, which respects counter prohibitions at this pin.
+                run(Effects.ForEachInCollection(chosen,Effects.AddCounters(CounterType.PLUS_ONE_PLUS_ONE,1,EffectTarget.IterationEntity)))
             }
             run(Effects.Proliferate())
         }
