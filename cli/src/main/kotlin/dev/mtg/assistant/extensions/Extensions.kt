@@ -15,6 +15,8 @@ data class ExtensionDefinition(val definition: CardDefinition, val provenance: P
 /** Native definitions only. Registration is fail-closed on names, face aliases, and Oracle identity. */
 object Extensions {
     val all: List<ExtensionDefinition> by lazy { listOf(
+        ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(KrenkosCommand,
             Provenance("APPLICATION_EXTENSION", "cli/src/main/kotlin/dev/mtg/assistant/extensions/KrenkosCommand.kt", "2026-10-26"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationScenarioTest.kt"))),
