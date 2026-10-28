@@ -1,0 +1,19 @@
+{
+  "approvedRevision": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "candidateRevision": "57aa530bca47e2c36aa37092958c7d283cf11ed3",
+  "candidateStatus": "LOCAL_UNAPPROVED_NOT_PUBLISHED_UPSTREAM",
+  "sourceWorktree": "Separate engine worktree, branch fix/collection-counter-placement",
+  "patch": "argentum-collection-counter-placement.patch",
+  "patchSha256": "e3dd863ff651266386aa8456ef32be8ff1bb56234fbb0868dcd6fa6789540c2d",
+  "upstreamWriteAccess": "Git push --dry-run denied to jasullivan5 (HTTP 403); no fork or upstream PR created",
+  "changedFiles": [
+    "mtg-sets/2026/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/InvisibleWomanSueStormScenarioTest.kt",
+    "rules-engine/src/main/kotlin/com/wingedsheep/engine/event/TriggerDetector.kt",
+    "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/effects/permanent/counters/AddCountersExecutor.kt",
+    "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/effects/permanent/counters/AddCountersToCollectionExecutor.kt",
+    "rules-engine/src/test/kotlin/com/wingedsheep/engine/scenarios/CollectionCounterPlacementTest.kt"
+  ],
+  "approvedCheckoutUnchanged": true,
+  "assurance": "Tatterkite confirmed concern and blocked status remain operative on approved pin; candidate tests cannot authorize promotion",
+  "patchHashFormat": "SHA256_UTF8_LF"
+}
