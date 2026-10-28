@@ -1,0 +1,107 @@
+{
+    "name": "Might of Murasa",
+    "manaCost": "{1}{G}",
+    "typeLine": "Instant",
+    "oracleText": "Kicker {2}{G} (You may pay an additional {2}{G} as you cast this spell.)\nTarget creature gets +3/+3 until end of turn. If this spell was kicked, that creature gets +5/+5 until end of turn instead.",
+    "keywordAbilities": [
+        {
+            "type": "Kicker",
+            "manaCost": "{2}{G}"
+        }
+    ],
+    "script": {
+        "spellEffect": {
+            "type": "Gated",
+            "gate": {
+                "type": "Gate.WhenCondition",
+                "condition": "WasKicked"
+            },
+            "then": {
+                "type": "ModifyStats",
+                "powerModifier": {
+                    "type": "Fixed",
+                    "amount": 5
+                },
+                "toughnessModifier": {
+                    "type": "Fixed",
+                    "amount": 5
+                },
+                "target": {
+                    "type": "BoundVariable",
+                    "name": "t0"
+                }
+            },
+            "otherwise": {
+                "type": "ModifyStats",
+                "powerModifier": {
+                    "type": "Fixed",
+                    "amount": 3
+                },
+                "toughnessModifier": {
+                    "type": "Fixed",
+                    "amount": 3
+                },
+                "target": {
+                    "type": "BoundVariable",
+                    "name": "t0"
+                }
+            }
+        },
+        "targetRequirements": [
+            {
+                "type": "TargetObject",
+                "filter": {
+                    "baseFilter": "creature"
+                },
+                "id": "t0"
+            }
+        ]
+    },
+    "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+    "setCode": "ZNR",
+    "metadata": {
+        "collectorNumber": "194",
+        "artist": "Lie Setiawan",
+        "imageUri": "https://cards.scryfall.io/normal/front/4/2/42914fd9-e56e-4c3e-a445-fdfa45a45178.jpg?1783929336",
+        "scryfallId": "42914fd9-e56e-4c3e-a445-fdfa45a45178",
+        "releaseDate": "2020-09-25",
+        "rulings": [
+            {
+                "date": "2024-11-08",
+                "text": "If a spell's kicker cost was paid, the spell is \"kicked.\""
+            },
+            {
+                "date": "2024-11-08",
+                "text": "The kicker ability doesn't let you pay a kicker cost more than once."
+            },
+            {
+                "date": "2024-11-08",
+                "text": "If you put a permanent with a kicker ability onto the battlefield without casting it, you can't kick it."
+            },
+            {
+                "date": "2024-11-08",
+                "text": "If you copy a kicked spell on the stack, the copy is also kicked. If the copied spell is a permanent spell, the token the copy of that spell becomes when it enters is also kicked."
+            },
+            {
+                "date": "2024-11-08",
+                "text": "If a card or token enters as a copy of a permanent, the new permanent isn't kicked, even if the original was."
+            },
+            {
+                "date": "2024-11-08",
+                "text": "To determine a spell's total cost, start with the mana cost (or an alternative cost if another card's effect allows you to pay one instead), add any cost increases (such as kicker), then apply any cost reductions. The spell's mana value remains unchanged, no matter what the total cost to cast it was."
+            }
+        ]
+    },
+    "legalFormats": [
+        "PIONEER",
+        "MODERN",
+        "LEGACY",
+        "PAUPER",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}
