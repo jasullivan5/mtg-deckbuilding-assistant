@@ -1,0 +1,43 @@
+{
+  "records": [
+    {
+      "id": "TK-COLLECTION-COUNTERS",
+      "scope": "REGISTERED_CARD_USING_PINNED_SHARED_ENGINE",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "sources": [
+        {
+          "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+        },
+        {
+          "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e"
+        }
+      ],
+      "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+      "definition": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Tatterkite.kt",
+      "mechanism": "AddCountersToCollectionExecutor",
+      "kind": "ENGINE_EXECUTION",
+      "state": "CONFIRMED",
+      "claim": "TK2: no counters may be placed on Tatterkite, including through collections",
+      "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter",
+      "reproduction": "VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
+      "evidence": [
+        "counter-gap-failure.json",
+        "cli/src/test/kotlin/dev/mtg/assistant/TranslationReliabilityScenarioTest.kt"
+      ],
+      "history": [
+        {
+          "state": "SUSPECTED",
+          "observation": "Two-recipient collection counter scenario failed against unmodified card"
+        },
+        {
+          "state": "CONFIRMED",
+          "observation": "AddCountersExecutor checks projectedState.canReceiveCounters; collection executor does not. Eight other mutation controls pass."
+        }
+      ],
+      "nextAction": "A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here.",
+      "resolutionEvidence": []
+    }
+  ]
+}

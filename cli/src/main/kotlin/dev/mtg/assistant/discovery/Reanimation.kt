@@ -51,7 +51,7 @@ fun factObjectiveReport(catalog: Catalog,commander: String,identity: List<String
         limitations=discoveryLimitations+(if(tokens) listOf("Creature/predefined/batch/source-copy/target-copy token variants recognized. Specialized amass/populate/chosen-copy and token-granted abilities are not automatically interpreted.","Quantity/controller/type are correlated per native variant. Positive count and copiable characteristics are prerequisites, not guaranteed gameplay outcomes.") else listOf("Reanimation query recognizes direct original-card graveyard-to-battlefield movement only; linked intermediate-zone sequences are retained as separate facts, not composed into reanimation.",
             "Ownership is distinct from battlefield control. Owner-default entry is evaluated using the same chosen owner assignment as source-graveyard compatibility.",
             "Unsupported predicates/bindings/selection restrictions retain UNKNOWN. Card availability, target legality, timing, resources and actual resolution are not guaranteed.")),
-        structuralSupport=support,facts=extracted.facts,mechanicalInputCards=inputCards)
+        structuralSupport=support,facts=extracted.facts,mechanicalInputCards=inputCards,translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) })
 }
 
 fun reanimationReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,

@@ -1,0 +1,629 @@
+[
+  {
+    "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+    "definitionSha256": "b51a983f98db2cca0e450580b766140acb702d14c8fff0701eb4d246c1f47876",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/phase27/translations/bitterblossom-scryfall.json",
+        "sha256": "7f6ee33b40fb5a5b84d1d1f914cbc417f3da82db73cb7f0c1ea6933d5d689ac4"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "67a10da3-76f2-4f4a-90d1-e77abb5842fe",
+    "definitionSha256": "7af37d91bc99af87332dc6a2c3fc7c22ba172b821e897d426959bb15195ec988",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/67a10da3-76f2-4f4a-90d1-e77abb5842fe.json",
+        "sha256": "9566062028a788f5c59cc054004d8644f0e663ccdbc91d5ba6fb2be94902663c"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/67a10da3-76f2-4f4a-90d1-e77abb5842fe.json",
+        "sha256": "8669a76ec39f5280280f2c3f017f3cb5c0d74c3b8c635372cced91e17d0b8da2"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+    "definitionSha256": "b6425d3c22ac4299ed085df08a8ba02fbf34bc0ee5d131c17fc4b0a3a185efb2",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/3b22d21f-e19a-40df-840b-a2b7f11f79c2.json",
+        "sha256": "f1008f6b38ed427cf6c1fb7b4cd40ea67b4ebad5a2fb36a0affc92a81883a685"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/3b22d21f-e19a-40df-840b-a2b7f11f79c2.json",
+        "sha256": "ecfc899f3ba14378cee75b12a0dadfb803573331a1f96639aee9c3e926572d07"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+    "definitionSha256": "4dff788132be41afd158883a9383d400783ddb77126f752f201017a82dd2b4e8",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+        "sha256": "9eb077a5079d7a4a2b77119b312e6748e2a505afd83e47bb8072fca8300fd501"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+        "sha256": "7736d6b082698d6feb63fcd02327a5e12ece227ef8fdc8d842d007fec52ac271"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+    "definitionSha256": "413ae83e9c376ce6f6a782a753810d68e8e5d30f826ebe7dc08b3efbdf1266c0",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/judith-rna-185-scryfall.json",
+        "sha256": "0c7e0693592f1d2d88d1c682f76425a40f41538bded1e265e525745db2e1802c"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+    "definitionSha256": "b5b446d5400ff7d2def6e685ed518fe53ba6175faa2ff153b190ae97e85cc1a6",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/phase27/translations/krenkos-command-scryfall.json",
+        "sha256": "ecefcd380f382f1c7076a27d049eaa60967e9b69bb95c375fccca2154404281a"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+    "definitionSha256": "a344b51864c18d3809801dda6679cbd1f297847d697a2acc171a8f0774fdda45",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8.json",
+        "sha256": "3a0d7bc3d6bc5a56067dcc5d75ab56b95cafb40e3c1d3839f382cfee5ee0e203"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8.json",
+        "sha256": "fc9ad9287a075f24421040b98efdf5ae4dec1a1baf682751c0f32c46d36b543e"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+    "definitionSha256": "09068902a66002545bab80b20fd50718392b041112956a241beeb9119d764c96",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+        "sha256": "eb9724ad2456cfde9e6b601b500f06546ecaff561d40fbdeaf5735a3cff30187"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+        "sha256": "91f9c68de51018713049ac7b37cb9e3570bd95f452dc155b86847a839ebacbba"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+    "definitionSha256": "e5adb488035d4d771695e019f692016756dcae02d78177560ee9ab4dd235130c",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/69266cb7-50eb-43d2-96d6-fc3c85be49f7.json",
+        "sha256": "b924262d7d6d739cc86b0497625d184af3e580f20894de04be124602a69c418a"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/69266cb7-50eb-43d2-96d6-fc3c85be49f7.json",
+        "sha256": "00295ebb95808c4bf105ace85d24abca58b9e1e8aa63053bed841c07012ada30"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+    "definitionSha256": "ecadab084fda9135a8a7afc0cd1357035fb4b7c7580f8901375d5c77e586a4a4",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/902eb71f-62b3-40cb-816b-f6b7e92e91e7.json",
+        "sha256": "358560f47addc25af6a7cc249b26ef8047278c4307590d7fcdd62b9ed7661bc0"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/902eb71f-62b3-40cb-816b-f6b7e92e91e7.json",
+        "sha256": "474fbd0faec023de5b6f0d57a83365e2caa01e34739e01a512708aa6a4682e71"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "80875914-df4c-4b05-8c4d-658ff477c956",
+    "definitionSha256": "59216a21488d39f01866987b1fefc8d12c8b58288a6f5502fbcf3646d39f12c5",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/80875914-df4c-4b05-8c4d-658ff477c956.json",
+        "sha256": "fce220365b6f2d1e06dc57d9629b2200e807275b230815ec06933033a4656d9e"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/80875914-df4c-4b05-8c4d-658ff477c956.json",
+        "sha256": "21e0cd47032a5d0bebac3ec6def2f9d50df41de34cbdb69fa19533ac393d6fbb"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
+    "definitionSha256": "98c54eefc764e57c94c453354b1b58cdaeb5a96d4510a3d54dd0dc76f6d89df4",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/f7b70077-5518-45f9-9833-01a4f8afac71.json",
+        "sha256": "b43bda76c5051d70a0fa6fa1b60173b926159afbcc2db2840a5c200e33394a4f"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/f7b70077-5518-45f9-9833-01a4f8afac71.json",
+        "sha256": "e50d5ecf98f6f6b80bcbe436b82a78308bef7d6a1caf009b0f3219e152a34ca9"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+    "definitionSha256": "e103166ade82bcdf07f2483313b3096e219c49824268403909ee4083b417aa92",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/oviya-kld-165-scryfall.json",
+        "sha256": "19b51a71560b5af76b0dcf04168a13d8a2e61f4c85d93f60fcdcdce8161942a3"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+    "definitionSha256": "e6ebf478a7bbd5842b25716e0b110f2fa75e95cd11aa5f8ed01bb61fec7ecdee",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/c1121b83-1ba2-473d-89c9-e3bbd4529072.json",
+        "sha256": "f7c0eef50a523422c30c4377ef62eb70b6eedae3e8b65f5c5a53bca08ca279ce"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/c1121b83-1ba2-473d-89c9-e3bbd4529072.json",
+        "sha256": "e50d5ecf98f6f6b80bcbe436b82a78308bef7d6a1caf009b0f3219e152a34ca9"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+    "definitionSha256": "5a14894e56272870cd989024470f8e987712b78b62eae1ca052df15244304ba5",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/af23d348-adc9-451e-af08-bf9b1986c591.json",
+        "sha256": "78e218d092e65f66ed16cf6a9e89d5e4f3fadb0577b1cb7d23370ebf3c558e72"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/af23d348-adc9-451e-af08-bf9b1986c591.json",
+        "sha256": "bdd1279adb1ffa1512cb63fdbed9ee8c416f61d23469556e6e3c4f660a256dbe"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+    "definitionSha256": "13017423763b4568dd574c3f59cb0a2ea72876419f2b37c5dfc92d1c260f828a",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+        "sha256": "5cfcceb1d106ada4993b142daa2f6c77a86cc867c861f1e3ed2cfad3974a9212"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+        "sha256": "ac879278213e2d175e67b62889feb6052136b4ed59b0420f99f26085604a132b"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+    "definitionSha256": "c45b1d2a06cb85c47799608827db7cb57a15158578f885f85200b04f37be947d",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/494050f4-0a55-415d-9ae9-feb17e61c4e1.json",
+        "sha256": "b7f6903aca5c25b4dbd94e871a94f014a45859c9e4c341682de9c482d92ca805"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/494050f4-0a55-415d-9ae9-feb17e61c4e1.json",
+        "sha256": "13b98d2fc56b438db211a2551f6b63c8a8a9ec49d79867e8766a9fa0be274e66"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+    "definitionSha256": "1604126a6a6c520209d8cc4cbe02023802359c5eea22193fe117e39bc4cf1836",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/2d09e689-c163-48c5-af5d-766f110d041e.json",
+        "sha256": "a147f8a3d20173142025217a258d74bacc2c5507145538b458ea91aafc8fa940"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/2d09e689-c163-48c5-af5d-766f110d041e.json",
+        "sha256": "989480c622e10c32aa56e02b57206deed7ed13f4ff0a02a30b8eaf68b734d2e6"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+    "definitionSha256": "b519e2c685eb012adf550f67a5dc4a765739ab0d487bfa6b2ecd50b7f11f63b9",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+        "sha256": "121af4f78243768f05388821ef671fbd5247bdc7b94dd767fd47173c92c9fb10"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+        "sha256": "c11faec66fb265c325407c0fde2ec4424d58b12c88f0d1a260aaf7ee04e8ae6d"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+    "definitionSha256": "7efc79971bd20276e936105eb5f2bc431ed38e84450bd60f8aaf90e8e7fc481e",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "FAILURE_OBSERVED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+        "sha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+        "sha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Direct placement passes; collection placement violates counter prohibition at this SDK pin. Research access retained; qualification blocked."
+    ],
+    "concerns": [
+      {
+        "id": "TK-COLLECTION-COUNTERS",
+        "kind": "ENGINE_EXECUTION",
+        "state": "CONFIRMED",
+        "claim": "TK2: no counters may be placed on Tatterkite, including through collections",
+        "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter",
+        "reproduction": "VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
+        "nextAction": "A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here.",
+        "resolutionEvidence": []
+      }
+    ],
+    "requirements": [
+      {
+        "path": "reference/translation-reliability/requirements.json",
+        "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      }
+    ]
+  },
+  {
+    "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+    "definitionSha256": "01f1d9a89e4d4d2fa57ba3d25f056b6fbb521174a5ec4be92775d6bd1bbf557e",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch2/sources/7e8198e9-0f3b-420b-ab09-74f13f4fd548.json",
+        "sha256": "a40485ff724ddcd86a24fec493e402b5501bd39a453967562aa6fdc9a69d2d68"
+      },
+      {
+        "path": "reference/alignment-batch2/rulings/7e8198e9-0f3b-420b-ab09-74f13f4fd548.json",
+        "sha256": "e50d5ecf98f6f6b80bcbe436b82a78308bef7d6a1caf009b0f3219e152a34ca9"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch2/verification.json",
+        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  },
+  {
+    "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+    "definitionSha256": "7b9681e5deeda9634b32c39b89bbeb9af44ff3d1b25ee90aa995c9e89b14a7c5",
+    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "reference/alignment-batch1/sources/38c83332-2d21-450c-ae97-34109b565f59.json",
+        "sha256": "9d06241ee6465d76936349992ec1edffbed0385d7f53b1d7f4d413b417ed7bb2"
+      },
+      {
+        "path": "reference/alignment-batch1/rulings/38c83332-2d21-450c-ae97-34109b565f59.json",
+        "sha256": "2b0d166cb279b016e4d845a9899c32eb0fbc97889c450494224c3107bd3f8cad"
+      }
+    ],
+    "tests": [
+      {
+        "path": "reference/alignment-batch1/verification.json",
+        "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+    ]
+  }
+]

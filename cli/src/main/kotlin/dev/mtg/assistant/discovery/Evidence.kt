@@ -51,7 +51,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val counts: Map<String, Int>, val eligibility: List<EligibilityEvidence>, val results: List<ResultEvidence>,
     val actions: List<ActionEvidence>, val unsupported: List<Unsupported>, val limitations: List<String>,
     val structuralSupport: List<StructuralSupport> = emptyList(),
-    val facts: List<MechanicalFact> = emptyList(), val mechanicalInputCards: List<String>? = null)
+    val facts: List<MechanicalFact> = emptyList(), val mechanicalInputCards: List<String>? = null,
+    val translationAssurance: List<dev.mtg.assistant.extensions.TranslationAssurance> = emptyList())
 
 /** Keyword/self alternative payments link to the card script, whose spell action owns resolution. */
 fun associatedSpellAction(actions: Map<String,ActionEvidence>,actionId: String): String? =

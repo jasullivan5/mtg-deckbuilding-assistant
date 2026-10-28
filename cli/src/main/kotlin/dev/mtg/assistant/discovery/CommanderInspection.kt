@@ -25,13 +25,15 @@ import kotlinx.serialization.encodeToString
     val mechanicalCaveat: String = "Selection eligibility and structural validation do not certify complete rules correctness; scenarios verify only their recorded cases",
     val selectable: Boolean = blockers.isEmpty(),
     val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null,
-    val nativeValidationWarnings: List<String> = emptyList()
+    val nativeValidationWarnings: List<String> = emptyList(),
+    val translationAssurance: dev.mtg.assistant.extensions.TranslationAssurance? = null
 )
 
 /** Pure inspection also accepts isolated SDK fixtures; no card-name exceptions or Oracle effect parser. */
 fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: Provenance? = null,
     physicalFront: Boolean = true, review: DefinitionReview = DefinitionReview(),
-    metadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null): CommanderInspection {
+    metadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null,
+    assurance: dev.mtg.assistant.extensions.TranslationAssurance? = null): CommanderInspection {
     val problems=mutableListOf<CommanderProblem>()
     fun block(code: CommanderBlocker, reason: String, action: String) { problems += CommanderProblem(code,reason,action) }
     if(name.isBlank()) block(CommanderBlocker.INVALID_REQUEST,"A single exact commander name is required; pairs are unsupported","Supply one physical card's exact front name")
@@ -61,13 +63,13 @@ fun inspectCommanderDefinition(name: String, card: CardDefinition?, provenance: 
         else -> MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
     }
     return CommanderInspection(name,card.name,if(provenance?.origin=="APPLICATION_EXTENSION") DefinitionAvailability.APPLICATION_EXTENSION else DefinitionAvailability.UPSTREAM_NATIVE,
-        provenance,legal,effective.authoritativeIdentity,(if(effective.authoritativeIdentity) effective.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations,effectiveMetadata=effective.takeIf { it.corrections.isNotEmpty() },nativeValidationWarnings=warnings)
+        provenance,legal,effective.authoritativeIdentity,(if(effective.authoritativeIdentity) effective.colors + identityRestrictions(card) else fullIdentity(card)).map { it.name }.sorted(),eligible,physicalFront,problems,mechanical,errors,review.scenarioReferences,review.knownLimitations,effectiveMetadata=effective.takeIf { it.corrections.isNotEmpty() },nativeValidationWarnings=warnings,translationAssurance=assurance)
 }
 
 fun inspectCommander(catalog: Catalog, name: String): CommanderInspection {
     val card=catalog.card(name)
     return inspectCommanderDefinition(name,card,card?.let { catalog.provenance(it.name) },
-        card!=null && physicalCards(catalog.cards).any { it.name==card.name },catalog.definitionReview(name),card?.takeIf { c -> physicalCards(catalog.cards).any { it.name==c.name } }?.let { catalog.eligibility.resolve(it) })
+        card!=null && physicalCards(catalog.cards).any { it.name==card.name },catalog.definitionReview(name),card?.takeIf { c -> physicalCards(catalog.cards).any { it.name==c.name } }?.let { catalog.eligibility.resolve(it) },catalog.translationAssurance(name))
 }
 
 fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {
@@ -85,6 +87,7 @@ fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         appendLine("Native commander eligibility: ${report.nativeCommanderEligible}; physical front: ${report.physicalFront}")
         report.effectiveMetadata?.let { appendLine("Reviewed eligibility corrections: ${it.corrections.map { c -> c.record.id to c.state }}; original identity: ${it.originalIdentity}; original format: ${it.originalCommanderLegality}") }
         report.blockers.forEach { appendLine("${it.code}: ${it.reason}. Next: ${it.nextAction}") }
+        report.translationAssurance?.let { appendLine("Translation assurance: ${it.qualification}; ${it.reasons}") }
         appendLine("Mechanical review: ${report.mechanicalReview}")
         report.nativeValidationWarnings.forEach { appendLine("Native warning: $it") }
         report.nativeValidationErrors.forEach { appendLine("Native validation: $it") }
