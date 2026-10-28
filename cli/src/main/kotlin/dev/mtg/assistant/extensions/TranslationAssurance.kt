@@ -7,6 +7,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.*
 import java.security.MessageDigest
+import java.time.LocalDate
 
 @Serializable enum class RepresentationState { COMPLETE, PARTIAL, UNRESOLVED }
 @Serializable enum class FidelityState { UNREVIEWED, SOURCE_REVIEWED, SUSPECTED_DISCREPANCY, CONFIRMED_DISCREPANCY }
@@ -52,12 +53,13 @@ fun bundleDigest(evidence: TranslationEvidence): String = evidenceDigest(canonic
 fun assessTranslation(card: CardDefinition, evidence: TranslationEvidence?, pin: String = ARGENTUM_SHA): TranslationAssurance {
     val current = evidence != null && evidence.oracleId==card.oracleId && evidence.definitionSha256==definitionDigest(card) && evidence.argentumCommit==pin
     val concerns = evidence?.concerns.orEmpty().any { it.kind!=ConcernKind.DISCOVERY_EXTRACTION && it.state in setOf(ConcernState.SUSPECTED,ConcernState.CONFIRMED,ConcernState.UNRESOLVED) }
-    val blocked = evidence?.representation?.let { it!=RepresentationState.COMPLETE }==true || concerns || evidence?.fidelity in setOf(FidelityState.SUSPECTED_DISCREPANCY,FidelityState.CONFIRMED_DISCREPANCY) || evidence?.execution==ExecutionState.FAILURE_OBSERVED
+    val unclosed = evidence?.concerns.orEmpty().any { it.state in setOf(ConcernState.RESOLVED,ConcernState.DISPROVEN) && it.resolutionEvidence.isEmpty() }
+    val blocked = unclosed || evidence?.representation?.let { it!=RepresentationState.COMPLETE }==true || concerns || evidence?.fidelity in setOf(FidelityState.SUSPECTED_DISCREPANCY,FidelityState.CONFIRMED_DISCREPANCY) || evidence?.execution==ExecutionState.FAILURE_OBSERVED
     val ready = current && !blocked && evidence!!.fidelity==FidelityState.SOURCE_REVIEWED && evidence.execution==ExecutionState.BOUNDED_EVIDENCE_PASSED &&
         listOf(evidence.source,evidence.requirements,evidence.tests).all { refs -> refs.isNotEmpty() && refs.all { it.path.isNotBlank() && it.sha256.matches(Regex("[0-9a-f]{64}")) } }
     val approval = evidence?.independentApproval
-    val approved = ready && approval!=null && approval.independentHumanReview && approval.reviewer.isNotBlank() && approval.reviewer!=evidence!!.author &&
-        approval.reviewedAt.isNotBlank() && approval.reviewReference.isNotBlank() && approval.bundleSha256==bundleDigest(evidence!!)
+    val approved = ready && approval!=null && approval.independentHumanReview && approval.reviewer.isNotBlank() && !approval.reviewer.trim().equals(evidence!!.author.trim(),ignoreCase=true) &&
+        runCatching { LocalDate.parse(approval.reviewedAt) }.isSuccess && approval.reviewReference.isNotBlank() && approval.bundleSha256==bundleDigest(evidence!!)
     val state = when {
         approval!=null && !approved -> QualificationState.WITHDRAWN
         blocked -> QualificationState.BLOCKED

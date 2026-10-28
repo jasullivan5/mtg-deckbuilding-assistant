@@ -26,6 +26,8 @@ class TranslationAssuranceTest : FunSpec({
         val e=fixture(c);val approved=approve(e)
         assessTranslation(c,approved).qualification shouldBe QualificationState.QUALIFIED
         assessTranslation(c,approved.copy(independentApproval=approved.independentApproval!!.copy(reviewer=e.author))).qualification shouldBe QualificationState.WITHDRAWN
+        assessTranslation(c,approved.copy(independentApproval=approved.independentApproval!!.copy(reviewedAt="not-a-date"))).qualification shouldBe QualificationState.WITHDRAWN
+        assessTranslation(c,approved.copy(independentApproval=approved.independentApproval!!.copy(reviewer=" FIXTURE-AUTHOR "))).qualification shouldBe QualificationState.WITHDRAWN
         assessTranslation(c,approved.copy(independentApproval=approved.independentApproval!!.copy(independentHumanReview=false))).qualification shouldBe QualificationState.WITHDRAWN
         assessTranslation(c,approve(e.copy(requirements=emptyList()))).qualification shouldBe QualificationState.WITHDRAWN
     }
@@ -47,6 +49,7 @@ class TranslationAssuranceTest : FunSpec({
         val suspect=base.copy(concerns=listOf(concern))
         assessTranslation(c,suspect).qualification shouldBe QualificationState.BLOCKED
         assessTranslation(c,suspect.copy(concerns=listOf(concern.copy(state=ConcernState.CONFIRMED)))).qualification shouldBe QualificationState.BLOCKED
+        assessTranslation(c,suspect.copy(concerns=listOf(concern.copy(state=ConcernState.RESOLVED)))).qualification shouldBe QualificationState.BLOCKED
         val resolved=suspect.copy(concerns=listOf(concern.copy(state=ConcernState.RESOLVED,resolutionEvidence=listOf("Original control passes; mutant fails; TranslationMutationTest M7"))))
         assessTranslation(c,resolved).qualification shouldBe QualificationState.PROVISIONAL
         assessTranslation(c,approve(resolved)).qualification shouldBe QualificationState.QUALIFIED
@@ -61,7 +64,7 @@ class TranslationAssuranceTest : FunSpec({
         }
     }
     val catalog by lazy { Catalog() }
-    test("historical entries are current provisional evidence and upstream is not reclassified") {
+    test("historical evidence stays current with one explicit blocked engine concern and upstream unassessed") {
         Extensions.all.size shouldBe 22
         Extensions.all.forEach { ext ->
             val a=catalog.translationAssurance(ext.definition.name)!!

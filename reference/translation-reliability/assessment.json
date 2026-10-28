@@ -1,0 +1,293 @@
+{
+  "requirementCommit": "b2632ea",
+  "reviewKind": "SOURCE_FIRST_AGENT_REVIEW_NOT_INDEPENDENT_CERTIFICATION",
+  "cards": [
+    {
+      "name": "Planewide Celebration",
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "requirements": [
+        {
+          "requirement": "PC1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "Modal chooseCount=4, allowRepeat=true; engine printed-order behavior separately executed",
+          "newScenarioCases": [
+            "PC1 PC3 partial legal targets and printed order"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "More complex repeated modal target binding/copy effects not exhaustively exercised."
+        },
+        {
+          "requirement": "PC2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "mode-local PermanentInYourGraveyard target and Graveyard-to-Hand movement",
+          "newScenarioCases": [
+            "PC2 repeated same target"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Opponent-graveyard and nonpermanent rejection structurally reviewed, not new engine tests."
+        },
+        {
+          "requirement": "PC3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "target requirements remain on return modes; resolution legality belongs to native engine",
+          "newScenarioCases": [
+            "PC3 all illegal targets",
+            "PC1 PC3 partial legal targets"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Multiple target legality changes via protection/zone return not exhaustive."
+        },
+        {
+          "requirement": "PC4",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "all five token colors, 2/2 Citizen, Proliferate and GainLife(4)",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "Existing Batch 1 scenarios cover repeated tokens/life and multiple counter kinds; player counters remain a gap."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "PROVISIONAL",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    },
+    {
+      "name": "Tatterkite",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "requirements": [
+        {
+          "requirement": "TK1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "mana cost 3, artifact creature Scarecrow, base 2/1, flying keyword",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "Static metadata and keyword inspection suffice for this claim; flying combat is inherited, not newly executed."
+        },
+        {
+          "requirement": "TK2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "CantReceiveCounters(Self) present; native source shape is correct, collection execution violates it",
+          "newScenarioCases": [
+            "TK2 known pinned collection-counter failure"
+          ],
+          "executionAssessment": "CONFIRMED_SHARED_ENGINE_FAILURE",
+          "remainingLimits": "Confirmed shared collection counter-placement execution failure; direct placement prior tests pass. No qualification."
+        },
+        {
+          "requirement": "TK3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "counter prohibition delegates cost/wither interaction to shared engine; no fresh execution claim",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "No new counter-as-cost or wither damage scenario; insufficient execution evidence for full claim."
+        },
+        {
+          "requirement": "TK4",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "counter prohibition delegates entry/counter interactions to shared engine; no fresh entry claim",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "No new enters-with counters scenario; proliferate/entry counter behavior remains bounded/inherited evidence only."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "BLOCKED",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    },
+    {
+      "name": "Ley Weaver",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "requirements": [
+        {
+          "requirement": "LW1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "Player target; ForEach TargetPlayer; optional gate; named own-library search, revealed movement to Hand then shuffle",
+          "newScenarioCases": [
+            "LW1 opponent can decline",
+            "LW1 accepted search reveals"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Search restrictions and control changes not newly exercised."
+        },
+        {
+          "requirement": "LW2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "optional gate surrounds entire search/reveal/move/shuffle and search filter is Lore Weaver",
+          "newScenarioCases": [
+            "LW2 absent named card"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Reveal and failed search exercised; library restriction replacements remain gaps."
+        },
+        {
+          "requirement": "LW3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "Tap cost, two land targets and UntapEachTarget",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "Prior own/opponent-land and count-boundary scenario retained; partial resolution legality not newly exercised."
+        },
+        {
+          "requirement": "LW4",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "nonlegendary creature with partner construction keyword, without commander override",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "Construction metadata/native eligibility structurally reviewed; no partner-pair construction support claimed."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "PROVISIONAL",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    },
+    {
+      "name": "Predatory Urge",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "requirements": [
+        {
+          "requirement": "PU1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "auraTarget Creature; GrantActivatedAbility with Tap cost; controller comes from granted host",
+          "newScenarioCases": [
+            "PU1 opponent host"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Control changes mid-stack and activation by Aura controller under different control not newly tested."
+        },
+        {
+          "requirement": "PU2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "bound creature target requirement on granted activation",
+          "newScenarioCases": [
+            "PU2 illegal prey"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Protection changes after activation not newly tested."
+        },
+        {
+          "requirement": "PU3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "ordered Composite of two damage instructions; second dealer is the bound prey; both refer to host source",
+          "newScenarioCases": [
+            "PU4 Aura removal"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Self-targeting, infect/wither and prevention ordering remain gaps; Aura removal confirms host identity only."
+        },
+        {
+          "requirement": "PU4",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "first damage uses implicit source and sourcePower, preserving source snapshot; no Aura reference",
+          "newScenarioCases": [
+            "PU4 removed host",
+            "PU4 Aura removal"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Aura reattachment and power-changing response not newly tested."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "PROVISIONAL",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    },
+    {
+      "name": "Hour of Promise",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "requirements": [
+        {
+          "requirement": "HP1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "Land gather from own Library; ChooseUpTo(2); Battlefield Tapped movement followed by shuffle",
+          "newScenarioCases": [
+            "HP1 zero search"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Nonland exclusion structurally reviewed; one-card search and restrictions not newly executed."
+        },
+        {
+          "requirement": "HP2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "post-movement own battlefield Desert count GTE 3; exactly two black 2/2 Zombies",
+          "newScenarioCases": [
+            "HP2 opponent Deserts"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Existing zero/one initial Desert cases cover threshold; token replacement remains a gap."
+        },
+        {
+          "requirement": "HP3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "condition is final gated step, not cast restriction or trigger intervening-if",
+          "newScenarioCases": [
+            "HP3 condition follows fetched Deserts"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Response-time Desert removal not newly executed; fetched threshold is tested."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "PROVISIONAL",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    },
+    {
+      "name": "Sword of Truth and Justice",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "requirements": [
+        {
+          "requirement": "SJ1",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "ModifyStats(2,2), white/blue GrantProtection, equip cost/timing and own-creature target",
+          "newScenarioCases": [],
+          "executionAssessment": "STRUCTURE_AND_RETAINED_TESTS_ONLY",
+          "remainingLimits": "Prior target protection tests retained; protection blocking/damage and equip response not newly tested."
+        },
+        {
+          "requirement": "SJ2",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "ATTACHED DealsDamage event restricted to combat damage and player recipient",
+          "newScenarioCases": [
+            "SJ2 noncombat damage"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Damage to planeswalkers/creatures not newly executed; pattern restricts player recipient."
+        },
+        {
+          "requirement": "SJ3",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "resolution-time creature gather/mandatory nontargeting choice; counter step then unconditional proliferate; corrected single-object iteration",
+          "newScenarioCases": [
+            "SJ3 shroud",
+            "SJ3 no creatures",
+            "SJ3 counter prohibition"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Shared collection executor gap corrected locally by existing single-object iteration; general executor remains unresolved."
+        },
+        {
+          "requirement": "SJ4",
+          "sourceReconciliation": "CORRESPONDING_NATIVE_STRUCTURES_PRESENT",
+          "structuralEvidence": "new counter step precedes optional native proliferate decision",
+          "newScenarioCases": [
+            "SJ3 shroud"
+          ],
+          "executionAssessment": "BOUNDED_SOURCE_EXPECTATIONS_EXECUTED",
+          "remainingLimits": "Prior scenario covers adding then proliferating new counter; multiplayer/player-counter cases remain gaps."
+        }
+      ],
+      "representation": "COMPLETE",
+      "sourceFidelity": "SOURCE_REVIEWED_BY_AGENT",
+      "qualification": "PROVISIONAL",
+      "independentApproval": null,
+      "priorLanguage": "Historical VERIFIED_NATIVE_EXTENSION overstated assurance if read as independent qualification; its original bounded authoring meaning is preserved."
+    }
+  ]
+}

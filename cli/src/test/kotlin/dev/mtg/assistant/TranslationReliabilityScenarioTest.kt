@@ -157,6 +157,18 @@ class TranslationReliabilityScenarioTest : FunSpec({
             failure!!.message!!.contains("expected:<0> but was:<1>") shouldBe true
         }
     }
+    test("SJ2 noncombat damage to player does not trigger Sword") {
+        val pinger=card("Reliability Pinger") {typeLine="Creature";power=2;toughness=3;activatedAbility {
+            cost=Costs.Tap;val player=target(Targets.Player);effect=Effects.DealDamage(1,player)
+        }}
+        val d=batchTwoDriver(SwordOfTruthAndJustice,pinger);val me=d.player1
+        val host=d.putCreatureOnBattlefield(me,pinger.name);d.removeSummoningSickness(host)
+        val sword=d.putPermanentOnBattlefield(me,SwordOfTruthAndJustice.name);d.giveColorlessMana(me,2)
+        d.submit(ActivateAbility(me,sword,SwordOfTruthAndJustice.activatedAbilities.single().id,targets=listOf(ChosenTarget.Permanent(host)))).error shouldBe null;d.drainBatchTwo()
+        d.submit(ActivateAbility(me,host,pinger.activatedAbilities.single().id,targets=listOf(ChosenTarget.Player(d.player2)))).error shouldBe null;d.drainBatchTwo()
+        d.getLifeTotal(d.player2) shouldBe 19
+        (d.state.getEntity(host)!!.get<CountersComponent>()?.getCount(CounterType.PLUS_ONE_PLUS_ONE) ?: 0) shouldBe 0
+    }
     test("SJ3 shroud does not prevent nontargeting choice") {ReliabilityChecks.sword(SwordOfTruthAndJustice)}
     test("SJ3 counter prohibition skips placement but still proliferates") {ReliabilityChecks.sword(SwordOfTruthAndJustice,counterBlocked=true)}
     test("SJ3 no creatures still proliferates") {ReliabilityChecks.sword(SwordOfTruthAndJustice,noCreatures=true)}

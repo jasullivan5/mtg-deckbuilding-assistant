@@ -46,9 +46,17 @@
                                         "storeSelected": "selected2"
                                     },
                                     {
-                                        "type": "AddCountersToCollection",
-                                        "collectionName": "selected2",
-                                        "counterType": "PLUS_ONE_PLUS_ONE"
+                                        "type": "ForEach",
+                                        "space": {
+                                            "type": "IterationSpace.Collection",
+                                            "collection": "selected2"
+                                        },
+                                        "body": {
+                                            "type": "AddCounters",
+                                            "counterType": "PLUS_ONE_PLUS_ONE",
+                                            "count": 1,
+                                            "target": "IterationEntity"
+                                        }
                                     }
                                 ]
                             }

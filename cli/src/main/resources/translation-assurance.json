@@ -97,6 +97,10 @@
       {
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      },
+      {
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
@@ -106,6 +110,10 @@
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
       }
     ]
   },
@@ -203,6 +211,10 @@
       {
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      },
+      {
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
@@ -212,6 +224,10 @@
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
       }
     ]
   },
@@ -394,6 +410,10 @@
       {
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      },
+      {
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
@@ -403,6 +423,10 @@
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
       }
     ]
   },
@@ -427,6 +451,10 @@
       {
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+      },
+      {
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
@@ -436,6 +464,10 @@
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
       }
     ]
   },
@@ -495,7 +527,7 @@
   },
   {
     "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
-    "definitionSha256": "b519e2c685eb012adf550f67a5dc4a765739ab0d487bfa6b2ecd50b7f11f63b9",
+    "definitionSha256": "c8e226bdbe9c3aa96095a59035393fcc2f909c6ffb0f3518d313139c87835076",
     "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
@@ -512,17 +544,37 @@
     ],
     "tests": [
       {
-        "path": "reference/alignment-batch2/verification.json",
-        "sha256": "f155d6745ac9634553f2913140a2bd0110b85e36858a8a7214319f5a423a5a25"
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Source-first agent review, not independent human certification.",
+      "Collection counter issue locally avoided with existing single-object composition; other stated limits remain in assessment.json and original Batch 2 review."
     ],
     "requirements": [
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
+      }
+    ],
+    "concerns": [
+      {
+        "id": "SWORD-COLLECTION-COUNTERS",
+        "kind": "ENGINE_EXECUTION",
+        "state": "RESOLVED",
+        "claim": "SJ3: chosen creature cannot receive prohibited counters; proliferate still happens",
+        "reason": "Original collection instruction bypasses the chosen Tatterkite counter prohibition",
+        "reproduction": "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+        "nextAction": "Retain regression; review upstream collection executor separately. No independent promotion.",
+        "resolutionEvidence": [
+          "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+          "focused-execution.json"
+        ]
       }
     ]
   },
@@ -547,6 +599,10 @@
       {
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "1797f30559484f6ee2682fb6e70a3570ae12711ec9c70b64d290d0fef7dc6624"
+      },
+      {
+        "path": "reference/translation-reliability/focused-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
       }
     ],
     "limitations": [
@@ -569,6 +625,10 @@
       {
         "path": "reference/translation-reliability/requirements.json",
         "sha256": "9a483bdbf608a779168f964782aafc43fc388a5c8f005d0e7a343a4e0704d437"
+      },
+      {
+        "path": "reference/translation-reliability/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
       }
     ]
   },
