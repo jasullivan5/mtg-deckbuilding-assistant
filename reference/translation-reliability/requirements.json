@@ -11,11 +11,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch1/sources/af23d348-adc9-451e-af08-bf9b1986c591.json",
-          "sha256": "78e218d092e65f66ed16cf6a9e89d5e4f3fadb0577b1cb7d23370ebf3c558e72"
+          "sha256": "20bce2f382a407bb2c296d4126dea1669ca80baa2677c78d4109182e86388a07"
         },
         {
           "path": "reference/alignment-batch1/rulings/af23d348-adc9-451e-af08-bf9b1986c591.json",
-          "sha256": "bdd1279adb1ffa1512cb63fdbed9ee8c416f61d23469556e6e3c4f660a256dbe"
+          "sha256": "2fd5fdb828166c0d30ec70a48d07ea9e68609114568e6816940a39887e4f634f"
         }
       ],
       "requirements": [
@@ -48,11 +48,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
-          "sha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+          "sha256": "e525068799f80024a6b3e3e24a61f0031ca5919c31bfdbf49d78a06eed49d356"
         },
         {
           "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
-          "sha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e"
+          "sha256": "b90262aa731f168036e6c2a7f84e05a2d9a4060139f42da8ccc7f1b16372a1ca"
         }
       ],
       "requirements": [
@@ -85,11 +85,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch1/sources/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
-          "sha256": "eb9724ad2456cfde9e6b601b500f06546ecaff561d40fbdeaf5735a3cff30187"
+          "sha256": "9840c6d5ef1b460705056531b499bb85ff4bab5d6917a710ef09f8c7b7533c1e"
         },
         {
           "path": "reference/alignment-batch1/rulings/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
-          "sha256": "91f9c68de51018713049ac7b37cb9e3570bd95f452dc155b86847a839ebacbba"
+          "sha256": "93246b77499f1c5c9f90228c9724c7935e2d85d63ec2335efdfc0083eb4d4751"
         }
       ],
       "requirements": [
@@ -122,11 +122,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch2/sources/f6175cca-0e19-4db8-a175-3369fb650f24.json",
-          "sha256": "5cfcceb1d106ada4993b142daa2f6c77a86cc867c861f1e3ed2cfad3974a9212"
+          "sha256": "bb32a711f1db577c2107aa95e201a64640f61204c94ca9f8a9416922c2907aee"
         },
         {
           "path": "reference/alignment-batch2/rulings/f6175cca-0e19-4db8-a175-3369fb650f24.json",
-          "sha256": "ac879278213e2d175e67b62889feb6052136b4ed59b0420f99f26085604a132b"
+          "sha256": "22b00ef180b5ff298b9e291e21b09a762126be53316bdc73200b453f2826b567"
         }
       ],
       "requirements": [
@@ -159,11 +159,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch2/sources/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
-          "sha256": "9eb077a5079d7a4a2b77119b312e6748e2a505afd83e47bb8072fca8300fd501"
+          "sha256": "e3157f55797d37d4b5f57dd4e44dfc1ce7cf75d9d467ffa3e702973b327596e9"
         },
         {
           "path": "reference/alignment-batch2/rulings/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
-          "sha256": "7736d6b082698d6feb63fcd02327a5e12ece227ef8fdc8d842d007fec52ac271"
+          "sha256": "dc9ee11d078be368a9df07f048d67b3d4a4917af0637f27ad59dda2b2a366763"
         }
       ],
       "requirements": [
@@ -191,11 +191,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
-          "sha256": "121af4f78243768f05388821ef671fbd5247bdc7b94dd767fd47173c92c9fb10"
+          "sha256": "3fc64a40af6b8518abcc63aa19e3b44e0064d0e7445f982f1ccbc366b5e51072"
         },
         {
           "path": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
-          "sha256": "c11faec66fb265c325407c0fde2ec4424d58b12c88f0d1a260aaf7ee04e8ae6d"
+          "sha256": "fffcefa36f2c4ea74ea89ca316e9d91578f05b6c6a7f329b04529026a02208e5"
         }
       ],
       "requirements": [
@@ -221,5 +221,6 @@
         }
       ]
     }
-  ]
+  ],
+  "sourceHashFormat": "SHA256_UTF8_LF"
 }

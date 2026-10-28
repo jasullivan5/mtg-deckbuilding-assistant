@@ -91,3 +91,11 @@ python scripts/translation-reliability-receipt.py
 ```
 
 The procedure now demonstrates useful semantic defect detection and an honest blocking decision, but does not supply independent approval. Another small **provisional** batch could use it, with risk-based source-first requirements and explicit unresolved issues. Substantial independently qualified expansion should wait for separate human review and resolution of the demonstrated collection-counter gap. The smallest next engineering question is whether the collection executor can reuse prohibition-aware placement while preserving per-recipient replacements, events and continuation behavior; that requires a separately reviewed engine correction at the settled pin policy. No next batch or engine project is started here.
+
+## CI portability correction
+
+The first Linux fast-gate run failed the retained-reference hash assertion: the new assurance records had hashed raw Windows CRLF bytes, while Git stores these text files with LF. This was an assurance-evidence portability defect, not changed Oracle content or a failed card scenario.
+
+Assurance evidence references now explicitly declare `SHA256_UTF8_LF`: decode UTF-8, replace CRLF with LF, then hash; other whitespace, final newlines and content changes remain significant. The reference test checks every retained file in both LF and CRLF form, and a focused regression rejects changed content and unsupported hash formats. Source hashes in this assignment's requirements/concerns and ledger use the same declared format. Frozen mechanical claims are unchanged; their original versions and raw hashes remain in Git history. Historical Batch 1/2 artifacts and raw execution-log hashes are preserved. No actual independent approvals existed to carry forward; changing reference hashes/formats invalidates any approval bound to an older bundle.
+
+The corrected `bash scripts/verify.sh fast` passed locally: 303 tests in 40 suites, zero failures/errors/skips, followed by installation and the CLI smoke check. A separate check confirmed all 45 distinct references against the staged Git text bytes, matching Linux checkout contents.

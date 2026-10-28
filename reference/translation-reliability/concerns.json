@@ -7,11 +7,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
-          "sha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+          "sha256": "e525068799f80024a6b3e3e24a61f0031ca5919c31bfdbf49d78a06eed49d356"
         },
         {
           "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
-          "sha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e"
+          "sha256": "b90262aa731f168036e6c2a7f84e05a2d9a4060139f42da8ccc7f1b16372a1ca"
         }
       ],
       "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
@@ -46,11 +46,11 @@
       "sources": [
         {
           "path": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
-          "sha256": "121af4f78243768f05388821ef671fbd5247bdc7b94dd767fd47173c92c9fb10"
+          "sha256": "3fc64a40af6b8518abcc63aa19e3b44e0064d0e7445f982f1ccbc366b5e51072"
         },
         {
           "path": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
-          "sha256": "c11faec66fb265c325407c0fde2ec4424d58b12c88f0d1a260aaf7ee04e8ae6d"
+          "sha256": "fffcefa36f2c4ea74ea89ca316e9d91578f05b6c6a7f329b04529026a02208e5"
         }
       ],
       "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
@@ -97,5 +97,6 @@
       "state": "HARNESS_COMMAND_FAILED",
       "cause": "Kotest named-case Gradle filter found no tests; successful reproduction ran full class."
     }
-  ]
+  ],
+  "sourceHashFormat": "SHA256_UTF8_LF"
 }

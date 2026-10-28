@@ -15,7 +15,10 @@ import java.time.LocalDate
 @Serializable enum class QualificationState { PROVISIONAL, QUALIFIED, BLOCKED, WITHDRAWN }
 @Serializable enum class ConcernKind { SOURCE_INTERPRETATION, TRANSLATION_STRUCTURE, ENGINE_EXECUTION, DISCOVERY_EXTRACTION }
 @Serializable enum class ConcernState { SUSPECTED, CONFIRMED, DISPROVEN, RESOLVED, UNRESOLVED }
-@Serializable data class EvidenceReference(val path: String, val sha256: String)
+const val EVIDENCE_TEXT_SHA256 = "SHA256_UTF8_LF"
+/** UTF-8 text with CRLF normalized to LF; every other character remains significant. */
+@Serializable data class EvidenceReference(val path: String, val sha256: String,
+    val hashFormat: String = EVIDENCE_TEXT_SHA256)
 @Serializable data class TranslationConcern(val id: String, val kind: ConcernKind, val state: ConcernState,
     val claim: String, val reason: String, val reproduction: String, val nextAction: String,
     val resolutionEvidence: List<String> = emptyList())
@@ -45,6 +48,7 @@ private fun canonical(value: JsonElement): JsonElement = when(value) {
 }
 fun evidenceDigest(text: String): String = MessageDigest.getInstance("SHA-256")
     .digest(text.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
+fun evidenceTextDigest(text: String): String = evidenceDigest(text.replace("\r\n","\n"))
 fun definitionDigest(card: CardDefinition): String = evidenceDigest(canonical(Json.parseToJsonElement(CardExporter.exportToJson(card))).toString())
 fun bundleDigest(evidence: TranslationEvidence): String = evidenceDigest(canonical(
     assuranceJson.encodeToJsonElement(evidence.copy(independentApproval=null))).toString())
@@ -56,7 +60,7 @@ fun assessTranslation(card: CardDefinition, evidence: TranslationEvidence?, pin:
     val unclosed = evidence?.concerns.orEmpty().any { it.state in setOf(ConcernState.RESOLVED,ConcernState.DISPROVEN) && it.resolutionEvidence.isEmpty() }
     val blocked = unclosed || evidence?.representation?.let { it!=RepresentationState.COMPLETE }==true || concerns || evidence?.fidelity in setOf(FidelityState.SUSPECTED_DISCREPANCY,FidelityState.CONFIRMED_DISCREPANCY) || evidence?.execution==ExecutionState.FAILURE_OBSERVED
     val ready = current && !blocked && evidence!!.fidelity==FidelityState.SOURCE_REVIEWED && evidence.execution==ExecutionState.BOUNDED_EVIDENCE_PASSED &&
-        listOf(evidence.source,evidence.requirements,evidence.tests).all { refs -> refs.isNotEmpty() && refs.all { it.path.isNotBlank() && it.sha256.matches(Regex("[0-9a-f]{64}")) } }
+        listOf(evidence.source,evidence.requirements,evidence.tests).all { refs -> refs.isNotEmpty() && refs.all { it.hashFormat==EVIDENCE_TEXT_SHA256 && it.path.isNotBlank() && it.sha256.matches(Regex("[0-9a-f]{64}")) } }
     val approval = evidence?.independentApproval
     val approved = ready && approval!=null && approval.independentHumanReview && approval.reviewer.isNotBlank() && !approval.reviewer.trim().equals(evidence!!.author.trim(),ignoreCase=true) &&
         runCatching { LocalDate.parse(approval.reviewedAt) }.isSuccess && approval.reviewReference.isNotBlank() && approval.bundleSha256==bundleDigest(evidence!!)

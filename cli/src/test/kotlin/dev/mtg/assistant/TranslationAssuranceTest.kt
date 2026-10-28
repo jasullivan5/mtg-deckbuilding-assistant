@@ -7,7 +7,7 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import java.nio.file.Files
 import java.nio.file.Path
-import java.security.MessageDigest
+import io.kotest.assertions.withClue
 
 class TranslationAssuranceTest : FunSpec({
     fun fixture(c: CardDefinition)=TranslationEvidence(c.oracleId!!,definitionDigest(c),ARGENTUM_SHA,"fixture-author",
@@ -17,6 +17,15 @@ class TranslationAssuranceTest : FunSpec({
         tests=listOf(EvidenceReference("isolated-execution-receipt","c".repeat(64))))
     fun approve(e: TranslationEvidence)=e.copy(independentApproval=IndependentApproval("fixture-independent-human","2026-10-28","isolated gate fixture, not actual approval",bundleDigest(e),true))
     val c=Tatterkite
+    test("text evidence ignores only checkout line endings and detects changed content") {
+        val lf="Oracle: α\nCost: {T}\n"
+        evidenceTextDigest(lf) shouldBe evidenceTextDigest(lf.replace("\n","\r\n"))
+        (evidenceTextDigest(lf)==evidenceTextDigest(lf.replace("{T}","{0}"))) shouldBe false
+        (evidenceTextDigest(lf)==evidenceTextDigest(lf+" ")) shouldBe false
+        (evidenceTextDigest(lf)==evidenceTextDigest(lf.dropLast(1))) shouldBe false
+        val unsupported=fixture(c).copy(source=listOf(EvidenceReference("source","a".repeat(64),"UNKNOWN")))
+        assessTranslation(c,approve(unsupported)).qualification shouldBe QualificationState.WITHDRAWN
+    }
     test("new definitions and passing author scenarios remain provisional") {
         assessTranslation(c,null).qualification shouldBe QualificationState.PROVISIONAL
         assessTranslation(c,fixture(c)).qualification shouldBe QualificationState.PROVISIONAL
@@ -81,8 +90,12 @@ class TranslationAssuranceTest : FunSpec({
             val e=ext.review.assuranceEvidence!!
             e.oracleId shouldBe ext.definition.oracleId
             (e.source+e.requirements+e.tests).forEach { ref ->
-                val hash=MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(root.resolve(ref.path))).joinToString("") {"%02x".format(it)}
-                hash shouldBe ref.sha256
+                withClue(ref.path) {
+                    ref.hashFormat shouldBe EVIDENCE_TEXT_SHA256
+                    val lf=Files.readString(root.resolve(ref.path)).replace("\r\n","\n")
+                    evidenceTextDigest(lf) shouldBe ref.sha256
+                    evidenceTextDigest(lf.replace("\n","\r\n")) shouldBe ref.sha256
+                }
             }
         }
     }
