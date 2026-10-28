@@ -1,0 +1,85 @@
+{
+    "name": "Spined Tyrranax",
+    "manaCost": "{4}{G}",
+    "typeLine": "Creature — Dinosaur Beast",
+    "oracleText": "At the beginning of combat on your turn, you may pay {2}{G}. When you do, put a +1/+1 counter on target creature. That creature gains trample until end of turn. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+    "creatureStats": {
+        "power": 5,
+        "toughness": 5
+    },
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Spined Tyrranax:1",
+                "trigger": {
+                    "type": "StepEvent",
+                    "step": "BEGIN_COMBAT"
+                },
+                "binding": "ANY",
+                "effect": {
+                    "type": "ReflexiveTrigger",
+                    "action": {
+                        "type": "PayManaCost",
+                        "cost": "{2}{G}"
+                    },
+                    "reflexiveEffect": {
+                        "type": "Composite",
+                        "effects": [
+                            {
+                                "type": "AddCounters",
+                                "counterType": "PLUS_ONE_PLUS_ONE",
+                                "count": 1,
+                                "target": {
+                                    "type": "BoundVariable",
+                                    "name": "t0"
+                                }
+                            },
+                            {
+                                "type": "GrantKeyword",
+                                "keyword": "TRAMPLE",
+                                "target": {
+                                    "type": "BoundVariable",
+                                    "name": "t0"
+                                }
+                            }
+                        ]
+                    },
+                    "reflexiveTargetRequirements": [
+                        {
+                            "type": "TargetObject",
+                            "filter": {
+                                "baseFilter": "creature"
+                            },
+                            "id": "t0"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+    "setCode": "J25",
+    "metadata": {
+        "collectorNumber": "26",
+        "rarity": "UNCOMMON",
+        "artist": "Brent Hollowell",
+        "imageUri": "https://cards.scryfall.io/normal/front/b/b/bb589caa-bba4-4d23-bdfe-7fc37f19bfd6.jpg?1783908862",
+        "scryfallId": "bb589caa-bba4-4d23-bdfe-7fc37f19bfd6",
+        "releaseDate": "2024-11-15",
+        "rulings": [
+            {
+                "date": "2024-11-08",
+                "text": "You don't choose a target for Spiked Tyrranax's ability at the time it triggers. Rather, a second \"reflexive\" ability triggers when you pay {2}{G} this way. You choose a target for that ability as it goes on the stack. Each player may respond to this triggered ability as normal."
+            }
+        ]
+    },
+    "legalFormats": [
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}
