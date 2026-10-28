@@ -1,0 +1,83 @@
+{
+    "name": "Momentum",
+    "manaCost": "{2}{G}",
+    "typeLine": "Enchantment — Aura",
+    "oracleText": "Enchant creature\nAt the beginning of your upkeep, you may put a growth counter on this Aura.\nEnchanted creature gets +1/+1 for each growth counter on this Aura.",
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Momentum:1",
+                "trigger": {
+                    "type": "StepEvent",
+                    "step": "UPKEEP"
+                },
+                "binding": "ANY",
+                "effect": {
+                    "type": "Gated",
+                    "gate": "Gate.MayDecide",
+                    "then": {
+                        "type": "AddCounters",
+                        "counterType": "GROWTH",
+                        "count": 1,
+                        "target": "Self"
+                    }
+                }
+            }
+        ],
+        "staticAbilities": [
+            {
+                "type": "GrantDynamicStats",
+                "filter": {
+                    "baseFilter": "permanent",
+                    "scope": "AttachedTo"
+                },
+                "powerBonus": {
+                    "type": "EntityProperty",
+                    "entity": "Self",
+                    "numericProperty": {
+                        "type": "CounterCount",
+                        "counterType": "GROWTH"
+                    }
+                },
+                "toughnessBonus": {
+                    "type": "EntityProperty",
+                    "entity": "Self",
+                    "numericProperty": {
+                        "type": "CounterCount",
+                        "counterType": "GROWTH"
+                    }
+                }
+            }
+        ],
+        "auraTarget": {
+            "type": "TargetObject",
+            "filter": {
+                "baseFilter": "creature"
+            }
+        }
+    },
+    "oracleId": "80875914-df4c-4b05-8c4d-658ff477c956",
+    "setCode": "UDS",
+    "metadata": {
+        "collectorNumber": "113",
+        "rarity": "UNCOMMON",
+        "artist": "Carl Critchlow",
+        "imageUri": "https://cards.scryfall.io/normal/front/1/0/10bd11a2-7cab-4d3f-b52b-f5bb66fbbec6.jpg?1783946061",
+        "scryfallId": "10bd11a2-7cab-4d3f-b52b-f5bb66fbbec6",
+        "releaseDate": "1999-06-07",
+        "rulings": [
+            {
+                "date": "2004-10-04",
+                "text": "Putting on a counter is optional. If you forget, you can't go back later even if it is something you usually do."
+            }
+        ]
+    },
+    "legalFormats": [
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}

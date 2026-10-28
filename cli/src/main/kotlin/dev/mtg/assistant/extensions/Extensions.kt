@@ -35,6 +35,8 @@ object Extensions {
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/GaladhrimAmbushScenarioTest.kt"))),
         ExtensionDefinition(HourOfPromise,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/HourOfPromise.kt","2026-10-28"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/HourOfPromiseScenarioTest.kt"))),
+        ExtensionDefinition(Momentum,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/Momentum.kt","2026-10-28"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/MomentumScenarioTest.kt"))),
         ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
