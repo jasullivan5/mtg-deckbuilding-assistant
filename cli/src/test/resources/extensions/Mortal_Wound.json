@@ -1,0 +1,45 @@
+{
+    "name": "Mortal Wound",
+    "manaCost": "{G}",
+    "typeLine": "Enchantment — Aura",
+    "oracleText": "Enchant creature\nWhen enchanted creature is dealt damage, destroy it.",
+    "script": {
+        "triggeredAbilities": [
+            {
+                "id": "Mortal Wound:1",
+                "trigger": "DamageReceivedEvent",
+                "binding": "ATTACHED",
+                "effect": {
+                    "type": "MoveToZone",
+                    "target": "EnchantedCreature",
+                    "destination": "Graveyard",
+                    "byDestruction": true
+                }
+            }
+        ],
+        "auraTarget": {
+            "type": "TargetObject",
+            "filter": {
+                "baseFilter": "creature"
+            }
+        }
+    },
+    "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
+    "setCode": "VIS",
+    "metadata": {
+        "collectorNumber": "113",
+        "artist": "Kev Walker",
+        "imageUri": "https://cards.scryfall.io/normal/front/8/0/808830ff-496a-41dc-8b64-334ddaca9435.jpg?1783946982",
+        "scryfallId": "808830ff-496a-41dc-8b64-334ddaca9435",
+        "releaseDate": "1997-02-03"
+    },
+    "legalFormats": [
+        "LEGACY",
+        "PAUPER",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}

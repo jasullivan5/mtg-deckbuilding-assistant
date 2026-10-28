@@ -19,6 +19,8 @@ object Extensions {
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/PlanewideCelebrationScenarioTest.kt"))),
+        ExtensionDefinition(MortalWound,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/MortalWound.kt","2026-10-27"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/MortalWoundScenarioTest.kt"))),
         ExtensionDefinition(KrenkosCommand,
             Provenance("APPLICATION_EXTENSION", "cli/src/main/kotlin/dev/mtg/assistant/extensions/KrenkosCommand.kt", "2026-10-26"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationScenarioTest.kt"))),
