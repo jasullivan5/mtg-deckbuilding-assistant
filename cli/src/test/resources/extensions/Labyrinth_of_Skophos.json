@@ -1,0 +1,101 @@
+{
+    "name": "Labyrinth of Skophos",
+    "manaCost": "",
+    "typeLine": "Land",
+    "oracleText": "{T}: Add {C}.\n{4}, {T}: Remove target attacking or blocking creature from combat.",
+    "script": {
+        "activatedAbilities": [
+            {
+                "id": "Labyrinth of Skophos:1",
+                "cost": "CostTap",
+                "effect": {
+                    "type": "AddColorlessMana",
+                    "amount": {
+                        "type": "Fixed",
+                        "amount": 1
+                    }
+                },
+                "timing": "ManaAbility",
+                "isManaAbility": true
+            },
+            {
+                "id": "Labyrinth of Skophos:2",
+                "cost": {
+                    "type": "CostComposite",
+                    "costs": [
+                        {
+                            "type": "CostAtomWrapper",
+                            "atom": {
+                                "type": "AtomMana",
+                                "cost": "{4}"
+                            }
+                        },
+                        "CostTap"
+                    ]
+                },
+                "effect": {
+                    "type": "RemoveFromCombat",
+                    "target": {
+                        "type": "BoundVariable",
+                        "name": "t0"
+                    }
+                },
+                "targetRequirements": [
+                    {
+                        "type": "TargetObject",
+                        "filter": {
+                            "baseFilter": {
+                                "cardPredicates": [
+                                    "IsCreature"
+                                ],
+                                "statePredicates": [
+                                    {
+                                        "type": "StateOr",
+                                        "predicates": [
+                                            "IsAttacking",
+                                            "IsBlocking"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "id": "t0"
+                    }
+                ]
+            }
+        ]
+    },
+    "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+    "setCode": "THB",
+    "metadata": {
+        "collectorNumber": "243",
+        "rarity": "RARE",
+        "artist": "Jonas De Ro",
+        "imageUri": "https://cards.scryfall.io/normal/front/f/f/ff0dd221-2660-43f6-8e28-8000e3fe72a4.jpg?1783931509",
+        "scryfallId": "ff0dd221-2660-43f6-8e28-8000e3fe72a4",
+        "releaseDate": "2020-01-24",
+        "rulings": [
+            {
+                "date": "2020-01-24",
+                "text": "A creature removed from combat by Labyrinth of Skophos remains tapped if it was tapped."
+            },
+            {
+                "date": "2020-01-24",
+                "text": "If a blocking creature is removed from combat, the creature it blocked remains blocked. Unless that creature has trample, it won't deal combat damage."
+            },
+            {
+                "date": "2020-01-24",
+                "text": "Once creatures attack or block, they remain attacking or blocking creatures through the end of combat step unless removed from combat (by Labyrinth of Skophos or a similar effect)."
+            }
+        ]
+    },
+    "legalFormats": [
+        "PIONEER",
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER",
+        "BRAWL"
+    ],
+    "colorIdentityOverride": []
+}

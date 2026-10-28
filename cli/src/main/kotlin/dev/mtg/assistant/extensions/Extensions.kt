@@ -27,6 +27,8 @@ object Extensions {
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/SavageConceptionScenarioTest.kt"))),
         ExtensionDefinition(ParadiseMantle,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ParadiseMantle.kt","2026-10-28"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ParadiseMantleScenarioTest.kt"))),
+        ExtensionDefinition(LabyrinthOfSkophos,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/LabyrinthOfSkophos.kt","2026-10-28"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/LabyrinthOfSkophosScenarioTest.kt"))),
         ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
