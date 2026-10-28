@@ -1,0 +1,225 @@
+{
+  "baseCommit": "4e047c796e2fd88335fa65fd95ed6fa745f48bd7",
+  "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "recordedAt": "2026-10-28T14:56:24.010251+00:00",
+  "method": "Requirements recorded from archived Oracle and published rulings before this assignment inspects native definitions or author test explanations. Same agent authored earlier batch: prior familiarity cannot be erased; this is source-first agent review, not blind or independent human certification. Requirement versions are preserved in Git. Mutation labels will not be inputs to assertion helpers.",
+  "cards": [
+    {
+      "name": "Planewide Celebration",
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch1/sources/af23d348-adc9-451e-af08-bf9b1986c591.json",
+          "sha256": "78e218d092e65f66ed16cf6a9e89d5e4f3fadb0577b1cb7d23370ebf3c558e72"
+        },
+        {
+          "path": "reference/alignment-batch1/rulings/af23d348-adc9-451e-af08-bf9b1986c591.json",
+          "sha256": "bdd1279adb1ffa1512cb63fdbed9ee8c416f61d23469556e6e3c4f660a256dbe"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "PC1",
+          "claim": "Choose exactly four modes with repetition; instructions execute in printed order, regardless of selection order.",
+          "adversarialQuestion": "Choose life before return/token; inspect resolution order."
+        },
+        {
+          "id": "PC2",
+          "claim": "Return mode targets a permanent card in your own graveyard and moves it to hand, not battlefield; targets belong to each mode occurrence.",
+          "adversarialQuestion": "Opponent graveyard or nonpermanent invalid; repeated targets share legal-target rules."
+        },
+        {
+          "id": "PC3",
+          "claim": "If every chosen target is illegal the whole spell fails, including untargeted modes; if some remain legal resolve as much as possible.",
+          "adversarialQuestion": "One return target removed plus life modes; two returns with one removed."
+        },
+        {
+          "id": "PC4",
+          "claim": "Create 2/2 all-color Citizens; proliferate chosen players/permanents with each existing counter kind; life mode gains four each time.",
+          "adversarialQuestion": "Repeated modes, multiple counter kinds, zero proliferate selections."
+        }
+      ]
+    },
+    {
+      "name": "Tatterkite",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "5995d2cb76658a3fe6fb0d89aff9955d12a6c099040b02d04d307a3e90fd3082"
+        },
+        {
+          "path": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+          "sha256": "da3c231b589924242130c7295f5c6a3951f04762f6a5f8def9deec92a5d23b5e"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "TK1",
+          "claim": "Three-mana 2/1 artifact Scarecrow creature with flying.",
+          "adversarialQuestion": "Source reconciliation; flying native keyword."
+        },
+        {
+          "id": "TK2",
+          "claim": "Cannot receive counters of any kind; another recipient in the same effect is still affected.",
+          "adversarialQuestion": "Multi-recipient counter effect changes other creature only."
+        },
+        {
+          "id": "TK3",
+          "claim": "Cannot pay a cost requiring a counter be put on it; prohibited counter is not a prevented damage event.",
+          "adversarialQuestion": "Counter-placing activation cost rejected; wither event still occurs."
+        },
+        {
+          "id": "TK4",
+          "claim": "Enters-with counters are prohibited, not entry itself; adding or proliferating counters cannot bypass prohibition.",
+          "adversarialQuestion": "Enters-with counter fixture; existing native counter checks."
+        }
+      ]
+    },
+    {
+      "name": "Ley Weaver",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch1/sources/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+          "sha256": "eb9724ad2456cfde9e6b601b500f06546ecaff561d40fbdeaf5735a3cff30187"
+        },
+        {
+          "path": "reference/alignment-batch1/rulings/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+          "sha256": "91f9c68de51018713049ac7b37cb9e3570bd95f452dc155b86847a839ebacbba"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "LW1",
+          "claim": "Partner with Lore Weaver includes enters trigger targeting a player; targeted player may search their own library, reveal named card, put into their hand, then shuffle.",
+          "adversarialQuestion": "Opponent target controls optional decision and library search; decline does nothing."
+        },
+        {
+          "id": "LW2",
+          "claim": "Search is optional, can fail to find, and must not find wrong card; reminder text does not remove reveal.",
+          "adversarialQuestion": "No Lore Weaver present; nonmatching cards excluded."
+        },
+        {
+          "id": "LW3",
+          "claim": "Tap is an activation cost; untap exactly two target lands (not just own), with target legality checked at resolution.",
+          "adversarialQuestion": "Opponent lands allowed; one removed leaves other untapped; nonland rejected."
+        },
+        {
+          "id": "LW4",
+          "claim": "Partner construction keyword does not make this nonlegendary creature a legal commander.",
+          "adversarialQuestion": "Existing Commander eligibility remains false."
+        }
+      ]
+    },
+    {
+      "name": "Predatory Urge",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch2/sources/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+          "sha256": "5cfcceb1d106ada4993b142daa2f6c77a86cc867c861f1e3ed2cfad3974a9212"
+        },
+        {
+          "path": "reference/alignment-batch2/rulings/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+          "sha256": "ac879278213e2d175e67b62889feb6052136b4ed59b0420f99f26085604a132b"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "PU1",
+          "claim": "Aura enchants a creature; that creature, not the Aura controller, owns the granted tap activation.",
+          "adversarialQuestion": "Opponent-controlled host; only host controller can activate."
+        },
+        {
+          "id": "PU2",
+          "claim": "Target a creature when activating; if it becomes illegal the entire ability fails.",
+          "adversarialQuestion": "Remove target in response; host takes no damage."
+        },
+        {
+          "id": "PU3",
+          "claim": "Host deals its power first, then target deals its power to the same host; these are sequential damage operations, not fight.",
+          "adversarialQuestion": "Self-target produces two damage events; preserve the original host after Aura removal."
+        },
+        {
+          "id": "PU4",
+          "claim": "If host leaves, its last-known power still deals damage; Aura leaving or moving cannot retarget the host binding.",
+          "adversarialQuestion": "Host removal and Aura removal responses."
+        }
+      ]
+    },
+    {
+      "name": "Hour of Promise",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch2/sources/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+          "sha256": "9eb077a5079d7a4a2b77119b312e6748e2a505afd83e47bb8072fca8300fd501"
+        },
+        {
+          "path": "reference/alignment-batch2/rulings/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+          "sha256": "7736d6b082698d6feb63fcd02327a5e12ece227ef8fdc8d842d007fec52ac271"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "HP1",
+          "claim": "Search own library for up to two land cards, including nonbasics; zero is legal; put them onto battlefield tapped then shuffle.",
+          "adversarialQuestion": "Decline to find; nonland excluded; choose one or two."
+        },
+        {
+          "id": "HP2",
+          "claim": "Only after search, count all Deserts currently controlled; three or more creates exactly two black 2/2 Zombies.",
+          "adversarialQuestion": "One existing plus two fetched reaches threshold; opponent Deserts do not count."
+        },
+        {
+          "id": "HP3",
+          "claim": "Condition is evaluated at resolution after movement, not cast/activation time; not an intervening-if trigger.",
+          "adversarialQuestion": "Remove a Desert in response then fail threshold; fetched lands restore threshold."
+        }
+      ]
+    },
+    {
+      "name": "Sword of Truth and Justice",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "selectionReason": "Assignment risk sample across both batches; Tatterkite lower-complexity control",
+      "sources": [
+        {
+          "path": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+          "sha256": "121af4f78243768f05388821ef671fbd5247bdc7b94dd767fd47173c92c9fb10"
+        },
+        {
+          "path": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+          "sha256": "c11faec66fb265c325407c0fde2ec4424d58b12c88f0d1a260aaf7ee04e8ae6d"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "SJ1",
+          "claim": "Equipped creature gets +2/+2 and protection from white and blue; equip costs two and attaches only to own creature under equip timing.",
+          "adversarialQuestion": "Protection blocks white/blue targets and damage; stat changes follow attachment."
+        },
+        {
+          "id": "SJ2",
+          "claim": "Trigger requires equipped creature combat damage to a player, not ordinary damage or damage to a creature.",
+          "adversarialQuestion": "Negative noncombat damage; real combat positive."
+        },
+        {
+          "id": "SJ3",
+          "claim": "On resolution choose a creature you control without targeting, put one +1/+1 counter on it, then proliferate even if no creature remains.",
+          "adversarialQuestion": "Shroud/protection must not bar choice; remove only creature in response; proliferate still happens."
+        },
+        {
+          "id": "SJ4",
+          "claim": "New counter is available to proliferate; choice is mandatory when legal creature exists, proliferate selections optional.",
+          "adversarialQuestion": "Choose creature with no counters then proliferate; choose zero proliferate objects."
+        }
+      ]
+    }
+  ]
+}
