@@ -1,0 +1,63 @@
+{
+    "name": "Tatterkite",
+    "manaCost": "{3}",
+    "typeLine": "Artifact Creature — Scarecrow",
+    "oracleText": "Flying\nThis creature can't have counters put on it.",
+    "creatureStats": {
+        "power": 2,
+        "toughness": 1
+    },
+    "keywords": [
+        "FLYING"
+    ],
+    "script": {
+        "staticAbilities": [
+            {
+                "type": "CantReceiveCounters",
+                "filter": {
+                    "baseFilter": "permanent",
+                    "scope": "Self"
+                }
+            }
+        ]
+    },
+    "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+    "setCode": "SHM",
+    "metadata": {
+        "collectorNumber": "264",
+        "rarity": "UNCOMMON",
+        "artist": "Ron Brown",
+        "imageUri": "https://cards.scryfall.io/normal/front/d/f/dfaf852c-b8a9-44d4-b2cd-3f1e071a8be9.jpg?1783942708",
+        "scryfallId": "dfaf852c-b8a9-44d4-b2cd-3f1e071a8be9",
+        "releaseDate": "2008-05-02",
+        "rulings": [
+            {
+                "date": "2008-05-01",
+                "text": "Tatterkite's ability prevents any kind of counter from being placed on it, not just -1/-1 counters."
+            },
+            {
+                "date": "2008-05-01",
+                "text": "A spell or ability whose effect would put a counter on Tatterkite simply doesn't affect it. The spell or ability isn't countered. If it would put counters on any other creatures, it continues to do so."
+            },
+            {
+                "date": "2008-05-01",
+                "text": "If Tatterkite is dealt damage by a creature with wither, that damage has no effect. It's not prevented; it just doesn't do anything. Abilities that trigger on damage being dealt will still trigger."
+            },
+            {
+                "date": "2008-05-01",
+                "text": "You can't pay a cost that includes putting a counter on Tatterkite. For example, if Tatterkite is the only creature you control, you can't cast Scarscale Ritual because you can't pay the additional cost."
+            },
+            {
+                "date": "2008-05-01",
+                "text": "If Tatterkite would enter with counters on it, it enters but doesn't have those counters. For example, if an effect grants it persist and then it's destroyed, it returns to the battlefield without a -1/-1 counter on it."
+            }
+        ]
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": []
+}
