@@ -23,6 +23,8 @@ object Extensions {
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/SpinedTyrranaxScenarioTest.kt"))),
         ExtensionDefinition(MightOfMurasa,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/MightOfMurasa.kt","2026-10-28"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/MightOfMurasaScenarioTest.kt"))),
+        ExtensionDefinition(SavageConception,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/SavageConception.kt","2026-10-28"),
+            DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/SavageConceptionScenarioTest.kt"))),
         ExtensionDefinition(ExperimentTwelve,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt","2026-10-27"),
             DefinitionReview(listOf("cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt"))),
         ExtensionDefinition(PlanewideCelebration,Provenance("APPLICATION_EXTENSION","cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt","2026-10-27"),
