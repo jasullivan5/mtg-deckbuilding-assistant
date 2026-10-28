@@ -61,3 +61,7 @@ Existing native definitions can receive a small application-owned, individually 
 Run `dev.ps1 test --tests dev.mtg.assistant.ExtensionStructureTest`. Intentional snapshot updates: set `$env:UPDATE_EXTENSION_SNAPSHOTS='1'`, run that test with `--rerun`, then remove the environment variable and review every JSON diff under `cli/src/test/resources/extensions/`. Never accept a snapshot change as evidence that it matches Oracle.
 
 Simple compositions of established primitives can rely on independent Oracle/ruling review plus these structural nets. Add native per-card scenarios for first uses and consequential costs, choices, timing, resolution values, replacement/layer or linked interactions. Existing scenarios remain useful bounded evidence. Research-only partial findings belong in the batch ledger; known omissions still block executable extension admission.
+
+## Damage dealer references
+
+When an ability's source deals damage, prefer the normal implicit damage source. At this pin an explicit `damageSource = EffectTarget.Self` is a live entity reference and can stop resolving after that object leaves. Predatory Urge's Batch 2 scenario demonstrates the difference; using the implicit source preserves its last-known-information behavior. Explicitly name a different dealer when the Oracle instruction requires one. Verify source removal and sequential-versus-fight semantics against rulings rather than assuming a comparable native card's implementation or comments establish correctness.
