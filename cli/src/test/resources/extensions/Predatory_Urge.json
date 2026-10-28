@@ -1,0 +1,106 @@
+{
+    "name": "Predatory Urge",
+    "manaCost": "{3}{G}",
+    "typeLine": "Enchantment — Aura",
+    "oracleText": "Enchant creature\nEnchanted creature has \"{T}: This creature deals damage equal to its power to target creature. That creature deals damage equal to its power to this creature.\"",
+    "script": {
+        "staticAbilities": [
+            {
+                "type": "GrantActivatedAbility",
+                "ability": {
+                    "id": "Predatory Urge:1",
+                    "cost": "CostTap",
+                    "effect": {
+                        "type": "Composite",
+                        "effects": [
+                            {
+                                "type": "DealDamage",
+                                "amount": {
+                                    "type": "EntityProperty",
+                                    "entity": "Self",
+                                    "numericProperty": "Power"
+                                },
+                                "target": {
+                                    "type": "BoundVariable",
+                                    "name": "t0"
+                                }
+                            },
+                            {
+                                "type": "DealDamage",
+                                "amount": {
+                                    "type": "EntityProperty",
+                                    "entity": {
+                                        "type": "BoundVariable",
+                                        "name": "t0"
+                                    },
+                                    "numericProperty": "Power"
+                                },
+                                "target": "Self",
+                                "damageSource": {
+                                    "type": "BoundVariable",
+                                    "name": "t0"
+                                }
+                            }
+                        ]
+                    },
+                    "targetRequirements": [
+                        {
+                            "type": "TargetObject",
+                            "filter": {
+                                "baseFilter": "creature"
+                            },
+                            "id": "t0"
+                        }
+                    ]
+                }
+            }
+        ],
+        "auraTarget": {
+            "type": "TargetObject",
+            "filter": {
+                "baseFilter": "creature"
+            }
+        }
+    },
+    "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+    "setCode": "ZEN",
+    "metadata": {
+        "collectorNumber": "175",
+        "rarity": "RARE",
+        "artist": "Scott Chou",
+        "imageUri": "https://cards.scryfall.io/normal/front/d/7/d7f8adaa-2852-4e9c-b91d-ce80a21859c9.jpg?1783942133",
+        "scryfallId": "d7f8adaa-2852-4e9c-b91d-ce80a21859c9",
+        "releaseDate": "2009-10-02",
+        "rulings": [
+            {
+                "date": "2009-10-01",
+                "text": "The controller of the enchanted creature may activate the ability, not the controller of Predatory Urge."
+            },
+            {
+                "date": "2009-10-01",
+                "text": "If the enchanted creature’s ability is activated, that creature is the one that will deal and be dealt damage when the ability resolves. It doesn’t matter if Predatory Urge leaves the battlefield or somehow becomes attached to another creature by that time."
+            },
+            {
+                "date": "2009-10-01",
+                "text": "If the targeted creature leaves the battlefield (or otherwise becomes an illegal target) before the ability resolves, the ability doesn’t resolve. The enchanted creature isn’t dealt damage."
+            },
+            {
+                "date": "2009-10-01",
+                "text": "On the other hand, if the enchanted creature leaves the battlefield before the ability resolves, the ability continues to resolve. The enchanted creature deals damage to the targeted creature equal to the power the enchanted creature had as it last existed on the battlefield."
+            },
+            {
+                "date": "2009-10-01",
+                "text": "You may have the enchanted creature target itself with its own ability. If you do, it will deal damage to itself equal to its power, then immediately do it again."
+            }
+        ]
+    },
+    "legalFormats": [
+        "MODERN",
+        "LEGACY",
+        "VINTAGE",
+        "COMMANDER"
+    ],
+    "colorIdentityOverride": [
+        "GREEN"
+    ]
+}
