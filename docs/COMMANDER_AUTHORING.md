@@ -65,3 +65,7 @@ Simple compositions of established primitives can rely on independent Oracle/rul
 ## Damage dealer references
 
 When an ability's source deals damage, prefer the normal implicit damage source. At this pin an explicit `damageSource = EffectTarget.Self` is a live entity reference and can stop resolving after that object leaves. Predatory Urge's Batch 2 scenario demonstrates the difference; using the implicit source preserves its last-known-information behavior. Explicitly name a different dealer when the Oracle instruction requires one. Verify source removal and sequential-versus-fight semantics against rulings rather than assuming a comparable native card's implementation or comments establish correctness.
+
+## Translation assurance
+
+New definitions begin provisional. Historical completed/VERIFIED authoring records are not independent qualification. Preserve source-first requirements, adversarial controls, concern history and exact evidence bindings before seeking separate human approval. Catalog/inspection/discovery expose assurance without excluding provisional research mechanics. See [TRANSLATION_RELIABILITY.md](TRANSLATION_RELIABILITY.md).
