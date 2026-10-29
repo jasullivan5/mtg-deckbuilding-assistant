@@ -1,0 +1,376 @@
+{
+  "reviewVersion": "phase25-frozen-v1-fork-foundation",
+  "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+  "reviewMethod": "Source-led Oracle/rulings and pinned native definition review before production changes; same engineering reviewer, not independent external adjudication. Held-out assignments frozen in splits.json. Fork-foundation rebinding: case assignments and expectations remain unchanged; native definitions/catalog match the original baseline and fresh stable-engine execution is recorded in reference/fork-foundation/pre-adoption-verification.json. This is not independent human certification.",
+  "frozenAt": "2026-10-26",
+  "cases": [
+    {
+      "id": "dragon-fodder",
+      "card": "Dragon Fodder",
+      "oracleId": "d0d2c45b-b6e3-4999-bdab-976e8f0d6617",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/fdn/535/dragon-fodder?utm_source=api"
+      ]
+    },
+    {
+      "id": "krenko--mob-boss",
+      "card": "Krenko, Mob Boss",
+      "oracleId": "68418069-f615-40ef-ae0d-764192acae00",
+      "face": "front",
+      "path": "script.activatedAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Tap ability; Goblin count must be positive; count not guaranteed in arbitrary game state."
+      ],
+      "requiredNative": {},
+      "reason": "Tap ability; Goblin count must be positive; count not guaranteed in arbitrary game state.",
+      "sources": [
+        "https://scryfall.com/card/fdn/204/krenko-mob-boss?utm_source=api"
+      ]
+    },
+    {
+      "id": "young-pyromancer",
+      "card": "Young Pyromancer",
+      "oracleId": "5fac139a-07d3-4e6c-98e3-d98b199f7a6f",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/tdc/95/young-pyromancer?utm_source=api"
+      ]
+    },
+    {
+      "id": "siege-gang-commander",
+      "card": "Siege-Gang Commander",
+      "oracleId": "ddc7f59a-bbb1-4ba1-82c8-6813fd191940",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/plst/DMR-136/siege-gang-commander?utm_source=api"
+      ]
+    },
+    {
+      "id": "ophiomancer",
+      "card": "Ophiomancer",
+      "oracleId": "55eca80c-dcd8-4c2f-aa0f-fb0aec7b80f7",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Upkeep intervening condition: no Snake controlled; condition must hold as required at trigger and resolution."
+      ],
+      "requiredNative": {},
+      "reason": "Upkeep intervening condition: no Snake controlled; condition must hold as required at trigger and resolution.",
+      "sources": [
+        "https://scryfall.com/card/soc/118/ophiomancer?utm_source=api"
+      ]
+    },
+    {
+      "id": "heat-shimmer",
+      "card": "Heat Shimmer",
+      "oracleId": "5c80d39e-f3af-4d24-bca0-19f0bd0f5082",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/2xm/130/heat-shimmer?utm_source=api"
+      ]
+    },
+    {
+      "id": "hunted-horror",
+      "card": "Hunted Horror",
+      "oracleId": "3469463e-ed4d-44bb-81f3-42bbe09d34ad",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native token receiver is targeted opponent, not us."
+      ],
+      "requiredNative": {},
+      "reason": "Native token receiver is targeted opponent, not us.",
+      "sources": [
+        "https://scryfall.com/card/clb/758/hunted-horror?utm_source=api"
+      ]
+    },
+    {
+      "id": "big-score",
+      "card": "Big Score",
+      "oracleId": "a5cbd257-c836-493e-bb1a-76242619dea2",
+      "face": "front",
+      "path": "script.spellEffect.effects[1]",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "NO_MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native Treasure template is an artifact without creature type."
+      ],
+      "requiredNative": {},
+      "reason": "Native Treasure template is an artifact without creature type.",
+      "sources": [
+        "https://scryfall.com/card/msc/802/big-score?utm_source=api"
+      ]
+    },
+    {
+      "id": "kuldotha-rebirth",
+      "card": "Kuldotha Rebirth",
+      "oracleId": "f3e28778-0149-4dbd-badb-ba5aeacacd76",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/som/96/kuldotha-rebirth?utm_source=api"
+      ]
+    },
+    {
+      "id": "haunted-dead",
+      "card": "Haunted Dead",
+      "oracleId": "03259490-a789-4f96-8c5b-b410425bdd02",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/inr/116/haunted-dead?utm_source=api"
+      ]
+    },
+    {
+      "id": "rite-of-replication",
+      "card": "Rite of Replication",
+      "oracleId": "fb60739e-1dc3-481d-a056-ad72e665c680",
+      "face": "front",
+      "path": "script.spellEffect.then",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "UNKNOWN",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract."
+      ],
+      "requiredNative": {},
+      "reason": "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract.",
+      "sources": [
+        "https://scryfall.com/card/soc/202/rite-of-replication?utm_source=api"
+      ]
+    },
+    {
+      "id": "rite-of-replication-else",
+      "card": "Rite of Replication",
+      "oracleId": "fb60739e-1dc3-481d-a056-ad72e665c680",
+      "face": "front",
+      "path": "script.spellEffect.otherwise",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "UNKNOWN",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract."
+      ],
+      "requiredNative": {},
+      "reason": "Creature copy in either kicker branch; generic gate satisfiability remains UNKNOWN in current interpreter contract.",
+      "sources": [
+        "https://scryfall.com/card/soc/202/rite-of-replication?utm_source=api"
+      ]
+    },
+    {
+      "id": "dreadhorde-invasion",
+      "card": "Dreadhorde Invasion",
+      "oracleId": "01deabbb-af6a-4998-99a7-35b7cfa9ef77",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "UNKNOWN",
+      "expectedPolicy": null,
+      "expectedCategory": null,
+      "expectedRole": "EFFECT",
+      "reviewStatus": "UNRESOLVED",
+      "prerequisites": [
+        "Native Amass primitive not interpreted; Oracle permits conditional creation but no primitive token fact is claimed."
+      ],
+      "requiredNative": {},
+      "reason": "Native Amass primitive not interpreted; Oracle permits conditional creation but no primitive token fact is claimed.",
+      "sources": [
+        "https://scryfall.com/card/frc/48/dreadhorde-invasion?utm_source=api"
+      ]
+    },
+    {
+      "id": "hordeling-outburst",
+      "card": "Hordeling Outburst",
+      "oracleId": "a6450b8e-eb18-431c-9eb7-7daf107978b2",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/a25/134/hordeling-outburst?utm_source=api"
+      ]
+    },
+    {
+      "id": "goblin-rabblemaster",
+      "card": "Goblin Rabblemaster",
+      "oracleId": "24661b81-6bee-4ad8-b3ab-53cb65005c51",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/ddt/46/goblin-rabblemaster?utm_source=api"
+      ]
+    },
+    {
+      "id": "raise-the-alarm",
+      "card": "Raise the Alarm",
+      "oracleId": "5b2364d7-a811-4595-a1b4-224c70555ffa",
+      "face": "front",
+      "path": "script.spellEffect",
+      "mapping": "EXACT",
+      "branch": "CREATE_CREATURE_TOKEN",
+      "operation": "CREATE_TOKEN",
+      "expectedMechanical": "MATCH",
+      "expectedPolicy": null,
+      "expectedCategory": "CREATE_CREATURE_TOKEN",
+      "expectedRole": "EFFECT",
+      "reviewStatus": "CONFIRMED",
+      "prerequisites": [
+        "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional."
+      ],
+      "requiredNative": {},
+      "reason": "Native creature token template or creature-target copy; effect controller receives tokens; casting/activation/trigger and resource prerequisites remain conditional.",
+      "sources": [
+        "https://scryfall.com/card/cmr/41/raise-the-alarm?utm_source=api"
+      ]
+    }
+  ]
+}

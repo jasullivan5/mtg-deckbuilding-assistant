@@ -2,6 +2,21 @@
 """Strict compact evidence comparison; preserves duplicates, never interprets MTG mechanics."""
 import pathlib,json,collections,hashlib,sys
 root=pathlib.Path(__file__).resolve().parent.parent;out=pathlib.Path(sys.argv[1]);checks={}
+# Current fork gate: strict full-report hashes, generated only after controlled old/new comparison.
+# The original Phase 2.5 comparison below remains available for historical reproduction.
+if len(sys.argv)>2:
+ baseline=json.loads(pathlib.Path(sys.argv[2]).read_text(encoding='utf-8'))
+ pin=(root/'ARGENTUM_COMMIT').read_text(encoding='utf-8').strip()
+ assert baseline['argentumCommit']==pin, 'Catalog baseline pin mismatch'
+ for key,expected in baseline['reports'].items():
+  report=json.loads((out/f'{key}.json').read_text(encoding='utf-8'))
+  digest=hashlib.sha256((json.dumps(report,sort_keys=True,separators=(',',':'),ensure_ascii=False)+'\n').encode('utf-8')).hexdigest()
+  benchmark=json.loads((out/f'{key}-benchmark.json').read_text(encoding='utf-8'))
+  checks[key]={'samePin':report['argentumCommit']==pin,'sameCompleteReport':digest==expected['sha256CanonicalJsonUtf8'],'zeroConfirmedBenchmarkMismatches':benchmark['numerators']['confirmed_mismatch_cases']==0}
+ checks['identicalDiffEmpty']=not json.loads((out/'diff-identical.json').read_text(encoding='utf-8'))['changes']
+ passed=all(all(v.values()) if isinstance(v,dict) else v for v in checks.values())
+ (out/'comparison-summary.json').write_text(json.dumps({'passed':passed,'checks':checks},indent=2)+'\n',encoding='utf-8')
+ print('Fork catalog comparison:',passed);sys.exit(0 if passed else 1)
 for who in ['judith','krenko']:
  for letter in 'abc':
   key=f'{who}-{letter}';before=json.loads((root/f'samples/phase2_5/final-{key}.json').read_text());after=json.loads((out/f'{key}.json').read_text())

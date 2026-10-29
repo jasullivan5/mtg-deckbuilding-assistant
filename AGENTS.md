@@ -17,7 +17,7 @@ Commands from root:
 - Routine gate: `./scripts/verify.sh fast`; complete gate: `./scripts/verify.sh full`; expensive catalog-only gate: `./scripts/verify.sh catalog`.
 - CLI: `cli/build/install/mtg-assistant/bin/mtg-assistant discover --commander 'Judith, the Scourge Diva' --objective create-creature-tokens`.
 - Other objectives: own-nontoken-creature-deaths and reanimate-own-creatures; same Commander filters.
-- Benchmark: launcher `audit benchmark --snapshot generated/result.json --benchmark benchmark/phase25/review-v1.json --json --output generated/benchmark.json` (choose matching review).
+- Benchmark: launcher `audit benchmark --snapshot generated/result.json --benchmark benchmark/phase25/review-fork-v1.json --json --output generated/benchmark.json` (choose matching review).
 - Coverage: launcher `audit coverage --snapshot generated/result.json --json --output generated/coverage.json`; cross-examiner: `audit inconsistencies` with snapshot and matching --benchmark.
 - Regression: launcher `audit diff --before generated/before.json --after generated/after.json --json --output generated/diff.json`.
 

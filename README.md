@@ -77,15 +77,17 @@ Using the installed `mtg-assistant` launcher:
 
 ```bash
 mtg-assistant audit coverage --snapshot generated/judith-tokens.json --json --output generated/coverage.json
-mtg-assistant audit inconsistencies --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-v1.json --json --output generated/examination.json
-mtg-assistant audit benchmark --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-v1.json --json --output generated/benchmark.json
+mtg-assistant audit inconsistencies --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-fork-v1.json --json --output generated/examination.json
+mtg-assistant audit benchmark --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-fork-v1.json --json --output generated/benchmark.json
 mtg-assistant audit diff --before generated/before.json --after generated/after.json --json --output generated/diff.json
 mtg-assistant audit cross-objective --snapshot generated/objective-a.json --other-snapshot generated/judith-tokens.json --json --output generated/reuse.json
 ```
 
 Prefix these example commands with `cli/build/install/mtg-assistant/bin/` if it is not on PATH. The all-colors reviewed-subset benchmark also executes in `Phase25ReportingTest`, so white/blue examples are evaluated without treating Judith/Krenko ineligibility as extractor failure.
 
-Regenerate the full final workflow and compact evidence. To regenerate the all-colors benchmark's JSON side output rather than reuse packaged evidence, run `./dev clean` followed by `./dev test --no-build-cache` first. This cleans only the application module; the pinned upstream outputs remain reusable. A cached test result alone does not recreate this optional side output.
+The historical Phase 2.5 regeneration commands below require their historical application revision/pin. Current fork verification uses scripts/check-catalog.sh and the fork-bound review-fork-v1.json inputs; the original reviews remain intact.
+
+Regenerate the historical full final workflow and compact evidence. To regenerate the all-colors benchmark's JSON side output rather than reuse packaged evidence, run `./dev clean` followed by `./dev test --no-build-cache` first. This cleans only the application module; the pinned upstream outputs remain reusable. A cached test result alone does not recreate this optional side output.
 
 ```bash
 MTG_REPORT_DIR=generated/phase25/final-verified bash verification/phase2_5/run-reports.sh final
