@@ -61,6 +61,7 @@ fun runCli(args: Array<String>, catalog: () -> Catalog = { Catalog() },
                 require(args.size == 1) { "stats takes no arguments" }
                 val data = catalog()
                 out("Sets: ${data.setCount}; registered names: ${data.cards.size}")
+                out("Engine: ${EngineBuild.revision}; mode: ${EngineBuild.mode}; implementation: ${EngineBuild.implementationSha256}")
             }
             "card" -> {
                 require(args.size > 1) { "card requires an exact card name" }
@@ -68,7 +69,7 @@ fun runCli(args: Array<String>, catalog: () -> Catalog = { Catalog() },
                 val data = catalog()
                 val card = data.card(name)
                 if (card == null) { err("Card not found: $name (lookup is case-sensitive)"); return 1 }
-                out("Provenance: ${data.provenance(name)}\n" + (data.translationAssurance(name)?.let { "Translation assurance: ${it.qualification}; fidelity=${it.sourceFidelity}; engine=${it.engineExecution}; ${it.reasons}\n" } ?: "") + describe(card))
+                out("Engine build: ${EngineBuild.revision}\nProvenance: ${data.provenance(name)}\n" + (data.translationAssurance(name)?.let { "Translation assurance: ${it.qualification}; fidelity=${it.sourceFidelity}; engine=${it.engineExecution}; ${it.reasons}\n" } ?: "") + describe(card))
             }
             "search" -> {
                 require(args.size > 1) { "search requires a query; use an explicit empty string to match all" }

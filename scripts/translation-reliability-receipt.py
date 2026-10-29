@@ -11,7 +11,7 @@ def metadata_only(v):
  if isinstance(v,list):return [metadata_only(x) for x in v]
  return v
 sword='Sword of Truth and Justice'
-proof={'implementationCommit':'4a69578f14c6425e1f50a37b64d6a271808aabe0','fullRunLogSha256':digest(GEN.parent/'reliability-full-tests.log'),'baseCommit':'4e047c796e2fd88335fa65fd95ed6fa745f48bd7','argentumCommit':(ROOT/'ARGENTUM_COMMIT').read_text().strip(),'comparisons':{},'coverage':{},'testSuites':{},'measurements':{}}
+proof={'implementationCommit':'4a69578f14c6425e1f50a37b64d6a271808aabe0','fullRunLogSha256':digest(GEN.parent/'reliability-full-tests.log'),'baseCommit':'4e047c796e2fd88335fa65fd95ed6fa745f48bd7','argentumCommit':(ROOT/'reference/fork-foundation/ARGENTUM_COMMIT').read_text().strip(),'comparisons':{},'coverage':{},'testSuites':{},'measurements':{}}
 for stage in ['before','after']:
  rows=read(GEN/stage/'timings.json');proof['measurements'][stage]={'wallSeconds':round(sum(r['wallSeconds'] for r in rows),3),'commands':[{k:r[k] for k in ['command','wallSeconds','peakWorkingSetBytes']} for r in rows]}
 for who in ['judith','krenko','oviya']:

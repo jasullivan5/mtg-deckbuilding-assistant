@@ -45,7 +45,7 @@ M1 may require internal checkpoints (API contract/parity → minimal UI → inte
 For each increment:
 
 1. **Choose an observable question.** State what a user can do after the change, which real MTG examples demonstrate it, and what misleading/negative/unknown case should be visible. Define the smallest defensible acceptance boundary and explicitly excluded work. A brief is enough; avoid ceremony.
-2. **Inspect live Git and implement.** Codex starts from current application `main`, checks `AGENTS.md`, architecture, dependency pin, relevant code/tests, local changes and known limits; makes routine technical choices; keeps the existing Kotlin/CLI mechanics authoritative; implements on a feature branch. Fork-only native engine corrections require a separate scoped decision and reviewed exact-pin adoption.
+2. **Inspect live Git and implement.** Codex starts from current application `main`, checks `AGENTS.md`, architecture, sibling engine revision, relevant code/tests, local changes and known limits; makes routine technical choices; keeps the existing Kotlin/CLI mechanics authoritative; implements on a feature branch. Fork-only native engine corrections require a separate scoped decision and native/application compatibility checks before app-stable acceptance.
 3. **Test at the right layers.** Use focused Kotlin parity/integration tests, frontend component/browser tests, error/unknown cases, and representative live interactions. Preserve exact source and engine revisions, source/data provenance, actual commands, failures and skipped checks. Test claims must not outgrow their evidence.
 4. **Deliver something to try.** Provide an easy local Windows setup/launch, **what can I do now?**, two or three guided actions (one should expose a real limitation), and screenshots only when captured from the actual running build. Include the PR and concise known issues. No automatic merges.
 5. **Prototype Lab review.** The user runs the app and judges navigation, clarity, usefulness, appearance and surprising results. ChatGPT helps separate UI misunderstandings, projection bugs, mechanical/translation errors, missing source data and strategic disagreement. This is **product acceptance**, not independent translation certification.
@@ -55,14 +55,14 @@ For each increment:
 
 ## 4. Quality boundaries that apply to every milestone
 
-- **Mechanics remain in Kotlin and pinned Argentum.** Frontend code renders application-owned results; it must not implement a competing Oracle parser, rules engine, Commander legality policy, or mechanical acceptance gate. Maintain CLI/headless operation.
+- **Mechanics remain in Kotlin and recorded Argentum builds.** Frontend code renders application-owned results; it must not implement a competing Oracle parser, rules engine, Commander legality policy, or mechanical acceptance gate. Maintain CLI/headless operation.
 - **Eligibility first.** Commander legality and full color identity precede candidate discovery. Unknown eligibility, unsupported commander configurations, missing native definitions and unsupported actions are distinct conditions; don't silently convert them into `NO_MATCH`.
 - **Evidence is layered.** Distinguish identity/source → representability → translation fidelity → engine execution → structural discovery → objective relevance → contextual deck value. `MATCH` is conditional structural possibility, not resolved play, card certification or a deck recommendation.
 - **Visual truth is mandatory.** A chart identifies its measured population, unit (distinct cards, faces, pathways, tests, etc.), filters, objective/commander, exclusions, missing/unknown categories and relevant revisions. Meaningful chart categories should link to their contributing records. No pathway emitted does not mean proven nonmatch.
 - **Imagery is identity-safe.** Images must correspond to a verified card, printing and face; show a fallback rather than guess. Observe image-provider terms, attribution and caching limits.
 - **Execution modes are named accurately.** Imported read-only report, live discovery, historical recorded scenario and fresh live engine scenario are different things. Do not invent gameplay state, progress measurements, coverage percentages or confidence scores.
 - **Approachable before exhaustive.** Show readable MTG explanations first, with optional deeper evidence, raw native structures, exact prerequisites and uncertainty. Accessibility, keyboard operation, clear failures and responsive navigation count as research quality.
-- **Preserve engine stewardship.** Application and independent engine development repositories remain siblings; the application's clean nested `argentum/` is the exact pinned dependency. Do not auto-upgrade, merge upstream or alter assurance records to make a UI look successful.
+- **Preserve engine stewardship.** Application and independent engine development repositories remain siblings; the application normally uses the clean sibling engine on app-stable and records its actual revision. Do not merge upstream or alter assurance records to make a UI look successful.
 - **Stay local and narrow.** Initially use a loopback-only application-owned integration, bounded requests and clear errors. No accounts, hosted server, databases, deck editor, multiplayer, general sandbox or packaging without a demonstrated need and approval.
 
 ## 5. Repository and workstation conventions
@@ -71,7 +71,7 @@ Work from the user's existing Windows development workspace containing **both** 
 
 Aim for **one practical launch command** from the application repo (or one documented script that orchestrates frontend and backend) once a live increment is delivered. Make failures and required prerequisites legible. Windows execution is essential for the first increment; do not claim other platforms were tested when they were not.
 
-Current code, `AGENTS.md`, `docs/ARCHITECTURE.md`, tests and `ARGENTUM_COMMIT` are authoritative for implementation. This document tracks *user-facing direction and review state*, not exact APIs, current test counts or pinned SHAs. Architectural changes with meaningful tradeoffs return to Product Studio for a decision.
+Current code, `AGENTS.md`, `docs/ARCHITECTURE.md`, tests and the recorded engine revision are authoritative for implementation. This document tracks *user-facing direction and review state*, not exact APIs, current test counts or pinned SHAs. Architectural changes with meaningful tradeoffs return to Product Studio for a decision.
 
 ## 6. Lightweight status and decision log
 
@@ -79,7 +79,7 @@ Keep this section brief and revise it **after** user review, not just PR creatio
 
 | Milestone | Status | Next product decision |
 |---|---|---|
-| M1 — Live discovery foundation | **Proposed next** | Approve its first bounded Codex assignment and the minimal launchable journey |
+| M1 — Live discovery foundation | **Paused before completion** | Finish and review the authorized sibling app-stable workflow migration first; partial Explorer implementation is preserved on feature/explorer-m1 |
 | M2 — Card-first exploration | **Not started** | Reassess priorities after trying M1 |
 | M3 — Evidence and visualization | **Not started** | Choose charts/questions from actual Explorer shortcomings |
 | M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |

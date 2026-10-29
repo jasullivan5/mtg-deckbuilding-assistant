@@ -26,7 +26,8 @@ import kotlinx.serialization.encodeToString
     val selectable: Boolean = blockers.isEmpty(),
     val effectiveMetadata: dev.mtg.assistant.eligibility.EffectiveEligibility? = null,
     val nativeValidationWarnings: List<String> = emptyList(),
-    val translationAssurance: dev.mtg.assistant.extensions.TranslationAssurance? = null
+    val translationAssurance: dev.mtg.assistant.extensions.TranslationAssurance? = null,
+    val argentumCommit: String = ARGENTUM_SHA
 )
 
 /** Pure inspection also accepts isolated SDK fixtures; no card-name exceptions or Oracle effect parser. */
@@ -81,6 +82,7 @@ fun commanderCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
     val report=inspectCommander(catalog,names.joinToString(" "))
     if(json) out(reportJson.encodeToString(report)) else out(buildString {
         appendLine("Commander: ${report.requestedName}")
+        appendLine("Engine build: ${report.argentumCommit}")
         appendLine("Availability: ${report.availability}; selectable: ${report.selectable}")
         appendLine("Provenance: ${report.provenance ?: "No native definition"}")
         appendLine("Commander legality: ${report.formatLegality}; authoritative identity: ${report.authoritativeIdentity}; colors: ${report.colorIdentity}")

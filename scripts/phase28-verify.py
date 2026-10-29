@@ -45,7 +45,7 @@ def compare(args):
   b=read(before/f'coverage-{slug}.json');a=read(after/f'coverage-{slug}.json')
   assert b['schemaVersion']==1 and a['schemaVersion']==2
   assert b['snapshot']['sha256']==a['snapshot']['sha256']==manifest['sha256']
-  assert b['argentumCommit']==a['argentumCommit']==(ROOT/'ARGENTUM_COMMIT').read_text().strip()
+  assert b['argentumCommit']==a['argentumCommit']==(ROOT/'reference/fork-foundation/ARGENTUM_COMMIT').read_text().strip()
   source=[c for c in cards if c.get('name')==commander and c.get('legalities',{}).get('commander')=='legal'];assert len(source)==1
   allowed=set(source[0]['color_identity']);assert set(a['allowedIdentity'])==allowed
   eligible=set()
