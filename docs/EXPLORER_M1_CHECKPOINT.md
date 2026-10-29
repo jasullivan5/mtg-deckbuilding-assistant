@@ -1,102 +1,13 @@
 # Explorer M1 checkpoint — 2026-10-29
 
-## Latest incremental checkpoint — supersedes unfinished statuses below
+Continue on `feature/explorer-m1`. Original foundation **a35b9b5** is preserved; **aa0f497** reconciles application main b66dd0d and its sibling app-stable integration. Checkpoints def3615 and 7d680f7 are pushed. Never restart or restore the retired nested/pinned dependency arrangement.
 
-The compact API **compiled and passed all five updated ExplorerServerTest cases**, including streamed full CLI evidence equality for all objectives, complete per-card records, changed commander, invalid indexes and expired run handling. The old-contract test warning in the historical section below is resolved.
+Normal engine: clean sibling `../argentum-engine`, branch `app-stable`, revision **e46fab1475ddc6f355e1c8fdc770b12bdc697b0f**. No engine changes are part of M1.
 
-Added exact @playwright/test 1.62.1 dependency/lock, playwright.config.ts and tests/interface.spec.ts + tests/live.spec.ts. Four fixture browser tests passed on installed Chrome (one initial locator ambiguity was corrected). The genuine live browser test passed: Judith tokens → Bitterblossom evidence → Judith reanimation → Oviya tokens → rejected Murder, with distinct real run IDs. Screenshot: generated/explorer/judith-tokens.png. One-command scripts/explorer.ps1 successfully built and launched the application. Ctrl+C shutdown was verified by a refused connection on port 8787; **no API server remains running**.
+Implemented: bounded loopback JDK HTTP API, compact summaries and selected-card evidence, complete streamed exports, React controls/findings/evidence with readable verdict restatements, three existing objectives, actual build provenance, Windows one-command foreground launch, focused boundary and browser tests, frontend CI and delivery documentation. Read [M1 launch, contract, exercises and limits](EXPLORER_M1.md).
 
-Measured warm Judith token discovery before the final readable-explanation refinement: 874,178-byte summary, 11,567-byte Bitterblossom detail, 4,820 ms native discovery / 5,016 ms complete HTTP request; 4,579 finding cards. Source engine e46fab1, application def3615+dirty. Measurements are in generated/explorer/live-measurement.json (ignored, not committed).
+Fresh verification completed: 465 application tests / 59 suites passed; five focused HTTP tests rerun after startup diagnostics passed; four fixture browser tests passed. HTTP tests compare every complete report field with fresh CLI output for all three objectives. An earlier genuine browser run passed Judith tokens → Bitterblossom → reanimation → Oviya tokens → rejected Murder. Final live rerun including mobile keyboard/layout remains next. Earlier Windows launch and Ctrl+C shutdown succeeded; occupied-port failure was checked.
 
-Visual inspection found the native decision reasons too technical. **ExplorerModels.explain** now restates the existing objective/verdict in readable terms, with generic objective requirements and explicit unresolved/nonmatching language. Original prerequisites/decisions remain unchanged in expandable records and full export. This is presentation, no new evaluator. Frontend uses these supplied explanations. This final refinement is undergoing validation now.
+Next: commit final source/docs, launch `scripts/explorer.ps1` from a clean source revision, run `pnpm test:live` with EXPLORER_URL and installed Chrome channel, inspect screenshots, measure final response sizes/query timing, stop server and verify port closure. Write compact final receipt, update this checkpoint, push and open/attach a focused PR against main. No M1 PR exists at this checkpoint. Do not merge it; readiness for Prototype Lab is not user acceptance. No M2+ work is authorized.
 
-Current validations in progress at this checkpoint:
-- Full regression/build: .\dev.ps1 test --rerun :assistant-cli:installDist (tool session 8133). Check test XML timestamps / active Java processes before restarting if a usage reset interrupts the agent. Do not rebuild installDist while a live server/CLI reads it.
-- Frontend rebuild + four fixture tests for the readable explanation change (tool session 74478); first two tests already passed when checkpoint was written.
-
-**Next:** finish/inspect those results; rerun live browser tests on the final source, plus mobile/keyboard check and startup/error/shutdown checks as appropriate. Then write launch/API/evaluation docs, update milestone state only to demonstrated readiness, run final affected checks, commit/push and create the M1 PR. No M1 PR exists yet. Add a small frontend CI check if economical; current CI only runs Kotlin. Keep normal engine sibling unchanged.
-
-Launch script is now reconciled: normal sibling setup, Node/JDK/pnpm prerequisites, packaged app provenance, one foreground JVM (no batch prompt), no MTG_APPLICATION_REVISION env workaround. It has been executed successfully. Frontend defaults to a populated verdict category and retains alphabetical name/page navigation. No old JSON Blob leak remains.
-
-## Resume here
-
-Continue **feature/explorer-m1** in the application checkout. Do not restart the Explorer or restore the old dependency policy. This is an unfinished implementation checkpoint, not a completed/accepted milestone.
-
-- Original preliminary work is preserved at **a35b9b5**.
-- **aa0f497** merges application main **b66dd0d** into the same feature branch. Conflicts in .gitignore, cli/build.gradle.kts and gradlew.bat deliberately retain main's corrected versions. Both a35b9b5 and b66dd0d are ancestors.
-- Normal engine is the clean sibling **argentum-engine**, branch **app-stable**, currently **e46fab1475ddc6f355e1c8fdc770b12bdc697b0f**. Engine PR #2 and application PR #12 are merged. Do not use the retired nested clone or change the engine.
-- No M1 PR has been opened. No M1 acceptance is claimed. No servers are currently running.
-
-Read AGENTS.md, README.md, docs/ARCHITECTURE.md, docs/ENGINE_WORKFLOW.md and docs/EXPLORER_MILESTONES.md. The original assignment in this conversation remains M1 only: one-command Windows launch; live Kotlin inspection/discovery; three existing objectives; usable controls/results/evidence; truthful unsupported/unknown/assurance states; focused HTTP/UI tests and CLI regression; reviewable application PR, no automatic merge.
-
-## Fresh verification already completed
-
-At reconciled source **aa0f497**:
-
-```powershell
-.\dev.ps1 test --tests dev.mtg.assistant.ExplorerServerTest :assistant-cli:installDist
-```
-
-All **five recovered HTTP tests passed**, including full CLI report/evidence parity for all three objectives, invalid selections, malformed requests, errors, busy/timeout handling. That was the earlier full-report HTTP contract; it is NOT validation of the newer projection below.
-
-After the subsequent frontend changes, these passed:
-
-```text
-node node_modules/typescript/bin/tsc --noEmit
-node node_modules/vite/bin/vite.js build
-```
-
-These are build/type checks, not browser interaction tests.
-
-## Why the preserved foundation is being refined
-
-Measured existing complete reports (generated/handoff/catalog):
-- Judith A: 47,802,090 bytes, 3,049 pathways, 8,702 unsupported records, 5,400 finding cards, 487 conditional-match cards.
-- Judith B: 48,772,091 bytes, 4,788 finding cards.
-- Judith C: 40,112,825 bytes, 4,579 finding cards.
-
-The recovered UI rendered all findings and constructed a complete JSON Blob on every render. Keep its architecture and presentation, but send a compact finding index and load selected-card evidence on demand. Retain complete export; do not prune consequential evidence or reinterpret mechanics. Client-side pages of 40 address the observed thousands of records, with basic verdict/name navigation within the executed findings; this is not M2's comprehensive browser.
-
-## Current source changes (not yet Kotlin-compiled/tested)
-
-- **ExplorerModels.kt**: existing Objective/ResearchRequest/ApiError moved here; RunSummary, CardFinding, CardEvidence and full LiveDiscovery export; StoredRun indexes the unchanged report by card. All original evidence remains in export and selected-card records.
-- **ExplorerServer.kt**: retains JDK loopback HTTP server, validation, single exclusive discovery worker and error handling. One latest run retained. New summary/detail/export routes below. Streaming JSON avoids full-report intermediate strings. A deadline prevents publication after timeout; gate stays reserved until work actually ends. Bounded request executor/body sizes/timeouts; static real-path containment.
-- **cli/build.gradle.kts**: generates application-build.properties alongside engine metadata, with actual application commit and +dirty when applicable. New property generation is not yet Kotlin/Gradle-validated.
-- **Main.kt**: existing explorer dispatch retained; usage line added.
-- **explorer/src/main.tsx**: retains original controls/results/inspection design; compact API types, selected-card fetch with cancellation, 40-card pages, basic verdict/name navigation, lazy raw details, native-authored text, complete download URL. Fixes object-URL leak by using server export. Type/build checks passed.
-- **explorer/src/style.css**: original style retained plus navigation/pager/authored-text refinements.
-- **scripts/explorer.ps1**: still recovered version; needs cleanup. It already calls normal setup/dev wrappers, but has obsolete pinned wording and MTG_APPLICATION_REVISION env logic now superseded by packaged metadata.
-
-### Current intended API v1
-
-- GET /api/v1/health: ready, actual engine SHA/mode, packaged application revision.
-- GET /api/v1/objectives: exact three IDs, readable labels/explanations.
-- POST /api/v1/commander: {commander}; unchanged CommanderInspection.
-- POST /api/v1/discover: {commander, objective}; **RunSummary**, not full LiveDiscovery.
-- GET /api/v1/runs/{runId}/cards/{index}: complete CardEvidence for one indexed finding card.
-- GET /api/v1/runs/{runId}/report: streamed **LiveDiscovery** envelope with full unchanged DiscoveryReport and run provenance, attachment download.
-- New discovery invalidates previous run (410 RUN_EXPIRED for old evidence); only latest report retained.
-- Existing 400/403/405/409/413/415/422/500/504 distinctions retained.
-- Native MATCH/UNKNOWN/NO_MATCH and unsupported records stay distinct. Summary card indexes include emitted pathways or unsupported records, not every eligible card; all other facts/eligibility remain in full export.
-
-## Immediate next steps, in order
-
-1. **Update ExplorerServerTest.kt to the new response contract.** Its old parity test expects full LiveDiscovery directly from POST discover and will fail. Read RunSummary, fetch its report endpoint, verify underlying full report vs CLI (prefer stream decoding/hashing to avoid extra 40–49 MB strings), and test selected-card evidence completeness, expired IDs/bad indexes, all three objectives and changed commander. Keep the recovered validation/busy/timeout/error tests. Add late-timeout publication exclusion if practical.
-2. Run focused Kotlin test/build through dev.ps1. Fix actual compile/runtime errors before further UI work. The current API/model/property additions have not been compiled yet.
-3. Reconcile scripts/explorer.ps1 with sibling setup and packaged provenance. Check Node/pnpm/JDK prerequisites and exit codes; one foreground Kotlin process serving built Vite assets; readiness, occupied port and Ctrl+C shutdown. Avoid hardcoded workstation paths. Don't require discovery JSON preparation.
-4. Add reproducible lightweight browser tests. Installed workspace runtime has **playwright 1.62.1**, but **@playwright/test is not yet added**. Existing frontend has React 19.2.7, TypeScript 6.0.3, Vite 8.1.0 and pnpm lock; Node 24.22.1/pnpm 11.25.0 available here. Add exact test dependency + lockfile, not node_modules. Test mocked UI states honestly as fixtures, and separately execute real browser → Kotlin flows.
-5. Actually launch on Windows from the spaces-and-ampersand workspace; measure readiness and summary/detail sizes/query duration. Exercise Judith + at least two objectives, change to Oviya/Krenko, inspect a real result's prerequisites, and Murder/missing commander feedback. Verify all objective IDs selectable, no silent fallback, loading, errors, empty/unsupported and stale evidence behavior. Inspect actual screenshot/mobile/keyboard flow.
-6. Run full application suite/affected checks and preserved CLI. Backend mechanics/policies/native engine were not changed; do not modify frozen records. Avoid rebuilding installDist concurrently with live CLI/catalog checks (earlier migration proved that can replace a JAR under a running process).
-7. Update README, architecture, M1 API/launch documentation and milestone review state to **ready for Prototype Lab** only when demonstrated; never accepted automatically. Commit/push feature branch, create/attach focused application PR, no merge.
-8. Deliver exact Windows launch, prerequisites/shutdown, 2–3 actual guided exercises, actual source/engine revisions and fresh test/performance evidence. Remain within M1.
-
-## Constraints and known review points
-
-- Source API worker/projection refinements still need validation. Do not claim recovered tests cover those changes.
-- Initial compact finding index may still be ~MB; measure, don't invent infrastructure.
-- Preserve structural potential vs resolution/translation assurance/strategic value. No imagery association loaded; honest fallback. No rankings/confidence scores.
-- Full export is deliberately large. Do not commit generated reports.
-- A selected-card fetch can return 410 when another tab starts discovery; show understandable recovery.
-- Direct server uses packaged application provenance, so it must be rebuilt after source changes.
-- No subagent delegation is authorized. Use primary agent.
-- Agent usage was 88% consumed in the five-hour window at checkpoint creation; user requested a durable checkpoint if the limit is reached. This is not a request to discard work or restart.
+Avoid installDist while a live server/CLI reads packaged jars. Generated reports/screenshots and node_modules stay ignored. Final evidence should identify the tested source commit separately from any subsequent documentation-only receipt commit.

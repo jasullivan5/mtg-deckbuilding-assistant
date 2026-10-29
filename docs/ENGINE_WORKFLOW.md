@@ -42,4 +42,5 @@ Catalog regression checks compare against the unchanged historical baseline afte
 
 ## Scope and review
 
-Explorer M1 is paused on `feature/explorer-m1` at a35b9b5. This migration adds no Explorer functionality and does not mark any Explorer milestone accepted. Permanent ChatGPT Project instructions are outside these repositories; replace any remaining nested-pin guidance there with this workflow.
+Explorer M1 resumed on `feature/explorer-m1`, preserving a35b9b5 and merging the completed migration before further implementation. See [M1 delivery](EXPLORER_M1.md); integration migration does not establish Explorer acceptance. Permanent ChatGPT Project instructions are outside these repositories; replace any remaining nested-pin guidance there with this workflow.
+

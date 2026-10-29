@@ -8,6 +8,7 @@ import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.discovery.*
 import kotlinx.serialization.json.*
 import java.net.InetSocketAddress
+import java.net.BindException
 import java.nio.file.Files
 import java.nio.file.Path
 import java.time.Instant
@@ -183,10 +184,11 @@ fun serveExplorer(args: List<String>) {
     require(Files.isRegularFile(assets.resolve("index.html"))) { "Frontend build missing; run scripts/explorer.ps1" }
     val port = args[1].toInt()
     require(port in 1024..65535) { "Port must be 1024..65535" }
-    println("Loading app-stable catalog…")
-    val server = ExplorerServer(Catalog(), port, assets)
+    println("Loading app-stable catalog...")
+    val server = try { ExplorerServer(Catalog(), port, assets) }
+        catch (e: BindException) { throw IllegalArgumentException("Port $port is already in use. Stop the service or choose another port.", e) }
     Runtime.getRuntime().addShutdownHook(Thread { server.close() })
     server.start()
-    println("Explorer ready: http://127.0.0.1:$port — Ctrl+C to stop")
+    println("Explorer ready: http://127.0.0.1:$port - Ctrl+C to stop")
     CountDownLatch(1).await()
 }

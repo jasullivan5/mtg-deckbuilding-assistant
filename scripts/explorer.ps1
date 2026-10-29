@@ -14,6 +14,10 @@ if ([int]$NodeVersion[0] -lt 22 -or ([int]$NodeVersion[0] -eq 22 -and [int]$Node
     throw 'Node 22.12 or newer is required.'
 }
 $JavaCommand = (Get-Command java).Source
+$PortProbe = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $Port)
+try { $PortProbe.Start() }
+catch [Net.Sockets.SocketException] { throw "Port $Port is already in use. Stop the existing service or choose -Port <number>." }
+finally { $PortProbe.Stop() }
 Push-Location $Root
 try {
     & "$PSScriptRoot/setup.ps1"

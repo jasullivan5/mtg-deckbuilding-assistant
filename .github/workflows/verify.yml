@@ -10,6 +10,32 @@ defaults:
   run:
     working-directory: mtg-deckbuilding-assistant
 jobs:
+  explorer-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: mtg-deckbuilding-assistant/explorer
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: mtg-deckbuilding-assistant
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:ui
+      - name: Preserve browser test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: explorer-ui
+          path: mtg-deckbuilding-assistant/generated/explorer/
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 60

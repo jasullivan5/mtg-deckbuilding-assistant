@@ -3,6 +3,8 @@ import {expect, test} from '@playwright/test';
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to the running Kotlin Explorer for genuine discovery.');
 
 test('real Judith discovery, changed objective/commander, inspected evidence and invalid selection', async ({page}) => {
+  const pageErrors: string[] = [];
+  page.on('pageerror', error => pageErrors.push(error.message));
   const executions: {runId: string; objective: string; commander: string; argentumCommit: string; cards: unknown[]}[] = [];
   page.on('response', async response => {
     if (response.url().endsWith('/api/v1/discover') && response.ok()) executions.push(await response.json());
@@ -37,4 +39,25 @@ test('real Judith discovery, changed objective/commander, inspected evidence and
   await page.getByRole('button', {name: 'Run discovery'}).click();
   await expect(page.getByText('Selection blocked', {exact: false})).toBeVisible();
   expect(executions).toHaveLength(3);
+  expect(pageErrors).toEqual([]);
+});
+
+test('mobile layout and keyboard controls retain accurate blocked-selection feedback', async ({page}) => {
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto('/');
+  await expect(page.getByRole('button', {name: 'Run discovery'})).toBeEnabled();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('link', {name: 'MTG / RESEARCH LAB'})).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('Commander’s exact name')).toBeFocused();
+  await page.keyboard.press('Control+A');
+  await page.keyboard.type('Murder');
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('Research objective')).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', {name: 'Inspect commander'})).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.getByText('Selection blocked', {exact: false})).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await page.screenshot({path: '../generated/explorer/mobile-selection.png', fullPage: true});
 });
