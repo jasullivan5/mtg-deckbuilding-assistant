@@ -1,31 +1,27 @@
-# Codex handoff
+# Development handoff
 
-## Current fork foundation
+Start with [README](README.md) and [AGENTS](AGENTS.md). The user supplies the next bounded assignment; old phase plans and recovery recommendations are not an active backlog.
 
-Use [our Argentum fork](https://github.com/jasullivan5/argentum-engine), with `app-stable` as the development base/default. Fork `main` tracks the original project for comparison only. Feature/fix work and internal PRs normally target app-stable; upstream PRs are not our workflow. The published modern `fix/collection-counter-placement` branch is historical and remains retained.
+## Repository and adoption authority
 
-The application always fetches the full commit in `ARGENTUM_COMMIT`, never a branch tip. Pin changes are separate reviewed application PRs. Setup retains wrong-revision and dirty-checkout refusal, migrates only the recognized old upstream origin, and rejects unrelated origins. For a different pin, use a fresh application worktree/checkout and bootstrap there; setup deliberately does not switch an existing wrong revision.
+Application development branches normally start from this repository's approved `main`. Engine branches start from [our fork's `app-stable`](https://github.com/jasullivan5/argentum-engine/tree/app-stable); internal engine PRs target that branch. Fork `main` tracks upstream for comparison only. No upstream PRs or automatic upstream integration.
 
-Review upstream manually approximately monthly or before an engine phase. Fetch/compare does not authorize integration. Select mechanisms rather than bulk card updates; regression-test candidates before adopting exact commits. **Do not use GitHub's fork-sync UI on default app-stable**: synchronization must explicitly target main. [Current workflow and transition evidence](docs/ENGINE_COUNTER_CORRECTION.md).
+Application PR #9 was merged by the owner on 2026-10-29 at `088f5c4e8c352816fad0e26660f6cbec23d89ef7`, adopting `4133241856227d1d36269e92aaba633bbaf93f5c`. Read [ARGENTUM_COMMIT](ARGENTUM_COMMIT) for the authoritative dependency and [recorded verification](HANDOFF_VERIFICATION.md) for exact evidence. Later documentation commits in the engine fork do not require an application pin update.
 
-## Historical migration record
+The persisted assurance ledger still has Tatterkite's CONFIRMED concern/BLOCKED qualification, despite bounded corrected-engine execution. Explicit adopted-revision resolution evidence is a separate bounded follow-up; this maintenance pass does not change research verdicts or qualifications. The other 21 records remain provisional, without independent approval.
 
-Current development adds structured `commander inspect` diagnostics, recursive native-extension safeguards and the application-owned Oviya Pashiri, Sage Lifecrafter definition. See docs/COMMANDER_AUTHORING.md for the repeatable workflow and bounded engine-test coverage. The accepted Phase2.5 migration notes below describe the baseline delivery; they are historical publication/environment records, not the current GitHub or local setup state.
+## Find the implementation
 
-Start with AGENTS.md, README.md and docs/ARCHITECTURE.md. This is accepted Phase2.5 prepared for Git development, not a new feature phase.
+- [Architecture and extension points](docs/ARCHITECTURE.md): native integration, common extraction, objective-specific queries, effective eligibility and assurance.
+- [Native authoring](docs/COMMANDER_AUTHORING.md), [reliability procedure](docs/TRANSLATION_RELIABILITY.md), [engine correction/integration](docs/ENGINE_COUNTER_CORRECTION.md).
+- [Eligibility](docs/ELIGIBILITY_CORRECTIONS.md), [identity enrichment](docs/ORACLE_IDENTITY.md), [coverage](docs/CARD_COVERAGE.md), [limitations](KNOWN_LIMITATIONS.md).
+- Tests: `cli/src/test/kotlin/dev/mtg/assistant/`; active revision-bound reviews: `benchmark/**/review-fork-v1.json`; original `review-v1.json` files are historical frozen inputs.
+- Packaged assurance: `cli/src/main/resources/translation-assurance.json`; approved eligibility context: `cli/src/main/resources/eligibility/phase29.json`; retained source/test receipts: `reference/`.
 
-Current objectives: A own nontoken creature deaths (direct vs enhanced-removal classifications/policy preserved); B own graveyard creature cards directly to our battlefield; C creature-token creation under our control. Native Argentum integration, shared MechanicalFact/FactQuery, Judith extension/gameplay tests, diagnostics, frozen reviews and all 210 Kotlin tests are preserved byte-for-byte. A retains legacy-specific projection.
+Use ordinary branches in the primary application and engine checkouts. The clean nested `argentum/` supplies the exact dependency; it is not the engine development branch. Worktrees are temporary isolation for demonstrated needs; inspect shared Git storage, active consumers and ignored evidence before removal. See [everyday workflow](README.md#everyday-workflow-and-documentation-ownership).
 
-Pin: ebf5bf2e9fbb80d13a556d75491dd462e10c206f. Source archive SHA256: f5d7732d7cafbd7a183bd11068ddad0333183cebf605c7f9f98cb0cedc5e12da. Git tag phase2.5-baseline identifies the accepted import. Exact delivered HEAD/baseline SHAs and sizes are in the generated REPOSITORY_STATE.json receipt; git log is authoritative.
+## Setup and evidence
 
-The first unpublished migration workspace reset before its Git objects/logs were saved. That lost local history is unavailable; this recovered repository has a new legitimate baseline import, not fabricated historical phase commits. See HANDOFF_VERIFICATION.md for verified versus incomplete checks. The prior session actually reported 210 baseline tests and 48 routine tests passing, but its current cold/full outcomes and logs could not be recovered.
+Use [README commands](README.md#setup-and-verification) and [environment prerequisites](docs/CODEX_ENVIRONMENT.md). Setup refuses an existing wrong/dirty engine revision. Use `dev`/`dev.ps1`; do not bypass its guards or invoke the root test task directly. Current recorded evidence is indexed in [HANDOFF_VERIFICATION](HANDOFF_VERIFICATION.md); reproduce only checks relevant to the assignment.
 
-No GitHub destination was confirmed. The available connection listed private research repositories but did not offer repository creation; unrelated repositories were untouched. This fallback includes complete local Git history. To publish with your own authorized GitHub CLI: `gh repo create mtg-deckbuilding-assistant --private --source=. --remote=origin --push`, then `git push origin --tags`. Inspect an existing destination first; never force-push unrelated work. No remote CI/environment success is claimed.
-
-Work on focused branches. Run appropriate test classes, then all tests/full catalog comparisons for shared extraction, eligibility or policy changes. Preserve full before/after JSON in ignored generated/ for native audit diff. Compact baselines retain decision rows and complete-evidence hashes; changed hashes require review and are not automatically policy changes. Generated catalog reports are excluded from Git.
-
-Known unsupported behavior: complex token-copy/controller/quantity variants, Amass/populate, multi-step reanimation and incomplete bindings/conditions. Unknown eligibility metadata is a separate data gap. Shared action IDs do not fully solve cross-objective causality. Frozen source-led benchmarks are not external adjudication or full-MTG recall. No new mechanical interpretations are added here.
-
-Recommended first Codex task (not implemented): make the existing all-colors benchmark JSON an explicit report task with declared inputs/outputs, so cached/filtered tests cannot suppress it. Acceptance: regenerate a deleted report without recompiling unchanged upstream modules; preserve 11 accepted/four excluded/two unknown-boundary/one separately unresolved Amass outcomes; all 210 tests pass; no effect walker/objective change. Currently full verification reruns the selected Test task to produce the side output.
-
-Recovery completed: fresh cold build 210/0, routine gate 48/0, four setup-guard tests, and all six catalog/complete-evidence comparisons passed. See HANDOFF_VERIFICATION.md and verification/handoff. Remote publication and hosted CI remain unperformed.
+Meaningful old recovery, publication, count and proposed-task text is preserved in [the historical entry-point archive](docs/history/PRE_CONSOLIDATION_HANDOFF.md). Historical phases, receipts, source archives and benchmark expectations remain unchanged.
