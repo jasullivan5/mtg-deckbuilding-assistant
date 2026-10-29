@@ -4,9 +4,11 @@ A Commander deckbuilding research CLI that finds structural mechanical possibili
 
 The implementation uses Kotlin, JDK 21 and Gradle, with Argentum's native `CardRegistry`, `CardDefinition`, `CardScript`, rules engine and `mtg-search`. The foundation is already selected; this project extends its existing extraction and research tools.
 
+The approved next direction is an independent React / TypeScript / Vite Commander Discovery Explorer: select a supported commander and existing objective, run real discovery, browse identity-verified card images and inspect mechanics, prerequisites, evidence and limitations. The frontend and local Kotlin integration boundary are planned, not implemented here. Small runnable prototypes will let the user evaluate understandability and usefulness alongside engineering evidence; the aim is to explain why cards matter in context, not universal card-strength scoring. See [development and delivery expectations](AGENTS.md#collaboration-and-delivery) and [planned architecture](docs/ARCHITECTURE.md#planned-research-interface).
+
 ## Two repositories
 
-- [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics.
+- [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics, including the planned research frontend and local API integration.
 - [Our Argentum fork](https://github.com/jasullivan5/argentum-engine) owns engine/SDK changes and native mechanical regressions. Its default `app-stable` is the normal development base; `main` tracks the [original project](https://github.com/wingedsheep/argentum-engine) for comparison only. Internal engine PRs target `app-stable`; upstream PRs require explicit user authorization.
 
 The application adopts only the exact reviewed revision in [ARGENTUM_COMMIT](ARGENTUM_COMMIT). PR #9 was merged by the owner on 2026-10-29, adopting `4133241856227d1d36269e92aaba633bbaf93f5c`. Later engine branch changes do not update this dependency. See [engine integration and upstream review](docs/ENGINE_COUNTER_CORRECTION.md).
@@ -52,6 +54,15 @@ cli/build/install/mtg-assistant/bin/mtg-assistant discover --commander 'Judith, 
 ```
 
 On Windows, use the adjacent `mtg-assistant.bat` launcher. Full generated reports, builds, dependencies and machine-local environment files remain ignored.
+
+For example, from the application root in PowerShell:
+
+```powershell
+.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect 'Judith, the Scourge Diva' --json
+.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat discover --commander 'Judith, the Scourge Diva' --objective create-creature-tokens --json --output generated/judith-tokens.json
+```
+
+Run these commands from the application checkout. Keep the application and primary engine-development checkouts as independent siblings; the application's ignored nested `argentum/` remains its exact pinned build dependency. Paths may contain spaces and `&`: quote full paths, use `Set-Location -LiteralPath 'path/to/application'` in PowerShell or `cd '/path/to/application'` in Bash, and use PowerShell's `& 'path/to/launcher.bat'` when invoking a quoted executable path. No temporary drive alias is required.
 
 ## Everyday workflow and documentation ownership
 
