@@ -54,6 +54,7 @@ fun runCli(args: Array<String>, catalog: () -> Catalog = { Catalog() },
     }
     return try {
         when (args[0]) {
+            "explorer" -> dev.mtg.assistant.explorer.serveExplorer(args.drop(1))
             "audit" -> dev.mtg.assistant.audit.auditCommand(args.drop(1), catalog, out)
             "commander" -> dev.mtg.assistant.discovery.commanderCommand(args.drop(1), catalog(), out)
             "discover" -> discoveryCommand(args.drop(1), catalog(), out)

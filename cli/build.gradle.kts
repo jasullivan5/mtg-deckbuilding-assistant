@@ -23,6 +23,17 @@ application {
     applicationDefaultJvmArgs = listOf("-Xmx1g", "-XX:ActiveProcessorCount=4")
 }
 
+// Gradle's stock Windows template leaves SET assignments unquoted, so '&' in
+// the checkout path is parsed as a command separator. Keep the CLI runnable here.
+tasks.startScripts {
+    doLast {
+        val script = windowsScript
+        script.writeText(script.readText()
+            .replace(Regex("(?m)^set ([A-Z_]+=.*)$"), "set \"$1\"")
+            .replace("do set APP_HOME=%%~fi", "do set \"APP_HOME=%%~fi\""))
+    }
+}
+
 tasks.test {
     // Frozen reviews are runtime test inputs; edits must invalidate Gradle test caching.
     inputs.dir(layout.projectDirectory.dir("../benchmark")).withPathSensitivity(PathSensitivity.RELATIVE)

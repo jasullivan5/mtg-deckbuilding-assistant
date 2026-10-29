@@ -11,3 +11,5 @@ __pycache__/
 .env.*
 /REPOSITORY_STATE.json
 /verification/handoff/*.log
+/explorer/node_modules/
+/explorer/dist/
