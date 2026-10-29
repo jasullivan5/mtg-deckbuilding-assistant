@@ -8,6 +8,6 @@ Ordinary maintenance: `bash scripts/setup.sh` validates/reuses the pin; incremen
 
 Public downloads need GitHub (including redirects/releases), Gradle distribution hosts, Maven Central and Gradle Plugin Portal/artifact hosts. A network proxy may require JVM Gradle proxy/truststore configuration; use platform-supported public CA settings, never disable TLS or commit secrets. Missing JDK, blocked downloads and wrong/dirty checkouts must be diagnosed separately.
 
-The scripts use repository-relative paths and the standard JAVA_HOME/Gradle environment. No former Work directory/JDK/cache is required. PowerShell entry points remain available; their new guards are inspection-only unless HANDOFF_VERIFICATION says otherwise.
+The scripts use repository-relative paths and the standard JAVA_HOME/Gradle environment. No former Work directory/JDK/cache is required. Windows PowerShell and Git Bash setup and revision/source safeguards were executed in the fork-foundation verification; see reference/fork-foundation/setup-verification.json.
 
 Official documentation reviewed during this migration: https://learn.chatgpt.com/docs/environments/cloud-environments . The environment UI can change; repository selection, explicit installation/testing and review before publication are the contract. No undocumented repository configuration schema is assumed.

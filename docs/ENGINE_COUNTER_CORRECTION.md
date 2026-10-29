@@ -6,7 +6,7 @@ Fork `main` was explicitly fast-forwarded to `8fa5e723ccd93753c1d2b1a78cb053dafe
 
 Start feature/fix branches from origin/app-stable and use internal PRs targeting app-stable. Engine acceptance does not adopt an application dependency: application main's ARGENTUM_COMMIT is the exact approval boundary. This application PR proposes the published stable SHA; it is not merged automatically. Native card definitions, SDK structures and discovery mechanics are unchanged. Source provenance now links to the exact fork revision. The legacy UPSTREAM_ARGENTUM origin label still identifies inherited native definitions; the source URL identifies the actual fork revision. The label is retained to preserve reviewed physical-identity fingerprints.
 
-Fresh pre-adoption execution passed **7,507 native tests including all 17 collection fixtures, 457 application tests, all nine discriminating mutations, and 13 representative native-card scenarios**. This is newly executed evidence, not reused PR #8 verdicts; see reference/fork-foundation/pre-adoption-verification.json. Normal published-source setup/test and controlled before/after receipts are recorded alongside it as verification completes.
+Fresh pre-adoption execution passed **7,507 native tests including all 17 collection fixtures, 457 application tests, all nine discriminating mutations, and 13 representative native-card scenarios**. This is newly executed evidence, not reused PR #8 verdicts; see reference/fork-foundation/pre-adoption-verification.json. A separate fresh checkout fetched published stable source through normal setup and passed all **457 tests in 57 suites**, with zero failures/errors/skips and all **nine mutation controls/detections** passing. Both setup shells passed **16 actual setup/wrapper safeguards**. All **nine complete discovery, three full-catalog coverage and three missing-card reports** match the approved configuration after explicit revision/provenance/validated assurance binding changes and coverage timing fields; mechanical/eligibility semantics are unchanged. Compact normal, setup and controlled-comparison receipts are recorded alongside the frozen pre-adoption receipt.
 
 Active eligibility records are rebound only in their engine revision context; correction values, native fingerprints and frozen Oracle sources remain unchanged. All 22 translation records retain source/test history and receive the fresh execution reference. Tatterkite's corrected execution is recorded, while its **historical concern remains CONFIRMED and qualification BLOCKED pending adoption**. Other definitions remain provisional, with no independent human approval. After an explicit pin merge, a bounded follow-up may record resolution with adopted-revision evidence and provisional qualification.
 
@@ -17,6 +17,29 @@ Benchmark reviews remain revision-strict. Historical review-v1.json files are pr
 Bash and PowerShell bootstrap retrieve the exact 40-character pin from our fork. Both refuse wrong revisions, source modifications and unrelated origins; only a recognized old upstream origin is migrated. Git Bash path/version normalization and Windows long-path setup are explicit. A new pin needs a fresh application checkout/worktree because setup deliberately refuses to switch an existing wrong engine revision. Use normal dev/dev.ps1 after setup, not the experimental init script, to validate published dependency adoption.
 
 The first normal fresh-checkout run exposed five expected old-benchmark pin refusals and one CRLF-only JSON golden mismatch. Versioned reviews preserve every expectation, and targeted .gitattributes enforce canonical LF without changing golden data or weakening equality. The failure receipt is retained in reference/fork-foundation/normal-initial-failure.json.
+
+## Reproduce current transition checks
+
+Use a fresh application worktree on this proposal, JDK 21 and the normal published dependency. Do not use the experimental candidate init for normal adoption verification.
+
+```powershell
+.\scripts\bootstrap.ps1 -NoBuild
+bash scripts/bootstrap.sh --no-build
+.\dev.ps1 test --rerun :assistant-cli:installDist
+```
+
+The normal source commit and CLI tree, published engine source/revision, JAR hashes and test-suite counts are in `reference/fork-foundation/normal-verification.json`. The initial failed run remains separately identified. The published-source checkout used `76d0d99`; later receipt/document edits preserve its CLI tree.
+
+The controlled report runner uses the same frozen Oracle snapshot (`081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a`) and unchanged `reference/alignment-batch2/coverage-status.json` for both configurations:
+
+```powershell
+python scripts/phase29-verify.py before --output-base generated/fork-foundation --dist generated/engine-counter-correction/approved-dist --translation-review reference/alignment-batch2/coverage-status.json --snapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz
+python scripts/phase29-verify.py after --output-base generated/fork-foundation --dist <published-source-app-checkout>/cli/build/install/mtg-assistant --translation-review reference/alignment-batch2/coverage-status.json --snapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz
+python scripts/fork-foundation-receipt.py --validation-root <published-source-app-checkout>
+bash scripts/check-catalog.sh
+```
+
+`fork-foundation-receipt.py` rejects undeclared report changes, preserves all old assurance test references, verifies frozen benchmark expectations and enforces 21 provisional/one blocked with no independent approvals. Bulk output remains ignored. A tooling interruption stopped the first after-run after Oviya coverage/missing reports; its remaining three discovery and three audit-diff commands were resumed against the same distribution and all exited zero. The current catalog gate is separately executed from the normal published-source checkout.
 
 ## Manual upstream review
 

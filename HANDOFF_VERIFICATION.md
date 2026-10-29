@@ -1,3 +1,11 @@
+# Current fork-foundation verification
+
+The independent-fork transition is documented in docs/ENGINE_COUNTER_CORRECTION.md and reference/fork-foundation/. Fresh execution passed 7,507 native tests (including 17 focused fixtures), 13 representative native scenarios, and 457 application tests. A separate normal build fetched the published stable fork commit and passed all 457 application tests and nine mutation controls/detections. All 16 Windows PowerShell/Git Bash setup and wrapper safeguards passed. Nine full discovery, three coverage and three missing-card report comparisons matched after declared revision/provenance/assurance bindings and coverage timings; no mechanical or eligibility changes. Initial benchmark-pin refusals and a CRLF-only golden failure are preserved with their corrections.
+
+This branch proposes engine 4133241856227d1d36269e92aaba633bbaf93f5c; application main remains on approved ebf5bf2e9fbb80d13a556d75491dd462e10c206f until an explicit application PR merge. Historical recovery counts and platform limitations below are not current transition results. No hosted CI or independent qualification is claimed.
+
+## Historical Phase 2.5 recovery record
+
 # Handoff verification — verified local delivery
 
 Status: recovery cold build and all 210 Kotlin tests PASSED. All six catalog comparisons and routine verification also passed; remote CI remains unexecuted.

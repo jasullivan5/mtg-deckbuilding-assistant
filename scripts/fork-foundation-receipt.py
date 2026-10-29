@@ -40,6 +40,15 @@ def main():
     assert normal["tests"]==457 and not any(normal[k] for k in ["failures","errors","skipped"])
     mutations=read(validation/"generated/translation-reliability/mutations.json")
     assert len(mutations)==9 and all(x["controlPassed"] and x["executionDetected"] and not x["executionConfounded"] for x in mutations)
+    reviews=read(REF/"benchmark-rebindings.json")
+    assert reviews["enginePin"]==pin and reviews["originalReviewsPreserved"]
+    for row in reviews["reviewRebindings"]:
+        old_review,new_review=read(ROOT/row["original"]),read(ROOT/row["candidate"])
+        assert text_hash(ROOT/row["original"])==row["originalSha256Utf8Lf"]
+        assert text_hash(ROOT/row["candidate"])==row["candidateSha256Utf8Lf"]
+        assert old_review["argentumCommit"]==OLD and new_review["argentumCommit"]==pin
+        assert old_review["cases"]==new_review["cases"] and old_review["frozenAt"]==new_review["frozenAt"]
+        assert {k:v for k,v in old_review.items() if k not in ["argentumCommit","reviewVersion","reviewMethod"]}=={k:v for k,v in new_review.items() if k not in ["argentumCommit","reviewVersion","reviewMethod"]}
     before_assurance={x["oracleId"]:x for x in read(base/"before/judith-a.json")["translationAssurance"]}
     after_assurance={x["oracleId"]:x for x in read(base/"after/judith-a.json")["translationAssurance"]}
     assert len(before_assurance)==22 and before_assurance.keys()==after_assurance.keys()
@@ -64,6 +73,9 @@ def main():
         assert eb["execution"]==("BOUNDED_EVIDENCE_PASSED" if tatter else ea["execution"])
         assert len(ea["concerns"])==len(eb["concerns"])
         for ca,cb in zip(ea["concerns"],eb["concerns"]):
+            if not tatter:
+                assert ca==cb
+                continue
             assert {k:v for k,v in ca.items() if k not in ["reason","reproduction","nextAction"]}=={k:v for k,v in cb.items() if k not in ["reason","reproduction","nextAction"]}
             assert tatter and cb["state"]=="CONFIRMED" and not cb["resolutionEvidence"]
             assert cb["reason"].startswith(ca["reason"]) and OLD in cb["reason"]
@@ -110,6 +122,6 @@ def main():
     after_manifest={"configuration":"NORMAL_PUBLISHED_FORK_PIN_PROPOSAL","actualRuntimeEngineRevision":pin,"reportedEngineRevision":pin,"sourceRepository":git(engine,"remote","get-url","origin"),"applicationSourceCommit":git(validation,"rev-parse","HEAD"),"applicationCliTree":git(validation,"rev-parse","HEAD:cli"),"engineSourceClean":True,"experimentalInitUsed":False,"jarSha256":{name:binary_hash(dist/"lib"/name) for name in before_manifest["jarSha256"]}}
     save(base/"after/build-configuration.json",after_manifest)
     save(REF/"normal-verification.json",{"configuration":after_manifest,"application":normal,"mutations":mutations,"command":"scripts/bootstrap.ps1 -NoBuild; bash scripts/bootstrap.sh --no-build; dev.ps1 test --rerun :assistant-cli:installDist (experimental flags absent)","logSha256Raw":binary_hash(ROOT/"generated/fork-foundation/normal-application.log"),"approvedMainPinStill":OLD})
-    save(REF/"controlled-comparison.json",{"hashFormat":"SHA256_UTF8_LF","beforeConfiguration":before_manifest,"afterConfiguration":after_manifest,"allowedBindingChanges":["Exact engine revision", "Canonical fork provenance URLs", "Validated current assurance execution/evidence binding; qualification unchanged"],"comparisons":comparisons,"assurance":assurance_changes,"tatterkiteConcernStillConfirmed":True,"independentQualificationsAdded":0,"definitionAndEligibilitySemanticsUnchanged":True})
-    print("Validated 9 complete discovery, 3 coverage and 3 missing-card reports; semantics unchanged. Normal457 tests and9 mutation controls/detections pass;21 provisional/1 blocked, no promotions.")
+    save(REF/"controlled-comparison.json",{"hashFormat":"SHA256_UTF8_LF","beforeConfiguration":before_manifest,"afterConfiguration":after_manifest,"allowedBindingChanges":["Exact engine revision", "Canonical fork provenance URLs", "Validated current assurance execution/evidence binding; qualification unchanged"],"comparisons":comparisons,"assurance":assurance_changes,"tatterkiteConcernStillConfirmed":True,"independentQualificationsAdded":0,"definitionAndEligibilitySemanticsUnchanged":True,"executionNote":"After-run interrupted after coverage/missing Oviya; remaining three Oviya discovery and three audit-diff commands resumed against the same distribution with zero exits", "resumedCommands":read(base/"after/resumed-timings.json")})
+    print("Validated 9 complete discovery, 3 coverage and 3 missing-card reports; semantics unchanged. Normal 457 tests and 9 mutation controls/detections pass; 21 provisional/1 blocked, no promotions.")
 if __name__=="__main__":main()

@@ -1,5 +1,5 @@
 {
-  "applicationCommit": "f0c0ce4",
+  "applicationCommit": "f0c0ce424ca9fa49322d97a41274fe90e39d4c8f",
   "enginePin": "4133241856227d1d36269e92aaba633bbaf93f5c",
   "tests": 457,
   "failures": 6,
@@ -44,5 +44,6 @@
   "repair": "Preserve original benchmarks and identical expectations in explicitly fork-bound versioned inputs; readBenchmark revision guard unchanged. Preserve golden bytes in Git and strict equality; enforce LF checkout for JSON golden fixtures.",
   "command": "dev.ps1 test --rerun :assistant-cli:installDist",
   "logSha256Raw": "388c4418ceff1a65602052b98739759237e3defcd967c74c21ad1bb8dd497607",
-  "elapsed": "17m17s including fresh-checkout cache restoration"
+  "elapsed": "17m17s including fresh-checkout cache restoration",
+  "goldenMaterializationNote": "After the attribute update the old validation worktree retained CRLF index metadata. Canonical fixtures were materialized from unchanged Git blobs; git add --renormalize refreshed index metadata with an empty staged diff. Every expected JSON byte/DSL value is preserved."
 }

@@ -51,7 +51,7 @@ Windows PowerShell, after installing Git/JDK21 and setting `JAVA_HOME`:
 .\cli\build\install\mtg-assistant\bin\mtg-assistant.bat discover --commander "Krenko, Mob Boss" --objective create-creature-tokens --json --output generated/krenko-tokens.json
 ```
 
-Linux was executed; macOS/Windows instructions are retained but not executed in this pass. Use `dev`/`dev.ps1`: the wrapper is attached to the pinned engine build through `argentum.init.gradle`, without edits to the pinned engine checkout. On a constrained machine append `-Pkotlin.daemon.jvmargs='-Xmx2g -XX:ActiveProcessorCount=4'` to the build/test command.
+Historical Phase 2.5 verification ran on Linux. The fork-foundation verification also executed Windows PowerShell and Git Bash setup and safeguards, plus the complete application suite on Windows; macOS remains unexecuted. Use `dev`/`dev.ps1`: the wrapper is attached to the pinned engine build through `argentum.init.gradle`, without edits to the pinned engine checkout. On a constrained machine append `-Pkotlin.daemon.jvmargs='-Xmx2g -XX:ActiveProcessorCount=4'` to the build/test command.
 
 ## Commander integration
 
