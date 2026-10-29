@@ -3,3 +3,6 @@
 gradlew text eol=lf
 *.bat text eol=crlf
 *.jar binary
+
+# Exported DSL goldens use canonical LF on every checkout.
+cli/src/test/resources/extensions/*.json text eol=lf

@@ -16,6 +16,8 @@ Benchmark reviews remain revision-strict. Historical review-v1.json files are pr
 
 Bash and PowerShell bootstrap retrieve the exact 40-character pin from our fork. Both refuse wrong revisions, source modifications and unrelated origins; only a recognized old upstream origin is migrated. Git Bash path/version normalization and Windows long-path setup are explicit. A new pin needs a fresh application checkout/worktree because setup deliberately refuses to switch an existing wrong engine revision. Use normal dev/dev.ps1 after setup, not the experimental init script, to validate published dependency adoption.
 
+The first normal fresh-checkout run exposed five expected old-benchmark pin refusals and one CRLF-only JSON golden mismatch. Versioned reviews preserve every expectation, and targeted .gitattributes enforce canonical LF without changing golden data or weakening equality. The failure receipt is retained in reference/fork-foundation/normal-initial-failure.json.
+
 ## Manual upstream review
 
 Review approximately monthly or before a substantial engine-development phase. This is a manual procedure, with no bot, scheduler or dependency updater.
