@@ -10,7 +10,8 @@ import kotlinx.serialization.json.JsonElement
     val sourceMustRemainOnBattlefield: Boolean, val objectRestrictions: List<String>,
     val repeatability: String, val resourceAssumptions: String = "Legal choices/resources must exist; no gameplay outcome guaranteed")
 
-const val ARGENTUM_SHA = "ebf5bf2e9fbb80d13a556d75491dd462e10c206f"
+const val ARGENTUM_REPOSITORY_URL = "https://github.com/jasullivan5/argentum-engine"
+const val ARGENTUM_SHA = "4133241856227d1d36269e92aaba633bbaf93f5c"
 val reportJson = Json { encodeDefaults = true }
 val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
 @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }

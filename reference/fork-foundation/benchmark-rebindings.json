@@ -1,0 +1,44 @@
+{
+  "enginePin": "4133241856227d1d36269e92aaba633bbaf93f5c",
+  "hashFormat": "SHA256_UTF8_LF",
+  "originalReviewsPreserved": true,
+  "reviewRebindings": [
+    {
+      "original": "benchmark/review-v1.json",
+      "candidate": "benchmark/review-fork-v1.json",
+      "originalSha256Utf8Lf": "3f28796f6beda350e38f85c56886d47c44ddf6cea0edb5c4eae1007e67932f30",
+      "candidateSha256Utf8Lf": "2061698ea85c05bf0f01ee0ba56d403404f62df6b32d5face7bd7542ec9a5cd8",
+      "cases": 29,
+      "casesAndExpectationsIdentical": true,
+      "frozenAtUnchanged": true
+    },
+    {
+      "original": "benchmark/phase23/review-v1.json",
+      "candidate": "benchmark/phase23/review-fork-v1.json",
+      "originalSha256Utf8Lf": "988a48b7e8d08874b6495a22753325cb2a52876ede2e42c4b7a5259bf15efe6c",
+      "candidateSha256Utf8Lf": "23778fc59660b20911205392465eb164376c2ba45eb589d59429b3bd9672ba08",
+      "cases": 13,
+      "casesAndExpectationsIdentical": true,
+      "frozenAtUnchanged": true
+    },
+    {
+      "original": "benchmark/phase24/review-v1.json",
+      "candidate": "benchmark/phase24/review-fork-v1.json",
+      "originalSha256Utf8Lf": "ea93c2c1fb71ef3da65f7f3da273cf73670bf2e80412013404ad8649c884770f",
+      "candidateSha256Utf8Lf": "e6bfdf29864c7be690b24f197652c6db29689e547ac5b3d557f1b2134b2d7e50",
+      "cases": 12,
+      "casesAndExpectationsIdentical": true,
+      "frozenAtUnchanged": true
+    },
+    {
+      "original": "benchmark/phase25/review-v1.json",
+      "candidate": "benchmark/phase25/review-fork-v1.json",
+      "originalSha256Utf8Lf": "b16589779c7bd63c8042598d601921c761ef157ffa445534bc51c03e0ee501e3",
+      "candidateSha256Utf8Lf": "513cf194b4c2f3d1ad5021c212e18a04a8dbbfadf1953fcba1e047c1452fa300",
+      "cases": 16,
+      "casesAndExpectationsIdentical": true,
+      "frozenAtUnchanged": true
+    }
+  ],
+  "gatePolicy": "Current catalog gate uses exact full-report hashes from the controlled transition, never silently overwriting historical Phase2.5 expectations."
+}

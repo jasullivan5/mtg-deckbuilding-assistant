@@ -1,0 +1,214 @@
+{
+  "publishedEngine": "4133241856227d1d36269e92aaba633bbaf93f5c",
+  "freshFetch": "PowerShell bootstrap fetched canonical fork; Bash bootstrap then validated the same clean pinned checkout",
+  "guards": [
+    {
+      "shell": "PowerShell",
+      "case": "clean-published-pin",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 0,
+      "expected": "SUCCESS",
+      "output": "Argentum ready: 4133241856227d1d36269e92aaba633bbaf93f5c\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "recognized-legacy-origin-migration",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 0,
+      "expected": "SUCCESS",
+      "output": "Argentum ready: 4133241856227d1d36269e92aaba633bbaf93f5c\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "wrong-revision-setup",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\scripts\\setup.ps1:23\nLine |\n  23 |  \u2026 -ne $Sha) { throw \"Wrong Argentum revision. Use a separate pinned che \u2026\n     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Wrong Argentum revision. Use a separate pinned checkout; no changes were made.\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "wrong-revision-dev",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "dev.ps1",
+        "help"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\dev.ps1:12\nLine |\n  12 |  \u2026 $Current -ne $Sha) { throw 'Argentum revision mismatch. Run setup.' }\n     |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Argentum revision mismatch. Run setup.\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "floating-pin",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\scripts\\setup.ps1:6\nLine |\n   6 |  \u2026 f]{40}$') { throw 'ARGENTUM_COMMIT must be an exact lowercase commit  \u2026\n     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | ARGENTUM_COMMIT must be an exact lowercase commit SHA.\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "dirty-setup",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\scripts\\setup.ps1:24\nLine |\n  24 |  \u2026 tatus --porcelain) { throw 'Refusing a modified Argentum checkout.' }\n     |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Refusing a modified Argentum checkout.\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "dirty-dev",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "dev.ps1",
+        "help"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\dev.ps1:13\nLine |\n  13 |  \u2026 r status --porcelain) { throw 'Argentum source files are modified.' }\n     |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Argentum source files are modified.\n"
+    },
+    {
+      "shell": "PowerShell",
+      "case": "unrelated-origin",
+      "command": [
+        "C:\\Users\\jasul\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "scripts/setup.ps1"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Exception: C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant-fork-validation\\scripts\\setup.ps1:29\nLine |\n  29 |      throw 'Argentum origin must point to our canonical fork; configur \u2026\n     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Argentum origin must point to our canonical fork; configure it explicitly.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "clean-published-pin",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 0,
+      "expected": "SUCCESS",
+      "output": "Argentum ready: 4133241856227d1d36269e92aaba633bbaf93f5c\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "recognized-legacy-origin-migration",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 0,
+      "expected": "SUCCESS",
+      "output": "Argentum ready: 4133241856227d1d36269e92aaba633bbaf93f5c\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "wrong-revision-setup",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Wrong Argentum revision: 4133241856227d1d36269e92aaba633bbaf93f5c. Use a separate pinned checkout; no changes were made.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "wrong-revision-dev",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "dev",
+        "help"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Argentum revision mismatch. Run setup.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "floating-pin",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "ARGENTUM_COMMIT must be an exact lowercase commit SHA.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "dirty-setup",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Refusing a modified Argentum checkout.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "dirty-dev",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "dev",
+        "help"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Argentum source files are modified.\n"
+    },
+    {
+      "shell": "Bash",
+      "case": "unrelated-origin",
+      "command": [
+        "C:/Program Files/Git/bin/bash.exe",
+        "scripts/setup.sh"
+      ],
+      "exitCode": 1,
+      "expected": "REFUSAL_BEFORE_FETCH_OR_BUILD",
+      "output": "Argentum origin must point to our canonical fork; configure it explicitly.\n"
+    }
+  ],
+  "checks": 16,
+  "allPassed": true,
+  "sourceAndPinRestored": true,
+  "verifierNote": "The first Python subprocess selected Windows System32/WSL bash and could not find the Windows JDK. The verifier was corrected to use the same explicit Git Bash executable selected by PowerShell; all sixteen checks then passed. No application guard was weakened."
+}

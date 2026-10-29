@@ -147,16 +147,7 @@ class TranslationReliabilityScenarioTest : FunSpec({
     test("LW1 opponent can decline without shuffle") {ReliabilityChecks.ley(LeyWeaver)}
     test("LW1 accepted search reveals to all then shuffles") {ReliabilityChecks.ley(LeyWeaver,accept=true)}
     test("LW2 absent named card can fail to find") {ReliabilityChecks.ley(LeyWeaver,accept=true,absent=true)}
-    test("TK2 known pinned collection-counter failure remains reproducible") {
-        if(System.getenv("VERIFY_KNOWN_ENGINE_GAPS")=="1" || System.getenv("ARGENTUM_CANDIDATE_REVISION")!=null) ReliabilityChecks.kite(Tatterkite)
-        else {
-            var failure: AssertionError?=null
-            try {ReliabilityChecks.kite(Tatterkite)} catch(e: AssertionError) {failure=e}
-            // This is a known-failure contract, NOT a passing Oracle correctness claim.
-            (failure!=null) shouldBe true
-            failure!!.message!!.contains("expected:<0> but was:<1>") shouldBe true
-        }
-    }
+    test("TK2 collection placement respects the source counter prohibition") {ReliabilityChecks.kite(Tatterkite)}
     test("SJ2 noncombat damage to player does not trigger Sword") {
         val pinger=card("Reliability Pinger") {typeLine="Creature";power=2;toughness=3;activatedAbility {
             cost=Costs.Tap;val player=target(Targets.Player);effect=Effects.DealDamage(1,player)

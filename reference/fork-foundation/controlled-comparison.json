@@ -1,0 +1,744 @@
+{
+  "hashFormat": "SHA256_UTF8_LF",
+  "beforeConfiguration": {
+    "configuration": "APPROVED_BASELINE_NEW_EXECUTION",
+    "actualRuntimeEngineRevision": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "approvedDefinitionAndEligibilityPin": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "reportArgentumCommitMeaning": "Approved definition/eligibility metadata, not experimental-runtime provenance; use this manifest",
+    "distribution": "approved-dist",
+    "jarSha256": {
+      "assistant-cli.jar": "fd24e19a89cf3d8c73fa1646b852b861f1ec064206e5c2864981af4851dc38cf",
+      "rules-engine.jar": "8c2ee08a040320771904bc48900a6601497f46c37b25bfaf797a73a6f23403b6"
+    },
+    "applicationCliSourceEqualsMain": true,
+    "sourceDistribution": "Previously built immutable distribution; binary hashes revalidated, reports freshly executed in this assignment"
+  },
+  "afterConfiguration": {
+    "configuration": "NORMAL_PUBLISHED_FORK_PIN_PROPOSAL",
+    "actualRuntimeEngineRevision": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "reportedEngineRevision": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "sourceRepository": "https://github.com/jasullivan5/argentum-engine.git",
+    "applicationSourceCommit": "76d0d995921f72c1e5a508a19ebe2e71563b11d6",
+    "applicationCliTree": "d33eba8122cc3fa49ef856b76da0802bfd94256b",
+    "engineSourceClean": true,
+    "experimentalInitUsed": false,
+    "jarSha256": {
+      "assistant-cli.jar": "13f3b10e637f5b19b141ab33bb4e1c39975995a392de056276a2835c2190ff64",
+      "rules-engine.jar": "9f2ad05f35f9de169698237ccfdf8ce08091ea5716d33325484aca4631519f49"
+    }
+  },
+  "allowedBindingChanges": [
+    "Exact engine revision",
+    "Canonical fork provenance URLs",
+    "Validated current assurance execution/evidence binding; qualification unchanged"
+  ],
+  "comparisons": [
+    {
+      "report": "judith-a.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "d5499847ee423751ae47a4d482666957fe5121db9911a299d63d14d099b17fb8",
+      "afterSha256Utf8Lf": "05fd58cb258bc127ac8b2e97ee1675a53ab1b23b4dcf7acdf60b7c6bbc5c2e67",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6111,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6111,
+        "extracted_potential_death_operations": 2916,
+        "potential_creature_death_pathways": 1471,
+        "our_creature_pathways": 1333,
+        "our_nontoken_creature_pathways": 1327,
+        "mechanically_compatible_direct_pathways": 1327,
+        "mechanically_compatible_policy_rejected_pathways": 850,
+        "accepted_direct_pathways": 474,
+        "accepted_direct_cards": 462,
+        "accepted_self_toughness_exchange_pathways": 12,
+        "mandatory_unlinked_sacrifice_pathways": 157,
+        "policy_unknown_compatible_pathways": 3,
+        "accepted_death_enhanced_removal_pathways": 25,
+        "accepted_death_enhanced_removal_cards": 25,
+        "policy_rejected_removal_pathways": 850,
+        "controller_incompatible_pathways": 164,
+        "nontoken_incompatible_pathways": 6,
+        "unknown_query_pathways": 410,
+        "pathways_with_any_unknown_decision": 1044,
+        "unsupported_structure_records": 8702,
+        "cards_with_unsupported_structures": 4359
+      }
+    },
+    {
+      "report": "judith-b.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "7370ace36db7e6325ec107b22a2e63f6ae38277fc346cbc81605a5c1ee50e9bb",
+      "afterSha256Utf8Lf": "c26c2ddd8fd5c7a5f5394acefc06f8550aa67be569abd0963a52a667b39cc2bf",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6111,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6111,
+        "mechanical_facts": 5631,
+        "movement_facts": 2056,
+        "accepted_reanimation_pathways": 97,
+        "accepted_reanimation_cards": 95,
+        "unknown_query_pathways": 93,
+        "rejected_movement_pathways": 1866,
+        "unsupported_structure_records": 8318,
+        "cards_with_unsupported_structures": 4221
+      }
+    },
+    {
+      "report": "judith-c.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "4fe375184a1fbd68ad38c2bf10a5232efffc0fd5b9d0a14bec4bea0871048cd6",
+      "afterSha256Utf8Lf": "a7598e5545cac50dc4fe74b8f7eb46f425fd5133c3e677b3dadd1e1a050d64a9",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 6111,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 6111,
+        "mechanical_facts": 5631,
+        "token_creation_facts": 648,
+        "accepted_token_creation_pathways": 363,
+        "accepted_token_creation_cards": 346,
+        "unknown_query_pathways": 55,
+        "rejected_token_creation_pathways": 230,
+        "unsupported_structure_records": 8702,
+        "cards_with_unsupported_structures": 4359,
+        "creature_compatible_creation_pathways": 385,
+        "our_controller_compatible_creation_pathways": 376,
+        "accepted_fixed_quantity_pathways": 354,
+        "accepted_dynamic_quantity_pathways": 9
+      }
+    },
+    {
+      "report": "coverage-judith.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [
+        "timingsMillis",
+        "correctionValidationMillis"
+      ],
+      "beforeSha256Utf8Lf": "3995a214e9d2c37fc5e0e49243a60c00efb200f5f83eb3ff2c2c6efab13098c0",
+      "afterSha256Utf8Lf": "5be644dd9e10d515d8ff0f09c50b40c17d855920766988fe48228a701a4f491f",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 12828,
+        "excluded_records": 26221,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 6658,
+        "confident_native_identity_associations": 6658,
+        "existing_native_oracle_id_matches": 9,
+        "enriched_identity_associations": 6649,
+        "native_physical_definitions": 17017,
+        "matched_upstream_definitions": 6649,
+        "matched_application_extensions": 9,
+        "identity_review_required": 10,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 579,
+        "effective_metadata_discrepancies": 575,
+        "approved_corrections_in_external_pool": 4,
+        "native_not_evaluated": 6745,
+        "native_mechanical_unresolved_any_objective": 4336,
+        "native_eligibility_disagreements": 579,
+        "missing_investigated": 12,
+        "missing_uninvestigated": 6147,
+        "native_available": 1747,
+        "native_metadata_unresolved": 575,
+        "native_mechanically_unresolved": 4336,
+        "native_definition_missing": 6159,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 10
+      }
+    },
+    {
+      "report": "missing-judith.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "88d4fdc7e07c6412063b4e8c5b8347171fdfa6b046a68f3b6864c5fa201fd0b9",
+      "afterSha256Utf8Lf": "88d4fdc7e07c6412063b4e8c5b8347171fdfa6b046a68f3b6864c5fa201fd0b9",
+      "counts": null
+    },
+    {
+      "report": "krenko-a.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "b1402594b328b312853cbbba02e011928511e9808fa511dad51115e0aea4b906",
+      "afterSha256Utf8Lf": "3b3c1289d0423d92e0ab99cef5140e68ac9650731d6e8f21bad04c679696d3f5",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3472,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3472,
+        "extracted_potential_death_operations": 1670,
+        "potential_creature_death_pathways": 780,
+        "our_creature_pathways": 725,
+        "our_nontoken_creature_pathways": 722,
+        "mechanically_compatible_direct_pathways": 722,
+        "mechanically_compatible_policy_rejected_pathways": 522,
+        "accepted_direct_pathways": 200,
+        "accepted_direct_cards": 195,
+        "accepted_self_toughness_exchange_pathways": 10,
+        "mandatory_unlinked_sacrifice_pathways": 55,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 8,
+        "accepted_death_enhanced_removal_cards": 8,
+        "policy_rejected_removal_pathways": 522,
+        "controller_incompatible_pathways": 59,
+        "nontoken_incompatible_pathways": 3,
+        "unknown_query_pathways": 190,
+        "pathways_with_any_unknown_decision": 568,
+        "unsupported_structure_records": 4861,
+        "cards_with_unsupported_structures": 2428
+      }
+    },
+    {
+      "report": "krenko-b.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "e8b82b85008889f26895d9523eaf78a74f0232e9648d3f6b5ec415fba8b86911",
+      "afterSha256Utf8Lf": "8f3c55e5e4aaf07283b9e3f5d13d14915e488af52861fe7469b7c7692add5c72",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3472,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3472,
+        "mechanical_facts": 2900,
+        "movement_facts": 865,
+        "accepted_reanimation_pathways": 15,
+        "accepted_reanimation_cards": 14,
+        "unknown_query_pathways": 35,
+        "rejected_movement_pathways": 815,
+        "unsupported_structure_records": 4760,
+        "cards_with_unsupported_structures": 2387
+      }
+    },
+    {
+      "report": "krenko-c.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "860271b678ad07deaf496539652de1d29998038ba070554d3c0f7d589a86181b",
+      "afterSha256Utf8Lf": "f8ddbea1d607a35010ed7cc64cd68d600b91f926aad173687731d853d5f549ae",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3472,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3472,
+        "mechanical_facts": 2900,
+        "token_creation_facts": 362,
+        "accepted_token_creation_pathways": 190,
+        "accepted_token_creation_cards": 182,
+        "unknown_query_pathways": 33,
+        "rejected_token_creation_pathways": 139,
+        "unsupported_structure_records": 4861,
+        "cards_with_unsupported_structures": 2428,
+        "creature_compatible_creation_pathways": 201,
+        "our_controller_compatible_creation_pathways": 197,
+        "accepted_fixed_quantity_pathways": 186,
+        "accepted_dynamic_quantity_pathways": 4
+      }
+    },
+    {
+      "report": "coverage-krenko.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [
+        "timingsMillis",
+        "correctionValidationMillis"
+      ],
+      "beforeSha256Utf8Lf": "01289471038b261e6abbf4bab90cd09f40e244ee79b98c4d74bf7e1a508a8092",
+      "afterSha256Utf8Lf": "7a78c6fe9cc3c8f96f96fa837f17987b87553256024ff5004a0592e2294ad1c0",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7552,
+        "excluded_records": 31497,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3920,
+        "confident_native_identity_associations": 3920,
+        "existing_native_oracle_id_matches": 7,
+        "enriched_identity_associations": 3913,
+        "native_physical_definitions": 17017,
+        "matched_upstream_definitions": 3913,
+        "matched_application_extensions": 7,
+        "identity_review_required": 5,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 466,
+        "effective_metadata_discrepancies": 464,
+        "approved_corrections_in_external_pool": 2,
+        "native_not_evaluated": 4096,
+        "native_mechanical_unresolved_any_objective": 2415,
+        "native_eligibility_disagreements": 466,
+        "missing_investigated": 4,
+        "missing_uninvestigated": 3622,
+        "native_available": 1041,
+        "native_metadata_unresolved": 464,
+        "native_mechanically_unresolved": 2415,
+        "native_definition_missing": 3626,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 5
+      }
+    },
+    {
+      "report": "missing-krenko.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "088a4574a13a28103e4f6013e5510540ad7f9e2139069b0e99591a75be7e6025",
+      "afterSha256Utf8Lf": "088a4574a13a28103e4f6013e5510540ad7f9e2139069b0e99591a75be7e6025",
+      "counts": null
+    },
+    {
+      "report": "oviya-a.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "87273b07756f8859225cb6893648b15b70db1433a678135872f2cf70975b40fe",
+      "afterSha256Utf8Lf": "a3a0bcf046c56e1c1bfef973caa53685bd88c0134e7f96963c81c151d098ee05",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3566,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3566,
+        "extracted_potential_death_operations": 920,
+        "potential_creature_death_pathways": 297,
+        "our_creature_pathways": 273,
+        "our_nontoken_creature_pathways": 269,
+        "mechanically_compatible_direct_pathways": 269,
+        "mechanically_compatible_policy_rejected_pathways": 147,
+        "accepted_direct_pathways": 122,
+        "accepted_direct_cards": 120,
+        "accepted_self_toughness_exchange_pathways": 2,
+        "mandatory_unlinked_sacrifice_pathways": 51,
+        "policy_unknown_compatible_pathways": 0,
+        "accepted_death_enhanced_removal_pathways": 1,
+        "accepted_death_enhanced_removal_cards": 1,
+        "policy_rejected_removal_pathways": 147,
+        "controller_incompatible_pathways": 58,
+        "nontoken_incompatible_pathways": 2,
+        "unknown_query_pathways": 223,
+        "pathways_with_any_unknown_decision": 427,
+        "unsupported_structure_records": 6006,
+        "cards_with_unsupported_structures": 2819
+      }
+    },
+    {
+      "report": "oviya-b.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "a97eddb77a9fd3e5779783a33e733b22b8231fe77432b0a5bc8d18397131f1eb",
+      "afterSha256Utf8Lf": "b8d6bcf766f68b3f5e119be3473a39740a0910e6a4056d2e29c24cf6633926a4",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3566,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3566,
+        "mechanical_facts": 2578,
+        "movement_facts": 1218,
+        "accepted_reanimation_pathways": 11,
+        "accepted_reanimation_cards": 11,
+        "unknown_query_pathways": 90,
+        "rejected_movement_pathways": 1117,
+        "unsupported_structure_records": 5840,
+        "cards_with_unsupported_structures": 2750
+      }
+    },
+    {
+      "report": "oviya-c.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "26bb5643c7f4bece5799f8ecd668ee1ab11c710da5fe2191d93bcb7a04f6e4d4",
+      "afterSha256Utf8Lf": "27263395983a89b127ab3bb9efa2e3314a1afbdac657851a15cf5b1c886c7872",
+      "counts": {
+        "authored_physical_cards": 17017,
+        "upstream_authored_physical_cards": 16995,
+        "application_extension_physical_cards": 22,
+        "registry_names_including_faces": 17373,
+        "commander_legal_cards": 16652,
+        "format_legality_unknown_cards": 352,
+        "commander_eligible_cards": 3566,
+        "identity_unknown_legal_cards": 697,
+        "mechanical_input_cards_after_conventional_search": 3566,
+        "mechanical_facts": 2578,
+        "token_creation_facts": 438,
+        "accepted_token_creation_pathways": 276,
+        "accepted_token_creation_cards": 253,
+        "unknown_query_pathways": 40,
+        "rejected_token_creation_pathways": 122,
+        "unsupported_structure_records": 6006,
+        "cards_with_unsupported_structures": 2819,
+        "creature_compatible_creation_pathways": 294,
+        "our_controller_compatible_creation_pathways": 289,
+        "accepted_fixed_quantity_pathways": 263,
+        "accepted_dynamic_quantity_pathways": 13
+      }
+    },
+    {
+      "report": "coverage-oviya.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [
+        "timingsMillis",
+        "correctionValidationMillis"
+      ],
+      "beforeSha256Utf8Lf": "ac0a4d70875d9f340cb2b0fe65bb66f480789298041c32a058ad391242b4eb9a",
+      "afterSha256Utf8Lf": "c69b8e4f021aa75a366872248553d2cd4915e8b78f734c00dea8de62d1c3b1d9",
+      "counts": {
+        "raw_snapshot_records": 39049,
+        "duplicate_records_collapsed": 0,
+        "distinct_snapshot_records": 39049,
+        "eligible_oracle_cards": 7420,
+        "excluded_records": 31629,
+        "unresolved_pool_records": 0,
+        "confident_oracle_id_matches": 3989,
+        "confident_native_identity_associations": 3989,
+        "existing_native_oracle_id_matches": 19,
+        "enriched_identity_associations": 3970,
+        "native_physical_definitions": 17017,
+        "matched_upstream_definitions": 3970,
+        "matched_application_extensions": 19,
+        "identity_review_required": 6,
+        "identity_conflicts": 0,
+        "native_metadata_discrepancies": 445,
+        "effective_metadata_discrepancies": 442,
+        "approved_corrections_in_external_pool": 3,
+        "native_not_evaluated": 3873,
+        "native_mechanical_unresolved_any_objective": 2804,
+        "native_eligibility_disagreements": 445,
+        "missing_investigated": 6,
+        "missing_uninvestigated": 3418,
+        "native_available": 743,
+        "native_metadata_unresolved": 442,
+        "native_mechanically_unresolved": 2804,
+        "native_definition_missing": 3424,
+        "ambiguous_mapping": 1,
+        "native_identity_review_required": 6
+      }
+    },
+    {
+      "report": "missing-oviya.json",
+      "equalAfterDeclaredBindingNormalization": true,
+      "ignoredTimingFields": [],
+      "beforeSha256Utf8Lf": "fe3f44db8e445084ae9db5618ed5d9b058868211fe0f88f33428aa7ba3bb129a",
+      "afterSha256Utf8Lf": "fe3f44db8e445084ae9db5618ed5d9b058868211fe0f88f33428aa7ba3bb129a",
+      "counts": null
+    }
+  ],
+  "assurance": [
+    {
+      "card": "Bitterblossom",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Experiment Twelve",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Galadhrim Ambush",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Hour of Promise",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Judith, the Scourge Diva",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Krenko's Command",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Labyrinth of Skophos",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Ley Weaver",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Magus of the Library",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Might of Murasa",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Momentum",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Mortal Wound",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Oviya Pashiri, Sage Lifecrafter",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Paradise Mantle",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Planewide Celebration",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Predatory Urge",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Savage Conception",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Spined Tyrranax",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Sword of Truth and Justice",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Tatterkite",
+      "qualification": "BLOCKED",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "engineExecution",
+        "evidence"
+      ]
+    },
+    {
+      "card": "Throne of Makindi",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    },
+    {
+      "card": "Tyrite Sanctum",
+      "qualification": "PROVISIONAL",
+      "evidenceCurrent": true,
+      "changedFields": [
+        "evidence"
+      ]
+    }
+  ],
+  "tatterkiteConcernStillConfirmed": true,
+  "independentQualificationsAdded": 0,
+  "definitionAndEligibilitySemanticsUnchanged": true,
+  "executionNote": "After-run interrupted after coverage/missing Oviya; remaining three Oviya discovery and three audit-diff commands resumed against the same distribution with zero exits",
+  "resumedCommands": [
+    {
+      "command": "oviya-a",
+      "arguments": [
+        "discover",
+        "--commander",
+        "Oviya Pashiri, Sage Lifecrafter",
+        "--objective",
+        "own-nontoken-creature-deaths",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-a.json"
+      ],
+      "wallSeconds": 25.683,
+      "exitCode": 0
+    },
+    {
+      "command": "diff-oviya-a",
+      "arguments": [
+        "audit",
+        "diff",
+        "--before",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\before\\oviya-a.json",
+        "--after",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-a.json",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\diff-oviya-a.json"
+      ],
+      "wallSeconds": 2.553,
+      "exitCode": 0
+    },
+    {
+      "command": "oviya-b",
+      "arguments": [
+        "discover",
+        "--commander",
+        "Oviya Pashiri, Sage Lifecrafter",
+        "--objective",
+        "reanimate-own-creatures",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-b.json"
+      ],
+      "wallSeconds": 33.615,
+      "exitCode": 0
+    },
+    {
+      "command": "diff-oviya-b",
+      "arguments": [
+        "audit",
+        "diff",
+        "--before",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\before\\oviya-b.json",
+        "--after",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-b.json",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\diff-oviya-b.json"
+      ],
+      "wallSeconds": 4.004,
+      "exitCode": 0
+    },
+    {
+      "command": "oviya-c",
+      "arguments": [
+        "discover",
+        "--commander",
+        "Oviya Pashiri, Sage Lifecrafter",
+        "--objective",
+        "create-creature-tokens",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-c.json"
+      ],
+      "wallSeconds": 36.326,
+      "exitCode": 0
+    },
+    {
+      "command": "diff-oviya-c",
+      "arguments": [
+        "audit",
+        "diff",
+        "--before",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\before\\oviya-c.json",
+        "--after",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\oviya-c.json",
+        "--json",
+        "--output",
+        "C:\\Users\\jasul\\development\\mtg-deckbuilding-assistant\\generated\\fork-foundation\\after\\diff-oviya-c.json"
+      ],
+      "wallSeconds": 3.458,
+      "exitCode": 0
+    }
+  ]
+}

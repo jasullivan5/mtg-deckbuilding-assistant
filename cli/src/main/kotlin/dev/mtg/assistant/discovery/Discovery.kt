@@ -89,8 +89,8 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
         val source=if(provenance.origin == "UPSTREAM_ARGENTUM") DefinitionSources.paths[p.card.name] else null
         ResultEvidence(p.card.name,p.card.oracleId ?: "${p.card.setCode}:${p.card.metadata.collectorNumber}:${p.card.name}",
             p.face,p.actionId,p.path,p.branch,evaluatedPath.verdict,p.operation,p.origin,p.scope.description,p.prerequisites,p.dependency,p.native,
-            evaluatedPath.decisions,listOfNotNull(source?.let { "https://github.com/wingedsheep/argentum-engine/blob/$ARGENTUM_SHA/$it" },
-                if(provenance.origin == "APPLICATION_EXTENSION") provenance.source else "native:${p.face}.${p.path}","https://github.com/wingedsheep/argentum-engine/tree/$ARGENTUM_SHA/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"),
+            evaluatedPath.decisions,listOfNotNull(source?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },
+                if(provenance.origin == "APPLICATION_EXTENSION") provenance.source else "native:${p.face}.${p.path}","$ARGENTUM_REPOSITORY_URL/tree/$ARGENTUM_SHA/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"),
             eligibilityEvidence.format,eligibilityEvidence.deck,
             interpretation=if(extracted.unsupported.any { it.actionId == p.actionId || it.actionId==associatedSpellAction(extractedActions,p.actionId) }) "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED" else "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
             contributionClassification=if(evaluatedPath.verdict == Verdict.MATCH) p.branch else null,

@@ -1,0 +1,13 @@
+{
+  "tests": 4,
+  "passed": 4,
+  "command": "MTG_TEST_BASH=<Git Bash executable> python scripts/test-bootstrap.py",
+  "platform": "Windows",
+  "logSha256Raw": "1ad727f502c471cf7f90390e7ef6843ee4a6f49b53da1f443ea5cf4e344c3a0b",
+  "changes": "Fixture declares canonical origin; optional explicit Bash selection; non-Git-directory fixture moves its task-owned metadata instead of deleting Windows read-only objects.",
+  "initialHarnessFailures": [
+    "Bare bash selected an unsuitable Windows executable (exit 127).",
+    "Windows read-only Git objects prevented recursive metadata removal in the fixture."
+  ],
+  "applicationSetupFailures": 0
+}

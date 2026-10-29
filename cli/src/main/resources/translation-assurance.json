@@ -2,7 +2,7 @@
   {
     "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
     "definitionSha256": "b51a983f98db2cca0e450580b766140acb702d14c8fff0701eb4d246c1f47876",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -18,16 +18,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "67a10da3-76f2-4f4a-90d1-e77abb5842fe",
     "definitionSha256": "7af37d91bc99af87332dc6a2c3fc7c22ba172b821e897d426959bb15195ec988",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -48,16 +54,22 @@
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
     "definitionSha256": "b6425d3c22ac4299ed085df08a8ba02fbf34bc0ee5d131c17fc4b0a3a185efb2",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -78,16 +90,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
     "definitionSha256": "4dff788132be41afd158883a9383d400783ddb77126f752f201017a82dd2b4e8",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -113,10 +131,16 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "requirements": [
       {
@@ -134,7 +158,7 @@
   {
     "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
     "definitionSha256": "413ae83e9c376ce6f6a782a753810d68e8e5d30f826ebe7dc08b3efbdf1266c0",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -150,16 +174,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
     "definitionSha256": "b5b446d5400ff7d2def6e685ed518fe53ba6175faa2ff153b190ae97e85cc1a6",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -175,16 +205,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
     "definitionSha256": "a344b51864c18d3809801dda6679cbd1f297847d697a2acc171a8f0774fdda45",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -205,16 +241,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
     "definitionSha256": "09068902a66002545bab80b20fd50718392b041112956a241beeb9119d764c96",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -240,10 +282,16 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "requirements": [
       {
@@ -261,7 +309,7 @@
   {
     "oracleId": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
     "definitionSha256": "e5adb488035d4d771695e019f692016756dcae02d78177560ee9ab4dd235130c",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -282,16 +330,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
     "definitionSha256": "ecadab084fda9135a8a7afc0cd1357035fb4b7c7580f8901375d5c77e586a4a4",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -312,16 +366,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "80875914-df4c-4b05-8c4d-658ff477c956",
     "definitionSha256": "59216a21488d39f01866987b1fefc8d12c8b58288a6f5502fbcf3646d39f12c5",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -342,16 +402,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
     "definitionSha256": "98c54eefc764e57c94c453354b1b58cdaeb5a96d4510a3d54dd0dc76f6d89df4",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -372,16 +438,22 @@
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
     "definitionSha256": "e103166ade82bcdf07f2483313b3096e219c49824268403909ee4083b417aa92",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -397,16 +469,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
     "definitionSha256": "e6ebf478a7bbd5842b25716e0b110f2fa75e95cd11aa5f8ed01bb61fec7ecdee",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -427,16 +505,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
     "definitionSha256": "5a14894e56272870cd989024470f8e987712b78b62eae1ca052df15244304ba5",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -462,10 +546,16 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "requirements": [
       {
@@ -483,7 +573,7 @@
   {
     "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
     "definitionSha256": "13017423763b4568dd574c3f59cb0a2ea72876419f2b37c5dfc92d1c260f828a",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -509,10 +599,16 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "requirements": [
       {
@@ -530,7 +626,7 @@
   {
     "oracleId": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
     "definitionSha256": "c45b1d2a06cb85c47799608827db7cb57a15158578f885f85200b04f37be947d",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -551,16 +647,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
     "definitionSha256": "1604126a6a6c520209d8cc4cbe02023802359c5eea22193fe117e39bc4cf1836",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -581,16 +683,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
     "definitionSha256": "c8e226bdbe9c3aa96095a59035393fcc2f909c6ffb0f3518d313139c87835076",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -611,11 +719,17 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
       "Source-first agent review, not independent human certification.",
-      "Collection counter issue locally avoided with existing single-object composition; other stated limits remain in assessment.json and original Batch 2 review."
+      "Collection counter issue locally avoided with existing single-object composition; other stated limits remain in assessment.json and original Batch 2 review.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "requirements": [
       {
@@ -648,10 +762,10 @@
   {
     "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
     "definitionSha256": "7efc79971bd20276e936105eb5f2bc431ed38e84450bd60f8aaf90e8e7fc481e",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
-    "execution": "FAILURE_OBSERVED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
     "source": [
       {
         "path": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
@@ -674,11 +788,17 @@
         "path": "reference/translation-reliability/focused-execution.json",
         "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
       "Historical author/source-led evidence, not independent certification; see original review for case limits.",
-      "Direct placement passes; collection placement violates counter prohibition at this SDK pin. Research access retained; qualification blocked."
+      "Historical on ebf5bf2e9fbb80d13a556d75491dd462e10c206f: Direct placement passes; collection placement violates counter prohibition at this SDK pin. Research access retained; qualification blocked.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ],
     "concerns": [
       {
@@ -686,9 +806,9 @@
         "kind": "ENGINE_EXECUTION",
         "state": "CONFIRMED",
         "claim": "TK2: no counters may be placed on Tatterkite, including through collections",
-        "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter",
-        "reproduction": "VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
-        "nextAction": "A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here.",
+        "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter Historical observation on ebf5bf2e9fbb80d13a556d75491dd462e10c206f; the candidate fork passes source-correct execution, but this concern remains confirmed pending application adoption.",
+        "reproduction": "Historical at ebf5bf2e9fbb80d13a556d75491dd462e10c206f: VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
+        "nextAction": "Historical action: A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here. Current action: after explicit pin adoption, record revision-bound resolution evidence and move only to provisional qualification.",
         "resolutionEvidence": []
       }
     ],
@@ -708,7 +828,7 @@
   {
     "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
     "definitionSha256": "01f1d9a89e4d4d2fa57ba3d25f056b6fbb521174a5ec4be92775d6bd1bbf557e",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -729,16 +849,22 @@
         "path": "reference/alignment-batch2/verification.json",
         "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   },
   {
     "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
     "definitionSha256": "7b9681e5deeda9634b32c39b89bbeb9af44ff3d1b25ee90aa995c9e89b14a7c5",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "author": "implementing-agent",
     "fidelity": "SOURCE_REVIEWED",
     "execution": "BOUNDED_EVIDENCE_PASSED",
@@ -759,10 +885,16 @@
         "path": "reference/alignment-batch1/verification.json",
         "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
         "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "reference/fork-foundation/pre-adoption-verification.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
       }
     ],
     "limitations": [
-      "Historical author/source-led evidence, not independent certification; see original review for case limits."
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
     ]
   }
 ]
