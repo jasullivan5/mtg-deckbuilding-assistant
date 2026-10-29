@@ -26,7 +26,9 @@ For explicit candidate validation, set `ARGENTUM_ENGINE_DIR` to an absolute clea
 
 The engine's Application compatibility workflow checks native tests and application main against the exact PR merge revision, and also runs after app-stable pushes. The application CI independently resolves app-stable once, records its SHA and runs the application checks. Inspect the named checks before merging; repository branch-protection enforcement is a separate server setting. A post-merge failure is a failed check, not automatic rollback or certification.
 
-Rollout order: merge the application migration PR first, then the engine compatibility-workflow PR. Until the application migration is on main, the new engine workflow cannot validate the old application's nested-pin setup. Workflow dispatch can select the migration branch to validate the transition beforehand.
+Rollout order: merge the application migration PR first, then the engine compatibility-workflow PR. Until the application migration is on main, the new engine workflow cannot validate the old application's nested-pin setup. Once available, workflow dispatch supports selecting an explicit application ref for controlled validation.
+
+Both repositories are public. The engine workflow reads the application using normal checkout; no cross-repository credential or token secret is needed. Its application build must report the exact engine candidate SHA and candidate mode, preventing accidental validation through the retired nested dependency.
 
 ## Reproducible evidence
 
