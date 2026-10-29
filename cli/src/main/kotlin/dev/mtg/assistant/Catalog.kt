@@ -12,7 +12,7 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
     private val correctionPlan: () -> dev.mtg.assistant.eligibility.CorrectionPlan? = { dev.mtg.assistant.eligibility.ApprovedEligibility.plan }) {
     val eligibility by lazy { dev.mtg.assistant.eligibility.EligibilityResolver(dev.mtg.assistant.discovery.physicalCards(cards),correctionPlan()) }
     private val origins = mutableMapOf<String, dev.mtg.assistant.extensions.Provenance>()
-    fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", "https://github.com/wingedsheep/argentum-engine/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
+    fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", dev.mtg.assistant.discovery.ARGENTUM_REPOSITORY_URL + "/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
     private val reviews = mutableMapOf<String, dev.mtg.assistant.extensions.DefinitionReview>()
     fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview()
     fun translationAssurance(name: String): dev.mtg.assistant.extensions.TranslationAssurance? =

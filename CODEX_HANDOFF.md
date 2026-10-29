@@ -1,5 +1,15 @@
 # Codex handoff
 
+## Current fork foundation
+
+Use [our Argentum fork](https://github.com/jasullivan5/argentum-engine), with `app-stable` as the development base/default. Fork `main` tracks the original project for comparison only. Feature/fix work and internal PRs normally target app-stable; upstream PRs are not our workflow. The published modern `fix/collection-counter-placement` branch is historical and remains retained.
+
+The application always fetches the full commit in `ARGENTUM_COMMIT`, never a branch tip. Pin changes are separate reviewed application PRs. Setup retains wrong-revision and dirty-checkout refusal, migrates only the recognized old upstream origin, and rejects unrelated origins. For a different pin, use a fresh application worktree/checkout and bootstrap there; setup deliberately does not switch an existing wrong revision.
+
+Review upstream manually approximately monthly or before an engine phase. Fetch/compare does not authorize integration. Select mechanisms rather than bulk card updates; regression-test candidates before adopting exact commits. **Do not use GitHub's fork-sync UI on default app-stable**: synchronization must explicitly target main. [Current workflow and transition evidence](docs/ENGINE_COUNTER_CORRECTION.md).
+
+## Historical migration record
+
 Current development adds structured `commander inspect` diagnostics, recursive native-extension safeguards and the application-owned Oviya Pashiri, Sage Lifecrafter definition. See docs/COMMANDER_AUTHORING.md for the repeatable workflow and bounded engine-test coverage. The accepted Phase2.5 migration notes below describe the baseline delivery; they are historical publication/environment records, not the current GitHub or local setup state.
 
 Start with AGENTS.md, README.md and docs/ARCHITECTURE.md. This is accepted Phase2.5 prepared for Git development, not a new feature phase.

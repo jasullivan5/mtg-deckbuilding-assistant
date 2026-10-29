@@ -1,5 +1,8 @@
 package dev.mtg.assistant
 
+import java.nio.file.Files
+import java.nio.file.Path
+import dev.mtg.assistant.discovery.ARGENTUM_SHA
 import com.wingedsheep.sdk.model.CardScript
 import com.wingedsheep.sdk.scripting.effects.DealDamageEffect
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
@@ -13,6 +16,8 @@ class ArgentumIntegrationTest : FunSpec({
     val catalog by lazy { Catalog() }
 
     test("real authored catalog is discovered and registered") {
+        val root=if(Files.exists(Path.of("ARGENTUM_COMMIT"))) Path.of(".") else Path.of("..")
+        Files.readString(root.resolve("ARGENTUM_COMMIT")).trim() shouldBe ARGENTUM_SHA
         (catalog.setCount > 1) shouldBe true
         (catalog.cards.size > 100) shouldBe true
         catalog.card("Lightning Bolt")!!.name shouldBe "Lightning Bolt"

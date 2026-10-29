@@ -14,7 +14,7 @@ fun factObjectiveReport(catalog: Catalog,commander: String,identity: List<String
     val results=evaluated.map { e ->
         val f=e.fact; val card=catalog.card(f.card)!!; val eligible=byName.getValue(f.card); val provenance=catalog.provenance(f.card)
         val related=extracted.facts.filter { it.costOrEffect.endsWith("COST") && (it.actionId==f.actionId || associatedSpellAction(actions,it.actionId)==f.actionId) }
-        val nativeSource=DefinitionSources.paths[f.card]?.let { "https://github.com/wingedsheep/argentum-engine/blob/$ARGENTUM_SHA/$it" }
+        val nativeSource=DefinitionSources.paths[f.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" }
         ResultEvidence(f.card,card.oracleId ?: "${card.setCode}:${card.metadata.collectorNumber}:${card.name}",f.face,f.actionId,f.path,
             category,e.verdict,f.operation,f.costOrEffect,
             if(tokens) "created=${f.tokenCreation}; entry-controller=${f.destinationController}; binding=${f.binding}" else "source=${f.sourceZone}; graveyard/zone-player=${f.sourcePlayer}; native ownership/filter=${f.objectFilter}; destination=${f.destinationZone}; entry-controller=${f.destinationController}; selection=${f.selection}; binding=${f.binding}",

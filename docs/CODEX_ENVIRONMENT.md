@@ -1,5 +1,7 @@
 # Codex environment
 
+Canonical engine source is our fork, `https://github.com/jasullivan5/argentum-engine.git`. New environments fetch the exact application pin, not a floating app-stable/main tip. app-stable is the engine development base; main is tracking only. Bash and PowerShell setup preserve exact clean-checkout guards. Use a fresh application worktree for a new pin; see ENGINE_COUNTER_CORRECTION.md for actual transition verification and upstream-review policy. The original hosted-environment notes below remain historical; no hosted environment was created here.
+
 No hosted environment was created. After publishing this Git repository to an authorized private destination, select the application repository in Codex Cloud (not the standalone upstream). Request Git, JDK21 including javac, Bash and Python3; set JAVA_HOME/PATH to its real installed JDK. Run `bash scripts/codex-setup.sh` as the install/setup command. Review and test setup before publishing the environment. No application server, start service or API key is needed.
 
 Ordinary maintenance: `bash scripts/setup.sh` validates/reuses the pin; incremental work uses ./dev installDist or focused tests. Full-catalog checks are expensive and do not belong in every startup. Gradle uses its normal user dependency/build cache; GRADLE_USER_HOME may select another cache location. Never commit caches or rely on a temporary filesystem as source control.

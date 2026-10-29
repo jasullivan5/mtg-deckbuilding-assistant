@@ -1,0 +1,14 @@
+{
+  "trackingCheckpoint": "8fa5e723ccd93753c1d2b1a78cb053dafee45cdc",
+  "applicationCompatibleUpstreamBase": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "modernCompatibilityInvestigationBase": "4c111d550c616ee9f5f1f0c0f9c6d15b1397014d",
+  "decision": "Tracking main fast-forwarded; no modern upstream changes imported into app-stable. Retained original correction only.",
+  "scope": "Repository/compatibility checkpoint, not a claim that every upstream commit was reviewed for correctness or adoption.",
+  "deferredRange": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f..8fa5e723ccd93753c1d2b1a78cb053dafee45cdc",
+  "knownMechanismGroups": {
+    "counter placement": "Original shared placement correction accepted; modern SDK spelling/handoff only belong to historical branch",
+    "card catalog and metadata": "Modern bulk introduces application-extension collisions; do not merge en masse",
+    "other engine/SDK mechanisms": "Evaluate selected changes individually during manual review"
+  },
+  "nextReview": "Approximately monthly or before substantial engine development; compare new observations and retained deferred ranges, record mechanism/source/decision/test receipts; no scheduler or automatic update."
+}

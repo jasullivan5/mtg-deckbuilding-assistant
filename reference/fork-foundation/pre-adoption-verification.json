@@ -1,0 +1,226 @@
+{
+  "configuration": "PRE_ADOPTION_ISOLATED_STABLE",
+  "runtimeEngineRevision": "4133241856227d1d36269e92aaba633bbaf93f5c",
+  "approvedApplicationPin": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+  "applicationSourceCommit": "461791c1ae531800ca5f2da868b9954f18bf6ad1",
+  "recordedAt": "2026-10-29T00:39:27.993996+00:00",
+  "results": {
+    "native": {
+      "tests": 7507,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": 1110
+    },
+    "application": {
+      "tests": 457,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": 57
+    },
+    "native2024": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": 2
+    },
+    "native2026": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": 2
+    }
+  },
+  "focusedCases": [
+    "mixed recipients respect prohibition and continue for PLUS_ONE_PLUS_ONE",
+    "mixed recipients respect prohibition and continue for MINUS_ONE_MINUS_ONE",
+    "mixed recipients respect prohibition and continue for CHARGE",
+    "all prohibited recipients emit no placement events and later instruction resolves",
+    "multiple ordinary recipients receive correct counters and preserve unrelated kinds",
+    "single-object and collection state and events agree: prohibited=false",
+    "single-object and collection state and events agree: prohibited=true",
+    "additive replacement remains recipient and controller scoped after prohibition",
+    "doubling replacement does not override a prohibition",
+    "replacement reducing placement to zero emits no event or first-placement mark",
+    "at maximum counters collection placement is a no-op without an event",
+    "player placement records cap lock even when its source leaves",
+    "zero and negative amounts do not create events even with an additive replacement",
+    "empty and nonexistent collection members are skipped without stopping eligible recipients",
+    "dynamic amount overrides count and is evaluated once before any recipient changes",
+    "first-placement flags are tracked separately for recipient and counter kind",
+    "state-based deaths happen after the following instruction, not between collection recipients"
+  ],
+  "mutationOutcomes": [
+    {
+      "id": "M1",
+      "defect": "live reference loses last-known damage",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU4"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M2",
+      "defect": "tap cost omitted",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<true> but was:<false>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M3",
+      "defect": "optional search made mandatory",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-optional"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<1> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M4",
+      "defect": "targeted player's choice assigned to controller",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-controller"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<e1> but was:<e0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M5",
+      "defect": "condition moved before fetched lands",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M6",
+      "defect": "fetched cards go to hand instead of battlefield",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M7",
+      "defect": "counter prohibition omitted",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "TK2"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<0> but was:<1>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M8",
+      "defect": "nontargeting choice replaced by a target",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "SJ3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "SJ3 is nontargeting at resolution",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M9",
+      "defect": "required reveal omitted",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-reveal"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<true> but was:<false>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    }
+  ],
+  "command": "bash scripts/gradle-locked --no-daemon --no-configuration-cache --max-workers=2 -PkotlinCompileParallelism=1 -Pkotlin.daemon.jvmargs=-Xmx4g -I C:/Users/jasul/development/mtg-deckbuilding-assistant/scripts/engine-candidate.init.gradle -Dmtg.assistant.root=C:/Users/jasul/development/mtg-deckbuilding-assistant -Dmtg.engine.candidate=4133241856227d1d36269e92aaba633bbaf93f5c :rules-engine:test --rerun :assistant-cli:test --rerun :assistant-cli:installDist :mtg-sets:2024:tests:test --rerun --tests \"*ValgavothsOnslaughtScenarioTest\" --tests \"*SuppressionRayScenarioTest\" :mtg-sets:2026:tests:test --rerun --tests \"*AppliedGeometryScenarioTest\" --tests \"*InvisibleWomanSueStormScenarioTest\" --continue",
+  "logSha256Raw": "ab74beec1d5e9f407e5862cfb15ea9c64363266bb9952f15c6c1e8394b7623e3",
+  "hashFormat": "SHA256_UTF8_LF",
+  "fixtureSha256": "09ff80b5a79c7937e22ce0ca35017d3efb6187e79c28873a40a233ab725f8ac0",
+  "qualification": "Agent execution, not independent human certification; concern stays confirmed until adoption",
+  "startupFailure": "First launcher attempted a missing task-local Just recipe before Gradle started; recipe created and verification rerun successfully."
+}

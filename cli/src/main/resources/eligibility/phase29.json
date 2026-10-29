@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "context": {
     "algorithm": "physical-identity-v1",
-    "argentumCommit": "ebf5bf2e9fbb80d13a556d75491dd462e10c206f",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
     "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
     "nativeIdentitySha256": "ceef411323fde4a1521b712402463977e246f8c14e83e9f7933abf3de77b2b21"
   },
