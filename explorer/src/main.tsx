@@ -30,6 +30,7 @@ type Evidence = {
   runId: string; card: string; authoredCard: {manaCost: string; typeLine: string; text: string} | null;
   results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string}[];
   structuralSupport: RecordData[]; eligibility: RecordData[]; translationAssurance: Assurance[];
+  explanations: {summary: string; requirements: string[]}[];
 };
 type Health = {applicationRevision: string; argentumCommit: string; engineMode: string};
 
@@ -116,7 +117,10 @@ export function App() {
       setInspection(inspected);
       if (discovery && inspected.selectable) {
         const fresh = await api<Run>('discover', {commander, objective});
-        setRun(fresh); setCategory('MATCH');
+        setRun(fresh);
+        setCategory(fresh.cards.some(c => c.pathways.MATCH > 0) ? 'MATCH' :
+          fresh.cards.some(c => c.pathways.UNKNOWN > 0) ? 'UNKNOWN' :
+          fresh.cards.some(c => c.unsupportedRecords > 0) ? 'UNSUPPORTED' : 'ALL');
         setSelected((fresh.cards.find(c => c.pathways.MATCH > 0) ?? fresh.cards[0])?.index ?? null);
       }
     } catch (e) {
@@ -241,9 +245,11 @@ export function App() {
                   'This recognized pathway belongs to a partly interpreted action. Inspect the unsupported structures as well.' :
                   'Structural evidence only; successful gameplay resolution is not established.'}</p>
                 <h4>Why this pathway appeared</h4>
-                {r.decisions.map((d, j) => <p key={j}><b>{verdictLabel(d.verdict)}</b> — {d.reason}</p>)}
+                <p>{detail.explanations[i]?.summary ?? 'Inspect the application decision records below.'}</p>
                 <h4>What must be true</h4>
-                <ul>{r.prerequisites.map((p, j) => <li key={j}>{p}</li>)}</ul>
+                <ul>{(detail.explanations[i]?.requirements ?? r.prerequisites).map((p, j) => <li key={j}>{p}</li>)}</ul>
+                <RawDetails label="Exact timing, costs, branch prerequisites and application decisions"
+                  value={{prerequisites: r.prerequisites, decisions: r.decisions}}/>
                 {r.circumstances && <RawDetails label="Timing, resources and circumstances" value={r.circumstances}/>}
                 <details><summary>Exact pathway and source evidence</summary>
                   <p>Path: <code>{r.abilityPath}</code></p>

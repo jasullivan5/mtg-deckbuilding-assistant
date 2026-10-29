@@ -1,3 +1,4 @@
+@file:OptIn(kotlinx.serialization.ExperimentalSerializationApi::class)
 package dev.mtg.assistant
 
 import dev.mtg.assistant.discovery.*
@@ -11,6 +12,10 @@ import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
+import java.nio.file.Files
+import java.security.DigestOutputStream
+import java.security.MessageDigest
+import java.io.OutputStream
 
 class ExplorerServerTest : FunSpec({
     val catalog by lazy { Catalog() }
@@ -46,16 +51,47 @@ class ExplorerServerTest : FunSpec({
             for (objective in objectives) {
                 val response = post(server,"discover","Judith, the Scourge Diva",objective.id)
                 response.statusCode() shouldBe 200
-                val live = reportJson.decodeFromString<LiveDiscovery>(response.body())
-                val cli = mutableListOf<String>()
-                runCli(arrayOf("discover","--commander","Judith, the Scourge Diva","--objective",objective.id,"--json"),{catalog},cli::add) shouldBe 0
-                live.report shouldBe reportJson.decodeFromString<DiscoveryReport>(cli.single())
+                val summary = reportJson.decodeFromString<RunSummary>(response.body())
+                val exported = client.send(HttpRequest.newBuilder(URI("http://127.0.0.1:${server.port}/api/v1/runs/${summary.runId}/report")).build(),
+                    HttpResponse.BodyHandlers.ofInputStream())
+                exported.statusCode() shouldBe 200
+                val live = exported.body().use { reportJson.decodeFromStream<LiveDiscovery>(it) }
+                live.runId shouldBe summary.runId
+                summary.counts shouldBe live.report.counts
+                summary.cards.map { it.card } shouldBe (live.report.results.map { it.card } + live.report.unsupported.map { it.card }).distinct().sorted()
+                val output = Files.createTempFile("explorer-cli-parity-", ".json")
+                try {
+                    runCli(arrayOf("discover","--commander","Judith, the Scourge Diva","--objective",objective.id,"--json","--output",output.toString()),{catalog},{}) shouldBe 0
+                    // Compare every serialized field against the real CLI without building a second giant report tree.
+                    val apiHash = MessageDigest.getInstance("SHA-256")
+                    DigestOutputStream(OutputStream.nullOutputStream(),apiHash).use {
+                        reportJson.encodeToStream(DiscoveryReport.serializer(),live.report,it)
+                    }
+                    val cliHash = MessageDigest.getInstance("SHA-256")
+                    Files.newInputStream(output).use { input ->
+                        val buffer=ByteArray(8192)
+                        while(true) { val n=input.read(buffer); if(n<0) break; cliHash.update(buffer,0,n) }
+                    }
+                    apiHash.digest().toList() shouldBe cliHash.digest().toList()
+                } finally { Files.deleteIfExists(output) }
+                val card=summary.cards.first { it.pathways.getValue("MATCH")>0 }
+                val detail=reportJson.decodeFromString<CardEvidence>(request(server,"runs/${summary.runId}/cards/${card.index}").body())
+                detail.results shouldBe live.report.results.filter { it.card==card.card }
+                detail.actions shouldBe live.report.actions.filter { it.card==card.card }
+                detail.facts shouldBe live.report.facts.filter { it.card==card.card }
+                detail.unsupported shouldBe live.report.unsupported.filter { it.card==card.card }
+                detail.structuralSupport shouldBe live.report.structuralSupport.filter { it.card==card.card }
+                detail.eligibility shouldBe live.report.eligibility.filter { it.card==card.card }
+                detail.translationAssurance shouldBe live.report.translationAssurance.filter { it.card==card.card }
+                request(server,"runs/${summary.runId}/cards/-1").statusCode() shouldBe 404
+                request(server,"runs/${summary.runId}/cards/9999999999999").statusCode() shouldBe 404
                 live.execution shouldBe "FRESH_STRUCTURAL_DISCOVERY"
                 live.applicationRevision shouldBe "test-revision"
             }
-            val second = reportJson.decodeFromString<LiveDiscovery>(post(server,"discover","Oviya Pashiri, Sage Lifecrafter","create-creature-tokens").body())
-            second.report.allowedIdentity shouldBe listOf("GREEN")
-            second.report.results.any { it.card == "Oviya Pashiri, Sage Lifecrafter" && it.verdict == Verdict.MATCH } shouldBe true
+            val second = reportJson.decodeFromString<RunSummary>(post(server,"discover","Oviya Pashiri, Sage Lifecrafter","create-creature-tokens").body())
+            second.allowedIdentity shouldBe listOf("GREEN")
+            second.cards.any { it.card == "Oviya Pashiri, Sage Lifecrafter" && it.pathways.getValue("MATCH")>0 } shouldBe true
+            request(server,"runs/expired-run/cards/0").statusCode() shouldBe 410
         }
     }
     test("malformed, oversized, invalid objective, route, method and foreign-origin requests are explicit errors") {

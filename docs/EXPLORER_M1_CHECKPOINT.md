@@ -1,5 +1,23 @@
 # Explorer M1 checkpoint — 2026-10-29
 
+## Latest incremental checkpoint — supersedes unfinished statuses below
+
+The compact API **compiled and passed all five updated ExplorerServerTest cases**, including streamed full CLI evidence equality for all objectives, complete per-card records, changed commander, invalid indexes and expired run handling. The old-contract test warning in the historical section below is resolved.
+
+Added exact @playwright/test 1.62.1 dependency/lock, playwright.config.ts and tests/interface.spec.ts + tests/live.spec.ts. Four fixture browser tests passed on installed Chrome (one initial locator ambiguity was corrected). The genuine live browser test passed: Judith tokens → Bitterblossom evidence → Judith reanimation → Oviya tokens → rejected Murder, with distinct real run IDs. Screenshot: generated/explorer/judith-tokens.png. One-command scripts/explorer.ps1 successfully built and launched the application. Ctrl+C shutdown was verified by a refused connection on port 8787; **no API server remains running**.
+
+Measured warm Judith token discovery before the final readable-explanation refinement: 874,178-byte summary, 11,567-byte Bitterblossom detail, 4,820 ms native discovery / 5,016 ms complete HTTP request; 4,579 finding cards. Source engine e46fab1, application def3615+dirty. Measurements are in generated/explorer/live-measurement.json (ignored, not committed).
+
+Visual inspection found the native decision reasons too technical. **ExplorerModels.explain** now restates the existing objective/verdict in readable terms, with generic objective requirements and explicit unresolved/nonmatching language. Original prerequisites/decisions remain unchanged in expandable records and full export. This is presentation, no new evaluator. Frontend uses these supplied explanations. This final refinement is undergoing validation now.
+
+Current validations in progress at this checkpoint:
+- Full regression/build: .\dev.ps1 test --rerun :assistant-cli:installDist (tool session 8133). Check test XML timestamps / active Java processes before restarting if a usage reset interrupts the agent. Do not rebuild installDist while a live server/CLI reads it.
+- Frontend rebuild + four fixture tests for the readable explanation change (tool session 74478); first two tests already passed when checkpoint was written.
+
+**Next:** finish/inspect those results; rerun live browser tests on the final source, plus mobile/keyboard check and startup/error/shutdown checks as appropriate. Then write launch/API/evaluation docs, update milestone state only to demonstrated readiness, run final affected checks, commit/push and create the M1 PR. No M1 PR exists yet. Add a small frontend CI check if economical; current CI only runs Kotlin. Keep normal engine sibling unchanged.
+
+Launch script is now reconciled: normal sibling setup, Node/JDK/pnpm prerequisites, packaged app provenance, one foreground JVM (no batch prompt), no MTG_APPLICATION_REVISION env workaround. It has been executed successfully. Frontend defaults to a populated verdict category and retains alphabetical name/page navigation. No old JSON Blob leak remains.
+
 ## Resume here
 
 Continue **feature/explorer-m1** in the application checkout. Do not restart the Explorer or restore the old dependency policy. This is an unfinished implementation checkpoint, not a completed/accepted milestone.
