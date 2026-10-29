@@ -9,7 +9,7 @@ def main(args):
  algorithm=ROOT/'cli/src/main/kotlin/dev/mtg/assistant/coverage/OracleEnrichment.kt'
  assert hashlib.sha256(algorithm.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==held['frozenAlgorithmSha256'],'Held-out assessment must use the frozen rules'
  assert context['snapshotSha256']==read(ROOT/'reference/phase27/snapshot.manifest.json')['sha256']
- assert context['argentumCommit']==(ROOT/'ARGENTUM_COMMIT').read_text().strip()
+ assert context['argentumCommit']==(ROOT/'reference/fork-foundation/ARGENTUM_COMMIT').read_text().strip()
  rows={r['native']['name']:r for r in assignments}
  byid=collections.defaultdict(list)
  for a in assignments:

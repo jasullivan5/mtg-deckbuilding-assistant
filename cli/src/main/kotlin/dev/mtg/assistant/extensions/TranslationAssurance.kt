@@ -55,7 +55,7 @@ fun bundleDigest(evidence: TranslationEvidence): String = evidenceDigest(canonic
 
 /** Pure gate; reports research access without changing eligibility or mechanical predicates. */
 fun assessTranslation(card: CardDefinition, evidence: TranslationEvidence?, pin: String = ARGENTUM_SHA): TranslationAssurance {
-    val current = evidence != null && evidence.oracleId==card.oracleId && evidence.definitionSha256==definitionDigest(card) && evidence.argentumCommit==pin
+    val current = evidence != null && evidence.oracleId==card.oracleId && evidence.definitionSha256==definitionDigest(card) && dev.mtg.assistant.EngineBuild.evidenceCompatible(evidence.argentumCommit,pin)
     val concerns = evidence?.concerns.orEmpty().any { it.kind!=ConcernKind.DISCOVERY_EXTRACTION && it.state in setOf(ConcernState.SUSPECTED,ConcernState.CONFIRMED,ConcernState.UNRESOLVED) }
     val unclosed = evidence?.concerns.orEmpty().any { it.state in setOf(ConcernState.RESOLVED,ConcernState.DISPROVEN) && it.resolutionEvidence.isEmpty() }
     val blocked = unclosed || evidence?.representation?.let { it!=RepresentationState.COMPLETE }==true || concerns || evidence?.fidelity in setOf(FidelityState.SUSPECTED_DISCREPANCY,FidelityState.CONFIRMED_DISCREPANCY) || evidence?.execution==ExecutionState.FAILURE_OBSERVED

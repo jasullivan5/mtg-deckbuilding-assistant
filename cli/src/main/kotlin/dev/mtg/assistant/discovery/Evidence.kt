@@ -11,7 +11,7 @@ import kotlinx.serialization.json.JsonElement
     val repeatability: String, val resourceAssumptions: String = "Legal choices/resources must exist; no gameplay outcome guaranteed")
 
 const val ARGENTUM_REPOSITORY_URL = "https://github.com/jasullivan5/argentum-engine"
-const val ARGENTUM_SHA = "4133241856227d1d36269e92aaba633bbaf93f5c"
+val ARGENTUM_SHA: String get() = dev.mtg.assistant.EngineBuild.revision
 val reportJson = Json { encodeDefaults = true }
 val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
 @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }

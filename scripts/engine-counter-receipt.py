@@ -19,7 +19,7 @@ def main():
     args = parser.parse_args()
     base = args.output_base
     candidate = read(REF / "candidate.json")
-    approved = (ROOT / "ARGENTUM_COMMIT").read_text().strip()
+    approved = (ROOT / "reference/fork-foundation/ARGENTUM_COMMIT").read_text().strip()
     assert approved == candidate["approvedRevision"]
     assert git("-C", str(ROOT / "argentum"), "rev-parse", "HEAD") == approved
     assert not git("-C", str(ROOT / "argentum"), "status", "--porcelain")
@@ -34,7 +34,7 @@ def main():
     assert not git("diff", "ae41683281b63286585ddb287b48f8a7b9ed586d", "46b2e98e5a534221478206a14698312b6166d22e", "--", "cli")
     assert full["native"]["tests"] == 7507 and full["application"]["tests"] == 457
     assert read(REF / "approved-application.json")["tests"] == 457
-    assert text_hash(ROOT / "scripts/engine-candidate.init.gradle") == full["initFileSha256Utf8Lf"]
+    assert text_hash(REF / "engine-candidate.init.gradle") == full["initFileSha256Utf8Lf"]
     manifests = {stage: read(base / stage / "build-configuration.json") for stage in ["before", "after"]}
     assert manifests["before"]["actualRuntimeEngineRevision"] == approved
     assert manifests["after"]["actualRuntimeEngineRevision"] == candidate["candidateRevision"]

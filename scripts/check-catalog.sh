@@ -19,4 +19,4 @@ done
 "$cli" audit coverage --snapshot "$out/judith-c.json" --json --output "$out/coverage.json"
 "$cli" audit inconsistencies --snapshot "$out/judith-c.json" --benchmark benchmark/phase25/review-fork-v1.json --json --output "$out/examination.json"
 "$cli" audit diff --before "$out/judith-a.json" --after "$out/judith-a.json" --json --output "$out/diff-identical.json"
-python3 scripts/compare-baseline.py "$out" reference/fork-foundation/catalog-baseline.json
+"${PYTHON:-python3}" scripts/compare-baseline.py "$out" reference/fork-foundation/catalog-baseline.json

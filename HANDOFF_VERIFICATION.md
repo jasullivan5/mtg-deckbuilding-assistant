@@ -1,8 +1,10 @@
 # Recorded verification and adoption
 
+> Historical exact-pin transition record. Normal dependency selection now follows the sibling app-stable [workflow](docs/ENGINE_WORKFLOW.md). Commands, pins and receipts below describe their original recorded checkouts, not current setup requirements.
+
 These are recorded results from the fork transition, not tests rerun by the documentation-maintenance assignment. Application [PR #9](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/9) was merged by the owner on 2026-10-29 at `088f5c4e8c352816fad0e26660f6cbec23d89ef7`. Its latest `verify` job [succeeded](https://github.com/jasullivan5/mtg-deckbuilding-assistant/actions/runs/40813458391/job/123248940586); that workflow runs the fast gate, not the entire native suite or catalog matrix.
 
-[ARGENTUM_COMMIT](ARGENTUM_COMMIT) now adopts `4133241856227d1d36269e92aaba633bbaf93f5c` from our fork. The preceding approved revision was `ebf5bf2e9fbb80d13a556d75491dd462e10c206f`. Engine code/test sources at the adopted revision match the original tested correction `57aa530bca47e2c36aa37092958c7d283cf11ed3`; only fork guidance differs.
+[historical ARGENTUM_COMMIT](reference/fork-foundation/ARGENTUM_COMMIT) now adopts `4133241856227d1d36269e92aaba633bbaf93f5c` from our fork. The preceding approved revision was `ebf5bf2e9fbb80d13a556d75491dd462e10c206f`. Engine code/test sources at the adopted revision match the original tested correction `57aa530bca47e2c36aa37092958c7d283cf11ed3`; only fork guidance differs.
 
 | Recorded transition check | Outcome | Compact receipt |
 |---|---|---|

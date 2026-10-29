@@ -1,38 +1,33 @@
+param([switch]$Update)
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path $PSScriptRoot -Parent
-$Sha = (Get-Content (Join-Path $Root 'ARGENTUM_COMMIT') -Raw).Trim()
-$SourceDir = Join-Path $Root 'argentum'
+$SourceDir = if ($env:ARGENTUM_ENGINE_DIR) { [IO.Path]::GetFullPath($env:ARGENTUM_ENGINE_DIR) } else { Join-Path (Split-Path $Root -Parent) 'argentum-engine' }
 $Repository = 'https://github.com/jasullivan5/argentum-engine.git'
-if ($Sha -notmatch '^[0-9a-f]{40}$') { throw 'ARGENTUM_COMMIT must be an exact lowercase commit SHA.' }
 function Git-Checked { & git @args; if ($LASTEXITCODE -ne 0) { throw "Git failed: $args" } }
-Get-Command git -ErrorAction Stop | Out-Null
-Get-Command java -ErrorAction Stop | Out-Null
-$JavaVersion = (& java --version | Out-String)
-if ($JavaVersion -notmatch '(?m)^(openjdk|java) 21[. ]') { throw 'JDK 21 is required. Set JAVA_HOME and PATH.' }
-if (-not (Test-Path $SourceDir)) {
-    New-Item -ItemType Directory $SourceDir | Out-Null
-    Git-Checked -C $SourceDir init
-    Git-Checked -C $SourceDir remote add origin $Repository
+Get-Command git,java -ErrorAction Stop | Out-Null
+if ((& java --version | Out-String) -notmatch '(?m)^(openjdk|java) 21[. ]') { throw 'JDK 21 is required. Set JAVA_HOME and PATH.' }
+if (-not (Test-Path -LiteralPath $SourceDir)) {
+    if ($env:ARGENTUM_CANDIDATE_REVISION) { throw 'Candidate checkout must already exist.' }
+    Git-Checked clone --branch app-stable --single-branch $Repository $SourceDir
 }
-$Top = (& git -C $SourceDir rev-parse --show-toplevel 2>$null)
-if ($LASTEXITCODE -ne 0 -or [IO.Path]::GetFullPath($Top) -ne [IO.Path]::GetFullPath($SourceDir)) {
-    throw 'argentum must be its own Git checkout.'
+$Top = Git-Checked -C $SourceDir rev-parse --show-toplevel
+if ([IO.Path]::GetFullPath($Top) -ne [IO.Path]::GetFullPath($SourceDir)) { throw 'Engine path must be its own Git checkout.' }
+if ([IO.Path]::GetFullPath($SourceDir) -eq [IO.Path]::GetFullPath((Join-Path $Root 'argentum'))) { throw 'The retired nested argentum checkout is not the application dependency.' }
+$Remote = Git-Checked -C $SourceDir config --get remote.origin.url
+if ($Remote -notin @($Repository,'https://github.com/jasullivan5/argentum-engine','git@github.com:jasullivan5/argentum-engine.git')) { throw 'Engine origin must be the maintained fork; no origin was changed.' }
+if (Git-Checked -C $SourceDir status --porcelain) { throw 'Engine has local changes; preserve them and use a clean app-stable checkout.' }
+$Current = Git-Checked -C $SourceDir rev-parse HEAD
+if ($env:ARGENTUM_CANDIDATE_REVISION) {
+    if ($env:ARGENTUM_CANDIDATE_REVISION -notmatch '^[0-9a-f]{40}$' -or $Current -ne $env:ARGENTUM_CANDIDATE_REVISION) { throw 'Candidate revision must identify this exact clean checkout.' }
+    if ($Update) { throw 'Candidate validation never updates the checkout.' }
+    Write-Host "Explicit candidate validation: $Current"
+} else {
+    $Branch = Git-Checked -C $SourceDir branch --show-current
+    if ($Branch -ne 'app-stable') { throw 'Engine must be on app-stable. Preserve feature work in a worktree; setup never switches existing branches.' }
+    if ($Update) {
+        Git-Checked -C $SourceDir fetch origin app-stable
+        Git-Checked -C $SourceDir merge --ff-only origin/app-stable
+        $Current = Git-Checked -C $SourceDir rev-parse HEAD
+    }
+    Write-Host "Argentum app-stable ready: $Current ($SourceDir)"
 }
-$Current = (& git -C $SourceDir rev-parse --verify HEAD 2>$null)
-if ($LASTEXITCODE -ne 0) { $Current = $null }
-if ($Current -and $Current -ne $Sha) { throw "Wrong Argentum revision. Use a separate pinned checkout; no changes were made." }
-if (& git -C $SourceDir status --porcelain) { throw 'Refusing a modified Argentum checkout.' }
-$Remote = Git-Checked -C $SourceDir remote get-url origin
-if ($Remote -in @('https://github.com/wingedsheep/argentum-engine.git','https://github.com/wingedsheep/argentum-engine','git@github.com:wingedsheep/argentum-engine.git')) {
-    Git-Checked -C $SourceDir remote set-url origin $Repository
-} elseif ($Remote -notin @($Repository,'https://github.com/jasullivan5/argentum-engine','git@github.com:jasullivan5/argentum-engine.git')) {
-    throw 'Argentum origin must point to our canonical fork; configure it explicitly.'
-}
-Git-Checked -C $SourceDir config core.longpaths true
-if ($Current -ne $Sha) {
-    if (& git -C $SourceDir status --porcelain) { throw 'Refusing to switch a modified checkout.' }
-    Git-Checked -C $SourceDir fetch --depth 1 origin $Sha
-    Git-Checked -C $SourceDir checkout --detach $Sha
-}
-if (& git -C $SourceDir status --porcelain) { throw 'Argentum source files are modified.' }
-Write-Host "Argentum ready: $Sha"

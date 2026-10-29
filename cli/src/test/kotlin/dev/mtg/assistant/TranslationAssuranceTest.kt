@@ -73,12 +73,12 @@ class TranslationAssuranceTest : FunSpec({
         }
     }
     val catalog by lazy { Catalog() }
-    test("historical evidence stays current with one explicit blocked engine concern and upstream unassessed") {
+    test("historical evidence retains its implementation binding with one blocked concern and upstream unassessed") {
         Extensions.all.size shouldBe 22
         Extensions.all.forEach { ext ->
             val a=catalog.translationAssurance(ext.definition.name)!!
             a.qualification shouldBe if(ext.definition.name==Tatterkite.name) QualificationState.BLOCKED else QualificationState.PROVISIONAL
-            a.evidenceCurrent shouldBe true
+            a.evidenceCurrent shouldBe EngineBuild.evidenceCompatible(a.evidence!!.argentumCommit)
             a.evidence!!.independentApproval shouldBe null
         }
         catalog.translationAssurance("Forest") shouldBe null
