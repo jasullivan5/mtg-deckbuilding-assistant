@@ -6,21 +6,44 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+defaults:
+  run:
+    working-directory: mtg-deckbuilding-assistant
 jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: mtg-deckbuilding-assistant
+      - uses: actions/checkout@v4
+        with:
+          repository: jasullivan5/argentum-engine
+          ref: app-stable
+          path: argentum-engine
+      - name: Record resolved stable revision
+        run: |
+          echo "Engine app-stable: $(git -C ../argentum-engine rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          git -C ../argentum-engine branch --show-current
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
           cache: gradle
           cache-dependency-path: |
-            ARGENTUM_COMMIT
-            gradle/wrapper/gradle-wrapper.properties
-            cli/build.gradle.kts
+            argentum-engine/gradle/libs.versions.toml
+            mtg-deckbuilding-assistant/gradle/wrapper/gradle-wrapper.properties
+            mtg-deckbuilding-assistant/cli/build.gradle.kts
       - run: bash scripts/bootstrap.sh
+      - run: python3 scripts/test-bootstrap.py
       - run: python3 scripts/test-oracle-snapshot.py
-      - run: bash scripts/verify.sh fast
+      - run: ./dev test
+      - name: Preserve engine provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: engine-build-and-tests
+          path: |
+            mtg-deckbuilding-assistant/cli/build/generated/engine-resources/
+            mtg-deckbuilding-assistant/cli/build/reports/tests/

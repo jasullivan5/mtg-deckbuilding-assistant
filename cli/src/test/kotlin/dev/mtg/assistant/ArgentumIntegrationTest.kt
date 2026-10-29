@@ -16,8 +16,12 @@ class ArgentumIntegrationTest : FunSpec({
     val catalog by lazy { Catalog() }
 
     test("real authored catalog is discovered and registered") {
-        val root=if(Files.exists(Path.of("ARGENTUM_COMMIT"))) Path.of(".") else Path.of("..")
-        Files.readString(root.resolve("ARGENTUM_COMMIT")).trim() shouldBe ARGENTUM_SHA
+        val root=if(Files.exists(Path.of("argentum.init.gradle"))) Path.of(".") else Path.of("..")
+        val engine=System.getenv("ARGENTUM_ENGINE_DIR")?.let(Path::of) ?: root.resolve("../argentum-engine")
+        val git=ProcessBuilder("git","-C",engine.toAbsolutePath().normalize().toString(),"rev-parse","HEAD").start()
+        git.inputStream.bufferedReader().readText().trim() shouldBe ARGENTUM_SHA
+        git.waitFor() shouldBe 0
+        EngineBuild.revision shouldBe ARGENTUM_SHA
         (catalog.setCount > 1) shouldBe true
         (catalog.cards.size > 100) shouldBe true
         catalog.card("Lightning Bolt")!!.name shouldBe "Lightning Bolt"

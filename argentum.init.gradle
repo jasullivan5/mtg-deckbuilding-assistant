@@ -1,7 +1,24 @@
-// Add our external module without editing the pinned upstream checkout.
-def foundation = new File(initscript.sourceFile.parentFile, '.')
+// Attach the application to the sibling engine; validate callers bypassing dev.
+def foundation = initscript.sourceFile.parentFile.canonicalFile
+def configuredEngine = System.getenv('ARGENTUM_ENGINE_DIR')
+def engine = (configuredEngine ? new File(configuredEngine) : new File(foundation.parentFile, 'argentum-engine')).canonicalFile
 settingsEvaluated { settings ->
-    if (settings.settingsDir.canonicalFile != new File(foundation, 'argentum').canonicalFile) return
+    if (settings.settingsDir.canonicalFile != engine) return
+    def git = { List args ->
+        def p = new ProcessBuilder(['git', '-C', engine.path] + args).redirectErrorStream(true).start()
+        def text = p.inputStream.getText('UTF-8').trim()
+        if (p.waitFor() != 0) throw new GradleException(text)
+        text
+    }
+    if (engine == new File(foundation, 'argentum').canonicalFile) throw new GradleException('Nested dependency is retired')
+    if (git(['config','--get','remote.origin.url']) !in ['https://github.com/jasullivan5/argentum-engine.git','https://github.com/jasullivan5/argentum-engine','git@github.com:jasullivan5/argentum-engine.git']) throw new GradleException('Unexpected engine origin')
+    if (git(['status','--porcelain'])) throw new GradleException('Engine checkout has local changes')
+    def sha = git(['rev-parse','HEAD'])
+    def candidate = System.getenv('ARGENTUM_CANDIDATE_REVISION')
+    if (candidate) {
+        if (!(candidate ==~ /[0-9a-f]{40}/) || sha != candidate) throw new GradleException('Candidate revision mismatch')
+    } else if (git(['branch','--show-current']) != 'app-stable') throw new GradleException('Normal engine checkout must be on app-stable')
+    println "APPLICATION ENGINE: ${sha}; mode=${candidate ? 'explicit candidate' : 'app-stable'}"
     settings.include(':assistant-cli')
     settings.project(':assistant-cli').projectDir = new File(foundation, 'cli')
 }

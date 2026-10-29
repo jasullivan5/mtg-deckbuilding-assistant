@@ -82,8 +82,10 @@ class EligibilityCorrectionsTest : FunSpec({
     test("changed source snapshot invalidates approval") {
         val p=plan();invalid(p.copy(context=p.context.copy(snapshotSha256="b".repeat(64))))
     }
-    test("changed upstream revision invalidates approval") {
-        val p=plan();invalid(p.copy(context=p.context.copy(argentumCommit="b".repeat(40))))
+    test("historical engine revision does not invalidate unchanged source and definition bindings") {
+        val p=plan();val historical=p.copy(context=p.context.copy(argentumCommit="b".repeat(40)))
+        resolve(p=historical).identity shouldBe resolve(p=p).identity
+        invalid(p.copy(context=p.context.copy(argentumCommit="invalid-revision")))
     }
     test("source disagreement or unsupported corrected values fail closed") {
         val p=plan();invalid(p.copy(currentSources=p.currentSources.map { it.copy(colorIdentity=listOf("U")) }))

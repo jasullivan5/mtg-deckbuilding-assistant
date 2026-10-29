@@ -25,11 +25,12 @@ import java.security.MessageDigest
     val cards: List<CardEvaluation>,val unreviewedAcceptedPathways: List<ResultEvidence>,
     val limitations: List<String> = listOf("Source-led reviewed sample, not corpus recall or an independently adjudicated human gold standard.",
         "Unreviewed accepted paths are suspected review gaps, never confirmed false positives. Mapping ambiguity and unsupported evidence are explicit.",
-        "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."))
+        "Mechanical compatibility is conditional existential potential. Counts distinguish policy, source uncertainty, missing extraction and incomplete explanations."),
+    val reviewArgentumCommit: String? = null, val discoveryArgentumCommit: String? = null)
 internal val auditReader=Json { ignoreUnknownKeys=true }
 fun readBenchmark(file: Path): ReviewedBenchmark {
     val review=auditReader.decodeFromString<ReviewedBenchmark>(Files.readString(file))
-    require(review.argentumCommit==ARGENTUM_SHA) { "Benchmark Argentum pin mismatch" }
+    require(review.argentumCommit.matches(Regex("[0-9a-f]{40}"))) { "Invalid benchmark revision provenance" }
     require(review.cases.map { it.id }.distinct().size==review.cases.size) { "Duplicate benchmark case ID" }
     require(review.cases.all { it.mapping in setOf("EXACT","PREFIX","ABSENT") }) { "Unsupported benchmark mapping" }
     return review
@@ -119,7 +120,8 @@ fun evaluateBenchmark(report: DiscoveryReport,review: ReviewedBenchmark,sha256: 
             "confirmed_mechanical_positive_recovered" to mechanical.count { x -> x.actual.any { mechanicalVerdict(it)==Verdict.MATCH } },
             "confirmed_mismatch_cases" to rows.count { it.status=="CONFIRMED_MISMATCH" },"unresolved_cases" to rows.count { it.status=="UNRESOLVED" },
             "suspected_or_incomplete_cases" to rows.count { it.issues.any { i -> i.certainty=="SUSPECTED_MISMATCH" } },"unreviewed_accepted_paths" to unreviewed.size,
-            "unknown_boundaries_preserved" to confirmed.count { it.expected.expectedMechanical==Verdict.UNKNOWN && it.actual.isNotEmpty() && it.actual.all { r -> mechanicalVerdict(r)==Verdict.UNKNOWN } }),rows,cards,unreviewed)
+            "unknown_boundaries_preserved" to confirmed.count { it.expected.expectedMechanical==Verdict.UNKNOWN && it.actual.isNotEmpty() && it.actual.all { r -> mechanicalVerdict(r)==Verdict.UNKNOWN } }),rows,cards,unreviewed,
+        reviewArgentumCommit=review.argentumCommit,discoveryArgentumCommit=report.argentumCommit)
 }
 fun evaluateBenchmark(report: DiscoveryReport,file: Path): BenchmarkReport = evaluateBenchmark(report,readBenchmark(file),
     MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)).joinToString("") { "%02x".format(it) })

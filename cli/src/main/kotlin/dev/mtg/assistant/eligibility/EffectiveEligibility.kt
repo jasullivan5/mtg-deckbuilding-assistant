@@ -64,7 +64,12 @@ class EligibilityResolver(cards: List<CardDefinition>, val plan: CorrectionPlan?
         val output=mutableMapOf<String,EffectiveEligibility>()
         if(plan!=null) {
             require(plan.schemaVersion==1 && plan.context.algorithm==IDENTITY_ALGORITHM) { "Unsupported correction plan/identity algorithm" }
-            require(plan.context.argentumCommit==revision && plan.context.snapshotSha256==plan.snapshot.sha256) { "Correction source snapshot or revision mismatch; review required" }
+            // Revision is provenance. Reusable source metadata is guarded below by
+            // physical identity, native definition, field values and both snapshots.
+            // An unrelated engine correction must not turn reviewed legality into a pin gate.
+            require(plan.context.argentumCommit.matches(Regex("[0-9a-f]{40}")) &&
+                revision.matches(Regex("[0-9a-f]{40}")) &&
+                plan.context.snapshotSha256==plan.snapshot.sha256) { "Correction source snapshot or revision provenance invalid; review required" }
             require(plan.snapshot.updatedAt.isNotBlank() && plan.snapshot.sourceUri.startsWith("https://api.scryfall.com/bulk-data")) { "Missing correction source provenance" }
             require(plan.sources.map { it.oracleId }.distinct().size==plan.sources.size && plan.currentSources.map { it.oracleId }.distinct().size==plan.currentSources.size) { "Duplicate correction source identities" }
             require(plan.corrections.map { it.id }.distinct().size==plan.corrections.size &&

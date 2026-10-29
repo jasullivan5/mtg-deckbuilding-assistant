@@ -11,5 +11,6 @@ __pycache__/
 .env.*
 /REPOSITORY_STATE.json
 /verification/handoff/*.log
+# Paused Explorer work may leave ignored build/dependency artifacts across branches.
 /explorer/node_modules/
 /explorer/dist/

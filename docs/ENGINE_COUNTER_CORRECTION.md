@@ -1,5 +1,7 @@
 # Fork foundation: current development workflow
 
+> Historical exact-pin transition record. Normal dependency selection now follows the sibling app-stable [workflow](ENGINE_WORKFLOW.md). Commands, pins and receipts below describe their original recorded checkouts, not current setup requirements.
+
 **Adoption status, 2026-10-29:** the owner merged [application PR #9](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/9) at `088f5c4e8c352816fad0e26660f6cbec23d89ef7`; its latest `verify` check passed. The application now adopts `4133241856227d1d36269e92aaba633bbaf93f5c`. Transition receipts below remain frozen historical execution records. The persisted Tatterkite concern still needs a separate adopted-revision resolution review; no verdict or independent qualification is changed by documentation maintenance.
 
 Ordinary development uses a branch in the existing primary application or engine checkout. A new branch alone does not require a worktree. Use temporary isolation for simultaneous revisions/candidate builds; reuse suitable clean checkouts, preserve evidence and remove ended worktrees only after consumer/status/process checks. The pinned dependency and engine development checkout have different roles even if they share Git storage. See [everyday workflow](../README.md#everyday-workflow-and-documentation-ownership).

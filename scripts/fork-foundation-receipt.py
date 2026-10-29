@@ -24,7 +24,7 @@ def main():
     parser.add_argument("--validation-root",type=pathlib.Path,required=True)
     parser.add_argument("--output-base",type=pathlib.Path,default=ROOT/"generated/fork-foundation")
     args=parser.parse_args();base=args.output_base;validation=args.validation_root.resolve()
-    pin=(ROOT/"ARGENTUM_COMMIT").read_text(encoding="utf-8").strip()
+    pin=(ROOT/"reference/fork-foundation/ARGENTUM_COMMIT").read_text(encoding="utf-8").strip()
     engine=validation/"argentum"
     assert git(engine,"rev-parse","HEAD")==pin
     assert git(engine,"remote","get-url","origin")==FORK+".git"

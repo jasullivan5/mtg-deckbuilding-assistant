@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-29",
+  "scope": "Sibling app-stable migration; Explorer paused, not accepted",
+  "testedSourceCommit": "61c0db2a73443de73f84755efb0c665651b5238e",
+  "branch": "feature/sibling-app-stable",
+  "applicationPr": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/12",
+  "enginePr": "https://github.com/jasullivan5/argentum-engine/pull/2",
+  "engineWorkflowCommit": "76ccac60b8c9245e353fd30cc4f204b75de1bfe4",
+  "engineBuild": {
+    "revision": "b58ff3013d795759a7083a658abd0cdd761867f7",
+    "implementationSha256": "7e6236e907d7b0c52bd68dc314b81c2471b35f709dbb766ee89afc4f9d98c679",
+    "mode": "app-stable"
+  },
+  "nativeCodeChanges": false,
+  "applicationTests": {
+    "command": ".\\dev.ps1 test --rerun :assistant-cli:installDist",
+    "suites": 58,
+    "tests": 460,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "setupTests": {
+    "command": "python scripts/test-bootstrap.py (MTG_TEST_SHELL selects Bash or PowerShell)",
+    "gitBash": {
+      "tests": 14,
+      "failures": 0
+    },
+    "powershell": {
+      "tests": 14,
+      "failures": 0
+    },
+    "cases": "reuse, no-pin stable commit, dirty/untracked preservation, wrong/detached branch, origin, exact candidate, worktree git-file, retired nested path, non-Git path, clone, fast-forward, divergence"
+  },
+  "nativeTests": {
+    "command": "bash scripts/gradle-locked --no-daemon --no-configuration-cache --max-workers=2 -PkotlinCompileParallelism=1 -Pkotlin.daemon.jvmargs=-Xmx4g :rules-engine:test --tests *CollectionCounterPlacementTest",
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "wholeNativeSuiteExecutedLocally": false
+  },
+  "catalog": {
+    "command": "bash scripts/check-catalog.sh",
+    "passed": true,
+    "actualEngineCommit": "b58ff3013d795759a7083a658abd0cdd761867f7",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only top-level runtime revision and fork native source URL revision; historical evidence bindings untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptRuntimeProvenance": true,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    },
+    "reportSha256": {
+      "judith-a": "cabcd9c6097d34e4ddd733b86e9a5359d67e58d35dbd241c3e040a89a45c3182",
+      "judith-b": "6e01d62045ededcd83aa3ad276f10c3f8e1cedd32442c75e5d521b3b393ad2b0",
+      "judith-c": "496e62e6adbe0be8e7a282b5dbb80f8b6797534780636b417759eb5ff567bf63",
+      "krenko-a": "c4f39b2f338816f411332dae388b7862a6fa10dd1d0ee00227c01a25a37b4f97",
+      "krenko-b": "caed0d31d54d44111c9b9e4ef9583e1c97ad567c56b561025f4da9d75ce6480e",
+      "krenko-c": "e58829ed1fb32578819720559b1e4589cbc430bd7930e81599cead33dd199dd9"
+    }
+  },
+  "installedRuntime": {
+    "batchStats": "passed from actual spaces-and-ampersand path",
+    "commanderInspection": "Judith selectable; actual engine SHA separate from original assurance revision",
+    "outsideRepositoryStats": "passed from temp directory using packaged distribution",
+    "assistantCliJarSha256": "f74074d227cfe109b83a7913b7aa018fb3e2940e0d13e8a1f665ae601f5a3f27"
+  },
+  "earlierFailures": {
+    "tests": 459,
+    "failures": 69,
+    "messages": {
+      "java.lang.IllegalArgumentException: Correction source snapshot or implementation mismatch; review required": 60,
+      "org.opentest4j.AssertionFailedError: expected:<0> but was:<2>": 4,
+      "org.opentest4j.AssertionFailedError: \"Correction source snapshot or implementation mismatch; review required\" should include substring \"Not a supported commander\"\nexpected:<Not a supported commander> but was:<Correction source snapshot or implementation mismatch; review required>": 1,
+      "java.lang.IllegalArgumentException: Benchmark engine implementation mismatch; revalidation required": 3,
+      "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>": 1
+    },
+    "cause": "Generated build metadata used the earlier fingerprint definition while the concurrently edited evidence resource used the final definition; corrected by consistent rebuild, no frozen expectations changed",
+    "otherAttempts": "Launcher ampersand/CRLF bugs corrected. An early catalog run overlapped installDist and failed while its JAR was replaced; final sequential catalog run passed."
+  },
+  "preserved": "Frozen benchmark expectations, translation ledger, eligibility approval data, native definitions and source snapshots unchanged. Historical pin and candidate init retained under reference/.",
+  "hostedCIAtReceipt": {
+    "application": "Verify run 40939819040 still in progress; no hosted pass claimed",
+    "engine": "Both repositories confirmed public; no token secret needed. Dispatched run 40941410737 tests this engine feature against application_ref=feature/sibling-app-stable and is in progress. Ordinary engine PR check deliberately requires the migration on application main first.",
+    "earlierAccessFailure": "Initial checkout failed while application was private. User made it public; workflow token requirement removed.",
+    "settings": "User changed application visibility. Agent did not merge or change branch protection."
+  },
+  "pausedExplorer": {
+    "branch": "feature/explorer-m1",
+    "commit": "a35b9b5",
+    "status": "Partial WIP; not completed or accepted"
+  },
+  "limits": [
+    "Fresh local verification is Windows/JDK 21.",
+    "Historical qualifications/concerns unchanged, not independent certification.",
+    "Permanent ChatGPT Project guidance is outside these repositories and may need the workflow update."
+  ]
+}

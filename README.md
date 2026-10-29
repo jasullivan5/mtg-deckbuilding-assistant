@@ -11,7 +11,7 @@ The approved next direction is an independent React / TypeScript / Vite Commande
 - [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics, including the planned research frontend and local API integration.
 - [Our Argentum fork](https://github.com/jasullivan5/argentum-engine) owns engine/SDK changes and native mechanical regressions. Its default `app-stable` is the normal development base; `main` tracks the [original project](https://github.com/wingedsheep/argentum-engine) for comparison only. Internal engine PRs target `app-stable`; upstream PRs require explicit user authorization.
 
-The application adopts only the exact reviewed revision in [ARGENTUM_COMMIT](ARGENTUM_COMMIT). PR #9 was merged by the owner on 2026-10-29, adopting `4133241856227d1d36269e92aaba633bbaf93f5c`. Later engine branch changes do not update this dependency. See [engine integration and upstream review](docs/ENGINE_COUNTER_CORRECTION.md).
+The application uses the sibling `../argentum-engine` checkout on the maintained fork's `app-stable` branch. Engine corrections require native and application compatibility checks before acceptance there. Each application build and research result records the actual engine SHA; no separate dependency-pin approval is required. See [engine workflow](docs/ENGINE_WORKFLOW.md). The earlier exact-pin transition is preserved as [historical evidence](docs/ENGINE_COUNTER_CORRECTION.md).
 
 ## Implemented discovery
 
@@ -27,7 +27,7 @@ For a supported single, fixed-identity commander, discovery checks Commander leg
 
 ## Setup and verification
 
-Install Git, JDK 21, Bash and Python 3; set `JAVA_HOME` and its `bin` on `PATH`. Gradle dependencies require network access. Setup retrieves a separate clean `argentum/` dependency checkout from our fork; it is not the engine development branch. No server, database or API key is required.
+Install Git, JDK 21, Bash and Python 3; set `JAVA_HOME` and its `bin` on `PATH`. Gradle dependencies require network access. Setup creates the sibling `argentum-engine/` on app-stable if absent, or validates and reuses it. No server, database or API key is required.
 
 ```bash
 bash scripts/bootstrap.sh
@@ -46,7 +46,7 @@ PowerShell entry points:
 .\dev.ps1 installDist
 ```
 
-Use `dev`/`dev.ps1`, not root `gradlew test`: the pinned engine owns the Gradle settings. Setup refuses wrong revisions, dirty source and unrelated origins. It never silently switches an existing dependency. For a deliberate adopted-pin transition, inspect and preserve the current checkout and linked worktrees before explicitly changing the clean dependency to the exact adopted commit; then rerun setup. Simultaneous old/new validation warrants a temporary checkout. See [environment prerequisites](docs/CODEX_ENVIRONMENT.md) and [recorded verification](HANDOFF_VERIFICATION.md).
+Use `dev`/`dev.ps1`, not root `gradlew test`: the sibling engine owns the Gradle settings. Setup refuses wrong branches, dirty source and unrelated origins. Existing work is never switched or overwritten. To obtain newly merged stable changes explicitly, run `.\scripts\setup.ps1 -Update` or `bash scripts/setup.sh --update`; updates are fast-forward only. See [environment prerequisites](docs/CODEX_ENVIRONMENT.md) and [engine workflow](docs/ENGINE_WORKFLOW.md).
 
 ```bash
 cli/build/install/mtg-assistant/bin/mtg-assistant commander inspect 'Judith, the Scourge Diva' --json
@@ -62,7 +62,7 @@ For example, from the application root in PowerShell:
 .\cli\build\install\mtg-assistant\bin\mtg-assistant.bat discover --commander 'Judith, the Scourge Diva' --objective create-creature-tokens --json --output generated/judith-tokens.json
 ```
 
-Run these commands from the application checkout. Keep the application and primary engine-development checkouts as independent siblings; the application's ignored nested `argentum/` remains its exact pinned build dependency. Paths may contain spaces and `&`: quote full paths, use `Set-Location -LiteralPath 'path/to/application'` in PowerShell or `cd '/path/to/application'` in Bash, and use PowerShell's `& 'path/to/launcher.bat'` when invoking a quoted executable path. No temporary drive alias is required.
+Run these commands from the application checkout. Keep application and engine as independent siblings; the engine normally stays on app-stable. The old ignored nested `argentum/` is retained but unused. Paths may contain spaces and `&`: quote paths and use `Set-Location -LiteralPath` in PowerShell. No temporary drive alias is required.
 
 ## Everyday workflow and documentation ownership
 
