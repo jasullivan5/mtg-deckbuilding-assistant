@@ -53,4 +53,3 @@ The interface is part of the research system; presentation must preserve the und
 - Distinguish source-derived expectations, previously recorded execution, freshly executed engine scenarios and mock/illustrative data. Never depict fictional state transitions as observed execution. Explain findings in readable MTG terms with access to native mechanics and supporting evidence.
 
 Read [architecture](docs/ARCHITECTURE.md), [authoring](docs/COMMANDER_AUTHORING.md), [assurance](docs/TRANSLATION_RELIABILITY.md) and [recorded verification](HANDOFF_VERIFICATION.md) as needed. Keep detailed guidance there. Permanent ChatGPT Project references (`01_VISION_AND_DECKBUILDING_THEORY_v2.0.md`, `02_EVIDENCE_ENGINEERING_AND_EXPERIENCE_v2.0.md` and Project Instructions v3.0) own enduring vision, research principles and experience standards; do not duplicate them here. This repository owns application implementation; the fork owns engine/SDK detail and native regressions.
-

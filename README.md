@@ -83,4 +83,3 @@ ChatGPT Project references own long-term vision and research principles. This re
 - [Authoring](docs/COMMANDER_AUTHORING.md), [translation reliability](docs/TRANSLATION_RELIABILITY.md), [eligibility](docs/ELIGIBILITY_CORRECTIONS.md), [identity observations](docs/ORACLE_IDENTITY.md).
 - [Coverage](docs/CARD_COVERAGE.md), [limitations](KNOWN_LIMITATIONS.md), [third-party notices](THIRD_PARTY_NOTICES.md).
 - [Historical entry-point text](docs/history/PRE_CONSOLIDATION_HANDOFF.md) and [Phase 2.5 implementation](docs/history/PHASE2_5_IMPLEMENTATION.md). Historical counts, ZIP/publication instructions and suggested tasks are not current assignments.
-

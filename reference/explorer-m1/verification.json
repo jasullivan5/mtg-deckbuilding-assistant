@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "status": "READY_FOR_PROTOTYPE_LAB_NOT_ACCEPTED",
+  "pr": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/13",
+  "branch": "feature/explorer-m1",
+  "testedApplicationRevision": "9e187e074f52346ec5b6ca48f61a59d4437254c9",
+  "preservedFoundation": "a35b9b5",
+  "reconciliationCommit": "aa0f497",
+  "applicationMain": "b66dd0db78ef62cc2db0002561f6c5b2e72dc6e9",
+  "engineBranch": "app-stable",
+  "engineRevision": "e46fab1475ddc6f355e1c8fdc770b12bdc697b0f",
+  "engineChanged": false,
+  "environment": {
+    "jdk": "21",
+    "browser": "installed Chrome, headless Playwright 1.62.1",
+    "shell": "PowerShell 7",
+    "pnpm": "11.25.0",
+    "node": "24.22.1",
+    "os": "Windows"
+  },
+  "kotlin": {
+    "elapsed": "3m 19s",
+    "focused": "Five ExplorerServerTest cases also passed after startup diagnostics; final full run includes these again.",
+    "command": ".\\dev.ps1 test --rerun",
+    "exitCode": 0,
+    "results": {
+      "suites": 59,
+      "tests": 465.0,
+      "failures": 0.0,
+      "errors": 0.0,
+      "skipped": 0.0,
+      "earliest": "2026-10-29T23:18:42.836Z",
+      "latest": "2026-10-29T23:21:34.253Z"
+    },
+    "parity": "Every serialized DiscoveryReport field agrees with fresh CLI output for all three objectives; selected-card records compared field-by-field."
+  },
+  "frontend": {
+    "build": "pnpm install --frozen-lockfile; pnpm build, through scripts/explorer.ps1",
+    "screenshotsVisuallyInspected": true,
+    "live": {
+      "command": "EXPLORER_URL=http://127.0.0.1:8787 EXPLORER_BROWSER_CHANNEL=chrome pnpm test:live",
+      "stats": {
+        "startTime": "2026-10-29T23:17:08.496Z",
+        "duration": 27956.211000000003,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "interactions": [
+        "Judith tokens; Bitterblossom evidence/prerequisites",
+        "Changed objective to reanimation with distinct run ID",
+        "Changed commander to Oviya; genuine changed findings",
+        "Rejected Murder without fallback",
+        "390px keyboard navigation and blocked feedback; no horizontal overflow"
+      ]
+    },
+    "fixtures": {
+      "stats": {
+        "startTime": "2026-10-29T23:16:29.128Z",
+        "duration": 6296.9169999999995,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "command": "pnpm test:ui"
+    },
+    "screenshots": [
+      "generated/explorer/judith-tokens.png",
+      "generated/explorer/mobile-selection.png"
+    ]
+  },
+  "launch": {
+    "catalogStartup": "Observed readiness after catalog loading; not separately timed. Startup can take tens of seconds.",
+    "diagnostics": [
+      "Occupied port detected before builds",
+      "Missing frontend assets reports actionable error",
+      "Packaged Windows .bat --help succeeds"
+    ],
+    "command": ".\\scripts\\explorer.ps1",
+    "healthApplicationRevision": "9e187e074f52346ec5b6ca48f61a59d4437254c9",
+    "buildElapsed": "27s",
+    "buildExitCode": 0,
+    "shutdown": "Ctrl+C; subsequent TCP connection to port 8787 refused"
+  },
+  "measurement": {
+    "applicationRevision": "9e187e074f52346ec5b6ca48f61a59d4437254c9",
+    "engineRevision": "e46fab1475ddc6f355e1c8fdc770b12bdc697b0f",
+    "runId": "c298bf5a-4b2e-4a30-bd73-e9f5edf657d0",
+    "startedAt": "2026-10-29T23:17:50.261312700Z",
+    "nativeDurationMs": 5087,
+    "httpDurationMs": 5285,
+    "summaryBytes": 808720,
+    "selectedCardBytes": 12099,
+    "findingCards": 4579,
+    "counts": {
+      "authored_physical_cards": 17017,
+      "upstream_authored_physical_cards": 16995,
+      "application_extension_physical_cards": 22,
+      "registry_names_including_faces": 17373,
+      "commander_legal_cards": 16652,
+      "format_legality_unknown_cards": 352,
+      "commander_eligible_cards": 6111,
+      "identity_unknown_legal_cards": 697,
+      "mechanical_input_cards_after_conventional_search": 6111,
+      "mechanical_facts": 5631,
+      "token_creation_facts": 648,
+      "accepted_token_creation_pathways": 363,
+      "accepted_token_creation_cards": 346,
+      "unknown_query_pathways": 55,
+      "rejected_token_creation_pathways": 230,
+      "unsupported_structure_records": 8702,
+      "cards_with_unsupported_structures": 4359,
+      "creature_compatible_creation_pathways": 385,
+      "our_controller_compatible_creation_pathways": 376,
+      "accepted_fixed_quantity_pathways": 354,
+      "accepted_dynamic_quantity_pathways": 9
+    },
+    "pathwayCounts": {
+      "MATCH": 363,
+      "NO_MATCH": 230,
+      "UNKNOWN": 55
+    }
+  },
+  "ci": {
+    "application": "in progress at receipt creation; not claimed passed",
+    "run": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/actions/runs/40972353395",
+    "sourceRevision": "9e187e074f52346ec5b6ca48f61a59d4437254c9",
+    "frontend": "passed"
+  },
+  "limitations": [
+    "Only latest in-memory run retained; older evidence URLs expire",
+    "Complete exports remain about 40–49 MB",
+    "No verified card imagery; explicit fallback",
+    "Structural possibility is not gameplay resolution, translation certification or strategic recommendation",
+    "Authored eligible catalog only; unresolved eligibility and unsupported mechanics retained in full export",
+    "Other launch platforms and exhaustive accessibility not tested",
+    "Native engine suite/catalog gate not rerun for this UI-only change; engine unchanged",
+    "M2 and later milestones not started"
+  ],
+  "resolvedVerificationIssues": [
+    "An initial fixture text locator was ambiguous; scoped locator fixed and all four tests rerun successfully",
+    "An initial CLI help check truncated its output pipe; rerun to a file exited zero"
+  ],
+  "artifacts": "Bulk reports, logs and screenshots remain ignored locally; this compact receipt is committed. Subsequent delivery edits are documentation only."
+}
+

@@ -82,4 +82,3 @@ Keep this section brief and record demonstrated readiness separately from accept
 | M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |
 
 Update only decisions that alter the work: *accepted experience, observed gap, changed milestone, or next authorized increment*. Keep detailed technical diagnostics, test receipts and PR history in the corresponding repository records instead of duplicating them here.
-

@@ -1,6 +1,6 @@
 # Explorer M1 — live Commander discovery
 
-M1 is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab only after the checks recorded in the PR; user acceptance remains separate. The preserved foundation at a35b9b5 was reconciled with current main in aa0f497 and extended on feature/explorer-m1.
+M1 is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab with the [recorded checks](../reference/explorer-m1/verification.json); user acceptance remains separate. The preserved foundation at a35b9b5 was reconciled with current main in aa0f497 and extended on feature/explorer-m1.
 
 ## Launch on Windows
 
@@ -85,7 +85,6 @@ HTTP parity compares every serialized DiscoveryReport field with fresh CLI outpu
 
 ## Observed limits
 
-The original full Judith reports were 40–49 MB and contained roughly 4,600–5,400 finding cards. The index/detail approach addresses that measured cost. An early warm token query measured 874 KB summary, 11.6 KB Bitterblossom detail and 4.8 seconds native discovery; readable explanations were refined afterward, so use the final receipt for final measurements. Full exports remain large and are deliberately streamed on request.
+The original full Judith reports were 40–49 MB and contained roughly 4,600–5,400 finding cards. The index/detail approach addresses that measured cost. The final clean-build warm token query measured 808,720 bytes for the summary, 12,099 bytes for Bitterblossom evidence, 5,087 ms native discovery and 5,285 ms complete HTTP. The first live query took 10.6 seconds native discovery; these are workstation observations, not performance guarantees. Full exports remain large and are deliberately streamed on request.
 
 This is structural research over available authored definitions. It is not exhaustive card coverage, a deck editor, strategic scoring, new objectives, scenario execution UI or independently qualified card translation. Source-first concerns and provisional/blocked assurance remain visible.
-
