@@ -39,7 +39,7 @@ python scripts/fork-foundation-receipt.py --validation-root <published-source-ap
 bash scripts/check-catalog.sh
 ```
 
-`fork-foundation-receipt.py` rejects undeclared report changes, preserves all old assurance test references, verifies frozen benchmark expectations and enforces 21 provisional/one blocked with no independent approvals. Bulk output remains ignored. A tooling interruption stopped the first after-run after Oviya coverage/missing reports; its remaining three discovery and three audit-diff commands were resumed against the same distribution and all exited zero. The current catalog gate is separately executed from the normal published-source checkout.
+`fork-foundation-receipt.py` rejects undeclared report changes, preserves all old assurance test references, verifies frozen benchmark expectations and enforces 21 provisional/one blocked with no independent approvals. Bulk output remains ignored. A tooling interruption stopped the first after-run after Oviya coverage/missing reports; its remaining three discovery and three audit-diff commands were resumed against the same distribution and all exited zero. The current catalog gate separately **passed** from the normal published-source checkout: all six complete discovery hashes equal the controlled baseline; all six frozen benchmarks have zero confirmed mismatches; coverage and cross-examination ran; the self-diff is empty. See `reference/fork-foundation/catalog-gate.json`. Four existing local-Git setup fixtures also passed on Windows after their origin/fixture portability updates.
 
 ## Manual upstream review
 
