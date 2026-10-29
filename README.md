@@ -1,111 +1,65 @@
-# Codex development entry point
+# MTG Deckbuilding Assistant
 
-Start with CODEX_HANDOFF.md and AGENTS.md. Current verification status is in HANDOFF_VERIFICATION.md; historical build reports alone are not current evidence. Initial setup: `./scripts/bootstrap.sh`; routine checks: `./scripts/verify.sh fast`; complete tests/catalog checks: `./scripts/verify.sh full`. Use Git branches/commits rather than replacing ZIP history. Architecture: docs/ARCHITECTURE.md; hosted setup: docs/CODEX_ENVIRONMENT.md.
+A Commander deckbuilding research CLI that finds structural mechanical possibilities in native Argentum card definitions. It records eligibility, prerequisites, unsupported structures and evidence rather than recommending decks or claiming that a matching action will resolve successfully.
 
-The original Phase2.5 usage guide follows; historical reports/manifests moved to docs/history. Scripts require Git/JDK21/Bash/Python3; PowerShell setup is retained. Do not use root gradlew test; dev attaches the application module to pinned engine settings.
+The implementation uses Kotlin, JDK 21 and Gradle, with Argentum's native `CardRegistry`, `CardDefinition`, `CardScript`, rules engine and `mtg-search`. The foundation is already selected; this project extends its existing extraction and research tools.
 
-## Engine development foundation
+## Two repositories
 
-Use [our Argentum fork](https://github.com/jasullivan5/argentum-engine), with `app-stable` as the development base/default. Fork `main` tracks the original project for comparison only. Feature/fix work and internal PRs normally target app-stable; upstream PRs are not our workflow. The published modern `fix/collection-counter-placement` branch is historical and remains retained.
+- [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics.
+- [Our Argentum fork](https://github.com/jasullivan5/argentum-engine) owns engine/SDK changes and native mechanical regressions. Its default `app-stable` is the normal development base; `main` tracks the [original project](https://github.com/wingedsheep/argentum-engine) for comparison only. Internal engine PRs target `app-stable`; upstream PRs require explicit user authorization.
 
-The application always fetches the full commit in `ARGENTUM_COMMIT`, never a branch tip. Pin changes are separate reviewed application PRs. Setup retains wrong-revision and dirty-checkout refusal, migrates only the recognized old upstream origin, and rejects unrelated origins. For a different pin, use a fresh application worktree/checkout and bootstrap there; setup deliberately does not switch an existing wrong revision.
+The application adopts only the exact reviewed revision in [ARGENTUM_COMMIT](ARGENTUM_COMMIT). PR #9 was merged by the owner on 2026-10-29, adopting `4133241856227d1d36269e92aaba633bbaf93f5c`. Later engine branch changes do not update this dependency. See [engine integration and upstream review](docs/ENGINE_COUNTER_CORRECTION.md).
 
-Review upstream manually approximately monthly or before an engine phase. Fetch/compare does not authorize integration. Select mechanisms rather than bulk card updates; regression-test candidates before adopting exact commits. **Do not use GitHub's fork-sync UI on default app-stable**: synchronization must explicitly target main. [Current workflow and transition evidence](docs/ENGINE_COUNTER_CORRECTION.md).
+## Implemented discovery
 
-## Phase 2.7 card coverage
+For a supported single, fixed-identity commander, discovery checks Commander legality and the full color-identity subset before examining native mechanics. Optional conventional `mtg-search` narrows that eligible pool.
 
-Commander-scoped Scryfall coverage, bounded missing-card inventories and the verified Krenko's Command/Bitterblossom native translations are documented in [CARD_COVERAGE.md](docs/CARD_COVERAGE.md). Executed counts, the 16-card Assay investigation and regression evidence are in [PHASE2_7_REPORT.md](docs/PHASE2_7_REPORT.md).
+| Objective | Bounded question |
+|---|---|
+| `own-nontoken-creature-deaths` | Direct death generation and separately classified death-enhanced removal |
+| `reanimate-own-creatures` | Direct original creature-card movement from our graveyard to our battlefield |
+| `create-creature-tokens` | Creature-token creation under our control, with quantity/type/controller prerequisites |
 
-# MTG Deckbuilding Assistant — Phase 2.5
+`commander inspect` distinguishes missing definitions, selection blockers and bounded mechanical evidence. Diagnostics cover native structures, frozen benchmarks, report differences, snapshot-based Oracle coverage and missing-card inventories. A structural match, a confident identity association, a passed engine scenario and an independently qualified translation are distinct claims. Provisional research definitions remain accessible; unknowns remain visible. This is not whole-deck validation, exhaustive MTG coverage or strategic ranking.
 
-Kotlin CLI over real Argentum `CardRegistry`, `CardDefinition`, `CardScript`, and `mtg-search`. Continues Phase 2.4 with an exact reviewed engine pin in `ARGENTUM_COMMIT`.
+## Setup and verification
 
-## Setup and startup
-
-Install **Git and JDK 21**, set `JAVA_HOME` and put its `bin` on `PATH`. Setup downloads the exact pinned source from our fork; Gradle downloads dependencies. Allow GitHub, Gradle distribution and Maven access. Expect the full upstream corpus to need several GB of disk and several minutes on the first build. No dependencies or upstream checkout are bundled.
-
-Linux/macOS, from the extracted project root:
+Install Git, JDK 21, Bash and Python 3; set `JAVA_HOME` and its `bin` on `PATH`. Gradle dependencies require network access. Setup retrieves a separate clean `argentum/` dependency checkout from our fork; it is not the engine development branch. No server, database or API key is required.
 
 ```bash
-bash scripts/setup.sh
-chmod +x gradlew dev
-./dev build
+bash scripts/bootstrap.sh
+./dev test
 ./dev installDist
-cli/build/install/mtg-assistant/bin/mtg-assistant card "Judith, the Scourge Diva"
-cli/build/install/mtg-assistant/bin/mtg-assistant search 't:instant c:r mv=1 name:bolt'
-cli/build/install/mtg-assistant/bin/mtg-assistant discover --commander "Judith, the Scourge Diva" --objective create-creature-tokens --json --output generated/judith-tokens.json
+bash scripts/verify.sh fast
+# Full application tests and catalog gate:
+bash scripts/verify.sh full
 ```
 
-Run only tests with `./dev test`. The Gradle-run equivalent is:
-
-```bash
-./dev run --args="discover --commander 'Judith, the Scourge Diva' --objective create-creature-tokens"
-```
-
-Windows PowerShell, after installing Git/JDK21 and setting `JAVA_HOME`:
+PowerShell entry points:
 
 ```powershell
-.\scripts\setup.ps1
-.\dev.ps1 build
+.\scripts\bootstrap.ps1
+.\dev.ps1 test
 .\dev.ps1 installDist
-.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat discover --commander "Krenko, Mob Boss" --objective create-creature-tokens --json --output generated/krenko-tokens.json
 ```
 
-Historical Phase 2.5 verification ran on Linux. The fork-foundation verification also executed Windows PowerShell and Git Bash setup and safeguards, plus the complete application suite on Windows; macOS remains unexecuted. Use `dev`/`dev.ps1`: the wrapper is attached to the pinned engine build through `argentum.init.gradle`, without edits to the pinned engine checkout. On a constrained machine append `-Pkotlin.daemon.jvmargs='-Xmx2g -XX:ActiveProcessorCount=4'` to the build/test command.
-
-## Commander integration
-
-Use `mtg-assistant commander inspect "<exact card name>" [--json]` before discovery. Inspection separates missing pinned definitions, metadata gaps, ineligible cards and unsupported construction from recorded native mechanical test coverage. Judith and Oviya Pashiri, Sage Lifecrafter are application-owned native extensions. See [the commander authoring guide](docs/COMMANDER_AUTHORING.md) for source verification, registration safeguards and engine-test requirements.
-
-## Three objectives
-
-Use the same `discover --commander <exact-name> --objective <objective>` command:
-
-| Objective | Contribution |
-|---|---|
-| `own-nontoken-creature-deaths` | Direct death generators; separate death-enhanced removal |
-| `reanimate-own-creatures` | Direct original creature-card movement from our graveyard to our battlefield |
-| `create-creature-tokens` | Creature-token creation under our control |
-
-All apply Commander legality, then full color-identity subset eligibility. `--search '<native mtg-search query>'` narrows that eligible pool. `--json` exports all decisions, native facts/actions, uncertainty and provenance. Human output lists accepted results; `--diagnostics` includes rejected/unknown paths. Judith remains an application extension and death-event consumer.
-
-A match is **conditional structural potential**, not guaranteed resolution, available targets/resources, complete card support, or strategic desirability. Fixed and variable token counts, source copying, branch conditions and grouped templates remain distinguishable. Noncreature tokens, opponent receivers and zero counts do not satisfy Objective C. Complex copy restrictions and unknown templates stay unknown.
-
-## Diagnostics and reproduction
-
-Using the installed `mtg-assistant` launcher:
+Use `dev`/`dev.ps1`, not root `gradlew test`: the pinned engine owns the Gradle settings. Setup refuses wrong revisions, dirty source and unrelated origins. It never silently switches an existing dependency. For a deliberate adopted-pin transition, inspect and preserve the current checkout and linked worktrees before explicitly changing the clean dependency to the exact adopted commit; then rerun setup. Simultaneous old/new validation warrants a temporary checkout. See [environment prerequisites](docs/CODEX_ENVIRONMENT.md) and [recorded verification](HANDOFF_VERIFICATION.md).
 
 ```bash
-mtg-assistant audit coverage --snapshot generated/judith-tokens.json --json --output generated/coverage.json
-mtg-assistant audit inconsistencies --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-fork-v1.json --json --output generated/examination.json
-mtg-assistant audit benchmark --snapshot generated/judith-tokens.json --benchmark benchmark/phase25/review-fork-v1.json --json --output generated/benchmark.json
-mtg-assistant audit diff --before generated/before.json --after generated/after.json --json --output generated/diff.json
-mtg-assistant audit cross-objective --snapshot generated/objective-a.json --other-snapshot generated/judith-tokens.json --json --output generated/reuse.json
+cli/build/install/mtg-assistant/bin/mtg-assistant commander inspect 'Judith, the Scourge Diva' --json
+cli/build/install/mtg-assistant/bin/mtg-assistant discover --commander 'Judith, the Scourge Diva' --objective create-creature-tokens --json --output generated/judith-tokens.json
 ```
 
-Prefix these example commands with `cli/build/install/mtg-assistant/bin/` if it is not on PATH. The all-colors reviewed-subset benchmark also executes in `Phase25ReportingTest`, so white/blue examples are evaluated without treating Judith/Krenko ineligibility as extractor failure.
+On Windows, use the adjacent `mtg-assistant.bat` launcher. Full generated reports, builds, dependencies and machine-local environment files remain ignored.
 
-The historical Phase 2.5 regeneration commands below require their historical application revision/pin. Current fork verification uses scripts/check-catalog.sh and the fork-bound review-fork-v1.json inputs; the original reviews remain intact.
+## Everyday workflow and documentation ownership
 
-Regenerate the historical full final workflow and compact evidence. To regenerate the all-colors benchmark's JSON side output rather than reuse packaged evidence, run `./dev clean` followed by `./dev test --no-build-cache` first. This cleans only the application module; the pinned upstream outputs remain reusable. A cached test result alone does not recreate this optional side output.
+Use a feature/fix branch from application `main`, or from engine `app-stable` for engine work, in the existing primary checkout. A new branch does not require a worktree. Reserve temporary worktrees for simultaneous revisions, isolated candidate integration, separate build outputs or protecting active work. Reuse a suitable clean checkout where possible. After preserving evidence and checking clean/untracked/unpushed work, active processes and consumers, remove ended temporary worktrees with `git worktree remove` without force; retain their branches/history. Keep ambiguous clones and necessary validation checkouts for review.
 
-```bash
-MTG_REPORT_DIR=generated/phase25/final-verified bash verification/phase2_5/run-reports.sh final
-python3 verification/phase2_5/compact-reports.py
-```
+ChatGPT Project references own long-term vision and research principles. This repository owns current assistant behavior and integration; the fork owns engine/SDK implementation and native tests. Link authoritative detail instead of copying it.
 
-The full workflow's A/B diffs require baseline snapshots. To reproduce those without replacing this project's source:
-
-```bash
-python3 scripts/create-phase24-baseline.py ../mtg-phase24-baseline
-(cd ../mtg-phase24-baseline && ./dev build :assistant-cli:installDist)
-MTG_REPORT_CLI="$(cd ../mtg-phase24-baseline && pwd)/cli/build/install/mtg-assistant/bin/mtg-assistant" MTG_REPORT_DIR=generated/phase25/baseline-pinned bash verification/phase2_5/run-reports.sh baseline
-MTG_REPORT_DIR=generated/phase25/final-verified bash verification/phase2_5/run-reports.sh final
-python3 verification/phase2_5/compact-reports.py
-```
-
-The source-restoration patch is verified against the original Phase2.4 application bytes. It requires Python3 and `patch` (Linux/macOS or Git Bash/WSL). Baseline setup reuses the clean pinned checkout when available. Full reports can be hundreds of MB; `generated/` is deliberately excluded from the delivery. `samples/phase2_5/OUTPUT_MANIFEST.json` records executed output hashes, sizes and regeneration commands. Compact samples preserve counts, identities, verdicts and representative native evidence, not complete snapshots usable directly by `audit diff`.
-
-See `docs/history/PHASE2_5_IMPLEMENTATION.md`, `docs/history/PHASE2_5_BUILD_VERIFICATION.md`, `KNOWN_LIMITATIONS.md`, and the frozen benchmark/source snapshots. All previous automated test sources and their benchmark dependencies are retained.
-
-When importing the ZIP on Windows, if Git reports executable-bit-only changes, set `git config core.fileMode false` locally before reviewing status. Native Windows execution is not claimed by the Linux verification record.
+- [Agent instructions](AGENTS.md), [handoff navigation](CODEX_HANDOFF.md), [actual architecture](docs/ARCHITECTURE.md).
+- [Authoring](docs/COMMANDER_AUTHORING.md), [translation reliability](docs/TRANSLATION_RELIABILITY.md), [eligibility](docs/ELIGIBILITY_CORRECTIONS.md), [identity observations](docs/ORACLE_IDENTITY.md).
+- [Coverage](docs/CARD_COVERAGE.md), [limitations](KNOWN_LIMITATIONS.md), [third-party notices](THIRD_PARTY_NOTICES.md).
+- [Historical entry-point text](docs/history/PRE_CONSOLIDATION_HANDOFF.md) and [Phase 2.5 implementation](docs/history/PHASE2_5_IMPLEMENTATION.md). Historical counts, ZIP/publication instructions and suggested tasks are not current assignments.

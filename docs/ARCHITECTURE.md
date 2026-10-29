@@ -1,34 +1,42 @@
 # Actual architecture and extension points
 
-Native Argentum definitions → shared action/branch extraction → mechanical facts/constraints → composable predicates → objective evidence → coverage/benchmark/regression diagnostics.
+The application is an external Kotlin `cli/` Gradle module attached through `argentum.init.gradle` to the exact dependency at `argentum/`. `dev`/`dev.ps1` enforce that revision and a clean checkout. [ARGENTUM_COMMIT](../ARGENTUM_COMMIT) authorizes adoption; engine acceptance in [our fork](https://github.com/jasullivan5/argentum-engine) is separate. The original project is an upstream reference, not a floating application dependency.
 
-The application is a small external `cli/` Gradle module attached through argentum.init.gradle to the pinned checkout at `argentum/`. Upstream supplies conventions, SDK, authored sets, search, tooling, engine and test fixtures. No SDK copy, database or server is introduced.
+Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the application-pinned source when changing integrations.
 
-Under `cli/src/main/kotlin/dev/mtg/assistant/`:
+## Application pipeline
 
-| Concern | Files |
+Native definitions → effective Commander eligibility → shared native action/branch extraction → reusable facts/constraints → objective queries and policies → evidence/reporting and research diagnostics.
+
+Files below are relative to `cli/src/main/kotlin/dev/mtg/assistant/`.
+
+| Concern | Implementation |
 |---|---|
-| External Oracle metadata and catalog mappings | coverage/OracleSnapshot.kt, coverage/CatalogCoverage.kt, coverage/OracleEnrichment.kt (offline input, identity indexes, independent coverage) |
-| Catalog/conventional search | Catalog.kt, DefinitionSearchCard.kt (native registry/search) |
-| Native extensions | extensions/Extensions.kt, JudithTheScourgeDiva.kt, OviyaPashiriSageLifecrafter.kt, KrenkosCommand.kt, Bitterblossom.kt (provenance/duplicates) |
-| Commander legality/full identity | discovery/Eligibility.kt, CommanderInspection.kt |
-| Native effects, costs, branches/bindings | discovery/PathwayExtractor.kt (one walker) |
-| Reusable facts/predicates/quantities | discovery/MechanicalFacts.kt, TokenFacts.kt, AmountBounds.kt |
-| Objective A | Legacy projection in extractor plus MechanicalQuery.kt and Discovery.kt |
-| Objectives B/C | Fact compositions; shared discovery/Reanimation.kt reporting; no separate walkers |
-| Evidence/CLI | discovery/Evidence.kt, Discovery.kt, Main.kt |
-| Diagnostics/reviews/diffs | audit/Diagnostics.kt, RootDiagnostics.kt, Benchmark.kt, CrossObjective.kt |
+| Native catalog and search | `Catalog.kt`, `DefinitionSearchCard.kt`; native registry plus `mtg-search` projection |
+| Application-owned native definitions | `extensions/Extensions.kt` and per-card files; provenance, duplicate/admission checks and source/test review metadata |
+| Commander selection and full color identity | `discovery/Eligibility.kt`, `CommanderInspection.kt`; consumers use `Catalog.eligibility` |
+| Reviewed effective metadata | `eligibility/EffectiveEligibility.kt`, packaged `eligibility/phase29.json`; source/snapshot/pin/native-fingerprint checks |
+| One native walker | `discovery/PathwayExtractor.kt`; actions, costs/effects, branches, bindings and unsupported structures |
+| Reusable facts, predicates and quantities | `discovery/MechanicalFacts.kt`, `TokenFacts.kt`, `AmountBounds.kt` |
+| Death objective A | Legacy death/removal projection and `MechanicalQuery.kt`, assembled in `Discovery.kt` |
+| Reanimation B / token C | Fact compositions and common reporting in `discovery/Reanimation.kt`; no separate native walkers |
+| Evidence and CLI | `discovery/Evidence.kt`, `Discovery.kt`, `Main.kt`; native source provenance binds the exact fork revision |
+| Identity/coverage observations | `coverage/OracleSnapshot.kt`, `OracleEnrichment.kt`, `CatalogCoverage.kt`; offline source snapshots and bounded mappings |
+| Translation assurance | `extensions/TranslationAssurance.kt`, packaged `translation-assurance.json`; exact definition/pin/evidence bundle and independent-approval checks |
+| Diagnostics and frozen reviews | `audit/Diagnostics.kt`, `RootDiagnostics.kt`, `Benchmark.kt`, `CrossObjective.kt`; coverage, inconsistencies, comparisons and report differences |
 
-Add generic SDK handling to the existing walker after inspecting the pinned type and freezing positive/adversarial examples. Add fact predicates in MechanicalFacts/TokenFacts; A's existing predicates remain in MechanicalQuery. New objectives should compose facts and use Discovery's common eligibility pipeline, but require a user assignment.
+## Eligibility and identity boundaries
 
-Native extensions use Argentum CardDefinition objects and Extensions.all; verify metadata, duplicate detection/provenance and real engine scenarios. Reviewed cases live in benchmark/*/review-v1.json with source references and expected path/conditions; do not derive expectations from search output. Tests live in cli/src/test/kotlin/dev/mtg/assistant, using FunSpec and ScenarioTestBase; assert exact pathways/constraints.
+Discovery checks Commander format legality, then full identity subset, then optional conventional search. Unknown metadata and unsupported commander construction remain explicit. A candidate query does not validate a whole deck, singleton rules, companions or every special commander form.
 
-A is not completely fact-driven. Local support is not whole-action/card support; shared action IDs do not imply every branch executes. Unknown conditions/copy/collection bindings, Amass and multi-step reanimation remain incomplete. See KNOWN_LIMITATIONS.md. Migration must not expand mechanical coverage.
+The physical identity layer compares archived Oracle observations to authored native identities, preserves existing IDs and quarantines competing claims. Association does not edit definitions or independently authorize eligibility changes. Reviewed effective metadata is a separate application-owned overlay; the original native definitions, scripts and values remain available. Inspection, discovery, conventional identity/format projections and coverage share `Catalog.eligibility`. See [identity](ORACLE_IDENTITY.md), [eligibility](ELIGIBILITY_CORRECTIONS.md) and [coverage](CARD_COVERAGE.md).
 
-Commander inspection has separate availability, selection-blocker and bounded mechanical-review fields. The same structured inspection drives selection; it does not add an effect walker or certify complete mechanical correctness. See [COMMANDER_AUTHORING.md](COMMANDER_AUTHORING.md).
+## Mechanical and assurance boundaries
 
-External coverage retains the complete snapshot-eligible Oracle pool separately from native availability and optionally calls existing discovery objectives. Missing/uncertain mappings stay unevaluated; shared physical face names affect mapping uncertainty rather than removing eligible IDs. Snapshot updates and bounded research sampling are separate scripts. See CARD_COVERAGE.md and PHASE2_7_REPORT.md for data contracts, measured outcomes and native metadata limitations.
+Extend the existing walker and fact predicates before adding another interpretation path. Preserve correlated owner/controller, source/host, zone, branch, target, quantity, cost/effect and timing constraints. Objective policy acceptance is distinct from structural possibility. Objective A is not fully fact-driven; shared action IDs do not establish whole-action causality. Complex copying, Amass, linked intermediate-zone reanimation and unresolved bindings remain incomplete. See [limitations](../KNOWN_LIMITATIONS.md).
 
-Phase 2.8 adds a source-bound physical identity association layer over NativeIndex. It compares complete physical names/layouts/cast costs/card types globally, preserves existing Oracle IDs, and quarantines competing claims. It never edits Catalog definitions or discovery eligibility. Metadata agreement/correction candidates and native objective observations remain independent fields. Exported enrichment is versioned evidence, not a trusted metadata overlay or database. See [ORACLE_IDENTITY.md](ORACLE_IDENTITY.md) for review quality, current counts and reproduction.
+Application extensions are native Argentum definitions registered through `Extensions.all`. Validation/serialization tests establish structural properties, not Oracle fidelity. Native `ScenarioTestBase` cases execute actual engine decisions, states and events for bounded source-derived contracts. Generic executor regressions belong in the engine fork; application integration tests bind the exact runtime separately from recorded definition/eligibility metadata when using experimental candidate integration.
 
-Phase 2.9 adds eligibility/EffectiveEligibility.kt and the packaged eligibility/phase29.json reviewed plan. Catalog owns a lazy effective-metadata resolver shared by inspection/selection, discovery, conventional identity/Commander-format projections and coverage. Original CardDefinition objects and scripts remain untouched; coverage retains both original and effective metadata. See [ELIGIBILITY_CORRECTIONS.md](ELIGIBILITY_CORRECTIONS.md).
+Assurance separates representation, source fidelity, execution and computed qualification. It binds archived source/requirements/test hashes to a definition and engine revision. An open material concern blocks qualification; passing author scenarios does not create independent human approval. Catalog, inspection, discovery and per-card coverage expose assurance without making provisional research definitions ineligible. Inherited engine definitions do not receive silent certification. See [reliability](TRANSLATION_RELIABILITY.md) and [authoring](COMMANDER_AUTHORING.md).
+
+Research diagnostics inspect native structures and source-led frozen subsets. An audit traversal is not an independent Oracle adjudication; sample agreement is not whole-catalog recall. Oracle coverage retains the eligible source pool separately from native availability, mapping uncertainty and objective observations. Benchmark cases are source-derived and revision-strict; active `review-fork-v1.json` inputs coexist with preserved historical `review-v1.json` files. Exact-report baselines and compact receipts detect changes, not universal correctness. [Recorded verification](../HANDOFF_VERIFICATION.md) distinguishes local evidence from CI and current execution from historical results.

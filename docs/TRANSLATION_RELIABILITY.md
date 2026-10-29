@@ -1,5 +1,11 @@
 # Translation reliability procedure and experiment
 
+## Current adoption and recorded concern
+
+The procedure below remains operative. Application PR #9 has been merged, adopting `4133241856227d1d36269e92aaba633bbaf93f5c`; [recorded transition evidence](../HANDOFF_VERIFICATION.md) includes source-correct collection execution and nine passing mutation controls/detections. Those results are recorded evidence, not a new execution by this documentation pass.
+
+The persisted ledger intentionally still records Tatterkite's historical material concern as CONFIRMED and qualification BLOCKED. Adoption alone does not close a concern: a separately reviewed resolution must bind the adopted revision and execution evidence. No qualification, requirement, definition or assurance record is changed here. Other records remain provisional without independent approval. Older statements about a missing collection guard or a confounded M7 describe the pre-correction experiment only.
+
 ## What admission currently means
 
 At base `4e047c796e2fd88335fa65fd95ed6fa745f48bd7`, Extensions.validate requires dated application source provenance, an Oracle ID, full identity/legality metadata, no declared known omissions, unique root/back/flip identities and zero native validation ERRORs. Warnings remain visible. DefinitionReview contains scenario paths and known limitations; registration does not execute those scenarios or adjudicate their assertions. ExtensionStructureTest stabilizes serialization, snapshots and authoring boundaries, not correspondence to Oracle.
@@ -36,7 +42,11 @@ Promotion is a concrete review action: reconcile the frozen requirements, inspec
 
 A concern identifies physical identity, source hashes/revision, native definition or shared mechanism, disputed claim, evidence, reproduction status, category, state, next action and resolution evidence. The lightweight Git record is `concerns.json`; runtime-relevant concerns are retained in the same card's assurance evidence. Suspected/confirmed/unresolved material concerns block independent qualification while research access remains. Discovery-only uncertainty stays distinct. Corrected or disproven records retain their history and regression reference; absence of testing alone is not a defect accusation.
 
-## Reproduction
+## Current focused checks
+
+With the exact clean adopted dependency, run `./dev test --tests dev.mtg.assistant.TranslationReliabilityScenarioTest --tests dev.mtg.assistant.TranslationMutationTest --tests dev.mtg.assistant.TranslationAssuranceTest` (or the PowerShell `dev.ps1` equivalent). Current tests require the source-correct zero-counter assertion and passing controls for all nine mutations. The old optional failure contract is no longer the current test behavior.
+
+## Historical experiment reproduction — earlier application/pin required
 
 Use the repository JDK 21 environment and dev wrapper. Requirements and first failure receipts are tracked; full reports, logs and distributions stay in ignored generated directories.
 
@@ -51,7 +61,7 @@ Remove-Item Env:VERIFY_KNOWN_ENGINE_GAPS
 
 The standard suite's known-failure contract verifies that the documented zero-counter assertion still fails in the expected way; it is not a passing correctness claim. The opt-in command leaves the source assertion uncaught and is expected to fail until the shared executor is corrected. This makes the unresolved failure visible without silently ignoring a test or loosening its Oracle expectation.
 
-## Reassessment findings
+## Historical reassessment findings
 
 | Card | Source requirements | New adversarial coverage and finding |
 |---|---:|---|
@@ -68,7 +78,7 @@ Prior scenarios were useful but insufficient to find the collection-path gap: Ta
 
 The broader AddCountersToCollection executor still lacks the canReceiveCounters check used by AddCountersExecutor. Tatterkite remains registered for research with COMPLETE representation, SOURCE_REVIEWED fidelity, FAILURE_OBSERVED execution and BLOCKED qualification. This is an execution diagnosis, not a claim that Tatterkite's native definition omitted its ability. Sword's concern retains suspected → confirmed → resolved history and the regression reference; its corrected definition remains PROVISIONAL. The shared-engine concern stays open. No upstream source or pin change is made.
 
-## Deliberate defect experiment
+## Historical deliberate defect experiment
 
 Nine isolated native copies cover live-source/LKI loss, missing tap cost, mandatory-versus-optional search, wrong choosing controller, condition before movement, wrong destination zone, omitted counter prohibition, targeting replacing a nontargeting choice and omitted reveal. All nine are meaningfully different from their controls and accepted by CardValidator with zero errors and zero warnings. None enters Extensions.all.
 
@@ -78,7 +88,7 @@ There were no observed source-probe false alarms in the controls. One execution-
 
 `mutations.json` records each validator outcome, violated requirement IDs, exact observed assertion, control result and qualification outcome. The verifier helpers were not given mutation descriptions, but their designer knew the mutations; this is a small same-agent detection experiment, not a measured estimate of general accuracy. There is no independently certified promotion. Even a plausible mutant with passing author tests remains provisional without separate approval; material recorded failures block it.
 
-## Executed verification and remaining decision
+## Historical execution and remaining decision at that revision
 
 The complete run `dev.ps1 test --rerun :assistant-cli:installDist` passed **454 test contracts in 56 suites**, with no escaped failures, errors or skips, in **1m50s**. This includes the known-failure contract and must not be read as 454 successful Oracle correctness checks. The opt-in reproduction ran separately, failed exactly the retained TK2 source expectation, and took 38s. The corrected focused run passed 39 contracts in 1m19s. Both Python receipt compilation and fast-gate shell syntax checks passed; the fast wrapper was not separately run after the complete suite. These are command elapsed times, not engineering labor estimates.
 
