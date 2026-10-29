@@ -1,8 +1,34 @@
-# Actual architecture and extension points
+# Architecture and extension points
+
+## Current implementation
 
 The application is an external Kotlin `cli/` Gradle module attached through `argentum.init.gradle` to the exact dependency at `argentum/`. `dev`/`dev.ps1` enforce that revision and a clean checkout. [ARGENTUM_COMMIT](../ARGENTUM_COMMIT) authorizes adoption; engine acceptance in [our fork](https://github.com/jasullivan5/argentum-engine) is separate. The original project is an upstream reference, not a floating application dependency.
 
-Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the application-pinned source when changing integrations.
+Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application currently has no frontend or HTTP API; it does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the application-pinned source when changing integrations.
+
+## Planned research interface
+
+The working direction selected following Technology Audit 001 is a focused independent React / TypeScript / Vite interface in the application repository. Its initial experience is a Commander Discovery Explorer over existing commander inspection and discovery objectives. This records the direction; it does not implement or start the Explorer. The local audit experiment is separate research evidence, not an integrated application feature or proof of live API operation.
+
+```text
+React research UI [planned, application-owned]
+  -> local Kotlin integration [planned, application-owned]
+  -> existing discovery / eligibility / assurance logic [implemented, application-owned]
+  -> exact pinned Argentum SDK and rules engine [implemented, fork-owned]
+```
+
+| Boundary | Ownership and constraints |
+|---|---|
+| Research UI — planned | Application: supported commander and existing-objective selection, genuine discovery, verified imagery, browsable grids/lists, readable mechanical explanations, prerequisites/decisions/evidence/limitations and interactive research visualizations. Responsive, keyboard-accessible and pleasant to explore. |
+| Local Kotlin integration — planned | Application: a narrow adapter exposing real application capabilities. Lightweight HTTP is favored; framework, schema, process lifecycle and error handling remain to be implemented and reviewed. Ktor is not an implemented or mandatory dependency. |
+| Existing research pipeline | Application: Commander eligibility, objective interpretation, discovery integration, translation assurance, source/identity observations, diagnostics and exact engine adoption. Retain the CLI and headless tests as entry points and regression evidence. |
+| Native mechanics | Maintained fork: card structures, SDK semantics, rules execution, generic mechanical corrections and native regressions. Develop in the independent sibling repository; consume only the application-approved exact pin through the nested dependency. |
+
+The UI must present native extraction and application decisions, never introduce a second MTG rules interpreter. An imported genuine report may support an early bounded prototype, but must be labeled with its source/revisions and not presented as live discovery. Genuine discovery execution remains part of the intended Explorer capability.
+
+Argentum's existing web client is a possible source of selected presentation components, imagery utilities and icons after coupling, provenance and licensing review. Do not import the complete client or default to its hosted gameplay architecture. Accounts, multiplayer, general deck editing, persistent databases, desktop packaging, cloud infrastructure, a comprehensive game client, new objectives and replacement rules execution remain outside this direction without demonstrated need and appropriate approval.
+
+The first bounded integration must validate the adapter contract and parity with existing CLI behavior, lifecycle/readiness/shutdown, error and blocked/unknown states, verified image associations/fallbacks, and actual local launch and interaction. Catalog startup, report size and browsing responsiveness need measurement on that implementation; the audit experiment does not settle them. Keep expectations, historical execution, fresh execution and illustrative data distinguishable. [Agent guidance](../AGENTS.md#visualization-fidelity) owns the presentation safeguards and [prototype delivery expectations](../AGENTS.md#collaboration-and-delivery); do not infer user acceptance or translation qualification from an attractive screen or passing tests.
 
 ## Application pipeline
 
