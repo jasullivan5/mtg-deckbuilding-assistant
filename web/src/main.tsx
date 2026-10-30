@@ -179,6 +179,7 @@ export function App() {
                 return <article key={i} className="pathway">
                   <span className={`badge ${r.verdict}`}>{verdictLabel(r.verdict)}</span>
                   <h3>{explanation?.mechanic ?? 'Relationship to your question'} · {r.face}</h3>
+                  {r.verdict === 'NO_MATCH' && <p className="hint">{explanation?.outcome ?? 'This ability did not meet the objective. The recorded checks remain available below.'}</p>}
                   <h4>How it relates</h4><p>{explanation?.summary ?? 'A precise explanation is unavailable. Inspect the recorded evidence before drawing a conclusion.'}</p>
                   <h4>What needs to happen</h4><ul>{(explanation?.requirements ?? []).map((p, j) => <li key={j}>{p}</li>)}</ul>
                   <h4>What isn’t established</h4><ul>{(explanation?.unknowns ?? ['Successful gameplay and whole-card correctness have not been verified.']).map((p, j) => <li key={j}>{p}</li>)}</ul>

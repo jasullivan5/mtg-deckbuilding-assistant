@@ -104,6 +104,12 @@ test('real sacrifice findings explain choices, land uncertainty, counts and veri
   await expect(detail.getByText('required sacrifice', {exact: false})).toBeVisible();
   await expect(detail.getByText('when this source enters', {exact: false})).toBeVisible();
   await expect(detail.getByText('does not exclude this source', {exact: false})).toBeVisible();
+  await nav.getByRole('button', {name: /Abilities ruled out/}).click();
+  await page.getByLabel('Mechanical relationship').selectOption('ALL');
+  await page.getByLabel('Find within these findings').fill('Murder');
+  await page.getByRole('button', {name: 'Murder', exact: true}).click();
+  await expect(detail.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
+  await expect(detail.getByText("excluded by this question's selection rules", {exact: false})).toBeVisible();
   await nav.getByRole('button', {name: /All findings/}).click();
   await page.getByLabel('Find within these findings').fill('');
   await page.getByLabel('Mechanical relationship').selectOption('Sacrifice');
@@ -126,6 +132,6 @@ test('real sacrifice findings explain choices, land uncertainty, counts and veri
     runId: run.runId, objective: run.objective, commander: run.commander,
     eligibleCards: run.counts.mechanical_input_cards_after_conventional_search, indexedCards: run.cards.length,
     overlappingCardCounts: actualCounts, pathwayCounts: run.pathwayCounts, unsupportedRecords: run.counts.unsupported_structure_records,
-    sacrificeCards, verifiedImage: images[0], pageErrors,
+    sacrificeCards, policyExample: {card: 'Murder', exclusionIsSelectionRule: true}, verifiedImage: images[0], pageErrors,
   }, null, 2));
 });

@@ -123,7 +123,12 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
     val outcome = when (result.verdict) {
         Verdict.MATCH -> "Can contribute if these conditions hold"
         Verdict.UNKNOWN -> "Needs investigation"
-        Verdict.NO_MATCH -> "This ability did not meet the objective; other abilities on this card may differ"
+        Verdict.NO_MATCH -> listOfNotNull(
+            "This ability was excluded by this question's selection rules. This does not mean the card cannot contribute in a game."
+                .takeIf { result.decisions.any { it.verdict == Verdict.NO_MATCH && it.basis == "POLICY" } },
+            "The affected objects or other recorded requirements do not satisfy this question for this ability."
+                .takeIf { result.decisions.any { it.verdict == Verdict.NO_MATCH && it.basis != "POLICY" } }
+        ).joinToString(" ").ifBlank { "This ability did not meet the objective." } + " Other abilities on this card may differ."
     }
     return PathwayExplanation(relationship, requirements.distinct(), unknowns, mechanic(result), outcome)
 }
