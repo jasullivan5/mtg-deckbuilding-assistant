@@ -1,6 +1,6 @@
 # MTG Deckbuilding Assistant
 
-A local Commander research application: choose a supported commander and one of three objectives, run Kotlin discovery, and browse findings by mechanical relationship, view verified card images, and inspect what each ability could do, what it needs and what remains uncertain in the Explorer. It explains structural possibilities rather than recommending decks or certifying translations.
+A local Commander research application: choose a supported commander and one of three objectives, run Kotlin discovery, and browse identified mechanics, view verified card images, inspect complete relevant activations and click scoped evidence for source review, recorded engine tests and independent approval in the Explorer. It explains structural possibilities rather than recommending decks or certifying translations.
 
 ## Launch on Windows
 
