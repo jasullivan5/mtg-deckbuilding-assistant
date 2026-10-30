@@ -49,6 +49,10 @@ class EvidenceSummaryTest : FunSpec({
         state.state shouldBe EvidenceState.OUTDATED
         state.historical shouldBe true
         state.recordedEngine shouldBe "1".repeat(40)
+        val oldFailure = assessTranslation(card, record().copy(argentumCommit = "1".repeat(40), execution = ExecutionState.FAILURE_OBSERVED))
+        val failure = statuses(oldFailure).getValue("execution")
+        failure.state shouldBe EvidenceState.OUTDATED
+        failure.established.any { "earlier record reports an observed failure" in it } shouldBe true
     }
     test("an applicable historical gate output still labels recorded execution as historical") {
         // Isolated mapper input: simulate an accepted implementation-compatible binding on a different build.

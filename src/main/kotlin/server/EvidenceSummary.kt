@@ -64,6 +64,12 @@ fun evidenceIndicators(
     val source = when {
         stale -> indicator("source", "Source review", EvidenceState.OUTDATED, "Prior review not applicable",
             "An earlier source review exists, but it no longer applies to this card and build.",
+            established = listOf(when (record!!.fidelity) {
+                FidelityState.SOURCE_REVIEWED -> "The earlier record reports a source comparison."
+                FidelityState.CONFIRMED_DISCREPANCY -> "The earlier record reports a confirmed source disagreement; that history remains retained."
+                FidelityState.SUSPECTED_DISCREPANCY -> "The earlier record reports a suspected source disagreement, not a confirmed defect."
+                FidelityState.UNREVIEWED -> "The earlier record did not establish source fidelity."
+            }),
             next = listOf("Review changed bindings and record a new source comparison."), references = refs(record!!.source, "Recorded source"))
         assurance?.sourceFidelity == FidelityState.CONFIRMED_DISCREPANCY -> indicator("source", "Source review", EvidenceState.KNOWN_PROBLEM, "Recorded disagreement",
             "The existing record identifies a confirmed disagreement between source rules and implementation.", next = listOf("Inspect the concern and its reproduction before relying on the affected behavior."), references = refs(record?.source.orEmpty(), "Recorded source"))
@@ -83,6 +89,11 @@ fun evidenceIndicators(
     val execution = when {
         stale -> indicator("execution", "Engine scenarios", EvidenceState.OUTDATED, "Prior evidence not applicable",
             "Historical execution evidence exists but does not pass the current assurance binding check.",
+            established = listOf(when (record!!.execution) {
+                ExecutionState.FAILURE_OBSERVED -> "The earlier record reports an observed failure on ${record.argentumCommit}. It is not erased or presented as a current failure."
+                ExecutionState.BOUNDED_EVIDENCE_PASSED -> "The earlier record reports bounded passes on ${record.argentumCommit}; they are not transferred to this build."
+                ExecutionState.NOT_TESTED -> "The earlier record did not report an execution result."
+            }),
             limits = listOf("This is neither a fresh pass nor a fresh failure on this engine."), next = listOf("Revalidate the changed definition/engine with the relevant scenarios."), references = refs(record!!.tests, "Recorded execution evidence"))
         current && assurance?.engineExecution == ExecutionState.FAILURE_OBSERVED -> indicator("execution", "Engine scenarios", EvidenceState.KNOWN_PROBLEM, "Failure recorded",
             "A failure is recorded for the bound scenario scope.", limits = listOf("The recorded failure must be interpreted at its recorded engine revision; this inspection did not execute a new scenario."),
