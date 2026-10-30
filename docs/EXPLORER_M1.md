@@ -1,6 +1,6 @@
 # Explorer M1 — live Commander discovery
 
-M1 is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab with the [recorded checks](../reference/explorer-m1/verification.json); user acceptance remains separate. The preserved foundation at a35b9b5 was reconciled with current main in aa0f497 and extended on feature/explorer-m1.
+M1 is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab with bounded verification recorded in Git and the historical export; user acceptance remains separate. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
 ## Launch on Windows
 

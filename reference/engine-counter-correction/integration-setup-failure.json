@@ -1,7 +1,0 @@
-{
-  "commandLogSha256": "0bc6189e81e9e4a9eef2c6c3489dfa23171ee110ba43bf5951a2390c355ec7cb",
-  "category": "EXPERIMENT_CONFIGURATION",
-  "failure": "Convention plugin not found because initial init script also included assistant-cli in buildSrc",
-  "correction": "Restrict settings hook to the main engine build; keep approved/candidate source directories and build outputs separate",
-  "mechanicalFailure": false
-}

@@ -19,7 +19,7 @@ Single fixed-identity commander selection is supported. A partner-capable legend
 
 1. Check `Catalog(emptyList())` and search authored upstream definitions at the engine SHA recorded by `mtg-assistant stats`; never replace a definition just because it has not been independently tested here.
 2. Retrieve the exact printing from Scryfall's named-card API with `exact` and `set`, plus `rulings_uri` (requests require User-Agent and Accept headers). Verify Oracle text, faces, types, costs, characteristics, Oracle ID, full color identity and current legalities. Retain dated source evidence under `reference/`; map only formats represented by native `DeckFormat`.
-3. Inspect the pinned SDK, existing definitions and effect executors. Trace costs, targets, conditions, controller/owner relations, timing and zone changes. Reject approximations of consequential mechanics; choose another bounded example if faithful implementation requires an upstream change outside the assignment.
+3. Inspect the recorded SDK, existing definitions and effect executors. Trace costs, targets, conditions, controller/owner relations, timing and zone changes. Reject approximations of consequential mechanics; choose another bounded example if faithful implementation requires an upstream change outside the assignment.
 4. Distinguish structural errors or explicitly recorded omissions from lack of independent verification. `CardValidator` checks native structure, not complete correspondence to Oracle text. An empty script alone is not proof that a card is incomplete.
 
 ## Author and register
@@ -46,34 +46,14 @@ Select the commander and run all three existing objectives. A commander need not
 
 Frozen reviews and the generated all-colors benchmark remain applicable; their documented UNKNOWN and unresolved cases must not be relabeled as mechanical nonmatches. Generated JSON, build outputs and upstream sources stay ignored.
 
-## Ordinary native cards
+## Native cards and metadata corrections
 
-The same registration and verification workflow applies to noncommander cards. Phase 2.7 adds Krenko's Command and Bitterblossom through Extensions.all, with source/ruling evidence, validation, engine scenarios and cross-commander/objective tests. See CARD_COVERAGE.md for the external missing-card inventory and PHASE2_7_REPORT.md for the bounded Assay experiment. A generated proposal remains unverified until its consequential scenarios actually execute.
+The same registration/source/scenario workflow applies to noncommander cards. Generated Assay proposals are implementation guidance, not production admission or certification. New mechanical SDK requirements belong in a separately scoped engine correction.
 
-## Reviewed eligibility metadata
+Consumers use Catalog.eligibility for effective full identity and Commander legality; raw native helpers are diagnostic. Never repair metadata by replacing unrelated native scripts or by introducing card-name branches in discovery. See [reviewed eligibility](ELIGIBILITY_CORRECTIONS.md).
 
-Existing native definitions can receive a small application-owned, individually approved eligibility correction without authoring a replacement definition. Commander inspection/selection and discovery use Catalog.eligibility; original native mechanics and metadata remain available. Inspection JSON/text records applied corrections and original values. Identity/Commander-format search filters and coverage share these values. See [ELIGIBILITY_CORRECTIONS.md](ELIGIBILITY_CORRECTIONS.md). Missing/unreviewed fields still block admission; corrected metadata does not certify mechanics or expand supported construction rules.
+Keep source/host damage references distinct from affected objects and controller/owner references. Inspect native relationships and scenario outcomes rather than relying on suggestive DSL names. Existing tests retain these consequential distinctions.
 
-## External-definition safeguards
+Registration, structural validation, bounded execution and independent translation qualification remain separate. Follow [translation assurance](TRANSLATION_RELIABILITY.md), preserve material concerns and keep source-bound records in reference/. Engine work follows the sibling [app-stable workflow](ENGINE_WORKFLOW.md); passing a candidate does not independently qualify a definition.
 
-`ExtensionStructureTest` snapshots only `Extensions.all`, using native `CardExporter`, and checks `CardLoader.fromJsonPreservingIds` round-trips. It also exercises nested/embedded face structures and a focused facade/source boundary adapted from the pinned upstream test. `CardValidator` continues to own structural/dataflow lint.
-
-Run `dev.ps1 test --tests dev.mtg.assistant.ExtensionStructureTest`. Intentional snapshot updates: set `$env:UPDATE_EXTENSION_SNAPSHOTS='1'`, run that test with `--rerun`, then remove the environment variable and review every JSON diff under `cli/src/test/resources/extensions/`. Never accept a snapshot change as evidence that it matches Oracle.
-
-Simple compositions of established primitives can rely on independent Oracle/ruling review plus these structural nets. Add native per-card scenarios for first uses and consequential costs, choices, timing, resolution values, replacement/layer or linked interactions. Existing scenarios remain useful bounded evidence. Research-only partial findings belong in the batch ledger; known omissions still block executable extension admission.
-
-## Damage dealer references
-
-When an ability's source deals damage, prefer the normal implicit damage source. At this pin an explicit `damageSource = EffectTarget.Self` is a live entity reference and can stop resolving after that object leaves. Predatory Urge's Batch 2 scenario demonstrates the difference; using the implicit source preserves its last-known-information behavior. Explicitly name a different dealer when the Oracle instruction requires one. Verify source removal and sequential-versus-fight semantics against rulings rather than assuming a comparable native card's implementation or comments establish correctness.
-
-## Translation assurance
-
-New definitions begin provisional. Historical completed/VERIFIED authoring records are not independent qualification. Preserve source-first requirements, adversarial controls, concern history and exact evidence bindings before seeking separate human approval. Catalog/inspection/discovery expose assurance without excluding provisional research mechanics. See [TRANSLATION_RELIABILITY.md](TRANSLATION_RELIABILITY.md).
-
-## Controlled engine corrections
-
-Use our Argentum fork and branch from app-stable. Reproduce a source-derived failure on the actual app-stable revision used by the application; inspect native authoring, executors, projections/replacements, events and continuation before fixing shared code. Keep generic native regressions and original failures. Internal engine PRs target our fork's app-stable; do not submit upstream contributions.
-
-Use the normal dev wrapper with explicit ARGENTUM_ENGINE_DIR and ARGENTUM_CANDIDATE_REVISION for an isolated clean candidate. Run native and complete application tests/mutations and controlled Commander discovery/coverage before accepting its PR into app-stable. The application then uses the maintained stable branch without a separate pin PR. Preserve provenance, source identity, clean-checkout checks and the distinction between historical and fresh execution. See [engine workflow](ENGINE_WORKFLOW.md).
-
-Preserve all original concern history and evidence. Candidate success cannot independently qualify a definition or close a recorded concern. PR #9 has adopted the correction, but Tatterkite's persisted concern remains blocked until an explicit reviewed resolution binds the adopted revision/execution; ordinary qualification is provisional. See [ENGINE_COUNTER_CORRECTION.md](ENGINE_COUNTER_CORRECTION.md) for current fork policy and historical evidence.
+Historical card-admission experiments and packaging instructions are exported. They are not new assignments. See [repository layout](REPOSITORY_LAYOUT.md).

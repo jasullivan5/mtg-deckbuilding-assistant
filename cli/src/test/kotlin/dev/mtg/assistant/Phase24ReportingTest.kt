@@ -41,8 +41,8 @@ class Phase24ReportingTest : FunSpec({
         audit.rootIssues.none { it.category==DiagnosticCategory.CONFIRMED_BENCHMARK_MISMATCH } shouldBe true
     }
     test("frozen B review maps expected movement while absent casting remains distinct") {
-        val root=if(java.nio.file.Files.exists(Path.of("benchmark"))) Path.of(".") else Path.of("..")
-        val review=readBenchmark(root.resolve("benchmark/phase24/review-fork-v1.json"))
+        val root=if(java.nio.file.Files.exists(Path.of("cli/src/test/resources/benchmarks"))) Path.of(".") else Path.of("..")
+        val review=readBenchmark(root.resolve("cli/src/test/resources/benchmarks/reanimation.json"))
         val evaluated=evaluateBenchmark(b,review)
         evaluated.cases.single { it.card=="Zombify" }.status shouldBe "MATCH"
         // --search restricted samples do not establish recall for omitted cards.

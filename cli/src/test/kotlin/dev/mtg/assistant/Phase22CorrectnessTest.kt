@@ -95,7 +95,7 @@ class Phase22CorrectnessTest : FunSpec({
         amountBounds(DynamicAmount.Add(DynamicAmount.Fixed(3),DynamicAmount.Fixed(-1))).negativePotential() shouldBe Verdict.NO_MATCH
     }
     test("frozen reviewed benchmark matches current Judith catalog with explicit denominators") {
-        val file=listOf(Path.of("../benchmark/review-fork-v1.json"),Path.of("benchmark/review-fork-v1.json")).first(Files::exists)
+        val file=listOf(Path.of("src/test/resources/benchmarks/deaths-initial.json"),Path.of("cli/src/test/resources/benchmarks/deaths-initial.json")).first(Files::exists)
         val report=evaluateBenchmark(discover(catalog,"Judith, the Scourge Diva"),file)
         report.denominators["reviewed_cases"] shouldBe 29
         report.numerators["expected_accepted_recovered"] shouldBe 15

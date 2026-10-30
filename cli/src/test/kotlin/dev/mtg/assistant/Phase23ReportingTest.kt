@@ -35,9 +35,9 @@ class Phase23ReportingTest : FunSpec({
     }
     test("both frozen reviews remain inspectable without treating unreviewed paths as confirmed errors") {
         val r=discover(catalog,"Judith, the Scourge Diva")
-        val old=evaluateBenchmark(r,Path.of("../benchmark/review-fork-v1.json"))
+        val old=evaluateBenchmark(r,Path.of("src/test/resources/benchmarks/deaths-initial.json"))
         old.numerators["confirmed_mismatch_cases"] shouldBe 0
-        val added=evaluateBenchmark(r,Path.of("../benchmark/phase23/review-fork-v1.json"))
+        val added=evaluateBenchmark(r,Path.of("src/test/resources/benchmarks/deaths-expanded.json"))
         added.numerators["expected_accepted_recovered"] shouldBe 11
         added.numerators["incorrect_accepted_reviewed_cases"] shouldBe 0
         added.numerators["confirmed_mismatch_cases"] shouldBe 0

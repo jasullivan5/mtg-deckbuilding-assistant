@@ -13,9 +13,9 @@ import kotlinx.serialization.encodeToString
 
 class Phase25ReportingTest : FunSpec({
     val catalog by lazy { Catalog() }
-    val root=if(Files.exists(Path.of("benchmark"))) Path.of(".") else Path.of("..")
+    val root=if(Files.exists(Path.of("cli/src/test/resources/benchmarks"))) Path.of(".") else Path.of("..")
     fun report(): DiscoveryReport {
-        val review=readBenchmark(root.resolve("benchmark/phase25/review-fork-v1.json"))
+        val review=readBenchmark(root.resolve("cli/src/test/resources/benchmarks/tokens.json"))
         val names=review.cases.map { it.card }.distinct()
         val commander=resolveCommander(catalog,"Kenrith, the Returned King")
         val identity=fullIdentity(commander)
@@ -25,7 +25,7 @@ class Phase25ReportingTest : FunSpec({
         return factObjectiveReport(catalog,commander.name,identity.map { it.name },null,eligibility,emptyMap(),PathwayExtractor().extract(input),input.map { it.name },"create-creature-tokens")
     }
     test("frozen source-reviewed benchmark evaluates development and held-out examples without mismatches") {
-        val r=evaluateBenchmark(report(),root.resolve("benchmark/phase25/review-fork-v1.json"))
+        val r=evaluateBenchmark(report(),root.resolve("cli/src/test/resources/benchmarks/tokens.json"))
         r.cases.filter { it.status=="CONFIRMED_MISMATCH" }.map { it.id to it.issues } shouldBe emptyList()
         r.denominators["reviewed_cases"] shouldBe 16
         val output=root.resolve("generated/phase25/benchmark-all-colors.json")
