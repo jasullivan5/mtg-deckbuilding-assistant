@@ -1,6 +1,6 @@
 # MTG Deckbuilding Assistant
 
-A local Commander research application: choose a supported commander and one of three objectives, run Kotlin discovery, and inspect conditional pathways, prerequisites, unsupported mechanics and evidence in the Explorer. It explains structural possibilities rather than recommending decks or certifying translations.
+A local Commander research application: choose a supported commander and one of three objectives, run Kotlin discovery, and browse findings by mechanical relationship, view verified card images, and inspect what each ability could do, what it needs and what remains uncertain in the Explorer. It explains structural possibilities rather than recommending decks or certifying translations.
 
 ## Launch on Windows
 
@@ -30,7 +30,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 
-Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](KNOWN_LIMITATIONS.md).
+Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](docs/KNOWN_LIMITATIONS.md).
 
 ## Build, tests and CLI
 

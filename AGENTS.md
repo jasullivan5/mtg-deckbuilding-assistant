@@ -33,7 +33,7 @@ Prefer small, meaningful end-to-end increments that the user can launch, explore
 
 The user evaluates understandability and usefulness before a substantial user-facing capability is accepted. Backend-only corrections and investigations remain appropriate when they are the cheapest adequate approach. Where practical, expose consequential findings through existing research views, scenario evidence or diagnostics; do not add decorative UI solely to satisfy this process.
 
-## Approved interface direction — M1 awaiting user evaluation
+## Approved interface direction — M1 experience revision awaiting review
 
 Technology Audit 001 informed the selected working direction: an independent React / TypeScript / Vite research interface in this repository, beginning with a Commander Discovery Explorer. It should support commander selection, selection among existing objectives, genuine discovery execution, identity-verified card imagery, browsable card grids/lists, readable mechanical explanations, inspectable prerequisites/decisions/evidence/limitations and meaningful interactive research visualizations. Make it attractive, responsive, keyboard-accessible and pleasant to explore.
 

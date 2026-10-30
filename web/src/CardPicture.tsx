@@ -20,7 +20,6 @@ export function CardPicture({image, compact = false}: {image?: CardImage; compac
         </div>}
         <a href={image.sourceUrl!} target="_blank" rel="noreferrer">Scryfall · {image.set?.toUpperCase()} #{image.collectorNumber}</a>
         <span>Art: {current.artist ?? 'see card credit'} · © Wizards of the Coast</span>
-        <span>Printing and faces checked; artwork does not verify mechanics.</span>
       </> : <span>{image?.reason ?? 'Checking the printing and complete face identities.'}{image?.status === 'VERIFIED' && ' The verified image could not be loaded.'}</span>}
     </figcaption>}
   </figure>;

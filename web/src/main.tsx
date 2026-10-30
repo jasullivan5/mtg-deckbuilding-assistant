@@ -117,10 +117,10 @@ export function App() {
           <div className="actions"><button type="button" onClick={() => void research(false)} disabled={!!busy || !commander.trim()}>Inspect commander</button>
             <button className="primary" disabled={!!busy || !objectives.length || !commander.trim()}>Run discovery</button></div>
         </form>
-        <p className="hint objective-hint">{objectives.find(o => o.id === objective)?.explanation}</p>
+        {!run && <p className="hint objective-hint">{objectives.find(o => o.id === objective)?.explanation}</p>}
         <div aria-live="polite">
           {busy && <p role="status">{busy} Please wait for the card search to finish.</p>}
-          {inspection && <><p className="inspection-status"><b>{inspection.requestedName}</b> · {inspection.selectable ? 'Available for single-commander discovery' : 'Selection blocked'} · {inspection.colorIdentity.join(' / ') || 'No resolved colors'}</p>
+          {inspection && <>{!run && <p className="inspection-status"><b>{inspection.requestedName}</b> · {inspection.selectable ? 'Available for single-commander discovery' : 'Selection blocked'} · {inspection.colorIdentity.join(' / ') || 'No resolved colors'}</p>}
             {inspection.blockers.map((b, i) => <p className="warning" key={i}>{b.reason}<br/>{b.nextAction}</p>)}
             <details><summary>Commander eligibility and review</summary><p>{inspection.constructionScope}</p><p>{inspection.mechanicalCaveat}</p>
               {inspection.knownLimitations.map((l, i) => <p key={i}>{l}</p>)}<Json value={inspection}/></details></>}
@@ -133,7 +133,7 @@ export function App() {
           <div><h2>{run.cards.length.toLocaleString()} card findings</h2><p>{objectives.find(o => o.id === run.objective)?.label} · {run.commander}</p></div>
           <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} eligible authored cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
-        <p className="count-note"><b>These views overlap.</b> Each count is distinct cards, not abilities. A card may have a useful ability, an unresolved ability, and instructions we cannot read. Do not add the counts together.</p>
+        <p className="count-note"><b>These views overlap.</b> Each count is distinct cards, not abilities. A card may have a useful ability, an unresolved ability, and instructions we cannot read. Do not add the counts together. Totals cover the entire search; the filters below narrow the cards shown.</p>
         <nav className="categories" aria-label="Finding categories">
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
@@ -171,7 +171,7 @@ export function App() {
             {shownDetail && <>
               <div className="card-overview"><CardPicture key={shownDetail.card} image={imageFor(selected!)} />
                 {shownDetail.authoredCard && <div className="authored"><p>{shownDetail.authoredCard.manaCost} · {shownDetail.authoredCard.typeLine}</p><p className="card-text">{shownDetail.authoredCard.text}</p>
-                  <small>Text from the application’s card definition. The image may show updated wording; neither is a full verification of the implemented mechanics.</small></div>}
+                  <small>Application card text. Source and verification details are available below.</small></div>}
               </div>
               {!shownDetail.results.length && <p>No relationship to this objective was extracted. This card has instructions the application could not interpret; do not treat it as ruled out.</p>}
               {shownDetail.results.map((r, i) => {
@@ -196,7 +196,7 @@ export function App() {
                 {shownDetail.unsupported.map((u, i) => <p className="warning" key={i}>{u.reason}</p>)}
                 {!shownDetail.unsupported.length && <p>No unread instruction was reported. This does not establish whole-card correctness.</p>}
               </details>
-              <details><summary>How much has this card been checked?</summary><p>Discovery reads represented abilities; it does not play out a game or independently certify an entire card.</p>
+              <details><summary>How much has this card been checked?</summary><p>Discovery reads represented abilities; it does not play out a game or independently certify an entire card. The text above comes from the authored card definition; the verified image may show newer Oracle wording.</p>
                 {!shownDetail.translationAssurance.length && <p>No separate application card-review record was supplied.</p>}
                 <RawDetails label="Card review, execution evidence and concern history" value={shownDetail.translationAssurance}/>
               </details>
@@ -207,7 +207,7 @@ export function App() {
         </div>
         <details className="provenance"><summary>Search scope, counts, exclusions and source revisions</summary>
           <p>The search covers the authored catalog and application extensions, not every Commander-legal Magic card. {run.counts.format_legality_unknown_cards} cards with unresolved format legality were excluded before checking mechanics.</p>
-          <p>The findings index includes {run.cards.length} distinct physical cards. Categories above overlap; counts below are pathway checks and unread instruction records, not additional cards.</p>
+          <p>The findings index includes {run.cards.length} distinct physical cards. Cards without an emitted check or unread instruction are absent from this index; that absence is not a negative result. Categories above overlap; counts below are pathway checks and unread instruction records, not additional cards.</p>
           <table><caption>Counts by record type</caption><thead><tr><th>Record</th><th>Count</th></tr></thead><tbody>
             <tr><td>Pathway checks that may help</td><td>{run.pathwayCounts.MATCH}</td></tr><tr><td>Unresolved pathway checks</td><td>{run.pathwayCounts.UNKNOWN}</td></tr>
             <tr><td>Pathway checks that did not meet the objective</td><td>{run.pathwayCounts.NO_MATCH}</td></tr><tr><td>Unread instruction records</td><td>{run.counts.unsupported_structure_records}</td></tr>

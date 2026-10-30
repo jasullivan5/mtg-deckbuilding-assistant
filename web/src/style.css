@@ -31,8 +31,8 @@ input, select { display: block; width: 100%; margin-top: 7px; background: #101b2
 .hint, .authored small { font-size: 13px; color: #b1c0c3; }
 .eyebrow { color: #b6d9c3; font-size: 11px; letter-spacing: .14em; }
 .warning { background: #342c28; color: #f2d7ac; padding: 12px; border-radius: 6px; }
-.run-summary { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 24px 0 10px; }
-.run-summary h2 { font-family: Georgia, serif; font-size: 29px; font-weight: 400; }
+.run-summary { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 18px 0 10px; }
+.run-summary h2 { font-family: Georgia, serif; font-size: 26px; font-weight: 400; }
 .run-summary p { margin: 0; }
 .count-note { color: #c2cfd0; font-size: 13px; margin: 12px 0; max-width: 1050px; }
 .categories { display: flex; flex-wrap: wrap; gap: 8px; }
