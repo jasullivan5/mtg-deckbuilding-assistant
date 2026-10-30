@@ -32,7 +32,7 @@ The browser's categories count physical finding cards and overlap. The run heade
 
 MATCH means conditional structural potential. UNKNOWN, a nonmatching pathway, an unsupported record, whole-card translation assurance, historical scenario execution and strategic usefulness remain separate. A card can have multiple different pathway verdicts. No emitted pathway is not a proven mechanical negative.
 
-Readable explanations restate existing Kotlin objectives and verdicts; they do not add mechanical acceptance rules. Original action, fact, decision, prerequisite, source, eligibility, structural-support and assurance records remain accessible. Authored native text is not independent Oracle/translation certification. Imagery and comprehensive card browsing remain deferred.
+Readable explanations restate existing Kotlin objectives and verdicts; they do not add mechanical acceptance rules. Original action, fact, decision, prerequisite, source, eligibility, structural-support and assurance records remain accessible. Authored native text is not independent Oracle/translation certification. The browser can filter the current findings by recorded mechanical relationships. It is not a comprehensive card catalog.
 
 Only **the latest run** is retained in memory. Starting another discovery invalidates earlier run URLs, including those in other tabs. Expired evidence reports a recovery message; rerun the question. Export complete evidence before replacing a run if you need to retain it. Exports are not imported as live discovery.
 
@@ -47,11 +47,12 @@ All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander
 | POST /commander | {commander} | unchanged CommanderInspection; HTTP 200 also covers blocked selections |
 | POST /discover | {commander, objective} | RunSummary: run ID, fresh structural execution mode/time, revisions, scope/counts, limitations and compact card index |
 | GET /runs/{id}/cards/{index} | index from that run's summary | CardEvidence: authored text, exact per-card results/actions/facts/unsupported/support/eligibility/assurance and readable restatements |
+| GET /runs/{id}/images?indices=0,1 | 1–40 indexes from the current run | Verified printing/face image records or explicit unavailable results |
 | GET /runs/{id}/report | none | streamed LiveDiscovery attachment containing the complete unchanged DiscoveryReport and run provenance |
 
-Card indexes belong to a single run; never reuse them for another run. Summary cards include cards with emitted objective pathways or unsupported records. Other cards/facts and every eligibility record remain in the full report. Alphabetical name/category navigation and 40-card UI pages do not narrow the Kotlin search population.
+Card indexes belong to a single run; never reuse them for another run. Summary cards include cards with emitted objective pathways or unsupported records. Other cards/facts and every eligibility record remain in the full report. Name/category/relationship navigation and 24-card UI pages do not narrow the Kotlin search population.
 
-The complete TypeScript consumer and serializable Kotlin DTOs are in `web/src/main.tsx` and `src/main/kotlin/server/ExplorerModels.kt`. Export metadata includes schemaVersion, execution, runId, startedAt, durationMs, applicationRevision, engineMode and report. The nested report's argentumCommit is the actual packaged engine revision. A +dirty application revision explicitly means its commit alone does not identify all uncommitted source.
+The complete TypeScript consumer and serializable Kotlin DTOs are in `web/src/api.ts` and the DTOs under `src/main/kotlin/server/`. Export metadata includes schemaVersion, execution, runId, startedAt, durationMs, applicationRevision, engineMode and report. The nested report's argentumCommit is the actual packaged engine revision. A +dirty application revision explicitly means its commit alone does not identify all uncommitted source.
 
 Errors use `{code, message, inspection?}`:
 
@@ -80,7 +81,7 @@ pnpm test:live
 Pop-Location
 ```
 
-The fixture browser suite tests UI states using explicitly synthetic transport records; it does not claim live mechanics. The live suite executes real browser → Kotlin queries and writes actual screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. CI runs the locked frontend build and fixture browser suite; genuine live browser execution is recorded separately in the the initial Explorer delivery receipt.
+The fixture browser suite tests UI states using explicitly synthetic transport records; it does not claim live mechanics. The live suite executes real browser → Kotlin queries and writes actual screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. CI runs the locked frontend build and fixture browser suite; genuine live browser execution is recorded separately in the initial Explorer delivery receipt.
 
 HTTP parity compares every serialized DiscoveryReport field with fresh CLI output for each objective, using streaming/hashing to avoid extra giant report trees. Selected-card evidence is also compared field-by-field. Boundary tests retain malformed/blocked/error/busy/timeout checks. The existing CLI and frozen expectations are unchanged.
 
@@ -88,8 +89,26 @@ HTTP parity compares every serialized DiscoveryReport field with fresh CLI outpu
 
 The original full Judith reports were 40–49 MB and contained roughly 4,600–5,400 finding cards. The index/detail approach addresses that measured cost. At the initial Explorer delivery, the clean-build warm token query measured 808,720 bytes for the summary, 12,099 bytes for Bitterblossom evidence, 5,087 ms native discovery and 5,285 ms complete HTTP. The first live query took 10.6 seconds native discovery; these are workstation observations, not performance guarantees. Full exports remain large and are deliberately streamed on request.
 
-This is structural research over available authored definitions. It is not exhaustive card coverage, a deck editor, strategic scoring, new objectives, scenario execution UI or independently qualified card translation. Source-first concerns and provisional/blocked assurance remain visible.
+This is structural research over available authored definitions. It is not exhaustive card coverage, a deck editor, strategic scoring, new objectives, scenario execution UI or independently qualified card translation. Source-first concerns and provisional/blocked assurance remain inspectable.
 
 ## Current revision checkpoint
 
 Branch `feature/discovery-experience` starts at application e972a19. The assignment is the 2026-10-30 Prototype Lab feedback. Inspect Agent of Shauku, Acolyte of Aclazotz and Accursed Centaur against retained Scryfall snapshots before presenting findings. Preserve discovery verdicts and frozen expectations; no engine change is currently justified. Implement server-owned explanations and verified imagery, revise the existing UI, then run Kotlin/frontend/browser checks and record actual source revisions here before delivery. This section will be replaced by the completed validation record.
+
+## Sacrifice findings investigation
+
+Source snapshots and rulings were retrieved from Scryfall on 2026-10-30 for PCY #55, LCI #89 and ONS #123. Raw hashes and URLs are retained in `src/test/resources/cards/image-and-explanation-sources.json`. The source set is a bounded investigation, not an independent whole-card qualification.
+
+| Card | Oracle expectation and authored representation | Existing discovery | Presentation consequence |
+| --- | --- | --- | --- |
+| Agent of Shauku | Mana plus a land sacrifice pays for a targeted power increase. The authored cost retains IsLand. | UNKNOWN: the application does not resolve IsLand as creature-compatible; policy accepts sacrifice costs only after mechanical checks. | Explain the land sacrifice that caused investigation. An ordinary land does not satisfy the creature objective. A land that is also a nontoken creature could do so, but this run establishes no animation or cross-card interaction. |
+| Acolyte of Aclazotz | Tap and sacrifice another creature or artifact. The authored filter retains the OR and excludeSelf. | MATCH under retained conditions: a legal choice can be a nontoken creature; a noncreature artifact or token does not meet the objective. | Show the choice, source exclusion and tap/resource restrictions. This is one OR-filtered sacrifice, not two independently payable costs. |
+| Accursed Centaur | On entering, sacrifice a creature. The source is not excluded. The retained ruling says it must sacrifice itself if it is the only creature. | MATCH under retained conditions, mandatory triggered effect rather than an activated sacrifice outlet. | Show the enters trigger, required sacrifice and source eligibility; no repeatable activation is inferred. |
+
+Checked against the official [Comprehensive Rules](https://magic.wizards.com/en/rules), revision 2026-09-25: sacrifice is a controller's battlefield-to-graveyard action (701.21a); death requires reaching the graveyard from the battlefield (700.4); effects can retain earlier card types (205.1b). No engine correction or broader filter-satisfiability change is justified by these three findings. This revision preserves the extractor, policies, report verdicts, source bindings and frozen expectations.
+
+## Printing and face imagery
+
+`CardImages` retrieves only requested visible cards, in batches of at most 40, from Scryfall's collection endpoint. A native Scryfall printing ID, an ID embedded in its Scryfall image URL, or exact set/collector identity is required. No name-only lookup is used. Conflicting known printing IDs, set/collector data, declared Oracle ID, physical layout, complete ordered face names, types or relevant mana costs prevent image admission. Unsupported layouts and missing images receive explicit fallbacks. The image association algorithm is `printing-face-image-v1`; it does not change coverage's physical-identity algorithm or eligibility.
+
+Scryfall's [API guidance](https://scryfall.com/docs/api) was checked on 2026-10-30. Requests identify the application and request JSON; collection batches are spaced at least 600ms apart. Metadata is cached for 24 hours under ignored `generated/explorer/image-metadata/`, revalidated against the current definition on every use, and bound by retrieval time and SHA256. Failure responses are not automatically retried; non-200 responses pause further requests (respecting a bounded Retry-After). Images are loaded directly from validated HTTPS Scryfall image URLs, unaltered, with browser caching, lazy loading, source links, artist credit and Wizards attribution. No image bytes are committed or proxied. Offline or conflicting metadata never substitutes approximate art. Image identity verifies the association, not card mechanics or current rules wording.

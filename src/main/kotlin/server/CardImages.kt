@@ -39,6 +39,7 @@ private fun safeImage(value: String?, printing: String): String? = value?.takeIf
     runCatching { URI(it).let { u -> u.scheme == "https" && u.host == "cards.scryfall.io" && printing in u.path } }.getOrDefault(false)
 }
 private fun identifier(card: CardDefinition): JsonObject? {
+    if (!card.metadata.scryfallId.isNullOrBlank() && uuid(card.metadata.scryfallId) == null) return null
     val declared = uuid(card.metadata.scryfallId)
     val image = sourceImageId(card.metadata.imageUri)
     if (declared != null && image != null && declared != image) return null

@@ -72,22 +72,22 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
         result.circumstances?.objectRestrictions?.contains("EXCLUDES_SOURCE") == true
     val relationship = when {
         result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "A death event is linked to this card's removal ability. The details retain which event and which removal are connected."
-        isSacrifice -> "The represented ability ${if (result.costOrEffect.endsWith("COST")) "sacrifices ${if (sacrificeSelf) "this source" else affected} as a cost" else "instructs a player to sacrifice ${if (sacrificeSelf) "this source" else affected}"}. ${if (excludesSource) "The source itself cannot be sacrificed for this instruction. " else ""}A sacrificed nontoken creature you control can contribute to your creature-dies objective if it reaches the graveyard."
-        result.branch == Contribution.REANIMATE_OWN_CREATURE -> "The represented ability moves a card from your graveyard onto your battlefield. This is being checked for returning an original creature card."
-        result.branch == Contribution.CREATE_CREATURE_TOKEN -> "The represented ability creates tokens. This is being checked for creating at least one creature token under your control."
-        result.operation == "DESTROY" -> "The represented ability destroys an affected permanent. This is being checked for causing a nontoken creature you control to die."
-        result.operation == "DAMAGE_POTENTIALLY_LETHAL" -> "The represented ability deals damage. Damage could cause a creature to die only if it is lethal in the actual game."
-        result.operation == "TOUGHNESS_REDUCTION" -> "The represented ability reduces toughness. A creature could die if its toughness becomes zero or less in the actual game."
-        result.operation == "MOVE_TO_GRAVEYARD" -> "The represented ability moves an object to the graveyard. It contributes a creature death only if that object is a creature on the battlefield immediately beforehand."
+        isSacrifice -> "This ability ${if (result.costOrEffect.endsWith("COST")) "sacrifices ${if (sacrificeSelf) "this source" else affected} as a cost" else "instructs a player to sacrifice ${if (sacrificeSelf) "this source" else affected}"}. ${if (excludesSource) "The source itself cannot be sacrificed for this instruction. " else ""}A sacrificed nontoken creature you control can contribute to your creature-dies objective if it reaches the graveyard."
+        result.branch == Contribution.REANIMATE_OWN_CREATURE -> "This ability moves a card from your graveyard onto your battlefield. This is being checked for returning an original creature card."
+        result.branch == Contribution.CREATE_CREATURE_TOKEN -> "This ability creates tokens. This is being checked for creating at least one creature token under your control."
+        result.operation == "DESTROY" -> "This ability destroys an affected permanent. This is being checked for causing a nontoken creature you control to die."
+        result.operation == "DAMAGE_POTENTIALLY_LETHAL" -> "This ability deals damage. Damage could cause a creature to die only if it is lethal in the actual game."
+        result.operation == "TOUGHNESS_REDUCTION" -> "This ability reduces toughness. A creature could die if its toughness becomes zero or less in the actual game."
+        result.operation == "MOVE_TO_GRAVEYARD" -> "This ability moves an object to the graveyard. It contributes a creature death only if that object is a creature on the battlefield immediately beforehand."
         else -> "An operation was retained for this objective, but this explanation cannot describe its precise relationship. Inspect the evidence before drawing a conclusion."
     }
     val requirements = mutableListOf<String>()
     requirements += costDescriptions(action?.native.obj()?.get("cost").obj())
     if (isSacrifice) {
         requirements += if (sacrificeSelf) "The source must be available to sacrifice." else
-            "The affected object must satisfy the represented filter: $affected${if (excludesSource) ", excluding this source" else ""}. Other filter restrictions remain in the evidence."
+            "The sacrifice must use: $affected${if (excludesSource) ", excluding this source" else ""}. Other filter restrictions remain in the evidence."
         if (result.branch == Contribution.DIRECT_DEATH_GENERATOR) requirements +=
-            "For this objective, the sacrificed object would have to be a nontoken creature you control. A token or an ordinary noncreature permanent does not meet it."
+            "For your objective, the sacrificed object would have to be a nontoken creature you control. A token or an ordinary noncreature permanent does not meet it."
         if (!excludesSource && native.text("type") in setOf("Sacrifice", "AtomSacrifice"))
             requirements += "The represented sacrifice does not exclude this source; if it satisfies all restrictions, it can be chosen."
         if (result.circumstances?.mandatory == Verdict.MATCH) requirements += "This is a required sacrifice when the represented effect resolves, rather than a repeatable sacrifice cost."
@@ -108,7 +108,14 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
         unknowns += "The application has not established that this ability meets the objective."
         if (isSacrifice && filter?.toString()?.contains("\"IsLand\"") == true)
             unknowns += "An ordinary land is not a creature. A land would also need to be a nontoken creature you control when sacrificed. This run has not established a land becoming a creature or verified that interaction."
-        unknowns += "Unresolved checks: " + result.decisions.filter { it.verdict == Verdict.UNKNOWN }.joinToString { it.stage }
+        unknowns += result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { decision ->
+            when (decision.stage) {
+                "potential-creature-death" -> "Whether the affected object can be a creature under the recorded restrictions remains unresolved."
+                "controller-YOU" -> "Whether the affected object can be under your control remains unresolved."
+                "token-NONTOKEN" -> "Whether the affected object can be nontoken remains unresolved."
+                else -> "An additional requirement could not be established. Its exact decision is retained in the ability evidence."
+            }
+        }.distinct()
     }
     if (result.localSupport == SupportStatus.PARTIALLY_SUPPORTED || result.interpretation.startsWith("PARTIAL"))
         unknowns += "Only part of this ability has been understood. Other instructions may matter; inspect what the application could not read."
