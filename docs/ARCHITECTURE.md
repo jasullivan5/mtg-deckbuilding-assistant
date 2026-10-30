@@ -27,7 +27,7 @@ The frontend presents native extraction and application decisions. Accounts, mul
 
 ## Application pipeline
 
-Native definitions â†’ effective Commander eligibility â†’ shared native action/branch extraction â†’ reusable facts/constraints â†’ objective queries and policies â†’ evidence/reporting and research diagnostics.
+Native definitions → effective Commander eligibility → shared native action/branch extraction → reusable facts/constraints → objective queries and policies → evidence/reporting and research diagnostics.
 
 Files below are relative to `src/main/kotlin/`.
 

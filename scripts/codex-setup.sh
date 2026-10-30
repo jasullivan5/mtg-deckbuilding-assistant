@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Configure JDK21/JAVA_HOME in the environment, then run from any working directory.
+# Compatibility entry point for externally configured setup commands.
+# Keep setup logic in bootstrap.sh; configure JDK21/JAVA_HOME before invoking.
 root=$(cd "$(dirname "$0")/.." && pwd)
 exec bash "$root/scripts/bootstrap.sh" "$@"
