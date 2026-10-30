@@ -44,9 +44,17 @@ val engineImplementation = engineGit("ls-tree", "-r", "HEAD").lineSequence()
 val engineImplementationSha256 = MessageDigest.getInstance("SHA-256")
     .digest(engineImplementation.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
 val generatedEngineResources = layout.buildDirectory.dir("generated/engine-resources")
+val applicationGit = ProcessBuilder("git", "-C", projectDir.parentFile.absolutePath, "rev-parse", "HEAD").start()
+val applicationCommit = applicationGit.inputStream.bufferedReader().readText().trim()
+check(applicationGit.waitFor() == 0) { "Cannot record application revision" }
+val applicationStatus = ProcessBuilder("git", "-C", projectDir.parentFile.absolutePath, "status", "--porcelain").start()
+val applicationDirty = applicationStatus.inputStream.bufferedReader().readText().isNotBlank()
+check(applicationStatus.waitFor() == 0) { "Cannot record application source state" }
+val applicationRevision = applicationCommit + if (applicationDirty) "+dirty" else ""
 val recordEngineBuild by tasks.registering {
     inputs.property("engineRevision", engineRevision)
     inputs.property("engineImplementationSha256", engineImplementationSha256)
+    inputs.property("applicationRevision", applicationRevision)
     inputs.property("mode", System.getenv("ARGENTUM_CANDIDATE_REVISION")?.let { "candidate" } ?: "app-stable")
     outputs.dir(generatedEngineResources)
     doLast {
@@ -54,6 +62,7 @@ val recordEngineBuild by tasks.registering {
         val output = generatedEngineResources.get().file("engine-build.properties").asFile
         output.parentFile.mkdirs()
         output.writeText("revision=$engineRevision\nimplementationSha256=$engineImplementationSha256\nmode=${inputs.properties["mode"]}\n")
+        output.resolveSibling("application-build.properties").writeText("revision=$applicationRevision\n")
     }
 }
 sourceSets.main { resources.srcDir(generatedEngineResources) }

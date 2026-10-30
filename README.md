@@ -4,11 +4,20 @@ A Commander deckbuilding research CLI that finds structural mechanical possibili
 
 The implementation uses Kotlin, JDK 21 and Gradle, with Argentum's native `CardRegistry`, `CardDefinition`, `CardScript`, rules engine and `mtg-search`. The foundation is already selected; this project extends its existing extraction and research tools.
 
-The approved next direction is an independent React / TypeScript / Vite Commander Discovery Explorer: select a supported commander and existing objective, run real discovery, browse identity-verified card images and inspect mechanics, prerequisites, evidence and limitations. The frontend and local Kotlin integration boundary are planned, not implemented here. Small runnable prototypes will let the user evaluate understandability and usefulness alongside engineering evidence; the aim is to explain why cards matter in context, not universal card-strength scoring. See [development and delivery expectations](AGENTS.md#collaboration-and-delivery) and [planned architecture](docs/ARCHITECTURE.md#planned-research-interface).
+Explorer M1 adds a live React / TypeScript / Vite interface over existing Kotlin inspection and the three discovery objectives. Browse findings, inspect conditional pathways and original evidence, and change the research question without generating JSON manually. User acceptance is pending; imagery and later milestones remain deferred.
 
+## Launch the Explorer on Windows
+
+Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0; configure JAVA_HOME and PATH. From this checkout:
+
+```powershell
+.\scripts\explorer.ps1
+```
+
+Open **http://127.0.0.1:8787** after **Explorer ready** appears. Initial installation requires network access; catalog loading takes tens of seconds. Stop with **Ctrl+C**. The command builds both layers using the normal sibling app-stable engine. See [guided exercises, API and limitations](docs/EXPLORER_M1.md).
 ## Two repositories
 
-- [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics, including the planned research frontend and local API integration.
+- [This application](https://github.com/jasullivan5/mtg-deckbuilding-assistant) owns discovery, effective Commander eligibility, external identity observations, translation assurance and research diagnostics, including the research frontend and local API integration.
 - [Our Argentum fork](https://github.com/jasullivan5/argentum-engine) owns engine/SDK changes and native mechanical regressions. Its default `app-stable` is the normal development base; `main` tracks the [original project](https://github.com/wingedsheep/argentum-engine) for comparison only. Internal engine PRs target `app-stable`; upstream PRs require explicit user authorization.
 
 The application uses the sibling `../argentum-engine` checkout on the maintained fork's `app-stable` branch. Engine corrections require native and application compatibility checks before acceptance there. Each application build and research result records the actual engine SHA; no separate dependency-pin approval is required. See [engine workflow](docs/ENGINE_WORKFLOW.md). The earlier exact-pin transition is preserved as [historical evidence](docs/ENGINE_COUNTER_CORRECTION.md).

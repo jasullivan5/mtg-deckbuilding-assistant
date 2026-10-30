@@ -17,7 +17,7 @@ The first coherent journey is:
 5. Expand prerequisites, decisions, source identity, translation status, unsupported structures, and evidence.
 6. Understand the run's scope, limitations, and revision provenance rather than mistaking a structural match for a verified or valuable inclusion.
 
-The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. The application currently retains a functioning Kotlin CLI and diagnostics; the React UI and local Kotlin adapter are planned until implemented and verified.
+The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER_M1.md); user acceptance remains pending.
 
 ## 2. Sequenced experience milestones
 
@@ -32,12 +32,9 @@ The order below reflects learning dependencies, **not** a promise of dates, fina
 
 **Decision point after M3:** Try the Explorer and decide whether scenario inspection is the most useful next research experience. M4 is a candidate, not an automatic phase. The UI should ultimately support deeper strategic questions—dependencies, substitutes and contextual deck value—but those need independent research and authorization rather than being smuggled into these milestones.
 
-### M1 is the next authorized *candidate*, not a running assignment
+### M1 delivery awaiting Prototype Lab
 
-The next Codex brief should target **M1**, not a generic backend API project. It should deliver a thin but complete, launchable vertical slice: real commander inspection/discovery from the browser, a readable result, an inspectable limitation, and one-step local startup. The interface may be visually modest at first, but it must feel intentional and usable rather than a JSON debugging page. Establish API framework/schema/process lifecycle from actual implementation evidence; do not prescribe Ktor merely because it was considered during the audit.
-
-M1 may require internal checkpoints (API contract/parity → minimal UI → integrated launch/tests), but do not treat a backend-only checkpoint as completion of the user experience. If unexpectedly high integration risk emerges, stop with documented evidence and propose the smallest corrective decision instead of silently expanding scope.
-
+The authorized M1 assignment resumes the preserved `feature/explorer-m1` foundation after reconciliation with the sibling app-stable integration. It delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [Explorer M1](EXPLORER_M1.md). Verification remains separate from user acceptance. No M2 or later milestone has begun.
 ## 3. How increments are proposed, built and accepted
 
 **One approved task at a time.** Product Studio maintains the direction; Codex may sequence ordinary technical subtasks within an approved increment, but must not execute subsequent milestones merely because they are written here. Prefer a single focused PR per meaningful increment; use more than one only when there is a concrete isolation or review benefit. Avoid a sprawling PR that implements multiple future milestones.
@@ -75,11 +72,11 @@ Current code, `AGENTS.md`, `docs/ARCHITECTURE.md`, tests and the recorded engine
 
 ## 6. Lightweight status and decision log
 
-Keep this section brief and revise it **after** user review, not just PR creation. No dates or completion claims without observed evidence.
+Keep this section brief and record demonstrated readiness separately from acceptance; mark acceptance only **after** user review. No dates or completion claims without observed evidence.
 
 | Milestone | Status | Next product decision |
 |---|---|---|
-| M1 — Live discovery foundation | **Paused before completion** | Finish and review the authorized sibling app-stable workflow migration first; partial Explorer implementation is preserved on feature/explorer-m1 |
+| M1 — Live discovery foundation | **Ready for Prototype Lab; acceptance pending** | Try the live M1 delivery and assess conditional explanations, evidence and limitations |
 | M2 — Card-first exploration | **Not started** | Reassess priorities after trying M1 |
 | M3 — Evidence and visualization | **Not started** | Choose charts/questions from actual Explorer shortcomings |
 | M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |

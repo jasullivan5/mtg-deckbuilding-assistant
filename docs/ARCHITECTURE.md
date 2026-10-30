@@ -4,32 +4,26 @@
 
 The application is an external Kotlin `cli/` Gradle module attached through `argentum.init.gradle` to the sibling `../argentum-engine` on the maintained fork's `app-stable` branch. `dev`/`dev.ps1` enforce branch, clean source and fork origin. The branch selects the dependency; generated build metadata and reports record the actual engine SHA. Native/application compatibility is checked before engine acceptance. See [engine workflow](ENGINE_WORKFLOW.md).
 
-Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application currently has no frontend or HTTP API; it does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the actual recorded engine revision when changing integrations.
+Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application includes a React frontend and local JDK HTTP adapter; it does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the actual recorded engine revision when changing integrations.
 
-## Planned research interface
+## Research interface
 
-The working direction selected following Technology Audit 001 is a focused independent React / TypeScript / Vite interface in the application repository. Its initial experience is a Commander Discovery Explorer over existing commander inspection and discovery objectives. This records the direction; it does not implement or start the Explorer. The local audit experiment is separate research evidence, not an integrated application feature or proof of live API operation.
+Explorer M1 implements an independent React / TypeScript / Vite frontend in `explorer/`, served by the application-owned JDK `HttpServer`. It directly calls existing Kotlin commander inspection and discovery services. The CLI and headless pipeline remain supported; React adds no mechanical acceptance rules.
 
 ```text
-React research UI [planned, application-owned]
-  -> local Kotlin integration [planned, application-owned]
-  -> existing discovery / eligibility / assurance logic [implemented, application-owned]
-  -> sibling app-stable Argentum SDK and rules engine [implemented, fork-owned]
+React research UI (application-owned)
+  -> loopback HTTP /api/v1 (application-owned)
+  -> existing discovery / eligibility / assurance (application-owned)
+  -> sibling app-stable Argentum SDK and rules engine (fork-owned)
 ```
 
-| Boundary | Ownership and constraints |
-|---|---|
-| Research UI — planned | Application: supported commander and existing-objective selection, genuine discovery, verified imagery, browsable grids/lists, readable mechanical explanations, prerequisites/decisions/evidence/limitations and interactive research visualizations. Responsive, keyboard-accessible and pleasant to explore. |
-| Local Kotlin integration — planned | Application: a narrow adapter exposing real application capabilities. Lightweight HTTP is favored; framework, schema, process lifecycle and error handling remain to be implemented and reviewed. Ktor is not an implemented or mandatory dependency. |
-| Existing research pipeline | Application: Commander eligibility, objective interpretation, discovery integration, translation assurance, source/identity observations, diagnostics and exact engine adoption. Retain the CLI and headless tests as entry points and regression evidence. |
-| Native mechanics | Maintained fork: card structures, SDK semantics, rules execution, generic mechanical corrections and native regressions. Develop in the independent sibling repository; maintain the normal sibling on app-stable and validate native/application compatibility before engine acceptance. |
+`ExplorerServer.kt` owns transport, strict requests, readiness, bounded execution and static assets. `ExplorerModels.kt` projects existing reports into a compact card index and selected-card evidence. A streamed export retains the complete unchanged report. Readable explanations restate the objective and existing verdict; original decisions and prerequisites remain inspectable. Builds package the actual application revision (with +dirty when applicable) and engine SHA.
 
-The UI must present native extraction and application decisions, never introduce a second MTG rules interpreter. An imported genuine report may support an early bounded prototype, but must be labeled with its source/revisions and not presented as live discovery. Genuine discovery execution remains part of the intended Explorer capability.
+One exclusive research worker prevents overlapping expensive queries. Four bounded HTTP workers serve loopback requests; research has a 120-second response deadline, with the worker reserved until timed-out work actually ends. Only the latest run is retained: starting another discovery expires earlier evidence URLs. Host/origin validation, bounded JSON bodies and resolved static-path containment constrain the local boundary. See [schema, lifecycle, errors and observed limits](EXPLORER_M1.md).
 
-Argentum's existing web client is a possible source of selected presentation components, imagery utilities and icons after coupling, provenance and licensing review. Do not import the complete client or default to its hosted gameplay architecture. Accounts, multiplayer, general deck editing, persistent databases, desktop packaging, cloud infrastructure, a comprehensive game client, new objectives and replacement rules execution remain outside this direction without demonstrated need and appropriate approval.
+The Windows launcher installs locked frontend dependencies, builds both layers and starts one foreground JVM. Fresh CLI parity, boundary tests, fixture browser checks and genuine live browser interactions are recorded in the M1 receipt. Readiness for user evaluation does not establish acceptance or translation certification. Imagery is an explicit fallback; comprehensive browsing and later visual/scenario milestones remain deferred.
 
-The first bounded integration must validate the adapter contract and parity with existing CLI behavior, lifecycle/readiness/shutdown, error and blocked/unknown states, verified image associations/fallbacks, and actual local launch and interaction. Catalog startup, report size and browsing responsiveness need measurement on that implementation; the audit experiment does not settle them. Keep expectations, historical execution, fresh execution and illustrative data distinguishable. [Agent guidance](../AGENTS.md#visualization-fidelity) owns the presentation safeguards and [prototype delivery expectations](../AGENTS.md#collaboration-and-delivery); do not infer user acceptance or translation qualification from an attractive screen or passing tests.
-
+The frontend presents native extraction and application decisions. Accounts, multiplayer, deck editing, databases, desktop packaging, hosted infrastructure, new objectives and replacement rules execution remain outside M1. Selective reuse of Argentum client assets still requires coupling, provenance and licensing review. [Presentation safeguards](../AGENTS.md#visualization-fidelity) apply to future increments.
 ## Application pipeline
 
 Native definitions → effective Commander eligibility → shared native action/branch extraction → reusable facts/constraints → objective queries and policies → evidence/reporting and research diagnostics.

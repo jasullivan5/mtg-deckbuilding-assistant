@@ -26,6 +26,7 @@ fun describe(card: CardDefinition): String = buildString {
 
 private const val HELP = """MTG Deckbuilding Assistant
 Usage:
+  mtg-assistant explorer <frontend-dist-directory> <port>
   mtg-assistant audit catalog-coverage --commander <name> --oracle-cards <snapshot> [--objective <objective|all>] [--translation-review <review.json>] [--enrichment-output <identities.json>] [--json] [--output <path>]
   mtg-assistant audit catalog-missing --report <coverage.json> [--name <substring>] [--status <STATUS>] [--limit 20] [--offset 0] [--json]
   mtg-assistant audit cross-objective --snapshot <objective-a.json> --other-snapshot <objective-b.json> [--json] [--output <path>]
@@ -54,6 +55,7 @@ fun runCli(args: Array<String>, catalog: () -> Catalog = { Catalog() },
     }
     return try {
         when (args[0]) {
+            "explorer" -> dev.mtg.assistant.explorer.serveExplorer(args.drop(1))
             "audit" -> dev.mtg.assistant.audit.auditCommand(args.drop(1), catalog, out)
             "commander" -> dev.mtg.assistant.discovery.commanderCommand(args.drop(1), catalog(), out)
             "discover" -> discoveryCommand(args.drop(1), catalog(), out)
