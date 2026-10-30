@@ -36,6 +36,16 @@
       "file": "delver-of-secrets-source.json",
       "sha256": "d05fe91d22f0d898f37b69ea890145a7c3430076211b7b0cf533b3aeb65137e9",
       "sourceUri": "https://api.scryfall.com/cards/11bf83bb-c95b-4b4f-9a56-ce7a1816307a"
+    },
+    {
+      "file": "attrition-source.json",
+      "sha256": "e576f4d0530835f4b20352fe1536fc64a56b5785994247976a98a0be17e0be50",
+      "sourceUri": "https://api.scryfall.com/cards/e3eb615b-249d-433f-a521-8310e8784b5d"
+    },
+    {
+      "file": "attrition-rulings.json",
+      "sha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "sourceUri": "https://api.scryfall.com/cards/e3eb615b-249d-433f-a521-8310e8784b5d/rulings"
     }
   ]
 }

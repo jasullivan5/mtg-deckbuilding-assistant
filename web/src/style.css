@@ -117,3 +117,51 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
   .card-overview .picture { max-width: 210px; margin: auto; }
   .detail { padding: 18px; }
 }
+
+/* Evidence controls describe separate claims; incomplete work stays visually neutral. */
+.commander-summary { margin-top: 12px; font-size: 13px; }
+.commander-summary p { margin: 6px 0; }
+.commander-rules { white-space: pre-line; color: #c4d2d0; }
+.commander-summary > details { margin-bottom: 0; }
+.diagnostic-views { margin: 10px 0 20px; padding-top: 8px; }
+.diagnostic-views summary { font-size: 12px; color: #9fb6b7; }
+.diagnostics { display: flex; gap: 8px; flex-wrap: wrap; }
+.diagnostics button { font-size: 12px; background: transparent; }
+.card .concern-marker { color: #eeb7a4; }
+.ability-inspection { border-top: 1px solid #466068; margin-top: 20px; padding-top: 5px; }
+.ability-inspection h3 { margin-bottom: 10px; }
+.ability-picker { margin: 20px 0; }
+.contribution { color: #d8e5db; }
+.ability-parts { display: flex; flex-wrap: wrap; gap: 18px; }
+.ability-parts > section { flex: 1 1 190px; min-width: 0; }
+.ability-part h4 { color: #bcd6c8; margin: 14px 0 7px; }
+.ability-part ul { font-size: 14px; margin: 6px 0 12px; }
+.ability-part li { margin-bottom: 7px; }
+.evidence-inspector { margin: 12px 0 18px; }
+.evidence-buttons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+.evidence-button { text-align: left; background: #14252b; border: 1px solid #435d64; padding: 10px; font-size: 12px; min-width: 0; }
+.evidence-button > span { display: block; font-weight: 600; line-height: 1.4; }
+.evidence-button small { display: block; color: #b6c6c7; margin-top: 6px; font-size: 11px; line-height: 1.4; }
+.evidence-button.ESTABLISHED:not(.historical) { border-color: #7ab79b; }
+.evidence-button.ESTABLISHED:not(.historical) > span { color: #c3e6ce; }
+.evidence-button.KNOWN_PROBLEM { border-color: #a96e5b; background: #352c29; }
+.evidence-button.KNOWN_PROBLEM small { color: #f0c4b2; }
+.evidence-button[aria-expanded=true] { box-shadow: inset 0 -3px #a5d0bc; background: #273c41; }
+.evidence-panel { border: 1px solid #4c686e; background: #14242a; border-radius: 8px; padding: 16px; margin-top: 10px; font-size: 13px; }
+.evidence-panel h4 { margin-top: 0; font-size: 15px; }
+.evidence-panel h5 { font-size: 13px; color: #bbd4c7; margin: 16px 0 6px; }
+.evidence-panel p { margin: 8px 0; }
+.evidence-panel ul { margin-top: 6px; }
+.evidence-scope { color: #b7c8c8; }
+.record-links details { border: 0; padding: 0; margin: 3px 0 10px; }
+.record-links summary { font-size: 11px; min-height: 24px; }
+.recorded-problem { border: 1px solid #a86b58; background: #332a27; border-radius: 8px; padding: 14px; margin: 16px 0; }
+.recorded-problem h4 { color: #f1c3ad; margin-top: 0; }
+.research-question { border-left: 2px solid #5b7b85; padding: 0 14px; margin: 14px 0; font-size: 13px; }
+.research-question h4 { font-size: 14px; }
+@media (max-width: 1100px) { .evidence-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) {
+  .evidence-panel { padding: 12px; }
+  .evidence-button { padding: 10px 8px; }
+  .commander-summary { font-size: 12px; }
+}

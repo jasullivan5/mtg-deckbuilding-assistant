@@ -81,6 +81,7 @@ class ExplorerServer(
             }
             "/api/v1/objectives" -> if (x.requestMethod == "GET") { x.json(200, objectives); return }
             "/api/v1/commander", "/api/v1/discover" -> { research(x, path.endsWith("discover")); return }
+            "/api/v1/commander-view" -> { research(x, false, true); return }
         }
         if (path.startsWith("/api/v1/runs/")) { evidence(x, path); return }
         if (path.startsWith("/api/")) { x.json(404, ApiError("NOT_FOUND", "Unknown API route or method.")); return }
@@ -88,7 +89,7 @@ class ExplorerServer(
     }
 
     private data class Response(val status: Int, val body: JsonElement)
-    private fun research(x: HttpExchange, discoveryRequested: Boolean) {
+    private fun research(x: HttpExchange, discoveryRequested: Boolean, viewRequested: Boolean = false) {
         if (x.requestMethod != "POST") { x.json(405, ApiError("METHOD_NOT_ALLOWED", "Use POST with JSON.")); return }
         if (!x.requestHeaders.getFirst("Content-Type")?.substringBefore(';')?.trim().equals("application/json", true)) {
             x.json(415, ApiError("CONTENT_TYPE", "Use application/json.")); return
@@ -98,7 +99,7 @@ class ExplorerServer(
         val request = try {
             reportJson.decodeFromString<ResearchRequest>(bytes.toString(Charsets.UTF_8)).also {
                 require(it.commander.isNotBlank() && it.commander.length <= 200 && it.commander.none(Char::isISOControl))
-                require(if (discoveryRequested) objectives.any { o -> o.id == it.objective } else it.objective == null)
+                require(if (discoveryRequested || viewRequested) objectives.any { o -> o.id == it.objective } else it.objective == null)
             }
         } catch (_: IllegalArgumentException) {
             x.json(400, ApiError("INVALID_REQUEST", "Supply one exact commander name and, for discovery, an existing objective ID.")); return
@@ -110,7 +111,7 @@ class ExplorerServer(
         val future = worker.submit(Callable {
             try {
                 val inspected = inspectCommander(catalog, request.commander)
-                if (!discoveryRequested) Response(200, reportJson.encodeToJsonElement(inspected))
+                if (!discoveryRequested) Response(200, if (viewRequested) reportJson.encodeToJsonElement(commanderView(catalog, request.commander, inspected)) else reportJson.encodeToJsonElement(inspected))
                 else if (!inspected.selectable) Response(422, reportJson.encodeToJsonElement(ApiError(
                     "COMMANDER_BLOCKED", "This commander cannot be selected in this catalog.", inspected)))
                 else {
