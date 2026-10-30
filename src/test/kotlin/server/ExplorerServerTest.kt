@@ -94,6 +94,29 @@ class ExplorerServerTest : FunSpec({
             request(server,"runs/expired-run/cards/0").statusCode() shouldBe 410
         }
     }
+    test("image requests use current run indexes, enforce batch limits and retain verified identity") {
+        val raw = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/agent-of-shauku-source.json"))).jsonObject
+        var lookups = 0
+        val images = CardImages { lookups++; listOf(raw) }
+        ExplorerServer(catalog, 0, images = images).use { server ->
+            server.start()
+            request(server, "runs/expired/images?indices=0").statusCode() shouldBe 410
+            lookups shouldBe 0
+            val summary = reportJson.decodeFromString<RunSummary>(post(server, "discover", "Judith, the Scourge Diva", objectives.first().id).body())
+            val index = summary.cards.single { it.card == "Agent of Shauku" }.index
+            for (query in listOf("", "indices=", "indices=-1", "indices=no", "indices=999999", "indices=" + List(41) { index }.joinToString(","))) {
+                request(server, "runs/${summary.runId}/images?$query").statusCode() shouldBe 400
+            }
+            lookups shouldBe 0
+            val response = request(server, "runs/${summary.runId}/images?indices=$index")
+            response.statusCode() shouldBe 200
+            val image = reportJson.decodeFromString<List<CardImage>>(response.body()).single()
+            image.card shouldBe "Agent of Shauku"
+            image.status shouldBe "VERIFIED"
+            image.printingId shouldBe "d8316804-6f8b-423e-a2c3-fa476c095544"
+            lookups shouldBe 1
+        }
+    }
     test("malformed, oversized, invalid objective, route, method and foreign-origin requests are explicit errors") {
         ExplorerServer(catalog,0).use { s ->
             s.start()

@@ -27,6 +27,7 @@ private fun applicationRevision(): String = Properties().run {
 class ExplorerServer(
     private val catalog: Catalog, port: Int = 8787, private val assets: Path? = null,
     private val revision: String = applicationRevision(), private val timeoutSeconds: Long = 120,
+    private val images: CardImages = CardImages(assets?.toAbsolutePath()?.parent?.parent?.resolve("generated/explorer/image-metadata")),
     private val discovery: (String, String) -> DiscoveryReport = { name, objective -> discover(catalog, name, objective = objective) }
 ) : AutoCloseable {
     companion object {
@@ -152,6 +153,15 @@ class ExplorerServer(
         if (parts.size == 2 && parts[1] == "report") {
             x.responseHeaders.set("Content-Disposition", "attachment; filename=explorer-${run.id}.json")
             x.json(200, run.export); return
+        }
+        if (parts.size == 2 && parts[1] == "images") {
+            val query = x.requestURI.rawQuery.orEmpty()
+            val indices = query.removePrefix("indices=").split(',').map { it.toIntOrNull() }
+            if (!query.startsWith("indices=") || indices.size !in 1..40 || indices.any { it == null || run.definition(it) == null }) {
+                x.json(400, ApiError("INVALID_IMAGE_REQUEST", "Supply 1–40 card indexes from this run.")); return
+            }
+            val cards = indices.filterNotNull().distinct().map { it to run.definition(it)!! }
+            x.json(200, images.resolve(cards)); return
         }
         if (parts.size == 3 && parts[1] == "cards") {
             val card = parts[2].toIntOrNull()?.let(run::card)

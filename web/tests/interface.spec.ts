@@ -22,6 +22,10 @@ function summary(cards: unknown[] = []) {
   };
 }
 test.beforeEach(async ({page}) => {
+  await page.route('**/api/v1/runs/*/images?*', route => route.fulfill({json:
+    (new URL(route.request().url()).searchParams.get('indices') ?? '').split(',').map(index => ({
+      index: Number(index), status: 'UNAVAILABLE', reason: 'Synthetic fixture: image identity is not established.', faces: [],
+    }))}));
   await page.route('**/api/v1/objectives', r => r.fulfill({json: objectives}));
   await page.route('**/api/v1/health', r => r.fulfill({json: {applicationRevision: 'fixture', argentumCommit: 'fixture', engineMode: 'test-fixture'}}));
   await page.route('**/api/v1/commander', r => r.fulfill({json: inspection}));
@@ -62,8 +66,10 @@ test('commander/objective submission, loading, card selection and evidence inspe
   await expect(page.getByRole('heading', {name: 'Fixture token card', exact: true})).toBeVisible();
   await page.getByRole('button', {name: /^Fixture token card/}).click();
   await expect(page.getByText('Fixture resources must be available.')).toBeVisible();
+  await page.getByText('What else could the application not read?', {exact: false}).click();
   await expect(page.getByText('Fixture unsupported child.')).toBeVisible();
-  await expect(page.getByText('No application translation-assurance record supplied.', {exact: false})).toBeVisible();
+  await page.getByText('How much has this card been checked?').click();
+  await expect(page.getByText('No separate application card-review record was supplied.')).toBeVisible();
   await page.getByLabel('Research objective').selectOption('reanimate-own-creatures');
   await expect(page.getByRole('region', {name: 'Completed discovery'})).toHaveCount(0);
   await expect(page.getByRole('heading', {name: 'Fixture token card', exact: true})).toHaveCount(0);
@@ -107,6 +113,36 @@ test('expired evidence is reported instead of inventing a result', async ({page}
   await page.goto('/');
   await page.getByRole('button', {name: 'Run discovery'}).click();
   await expect(page.getByRole('alert')).toHaveText('This run is no longer retained. Run discovery again.');
-  await page.getByRole('button', {name: /^Unresolved pathways/}).click();
+  await page.getByRole('button', {name: /Needs investigation/}).click();
   await expect(page.getByRole('button', {name: /^Expired fixture/})).toBeVisible();
+});
+
+
+test('overlapping card counts, relationship filtering and selection remain distinct from pathway counts', async ({page}) => {
+  const cards = [
+    {index: 0, card: 'Mixed fixture', pathways: {MATCH: 2, UNKNOWN: 1, NO_MATCH: 1}, mechanics: ['Sacrifice'], branches: [], unsupportedRecords: 1, partialPathways: 1, reason: 'Synthetic sacrifice relationship.'},
+    {index: 1, card: 'Unresolved fixture', pathways: {MATCH: 0, UNKNOWN: 1, NO_MATCH: 0}, mechanics: ['Destruction'], branches: [], unsupportedRecords: 0, partialPathways: 1, reason: 'Synthetic unresolved destruction.'},
+  ];
+  await page.route('**/api/v1/discover', r => r.fulfill({json: {...summary(cards), pathwayCounts: {MATCH: 2, UNKNOWN: 2, NO_MATCH: 1}}}));
+  await page.route('**/api/v1/runs/fixture-run/cards/*', r => {
+    const card = cards[Number(r.request().url().split('/').pop())];
+    return r.fulfill({json: {runId: 'fixture-run', card: card.card, authoredCard: null, results: [], actions: [], facts: [], unsupported: [], structuralSupport: [], eligibility: [], translationAssurance: [], explanations: []}});
+  });
+  await page.goto('/');
+  await expect(page.getByRole('heading', {name: 'Commander Discovery', exact: true})).toBeVisible();
+  await page.getByRole('button', {name: 'Run discovery'}).click();
+  const categories = page.getByRole('navigation', {name: 'Finding categories'});
+  await expect(categories.getByRole('button', {name: /May help/})).toHaveText('1May helpcards');
+  await expect(categories.getByRole('button', {name: /Needs investigation/})).toHaveText('2Needs investigationcards');
+  await expect(categories.getByRole('button', {name: /Abilities ruled out/})).toHaveText('1Abilities ruled outcards');
+  await expect(page.getByText('These views overlap.', {exact: true})).toBeVisible();
+  await categories.getByRole('button', {name: /Needs investigation/}).click();
+  await page.getByLabel('Mechanical relationship').selectOption('Destruction');
+  await expect(page.getByRole('button', {name: 'Mixed fixture', exact: true})).toHaveCount(0);
+  const selected = page.getByRole('button', {name: 'Unresolved fixture', exact: true});
+  await expect(selected).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('region', {name: 'Result inspection'}).getByRole('heading', {name: 'Unresolved fixture'})).toBeVisible();
+  await expect(page.getByText('Synthetic fixture: image identity is not established.')).toBeVisible();
+  await page.getByRole('link', {name: 'Read selected card: Unresolved fixture ↓'}).click();
+  await expect(page.getByRole('region', {name: 'Result inspection'})).toBeFocused();
 });

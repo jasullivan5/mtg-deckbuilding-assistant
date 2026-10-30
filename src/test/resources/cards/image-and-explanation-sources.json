@@ -1,0 +1,41 @@
+{
+  "retrievedDate": "2026-10-30",
+  "purpose": "Source-grounded finding explanations and physical printing/face image identity tests; no gameplay or independent translation certification.",
+  "sources": [
+    {
+      "file": "agent-of-shauku-source.json",
+      "sha256": "ebe07287a8063e9a3aa4ae1a07b42493d6480e5de82f2f5fe6479c39919a0bc1",
+      "sourceUri": "https://api.scryfall.com/cards/d8316804-6f8b-423e-a2c3-fa476c095544"
+    },
+    {
+      "file": "agent-of-shauku-rulings.json",
+      "sha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "sourceUri": "https://api.scryfall.com/cards/d8316804-6f8b-423e-a2c3-fa476c095544/rulings"
+    },
+    {
+      "file": "acolyte-of-aclazotz-source.json",
+      "sha256": "5dcc85b20fb934d4341b29126bff735b1f5c1598df7c8f116a588be2681ee19a",
+      "sourceUri": "https://api.scryfall.com/cards/99009400-ffa4-40af-8305-78295ae605ac"
+    },
+    {
+      "file": "acolyte-of-aclazotz-rulings.json",
+      "sha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "sourceUri": "https://api.scryfall.com/cards/99009400-ffa4-40af-8305-78295ae605ac/rulings"
+    },
+    {
+      "file": "accursed-centaur-source.json",
+      "sha256": "492452bf6811b3be8c6cf2e90fe44ca19f98de4574ce6df2ce22424474864ee4",
+      "sourceUri": "https://api.scryfall.com/cards/894556d8-6d5c-431b-a45d-26cd37c5f456"
+    },
+    {
+      "file": "accursed-centaur-rulings.json",
+      "sha256": "0d8b7e9592a3f8a1dee8eb3675aa0f37a598fa39a61af1bb82c53e1b4a6d47cd",
+      "sourceUri": "https://api.scryfall.com/cards/894556d8-6d5c-431b-a45d-26cd37c5f456/rulings"
+    },
+    {
+      "file": "delver-of-secrets-source.json",
+      "sha256": "d05fe91d22f0d898f37b69ea890145a7c3430076211b7b0cf533b3aeb65137e9",
+      "sourceUri": "https://api.scryfall.com/cards/11bf83bb-c95b-4b4f-9a56-ce7a1816307a"
+    }
+  ]
+}
