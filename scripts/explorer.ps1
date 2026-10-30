@@ -1,6 +1,46 @@
 param([ValidateRange(1024,65535)][int]$Port = 8787)
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path $PSScriptRoot -Parent
+# VS Code can retain the environment from before tools were installed.
+# Refresh saved paths without depending on its PowerShell profile loading.
+if ([Environment]::OSVersion.Platform -eq [PlatformID]::Win32NT) {
+    if (-not $env:JAVA_HOME -or -not (Test-Path -LiteralPath (Join-Path $env:JAVA_HOME 'bin/java.exe'))) {
+        $env:JAVA_HOME = [Environment]::GetEnvironmentVariable('JAVA_HOME', 'User')
+        if (-not $env:JAVA_HOME) {
+            $env:JAVA_HOME = [Environment]::GetEnvironmentVariable('JAVA_HOME', 'Machine')
+        }
+    }
+    $ToolPaths = @()
+    if ($env:JAVA_HOME) { $ToolPaths += Join-Path $env:JAVA_HOME 'bin' }
+    $ToolPaths += $env:Path -split ';'
+    $ToolPaths += [Environment]::GetEnvironmentVariable('Path', 'User') -split ';'
+    $ToolPaths += [Environment]::GetEnvironmentVariable('Path', 'Machine') -split ';'
+    # Packaged Windows apps can see different AppData files. Prefer the shared
+    # user Tools folder, with the older AppData installation as a fallback.
+    $ToolRoots = @(
+        (Join-Path $env:USERPROFILE 'Tools/mtg-dev-tools'),
+        (Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'mtg-dev-tools')
+    )
+    foreach ($LocalTools in $ToolRoots) {
+        if (-not (Test-Path -LiteralPath $LocalTools)) { continue }
+        if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+            $NodeInstall = Get-ChildItem -LiteralPath $LocalTools -Directory -Filter 'node-*-win-*' |
+                Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'node.exe') } |
+                Sort-Object LastWriteTime -Descending | Select-Object -First 1
+            if ($NodeInstall) { $ToolPaths = @($NodeInstall.FullName) + $ToolPaths }
+        }
+        if (-not $env:JAVA_HOME) {
+            $JavaInstall = Get-ChildItem -LiteralPath $LocalTools -Directory -Filter 'jdk-21*' |
+                Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'bin/java.exe') } |
+                Sort-Object LastWriteTime -Descending | Select-Object -First 1
+            if ($JavaInstall) {
+                $env:JAVA_HOME = $JavaInstall.FullName
+                $ToolPaths = @((Join-Path $env:JAVA_HOME 'bin')) + $ToolPaths
+            }
+        }
+    }
+    $env:Path = ($ToolPaths | Where-Object { $_ } | Select-Object -Unique) -join ';'
+}
 foreach ($Tool in @('git','node','pnpm','java')) {
     if (-not (Get-Command $Tool -ErrorAction SilentlyContinue)) {
         throw "Missing $Tool. Install Git, JDK 21, Node 22.12+ and pnpm 11 before launching."
