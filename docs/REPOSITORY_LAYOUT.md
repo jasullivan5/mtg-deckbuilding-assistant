@@ -25,7 +25,7 @@ build/                     Ignored Kotlin build/distribution output
 
 ## Tests and evidence
 
-Test names describe behavior: death pathways, reanimation, token creation, reporting, identity, eligibility, extension scenarios and assurance. There are no Phase* or Batch* test files. Duplicate source/registry checks now cover the current registered extensions together, rather than preserving cohorts from past assignments. Existing unique scenario and proposal assertions remain. Experiment Twelve is an actual Magic card name and is intentionally retained as a card/scenario name.
+Test names describe behavior: death pathways, reanimation, token creation, reporting, identity, eligibility, extension scenarios and assurance. There are no Phase*or Batch* test files. Duplicate source/registry checks now cover the current registered extensions together, rather than preserving cohorts from past assignments. Existing unique scenario and proposal assertions remain. Experiment Twelve is an actual Magic card name and is intentionally retained as a card/scenario name.
 
 All retained test material lives under [src/test/resources](../src/test/resources/README.md). Oracle snapshots/rulings use card names; identity, assurance and regression fixtures use their purpose. The fixture integrity test binds 82 pre-existing data files by LF-normalized SHA256. Those files were verified unchanged against their pre-move hashes.
 

@@ -17,7 +17,7 @@ Use `dev`/`dev.ps1`, not root `gradlew test`. Setup: `bash scripts/bootstrap.sh`
 ## Collaboration and delivery
 
 | Job | Responsibility |
-|---|---|
+| --- | --- |
 | Product Studio â€” user and ChatGPT | Research questions, product goals, experience priorities, major architecture/scope, evaluation criteria and the next meaningful capability. ChatGPT challenges assumptions, proposes alternatives and helps bound assignments; the user retains consequential decision authority. |
 | Codex Build â€” focused implementation sessions | Inspect current Git state; implement approved functionality; handle routine technical design, source organization and tests without asking the user to supervise those choices; preserve evidence; deliver small reviewable PRs, runnable demonstrations and clear instructions. Do not silently expand scope or merge without authorization. |
 | Prototype Lab â€” user and ChatGPT | Try actual running functionality, investigate confusing behavior, review useful or misleading results, compare demonstrated and intended capabilities, and recommend accept/revise decisions. Product evaluation does not independently certify card translation accuracy. |

@@ -24,6 +24,7 @@ One exclusive research worker prevents overlapping expensive queries. Four bound
 The Windows launcher installs locked frontend dependencies, builds both layers and starts one foreground JVM. Fresh CLI parity, boundary tests, fixture browser checks and genuine live browser interactions are recorded in the M1 receipt. Readiness for user evaluation does not establish acceptance or translation certification. Imagery is an explicit fallback; comprehensive browsing and later visual/scenario milestones remain deferred.
 
 The frontend presents native extraction and application decisions. Accounts, multiplayer, deck editing, databases, desktop packaging, hosted infrastructure, new objectives and replacement rules execution remain outside M1. Selective reuse of Argentum client assets still requires coupling, provenance and licensing review. [Presentation safeguards](../AGENTS.md#visualization-fidelity) apply to future increments.
+
 ## Application pipeline
 
 Native definitions â†’ effective Commander eligibility â†’ shared native action/branch extraction â†’ reusable facts/constraints â†’ objective queries and policies â†’ evidence/reporting and research diagnostics.
@@ -31,7 +32,7 @@ Native definitions â†’ effective Commander eligibility â†’ shared nati
 Files below are relative to `src/main/kotlin/`.
 
 | Concern | Implementation |
-|---|---|
+| --- | --- |
 | Native catalog and search | `Catalog.kt`, `DefinitionSearchCard.kt`; native registry plus `mtg-search` projection |
 | Application-owned native definitions | `extensions/Extensions.kt` and per-card files; provenance, duplicate/admission checks and source/test review metadata |
 | Commander selection and full color identity | `discovery/Eligibility.kt`, `CommanderInspection.kt`; consumers use `Catalog.eligibility` |

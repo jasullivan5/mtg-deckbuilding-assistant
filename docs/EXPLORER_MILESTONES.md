@@ -24,7 +24,7 @@ The Technology Audit 001 read-only React viewer is a useful design/integration r
 The order below reflects learning dependencies, **not** a promise of dates, final specifications, or blanket authorization. Each milestone can be split into small reviewable increments. A milestone is accepted only after the user has tried its meaningful end-to-end experience.
 
 | Milestone | What the user gains | Minimum useful demonstration | Deliberately deferred |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **M1 — Live discovery foundation** | Start the local Explorer, choose a supported commander and objective, run actual discovery, and inspect at least one result and one meaningful limitation | Browser → bounded local Kotlin integration → existing discovery logic; parity with CLI on representative input; clear errors/unknowns; straightforward Windows launch | Comprehensive card art, advanced charts, arbitrary objectives, gameplay |
 | **M2 — Card-first exploration** | A compelling card grid/list, identity-safe imagery, filtering/navigation, and a readable **why this card appeared** detail view | Verified card/printing/face imagery or honest fallback; accessible controls; explanation and expandable prerequisites/raw evidence; useful result filtering | Deck editing, strategic strength ratings, general dependency graph |
 | **M3 — Evidence and visual exploration** | Understand the population behind results and investigate surprising matches, omissions, unsupported mechanics and assurance concerns | At least one useful interactive chart/filter with drill-down to contributing records; scoped counts, exclusions, unknowns and revisions; separate source/translation/execution/discovery claims | Whole-deck evaluation and unsupported confidence percentages |
@@ -35,6 +35,7 @@ The order below reflects learning dependencies, **not** a promise of dates, fina
 ### M1 delivery awaiting Prototype Lab
 
 The current Explorer delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [the Explorer guide](EXPLORER.md). Verification remains separate from user acceptance. No M2 or later milestone has begun.
+
 ## 3. How increments are proposed, built and accepted
 
 **One approved task at a time.** Product Studio maintains the direction; Codex may sequence ordinary technical subtasks within an approved increment, but must not execute subsequent milestones merely because they are written here. Prefer a single focused PR per meaningful increment; use more than one only when there is a concrete isolation or review benefit. Avoid a sprawling PR that implements multiple future milestones.
@@ -75,7 +76,7 @@ Current code, `AGENTS.md`, `docs/ARCHITECTURE.md`, tests and the recorded engine
 Keep this section brief and record demonstrated readiness separately from acceptance; mark acceptance only **after** user review. No dates or completion claims without observed evidence.
 
 | Milestone | Status | Next product decision |
-|---|---|---|
+| --- | --- | --- |
 | M1 — Live discovery foundation | **Ready for Prototype Lab; acceptance pending** | Try the live M1 delivery and assess conditional explanations, evidence and limitations |
 | M2 — Card-first exploration | **Not started** | Reassess priorities after trying M1 |
 | M3 — Evidence and visualization | **Not started** | Choose charts/questions from actual Explorer shortcomings |

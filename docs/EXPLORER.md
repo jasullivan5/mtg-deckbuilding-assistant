@@ -12,7 +12,7 @@ From the application checkout:
 
 Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0; set JAVA_HOME and put JDK 21 on PATH. The existing sibling engine must be clean on app-stable with the maintained fork as origin. Setup creates that sibling if absent and preserves existing work as described in [engine workflow](ENGINE_WORKFLOW.md). Initial dependency installation needs network access.
 
-The command installs locked frontend dependencies, type-checks/builds the React UI, builds the Kotlin distribution and starts one foreground JVM. Paths are repository-relative and work in this workspace containing spaces and an ampersand. Open **http://127.0.0.1:8787** after the terminal prints **Explorer ready**. Catalog loading can take tens of seconds; the service does not claim readiness while it loads.
+The command installs locked frontend dependencies, type-checks/builds the React UI, builds the Kotlin distribution and starts one foreground JVM. Paths are repository-relative and work in this workspace containing spaces and an ampersand. Open **<http://127.0.0.1:8787>** after the terminal prints **Explorer ready**. Catalog loading can take tens of seconds; the service does not claim readiness while it loads.
 
 Stop with **Ctrl+C** in that terminal. No separate frontend server needs cleanup. An occupied port is reported before the build; choose `-Port 8788` if needed. The command rebuilds saved changes on launch; this launch does not provide hot reload. `pnpm dev` alone is a frontend source server, not the supported live application launch.
 
@@ -41,7 +41,7 @@ Only **the latest run** is retained in memory. Starting another discovery invali
 All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander names use exact native lookup. Browser input never becomes a shell command or filesystem path.
 
 | Method and path | Request | Response |
-|---|---|---|
+| --- | --- | --- |
 | GET /health | none | ready state, actual engine SHA/mode, packaged application revision |
 | GET /objectives | none | three Objective records: exact id, label, explanation |
 | POST /commander | {commander} | unchanged CommanderInspection; HTTP 200 also covers blocked selections |
@@ -54,6 +54,7 @@ Card indexes belong to a single run; never reuse them for another run. Summary c
 The complete TypeScript consumer and serializable Kotlin DTOs are in `web/src/main.tsx` and `src/main/kotlin/server/ExplorerModels.kt`. Export metadata includes schemaVersion, execution, runId, startedAt, durationMs, applicationRevision, engineMode and report. The nested report's argentumCommit is the actual packaged engine revision. A +dirty application revision explicitly means its commit alone does not identify all uncommitted source.
 
 Errors use `{code, message, inspection?}`:
+
 - 400 invalid JSON/name/objective; 403 foreign Origin/Host; 405 unsupported methods on research/evidence routes.
 - 409 busy; 410 expired run; 413 body over 4096 bytes; 415 wrong content type.
 - 422 blocked discovery selection with its inspection; 500 internal error (details in terminal); 504 execution timeout.
