@@ -6,7 +6,7 @@ bash "$root/scripts/setup.sh"
 task=${1:-help}
 if [ "$#" -gt 0 ]; then shift; fi
 case "$task" in
-  build|test|run|installDist|clean|help) task=":assistant-cli:$task" ;;
+  build|test|run|installDist|clean|help) task=":assistant:$task" ;;
   *) echo 'Usage: ./dev {build|test|run|installDist|clean|help} [Gradle options]' >&2; exit 2 ;;
 esac
 # Conservative defaults for the large native Kotlin corpus; override with later Gradle options.

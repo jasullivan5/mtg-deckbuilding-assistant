@@ -14,7 +14,7 @@ python scripts/oracle-snapshot.py download --directory generated/oracle
 Use the downloaded snapshot path printed by the tool. Its adjacent manifest records version, retrieval/source URI, encoding, size and hash. The downloader checks hosts and integrity, and manifest replay can reproduce an explicitly supplied archived version. The Kotlin loader streams declared JSON/JSONL/gzip forms and verifies integrity; no implicit current-source update is performed.
 
 ```powershell
-$cli = '.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat'
+$cli = '.\build\install\mtg-assistant\bin\mtg-assistant.bat'
 $snapshot = '<downloaded snapshot path>'
 & $cli audit catalog-coverage --commander 'Judith, the Scourge Diva' --oracle-cards $snapshot --objective create-creature-tokens --json --output generated/judith-coverage.json
 & $cli audit catalog-missing --report generated/judith-coverage.json --limit 20

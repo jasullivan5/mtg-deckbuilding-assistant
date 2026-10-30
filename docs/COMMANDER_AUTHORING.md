@@ -7,8 +7,8 @@ Use native Argentum definitions, not a second rules interpreter. Assisted author
 After setup and `dev.ps1 installDist` on Windows (`./dev installDist` on Bash), use the installed launcher:
 
 ```powershell
-.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect "Oviya Pashiri, Sage Lifecrafter"
-.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect "Krenko, Mob Boss" --json
+.\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect "Oviya Pashiri, Sage Lifecrafter"
+.\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect "Krenko, Mob Boss" --json
 ```
 
 Inspection uses exact, case-sensitive native lookup. It distinguishes upstream definitions, application extensions, and absence from the pinned catalog. Absence is not a statement that the Magic card does not exist. Structured blockers distinguish unresolved legality/identity, confirmed format exclusion, ineligible cards, non-front aliases, unsupported construction and invalid native structures. Successful inspection exits 0 even if selection is blocked; inspect `selectable` and `blockers` in JSON. Invalid command syntax and blocked discovery exit 2.
@@ -18,13 +18,13 @@ Single fixed-identity commander selection is supported. A partner-capable legend
 ## Verify sources and native coverage
 
 1. Check `Catalog(emptyList())` and search authored upstream definitions at the engine SHA recorded by `mtg-assistant stats`; never replace a definition just because it has not been independently tested here.
-2. Retrieve the exact printing from Scryfall's named-card API with `exact` and `set`, plus `rulings_uri` (requests require User-Agent and Accept headers). Verify Oracle text, faces, types, costs, characteristics, Oracle ID, full color identity and current legalities. Retain dated source evidence under `reference/`; map only formats represented by native `DeckFormat`.
+2. Retrieve the exact printing from Scryfall's named-card API with `exact` and `set`, plus `rulings_uri` (requests require User-Agent and Accept headers). Verify Oracle text, faces, types, costs, characteristics, Oracle ID, full color identity and current legalities. Retain dated source evidence under `src/test/resources/`; map only formats represented by native `DeckFormat`.
 3. Inspect the recorded SDK, existing definitions and effect executors. Trace costs, targets, conditions, controller/owner relations, timing and zone changes. Reject approximations of consequential mechanics; choose another bounded example if faithful implementation requires an upstream change outside the assignment.
 4. Distinguish structural errors or explicitly recorded omissions from lack of independent verification. `CardValidator` checks native structure, not complete correspondence to Oracle text. An empty script alone is not proof that a card is incomplete.
 
 ## Author and register
 
-Put a native `CardDefinition` in `cli/src/main/kotlin/dev/mtg/assistant/extensions/`, using the existing SDK DSL. Preserve authoritative identity/legality metadata and relevant faces; do not use card-name exceptions in extraction or queries. Add an `ExtensionDefinition` to `Extensions.all` with dated `APPLICATION_EXTENSION` provenance and a source path. Record scenario references in `DefinitionReview`; these describe bounded test coverage, not universal correctness.
+Put a native `CardDefinition` in `src/main/kotlin/extensions/`, using the existing SDK DSL. Preserve authoritative identity/legality metadata and relevant faces; do not use card-name exceptions in extraction or queries. Add an `ExtensionDefinition` to `Extensions.all` with dated `APPLICATION_EXTENSION` provenance and a source path. Record scenario references in `DefinitionReview`; these describe bounded test coverage, not universal correctness.
 
 Registration validates every nested native definition, required metadata/provenance, case-insensitive root names and registered back/flip aliases (embedded spell-face names are not registrations) and Oracle identities against both upstream and other additions before registering anything. Known-incomplete additions are refused. Validator ERROR findings block; WARNING findings remain available through Catalog.validationWarnings and commander inspection nativeValidationWarnings, without marking mechanics incomplete. Embedded spell faces retain their mechanics without claiming a separate physical identity or provenance entry. On a future engine update, a newly authored upstream version must cause a collision rather than silently override either definition: compare them, preserve tests/provenance, and deliberately retire the extension in a separately reviewed change.
 

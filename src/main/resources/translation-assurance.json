@@ -1,0 +1,900 @@
+[
+  {
+    "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+    "definitionSha256": "b51a983f98db2cca0e450580b766140acb702d14c8fff0701eb4d246c1f47876",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/bitterblossom-source.json",
+        "sha256": "7f6ee33b40fb5a5b84d1d1f914cbc417f3da82db73cb7f0c1ea6933d5d689ac4",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "67a10da3-76f2-4f4a-90d1-e77abb5842fe",
+    "definitionSha256": "7af37d91bc99af87332dc6a2c3fc7c22ba172b821e897d426959bb15195ec988",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/experiment-twelve-source.json",
+        "sha256": "0627c2e95df1d241d36a35aa8351ca640556bdd9f4a2fb3c805b4a2f625c268a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/experiment-twelve-rulings.json",
+        "sha256": "ef90dbeac1d18b5b2aaf41acb2ed8a6d97a4490c0fff5b6eb8a9248cc3b0fdc3",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+    "definitionSha256": "b6425d3c22ac4299ed085df08a8ba02fbf34bc0ee5d131c17fc4b0a3a185efb2",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/galadhrim-ambush-source.json",
+        "sha256": "64040d078067317f18530279c632e1306f7e95939562aa31e3a76f8791a99275",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/galadhrim-ambush-rulings.json",
+        "sha256": "a0a1a33b38d7b620e74e16a7d1553bad302f0a7025429497384a496280ee6120",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+    "definitionSha256": "4dff788132be41afd158883a9383d400783ddb77126f752f201017a82dd2b4e8",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/hour-of-promise-source.json",
+        "sha256": "e3157f55797d37d4b5f57dd4e44dfc1ce7cf75d9d467ffa3e702973b327596e9",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/hour-of-promise-rulings.json",
+        "sha256": "dc9ee11d078be368a9df07f048d67b3d4a4917af0637f27ad59dda2b2a366763",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ]
+  },
+  {
+    "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+    "definitionSha256": "413ae83e9c376ce6f6a782a753810d68e8e5d30f826ebe7dc08b3efbdf1266c0",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/judith-the-scourge-diva-source.json",
+        "sha256": "0c7e0693592f1d2d88d1c682f76425a40f41538bded1e265e525745db2e1802c",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+    "definitionSha256": "b5b446d5400ff7d2def6e685ed518fe53ba6175faa2ff153b190ae97e85cc1a6",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/krenkos-command-source.json",
+        "sha256": "ecefcd380f382f1c7076a27d049eaa60967e9b69bb95c375fccca2154404281a",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+    "definitionSha256": "a344b51864c18d3809801dda6679cbd1f297847d697a2acc171a8f0774fdda45",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/labyrinth-of-skophos-source.json",
+        "sha256": "fa29b98962786d5242e55485324a1b677fda2f64799cb6b130814c3f60d2330f",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/labyrinth-of-skophos-rulings.json",
+        "sha256": "796b2cf9443236adfbdeffced88b732a31029e20b8aa6e1499fe85bd24b2addd",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+    "definitionSha256": "09068902a66002545bab80b20fd50718392b041112956a241beeb9119d764c96",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/ley-weaver-source.json",
+        "sha256": "9840c6d5ef1b460705056531b499bb85ff4bab5d6917a710ef09f8c7b7533c1e",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/ley-weaver-rulings.json",
+        "sha256": "93246b77499f1c5c9f90228c9724c7935e2d85d63ec2335efdfc0083eb4d4751",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ]
+  },
+  {
+    "oracleId": "69266cb7-50eb-43d2-96d6-fc3c85be49f7",
+    "definitionSha256": "e5adb488035d4d771695e019f692016756dcae02d78177560ee9ab4dd235130c",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/magus-of-the-library-source.json",
+        "sha256": "77b57fc66f828d65a45d9d3a60b0e635eecf07f1819aba1becd76cda7aed81e2",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/magus-of-the-library-rulings.json",
+        "sha256": "ab03d31b6367dde172091cc2ba143f2585c3ab32a1582b9e9981012901c53cb9",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+    "definitionSha256": "ecadab084fda9135a8a7afc0cd1357035fb4b7c7580f8901375d5c77e586a4a4",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/might-of-murasa-source.json",
+        "sha256": "8f64fef6f8122e641882af914609c6cd0f82535568e9a3c779f5e5b5cdd77d70",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/might-of-murasa-rulings.json",
+        "sha256": "2f75e32e38beb8cd9c4947d56911edfb62e7b35b07f6b1c1c098a62cb82a24b7",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "80875914-df4c-4b05-8c4d-658ff477c956",
+    "definitionSha256": "59216a21488d39f01866987b1fefc8d12c8b58288a6f5502fbcf3646d39f12c5",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/momentum-source.json",
+        "sha256": "be4c18cb1a1689fe90cf149cc280ce821afe690e1f537fb396fbf7945e85bab7",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/momentum-rulings.json",
+        "sha256": "6eab3a0bfdea9295072960c7cd2269da0c18929b6f130438e1356d0bff712c89",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "f7b70077-5518-45f9-9833-01a4f8afac71",
+    "definitionSha256": "98c54eefc764e57c94c453354b1b58cdaeb5a96d4510a3d54dd0dc76f6d89df4",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/mortal-wound-source.json",
+        "sha256": "9a02907cf6c276cd554fdfd90de5af0ea8a44ed50aaa8e7ab36e0a54690d59ef",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/mortal-wound-rulings.json",
+        "sha256": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+    "definitionSha256": "e103166ade82bcdf07f2483313b3096e219c49824268403909ee4083b417aa92",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/oviya-pashiri-sage-lifecrafter-source.json",
+        "sha256": "68faaa7da09eb0e926bb80aab36580a9add8ca5e7e0bfd3eadcbfe00d77580fa",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+    "definitionSha256": "e6ebf478a7bbd5842b25716e0b110f2fa75e95cd11aa5f8ed01bb61fec7ecdee",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/paradise-mantle-source.json",
+        "sha256": "28d9128be1884ae1aa8375c7e4692a04ccaa3ecc706475e21ca0b8a9f17c3e45",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/paradise-mantle-rulings.json",
+        "sha256": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+    "definitionSha256": "5a14894e56272870cd989024470f8e987712b78b62eae1ca052df15244304ba5",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/planewide-celebration-source.json",
+        "sha256": "20bce2f382a407bb2c296d4126dea1669ca80baa2677c78d4109182e86388a07",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/planewide-celebration-rulings.json",
+        "sha256": "2fd5fdb828166c0d30ec70a48d07ea9e68609114568e6816940a39887e4f634f",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ]
+  },
+  {
+    "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+    "definitionSha256": "13017423763b4568dd574c3f59cb0a2ea72876419f2b37c5dfc92d1c260f828a",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/predatory-urge-source.json",
+        "sha256": "bb32a711f1db577c2107aa95e201a64640f61204c94ca9f8a9416922c2907aee",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/predatory-urge-rulings.json",
+        "sha256": "22b00ef180b5ff298b9e291e21b09a762126be53316bdc73200b453f2826b567",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ]
+  },
+  {
+    "oracleId": "494050f4-0a55-415d-9ae9-feb17e61c4e1",
+    "definitionSha256": "c45b1d2a06cb85c47799608827db7cb57a15158578f885f85200b04f37be947d",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/savage-conception-source.json",
+        "sha256": "98197fb599fb833241653635481ea8690ccdcb100b6b9c8d39ba1de16b553218",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/savage-conception-rulings.json",
+        "sha256": "4ac451ae6c3f833fce1d85c5f4dd11614c2300b7aa7c0a64fa434f0f535d7371",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+    "definitionSha256": "1604126a6a6c520209d8cc4cbe02023802359c5eea22193fe117e39bc4cf1836",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/spined-tyrranax-source.json",
+        "sha256": "eb5d945da50df185308290741850e4b9553a1eefa4ff096e2a2b3141d77e860c",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/spined-tyrranax-rulings.json",
+        "sha256": "59ab86868c0c492aa1a03a3bce2b65f793431132bff90d90a3bd8f2e66c404e8",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+    "definitionSha256": "c8e226bdbe9c3aa96095a59035393fcc2f909c6ffb0f3518d313139c87835076",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/sword-of-truth-and-justice-source.json",
+        "sha256": "3fc64a40af6b8518abcc63aa19e3b44e0064d0e7445f982f1ccbc366b5e51072",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/sword-of-truth-and-justice-rulings.json",
+        "sha256": "fffcefa36f2c4ea74ea89ca316e9d91578f05b6c6a7f329b04529026a02208e5",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Source-first agent review, not independent human certification.",
+      "Collection counter issue locally avoided with existing single-object composition; other stated limits remain in assessment.json and original Batch 2 review.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "concerns": [
+      {
+        "id": "SWORD-COLLECTION-COUNTERS",
+        "kind": "ENGINE_EXECUTION",
+        "state": "RESOLVED",
+        "claim": "SJ3: chosen creature cannot receive prohibited counters; proliferate still happens",
+        "reason": "Original collection instruction bypasses the chosen Tatterkite counter prohibition",
+        "reproduction": "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+        "nextAction": "Retain regression; review upstream collection executor separately. No independent promotion.",
+        "resolutionEvidence": [
+          "TranslationReliabilityScenarioTest SJ3 counter prohibition skips placement but still proliferates",
+          "focused-execution.json"
+        ]
+      }
+    ]
+  },
+  {
+    "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+    "definitionSha256": "7efc79971bd20276e936105eb5f2bc431ed38e84450bd60f8aaf90e8e7fc481e",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/tatterkite-source.json",
+        "sha256": "e525068799f80024a6b3e3e24a61f0031ca5919c31bfdbf49d78a06eed49d356",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/tatterkite-rulings.json",
+        "sha256": "b90262aa731f168036e6c2a7f84e05a2d9a4060139f42da8ccc7f1b16372a1ca",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/source-led-execution.json",
+        "sha256": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Historical on ebf5bf2e9fbb80d13a556d75491dd462e10c206f: Direct placement passes; collection placement violates counter prohibition at this SDK pin. Research access retained; qualification blocked.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ],
+    "concerns": [
+      {
+        "id": "TK-COLLECTION-COUNTERS",
+        "kind": "ENGINE_EXECUTION",
+        "state": "CONFIRMED",
+        "claim": "TK2: no counters may be placed on Tatterkite, including through collections",
+        "reason": "Source-correct CantReceiveCounters passes direct-placement tests but collection placement adds a charge counter Historical observation on ebf5bf2e9fbb80d13a556d75491dd462e10c206f; the candidate fork passes source-correct execution, but this concern remains confirmed pending application adoption.",
+        "reproduction": "Historical at ebf5bf2e9fbb80d13a556d75491dd462e10c206f: VERIFY_KNOWN_ENGINE_GAPS=1; TranslationReliabilityScenarioTest TK2; source expectation remains zero",
+        "nextAction": "Historical action: A separately reviewed pinned-engine correction should route collection placement through the prohibition check, preserving other recipients and replacement/event semantics. No pin change here. Current action: after explicit pin adoption, record revision-bound resolution evidence and move only to provisional qualification.",
+        "resolutionEvidence": []
+      }
+    ],
+    "requirements": [
+      {
+        "path": "src/test/resources/assurance/requirements.json",
+        "sha256": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/assessment.json",
+        "sha256": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ]
+  },
+  {
+    "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+    "definitionSha256": "01f1d9a89e4d4d2fa57ba3d25f056b6fbb521174a5ec4be92775d6bd1bbf557e",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/throne-of-makindi-source.json",
+        "sha256": "b8fec608eb30f9974f4de2a4704a333056fca3c12f7d09357771139aa5a12b6a",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/throne-of-makindi-rulings.json",
+        "sha256": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-28.json",
+        "sha256": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  },
+  {
+    "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+    "definitionSha256": "7b9681e5deeda9634b32c39b89bbeb9af44ff3d1b25ee90aa995c9e89b14a7c5",
+    "argentumCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "author": "implementing-agent",
+    "fidelity": "SOURCE_REVIEWED",
+    "execution": "BOUNDED_EVIDENCE_PASSED",
+    "source": [
+      {
+        "path": "src/test/resources/cards/tyrite-sanctum-source.json",
+        "sha256": "de765b12179ca50afa3a4efa1b99209bd2884acd7b1e934fe3ad4042c858d9e0",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/cards/tyrite-sanctum-rulings.json",
+        "sha256": "4f192959d9a28de7c5f0f4c5d8e72843de2d551f2047f73e7ab4ea03cbc697d0",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "tests": [
+      {
+        "path": "src/test/resources/assurance/extension-review-2026-10-27.json",
+        "sha256": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3",
+        "hashFormat": "SHA256_UTF8_LF"
+      },
+      {
+        "path": "src/test/resources/assurance/engine-compatibility-41332418.json",
+        "sha256": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+        "hashFormat": "SHA256_UTF8_LF"
+      }
+    ],
+    "limitations": [
+      "Historical author/source-led evidence, not independent certification; see original review for case limits.",
+      "Candidate fork binding revalidated against 4133241856227d1d36269e92aaba633bbaf93f5c with unchanged definitions/catalog and fresh native/application execution. Application adoption remains subject to pin-PR approval; no independent certification."
+    ]
+  }
+]

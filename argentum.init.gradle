@@ -19,6 +19,6 @@ settingsEvaluated { settings ->
         if (!(candidate ==~ /[0-9a-f]{40}/) || sha != candidate) throw new GradleException('Candidate revision mismatch')
     } else if (git(['branch','--show-current']) != 'app-stable') throw new GradleException('Normal engine checkout must be on app-stable')
     println "APPLICATION ENGINE: ${sha}; mode=${candidate ? 'explicit candidate' : 'app-stable'}"
-    settings.include(':assistant-cli')
-    settings.project(':assistant-cli').projectDir = new File(foundation, 'cli')
+    settings.include(':assistant')
+    settings.project(':assistant').projectDir = foundation
 }

@@ -18,9 +18,9 @@ Use `dev`/`dev.ps1`, not root `gradlew test`. Setup: `bash scripts/bootstrap.sh`
 
 | Job | Responsibility |
 |---|---|
-| Product Studio — user and ChatGPT | Research questions, product goals, experience priorities, major architecture/scope, evaluation criteria and the next meaningful capability. ChatGPT challenges assumptions, proposes alternatives and helps bound assignments; the user retains consequential decision authority. |
-| Codex Build — focused implementation sessions | Inspect current Git state; implement approved functionality; handle routine technical design, source organization and tests without asking the user to supervise those choices; preserve evidence; deliver small reviewable PRs, runnable demonstrations and clear instructions. Do not silently expand scope or merge without authorization. |
-| Prototype Lab — user and ChatGPT | Try actual running functionality, investigate confusing behavior, review useful or misleading results, compare demonstrated and intended capabilities, and recommend accept/revise decisions. Product evaluation does not independently certify card translation accuracy. |
+| Product Studio â€” user and ChatGPT | Research questions, product goals, experience priorities, major architecture/scope, evaluation criteria and the next meaningful capability. ChatGPT challenges assumptions, proposes alternatives and helps bound assignments; the user retains consequential decision authority. |
+| Codex Build â€” focused implementation sessions | Inspect current Git state; implement approved functionality; handle routine technical design, source organization and tests without asking the user to supervise those choices; preserve evidence; deliver small reviewable PRs, runnable demonstrations and clear instructions. Do not silently expand scope or merge without authorization. |
+| Prototype Lab â€” user and ChatGPT | Try actual running functionality, investigate confusing behavior, review useful or misleading results, compare demonstrated and intended capabilities, and recommend accept/revise decisions. Product evaluation does not independently certify card translation accuracy. |
 
 Git remains authoritative for implementation continuity. These jobs do not require permanent separate repository processes or project-management infrastructure.
 
@@ -33,7 +33,7 @@ Prefer small, meaningful end-to-end increments that the user can launch, explore
 
 The user evaluates understandability and usefulness before a substantial user-facing capability is accepted. Backend-only corrections and investigations remain appropriate when they are the cheapest adequate approach. Where practical, expose consequential findings through existing research views, scenario evidence or diagnostics; do not add decorative UI solely to satisfy this process.
 
-## Approved interface direction — M1 awaiting user evaluation
+## Approved interface direction â€” M1 awaiting user evaluation
 
 Technology Audit 001 informed the selected working direction: an independent React / TypeScript / Vite research interface in this repository, beginning with a Commander Discovery Explorer. It should support commander selection, selection among existing objectives, genuine discovery execution, identity-verified card imagery, browsable card grids/lists, readable mechanical explanations, inspectable prerequisites/decisions/evidence/limitations and meaningful interactive research visualizations. Make it attractive, responsive, keyboard-accessible and pleasant to explore.
 
@@ -41,7 +41,7 @@ Preserve Kotlin/JDK 21/Gradle, the CLI and headless tests. A narrow application-
 
 The application owns Commander eligibility/discovery integration, objective interpretation, translation assurance, source/identity observations, research presentation, frontend/local API integration and app-stable compatibility. The independent sibling fork owns native card structures, SDK semantics, rules execution, generic mechanical corrections and native regressions. Selective reuse of Argentum presentation components, imagery utilities or icons requires coupling, provenance and licensing review. Do not adopt the complete game client or its hosted gameplay architecture by default. See [architecture](docs/ARCHITECTURE.md#research-interface).
 
-This direction does not authorize hosted accounts, multiplayer, general deck editing, persistent databases, desktop packaging, cloud infrastructure, a comprehensive game client, new mechanical objectives or a replacement rules engine. Such scope needs demonstrated need and appropriate approval. M1 implements the bounded live foundation described in [Explorer M1](docs/EXPLORER_M1.md); subsequent increments require a separate bounded assignment.
+This direction does not authorize hosted accounts, multiplayer, general deck editing, persistent databases, desktop packaging, cloud infrastructure, a comprehensive game client, new mechanical objectives or a replacement rules engine. Such scope needs demonstrated need and appropriate approval. The Explorer implements the bounded live foundation described in [Explorer](docs/EXPLORER.md); subsequent increments require a separate bounded assignment.
 
 ## Visualization fidelity
 
@@ -56,6 +56,6 @@ Read [architecture](docs/ARCHITECTURE.md), [authoring](docs/COMMANDER_AUTHORING.
 
 ## Repository organization
 
-Current application code, tests, maintained scripts and operating guidance are authoritative. `reference/` contains only source/assurance records and fixtures still consumed by the current suite; its README explains the retained dependencies. Frozen regression inputs live in `cli/src/test/resources/benchmarks/`. Preserve their contents and assurance bindings when changing layout.
+Use the root Kotlin source sets, shallow behavior folders, web frontend and test-owned fixtures described in [repository layout](docs/REPOSITORY_LAYOUT.md). Never introduce Phase*/Batch* source or test names for an assignment. Retained evidence/fixtures live under src/test/resources; packaged metadata lives under src/main/resources. Add a lasting responsibility or behavior, not a new folder/script/handoff for every session.
 
-Completed experiments, old handoffs, samples and bulk historical outputs belong in the ignored movable `archive-export-*` folder, not active documentation or setup. Exported instructions describe their recorded source revision and are not current assignments. No build, test or CI may depend on that export. Future generated outputs belong under ignored `generated/`. See docs/REPOSITORY_LAYOUT.md.
+Preserve frozen expected contents, source hashes, concerns and qualification while changing locations. Exact location aliases may support historical report comparison; never normalize mechanics or verdicts. Completed experiments, old handoffs and bulk historical output belong in the ignored movable archive-export-* folder. No build, test or CI may depend on that export. Current run outputs belong under ignored generated/.

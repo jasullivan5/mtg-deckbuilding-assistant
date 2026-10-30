@@ -1,19 +1,15 @@
-/argentum/
 .gradle/
 .kotlin/
 **/build/
 *.hprof
 /generated/
 *.zip
-/argentum
 __pycache__/
 .env
 .env.*
-/REPOSITORY_STATE.json
-/verification/handoff/*.log
 # Local frontend build/dependency artifacts.
-/explorer/node_modules/
-/explorer/dist/
+/web/node_modules/
+/web/dist/
 
 # User-owned historical export; safe to move outside this checkout.
 /archive-export-*/

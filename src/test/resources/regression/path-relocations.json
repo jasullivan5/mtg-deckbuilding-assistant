@@ -1,0 +1,765 @@
+{
+  "description": "Exact file-location aliases only. Historical report/source bytes and engine evidence bindings remain unchanged. No mechanical values or verdicts may be normalized.",
+  "paths": [
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/Catalog.kt",
+      "to": "src/main/kotlin/Catalog.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/DefinitionSearchCard.kt",
+      "to": "src/main/kotlin/DefinitionSearchCard.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/EngineBuild.kt",
+      "to": "src/main/kotlin/EngineBuild.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/Main.kt",
+      "to": "src/main/kotlin/Main.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/audit/Benchmark.kt",
+      "to": "src/main/kotlin/audit/Benchmark.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/audit/CrossObjective.kt",
+      "to": "src/main/kotlin/audit/CrossObjective.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/audit/Diagnostics.kt",
+      "to": "src/main/kotlin/audit/Diagnostics.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/audit/RootDiagnostics.kt",
+      "to": "src/main/kotlin/audit/RootDiagnostics.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/coverage/CatalogCoverage.kt",
+      "to": "src/main/kotlin/coverage/CatalogCoverage.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/coverage/OracleEnrichment.kt",
+      "to": "src/main/kotlin/coverage/OracleEnrichment.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/coverage/OracleSnapshot.kt",
+      "to": "src/main/kotlin/coverage/OracleSnapshot.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/AmountBounds.kt",
+      "to": "src/main/kotlin/discovery/AmountBounds.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/CommanderInspection.kt",
+      "to": "src/main/kotlin/discovery/CommanderInspection.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/Discovery.kt",
+      "to": "src/main/kotlin/discovery/Discovery.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/Eligibility.kt",
+      "to": "src/main/kotlin/discovery/Eligibility.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/Evidence.kt",
+      "to": "src/main/kotlin/discovery/Evidence.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/MechanicalFacts.kt",
+      "to": "src/main/kotlin/discovery/MechanicalFacts.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/MechanicalQuery.kt",
+      "to": "src/main/kotlin/discovery/MechanicalQuery.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/PathwayExtractor.kt",
+      "to": "src/main/kotlin/discovery/PathwayExtractor.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/Reanimation.kt",
+      "to": "src/main/kotlin/discovery/Reanimation.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/discovery/TokenFacts.kt",
+      "to": "src/main/kotlin/discovery/TokenFacts.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/eligibility/EffectiveEligibility.kt",
+      "to": "src/main/kotlin/eligibility/EffectiveEligibility.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/explorer/ExplorerModels.kt",
+      "to": "src/main/kotlin/server/ExplorerModels.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/explorer/ExplorerServer.kt",
+      "to": "src/main/kotlin/server/ExplorerServer.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Bitterblossom.kt",
+      "to": "src/main/kotlin/extensions/Bitterblossom.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/ExperimentTwelve.kt",
+      "to": "src/main/kotlin/extensions/ExperimentTwelve.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Extensions.kt",
+      "to": "src/main/kotlin/extensions/Extensions.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/GaladhrimAmbush.kt",
+      "to": "src/main/kotlin/extensions/GaladhrimAmbush.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/HourOfPromise.kt",
+      "to": "src/main/kotlin/extensions/HourOfPromise.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/JudithTheScourgeDiva.kt",
+      "to": "src/main/kotlin/extensions/JudithTheScourgeDiva.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/KrenkosCommand.kt",
+      "to": "src/main/kotlin/extensions/KrenkosCommand.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/LabyrinthOfSkophos.kt",
+      "to": "src/main/kotlin/extensions/LabyrinthOfSkophos.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/LeyWeaver.kt",
+      "to": "src/main/kotlin/extensions/LeyWeaver.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/MagusOfTheLibrary.kt",
+      "to": "src/main/kotlin/extensions/MagusOfTheLibrary.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/MightOfMurasa.kt",
+      "to": "src/main/kotlin/extensions/MightOfMurasa.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Momentum.kt",
+      "to": "src/main/kotlin/extensions/Momentum.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/MortalWound.kt",
+      "to": "src/main/kotlin/extensions/MortalWound.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/OviyaPashiriSageLifecrafter.kt",
+      "to": "src/main/kotlin/extensions/OviyaPashiriSageLifecrafter.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/ParadiseMantle.kt",
+      "to": "src/main/kotlin/extensions/ParadiseMantle.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/PlanewideCelebration.kt",
+      "to": "src/main/kotlin/extensions/PlanewideCelebration.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/PredatoryUrge.kt",
+      "to": "src/main/kotlin/extensions/PredatoryUrge.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/SavageConception.kt",
+      "to": "src/main/kotlin/extensions/SavageConception.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/SpinedTyrranax.kt",
+      "to": "src/main/kotlin/extensions/SpinedTyrranax.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/SwordOfTruthAndJustice.kt",
+      "to": "src/main/kotlin/extensions/SwordOfTruthAndJustice.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/Tatterkite.kt",
+      "to": "src/main/kotlin/extensions/Tatterkite.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/ThroneOfMakindi.kt",
+      "to": "src/main/kotlin/extensions/ThroneOfMakindi.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/TranslationAssurance.kt",
+      "to": "src/main/kotlin/extensions/TranslationAssurance.kt"
+    },
+    {
+      "from": "cli/src/main/kotlin/dev/mtg/assistant/extensions/TyriteSanctum.kt",
+      "to": "src/main/kotlin/extensions/TyriteSanctum.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ArgentumIntegrationTest.kt",
+      "to": "src/test/kotlin/integration/ArgentumIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/BatchTwoSupport.kt",
+      "to": "src/test/kotlin/support/NativeScenarioSupport.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/CatalogCoverageTest.kt",
+      "to": "src/test/kotlin/coverage/CatalogCoverageTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/CollectionCounterIntegrationTest.kt",
+      "to": "src/test/kotlin/discovery/CollectionCounterIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/CommanderIntegrationTest.kt",
+      "to": "src/test/kotlin/eligibility/CommanderIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/EligibilityCorrectionsCatalogTest.kt",
+      "to": "src/test/kotlin/eligibility/EligibilityCorrectionsCatalogTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/EligibilityCorrectionsTest.kt",
+      "to": "src/test/kotlin/eligibility/EligibilityCorrectionsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/EngineBuildTest.kt",
+      "to": "src/test/kotlin/integration/EngineBuildTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ExperimentTwelveScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/ExperimentTwelveScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ExplorerServerTest.kt",
+      "to": "src/test/kotlin/server/ExplorerServerTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ExtensionAdmissionTest.kt",
+      "to": "src/test/kotlin/extensions/ExtensionAdmissionTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ExtensionStructureTest.kt",
+      "to": "src/test/kotlin/extensions/ExtensionStructureTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/GaladhrimAmbushScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/GaladhrimAmbushScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/HourOfPromiseScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/HourOfPromiseScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/JudithTheScourgeDivaScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/JudithTheScourgeDivaScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/LabyrinthOfSkophosScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/LabyrinthOfSkophosScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/LeyWeaverScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/LeyWeaverScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MagusOfTheLibraryScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/MagusOfTheLibraryScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MandatoryDeathEngineTest.kt",
+      "to": "src/test/kotlin/scenarios/MandatoryDeathEngineTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MechanicalDiscoveryTest.kt",
+      "to": "src/test/kotlin/discovery/MechanicalDiscoveryTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MightOfMurasaScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/MightOfMurasaScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MomentumScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/MomentumScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/MortalWoundScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/MortalWoundScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/OracleEnrichmentCatalogTest.kt",
+      "to": "src/test/kotlin/coverage/OracleEnrichmentCatalogTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/OracleEnrichmentCoverageTest.kt",
+      "to": "src/test/kotlin/coverage/OracleEnrichmentCoverageTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/OracleEnrichmentHeldOutTest.kt",
+      "to": "src/test/kotlin/coverage/OracleEnrichmentHeldOutTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/OracleEnrichmentTest.kt",
+      "to": "src/test/kotlin/coverage/OracleEnrichmentTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/OviyaPashiriSageLifecrafterScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/OviyaPashiriSageLifecrafterScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ParadiseMantleScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/ParadiseMantleScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase21DiagnosticsTest.kt",
+      "to": "src/test/kotlin/diagnostics/DiscoveryDiagnosticsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase21MechanicsTest.kt",
+      "to": "src/test/kotlin/discovery/DeathPathwayExtractionTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase22CorrectnessTest.kt",
+      "to": "src/test/kotlin/discovery/DeathQueryCorrectnessTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase22DiagnosticTest.kt",
+      "to": "src/test/kotlin/diagnostics/ReportDiagnosticsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase23CollectionsTest.kt",
+      "to": "src/test/kotlin/discovery/DeathCollectionFactsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase23CostsTest.kt",
+      "to": "src/test/kotlin/discovery/DeathCostFactsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase23EngineTest.kt",
+      "to": "src/test/kotlin/scenarios/DeathCollectionScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase23ReportingTest.kt",
+      "to": "src/test/kotlin/diagnostics/DeathReportingTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase24EngineTest.kt",
+      "to": "src/test/kotlin/scenarios/ReanimationScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase24FactsTest.kt",
+      "to": "src/test/kotlin/discovery/ReanimationFactsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase24IntegrationTest.kt",
+      "to": "src/test/kotlin/discovery/ReanimationIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase24ReportingTest.kt",
+      "to": "src/test/kotlin/diagnostics/ReanimationReportingTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase25EngineTest.kt",
+      "to": "src/test/kotlin/scenarios/TokenCreationScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase25FactsTest.kt",
+      "to": "src/test/kotlin/discovery/TokenCreationFactsTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase25IntegrationTest.kt",
+      "to": "src/test/kotlin/discovery/TokenCreationIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase25ReportingTest.kt",
+      "to": "src/test/kotlin/diagnostics/TokenCreationReportingTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationIntegrationTest.kt",
+      "to": "src/test/kotlin/discovery/TokenCardIntegrationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/Phase27TranslationScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/TokenCardScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/PlanewideCelebrationScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/PlanewideCelebrationScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/PredatoryUrgeScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/PredatoryUrgeScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/SavageConceptionScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/SavageConceptionScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/SpinedTyrranaxScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/SpinedTyrranaxScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/SwordOfTruthAndJusticeScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/SwordOfTruthAndJusticeScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/TatterkiteScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/TatterkiteScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/ThroneOfMakindiScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/ThroneOfMakindiScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/TranslationAssuranceTest.kt",
+      "to": "src/test/kotlin/assurance/TranslationAssuranceTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/TranslationMutationTest.kt",
+      "to": "src/test/kotlin/assurance/TranslationMutationTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/TranslationReliabilityScenarioTest.kt",
+      "to": "src/test/kotlin/assurance/TranslationReliabilityScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/test/kotlin/dev/mtg/assistant/TyriteSanctumScenarioTest.kt",
+      "to": "src/test/kotlin/scenarios/TyriteSanctumScenarioTest.kt"
+    },
+    {
+      "from": "cli/src/main/resources/translation-assurance.json",
+      "to": "src/main/resources/translation-assurance.json"
+    },
+    {
+      "from": "cli/src/main/resources/eligibility/phase29.json",
+      "to": "src/main/resources/eligibility/corrections.json"
+    },
+    {
+      "from": "cli/src/test/resources/benchmarks/catalog-baseline.json",
+      "to": "src/test/resources/regression/catalog-baseline.json"
+    },
+    {
+      "from": "cli/src/test/resources/benchmarks/deaths-expanded.json",
+      "to": "src/test/resources/regression/deaths-expanded.json"
+    },
+    {
+      "from": "cli/src/test/resources/benchmarks/deaths-initial.json",
+      "to": "src/test/resources/regression/deaths-initial.json"
+    },
+    {
+      "from": "cli/src/test/resources/benchmarks/reanimation.json",
+      "to": "src/test/resources/regression/reanimation.json"
+    },
+    {
+      "from": "cli/src/test/resources/benchmarks/tokens.json",
+      "to": "src/test/resources/regression/tokens.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Bitterblossom.json",
+      "to": "src/test/resources/native-definitions/Bitterblossom.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Experiment_Twelve.json",
+      "to": "src/test/resources/native-definitions/Experiment_Twelve.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Galadhrim_Ambush.json",
+      "to": "src/test/resources/native-definitions/Galadhrim_Ambush.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Hour_of_Promise.json",
+      "to": "src/test/resources/native-definitions/Hour_of_Promise.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Judith_the_Scourge_Diva.json",
+      "to": "src/test/resources/native-definitions/Judith_the_Scourge_Diva.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Krenko_s_Command.json",
+      "to": "src/test/resources/native-definitions/Krenko_s_Command.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Labyrinth_of_Skophos.json",
+      "to": "src/test/resources/native-definitions/Labyrinth_of_Skophos.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Ley_Weaver.json",
+      "to": "src/test/resources/native-definitions/Ley_Weaver.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Magus_of_the_Library.json",
+      "to": "src/test/resources/native-definitions/Magus_of_the_Library.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Might_of_Murasa.json",
+      "to": "src/test/resources/native-definitions/Might_of_Murasa.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Momentum.json",
+      "to": "src/test/resources/native-definitions/Momentum.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Mortal_Wound.json",
+      "to": "src/test/resources/native-definitions/Mortal_Wound.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Oviya_Pashiri_Sage_Lifecrafter.json",
+      "to": "src/test/resources/native-definitions/Oviya_Pashiri_Sage_Lifecrafter.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Paradise_Mantle.json",
+      "to": "src/test/resources/native-definitions/Paradise_Mantle.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Planewide_Celebration.json",
+      "to": "src/test/resources/native-definitions/Planewide_Celebration.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Predatory_Urge.json",
+      "to": "src/test/resources/native-definitions/Predatory_Urge.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Savage_Conception.json",
+      "to": "src/test/resources/native-definitions/Savage_Conception.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Spined_Tyrranax.json",
+      "to": "src/test/resources/native-definitions/Spined_Tyrranax.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Sword_of_Truth_and_Justice.json",
+      "to": "src/test/resources/native-definitions/Sword_of_Truth_and_Justice.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Tatterkite.json",
+      "to": "src/test/resources/native-definitions/Tatterkite.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Throne_of_Makindi.json",
+      "to": "src/test/resources/native-definitions/Throne_of_Makindi.json"
+    },
+    {
+      "from": "cli/src/test/resources/extensions/Tyrite_Sanctum.json",
+      "to": "src/test/resources/native-definitions/Tyrite_Sanctum.json"
+    },
+    {
+      "from": "reference/judith-rna-185-scryfall.json",
+      "to": "src/test/resources/cards/judith-the-scourge-diva-source.json"
+    },
+    {
+      "from": "reference/oviya-kld-165-scryfall.json",
+      "to": "src/test/resources/cards/oviya-pashiri-sage-lifecrafter-source.json"
+    },
+    {
+      "from": "reference/oviya-rulings-scryfall.json",
+      "to": "src/test/resources/cards/oviya-pashiri-sage-lifecrafter-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/verification.json",
+      "to": "src/test/resources/assurance/extension-review-2026-10-27.json"
+    },
+    {
+      "from": "reference/alignment-batch2/assay-7e8198e9-0f3b-420b-ab09-74f13f4fd548.json",
+      "to": "src/test/resources/cards/throne-of-makindi-native-proposal.json"
+    },
+    {
+      "from": "reference/alignment-batch2/assay-c1121b83-1ba2-473d-89c9-e3bbd4529072.json",
+      "to": "src/test/resources/cards/paradise-mantle-native-proposal.json"
+    },
+    {
+      "from": "reference/alignment-batch2/verification.json",
+      "to": "src/test/resources/assurance/extension-review-2026-10-28.json"
+    },
+    {
+      "from": "reference/fork-foundation/pre-adoption-verification.json",
+      "to": "src/test/resources/assurance/engine-compatibility-41332418.json"
+    },
+    {
+      "from": "reference/phase28/development-oracle.json",
+      "to": "src/test/resources/identity/development-oracle.json"
+    },
+    {
+      "from": "reference/phase28/development-review.json",
+      "to": "src/test/resources/identity/development-expectations.json"
+    },
+    {
+      "from": "reference/phase28/held-out-oracle.json",
+      "to": "src/test/resources/identity/held-out-oracle.json"
+    },
+    {
+      "from": "reference/phase28/held-out-review.json",
+      "to": "src/test/resources/identity/held-out-expectations.json"
+    },
+    {
+      "from": "reference/translation-reliability/assessment.json",
+      "to": "src/test/resources/assurance/assessment.json"
+    },
+    {
+      "from": "reference/translation-reliability/focused-execution.json",
+      "to": "src/test/resources/assurance/source-led-execution.json"
+    },
+    {
+      "from": "reference/translation-reliability/requirements.json",
+      "to": "src/test/resources/assurance/requirements.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+      "to": "src/test/resources/cards/ley-weaver-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/38c83332-2d21-450c-ae97-34109b565f59.json",
+      "to": "src/test/resources/cards/tyrite-sanctum-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/67a10da3-76f2-4f4a-90d1-e77abb5842fe.json",
+      "to": "src/test/resources/cards/experiment-twelve-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+      "to": "src/test/resources/cards/tatterkite-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/af23d348-adc9-451e-af08-bf9b1986c591.json",
+      "to": "src/test/resources/cards/planewide-celebration-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/rulings/f7b70077-5518-45f9-9833-01a4f8afac71.json",
+      "to": "src/test/resources/cards/mortal-wound-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/24f1f0e9-8c9b-4f32-95ec-7af883bbeef4.json",
+      "to": "src/test/resources/cards/ley-weaver-source.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/38c83332-2d21-450c-ae97-34109b565f59.json",
+      "to": "src/test/resources/cards/tyrite-sanctum-source.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/67a10da3-76f2-4f4a-90d1-e77abb5842fe.json",
+      "to": "src/test/resources/cards/experiment-twelve-source.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/9505f124-f152-48ce-b0d3-097abdda8e3e.json",
+      "to": "src/test/resources/cards/tatterkite-source.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/af23d348-adc9-451e-af08-bf9b1986c591.json",
+      "to": "src/test/resources/cards/planewide-celebration-source.json"
+    },
+    {
+      "from": "reference/alignment-batch1/sources/f7b70077-5518-45f9-9833-01a4f8afac71.json",
+      "to": "src/test/resources/cards/mortal-wound-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/2d09e689-c163-48c5-af5d-766f110d041e.json",
+      "to": "src/test/resources/cards/spined-tyrranax-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/3b22d21f-e19a-40df-840b-a2b7f11f79c2.json",
+      "to": "src/test/resources/cards/galadhrim-ambush-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/494050f4-0a55-415d-9ae9-feb17e61c4e1.json",
+      "to": "src/test/resources/cards/savage-conception-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+      "to": "src/test/resources/cards/hour-of-promise-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/69266cb7-50eb-43d2-96d6-fc3c85be49f7.json",
+      "to": "src/test/resources/cards/magus-of-the-library-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+      "to": "src/test/resources/cards/sword-of-truth-and-justice-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/7e8198e9-0f3b-420b-ab09-74f13f4fd548.json",
+      "to": "src/test/resources/cards/throne-of-makindi-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/80875914-df4c-4b05-8c4d-658ff477c956.json",
+      "to": "src/test/resources/cards/momentum-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/902eb71f-62b3-40cb-816b-f6b7e92e91e7.json",
+      "to": "src/test/resources/cards/might-of-murasa-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8.json",
+      "to": "src/test/resources/cards/labyrinth-of-skophos-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/c1121b83-1ba2-473d-89c9-e3bbd4529072.json",
+      "to": "src/test/resources/cards/paradise-mantle-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/rulings/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+      "to": "src/test/resources/cards/predatory-urge-rulings.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/2d09e689-c163-48c5-af5d-766f110d041e.json",
+      "to": "src/test/resources/cards/spined-tyrranax-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/3b22d21f-e19a-40df-840b-a2b7f11f79c2.json",
+      "to": "src/test/resources/cards/galadhrim-ambush-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/494050f4-0a55-415d-9ae9-feb17e61c4e1.json",
+      "to": "src/test/resources/cards/savage-conception-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/51ff3e53-90bb-41bf-80e4-bb3fd51d574a.json",
+      "to": "src/test/resources/cards/hour-of-promise-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/69266cb7-50eb-43d2-96d6-fc3c85be49f7.json",
+      "to": "src/test/resources/cards/magus-of-the-library-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/7a8baaf9-e21f-41a0-9f15-80764f6e5e68.json",
+      "to": "src/test/resources/cards/sword-of-truth-and-justice-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/7e8198e9-0f3b-420b-ab09-74f13f4fd548.json",
+      "to": "src/test/resources/cards/throne-of-makindi-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/80875914-df4c-4b05-8c4d-658ff477c956.json",
+      "to": "src/test/resources/cards/momentum-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/902eb71f-62b3-40cb-816b-f6b7e92e91e7.json",
+      "to": "src/test/resources/cards/might-of-murasa-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8.json",
+      "to": "src/test/resources/cards/labyrinth-of-skophos-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/c1121b83-1ba2-473d-89c9-e3bbd4529072.json",
+      "to": "src/test/resources/cards/paradise-mantle-source.json"
+    },
+    {
+      "from": "reference/alignment-batch2/sources/f6175cca-0e19-4db8-a175-3369fb650f24.json",
+      "to": "src/test/resources/cards/predatory-urge-source.json"
+    },
+    {
+      "from": "reference/phase27/fixtures/oracle-cards.json",
+      "to": "src/test/resources/identity/coverage-oracle.json"
+    },
+    {
+      "from": "reference/phase27/translations/bitterblossom-scryfall.json",
+      "to": "src/test/resources/cards/bitterblossom-source.json"
+    },
+    {
+      "from": "reference/phase27/translations/krenkos-command-scryfall.json",
+      "to": "src/test/resources/cards/krenkos-command-source.json"
+    },
+    {
+      "from": "reference/phase27/sample/rulings/fb868840-09fa-49b1-85cb-b08ad065e972.json",
+      "to": "src/test/resources/cards/bitterblossom-rulings.json"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the l
 .\scripts\explorer.ps1
 ```
 
-Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script builds both layers; catalog startup can take tens of seconds. Stop with **Ctrl+C**. See [guided exercises and API](docs/EXPLORER_M1.md).
+Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script builds both layers; catalog startup can take tens of seconds. Stop with **Ctrl+C**. See [guided exercises and API](docs/EXPLORER.md).
 
 ## Two sibling repositories
 
@@ -40,7 +40,7 @@ Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 
 .\scripts\bootstrap.ps1
 .\dev.ps1 test
 .\dev.ps1 installDist
-.\cli\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect 'Judith, the Scourge Diva' --json
+.\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect 'Judith, the Scourge Diva' --json
 ```
 
 Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. Update the local stable engine deliberately with `.\scripts\setup.ps1 -Update`, then rebuild. Generated reports belong under ignored `generated/`.
@@ -49,7 +49,7 @@ Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. 
 
 - [Repository layout and historical export](docs/REPOSITORY_LAYOUT.md)
 - [Agent instructions](AGENTS.md), [architecture](docs/ARCHITECTURE.md), [environment](docs/CODEX_ENVIRONMENT.md)
-- [Explorer launch/evaluation](docs/EXPLORER_M1.md) and [milestones](docs/EXPLORER_MILESTONES.md)
+- [Explorer launch/evaluation](docs/EXPLORER.md) and [milestones](docs/EXPLORER_MILESTONES.md)
 - [Native card authoring](docs/COMMANDER_AUTHORING.md), [translation assurance](docs/TRANSLATION_RELIABILITY.md)
 - [Eligibility](docs/ELIGIBILITY_CORRECTIONS.md), [identity](docs/ORACLE_IDENTITY.md), [coverage tools](docs/CARD_COVERAGE.md)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)

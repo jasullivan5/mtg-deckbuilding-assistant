@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 15
     defaults:
       run:
-        working-directory: mtg-deckbuilding-assistant/explorer
+        working-directory: mtg-deckbuilding-assistant/web
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,7 +60,7 @@ jobs:
           cache-dependency-path: |
             argentum-engine/gradle/libs.versions.toml
             mtg-deckbuilding-assistant/gradle/wrapper/gradle-wrapper.properties
-            mtg-deckbuilding-assistant/cli/build.gradle.kts
+            mtg-deckbuilding-assistant/build.gradle.kts
       - run: bash scripts/bootstrap.sh
       - run: python3 scripts/test-bootstrap.py
       - run: python3 scripts/test-oracle-snapshot.py
@@ -71,5 +71,5 @@ jobs:
         with:
           name: engine-build-and-tests
           path: |
-            mtg-deckbuilding-assistant/cli/build/generated/engine-resources/
-            mtg-deckbuilding-assistant/cli/build/reports/tests/
+            mtg-deckbuilding-assistant/build/generated/engine-resources/
+            mtg-deckbuilding-assistant/build/reports/tests/

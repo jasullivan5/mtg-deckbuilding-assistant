@@ -17,7 +17,7 @@ The first coherent journey is:
 5. Expand prerequisites, decisions, source identity, translation status, unsupported structures, and evidence.
 6. Understand the run's scope, limitations, and revision provenance rather than mistaking a structural match for a verified or valuable inclusion.
 
-The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER_M1.md); user acceptance remains pending.
+The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER.md); user acceptance remains pending.
 
 ## 2. Sequenced experience milestones
 
@@ -34,7 +34,7 @@ The order below reflects learning dependencies, **not** a promise of dates, fina
 
 ### M1 delivery awaiting Prototype Lab
 
-The authorized M1 assignment resumes the preserved `feature/explorer-m1` foundation after reconciliation with the sibling app-stable integration. It delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [Explorer M1](EXPLORER_M1.md). Verification remains separate from user acceptance. No M2 or later milestone has begun.
+The current Explorer delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [the Explorer guide](EXPLORER.md). Verification remains separate from user acceptance. No M2 or later milestone has begun.
 ## 3. How increments are proposed, built and accepted
 
 **One approved task at a time.** Product Studio maintains the direction; Codex may sequence ordinary technical subtasks within an approved increment, but must not execute subsequent milestones merely because they are written here. Prefer a single focused PR per meaningful increment; use more than one only when there is a concrete isolation or review benefit. Avoid a sprawling PR that implements multiple future milestones.
