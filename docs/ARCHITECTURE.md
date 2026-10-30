@@ -2,7 +2,7 @@
 
 ## Current implementation
 
-The application is an external Kotlin Gradle application module at the repository root attached through `argentum.init.gradle` to the sibling `../argentum-engine` on the maintained fork's `app-stable` branch. `dev`/`dev.ps1` enforce branch, clean source and fork origin. The branch selects the dependency; generated build metadata and reports record the actual engine SHA. Native/application compatibility is checked before engine acceptance. See [engine workflow](ENGINE_WORKFLOW.md).
+The application is an external Kotlin Gradle application module at the repository root attached through `gradle/argentum.init.gradle` to the sibling `../argentum-engine` on the maintained fork's `app-stable` branch. `dev`/`dev.ps1` enforce branch, clean source and fork origin. The branch selects the dependency; generated build metadata and reports record the actual engine SHA. Native/application compatibility is checked before engine acceptance. See [engine workflow](ENGINE_WORKFLOW.md).
 
 Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery/registry, search, pure rules execution, replacement/projection/continuation/event machinery and native scenario infrastructure. The application includes a React frontend and local JDK HTTP adapter; it does not copy the SDK or add its own rules engine, database, game server or Oracle mechanics parser. Engine implementation guidance belongs to the fork's [architecture](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/architecture-principles.md) and [SDK reference](https://github.com/jasullivan5/argentum-engine/blob/app-stable/docs/card-sdk-language-reference.md); consult the actual recorded engine revision when changing integrations.
 
@@ -27,7 +27,7 @@ The frontend presents native extraction and application decisions. Accounts, mul
 
 ## Application pipeline
 
-Native definitions â†’ effective Commander eligibility â†’ shared native action/branch extraction â†’ reusable facts/constraints â†’ objective queries and policies â†’ evidence/reporting and research diagnostics.
+Native definitions → effective Commander eligibility → shared native action/branch extraction → reusable facts/constraints → objective queries and policies → evidence/reporting and research diagnostics.
 
 Files below are relative to `src/main/kotlin/`.
 

@@ -4,6 +4,7 @@ The application has one Kotlin module at the repository root and one web fronten
 
 ```text
 build.gradle.kts           Kotlin application build
+gradle/                    Gradle wrapper and sibling-engine initialization
 src/main/kotlin/           Main.kt, Catalog.kt and behavior folders
   discovery/               Extraction, facts, objective policies and reports
   extensions/              Native card definitions and translation assurance

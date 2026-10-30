@@ -1,5 +1,5 @@
 // Attach the application to the sibling engine; validate callers bypassing dev.
-def foundation = initscript.sourceFile.parentFile.canonicalFile
+def foundation = initscript.sourceFile.parentFile.parentFile.canonicalFile
 def configuredEngine = System.getenv('ARGENTUM_ENGINE_DIR')
 def engine = (configuredEngine ? new File(configuredEngine) : new File(foundation.parentFile, 'argentum-engine')).canonicalFile
 settingsEvaluated { settings ->

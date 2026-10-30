@@ -1,4 +1,4 @@
-# Explorer M1 â€” live Commander discovery
+# Explorer M1 — live Commander discovery
 
 The Explorer is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab with bounded verification recorded in Git and the historical export; user acceptance remains separate. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
@@ -36,7 +36,7 @@ Readable explanations restate existing Kotlin objectives and verdicts; they do n
 
 Only **the latest run** is retained in memory. Starting another discovery invalidates earlier run URLs, including those in other tabs. Expired evidence reports a recovery message; rerun the question. Export complete evidence before replacing a run if you need to retain it. Exports are not imported as live discovery.
 
-## Local HTTP contract â€” schema version 1
+## Local HTTP contract — schema version 1
 
 All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander names use exact native lookup. Browser input never becomes a shell command or filesystem path.
 
@@ -80,12 +80,12 @@ pnpm test:live
 Pop-Location
 ```
 
-The fixture browser suite tests UI states using explicitly synthetic transport records; it does not claim live mechanics. The live suite executes real browser â†’ Kotlin queries and writes actual screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. CI runs the locked frontend build and fixture browser suite; genuine live browser execution is recorded separately in the the initial Explorer delivery receipt.
+The fixture browser suite tests UI states using explicitly synthetic transport records; it does not claim live mechanics. The live suite executes real browser → Kotlin queries and writes actual screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. CI runs the locked frontend build and fixture browser suite; genuine live browser execution is recorded separately in the the initial Explorer delivery receipt.
 
 HTTP parity compares every serialized DiscoveryReport field with fresh CLI output for each objective, using streaming/hashing to avoid extra giant report trees. Selected-card evidence is also compared field-by-field. Boundary tests retain malformed/blocked/error/busy/timeout checks. The existing CLI and frozen expectations are unchanged.
 
 ## Recorded delivery observations and current limits
 
-The original full Judith reports were 40â€“49 MB and contained roughly 4,600â€“5,400 finding cards. The index/detail approach addresses that measured cost. At the initial Explorer delivery, the clean-build warm token query measured 808,720 bytes for the summary, 12,099 bytes for Bitterblossom evidence, 5,087 ms native discovery and 5,285 ms complete HTTP. The first live query took 10.6 seconds native discovery; these are workstation observations, not performance guarantees. Full exports remain large and are deliberately streamed on request.
+The original full Judith reports were 40–49 MB and contained roughly 4,600–5,400 finding cards. The index/detail approach addresses that measured cost. At the initial Explorer delivery, the clean-build warm token query measured 808,720 bytes for the summary, 12,099 bytes for Bitterblossom evidence, 5,087 ms native discovery and 5,285 ms complete HTTP. The first live query took 10.6 seconds native discovery; these are workstation observations, not performance guarantees. Full exports remain large and are deliberately streamed on request.
 
 This is structural research over available authored definitions. It is not exhaustive card coverage, a deck editor, strategic scoring, new objectives, scenario execution UI or independently qualified card translation. Source-first concerns and provisional/blocked assurance remain visible.
