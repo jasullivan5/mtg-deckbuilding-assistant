@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+"${PYTHON:-python3}" scripts/test-catalog-comparison.py
 out=generated/verification/catalog
 mkdir -p "$out"
 cli=build/install/mtg-assistant/bin/mtg-assistant

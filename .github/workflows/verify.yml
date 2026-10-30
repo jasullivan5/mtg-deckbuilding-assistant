@@ -64,6 +64,7 @@ jobs:
       - run: bash scripts/bootstrap.sh
       - run: python3 scripts/test-bootstrap.py
       - run: python3 scripts/test-oracle-snapshot.py
+      - run: python3 scripts/test-catalog-comparison.py
       - run: ./dev test
       - name: Preserve engine provenance
         if: always()
