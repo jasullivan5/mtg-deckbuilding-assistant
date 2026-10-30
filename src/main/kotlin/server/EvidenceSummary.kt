@@ -122,6 +122,6 @@ fun evidenceIndicators(
 fun materialConcerns(assurance: TranslationAssurance?): List<ResearchConcern> = assurance?.evidence?.concerns.orEmpty()
     .filter { it.state in setOf(ConcernState.CONFIRMED, ConcernState.SUSPECTED, ConcernState.UNRESOLVED) }
     .map { concern -> ResearchConcern(concern.claim, concern.reason,
-        concern.nextAction,
+        "Review the retained reproduction at its recorded engine version. Closing this concern requires reviewed, revision-bound resolution evidence; the original suggested action remains in the detailed record.",
         if (concern.state == ConcernState.CONFIRMED) EvidenceState.KNOWN_PROBLEM else EvidenceState.INCOMPLETE,
         "Card-level concern recorded on ${assurance!!.evidence!!.argentumCommit}; it is not automatically assigned to this ability or a fresh failure on this build.") }

@@ -45,7 +45,7 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
 }
 export function Concerns({items}: {items: ResearchConcern[]}) {
   return <>{items.map((item, i) => <article key={i} className={item.state === 'KNOWN_PROBLEM' ? 'recorded-problem' : 'research-question'}>
-    <h4>{item.title}</h4><p>{item.detail}</p><p className="hint">{item.scope}</p>
+    <h4>{item.title}</h4><p className="hint">{item.scope}</p><p>{item.detail}</p>
     <p><b>Next evidence needed:</b> {item.nextStep}</p>
   </article>)}</>;
 }

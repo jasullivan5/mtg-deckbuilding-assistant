@@ -32,7 +32,12 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
     private val activated = rows.any { it.circumstances?.actionKind == "ACTIVATED" }
 
     private fun targetDescription(t: JsonObject?): String = when (t.text("type")) {
-        "TargetObject" -> filterDescription(t?.get("filter").obj()?.get("baseFilter").obj())
+        "TargetObject" -> {
+            val filter = t?.get("filter").obj()
+            val zone = filter.text("zone")
+            filterDescription(filter?.get("baseFilter").obj()) +
+                if (zone != null && zone != "Battlefield") " in the recorded ${zone.lowercase()} zone" else ""
+        }
         "AnyTarget" -> "any legal damage target"
         "TargetPlayer" -> "a player"
         "TargetOpponent" -> "an opponent"
@@ -114,6 +119,8 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
         }
         effect(native?.get("effect").obj())
         if (activated) conditions += "Each activation needs a new payment of its costs and legal choices; any recorded timing limits still apply."
+        if (rows.any { it.operation == "DAMAGE_POTENTIALLY_LETHAL" }) conditions += "Damage contributes a creature death only if it is lethal in that game state. Damage to a player does not itself make a creature die."
+        if (rows.any { it.operation == "DESTROY" }) conditions += "Destruction has to succeed to cause a death; indestructibility and replacement effects can change the outcome. The sacrifice cost is separate from that outcome."
         if (rows.any { it.circumstances?.mandatory == Verdict.MATCH }) conditions += "This is a required instruction when the triggered effect resolves, not an optional sacrifice outlet."
         if (rows.any { it.circumstances?.delayedTrigger == true || it.circumstances?.deferredTiming == true }) gaps += "A delayed or timing-dependent instruction needs inspection."
     }
@@ -160,9 +167,12 @@ fun abilityInspections(
         val uncertainty = if (best.verdict == Verdict.UNKNOWN) explanation.unknowns.filterNot {
             it.startsWith("This finding") || it.startsWith("Only part") || it.startsWith("The application has not")
         } else emptyList()
-        val objectiveConditions = if (best.branch == Contribution.DIRECT_DEATH_GENERATOR) listOf(
-            "For this objective, the affected permanent must be a nontoken creature you control and must reach the graveyard. A token or an ordinary noncreature permanent does not meet that condition."
-        ) else emptyList()
+        val objectiveConditions = when (best.branch) {
+            Contribution.DIRECT_DEATH_GENERATOR -> listOf("For this objective, the affected permanent must be a nontoken creature you control and must reach the graveyard. A token or an ordinary noncreature permanent does not meet that condition.")
+            Contribution.REANIMATE_OWN_CREATURE -> listOf("For this objective, the original creature card must come from your graveyard and enter the battlefield under your control. A copy or a return to hand is a different result.")
+            Contribution.CREATE_CREATURE_TOKEN -> listOf("For this objective, at least one created token must be a creature under your control when the ability resolves. The actual number still depends on the recorded amount and game state.")
+            else -> emptyList()
+        }
         AbilityInspection(id, title, best.face.takeUnless { it == "front" }, best.verdict,
             if (best.verdict == Verdict.NO_MATCH) explanation.outcome else explanation.summary,
             narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), uncertainty,
