@@ -16,7 +16,7 @@ test('real Judith discovery, changed objective/commander, inspected evidence and
   await page.getByLabel('Find within these findings').fill('Bitterblossom');
   await page.getByRole('button', {name: /^Bitterblossom/}).click();
   await expect(page.getByRole('heading', {name: 'Bitterblossom', exact: true})).toBeVisible();
-  await expect(page.getByRole('heading', {name: 'What must be true'}).first()).toBeVisible();
+  await expect(page.getByRole('heading', {name: 'What needs to happen'}).first()).toBeVisible();
   await page.screenshot({path: '../generated/explorer/judith-tokens.png', fullPage: true});
 
   await page.getByLabel('Research objective').selectOption('reanimate-own-creatures');
@@ -46,8 +46,6 @@ test('mobile layout and keyboard controls retain accurate blocked-selection feed
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
   await expect(page.getByRole('button', {name: 'Run discovery'})).toBeEnabled();
-  await page.keyboard.press('Tab');
-  await expect(page.getByRole('link', {name: 'MTG / RESEARCH LAB'})).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByLabel('Commander’s exact name')).toBeFocused();
   await page.keyboard.press('Control+A');

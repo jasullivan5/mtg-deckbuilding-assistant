@@ -17,3 +17,5 @@ Some recorded JSON content contains historical paths, immutable review IDs or or
 The complete-report gate reverses only declared exact path relocations and runtime engine source-URL provenance when comparing with the immutable baseline. It cannot normalize verdicts, facts, quantities, prerequisites, source content or concern state. Expectation JSON was not regenerated.
 
 Unused research records live in the movable export described in [repository layout](../../../docs/REPOSITORY_LAYOUT.md).
+
+The 2026-10-30 card explanation/image fixtures have separate retrieval URLs and raw hashes in `cards/image-and-explanation-sources.json`, consumed by FindingExplanationTest. They preserve the three sacrifice examples, empty ruling lists where appropriate, and a double-faced image identity case. They do not change the original 82-file relocation manifest or independently certify those cards.

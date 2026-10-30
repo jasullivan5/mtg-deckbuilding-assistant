@@ -1,6 +1,6 @@
 # Explorer M1 — live Commander discovery
 
-The Explorer is a local browser interface over the application's existing Kotlin discovery. It is ready for Prototype Lab with bounded verification recorded in Git and the historical export; user acceptance remains separate. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
+The Explorer is a local browser interface over the application's existing Kotlin discovery. The first Prototype Lab review did not accept M1 as a usable research experience. A focused revision is in progress: compact controls, grounded Magic explanations, explicit overlapping counts, mechanic browsing and verified printing/face imagery. Existing mechanical classifications and CLI evidence remain authoritative. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
 ## Launch on Windows
 
@@ -89,3 +89,7 @@ HTTP parity compares every serialized DiscoveryReport field with fresh CLI outpu
 The original full Judith reports were 40–49 MB and contained roughly 4,600–5,400 finding cards. The index/detail approach addresses that measured cost. At the initial Explorer delivery, the clean-build warm token query measured 808,720 bytes for the summary, 12,099 bytes for Bitterblossom evidence, 5,087 ms native discovery and 5,285 ms complete HTTP. The first live query took 10.6 seconds native discovery; these are workstation observations, not performance guarantees. Full exports remain large and are deliberately streamed on request.
 
 This is structural research over available authored definitions. It is not exhaustive card coverage, a deck editor, strategic scoring, new objectives, scenario execution UI or independently qualified card translation. Source-first concerns and provisional/blocked assurance remain visible.
+
+## Current revision checkpoint
+
+Branch `feature/discovery-experience` starts at application e972a19. The assignment is the 2026-10-30 Prototype Lab feedback. Inspect Agent of Shauku, Acolyte of Aclazotz and Accursed Centaur against retained Scryfall snapshots before presenting findings. Preserve discovery verdicts and frozen expectations; no engine change is currently justified. Implement server-owned explanations and verified imagery, revise the existing UI, then run Kotlin/frontend/browser checks and record actual source revisions here before delivery. This section will be replaced by the completed validation record.

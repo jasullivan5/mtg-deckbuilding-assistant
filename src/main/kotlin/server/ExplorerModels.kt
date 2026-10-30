@@ -10,15 +10,15 @@ import java.util.UUID
 
 @Serializable data class Objective(val id: String, val label: String, val explanation: String)
 val objectives = listOf(
-    Objective("own-nontoken-creature-deaths", "Our nontoken creatures die", "Find direct death generation and separately classified death-enhanced removal."),
-    Objective("reanimate-own-creatures", "Return our creatures", "Find direct movement of original creature cards from our graveyard to our battlefield."),
-    Objective("create-creature-tokens", "Create creature tokens", "Find creature-token creation under our control, subject to type, quantity and controller prerequisites.")
+    Objective("own-nontoken-creature-deaths", "Our nontoken creatures die", "Explore sacrifice and other ways your nontoken creatures could die, plus removal enabled by a death."),
+    Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield."),
+    Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.")
 )
 @Serializable data class ResearchRequest(val commander: String, val objective: String? = null)
 @Serializable data class ApiError(val code: String, val message: String, val inspection: CommanderInspection? = null)
 @Serializable data class CardFinding(
     val index: Int, val card: String, val pathways: Map<String, Int>, val branches: List<Contribution>,
-    val unsupportedRecords: Int, val partialPathways: Int, val reason: String?
+    val unsupportedRecords: Int, val partialPathways: Int, val reason: String?, val mechanics: List<String> = emptyList()
 )
 @Serializable data class RunSummary(
     val schemaVersion: Int = 1, val execution: String = "FRESH_STRUCTURAL_DISCOVERY",
@@ -29,31 +29,6 @@ val objectives = listOf(
     val cards: List<CardFinding>
 )
 @Serializable data class AuthoredCardText(val manaCost: String, val typeLine: String, val text: String)
-@Serializable data class PathwayExplanation(val summary: String, val requirements: List<String>)
-
-/** Readable restatement of the existing objective/verdict, not another mechanical evaluator. */
-fun explain(result: ResultEvidence): PathwayExplanation {
-    val potential = when (result.branch) {
-        Contribution.DIRECT_DEATH_GENERATOR -> "This pathway can contribute to a nontoken creature you control dying, under its retained conditions."
-        Contribution.DEATH_ENHANCED_REMOVAL -> "A retained death event may enable or improve this removal pathway."
-        Contribution.REANIMATE_OWN_CREATURE -> "This pathway can move an original creature card from your graveyard to your battlefield, under its retained conditions."
-        Contribution.CREATE_CREATURE_TOKEN -> "This pathway can create a creature token under your control, under its retained conditions."
-    }
-    val summary = when (result.verdict) {
-        Verdict.MATCH -> potential
-        Verdict.UNKNOWN -> "At least one requirement is unresolved. The application has not established that this pathway satisfies the objective."
-        Verdict.NO_MATCH -> "This represented pathway does not meet at least one requirement of the objective. Other pathways on the card may differ."
-    }
-    val objectiveRequirements = when (result.branch) {
-        Contribution.DIRECT_DEATH_GENERATOR -> listOf("A nontoken creature you control must be affected in a way that can cause its death.")
-        Contribution.DEATH_ENHANCED_REMOVAL -> listOf("The retained death-event dependency must hold for the represented removal improvement.")
-        Contribution.REANIMATE_OWN_CREATURE -> listOf("The original card must be a creature card in your graveyard.", "The represented movement must put that card onto your battlefield.")
-        Contribution.CREATE_CREATURE_TOKEN -> listOf("The created object must be a creature token under your control.", "The native quantity must evaluate to a positive number when the action resolves.")
-    }
-    return PathwayExplanation(summary, objectiveRequirements + listOf(
-        "The action's exact timing, costs, targets, choices and branch restrictions must hold; inspect the native prerequisites below.",
-        "Resources and legal choices must exist. Replacements and other game-state effects can change the actual outcome."))
-}
 @Serializable data class CardEvidence(
     val runId: String, val card: String, val authoredCard: AuthoredCardText?,
     val results: List<ResultEvidence>, val actions: List<ActionEvidence>,
@@ -92,17 +67,19 @@ class StoredRun(
                 rows.map { it.branch }.distinct(), unsupported[card].orEmpty().size,
                 rows.count { it.interpretation.startsWith("PARTIAL") || it.localSupport == SupportStatus.PARTIALLY_SUPPORTED },
                 (rows.firstOrNull { it.verdict == Verdict.MATCH } ?: rows.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: rows.firstOrNull())
-                    ?.let { explain(it).summary })
+                    ?.let { explain(it, actions[card].orEmpty().firstOrNull { a -> a.id == it.actionId }).summary }, rows.map(::mechanic).distinct())
         }
     )
     val export = LiveDiscovery(runId = id, startedAt = started.toString(), durationMs = durationMs,
         applicationRevision = revision, engineMode = EngineBuild.mode, report = report)
+
+    fun definition(index: Int) = summary.cards.getOrNull(index)?.card?.let(catalog::card)
 
     fun card(index: Int): CardEvidence? {
         val name = summary.cards.getOrNull(index)?.card ?: return null
         val native = catalog.card(name)
         return CardEvidence(id, name, native?.let { AuthoredCardText(it.manaCost.toString(), it.typeLine.toString(), it.oracleText) },
             results[name].orEmpty(), actions[name].orEmpty(), facts[name].orEmpty(), unsupported[name].orEmpty(),
-            support[name].orEmpty(), eligibility[name].orEmpty(), assurance[name].orEmpty(), results[name].orEmpty().map(::explain))
+            support[name].orEmpty(), eligibility[name].orEmpty(), assurance[name].orEmpty(), results[name].orEmpty().map { result -> explain(result, actions[name].orEmpty().firstOrNull { it.id == result.actionId }) })
     }
 }
