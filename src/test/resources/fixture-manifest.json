@@ -1,0 +1,333 @@
+{
+  "description": "Retained current fixtures. Content checked against pre-move hashes before recording portable LF-normalized hashes. No expected mechanics or verdicts changed.",
+  "files": [
+    {
+      "path": "regression/catalog-baseline.json",
+      "sha256TextLf": "513d9916c6350f89979106570d6aee856026f6dba66c4ddb81790850f45b4ed6"
+    },
+    {
+      "path": "regression/deaths-expanded.json",
+      "sha256TextLf": "23778fc59660b20911205392465eb164376c2ba45eb589d59429b3bd9672ba08"
+    },
+    {
+      "path": "regression/deaths-initial.json",
+      "sha256TextLf": "2061698ea85c05bf0f01ee0ba56d403404f62df6b32d5face7bd7542ec9a5cd8"
+    },
+    {
+      "path": "regression/reanimation.json",
+      "sha256TextLf": "e6bfdf29864c7be690b24f197652c6db29689e547ac5b3d557f1b2134b2d7e50"
+    },
+    {
+      "path": "regression/tokens.json",
+      "sha256TextLf": "513cf194b4c2f3d1ad5021c212e18a04a8dbbfadf1953fcba1e047c1452fa300"
+    },
+    {
+      "path": "native-definitions/Bitterblossom.json",
+      "sha256TextLf": "daea31a2c318a51d7895ab5a345ac8232474b1e76666fd56cc9e34322f46cb8d"
+    },
+    {
+      "path": "native-definitions/Experiment_Twelve.json",
+      "sha256TextLf": "f0bccd1aab938b8103af5e31dfc6c392fe3f0f3cc5cc0c68ee12e4e2cc0c5d15"
+    },
+    {
+      "path": "native-definitions/Galadhrim_Ambush.json",
+      "sha256TextLf": "76a4b233db913f5fa5d327348bd34214493a431397e709e6c2775b6121d790e7"
+    },
+    {
+      "path": "native-definitions/Hour_of_Promise.json",
+      "sha256TextLf": "d72a559c4dba6c1fe0a0270eec0584cc29b65e88077379929a90b9d58a2c7ead"
+    },
+    {
+      "path": "native-definitions/Judith_the_Scourge_Diva.json",
+      "sha256TextLf": "e03fbee9f13d26c9161d776dc90d7bc5e13cc102a10b08da6c47001094e6749a"
+    },
+    {
+      "path": "native-definitions/Krenko_s_Command.json",
+      "sha256TextLf": "531ae2de99cb4f7271b31e424bcecc0008e2b88320b98047aa026fc5b244a1a1"
+    },
+    {
+      "path": "native-definitions/Labyrinth_of_Skophos.json",
+      "sha256TextLf": "4f04dad418bdcd3c37e1d21bc176d739a5a92d46fa6b1057f1a99d362adec418"
+    },
+    {
+      "path": "native-definitions/Ley_Weaver.json",
+      "sha256TextLf": "f8ee640a38d541d50f8954af8a42b83a5b5401b88e9ad3196d45a47eaa1b33f5"
+    },
+    {
+      "path": "native-definitions/Magus_of_the_Library.json",
+      "sha256TextLf": "763b829051b5256f27f59f67799926ea45155fe557f0f8af8e608f4d48c3c71a"
+    },
+    {
+      "path": "native-definitions/Might_of_Murasa.json",
+      "sha256TextLf": "a12f960d3ef5c1d2eb3cb4799505a6e450c93e60edc69eca2b9e84e9e46ef1fc"
+    },
+    {
+      "path": "native-definitions/Momentum.json",
+      "sha256TextLf": "9859853ece48300fe4547dd1ddc90cc651216f6995e382362cebd25a68079522"
+    },
+    {
+      "path": "native-definitions/Mortal_Wound.json",
+      "sha256TextLf": "9e7dfa548aac95c88bb1a2153c9971de0c1997af2bcc06ba67fcabbd8e5d3886"
+    },
+    {
+      "path": "native-definitions/Oviya_Pashiri_Sage_Lifecrafter.json",
+      "sha256TextLf": "5fb95d80d13cc54e2c2ca8aae95c9d8f11907e25ec96dc93ba723f7be084fdaa"
+    },
+    {
+      "path": "native-definitions/Paradise_Mantle.json",
+      "sha256TextLf": "d1fb288fbe7148a2ee783adc0b6c820c8a17303c9232c3325a9b982c8bcb9e9a"
+    },
+    {
+      "path": "native-definitions/Planewide_Celebration.json",
+      "sha256TextLf": "3996a7478d86328a7bf7fbdaa267a839595164e8a59dde655d5316fc96770fc0"
+    },
+    {
+      "path": "native-definitions/Predatory_Urge.json",
+      "sha256TextLf": "44c3e5c922ce10649e64a5f62943abaf7445327f728409e7b2cbea47b0ada296"
+    },
+    {
+      "path": "native-definitions/Savage_Conception.json",
+      "sha256TextLf": "d65b501568e0e0430a96631bfa75193a9bdb1437bb5710a9f7d357944449d254"
+    },
+    {
+      "path": "native-definitions/Spined_Tyrranax.json",
+      "sha256TextLf": "05372bf2a75d54d122ebd28d3abfa35ac27f89c810e93ee8087cfcf64ad43b3e"
+    },
+    {
+      "path": "native-definitions/Sword_of_Truth_and_Justice.json",
+      "sha256TextLf": "7cb8505bf5aab76142fafe7fedd23acf5bfe595f96c6950548b4a1a7b8b1740b"
+    },
+    {
+      "path": "native-definitions/Tatterkite.json",
+      "sha256TextLf": "3a84301e1ada62352c433c6c6757ecc2d44bab59bd63eb0bf33a6e8b271c8851"
+    },
+    {
+      "path": "native-definitions/Throne_of_Makindi.json",
+      "sha256TextLf": "ff1ad4c0d520a3d4ec1fe5045f371f5876882ba40628c1699c3e6a654c26fd19"
+    },
+    {
+      "path": "native-definitions/Tyrite_Sanctum.json",
+      "sha256TextLf": "5ff284af74251a7d9aed3047ac774ed079261c6611d82f21bc1423fab9d96861"
+    },
+    {
+      "path": "cards/judith-the-scourge-diva-source.json",
+      "sha256TextLf": "0c7e0693592f1d2d88d1c682f76425a40f41538bded1e265e525745db2e1802c"
+    },
+    {
+      "path": "cards/oviya-pashiri-sage-lifecrafter-source.json",
+      "sha256TextLf": "68faaa7da09eb0e926bb80aab36580a9add8ca5e7e0bfd3eadcbfe00d77580fa"
+    },
+    {
+      "path": "cards/oviya-pashiri-sage-lifecrafter-rulings.json",
+      "sha256TextLf": "227021f47fbdb0979da162b00d54f65ff8863517eef82dc43fcf42c1c5b2ef04"
+    },
+    {
+      "path": "assurance/extension-review-2026-10-27.json",
+      "sha256TextLf": "52ef72f722925b76ef08a1f7540c1993ab701a7eebf857f48558139db86968f3"
+    },
+    {
+      "path": "cards/throne-of-makindi-native-proposal.json",
+      "sha256TextLf": "642b34d1c6a8a9c7d5c9805f39218ccc65f40fd6edf8885ea600340db51e9e6d"
+    },
+    {
+      "path": "cards/paradise-mantle-native-proposal.json",
+      "sha256TextLf": "2478dee40f77c9987ef18f93770eb2a9028e5d76e9c1b4e6fc8979e535927e46"
+    },
+    {
+      "path": "assurance/extension-review-2026-10-28.json",
+      "sha256TextLf": "35bafd29698845359a0904b6f24fe8022453864c71242fca5298bb859d4b85a0"
+    },
+    {
+      "path": "assurance/engine-compatibility-41332418.json",
+      "sha256TextLf": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e"
+    },
+    {
+      "path": "identity/development-oracle.json",
+      "sha256TextLf": "d06cf98cd14fb7862c354625ecd9ede944c4c55cdf088c18165d243c2a0a05b1"
+    },
+    {
+      "path": "identity/development-expectations.json",
+      "sha256TextLf": "13789ad2962c4a8230448c98b9d4eb4d79adcab95f12d6e8fbcfbf5788bf0c2d"
+    },
+    {
+      "path": "identity/held-out-oracle.json",
+      "sha256TextLf": "2fdd2beda3b6d678107fe3fd3a1af1af6909ccf7504ddcfe15e316b346da47ec"
+    },
+    {
+      "path": "identity/held-out-expectations.json",
+      "sha256TextLf": "0998d63e249b52387805c5ba97b5196ef24c9269f596fdc4f25a94cf3d001088"
+    },
+    {
+      "path": "assurance/assessment.json",
+      "sha256TextLf": "9ab28104fb8307d3731de2ea4594c01b5e59c3dfe735a91ced7fb56bf231eb53"
+    },
+    {
+      "path": "assurance/source-led-execution.json",
+      "sha256TextLf": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
+    },
+    {
+      "path": "assurance/requirements.json",
+      "sha256TextLf": "8df56abbfd8a5532f16ae5560e72572ba0e29eea6be50a182f59c657f86daef5"
+    },
+    {
+      "path": "cards/ley-weaver-rulings.json",
+      "sha256TextLf": "93246b77499f1c5c9f90228c9724c7935e2d85d63ec2335efdfc0083eb4d4751"
+    },
+    {
+      "path": "cards/tyrite-sanctum-rulings.json",
+      "sha256TextLf": "4f192959d9a28de7c5f0f4c5d8e72843de2d551f2047f73e7ab4ea03cbc697d0"
+    },
+    {
+      "path": "cards/experiment-twelve-rulings.json",
+      "sha256TextLf": "ef90dbeac1d18b5b2aaf41acb2ed8a6d97a4490c0fff5b6eb8a9248cc3b0fdc3"
+    },
+    {
+      "path": "cards/tatterkite-rulings.json",
+      "sha256TextLf": "b90262aa731f168036e6c2a7f84e05a2d9a4060139f42da8ccc7f1b16372a1ca"
+    },
+    {
+      "path": "cards/planewide-celebration-rulings.json",
+      "sha256TextLf": "2fd5fdb828166c0d30ec70a48d07ea9e68609114568e6816940a39887e4f634f"
+    },
+    {
+      "path": "cards/mortal-wound-rulings.json",
+      "sha256TextLf": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b"
+    },
+    {
+      "path": "cards/ley-weaver-source.json",
+      "sha256TextLf": "9840c6d5ef1b460705056531b499bb85ff4bab5d6917a710ef09f8c7b7533c1e"
+    },
+    {
+      "path": "cards/tyrite-sanctum-source.json",
+      "sha256TextLf": "de765b12179ca50afa3a4efa1b99209bd2884acd7b1e934fe3ad4042c858d9e0"
+    },
+    {
+      "path": "cards/experiment-twelve-source.json",
+      "sha256TextLf": "0627c2e95df1d241d36a35aa8351ca640556bdd9f4a2fb3c805b4a2f625c268a"
+    },
+    {
+      "path": "cards/tatterkite-source.json",
+      "sha256TextLf": "e525068799f80024a6b3e3e24a61f0031ca5919c31bfdbf49d78a06eed49d356"
+    },
+    {
+      "path": "cards/planewide-celebration-source.json",
+      "sha256TextLf": "20bce2f382a407bb2c296d4126dea1669ca80baa2677c78d4109182e86388a07"
+    },
+    {
+      "path": "cards/mortal-wound-source.json",
+      "sha256TextLf": "9a02907cf6c276cd554fdfd90de5af0ea8a44ed50aaa8e7ab36e0a54690d59ef"
+    },
+    {
+      "path": "cards/spined-tyrranax-rulings.json",
+      "sha256TextLf": "59ab86868c0c492aa1a03a3bce2b65f793431132bff90d90a3bd8f2e66c404e8"
+    },
+    {
+      "path": "cards/galadhrim-ambush-rulings.json",
+      "sha256TextLf": "a0a1a33b38d7b620e74e16a7d1553bad302f0a7025429497384a496280ee6120"
+    },
+    {
+      "path": "cards/savage-conception-rulings.json",
+      "sha256TextLf": "4ac451ae6c3f833fce1d85c5f4dd11614c2300b7aa7c0a64fa434f0f535d7371"
+    },
+    {
+      "path": "cards/hour-of-promise-rulings.json",
+      "sha256TextLf": "dc9ee11d078be368a9df07f048d67b3d4a4917af0637f27ad59dda2b2a366763"
+    },
+    {
+      "path": "cards/magus-of-the-library-rulings.json",
+      "sha256TextLf": "ab03d31b6367dde172091cc2ba143f2585c3ab32a1582b9e9981012901c53cb9"
+    },
+    {
+      "path": "cards/sword-of-truth-and-justice-rulings.json",
+      "sha256TextLf": "fffcefa36f2c4ea74ea89ca316e9d91578f05b6c6a7f329b04529026a02208e5"
+    },
+    {
+      "path": "cards/throne-of-makindi-rulings.json",
+      "sha256TextLf": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b"
+    },
+    {
+      "path": "cards/momentum-rulings.json",
+      "sha256TextLf": "6eab3a0bfdea9295072960c7cd2269da0c18929b6f130438e1356d0bff712c89"
+    },
+    {
+      "path": "cards/might-of-murasa-rulings.json",
+      "sha256TextLf": "2f75e32e38beb8cd9c4947d56911edfb62e7b35b07f6b1c1c098a62cb82a24b7"
+    },
+    {
+      "path": "cards/labyrinth-of-skophos-rulings.json",
+      "sha256TextLf": "796b2cf9443236adfbdeffced88b732a31029e20b8aa6e1499fe85bd24b2addd"
+    },
+    {
+      "path": "cards/paradise-mantle-rulings.json",
+      "sha256TextLf": "9becf54632b534c44de9f01a62aae88b25e402954ba698f708334a266fbaf53b"
+    },
+    {
+      "path": "cards/predatory-urge-rulings.json",
+      "sha256TextLf": "22b00ef180b5ff298b9e291e21b09a762126be53316bdc73200b453f2826b567"
+    },
+    {
+      "path": "cards/spined-tyrranax-source.json",
+      "sha256TextLf": "eb5d945da50df185308290741850e4b9553a1eefa4ff096e2a2b3141d77e860c"
+    },
+    {
+      "path": "cards/galadhrim-ambush-source.json",
+      "sha256TextLf": "64040d078067317f18530279c632e1306f7e95939562aa31e3a76f8791a99275"
+    },
+    {
+      "path": "cards/savage-conception-source.json",
+      "sha256TextLf": "98197fb599fb833241653635481ea8690ccdcb100b6b9c8d39ba1de16b553218"
+    },
+    {
+      "path": "cards/hour-of-promise-source.json",
+      "sha256TextLf": "e3157f55797d37d4b5f57dd4e44dfc1ce7cf75d9d467ffa3e702973b327596e9"
+    },
+    {
+      "path": "cards/magus-of-the-library-source.json",
+      "sha256TextLf": "77b57fc66f828d65a45d9d3a60b0e635eecf07f1819aba1becd76cda7aed81e2"
+    },
+    {
+      "path": "cards/sword-of-truth-and-justice-source.json",
+      "sha256TextLf": "3fc64a40af6b8518abcc63aa19e3b44e0064d0e7445f982f1ccbc366b5e51072"
+    },
+    {
+      "path": "cards/throne-of-makindi-source.json",
+      "sha256TextLf": "b8fec608eb30f9974f4de2a4704a333056fca3c12f7d09357771139aa5a12b6a"
+    },
+    {
+      "path": "cards/momentum-source.json",
+      "sha256TextLf": "be4c18cb1a1689fe90cf149cc280ce821afe690e1f537fb396fbf7945e85bab7"
+    },
+    {
+      "path": "cards/might-of-murasa-source.json",
+      "sha256TextLf": "8f64fef6f8122e641882af914609c6cd0f82535568e9a3c779f5e5b5cdd77d70"
+    },
+    {
+      "path": "cards/labyrinth-of-skophos-source.json",
+      "sha256TextLf": "fa29b98962786d5242e55485324a1b677fda2f64799cb6b130814c3f60d2330f"
+    },
+    {
+      "path": "cards/paradise-mantle-source.json",
+      "sha256TextLf": "28d9128be1884ae1aa8375c7e4692a04ccaa3ecc706475e21ca0b8a9f17c3e45"
+    },
+    {
+      "path": "cards/predatory-urge-source.json",
+      "sha256TextLf": "bb32a711f1db577c2107aa95e201a64640f61204c94ca9f8a9416922c2907aee"
+    },
+    {
+      "path": "identity/coverage-oracle.json",
+      "sha256TextLf": "216ba181eb139b308c316a22442bb4b3b81133d3ba24338ed8dfbcefb02e00e1"
+    },
+    {
+      "path": "cards/bitterblossom-source.json",
+      "sha256TextLf": "7f6ee33b40fb5a5b84d1d1f914cbc417f3da82db73cb7f0c1ea6933d5d689ac4"
+    },
+    {
+      "path": "cards/krenkos-command-source.json",
+      "sha256TextLf": "ecefcd380f382f1c7076a27d049eaa60967e9b69bb95c375fccca2154404281a"
+    },
+    {
+      "path": "cards/bitterblossom-rulings.json",
+      "sha256TextLf": "b3500bd8d0795800b72820068d0aa6588978d966f4b3471233e1c56a5b5640e4"
+    }
+  ]
+}

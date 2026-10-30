@@ -1,2 +1,0 @@
-// Historical implementation is retained under reference/engine-counter-correction/.
-throw new GradleException('Retired exact-pin experiment. Set ARGENTUM_ENGINE_DIR and ARGENTUM_CANDIDATE_REVISION, then use dev/dev.ps1. See docs/ENGINE_WORKFLOW.md.')

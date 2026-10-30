@@ -7,3 +7,5 @@ Required: Git, JDK 21 including javac, Bash and Python 3. Set JAVA_HOME and its 
 Use `dev` / `dev.ps1`, not the engine root test task. The wrapper attaches the external application module to the sibling engine's Gradle settings and validates its origin, branch and clean state. It never silently resets, cleans or switches active work. `setup.ps1 -Update` / `setup.sh --update` explicitly fetch and fast-forward app-stable.
 
 Ordinary application work uses feature branches from main. Keep the normal engine checkout clean on app-stable; isolate engine feature work when the application needs that checkout. Build caches, full generated reports and the retired ignored nested clone remain outside committed sources. Reproduce historical experiments using their recorded revisions and receipts, not the current branch name as a substitute for provenance.
+
+On Windows, use Git Bash for Bash verification. If another bash is first on PATH, set `MTG_TEST_BASH` to the Git Bash executable when running scripts/test-bootstrap.py. The ordinary Explorer launch uses PowerShell and does not require a separate Bash process.

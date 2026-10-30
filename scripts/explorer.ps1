@@ -61,7 +61,7 @@ finally { $PortProbe.Stop() }
 Push-Location $Root
 try {
     & "$PSScriptRoot/setup.ps1"
-    Push-Location (Join-Path $Root 'explorer')
+    Push-Location (Join-Path $Root 'web')
     try {
         & pnpm install --frozen-lockfile
         if ($LASTEXITCODE -ne 0) { throw 'Frontend dependency installation failed; check pnpm and network access.' }
@@ -73,7 +73,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Kotlin build failed.' }
     Write-Host "Starting Explorer at http://127.0.0.1:$Port (wait for ready). Ctrl+C stops it."
     # One foreground JVM serves the Vite build; no batch prompt or orphaned dev server on shutdown.
-    & $JavaCommand '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp (Join-Path $Root 'cli/build/install/mtg-assistant/lib/*') dev.mtg.assistant.MainKt explorer (Join-Path $Root 'explorer/dist') $Port
+    & $JavaCommand '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp (Join-Path $Root 'build/install/mtg-assistant/lib/*') dev.mtg.assistant.MainKt explorer (Join-Path $Root 'web/dist') $Port
     if ($LASTEXITCODE -notin @(0,130,-1073741510)) {
         throw 'Explorer stopped with an error; see output above. Check whether the port is already in use.'
     }

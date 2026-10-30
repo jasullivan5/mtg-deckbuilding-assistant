@@ -1,45 +1,29 @@
-# Sibling app-stable integration
+# Sibling app-stable workflow
 
-The application normally builds against `../argentum-engine` on the maintained fork's `app-stable` branch. The branch selects the dependency. The exact engine commit recorded inside each application build and report identifies the code that produced it. There is no separate application dependency-pin approval.
+Keep the application and maintained engine as separate sibling repositories. Normal builds use `../argentum-engine`, clean on the maintained fork's **app-stable** branch. The nested `argentum/` checkout is retired and has been removed. Setup explicitly rejects that nested path.
 
-## Local use
+## Everyday use
 
-Keep these sibling checkouts:
+Run the Explorer or dev/dev.ps1 from the application. Setup creates the sibling on app-stable if absent, otherwise validates and reuses it. It does not automatically fetch, change branches, reset, stash or delete work.
 
-```text
-MTG Deckbuilding R&D/
-  mtg-deckbuilding-assistant/
-  argentum-engine/                 # clean app-stable
+To deliberately obtain merged stable improvements:
+
+```powershell
+.\scripts\setup.ps1 -Update
 ```
 
-From the application, run `.\scripts\bootstrap.ps1`, then `.\dev.ps1 test` or `.\dev.ps1 installDist`. Bash equivalents remain `bash scripts/bootstrap.sh` and `./dev test`. Git, JDK 21, Bash and Python 3 are prerequisites. Set JAVA_HOME and put JDK 21's bin on PATH.
+This fetches and fast-forwards only. Rebuild/relaunch afterward. The branch chooses the normal engine code; the exact SHA in each build/report records what produced that result. There is no separate pin-adoption PR. The branch name alone is not a compatibility certificate.
 
-Setup clones the sibling fork on app-stable if absent. Existing checkouts are validated and reused without fetching, resetting, changing branch, stashing, or deleting work. To deliberately obtain newly merged stable changes, run `.\scripts\setup.ps1 -Update` (Bash: `bash scripts/setup.sh --update`); it fetches and fast-forwards only. Inspect/preserve local commits before updating. A clean local app-stable commit is usable; the branch name alone does not certify compatibility.
+## Engine corrections
 
-Wrong branch, dirty/untracked source, an unrelated origin, and the retired nested dependency are refused. Paths with spaces and ampersands are supported. The ignored old `argentum/` checkout is retained for historical evidence, but no normal build reads it. Do not delete it until its history, outputs and consumers have been reviewed.
+Develop engine corrections on feature branches, using a temporary worktree when the application's normal stable checkout must remain available. Before merging into app-stable, check appropriate native regressions and application compatibility against the exact candidate. Engine workflow CI tests the PR merge revision and runs again after stable pushes. Application CI independently resolves app-stable once, records its SHA and runs its checks. Failed checks require investigation; there is no automatic rollback or qualification promotion.
 
-## Engine corrections and acceptance
+For explicit candidate validation only, set ARGENTUM_ENGINE_DIR to an absolute clean isolated engine checkout and ARGENTUM_CANDIDATE_REVISION to its exact 40-character HEAD. Use the usual wrappers. Unset both afterward. Setup refuses branch/origin/dirty mismatches and never advances a candidate. Engine main tracks upstream; upstream merging is not ordinary application work.
 
-Develop engine corrections on feature branches isolated from the normal app-stable checkout, ordinarily in a temporary Git worktree when the application is in use. Run the appropriate native regressions and the complete application suite against the exact clean candidate before accepting its PR into app-stable. No automatic upstream integration or merge is authorized.
+## Evidence and history
 
-For explicit candidate validation, set `ARGENTUM_ENGINE_DIR` to an absolute clean engine worktree and `ARGENTUM_CANDIDATE_REVISION` to its exact 40-character HEAD, then use the normal application dev wrapper. Both must agree; setup never advances a candidate. Unset both variables to return to the normal sibling. This exception supports pre-merge CI and historical reproduction, not silent substitution during ordinary use.
+Generated engine-build.properties is packaged in the application. Reports and native source URLs use that actual SHA, including when a source checkout later moves. `mtg-assistant stats` reports the mode and implementation fingerprint; runtime does not require Git.
 
-The engine's Application compatibility workflow checks native tests and application main against the exact PR merge revision, and also runs after app-stable pushes. The application CI independently resolves app-stable once, records its SHA and runs the application checks. Inspect the named checks before merging; repository branch-protection enforcement is a separate server setting. A post-merge failure is a failed check, not automatic rollback or certification.
+Historical source, benchmark, eligibility and assurance records retain their original revisions. engine-evidence.properties permits documented equivalence only when all tracked engine content except root guidance and GitHub workflow configuration is identical. Mechanical changes cannot inherit old execution claims. Definition/source hashes, effective eligibility bindings, provisional qualification and open concerns remain guarded. New engine compatibility does not independently qualify a card.
 
-Rollout order: merge the application migration PR first, then the engine compatibility-workflow PR. Until the application migration is on main, the new engine workflow cannot validate the old application's nested-pin setup. Once available, workflow dispatch supports selecting an explicit application ref for controlled validation.
-
-Both repositories are public. The engine workflow reads the application using normal checkout; no cross-repository credential or token secret is needed. Its application build must report the exact engine candidate SHA and candidate mode, preventing accidental validation through the retired nested dependency.
-
-## Reproducible evidence
-
-`engine-build.properties` is generated from the actual engine checkout and packaged in the CLI. Reports and native source URLs use that SHA even if the source checkout later moves. `mtg-assistant stats` prints the SHA, mode and implementation fingerprint. CLI research needs no Git checkout at runtime.
-
-Historical source, eligibility, translation and benchmark records retain their original revisions. The historical `ARGENTUM_COMMIT` file now lives under `reference/fork-foundation/`; it is not read by setup or builds. It exists only for historical receipt reproduction.
-
-The evidence compatibility manifest compares the entire tracked engine tree (mode, blob, path), excluding root AGENTS.md/README.md and GitHub workflow configuration (.github/). At this transition, b58ff301 differs from the historical evidence revision only in those two guidance files. This permits existing evidence to remain applicable without relabeling it as fresh execution. Any other tracked change breaks that equivalence and cannot inherit old execution claims. Definition hashes, source snapshots, identity bindings, provisional qualification and open concerns remain guarded. Reviewed legality corrections remain applicable across engine revisions only while all existing physical identity, native definition, approved field and source-snapshot checks pass. Benchmarks can be re-evaluated against another engine while recording both review and discovery revisions. Engine-execution assurance still becomes stale on an implementation change; that does not block structural discovery or confer new qualification. Engine improvements need appropriate native/application revalidation before acceptance; no dependency-pin PR is required.
-
-Catalog regression checks compare against the unchanged historical baseline after narrowly normalizing runtime revision and native source URLs. Historical evidence revisions are never normalized. Every other report field, pathway, decision and prerequisite remains part of the comparison.
-
-## Scope and review
-
-Explorer M1 resumed on `feature/explorer-m1`, preserving a35b9b5 and merging the completed migration before further implementation. See [M1 delivery](EXPLORER_M1.md); integration migration does not establish Explorer acceptance. Permanent ChatGPT Project instructions are outside these repositories; replace any remaining nested-pin guidance there with this workflow.
+The cleanup export holds obsolete transition instructions and receipts; they are not active dependency selectors. See [repository layout](REPOSITORY_LAYOUT.md).

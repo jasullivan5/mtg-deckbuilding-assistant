@@ -1,8 +1,9 @@
 * text=auto
 *.sh text eol=lf
 gradlew text eol=lf
+dev text eol=lf
 *.bat text eol=crlf
 *.jar binary
 
 # Exported DSL goldens use canonical LF on every checkout.
-cli/src/test/resources/extensions/*.json text eol=lf
+src/test/resources/**/*.json text eol=lf
