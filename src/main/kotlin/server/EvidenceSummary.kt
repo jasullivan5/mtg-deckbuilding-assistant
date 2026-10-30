@@ -30,7 +30,7 @@ fun evidenceIndicators(
     val stale = record != null && !current
     val historical = record != null && record.argentumCommit != runtimeRevision
     fun refs(items: List<EvidenceReference>, label: String) = items.map { RecordReference(label, it.path, it.sha256) }
-    val recordedScope = "Card-definition record; no per-ability evidence mapping is supplied. It does not establish every instruction in $scope."
+    val recordedScope = "This record concerns the card's implementation. It does not identify which individual instructions in $scope were checked."
     val bindings = if (stale) listOf("The recorded identity, definition or engine binding is no longer applicable. A historical result is retained, not transferred to this build.") else emptyList()
     fun indicator(id: String, label: String, state: EvidenceState, status: String, explanation: String,
                   established: List<String> = emptyList(), limits: List<String> = emptyList(), next: List<String> = emptyList(),
@@ -45,7 +45,9 @@ fun evidenceIndicators(
             "Discovery identified a part of this ability that meets the objective's recorded checks.",
             established = matched.map { "${dev.mtg.assistant.explorer.mechanic(it)}: ${if (it.costOrEffect.endsWith("COST")) "a cost" else "an effect or dependency"} was accepted for this objective." }.distinct(),
             limits = listOf("This check covers those recorded parts, not every effect of the ability, rules fidelity, engine execution or deck value."),
-            references = matched.map { RecordReference("Discovery check", it.abilityPath) }, currentEngine = runtimeRevision)
+            references = matched.map { RecordReference("Discovery check", it.abilityPath) } + matched.flatMap { it.sourceReferences }.distinct()
+                .filter { it.startsWith("https://github.com/") || it.startsWith("src/main/") }
+                .map { RecordReference("Authored source (representation, not a rules review)", it) }, currentEngine = runtimeRevision)
         unknown.isNotEmpty() -> EvidenceIndicator("mechanic", "Mechanic identified", EvidenceState.INCOMPLETE, "Relationship unresolved", scope,
             "An operation is represented, but discovery could not establish its relationship to this objective.",
             limits = listOf("An unresolved relationship is not an observed rules error or a failed engine scenario."),
@@ -60,7 +62,7 @@ fun evidenceIndicators(
     }
     val source = when {
         stale -> indicator("source", "Source review", EvidenceState.OUTDATED, "Prior review not applicable",
-            "A prior source-review record exists, but the existing assurance gate does not consider its bindings current.",
+            "An earlier source review exists, but it no longer applies to this card and build.",
             next = listOf("Review changed bindings and record a new source comparison."), references = refs(record!!.source, "Recorded source"))
         assurance?.sourceFidelity == FidelityState.CONFIRMED_DISCREPANCY -> indicator("source", "Source review", EvidenceState.KNOWN_PROBLEM, "Recorded disagreement",
             "The existing record identifies a confirmed disagreement between source rules and implementation.", next = listOf("Inspect the concern and its reproduction before relying on the affected behavior."), references = refs(record?.source.orEmpty(), "Recorded source"))
@@ -68,7 +70,7 @@ fun evidenceIndicators(
             "The record suspects a source disagreement; that is not yet a confirmed defect.", next = listOf("Compare the affected instruction against the retained source and record a scoped finding."), references = refs(record?.source.orEmpty(), "Recorded source"))
         current && assurance?.sourceFidelity == FidelityState.SOURCE_REVIEWED && record!!.source.isNotEmpty() -> indicator(
             "source", "Source review", EvidenceState.ESTABLISHED, "Author review recorded",
-            "A source comparison is recorded for this definition, under the existing assurance model.",
+            "A developer's comparison against retained card sources is recorded for this implementation.",
             established = listOf("Source fidelity is recorded as source-reviewed by ${record.author}."),
             limits = listOf("This is author/source-led evidence, not an independent rules certification or an ability-specific approval.") +
                 if (record.requirements.isEmpty()) listOf("No separately bound requirements record is supplied for this card.") else emptyList(),
@@ -86,9 +88,9 @@ fun evidenceIndicators(
             next = listOf("Inspect the failing scenario, actual outcome and reproduction; record a scoped resolution if corrected."), references = refs(record?.tests.orEmpty(), "Execution record"))
         current && assurance?.engineExecution == ExecutionState.BOUNDED_EVIDENCE_PASSED && record!!.tests.isNotEmpty() -> indicator(
             "execution", "Engine scenarios", EvidenceState.ESTABLISHED, if (historical) "Historical pass recorded" else "Bounded pass recorded",
-            "The registered record reports passed bounded scenarios. Opening this card has not executed a game.",
+            "The recorded tests passed in the situations they covered. Opening this card has not played a new game.",
             established = listOf("Recorded execution: ${record.argentumCommit}."),
-            limits = listOf("The record reports bounded passes, not whole-card correctness or proof of every interaction in this ability. This view has no mapping of individual case outcomes to this ability; scenario-source links alone are not execution receipts.") +
+            limits = listOf("The record reports bounded passes, not whole-card correctness or proof of every interaction in this ability. This view does not identify the outcome of each test for this selected ability; a test-source link alone does not prove it ran.") +
                 if (historical) listOf("The current engine has a different revision. The existing compatibility gate accepts the binding, but this remains historical execution, not a fresh run.") else emptyList(),
             references = refs(record.tests, "Execution record") + scenarioReferences.map { RecordReference("Scenario source (not an execution receipt)", it) })
         scenarioReferences.isNotEmpty() -> indicator("execution", "Engine scenarios", EvidenceState.INCOMPLETE, "Scenario files listed",

@@ -64,7 +64,7 @@ class EvidenceSummaryTest : FunSpec({
         states.getValue("source").state shouldBe EvidenceState.ESTABLISHED
         states.getValue("execution").state shouldBe EvidenceState.ESTABLISHED
         states.getValue("independent").state shouldBe EvidenceState.NOT_RECORDED
-        states.getValue("source").scope.contains("Card-definition record") shouldBe true
+        states.getValue("source").scope.contains("card's implementation") shouldBe true
         states.getValue("source").limits.any { "not an independent" in it } shouldBe true
     }
     test("an observed failure is an actual problem rather than absence of testing") {

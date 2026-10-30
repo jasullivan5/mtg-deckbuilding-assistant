@@ -145,7 +145,7 @@ fun abilityInspections(
         val best = rows.firstOrNull { it.verdict == Verdict.MATCH } ?: rows.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: rows.first()
         val action = byId[id]
         val kind = best.circumstances?.actionKind
-        val title = when (kind) { "ACTIVATED" -> "Activated ability"; "TRIGGERED", "STATE_TRIGGERED" -> "Triggered ability"; else -> "Represented ability" } + " ${ordinal + 1}"
+        val title = when (kind) { "ACTIVATED" -> "Activated ability"; "TRIGGERED", "STATE_TRIGGERED" -> "Triggered ability"; "SPELL" -> "Spell effect"; else -> "Card ability" } + " ${ordinal + 1}"
         val narration = AbilityText(action, rows)
         val relevantParts = rows.filter { it.verdict != Verdict.NO_MATCH }
         val scope = "$title — ${mechanic(best)} ${if (best.costOrEffect.endsWith("COST")) "cost" else "relationship"}"
