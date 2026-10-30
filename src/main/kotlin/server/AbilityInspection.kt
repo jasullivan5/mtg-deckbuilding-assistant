@@ -29,6 +29,8 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
     val conditions = mutableListOf<String>()
     val tradeoffs = mutableListOf<String>()
     val gaps = mutableListOf<String>()
+    var triggerDescription: String? = null
+        private set
     private val activated = rows.any { it.circumstances?.actionKind == "ACTIVATED" }
 
     private fun targetDescription(t: JsonObject?): String = when (t.text("type")) {
@@ -113,10 +115,11 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
         if (trigger.text("type") == "ZoneChangeEvent") {
             val ownSource = rows.any { it.circumstances?.timingAndConditions.orEmpty().any { text -> "binding=SELF;" in text } }
             val from = trigger.text("from"); val to = trigger.text("to")
-            if (ownSource && to == "Battlefield") conditions += "This ability triggers when this permanent enters the battlefield."
-            else if (from == "Battlefield" && to == "Graveyard") conditions += "This ability triggers when ${filterDescription(trigger?.get("filter").obj())} moves from the battlefield to the graveyard."
+            if (ownSource && to == "Battlefield") triggerDescription = "This ability triggers when this permanent enters the battlefield."
+            else if (from == "Battlefield" && to == "Graveyard") triggerDescription = "This ability triggers when ${filterDescription(trigger?.get("filter").obj())} moves from the battlefield to the graveyard."
             else gaps += "This trigger's timing needs inspection."
         }
+        triggerDescription?.let { conditions += it }
         effect(native?.get("effect").obj())
         if (activated) conditions += "Each activation needs a new payment of its costs and legal choices; any recorded timing limits still apply."
         if (rows.any { it.operation == "DAMAGE_POTENTIALLY_LETHAL" }) conditions += "Damage contributes a creature death only if it is lethal in that game state. Damage to a player does not itself make a creature die."
@@ -160,7 +163,7 @@ fun abilityInspections(
             narration.gaps.distinct().map { ResearchConcern("An authored instruction needs inspection", it, "Read the exact ability record and source requirements.", EvidenceState.INCOMPLETE, title) } +
             rows.filter { it != best && it.decisions.any { d -> d.verdict == Verdict.UNKNOWN } }.map {
                 ResearchConcern("Another instruction has unresolved checks",
-                    "The authored instruction is described above, but discovery did not resolve all of its affected-object or condition checks. Its objective-policy exclusion is separate from mechanical impossibility.",
+                    "The affected-object restriction '${it.affectedScope.substringBefore(';')}' has unresolved discovery checks. The authored instruction is described above; its objective-policy exclusion is separate from mechanical impossibility.",
                     "Inspect the retained object and objective decisions. An unresolved check is not an established implementation defect.", EvidenceState.INCOMPLETE, "${mechanic(it)} in $title")
             }
         val explanation = explain(best, action)
@@ -174,7 +177,12 @@ fun abilityInspections(
             else -> emptyList()
         }
         AbilityInspection(id, title, best.face.takeUnless { it == "front" }, best.verdict,
-            if (best.verdict == Verdict.NO_MATCH) explanation.outcome else explanation.summary,
+            when {
+                best.verdict == Verdict.NO_MATCH -> explanation.outcome
+                best.branch == Contribution.DEATH_ENHANCED_REMOVAL && narration.triggerDescription != null ->
+                    "${narration.triggerDescription} ${narration.effects.joinToString(" ")} This is a response to the triggering event; it does not establish how that first creature died."
+                else -> explanation.summary
+            },
             narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), uncertainty,
             evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision), questions.distinct(), entries.map { it.index }, id)
     }.sortedBy { when (it.verdict) { Verdict.MATCH -> 0; Verdict.UNKNOWN -> 1; Verdict.NO_MATCH -> 2 } }

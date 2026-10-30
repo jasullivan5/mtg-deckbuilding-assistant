@@ -30,7 +30,8 @@ fun evidenceIndicators(
     val stale = record != null && !current
     val historical = record != null && record.argentumCommit != runtimeRevision
     fun refs(items: List<EvidenceReference>, label: String) = items.map { RecordReference(label, it.path, it.sha256) }
-    val recordedScope = "This record concerns the card's implementation. It does not identify which individual instructions in $scope were checked."
+    val recordedScope = if (record == null) "No card-level verification record is registered here for $scope. The individual source-review, execution and approval gaps remain separate."
+        else "This record concerns the card's implementation. It does not identify which individual instructions in $scope were checked."
     val bindings = if (stale) listOf("The recorded identity, definition or engine binding is no longer applicable. A historical result is retained, not transferred to this build.") else emptyList()
     fun indicator(id: String, label: String, state: EvidenceState, status: String, explanation: String,
                   established: List<String> = emptyList(), limits: List<String> = emptyList(), next: List<String> = emptyList(),

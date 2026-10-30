@@ -32,6 +32,7 @@ class AbilityInspectionTest : FunSpec({
         ability.evidence.single { it.id == "mechanic" }.state shouldBe EvidenceState.ESTABLISHED
         for (id in listOf("source", "execution", "independent")) ability.evidence.single { it.id == id }.state shouldBe EvidenceState.NOT_RECORDED
         evidence.results shouldBe report.results.filter { it.card == "Attrition" }
+        ability.questions.any { "nonblack creature" in it.detail } shouldBe true
     }
     test("optional targets do not become mandatory activation dependencies in the formatter") {
         val evidence = card("Attrition")
@@ -66,6 +67,9 @@ class AbilityInspectionTest : FunSpec({
         ability.face shouldBe null
         ability.conditions.any { "nontoken creature you control" in it } shouldBe true
         ability.effects.any { "1 damage" in it } shouldBe true
+        ability.contribution.contains("nontoken creature you control") shouldBe true
+        ability.contribution.contains("1 damage") shouldBe true
+        ability.contribution.contains("how that first creature died") shouldBe true
         val assurance = catalog.translationAssurance("Judith, the Scourge Diva")!!
         assurance.qualification shouldBe QualificationState.PROVISIONAL
         ability.evidence.single { it.id == "source" }.state shouldBe if (assurance.evidenceCurrent) EvidenceState.ESTABLISHED else EvidenceState.OUTDATED
