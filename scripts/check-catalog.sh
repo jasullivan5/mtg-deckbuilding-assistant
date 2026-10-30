@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-out=generated/handoff/catalog
+out=generated/verification/catalog
 mkdir -p "$out"
 cli=build/install/mtg-assistant/bin/mtg-assistant
 for who in judith krenko; do
