@@ -22,3 +22,7 @@ Extensions.validate checks provenance, unique physical identities, representable
 Qualification is computed from the exact bundle. Missing/stale evidence remains unreviewed or untested. Open material discrepancy, incomplete representation or observed execution failure blocks qualification. Changed evidence can withdraw prior approval. Independent approval fixtures are isolated tests, never real card approvals.
 
 The historical experiments are exported; hash-bound records still required by this ledger remain in [active reference evidence](../src/test/resources/README.md). See [authoring](COMMANDER_AUTHORING.md) and [repository layout](REPOSITORY_LAYOUT.md).
+
+## Research interface
+
+The Explorer presents mechanic identification, source comparison, recorded engine scenarios and independent review as separate clickable claims. Its presentation reads this existing model, including evidenceCurrent and qualification, without changing admission or qualification. Labels state their ability/card scope. Historical compatible records remain historical; outdated records retain prior pass/failure history without transferring it to the current build. Scenario source references alone are not execution receipts, and verified images do not establish rules fidelity. See [Explorer evidence and verification](EXPLORER.md#evidence-labels-and-scope).

@@ -8,6 +8,7 @@ export type Objective = {id: string; label: string; explanation: string};
 export type Finding = {
   index: number; card: string; pathways: Record<string, number>; branches: string[];
   unsupportedRecords: number; partialPathways: number; reason: string | null; mechanics: string[];
+  browsingState: string; recordedConcern: boolean;
 };
 export type Run = {
   schemaVersion: number; execution: string; runId: string; startedAt: string; durationMs: number;
@@ -24,9 +25,26 @@ export type Row = {
 export type Explanation = {summary: string; requirements: string[]; unknowns: string[]; mechanic: string; outcome: string};
 export type Evidence = {
   runId: string; card: string; authoredCard: {manaCost: string; typeLine: string; text: string} | null;
-  results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string}[];
+  results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string; actionId: string; path: string; nativeType: string}[];
   structuralSupport: RecordData[]; eligibility: RecordData[]; translationAssurance: RecordData[];
-  explanations: Explanation[];
+  explanations: Explanation[]; abilities: AbilityInspection[]; evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
+};
+export type EvidenceState = 'ESTABLISHED' | 'NOT_RECORDED' | 'INCOMPLETE' | 'KNOWN_PROBLEM' | 'OUTDATED';
+export type EvidenceIndicator = {
+  id: string; label: string; state: EvidenceState; status: string; scope: string; explanation: string;
+  established: string[]; limits: string[]; nextSteps: string[];
+  references: {label: string; path: string; sha256: string | null}[];
+  recordedEngine: string | null; currentEngine: string; historical: boolean;
+};
+export type ResearchConcern = {title: string; detail: string; nextStep: string; state: EvidenceState; scope: string};
+export type AbilityInspection = {
+  id: string; title: string; face: string | null; verdict: string; contribution: string;
+  costs: string[]; effects: string[]; conditions: string[]; tradeoffs: string[]; uncertainties: string[];
+  evidence: EvidenceIndicator[]; questions: ResearchConcern[]; resultIndexes: number[]; actionId: string;
+};
+export type CommanderView = {
+  inspection: Inspection; authoredCard: Evidence['authoredCard']; headline: string;
+  evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
 };
 export type CardImage = {
   index: number; card: string; status: string; reason: string; printingId: string | null;

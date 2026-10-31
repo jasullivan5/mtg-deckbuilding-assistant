@@ -1,137 +1,156 @@
 import {expect, test} from '@playwright/test';
 import {mkdir, writeFile} from 'node:fs/promises';
-import type {Run, CardImage} from '../src/api';
+import type {Run, Evidence, CommanderView, CardImage} from '../src/api';
 
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to the running Kotlin Explorer for genuine discovery.');
 
-test('real Judith discovery, changed objective/commander, inspected evidence and invalid selection', async ({page}) => {
-  const pageErrors: string[] = [];
-  page.on('pageerror', error => pageErrors.push(error.message));
-  const executions: {runId: string; objective: string; commander: string; argentumCommit: string; cards: unknown[]}[] = [];
-  page.on('response', async response => {
-    if (response.url().endsWith('/api/v1/discover') && response.ok()) executions.push(await response.json());
-  });
+test('real objective changes and commander selection keep genuine execution and blockers', async ({page}) => {
+  const runs: Run[] = [];
+  const errors: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('response', async r => {if (r.url().endsWith('/api/v1/discover') && r.ok()) runs.push(await r.json());});
   await page.goto('/');
-  await page.getByLabel('Research objective').selectOption('create-creature-tokens');
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('create-creature-tokens');
   await page.getByRole('button', {name: 'Run discovery'}).click();
   await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
   await page.getByLabel('Find within these findings').fill('Bitterblossom');
-  await page.getByRole('button', {name: /^Bitterblossom/}).click();
-  await expect(page.getByRole('heading', {name: 'Bitterblossom', exact: true})).toBeVisible();
-  await expect(page.getByRole('heading', {name: 'What needs to happen'}).first()).toBeVisible();
-  await page.screenshot({path: '../generated/explorer/judith-tokens.png', fullPage: true});
-
-  await page.getByLabel('Research objective').selectOption('reanimate-own-creatures');
+  await page.getByRole('button', {name: 'Bitterblossom', exact: true}).click();
+  const selected = page.getByRole('region', {name: 'Result inspection'});
+  await expect(selected.getByRole('heading', {name: 'Bitterblossom', exact: true})).toBeVisible();
+  await expect(selected.getByRole('group', {name: 'Evidence and verification'})).toBeVisible();
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('reanimate-own-creatures');
   await page.getByRole('button', {name: 'Run discovery'}).click();
-  await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
-  await expect.poll(() => executions.length).toBe(2);
-  expect(executions[0].runId).not.toBe(executions[1].runId);
-  expect(executions[1].objective).toBe('reanimate-own-creatures');
-
+  await expect.poll(() => runs.length, {timeout: 130_000}).toBe(2);
+  expect(runs[1].runId).not.toBe(runs[0].runId);
+  expect(runs[1].objective).toBe('reanimate-own-creatures');
   await page.getByLabel('Commander’s exact name').fill('Oviya Pashiri, Sage Lifecrafter');
-  await page.getByLabel('Research objective').selectOption('create-creature-tokens');
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('create-creature-tokens');
   await page.getByRole('button', {name: 'Run discovery'}).click();
-  await expect(page.getByRole('region', {name: 'Completed discovery'})).toContainText('Oviya Pashiri', {timeout: 130_000});
-  await expect.poll(() => executions.length).toBe(3);
-  expect(executions[2].commander).toBe('Oviya Pashiri, Sage Lifecrafter');
-  expect(executions[2].argentumCommit).toMatch(/^[a-f0-9]{40}$/);
-  expect(executions[2].cards).not.toEqual(executions[0].cards);
-
+  await expect.poll(() => runs.length, {timeout: 130_000}).toBe(3);
+  expect(runs[2].commander).toBe('Oviya Pashiri, Sage Lifecrafter');
+  expect(runs[2].allowedIdentity).toEqual(['GREEN']);
+  expect(runs[2].argentumCommit).toMatch(/^[a-f0-9]{40}$/);
   await page.getByLabel('Commander’s exact name').fill('Murder');
   await page.getByRole('button', {name: 'Run discovery'}).click();
-  await expect(page.getByText('Selection blocked', {exact: false})).toBeVisible();
-  expect(executions).toHaveLength(3);
-  expect(pageErrors).toEqual([]);
+  await expect(page.getByText('Selection blocked', {exact: false}).first()).toBeVisible();
+  expect(runs).toHaveLength(3);
+  expect(errors).toEqual([]);
 });
 
-test('mobile layout and keyboard controls retain accurate blocked-selection feedback', async ({page}) => {
+test('real evidence controls and commander inspection work with keyboard and a 390px screen', async ({page}) => {
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
-  await expect(page.getByRole('button', {name: 'Run discovery'})).toBeEnabled();
+  await expect(page.getByRole('button', {name: 'Inspect commander'})).toBeEnabled();
   await page.keyboard.press('Tab');
   await expect(page.getByLabel('Commander’s exact name')).toBeFocused();
-  await page.keyboard.press('Control+A');
-  await page.keyboard.type('Murder');
   await page.keyboard.press('Tab');
-  await expect(page.getByLabel('Research objective')).toBeFocused();
+  await expect(page.getByRole('combobox', {name: 'Objective', exact: true})).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button', {name: 'Inspect commander'})).toBeFocused();
   await page.keyboard.press('Enter');
-  await expect(page.getByText('Selection blocked', {exact: false})).toBeVisible();
+  const commander = page.getByRole('region', {name: 'Selected commander'});
+  await expect(commander).toContainText('can be your commander · Black and red');
+  await expect(commander).toContainText('Whenever a nontoken creature you control dies');
+  await expect(commander.getByText('Single fixed-identity commander', {exact: false})).not.toBeVisible();
+  const disclosure = commander.getByText('Commander evidence', {exact: true});
+  await disclosure.focus(); await page.keyboard.press('Enter');
+  const independent = commander.getByRole('button', {name: /Independent review/});
+  await independent.focus(); await page.keyboard.press('Enter');
+  await expect(independent).toHaveAttribute('aria-expanded', 'true');
+  await expect(commander.getByRole('region', {name: 'Independent review evidence'})).toContainText('No current independent approval');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
-  await page.screenshot({path: '../generated/explorer/mobile-selection.png', fullPage: true});
+  await page.screenshot({path: '../generated/explorer/mobile-commander-evidence.png', fullPage: true});
 });
 
-
-test('real sacrifice findings explain choices, land uncertainty, counts and verified printing imagery', async ({page}) => {
-  const pageErrors: string[] = [];
-  page.on('pageerror', error => pageErrors.push(error.message));
+test('Attrition complete activation, scoped verification, unresolved land sacrifice and richer Judith records', async ({page}) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
-  await expect(page.getByRole('heading', {name: 'Commander Discovery', exact: true})).toBeVisible();
   const completed = page.waitForResponse(r => r.url().endsWith('/api/v1/discover') && r.ok());
   await page.getByRole('button', {name: 'Run discovery'}).click();
   const run: Run = await (await completed).json();
   expect(run.objective).toBe('own-nontoken-creature-deaths');
-  const actualCounts = Object.fromEntries(['MATCH', 'UNKNOWN', 'NO_MATCH'].map(key => [key, run.cards.filter(card => card.pathways[key] > 0).length]));
-  const nav = page.getByRole('navigation', {name: 'Finding categories'});
-  for (const [label, key] of [['May help', 'MATCH'], ['Needs investigation', 'UNKNOWN'], ['Abilities ruled out', 'NO_MATCH']]) {
-    await expect(nav.getByRole('button', {name: new RegExp(label)}).locator('.category-count')).toHaveText(actualCounts[key].toLocaleString());
-  }
-  await expect(nav.getByRole('button', {name: /Not fully understood/}).locator('.category-count')).toHaveText(run.cards.filter(c => c.unsupportedRecords > 0).length.toLocaleString());
+  const nav = page.getByRole('navigation', {name: 'Finding categories', exact: true});
+  const identified = run.cards.filter(c => c.pathways.MATCH > 0).length;
+  const unresolvedOnly = run.cards.filter(c => !c.pathways.MATCH && c.pathways.UNKNOWN > 0).length;
+  await expect(nav.getByRole('button', {name: /Identified mechanics/}).locator('.category-count')).toHaveText(identified.toLocaleString());
+  await expect(nav.getByRole('button', {name: /Needs interpretation/}).locator('.category-count')).toHaveText(unresolvedOnly.toLocaleString());
   await expect(nav.getByRole('button', {name: /All findings/}).locator('.category-count')).toHaveText(run.cards.length.toLocaleString());
+  await expect(page.getByText('May help', {exact: true})).toHaveCount(0);
   const detail = page.getByRole('region', {name: 'Result inspection'});
-  await page.getByLabel('Find within these findings').fill('Acolyte of Aclazotz');
-  await expect(detail.getByRole('heading', {name: 'Acolyte of Aclazotz', exact: true})).toBeVisible();
-  await expect(detail.getByText('Tap this source;', {exact: false})).toBeVisible();
-  await expect(detail.getByText('The source itself cannot be sacrificed', {exact: false})).toBeVisible();
-  const art = detail.getByRole('img', {name: /^Acolyte of Aclazotz/});
+  await page.getByLabel('Find within these findings').fill('Attrition');
+  await page.getByRole('button', {name: 'Attrition', exact: true}).click();
+  await expect(detail.getByRole('heading', {name: 'Attrition', exact: true})).toBeVisible();
+  await expect(detail.getByText('Destroy target nonblack creature.', {exact: true})).toBeVisible();
+  await expect(detail.getByText('Pay {B}.', {exact: true})).toBeVisible();
+  await expect(detail.getByText('cannot activate it merely', {exact: false})).toBeVisible();
+  await expect(detail.getByRole('heading', {name: /Activated ability/})).toHaveCount(1);
+  await expect(detail.getByRole('heading', {name: /front/})).toHaveCount(0);
+  await expect(detail.getByText('Application card text.', {exact: false})).toHaveCount(0);
+  await detail.getByRole('button', {name: /Mechanic identified/}).click();
+  await expect(detail.getByRole('region', {name: 'Mechanic identified evidence'})).toContainText('cost');
+  await detail.getByRole('button', {name: /Source review/}).click();
+  await expect(detail.getByRole('region', {name: 'Source review evidence'})).toContainText('No applicable registered source comparison');
+  await detail.getByRole('button', {name: /Engine scenarios/}).click();
+  await expect(detail.getByRole('region', {name: 'Engine scenarios evidence'})).toContainText('does not mean the engine cannot execute');
+  await expect(detail.getByRole('button', {name: /Engine scenarios/})).not.toContainText('✓');
+  const art = detail.getByRole('img', {name: /^Attrition/});
   await expect(art).toBeVisible({timeout: 30_000});
   await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.naturalWidth), {timeout: 30_000}).toBeGreaterThan(0);
-  expect(await art.getAttribute('src')).toContain('99009400-ffa4-40af-8305-78295ae605ac');
-  await page.screenshot({path: '../generated/explorer/acolyte-discovery.png', fullPage: true});
+  expect(await art.getAttribute('src')).toContain('e3eb615b-249d-433f-a521-8310e8784b5d');
+  await page.screenshot({path: '../generated/explorer/attrition-inspection.png', fullPage: true});
 
-  await nav.getByRole('button', {name: /Needs investigation/}).click();
+  await page.getByLabel('Find within these findings').fill('Acolyte of Aclazotz');
+  await expect(detail.getByText('Each opponent loses 1 life.', {exact: true})).toBeVisible();
+  await expect(detail.getByText('You gain 1 life.', {exact: true})).toBeVisible();
+  await expect(detail.getByText('other than this source', {exact: false})).toBeVisible();
+  await expect(detail.getByText('ordinary noncreature permanent does not meet', {exact: false})).toBeVisible();
+  await expect(detail.getByRole('button', {name: /Mechanic identified/})).toContainText('Relevant part identified');
+  await expect(detail.getByRole('button', {name: /Engine scenarios/})).toContainText('No run record');
+
+  await nav.getByRole('button', {name: /Needs interpretation/}).click();
   await page.getByLabel('Find within these findings').fill('Agent of Shauku');
   await expect(detail.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible();
-  await expect(detail.getByText('a land as a cost', {exact: false})).toBeVisible();
   await expect(detail.getByText('has not established a land becoming a creature', {exact: false})).toBeVisible();
-  await expect(detail.getByText('Needs investigation', {exact: true})).toBeVisible();
+  await expect(detail.getByRole('button', {name: /Mechanic identified/})).toContainText('Relationship unresolved');
   await page.screenshot({path: '../generated/explorer/agent-investigation.png', fullPage: true});
 
-  await nav.getByRole('button', {name: /May help/}).click();
-  await page.getByLabel('Find within these findings').fill('Accursed Centaur');
-  await expect(detail.getByRole('heading', {name: 'Accursed Centaur', exact: true})).toBeVisible();
-  await expect(detail.getByText('required sacrifice', {exact: false})).toBeVisible();
-  await expect(detail.getByText('when this source enters', {exact: false})).toBeVisible();
-  await expect(detail.getByText('does not exclude this source', {exact: false})).toBeVisible();
-  await nav.getByRole('button', {name: /Abilities ruled out/}).click();
-  await page.getByLabel('Mechanical relationship').selectOption('ALL');
-  await page.getByLabel('Find within these findings').fill('Murder');
-  await page.getByRole('button', {name: 'Murder', exact: true}).click();
-  await expect(detail.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
-  await expect(detail.getByText("excluded by this question's selection rules", {exact: false})).toBeVisible();
-  await nav.getByRole('button', {name: /All findings/}).click();
-  await page.getByLabel('Find within these findings').fill('');
-  await page.getByLabel('Mechanical relationship').selectOption('Sacrifice');
-  const sacrificeCards = run.cards.filter(c => c.mechanics.includes('Sacrifice')).length;
-  await expect(page.getByText(`${sacrificeCards.toLocaleString()} cards in this view`, {exact: false})).toBeVisible();
-  await page.getByLabel('Find within these findings').fill('Acolyte of Aclazotz');
+  const commander = page.getByRole('region', {name: 'Selected commander'});
+  await expect(commander).toContainText('can be your commander · Black and red');
+  await commander.getByText('Commander evidence', {exact: true}).click();
+  await expect(commander.getByRole('button', {name: /Source review/})).toContainText('Author review recorded');
+  await commander.getByRole('button', {name: /Engine scenarios/}).click();
+  const enginePanel = commander.getByRole('region', {name: 'Engine scenarios evidence'});
+  await expect(enginePanel).toContainText('not a fresh run');
+  await expect(enginePanel).toContainText('does not identify the outcome of each test');
+  await expect(commander.getByRole('button', {name: /Independent review/})).toContainText('No approval recorded');
+  await page.screenshot({path: '../generated/explorer/commander-evidence.png', fullPage: true});
+
+  await page.getByText('Research and diagnostic views', {exact: true}).click();
+  const diagnostic = page.getByRole('navigation', {name: 'Diagnostic finding categories'});
+  await expect(diagnostic.getByRole('button', {name: /Has unresolved checks/})).toContainText(`${run.cards.filter(c => c.pathways.UNKNOWN > 0).length.toLocaleString()} cards`);
+  await expect(diagnostic.getByRole('button', {name: /Has nonqualifying checks/})).toContainText(`${run.cards.filter(c => c.pathways.NO_MATCH > 0).length.toLocaleString()} cards`);
+  await nav.getByRole('button', {name: /Identified mechanics/}).click();
+  await page.getByLabel('Find within these findings').fill('Attrition');
   await page.setViewportSize({width: 390, height: 844});
-  await page.getByRole('link', {name: 'Read selected card: Acolyte of Aclazotz ↓'}).click();
-  await expect(detail).toBeFocused();
+  await page.getByRole('link', {name: 'Read selected card: Attrition ↓'}).click();
+  const review = detail.getByRole('button', {name: /Source review/});
+  await review.focus(); await page.keyboard.press('Enter');
+  await expect(review).toHaveAttribute('aria-expanded', 'true');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
-  await page.screenshot({path: '../generated/explorer/mobile-card-inspection.png', fullPage: true});
-  const imageResponse = await page.request.get(`/api/v1/runs/${run.runId}/images?indices=${run.cards.find(c => c.card === 'Acolyte of Aclazotz')!.index}`);
-  const images: CardImage[] = await imageResponse.json();
+  await page.screenshot({path: '../generated/explorer/mobile-evidence.png', fullPage: true});
+
+  const attrition = run.cards.find(c => c.card === 'Attrition')!;
+  const evidence: Evidence = await (await page.request.get(`/api/v1/runs/${run.runId}/cards/${attrition.index}`)).json();
+  const view: CommanderView = await (await page.request.post('/api/v1/commander-view', {data: {commander: run.commander, objective: run.objective}})).json();
+  const images: CardImage[] = await (await page.request.get(`/api/v1/runs/${run.runId}/images?indices=${attrition.index}`)).json();
+  expect(evidence.abilities).toHaveLength(1);
+  expect(evidence.results.map(r => r.verdict)).toEqual(['MATCH', 'NO_MATCH']);
   expect(images[0].status).toBe('VERIFIED');
-  expect(images[0].oracleId).toBe('324d2aa8-6dea-4b0d-898d-1e52ed187565');
-  expect(pageErrors).toEqual([]);
+  expect(errors).toEqual([]);
   await mkdir('../generated/explorer', {recursive: true});
-  await writeFile('../generated/explorer/experience-observation.json', JSON.stringify({
-    observedAt: new Date().toISOString(), applicationRevision: run.applicationRevision, engineRevision: run.argentumCommit,
-    runId: run.runId, objective: run.objective, commander: run.commander,
-    eligibleCards: run.counts.mechanical_input_cards_after_conventional_search, indexedCards: run.cards.length,
-    overlappingCardCounts: actualCounts, pathwayCounts: run.pathwayCounts, unsupportedRecords: run.counts.unsupported_structure_records,
-    sacrificeCards, policyExample: {card: 'Murder', exclusionIsSelectionRule: true}, verifiedImage: images[0], pageErrors,
-  }, null, 2));
+  await writeFile('../generated/explorer/evidence-observation.json', JSON.stringify({observedAt: new Date().toISOString(), applicationRevision: run.applicationRevision,
+    engineRevision: run.argentumCommit, runId: run.runId, objective: run.objective, commander: run.commander, eligibleCards: run.counts.mechanical_input_cards_after_conventional_search,
+    indexedCards: run.cards.length, identified, unresolvedOnly, overlappingUnknown: run.cards.filter(c => c.pathways.UNKNOWN > 0).length, pathwayCounts: run.pathwayCounts,
+    attritionAbility: evidence.abilities[0], commanderEvidence: view.evidenceSummary, verifiedImage: images[0], pageErrors: errors}, null, 2));
 });

@@ -31,8 +31,28 @@ private fun predicate(p: JsonObject): String = when (p.text("type")) {
     else -> "an object with an additional requirement the explanation cannot translate"
 }
 
-private fun filterDescription(filter: JsonObject?): String {
+internal fun filterDescription(filter: JsonObject?): String {
     if (filter == null) return "an affected object whose type is unresolved"
+    val predicates = filter.array("cardPredicates").mapNotNull { it.obj() }
+    val simple = setOf("IsCreature", "IsArtifact", "IsLand", "IsEnchantment", "IsPlaneswalker", "IsPermanent", "IsNontoken", "NotColor")
+    if (predicates.isNotEmpty() && predicates.all { it.text("type") in simple } && filter.array("anyOf").isEmpty()) {
+        val kinds = predicates.mapNotNull { when (it.text("type")) {
+            "IsCreature" -> "creature"; "IsArtifact" -> "artifact"; "IsLand" -> "land"
+            "IsEnchantment" -> "enchantment"; "IsPlaneswalker" -> "planeswalker"; "IsPermanent" -> "permanent"; else -> null
+        } }
+        val modifiers = predicates.mapNotNull { when (it.text("type")) {
+            "IsNontoken" -> "nontoken"
+            "NotColor" -> it.text("color")?.lowercase()?.let { color -> "non$color" }
+            else -> null
+        } }
+        val controller = when (filter["controllerPredicate"].obj().text("type")) {
+            "ControlledByYou" -> " you control"; "ControlledByOpponent" -> " an opponent controls"
+            null -> ""; else -> " subject to an additional controller restriction"
+        }
+        val phrase = (modifiers + kinds.ifEmpty { listOf("permanent") }).joinToString(" ")
+        val state = if (filter.array("statePredicates").isNotEmpty()) " with additional state restrictions" else ""
+        return "${if (phrase.firstOrNull() in listOf('a','e','i','o','u')) "an" else "a"} $phrase$controller$state"
+    }
     val clauses = filter.array("cardPredicates").map { it.obj()?.let(::predicate) ?: "an unresolved object" } +
         filter.array("anyOf").takeIf { it.isNotEmpty() }?.let { branches ->
             listOf(branches.joinToString(" or ") { "(${filterDescription(it.obj())})" }) }.orEmpty()
@@ -106,7 +126,7 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
     val unknowns = mutableListOf<String>()
     if (result.verdict == Verdict.UNKNOWN) {
         unknowns += "The application has not established that this ability meets the objective."
-        if (isSacrifice && filter?.toString()?.contains("\"IsLand\"") == true)
+        if (isSacrifice && (filter?.get("cardPredicates") as? JsonArray).orEmpty().any { it.obj().text("type") == "IsLand" })
             unknowns += "An ordinary land is not a creature. A land would also need to be a nontoken creature you control when sacrificed. This run has not established a land becoming a creature or verified that interaction."
         unknowns += result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { decision ->
             when (decision.stage) {
@@ -124,9 +144,9 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
         Verdict.MATCH -> "Can contribute if these conditions hold"
         Verdict.UNKNOWN -> "Needs investigation"
         Verdict.NO_MATCH -> listOfNotNull(
-            "This ability was excluded by this question's selection rules. This does not mean the card cannot contribute in a game."
+            "This ability was excluded by this objective's selection rules. This does not mean the card cannot contribute in a game."
                 .takeIf { result.decisions.any { it.verdict == Verdict.NO_MATCH && it.basis == "POLICY" } },
-            "The affected objects or other recorded requirements do not satisfy this question for this ability."
+            "The affected objects or other recorded requirements do not satisfy this objective for this ability."
                 .takeIf { result.decisions.any { it.verdict == Verdict.NO_MATCH && it.basis != "POLICY" } }
         ).joinToString(" ").ifBlank { "This ability did not meet the objective." } + " Other abilities on this card may differ."
     }

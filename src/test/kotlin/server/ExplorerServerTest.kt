@@ -94,6 +94,23 @@ class ExplorerServerTest : FunSpec({
             request(server,"runs/expired-run/cards/0").statusCode() shouldBe 410
         }
     }
+    test("commander presentation keeps original selection authority and exposes scoped evidence without generic construction notices") {
+        ExplorerServer(catalog, 0).use { server ->
+            server.start()
+            val response = post(server, "commander-view", "Judith, the Scourge Diva", objectives.first().id)
+            response.statusCode() shouldBe 200
+            val view = reportJson.decodeFromString<CommanderView>(response.body())
+            view.inspection shouldBe inspectCommander(catalog, "Judith, the Scourge Diva")
+            view.headline shouldBe "Judith, the Scourge Diva can be your commander · Black and red"
+            view.authoredCard!!.text.contains("nontoken creature you control dies") shouldBe true
+            view.evidenceSummary.single { it.id == "mechanic" }.state shouldBe EvidenceState.NOT_RECORDED
+            view.evidenceSummary.single { it.id == "independent" }.state shouldBe EvidenceState.NOT_RECORDED
+            post(server, "commander-view", "Judith, the Scourge Diva", "invented").statusCode() shouldBe 400
+            val blocked = reportJson.decodeFromString<CommanderView>(post(server, "commander-view", "Murder", objectives.first().id).body())
+            blocked.inspection.selectable shouldBe false
+            blocked.headline.startsWith("Selection blocked") shouldBe true
+        }
+    }
     test("image requests use current run indexes, enforce batch limits and retain verified identity") {
         val raw = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/agent-of-shauku-source.json"))).jsonObject
         var lookups = 0

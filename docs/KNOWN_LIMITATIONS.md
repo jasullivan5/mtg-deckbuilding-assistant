@@ -10,4 +10,6 @@
 - Explorer retains only the latest run. New discovery expires old evidence URLs, including other tabs. Full exports can be about 40–49 MB; catalog loading takes time. Verified images require matching printing and face metadata. Missing, conflicting or unsupported identities and unavailable networks receive fallbacks; supported image layouts are deliberately bounded.
 - The Explorer is structural research, not a deck editor, scenario sandbox, strategic ranking or recommendation system. Windows launch and bounded browser checks are recorded; other platforms and exhaustive accessibility are not claimed tested.
 
+- Explorer evidence records are often card-level and historical, with no mapping of individual scenario outcomes to the selected ability. Source review, successful bounded execution and independent approval remain different claims. A scoped identified mechanic does not establish full-ability correctness; complex conditions may need the exact retained records.
+
 Completed phase reports, old counts and reproduction instructions belong to the movable historical export. [Repository layout](REPOSITORY_LAYOUT.md) distinguishes that material from retained current regression inputs and source evidence.
