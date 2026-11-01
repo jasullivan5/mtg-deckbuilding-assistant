@@ -21,6 +21,8 @@ class AbilityInspectionTest : FunSpec({
         source.getValue("oracle_text").jsonPrimitive.content shouldBe "{B}, Sacrifice a creature: Destroy target nonblack creature."
         val evidence = card("Attrition")
         val ability = evidence.abilities.single()
+        ability.contribution.contains("can trigger Judith, the Scourge Diva") shouldBe true
+        ability.uncertainties.any { "nonblack creature" in it } shouldBe true
         ability.face shouldBe null
         ability.title shouldBe "{B}, Sacrifice a creature — destroy target nonblack creature"
         ability.verdict shouldBe Verdict.MATCH
@@ -88,6 +90,9 @@ class AbilityInspectionTest : FunSpec({
             if (finding.pathways.getValue("MATCH") > 0) finding.browsingState shouldBe "IDENTIFIED"
             else if (finding.pathways.getValue("UNKNOWN") > 0) finding.browsingState shouldBe "UNRESOLVED"
         }
+        val concernCard = card("Tatterkite")
+        concernCard.evidenceSummary.none { it.id == "mechanic" } shouldBe true
+        concernCard.concerns.single().reading.contains("has not retested") shouldBe true
         val acolyte = stored.summary.cards.single { it.card == "Acolyte of Aclazotz" }
         acolyte.browsingState shouldBe "IDENTIFIED"
         (acolyte.unsupportedRecords > 0) shouldBe true

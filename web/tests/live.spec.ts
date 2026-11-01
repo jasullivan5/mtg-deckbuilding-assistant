@@ -55,7 +55,7 @@ test('real evidence controls and commander inspection work with keyboard and a 3
   await expect(commander.getByRole('button', {name: /Relevant mechanic/})).toHaveCount(0);
   const art = commander.getByRole('img', {name: /^Judith/});
   await expect(art).toBeVisible({timeout: 30_000});
-  await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.naturalWidth), {timeout: 30_000}).toBeGreaterThan(0);
+  await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0 ? img.naturalWidth : 0), {timeout: 30_000}).toBeGreaterThan(0);
   await expect(commander).toContainText('sacrifice or otherwise cause your nontoken creatures to die');
   const independent = commander.getByRole('button', {name: /Independent review/});
   await independent.focus(); await page.keyboard.press('Enter');
@@ -86,6 +86,8 @@ test('Attrition complete activation, scoped verification, unresolved land sacrif
   await expect(detail.getByRole('heading', {name: 'Attrition', exact: true})).toBeVisible();
   await expect(detail.getByText('Destroy target nonblack creature.', {exact: true})).toBeVisible();
   await expect(detail.getByText('Pay {B}.', {exact: true})).toBeVisible();
+  await expect(detail.locator('.contribution')).toContainText('can trigger Judith, the Scourge Diva');
+  await expect(detail.locator('.ability-part').filter({hasText: 'Still unresolved'})).toContainText('nonblack creature');
   await expect(detail.getByText('before activation, even if', {exact: false})).toBeVisible();
   await expect(detail.getByRole('heading', {name: /\{B\}, Sacrifice a creature — destroy target nonblack creature/})).toHaveCount(1);
   await expect(detail.getByRole('heading', {name: /front/})).toHaveCount(0);
@@ -99,15 +101,15 @@ test('Attrition complete activation, scoped verification, unresolved land sacrif
   await expect(detail.getByRole('button', {name: /Engine tests/})).not.toContainText('✓');
   const art = detail.getByRole('img', {name: /^Attrition/});
   await expect(art).toBeVisible({timeout: 30_000});
-  await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.naturalWidth), {timeout: 30_000}).toBeGreaterThan(0);
+  await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0 ? img.naturalWidth : 0), {timeout: 30_000}).toBeGreaterThan(0);
   expect(await art.getAttribute('src')).toContain('e3eb615b-249d-433f-a521-8310e8784b5d');
   await page.screenshot({path: '../generated/explorer/attrition-inspection.png', fullPage: true});
 
   await page.getByLabel('Find within these findings').fill('Acolyte of Aclazotz');
   await expect(detail.getByText('Each opponent loses 1 life.', {exact: true})).toBeVisible();
   await expect(detail.getByText('You gain 1 life.', {exact: true})).toBeVisible();
-  await expect(detail.getByText('other than this source', {exact: false})).toBeVisible();
-  await expect(detail.getByText('ordinary noncreature permanent does not meet', {exact: false})).toBeVisible();
+  await expect(detail.locator('.ability-parts li').filter({hasText: 'other than this source'})).toBeVisible();
+  await expect(detail.getByText('A token or noncreature permanent does not advance it.', {exact: false})).toBeVisible();
   await expect(detail.getByRole('button', {name: /Relevant mechanic/})).toContainText('Relevant part identified');
   await expect(detail.getByRole('button', {name: /Engine tests/})).toContainText('No run record');
 

@@ -19,22 +19,22 @@ export function CardInspection({evidence, image, revision}: {evidence: Evidence;
   const unassigned = evidence.unsupported.filter(u => !evidence.abilities.some(a => a.actionId === u.actionId));
   return <>
     <div className="card-overview"><CardPicture image={image}/>
-      {evidence.authoredCard && <div className="authored"><p>{evidence.authoredCard.manaCost} Â· {evidence.authoredCard.typeLine}</p>
+      {evidence.authoredCard && <div className="authored"><p>{evidence.authoredCard.manaCost} · {evidence.authoredCard.typeLine}</p>
         <p className="card-text">{evidence.authoredCard.text}</p></div>}
     </div>
     {available.length > 1 && <label className="ability-picker">Ability to inspect<select value={ability?.id} onChange={e => setSelected(e.target.value)}>
-      {available.map(a => <option key={a.id} value={a.id}>{a.title}{a.face ? ` Â· ${a.face}` : ''}</option>)}
+      {available.map(a => <option key={a.id} value={a.id}>{a.title}{a.face ? ` · ${a.face}` : ''}</option>)}
     </select></label>}
     {ability ? <article className="ability-inspection">
-      <h3>{ability.title}{ability.face ? ` Â· ${ability.face}` : ''}</h3>
+      <h3>{ability.title}{ability.face ? ` · ${ability.face}` : ''}</h3>
       <p className="contribution">{ability.contribution}</p>
       <div className="ability-parts"><List title="Pay" values={ability.costs}/><List title="Effect of this ability" values={ability.effects}/></div>
       <List title="What needs to happen" values={ability.conditions}/>
       {ability.tradeoffs.length > 0 && <details><summary>More about costs and resolution</summary><List title="Keep in mind" values={ability.tradeoffs}/></details>}
-      <List title="What remains unresolved" values={ability.uncertainties}/>
+      <List title="Still unresolved" values={ability.uncertainties}/>
       <EvidenceInspector key={ability.id} indicators={ability.evidence} revision={revision}/>
       <Concerns items={evidence.concerns}/>
-      {(ability.questions.length > 0 || unassigned.length > 0) && <details><summary>Outstanding interpretation questions ({ability.questions.length + unassigned.length})</summary>
+      {(ability.questions.length > 0 || unassigned.length > 0) && <details><summary>Questions about this ability ({ability.questions.length + unassigned.length})</summary>
         <Concerns items={ability.questions}/>
         {unassigned.length > 0 && <p>Other instructions on this card were not interpreted for this objective. They do not invalidate the identified part of this ability or establish a rules defect.</p>}
         {unassigned.length > 0 && <Raw label="Other instruction records" data={unassigned}/>}

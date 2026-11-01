@@ -75,6 +75,9 @@ class StoredRun(
     private val support = report.structuralSupport.groupBy { it.card }
     private val eligibility = report.eligibility.groupBy { it.card }
     private val assurance = report.translationAssurance.groupBy { it.card }
+    private val deathPayoffCommander = catalog.card(report.commander)?.takeIf {
+        commanderObjectiveConnection(it, report.objective) != null
+    }?.name
     val id: String = UUID.randomUUID().toString()
     val summary = RunSummary(
         runId = id, startedAt = started.toString(), durationMs = durationMs,
@@ -109,7 +112,8 @@ class StoredRun(
         return CardEvidence(id, name, native?.let { AuthoredCardText(it.manaCost.toString(), it.typeLine.toString(), it.oracleText) },
             results[name].orEmpty(), actions[name].orEmpty(), facts[name].orEmpty(), unsupported[name].orEmpty(),
             support[name].orEmpty(), eligibility[name].orEmpty(), assurance[name].orEmpty(), results[name].orEmpty().map { result -> explain(result, actions[name].orEmpty().firstOrNull { it.id == result.actionId }) },
-            abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios),
-            evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings"), materialConcerns(review))
+            abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios, deathPayoffCommander = deathPayoffCommander),
+            evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings")
+                .filterNot { it.id == "mechanic" && results[name].isNullOrEmpty() }, materialConcerns(review))
     }
 }
