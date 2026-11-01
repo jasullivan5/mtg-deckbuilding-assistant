@@ -70,7 +70,7 @@ private fun costDescriptions(node: JsonObject?): List<String> = when (node.text(
 }
 
 fun mechanic(result: ResultEvidence): String = when {
-    result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "Removal enabled by a death"
+    result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "Benefits from a creature dying"
     result.branch == Contribution.REANIMATE_OWN_CREATURE -> "Return from the graveyard"
     result.branch == Contribution.CREATE_CREATURE_TOKEN -> "Create creature tokens"
     result.operation == "SACRIFICE" -> "Sacrifice"
@@ -91,7 +91,7 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
         native?.get("excludeSource")?.jsonPrimitive?.booleanOrNull == true ||
         result.circumstances?.objectRestrictions?.contains("EXCLUDES_SOURCE") == true
     val relationship = when {
-        result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "A death event is linked to this card's removal ability. The details retain which event and which removal are connected."
+        result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "This ability can benefit when a creature dies. Inspect the ability to see which death and effect are connected."
         isSacrifice -> "This ability ${if (result.costOrEffect.endsWith("COST")) "sacrifices ${if (sacrificeSelf) "this source" else affected} as a cost" else "instructs a player to sacrifice ${if (sacrificeSelf) "this source" else affected}"}. ${if (excludesSource) "The source itself cannot be sacrificed for this instruction. " else ""}A sacrificed nontoken creature you control can contribute to your creature-dies objective if it reaches the graveyard."
         result.branch == Contribution.REANIMATE_OWN_CREATURE -> "This ability moves a card from your graveyard onto your battlefield. This is being checked for returning an original creature card."
         result.branch == Contribution.CREATE_CREATURE_TOKEN -> "This ability creates tokens. This is being checked for creating at least one creature token under your control."

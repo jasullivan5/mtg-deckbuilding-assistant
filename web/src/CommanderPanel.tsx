@@ -1,17 +1,24 @@
-import type {CommanderView, Evidence} from './api';
+import type {CommanderView} from './api';
 import {Concerns, EvidenceInspector} from './EvidenceInspector';
+import {CardPicture} from './CardPicture';
 
-export function CommanderPanel({view, discovered, revision}: {view: CommanderView; discovered: Evidence | null; revision?: string}) {
-  const ability = discovered?.abilities.find(a => a.verdict === 'MATCH') ?? discovered?.abilities.find(a => a.verdict === 'UNKNOWN');
+export function CommanderPanel({view, revision}: {view: CommanderView; revision?: string}) {
   return <section className="commander-summary" aria-label="Selected commander">
-    <p><b>{view.headline}</b></p>
-    {view.inspection.selectable && view.authoredCard && <p className="commander-rules">{view.authoredCard.text}</p>}
-    {ability && <p className="hint">Objective connection: {ability.contribution}</p>}
-    {view.inspection.blockers.map((b, i) => <p className="warning" key={i}>{b.reason}<br/>{b.nextAction}</p>)}
-    <details><summary>Commander evidence</summary>
-      <EvidenceInspector indicators={ability?.evidence ?? view.evidenceSummary} revision={revision}/>
-      <Concerns items={view.concerns}/>
-      <details><summary>Exact selection, source and review records</summary><pre>{JSON.stringify(view.inspection, null, 2)}</pre></details>
-    </details>
+    <div className="commander-overview">
+      {view.inspection.selectable && <CardPicture image={view.image ?? undefined}/>}
+      <div>
+        <h2>{view.inspection.requestedName}</h2>
+        <p className="commander-identity">{view.headline}{view.inspection.selectable && ' color identity'}</p>
+        {view.inspection.selectable && view.authoredCard && <>
+          <p>{view.authoredCard.manaCost} · {view.authoredCard.typeLine}</p>
+          <p className="commander-rules">{view.authoredCard.text}</p>
+        </>}
+        {view.objectiveConnection && <p className="contribution">{view.objectiveConnection}</p>}
+        {view.inspection.blockers.map((b, i) => <p className="warning" key={i}>{b.reason}<br/>{b.nextAction}</p>)}
+        <EvidenceInspector indicators={view.evidenceSummary} revision={revision}/>
+        <Concerns items={view.concerns}/>
+        <details><summary>Commander technical records</summary><pre>{JSON.stringify({inspection: view.inspection, image: view.image}, null, 2)}</pre></details>
+      </div>
+    </div>
   </section>;
 }

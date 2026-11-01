@@ -94,16 +94,22 @@ class ExplorerServerTest : FunSpec({
             request(server,"runs/expired-run/cards/0").statusCode() shouldBe 410
         }
     }
-    test("commander presentation keeps original selection authority and exposes scoped evidence without generic construction notices") {
-        ExplorerServer(catalog, 0).use { server ->
+    test("commander presentation keeps selection authority and supplies verified imagery without inapplicable mechanic states") {
+        val raw = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/judith-the-scourge-diva-source.json"))).jsonObject
+        ExplorerServer(catalog, 0, images = CardImages { listOf(raw) }).use { server ->
             server.start()
             val response = post(server, "commander-view", "Judith, the Scourge Diva", objectives.first().id)
             response.statusCode() shouldBe 200
             val view = reportJson.decodeFromString<CommanderView>(response.body())
             view.inspection shouldBe inspectCommander(catalog, "Judith, the Scourge Diva")
-            view.headline shouldBe "Judith, the Scourge Diva can be your commander · Black and red"
+            view.headline shouldBe "Black and red"
+            view.image!!.status shouldBe "VERIFIED"
+            view.image!!.card shouldBe "Judith, the Scourge Diva"
+            view.objectiveConnection!!.contains("sacrifice or otherwise") shouldBe true
             view.authoredCard!!.text.contains("nontoken creature you control dies") shouldBe true
-            view.evidenceSummary.single { it.id == "mechanic" }.state shouldBe EvidenceState.NOT_RECORDED
+            view.evidenceSummary.none { it.id == "mechanic" } shouldBe true
+            val other = reportJson.decodeFromString<CommanderView>(post(server, "commander-view", "Judith, the Scourge Diva", "create-creature-tokens").body())
+            other.objectiveConnection shouldBe null
             view.evidenceSummary.single { it.id == "independent" }.state shouldBe EvidenceState.NOT_RECORDED
             post(server, "commander-view", "Judith, the Scourge Diva", "invented").statusCode() shouldBe 400
             val blocked = reportJson.decodeFromString<CommanderView>(post(server, "commander-view", "Murder", objectives.first().id).body())

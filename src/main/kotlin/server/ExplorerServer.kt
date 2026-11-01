@@ -111,7 +111,10 @@ class ExplorerServer(
         val future = worker.submit(Callable {
             try {
                 val inspected = inspectCommander(catalog, request.commander)
-                if (!discoveryRequested) Response(200, if (viewRequested) reportJson.encodeToJsonElement(commanderView(catalog, request.commander, inspected)) else reportJson.encodeToJsonElement(inspected))
+                if (!discoveryRequested) Response(200, if (viewRequested) {
+                    val image = catalog.card(request.commander)?.takeIf { inspected.selectable }?.let { images.resolve(listOf(0 to it)).single() }
+                    reportJson.encodeToJsonElement(commanderView(catalog, request.commander, inspected, request.objective!!, image))
+                } else reportJson.encodeToJsonElement(inspected))
                 else if (!inspected.selectable) Response(422, reportJson.encodeToJsonElement(ApiError(
                     "COMMANDER_BLOCKED", "This commander cannot be selected in this catalog.", inspected)))
                 else {

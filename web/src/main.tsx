@@ -7,9 +7,9 @@ import {CommanderPanel} from './CommanderPanel';
 import './style.css';
 
 const categories = [
-  ['IDENTIFIED', 'Identified mechanics', 'Cards with at least one identified contribution. Costs and conditions are described on the card; review and gameplay evidence are separate.'],
-  ['UNRESOLVED', 'Needs interpretation', 'Cards with an unresolved relationship and no identified contribution. Cards with both stay in Identified mechanics.'],
-  ['ALL', 'All findings', 'All cards with a discovery check or an instruction needing interpretation. Absence from this index is not a negative result.'],
+  ['IDENTIFIED', 'Identified mechanics', 'Cards with an identified way to contribute to your objective.'],
+  ['UNRESOLVED', 'Needs interpretation', 'Possible connections the application could not establish. Inspect the card to see what remains unresolved.'],
+  ['ALL', 'All findings', 'Every card returned by this search, including unresolved and excluded findings.'],
 ] as const;
 const diagnostics = [
   ['MATCH', 'Has accepted checks'], ['UNKNOWN', 'Has unresolved checks'],
@@ -30,7 +30,6 @@ export function App() {
   const [commander, setCommander] = useState('Judith, the Scourge Diva');
   const [objective, setObjective] = useState('own-nontoken-creature-deaths');
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
-  const [commanderEvidence, setCommanderEvidence] = useState<Evidence | null>(null);
   const [run, setRun] = useState<Run | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
@@ -89,11 +88,11 @@ export function App() {
   }, [runId, visibleIds]);
 
   function changed() {
-    setCommanderView(null); setCommanderEvidence(null); setRun(null); setSelected(null); setDetail(null); setImages({});
+    setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
   }
   async function research(discovery: boolean) {
-    setBusy(discovery ? 'Running discovery…' : 'Inspecting commander…'); changed();
+    setBusy(discovery ? 'Finding cards…' : 'Loading commander…'); changed();
     try {
       const view = await api<CommanderView>('commander-view', {commander, objective}); setCommanderView(view);
       const inspected = view.inspection;
@@ -106,44 +105,37 @@ export function App() {
     finally { setBusy(''); }
   }
   const shownDetail = detail?.card === selectedCard?.card ? detail : null;
-  useEffect(() => {
-    setCommanderEvidence(null);
-    const card = run?.cards.find(c => c.card === run.commander);
-    if (!runId || !card) return;
-    const controller = new AbortController();
-    api<Evidence>(`runs/${runId}/cards/${card.index}`, undefined, controller.signal)
-      .then(value => { if (!controller.signal.aborted) setCommanderEvidence(value); }).catch(() => {});
-    return () => controller.abort();
-  }, [runId]);
   const imageFor = (index: number) => images[`${runId}:${index}`];
   const mechanics = [...new Set(run?.cards.flatMap(c => c.mechanics ?? []) ?? [])].sort();
 
   return <>
-    <header><h1>Commander Discovery</h1><span>{health ? 'Local research' : 'Connecting…'}</span></header>
+    <header><h1>Card Discovery</h1><span>{health ? 'Local research' : 'Connecting…'}</span></header>
     <main>
       <section className="controls" aria-label="Research controls">
         <form onSubmit={e => { e.preventDefault(); void research(true); }}>
-          <label>Commander’s exact name<input list="commanders" value={commander}
+          <label>Commander<input list="commanders" value={commander}
             onChange={e => { changed(); setCommander(e.target.value); }} disabled={!!busy} required maxLength={200}/></label>
           <datalist id="commanders"><option>Judith, the Scourge Diva</option><option>Oviya Pashiri, Sage Lifecrafter</option><option>Krenko, Mob Boss</option></datalist>
           <label>Objective<select value={objective} onChange={e => { changed(); setObjective(e.target.value); }} disabled={!!busy || !objectives.length}>
             {objectives.map(o => <option value={o.id} key={o.id}>{o.label}</option>)}
           </select></label>
-          <div className="actions"><button type="button" onClick={() => void research(false)} disabled={!!busy || !commander.trim()}>Inspect commander</button>
-            <button className="primary" disabled={!!busy || !objectives.length || !commander.trim()}>Run discovery</button></div>
+          <div className="actions"><button type="button" onClick={() => void research(false)} disabled={!!busy || !commander.trim()}>View commander</button>
+            <button className="primary" disabled={!!busy || !objectives.length || !commander.trim()}>Find cards</button></div>
         </form>
-        {!run && <p className="hint objective-hint">{objectives.find(o => o.id === objective)?.explanation}</p>}
+        <details className="objective-help"><summary>About this objective</summary>
+          <p>{objectives.find(o => o.id === objective)?.explanation}</p>
+          <p>Find cards that fit your objective and can be included in your chosen Commander's deck. Search coverage and exclusions are available with the results.</p>
+        </details>
         <div aria-live="polite">
           {busy && <p role="status">{busy} Please wait for the card search to finish.</p>}
-          {commanderView && <CommanderPanel view={commanderView} discovered={commanderEvidence} revision={run?.applicationRevision ?? health?.applicationRevision}/>}
+          {commanderView && <CommanderPanel view={commanderView} revision={run?.applicationRevision ?? health?.applicationRevision}/>}
           {error && <p role="alert" className="warning">{error}</p>}
         </div>
       </section>
-      {!run && <p className="hint">Choose a commander and an objective, then run discovery to explore the cards in its colors. Findings are research leads, not deck recommendations.</p>}
       {run && <>
         <section className="run-summary" aria-label="Completed discovery">
           <div><h2>Discovery results</h2><p>{objectives.find(o => o.id === run.objective)?.label} · {run.commander}</p></div>
-          <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} eligible authored cards · {(run.durationMs / 1000).toFixed(1)} s</p>
+          <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} available cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
         <nav className="categories" aria-label="Finding categories">
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description}

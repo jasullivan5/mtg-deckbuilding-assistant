@@ -120,6 +120,15 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
 
 /* Evidence controls describe separate claims; incomplete work stays visually neutral. */
 .commander-summary { margin-top: 12px; font-size: 13px; }
+.commander-overview { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 22px; border-top: 1px solid #3c5158; padding-top: 18px; }
+.commander-overview > div { min-width: 0; }
+.commander-overview .picture { margin: 0; width: 100%; }
+.commander-overview h2 { font-family: Georgia, serif; margin-bottom: 6px; }
+.commander-identity { color: #b6d9c3; }
+.commander-overview .evidence-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.objective-help { font-size: 12px; color: #b1c0c3; }
+.objective-help p { max-width: 850px; }
+.technical-evidence { font-size: 12px; color: #b1c0c3; }
 .commander-summary p { margin: 6px 0; }
 .commander-rules { white-space: pre-line; color: #c4d2d0; }
 .commander-summary > details { margin-bottom: 0; }
@@ -164,4 +173,7 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
   .evidence-panel { padding: 12px; }
   .evidence-button { padding: 10px 8px; }
   .commander-summary { font-size: 12px; }
+  .commander-overview { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .commander-overview .picture { max-width: 150px; margin: auto; }
+  .commander-overview .evidence-buttons { grid-template-columns: minmax(0, 1fr); }
 }
