@@ -21,13 +21,16 @@ class AbilityInspectionTest : FunSpec({
         source.getValue("oracle_text").jsonPrimitive.content shouldBe "{B}, Sacrifice a creature: Destroy target nonblack creature."
         val evidence = card("Attrition")
         val ability = evidence.abilities.single()
+        ability.contribution.contains("can trigger Judith, the Scourge Diva") shouldBe true
+        ability.uncertainties.any { "nonblack creature" in it } shouldBe true
         ability.face shouldBe null
+        ability.title shouldBe "{B}, Sacrifice a creature — destroy target nonblack creature"
         ability.verdict shouldBe Verdict.MATCH
         ability.costs.any { "{B}" in it } shouldBe true
         ability.costs.any { "Sacrifice a creature" in it } shouldBe true
         ability.effects shouldBe listOf("Destroy target nonblack creature.")
         ability.conditions.any { "nonblack creature" in it } shouldBe true
-        ability.conditions.any { "cannot activate" in it && "without that target" in it } shouldBe true
+        ability.conditions.any { "before activation" in it && "nonblack creature" in it } shouldBe true
         ability.resultIndexes.map { evidence.results[it].verdict }.toSet() shouldBe setOf(Verdict.MATCH, Verdict.NO_MATCH)
         ability.evidence.single { it.id == "mechanic" }.state shouldBe EvidenceState.ESTABLISHED
         for (id in listOf("source", "execution", "independent")) ability.evidence.single { it.id == id }.state shouldBe EvidenceState.NOT_RECORDED
@@ -43,7 +46,7 @@ class AbilityInspectionTest : FunSpec({
             a.copy(native = JsonObject(node + ("targetRequirements" to JsonArray(listOf(JsonObject(requirement + mapOf("optional" to JsonPrimitive(true), "minCount" to JsonPrimitive(0))))))))
         } }
         val ability = abilityInspections(evidence.results, actions, evidence.unsupported, null, emptyList()).single()
-        ability.conditions.any { "cannot activate" in it } shouldBe false
+        ability.conditions.any { "before activation" in it } shouldBe false
         ability.conditions.any { "If you choose a target" in it } shouldBe true
     }
     test("Agent's represented land payment stays an unresolved objective relationship") {
@@ -67,16 +70,19 @@ class AbilityInspectionTest : FunSpec({
         ability.face shouldBe null
         ability.conditions.any { "nontoken creature you control" in it } shouldBe true
         ability.effects.any { "1 damage" in it } shouldBe true
+        ability.title.startsWith("Whenever a nontoken creature you control dies — deal 1 damage") shouldBe true
         ability.contribution.contains("nontoken creature you control") shouldBe true
         ability.contribution.contains("1 damage") shouldBe true
-        ability.contribution.contains("how that first creature died") shouldBe true
+        ability.contribution.contains("does not cause the initial death") shouldBe true
         val assurance = catalog.translationAssurance("Judith, the Scourge Diva")!!
         assurance.qualification shouldBe QualificationState.PROVISIONAL
         ability.evidence.single { it.id == "source" }.state shouldBe if (assurance.evidenceCurrent) EvidenceState.ESTABLISHED else EvidenceState.OUTDATED
         ability.evidence.single { it.id == "execution" }.historical shouldBe true
         ability.evidence.single { it.id == "independent" }.state shouldBe EvidenceState.NOT_RECORDED
         val view = commanderView(catalog, evidence.card, inspectCommander(catalog, evidence.card))
-        view.headline shouldBe "Judith, the Scourge Diva can be your commander · Black and red"
+        view.headline shouldBe "Black and red"
+        view.objectiveConnection!!.contains("Judith, the Scourge Diva deals 1 damage to any target") shouldBe true
+        view.evidenceSummary.none { it.id == "mechanic" } shouldBe true
         view.authoredCard!!.text.contains("Whenever a nontoken creature you control dies") shouldBe true
     }
     test("ordinary navigation gives recognized cards priority without losing overlapping diagnostic records") {
@@ -84,10 +90,25 @@ class AbilityInspectionTest : FunSpec({
             if (finding.pathways.getValue("MATCH") > 0) finding.browsingState shouldBe "IDENTIFIED"
             else if (finding.pathways.getValue("UNKNOWN") > 0) finding.browsingState shouldBe "UNRESOLVED"
         }
+        val concernCard = card("Tatterkite")
+        concernCard.evidenceSummary.none { it.id == "mechanic" } shouldBe true
+        concernCard.concerns.single().reading.contains("has not retested") shouldBe true
+        concernCard.concerns.single().reading.contains("collections") shouldBe false
+        concernCard.concerns.single().title.contains("including through collections") shouldBe true
         val acolyte = stored.summary.cards.single { it.card == "Acolyte of Aclazotz" }
         acolyte.browsingState shouldBe "IDENTIFIED"
         (acolyte.unsupportedRecords > 0) shouldBe true
         stored.summary.cards.single { it.card == "Agent of Shauku" }.browsingState shouldBe "UNRESOLVED"
         stored.summary.cards.size shouldBe (report.results.map { it.card } + report.unsupported.map { it.card }).distinct().size
     }
+    test("commander relationship is objective-specific and does not invent a general death payoff") {
+        val judith = catalog.card("Judith, the Scourge Diva")!!
+        commanderObjectiveConnection(judith, "create-creature-tokens") shouldBe null
+        commanderObjectiveConnection(catalog.card("Oviya Pashiri, Sage Lifecrafter")!!, objectives.first().id) shouldBe null
+        val view = commanderView(catalog, judith.name, inspectCommander(catalog, judith.name))
+        view.objectiveConnection!!.contains("Whenever a nontoken creature you control dies,") shouldBe true
+        view.objectiveConnection!!.contains("sacrifice or otherwise") shouldBe true
+        view.objectiveConnection!!.contains("removal") shouldBe false
+    }
+
 })

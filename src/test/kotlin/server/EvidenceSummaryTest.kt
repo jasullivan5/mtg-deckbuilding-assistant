@@ -52,6 +52,7 @@ class EvidenceSummaryTest : FunSpec({
         val oldFailure = assessTranslation(card, record().copy(argentumCommit = "1".repeat(40), execution = ExecutionState.FAILURE_OBSERVED))
         val failure = statuses(oldFailure).getValue("execution")
         failure.state shouldBe EvidenceState.OUTDATED
+        failure.reading.contains("earlier engine test recorded a failure") shouldBe true
         failure.established.any { "earlier record reports an observed failure" in it } shouldBe true
     }
     test("an applicable historical gate output still labels recorded execution as historical") {
@@ -60,12 +61,15 @@ class EvidenceSummaryTest : FunSpec({
         val state = evidenceIndicators(listOf(row()), approvedBinding, emptyList(), "Fixture cost", "2".repeat(40)).single { it.id == "execution" }
         state.state shouldBe EvidenceState.ESTABLISHED
         state.historical shouldBe true
-        state.status shouldBe "Historical pass recorded"
+        state.status shouldBe "Earlier tests passed"
+        state.reading.contains("current engine version") shouldBe true
         state.limits.any { "not a fresh run" in it } shouldBe true
     }
     test("author source review and bounded passes stay distinct from independent qualification") {
         val states = statuses(assessTranslation(card, record()))
         states.getValue("source").state shouldBe EvidenceState.ESTABLISHED
+        states.getValue("source").reading.contains("card-level comparison") shouldBe true
+        states.getValue("source").reading.contains("implementer") shouldBe true
         states.getValue("execution").state shouldBe EvidenceState.ESTABLISHED
         states.getValue("independent").state shouldBe EvidenceState.NOT_RECORDED
         states.getValue("source").scope.contains("card's implementation") shouldBe true
@@ -107,4 +111,14 @@ class EvidenceSummaryTest : FunSpec({
         materialConcerns(assessment).single().scope.contains("not automatically assigned") shouldBe true
         statuses(assessment).getValue("mechanic").state shouldBe EvidenceState.ESTABLISHED
     }
+    test("an outdated unreviewed untested record does not invent an earlier comparison or execution") {
+        val untested = assessTranslation(card, record().copy(definitionSha256 = "0".repeat(64),
+            fidelity = FidelityState.UNREVIEWED, execution = ExecutionState.NOT_TESTED, source = emptyList(), tests = emptyList()))
+        val states = statuses(untested)
+        states.getValue("source").state shouldBe EvidenceState.NOT_RECORDED
+        states.getValue("execution").state shouldBe EvidenceState.NOT_RECORDED
+        states.getValue("source").reading.startsWith("No rules comparison") shouldBe true
+        states.getValue("execution").reading.startsWith("No engine test result") shouldBe true
+    }
+
 })

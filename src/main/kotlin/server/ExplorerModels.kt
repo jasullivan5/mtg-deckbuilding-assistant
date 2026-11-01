@@ -10,7 +10,7 @@ import java.util.UUID
 
 @Serializable data class Objective(val id: String, val label: String, val explanation: String)
 val objectives = listOf(
-    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Explore sacrifice and other ways your nontoken creatures could die, plus removal enabled by a death."),
+    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Find ways for your nontoken creatures to die, and cards that benefit when they do. The current search recognizes sacrifice, some other ways to cause deaths, and some death-triggered or death-enhanced effects; it does not cover every payoff."),
     Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield."),
     Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.")
 )
@@ -41,17 +41,21 @@ val objectives = listOf(
 )
 @Serializable data class CommanderView(
     val inspection: CommanderInspection, val authoredCard: AuthoredCardText?, val headline: String,
-    val evidenceSummary: List<EvidenceIndicator>, val concerns: List<ResearchConcern>
+    val evidenceSummary: List<EvidenceIndicator>, val concerns: List<ResearchConcern>,
+    val objectiveConnection: String? = null, val image: CardImage? = null
 )
-fun commanderView(catalog: Catalog, name: String, inspection: CommanderInspection): CommanderView {
+fun commanderView(catalog: Catalog, name: String, inspection: CommanderInspection, objective: String = objectives.first().id,
+                  image: CardImage? = null): CommanderView {
     val card = catalog.card(name)
     val colors = inspection.colorIdentity.map { it.lowercase() }
     val identity = if (!inspection.authoritativeIdentity) "Color identity unresolved" else if (colors.isEmpty()) "Colorless" else
         colors.joinToString(" and ").replaceFirstChar { it.uppercase() }
     return CommanderView(inspection, card?.let { AuthoredCardText(it.manaCost.toString(), it.typeLine.toString(), it.oracleText) },
-        if (inspection.selectable) "${inspection.requestedName} can be your commander · $identity" else "Selection blocked · $identity",
-        evidenceIndicators(emptyList(), inspection.translationAssurance, inspection.scenarioReferences, "Commander card record; no objective-specific run in this inspection"),
-        materialConcerns(inspection.translationAssurance))
+        if (inspection.selectable) identity else "Selection blocked · $identity",
+        evidenceIndicators(emptyList(), inspection.translationAssurance, inspection.scenarioReferences, "Commander card record")
+            .filterNot { it.id == "mechanic" },
+        materialConcerns(inspection.translationAssurance),
+        card?.takeIf { inspection.selectable }?.let { commanderObjectiveConnection(it, objective) }, image)
 }
 @Serializable data class LiveDiscovery(
     val schemaVersion: Int = 1, val execution: String = "FRESH_STRUCTURAL_DISCOVERY",
@@ -71,6 +75,9 @@ class StoredRun(
     private val support = report.structuralSupport.groupBy { it.card }
     private val eligibility = report.eligibility.groupBy { it.card }
     private val assurance = report.translationAssurance.groupBy { it.card }
+    private val deathPayoffCommander = catalog.card(report.commander)?.takeIf {
+        commanderObjectiveConnection(it, report.objective) != null
+    }?.name
     val id: String = UUID.randomUUID().toString()
     val summary = RunSummary(
         runId = id, startedAt = started.toString(), durationMs = durationMs,
@@ -105,7 +112,8 @@ class StoredRun(
         return CardEvidence(id, name, native?.let { AuthoredCardText(it.manaCost.toString(), it.typeLine.toString(), it.oracleText) },
             results[name].orEmpty(), actions[name].orEmpty(), facts[name].orEmpty(), unsupported[name].orEmpty(),
             support[name].orEmpty(), eligibility[name].orEmpty(), assurance[name].orEmpty(), results[name].orEmpty().map { result -> explain(result, actions[name].orEmpty().firstOrNull { it.id == result.actionId }) },
-            abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios),
-            evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings"), materialConcerns(review))
+            abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios, deathPayoffCommander = deathPayoffCommander),
+            evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings")
+                .filterNot { it.id == "mechanic" && results[name].isNullOrEmpty() }, materialConcerns(review))
     }
 }

@@ -14,11 +14,13 @@ import kotlinx.serialization.Serializable
     val established: List<String> = emptyList(), val limits: List<String> = emptyList(),
     val nextSteps: List<String> = emptyList(), val references: List<RecordReference> = emptyList(),
     val recordedEngine: String? = null, val currentEngine: String = EngineBuild.revision,
-    val historical: Boolean = false
+    val historical: Boolean = false,
+    /** Brief player-facing claim; exact scope/bindings above remain available to investigators. */
+    val reading: String = ""
 )
 @Serializable data class ResearchConcern(
     val title: String, val detail: String, val nextStep: String,
-    val state: EvidenceState, val scope: String
+    val state: EvidenceState, val scope: String, val reading: String = ""
 )
 
 fun evidenceIndicators(
@@ -62,7 +64,7 @@ fun evidenceIndicators(
             nextSteps = listOf("Run discovery to inspect the represented relationships; absence of a result is not a negative finding."), currentEngine = runtimeRevision)
     }
     val source = when {
-        stale -> indicator("source", "Source review", EvidenceState.OUTDATED, "Prior review not applicable",
+        stale && record!!.fidelity != FidelityState.UNREVIEWED -> indicator("source", "Source review", EvidenceState.OUTDATED, "Prior review not applicable",
             "An earlier source review exists, but it no longer applies to this card and build.",
             established = listOf(when (record!!.fidelity) {
                 FidelityState.SOURCE_REVIEWED -> "The earlier record reports a source comparison."
@@ -87,7 +89,7 @@ fun evidenceIndicators(
             next = listOf("Compare the exact ability with dated Oracle/ruling requirements and retain the review against this definition."))
     }
     val execution = when {
-        stale -> indicator("execution", "Engine scenarios", EvidenceState.OUTDATED, "Prior evidence not applicable",
+        stale && record!!.execution != ExecutionState.NOT_TESTED -> indicator("execution", "Engine scenarios", EvidenceState.OUTDATED, "Prior evidence not applicable",
             "Historical execution evidence exists but does not pass the current assurance binding check.",
             established = listOf(when (record!!.execution) {
                 ExecutionState.FAILURE_OBSERVED -> "The earlier record reports an observed failure on ${record.argentumCommit}. It is not erased or presented as a current failure."
@@ -128,7 +130,57 @@ fun evidenceIndicators(
             "No current independent approval is recorded. Author tests and source comparison remain useful evidence without becoming independent qualification.",
             next = listOf("An independent reviewer must assess the scoped source, requirements, implementation and execution evidence and approve the exact bundle."))
     }
-    return listOf(mechanic, source, execution, independent)
+    return listOf(mechanic, source, execution, independent).map { item ->
+        val reading = when (item.id) {
+            "mechanic" -> when {
+                matched.isNotEmpty() -> {
+                    val parts = matched.map { when (it.operation) {
+                        "SACRIFICE" -> if (it.costOrEffect.endsWith("COST")) "the sacrifice cost" else "the sacrifice effect"
+                        "DESTROY" -> "the destruction effect"
+                        "DAMAGE_POTENTIALLY_LETHAL" -> "the damage interaction"
+                        else -> dev.mtg.assistant.explorer.mechanic(it).lowercase()
+                    } }.distinct().joinToString(" and ")
+                    "The application identified $parts as relevant to your objective. That finding does not verify every instruction in this ability or show that it has worked in a game."
+                }
+                unknown.isNotEmpty() -> "The application found a possible connection, but could not establish whether the affected objects and conditions meet your objective. The specific unresolved relationship is explained beside the ability."
+                results.isNotEmpty() -> "This ability did not meet the search's objective checks. That is not a rules error or a failed engine test."
+                else -> "No objective-specific check is available in this view."
+            }
+            "source" -> when (item.state) {
+                EvidenceState.ESTABLISHED -> "The card's programmed rules were compared with recorded Magic card information by the implementer. This card-level comparison does not say which individual abilities were checked and is not a separate independent verification."
+                EvidenceState.KNOWN_PROBLEM -> "A recorded comparison found a disagreement between the card's rules and its programmed behavior. Inspect the recorded concern before relying on the affected interaction."
+                EvidenceState.OUTDATED -> "An earlier card comparison is recorded, but its card or engine version no longer matches the evidence requirements for this build. The earlier findings remain available in the technical records."
+                EvidenceState.INCOMPLETE -> "A possible disagreement with the card's rules is still being investigated. It has not been confirmed as an error."
+                EvidenceState.NOT_RECORDED -> "No rules comparison is recorded here for this card. Its displayed text and verified image do not establish that its programmed behavior matches those rules."
+            }
+            "execution" -> when (item.state) {
+                EvidenceState.ESTABLISHED -> if (historical)
+                    "Earlier engine tests passed for selected interactions on this card. They do not establish that every ability works or that those tests passed on the current engine version; the record does not map their outcomes to this selected ability."
+                    else "Recorded engine tests passed for selected interactions on this card. They do not establish that every ability works; this view does not map individual outcomes to this selected ability."
+                EvidenceState.KNOWN_PROBLEM -> "An engine test recorded a failure for a specific interaction. This is an observed problem, rather than missing testing; inspect its recorded version and reproduction to see what was affected."
+                EvidenceState.OUTDATED -> when (record?.execution) {
+                    ExecutionState.FAILURE_OBSERVED -> "An earlier engine test recorded a failure. The evidence no longer applies to this build, so it establishes neither a current failure nor a fix; the earlier result is retained."
+                    ExecutionState.BOUNDED_EVIDENCE_PASSED -> "Earlier engine tests passed, but that evidence no longer applies to this build. The old results do not establish that the interaction works on the current version."
+                    else -> "The earlier record contains no test outcome that applies to this build."
+                }
+                EvidenceState.INCOMPLETE -> "Test code is listed, but no applicable execution result is recorded here. A test file alone does not show that the interaction was run or passed."
+                EvidenceState.NOT_RECORDED -> "No engine test result is recorded here for this card. This does not mean the engine cannot execute the ability."
+            }
+            else -> when (item.state) {
+                EvidenceState.ESTABLISHED -> "A separate reviewer approved the recorded interpretation and its supporting evidence. That approval covers the specified requirements and tested cases, rather than every possible interaction."
+                EvidenceState.OUTDATED -> "An earlier separate approval no longer applies to the current evidence. Its original record is retained for investigation."
+                else -> "No separate independent verification is recorded for this card. This is not a finding that the mechanic is wrong, and does not prevent it from appearing in discovery."
+            }
+        }
+        item.copy(label = when (item.id) {
+            "mechanic" -> "Relevant mechanic"; "source" -> "Rules comparison"; "execution" -> "Engine tests"; else -> "Independent review"
+        }, status = when {
+            item.id == "source" && item.state == EvidenceState.ESTABLISHED -> "Compared by implementer"
+            item.id == "execution" && item.state == EvidenceState.ESTABLISHED -> if (historical) "Earlier tests passed" else "Recorded tests passed"
+            item.id == "independent" && item.state == EvidenceState.NOT_RECORDED -> "Not recorded"
+            else -> item.status
+        }, reading = reading)
+    }
 }
 
 fun materialConcerns(assurance: TranslationAssurance?): List<ResearchConcern> = assurance?.evidence?.concerns.orEmpty()
@@ -136,4 +188,5 @@ fun materialConcerns(assurance: TranslationAssurance?): List<ResearchConcern> = 
     .map { concern -> ResearchConcern(concern.claim, concern.reason,
         "Review the retained reproduction at its recorded engine version. Closing this concern requires reviewed, revision-bound resolution evidence; the original suggested action remains in the detailed record.",
         if (concern.state == ConcernState.CONFIRMED) EvidenceState.KNOWN_PROBLEM else EvidenceState.INCOMPLETE,
-        "Card-level concern recorded on ${assurance!!.evidence!!.argentumCommit}; it is not automatically assigned to this ability or a fresh failure on this build.") }
+        "Card-level concern recorded on ${assurance!!.evidence!!.argentumCommit}; it is not automatically assigned to this ability or a fresh failure on this build.",
+        "${if (concern.state == ConcernState.CONFIRMED) "A confirmed problem was recorded" else "An unresolved question was recorded"} about this rule: ${concern.claim.substringAfter(": ", concern.claim).substringBefore(", including ")}. The concern remains open in the record; this view has not retested it on the current engine or assigned it to the selected ability.") }

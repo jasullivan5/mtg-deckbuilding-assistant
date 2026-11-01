@@ -35,8 +35,9 @@ export type EvidenceIndicator = {
   established: string[]; limits: string[]; nextSteps: string[];
   references: {label: string; path: string; sha256: string | null}[];
   recordedEngine: string | null; currentEngine: string; historical: boolean;
+  reading: string;
 };
-export type ResearchConcern = {title: string; detail: string; nextStep: string; state: EvidenceState; scope: string};
+export type ResearchConcern = {title: string; detail: string; nextStep: string; state: EvidenceState; scope: string; reading?: string};
 export type AbilityInspection = {
   id: string; title: string; face: string | null; verdict: string; contribution: string;
   costs: string[]; effects: string[]; conditions: string[]; tradeoffs: string[]; uncertainties: string[];
@@ -45,6 +46,7 @@ export type AbilityInspection = {
 export type CommanderView = {
   inspection: Inspection; authoredCard: Evidence['authoredCard']; headline: string;
   evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
+  objectiveConnection: string | null; image: CardImage | null;
 };
 export type CardImage = {
   index: number; card: string; status: string; reason: string; printingId: string | null;

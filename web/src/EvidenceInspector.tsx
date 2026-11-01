@@ -25,7 +25,9 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
     </div>
     {current && <section id={`${id}-panel`} aria-label={`${current.label} evidence`} className="evidence-panel">
       <h4>{current.label}: {current.status}</h4>
-      <p className="evidence-scope"><b>Scope:</b> {current.scope}</p>
+      <p>{current.reading || current.explanation}</p>
+      <details className="technical-evidence"><summary>Technical evidence and recorded interactions</summary>
+      <p className="evidence-scope">{current.scope}</p>
       <p>{current.explanation}</p>
       <Lines title="What is recorded" lines={current.established}/>
       <Lines title="What this does not establish" lines={current.limits}/>
@@ -40,12 +42,13 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
         <p>Recorded engine: <code>{current.recordedEngine}</code><br/>Current engine: <code>{current.currentEngine}</code></p>
         {current.historical && <p>The recorded run used a different engine revision. It is not a fresh execution on this build.</p>}
       </details>}
+      </details>
     </section>}
   </div>;
 }
 export function Concerns({items}: {items: ResearchConcern[]}) {
   return <>{items.map((item, i) => <article key={i} className={item.state === 'KNOWN_PROBLEM' ? 'recorded-problem' : 'research-question'}>
-    <h4>{item.title}</h4><p className="hint">{item.scope}</p><p>{item.detail}</p>
-    <p><b>Next evidence needed:</b> {item.nextStep}</p>
+    <h4>{item.reading ? 'Recorded card concern' : item.title}</h4><p>{item.reading || item.detail}</p>
+    <details><summary>Investigation details</summary><p>{item.scope}</p>{item.reading && <p>{item.detail}</p>}<p>{item.nextStep}</p></details>
   </article>)}</>;
 }

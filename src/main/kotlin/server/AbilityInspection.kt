@@ -3,6 +3,7 @@ package dev.mtg.assistant.explorer
 import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.TranslationAssurance
+import com.wingedsheep.sdk.model.CardDefinition
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.*
 
@@ -31,6 +32,22 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
     val gaps = mutableListOf<String>()
     var triggerDescription: String? = null
         private set
+    private val costExcerpt = mutableListOf<String>()
+    var triggerExcerpt: String? = null
+        private set
+    fun title(fallback: String): String {
+        val effect = effects.joinToString(" ").removeSuffix(".").replace("This source deals", "deal")
+        val lead = triggerExcerpt ?: costExcerpt.joinToString(", ").takeIf { it.isNotBlank() }
+        // This is an excerpt of the corresponding stored action, never a guessed Oracle-line mapping.
+        val text = when {
+            lead != null && effect.isNotBlank() -> "$lead — ${effect.replaceFirstChar { it.lowercase() }}"
+            lead != null -> lead
+            effect.isNotBlank() -> effect
+            else -> fallback
+        }
+        val incomplete = if (gaps.isNotEmpty() || native?.get("condition") != null) " · more details below" else ""
+        return text.take(180) + (if (text.length > 180) "…" else "") + incomplete
+    }
     private val activated = rows.any { it.circumstances?.actionKind == "ACTIVATED" }
 
     private fun targetDescription(t: JsonObject?): String = when (t.text("type")) {
@@ -40,7 +57,7 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
             filterDescription(filter?.get("baseFilter").obj()) +
                 if (zone != null && zone != "Battlefield") " in the recorded ${zone.lowercase()} zone" else ""
         }
-        "AnyTarget" -> "any legal damage target"
+        "AnyTarget" -> "any target"
         "TargetPlayer" -> "a player"
         "TargetOpponent" -> "an opponent"
         else -> "a target with requirements not fully summarized here"
@@ -67,11 +84,12 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
             null -> Unit
             "CostComposite" -> n.items("costs").forEach { cost(it.obj()) }
             "CostAtomWrapper" -> cost(n?.get("atom").obj())
-            "AtomMana" -> costs.add("Pay ${n.text("cost") ?: "the recorded mana cost"}.")
-            "CostTap" -> costs.add("Tap this permanent; it must be untapped and able to pay a tap cost.")
+            "AtomMana" -> { costs.add("Pay ${n.text("cost") ?: "the recorded mana cost"}."); costExcerpt += n.text("cost") ?: "Mana payment" }
+            "CostTap" -> { costs.add("Tap this permanent; it must be untapped and able to pay a tap cost."); costExcerpt += "{T}" }
             "AtomSacrifice" -> {
                 val count = n.number("count") ?: 1
                 costs += "Sacrifice ${if (count == 1) filterDescription(n?.get("filter").obj()) else "$count permanents matching ${filterDescription(n?.get("filter").obj())}"}${if (n.flag("excludeSelf")) ", other than this source" else ""}. You must control what you sacrifice."
+                costExcerpt += costs.last().substringBefore(". You")
                 if (count > 0) tradeoffs += "The sacrifice is paid during activation. It is not refunded if the resulting ability is countered or fails to resolve."
             }
             else -> gaps.add("An additional cost is not summarized. Its exact payment requirements remain in the ability record.")
@@ -105,9 +123,9 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
         for (requirement in targets) {
             val optional = requirement.flag("optional")
             val minimum = requirement.number("minCount") ?: if (optional || requirement.flag("unlimited")) 0 else requirement.number("count") ?: 1
-            conditions += "${if (minimum > 0) "Choose" else "If you choose a target, choose"} ${targetDescription(requirement)}${if (minimum > 1) " (at least $minimum targets)" else ""}."
             if (activated && minimum > 0 && requirement["dynamicMinCount"] == null)
-                conditions += "A required legal target must exist before you can activate this ability. You cannot activate it merely to pay the sacrifice cost without that target."
+                conditions += "Choose ${targetDescription(requirement)}${if (minimum > 1) " (at least $minimum targets)" else ""} as a legal target before activation${if (costExcerpt.any { it.startsWith("Sacrifice") }) ", even if you only want to sacrifice" else ""}."
+            else conditions += "${if (minimum > 0) "Choose" else "If you choose a target, choose"} ${targetDescription(requirement)}${if (minimum > 1) " (at least $minimum targets)" else ""}."
             if (requirement["dynamicMinCount"] != null || requirement["dynamicMaxCount"] != null || requirement.flag("sameController") || requirement.flag("sameOwner"))
                 gaps += "Additional target-count or relationship restrictions require inspection."
         }
@@ -115,15 +133,23 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
         if (trigger.text("type") == "ZoneChangeEvent") {
             val ownSource = rows.any { it.circumstances?.timingAndConditions.orEmpty().any { text -> "binding=SELF;" in text } }
             val from = trigger.text("from"); val to = trigger.text("to")
-            if (ownSource && to == "Battlefield") triggerDescription = "This ability triggers when this permanent enters the battlefield."
-            else if (from == "Battlefield" && to == "Graveyard") triggerDescription = "This ability triggers when ${filterDescription(trigger?.get("filter").obj())} moves from the battlefield to the graveyard."
+            if (ownSource && to == "Battlefield") {
+                triggerExcerpt = "When this permanent enters the battlefield"
+                triggerDescription = "$triggerExcerpt."
+            }
+            else if (from == "Battlefield" && to == "Graveyard") {
+                val subject = if (ownSource) "this permanent" else filterDescription(trigger?.get("filter").obj())
+                val creature = trigger?.get("filter").obj().items("cardPredicates").any { it.obj().text("type") == "IsCreature" }
+                triggerExcerpt = "Whenever $subject ${if (creature) "dies" else "is put into a graveyard from the battlefield"}"
+                triggerDescription = "$triggerExcerpt."
+            }
             else gaps += "This trigger's timing needs inspection."
         }
         triggerDescription?.let { conditions += it }
         effect(native?.get("effect").obj())
-        if (activated) conditions += "Each activation needs a new payment of its costs and legal choices; any recorded timing limits still apply."
+        if (activated) conditions += "You can activate it again while you have the resources and legal choices; timing limits still apply."
         if (rows.any { it.operation == "DAMAGE_POTENTIALLY_LETHAL" }) conditions += "Damage contributes a creature death only if it is lethal in that game state. Damage to a player does not itself make a creature die."
-        if (rows.any { it.operation == "DESTROY" }) conditions += "Destruction has to succeed to cause a death; indestructibility and replacement effects can change the outcome. The sacrifice cost is separate from that outcome."
+        if (rows.any { it.operation == "DESTROY" }) tradeoffs += "Indestructibility or replacement effects can prevent the destruction from causing a death. They do not undo the sacrifice payment."
         if (rows.any { it.circumstances?.mandatory == Verdict.MATCH }) conditions += "This is a required instruction when the triggered effect resolves, not an optional sacrifice outlet."
         if (rows.any { it.circumstances?.delayedTrigger == true || it.circumstances?.deferredTiming == true }) gaps += "A delayed or timing-dependent instruction needs inspection."
     }
@@ -147,7 +173,8 @@ private fun unreadInstruction(item: Unsupported, scope: String): ResearchConcern
 
 fun abilityInspections(
     results: List<ResultEvidence>, actions: List<ActionEvidence>, unsupported: List<Unsupported>,
-    assurance: TranslationAssurance?, scenarios: List<String>, runtimeRevision: String = EngineBuild.revision
+    assurance: TranslationAssurance?, scenarios: List<String>, runtimeRevision: String = EngineBuild.revision,
+    deathPayoffCommander: String? = null
 ): List<AbilityInspection> {
     val byId = actions.associateBy { it.id }
     return results.withIndex().groupBy { it.value.actionId }.entries.mapIndexed { ordinal, (id, entries) ->
@@ -155,8 +182,8 @@ fun abilityInspections(
         val best = rows.firstOrNull { it.verdict == Verdict.MATCH } ?: rows.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: rows.first()
         val action = byId[id]
         val kind = best.circumstances?.actionKind
-        val title = when (kind) { "ACTIVATED" -> "Activated ability"; "TRIGGERED", "STATE_TRIGGERED" -> "Triggered ability"; "SPELL" -> "Spell effect"; else -> "Card ability" } + " ${ordinal + 1}"
         val narration = AbilityText(action, rows)
+        val title = narration.title(when (kind) { "ACTIVATED" -> "Ability with an activation cost"; "TRIGGERED", "STATE_TRIGGERED" -> "Ability triggered by an event"; "SPELL" -> "Spell instructions"; else -> "Ability details" } + " (${ordinal + 1})")
         val relevantParts = rows.filter { it.verdict != Verdict.NO_MATCH }
         val scope = "$title — ${mechanic(best)} ${if (best.costOrEffect.endsWith("COST")) "cost" else "relationship"}"
         val questions = unsupported.filter { it.actionId == id || it.actionId == action?.associatedActionId }.map { unreadInstruction(it, title) } +
@@ -167,11 +194,19 @@ fun abilityInspections(
                     "Inspect the retained object and objective decisions. An unresolved check is not an established implementation defect.", EvidenceState.INCOMPLETE, "${mechanic(it)} in $title")
             }
         val explanation = explain(best, action)
-        val uncertainty = if (best.verdict == Verdict.UNKNOWN) explanation.unknowns.filterNot {
+        val landSacrifice = best.operation == "SACRIFICE" && best.nativeOperation.obj()?.get("filter").obj()
+            .items("cardPredicates").any { it.obj().text("type") == "IsLand" }
+        val uncertainty = if (best.verdict != Verdict.UNKNOWN) emptyList() else if (landSacrifice)
+            listOf("The search has not established a land becoming a creature you control when sacrificed.") +
+                explanation.unknowns.filter { it.startsWith("An additional requirement") }
+        else explanation.unknowns.filterNot {
             it.startsWith("This finding") || it.startsWith("Only part") || it.startsWith("The application has not")
-        } else emptyList()
+        }
+        val secondaryUnknowns = rows.filter { it != best && it.decisions.any { d -> d.verdict == Verdict.UNKNOWN } }.map {
+            "The '${it.affectedScope.substringBefore(';')}' restriction is present in the programmed ability, but the search has not fully interpreted it. The contribution above remains identified."
+        }.distinct()
         val objectiveConditions = when (best.branch) {
-            Contribution.DIRECT_DEATH_GENERATOR -> listOf("For this objective, the affected permanent must be a nontoken creature you control and must reach the graveyard. A token or an ordinary noncreature permanent does not meet that condition.")
+            Contribution.DIRECT_DEATH_GENERATOR -> listOf("For this objective, use a nontoken creature you control that reaches the graveyard. A token or noncreature permanent does not advance it.")
             Contribution.REANIMATE_OWN_CREATURE -> listOf("For this objective, the original creature card must come from your graveyard and enter the battlefield under your control. A copy or a return to hand is a different result.")
             Contribution.CREATE_CREATURE_TOKEN -> listOf("For this objective, at least one created token must be a creature under your control when the ability resolves. The actual number still depends on the recorded amount and game state.")
             else -> emptyList()
@@ -180,10 +215,30 @@ fun abilityInspections(
             when {
                 best.verdict == Verdict.NO_MATCH -> explanation.outcome
                 best.branch == Contribution.DEATH_ENHANCED_REMOVAL && narration.triggerDescription != null ->
-                    "${narration.triggerDescription} ${narration.effects.joinToString(" ")} This is a response to the triggering event; it does not establish how that first creature died."
+                    "${narration.triggerDescription} ${narration.effects.joinToString(" ")} This ability benefits from a creature dying; it does not cause the initial death."
+                best.branch == Contribution.DIRECT_DEATH_GENERATOR && best.operation == "SACRIFICE" && best.costOrEffect.endsWith("COST") && best.verdict == Verdict.MATCH ->
+                    if (deathPayoffCommander != null) "Sacrificing a nontoken creature you control to pay this ability's cost can trigger $deathPayoffCommander's death ability."
+                    else "Paying this ability's sacrifice cost with a nontoken creature you control can trigger abilities that care about your creatures dying."
                 else -> explanation.summary
             },
-            narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), uncertainty,
+            narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), (uncertainty + secondaryUnknowns).distinct(),
             evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision), questions.distinct(), entries.map { it.index }, id)
     }.sortedBy { when (it.verdict) { Verdict.MATCH -> 0; Verdict.UNKNOWN -> 1; Verdict.NO_MATCH -> 2 } }
+}
+
+/** A commander connection uses the same single-card native walker; it is not a second objective policy. */
+fun commanderObjectiveConnection(card: CardDefinition, objective: String): String? {
+    if (objective != "own-nontoken-creature-deaths") return null
+    val extracted = PathwayExtractor().extract(listOf(card))
+    val actionIds = extracted.pathways.filter {
+        it.branch == Contribution.DEATH_ENHANCED_REMOVAL &&
+            it.scope.compatible(Requirements(creature = true, controller = Controller.YOU, token = TokenStatus.NONTOKEN)) == Verdict.MATCH
+    }.map { it.actionId }.toSet()
+    return extracted.actions.filter { it.id in actionIds }.mapNotNull { action ->
+        val text = AbilityText(action, emptyList())
+        // Only this fully described trigger supports the broad connection. Other forms need a truthful fallback.
+        if (text.triggerExcerpt != "Whenever a nontoken creature you control dies" || text.gaps.isNotEmpty() ||
+            action.native.obj()?.get("condition") != null) null
+        else "${text.triggerDescription?.removeSuffix(".")}, ${text.effects.joinToString(" ").replace("This source", card.name)} Finding ways to sacrifice or otherwise cause your nontoken creatures to die can trigger this ability."
+    }.distinct().joinToString(" ").takeIf { it.isNotBlank() }
 }
