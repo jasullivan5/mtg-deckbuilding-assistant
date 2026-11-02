@@ -227,7 +227,7 @@ fun abilityInspections(
                 val filter = best.nativeOperation.obj()?.get("filter").obj()
                 val choice = filter.items("cardPredicates").singleOrNull().obj()
                 val creatureOrArtifact = choice.text("type") == "Or" && choice.items("predicates").map { it.obj().text("type") }.toSet() == setOf("IsCreature", "IsArtifact")
-                add(if (sacrificeObject(best) == "Artifact or land") "A nontoken artifact creature you control can pay this cost without animation. A noncreature artifact or land does not cause a creature death."
+                add(if (sacrificeObject(best) == "Artifact or land") "A nontoken artifact creature you control can pay this cost without animation. Sacrificing a noncreature permanent does not cause a creature death."
                     else if (sacrificeObject(best) == "Artifact") "For this objective, use a nontoken artifact creature you control; a noncreature artifact does not cause a creature death."
                     else if (creatureOrArtifact) "Only a nontoken creature choice advances this objective; a noncreature artifact or token does not."
                     else "For this objective, sacrifice a nontoken creature you control.${if (best.circumstances?.mandatory == Verdict.MATCH) " The sacrifice is mandatory when the ability resolves." else ""}")
