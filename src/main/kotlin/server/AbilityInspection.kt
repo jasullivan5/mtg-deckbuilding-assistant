@@ -214,7 +214,7 @@ fun abilityInspections(
             it.startsWith("This finding") || it.startsWith("Only part") || it.startsWith("The application has not")
         }
         val secondaryUnknowns = rows.filter { it != best && it.decisions.any { d -> d.verdict == Verdict.UNKNOWN } }.map {
-            "The '${it.affectedScope.substringBefore(';')}' restriction is present in the programmed ability, but the search has not fully interpreted it. The contribution above remains identified."
+            "Discovery has not fully interpreted the '${it.affectedScope.substringBefore(';')}' restriction."
         }.distinct()
         val objectiveConditions = when (best.branch) {
             Contribution.DIRECT_DEATH_GENERATOR -> listOf("For this objective, use a nontoken creature you control that reaches the graveyard. A token or noncreature permanent does not advance it.")
