@@ -40,7 +40,8 @@ internal fun evidenceFields(item: EvidenceIndicator, record: TranslationEvidence
                 "token-NONTOKEN" -> "Can affect a nontoken creature"
                 else -> null
             } }.distinct()
-            if (accepted.isNotEmpty()) add(EvidenceField("Conditions checked", accepted.joinToString("; ")))
+            if (accepted.isNotEmpty()) add(EvidenceField("Conditions checked", if (accepted.size == 3)
+                "A nontoken creature you control" else accepted.joinToString("; ")))
         }
         val unresolved = results.flatMap { it.decisions }.filter { it.verdict == Verdict.UNKNOWN }.map { when (it.stage) {
             "potential-creature-death" -> "Affected creature type"

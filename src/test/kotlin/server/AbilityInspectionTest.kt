@@ -92,7 +92,7 @@ class AbilityInspectionTest : FunSpec({
         }
         val concernCard = card("Tatterkite")
         concernCard.evidenceSummary.none { it.id == "mechanic" } shouldBe true
-        concernCard.concerns.single().reading.contains("has not retested") shouldBe true
+        concernCard.concerns.single().reading.contains("Open historical problem") shouldBe true
         concernCard.concerns.single().reading.contains("collections") shouldBe false
         concernCard.concerns.single().title.contains("including through collections") shouldBe true
         val acolyte = stored.summary.cards.single { it.card == "Acolyte of Aclazotz" }

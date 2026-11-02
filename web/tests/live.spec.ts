@@ -104,7 +104,7 @@ test('five representative cards retain concise conditions honest evidence and in
     }
     if (name === 'Tatterkite') {
       await expect(detail.locator('.recorded-problem')).toContainText('no counters may be placed on Tatterkite');
-      await expect(detail.locator('.recorded-problem')).toContainText('has not retested');
+      await expect(detail.locator('.recorded-problem')).toContainText('Open historical problem');
     }
     audit[name] = {defaultText: await detail.innerText(), evidence: {}};
     await detail.screenshot({path: `../generated/explorer/hierarchy-${slug}.png`});
