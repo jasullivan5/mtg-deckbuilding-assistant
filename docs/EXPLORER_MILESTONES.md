@@ -1,4 +1,4 @@
-# Commander Discovery Explorer — Milestones and Development Rhythm
+# Card Discovery Explorer — Milestones and Development Rhythm
 
 **Status:** Working product plan; not authorization to implement all milestones  
 **Home:** `mtg-deckbuilding-assistant/docs/EXPLORER_MILESTONES.md`  

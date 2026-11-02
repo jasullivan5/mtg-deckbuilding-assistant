@@ -22,7 +22,7 @@ The existing native actions retain costs, source zones, triggers and effects. Sh
 
 Not implemented or authorized by this record. Ask whether native self-return mechanics can identify distinctive renewable nontoken creature resources without retrieving ordinary bodies or arbitrary constructed synergies. Use Skeleton and Bloodghast as source-bound positive controls, Walking Corpse as ordinary-resource control, and token copies, return-to-hand, one-use/exile costs, opponent-controlled entry and unsupported conditions as adversarial controls.
 
-Correlate the original self card, graveyard source, battlefield entry, controller, optionality, costs, placement and native trigger/activation within the same action using existing facts and constraints. Preserve landfall and mana as prerequisites, not research defects. Establish source expectations and compare actual candidate/pathway changes before selecting admission policy. No new engine, card-name exceptions, Oracle parser, strategic score or generic role classifier is implied.
+Correlate the original self card, graveyard source, battlefield entry, controller, optionality, costs, placement and native trigger/activation within the same action using existing facts and constraints. Preserve landfall and mana as prerequisites, not research defects. Wolfbat’s source-recorded finality counter is a useful control against assuming every return supplies indefinitely reusable fuel. Establish source expectations and compare actual candidate/pathway changes before selecting admission policy. No new engine, card-name exceptions, Oracle parser, strategic score or generic role classifier is implied.
 
 ## Composable investigation
 
