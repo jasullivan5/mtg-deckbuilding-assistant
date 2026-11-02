@@ -53,7 +53,7 @@ class AbilityInspectionTest : FunSpec({
         val ability = card("Agent of Shauku").abilities.single()
         ability.verdict shouldBe Verdict.UNKNOWN
         ability.costs.any { "Sacrifice a land" in it } shouldBe true
-        ability.uncertainties.any { "has not established a land becoming a creature" in it } shouldBe true
+        ability.uncertainties.any { "has not resolved the land/creature type overlap" in it } shouldBe true
         ability.evidence.single { it.id == "mechanic" }.state shouldBe EvidenceState.INCOMPLETE
     }
     test("Acolyte's alternatives and other life effects stay together without upgrading verification") {

@@ -41,7 +41,7 @@ test('commander and objective disclosures work before discovery with precise rev
   await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0), {timeout: 30_000}).toBe(true);
   await expect(panel.getByRole('img', {name: 'Relevant to this objective', exact: true})).toHaveCount(1);
   await expect(panel.getByText('Whenever a nontoken creature you control dies, Judith deals 1 damage to any target.', {exact: true})).toHaveCount(1);
-  await expect(panel.locator('.contribution')).toHaveText('The trigger does not depend on what caused the death.');
+  await expect(panel.locator('.contribution')).toHaveCount(0);
   await expect(panel.getByRole('button', {name: /Discovery/})).toHaveCount(0);
   await panel.getByRole('button', {name: /Rules comparison/}).click();
   const rules = panel.getByRole('region', {name: 'Rules comparison evidence'});
@@ -99,7 +99,7 @@ test('five representative cards retain concise conditions honest evidence and in
     if (name === 'Acolyte of Aclazotz') await expect(detail.locator('.objective-notes')).toContainText('noncreature artifact or token');
     if (name === 'Agent of Shauku') {
       await expect(detail.getByRole('img', {name: 'Relevance unresolved', exact: true})).toHaveCount(1);
-      await expect(detail.locator('.unresolved-note')).toContainText('land would also have to be a nontoken creature');
+      await expect(detail.locator('.unresolved-note')).toContainText('land must also be a nontoken creature');
       await expect(detail.getByRole('button', {name: /Discovery/})).toContainText('Affected creature type unresolved');
     }
     if (name === 'Tatterkite') {
@@ -141,7 +141,8 @@ test('keyboard card selection focuses the compact inspector without a jump link 
 
 test('source investigation distinguishes death sources removal policy and omitted non-removal payoffs', async ({page}) => {
   await page.goto('/'); await page.getByText('About objective', {exact: true}).click();
-  await expect(page.locator('.objective-help')).toContainText('not searched as independent payoffs');
+  await expect(page.locator('.objective-help')).not.toContainText('not searched as independent payoffs');
+  await expect(page.locator('.objective-help li')).toHaveCount(3);
   const completed=page.waitForResponse(r=>r.url().endsWith('/api/v1/discover')&&r.ok());
   await page.getByRole('button',{name:'Find cards',exact:true}).click();const run:Run=await(await completed).json();
   const detail=page.getByRole('region',{name:'Result inspection'});const nav=page.getByRole('navigation',{name:'Finding categories',exact:true});
@@ -163,4 +164,46 @@ test('source investigation distinguishes death sources removal policy and omitte
   await page.getByRole('combobox',{name:'Objective',exact:true}).selectOption('create-creature-tokens');await page.getByRole('button',{name:'Find cards',exact:true}).click();
   await expect(page.getByRole('region',{name:'Completed discovery'})).toBeVisible({timeout:130_000});await page.getByLabel('Card name').fill('Doomed Dissenter');
   await expect(page.getByRole('button',{name:'Doomed Dissenter',exact:true})).toBeVisible();
+});
+
+test('sacrifice type boundaries retain real restrictions and renewable creatures stay within existing coverage', async ({page}) => {
+  await page.goto('/');
+  const completed = page.waitForResponse(r => r.url().endsWith('/api/v1/discover') && r.ok());
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const run: Run = await (await completed).json();
+  const detail = page.getByRole('region', {name: 'Result inspection'});
+  const nav = page.getByRole('navigation', {name: 'Finding categories', exact: true});
+  const observations: Record<string, string> = {};
+  for (const [name, expected] of [
+    ['Viscera Seer', 'Optional activation; repeat only when the source is available'],
+    ['Akki Scrapchomper', 'Artifact or land sacrifice as a cost'],
+    ['Atog', 'Artifact sacrifice as a cost'],
+    ['Claws of Gix', 'Permanent sacrifice as a cost'],
+    ['Agent of Shauku', 'Land sacrifice as a cost'],
+  ]) {
+    await nav.getByRole('button', {name: /All findings/}).click();
+    await page.getByLabel('Card name').fill(name);
+    await expect(detail.getByRole('heading', {name, exact: true})).toBeVisible();
+    await detail.getByRole('button', {name: /Discovery/}).click();
+    await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText(expected);
+    if (name === 'Akki Scrapchomper') {
+      await expect(detail.locator('.objective-notes')).toContainText('without animation');
+      await expect(detail.getByRole('button', {name: /Discovery/})).toContainText('Artifact or land sacrifice cost identified');
+    }
+    if (name === 'Agent of Shauku') await expect(detail.locator('.unresolved-note')).toContainText('inherently or through a type-changing effect');
+    observations[name] = await detail.innerText();
+    await detail.screenshot({path: `../generated/explorer/boundary-${name.toLowerCase().replaceAll(' ', '-')}.png`});
+  }
+  await page.getByText('Search scope, counts, exclusions and source revisions', {exact: true}).click();
+  await expect(page.locator('.provenance')).toContainText('not searched as independent payoffs');
+  await writeFile('../generated/explorer/boundary-report.json', await (await page.request.get(`/api/v1/runs/${run.runId}/report`)).body());
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('reanimate-own-creatures');
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
+  for (const name of ['Reassembling Skeleton', 'Bloodghast']) {
+    await page.getByLabel('Card name').fill(name);
+    await expect(detail.getByRole('heading', {name, exact: true})).toBeVisible();
+    observations[name] = await detail.innerText();
+  }
+  await writeFile('../generated/explorer/boundary-reading.json', JSON.stringify({applicationRevision: run.applicationRevision, engineRevision: run.argentumCommit, observations}, null, 2));
 });

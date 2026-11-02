@@ -18,11 +18,10 @@ export function CommanderPanel({view, revision}: {view: CommanderView; revision?
           </dl>
           <CardRules lines={view.rules} text={view.authoredCard.text}/>
         </>}
-        {view.objectiveConnection && <p className="contribution">{view.objectiveConnection}</p>}
         {view.inspection.blockers.map((b, i) => <p className="warning" key={i}>{b.reason}<br/>{b.nextAction}</p>)}
         <EvidenceInspector indicators={view.evidenceSummary} revision={revision}/>
         <Concerns items={view.concerns}/>
-        <details><summary>Commander technical records</summary><pre>{JSON.stringify({inspection: view.inspection, image: view.image}, null, 2)}</pre></details>
+        <details><summary>Commander technical records</summary><pre>{JSON.stringify({inspection: view.inspection, image: view.image, objectiveConnection: view.objectiveConnection}, null, 2)}</pre></details>
       </div>
     </div>
   </section>;

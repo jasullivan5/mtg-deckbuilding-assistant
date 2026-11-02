@@ -3,13 +3,32 @@ package dev.mtg.assistant.explorer
 import dev.mtg.assistant.discovery.*
 import kotlinx.serialization.json.*
 
+/** Display vocabulary for the represented sacrifice filter; never an admission predicate. */
+internal fun sacrificeObject(row: ResultEvidence): String {
+    val node = row.nativeOperation.obj()
+    if (node.text("type") in setOf("AtomSacrificeSelf", "SacrificeSelf")) return if (row.mechanicalCompatibility == Verdict.MATCH) "Source creature" else "Source permanent"
+    val predicates = (node?.get("filter").obj()?.get("cardPredicates") as? JsonArray).orEmpty()
+    val predicate = predicates.singleOrNull().obj()
+    return when (predicate.text("type")) {
+        "IsCreature" -> "Creature"
+        "IsArtifact" -> "Artifact"
+        "IsLand" -> "Land"
+        "IsPermanent" -> "Permanent"
+        "Or" -> when ((predicate?.get("predicates") as? JsonArray).orEmpty().map { it.obj().text("type") }.toSet()) {
+            setOf("IsArtifact", "IsLand") -> "Artifact or land"
+            setOf("IsCreature", "IsArtifact") -> "Creature or artifact"
+            else -> "Object"
+        }
+        else -> "Object"
+    }
+}
+
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
     val payoff = row.branch == Contribution.DEATH_ENHANCED_REMOVAL
-    val land = (row.nativeOperation.obj()?.get("filter").obj()?.get("cardPredicates") as? JsonArray).orEmpty().any { it.obj().text("type") == "IsLand" }
     val mechanism = when (row.operation) {
-        "SACRIFICE" -> "${if (land) "Land" else if (row.verdict == Verdict.MATCH) "Creature" else "Object"} sacrifice${if (row.costOrEffect.endsWith("COST")) " as a cost" else " as an effect"}"
+        "SACRIFICE" -> "${sacrificeObject(row)} sacrifice${if (row.costOrEffect.endsWith("COST")) " as a cost" else " as an effect"}"
         "DESTROY" -> "Destruction"
         "DAMAGE_POTENTIALLY_LETHAL" -> "${if (payoff) "Death-related " else ""}damage"
         "TOUGHNESS_REDUCTION" -> "${if (payoff) "Death-enhanced " else ""}toughness reduction"
@@ -45,7 +64,11 @@ internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEviden
         else "The recorded object restrictions or objective policy did not qualify this effect."))
         add(EvidenceField("Decision scope", "This effect only; other payoffs may be outside the objective"))
     }
+    if (row.operation == "SACRIFICE" && row.verdict == Verdict.MATCH && sacrificeObject(row) in setOf("Artifact", "Artifact or land"))
+        add(EvidenceField("Creature overlap", "A nontoken artifact creature can pay the cost without a type-changing effect; a noncreature artifact does not cause a creature death."))
     val context = row.circumstances
+    if (row.operation == "SACRIFICE" && row.costOrEffect.endsWith("COST") && context?.actionKind == "ACTIVATED" && row.verdict != Verdict.NO_MATCH)
+        add(EvidenceField("Repeat use", "Optional activation; repeat only when the source is available and costs, timing and limits permit."))
     val trigger = action?.native.obj()?.get("trigger").obj()
     val selfEntry = trigger.text("type") == "ZoneChangeEvent" && trigger.text("to") == "Battlefield" &&
         context?.timingAndConditions.orEmpty().any { "binding=SELF;" in it }

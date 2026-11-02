@@ -245,7 +245,11 @@ class PathwayExtractor {
             val assumptions=extra + listOf("Trigger=${ability.trigger}; binding=${ability.binding}; activeZones=${ability.activeZones}",
                 "InterveningIf=${ability.interveningIf}; restriction=${ability.triggerRestriction}; cap=${ability.perTurnTriggerCap}")
             val trigger=ability.trigger
-            val sourceZone=if(trigger is EventPattern.ZoneChangeEvent && ability.binding == TriggerBinding.SELF) trigger.to else Zone.BATTLEFIELD
+            // A trigger observing another object can itself be active in a non-battlefield zone.
+            // Keep self zone-change triggers bound to their resulting zone; do not infer a
+            // single location for multi-zone abilities in this bounded correction.
+            val sourceZone=if(trigger is EventPattern.ZoneChangeEvent && ability.binding == TriggerBinding.SELF) trigger.to
+                else ability.activeZones.singleOrNull() ?: Zone.BATTLEFIELD
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone)
             if(trigger is EventPattern.ZoneChangeEvent && trigger.from == Zone.BATTLEFIELD && trigger.to == Zone.GRAVEYARD) {
                 var eventScope=ObjectScope(trigger.filter)

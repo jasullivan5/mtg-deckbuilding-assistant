@@ -133,7 +133,6 @@ export function App() {
           </details>
           <details className="objective-help"><summary>About objective</summary>
             <ul>{objectives.find(o => o.id === objective)?.capabilities?.map((item, i) => <li key={i}>{item}</li>)}</ul>
-            {objectives.find(o => o.id === objective)?.coverageNote && <p>{objectives.find(o => o.id === objective)?.coverageNote}</p>}
           </details>
         </div>
         <div aria-live="polite">
