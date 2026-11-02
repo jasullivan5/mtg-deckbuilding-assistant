@@ -23,8 +23,10 @@ class SacrificeBoundaryTest : FunSpec({
         .first { it.verdict != Verdict.NO_MATCH }.evidence.single { it.id == "mechanic" }.fields.associate { it.label to it.value }
 
     test("source snapshots retain exact physical identities hashes and actual native printing bindings") {
-        val manifest = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/sacrifice-boundary-sources.json"))).jsonObject
-        for (entry in manifest.getValue("sources").jsonArray.map { it.jsonObject }) {
+        val sources = listOf("sacrifice-boundary-sources.json", "trigger-zone-sources.json").flatMap { file ->
+            reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/$file"))).jsonObject.getValue("sources").jsonArray.map { it.jsonObject }
+        }
+        for (entry in sources) {
             val bytes = Files.readAllBytes(TestFiles.fixture("cards/${entry.getValue("file").jsonPrimitive.content}"))
             MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) } shouldBe entry.getValue("sha256").jsonPrimitive.content
             val source = reportJson.parseToJsonElement(bytes.toString(Charsets.UTF_8)).jsonObject
@@ -78,6 +80,19 @@ class SacrificeBoundaryTest : FunSpec({
             report.results.none { it.card == name } shouldBe true
             report.facts.any { it.card == name && it.kind == FactKind.MOVE_OBJECT && it.sourceZone == com.wingedsheep.sdk.core.Zone.GRAVEYARD && it.destinationZone == com.wingedsheep.sdk.core.Zone.BATTLEFIELD } shouldBe true
             returns.results.any { it.card == name && it.verdict == Verdict.MATCH } shouldBe true
+        }
+        val sourceRows = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/trigger-zone-sources.json"))).jsonObject.getValue("sources").jsonArray.map { it.jsonObject }
+        val battlefieldReturns = setOf("Bladewing's Thrall", "Bloodfeather Phoenix", "Bloodghast", "Flamewake Phoenix", "Forsaken Miner", "Persistent Marshstalker", "Phoenix Chick", "Warcry Phoenix", "Wolfbat")
+        for (entry in sourceRows) {
+            val name = entry.getValue("name").jsonPrimitive.content
+            val source = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/${entry.getValue("file").jsonPrimitive.content}"))).jsonObject
+            val movement = returns.results.single { it.card == name }
+            movement.verdict shouldBe if (name in battlefieldReturns) Verdict.MATCH else Verdict.NO_MATCH
+            if (name in battlefieldReturns) source.getValue("oracle_text").jsonPrimitive.content.contains("from your graveyard to the battlefield") shouldBe true
+            // Nonmatches concern these recorded movements, not the whole card's other capabilities.
+            if (name == "All Hallow's Eve") movement.nativeOperation.jsonObject.getValue("destination").jsonPrimitive.content shouldBe "Graveyard"
+            else if (name !in battlefieldReturns) movement.nativeOperation.jsonObject.getValue("destination").jsonPrimitive.content shouldBe "Hand"
+            if (name == "Wolfbat") source.getValue("oracle_text").jsonPrimitive.content.contains("finality counter") shouldBe true
         }
         report.actions.any { it.card == "Bloodghast" && "ZoneChangeEvent" in it.native.toString() && "IsLand" in it.native.toString() } shouldBe true
         report.actions.any { it.card == "Reassembling Skeleton" && "activateFromZone" in it.native.toString() } shouldBe true
