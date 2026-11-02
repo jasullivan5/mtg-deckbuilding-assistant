@@ -86,7 +86,7 @@ class SacrificeBoundaryTest : FunSpec({
         for (entry in sourceRows) {
             val name = entry.getValue("name").jsonPrimitive.content
             val source = reportJson.parseToJsonElement(Files.readString(TestFiles.fixture("cards/${entry.getValue("file").jsonPrimitive.content}"))).jsonObject
-            val movement = returns.results.single { it.card == name }
+            val movement = returns.results.single { it.card == name && it.abilityPath == entry.getValue("abilityPath").jsonPrimitive.content }
             movement.verdict shouldBe if (name in battlefieldReturns) Verdict.MATCH else Verdict.NO_MATCH
             if (name in battlefieldReturns) source.getValue("oracle_text").jsonPrimitive.content.contains("from your graveyard to the battlefield") shouldBe true
             // Nonmatches concern these recorded movements, not the whole card's other capabilities.
