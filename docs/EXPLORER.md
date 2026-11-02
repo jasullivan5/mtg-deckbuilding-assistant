@@ -121,7 +121,7 @@ The commander presentation uses the existing native walker on the selected card 
 
 ## Verified implementation and current limits
 
-Fresh local verification on 2026-11-02 used application **ddda1da82f17f426239dc4fafa0db210e279acf4** and clean sibling engine **03869c08665bf476a8b40dacbfbcd501c54a33bd**, mode **app-stable**. Subsequent documentation-only changes are not another test execution.
+Fresh local verification on 2026-11-02 used application **6cc73f2e72bbb3a1d979972e0f9eae9b879062d7** and clean sibling engine **03869c08665bf476a8b40dacbfbcd501c54a33bd**, mode **app-stable**. Subsequent documentation-only changes are not another test execution.
 
 - **501 Kotlin tests / 64 suites**, zero failures/errors/skips. This includes all-objective CLI/API report parity; exact/ambiguous/changed/back-face text-link controls; real Centaur, Judith, Attrition, Acolyte and Agent projections; source identity/hash checks; absent, provisional, historical, stale, failed and independent-evidence controls; image/API boundaries and original scenario regressions.
 - Locked frontend installation and TypeScript/Vite build passed, followed by **8 synthetic interface tests** and **4 real Chrome browser tests**. Live exercises cover both pre-search disclosures, reviewer/source fields, complete imagery, the five requested examples, Tatterkite's open historical concern, all existing objectives, changed/blocked commanders, keyboard focus without a visible jump link, and 390px containment. Desktop/mobile screenshots were read and inspected; exhaustive accessibility and other platforms are not claimed tested.
