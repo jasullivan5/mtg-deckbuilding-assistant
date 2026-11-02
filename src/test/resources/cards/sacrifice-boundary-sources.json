@@ -1,0 +1,115 @@
+{
+  "scope": "Bounded source comparison for sacrifice type overlap and renewable creature resources; not registered rules approval or gameplay execution.",
+  "sources": [
+    {
+      "name": "Akki Scrapchomper",
+      "file": "akki-scrapchomper-source.json",
+      "printingId": "b0e02737-0193-46e4-a506-cec86a44dc99",
+      "oracleId": "baea7cc5-15ec-4229-ad8b-d4b34c2e21e8",
+      "url": "https://api.scryfall.com/cards/b0e02737-0193-46e4-a506-cec86a44dc99",
+      "sha256": "a5ef14135f24a9b9d6f52ae9cbea4ff649707f9595626283108167709c8826a8",
+      "retrievedAt": "2026-11-02T21:56:38.006496+00:00",
+      "nativeSource": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/AkkiScrapchomper.kt"
+    },
+    {
+      "name": "Viscera Seer",
+      "file": "viscera-seer-source.json",
+      "printingId": "6179f847-e334-4f7f-9a4e-0013942a394f",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "url": "https://api.scryfall.com/cards/6179f847-e334-4f7f-9a4e-0013942a394f",
+      "sha256": "5840b4b6a3bf4a5248aaa37eb350dcb17f772356d94ec9e64aa18439cdac3d87",
+      "retrievedAt": "2026-11-02T21:56:39.399092+00:00",
+      "nativeSource": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt"
+    },
+    {
+      "name": "Reassembling Skeleton",
+      "file": "reassembling-skeleton-source.json",
+      "printingId": "655f983e-3b23-48ee-89d5-d01d469d5a6f",
+      "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "url": "https://api.scryfall.com/cards/655f983e-3b23-48ee-89d5-d01d469d5a6f",
+      "sha256": "7f721233f390d7edca66ebafe0392f1e0d2f50a07686b4e8dfc7e2ca48e90a75",
+      "retrievedAt": "2026-11-02T21:56:41.191425+00:00",
+      "nativeSource": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arc/cards/ReassemblingSkeleton.kt"
+    },
+    {
+      "name": "Bloodghast",
+      "file": "bloodghast-source.json",
+      "printingId": "63870c81-63bf-4a9a-aeb5-74c6eaded9f1",
+      "oracleId": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+      "url": "https://api.scryfall.com/cards/63870c81-63bf-4a9a-aeb5-74c6eaded9f1",
+      "sha256": "681b3c6797f243574566d2e8033a92c11f719d088c4f08a8cf5bb482ff0052d1",
+      "retrievedAt": "2026-11-02T21:56:42.226738+00:00",
+      "nativeSource": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/Bloodghast.kt"
+    },
+    {
+      "name": "Atog",
+      "file": "atog-source.json",
+      "printingId": "2249fc40-4412-48fd-800a-7ea3678aee3f",
+      "oracleId": "3095f2cf-05c3-4381-929f-c526b6fc30a7",
+      "url": "https://api.scryfall.com/cards/2249fc40-4412-48fd-800a-7ea3678aee3f",
+      "sha256": "248fc16c16041918fb8276b99dba8bca8000102789f07f12bc7fe2d4894ed791",
+      "retrievedAt": "2026-11-02T21:56:43.055960+00:00",
+      "nativeSource": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/Atog.kt"
+    },
+    {
+      "name": "Claws of Gix",
+      "file": "claws-of-gix-source.json",
+      "printingId": "78372366-8c4c-46ac-bd7c-a735c2b24b5d",
+      "oracleId": "c4d384d7-f294-4b2d-9971-a4689c150255",
+      "url": "https://api.scryfall.com/cards/78372366-8c4c-46ac-bd7c-a735c2b24b5d",
+      "sha256": "d44222b955c2c5ea96dec474a515e5e54e78ee0eccf4d9d10887cbec6fa6cfbd",
+      "retrievedAt": "2026-11-02T21:56:44.303483+00:00",
+      "nativeSource": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/ClawsOfGix.kt"
+    },
+    {
+      "name": "Walking Corpse",
+      "file": "walking-corpse-source.json",
+      "printingId": "8e033384-3334-4082-9541-f2443d3bc424",
+      "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+      "url": "https://api.scryfall.com/cards/8e033384-3334-4082-9541-f2443d3bc424",
+      "sha256": "cf8257ba6a8d42877be62ec1a675e3a63505ce4898034ddb2d0435083fb52bfe",
+      "retrievedAt": "2026-11-02T21:56:45.501107+00:00",
+      "nativeSource": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/WalkingCorpse.kt"
+    },
+    {
+      "name": "Ornithopter",
+      "file": "ornithopter-source.json",
+      "printingId": "59cc9bdb-7cf2-4795-bac7-ffff605c9eb0",
+      "oracleId": "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
+      "url": "https://api.scryfall.com/cards/59cc9bdb-7cf2-4795-bac7-ffff605c9eb0",
+      "sha256": "b58db845d84336a80d96e02895f2d3a58b50ff6f2783500854c4ab3eabf76764",
+      "retrievedAt": "2026-11-02T21:56:47.206039+00:00",
+      "nativeSource": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/Ornithopter.kt"
+    },
+    {
+      "name": "Dryad Arbor",
+      "file": "dryad-arbor-source.json",
+      "printingId": "8cee476d-42e1-4997-87af-73e18f542167",
+      "oracleId": "e996cd67-739c-40f4-b276-0042acf26c71",
+      "url": "https://api.scryfall.com/cards/8cee476d-42e1-4997-87af-73e18f542167",
+      "sha256": "edb6d84ad473fe269a3ff38264c32542ebde5b9445bc0b82439a5ff5a211d215",
+      "retrievedAt": "2026-11-02T21:56:48.951267+00:00",
+      "nativeSource": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fut/cards/DryadArbor.kt"
+    },
+    {
+      "name": "Mogg Fanatic",
+      "file": "mogg-fanatic-source.json",
+      "printingId": "ca2ecfd4-c874-4468-8601-87aa110d5a00",
+      "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "url": "https://api.scryfall.com/cards/ca2ecfd4-c874-4468-8601-87aa110d5a00",
+      "sha256": "1e29821b5c1f4b2fb6969d9a7796a8c4758e1baf0c0763a02a2e454aa14917a0",
+      "retrievedAt": "2026-11-02T21:56:50.039869+00:00",
+      "nativeSource": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/MoggFanatic.kt"
+    },
+    {
+      "name": "Blood Bairn",
+      "file": "blood-bairn-source.json",
+      "printingId": "a3fcbbd1-ee51-42a3-ad11-2fd41728c35d",
+      "oracleId": "33bea2f0-c5aa-44b5-8714-5f50f7f2bb05",
+      "url": "https://api.scryfall.com/cards/a3fcbbd1-ee51-42a3-ad11-2fd41728c35d",
+      "sha256": "a7aeb46b81542b291931455125906559e735d631e1f5f3a02ff91461f33f4e5b",
+      "retrievedAt": "2026-11-02T21:56:51.280824+00:00",
+      "nativeSource": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BloodBairn.kt"
+    }
+  ]
+}

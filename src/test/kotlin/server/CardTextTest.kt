@@ -40,7 +40,7 @@ class CardTextTest : FunSpec({
         acolyte.abilities.single().objectiveNotes.single().contains("noncreature artifact or token") shouldBe true
         val agent = card("Agent of Shauku")
         agent.rules.single().relevance shouldBe Verdict.UNKNOWN
-        agent.abilities.single().unresolvedNotes.single().contains("land would also have to be a nontoken creature") shouldBe true
+        agent.abilities.single().unresolvedNotes.single().contains("land must also be a nontoken creature") shouldBe true
     }
     test("ambiguous duplicated or changed text never receives an invented precise association") {
         val evidence = card("Attrition")

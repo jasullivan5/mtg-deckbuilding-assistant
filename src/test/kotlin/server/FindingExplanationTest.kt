@@ -36,7 +36,7 @@ class FindingExplanationTest : FunSpec({
         result.verdict shouldBe Verdict.UNKNOWN
         result.nativeOperation.jsonObject["filter"]!!.jsonObject["cardPredicates"]!!.jsonArray.single().jsonObject["type"]!!.jsonPrimitive.content shouldBe "IsLand"
         explanation(result.card).summary.contains("a land as a cost") shouldBe true
-        explanation(result.card).unknowns.any { "has not established a land becoming a creature" in it } shouldBe true
+        explanation(result.card).unknowns.any { "has not resolved that overlap" in it } shouldBe true
         explanation(result.card).requirements.any { "{1}{B}" in it } shouldBe true
     }
     test("creature-or-artifact sacrifice retains the choice and excludes its source") {

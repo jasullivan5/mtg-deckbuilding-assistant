@@ -127,7 +127,7 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
     if (result.verdict == Verdict.UNKNOWN) {
         unknowns += "The application has not established that this ability meets the objective."
         if (isSacrifice && (filter?.get("cardPredicates") as? JsonArray).orEmpty().any { it.obj().text("type") == "IsLand" })
-            unknowns += "An ordinary land is not a creature. A land would also need to be a nontoken creature you control when sacrificed. This run has not established a land becoming a creature or verified that interaction."
+            unknowns += "An ordinary land is not a creature. The sacrificed land must also be a nontoken creature you control, inherently or through a type-changing effect. Discovery has not resolved that overlap."
         unknowns += result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { decision ->
             when (decision.stage) {
                 "potential-creature-death" -> "Whether the affected object can be a creature under the recorded restrictions remains unresolved."

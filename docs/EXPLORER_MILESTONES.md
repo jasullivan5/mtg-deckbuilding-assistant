@@ -1,4 +1,4 @@
-# Commander Discovery Explorer — Milestones and Development Rhythm
+# Card Discovery Explorer — Milestones and Development Rhythm
 
 **Status:** Working product plan; not authorization to implement all milestones  
 **Home:** `mtg-deckbuilding-assistant/docs/EXPLORER_MILESTONES.md`  
@@ -32,9 +32,9 @@ The order below reflects learning dependencies, **not** a promise of dates, fina
 
 **Decision point after M3:** Try the Explorer and decide whether scenario inspection is the most useful next research experience. M4 is a candidate, not an automatic phase. The UI should ultimately support deeper strategic questions—dependencies, substitutes and contextual deck value—but those need independent research and authorization rather than being smuggled into these milestones.
 
-### M1 delivery awaiting Prototype Lab
+### M1 implementation candidate awaiting final Prototype Lab review
 
-The current Explorer delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [the Explorer guide](EXPLORER.md). Verification remains separate from user acceptance. No M2 or later milestone has begun.
+The current Explorer delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [the Explorer guide](EXPLORER.md). Verification remains separate from user acceptance. No M2 or later milestone has begun. The bounded finalization investigates sacrifice-type boundaries and records the adopted [resource-aware, composable objective direction](OBJECTIVE_MODEL.md). That future direction is not new discovery coverage or M1 acceptance.
 
 ## 3. How increments are proposed, built and accepted
 

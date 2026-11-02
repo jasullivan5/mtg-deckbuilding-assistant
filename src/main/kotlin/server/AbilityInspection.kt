@@ -208,7 +208,7 @@ fun abilityInspections(
         val landSacrifice = best.operation == "SACRIFICE" && best.nativeOperation.obj()?.get("filter").obj()
             .items("cardPredicates").any { it.obj().text("type") == "IsLand" }
         val uncertainty = if (best.verdict != Verdict.UNKNOWN) emptyList() else if (landSacrifice)
-            listOf("The search has not established a land becoming a creature you control when sacrificed.") +
+            listOf("Discovery has not resolved the land/creature type overlap.") +
                 explanation.unknowns.filter { it.startsWith("An additional requirement") }
         else explanation.unknowns.filterNot {
             it.startsWith("This finding") || it.startsWith("Only part") || it.startsWith("The application has not")
@@ -227,7 +227,9 @@ fun abilityInspections(
                 val filter = best.nativeOperation.obj()?.get("filter").obj()
                 val choice = filter.items("cardPredicates").singleOrNull().obj()
                 val creatureOrArtifact = choice.text("type") == "Or" && choice.items("predicates").map { it.obj().text("type") }.toSet() == setOf("IsCreature", "IsArtifact")
-                add(if (creatureOrArtifact) "Only a nontoken creature choice advances this objective; a noncreature artifact or token does not."
+                add(if (sacrificeObject(best) == "Artifact or land") "A nontoken artifact creature you control can pay this cost without animation. Sacrificing a noncreature permanent does not cause a creature death."
+                    else if (sacrificeObject(best) == "Artifact") "For this objective, use a nontoken artifact creature you control; a noncreature artifact does not cause a creature death."
+                    else if (creatureOrArtifact) "Only a nontoken creature choice advances this objective; a noncreature artifact or token does not."
                     else "For this objective, sacrifice a nontoken creature you control.${if (best.circumstances?.mandatory == Verdict.MATCH) " The sacrifice is mandatory when the ability resolves." else ""}")
             } else if (best.verdict == Verdict.MATCH && best.branch == Contribution.DIRECT_DEATH_GENERATOR)
                 add(if (best.operation == "DAMAGE_POTENTIALLY_LETHAL") "The damage must be lethal to a nontoken creature you control."
@@ -235,7 +237,7 @@ fun abilityInspections(
             addAll(narration.conditions.filter { "even if you only want to sacrifice" in it })
         }
         val unresolvedNotes = if (landSacrifice && best.verdict == Verdict.UNKNOWN)
-            listOf("The sacrificed land would also have to be a nontoken creature you control; this search has not established that interaction.")
+            listOf("A sacrificed land must also be a nontoken creature you control, either inherently or through a type-changing effect. Discovery has not resolved that overlap.")
         else uncertainty + secondaryUnknowns.map { it.substringBefore(" The contribution above") }
         AbilityInspection(id, title, best.face.takeUnless { it == "front" }, best.verdict,
             when {

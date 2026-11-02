@@ -63,7 +63,7 @@ internal fun evidenceFields(item: EvidenceIndicator, record: TranslationEvidence
 internal fun discoveryStatus(results: List<ResultEvidence>): String {
     val match = results.firstOrNull { it.verdict == Verdict.MATCH }
     if (match != null) return when (match.operation) {
-        "SACRIFICE" -> if (match.costOrEffect.endsWith("COST")) "Creature sacrifice cost identified" else "Creature sacrifice effect identified"
+        "SACRIFICE" -> if (match.costOrEffect.endsWith("COST")) "${sacrificeObject(match)} sacrifice cost identified" else "${sacrificeObject(match)} sacrifice effect identified"
         "DESTROY" -> "Destruction identified"
         "DAMAGE_POTENTIALLY_LETHAL" -> "Death-related damage identified"
         else -> "${mechanic(match)} identified"

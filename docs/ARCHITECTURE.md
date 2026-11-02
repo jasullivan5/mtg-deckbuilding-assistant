@@ -27,6 +27,8 @@ The Windows launcher installs locked frontend dependencies, builds both layers a
 
 The frontend presents native extraction and application decisions. Accounts, multiplayer, deck editing, databases, desktop packaging, hosted infrastructure, new objectives and replacement rules execution remain outside M1. Selective reuse of Argentum client assets still requires coupling, provenance and licensing review. [Presentation safeguards](../AGENTS.md#visualization-fidelity) apply to future increments.
 
+The adopted [objective direction v1](OBJECTIVE_MODEL.md) allows distinctive resource contributions as well as events and capabilities. Current query coverage remains narrower; this decision does not implement roles, resource discovery or objective composition.
+
 ## Application pipeline
 
 Native definitions → effective Commander eligibility → shared native action/branch extraction → reusable facts/constraints → objective queries and policies → evidence/reporting and research diagnostics.
