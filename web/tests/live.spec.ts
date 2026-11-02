@@ -188,6 +188,7 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
     await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText(expected);
     if (name === 'Akki Scrapchomper') {
       await expect(detail.locator('.objective-notes')).toContainText('without animation');
+      await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText('Artifact-creature choice; land/creature overlap remains unresolved');
       await expect(detail.getByRole('button', {name: /Discovery/})).toContainText('Artifact or land sacrifice cost identified');
     }
     if (name === 'Agent of Shauku') await expect(detail.locator('.unresolved-note')).toContainText('inherently or through a type-changing effect');

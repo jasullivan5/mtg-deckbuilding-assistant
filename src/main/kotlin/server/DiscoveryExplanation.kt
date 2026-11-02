@@ -64,8 +64,8 @@ internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEviden
         else "The recorded object restrictions or objective policy did not qualify this effect."))
         add(EvidenceField("Decision scope", "This effect only; other payoffs may be outside the objective"))
     }
-    if (row.operation == "SACRIFICE" && row.verdict == Verdict.MATCH && sacrificeObject(row) in setOf("Artifact", "Artifact or land"))
-        add(EvidenceField("Creature overlap", "A nontoken artifact creature can pay the cost without a type-changing effect; a noncreature artifact does not cause a creature death."))
+    if (row.operation == "SACRIFICE" && row.verdict == Verdict.MATCH && sacrificeObject(row) == "Artifact or land")
+        add(EvidenceField("Accepted route", "Artifact-creature choice; land/creature overlap remains unresolved"))
     val context = row.circumstances
     if (row.operation == "SACRIFICE" && row.costOrEffect.endsWith("COST") && context?.actionKind == "ACTIVATED" && row.verdict != Verdict.NO_MATCH)
         add(EvidenceField("Repeat use", "Optional activation; repeat only when the source is available and costs, timing and limits permit."))

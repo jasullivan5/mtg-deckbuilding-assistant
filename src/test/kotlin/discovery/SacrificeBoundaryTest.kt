@@ -47,7 +47,7 @@ class SacrificeBoundaryTest : FunSpec({
         row("Agent of Shauku").policyAcceptance shouldBe Verdict.MATCH
         row("Agent of Shauku").verdict shouldBe Verdict.UNKNOWN
         fields("Akki Scrapchomper").getValue("Mechanic found") shouldBe "Artifact or land sacrifice as a cost"
-        fields("Akki Scrapchomper").getValue("Creature overlap").contains("without a type-changing effect") shouldBe true
+        fields("Akki Scrapchomper").getValue("Accepted route").contains("land/creature overlap remains unresolved") shouldBe true
         fields("Atog").getValue("Mechanic found") shouldBe "Artifact sacrifice as a cost"
         fields("Claws of Gix").getValue("Mechanic found") shouldBe "Permanent sacrifice as a cost"
         fields("Agent of Shauku").containsKey("Why it qualifies") shouldBe false
