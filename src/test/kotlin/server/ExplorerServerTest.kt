@@ -105,7 +105,8 @@ class ExplorerServerTest : FunSpec({
             view.headline shouldBe "Black and red"
             view.image!!.status shouldBe "VERIFIED"
             view.image!!.card shouldBe "Judith, the Scourge Diva"
-            view.objectiveConnection!!.contains("sacrifice or otherwise") shouldBe true
+            view.objectiveConnection!!.contains("Sacrificing") shouldBe true
+            view.rules.count { it.relevance == Verdict.MATCH } shouldBe 1
             view.authoredCard!!.text.contains("nontoken creature you control dies") shouldBe true
             view.evidenceSummary.none { it.id == "mechanic" } shouldBe true
             val other = reportJson.decodeFromString<CommanderView>(post(server, "commander-view", "Judith, the Scourge Diva", "create-creature-tokens").body())

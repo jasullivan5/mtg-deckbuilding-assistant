@@ -66,7 +66,14 @@ val recordEngineBuild by tasks.registering {
     }
 }
 sourceSets.main { resources.srcDir(generatedEngineResources) }
-tasks.processResources { dependsOn(recordEngineBuild) }
+tasks.processResources {
+    dependsOn(recordEngineBuild)
+    // Existing review sources travel with installed builds; presentation checks their recorded hashes.
+    from("src/test/resources") {
+        include("cards/*-source.json", "cards/*-rulings.json")
+        into("retained-evidence")
+    }
+}
 tasks.jar { doFirst { verifyEngineUnchanged() } }
 
 // Stock Windows SET assignments break when the checkout path contains '&'.

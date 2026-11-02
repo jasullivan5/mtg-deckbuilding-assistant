@@ -16,7 +16,7 @@ import kotlinx.serialization.Serializable
     val recordedEngine: String? = null, val currentEngine: String = EngineBuild.revision,
     val historical: Boolean = false,
     /** Brief player-facing claim; exact scope/bindings above remain available to investigators. */
-    val reading: String = ""
+    val reading: String = "", val fields: List<EvidenceField> = emptyList()
 )
 @Serializable data class ResearchConcern(
     val title: String, val detail: String, val nextStep: String,
@@ -172,14 +172,18 @@ fun evidenceIndicators(
                 else -> "No separate independent verification is recorded for this card. This is not a finding that the mechanic is wrong, and does not prevent it from appearing in discovery."
             }
         }
-        item.copy(label = when (item.id) {
-            "mechanic" -> "Relevant mechanic"; "source" -> "Rules comparison"; "execution" -> "Engine tests"; else -> "Independent review"
+        val presented = item.copy(label = when (item.id) {
+            "mechanic" -> "Discovery"; "source" -> "Rules comparison"; "execution" -> "Engine tests"; else -> "Independent verification"
         }, status = when {
-            item.id == "source" && item.state == EvidenceState.ESTABLISHED -> "Compared by implementer"
+            item.id == "mechanic" -> discoveryStatus(results)
+            item.id == "source" && item.state == EvidenceState.ESTABLISHED -> "Comparison recorded"
+            item.id == "source" && item.state == EvidenceState.NOT_RECORDED -> "No review recorded"
+            item.id == "execution" && item.state == EvidenceState.NOT_RECORDED -> "No test results recorded"
             item.id == "execution" && item.state == EvidenceState.ESTABLISHED -> if (historical) "Earlier tests passed" else "Recorded tests passed"
             item.id == "independent" && item.state == EvidenceState.NOT_RECORDED -> "Not recorded"
             else -> item.status
         }, reading = reading)
+        presented.copy(fields = evidenceFields(presented, record, results))
     }
 }
 
@@ -189,4 +193,4 @@ fun materialConcerns(assurance: TranslationAssurance?): List<ResearchConcern> = 
         "Review the retained reproduction at its recorded engine version. Closing this concern requires reviewed, revision-bound resolution evidence; the original suggested action remains in the detailed record.",
         if (concern.state == ConcernState.CONFIRMED) EvidenceState.KNOWN_PROBLEM else EvidenceState.INCOMPLETE,
         "Card-level concern recorded on ${assurance!!.evidence!!.argentumCommit}; it is not automatically assigned to this ability or a fresh failure on this build.",
-        "${if (concern.state == ConcernState.CONFIRMED) "A confirmed problem was recorded" else "An unresolved question was recorded"} about this rule: ${concern.claim.substringAfter(": ", concern.claim).substringBefore(", including ")}. The concern remains open in the record; this view has not retested it on the current engine or assigned it to the selected ability.") }
+        "Open ${if (!assurance.evidenceCurrent || assurance.evidence.argentumCommit != EngineBuild.revision) "historical " else "recorded "}${if (concern.state == ConcernState.CONFIRMED) "problem" else "question"}: ${concern.claim.substringAfter(": ", concern.claim).substringBefore(", including ")}.") }

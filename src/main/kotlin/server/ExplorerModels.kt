@@ -8,11 +8,12 @@ import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.util.UUID
 
-@Serializable data class Objective(val id: String, val label: String, val explanation: String)
+@Serializable data class Objective(val id: String, val label: String, val explanation: String, val capabilities: List<String> = emptyList())
 val objectives = listOf(
-    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Find ways for your nontoken creatures to die, and cards that benefit when they do. The current search recognizes sacrifice, some other ways to cause deaths, and some death-triggered or death-enhanced effects; it does not cover every payoff."),
-    Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield."),
-    Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.")
+    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Find ways for your nontoken creatures to die, and cards that benefit when they do. The current search recognizes sacrifice, some other ways to cause deaths, and some death-triggered or death-enhanced effects; it does not cover every payoff.",
+        listOf("Sacrificing your creatures, as a cost or a mandatory effect.", "Other recognized ways to cause your nontoken creatures to die.", "Recognized removal effects triggered, enabled or improved by creature deaths.")),
+    Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield.", listOf("Return original creature cards from your graveyard to your battlefield.")),
+    Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token."))
 )
 @Serializable data class ResearchRequest(val commander: String, val objective: String? = null)
 @Serializable data class ApiError(val code: String, val message: String, val inspection: CommanderInspection? = null)
@@ -37,12 +38,12 @@ val objectives = listOf(
     val structuralSupport: List<StructuralSupport>, val eligibility: List<EligibilityEvidence>,
     val translationAssurance: List<TranslationAssurance>, val explanations: List<PathwayExplanation>,
     val abilities: List<AbilityInspection> = emptyList(), val evidenceSummary: List<EvidenceIndicator> = emptyList(),
-    val concerns: List<ResearchConcern> = emptyList()
+    val concerns: List<ResearchConcern> = emptyList(), val rules: List<RulesLine> = emptyList()
 )
 @Serializable data class CommanderView(
     val inspection: CommanderInspection, val authoredCard: AuthoredCardText?, val headline: String,
     val evidenceSummary: List<EvidenceIndicator>, val concerns: List<ResearchConcern>,
-    val objectiveConnection: String? = null, val image: CardImage? = null
+    val objectiveConnection: String? = null, val image: CardImage? = null, val rules: List<RulesLine> = emptyList()
 )
 fun commanderView(catalog: Catalog, name: String, inspection: CommanderInspection, objective: String = objectives.first().id,
                   image: CardImage? = null): CommanderView {
@@ -55,7 +56,8 @@ fun commanderView(catalog: Catalog, name: String, inspection: CommanderInspectio
         evidenceIndicators(emptyList(), inspection.translationAssurance, inspection.scenarioReferences, "Commander card record")
             .filterNot { it.id == "mechanic" },
         materialConcerns(inspection.translationAssurance),
-        card?.takeIf { inspection.selectable }?.let { commanderObjectiveConnection(it, objective) }, image)
+        card?.takeIf { inspection.selectable }?.let { commanderObjectiveConnection(it, objective) }, image,
+        card?.let { commanderRulesLines(it, objective) }.orEmpty())
 }
 @Serializable data class LiveDiscovery(
     val schemaVersion: Int = 1, val execution: String = "FRESH_STRUCTURAL_DISCOVERY",
@@ -109,11 +111,13 @@ class StoredRun(
         val native = catalog.card(name)
         val scenarios = catalog.definitionReview(name).scenarioReferences
         val review = catalog.translationAssurance(name)
+        val abilities = abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios, deathPayoffCommander = deathPayoffCommander)
         return CardEvidence(id, name, native?.let { AuthoredCardText(it.manaCost.toString(), it.typeLine.toString(), it.oracleText) },
             results[name].orEmpty(), actions[name].orEmpty(), facts[name].orEmpty(), unsupported[name].orEmpty(),
             support[name].orEmpty(), eligibility[name].orEmpty(), assurance[name].orEmpty(), results[name].orEmpty().map { result -> explain(result, actions[name].orEmpty().firstOrNull { it.id == result.actionId }) },
-            abilityInspections(results[name].orEmpty(), actions[name].orEmpty(), unsupported[name].orEmpty(), review, scenarios, deathPayoffCommander = deathPayoffCommander),
+            abilities,
             evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings")
-                .filterNot { it.id == "mechanic" && results[name].isNullOrEmpty() }, materialConcerns(review))
+                .filterNot { it.id == "mechanic" && results[name].isNullOrEmpty() }, materialConcerns(review),
+            rulesLines(name, native?.oracleText.orEmpty(), abilities))
     }
 }

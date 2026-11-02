@@ -8,6 +8,12 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
   const [selected, setSelected] = useState<string | null>(null);
   const id = useId();
   const current = indicators.find(s => s.id === selected);
+  const help: Record<string, string> = {
+    mechanic: 'Checks how a mechanic can contribute to the chosen objective.',
+    source: 'Records comparisons between programmed card behavior and retained Magic rules sources.',
+    execution: 'Records outcomes from engine test scenarios.',
+    independent: 'Records a separate review of the interpretation and its supporting evidence.',
+  };
   const sourceLink = (path: string) => {
     if (path.startsWith('https://github.com/') || path.startsWith('https://scryfall.com/')) return path;
     if (revision && /^(src\/main\/|src\/test\/)/.test(path) && !path.split('/').includes('..'))
@@ -17,6 +23,7 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
   return <div className="evidence-inspector">
     <div className="evidence-buttons" role="group" aria-label="Evidence and verification">
       {indicators.map(item => <button key={item.id} type="button" aria-expanded={selected === item.id}
+        title={help[item.id]} aria-description={help[item.id]}
         aria-controls={`${id}-panel`} className={`evidence-button ${item.state} ${item.historical ? 'historical' : ''}`}
         onClick={() => setSelected(selected === item.id ? null : item.id)}>
         <span><span aria-hidden="true">{item.state === 'ESTABLISHED' ? item.historical ? '◷ ' : '✓ ' : item.state === 'KNOWN_PROBLEM' ? '! ' : '· '}</span>{item.label}</span>
@@ -24,8 +31,11 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
       </button>)}
     </div>
     {current && <section id={`${id}-panel`} aria-label={`${current.label} evidence`} className="evidence-panel">
-      <h4>{current.label}: {current.status}</h4>
-      <p>{current.reading || current.explanation}</p>
+      <h4>{current.label}</h4>
+      {!!current.fields?.length && <dl className="evidence-fields">{current.fields.map((field, i) => {
+        const url = field.reference && sourceLink(field.reference.path);
+        return <div key={i}><dt>{field.label}</dt><dd>{url ? <a href={url} target="_blank" rel="noreferrer">{field.value}</a> : field.value}</dd></div>;
+      })}</dl>}
       <details className="technical-evidence"><summary>Technical evidence and recorded interactions</summary>
       <p className="evidence-scope">{current.scope}</p>
       <p>{current.explanation}</p>

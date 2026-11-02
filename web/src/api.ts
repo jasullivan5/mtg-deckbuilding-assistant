@@ -4,7 +4,7 @@ export type Inspection = {
   blockers: {code: string; reason: string; nextAction: string}[]; knownLimitations: string[];
   mechanicalCaveat: string; constructionScope: string; argentumCommit: string;
 };
-export type Objective = {id: string; label: string; explanation: string};
+export type Objective = {id: string; label: string; explanation: string; capabilities: string[]};
 export type Finding = {
   index: number; card: string; pathways: Record<string, number>; branches: string[];
   unsupportedRecords: number; partialPathways: number; reason: string | null; mechanics: string[];
@@ -28,6 +28,7 @@ export type Evidence = {
   results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string; actionId: string; path: string; nativeType: string}[];
   structuralSupport: RecordData[]; eligibility: RecordData[]; translationAssurance: RecordData[];
   explanations: Explanation[]; abilities: AbilityInspection[]; evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
+  rules: RulesLine[];
 };
 export type EvidenceState = 'ESTABLISHED' | 'NOT_RECORDED' | 'INCOMPLETE' | 'KNOWN_PROBLEM' | 'OUTDATED';
 export type EvidenceIndicator = {
@@ -36,17 +37,21 @@ export type EvidenceIndicator = {
   references: {label: string; path: string; sha256: string | null}[];
   recordedEngine: string | null; currentEngine: string; historical: boolean;
   reading: string;
+  fields: {label: string; value: string; reference?: {label: string; path: string; sha256: string | null} | null}[];
 };
 export type ResearchConcern = {title: string; detail: string; nextStep: string; state: EvidenceState; scope: string; reading?: string};
 export type AbilityInspection = {
   id: string; title: string; face: string | null; verdict: string; contribution: string;
   costs: string[]; effects: string[]; conditions: string[]; tradeoffs: string[]; uncertainties: string[];
   evidence: EvidenceIndicator[]; questions: ResearchConcern[]; resultIndexes: number[]; actionId: string;
+  objectiveNotes: string[]; unresolvedNotes: string[];
 };
+export type RulesLine = {text: string; actionId: string | null; relevance: string | null};
 export type CommanderView = {
   inspection: Inspection; authoredCard: Evidence['authoredCard']; headline: string;
   evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
   objectiveConnection: string | null; image: CardImage | null;
+  rules: RulesLine[];
 };
 export type CardImage = {
   index: number; card: string; status: string; reason: string; printingId: string | null;
