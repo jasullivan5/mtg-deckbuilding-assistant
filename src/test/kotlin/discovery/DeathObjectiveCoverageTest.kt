@@ -27,6 +27,8 @@ class DeathObjectiveCoverageTest : FunSpec({
             json.getValue("id") shouldBe entry.getValue("printingId")
             json.getValue("oracle_id") shouldBe entry.getValue("oracleId")
             json.getValue("name") shouldBe entry.getValue("name")
+            val native = catalog.card(entry.getValue("name").jsonPrimitive.content)!!
+            native.metadata.imageUri!!.contains(entry.getValue("printingId").jsonPrimitive.content) shouldBe true
         }
     }
     test("Centaur causes a conditional death while Judith responds to the preceding death") {
