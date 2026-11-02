@@ -12,7 +12,9 @@ import kotlinx.serialization.json.*
     val contribution: String, val costs: List<String>, val effects: List<String>,
     val conditions: List<String>, val tradeoffs: List<String>, val uncertainties: List<String>,
     val evidence: List<EvidenceIndicator>, val questions: List<ResearchConcern>,
-    val resultIndexes: List<Int>, val actionId: String
+    val resultIndexes: List<Int>, val actionId: String,
+    val objectiveNotes: List<String> = emptyList(), val unresolvedNotes: List<String> = emptyList(),
+    val textCandidates: List<String> = emptyList()
 )
 
 private fun JsonObject?.items(key: String) = (this?.get(key) as? JsonArray).orEmpty()
@@ -35,6 +37,15 @@ private class AbilityText(private val action: ActionEvidence?, private val rows:
     private val costExcerpt = mutableListOf<String>()
     var triggerExcerpt: String? = null
         private set
+    fun textCandidates(): List<String> {
+        if (gaps.isNotEmpty() || native?.get("condition") != null) return listOfNotNull(native.text("descriptionOverride"))
+        val effect = effects.joinToString(" ")
+        return listOfNotNull(native.text("descriptionOverride"), when {
+            triggerExcerpt != null -> "$triggerExcerpt, $effect"
+            costExcerpt.isNotEmpty() -> "${costExcerpt.joinToString(", ")}: $effect"
+            else -> effect.takeIf { it.isNotBlank() }
+        })
+    }
     fun title(fallback: String): String {
         val effect = effects.joinToString(" ").removeSuffix(".").replace("This source deals", "deal")
         val lead = triggerExcerpt ?: costExcerpt.joinToString(", ").takeIf { it.isNotBlank() }
@@ -211,6 +222,21 @@ fun abilityInspections(
             Contribution.CREATE_CREATURE_TOKEN -> listOf("For this objective, at least one created token must be a creature under your control when the ability resolves. The actual number still depends on the recorded amount and game state.")
             else -> emptyList()
         }
+        val notes = buildList {
+            if (best.branch == Contribution.DIRECT_DEATH_GENERATOR && best.operation == "SACRIFICE" && best.verdict == Verdict.MATCH) {
+                val filter = best.nativeOperation.obj()?.get("filter").obj()
+                val choice = filter.items("cardPredicates").singleOrNull().obj()
+                val creatureOrArtifact = choice.text("type") == "Or" && choice.items("predicates").map { it.obj().text("type") }.toSet() == setOf("IsCreature", "IsArtifact")
+                add(if (creatureOrArtifact) "Only a nontoken creature choice advances this objective; a noncreature artifact or token does not."
+                    else "For this objective, sacrifice a nontoken creature you control.${if (best.circumstances?.mandatory == Verdict.MATCH) " The sacrifice is mandatory when the ability resolves." else ""}")
+            } else if (best.verdict == Verdict.MATCH && best.branch == Contribution.DIRECT_DEATH_GENERATOR)
+                add(if (best.operation == "DAMAGE_POTENTIALLY_LETHAL") "The damage must be lethal to a nontoken creature you control."
+                    else "This contributes when a nontoken creature you control dies.")
+            addAll(narration.conditions.filter { "even if you only want to sacrifice" in it })
+        }
+        val unresolvedNotes = if (landSacrifice && best.verdict == Verdict.UNKNOWN)
+            listOf("The sacrificed land would also have to be a nontoken creature you control; this search has not established that interaction.")
+        else uncertainty + secondaryUnknowns.map { it.substringBefore(" The contribution above") }
         AbilityInspection(id, title, best.face.takeUnless { it == "front" }, best.verdict,
             when {
                 best.verdict == Verdict.NO_MATCH -> explanation.outcome
@@ -222,23 +248,28 @@ fun abilityInspections(
                 else -> explanation.summary
             },
             narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), (uncertainty + secondaryUnknowns).distinct(),
-            evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision), questions.distinct(), entries.map { it.index }, id)
+            evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision), questions.distinct(), entries.map { it.index }, id,
+            notes.distinct(), unresolvedNotes.distinct(), narration.textCandidates())
     }.sortedBy { when (it.verdict) { Verdict.MATCH -> 0; Verdict.UNKNOWN -> 1; Verdict.NO_MATCH -> 2 } }
 }
 
 /** A commander connection uses the same single-card native walker; it is not a second objective policy. */
-fun commanderObjectiveConnection(card: CardDefinition, objective: String): String? {
-    if (objective != "own-nontoken-creature-deaths") return null
+private fun commanderConnections(card: CardDefinition, objective: String): List<ActionEvidence> {
+    if (objective != "own-nontoken-creature-deaths") return emptyList()
     val extracted = PathwayExtractor().extract(listOf(card))
     val actionIds = extracted.pathways.filter {
         it.branch == Contribution.DEATH_ENHANCED_REMOVAL &&
             it.scope.compatible(Requirements(creature = true, controller = Controller.YOU, token = TokenStatus.NONTOKEN)) == Verdict.MATCH
     }.map { it.actionId }.toSet()
-    return extracted.actions.filter { it.id in actionIds }.mapNotNull { action ->
+    return extracted.actions.filter { it.id in actionIds }.filter { action ->
         val text = AbilityText(action, emptyList())
         // Only this fully described trigger supports the broad connection. Other forms need a truthful fallback.
-        if (text.triggerExcerpt != "Whenever a nontoken creature you control dies" || text.gaps.isNotEmpty() ||
-            action.native.obj()?.get("condition") != null) null
-        else "${text.triggerDescription?.removeSuffix(".")}, ${text.effects.joinToString(" ").replace("This source", card.name)} Finding ways to sacrifice or otherwise cause your nontoken creatures to die can trigger this ability."
-    }.distinct().joinToString(" ").takeIf { it.isNotBlank() }
+        text.triggerExcerpt == "Whenever a nontoken creature you control dies" && text.gaps.isEmpty() &&
+            action.native.obj()?.get("condition") == null
+    }
 }
+fun commanderObjectiveConnection(card: CardDefinition, objective: String): String? =
+    if (commanderConnections(card, objective).isEmpty()) null else "Sacrificing one of your nontoken creatures can trigger this ability."
+
+fun commanderRulesLines(card: CardDefinition, objective: String): List<RulesLine> = linkedRulesLines(card.name, card.oracleText,
+    commanderConnections(card, objective).map { RulesLink(it.id, it.face.takeUnless { face -> face == "front" }, Verdict.MATCH, AbilityText(it, emptyList()).textCandidates()) })

@@ -103,6 +103,7 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
   .run-summary .hint { margin-top: 8px; }
 }
 @media (max-width: 480px) {
+  .selection-info { grid-template-columns: minmax(0, 1fr); gap: 0; }
   header { gap: 8px; }
   header h1 { font-size: 23px; }
   main { padding: 16px; }
@@ -120,6 +121,28 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
 
 /* Evidence controls describe separate claims; incomplete work stays visually neutral. */
 .commander-summary { margin-top: 12px; font-size: 13px; }
+.selection-info { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.selection-info:has(details:first-child[open]) { grid-template-columns: minmax(0, 1fr); }
+.selection-info summary { font-size: 13px; }
+.selection-info .commander-summary { margin-top: 0; }
+.rules-text .rules-line { display: flex; align-items: baseline; gap: 8px; margin: 5px 0; padding: 3px 0; line-height: 1.6; text-align: left; }
+button.rules-line { min-height: 0; border: 0; background: transparent; width: 100%; font-size: inherit; }
+button.rules-line:hover { background: #273c41; }
+.objective-marker { color: #b6d9c3; flex-shrink: 0; font-size: 11px; }
+.objective-marker.UNKNOWN { color: #b5cad4; }
+.card-properties { margin: 0 0 12px; font-size: 13px; }
+.card-properties > div { display: flex; gap: 8px; margin: 3px 0; }
+.card-properties dt { color: #a9bdc1; }
+.card-properties dt::after { content: ':'; }
+.card-properties dd { margin: 0; }
+.objective-notes { margin: 14px 0; padding-left: 20px; font-size: 14px; }
+.objective-notes li { margin-bottom: 6px; }
+.unresolved-note { border-left: 2px solid #7497a5; padding-left: 12px; font-size: 13px; }
+.evidence-fields { margin: 10px 0; }
+.evidence-fields > div { display: grid; grid-template-columns: minmax(110px, .7fr) minmax(0, 1.6fr); gap: 12px; padding: 6px 0; }
+.evidence-fields dt { color: #a9bdc1; }
+.evidence-fields dd { margin: 0; overflow-wrap: anywhere; }
+.shared-help { font-size: 13px; margin-top: 20px; }
 .commander-overview { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 22px; border-top: 1px solid #3c5158; padding-top: 18px; }
 .commander-overview > div { min-width: 0; }
 .commander-overview .picture { margin: 0; width: 100%; }

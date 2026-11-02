@@ -30,6 +30,7 @@ export function App() {
   const [commander, setCommander] = useState('Judith, the Scourge Diva');
   const [objective, setObjective] = useState('own-nontoken-creature-deaths');
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
+  const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
@@ -88,14 +89,16 @@ export function App() {
   }, [runId, visibleIds]);
 
   function changed() {
-    setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
+    setCommanderOpen(false); setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
   }
   async function research(discovery: boolean) {
-    setBusy(discovery ? 'Finding cards…' : 'Loading commander…'); changed();
+    setBusy(discovery ? 'Finding cards…' : 'Loading commander…');
+    if (discovery) changed();
     try {
       const view = await api<CommanderView>('commander-view', {commander, objective}); setCommanderView(view);
       const inspected = view.inspection;
+      if (!inspected.selectable) setCommanderOpen(true);
       if (discovery && inspected.selectable) {
         const fresh = await api<Run>('discover', {commander, objective}); setRun(fresh);
         setCategory(fresh.cards.some(c => c.browsingState === 'IDENTIFIED') ? 'IDENTIFIED' :
@@ -109,7 +112,7 @@ export function App() {
   const mechanics = [...new Set(run?.cards.flatMap(c => c.mechanics ?? []) ?? [])].sort();
 
   return <>
-    <header><h1>Card Discovery</h1><span>{health ? 'Local research' : 'Connecting…'}</span></header>
+    <header><h1>Card Discovery</h1>{!health && <span>Connecting…</span>}</header>
     <main>
       <section className="controls" aria-label="Research controls">
         <form onSubmit={e => { e.preventDefault(); void research(true); }}>
@@ -119,16 +122,21 @@ export function App() {
           <label>Objective<select value={objective} onChange={e => { changed(); setObjective(e.target.value); }} disabled={!!busy || !objectives.length}>
             {objectives.map(o => <option value={o.id} key={o.id}>{o.label}</option>)}
           </select></label>
-          <div className="actions"><button type="button" onClick={() => void research(false)} disabled={!!busy || !commander.trim()}>View commander</button>
-            <button className="primary" disabled={!!busy || !objectives.length || !commander.trim()}>Find cards</button></div>
+          <div className="actions"><button className="primary" disabled={!!busy || !objectives.length || !commander.trim()}>Find cards</button></div>
         </form>
-        <details className="objective-help"><summary>About this objective</summary>
-          <p>{objectives.find(o => o.id === objective)?.explanation}</p>
-          <p>Find cards that fit your objective and can be included in your chosen Commander's deck. Search coverage and exclusions are available with the results.</p>
-        </details>
+        <div className="selection-info">
+          <details open={commanderOpen} onToggle={e => {
+            const open = e.currentTarget.open; setCommanderOpen(open);
+            if (open && !commanderView && !busy && commander.trim()) void research(false);
+          }}><summary>About commander</summary>
+            {commanderView && <CommanderPanel view={commanderView} revision={run?.applicationRevision ?? health?.applicationRevision}/>}
+          </details>
+          <details className="objective-help"><summary>About objective</summary>
+            <ul>{objectives.find(o => o.id === objective)?.capabilities?.map((item, i) => <li key={i}>{item}</li>)}</ul>
+          </details>
+        </div>
         <div aria-live="polite">
-          {busy && <p role="status">{busy} Please wait for the card search to finish.</p>}
-          {commanderView && <CommanderPanel view={commanderView} revision={run?.applicationRevision ?? health?.applicationRevision}/>}
+          {busy && <p role="status">{busy}</p>}
           {error && <p role="alert" className="warning">{error}</p>}
         </div>
       </section>
@@ -138,10 +146,9 @@ export function App() {
           <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} available cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
         <nav className="categories" aria-label="Finding categories">
-          {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description}
+          {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description} aria-description={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
         </nav>
-        <p className="hint category-explanation">{categories.find(c => c[0] === category)?.[2] ?? 'Diagnostic card view. An excluded check does not rule out the whole card.'}</p>
         <details className="diagnostic-views"><summary>Research and diagnostic views</summary>
           <p className="hint">These counts overlap and count distinct cards, not abilities. Identified mechanics remain useful even when another part of a card is excluded or unread. Do not add these counts together.</p>
           <nav className="diagnostics" aria-label="Diagnostic finding categories">
@@ -151,30 +158,26 @@ export function App() {
         <div className="workspace">
           <section aria-label="Discovery results">
             <h2>Explore cards</h2>
-            <div className="filters"><label>Find within these findings<input value={name} onChange={e => { setName(e.target.value); setPage(0); }} placeholder="Card name"/></label>
+            <div className="filters"><label>Card name<input value={name} onChange={e => { setName(e.target.value); setPage(0); }}/></label>
               <label>Mechanic<select value={mechanic} onChange={e => { setMechanic(e.target.value); setPage(0); }}>
-                <option value="ALL">All relationships</option>{mechanics.map(m => <option key={m}>{m}</option>)}
+                <option value="ALL">All mechanics</option>{mechanics.map(m => <option key={m}>{m}</option>)}
               </select></label></div>
             <p className="hint">{filtered.length.toLocaleString()} cards in this view · name order · page {page + 1} of {pages}</p>
-            {selectedCard && <a className="inspection-link" href="#card-inspection" onClick={() => detailRef.current?.focus()}>Read selected card: {selectedCard.card} ↓</a>}
             <div className="results">
-              {!visible.length && <p>No findings in this view. This is not proof that these mechanics are absent.</p>}
+              {!visible.length && <p>No cards in this view.</p>}
               {visible.map(card => <button key={card.index} className={`card ${selected === card.index ? 'selected' : ''}`}
-                onClick={() => setSelected(card.index)} aria-pressed={selected === card.index} aria-controls="card-inspection" aria-label={card.card}>
+                onClick={event => { setSelected(card.index); if (event.detail === 0) requestAnimationFrame(() => detailRef.current?.focus()); }} aria-pressed={selected === card.index} aria-controls="card-inspection" aria-label={card.card}>
                 <CardPicture compact image={imageFor(card.index)}/>
                 <div><strong>{card.card}</strong>
-                  {selected === card.index && <small className="selected-marker">Selected for inspection</small>}
                   {card.browsingState === 'UNRESOLVED' && <small>Relationship needs interpretation</small>}
                   {card.recordedConcern && <small className="concern-marker">Recorded concern — inspect evidence</small>}
-                  <small>{card.mechanics?.join(' · ') || 'No recognized relationship to this objective'}</small>
-                  {card.reason && <p className="preview">{card.reason}</p>}
+                  {!!card.mechanics?.length && <small>{card.mechanics.join(' · ')}</small>}
                 </div>
               </button>)}
             </div>
             <div className="actions pager"><button onClick={() => setPage(page - 1)} disabled={!page}>Previous cards</button><button onClick={() => setPage(page + 1)} disabled={page + 1 >= pages}>Next cards</button></div>
           </section>
           <section id="card-inspection" ref={detailRef} className="detail" aria-label="Result inspection" tabIndex={-1} aria-live="polite">
-            {selectedCard && <p className="eyebrow">SELECTED CARD</p>}
             <h2>{selectedCard?.card ?? 'Select a finding'}</h2>
             {detailLoading && <p role="status">Loading card evidence…</p>}
             {detailError && <p role="alert" className="warning">{detailError}</p>}
@@ -195,6 +198,15 @@ export function App() {
           <p>Only the latest search is retained. A new discovery replaces it.</p><a href={`/api/v1/runs/${run.runId}/report`} download>Download complete live evidence, including all eligibility records</a>
         </details>
       </>}
+      <details className="shared-help"><summary>About the evidence checks</summary>
+        <dl className="evidence-fields">
+          <div><dt>Discovery</dt><dd>Which mechanics and conditions the search identified for your objective.</dd></div>
+          <div><dt>Rules comparison</dt><dd>Recorded comparisons between programmed behavior and Magic rules sources.</dd></div>
+          <div><dt>Engine tests</dt><dd>Recorded outcomes for particular test scenarios.</dd></div>
+          <div><dt>Independent verification</dt><dd>A separate review of the interpretation and supporting evidence.</dd></div>
+        </dl>
+        <p>These checks cover their stated scope, rather than certifying every interaction on a card. Missing verification does not block discovery or require you to review the catalog. Earlier results retain their original engine version.</p>
+      </details>
       <footer>Unofficial Magic: The Gathering research · © Wizards of the Coast · Card metadata and unaltered images from <a href="https://scryfall.com" target="_blank" rel="noreferrer">Scryfall</a></footer>
     </main>
   </>;

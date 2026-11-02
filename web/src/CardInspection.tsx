@@ -2,6 +2,7 @@ import {useState} from 'react';
 import type {AbilityInspection, CardImage, Evidence} from './api';
 import {EvidenceInspector, Concerns} from './EvidenceInspector';
 import {CardPicture} from './CardPicture';
+import {CardRules} from './CardRules';
 
 function List({title, values}: {title: string; values: string[]}) {
   return values.length > 0 && <section className="ability-part"><h4>{title}</h4><ul>{values.map((v, i) => <li key={i}>{v}</li>)}</ul></section>;
@@ -19,34 +20,34 @@ export function CardInspection({evidence, image, revision}: {evidence: Evidence;
   const unassigned = evidence.unsupported.filter(u => !evidence.abilities.some(a => a.actionId === u.actionId));
   return <>
     <div className="card-overview"><CardPicture image={image}/>
-      {evidence.authoredCard && <div className="authored"><p>{evidence.authoredCard.manaCost} · {evidence.authoredCard.typeLine}</p>
-        <p className="card-text">{evidence.authoredCard.text}</p></div>}
+      {evidence.authoredCard && <div className="authored">
+        <dl className="card-properties"><div><dt>Mana cost</dt><dd>{evidence.authoredCard.manaCost}</dd></div><div><dt>Type</dt><dd>{evidence.authoredCard.typeLine}</dd></div></dl>
+        <CardRules lines={evidence.rules} text={evidence.authoredCard.text} selected={ability?.actionId} onSelect={id => {if (available.some(a => a.actionId === id)) setSelected(id);}}/>
+      </div>}
     </div>
-    {available.length > 1 && <label className="ability-picker">Ability to inspect<select value={ability?.id} onChange={e => setSelected(e.target.value)}>
+    {available.length > 1 && !available.every(a => evidence.rules?.some(line => line.actionId === a.actionId)) && <label className="ability-picker">Ability to inspect<select value={ability?.id} onChange={e => setSelected(e.target.value)}>
       {available.map(a => <option key={a.id} value={a.id}>{a.title}{a.face ? ` · ${a.face}` : ''}</option>)}
     </select></label>}
     {ability ? <article className="ability-inspection">
-      <h3>{ability.title}{ability.face ? ` · ${ability.face}` : ''}</h3>
-      <p className="contribution">{ability.contribution}</p>
-      <div className="ability-parts"><List title="Pay" values={ability.costs}/><List title="Effect of this ability" values={ability.effects}/></div>
-      <List title="What needs to happen" values={ability.conditions}/>
-      {ability.tradeoffs.length > 0 && <details><summary>More about costs and resolution</summary><List title="Keep in mind" values={ability.tradeoffs}/></details>}
-      <List title="Still unresolved" values={ability.uncertainties}/>
+      {!!ability.objectiveNotes?.length && <ul className="objective-notes">{ability.objectiveNotes.map((note, i) => <li key={i}>{note}</li>)}</ul>}
+      {ability.unresolvedNotes?.map((note, i) => <p className="unresolved-note" key={i}>{note}</p>)}
       <EvidenceInspector key={ability.id} indicators={ability.evidence} revision={revision}/>
       <Concerns items={evidence.concerns}/>
-      {(ability.questions.length > 0 || unassigned.length > 0) && <details><summary>Questions about this ability ({ability.questions.length + unassigned.length})</summary>
+      <details><summary>Technical investigation</summary>
+      <Raw label="Ability identity and text association" data={{actionId: ability.actionId, title: ability.title, linkedRules: evidence.rules?.filter(line => line.actionId === ability.actionId)}}/>
+      <List title="Complete ability projection" values={[...ability.costs, ...ability.effects, ...ability.conditions, ...ability.tradeoffs, ...ability.uncertainties]}/>
+      {(ability.questions.length > 0 || unassigned.length > 0) && <details><summary>Interpretation questions ({ability.questions.length + unassigned.length})</summary>
         <Concerns items={ability.questions}/>
         {unassigned.length > 0 && <p>Other instructions on this card were not interpreted for this objective. They do not invalidate the identified part of this ability or establish a rules defect.</p>}
         {unassigned.length > 0 && <Raw label="Other instruction records" data={unassigned}/>}
       </details>}
-      <details><summary>Investigate this ability</summary>
         <Raw label="Conditions and objective decisions" data={rows.map(r => ({prerequisites: r.prerequisites, decisions: r.decisions, circumstances: r.circumstances}))}/>
         <Raw label="Whole authored ability and related checks" data={{actions: evidence.actions.filter(a => a.id === ability.actionId), results: rows}}/>
         {evidence.results.some(r => r.verdict === 'NO_MATCH') && <Raw label="Nonqualifying checks (including objective-policy exclusions)" data={evidence.results.filter(r => r.verdict === 'NO_MATCH')}/>}
         <Raw label="All card evidence, source bindings and image association" data={{...evidence, image}}/>
       </details>
     </article> : <>
-      <p>No objective-specific relationship was established for this card. Any unread instructions remain unresolved, not negative results.</p>
+      <p>No contribution identified for this objective.</p>
       <EvidenceInspector indicators={evidence.evidenceSummary} revision={revision}/><Concerns items={evidence.concerns}/>
       {evidence.unsupported.length > 0 && <Raw label="Instructions needing interpretation" data={evidence.unsupported}/>}
       <Raw label="All card evidence and image association" data={{...evidence, image}}/>

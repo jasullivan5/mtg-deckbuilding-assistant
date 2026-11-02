@@ -81,7 +81,7 @@ class AbilityInspectionTest : FunSpec({
         ability.evidence.single { it.id == "independent" }.state shouldBe EvidenceState.NOT_RECORDED
         val view = commanderView(catalog, evidence.card, inspectCommander(catalog, evidence.card))
         view.headline shouldBe "Black and red"
-        view.objectiveConnection!!.contains("Judith, the Scourge Diva deals 1 damage to any target") shouldBe true
+        view.objectiveConnection shouldBe "Sacrificing one of your nontoken creatures can trigger this ability."
         view.evidenceSummary.none { it.id == "mechanic" } shouldBe true
         view.authoredCard!!.text.contains("Whenever a nontoken creature you control dies") shouldBe true
     }
@@ -106,8 +106,8 @@ class AbilityInspectionTest : FunSpec({
         commanderObjectiveConnection(judith, "create-creature-tokens") shouldBe null
         commanderObjectiveConnection(catalog.card("Oviya Pashiri, Sage Lifecrafter")!!, objectives.first().id) shouldBe null
         val view = commanderView(catalog, judith.name, inspectCommander(catalog, judith.name))
-        view.objectiveConnection!!.contains("Whenever a nontoken creature you control dies,") shouldBe true
-        view.objectiveConnection!!.contains("sacrifice or otherwise") shouldBe true
+        view.rules.count { it.relevance == Verdict.MATCH } shouldBe 1
+        view.objectiveConnection!!.contains("Sacrificing") shouldBe true
         view.objectiveConnection!!.contains("removal") shouldBe false
     }
 

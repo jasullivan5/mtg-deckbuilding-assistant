@@ -16,7 +16,7 @@ import kotlinx.serialization.Serializable
     val recordedEngine: String? = null, val currentEngine: String = EngineBuild.revision,
     val historical: Boolean = false,
     /** Brief player-facing claim; exact scope/bindings above remain available to investigators. */
-    val reading: String = ""
+    val reading: String = "", val fields: List<EvidenceField> = emptyList()
 )
 @Serializable data class ResearchConcern(
     val title: String, val detail: String, val nextStep: String,
@@ -172,14 +172,18 @@ fun evidenceIndicators(
                 else -> "No separate independent verification is recorded for this card. This is not a finding that the mechanic is wrong, and does not prevent it from appearing in discovery."
             }
         }
-        item.copy(label = when (item.id) {
-            "mechanic" -> "Relevant mechanic"; "source" -> "Rules comparison"; "execution" -> "Engine tests"; else -> "Independent review"
+        val presented = item.copy(label = when (item.id) {
+            "mechanic" -> "Discovery"; "source" -> "Rules comparison"; "execution" -> "Engine tests"; else -> "Independent verification"
         }, status = when {
-            item.id == "source" && item.state == EvidenceState.ESTABLISHED -> "Compared by implementer"
+            item.id == "mechanic" -> discoveryStatus(results)
+            item.id == "source" && item.state == EvidenceState.ESTABLISHED -> "Comparison recorded"
+            item.id == "source" && item.state == EvidenceState.NOT_RECORDED -> "No review recorded"
+            item.id == "execution" && item.state == EvidenceState.NOT_RECORDED -> "No test results recorded"
             item.id == "execution" && item.state == EvidenceState.ESTABLISHED -> if (historical) "Earlier tests passed" else "Recorded tests passed"
             item.id == "independent" && item.state == EvidenceState.NOT_RECORDED -> "Not recorded"
             else -> item.status
         }, reading = reading)
+        presented.copy(fields = evidenceFields(presented, record, results))
     }
 }
 
