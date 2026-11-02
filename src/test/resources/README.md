@@ -19,3 +19,5 @@ The complete-report gate reverses only declared exact path relocations and runti
 Unused research records live in the movable export described in [repository layout](../../../docs/REPOSITORY_LAYOUT.md).
 
 The 2026-10-30 card explanation/image fixtures have separate retrieval URLs and raw hashes in `cards/image-and-explanation-sources.json`, consumed by FindingExplanationTest and AbilityInspectionTest. They preserve sacrifice/activation examples (including Attrition’s legal-target dependency), empty ruling lists where appropriate, and a double-faced image identity case. They do not change the original 82-file relocation manifest or independently certify those cards.
+
+The objective-coverage source manifest binds seven exact-printing Scryfall snapshots used by DeathObjectiveCoverageTest. These compare authored mechanics with the death objective's actual scope; they do not create registered card approvals or claim new engine gameplay execution. See [objective coverage](../../../docs/OBJECTIVE_COVERAGE.md).

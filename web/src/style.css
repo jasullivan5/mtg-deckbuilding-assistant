@@ -143,7 +143,7 @@ button.rules-line:hover { background: #273c41; }
 .evidence-fields dt { color: #a9bdc1; }
 .evidence-fields dd { margin: 0; overflow-wrap: anywhere; }
 .shared-help { font-size: 13px; margin-top: 20px; }
-.commander-overview { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 22px; border-top: 1px solid #3c5158; padding-top: 18px; }
+.commander-overview { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 22px; border-top: 1px solid #3c5158; padding-top: 18px; }
 .commander-overview > div { min-width: 0; }
 .commander-overview .picture { margin: 0; width: 100%; }
 .commander-overview h2 { font-family: Georgia, serif; margin-bottom: 6px; }

@@ -41,14 +41,14 @@ test('commander and objective disclosures work before discovery with precise rev
   await expect.poll(() => art.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0), {timeout: 30_000}).toBe(true);
   await expect(panel.getByRole('img', {name: 'Relevant to this objective', exact: true})).toHaveCount(1);
   await expect(panel.getByText('Whenever a nontoken creature you control dies, Judith deals 1 damage to any target.', {exact: true})).toHaveCount(1);
-  await expect(panel.locator('.contribution')).toHaveText('Sacrificing one of your nontoken creatures can trigger this ability.');
+  await expect(panel.locator('.contribution')).toHaveText('The trigger does not depend on what caused the death.');
   await expect(panel.getByRole('button', {name: /Discovery/})).toHaveCount(0);
   await panel.getByRole('button', {name: /Rules comparison/}).click();
   const rules = panel.getByRole('region', {name: 'Rules comparison evidence'});
   await expect(rules.locator('.evidence-fields')).toContainText('Scryfall Oracle text');
   await expect(rules.locator('.evidence-fields')).toContainText('AI agent');
-  await expect(rules.locator('.evidence-fields')).toContainText('Not separately identified');
-  await expect(rules.locator('.evidence-fields')).toContainText('Not individually recorded');
+  await expect(rules.locator('.evidence-fields')).toContainText('Not captured separately');
+  await expect(rules.locator('.evidence-fields')).toContainText('no ability-by-ability links');
   await expect(rules.getByRole('link', {name: /Scryfall Oracle text/})).toHaveAttribute('href', /src\/test\/resources\/cards\/judith-the-scourge-diva-source\.json/);
   await panel.getByRole('button', {name: /Engine tests/}).click();
   const engine = panel.getByRole('region', {name: 'Engine tests evidence'});
@@ -136,4 +136,31 @@ test('keyboard card selection focuses the compact inspector without a jump link 
   await expect(review).toHaveAttribute('aria-expanded', 'true');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.screenshot({path: '../generated/explorer/hierarchy-mobile-card.png', fullPage: true});
+});
+
+
+test('source investigation distinguishes death sources removal policy and omitted non-removal payoffs', async ({page}) => {
+  await page.goto('/'); await page.getByText('About objective', {exact: true}).click();
+  await expect(page.locator('.objective-help')).toContainText('not searched as independent payoffs');
+  const completed=page.waitForResponse(r=>r.url().endsWith('/api/v1/discover')&&r.ok());
+  await page.getByRole('button',{name:'Find cards',exact:true}).click();const run:Run=await(await completed).json();
+  const detail=page.getByRole('region',{name:'Result inspection'});const nav=page.getByRole('navigation',{name:'Finding categories',exact:true});
+  const cases:Record<string,unknown>={};
+  for(const [name,expected] of [['Accursed Centaur','sacrificed and die'],['Judith, the Scourge Diva','does not cause that first death'],['Tragic Slip','enable or improve this removal'],['Murder','choosing your own creature'],['Midnight Reaper','damage affects a player'],['Blood Artist','No discovery relationship was evaluated']]) {
+    await nav.getByRole('button',{name:/All findings/}).click();await page.getByLabel('Card name').fill(name);
+    await expect(detail.getByRole('heading',{name,exact:true})).toBeVisible();
+    if(name==='Blood Artist'){await expect(detail).toContainText(expected);continue;}
+    const button=detail.getByRole('button',{name:/Discovery/});await button.click();
+    const panel=detail.getByRole('region',{name:'Discovery evidence'});await expect(panel).toContainText(expected);
+    cases[name]={defaultText:await detail.innerText(),fields:await panel.innerText()};
+    if(name==='Accursed Centaur') {await expect(panel).toContainText('conditional on reaching the graveyard');await expect(panel).toContainText('Source enters the battlefield; sacrifice required');}
+    if(name==='Murder') await expect(button).not.toContainText('✓');
+  }
+  expect(run.cards.find(c=>c.card==='Pitiless Plunderer')).toBeUndefined();
+  const draw=run.cards.find(c=>c.card==='Grim Haruspex');expect(draw?.pathways.MATCH??0).toBe(0);
+  await writeFile('../generated/explorer/coverage-observation.json',JSON.stringify({applicationRevision:run.applicationRevision,engineRevision:run.argentumCommit,runId:run.runId,cases,omissions:['Pitiless Plunderer has no finding','Grim Haruspex has no accepted payoff']},null,2));
+  await writeFile('../generated/explorer/coverage-report.json',await(await page.request.get(`/api/v1/runs/${run.runId}/report`)).body());
+  await page.getByRole('combobox',{name:'Objective',exact:true}).selectOption('create-creature-tokens');await page.getByRole('button',{name:'Find cards',exact:true}).click();
+  await expect(page.getByRole('region',{name:'Completed discovery'})).toBeVisible({timeout:130_000});await page.getByLabel('Card name').fill('Doomed Dissenter');
+  await expect(page.getByRole('button',{name:'Doomed Dissenter',exact:true})).toBeVisible();
 });

@@ -47,7 +47,7 @@ export function CardInspection({evidence, image, revision}: {evidence: Evidence;
         <Raw label="All card evidence, source bindings and image association" data={{...evidence, image}}/>
       </details>
     </article> : <>
-      <p>No contribution identified for this objective.</p>
+      <p>No discovery relationship was evaluated for this card.</p>
       <EvidenceInspector indicators={evidence.evidenceSummary} revision={revision}/><Concerns items={evidence.concerns}/>
       <details><summary>Technical investigation</summary>
       {evidence.unsupported.length > 0 && <Raw label="Instructions needing interpretation" data={evidence.unsupported}/>}

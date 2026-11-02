@@ -1,0 +1,68 @@
+{
+  "scope": "Bounded source comparison for objective coverage; not registered card qualification or engine execution.",
+  "sources": [
+    {
+      "file": "grim-haruspex-source.json",
+      "name": "Grim Haruspex",
+      "printingId": "cf1fe2bf-1640-4781-87b4-09a1f7d35831",
+      "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "url": "https://api.scryfall.com/cards/cf1fe2bf-1640-4781-87b4-09a1f7d35831",
+      "sha256": "5b101cdbd942b61ed3f298cf3090e4697543d23761663084314966dd3a11ae6a",
+      "retrievedAt": "2026-11-02T16:19:09.926624+00:00"
+    },
+    {
+      "file": "pitiless-plunderer-source.json",
+      "name": "Pitiless Plunderer",
+      "printingId": "c87ebffe-5907-427b-9f9b-7c36a12b4a03",
+      "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+      "url": "https://api.scryfall.com/cards/c87ebffe-5907-427b-9f9b-7c36a12b4a03",
+      "sha256": "50ea5539bb9edb21852ec90f0ed87c377f75224d841a7a5b0e4e795e7087eefc",
+      "retrievedAt": "2026-11-02T16:19:10.981181+00:00"
+    },
+    {
+      "file": "blood-artist-source.json",
+      "name": "Blood Artist",
+      "printingId": "2e1fb442-68ff-4249-8e44-87edf6fae211",
+      "oracleId": "310f141c-7f37-4729-aed6-dd9c09db448d",
+      "url": "https://api.scryfall.com/cards/2e1fb442-68ff-4249-8e44-87edf6fae211",
+      "sha256": "f90ceeb99929bbafda30cdb39d5b0dce14cae18ee6dfbf981b3c895f7ef6d881",
+      "retrievedAt": "2026-11-02T16:19:12.227173+00:00"
+    },
+    {
+      "file": "midnight-reaper-source.json",
+      "name": "Midnight Reaper",
+      "printingId": "5e122fe0-51c5-404d-a7b9-3d161a426c35",
+      "oracleId": "e8c7566d-7cc0-48af-a986-83223ec7e06c",
+      "url": "https://api.scryfall.com/cards/5e122fe0-51c5-404d-a7b9-3d161a426c35",
+      "sha256": "7c67d49ac1cd492a4b27bf3469897aa3f839968cac896e904464c8dfe1b62618",
+      "retrievedAt": "2026-11-02T16:19:13.273893+00:00"
+    },
+    {
+      "file": "tragic-slip-source.json",
+      "name": "Tragic Slip",
+      "printingId": "09666671-601e-4fca-bdfb-fb288bf2672c",
+      "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "url": "https://api.scryfall.com/cards/09666671-601e-4fca-bdfb-fb288bf2672c",
+      "sha256": "6f0c1ae57dec74f01823d9f5295520fba2ed8db4ead0236d82bde2bb9388dc47",
+      "retrievedAt": "2026-11-02T16:19:14.120560+00:00"
+    },
+    {
+      "file": "murder-source.json",
+      "name": "Murder",
+      "printingId": "c8676f02-cf1e-4d40-a0c5-6e5a97417898",
+      "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+      "url": "https://api.scryfall.com/cards/c8676f02-cf1e-4d40-a0c5-6e5a97417898",
+      "sha256": "7148e460e0c5b3580a3aadf05b18f5e3556273cf90b1aaeeaa510dab15c51c80",
+      "retrievedAt": "2026-11-02T16:19:15.122313+00:00"
+    },
+    {
+      "file": "doomed-dissenter-source.json",
+      "name": "Doomed Dissenter",
+      "printingId": "a1c0b645-de43-46d0-84c1-03f295def217",
+      "oracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+      "url": "https://api.scryfall.com/cards/a1c0b645-de43-46d0-84c1-03f295def217",
+      "sha256": "a6e44719a752bac81d55baa7d3fe80bef99deb89586dd375451b6cb14503f07d",
+      "retrievedAt": "2026-11-02T16:19:15.954894+00:00"
+    }
+  ]
+}
