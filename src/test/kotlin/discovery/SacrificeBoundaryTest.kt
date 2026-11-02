@@ -85,6 +85,7 @@ class SacrificeBoundaryTest : FunSpec({
     test("non-battlefield trigger sources respect their declared zone without overriding incompatible movements") {
         fun fixture(active: Zone, from: Zone) = card("Synthetic zone-bound observer") {
             typeLine = "Creature — Spirit"
+            power = 1; toughness = 1
             triggeredAbility {
                 trigger = Triggers.a(GameObjectFilter.Land.youControl()).enters()
                 triggerZone = active
