@@ -25,7 +25,7 @@ import kotlinx.serialization.Serializable
 
 fun evidenceIndicators(
     results: List<ResultEvidence>, assurance: TranslationAssurance?, scenarioReferences: List<String>,
-    scope: String, runtimeRevision: String = EngineBuild.revision
+    scope: String, runtimeRevision: String = EngineBuild.revision, action: ActionEvidence? = null
 ): List<EvidenceIndicator> {
     val record = assurance?.evidence
     val current = assurance?.evidenceCurrent == true
@@ -183,7 +183,7 @@ fun evidenceIndicators(
             item.id == "independent" && item.state == EvidenceState.NOT_RECORDED -> "Not recorded"
             else -> item.status
         }, reading = reading)
-        presented.copy(fields = evidenceFields(presented, record, results))
+        presented.copy(fields = evidenceFields(presented, record, results, action))
     }
 }
 

@@ -81,7 +81,7 @@ class AbilityInspectionTest : FunSpec({
         ability.evidence.single { it.id == "independent" }.state shouldBe EvidenceState.NOT_RECORDED
         val view = commanderView(catalog, evidence.card, inspectCommander(catalog, evidence.card))
         view.headline shouldBe "Black and red"
-        view.objectiveConnection shouldBe "Sacrificing one of your nontoken creatures can trigger this ability."
+        view.objectiveConnection shouldBe "The trigger does not depend on what caused the death."
         view.evidenceSummary.none { it.id == "mechanic" } shouldBe true
         view.authoredCard!!.text.contains("Whenever a nontoken creature you control dies") shouldBe true
     }
@@ -107,7 +107,7 @@ class AbilityInspectionTest : FunSpec({
         commanderObjectiveConnection(catalog.card("Oviya Pashiri, Sage Lifecrafter")!!, objectives.first().id) shouldBe null
         val view = commanderView(catalog, judith.name, inspectCommander(catalog, judith.name))
         view.rules.count { it.relevance == Verdict.MATCH } shouldBe 1
-        view.objectiveConnection!!.contains("Sacrificing") shouldBe true
+        view.objectiveConnection!!.contains("what caused the death") shouldBe true
         view.objectiveConnection!!.contains("removal") shouldBe false
     }
 

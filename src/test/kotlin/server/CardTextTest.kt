@@ -18,7 +18,7 @@ class CardTextTest : FunSpec({
         lines.count { it.relevance == Verdict.MATCH } shouldBe 1
         lines.first().actionId shouldBe null
         lines.last().text.startsWith("Whenever a nontoken creature") shouldBe true
-        commanderObjectiveConnection(native, objectives.first().id) shouldBe "Sacrificing one of your nontoken creatures can trigger this ability."
+        commanderObjectiveConnection(native, objectives.first().id) shouldBe "The trigger does not depend on what caused the death."
         commanderRulesLines(native, "create-creature-tokens").all { it.actionId == null } shouldBe true
     }
     test("Attrition links its single complete activation while preserving both original decisions") {
@@ -54,9 +54,9 @@ class CardTextTest : FunSpec({
         val fields = evidenceIndicators(emptyList(), assurance, emptyList(), "Commander").single { it.id == "source" }.fields
         fields.single { it.label == "Rules source" }.value shouldBe "Scryfall Oracle text · retained snapshot"
         fields.single { it.label == "Recorded author" }.value shouldBe "AI agent · name not recorded"
-        fields.single { it.label == "Comparison reviewer" }.value shouldBe "Not separately identified"
-        fields.single { it.label == "Comparison date" }.value shouldBe "Not recorded"
-        fields.single { it.label == "Abilities checked" }.value shouldBe "Not individually recorded"
+        fields.single { it.label == "Comparison reviewer" }.value shouldBe "Not captured separately by the card-review format"
+        fields.single { it.label == "Comparison date" }.value shouldBe "Not captured by the card-review format"
+        fields.single { it.label == "Abilities checked" }.value shouldBe "The card-review format has no ability-by-ability links"
         val source = assurance.evidence!!.source.single()
         recordedSource(source.copy(sha256 = "0".repeat(64)), assurance.evidence!!.oracleId).value shouldBe "Retained file; provider not identified"
         recordedSource(source, "wrong-identity").value shouldBe "Retained file; provider not identified"

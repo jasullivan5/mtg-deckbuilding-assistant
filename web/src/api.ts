@@ -4,7 +4,7 @@ export type Inspection = {
   blockers: {code: string; reason: string; nextAction: string}[]; knownLimitations: string[];
   mechanicalCaveat: string; constructionScope: string; argentumCommit: string;
 };
-export type Objective = {id: string; label: string; explanation: string; capabilities: string[]};
+export type Objective = {id: string; label: string; explanation: string; capabilities: string[]; coverageNote?: string | null};
 export type Finding = {
   index: number; card: string; pathways: Record<string, number>; branches: string[];
   unsupportedRecords: number; partialPathways: number; reason: string | null; mechanics: string[];

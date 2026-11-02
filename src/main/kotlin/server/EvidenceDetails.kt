@@ -29,35 +29,15 @@ internal fun recordedSource(reference: EvidenceReference, oracleId: String): Evi
     return fallback()
 }
 
-internal fun evidenceFields(item: EvidenceIndicator, record: TranslationEvidence?, results: List<ResultEvidence>): List<EvidenceField> = when (item.id) {
-    "mechanic" -> buildList {
-        val matched = results.filter { it.verdict == Verdict.MATCH }
-        if (matched.isNotEmpty()) {
-            add(EvidenceField("Coverage", if (matched.all { it.costOrEffect.endsWith("COST") }) "Payment only" else "The identified effect or relationship"))
-            val accepted = matched.flatMap { it.decisions }.filter { it.verdict == Verdict.MATCH }.mapNotNull { when (it.stage) {
-                "potential-creature-death" -> "Can affect a creature"
-                "controller-YOU" -> "Can affect a creature you control"
-                "token-NONTOKEN" -> "Can affect a nontoken creature"
-                else -> null
-            } }.distinct()
-            if (accepted.isNotEmpty()) add(EvidenceField("Conditions checked", if (accepted.size == 3)
-                "A nontoken creature you control" else accepted.joinToString("; ")))
-        }
-        val unresolved = results.flatMap { it.decisions }.filter { it.verdict == Verdict.UNKNOWN }.map { when (it.stage) {
-            "potential-creature-death" -> "Affected creature type"
-            "controller-YOU" -> "Control of the affected creature"
-            "token-NONTOKEN" -> "Whether the creature is nontoken"
-            else -> "Additional conditions"
-        } }.distinct()
-        if (unresolved.isNotEmpty()) add(EvidenceField("Unresolved", unresolved.joinToString("; ")))
-    }
+internal fun evidenceFields(item: EvidenceIndicator, record: TranslationEvidence?, results: List<ResultEvidence>, action: ActionEvidence? = null): List<EvidenceField> = when (item.id) {
+    "mechanic" -> discoveryFields(results, action)
     "source" -> if (record == null || item.state == EvidenceState.NOT_RECORDED) emptyList() else buildList {
         add(EvidenceField("Recorded author", if (record.author == "implementing-agent") "AI agent · name not recorded" else "Not identified"))
         // The contract has an implementation author, not a separate comparison-reviewer field.
-        add(EvidenceField("Comparison reviewer", "Not separately identified"))
+        add(EvidenceField("Comparison reviewer", "Not captured separately by the card-review format"))
         addAll(record.source.map { recordedSource(it, record.oracleId) })
-        add(EvidenceField("Abilities checked", "Not individually recorded"))
-        add(EvidenceField("Comparison date", "Not recorded"))
+        add(EvidenceField("Abilities checked", "The card-review format has no ability-by-ability links"))
+        add(EvidenceField("Comparison date", "Not captured by the card-review format"))
         if (item.state == EvidenceState.OUTDATED) add(EvidenceField("Applies to this build", "No · card or engine binding changed"))
     }
     "execution" -> if (item.state == EvidenceState.NOT_RECORDED) emptyList() else buildList {

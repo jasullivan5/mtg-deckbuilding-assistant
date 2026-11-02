@@ -8,10 +8,11 @@ import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.util.UUID
 
-@Serializable data class Objective(val id: String, val label: String, val explanation: String, val capabilities: List<String> = emptyList())
+@Serializable data class Objective(val id: String, val label: String, val explanation: String, val capabilities: List<String> = emptyList(), val coverageNote: String? = null)
 val objectives = listOf(
-    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Find ways for your nontoken creatures to die, and cards that benefit when they do. The current search recognizes sacrifice, some other ways to cause deaths, and some death-triggered or death-enhanced effects; it does not cover every payoff.",
-        listOf("Sacrificing your creatures, as a cost or a mandatory effect.", "Other recognized ways to cause your nontoken creatures to die.", "Recognized removal effects triggered, enabled or improved by creature deaths.")),
+    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Search recognized ways to cause your nontoken creatures to die and removal that responds to or benefits from a death. This is not a general search for death payoffs.",
+        listOf("Ways to sacrifice your nontoken creatures.", "Recognized effects that can cause the card itself to die.", "Removal triggered, enabled or improved by a creature's death."),
+        "Death-triggered draw, mana, tokens and life changes are not searched as independent payoffs. A card may still appear for another supported interaction. Ordinary removal does not qualify merely because it can target your creature."),
     Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield.", listOf("Return original creature cards from your graveyard to your battlefield.")),
     Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token."))
 )

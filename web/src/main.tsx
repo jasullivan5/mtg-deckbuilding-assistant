@@ -133,6 +133,7 @@ export function App() {
           </details>
           <details className="objective-help"><summary>About objective</summary>
             <ul>{objectives.find(o => o.id === objective)?.capabilities?.map((item, i) => <li key={i}>{item}</li>)}</ul>
+            {objectives.find(o => o.id === objective)?.coverageNote && <p>{objectives.find(o => o.id === objective)?.coverageNote}</p>}
           </details>
         </div>
         <div aria-live="polite">
@@ -186,6 +187,7 @@ export function App() {
           </section>
         </div>
         <details className="provenance"><summary>Search scope, counts, exclusions and source revisions</summary>
+          {objectives.find(o => o.id === run.objective)?.coverageNote && <p>{objectives.find(o => o.id === run.objective)?.coverageNote}</p>}
           <p>The search covers the authored catalog and application extensions, not every Commander-legal Magic card. {run.counts.format_legality_unknown_cards} cards with unresolved format legality were excluded before checking mechanics.</p>
           <p>The findings index includes {run.cards.length} distinct physical cards. Cards without an emitted check or unread instruction are absent from this index; that absence is not a negative result. Categories above overlap; counts below are pathway checks and unread instruction records, not additional cards.</p>
           <table><caption>Counts by record type</caption><thead><tr><th>Record</th><th>Count</th></tr></thead><tbody>

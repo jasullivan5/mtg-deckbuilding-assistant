@@ -248,7 +248,7 @@ fun abilityInspections(
                 else -> explanation.summary
             },
             narration.costs.distinct(), narration.effects.distinct(), (objectiveConditions + narration.conditions).distinct(), narration.tradeoffs.distinct(), (uncertainty + secondaryUnknowns).distinct(),
-            evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision), questions.distinct(), entries.map { it.index }, id,
+            evidenceIndicators(relevantParts.ifEmpty { rows }, assurance, scenarios, scope, runtimeRevision, action), questions.distinct(), entries.map { it.index }, id,
             notes.distinct(), unresolvedNotes.distinct(), narration.textCandidates())
     }.sortedBy { when (it.verdict) { Verdict.MATCH -> 0; Verdict.UNKNOWN -> 1; Verdict.NO_MATCH -> 2 } }
 }
@@ -269,7 +269,7 @@ private fun commanderConnections(card: CardDefinition, objective: String): List<
     }
 }
 fun commanderObjectiveConnection(card: CardDefinition, objective: String): String? =
-    if (commanderConnections(card, objective).isEmpty()) null else "Sacrificing one of your nontoken creatures can trigger this ability."
+    if (commanderConnections(card, objective).isEmpty()) null else "The trigger does not depend on what caused the death."
 
 fun commanderRulesLines(card: CardDefinition, objective: String): List<RulesLine> = linkedRulesLines(card.name, card.oracleText,
     commanderConnections(card, objective).map { RulesLink(it.id, it.face.takeUnless { face -> face == "front" }, Verdict.MATCH, AbilityText(it, emptyList()).textCandidates()) })
