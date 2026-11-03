@@ -17,7 +17,7 @@ The first coherent journey is:
 5. Expand prerequisites, decisions, source identity, translation status, unsupported structures, and evidence.
 6. Understand the run's scope, limitations, and revision provenance rather than mistaking a structural match for a verified or valuable inclusion.
 
-The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER.md); user acceptance remains pending.
+The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER.md).
 
 ## 2. Sequenced experience milestones
 
@@ -32,9 +32,15 @@ The order below reflects learning dependencies, **not** a promise of dates, fina
 
 **Decision point after M3:** Try the Explorer and decide whether scenario inspection is the most useful next research experience. M4 is a candidate, not an automatic phase. The UI should ultimately support deeper strategic questions—dependencies, substitutes and contextual deck value—but those need independent research and authorization rather than being smuggled into these milestones.
 
-### M1 implementation candidate awaiting final Prototype Lab review
+### M1 and M2 acceptance
 
-The current Explorer delivers the live browser → Kotlin slice, existing objectives, inspectable evidence and Windows launch described in [the Explorer guide](EXPLORER.md). Verification remains separate from user acceptance. No M2 or later milestone has begun. The bounded finalization investigates sacrifice-type boundaries and records the adopted [resource-aware, composable objective direction](OBJECTIVE_MODEL.md). That future direction is not new discovery coverage or M1 acceptance.
+Following Prototype Lab evaluation, Product Studio accepted M1 and M2 against separate experience criteria. M1 acceptance covers launching the local Explorer, selecting a supported commander and objective, running live Kotlin discovery, and inspecting findings, conditions, evidence and uncertainty. M2 acceptance covers the card list and inspector, verified imagery and fallbacks, filtering by name and recognized mechanics, readable ability explanations, prerequisites and evidence, and the implemented keyboard and responsive controls.
+
+The card-first functionality was delivered through iterative M1 Prototype Lab development. See the [Explorer delivery and verification records](EXPLORER.md), [objective coverage](OBJECTIVE_COVERAGE.md), and [known limitations](KNOWN_LIMITATIONS.md).
+
+The acceptance scope is bounded. Whole-catalog coverage, complete or independently qualified translations, exhaustive execution and accessibility testing, general death-payoff discovery, renewable creature fuel under the death objective, custom or composable objectives, and contextual deck value remain outside it. The [Agent of Shauku and Akki Scrapchomper primary-inclusion decision](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open) remains open.
+
+M3 is in progress with the Discovery Coverage and Omissions Explorer as its first authorized increment. Prototype Lab review of that increment is pending.
 
 ## 3. How increments are proposed, built and accepted
 
@@ -77,9 +83,9 @@ Keep this section brief and record demonstrated readiness separately from accept
 
 | Milestone | Status | Next product decision |
 | --- | --- | --- |
-| M1 — Live discovery foundation | **Ready for Prototype Lab; acceptance pending** | Try the live M1 delivery and assess conditional explanations, evidence and limitations |
-| M2 — Card-first exploration | **Not started** | Reassess priorities after trying M1 |
-| M3 — Evidence and visualization | **Not started** | Choose charts/questions from actual Explorer shortcomings |
+| M1 — Live discovery foundation | **Accepted** | Bounded live discovery experience |
+| M2 — Card-first exploration | **Accepted** | Bounded card-first experience |
+| M3 — Evidence and visualization | **In progress / first increment authorized** | Evaluate Discovery Coverage in Prototype Lab |
 | M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |
 
 Update only decisions that alter the work: *accepted experience, observed gap, changed milestone, or next authorized increment*. Keep detailed technical diagnostics, test receipts and PR history in the corresponding repository records instead of duplicating them here.

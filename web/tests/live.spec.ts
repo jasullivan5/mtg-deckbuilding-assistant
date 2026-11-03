@@ -209,3 +209,41 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
   }
   await writeFile('../generated/explorer/boundary-reading.json', JSON.stringify({applicationRevision: run.applicationRevision, engineRevision: run.argentumCommit, observations}, null, 2));
 });
+
+test('Discovery Coverage counts and filters the fixed cohort and inspects recognized, omitted and unresolved cards', async ({page}) => {
+  await page.goto('/');
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  await page.getByRole('button', {name: 'Investigate Discovery Coverage'}).click({timeout: 130_000});
+  const nav = page.getByRole('navigation', {name: 'Coverage categories'});
+  const list = page.getByRole('region', {name: 'Cohort cards'});
+  const detail = page.getByRole('region', {name: 'Coverage card inspection'});
+  const groups = [
+    ['4 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper']],
+    ['1 Unresolved relationship', ['Agent of Shauku']],
+    ['1 Excluded by objective policy', ['Murder']],
+    ['4 Outside current objective coverage', ['Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer', 'Reassembling Skeleton']],
+    ['1 Ordinary creature body', ['Walking Corpse']],
+    ['1 Excluded by Commander eligibility', ['Dryad Arbor']],
+  ] as const;
+  await expect(nav.getByRole('button', {name: '12 All cards'})).toBeVisible();
+  for (const [label, names] of groups) {
+    await nav.getByRole('button', {name: label, exact: true}).click();
+    await expect(list.getByRole('button')).toHaveCount(names.length);
+    for (const name of names) await expect(list.getByRole('button', {name, exact: true})).toBeVisible();
+  }
+  await nav.getByRole('button', {name: groups[0][0]}).click();
+  await list.getByRole('button', {name: 'Viscera Seer'}).click();
+  await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
+  await expect(detail).toContainText('activation cost');
+  await nav.getByRole('button', {name: groups[3][0]}).click();
+  await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
+  await expect(detail).toContainText('Absent from the ordinary findings index');
+  await expect(detail).toContainText('No pathway check for the reviewed relationship');
+  await expect(detail.getByRole('button', {name: /Rules comparison/})).toBeVisible();
+  await detail.getByText('Retained Oracle text and identity').click();
+  await expect(detail.getByRole('link', {name: 'Scryfall printing record'})).toBeVisible();
+  await nav.getByRole('button', {name: groups[1][0]}).click();
+  await expect(detail).toContainText('leaves land and creature overlap unresolved');
+  await page.getByRole('button', {name: 'Back to discovery results'}).click();
+  await expect(page.getByRole('navigation', {name: 'Finding categories', exact: true})).toBeVisible();
+});

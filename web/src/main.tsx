@@ -1,3 +1,4 @@
+import {DiscoveryCoverage} from "./DiscoveryCoverage";
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {api, type CardImage, type Evidence, type Finding, type Health, type CommanderView, type Objective, type Run} from './api';
@@ -32,6 +33,8 @@ export function App() {
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
+  const [coverageRun, setCoverageRun] = useState<string>();
+  const coverageOpen = !!run && coverageRun === run.runId;
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
   const [detailError, setDetailError] = useState('');
@@ -145,6 +148,11 @@ export function App() {
           <div><h2>Discovery results</h2><p>{objectives.find(o => o.id === run.objective)?.label} · {run.commander}</p></div>
           <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} available cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
+        {run.commander === "Judith, the Scourge Diva" && run.objective === "own-nontoken-creature-deaths" &&
+          <div className="actions"><button aria-expanded={coverageOpen} onClick={() => setCoverageRun(coverageOpen ? undefined : run.runId)}>
+            {coverageOpen ? "Back to discovery results" : "Investigate Discovery Coverage"}
+          </button></div>}
+        {coverageOpen ? <DiscoveryCoverage key={run.runId} run={run}/> : <>
         <nav className="categories" aria-label="Finding categories">
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description} aria-description={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
@@ -198,6 +206,7 @@ export function App() {
           <ul>{run.limitations.map((l, i) => <li key={i}>{l}</li>)}</ul><RawDetails label="Exact population counts" value={run.counts}/>
           <p>Only the latest search is retained. A new discovery replaces it.</p><a href={`/api/v1/runs/${run.runId}/report`} download>Download complete live evidence, including all eligibility records</a>
         </details>
+        </>}
       </>}
       <details className="shared-help"><summary>About the evidence checks</summary>
         <dl className="evidence-fields">

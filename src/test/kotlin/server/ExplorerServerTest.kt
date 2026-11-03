@@ -74,6 +74,20 @@ class ExplorerServerTest : FunSpec({
                     }
                     apiHash.digest().toList() shouldBe cliHash.digest().toList()
                 } finally { Files.deleteIfExists(output) }
+                val coverageResponse = request(server, "runs/${summary.runId}/coverage")
+                if (objective == objectives.first()) {
+                    coverageResponse.statusCode() shouldBe 200
+                    val comparison = reportJson.decodeFromString<CoverageComparison>(coverageResponse.body())
+                    val omitted = comparison.cards.single { it.source.card == "Reassembling Skeleton" }
+                    omitted.inFindings shouldBe false
+                    val omittedResponse = request(server, "runs/${summary.runId}/cards/${omitted.index}")
+                    omittedResponse.statusCode() shouldBe 200
+                    val omittedCard = reportJson.decodeFromString<CardEvidence>(omittedResponse.body())
+                    omittedCard.results.isEmpty() shouldBe true
+                    omittedCard.facts shouldBe live.report.facts.filter { it.card == omitted.source.card }
+                } else {
+                    coverageResponse.statusCode() shouldBe 404
+                }
                 val card=summary.cards.first { it.pathways.getValue("MATCH")>0 }
                 val detail=reportJson.decodeFromString<CardEvidence>(request(server,"runs/${summary.runId}/cards/${card.index}").body())
                 detail.results shouldBe live.report.results.filter { it.card==card.card }

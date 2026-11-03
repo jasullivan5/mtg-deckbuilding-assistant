@@ -1,0 +1,138 @@
+{
+  "reviewedOn": "2026-11-02",
+  "reviewedEngine": "03869c08665bf476a8b40dacbfbcd501c54a33bd",
+  "cards": [
+    {
+      "card": "Accursed Centaur",
+      "probe": "SACRIFICE",
+      "expectation": "When it enters, you must sacrifice a creature. A suitable nontoken creature, including the Centaur, can supply the death if it reaches the graveyard.",
+      "diagnosis": "The live check examines the mandatory sacrifice effect on resolution.",
+      "printingId": "894556d8-6d5c-431b-a45d-26cd37c5f456",
+      "oracleId": "b1e6921e-e460-4e58-82b0-d98ee31c279d",
+      "oracleText": "When this creature enters, sacrifice a creature.",
+      "sourceUrl": "https://api.scryfall.com/cards/894556d8-6d5c-431b-a45d-26cd37c5f456",
+      "snapshotSha256": "492452bf6811b3be8c6cf2e90fe44ca19f98de4574ce6df2ce22424474864ee4"
+    },
+    {
+      "card": "Viscera Seer",
+      "probe": "SACRIFICE",
+      "expectation": "Sacrifice a creature to scry 1. You can activate again while the source, suitable creatures and legal timing are available.",
+      "diagnosis": "The live check examines the creature paid as an activation cost.",
+      "printingId": "6179f847-e334-4f7f-9a4e-0013942a394f",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "oracleText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "sourceUrl": "https://api.scryfall.com/cards/6179f847-e334-4f7f-9a4e-0013942a394f",
+      "snapshotSha256": "5840b4b6a3bf4a5248aaa37eb350dcb17f772356d94ec9e64aa18439cdac3d87"
+    },
+    {
+      "card": "Attrition",
+      "probe": "SACRIFICE",
+      "expectation": "Pay black mana and sacrifice a creature to destroy target nonblack creature. You must have a legal target to activate.",
+      "diagnosis": "The sacrifice cost and the separate destruction check answer different questions.",
+      "printingId": "e3eb615b-249d-433f-a521-8310e8784b5d",
+      "oracleId": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+      "oracleText": "{B}, Sacrifice a creature: Destroy target nonblack creature.",
+      "sourceUrl": "https://api.scryfall.com/cards/e3eb615b-249d-433f-a521-8310e8784b5d",
+      "snapshotSha256": "e576f4d0530835f4b20352fe1536fc64a56b5785994247976a98a0be17e0be50"
+    },
+    {
+      "card": "Akki Scrapchomper",
+      "probe": "SACRIFICE",
+      "expectation": "Pay red mana, tap and sacrifice an artifact or land to draw. A nontoken artifact creature inherently satisfies the artifact choice.",
+      "diagnosis": "The current query recognizes the artifact route and leaves land overlap unresolved. Primary inclusion for type-dependent sacrifice remains a Product Studio decision.",
+      "printingId": "b0e02737-0193-46e4-a506-cec86a44dc99",
+      "oracleId": "baea7cc5-15ec-4229-ad8b-d4b34c2e21e8",
+      "oracleText": "{1}{R}, {T}, Sacrifice an artifact or land: Draw a card.",
+      "sourceUrl": "https://api.scryfall.com/cards/b0e02737-0193-46e4-a506-cec86a44dc99",
+      "snapshotSha256": "a5ef14135f24a9b9d6f52ae9cbea4ff649707f9595626283108167709c8826a8"
+    },
+    {
+      "card": "Agent of Shauku",
+      "probe": "SACRIFICE",
+      "expectation": "Pay mana and sacrifice a land to give target creature +2/+0. A land that is also a nontoken creature could supply the death.",
+      "diagnosis": "The mechanical query leaves land and creature overlap unresolved. The sacrifice policy admits the cost form. No Judith-eligible land-creature partner or animation setup is established here.",
+      "printingId": "d8316804-6f8b-423e-a2c3-fa476c095544",
+      "oracleId": "d2e0d739-b441-4173-a8f1-b831a19ea98e",
+      "oracleText": "{1}{B}, Sacrifice a land: Target creature gets +2/+0 until end of turn.",
+      "sourceUrl": "https://api.scryfall.com/cards/d8316804-6f8b-423e-a2c3-fa476c095544",
+      "snapshotSha256": "ebe07287a8063e9a3aa4ae1a07b42493d6480e5de82f2f5fe6479c39919a0bc1"
+    },
+    {
+      "card": "Grim Haruspex",
+      "probe": "DrawCards",
+      "expectation": "Draw when another nontoken creature you control dies. This rewards a death that has already happened.",
+      "diagnosis": "The authored draw is present. The death walker skips draw and the objective has no general payoff branch. The separate morph diagnostic concerns another ability.",
+      "printingId": "cf1fe2bf-1640-4781-87b4-09a1f7d35831",
+      "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "oracleText": "Morph {B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhenever another nontoken creature you control dies, draw a card.",
+      "sourceUrl": "https://api.scryfall.com/cards/cf1fe2bf-1640-4781-87b4-09a1f7d35831",
+      "snapshotSha256": "5b101cdbd942b61ed3f298cf3090e4697543d23761663084314966dd3a11ae6a"
+    },
+    {
+      "card": "Doomed Dissenter",
+      "probe": "CREATE_TOKEN",
+      "expectation": "When it dies, create a Zombie. The token can replace a body, while its eventual death is outside Judith's nontoken trigger.",
+      "diagnosis": "The shared token fact is present. The death objective leaves the death-to-token relationship unqueried.",
+      "printingId": "a1c0b645-de43-46d0-84c1-03f295def217",
+      "oracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+      "oracleText": "When this creature dies, create a 2/2 black Zombie creature token.",
+      "sourceUrl": "https://api.scryfall.com/cards/a1c0b645-de43-46d0-84c1-03f295def217",
+      "snapshotSha256": "a6e44719a752bac81d55baa7d3fe80bef99deb89586dd375451b6cb14503f07d"
+    },
+    {
+      "card": "Pitiless Plunderer",
+      "probe": "CREATE_TOKEN",
+      "expectation": "Create a Treasure when another creature you control dies. The trigger can also observe a token creature.",
+      "diagnosis": "The shared token fact is present. The death objective leaves the death-to-Treasure relationship unqueried.",
+      "printingId": "c87ebffe-5907-427b-9f9b-7c36a12b4a03",
+      "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+      "oracleText": "Whenever another creature you control dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "sourceUrl": "https://api.scryfall.com/cards/c87ebffe-5907-427b-9f9b-7c36a12b4a03",
+      "snapshotSha256": "50ea5539bb9edb21852ec90f0ed87c377f75224d841a7a5b0e4e795e7087eefc"
+    },
+    {
+      "card": "Reassembling Skeleton",
+      "probe": "MOVE_OBJECT",
+      "expectation": "Pay mana to return this card tapped from your graveyard. Under the adopted resource model it can replenish nontoken creature fuel for a later death.",
+      "diagnosis": "The shared movement fact is present. The death objective has no renewable creature resource branch.",
+      "printingId": "655f983e-3b23-48ee-89d5-d01d469d5a6f",
+      "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "oracleText": "{1}{B}: Return this card from your graveyard to the battlefield tapped.",
+      "sourceUrl": "https://api.scryfall.com/cards/655f983e-3b23-48ee-89d5-d01d469d5a6f",
+      "snapshotSha256": "7f721233f390d7edca66ebafe0392f1e0d2f50a07686b4e8dfc7e2ca48e90a75"
+    },
+    {
+      "card": "Walking Corpse",
+      "probe": "BODY",
+      "expectation": "An ordinary nontoken body can be sacrificed by another card. Its rules supply no distinctive death contribution.",
+      "diagnosis": "The reviewed native card has no scripted behavior and the live query emits no pathway.",
+      "printingId": "8e033384-3334-4082-9541-f2443d3bc424",
+      "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+      "oracleText": "",
+      "sourceUrl": "https://api.scryfall.com/cards/8e033384-3334-4082-9541-f2443d3bc424",
+      "snapshotSha256": "cf8257ba6a8d42877be62ec1a675e3a63505ce4898034ddb2d0435083fb52bfe"
+    },
+    {
+      "card": "Murder",
+      "probe": "DESTROY",
+      "expectation": "Destroy a target creature. You may choose your own creature if it is a legal target.",
+      "diagnosis": "Current policy excludes ordinary friendly-target removal even when mechanically possible.",
+      "printingId": "c8676f02-cf1e-4d40-a0c5-6e5a97417898",
+      "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+      "oracleText": "Destroy target creature.",
+      "sourceUrl": "https://api.scryfall.com/cards/c8676f02-cf1e-4d40-a0c5-6e5a97417898",
+      "snapshotSha256": "7148e460e0c5b3580a3aadf05b18f5e3556273cf90b1aaeeaa510dab15c51c80"
+    },
+    {
+      "card": "Dryad Arbor",
+      "probe": "ELIGIBILITY",
+      "expectation": "This card is inherently both a land and a creature. It illustrates the land-creature overlap independently of animation.",
+      "diagnosis": "Its green identity places it outside Judith's deck. This run supplies no mechanical evaluation of it.",
+      "printingId": "8cee476d-42e1-4997-87af-73e18f542167",
+      "oracleId": "e996cd67-739c-40f4-b276-0042acf26c71",
+      "oracleText": "(This land isn't a spell, it's affected by summoning sickness, and it has \"{T}: Add {G}.\")",
+      "sourceUrl": "https://api.scryfall.com/cards/8cee476d-42e1-4997-87af-73e18f542167",
+      "snapshotSha256": "edb6d84ad473fe269a3ff38264c32542ebde5b9445bc0b82439a5ff5a211d215"
+    }
+  ]
+}

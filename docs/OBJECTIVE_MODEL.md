@@ -1,6 +1,6 @@
 # Objective direction — decision record v1
 
-Adopted by Product Studio on 2026-11-02. This records direction, not authorization for a new objective engine. M1 remains a bounded implementation awaiting hands-on acceptance.
+Adopted by Product Studio on 2026-11-02. This records direction, not authorization for a new objective engine. Product Studio accepted the bounded M1 and M2 Explorer experiences.
 
 ## Distinctive contributions
 
@@ -28,4 +28,4 @@ Correlate the original self card, graveyard source, battlefield entry, controlle
 
 Future objectives can investigate creature deaths, land animation and land sacrifice separately. **Grouping** retains each objective's candidates, relationships, sources and limitations. **Connecting** requires evidence joining the same objects, types, resources, costs, zones, timing and causal conditions. Grouping and shared keywords alone establish no valid interaction.
 
-User-composed strategies and system-assisted discovery may complement each other; the user need not necessarily author every complementary objective. Future filters may expose operations, participation or demonstrated resource qualities. M1 retains its mechanic filter. Objective authoring, role filters, composition, dependency graphs and automatic combinations remain outside this increment; no M2 continuation is authorized.
+User-composed strategies and system-assisted discovery may complement each other; the user need not necessarily author every complementary objective. Future filters may expose operations, participation or demonstrated resource qualities. M1 retains its mechanic filter. Objective authoring, role filters, composition, dependency graphs and automatic combinations remain outside this increment.
