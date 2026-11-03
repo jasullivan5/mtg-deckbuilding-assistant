@@ -1,5 +1,6 @@
 import {useRef, useState} from 'react';
 import {CardPicture} from './CardPicture';
+import {retainedPrintingImage} from './retainedPrintingImage';
 import evidence from './integration-change-evidence.json';
 
 const {relationships, revisions, totals, population, objectives} = evidence;
@@ -85,12 +86,7 @@ export default function IntegrationChange() {
     <section className="pathway" tabIndex={-1} ref={inspection} aria-labelledby="integration-card">
       <h3 id="integration-card">{card}</h3>
       <div className="card-overview">
-        <CardPicture key={source.printingId} image={{
-          index: 0, card, status: source.image ? 'VERIFIED' : 'UNAVAILABLE', set: source.set,
-          printingId: source.printingId, oracleId: source.oracleId, fetchedAt: source.retrievedAt, metadataSha256: source.sha256,
-          algorithm: 'retained-printing-snapshot', collectorNumber: source.collectorNumber, sourceUrl: source.cardUrl, reason: 'No front image in the retained printing snapshot.',
-          faces: source.image ? [{name: card, url: source.image, artist: source.artist}] : [],
-        }}/>
+        <CardPicture key={source.printingId} image={retainedPrintingImage(source)}/>
         <div className="authored">
           <p className="eyebrow">RECORDED OBJECTIVE DISCOVERY · {movement}</p>
           <p><strong>{verdictText[outcome.before.verdict]} → {verdictText[outcome.after.verdict]}</strong></p>

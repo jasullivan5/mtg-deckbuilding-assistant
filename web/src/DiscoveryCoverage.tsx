@@ -81,7 +81,7 @@ function CoverageInspection({entry, run}: {entry: Entry; run: Run}) {
   </section>;
 }
 
-export function DiscoveryCoverage({run}: {run: Run}) {
+export function DiscoveryCoverage({run, initialCard}: {run: Run; initialCard?: string}) {
   const [comparison, setComparison] = useState<Comparison>();
   const [error, setError] = useState('');
   const [category, setCategory] = useState<Category | 'ALL'>('ALL');
@@ -94,7 +94,7 @@ export function DiscoveryCoverage({run}: {run: Run}) {
   }, [run.runId]);
   const cards = comparison?.cards ?? [];
   const filtered = cards.filter(c => category === 'ALL' || c.category === category);
-  const entry = filtered.find(c => c.source.oracleId === selected) ?? filtered[0];
+  const entry = filtered.find(c => selected ? c.source.oracleId === selected : c.source.card === initialCard) ?? filtered[0];
 
   return <section aria-label="Discovery Coverage" className="coverage">
     <h2>Discovery Coverage</h2>

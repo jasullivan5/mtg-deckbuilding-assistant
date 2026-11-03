@@ -295,3 +295,62 @@ test('Integration Change Case Study compares historical records and preserves li
   await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
   await expect(page.getByRole('button', {name: 'Investigate Discovery Coverage'})).toBeVisible();
 });
+
+test('integration primer reveals both examples and leads to the existing investigations', async ({page}) => {
+  await page.setViewportSize({width: 390, height: 844});
+  const discoveryRequests: unknown[] = [];
+  page.on('request', request => {
+    if (request.url().endsWith('/api/v1/discover')) discoveryRequests.push(request.postDataJSON());
+  });
+  await page.goto('/');
+  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
+  const primer = page.getByRole('region', {name: 'How Card Integration Works'});
+  await expect(primer).toContainText('Bloodghast’s ability triggers here.');
+  await expect(primer).toContainText('ILLUSTRATED RULES RELATIONSHIP');
+  await expect(primer.getByText('Excluded → Recognized')).toHaveCount(0);
+  await expect(primer.getByRole('button', {name: 'Open Bloodghast’s historical case study'})).toHaveCount(0);
+  const prediction = primer.getByRole('button', {name: 'It recognized the return'});
+  await prediction.focus();
+  await page.keyboard.press('Space');
+  await expect(prediction).toHaveAttribute('aria-pressed', 'true');
+  await expect(primer).toContainText('Excluded → Recognized');
+  await expect(primer).toContainText('No such scenario or independent qualification is linked');
+  await primer.getByRole('button', {name: 'Open Bloodghast’s historical case study'}).click();
+  const study = page.getByRole('region', {name: 'When a return trigger works from the graveyard'});
+  await expect(study).toContainText('95 → 104');
+  await expect(study.getByRole('region', {name: 'Bloodghast', exact: true})).toBeVisible();
+  expect(discoveryRequests).toEqual([]);
+
+  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
+  await expect(primer).toContainText('Excluded → Recognized');
+  await primer.getByRole('button', {name: 'Next: Agent of Shauku'}).click();
+  await expect(primer.getByRole('heading', {name: 'When a land could also be a creature'})).toBeFocused();
+  await primer.getByRole('button', {name: 'A land that is only a land'}).click();
+  await expect(primer).toContainText('does not count as a creature death');
+  await primer.getByRole('button', {name: 'A land that is also a nontoken creature'}).click();
+  await expect(primer).toContainText('leaves the actual board setup open');
+  await expect(primer).toContainText('Recorded M3.1 finding · Unresolved relationship.');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  await primer.getByRole('button', {name: 'Continue to recap'}).click();
+  await primer.getByText('Would nine extra matches convince you?').click();
+  await expect(primer.getByText(/Reassembling Skeleton stayed recognized/)).toBeVisible();
+  await primer.getByRole('button', {name: '2. Agent of Shauku'}).click();
+  await expect(primer).toContainText('leaves the actual board setup open');
+  await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();
+  const coverage = page.getByRole('region', {name: 'Discovery Coverage', exact: true});
+  const agent = coverage.getByRole('region', {name: 'Coverage card inspection'});
+  await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible({timeout: 130_000});
+  await expect(agent).toContainText('Unresolved relationship');
+  expect(discoveryRequests).toEqual([{commander: 'Judith, the Scourge Diva', objective: 'own-nontoken-creature-deaths'}]);
+
+  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
+  await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();
+  await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible();
+  expect(discoveryRequests).toHaveLength(1);
+  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
+  await primer.getByRole('button', {name: 'Restart primer'}).click();
+  await expect(primer.getByRole('heading', {name: 'A trigger in the graveyard'})).toBeFocused();
+  await expect(primer.getByText('Excluded → Recognized')).toHaveCount(0);
+  await page.setViewportSize({width: 1365, height: 950});
+  await expect(primer).toBeVisible();
+});

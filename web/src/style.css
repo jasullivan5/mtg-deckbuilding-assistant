@@ -219,3 +219,22 @@ button.rules-line:hover { background: #273c41; }
   .integration-change .picture { max-width: 150px; }
 }
 .integration-entry { margin-top: 14px; }
+
+.primer { margin-bottom: 18px; }
+.primer > p, .primer-reveal { max-width: 85ch; }
+.primer-card { display: grid; grid-template-columns: 135px minmax(0, 1fr); gap: 20px; align-items: start; }
+.primer-card .card-text { margin-top: 0; }
+.primer-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; counter-reset: primer-step; }
+.primer-flow li { counter-increment: primer-step; background: #22383e; border: 1px solid #425d62; border-radius: 8px; padding: 12px; margin: 0; }
+.primer-flow strong { display: block; color: #b8e6cc; margin-bottom: 5px; }
+.primer-flow strong::before { content: counter(primer-step) ". "; }
+.primer button[aria-pressed=true] { border-color: #b6d9c3; background: #2a4246; }
+.primer-reveal { margin: 16px 0; padding: 4px 15px; border-left: 3px solid #91cbb3; background: #22383e; }
+.primer-restart { border-top: 1px solid #425d62; margin-top: 18px; padding-top: 14px; }
+@media (max-width: 760px) {
+  .primer-flow { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 480px) {
+  .primer-card { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .primer-card .picture { max-width: 115px; }
+}
