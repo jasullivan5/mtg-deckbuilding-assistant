@@ -94,7 +94,7 @@
       "card": "Reassembling Skeleton",
       "probe": "MOVE_OBJECT",
       "expectation": "Pay mana to return this card tapped from your graveyard. Under the adopted resource model it can replenish nontoken creature fuel for a later death.",
-      "diagnosis": "The shared movement fact is present. The death objective has no renewable creature resource branch.",
+      "diagnosis": "Shared extraction records the return as a movement fact. The death walker also retains an unread movement instruction, and the objective has no renewable creature resource branch.",
       "printingId": "655f983e-3b23-48ee-89d5-d01d469d5a6f",
       "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
       "oracleText": "{1}{B}: Return this card from your graveyard to the battlefield tapped.",
