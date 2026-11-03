@@ -7,7 +7,11 @@ import {CommanderPanel} from './CommanderPanel';
 import {DiscoveryCoverage} from './DiscoveryCoverage';
 import './style.css';
 
+const IntegrationPrimer = lazy(() => import('./IntegrationPrimer'));
 const IntegrationChange = lazy(() => import('./IntegrationChange'));
+
+const judith = 'Judith, the Scourge Diva';
+const creatureDeaths = 'own-nontoken-creature-deaths';
 
 const categories = [
   ['IDENTIFIED', 'Identified mechanics', 'Cards with an identified way to contribute to your objective.'],
@@ -30,13 +34,15 @@ function RawDetails({label, value}: {label: string; value: unknown}) {
 export function App() {
   const [objectives, setObjectives] = useState<Objective[]>([]);
   const [health, setHealth] = useState<Health | null>(null);
-  const [commander, setCommander] = useState('Judith, the Scourge Diva');
-  const [objective, setObjective] = useState('own-nontoken-creature-deaths');
+  const [commander, setCommander] = useState(judith);
+  const [objective, setObjective] = useState(creatureDeaths);
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
+  const [primerOpen, setPrimerOpen] = useState<boolean>();
   const [caseOpen, setCaseOpen] = useState(false);
   const [coverageRun, setCoverageRun] = useState<string>();
+  const [coverageCard, setCoverageCard] = useState<string>();
   const coverageOpen = !!run && coverageRun === run.runId;
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
@@ -49,6 +55,8 @@ export function App() {
   const [name, setName] = useState('');
   const [page, setPage] = useState(0);
   const [images, setImages] = useState<Record<string, CardImage>>({});
+  const caseRef = useRef<HTMLDivElement>(null);
+  const coverageRef = useRef<HTMLDivElement>(null);
   const detailRef = useRef<HTMLElement>(null);
   const pageSize = 24;
   const runId = run?.runId;
@@ -95,24 +103,49 @@ export function App() {
   }, [runId, visibleIds]);
 
   function changed() {
+    setCoverageCard(undefined);
     setCommanderOpen(false); setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
   }
-  async function research(discovery: boolean) {
+  async function research(discovery: boolean, searchCommander = commander, searchObjective = objective) {
     setBusy(discovery ? 'Finding cards…' : 'Loading commander…');
     if (discovery) changed();
     try {
-      const view = await api<CommanderView>('commander-view', {commander, objective}); setCommanderView(view);
+      const view = await api<CommanderView>('commander-view', {commander: searchCommander, objective: searchObjective}); setCommanderView(view);
       const inspected = view.inspection;
       if (!inspected.selectable) setCommanderOpen(true);
       if (discovery && inspected.selectable) {
-        const fresh = await api<Run>('discover', {commander, objective}); setRun(fresh);
+        const fresh = await api<Run>('discover', {commander: searchCommander, objective: searchObjective}); setRun(fresh);
         setCategory(fresh.cards.some(c => c.browsingState === 'IDENTIFIED') ? 'IDENTIFIED' :
           fresh.cards.some(c => c.browsingState === 'UNRESOLVED') ? 'UNRESOLVED' : 'ALL');
+        return fresh;
       }
     } catch (e) { setError(e instanceof Error ? e.message : String(e)); }
     finally { setBusy(''); }
   }
+  useEffect(() => {
+    if (caseOpen) caseRef.current?.focus();
+  }, [caseOpen]);
+
+  useEffect(() => {
+    if (coverageOpen && coverageCard) coverageRef.current?.focus();
+  }, [coverageOpen, coverageCard]);
+
+  async function openAgentCoverage() {
+    let matchingRun = run;
+    if (run?.commander !== judith || run?.objective !== creatureDeaths) {
+      setCommander(judith);
+      setObjective(creatureDeaths);
+      matchingRun = await research(true, judith, creatureDeaths) ?? null;
+    }
+    if (!matchingRun) return;
+    setPrimerOpen(false);
+    setCaseOpen(false);
+    setCoverageCard('Agent of Shauku');
+    setCoverageRun(matchingRun.runId);
+    coverageRef.current?.focus();
+  }
+
   const shownDetail = detail?.card === selectedCard?.card ? detail : null;
   const imageFor = (index: number) => images[`${runId}:${index}`];
   const mechanics = [...new Set(run?.cards.flatMap(c => c.mechanics ?? []) ?? [])].sort();
@@ -147,21 +180,32 @@ export function App() {
         </div>
       </section>
       <div className="actions integration-entry">
-        <button aria-expanded={caseOpen} onClick={() => setCaseOpen(!caseOpen)}>
+        <button aria-expanded={!!primerOpen} onClick={() => {setPrimerOpen(!primerOpen); setCaseOpen(false);}}>
+          {primerOpen ? 'Close How Card Integration Works' : 'How Card Integration Works'}
+        </button>
+        <button aria-expanded={caseOpen} onClick={() => {setCaseOpen(!caseOpen); if (primerOpen) setPrimerOpen(false);}}>
           {caseOpen ? 'Close Integration Change Case Study' : 'Open Integration Change Case Study'}
         </button>
       </div>
-      {caseOpen && <Suspense fallback={<p role="status">Loading comparison…</p>}><IntegrationChange/></Suspense>}
+      {primerOpen !== undefined && <div hidden={!primerOpen}>
+        <Suspense fallback={<p role="status">Loading primer…</p>}>
+          <IntegrationPrimer busy={!!busy || !objectives.length} openCoverage={() => void openAgentCoverage()}
+            openCase={() => {setPrimerOpen(false); setCaseOpen(true);}}/>
+        </Suspense>
+      </div>}
+      {caseOpen && <div ref={caseRef} tabIndex={-1}>
+        <Suspense fallback={<p role="status">Loading comparison…</p>}><IntegrationChange/></Suspense>
+      </div>}
       {run && <>
         <section className="run-summary" aria-label="Completed discovery">
           <div><h2>Discovery results</h2><p>{objectives.find(o => o.id === run.objective)?.label} · {run.commander}</p></div>
           <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} available cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
-        {run.commander === "Judith, the Scourge Diva" && run.objective === "own-nontoken-creature-deaths" &&
-          <div className="actions"><button aria-expanded={coverageOpen} onClick={() => setCoverageRun(coverageOpen ? undefined : run.runId)}>
+        {run.commander === judith && run.objective === creatureDeaths &&
+          <div className="actions"><button aria-expanded={coverageOpen} onClick={() => {setCoverageCard(undefined); setCoverageRun(coverageOpen ? undefined : run.runId);}}>
             {coverageOpen ? "Back to discovery results" : "Investigate Discovery Coverage"}
           </button></div>}
-        {coverageOpen ? <DiscoveryCoverage key={run.runId} run={run}/> : <>
+        {coverageOpen ? <div tabIndex={-1} ref={coverageRef}><DiscoveryCoverage key={run.runId + (coverageCard ?? '')} run={run} initialCard={coverageCard}/></div> : <>
         <nav className="categories" aria-label="Finding categories">
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description} aria-description={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
