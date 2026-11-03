@@ -102,13 +102,17 @@ class StoredRun(
                 assurance[card].orEmpty().any { materialConcerns(it).any { c -> c.state == EvidenceState.KNOWN_PROBLEM } })
         }
     )
+    val coverage = compareCoverage(catalog, report, summary.cards, results, actions, facts, eligibility)
+    private val coverageNames = coverage?.cards.orEmpty().mapNotNull { row -> row.index?.let { it to row.source.card } }.toMap()
     val export = LiveDiscovery(runId = id, startedAt = started.toString(), durationMs = durationMs,
         applicationRevision = revision, engineMode = EngineBuild.mode, report = report)
 
-    fun definition(index: Int) = summary.cards.getOrNull(index)?.card?.let(catalog::card)
+    private fun cardName(index: Int) = summary.cards.getOrNull(index)?.card ?: coverageNames[index]
+
+    fun definition(index: Int) = cardName(index)?.let(catalog::card)
 
     fun card(index: Int): CardEvidence? {
-        val name = summary.cards.getOrNull(index)?.card ?: return null
+        val name = cardName(index) ?: return null
         val native = catalog.card(name)
         val scenarios = catalog.definitionReview(name).scenarioReferences
         val review = catalog.translationAssurance(name)

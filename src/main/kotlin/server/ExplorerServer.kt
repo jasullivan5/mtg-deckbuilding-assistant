@@ -154,6 +154,9 @@ class ExplorerServer(
         if (run == null || parts.firstOrNull() != run.id) {
             x.json(410, ApiError("RUN_EXPIRED", "This run is no longer retained. Run discovery again; only the latest run is kept.")); return
         }
+        if (parts.size == 2 && parts[1] == "coverage" && run.coverage != null) {
+            x.json(200, run.coverage); return
+        }
         if (parts.size == 2 && parts[1] == "report") {
             x.responseHeaders.set("Content-Disposition", "attachment; filename=explorer-${run.id}.json")
             x.json(200, run.export); return

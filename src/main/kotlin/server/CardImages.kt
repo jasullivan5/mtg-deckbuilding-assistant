@@ -50,6 +50,8 @@ private fun identifier(card: CardDefinition): JsonObject? {
     return null // Never fall back to a name lookup.
 }
 
+internal fun printingIdentity(card: CardDefinition): String? = identifier(card)?.text("id")
+
 /** Verify physical identity, exact printing and complete ordered faces before exposing any image. */
 fun verifiedImage(index: Int, card: CardDefinition, raw: JsonObject, fetchedAt: String): CardImage {
     fun unavailable(reason: String) = CardImage(index, card.name, "UNAVAILABLE", reason)
