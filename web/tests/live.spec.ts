@@ -237,6 +237,9 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
   await expect(detail).toContainText('activation cost');
   await nav.getByRole('button', {name: groups[3][0]}).click();
   await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
+  await expect(detail).toContainText('In the ordinary findings index');
+  await expect(detail).toContainText('No pathway check for the reviewed relationship');
+  await list.getByRole('button', {name: 'Pitiless Plunderer'}).click();
   await expect(detail).toContainText('Absent from the ordinary findings index');
   await expect(detail).toContainText('No pathway check for the reviewed relationship');
   await expect(detail.getByRole('button', {name: /Rules comparison/})).toBeVisible();

@@ -78,7 +78,7 @@ class ExplorerServerTest : FunSpec({
                 if (objective == objectives.first()) {
                     coverageResponse.statusCode() shouldBe 200
                     val comparison = reportJson.decodeFromString<CoverageComparison>(coverageResponse.body())
-                    val omitted = comparison.cards.single { it.source.card == "Reassembling Skeleton" }
+                    val omitted = comparison.cards.single { it.source.card == "Pitiless Plunderer" }
                     omitted.inFindings shouldBe false
                     val omittedResponse = request(server, "runs/${summary.runId}/cards/${omitted.index}")
                     omittedResponse.statusCode() shouldBe 200

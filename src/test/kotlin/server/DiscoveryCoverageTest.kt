@@ -45,7 +45,10 @@ class DiscoveryCoverageTest : FunSpec({
             entry.inFindings shouldBe stored.summary.cards.any { it.card == evidence.card }
         }
         val skeleton = comparison.cards.single { it.source.card == "Reassembling Skeleton" }
-        skeleton.inFindings shouldBe false
+        skeleton.inFindings shouldBe true // A diagnostic can be indexed without a pathway.
+        val plunderer = comparison.cards.single { it.source.card == "Pitiless Plunderer" }
+        plunderer.inFindings shouldBe false
+        stored.card(plunderer.index!!)!!.results.isEmpty() shouldBe true
         stored.card(skeleton.index!!)!!.results.isEmpty() shouldBe true
         val arbor = comparison.cards.single { it.source.card == "Dryad Arbor" }
         arbor.eligibility!!.deck shouldBe Verdict.NO_MATCH
