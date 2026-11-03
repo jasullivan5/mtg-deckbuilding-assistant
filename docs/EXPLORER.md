@@ -181,3 +181,18 @@ From the completed Judith search for **My nontoken creatures die**, open **Inves
 The [versioned comparison](../src/main/resources/discovery-coverage-v1.json) records exact printing and Oracle IDs, source URLs and SHA-256 bindings to the existing snapshots. The [retained investigations](OBJECTIVE_COVERAGE.md) document the rules sources, native representation and decisions. No registered assurance records, engine definitions or objective policies were added. Each card's inspector distinguishes available discovery, rules comparison, engine tests and independent verification. The source review concerns the listed relationship and recorded engine revision. The comparison shows uncertain identity or unexplained absence when the available records cannot support a stronger diagnosis.
 
 A bounded next research question is whether native death triggers can be correlated with draw and token creation from the same ability. Grim Haruspex, Doomed Dissenter and Pitiless Plunderer give three different trigger/effect controls for that study. The Agent/Akki primary-inclusion question remains open.
+
+### M3.1 verification record
+
+Windows, JDK 21, Gradle 9.6.1, Node 24.22.1, pnpm 11.25.0 and Playwright with Microsoft Edge. The application base was `f0b77714e4cab57a812e389c38561d068cb4878e`. Both live builds reported clean Argentum `app-stable` at `03869c08665bf476a8b40dacbfbcd501c54a33bd`.
+
+| Check | Result |
+| --- | --- |
+| `.\dev.ps1 test` | 519 passed, zero skipped. Includes source snapshot hashes and identities, exact native printing joins, missing-definition and unassessed inputs, and CLI/API report parity for all three objectives. |
+| `pnpm build`, then `pnpm test:ui` in web | Production build passed and eight interface tests passed in Edge. |
+| `.\scripts\explorer.ps1 -Port 8797`, then `pnpm test:live` with the loopback URL | Seven passed against application `b5e8d34f89cf571f76bc2f27e58e686d54681252` with the corrected tests from `b83db8b2ab54c2e337f77834e38dd2a29391a9a5`. Includes real discovery, changed commander and objective, verified imagery, keyboard navigation and evidence inspection. |
+| `.\scripts\explorer.ps1 -Port 8798`, then `pnpm test:live -g 'Discovery Coverage'` | Final production build and coverage journey passed. The health endpoint reported application `3187a1113bc0542359a44a53bf9e24337c6912d1`. The separate port avoids the occupied default. |
+
+The live sample contained four recognized contributions, four gaps in objective coverage, one unresolved relationship, one objective-policy exclusion, one ordinary body and one Commander eligibility exclusion. All 12 definitions were present. Outside the cohort, the live death search used 6,111 eligible authored cards and emitted 499 MATCH, 410 UNKNOWN and 2,140 NO_MATCH pathway checks, matching the recorded baseline. M3.1 changed the comparison and evidence presentation only. The original result export and index are checked against live report records and CLI output.
+
+An initial simultaneous build hit a Gradle file hash cache lock. The first completed Kotlin and browser runs exposed an incorrect assertion about Skeleton's index membership, corrected by testing its unread instruction and Plunderer's absence separately. No new native scenarios or independent qualifications were added. Cross-platform and exhaustive accessibility checks were outside this verification.
