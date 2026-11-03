@@ -224,3 +224,26 @@ The production candidate was application `0bb0fe359a6194e8e14466b4fe2f68e3bbcd7d
 | `pnpm --dir web test:live` with the same settings | Eight genuine browser checks passed. The new journey covered keyboard selection and focus, 390 px layout, the historical records and a return to live discovery. |
 
 The initial sandboxed launcher could not acquire the Gradle cache lock. The first focused Kotlin invocation also needed JDK 21 added to the shell PATH. Both succeeded after correcting the execution environment. An isolated Vite preview attempt did not complete, so the synthetic suite ran against the production frontend with mocked API responses. The full Kotlin suite, non-Windows launch and new gameplay scenarios were outside this verification run.
+
+## How Card Integration Works
+
+Run `.scriptsexplorer.ps1` and open **How Card Integration Works** below the research controls. The primer itself needs no discovery run.
+
+1. Start with **Bloodghast**. Follow the landfall sequence and predict what the old search found. Explain where the native definition and discovery interpretation diverged. Open the historical case study for the actual comparison, or continue with the second journey.
+2. In **Agent of Shauku**, try both sacrifice payments. Explain why an ordinary land can pay the cost without supplying a creature death, and why the possible type overlap stays unresolved in the recorded Judith investigation. **Open Agent in Discovery Coverage** reuses a matching Judith death-objective run or performs the standard live search, then selects Agent. Starting that run sets the Explorer controls to Judith and the creature-death objective.
+3. Open **Recap** and decide what evidence would make nine additional matches persuasive. Distinguish discovery, gameplay testing and independent review. Use the journey buttons to revisit your choices or **Restart primer** to clear them.
+
+The illustrated sequences explain reviewed relationships and do not depict observed gameplay. Bloodghast uses the existing M3.2 comparison extract. Agent uses the M3.1 review entry and its source-bound Prophecy printing snapshot. Its hypothetical land-creature payment leaves the actual board setup open. The underlying research views retain revision and ability provenance. Choices are stored in the current Explorer session and reset on page reload.
+
+Prototype Lab should check whether a reader can explain why one search outcome was wrong and the other remains unresolved, and what evidence would support a gameplay claim. Acceptance remains pending hands-on review.
+
+### Primer validation
+
+Windows PowerShell launch with `.scriptsexplorer.ps1 -Port 8795` built the frontend and installed the Kotlin application. The health endpoint reported application `5e9b097bcddf2e63515b8d007751d4645a6279de+dirty` with only these guide and milestone edits uncommitted, and clean sibling engine `03869c08665bf476a8b40dacbfbcd501c54a33bd` in app-stable mode.
+
+- `pnpm --dir web test:ui` passed eight synthetic interface checks.
+- `pnpm --dir web test:live` passed nine live Edge checks. The primer test covered keyboard prediction, 390 px layout, retained choices, restart and both research links. It observed one real Judith death query, then confirmed the second coverage visit reused that run. The existing M3.1 and M3.2 journeys also passed.
+- Both browser commands used `EXPLORER_URL=http://127.0.0.1:8795` and `EXPLORER_BROWSER_CHANNEL=msedge`. Separate visual checks confirmed both retained printing images decoded and inspected desktop and narrow screenshots.
+- `node scripts/retain-integration-change.mjs --check` validated the existing comparison extract against its retained receipts. The Agent printing snapshot SHA-256 matched the M3.1 manifest.
+
+No gameplay scenarios or new Kotlin test suite runs were part of this frontend increment.
