@@ -27,15 +27,23 @@ function CoverageInspection({entry, run}: {entry: Entry; run: Run}) {
   const [image, setImage] = useState<CardImage>();
   const [error, setError] = useState('');
   useEffect(() => {
-    if (entry.index === null) return;
+    const index = entry.index;
+    if (index === null) return;
     const controller = new AbortController();
     const path = 'runs/' + run.runId;
-    api<Evidence>(path + '/cards/' + entry.index, undefined, controller.signal)
+    api<Evidence>(path + '/cards/' + index, undefined, controller.signal)
       .then(setEvidence).catch(e => {if (!controller.signal.aborted) setError(e.message);});
-    api<CardImage[]>(path + '/images?indices=' + entry.index, undefined, controller.signal)
-      .then(images => setImage(images[0])).catch(() => { /* CardPicture shows the fallback. */ });
+    api<CardImage[]>(path + '/images?indices=' + index, undefined, controller.signal)
+      .then(images => setImage(images[0])).catch(() => {
+        if (controller.signal.aborted) return;
+        setImage({
+          index, card: entry.source.card, status: 'UNAVAILABLE', reason: 'Image metadata could not be loaded.',
+          printingId: null, oracleId: null, set: null, collectorNumber: null, sourceUrl: null,
+          fetchedAt: null, metadataSha256: null, algorithm: '', faces: [],
+        });
+      });
     return () => controller.abort();
-  }, [entry.index, run.runId]);
+  }, [entry.index, entry.source.card, run.runId]);
 
   return <section id="coverage-inspection" className="detail" aria-label="Coverage card inspection">
     <h2>{entry.source.card}</h2>
@@ -64,6 +72,10 @@ function CoverageInspection({entry, run}: {entry: Entry; run: Run}) {
     {evidence && <>
       <h3>Native card and retained evidence</h3>
       <p className="hint">Rules comparison, engine tests and independent verification apply to the recorded scope. The cohort review adds no assurance records.</p>
+      {entry.relationshipChecks === 0 && (evidence.actions.length > 0 || evidence.facts.length > 0) &&
+        <details><summary>Retained native actions and extracted facts</summary>
+          <pre>{JSON.stringify({actions: evidence.actions, facts: evidence.facts}, null, 2)}</pre>
+        </details>}
       <CardInspection evidence={evidence} image={image} revision={run.applicationRevision}/>
     </>}
   </section>;

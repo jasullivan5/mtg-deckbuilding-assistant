@@ -1,10 +1,10 @@
-import {DiscoveryCoverage} from "./DiscoveryCoverage";
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {api, type CardImage, type Evidence, type Finding, type Health, type CommanderView, type Objective, type Run} from './api';
 import {CardPicture} from './CardPicture';
 import {CardInspection} from './CardInspection';
 import {CommanderPanel} from './CommanderPanel';
+import {DiscoveryCoverage} from './DiscoveryCoverage';
 import './style.css';
 
 const categories = [
