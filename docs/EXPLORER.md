@@ -196,3 +196,31 @@ Windows, JDK 21, Gradle 9.6.1, Node 24.22.1, pnpm 11.25.0 and Playwright with Mi
 The live sample contained four recognized contributions, four gaps in objective coverage, one unresolved relationship, one objective-policy exclusion, one ordinary body and one Commander eligibility exclusion. All 12 definitions were present. Outside the cohort, the live death search used 6,111 eligible authored cards and emitted 499 MATCH, 410 UNKNOWN and 2,140 NO_MATCH pathway checks, matching the recorded baseline. M3.1 changed the comparison and evidence presentation only. The original result export and index are checked against live report records and CLI output.
 
 An initial simultaneous build hit a Gradle file hash cache lock. The first completed Kotlin and browser runs exposed an incorrect assertion about Skeleton's index membership, corrected by testing its unread instruction and Plunderer's absence separately. No new native scenarios or independent qualifications were added. Cross-platform and exhaustive accessibility checks were outside this verification.
+
+## M3.2 Integration Change Case Study
+
+Launch with `.scriptsexplorer.ps1` and choose **Open Integration Change Case Study** below the research controls. It opens independently of the selected commander and live search. The measured comparison is fixed to the historical Judith input pool.
+
+1. Start with **Bloodghast**. Read why the extractor rejected its optional landfall return and compare the two recorded outcomes. Open **Source provenance, native action and recorded before/after evidence** for the bound printing, exact ability path and raw records.
+2. Compare **Reassembling Skeleton**, **Blood Speaker** and **Wolfbat**. Look for the stable activated return, the excluded hand return with a changed movement fact, and the corrected return that carries a finality counter. **Browse all measured changes and controls** also exposes the exclusion and separate unresolved pathway on All Hallow's Eve.
+3. Open **Comparison conditions and receipt hashes**. Review the fixed pool, exact revisions and results, then read the integration stages for a selected relationship. A possible follow-up for Product Studio is one focused Wolfbat execution scenario covering the paid return, finality counter placement and the next would-be move to the graveyard.
+
+The [controlled investigation](OBJECTIVE_COVERAGE.md#controlled-comparison-and-source-review) attributed the original application captures to `45782ae4e537cdaab0a2e13de22308466409ecb1` and `877f9ee90fea7120f85096de583db7d898e6fd56`. The retained CLI JSON embeds engine SHA `03869c08665bf476a8b40dacbfbcd501c54a33bd`. Application SHAs come from the historical investigation record. All six CLI reports have identical eligibility and ordered mechanical input records for 6,111 cards with Judith and no additional search filter. The comparison shows 95 → 104 distinct accepted cards, 97 → 106 accepted pathways, and 93 unresolved pathways on both sides. Twenty shared movement facts changed. Death and token result records and their decisions stayed identical. Every reanimation verdict change was one of the nine source-bound returns to the battlefield.
+
+The case study ships a bounded extract of the six reports, including the 20 changed relationship records and one stable control, printing and native file hashes, related unresolved or excluded outcomes, and unsupported records for the selected cards. The export is lazy-loaded by the frontend. To validate it against the original local receipts, run `node scripts/retain-integration-change.mjs --check` from the app root with the six `generated/explorer/boundary-*.json` reports and the retained `boundary-diff.json` receipt index. The script checks receipt hashes, input/eligibility equality, recorded objectives and engine revision, report differences, aggregate reconciliation and exact source bindings. The running app only needs the tracked extract.
+
+The six captures were validated and were not rerun for M3.2. The source review is bounded to selected movement and its context. The comparison carries no linked gameplay scenario or independently qualified requirement for these relationships. The continued unknown checks and unsupported structures limit conclusions, as does the focus on explicit single-zone triggers.
+
+### M3.2 validation
+
+The production candidate was application `0bb0fe359a6194e8e14466b4fe2f68e3bbcd7db3` and clean sibling engine `03869c08665bf476a8b40dacbfbcd501c54a33bd`, mode `app-stable`.
+
+| Command | Observed result |
+| --- | --- |
+| `node scripts/retain-integration-change.mjs --check` | Six receipt hashes, three objective comparisons and 21 source-bound relationship records validated |
+| `.scriptsexplorer.ps1 -Port 8796` | Locked frontend install, TypeScript/Vite production build and Kotlin install succeeded. The health endpoint returned both candidate revisions. |
+| `.dev.ps1 test --tests '*SacrificeBoundaryTest' --tests '*ReanimationIntegrationTest' --tests '*DiscoveryCoverageTest'` | 21 focused Kotlin checks passed, zero failures or skips |
+| `pnpm --dir web test:ui` with `EXPLORER_URL=http://127.0.0.1:8796` and `EXPLORER_BROWSER_CHANNEL=msedge` | Eight synthetic interface checks passed |
+| `pnpm --dir web test:live` with the same settings | Eight genuine browser checks passed. The new journey covered keyboard selection and focus, 390 px layout, the historical records and a return to live discovery. |
+
+The initial sandboxed launcher could not acquire the Gradle cache lock. The first focused Kotlin invocation also needed JDK 21 added to the shell PATH. Both succeeded after correcting the execution environment. An isolated Vite preview attempt did not complete, so the synthetic suite ran against the production frontend with mocked API responses. The full Kotlin suite, non-Windows launch and new gameplay scenarios were outside this verification run.

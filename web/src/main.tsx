@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {lazy, Suspense, useEffect, useMemo, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {api, type CardImage, type Evidence, type Finding, type Health, type CommanderView, type Objective, type Run} from './api';
 import {CardPicture} from './CardPicture';
@@ -6,6 +6,8 @@ import {CardInspection} from './CardInspection';
 import {CommanderPanel} from './CommanderPanel';
 import {DiscoveryCoverage} from './DiscoveryCoverage';
 import './style.css';
+
+const IntegrationChange = lazy(() => import('./IntegrationChange'));
 
 const categories = [
   ['IDENTIFIED', 'Identified mechanics', 'Cards with an identified way to contribute to your objective.'],
@@ -33,6 +35,7 @@ export function App() {
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
+  const [caseOpen, setCaseOpen] = useState(false);
   const [coverageRun, setCoverageRun] = useState<string>();
   const coverageOpen = !!run && coverageRun === run.runId;
   const [selected, setSelected] = useState<number | null>(null);
@@ -143,6 +146,12 @@ export function App() {
           {error && <p role="alert" className="warning">{error}</p>}
         </div>
       </section>
+      <div className="actions integration-entry">
+        <button aria-expanded={caseOpen} onClick={() => setCaseOpen(!caseOpen)}>
+          {caseOpen ? 'Close Integration Change Case Study' : 'Open Integration Change Case Study'}
+        </button>
+      </div>
+      {caseOpen && <Suspense fallback={<p role="status">Loading comparison…</p>}><IntegrationChange/></Suspense>}
       {run && <>
         <section className="run-summary" aria-label="Completed discovery">
           <div><h2>Discovery results</h2><p>{objectives.find(o => o.id === run.objective)?.label} · {run.commander}</p></div>
