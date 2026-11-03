@@ -133,5 +133,3 @@ export default function IntegrationChange() {
       and what happens when Wolfbat would next go to the graveyard.</p>
   </section>;
 }
-
-

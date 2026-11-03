@@ -143,4 +143,3 @@ const output = {revisions, commander, population: population.length, objectives,
 if (process.argv.includes('--check')) assert.deepEqual(read(path), output);
 else writeFileSync(path, JSON.stringify(output) + '\n');
 console.log('Validated six receipt hashes, three objective comparisons and ' + relationships.length + ' source-bound relationships.');
-
