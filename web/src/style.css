@@ -205,3 +205,17 @@ button.rules-line:hover { background: #273c41; }
 .coverage-categories strong { display: block; font-size: 1.3rem; }
 .coverage-oracle { white-space: pre-line; }
 .coverage code { overflow-wrap: anywhere; }
+
+.integration-entry, .integration-change { margin-bottom: 18px; }
+.integration-change > p { max-width: 88ch; }
+.integration-metrics { display: flex; flex-wrap: wrap; gap: 10px; }
+.integration-metrics p { flex: 1 1 170px; margin: 0; padding: 12px; background: #22383e; border-radius: 8px; }
+.integration-metrics strong { display: block; color: #b8e6cc; font-size: 23px; }
+.integration-change dd { margin: 0 0 10px; line-height: 1.55; }
+.integration-stages dt { color: #b6d9c3; font-weight: 650; }
+.integration-change [tabindex] { scroll-margin-top: 16px; }
+@media (max-width: 480px) {
+  .integration-change .card-overview { grid-template-columns: minmax(0, 1fr); }
+  .integration-change .picture { max-width: 150px; }
+}
+.integration-entry { margin-top: 14px; }
