@@ -1,0 +1,121 @@
+import {useState} from 'react';
+import comparison from './integration-change-evidence.json';
+import cohort from '../../src/main/resources/discovery-coverage-v1.json';
+
+const contributions = [
+  {role: 'Cause a death', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.'},
+  {role: 'Replenish a resource', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.'},
+  {role: 'Reward a death', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.'},
+  {role: 'Supply a body', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.'},
+];
+
+export function PrimerPurpose() {
+  const [selected, setSelected] = useState(0);
+  const example = contributions[selected];
+  return <>
+    <p>We’re building a way to explain why a card could matter in a specific Commander strategy. Start with a plan: <strong>My nontoken creatures die.</strong> Choose a contribution to see how it serves that plan.</p>
+    <div className="primer-choices" role="group" aria-label="Ways to support a creature-death plan">
+      {contributions.map(({role, card}, index) => <button key={role} aria-pressed={index === selected} onClick={() => setSelected(index)}>
+        <strong>{role}</strong><small>{card}</small>
+      </button>)}
+    </div>
+    <div className="primer-reveal" aria-live="polite">
+      <h4>{example.card}</h4>
+      <p>{example.mechanic}</p>
+      <p><strong>What has to be true?</strong> {example.requirement}</p>
+    </div>
+    <p>Cards with different text can work together. Knowing how they contribute lets us ask whether the deck can afford the mana, supply the pieces, and get more value here than from another card. Comparing that value across decks and alternatives is future work.</p>
+  </>;
+}
+
+const stages = [
+  {label: 'Card identity and rules', status: 'Available for reviewed sources', question: 'Which card and which rules are we working from?',
+    example: 'The reviewed Bloodghast printing supplies the Oracle wording for its optional landfall return.',
+    limit: 'A printing association establishes which card the evidence describes. Rules fidelity requires comparing the relevant behavior.',
+    connection: 'The source gives us an expectation to compare with the native definition.'},
+  {label: 'Native definition', status: 'Available for authored cards', question: 'How is the card written in a form the engine can use?',
+    example: 'Bloodghast’s definition expresses a land-entry trigger active in the graveyard and a move to the battlefield.',
+    limit: 'A definition can be missing, incomplete or mistranslate an instruction.',
+    connection: 'The same definition is input to gameplay and to mechanical extraction.'},
+  {label: 'Mechanical facts', status: 'Implemented within supported structures', question: 'What reusable facts can we read from the native ability?',
+    example: 'Bloodghast can move itself from the graveyard to the battlefield under the landfall condition.',
+    limit: 'The old reading assumed the trigger source was on the battlefield. Some structures are still unread or only partly interpreted.',
+    connection: 'The objective uses those facts to decide which relationships it can recognize.'},
+  {label: 'Objective discovery', status: 'Implemented for selected objectives', question: 'Which represented capabilities fit the chosen objective?',
+    example: 'A battlefield return can fit reanimation. Blood Speaker’s return to hand falls outside that check.',
+    limit: 'An unresolved relationship stays open when a required condition cannot be established. Policy can also exclude a possible relationship.',
+    connection: 'A finding gives us a candidate relationship to investigate in a strategy.'},
+  {label: 'Strategic relationships', status: 'Research direction', question: 'How might capabilities work together?',
+    example: 'Skeleton can replenish a creature that Viscera Seer can sacrifice, potentially creating a death that Grim Haruspex rewards.',
+    limit: 'The app does not establish this as a complete multi-card interaction. Mana, timing and object requirements still need to line up.',
+    connection: 'A supported connection would inform a future comparison of deck choices.'},
+  {label: 'Deck evaluation', status: 'Future research', question: 'Is this contribution worth a slot in this deck?',
+    example: 'Skeleton’s recurring mana cost may matter differently in two decks with different resource demands.',
+    limit: 'The Explorer has no contextual deck evaluation. Discovery does not settle trade-offs among alternatives.',
+    connection: 'The intended evaluation would use the mechanics, requirements and connections established earlier.'},
+  {label: 'Commander eligibility', status: 'Separate gate before discovery', question: 'May this card go in the selected Commander deck?',
+    example: 'Dryad Arbor’s green color identity places it outside Judith’s black-red pool.',
+    limit: 'Unknown eligibility can exclude a card from the search. An eligible card can still have unresolved mechanics.',
+    connection: 'Format legality and full color identity determine which cards enter the objective search.'},
+  {label: 'Evidence and verification', status: 'Scoped checks across the system', question: 'What evidence supports this particular claim?',
+    example: 'Source comparison checks a represented instruction against the rules. Execution tests observe gameplay under stated conditions. Independent assurance requires separate review of the exact evidence and requirements.',
+    limit: 'A scenario may test one branch. A source match, a scenario pass and an independent decision can exist separately and apply to different claims.',
+    connection: 'These checks can inform any part of the map and can progress independently.'},
+];
+
+export function PrimerMap() {
+  const [selected, setSelected] = useState(0);
+  const stage = stages[selected];
+  const control = (index: number) => <button aria-pressed={selected === index} onClick={() => setSelected(index)}>
+    {stages[index].label}
+  </button>;
+  return <>
+    <p>Select a step to follow the reasoning from a card’s rules to a possible deck choice. Eligibility filters what enters discovery. Evidence can inform any step.</p>
+    <ol className="primer-map" aria-label="From card rules to deck choices">
+      {stages.slice(0, 6).map(({label}, index) => <li key={label}>{control(index)}</li>)}
+    </ol>
+    <div className="primer-support" role="group" aria-label="What supports the reasoning">
+      {control(6)}{control(7)}
+    </div>
+    <div className="primer-reveal" aria-live="polite">
+      <p className="eyebrow">{stage.status}</p>
+      <h4>{stage.question}</h4>
+      <p>{stage.example}</p>
+      <p><strong>Where to be careful.</strong> {stage.limit}</p>
+      <p><strong>Connection.</strong> {stage.connection}</p>
+    </div>
+  </>;
+}
+
+const {population, totals, revisions, objectives} = comparison;
+const capabilityTopics = ['Demonstrated', 'Measured', 'Known limits', 'Unmeasured', 'Future research'];
+
+export function PrimerCapabilities() {
+  const [selected, setSelected] = useState(0);
+  const observations = [
+    <><p>The Explorer can filter by Commander legality and full color identity, then search supported mechanics for creature deaths, creature tokens or reanimation. You can inspect the card and the specific relationship it found.</p>
+      <p>For example, the death query recognizes Viscera Seer’s sacrifice, and the reanimation query recognizes Skeleton’s paid return. Retained source comparisons and bounded engine scenarios exist for selected cards. The Bitterblossom ledger records a historical source review and execution pass with provisional evidence.</p></>,
+    <><p><strong>Historical reanimation comparison.</strong> On the same {population.toLocaleString()} eligible Judith card inputs, accepted results changed from <strong>{totals.before.cards} → {totals.after.cards} distinct cards</strong> and <strong>{totals.before.pathways} → {totals.after.pathways} pathways</strong>. The correction changed {objectives.reanimation.verdictChanges} verdicts. The engine and input pool were held fixed.</p>
+      <p>M3.1 instead uses a deliberately selected {cohort.cards.length}-card Judith death-objective cohort to investigate different kinds of findings and omissions.</p></>,
+    <><p>The death query recognizes selected death sources and death-enhanced removal. General draw payoffs such as Grim Haruspex and recurring fuel such as Skeleton remain outside its present coverage. Agent’s land-creature overlap remains unresolved in the reviewed finding.</p>
+      <p>The Explorer can expose an unsupported instruction or missing review. Eligibility, mechanical recognition and assurance stay separate.</p></>,
+    <p>These studies leave catalog-wide rules fidelity, gameplay reliability and discovery recall unmeasured. The selected cohort gives examples of gaps. Scenario passes and authored definitions describe their own scopes. Independent assurance needs evidence bound to specific requirements and revisions.</p>,
+    <p>One bounded next question is whether the system can recognize a returning creature as renewable sacrifice material while retaining the mana, timing and repeatability constraints. Connecting several cards and evaluating whether they are worth slots in a particular deck are later research.</p>,
+  ];
+  return <>
+    <p>Explore what the running Explorer supports and what the recorded investigations establish.</p>
+    <div className="primer-choices" role="group" aria-label="Capability evidence categories">
+      {capabilityTopics.map((topic, index) => <button key={topic} aria-pressed={index === selected}
+        onClick={() => setSelected(index)}>{topic}</button>)}
+    </div>
+    <div className="primer-reveal" aria-live="polite">
+      <h4>{capabilityTopics[selected]}</h4>
+      {observations[selected]}
+    </div>
+    {selected === 1 && <details>
+      <summary>Measurement scope and revisions</summary>
+      <p>Reanimation comparison applications <code>{revisions.before}</code> and <code>{revisions.after}</code>. Shared engine <code>{revisions.engine}</code>.</p>
+      <p>M3.1 reviewed engine <code>{cohort.reviewedEngine}</code>. Its cohort is a set of selected examples. The live coverage view labels the actual application and engine revisions for your run.</p>
+    </details>}
+  </>;
+}

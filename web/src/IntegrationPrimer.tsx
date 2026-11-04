@@ -1,5 +1,6 @@
 import {useRef, useState} from 'react';
 import {CardPicture} from './CardPicture';
+import {PrimerCapabilities, PrimerMap, PrimerPurpose} from './PrimerOrientation';
 import {retainedPrintingImage} from './retainedPrintingImage';
 import evidence from './integration-change-evidence.json';
 import cohort from '../../src/main/resources/discovery-coverage-v1.json';
@@ -16,29 +17,50 @@ const agentImage = retainedPrintingImage({
 });
 const verdictLabels: Record<string, string> = {MATCH: 'Recognized', NO_MATCH: 'Excluded', UNKNOWN: 'Unresolved'};
 
+const parts = [
+  {label: 'The goal', title: 'What are we building?'},
+  {label: 'The system', title: 'How does the system work?'},
+  {label: 'Today’s capabilities', title: 'What can the Explorer do today?'},
+  {label: 'Research examples', title: 'Apply the model to two cards'},
+];
+
 export default function IntegrationPrimer({openCase, openCoverage, busy}: {
   openCase: () => void; openCoverage: () => void; busy: boolean;
 }) {
+  const [part, setPart] = useState(0);
   const [journey, setJourney] = useState<'bloodghast' | 'agent' | 'recap'>('bloodghast');
   const [prediction, setPrediction] = useState<'recognized' | 'excluded'>();
   const [payment, setPayment] = useState<'land' | 'landCreature'>();
   const heading = useRef<HTMLHeadingElement>(null);
   const blood = journey === 'bloodghast';
+  function openPart(next: number) {
+    setPart(next);
+    heading.current?.focus();
+  }
   function visit(next: typeof journey) {
     setJourney(next);
     heading.current?.focus();
   }
 
   return <section id="integration-primer" className="detail primer" aria-label="How Card Integration Works">
-    <p className="eyebrow">TWO CARDS · TWO DISCOVERY QUESTIONS</p>
+    <p className="eyebrow">PART {part + 1} OF {parts.length} · COMMANDER RESEARCH</p>
     <h2>How Card Integration Works</h2>
-    <nav className="categories" aria-label="Primer journeys">
-      <button aria-pressed={blood} onClick={() => visit('bloodghast')}>1. Bloodghast</button>
-      <button aria-pressed={journey === 'agent'} onClick={() => visit('agent')}>2. Agent of Shauku</button>
-      <button aria-pressed={journey === 'recap'} onClick={() => visit('recap')}>Recap</button>
+    <nav className="categories" aria-label="Primer parts">
+      {parts.map(({label}, index) => <button key={label} aria-current={part === index ? 'step' : undefined}
+        onClick={() => openPart(index)}>{index + 1}. {label}</button>)}
     </nav>
-    <h3 tabIndex={-1} ref={heading}>{blood ? 'A trigger in the graveyard' :
+    <h3 tabIndex={-1} ref={heading}>{part !== 3 ? parts[part].title : blood ? 'A trigger in the graveyard' :
       journey === 'agent' ? 'When a land could also be a creature' : 'What would convince you?'}</h3>
+    {part === 0 && <PrimerPurpose/>}
+    {part === 1 && <PrimerMap/>}
+    {part === 2 && <PrimerCapabilities/>}
+    {part !== 3 && <button className="primary" onClick={() => openPart(part + 1)}>Next · {parts[part + 1].label}</button>}
+    {part === 3 && <>
+      <nav className="categories" aria-label="Research examples">
+        <button aria-pressed={blood} onClick={() => visit('bloodghast')}>Bloodghast</button>
+        <button aria-pressed={journey === 'agent'} onClick={() => visit('agent')}>Agent of Shauku</button>
+        <button aria-pressed={journey === 'recap'} onClick={() => visit('recap')}>Recap</button>
+      </nav>
     {journey !== 'recap' && <div className="primer-card">
       <CardPicture key={journey} image={blood ? retainedPrintingImage(bloodghast.source) : agentImage}/>
       <div>
@@ -100,7 +122,7 @@ export default function IntegrationPrimer({openCase, openCoverage, busy}: {
       </div>}
     </>}
     {journey === 'recap' && <>
-      <p>Bloodghast shows how discovery can misread a represented mechanic. Agent shows how discovery can leave a plausible relationship open when it cannot establish a condition.</p>
+      <p>Start with a deck goal, look for a concrete mechanic, and check the conditions that connect them. Bloodghast shows how extraction can misread a represented mechanic. Agent shows how discovery can leave a plausible relationship open when it cannot establish a condition.</p>
       <details>
         <summary>Would nine extra matches convince you?</summary>
         <p>The controlled comparison held the engine and input pool fixed. The reviewed rules supported the new battlefield returns.
@@ -116,10 +138,12 @@ export default function IntegrationPrimer({openCase, openCoverage, busy}: {
         </ul>
       </details>
     </>}
+    </>}
     <div className="primer-restart"><button onClick={() => {
       setPrediction(undefined);
       setPayment(undefined);
-      visit('bloodghast');
+      setJourney('bloodghast');
+      openPart(0);
     }}>Restart primer</button></div>
   </section>;
 }
