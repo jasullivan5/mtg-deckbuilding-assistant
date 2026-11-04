@@ -229,13 +229,16 @@ The initial sandboxed launcher could not acquire the Gradle cache lock. The firs
 
 Run `.scriptsexplorer.ps1` and open **How Card Integration Works** below the research controls. The primer itself needs no discovery run.
 
-1. Start with **Bloodghast**. Follow the landfall sequence and predict what the old search found. Explain where the native definition and discovery interpretation diverged. Open the historical case study for the actual comparison, or continue with the second journey.
-2. In **Agent of Shauku**, try both sacrifice payments. Explain why an ordinary land can pay the cost without supplying a creature death, and why the possible type overlap stays unresolved in the recorded Judith investigation. **Open Agent in Discovery Coverage** reuses a matching Judith death-objective run or performs the standard live search, then selects Agent. Starting that run sets the Explorer controls to Judith and the creature-death objective.
-3. Open **Recap** and decide what evidence would make nine additional matches persuasive. Distinguish discovery, gameplay testing and independent review. Use the journey buttons to revisit your choices or **Restart primer** to clear them.
+1. **The goal.** Compare Viscera Seer, Reassembling Skeleton, Grim Haruspex and Walking Corpse. Explain how each might support a death strategy, what the mechanic requires, and what a deck-specific choice would still need to establish.
+2. **The system.** Select **Native definition**, **Mechanical facts** and **Objective discovery** in the map. Then select the two supporting controls, **Commander eligibility** and **Evidence and verification**. Explain where they apply and why their conclusions can differ.
+3. **Today’s capabilities.** Compare **Demonstrated**, **Measured**, **Known limits**, **Unmeasured** and **Future research**. Open **Measurement scope and revisions** to distinguish the controlled Judith reanimation population from the selected M3.1 death cohort.
+4. **Research examples.** Predict Bloodghast’s old verdict and try both Agent of Shauku payments. Follow their links into the historical case study and live Discovery Coverage. The Agent link reuses a matching Judith run or starts the standard live search and sets the controls to Judith and the creature-death objective.
 
-The illustrated sequences explain reviewed relationships and do not depict observed gameplay. Bloodghast uses the existing M3.2 comparison extract. Agent uses the M3.1 review entry and its source-bound Prophecy printing snapshot. Its hypothetical land-creature payment leaves the actual board setup open. The underlying research views retain revision and ability provenance. Choices are stored in the current Explorer session and reset on page reload.
+**Recap** connects the examples to the map. **Restart primer** returns to the goal and clears the lesson choices. The primer, including the capabilities view, can be explored without running discovery.
 
-Prototype Lab should check whether a reader can explain why one search outcome was wrong and the other remains unresolved, and what evidence would support a gameplay claim. Acceptance remains pending hands-on review.
+The illustrated relationships are conceptual, with no observed gameplay implied. The goal and future directions are grounded in the [adopted objective direction](OBJECTIVE_MODEL.md). The scope descriptions are authored summaries of the [Explorer and discovery records](OBJECTIVE_COVERAGE.md). The M3.1 manifest and M3.2 extract supply the displayed cohort size, comparison totals and revisions. The Bitterblossom example refers to the historical record in the packaged translation-assurance ledger at engine `4133241856227d1d36269e92aaba633bbaf93f5c`. Its source review and execution pass are bounded to that evidence. See [translation assurance](TRANSLATION_RELIABILITY.md).
+
+Prototype Lab should check whether a returning reader can explain the project’s goal, separate the system’s claims, and distinguish the two populations without opening the technical views. The renewable creature-fuel example is a future research question already recorded in the objective direction. Acceptance remains pending hands-on review.
 
 ### Primer validation
 
@@ -247,3 +250,14 @@ Windows PowerShell launch with `.scriptsexplorer.ps1 -Port 8795` built the front
 - `node scripts/retain-integration-change.mjs --check` validated the existing comparison extract against its retained receipts. The Agent printing snapshot SHA-256 matched the M3.1 manifest.
 
 No gameplay scenarios or new Kotlin test suite runs were part of this frontend increment.
+
+### System orientation revision validation
+
+`.scriptsexplorer.ps1 -Port 8794` passed the Windows production frontend build and Kotlin installation. Health reported application `c203c355b20bc55fa325c42ff519f9c5a8c8a527+dirty` with guide and milestone edits in progress, and clean app-stable engine `03869c08665bf476a8b40dacbfbcd501c54a33bd`.
+
+- `pnpm --dir web test:ui` passed 8 synthetic checks, and `pnpm --dir web test:live` passed 9 genuine browser checks. Both used Edge at `EXPLORER_URL=http://127.0.0.1:8794` with `EXPLORER_BROWSER_CHANNEL=msedge`.
+- The live check exercised keyboard progression, 390 px width, evidence scope, restart, and both research links. It observed no discovery request during the orientation. The existing live discovery and card inspection checks passed.
+- Desktop and narrow screenshots were inspected after the server was ready. An initial capture attempted before readiness got a connection refusal.
+- `node scripts/retain-integration-change.mjs --check` validated six retained receipt hashes, three objective comparisons and 21 source-bound relationships.
+
+This frontend revision did not run a new Kotlin test suite or gameplay scenario, or reproduce the original historical CLI runs.
