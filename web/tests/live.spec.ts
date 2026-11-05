@@ -377,6 +377,8 @@ test('integration primer reveals both examples and leads to the existing investi
   await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible({timeout: 130_000});
   await expect(agent).toContainText('Unresolved relationship');
   expect(discoveryRequests).toEqual([{commander: 'Judith, the Scourge Diva', objective: 'own-nontoken-creature-deaths'}]);
+  await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
+  await expect(agent.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
 
   await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
   await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();

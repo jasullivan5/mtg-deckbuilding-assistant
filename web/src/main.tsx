@@ -52,7 +52,7 @@ export function App() {
   const [run, setRun] = useState<Run | null>(null);
   const [activeResearch, setActiveResearch] = useState<ResearchView>();
   const [visited, setVisited] = useState<ResearchView[]>([]);
-  const [coverageCard, setCoverageCard] = useState<string>();
+  const [agentCoverageVisits, setAgentCoverageVisits] = useState(0);
   const coverageReady = run?.commander === judith && run.objective === creatureDeaths;
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
@@ -113,7 +113,7 @@ export function App() {
   }, [runId, visibleIds]);
 
   function changed() {
-    setCoverageCard(undefined);
+    setAgentCoverageVisits(0);
     setCommanderOpen(false); setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
   }
@@ -157,7 +157,7 @@ export function App() {
       matchingRun = await research(true, judith, creatureDeaths) ?? null;
     }
     if (!matchingRun) return;
-    setCoverageCard('Agent of Shauku');
+    setAgentCoverageVisits(visits => visits + 1);
     openResearch('coverage');
   }
 
@@ -298,7 +298,7 @@ export function App() {
         <Suspense fallback={<p role="status">Loading contribution study…</p>}><ContributionValidation/></Suspense>
       </div>}
       {coverageReady && visited.includes('coverage') && <div hidden={activeResearch !== 'coverage'}>
-        <DiscoveryCoverage key={run.runId + (coverageCard ?? '')} run={run} initialCard={coverageCard}/>
+        <DiscoveryCoverage key={run.runId + ':' + agentCoverageVisits} run={run} initialCard={agentCoverageVisits ? 'Agent of Shauku' : undefined}/>
       </div>}
       <details className="shared-help"><summary>About the evidence checks</summary>
         <dl className="evidence-fields">

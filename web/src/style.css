@@ -103,7 +103,6 @@ footer { color: #9fb2b8; font-size: 12px; margin: 32px 0 14px; }
   .run-summary .hint { margin-top: 8px; }
 }
 @media (max-width: 480px) {
-  .selection-info { grid-template-columns: minmax(0, 1fr); gap: 0; }
   header { gap: 8px; }
   header h1 { font-size: 23px; }
   main { padding: 16px; }
@@ -206,7 +205,7 @@ button.rules-line:hover { background: #273c41; }
 .coverage-oracle { white-space: pre-line; }
 .coverage code { overflow-wrap: anywhere; }
 
-.integration-entry, .integration-change { margin-bottom: 18px; }
+.integration-change { margin-bottom: 18px; }
 .integration-change > p { max-width: 88ch; }
 .integration-metrics { display: flex; flex-wrap: wrap; gap: 10px; }
 .integration-metrics p { flex: 1 1 170px; margin: 0; padding: 12px; background: #22383e; border-radius: 8px; }
@@ -218,7 +217,6 @@ button.rules-line:hover { background: #273c41; }
   .integration-change .card-overview { grid-template-columns: minmax(0, 1fr); }
   .integration-change .picture { max-width: 150px; }
 }
-.integration-entry { margin-top: 14px; }
 
 .primer { margin-bottom: 18px; }
 .primer > p, .primer-reveal { max-width: 85ch; }

@@ -8,7 +8,7 @@ const scope: Record<string, {goal: string; searched: string; limits: string}> = 
   },
   'reanimate-own-creatures': {
     goal: 'Return creature cards from your graveyard to the battlefield under your control.',
-    searched: 'Supported movements of the original creature card from your graveyard to your battlefield.',
+    searched: 'Supported movements of the original creature card from your graveyard to the battlefield under your control.',
     limits: 'A return to hand or a token copy does not meet this check. Some conditions remain unresolved.',
   },
   'create-creature-tokens': {
