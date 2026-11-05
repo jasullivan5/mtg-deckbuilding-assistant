@@ -3,17 +3,17 @@ import comparison from './integration-change-evidence.json';
 import cohort from '../../src/main/resources/discovery-coverage-v1.json';
 
 const contributions = [
-  {role: 'Cause a death', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.'},
-  {role: 'Replenish a resource', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.'},
-  {role: 'Reward a death', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.'},
-  {role: 'Supply a body', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.'},
+  {role: 'Sacrifice outlet', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.'},
+  {role: 'Replenish sacrifice material', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.'},
+  {role: 'Respond to a death', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.'},
+  {role: 'Ordinary creature body', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.'},
 ];
 
 export function PrimerPurpose() {
   const [selected, setSelected] = useState(0);
   const example = contributions[selected];
   return <>
-    <p>We’re building a way to explain why a card could matter in a specific Commander strategy. Start with a plan: <strong>My nontoken creatures die.</strong> Choose a contribution to see how it serves that plan.</p>
+    <p>We’re building a way to explain why a card could matter in a specific Commander strategy. Start with a plan: <strong>My nontoken creatures die.</strong> Compare three distinct mechanics with a creature that can participate as ordinary material.</p>
     <div className="primer-choices" role="group" aria-label="Ways to support a creature-death plan">
       {contributions.map(({role, card}, index) => <button key={role} aria-pressed={index === selected} onClick={() => setSelected(index)}>
         <strong>{role}</strong><small>{card}</small>
@@ -66,8 +66,9 @@ const stages = [
 export function PrimerMap() {
   const [selected, setSelected] = useState(0);
   const stage = stages[selected];
+  const maturity = ['Demonstrated', 'Demonstrated', 'Implemented · partial', 'Implemented · bounded', 'Active research', 'Future work'];
   const control = (index: number) => <button aria-pressed={selected === index} onClick={() => setSelected(index)}>
-    {stages[index].label}
+    <span>{stages[index].label}</span>{maturity[index] && <small className="stage-maturity">{maturity[index]}</small>}
   </button>;
   return <>
     <p>Select a step to follow the reasoning from a card’s rules to a possible deck choice. Eligibility filters what enters discovery. Evidence can inform any step.</p>

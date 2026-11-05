@@ -17,6 +17,10 @@ export function CardInspection({evidence, image, revision}: {evidence: Evidence;
   const [selected, setSelected] = useState(available[0]?.id ?? '');
   const ability: AbilityInspection | undefined = available.find(a => a.id === selected) ?? available[0];
   const rows = ability?.resultIndexes.map(i => evidence.results[i]) ?? [];
+  const policyExcluded = ability?.verdict === 'NO_MATCH' &&
+    rows.some(row => row.mechanicalCompatibility === 'MATCH' && row.policyAcceptance === 'NO_MATCH');
+  const indicators = policyExcluded ? ability.evidence.map(item => item.id === 'mechanic'
+    ? {...item, status: 'Excluded by objective policy'} : item) : ability?.evidence;
   const unassigned = evidence.unsupported.filter(u => !evidence.abilities.some(a => a.actionId === u.actionId));
   return <>
     <div className="card-overview"><CardPicture image={image}/>
@@ -31,7 +35,7 @@ export function CardInspection({evidence, image, revision}: {evidence: Evidence;
     {ability ? <article className="ability-inspection">
       {!!ability.objectiveNotes?.length && <ul className="objective-notes">{ability.objectiveNotes.map((note, i) => <li key={i}>{note}</li>)}</ul>}
       {ability.unresolvedNotes?.map((note, i) => <p className="unresolved-note" key={i}>{note}</p>)}
-      <EvidenceInspector key={ability.id} indicators={ability.evidence} revision={revision}/>
+      <EvidenceInspector key={ability.id} indicators={indicators ?? ability.evidence} revision={revision}/>
       <Concerns items={evidence.concerns}/>
       <details><summary>Technical investigation</summary>
       <Raw label="Ability identity and text association" data={{actionId: ability.actionId, title: ability.title, linkedRules: evidence.rules?.filter(line => line.actionId === ability.actionId)}}/>
