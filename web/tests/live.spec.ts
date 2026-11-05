@@ -458,7 +458,7 @@ test('contribution follow-up distinguishes state access from scaling and keeps m
   await page.keyboard.press('Space');
   await expect(lens).toHaveAttribute('aria-pressed', 'true');
   await expect(study).toContainText('Get repeated life-gain events.');
-  await expect(capability).toHaveText(mechanic);
+  await expect(capability).toHaveText(mechanic, {useInnerText: true});
   await expect(five).not.toContainText('Respond to Event + Leverage State');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
   expect(discoveryRequests).toBe(0);
