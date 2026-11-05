@@ -543,3 +543,53 @@ test('objective scope and research navigation preserve a live Judith result at d
   await expect(name).toHaveValue('Viscera Seer');
   expect(searches).toBe(1);
 });
+
+test('event-to-state research distinguishes observed death and checkpoint state', async ({page}) => {
+  const searches: string[] = [];
+  page.on('request', request => {
+    if (request.url().includes('/api/discover')) searches.push(request.url());
+  });
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto('/');
+  await page.getByRole('button', {name: 'Open Contribution Model Study'}).click();
+  await page.getByRole('button', {name: 'Open event-to-state experiment'}).click();
+  const study = page.getByRole('region', {name: 'Can a death establish a graveyard state?'});
+  const observation = study.getByRole('region', {name: 'Selected observation'});
+  const event = observation.getByRole('region', {name: 'Event outcome'}).locator('p');
+  const state = observation.getByRole('region', {name: 'State outcome'}).locator('p');
+  await expect(study).toContainText('RETAINED EXECUTION RECORD');
+  await expect(event).toHaveText('Satisfied');
+  await expect(state).toHaveText('Satisfied');
+  await expect(observation).toContainText('still supplies the state');
+
+  const borrowed = study.getByRole('button', {name: 'Opponent-owned creature'});
+  await borrowed.focus();
+  await page.keyboard.press('Space');
+  await expect(borrowed).toHaveAttribute('aria-pressed', 'true');
+  await expect(event).toHaveText('Satisfied');
+  await expect(state).toHaveText('Not satisfied');
+  await expect(observation).toContainText('the card went to its owner’s graveyard');
+
+  await study.getByRole('button', {name: 'Creature token'}).click();
+  await expect(event).toHaveText('Not satisfied');
+  await expect(state).toHaveText('Not satisfied');
+  await expect(observation).toContainText('The tracked token is gone');
+
+  await study.getByRole('button', {name: 'Finality counter'}).click();
+  await expect(event).toHaveText('Not satisfied');
+  await expect(state).toHaveText('Not satisfied');
+  await expect(observation).toContainText('Battlefield → exile');
+  await observation.getByText('Rules-derived expectation and recorded inputs').click();
+  await expect(observation.getByText(/Finality counters at departure: 1/)).toBeVisible();
+
+  await study.getByRole('button', {name: 'Mill a creature card'}).click();
+  await expect(event).toHaveText('Not satisfied');
+  await expect(state).toHaveText('Satisfied');
+  await expect(observation).toContainText('It establishes the state without a death');
+  await study.getByText('Evidence and limits of this comparison').click();
+  await expect(study.getByText(/Scenario application/)).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  await page.getByRole('button', {name: 'Back to role comparison'}).click();
+  await expect(page.getByText('Choose a research comparison')).toBeVisible();
+  expect(searches).toEqual([]);
+});

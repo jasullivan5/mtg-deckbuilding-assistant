@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {EventToState} from './EventToState';
 import {CardPicture} from './CardPicture';
 import {retainedPrintingImage} from './retainedPrintingImage';
 import {contributionCases, families, roleDefinitions} from './contributionCases';
@@ -10,6 +11,7 @@ const heldOut = ['goblin-piledriver', 'tragic-slip'];
 const views = [...families, 'Events versus states', 'Held-out controls'];
 
 export default function ContributionValidation() {
+  const [experiment, setExperiment] = useState(false);
   const [view, setView] = useState(0);
   const [selected, setSelected] = useState<string>(contributionCases[0].id);
   const [lifeGain, setLifeGain] = useState(false);
@@ -30,6 +32,10 @@ export default function ContributionValidation() {
     <p className="eyebrow">SOURCE-REVIEWED CONCEPTUAL EXPERIMENT</p>
     <h2 id="contribution-title">How do cards contribute to a strategy?</h2>
     <p>Choose a research comparison or start with <strong>Events versus states</strong>. Both provisional models use the same ability and game conditions. These controls do not run discovery.</p>
+    <button aria-expanded={experiment} onClick={() => setExperiment(!experiment)}>
+      {experiment ? 'Back to role comparison' : 'Open event-to-state experiment'}
+    </button>
+    {experiment ? <EventToState/> : <>
     <nav className="categories" aria-label="Contribution study views">
       {views.map((label, index) => <button key={label} aria-pressed={index === view} onClick={() => pickView(index)}>{label}</button>)}
     </nav>
@@ -90,5 +96,6 @@ export default function ContributionValidation() {
       <p>Four roles plus structured state dependencies could expose the same complementary cards if the system can join a state supplier to a consumer at the right time, for the right player and object. A fifth label makes the question visible but does not perform that join. Generic mana remains a cost. Supplying red mana could matter to a strategy that reliably solves that particular constraint.</p>
       <p>The original sample favored four roles when it emphasized scaling. The expanded comparison makes binary access and maintaining a state explicit. Exploration’s permission still sits between Facilitate and Modify. Product Studio can judge whether a visible state relationship earns a fifth role in the experience.</p>
     </details>
+    </>}
   </section>;
 }
