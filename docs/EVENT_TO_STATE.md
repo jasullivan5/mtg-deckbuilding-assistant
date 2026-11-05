@@ -28,11 +28,25 @@ Run `.\scripts\explorer.ps1` from the application checkout and open [Explorer](h
 - `attributeArrival` joins a qualifying move to a set of witnesses from the same execution. It compares the recorded arrival reference, including generation, with the qualifying checkpoint objects. A later visit by the same entity has a different reference. The join answers whether the arrival supplies a witness. Establishing a previously false condition also depends on the starting state, which these fixtures record separately.
 - Static facts can identify potential costs, object filters and nominal movement. They lack the actual destination, pre-departure characteristics and checkpoint references needed for attribution. Missing execution evidence can yield an unresolved verdict. The scenario fixtures still supply setup, action and checkpoint selection. Explorer displays the resulting test receipt.
 
+### Observed comparison
+
+The new Kotlin run matched all five PR #30 event, state and link verdicts below. Actual and requested movement, owner, last-known controller, creature and token status, finality, sacrifice, current arrival status, checkpoint types and graveyard contents also matched. The receipt records both additional outcomes against the expectations above. [Retained application evaluation](../web/src/objective-semantics-receipt.json)
+
+- **Animated land.** The engine resolved Raging Ravine's animation, then recorded a nontoken creature leaving the battlefield for your graveyard. The current arrival had type Land. A held and B was false.
+- **Prefilled graveyard.** A held and B was true before and after the move. The application found the same original witness in your graveyard at both checkpoints. The new arrival went to its owner's graveyard and supplied no witness for B.
+- **Missing evidence checks.** A missing move, missing last-known information, missing arrival reference and missing checkpoint each left the relevant attribution unresolved. These checks are separate from the seven executed cases in the receipt.
+
+### Reproduce and verify
+
+- Run `.\dev.ps1 test --offline` with JDK 21 and a populated Gradle cache. The full application suite passed 521 tests, including the seven-case receipt and the missing-evidence checks. To regenerate just the receipt, run `.\dev.ps1 test --tests '*EventToStateScenarioTest'`. The test writes `generated/event-to-state/observations.json`.
+- The receipt records application `37267b5f4e9977a8a61a8ca6b353e4fb4c564166` and resolved Argentum `03869c08665bf476a8b40dacbfbcd501c54a33bd` on clean `app-stable`. The Windows launcher passed TypeScript, Vite and Kotlin packaging. Explorer health reported application `1fa281c0171c0b733037c276cec15f05664b91c5` and the same Argentum revision.
+- Against the launched Explorer in headless Edge, `pnpm --dir web test:ui` passed 8 tests and `pnpm --dir web test:live` passed 13. The live checks exercised all seven cases, keyboard selection, the 390 px viewport, the historical comparison and zero discovery requests from the panel. The existing live Commander discovery tests also passed.
+
 **Next research question.** Can a controlled return-to-hand and redeath sequence show that a later graveyard visit supplies the current state while the original death remains true? This would exercise object generation and checkpoint timing with a real repeat visit.
 
 ## PR #30 baseline
 
-## Frozen expectations
+### Frozen expectations
 
 Every case begins with no creature cards in the observing player's graveyard. Read the state after the stack and pending decisions settle, with no intervening new action. The actual engine move determines the event. Count actual creature cards in the observing player's graveyard at that checkpoint.
 
@@ -46,7 +60,7 @@ Every case begins with no creature cards in the observing player's graveyard. Re
 
 A token can die without satisfying the nontoken criterion. Controller and owner are independent. Finality applies to the move even if the sacrifice cost was paid. Sources include the retained Seer and Wolfbat printings, [Wizards' rules glossary](https://magic.wizards.com/en/keyword-glossary), the [finality release notes](https://magic.wizards.com/en/news/feature/duskmourn-house-of-horror-release-notes) and the [Comprehensive Rules](https://magic.wizards.com/en/rules) (dies, zones, tokens and state-based actions).
 
-## Original Explorer walkthrough
+### Original Explorer walkthrough
 
 PR #30 originally displayed a retained record of these five executed scenarios. Its verdicts are still available in the new case picker.
 
@@ -60,7 +74,7 @@ PR #30 originally displayed a retained record of these five executed scenarios. 
 
 **New execution.** All five rows matched the frozen expectations. The retained [receipt](../web/src/event-to-state-receipt.json) contains actual destination, owner, last-known controller, battlefield creature and token status, both graveyards, the tracked card’s types and zone at the checkpoint, and the verdicts. The developer-authored test executed real Seer activations and a native Tome Scour cast. Borrowed control and token identity were fixture setup. The run does not independently qualify these cards or verify those setup mechanics in gameplay.
 
-## Product Studio assessment
+### Original Product Studio assessment
 
 **Use independent event and state definitions for the next bounded trial.** The borrowed Wolfbat shows a true event with a false state. Milling shows the reverse. The token and finality examples separate an actual but nonqualifying death from a sacrifice paid without a death. In the owned case the arrived object is still current and is one of the creature cards supplying the state. This result depends on its actual destination and its type at the checkpoint. A later departure could invalidate B while the original A remains true.
 
@@ -74,7 +88,7 @@ This separation preserves direct responses to a death under their own trigger fi
 
 The join is justified when the question is whether a particular move established the state. For a standalone trigger or a standalone state check, the extra join adds complexity without answering a different question. Animation, competing replacement effects, and changes after the checkpoint remain outside the executed population. The next bounded experiment should animate a native noncreature card, sacrifice it, and verify that its battlefield creature status qualifies A while its graveyard card type fails B. This would test whether the same separation works when the types differ within a single move.
 
-## Reproduce and verify
+### Original reproduction and verification
 
 - Windows/JDK 21: `.\dev.ps1 test --tests '*EventToStateScenarioTest' --tests '*DiscoveryCoverageTest' --tests '*ReanimationIntegrationTest'`. Fifteen Kotlin tests passed, including one scenario test covering all five controlled cases. It writes `generated/event-to-state/observations.json` after the checks pass.
 - Exact application revision for the retained execution: `9c8ced9167550322765dcf75f81b23434b9cf24d`. Resolved maintained Argentum `app-stable` revision: `03869c08665bf476a8b40dacbfbcd501c54a33bd`.
