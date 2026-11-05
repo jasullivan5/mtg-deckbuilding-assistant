@@ -156,6 +156,45 @@
       "artist": "Christopher Moeller",
       "sha256": "6f0c1ae57dec74f01823d9f5295520fba2ed8db4ead0236d82bde2bb9388dc47",
       "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt"
+    },
+    "flamewake-phoenix": {
+      "name": "Flamewake Phoenix",
+      "printingId": "fefd5848-9fe1-4129-a5d7-e51606bf76ef",
+      "oracleId": "9e43805d-3576-47d4-9331-524869ab99d0",
+      "set": "frf",
+      "collectorNumber": "100",
+      "oracleText": "Flying, haste\nThis creature attacks each combat if able.\nFerocious — At the beginning of combat on your turn, if you control a creature with power 4 or greater, you may pay {R}. If you do, return this card from your graveyard to the battlefield.",
+      "cardUrl": "https://scryfall.com/card/frf/100/flamewake-phoenix?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/e/fefd5848-9fe1-4129-a5d7-e51606bf76ef.jpg?1783938688",
+      "artist": "Min Yum",
+      "sha256": "b7c2f4b53bb1016e3934321e9d9cd9b8a3a7d5f76fad44eaaaf9cc349fa22e18",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/frf/cards/FlamewakePhoenix.kt"
+    },
+    "zulaport-cutthroat": {
+      "name": "Zulaport Cutthroat",
+      "printingId": "5c963d97-c948-45d9-84cc-58e246d35970",
+      "oracleId": "76b003e0-15af-4f22-bdf2-1ade5430964a",
+      "set": "bfz",
+      "collectorNumber": "126",
+      "oracleText": "Whenever this creature or another creature you control dies, each opponent loses 1 life and you gain 1 life.",
+      "cardUrl": "https://scryfall.com/card/bfz/126/zulaport-cutthroat?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/c/5c963d97-c948-45d9-84cc-58e246d35970.jpg?1783938198",
+      "artist": "Jason Rainville",
+      "sha256": "87ff535fe9a4e7c36bf2c06f6815f9170363c1b02cbdc880f6b993c52b6d4040",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/ZulaportCutthroat.kt"
+    },
+    "coat-of-arms": {
+      "name": "Coat of Arms",
+      "printingId": "59414f0a-48b9-489f-82ca-e710679ad21d",
+      "oracleId": "5f7f133e-58ea-41ab-b1be-be4b400fac4c",
+      "set": "lcc",
+      "collectorNumber": "108",
+      "oracleText": "Each creature gets +1/+1 for each other creature on the battlefield that shares at least one creature type with it. (For example, if two Goblin Warriors and a Goblin Shaman are on the battlefield, each gets +2/+2.)",
+      "cardUrl": "https://scryfall.com/card/lcc/108/coat-of-arms?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/9/59414f0a-48b9-489f-82ca-e710679ad21d.jpg?1783913902",
+      "artist": "Volkan Baǵa",
+      "sha256": "2bb8d85f269a61b322ab880a388faf8a11cb4f845d53bba8da7e9009ed2ed13b",
+      "nativePath": null
     }
   }
 }

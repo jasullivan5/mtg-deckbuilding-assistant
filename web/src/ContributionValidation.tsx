@@ -5,21 +5,24 @@ import {contributionCases, families, roleDefinitions} from './contributionCases'
 import {engine, sources} from './contribution-sources.json';
 import cohort from '../../src/main/resources/discovery-coverage-v1.json';
 
-const featured = ['goblin-chieftain', 'cranial-plating', 'scute-swarm'];
+const featured = ['goblin-chieftain', 'cranial-plating', 'scute-swarm', 'flamewake-phoenix', 'zulaport-cutthroat', 'coat-of-arms'];
 const heldOut = ['goblin-piledriver', 'tragic-slip'];
 const views = [...families, 'Events versus states', 'Held-out controls'];
 
 export default function ContributionValidation() {
   const [view, setView] = useState(0);
   const [selected, setSelected] = useState<string>(contributionCases[0].id);
+  const [lifeGain, setLifeGain] = useState(false);
   const casesFor = (index: number) => contributionCases.filter(row => index === 3
     ? featured.includes(row.id) : index === 4 ? heldOut.includes(row.id) : row.family === index);
   const cases = casesFor(view);
   const row = cases.find(item => item.id === selected) ?? cases[0];
+  const lens = lifeGain && row.lifeGainLens ? row.lifeGainLens : row;
   const source = sources[row.id];
   const discovery = cohort.cards.find(card => card.card === source.name);
   const pickView = (index: number) => {
     setView(index);
+    setLifeGain(false);
     setSelected(index === 3 ? featured[0] : casesFor(index)[0].id);
   };
 
@@ -31,25 +34,30 @@ export default function ContributionValidation() {
       {views.map((label, index) => <button key={label} aria-pressed={index === view} onClick={() => pickView(index)}>{label}</button>)}
     </nav>
     <label className="contribution-select">Reviewed card
-      <select value={row.id} onChange={event => setSelected(event.target.value)}>
+      <select value={row.id} onChange={event => {setSelected(event.target.value); setLifeGain(false);}}>
         {cases.map(item => <option key={item.id} value={item.id}>{sources[item.id].name}</option>)}
       </select>
     </label>
     <section aria-labelledby="contribution-card">
       <h3 id="contribution-card">{source.name}</h3>
       {heldOut.includes(row.id) && <p className="eyebrow">HELD-OUT CONTROL · CRITERIA SET BEFORE EVALUATION</p>}
+      {row.lifeGainLens && <div className="actions" role="group" aria-label="Objective lens">
+        <button aria-pressed={!lifeGain} onClick={() => setLifeGain(false)}>Creature-death lens</button>
+        <button aria-pressed={lifeGain} onClick={() => setLifeGain(true)}>Life-gain lens</button>
+      </div>}
       <div className="primer-card">
         <CardPicture key={source.printingId} image={retainedPrintingImage(source)}/>
         <div>
           <p className="eyebrow">{families[row.family]} · ILLUSTRATED MECHANICS</p>
           <ol className="primer-flow">
-            <li><strong>Objective requirement</strong>{row.need}</li>
+            <li><strong>Objective requirement</strong>{lens.need}</li>
             <li><strong>Capability</strong>{row.mechanic}</li>
-            <li><strong>How it helps</strong>{row.connection}</li>
+            <li><strong>How it helps</strong>{lens.connection}</li>
           </ol>
           <p><strong>Prerequisites.</strong> {row.prerequisites}</p>
         </div>
       </div>
+      {row.complement && <p className="primer-reveal"><strong>What the strategy supplies.</strong> {row.complement}</p>}
       <div className="contribution-models">
         <section aria-label="Model A"><h4>Model A · Five roles</h4>
           <p className="contribution-roles">{[...row.roles, ...(row.leverage ? ['Leverage State'] : [])].join(' + ')}</p>
@@ -78,9 +86,9 @@ export default function ContributionValidation() {
     </details>
     <details>
       <summary>What does the sample suggest?</summary>
-      <p><strong>Provisional recommendation.</strong> Keep four roles and describe state dependencies explicitly. Plating’s artifact count changes the size of a continuous bonus. Scute Swarm’s land count chooses a token branch on resolution. Piledriver measures attackers once. The fifth label groups them but leaves those different mechanisms to be explained separately.</p>
-      <p>Keep overlapping labels when they explain different parts of one causal chain. Plunderer responds to a death and thereby provides Treasure. Exploration is harder: permission can be described as Facilitate or Modify in either model. Neither vocabulary alone settles that boundary or whether a generic body is distinctive.</p>
-      <p>The next bounded test could ask whether the application can link a native death trigger to the output in that same ability while preserving controller, token and branch restrictions. This sample does not establish automatic classification or broader discovery coverage.</p>
+      <p><strong>Provisional recommendation.</strong> Revise the boundary. Make Leverage State a visible relationship from an established state to a capability, while Provide, Facilitate, Respond to Event and Modify describe what the ability does. Phoenix shows why that relationship matters even when the return never gets bigger.</p>
+      <p>Four roles plus structured state dependencies could expose the same complementary cards if the system can join a state supplier to a consumer at the right time, for the right player and object. A fifth label makes the question visible but does not perform that join. Generic mana remains a cost. Supplying red mana could matter to a strategy that reliably solves that particular constraint.</p>
+      <p>The original sample favored four roles when it emphasized scaling. The expanded comparison makes binary access and maintaining a state explicit. Exploration’s permission still sits between Facilitate and Modify. Product Studio can judge whether a visible state relationship earns a fifth role in the experience.</p>
     </details>
   </section>;
 }

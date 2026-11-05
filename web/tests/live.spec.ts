@@ -428,3 +428,38 @@ test('contribution study compares roles against the same mechanics without a new
   await page.setViewportSize({width: 1365, height: 950});
   await expect(study).toBeVisible();
 });
+
+test('contribution follow-up distinguishes state access from scaling and keeps mechanics stable across lenses', async ({page}) => {
+  let discoveryRequests = 0;
+  page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) discoveryRequests++;});
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto('/');
+  await page.getByRole('button', {name: 'Open Contribution Model Study'}).click();
+  const study = page.getByRole('region', {name: 'How do cards contribute to a strategy?'});
+  await study.getByRole('button', {name: 'Events versus states'}).click();
+  const card = study.getByRole('combobox', {name: 'Reviewed card'});
+  const five = study.getByRole('region', {name: 'Model A'});
+  const four = study.getByRole('region', {name: 'Model B'});
+  await card.selectOption({label: 'Flamewake Phoenix'});
+  await expect(five).toContainText('Leverage State');
+  await expect(four).toContainText('Binary access at two checkpoints');
+  await expect(study).toContainText('power 4 or power 8');
+  await expect(study).toContainText('boost that starts only after attacking arrives too late');
+  await expect(study).toContainText('option and mana to pay {R}');
+  await expect(study).toContainText('did not establish the Chieftain connection');
+  await card.selectOption({label: 'Coat of Arms'});
+  await expect(four).toContainText('across controllers');
+  await card.selectOption({label: 'Zulaport Cutthroat'});
+  const capability = study.getByRole('listitem').filter({hasText: 'Capability'});
+  const mechanic = await capability.innerText();
+  await expect(study).toContainText('Get a life-total payoff from deaths you cause.');
+  const lens = study.getByRole('button', {name: 'Life-gain lens'});
+  await lens.focus();
+  await page.keyboard.press('Space');
+  await expect(lens).toHaveAttribute('aria-pressed', 'true');
+  await expect(study).toContainText('Get repeated life-gain events.');
+  await expect(capability).toHaveText(mechanic);
+  await expect(five).not.toContainText('Respond to Event + Leverage State');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  expect(discoveryRequests).toBe(0);
+});
