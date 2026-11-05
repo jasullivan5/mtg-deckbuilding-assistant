@@ -1,0 +1,135 @@
+{
+    "application": "9c8ced9167550322765dcf75f81b23434b9cf24d",
+    "engine": "03869c08665bf476a8b40dacbfbcd501c54a33bd",
+    "cases": [
+        {
+            "id": "owned",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [
+                "Wolfbat"
+            ],
+            "opponentGraveyard": [],
+            "event": true,
+            "state": true,
+            "linked": true
+        },
+        {
+            "id": "borrowed",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "Opponent",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [],
+            "opponentGraveyard": [
+                "Wolfbat"
+            ],
+            "event": true,
+            "state": false,
+            "linked": false
+        },
+        {
+            "id": "token",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": true,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": false,
+            "observedZone": null,
+            "observedTypes": [],
+            "myGraveyard": [],
+            "opponentGraveyard": [],
+            "event": false,
+            "state": false,
+            "linked": false
+        },
+        {
+            "id": "finality",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Exile",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 1,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Exile",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [],
+            "opponentGraveyard": [],
+            "event": false,
+            "state": false,
+            "linked": false
+        },
+        {
+            "id": "mill",
+            "from": "Library",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": null,
+            "battlefieldCreature": null,
+            "token": null,
+            "finalityCounters": 0,
+            "sacrificed": false,
+            "fromGeneration": 95,
+            "toGeneration": 98,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [
+                "Wolfbat",
+                "Forest",
+                "Forest",
+                "Forest",
+                "Forest",
+                "Tome Scour"
+            ],
+            "opponentGraveyard": [],
+            "event": false,
+            "state": true,
+            "linked": false
+        }
+    ]
+}

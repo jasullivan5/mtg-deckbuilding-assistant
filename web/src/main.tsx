@@ -20,7 +20,7 @@ const destinations = [
   {id: 'primer', label: 'How Card Integration Works', purpose: 'Learn how card mechanics become research evidence.'},
   {id: 'coverage', label: 'Discovery Coverage', purpose: 'Investigate recognized, omitted, unresolved and excluded relationships in a live Judith run.'},
   {id: 'case', label: 'Integration Change Case Study', purpose: 'Inspect a controlled historical discovery correction.'},
-  {id: 'contribution', label: 'Contribution Model Study', purpose: 'Compare provisional explanations of card–objective relationships.'},
+  {id: 'contribution', label: 'Contribution Model Study', purpose: 'Compare provisional contribution roles and inspect a controlled event-to-state experiment.'},
 ] as const;
 type ResearchView = typeof destinations[number]['id'];
 
