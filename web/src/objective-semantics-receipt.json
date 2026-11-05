@@ -1,0 +1,196 @@
+{
+    "application": "37267b5f4e9977a8a61a8ca6b353e4fb4c564166",
+    "engine": "03869c08665bf476a8b40dacbfbcd501c54a33bd",
+    "cases": [
+        {
+            "id": "owned",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [
+                "Wolfbat"
+            ],
+            "opponentGraveyard": [],
+            "stateBefore": false,
+            "event": true,
+            "state": true,
+            "attribution": "ARRIVAL_SUPPLIES"
+        },
+        {
+            "id": "borrowed",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "Opponent",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [],
+            "opponentGraveyard": [
+                "Wolfbat"
+            ],
+            "stateBefore": false,
+            "event": true,
+            "state": false,
+            "attribution": "STATE_UNSATISFIED"
+        },
+        {
+            "id": "token",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": true,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": false,
+            "observedZone": null,
+            "observedTypes": [],
+            "myGraveyard": [],
+            "opponentGraveyard": [],
+            "stateBefore": false,
+            "event": false,
+            "state": false,
+            "attribution": "NO_QUALIFYING_EVENT"
+        },
+        {
+            "id": "finality",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Exile",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 1,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 97,
+            "atArrivalReference": true,
+            "observedZone": "Exile",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [],
+            "opponentGraveyard": [],
+            "stateBefore": false,
+            "event": false,
+            "state": false,
+            "attribution": "NO_QUALIFYING_EVENT"
+        },
+        {
+            "id": "mill",
+            "from": "Library",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": null,
+            "battlefieldCreature": null,
+            "token": null,
+            "finalityCounters": 0,
+            "sacrificed": false,
+            "fromGeneration": 95,
+            "toGeneration": 98,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [
+                "Wolfbat",
+                "Forest",
+                "Forest",
+                "Forest",
+                "Forest",
+                "Tome Scour"
+            ],
+            "opponentGraveyard": [],
+            "stateBefore": false,
+            "event": false,
+            "state": true,
+            "attribution": "NO_QUALIFYING_EVENT"
+        },
+        {
+            "id": "animated",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "You",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 98,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "LAND"
+            ],
+            "myGraveyard": [
+                "Raging Ravine"
+            ],
+            "opponentGraveyard": [],
+            "stateBefore": false,
+            "event": true,
+            "state": false,
+            "attribution": "STATE_UNSATISFIED"
+        },
+        {
+            "id": "already-satisfied",
+            "from": "Battlefield",
+            "requested": "Graveyard",
+            "actual": "Graveyard",
+            "owner": "Opponent",
+            "controllerBefore": "You",
+            "battlefieldCreature": true,
+            "token": false,
+            "finalityCounters": 0,
+            "sacrificed": true,
+            "fromGeneration": 95,
+            "toGeneration": 98,
+            "atArrivalReference": true,
+            "observedZone": "Graveyard",
+            "observedTypes": [
+                "CREATURE"
+            ],
+            "myGraveyard": [
+                "Wolfbat"
+            ],
+            "opponentGraveyard": [
+                "Wolfbat"
+            ],
+            "stateBefore": true,
+            "event": true,
+            "state": true,
+            "attribution": "ARRIVAL_DOES_NOT_SUPPLY"
+        }
+    ]
+}

@@ -13,6 +13,23 @@ This is a proposed research workstream pending Product Studio's milestone decisi
 
 The animated-land fixture uses the maintained fork's Raging Ravine definition (WWK/141). Wizards lists the card as a land with a temporary self-animation that retains the land type. Rules 700.4 and 603.10a explain the battlefield departure and the use of pre-departure characteristics. Under rule 400.7 the arrival is a new object, so the battlefield animation does not make the graveyard card a creature. In the prefilled control, rule 404.1 puts the sacrificed card into its owner's graveyard. [Wizards' card notes](https://magic.wizards.com/en/news/feature/edge-of-eternities-release-notes), [Comprehensive Rules](https://magic.wizards.com/en/rules).
 
+### Try it in Explorer
+
+Run `.\scripts\explorer.ps1` from the application checkout and open [Explorer](http://127.0.0.1:8787) when the launcher prints **Explorer ready**. Choose **Research and learning → Open Contribution Model Study → Open event-to-state experiment**.
+
+1. **Owned creature.** Follow Wolfbat into your graveyard. Compare the application verdicts with PR #30 under **Rules-derived expectation and recorded inputs**.
+2. **Animated land.** Compare Raging Ravine's last-known battlefield creature status with the graveyard card's land type. Check which criterion each observation answers.
+3. **Prefilled graveyard.** Compare the graveyard state before and after the move. Both criteria hold at the checkpoint. Follow the new arrival to the opponent's graveyard and identify the card that supplies your state.
+
+### Reuse and evidence boundaries
+
+- `nontokenCreatureDeath` reads one native move. Last-known controller, type and token status qualify the departure. The actual destination controls the result when the requested move was redirected.
+- `graveyardCreatureCards` reads a player's graveyard at a caller-supplied checkpoint. It returns current object references for the cards that satisfy the condition, with unresolved entries tracked separately. One confirmed creature card suffices even when another entry is unresolved.
+- `attributeArrival` joins a qualifying move to a set of witnesses from the same execution. It compares the recorded arrival reference, including generation, with the qualifying checkpoint objects. A later visit by the same entity has a different reference. The join answers whether the arrival supplies a witness. Establishing a previously false condition also depends on the starting state, which these fixtures record separately.
+- Static facts can identify potential costs, object filters and nominal movement. They lack the actual destination, pre-departure characteristics and checkpoint references needed for attribution. Missing execution evidence can yield an unresolved verdict. The scenario fixtures still supply setup, action and checkpoint selection. Explorer displays the resulting test receipt.
+
+**Next research question.** Can a controlled return-to-hand and redeath sequence show that a later graveyard visit supplies the current state while the original death remains true? This would exercise object generation and checkpoint timing with a real repeat visit.
+
 ## PR #30 baseline
 
 ## Frozen expectations
@@ -29,9 +46,9 @@ Every case begins with no creature cards in the observing player's graveyard. Re
 
 A token can die without satisfying the nontoken criterion. Controller and owner are independent. Finality applies to the move even if the sacrifice cost was paid. Sources include the retained Seer and Wolfbat printings, [Wizards' rules glossary](https://magic.wizards.com/en/keyword-glossary), the [finality release notes](https://magic.wizards.com/en/news/feature/duskmourn-house-of-horror-release-notes) and the [Comprehensive Rules](https://magic.wizards.com/en/rules) (dies, zones, tokens and state-based actions).
 
-## Try it in Explorer
+## Original Explorer walkthrough
 
-From the application checkout run `.\scripts\explorer.ps1` and open <http://127.0.0.1:8787> when the launcher prints **Explorer ready**. Use **Research and learning → Open Contribution Model Study → Open event-to-state experiment**. The case picker reads a retained record of five executed scenarios. It can be used before any live search.
+PR #30 originally displayed a retained record of these five executed scenarios. Its verdicts are still available in the new case picker.
 
 1. **Owned creature.** Follow Wolfbat from Seer’s sacrifice cost to your graveyard. Find the two independently satisfied criteria and check why the recorded arrival still supplies the state.
 2. **Opponent-owned creature.** Compare the last-known controller with the owner and both players’ graveyards. Explain why A still holds and B does not.

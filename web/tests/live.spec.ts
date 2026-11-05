@@ -568,7 +568,8 @@ test('event-to-state research distinguishes observed death and checkpoint state'
   await expect(borrowed).toHaveAttribute('aria-pressed', 'true');
   await expect(event).toHaveText('Satisfied');
   await expect(state).toHaveText('Not satisfied');
-  await expect(observation).toContainText('the card went to its owner’s graveyard');
+  await expect(observation).toContainText('Battlefield → opponent’s graveyard');
+  await expect(observation).toContainText('The graveyard state was unsatisfied');
 
   await study.getByRole('button', {name: 'Creature token'}).click();
   await expect(event).toHaveText('Not satisfied');
@@ -585,7 +586,20 @@ test('event-to-state research distinguishes observed death and checkpoint state'
   await study.getByRole('button', {name: 'Mill a creature card'}).click();
   await expect(event).toHaveText('Not satisfied');
   await expect(state).toHaveText('Satisfied');
-  await expect(observation).toContainText('It establishes the state without a death');
+  await expect(observation).toContainText('This move did not meet the death criterion');
+  await observation.getByText('Rules-derived expectation and recorded inputs').click();
+  await expect(observation.getByText(/Retained PR #30 verdicts/)).toBeVisible();
+
+  await study.getByRole('button', {name: 'Animated land'}).click();
+  await expect(event).toHaveText('Satisfied');
+  await expect(state).toHaveText('Not satisfied');
+  await expect(observation).toContainText('in graveyard with card types land');
+
+  await study.getByRole('button', {name: 'Prefilled graveyard'}).click();
+  await expect(event).toHaveText('Satisfied');
+  await expect(state).toHaveText('Satisfied');
+  await expect(observation).toContainText('Graveyard state before the move. Satisfied.');
+  await expect(observation).toContainText('The state was satisfied independently of this arrival');
   await study.getByText('Evidence and limits of this comparison').click();
   await expect(study.getByText(/Scenario application/)).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
