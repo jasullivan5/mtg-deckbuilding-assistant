@@ -112,7 +112,7 @@ test('five representative cards retain concise conditions honest evidence and in
       const button = detail.getByRole('button', {name: new RegExp(label)}); if (!await button.count()) continue;
       await button.click(); audit[name].evidence[label] = await detail.locator('.evidence-panel').innerText();
       if (name === 'Attrition' && label === 'Rules comparison') {
-        await expect(button).toContainText('No review recorded'); await expect(button).not.toContainText('✓');
+        await expect(button).toContainText('No formal comparison recorded'); await expect(button).not.toContainText('✓');
       }
       await button.click();
     }
@@ -155,7 +155,10 @@ test('source investigation distinguishes death sources removal policy and omitte
     const panel=detail.getByRole('region',{name:'Discovery evidence'});await expect(panel).toContainText(expected);
     cases[name]={defaultText:await detail.innerText(),fields:await panel.innerText()};
     if(name==='Accursed Centaur') {await expect(panel).toContainText('conditional on reaching the graveyard');await expect(panel).toContainText('Source enters the battlefield; sacrifice required');}
-    if(name==='Murder') await expect(button).not.toContainText('✓');
+    if(name==='Murder') {
+      await expect(button).toContainText('Excluded by objective policy');
+      await expect(button).not.toContainText('✓');
+    }
   }
   expect(run.cards.find(c=>c.card==='Pitiless Plunderer')).toBeUndefined();
   const draw=run.cards.find(c=>c.card==='Grim Haruspex');expect(draw?.pathways.MATCH??0).toBe(0);
@@ -304,18 +307,18 @@ test('integration primer reveals both examples and leads to the existing investi
   });
   await page.goto('/');
   await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  const primer = page.getByRole('region', {name: 'How Card Integration Works'});
+  const primer = page.getByRole('region', {name: 'How Card Integration Works', exact: true});
   const parts = primer.getByRole('navigation', {name: 'Primer parts'});
   await expect(parts.getByRole('button', {name: '1. The goal'})).toHaveAttribute('aria-current', 'step');
-  await primer.getByRole('button', {name: /Replenish a resource/}).click();
+  await primer.getByRole('button', {name: /Replenish sacrifice material/}).click();
   await expect(primer).toContainText('It returns tapped');
-  await primer.getByRole('button', {name: /Reward a death/}).click();
+  await primer.getByRole('button', {name: /Respond to a death/}).click();
   await expect(primer).toContainText('outside the present death query');
   const system = primer.getByRole('button', {name: 'Next · The system'});
   await system.focus();
   await page.keyboard.press('Enter');
   await expect(primer.getByRole('heading', {name: 'How does the system work?'})).toBeFocused();
-  await primer.getByRole('button', {name: 'Native definition', exact: true}).click();
+  await primer.getByRole('button', {name: /Native definition/}).click();
   await expect(primer).toContainText('input to gameplay and to mechanical extraction');
   await primer.getByRole('button', {name: 'Commander eligibility', exact: true}).click();
   await expect(primer).toContainText('Dryad Arbor’s green color identity');
@@ -374,6 +377,8 @@ test('integration primer reveals both examples and leads to the existing investi
   await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible({timeout: 130_000});
   await expect(agent).toContainText('Unresolved relationship');
   expect(discoveryRequests).toEqual([{commander: 'Judith, the Scourge Diva', objective: 'own-nontoken-creature-deaths'}]);
+  await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
+  await expect(agent.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
 
   await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
   await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();
@@ -462,4 +467,79 @@ test('contribution follow-up distinguishes state access from scaling and keeps m
   await expect(five).not.toContainText('Respond to Event + Leverage State');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
   expect(discoveryRequests).toBe(0);
+});
+
+test('objective scope and research navigation preserve a live Judith result at desktop and 390 px', async ({page}) => {
+  const shots = '../generated/explorer/clarity-navigation';
+  await mkdir(shots, {recursive: true});
+  let searches = 0;
+  page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) searches++;});
+  await page.setViewportSize({width: 1440, height: 1100});
+  await page.goto('/');
+  const scope = page.getByRole('region', {name: 'Objective and search scope'});
+  await expect(scope).toContainText('A nontoken creature you control moves from the battlefield to a graveyard');
+  await expect(scope).toContainText('Currently searched');
+  await expect(scope).toContainText('General death rewards, such as Treasure');
+  const research = page.getByRole('navigation', {name: 'Research and learning'});
+  await expect(research.getByRole('button', {name: 'Discovery Coverage', exact: true})).toBeDisabled();
+  await expect(research).toContainText('Run Judith');
+  await page.screenshot({path: shots + '/after-home-desktop.png'});
+  await page.setViewportSize({width: 390, height: 844});
+  await page.getByText('About objective', {exact: true}).click();
+  const explanation = page.locator('.objective-help');
+  const box = await explanation.boundingBox();
+  expect(box?.width).toBeGreaterThan(300);
+  await page.screenshot({path: shots + '/after-scope-mobile.png'});
+  await page.setViewportSize({width: 1440, height: 1100});
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
+  const after = page.getByRole('region', {name: 'Scope of this search'});
+  await expect(after).toContainText('renewable sacrifice material');
+  await after.scrollIntoViewIfNeeded();
+  await page.screenshot({path: shots + '/after-results-desktop.png'});
+  const name = page.getByLabel('Card name');
+  const inspection = page.getByRole('region', {name: 'Result inspection'});
+  await name.fill('Viscera Seer');
+  await expect(inspection.getByRole('button', {name: /Creature sacrifice cost identified/})).toBeVisible();
+  await inspection.getByRole('button', {name: /Rules comparison/}).click();
+
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({width, height: width === 390 ? 844 : 1100});
+    await page.getByRole('button', {name: 'Investigate Discovery Coverage'}).focus();
+    await page.keyboard.press('Enter');
+    const navigation = page.getByRole('region', {name: 'Discovery Coverage navigation', exact: true});
+    await expect(navigation).toBeFocused();
+    const coverage = page.getByRole('region', {name: 'Discovery Coverage', exact: true});
+    const detail = coverage.getByRole('region', {name: 'Coverage card inspection'});
+    await coverage.getByRole('button', {name: '4 Outside current objective coverage'}).click();
+    await coverage.getByRole('button', {name: 'Pitiless Plunderer', exact: true}).click();
+    await expect(detail).toContainText('No pathway check for the reviewed relationship');
+    await expect(detail).toContainText('No formal comparison recorded');
+    await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
+    await expect(detail.getByRole('button', {name: /Discovery.*Excluded by objective policy/})).toBeVisible();
+    await coverage.getByRole('button', {name: '1 Unresolved relationship'}).click();
+    await expect(detail).toContainText('leaves land and creature overlap unresolved');
+    if (width === 1440) {
+      await coverage.getByRole('button', {name: '4 Recognized contribution'}).click();
+      await coverage.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
+      await coverage.getByRole('heading', {name: 'Discovery Coverage', exact: true}).scrollIntoViewIfNeeded();
+      await page.screenshot({path: shots + '/after-coverage-desktop.png'});
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
+    await navigation.getByRole('button', {name: 'Back to discovery results'}).click();
+    await expect(inspection).toBeFocused();
+    await expect(name).toHaveValue('Viscera Seer');
+    await expect(inspection.getByRole('button', {name: /Rules comparison/})).toHaveAttribute('aria-expanded', 'true');
+  }
+
+  await page.getByRole('link', {name: 'Research and learning'}).click();
+  await expect(research).toContainText('Learn how card mechanics become research evidence');
+  await expect(research).toContainText('Inspect a controlled historical discovery correction');
+  await research.getByRole('button', {name: 'Open Contribution Model Study'}).click();
+  const study = page.getByRole('region', {name: 'How do cards contribute to a strategy?'});
+  await expect(study).toContainText('Choose a research comparison');
+  await expect(study).toContainText('These controls do not run discovery');
+  await page.getByRole('button', {name: 'Back to discovery results'}).click();
+  await expect(name).toHaveValue('Viscera Seer');
+  expect(searches).toBe(1);
 });

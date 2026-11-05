@@ -18,7 +18,7 @@ export type Run = {
 };
 export type Row = {
   card: string; face: string; actionId: string; abilityPath: string; branch: string;
-  operation: string; verdict: string; interpretation: string; prerequisites: string[];
+  operation: string; verdict: string; mechanicalCompatibility?: string | null; policyAcceptance?: string | null; interpretation: string; prerequisites: string[];
   decisions: {stage: string; verdict: string; reason: string}[];
   sourceReferences: string[]; circumstances: RecordData | null;
 };

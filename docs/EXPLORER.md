@@ -265,3 +265,22 @@ This frontend revision did not run a new Kotlin test suite or gameplay scenario,
 ## Contribution Model Study
 
 Open **Contribution Model Study** below the research controls. This optional study compares two proposed vocabularies against the same source-reviewed mechanics. It requires no discovery run. See the [Prototype Lab exercises and assessment](CONTRIBUTION_VALIDATION.md).
+
+## M3 clarity and navigation
+
+Launch with `./scripts/explorer.ps1` in PowerShell from the application repository. **Find cards** starts the primary workflow. The objective panel separates the goal, the relationships the query checks, and important gaps or exclusions. The same scope appears above the live findings. The descriptions summarize the documented query boundaries and do not estimate catalog coverage.
+
+1. **Understand the search boundary.** Read the three scope fields for Judith and **My nontoken creatures die**, then run discovery. Inspect **Viscera Seer**. Open **Investigate Discovery Coverage** and compare **Pitiless Plunderer** under **Outside current objective coverage** with **Murder** under **Excluded by objective policy**. The omission has no check for that relationship. Murder has a mechanically possible relationship excluded by policy.
+2. **Return to your work.** Filter for a card and open one of its evidence tiles. Visit Discovery Coverage and use **Back to discovery results**. Focus returns to the same inspector with the filter, selected card and open evidence tile intact. Use **Research and learning** to find the primer, historical case and contribution study. Repeat at about 390 px. Coverage uses a compatible live Judith run. Starting a new search still replaces the server’s latest run.
+3. **Read the evidence.** Compare Agent's unresolved type overlap, Murder's policy exclusion and Bloodghast's historical correction. **About the evidence checks** explains source expectations, native representation, discovery, historical results, formal rules comparison, gameplay execution and independent qualification. These views support scoped conclusions about relationships. Contextual deck value and complete gameplay correctness remain separate questions.
+
+The primer contrasts distinctive mechanics with an ordinary creature body and marks the map’s maturity on the diagram. The contribution study remains a conceptual comparison. Atomic objective composition, further mechanical coverage and plan-level Victory Path remain future research. Review in Prototype Lab before acceptance.
+
+### Clarity pass verification
+
+`./scripts/explorer.ps1 -Port 8790` completed the TypeScript/Vite production build and Kotlin installation. The health endpoint reported application `1a2e657d170f7cf95d6411158f3bb45ee6c2d47f` and clean app-stable engine `03869c08665bf476a8b40dacbfbcd501c54a33bd`. The subsequent test-only locator correction does not change the served UI.
+
+- `pnpm --dir web test:ui` passed 8 synthetic interface checks. The first `pnpm --dir web test:live` run passed 11 checks, including the new live Judith scope and round-trip check at desktop and 390 px. The primer check initially matched both the lesson and its new navigation region. After making the region locator exact, `pnpm --dir web test:live -g 'integration primer'` passed. Tests ran in Edge with `EXPLORER_URL=http://127.0.0.1:8790` and `EXPLORER_BROWSER_CHANNEL=msedge`.
+- Compared the exported Judith death report with the product-review run at application `615df22d795ba1176853f8ee5ef39eef2976a474` and the same engine. Population counts and verdict totals agreed, including 6,111 inputs, 499 accepted, 410 unresolved and 2,140 nonqualifying checks. The current report records Seer as accepted, Murder as mechanically compatible and policy-excluded, Agent as mechanically unresolved, and no death pathway for Plunderer or Skeleton. This verifies the reported totals and representative controls, with no claim of a whole-report identity comparison.
+- Actual 1440 × 1100 and 390 × 844 before/after pairs are packaged locally under ignored `generated/explorer/explorer-clarity-before-after.zip`. The before frames come from the live product review. The after frames come from the new browser exercise.
+- This is a frontend presentation change. No new Kotlin test suite or gameplay scenarios ran. The browser exercised the real Kotlin server and existing research views.

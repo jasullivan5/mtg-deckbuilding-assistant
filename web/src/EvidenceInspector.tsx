@@ -1,5 +1,6 @@
 import {useId, useState} from 'react';
 import type {EvidenceIndicator, ResearchConcern} from './api';
+import {evidenceTerms} from './evidenceTerms';
 
 function Lines({title, lines}: {title: string; lines: string[]}) {
   return lines.length > 0 && <><h5>{title}</h5><ul>{lines.map((line, i) => <li key={i}>{line}</li>)}</ul></>;
@@ -8,12 +9,6 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
   const [selected, setSelected] = useState<string | null>(null);
   const id = useId();
   const current = indicators.find(s => s.id === selected);
-  const help: Record<string, string> = {
-    mechanic: 'Checks how a mechanic can contribute to the chosen objective.',
-    source: 'Records comparisons between programmed card behavior and retained Magic rules sources.',
-    execution: 'Records outcomes from engine test scenarios.',
-    independent: 'Records a separate review of the interpretation and its supporting evidence.',
-  };
   const sourceLink = (path: string) => {
     if (path.startsWith('https://github.com/') || path.startsWith('https://scryfall.com/')) return path;
     if (revision && /^(src\/main\/|src\/test\/)/.test(path) && !path.split('/').includes('..'))
@@ -23,11 +18,11 @@ export function EvidenceInspector({indicators, revision}: {indicators: EvidenceI
   return <div className="evidence-inspector">
     <div className="evidence-buttons" role="group" aria-label="Evidence and verification">
       {indicators.map(item => <button key={item.id} type="button" aria-expanded={selected === item.id}
-        title={help[item.id]} aria-description={help[item.id]}
+        title={evidenceTerms[item.id as keyof typeof evidenceTerms]} aria-description={evidenceTerms[item.id as keyof typeof evidenceTerms]}
         aria-controls={`${id}-panel`} className={`evidence-button ${item.state} ${item.historical ? 'historical' : ''}`}
         onClick={() => setSelected(selected === item.id ? null : item.id)}>
         <span><span aria-hidden="true">{item.state === 'ESTABLISHED' ? item.historical ? '◷ ' : '✓ ' : item.state === 'KNOWN_PROBLEM' ? '! ' : '· '}</span>{item.label}</span>
-        <small>{item.status}</small>
+        <small>{item.id === 'source' && item.status === 'No review recorded' ? 'No formal comparison recorded' : item.status}</small>
       </button>)}
     </div>
     {current && <section id={`${id}-panel`} aria-label={`${current.label} evidence`} className="evidence-panel">

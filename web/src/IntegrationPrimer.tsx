@@ -118,7 +118,7 @@ export default function IntegrationPrimer({openCase, openCoverage, busy}: {
       {payment && <div className="actions">
         <button disabled={busy} onClick={openCoverage}>Open Agent in Discovery Coverage</button>
         <button className="primary" onClick={() => visit('recap')}>Continue to recap</button>
-        <p className="hint">Discovery Coverage uses a live Judith creature-death search. Explorer will use a matching run or start one.</p>
+        <p className="hint">Discovery Coverage uses a live Judith creature-death search. Explorer will reuse a matching run. Starting a Judith search replaces any earlier results.</p>
       </div>}
     </>}
     {journey === 'recap' && <>

@@ -47,7 +47,7 @@ function CoverageInspection({entry, run}: {entry: Entry; run: Run}) {
 
   return <section id="coverage-inspection" className="detail" aria-label="Coverage card inspection">
     <h2>{entry.source.card}</h2>
-    <h3>Source-reviewed relationship</h3>
+    <h3>Source-reviewed expectation</h3>
     <p>{entry.source.expectation}</p>
     <details><summary>Retained Oracle text and identity</summary>
       <p className="coverage-oracle">{entry.source.oracleText}</p>
@@ -71,7 +71,7 @@ function CoverageInspection({entry, run}: {entry: Entry; run: Run}) {
     {entry.index !== null && !evidence && !error && <p role="status">Loading card evidence…</p>}
     {evidence && <>
       <h3>Native card and retained evidence</h3>
-      <p className="hint">Rules comparison, engine tests and independent verification apply to the recorded scope. The cohort review adds no assurance records.</p>
+      <p className="hint">The expectation above comes from a rules-source review for this cohort. The tiles below show formal comparison, gameplay and qualification records for their own scope.</p>
       {entry.relationshipChecks === 0 && (evidence.actions.length > 0 || evidence.facts.length > 0) &&
         <details><summary>Retained native actions and extracted facts</summary>
           <pre>{JSON.stringify({actions: evidence.actions, facts: evidence.facts}, null, 2)}</pre>
@@ -113,7 +113,7 @@ export function DiscoveryCoverage({run, initialCard}: {run: Run; initialCard?: s
         })}
       </nav>
       <details className="provenance"><summary>Comparison sources and revisions</summary>
-        <p>Live structural discovery from this run, joined to retained Oracle snapshots and the adopted objective model. Review date {comparison.reviewedOn}. Gameplay evidence in the inspector may be historical.</p>
+        <p>Live structural discovery from this run, joined to retained Oracle snapshots and the documented query scope. Review date {comparison.reviewedOn}. Gameplay evidence in the inspector may be historical.</p>
         <p>Application <code>{run.applicationRevision}</code><br/>Live engine <code>{run.argentumCommit}</code><br/>
           Retained comparison engine <code>{comparison.reviewedEngine}</code></p>
       </details>

@@ -85,7 +85,7 @@ Keep this section brief and record demonstrated readiness separately from accept
 | --- | --- | --- |
 | M1 — Live discovery foundation | **Accepted** | Bounded live discovery experience |
 | M2 — Card-first exploration | **Accepted** | Bounded card-first experience |
-| M3 — Evidence and visualization | **In progress** | Review M3.2 Integration Change Case Study and the revised system orientation in Prototype Lab. Review the Contribution Model Study before choosing a vocabulary. M3.1 Discovery Coverage remains available. |
+| M3 — Evidence and visualization | **In progress** | Review M3.2 Integration Change Case Study and the revised system orientation in Prototype Lab. Review the Contribution Model Study before choosing a vocabulary. Review the clarity and navigation pass with the three Explorer exercises. |
 | M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |
 
 Update only decisions that alter the work: *accepted experience, observed gap, changed milestone, or next authorized increment*. Keep detailed technical diagnostics, test receipts and PR history in the corresponding repository records instead of duplicating them here.

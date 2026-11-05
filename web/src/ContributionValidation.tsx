@@ -29,7 +29,7 @@ export default function ContributionValidation() {
   return <section id="contribution-validation" className="detail primer contribution-study" aria-labelledby="contribution-title">
     <p className="eyebrow">SOURCE-REVIEWED CONCEPTUAL EXPERIMENT</p>
     <h2 id="contribution-title">How do cards contribute to a strategy?</h2>
-    <p>Pick an objective or start with <strong>Events versus states</strong>. Compare both models against the same ability and the same game conditions.</p>
+    <p>Choose a research comparison or start with <strong>Events versus states</strong>. Both provisional models use the same ability and game conditions. These controls do not run discovery.</p>
     <nav className="categories" aria-label="Contribution study views">
       {views.map((label, index) => <button key={label} aria-pressed={index === view} onClick={() => pickView(index)}>{label}</button>)}
     </nav>
