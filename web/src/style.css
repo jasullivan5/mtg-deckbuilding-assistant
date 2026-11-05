@@ -254,3 +254,12 @@ button.rules-line:hover { background: #273c41; }
   .primer-map { grid-template-columns: 1fr; gap: 13px; }
   .primer-map li + li::before { content: "↓"; right: 0; top: -7px; width: 100%; line-height: 1; pointer-events: none; }
 }
+
+.contribution-select { max-width: 380px; margin-top: 16px; }
+.contribution-models { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+.contribution-models section { border: 1px solid #425d62; border-radius: 8px; background: #22383e; padding: 0 14px; }
+.contribution-roles { color: #b8e6cc; font-weight: 650; }
+.contribution-study .primer-flow { margin-top: 4px; }
+@media (max-width: 620px) {
+  .contribution-models { grid-template-columns: 1fr; }
+}

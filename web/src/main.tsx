@@ -7,6 +7,7 @@ import {CommanderPanel} from './CommanderPanel';
 import {DiscoveryCoverage} from './DiscoveryCoverage';
 import './style.css';
 
+const ContributionValidation = lazy(() => import('./ContributionValidation'));
 const IntegrationPrimer = lazy(() => import('./IntegrationPrimer'));
 const IntegrationChange = lazy(() => import('./IntegrationChange'));
 
@@ -40,6 +41,7 @@ export function App() {
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
   const [primerOpen, setPrimerOpen] = useState<boolean>();
+  const [contributionOpen, setContributionOpen] = useState(false);
   const [caseOpen, setCaseOpen] = useState(false);
   const [coverageRun, setCoverageRun] = useState<string>();
   const [coverageCard, setCoverageCard] = useState<string>();
@@ -186,7 +188,11 @@ export function App() {
         <button aria-expanded={caseOpen} onClick={() => {setCaseOpen(!caseOpen); if (primerOpen) setPrimerOpen(false);}}>
           {caseOpen ? 'Close Integration Change Case Study' : 'Open Integration Change Case Study'}
         </button>
+        <button aria-expanded={contributionOpen} onClick={() => setContributionOpen(!contributionOpen)}>
+          {contributionOpen ? 'Close Contribution Model Study' : 'Open Contribution Model Study'}
+        </button>
       </div>
+      {contributionOpen && <Suspense fallback={<p role="status">Loading contribution study…</p>}><ContributionValidation/></Suspense>}
       {primerOpen !== undefined && <div hidden={!primerOpen}>
         <Suspense fallback={<p role="status">Loading primer…</p>}>
           <IntegrationPrimer busy={!!busy || !objectives.length} openCoverage={() => void openAgentCoverage()}

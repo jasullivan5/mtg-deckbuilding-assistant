@@ -261,3 +261,7 @@ No gameplay scenarios or new Kotlin test suite runs were part of this frontend i
 - `node scripts/retain-integration-change.mjs --check` validated six retained receipt hashes, three objective comparisons and 21 source-bound relationships.
 
 This frontend revision did not run a new Kotlin test suite or gameplay scenario, or reproduce the original historical CLI runs.
+
+## Contribution Model Study
+
+Open **Contribution Model Study** below the research controls. This optional study compares two proposed vocabularies against the same source-reviewed mechanics. It requires no discovery run. See the [Prototype Lab exercises and assessment](CONTRIBUTION_VALIDATION.md).
