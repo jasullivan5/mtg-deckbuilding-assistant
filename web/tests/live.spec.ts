@@ -307,7 +307,7 @@ test('integration primer reveals both examples and leads to the existing investi
   });
   await page.goto('/');
   await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  const primer = page.getByRole('region', {name: 'How Card Integration Works'});
+  const primer = page.getByRole('region', {name: 'How Card Integration Works', exact: true});
   const parts = primer.getByRole('navigation', {name: 'Primer parts'});
   await expect(parts.getByRole('button', {name: '1. The goal'})).toHaveAttribute('aria-current', 'step');
   await primer.getByRole('button', {name: /Replenish sacrifice material/}).click();
