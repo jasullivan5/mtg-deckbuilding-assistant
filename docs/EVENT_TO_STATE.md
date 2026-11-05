@@ -1,5 +1,20 @@
 # Atomic objective relationship experiment
 
+## Objective Semantics Foundations · Increment 1
+
+This is a proposed research workstream pending Product Studio's milestone decision.
+
+### Additional frozen expectations
+
+| Case | Setup and executed action | State B before the action | Event A | State B at the checkpoint | Arrival supplies B |
+| --- | --- | --- | --- | --- | --- |
+| Animated land | Activate Raging Ravine's animation, resolve it, then sacrifice the land to Viscera Seer in the same turn | No | Yes | No | No |
+| Prefilled graveyard | Start with one Wolfbat in our graveyard and sacrifice a different, opponent-owned Wolfbat we control | Yes | Yes | Yes | No |
+
+The animated-land fixture uses the maintained fork's Raging Ravine definition (WWK/141). Wizards lists the card as a land with a temporary self-animation that retains the land type. Rules 700.4 and 603.10a explain the battlefield departure and the use of pre-departure characteristics. Under rule 400.7 the arrival is a new object, so the battlefield animation does not make the graveyard card a creature. In the prefilled control, rule 404.1 puts the sacrificed card into its owner's graveyard. [Wizards' card notes](https://magic.wizards.com/en/news/feature/edge-of-eternities-release-notes), [Comprehensive Rules](https://magic.wizards.com/en/rules).
+
+## PR #30 baseline
+
 ## Frozen expectations
 
 Every case begins with no creature cards in the observing player's graveyard. Read the state after the stack and pending decisions settle, with no intervening new action. The actual engine move determines the event. Count actual creature cards in the observing player's graveyard at that checkpoint.
