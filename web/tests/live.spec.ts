@@ -386,3 +386,45 @@ test('integration primer reveals both examples and leads to the existing investi
   await page.setViewportSize({width: 1365, height: 950});
   await expect(primer).toBeVisible();
 });
+
+test('contribution study compares roles against the same mechanics without a new discovery run', async ({page}) => {
+  let discoveryRequests = 0;
+  page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) discoveryRequests++;});
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto('/');
+  const open = page.getByRole('button', {name: 'Open Contribution Model Study'});
+  await open.focus();
+  await page.keyboard.press('Enter');
+  const study = page.getByRole('region', {name: 'How do cards contribute to a strategy?'});
+  const card = study.getByRole('combobox', {name: 'Reviewed card'});
+  const five = study.getByRole('region', {name: 'Model A'});
+  const four = study.getByRole('region', {name: 'Model B'});
+  await expect(study).toContainText('Renewable nontoken creature material');
+  await card.selectOption({label: 'Pitiless Plunderer'});
+  await expect(four).toContainText('Respond to Event + Provide');
+  await expect(study).toContainText('relationship is unqueried');
+  await card.selectOption({label: 'Murder'});
+  await expect(study).toContainText('deliberately excluded by policy');
+
+  await study.getByRole('button', {name: 'Events versus states'}).click();
+  await expect(study.getByRole('heading', {name: 'Goblin Chieftain'})).toBeVisible();
+  await expect(four).toContainText('bonus per recipient is fixed');
+  await card.selectOption({label: 'Cranial Plating'});
+  await expect(five).toContainText('Modify + Leverage State');
+  await expect(four).toContainText('Continuous quantity dependency');
+  await card.selectOption({label: 'Scute Swarm'});
+  await expect(four).toContainText('Resolution threshold selects output identity');
+  await expect(study).toContainText('No live query runs for this objective');
+  await study.getByRole('button', {name: 'Held-out controls'}).click();
+  await expect(study).toContainText('Possible fidelity concern');
+  await card.selectOption({label: 'Tragic Slip'});
+  await expect(four).toContainText('Earlier-event history');
+  await expect(four).not.toContainText('Respond to Event');
+  await expect(study.getByText('Provisional recommendation.')).toBeHidden();
+  await study.getByText('What does the sample suggest?').click();
+  await expect(study.getByText('Provisional recommendation.')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  expect(discoveryRequests).toBe(0);
+  await page.setViewportSize({width: 1365, height: 950});
+  await expect(study).toBeVisible();
+});
