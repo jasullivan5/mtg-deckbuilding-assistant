@@ -547,7 +547,7 @@ test('objective scope and research navigation preserve a live Judith result at d
 test('event-to-state research distinguishes observed death and checkpoint state', async ({page}) => {
   const searches: string[] = [];
   page.on('request', request => {
-    if (request.url().includes('/api/discover')) searches.push(request.url());
+    if (request.url().endsWith('/api/v1/discover')) searches.push(request.url());
   });
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
