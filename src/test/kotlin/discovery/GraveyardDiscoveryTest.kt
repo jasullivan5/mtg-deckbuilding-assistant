@@ -77,10 +77,13 @@ class GraveyardDiscoveryTest : FunSpec({
     }
 
     test("held-out targeting and opponent-only discard keep their own player and action bindings") {
-        val shredder = rows("Codex Shredder").single { it.stateEntry!!.route == GraveyardRoute.MILL }
-        shredder.verdict shouldBe Verdict.MATCH
-        shredder.stateEntry!!.sourcePlayer shouldBe "ANY"
-        rows("Codex Shredder").count { it.verdict == Verdict.MATCH } shouldBe 1
+        val triton = rows("Mire Triton").single()
+        triton.verdict shouldBe Verdict.MATCH
+        triton.stateEntry!!.route shouldBe GraveyardRoute.MILL
+        triton.stateEntry.count shouldBe 2
+        val millstone = rows("Millstone").single()
+        millstone.verdict shouldBe Verdict.MATCH
+        millstone.stateEntry!!.sourcePlayer shouldBe "ANY"
         val disciple = rows("Elderfang Disciple").single()
         disciple.stateEntry!!.route shouldBe GraveyardRoute.DISCARD
         disciple.verdict shouldBe Verdict.NO_MATCH
@@ -89,8 +92,14 @@ class GraveyardDiscoveryTest : FunSpec({
 
     test("Commander eligibility and the established death policy remain separate") {
         report.eligibility.single { it.card == "Tome Scour" }.deck shouldBe Verdict.NO_MATCH
-        "Tome Scour" in report.mechanicalInputCards.orEmpty() shouldBe false
+        ("Tome Scour" in report.mechanicalInputCards.orEmpty()) shouldBe false
         rows("Tome Scour") shouldBe emptyList()
+        report.eligibility.single { it.card == "Codex Shredder" }.deck shouldBe Verdict.UNKNOWN
+        rows("Codex Shredder") shouldBe emptyList()
+        val shredder = PathwayExtractor(inspectCardEntries = true).extract(listOf(catalog.card("Codex Shredder")!!))
+        val nativeMill = graveyardEntries(shredder.facts).single { it.fact.operation == "MILL" }
+        nativeMill.verdict shouldBe Verdict.MATCH
+        nativeMill.fact.sourcePlayer shouldBe "ANY"
         rows("Reassembling Skeleton") shouldBe emptyList()
         rows("Murder") shouldBe emptyList()
         val deaths = discover(catalog, report.commander, conventionalQuery = "name:Murder")
