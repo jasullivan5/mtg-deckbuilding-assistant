@@ -1,6 +1,9 @@
 package dev.mtg.assistant
 
 import com.wingedsheep.sdk.core.Zone
+import com.wingedsheep.sdk.dsl.card
+import com.wingedsheep.sdk.scripting.AbilityCost
+import com.wingedsheep.sdk.scripting.effects.DrawCardsEffect
 import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.objectives.GRAVEYARD_CREATURE_OBJECTIVE
@@ -88,6 +91,49 @@ class GraveyardDiscoveryTest : FunSpec({
         disciple.stateEntry!!.route shouldBe GraveyardRoute.DISCARD
         disciple.verdict shouldBe Verdict.NO_MATCH
         facts("Elderfang Disciple").single().sourcePlayer shouldBe "OPPONENT"
+    }
+
+    test("discarding the source uses the actual card type and retains the activation requirements") {
+        for (name in listOf("Twinshot Sniper", "Harvester of Misery", "Reinforced Ronin", "Trumpeting Carnosaur")) {
+            val row = rows(name).single { it.stateEntry?.route == GraveyardRoute.DISCARD }
+            val fact = facts(name).single { it.id == row.stateEntry!!.factId }
+            row.verdict shouldBe Verdict.MATCH
+            row.costOrEffect shouldBe "ACTIVATION_COST"
+            row.stateEntry!!.deathComparison.verdict shouldBe Verdict.NO_MATCH
+            fact.binding shouldBe "SELF"
+            fact.cardEntry shouldBe CardEntry(GraveyardRoute.DISCARD, 1, discardsSource = true)
+            fact.sourceZone shouldBe Zone.HAND
+            fact.sourcePlayer shouldBe "YOU"
+            fact.ownerScope shouldBe "YOU"
+            fact.destinationZone shouldBe Zone.GRAVEYARD
+            fact.destinationController shouldBe "OWNER"
+            fact.objectFilter.cardPredicates shouldBe listOf(CardPredicate.IsCreature)
+            val action = report.actions.single { it.id == fact.actionId }
+            action.native.toString().contains("CostDiscardSelf") shouldBe true
+            action.native.toString().contains("targetRequirements") shouldBe (name != "Reinforced Ronin")
+        }
+        val land = rows("Sokenzan, Crucible of Defiance").single { it.stateEntry?.route == GraveyardRoute.DISCARD }
+        land.verdict shouldBe Verdict.NO_MATCH
+        land.decisions.single().reason.contains("noncreature card") shouldBe true
+    }
+
+    test("unsupported source characteristics and inconsistent activation zones never become a match") {
+        fun source(zone: Zone) = card("Synthetic discard source") {
+            typeLine = "Creature — Beast"
+            power = 1
+            toughness = 1
+            activatedAbility {
+                cost = AbilityCost.DiscardSelf
+                activateFromZone = zone
+                effect = DrawCardsEffect(1)
+            }
+        }
+        val backFace = card("Synthetic back face") { typeLine = "Land" }
+        val multiFace = PathwayExtractor(inspectCardEntries = true).extract(listOf(source(Zone.HAND).copy(backFace = backFace)))
+        graveyardEntries(multiFace.facts).single().verdict shouldBe Verdict.UNKNOWN
+        val wrongZone = PathwayExtractor(inspectCardEntries = true).extract(listOf(source(Zone.BATTLEFIELD)))
+        graveyardEntries(wrongZone.facts).isEmpty() shouldBe true
+        wrongZone.unsupported.any { it.path == "script.activatedAbilities[0].cost" } shouldBe true
     }
 
     test("Commander eligibility and the established death policy remain separate") {

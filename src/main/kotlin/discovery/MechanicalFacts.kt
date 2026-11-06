@@ -3,6 +3,7 @@ package dev.mtg.assistant.discovery
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.scripting.GameObjectFilter
 import com.wingedsheep.sdk.scripting.predicates.ControllerPredicate
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 
@@ -10,7 +11,8 @@ import kotlinx.serialization.json.JsonElement
 @Serializable enum class FactKind { MOVE_OBJECT, SACRIFICE, DAMAGE, TOUGHNESS_CHANGE, CAST_PERMISSION, CREATE_TOKEN, OTHER_OPERATION }
 @Serializable data class SacrificeChoice(val count: Int, val excludesSource: Boolean)
 @Serializable enum class GraveyardRoute { SACRIFICE, MILL, DISCARD }
-@Serializable data class CardEntry(val route: GraveyardRoute, val count: Int?, val random: Boolean = false)
+@Serializable data class CardEntry(val route: GraveyardRoute, val count: Int?, val random: Boolean = false,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val discardsSource: Boolean = false)
 @Serializable data class MechanicalFact(
     val id: String, val card: String, val face: String, val actionId: String, val path: String,
     val kind: FactKind, val operation: String, val costOrEffect: String,

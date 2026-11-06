@@ -15,7 +15,8 @@ internal fun stateEntryExplanation(row: ResultEvidence, action: ActionEvidence?,
     } else ""
     val movement = when (entry.route) {
         GraveyardRoute.MILL -> "mill $cards from your library"
-        GraveyardRoute.DISCARD -> "discard $cards from your hand" + if (entry.random) " at random" else ""
+        GraveyardRoute.DISCARD -> if (entry.discardsSource) "discard this creature card from your hand"
+            else "discard $cards from your hand" + if (entry.random) " at random" else ""
         GraveyardRoute.SACRIFICE -> (if (entry.sourcePlayer == "OPPONENT") "an opponent sacrifices " else "sacrifice ") + when {
             entry.excludesSource && count == 1 -> "another creature"
             entry.excludesSource -> "$count creatures other than the source"
@@ -39,7 +40,9 @@ internal fun stateEntryExplanation(row: ResultEvidence, action: ActionEvidence?,
             add("This route must affect you. If it targets a player, you must be a legal target.")
         add(when (entry.route) {
             GraveyardRoute.MILL -> "At least one card milled must be a creature card in your graveyard."
-            GraveyardRoute.DISCARD -> "An eligible creature card must be among the cards actually discarded."
+            GraveyardRoute.DISCARD -> if (entry.discardsSource)
+                "Meet the timing, mana costs and any target requirements. You pay by discarding this exact card before the ability resolves."
+            else "An eligible creature card must be among the cards actually discarded."
             GraveyardRoute.SACRIFICE -> "An eligible creature you own must reach your graveyard as a creature card."
         })
         add("The card must stay in your graveyard through the checkpoint. Replacement effects can redirect the move.")

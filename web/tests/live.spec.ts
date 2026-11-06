@@ -47,6 +47,17 @@ test('independent graveyard discovery finds mill discard and sacrifice through K
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await detail.screenshot({path: '../generated/explorer/state-discovery-mobile.png'});
 
+  await page.setViewportSize({width: 1365, height: 950});
+  await page.getByLabel('Card name').fill('Twinshot Sniper');
+  await results.getByRole('button', {name: 'Twinshot Sniper', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('Discard this creature card from your hand to activate this ability');
+  await expect(detail.locator('.objective-notes')).toContainText('any target requirements');
+  await expect(detail.locator('.objective-notes')).toContainText('starts outside the battlefield');
+  await detail.getByRole('button', {name: /Discovery/}).click();
+  await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText('Event comparison');
+  await detail.screenshot({path: '../generated/explorer/source-discard-desktop.png'});
+  expect(run.cards.find(card => card.card === 'Sokenzan, Crucible of Defiance')?.pathways.MATCH ?? 0).toBe(0);
+
   await page.getByLabel('Card name').fill('Viscera Seer');
   await mechanic.selectOption('Sacrifice');
   await results.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
@@ -55,6 +66,13 @@ test('independent graveyard discovery finds mill discard and sacrifice through K
   await page.getByLabel('Card name').fill('Mogg Fanatic');
   await results.getByRole('button', {name: 'Mogg Fanatic', exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('leaves the creature-card arrival unresolved');
+
+  await page.getByRole('button', {name: /All findings/}).click();
+  await mechanic.selectOption('Discard');
+  await page.getByLabel('Card name').fill('Sokenzan, Crucible of Defiance');
+  await results.getByRole('button', {name: 'Sokenzan, Crucible of Defiance', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('which is a noncreature card');
+  await detail.screenshot({path: '../generated/explorer/source-discard-nonmatch.png'});
 });
 
 test('discover conditional graveyard contributions from native Judith results', async ({page}) => {
