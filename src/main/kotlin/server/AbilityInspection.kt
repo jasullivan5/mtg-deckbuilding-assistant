@@ -223,6 +223,11 @@ fun abilityInspections(
             else -> emptyList()
         }
         val notes = buildList {
+            if (best.stateEntry != null) {
+                add(explanation.summary)
+                addAll(explanation.requirements)
+                add(stateEntryEventNote(best.stateEntry))
+            }
             if (best.branch == Contribution.DIRECT_DEATH_GENERATOR && best.operation == "SACRIFICE" && best.verdict == Verdict.MATCH) {
                 val filter = best.nativeOperation.obj()?.get("filter").obj()
                 val choice = filter.items("cardPredicates").singleOrNull().obj()

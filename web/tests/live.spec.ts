@@ -5,6 +5,57 @@ import type {Run, Evidence, CommanderView} from '../src/api';
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to a running Kotlin application.');
 const objective = 'own-nontoken-creature-deaths';
 
+test('independent graveyard discovery finds mill discard and sacrifice through Kotlin', async ({page}) => {
+  const searches: string[] = [];
+  page.on('request', request => {
+    if (request.url().endsWith('/api/v1/discover')) searches.push(request.postDataJSON().objective);
+  });
+  await page.goto('/');
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('stock-own-graveyard');
+  const completed = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const run: Run = await (await completed).json();
+  expect(searches).toEqual(['stock-own-graveyard']);
+  for (const route of ['sacrifice', 'mill', 'discard']) {
+    expect(run.counts[`accepted_state_${route}_pathways`]).toBeGreaterThan(0);
+  }
+  expect(run.cards.some(card => card.card === 'Tome Scour')).toBe(false);
+  const results = page.getByRole('region', {name: 'Discovery results', exact: true});
+  const detail = page.getByRole('region', {name: 'Result inspection'});
+  await page.getByLabel('Mechanic', {exact: true}).selectOption('Mill');
+  const first = results.locator('button.card').first();
+  await first.click();
+  await expect(detail.locator('.objective-notes')).toContainText(/mill .* from your library/);
+
+  await page.getByLabel('Card name').fill("Stitcher's Supplier");
+  await results.getByRole('button', {name: "Stitcher's Supplier", exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('When this permanent enters, mill 3 cards');
+  await expect(detail.locator('.objective-notes')).toContainText('starts outside the battlefield');
+  await detail.getByLabel('Ability to inspect').selectOption({index: 1});
+  await expect(detail.locator('.objective-notes')).toContainText('When this permanent dies, mill 3 cards');
+  await detail.getByRole('button', {name: /Discovery/}).click();
+  await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText('Event comparison');
+  await detail.screenshot({path: '../generated/explorer/state-discovery-desktop.png'});
+
+  await page.getByLabel('Card name').fill('Faithless Looting');
+  await page.getByLabel('Mechanic', {exact: true}).selectOption('Discard');
+  await results.getByRole('button', {name: 'Faithless Looting', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('Discard 2 cards from your hand');
+  await expect(detail.locator('.objective-notes')).toContainText('eligible creature card');
+  await page.setViewportSize({width: 390, height: 844});
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await detail.screenshot({path: '../generated/explorer/state-discovery-mobile.png'});
+
+  await page.getByLabel('Card name').fill('Viscera Seer');
+  await page.getByLabel('Mechanic', {exact: true}).selectOption('Sacrifice');
+  await results.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('This same sacrifice can cause a death');
+  await page.getByRole('button', {name: /Needs interpretation/}).click();
+  await page.getByLabel('Card name').fill('Mogg Fanatic');
+  await results.getByRole('button', {name: 'Mogg Fanatic', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('leaves the creature-card arrival unresolved');
+});
+
 test('discover conditional graveyard contributions from native Judith results', async ({page}) => {
   await page.goto('/');
   const completed = page.waitForResponse(r => r.url().endsWith('/api/v1/discover') && r.ok());

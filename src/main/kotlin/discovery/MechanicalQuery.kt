@@ -28,6 +28,7 @@ data class ObjectScope(
     val battlefield: Boolean = true, val details: List<String> = emptyList(),
     val zone: com.wingedsheep.sdk.core.Zone? = null, val zonePlayer: String = "UNKNOWN",
     val possible: Boolean = true, val ownerScope: String = "ANY",
+    val entryPlayer: com.wingedsheep.sdk.scripting.references.Player? = null, val cardEntry: CardEntry? = null
 ) {
     val description: String get() = "${filter.description}; actor=$actor; selfCreature=$printedSelfCreature; battlefieldCompatible=$battlefield; ${unresolved ?: ""}; constraints=$details"
     fun compatible(r: Requirements): Verdict {
@@ -117,3 +118,6 @@ class MechanicalQuery(private val paths: List<Pathway>, private val filters: Lis
     }
 }
 fun creatureDeathPathways(paths: List<Pathway>) = MechanicalQuery(paths.filter { it.branch == Contribution.DIRECT_DEATH_GENERATOR })
+internal fun evaluateDeathGeneration(paths: List<Pathway>) = creatureDeathPathways(paths).where(canAffectCreature())
+    .where(canAffectController(Controller.YOU)).where(canAffectTokenStatus(TokenStatus.NONTOKEN))
+    .where(satisfiesDeathGenerationPolicy()).execute()

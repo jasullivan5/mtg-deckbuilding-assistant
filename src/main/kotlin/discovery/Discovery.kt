@@ -3,6 +3,7 @@ package dev.mtg.assistant.discovery
 import com.wingedsheep.sdk.model.CardDefinition
 import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.objectives.conditionalSacrificeArrivals
+import dev.mtg.assistant.objectives.GRAVEYARD_CREATURE_OBJECTIVE
 import io.github.classgraph.ClassGraph
 import java.lang.reflect.Modifier
 import java.nio.file.Files
@@ -47,7 +48,7 @@ val discoveryLimitations = listOf(
     "No card-name matching or Oracle-text matching is used by mechanical extraction. Native commander designation and the unsupported chosen-color selection guard are the only text-based eligibility checks."
 )
 fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String? = null, objective: String = "own-nontoken-creature-deaths"): DiscoveryReport {
-    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) { "Unsupported objective: $objective" }
+    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens",GRAVEYARD_CREATURE_OBJECTIVE)) { "Unsupported objective: $objective" }
     val commander=resolveCommander(catalog,commanderName)
     val allowed=catalog.eligibility.resolve(commander).colors + identityRestrictions(commander)
     val roots=physicalCards(catalog.cards)
@@ -64,16 +65,14 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     val eligible=legal.filter { byName.getValue(it.name).deck == Verdict.MATCH }
     val conventionalNames=conventionalQuery?.let { catalog.search(it).map { it.name }.toSet() }
     val input=eligible.filter { conventionalNames == null || it.name in conventionalNames }
-    val extracted=PathwayExtractor().extract(input)
-    if(objective in setOf("reanimate-own-creatures","create-creature-tokens")) return factObjectiveReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
+    val extracted=PathwayExtractor(inspectCardEntries=objective==GRAVEYARD_CREATURE_OBJECTIVE).extract(input)
+    if(objective != "own-nontoken-creature-deaths") return factObjectiveReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
         linkedMapOf("authored_physical_cards" to roots.size,"upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin=="UPSTREAM_ARGENTUM" },
             "application_extension_physical_cards" to roots.count { catalog.provenance(it.name).origin=="APPLICATION_EXTENSION" },"registry_names_including_faces" to catalog.cards.size,
             "commander_legal_cards" to legal.size,"format_legality_unknown_cards" to eligibility.count { it.format==Verdict.UNKNOWN },
             "commander_eligible_cards" to eligible.size,"identity_unknown_legal_cards" to legal.count { byName.getValue(it.name).deck==Verdict.UNKNOWN },
             "mechanical_input_cards_after_conventional_search" to input.size),extracted,input.map { it.name },objective)
-    val direct=creatureDeathPathways(extracted.pathways).where(canAffectCreature())
-        .where(canAffectController(Controller.YOU)).where(canAffectTokenStatus(TokenStatus.NONTOKEN))
-        .where(satisfiesDeathGenerationPolicy()).execute()
+    val direct=evaluateDeathGeneration(extracted.pathways)
     // Independent branch: never downstream of direct-generation or its policy.
     val enhanced=MechanicalQuery(extracted.pathways.filter { it.branch == Contribution.DEATH_ENHANCED_REMOVAL })
         .where(canAffectCreature()).where(canAffectController(Controller.YOU))
@@ -165,7 +164,7 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         appendLine("Commander: ${report.commander}; allowed identity: ${report.allowedIdentity}")
         report.counts.forEach { (k,v)-> appendLine("$k: $v") }
         report.translationAssurance.forEach { appendLine("Translation assurance: ${it.card}: ${it.qualification}; fidelity=${it.sourceFidelity}; engine=${it.engineExecution}; ${it.reasons}") }
-        for(branch in Contribution.entries) {
+        for(branch in Contribution.entries.filter { (it == Contribution.GRAVEYARD_CREATURE_ARRIVAL) == (objective == GRAVEYARD_CREATURE_OBJECTIVE) }) {
             appendLine("\n$branch")
             report.results.filter { it.branch == branch && it.verdict == Verdict.MATCH }.forEach { r ->
                 appendLine("${r.card} | ${r.face} | ${r.abilityPath} | ${r.operation} | ${r.costOrEffect}")

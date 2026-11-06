@@ -45,7 +45,7 @@ class ExplorerServerTest : FunSpec({
             reportJson.decodeFromString<ApiError>(blocked.body()).inspection!!.selectable shouldBe false
         }
     }
-    test("all three HTTP discoveries agree with CLI full reports and evidence") {
+    test("all HTTP discovery objectives agree with CLI full reports and evidence") {
         ExplorerServer(catalog,0,revision="test-revision").use { server ->
             server.start()
             for (objective in objectives) {
