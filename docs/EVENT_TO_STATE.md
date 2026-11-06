@@ -1,5 +1,50 @@
 # Atomic objective relationship experiment
 
+## Objective Semantics Foundations · Increment 2
+
+### Try it in Explorer
+
+Run `.\scripts\explorer.ps1` from the application checkout. Open [Explorer](http://127.0.0.1:8787) when the terminal prints **Explorer ready**.
+
+1. Select **Judith, the Scourge Diva** and **My nontoken creatures die**, then choose **Find cards → Potential graveyard contributions**. Open the first result, Accursed Centaur. The sacrifice is required when the enters trigger resolves. Open **Native evidence** for the exact action, fact and definition.
+2. In that view, inspect **Viscera Seer**. Compare its activation payment with Centaur's triggered instruction. Then inspect **Blood Bairn** for a payment that needs another creature. Open **Separate engine validation** to compare the conditions with the seven recorded game cases.
+3. Open **Needs interpretation** and search for **Agent of Shauku**. A land must also be a nontoken creature to qualify for the death, and a land's battlefield type does not establish its graveyard type. In **All findings**, inspect **Murder** for the existing ordinary-removal policy exclusion.
+
+### What the search found
+
+The Judith run evaluated 6,111 Commander-eligible authored physical cards at the same full color identity and engine revision as the baseline. The research view contains **147 distinct cards across 150 conditional sacrifice paths**. Those paths comprise 108 activation payments, 27 ordinary casting payments, 12 resolving effects, one alternative casting payment, one optional casting payment and one payment during resolution. They are a subset of accepted death pathways. The run kept **474 accepted direct paths on 462 cards** and **25 accepted death-enhanced removal paths on 25 cards**, with 487 distinct cards across both groups.
+
+The report also retains 464 unresolved sacrifice relationships across 447 cards. In 158 paths the death criterion or policy is unresolved. In 198 the fixed-choice movement is outside the supported slice. In 108 the joint creature and destination compatibility is unresolved. Cards may have several paths, including both conditional and unresolved findings. These figures measure the authored Judith input pool and the implemented lens.
+
+| Control | What the live records show |
+| --- | --- |
+| Viscera Seer | Conditional activation payment. The cost needs a creature you control and allows Seer itself if eligible. An additional creature is needed to pay while keeping Seer. |
+| Accursed Centaur | Conditional resolving trigger. It can be the sacrificed creature if it is still an eligible choice. |
+| Blood Bairn | Conditional activation payment that excludes the source. |
+| Carrion Feeder and Village Rites | Additional mechanically found controls. Feeder can sacrifice itself even though the counter effect would then do nothing. Village Rites needs a creature to cast. |
+| Agent of Shauku and Mogg Fanatic | The land restriction is unresolved for the first. The second has a recognized primary death route, but self-bound movement is outside this relationship slice. |
+| Murder and Fleshbag Marauder | Both retain the existing policy exclusions. Symmetrical or incidental removal stays separate from an accepted own-death generator. |
+| Reassembling Skeleton | Authored return from the graveyard can replenish sacrifice material. It produces no death-to-graveyard relationship by itself. |
+
+The relevant Oracle text was checked via Scryfall, and the retained source/rulings fixtures cover Centaur, Seer, Blood Bairn, Agent of Shauku, Murder and Skeleton. Wizards' rulings distinguish Feeder's payment from its payoff and give the exact count for Village Rites. Source review checked these instructions and restrictions. The catalog-wide findings still describe native representation. [Centaur Oracle](https://scryfall.com/card/ons/123/accursed-centaur), [Seer Oracle](https://scryfall.com/card/soc/229/viscera-seer), [Carrion Feeder rulings](https://magic.wizards.com/en/news/feature/eternal-masters-release-notes-2016-06-02), [Village Rites rulings](https://magic.wizards.com/en/news/feature/innistrad-remastered-release-notes)
+
+### How the two criteria connect
+
+The existing death query supplies the event and policy decision. The application joins that exact path by fact ID to a native fixed-count sacrifice choice, then checks whether a legal departing object could be a nontoken creature you control and own with a nominal move to your graveyard. The bounded positive case requires an explicit creature choice with supported restrictions. Ownership and controller constraints apply to the same choice. The exact action, role, quantity, source exclusions, timing and unsupported records remain available in the report. The CLI exposes the additional records through `discover --json`.
+
+The ordinary sacrifice destination is the owner's graveyard. The event can hold for a borrowed creature, while the owner's destination makes that arrival insufficient for your state. A finality counter can redirect the move and prevent the death. An animated land can die as a creature and arrive as a land card. The graveyard state is satisfied whenever it has a qualifying witness, and the new arrival supplies it only while that same arrival is a witness. It establishes the state only if the state was previously false. Milling illustrates a path to the same state without a death. [Comprehensive Rules](https://magic.wizards.com/en/rules), [Finality rulings](https://magic.wizards.com/en/news/feature/duskmourn-house-of-horror-release-notes), [Controlled execution receipt](../web/src/objective-semantics-receipt.json)
+
+The application leaves actual resources, legal timing and choices, replacement effects, arrival characteristics, later moves and the prior graveyard state to execution. Broad permanent and artifact selectors, subtype or branch restrictions, variable or bound selections, and self-bound sacrifices can need further evidence. Source identity, translation assurance and contextual deck value remain separate from this mechanical check. The reusable boundary is the native choice with its movement route and object constraints. Future event queries can supply other routes, and future checkpoint criteria can impose their own destination and object requirements.
+
+### Validation and revisions
+
+- Compared fresh Judith CLI exports from baseline application `b36b1dc8b098e9ef5a26d3a2312be2f24ca9f5a3` and the feature build. Primary result rows, counts, actions, eligible input, unsupported records, structural support and assurance were identical for all three objectives. Reanimation remained at 106 accepted pathways on 104 cards, and token creation at 363 on 346. The additive fact data records fixed-choice sacrifice destinations and preserves native owner scope on 14 previously emitted records. The local comparison is in `generated/explorer/relationship-primary-comparison.json`.
+- Feature implementation and test source `6855d3be4e0adb3d55ded0340e2be58ff4ddb71f` resolve Argentum `03869c08665bf476a8b40dacbfbcd501c54a33bd` on clean `app-stable`. The Windows launcher passed the locked frontend install, TypeScript/Vite build and Kotlin installation. Explorer reported a pre-commit build label of `116ac3ad8803358fa01cc5d6f20fcb8a70bf9b93+dirty`. A SHA-256 comparison of all 564 packaged file entries against the clean feature build found only the application revision resource differed.
+- `.\dev.ps1 test --offline` passed all 524 application tests at the clean feature revision. The seven freshly generated scenario case records exactly match the retained Increment 1 receipt. The new static tests exercise authored cards and distinct activation, casting and resolution structures, plus independent owner, token, type, zone, eligibility and policy controls.
+- Edge passed eight fixture tests and fourteen live tests. The live journey selected a card directly from the research view, inspected cost and trigger examples, checked an unresolved case and a policy exclusion, and verified horizontal containment at 390 px. Local captures are `generated/explorer/relationship-desktop.png` and `generated/explorer/relationship-mobile.png`.
+
+**Next decision.** Extend the arrival check to one source-bound self-sacrifice case such as Mogg Fanatic. Use the native source identity and graveyard card characteristics as evidence, with a face or animation control. This would test whether a second kind of object binding can reuse the destination check before attempting another objective pair.
+
 ## Objective Semantics Foundations · Increment 1
 
 This is a proposed research workstream pending Product Studio's milestone decision.
