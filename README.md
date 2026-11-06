@@ -44,7 +44,7 @@ Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 
 .\build\install\mtg-assistant\bin\mtg-assistant.bat commander inspect 'Judith, the Scourge Diva' --json
 ```
 
-Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. Update the local stable engine deliberately with `.\scripts\setup.ps1 -Update`, then rebuild. Generated reports belong under ignored `generated/`.
+Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. See the [complete local verification procedure](docs/ENGINE_WORKFLOW.md#complete-local-verification) for engine, browser and comparison checks. Update the local stable engine deliberately with `.\scripts\setup.ps1 -Update`, then rebuild. Generated reports belong under ignored `generated/`.
 
 ## Current documentation
 
