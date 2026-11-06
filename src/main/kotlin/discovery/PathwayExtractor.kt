@@ -2,6 +2,7 @@ package dev.mtg.assistant.discovery
 
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.model.CardDefinition
+import com.wingedsheep.sdk.model.CardLayout
 import com.wingedsheep.sdk.model.CardScript
 import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.conditions.*
@@ -346,6 +347,20 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         when(c) {
             is AbilityCost.Composite -> c.costs.forEachIndexed { i,child -> abilityCost(child,"$path.costs[$i]",frame) }
             is AbilityCost.Atom -> atom(c.atom,"$path.atom","ACTIVATION_COST",frame)
+            AbilityCost.DiscardSelf -> {
+                if (!inspectCardEntries || frame.selfZone != Zone.HAND) {
+                    issue(path,c,"Activation cost not interpreted")
+                    return
+                }
+                val singleFace = card.layout == CardLayout.NORMAL && card.backFace == null &&
+                    card.flipSide == null && card.cardFaces.isEmpty()
+                val source = ObjectScope(battlefield = false, zone = Zone.HAND, zonePlayer = frame.actor,
+                    ownerScope = frame.actor, printedSelfCreature = selfCreature.takeIf { singleFace },
+                    unresolved = if (singleFace) null else "Source card characteristics in the graveyard need face-specific interpretation")
+                recordMovement(path,nativeJson.encodeToJsonElement(AbilityCost.serializer(),c),source,
+                    Zone.GRAVEYARD,"OWNER",frame,binding="SELF",selection="Exactly the source card; no discard choice",
+                    role="ACTIVATION_COST",cardEntry=CardEntry(GraveyardRoute.DISCARD,1,discardsSource=true))
+            }
             AbilityCost.SacrificeSelf -> add(path,"SACRIFICE","ACTIVATION_COST",ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN"),nativeJson.encodeToJsonElement(AbilityCost.serializer(),c),frame)
             AbilityCost.Free, AbilityCost.Tap, AbilityCost.Untap, is AbilityCost.Loyalty -> Unit
             else -> issue(path,c,"Activation cost not interpreted")

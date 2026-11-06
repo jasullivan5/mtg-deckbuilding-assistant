@@ -3,6 +3,7 @@ package dev.mtg.assistant.objectives
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import dev.mtg.assistant.discovery.*
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.Serializable
 
 const val GRAVEYARD_CREATURE_OBJECTIVE = "stock-own-graveyard"
@@ -10,7 +11,8 @@ const val GRAVEYARD_CREATURE_OBJECTIVE = "stock-own-graveyard"
 @Serializable data class StateEntryEvidence(
     val factId: String, val route: GraveyardRoute, val count: Int?, val sourcePlayer: String,
     val excludesSource: Boolean = false, val random: Boolean = false,
-    val deathComparison: Decision, val deathPolicy: Decision? = null
+    val deathComparison: Decision, val deathPolicy: Decision? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val discardsSource: Boolean = false
 )
 
 /** Compatibility applies to one possible object. Arrival type and persistence remain conditions. */
@@ -36,7 +38,9 @@ internal fun evaluateStateEntry(fact: MechanicalFact, route: GraveyardRoute): De
     if (count != null && count <= 0) return outcome(Verdict.NO_MATCH, "This instruction moves zero cards.")
     val compatibility = graveyardArrivalCompatibility(fact, source)
     if (compatibility == Verdict.NO_MATCH) return outcome(compatibility,
-        "This movement's object restrictions, source zone or destination rule out supplying a creature card to your graveyard.")
+        if (fact.cardEntry?.discardsSource == true && CardPredicate.IsNoncreature in fact.objectFilter.cardPredicates)
+            "This cost discards the source card itself, which is a noncreature card."
+        else "This movement's object restrictions, source zone or destination rule out supplying a creature card to your graveyard.")
     if (count == null || compatibility == Verdict.UNKNOWN || !simpleCreatureChoice(fact, explicit = source == Zone.BATTLEFIELD))
         return outcome(Verdict.UNKNOWN, "The native selection, affected player, quantity or nominal movement leaves the creature-card arrival unresolved.")
     return outcome(Verdict.MATCH, "A creature card you own could reach your graveyard through this movement and supply the state while it remains there.")
@@ -65,5 +69,5 @@ internal fun stateEntryEvidence(fact: MechanicalFact, death: EvaluatedPathway?):
     }
     return StateEntryEvidence(fact.id, entry?.route ?: GraveyardRoute.SACRIFICE, choice?.count ?: entry?.count,
         fact.sourcePlayer, choice?.excludesSource == true, entry?.random == true, comparison,
-        death?.decisions?.firstOrNull { it.basis == "POLICY" })
+        death?.decisions?.firstOrNull { it.basis == "POLICY" }, discardsSource = entry?.discardsSource == true)
 }
