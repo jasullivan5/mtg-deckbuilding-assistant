@@ -391,7 +391,8 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
   await nav.getByRole('button', {name: '4 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Viscera Seer'}).click();
   await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
-  await expect(detail).toContainText('activation cost');
+  await expect(detail.getByRole('button', {name: /Discovery.*Creature sacrifice cost identified/})).toBeVisible();
+  await expect(detail).toContainText(reviewed ? 'activation cost' : differentEngineDiagnosis);
   await nav.getByRole('button', {name: omissionLabel, exact: true}).click();
   await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
   await expect(detail).toContainText('In the ordinary findings index');
