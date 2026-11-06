@@ -22,23 +22,24 @@ test('independent graveyard discovery finds mill discard and sacrifice through K
   expect(run.cards.some(card => card.card === 'Tome Scour')).toBe(false);
   const results = page.getByRole('region', {name: 'Discovery results', exact: true});
   const detail = page.getByRole('region', {name: 'Result inspection'});
-  await page.getByLabel('Mechanic', {exact: true}).selectOption('Mill');
+  const mechanic = results.getByRole('combobox', {name: 'Mechanic', exact: true});
+  await mechanic.selectOption('Mill');
   const first = results.locator('button.card').first();
   await first.click();
-  await expect(detail.locator('.objective-notes')).toContainText(/mill .* from your library/);
+  await expect(detail.locator('.objective-notes')).toContainText(/mill .* from your library/i);
 
   await page.getByLabel('Card name').fill("Stitcher's Supplier");
   await results.getByRole('button', {name: "Stitcher's Supplier", exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('When this permanent enters, mill 3 cards');
   await expect(detail.locator('.objective-notes')).toContainText('starts outside the battlefield');
-  await detail.getByLabel('Ability to inspect').selectOption({index: 1});
+  await detail.getByRole('combobox', {name: 'Ability to inspect', exact: true}).selectOption({index: 1});
   await expect(detail.locator('.objective-notes')).toContainText('When this permanent dies, mill 3 cards');
   await detail.getByRole('button', {name: /Discovery/}).click();
   await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText('Event comparison');
   await detail.screenshot({path: '../generated/explorer/state-discovery-desktop.png'});
 
   await page.getByLabel('Card name').fill('Faithless Looting');
-  await page.getByLabel('Mechanic', {exact: true}).selectOption('Discard');
+  await mechanic.selectOption('Discard');
   await results.getByRole('button', {name: 'Faithless Looting', exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('Discard 2 cards from your hand');
   await expect(detail.locator('.objective-notes')).toContainText('eligible creature card');
@@ -47,7 +48,7 @@ test('independent graveyard discovery finds mill discard and sacrifice through K
   await detail.screenshot({path: '../generated/explorer/state-discovery-mobile.png'});
 
   await page.getByLabel('Card name').fill('Viscera Seer');
-  await page.getByLabel('Mechanic', {exact: true}).selectOption('Sacrifice');
+  await mechanic.selectOption('Sacrifice');
   await results.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('This same sacrifice can cause a death');
   await page.getByRole('button', {name: /Needs interpretation/}).click();

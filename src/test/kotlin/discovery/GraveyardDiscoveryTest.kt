@@ -103,6 +103,6 @@ class GraveyardDiscoveryTest : FunSpec({
         rows("Reassembling Skeleton") shouldBe emptyList()
         rows("Murder") shouldBe emptyList()
         val deaths = discover(catalog, report.commander, conventionalQuery = "name:Murder")
-        deaths.results.single().policyAcceptance shouldBe Verdict.NO_MATCH
+        deaths.results.single { it.card == "Murder" }.policyAcceptance shouldBe Verdict.NO_MATCH
     }
 })
