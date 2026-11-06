@@ -1,5 +1,55 @@
 # Atomic objective relationship experiment
 
+## Objective Semantics Foundations · Increment 3
+
+### Discover creature cards for your graveyard
+
+From the application checkout, run `.\scripts\explorer.ps1`. Open [Explorer](http://127.0.0.1:8787) after the launcher prints **Explorer ready**.
+
+1. Choose **Judith, the Scourge Diva** and **I have at least one creature card in my graveyard**, then select **Find cards**. Set **Mechanic** to **Mill** and browse the results. On **Stitcher's Supplier**, switch between its enters and death triggers. Both move cards from the library. Its death trigger responds to a prior death.
+2. Filter by **Discard** and compare **Faithless Looting**, which discards during resolution, with **Thrill of Possibility**, which requires a discard as you cast it. Either can supply the state if a creature card is among the cards actually discarded and it remains in your graveyard.
+3. Filter by **Sacrifice** and inspect **Viscera Seer** for a possible contribution to both objectives. Then open **Needs interpretation** and inspect **Mogg Fanatic** for an unresolved source-bound sacrifice. In **All findings**, **Elderfang Disciple** shows why an opponent's discard does not advance your own graveyard state.
+
+### Independent state results for Judith
+
+The eligible authored input was **6,111 physical cards**, with black and red full color identity. The state search evaluated 1,431 pathways. A card may contribute through more than one route.
+
+| Route | Conditional pathways | Distinct cards with a conditional pathway | Unresolved pathways | Mechanical nonmatches |
+| --- | ---: | ---: | ---: | ---: |
+| Sacrifice | 150 | 147 | 803 | 3 |
+| Mill | 58 | 55 | 11 | 2 |
+| Discard | 225 | 218 | 78 | 101 |
+| Total | 433 | 412 | 892 | 106 |
+
+The state search has no separate policy exclusions beyond eligibility and its supported mechanics. The same-fact comparison found 150 conditional state paths also accepted for death generation, with the same fact IDs as the Increment 2 conditional sacrifice results. It recorded 32 other mechanically death-compatible paths excluded by the event policy, including Fleshbag Marauder's unresolved state route. These figures describe event policy. Murder stays excluded under the existing event policy and ordinary destruction is outside the state search. Tome Scour remains outside Judith's color identity. Reassembling Skeleton's return is a different movement.
+
+| Source-reviewed control | Observed discovery |
+| --- | --- |
+| Viscera Seer and Accursed Centaur | The activation payment and resolving trigger each support a conditional sacrifice arrival. The same movement could produce a qualifying death. |
+| Stitcher's Supplier | Two mill paths retain separate native action IDs and their distinct triggers. Each mill is separate from a battlefield departure. |
+| Faithless Looting and Thrill of Possibility | Both have conditional discard paths, with resolution and casting payment recorded separately. |
+| Mire Triton and Elderfang Disciple | Held-out eligible controls. Triton's own mill qualifies conditionally. Disciple's opponent-only discard is a mechanical nonmatch. |
+| Codex Shredder and Millstone | The standalone native Codex mill can select you, but effective color identity is unresolved and the live run excludes it. Millstone demonstrates an eligible mill that can target yourself. |
+| Dread Summons and Mogg Fanatic | Dynamic mill quantity/player binding and source-bound sacrifice remain unresolved, respectively. |
+
+The cohort checks current Oracle expectations against the maintained definitions. Exact definition and action references are attached to live findings. The reviewed cohort does not independently qualify the catalog. [Stitcher's Supplier](https://scryfall.com/card/tdc/196/stitchers-supplier), [Faithless Looting and casting rulings](https://magic.wizards.com/en/news/feature/innistrad-remastered-release-notes), [Thrill of Possibility rulings](https://magic.wizards.com/en/news/feature/core-set-2021-and-jumpstart-release-notes-2020-06-20), [Codex Shredder](https://scryfall.com/card/cmr/304/codex-shredder), [Mire Triton](https://scryfall.com/card/cmm/174/mire-triton), [Elderfang Disciple](https://magic.wizards.com/en/news/feature/kaldheim-release-notes-2021-01-22)
+
+### What the query establishes
+
+The shared walker retains mill from a marked library-top gather and its bound move, and discard from a hand selection and its discard move. Fixed-count native mill and discard costs supply their own facts. The state check reuses the sacrifice choice, correlated owner and destination constraints, and tests for a possible original nontoken creature card. A state result remains independent of the death policy. The death comparison is attached afterward by fact ID. A mill or discard can be triggered by a death without itself causing one.
+
+Actual availability, destination after replacements, card type on arrival and presence at the checkpoint depend on play. An owned animated land may die and arrive as a land card. A borrowed creature can die and go to another player's graveyard. A token leaves no creature card, and finality can prevent the graveyard arrival. A qualifying arrival can supply a state that already holds. The seven controlled engine cases below are a separate execution baseline.
+
+The reusable part is the movement record with action, source, affected player, ownership, destination and choice restrictions. Another objective could query those facts with its own arrival criteria. The creature-card witness and the current fixed-count bounds remain specific to this search. Unbound targets, variable choices, other movement mechanisms and incomplete definitions remain outside positive coverage.
+
+### Comparison and browser evidence
+
+- Fresh CLI runs compared the feature with baseline main `d556cff41f11fd713c44f47267fc7b81aa320af0` on identical eligible inputs and engine `03869c08665bf476a8b40dacbfbcd501c54a33bd`. The existing Windows baseline package contained the same application code as baseline main. The three original reports compared equal after omitting the new default-null fields for legacy rows and facts. Death remained at 499 accepted pathways on 487 cards, reanimation at 106 on 104, and token creation at 363 on 346. The local summary is in `generated/explorer/state-comparison.json`.
+- The Windows launcher built and served application `a65668b7e80e0231be207211cff211a3fa1abfac` with clean Argentum `app-stable` at the SHA above. The locked frontend install, TypeScript/Vite build and Kotlin installation passed. Edge passed eight fixture tests and fifteen live tests, including selecting the state objective directly, discovering a mill card by mechanic and inspecting two Supplier triggers, Looting's discard, Seer's event comparison and Fanatic's unresolved route. Later test changes preserve the application and frontend code.
+- Actual inspection captures are `generated/explorer/state-discovery-desktop.png` and `generated/explorer/state-discovery-mobile.png`. The mobile browser ran at a 390 px viewport. The images show the relevant card inspectors cropped from each viewport.
+
+**Next decision.** Test a variable self-mill route against the existing amount bounds. Require a positive payable or resolving quantity, preserve zero and unresolved cases, and keep the affected player tied to the same graveyard.
+
 ## Objective Semantics Foundations · Increment 2
 
 ### Try it in Explorer

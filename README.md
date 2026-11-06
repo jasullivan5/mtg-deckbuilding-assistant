@@ -1,6 +1,6 @@
 # MTG Deckbuilding Assistant
 
-A local Commander research application: choose a supported commander and one of three objectives, run Kotlin discovery, and browse identified mechanics, view verified card images, see relevant card text with brief objective notes and inspect structured evidence fields in Card Discovery. Exact sources, tests and review records remain one level deeper. It explains structural possibilities rather than recommending decks or certifying translations.
+A local Commander research application: choose a supported commander and an objective, run Kotlin discovery, and browse identified mechanics, view verified card images, see relevant card text with brief objective notes and inspect structured evidence fields in Card Discovery. Exact sources, tests and review records remain one level deeper. It explains structural possibilities rather than recommending decks or certifying translations.
 
 ## Launch on Windows
 
@@ -29,6 +29,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 | own-nontoken-creature-deaths | Direct death generation and separately classified death-enhanced removal |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
+| stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |
 
 Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](docs/KNOWN_LIMITATIONS.md).
 
