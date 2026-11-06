@@ -6,6 +6,7 @@ import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.TranslationAssurance
 import dev.mtg.assistant.objectives.ConditionalArrival
 import dev.mtg.assistant.objectives.GRAVEYARD_CREATURE_CRITERION
+import dev.mtg.assistant.objectives.GRAVEYARD_CREATURE_OBJECTIVE
 import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.util.UUID
@@ -16,7 +17,10 @@ val objectives = listOf(
         listOf("Ways to sacrifice your nontoken creatures.", "Recognized effects that can cause the card itself to die.", "Removal triggered, enabled or improved by a creature's death."),
         "Death-triggered draw, mana, tokens and life changes are not searched as independent payoffs. A card may still appear for another supported interaction. Ordinary removal does not qualify merely because it can target your creature."),
     Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield.", listOf("Return original creature cards from your graveyard to your battlefield.")),
-    Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token."))
+    Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token.")),
+    Objective(GRAVEYARD_CREATURE_OBJECTIVE, GRAVEYARD_CREATURE_CRITERION, "Find ways to put a creature card into your graveyard through supported native mechanics.",
+        listOf("Sacrifice a creature.", "Mill cards from your library.", "Discard cards from your hand."),
+        "The current search covers supported fixed-count routes. Actual card choices, replacement effects and the graveyard at the checkpoint depend on play.")
 )
 @Serializable data class ResearchRequest(val commander: String, val objective: String? = null)
 @Serializable data class ApiError(val code: String, val message: String, val inspection: CommanderInspection? = null)
@@ -104,7 +108,9 @@ class StoredRun(
                 rows.map { it.branch }.distinct(), unsupported[card].orEmpty().size,
                 rows.count { it.interpretation.startsWith("PARTIAL") || it.localSupport == SupportStatus.PARTIALLY_SUPPORTED },
                 (rows.firstOrNull { it.verdict == Verdict.MATCH } ?: rows.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: rows.firstOrNull())
-                    ?.let { explain(it, actions[card].orEmpty().firstOrNull { a -> a.id == it.actionId }).summary }, rows.map(::mechanic).distinct(),
+                    ?.let { explain(it, actions[card].orEmpty().firstOrNull { a -> a.id == it.actionId }).summary },
+                (if(report.objective == GRAVEYARD_CREATURE_OBJECTIVE && rows.any { it.verdict == Verdict.MATCH })
+                    rows.filter { it.verdict == Verdict.MATCH } else rows).map(::mechanic).distinct(),
                 when { rows.any { it.verdict == Verdict.MATCH } -> "IDENTIFIED"
                     rows.any { it.verdict == Verdict.UNKNOWN } -> "UNRESOLVED"
                     unsupported[card].orEmpty().isNotEmpty() -> "UNINTERPRETED"

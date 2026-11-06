@@ -75,6 +75,8 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
       </details>}
         <Raw label="Conditions and objective decisions" data={rows.map(r => ({prerequisites: r.prerequisites, decisions: r.decisions, circumstances: r.circumstances}))}/>
         <Raw label="Whole authored ability and related checks" data={{actions: evidence.actions.filter(a => a.id === ability.actionId), results: rows}}/>
+        {rows.some(row => row.stateEntry) && <Raw label="Native movement facts for this ability"
+          data={evidence.facts.filter(fact => rows.some(row => row.stateEntry?.factId === fact.id))}/>}
         {evidence.results.some(r => r.verdict === 'NO_MATCH') && <Raw label="Nonqualifying checks (including objective-policy exclusions)" data={evidence.results.filter(r => r.verdict === 'NO_MATCH')}/>}
         <Raw label="All card evidence, source bindings and image association" data={{...evidence, image}}/>
       </details>

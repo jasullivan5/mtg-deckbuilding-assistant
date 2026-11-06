@@ -89,8 +89,8 @@ class DeathObjectiveCoverageTest : FunSpec({
         agent.getValue("Death relationship").contains("unresolved") shouldBe true
         agent.containsKey("Why it qualifies") shouldBe false
     }
-    test("scope help does not advertise a general payoff interpreter or a new objective") {
+    test("death scope help excludes general payoffs and the objective menu includes the independent state search") {
         objectives.first().coverageNote!!.contains("not searched as independent payoffs") shouldBe true
-        objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens")
+        objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "stock-own-graveyard")
     }
 })

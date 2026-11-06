@@ -22,6 +22,7 @@ export type Row = {
   operation: string; verdict: string; mechanicalCompatibility?: string | null; policyAcceptance?: string | null; interpretation: string; prerequisites: string[];
   decisions: {stage: string; verdict: string; reason: string}[];
   sourceReferences: string[]; circumstances: RecordData | null;
+  stateEntry?: {factId: string} | null;
 };
 export type Explanation = {summary: string; requirements: string[]; unknowns: string[]; mechanic: string; outcome: string};
 export type ArrivalInspection = {

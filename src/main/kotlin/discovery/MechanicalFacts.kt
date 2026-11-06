@@ -9,6 +9,8 @@ import kotlinx.serialization.json.JsonElement
 /** Small operation view of native SDK nodes. No card model, strategy labels, or second walker. */
 @Serializable enum class FactKind { MOVE_OBJECT, SACRIFICE, DAMAGE, TOUGHNESS_CHANGE, CAST_PERMISSION, CREATE_TOKEN, OTHER_OPERATION }
 @Serializable data class SacrificeChoice(val count: Int, val excludesSource: Boolean)
+@Serializable enum class GraveyardRoute { SACRIFICE, MILL, DISCARD }
+@Serializable data class CardEntry(val route: GraveyardRoute, val count: Int?, val random: Boolean = false)
 @Serializable data class MechanicalFact(
     val id: String, val card: String, val face: String, val actionId: String, val path: String,
     val kind: FactKind, val operation: String, val costOrEffect: String,
@@ -23,7 +25,8 @@ import kotlinx.serialization.json.JsonElement
     val movesOriginalCard: Boolean = true, val ownerScope: String = "ANY",
     val tokenCreation: TokenCreation? = null,
     /** Fixed-count choice of controlled permanents. Destination is nominal before replacements. */
-    val sacrificeChoice: SacrificeChoice? = null
+    val sacrificeChoice: SacrificeChoice? = null,
+    val cardEntry: CardEntry? = null
 )
 
 data class FactConstraints(val impossible: Boolean = false, val kind: FactKind? = null, val creature: Boolean = false,

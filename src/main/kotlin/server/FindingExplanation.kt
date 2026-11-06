@@ -74,6 +74,8 @@ fun mechanic(result: ResultEvidence): String = when {
     result.branch == Contribution.REANIMATE_OWN_CREATURE -> "Return from the graveyard"
     result.branch == Contribution.CREATE_CREATURE_TOKEN -> "Create creature tokens"
     result.operation == "SACRIFICE" -> "Sacrifice"
+    result.operation == "MILL" -> "Mill"
+    result.operation == "DISCARD" -> "Discard"
     result.operation == "DESTROY" -> "Destruction"
     result.operation == "DAMAGE_POTENTIALLY_LETHAL" -> "Damage"
     result.operation == "TOUGHNESS_REDUCTION" -> "Reduce toughness"
@@ -82,6 +84,7 @@ fun mechanic(result: ResultEvidence): String = when {
 }
 
 fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExplanation {
+    result.stateEntry?.let { return stateEntryExplanation(result, action, it) }
     val native = result.nativeOperation.obj()
     val filter = native?.get("filter").obj()
     val affected = filterDescription(filter)

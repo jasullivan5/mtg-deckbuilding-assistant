@@ -26,6 +26,13 @@ internal fun sacrificeObject(row: ResultEvidence): String {
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
+    row.stateEntry?.let {
+        val explanation = stateEntryExplanation(row, action, it)
+        add(EvidenceField("Movement", explanation.summary))
+        add(EvidenceField("State contribution", explanation.outcome))
+        add(EvidenceField("Event comparison", stateEntryEventNote(it)))
+        return@buildList
+    }
     val payoff = row.branch == Contribution.DEATH_ENHANCED_REMOVAL
     val mechanism = when (row.operation) {
         "SACRIFICE" -> "${sacrificeObject(row)} sacrifice${if (row.costOrEffect.endsWith("COST")) " as a cost" else " as an effect"}"

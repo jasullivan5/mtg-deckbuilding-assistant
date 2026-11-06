@@ -16,6 +16,11 @@ const scope: Record<string, {goal: string; searched: string; limits: string}> = 
     searched: 'Supported token-creation effects, including recognized variable amounts that can produce at least one creature token.',
     limits: 'Noncreature tokens are outside this goal. Unknown token types, quantities or conditions can leave a check unresolved.',
   },
+  'stock-own-graveyard': {
+    goal: 'Have at least one creature card in your graveyard at a checkpoint.',
+    searched: 'Supported sacrifices, mills and discards that could put a creature card into your graveyard.',
+    limits: 'Results depend on the actual cards moved, replacement effects and what is still in your graveyard at the checkpoint.',
+  },
 };
 
 export function ObjectiveScope({objective, afterSearch = false}: {objective: Objective; afterSearch?: boolean}) {

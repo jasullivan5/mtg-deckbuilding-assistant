@@ -105,6 +105,25 @@ private fun playerScope(target: EffectTarget, frame: Frame): String = when(targe
     else -> "UNKNOWN"
 }
 
+/** Resolve the same native player reference used by the collection source and destination. */
+private fun cardEntryPlayer(player: Player, frame: Frame): String {
+    val requirement = when (player) {
+        is Player.ContextPlayer -> frame.targets.getOrNull(player.index)
+        is Player.BoundVariable -> frame.targets.find { it.id == player.name }
+        Player.TargetPlayer, Player.TargetOpponent -> frame.targets.filter { it is TargetPlayer || it is TargetOpponent }.singleOrNull()
+        else -> return when (player) {
+            Player.You, Player.EachOpponent, Player.AnOpponent -> relativeActor(player, frame)
+            Player.ControllerOfSource -> if (frame.actor == "YOU") "YOU" else "UNKNOWN"
+            else -> "UNKNOWN"
+        }
+    }
+    return when (requirement) {
+        is TargetOpponent -> if (requirement.count > 0) "OPPONENT" else "UNKNOWN"
+        is TargetPlayer -> if (requirement.count > 0 && requirement.restriction == null && player != Player.TargetOpponent) "ANY" else "UNKNOWN"
+        else -> "UNKNOWN"
+    }
+}
+
 /** Desired event can satisfy a native condition; other conjuncts remain prerequisites. */
 internal fun deathDependency(c: Condition): Pair<Verdict,ObjectScope> = when(c) {
     CreatureDiedThisTurnCondition -> Verdict.MATCH to ObjectScope(GameObjectFilter.Creature)
@@ -117,7 +136,7 @@ internal fun deathDependency(c: Condition): Pair<Verdict,ObjectScope> = when(c) 
 }
 
 /** Native objects in, individual operations out. No card names or Oracle text are inspected. */
-class PathwayExtractor {
+class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     val facts = mutableListOf<MechanicalFact>()
     val pathways = mutableListOf<Pathway>()
     val actions = mutableListOf<ActionEvidence>()
@@ -350,6 +369,18 @@ class PathwayExtractor {
         }
     }
     private fun atom(c: CostAtom,path: String,origin: String,frame: Frame) {
+        if (inspectCardEntries && (c is CostAtom.Discard || c is CostAtom.Mill)) {
+            val discard = c as? CostAtom.Discard
+            val route = if (discard == null) GraveyardRoute.MILL else GraveyardRoute.DISCARD
+            val count = discard?.count ?: (c as CostAtom.Mill).count
+            val zone = if (discard == null) Zone.LIBRARY else Zone.HAND
+            recordMovement(path,nativeJson.encodeToJsonElement(CostAtom.serializer(),c),
+                ObjectScope(discard?.filter ?: GameObjectFilter.Any,battlefield=false,zone=zone,zonePlayer=frame.actor,ownerScope=frame.actor),
+                Zone.GRAVEYARD,"OWNER",frame,selection=c.description,confidence=if(count>0) Verdict.MATCH else Verdict.NO_MATCH,
+                role=origin,cardEntry=CardEntry(route,count,random=discard?.random == true))
+            support(path,c,SupportStatus.SUPPORTED,"Native fixed-count graveyard entry payment; actual cards and destination remain conditional")
+            return
+        }
         val filter=when(c) {
             is CostAtom.Sacrifice -> c.filter
             is CostAtom.SacrificeAll -> c.filter
@@ -378,13 +409,14 @@ class PathwayExtractor {
         }
     }
     private fun recordMovement(path: String,native: JsonElement,obj: ObjectScope,destination: Zone?,controller: String,frame: Frame,
-        binding: String?=null,selection: String="Native target requirement",extra: List<String> = emptyList(),confidence: Verdict=Verdict.MATCH) {
+        binding: String?=null,selection: String="Native target requirement",extra: List<String> = emptyList(),confidence: Verdict=Verdict.MATCH,
+        role: String="EFFECT",cardEntry: CardEntry?=null) {
         val problems=listOfNotNull(obj.unresolved)+extra
         val filter=if(obj.printedSelfCreature==true) intersect(obj.filter,GameObjectFilter.Creature) else if(obj.printedSelfCreature==false) intersect(obj.filter,GameObjectFilter.Any.copy(cardPredicates=listOf(com.wingedsheep.sdk.scripting.predicates.CardPredicate.IsNoncreature))) else obj.filter
         facts += MechanicalFact("$actionId|$path|MOVE_OBJECT|${facts.count { it.actionId==actionId && it.path==path && it.kind==FactKind.MOVE_OBJECT }}",
-            card.name,face,actionId,path,FactKind.MOVE_OBJECT,"MOVE_OBJECT","EFFECT",filter,obj.zone,obj.zonePlayer,destination,controller,
+            card.name,face,actionId,path,FactKind.MOVE_OBJECT,cardEntry?.route?.name ?: "MOVE_OBJECT",role,filter,obj.zone,obj.zonePlayer,destination,controller,
             all(listOf(confidence,frame.guardConfidence,frame.factGuard,if((actionNative as? JsonObject)?.get("controlledByTriggeringEntityController")==JsonPrimitive(true)) Verdict.UNKNOWN else Verdict.MATCH,if(obj.possible) Verdict.MATCH else Verdict.NO_MATCH)),frame.assumptions+"Only actual successful movement; legal choices/resources and no replacing effects assumed"+obj.details,
-            native,binding,selection,circumstances("EFFECT",obj,frame),problems,ownerScope=obj.ownerScope)
+            native,binding,selection,circumstances(role,obj,frame),problems,ownerScope=obj.ownerScope,cardEntry=cardEntry)
     }
     private fun recordTargetMove(e: MoveToZoneEffect,path: String,frame: Frame) {
         val requirement=when(val t=e.target) { is EffectTarget.ContextTarget->frame.targets.getOrNull(t.index);is EffectTarget.BoundVariable->frame.targets.find { it.id==t.name };else->null }
@@ -580,7 +612,20 @@ class PathwayExtractor {
                 frame.collectionMax[e.storeAs]=(e.source as? CardSource.FromVariable)?.let { frame.collectionMax[it.variableName] }
                 frame.collections[e.storeAs]=when(val s=e.source) {
                     is CardSource.BattlefieldMatching -> ObjectScope(s.filter,relativeActor(s.player,frame),zone=Zone.BATTLEFIELD,zonePlayer=relativeActor(s.player,frame),details=listOf("Native source restrictions: $s"))
-                    is CardSource.FromZone -> ObjectScope(s.filter,relativeActor(s.player,frame),battlefield=s.zone == Zone.BATTLEFIELD,zone=s.zone,zonePlayer=relativeActor(s.player,frame),ownerScope=if(s.zone in setOf(Zone.GRAVEYARD,Zone.HAND,Zone.LIBRARY)) relativeActor(s.player,frame) else "ANY",details=listOf("Native source restrictions: $s"))
+                    is CardSource.FromZone -> {
+                        val hand = inspectCardEntries && s.zone == Zone.HAND
+                        val player = if(hand) cardEntryPlayer(s.player,frame) else relativeActor(s.player,frame)
+                        ObjectScope(s.filter,player,battlefield=s.zone == Zone.BATTLEFIELD,zone=s.zone,zonePlayer=player,
+                            ownerScope=if(s.zone in setOf(Zone.GRAVEYARD,Zone.HAND,Zone.LIBRARY)) player else "ANY",
+                            details=listOf("Native source restrictions: $s"),entryPlayer=s.player.takeIf { hand })
+                    }
+                    is CardSource.TopOfLibrary -> if(inspectCardEntries && s.isMill) {
+                        val player = cardEntryPlayer(s.player,frame)
+                        val count = (s.count as? DynamicAmount.Fixed)?.amount
+                        frame.collectionMax[e.storeAs] = count?.coerceAtLeast(0)
+                        ObjectScope(actor=player,battlefield=false,zone=Zone.LIBRARY,zonePlayer=player,ownerScope=player,
+                            details=listOf("Native source restrictions: $s"),entryPlayer=s.player,cardEntry=CardEntry(GraveyardRoute.MILL,count))
+                    } else ObjectScope(unresolved="Collection source not interpreted: ${s.javaClass.simpleName}")
                     is CardSource.ControlledPermanents -> ObjectScope(s.filter,relativeActor(s.player,frame),zone=Zone.BATTLEFIELD,zonePlayer=relativeActor(s.player,frame),details=listOf("Native source restrictions: $s"))
                     CardSource.ChosenTargets -> if(frame.targets.size==1) requirementScope(frame.targets.single()) else ObjectScope(unresolved="Multiple/absent chosen-target collection not unified")
                     is CardSource.Entity -> targetScope(s.entity,frame,selfCreature)
@@ -600,7 +645,11 @@ class PathwayExtractor {
                 val problems=listOfNotNull(source.unresolved,
                     if(!knownSelection || count != null && count !is DynamicAmount.Fixed) "Selection mode/count requires game-state interpretation" else null,
                     if(e.restrictions.isNotEmpty() || e.matchChosenCreatureType) "Additional selection restrictions retained: ${e.restrictions}; chosenType=${e.matchChosenCreatureType}" else null)
-                frame.collections[e.storeSelected]=source.copy(filter=intersect(source.filter,e.filter),possible=source.possible && !zero,battlefield=source.battlefield && !zero,details=source.details+"Selection=${e.selection}; chooser=${e.chooser}; filter=${e.filter}; restrictions=${e.restrictions}; chosenType=${e.matchChosenCreatureType}",
+                val entry = if (inspectCardEntries && source.zone == Zone.HAND)
+                    CardEntry(GraveyardRoute.DISCARD,(count as? DynamicAmount.Fixed)?.amount
+                        .takeIf { e.selection is SelectionMode.ChooseExactly || e.selection is SelectionMode.Random },e.selection is SelectionMode.Random)
+                    else source.cardEntry?.copy(count=null)
+                frame.collections[e.storeSelected]=source.copy(filter=intersect(source.filter,e.filter),possible=source.possible && !zero,battlefield=source.battlefield && !zero,details=source.details+"Selection=${e.selection}; chooser=${e.chooser}; filter=${e.filter}; restrictions=${e.restrictions}; chosenType=${e.matchChosenCreatureType}",cardEntry=entry,
                     unresolved=problems.takeIf { it.isNotEmpty() }?.joinToString("; "))
                 val fixed=(count as? DynamicAmount.Fixed)?.amount?.coerceAtLeast(0)
                 val inputMax=frame.collectionMax[e.from]
@@ -611,7 +660,9 @@ class PathwayExtractor {
             is FilterCollectionEffect -> {
                 val source=frame.collections[e.from] ?: ObjectScope(unresolved="Unbound filtered collection ${e.from}")
                 frame.collectionMax[e.storeMatching]=frame.collectionMax[e.from]
-                frame.collections[e.storeMatching]=source.copy(filter=intersect(source.filter,e.filter),unresolved=if(e.collectionFilter != null) "Collection-relative filter unresolved: ${e.collectionFilter}" else source.unresolved)
+                frame.collections[e.storeMatching]=source.copy(filter=intersect(source.filter,e.filter),
+                    cardEntry=source.cardEntry?.copy(count=null),
+                    unresolved=if(e.collectionFilter != null) "Collection-relative filter unresolved: ${e.collectionFilter}" else source.unresolved)
                 e.storeNonMatching?.let { frame.collections[it]=source.copy(unresolved="Complement collection filter not solved") }
                 if(e.collectionFilter != null || e.storeNonMatching != null) issue(path,e,"Positive per-card filter propagated; relative/complement membership unresolved")
             }
@@ -619,10 +670,22 @@ class PathwayExtractor {
                 val source=frame.collections[e.from] ?: ObjectScope(unresolved="Unbound pipeline collection: ${e.from}")
                 val obj=if(e.filter==null) source else source.copy(filter=intersect(source.filter,e.filter!!))
                 val destination=e.destination as? CardDestination.ToZone
-                recordMovement(path,e.tree(),obj,destination?.zone,if(e.underOwnersControl) "OWNER" else destination?.let { relativeActor(it.player,frame) } ?: "UNKNOWN",frame,
+                val entry = when {
+                    !inspectCardEntries -> null
+                    e.moveType == MoveType.Discard -> obj.cardEntry?.takeIf { it.route == GraveyardRoute.DISCARD } ?: CardEntry(GraveyardRoute.DISCARD,null)
+                    e.moveType == MoveType.Default && obj.zone == Zone.LIBRARY -> obj.cardEntry?.takeIf { it.route == GraveyardRoute.MILL }
+                    else -> null
+                }
+                val samePlayer = entry != null && obj.entryPlayer != null && obj.entryPlayer == destination?.player
+                recordMovement(path,e.tree(),obj,destination?.zone,when {
+                    e.underOwnersControl || samePlayer -> "OWNER"
+                    entry != null -> "UNKNOWN"
+                    else -> destination?.let { relativeActor(it.player,frame) } ?: "UNKNOWN"
+                },frame,
                     binding=e.from,selection="collectionMax=${frame.collectionMax[e.from]}; ${obj.details}; operation=${e.moveType}",
-                    extra=listOfNotNull(if(e.faceDown!=null) "Face-down arrival characteristics unresolved" else null,if(destination==null) "Dynamic destination unresolved" else null),
-                    confidence=if(frame.collectionMax[e.from]==0) Verdict.NO_MATCH else Verdict.MATCH)
+                    extra=listOfNotNull(if(e.faceDown!=null) "Face-down arrival characteristics unresolved" else null,if(destination==null) "Dynamic destination unresolved" else null,
+                        if(entry?.route == GraveyardRoute.MILL && e.filter != null) "Filtered mill membership unresolved" else null),
+                    confidence=if(frame.collectionMax[e.from]==0) Verdict.NO_MATCH else Verdict.MATCH,cardEntry=entry)
                 val restrictions=listOfNotNull(source.unresolved,
                     if(destination==null) "Dynamic destination not interpreted" else null,
                     if(source.battlefield && destination?.zone==Zone.BATTLEFIELD) "Battlefield-to-battlefield movement/control semantics unresolved" else null,
@@ -635,7 +698,7 @@ class PathwayExtractor {
                     filter=if(destination?.zone==Zone.BATTLEFIELD) obj.filter.copy(controllerPredicate=null) else obj.filter,
                     actor=if(destination?.zone==Zone.BATTLEFIELD) { if(e.underOwnersControl) "UNKNOWN" else relativeActor(destination.player,frame) } else obj.actor,
                     battlefield=destination?.zone==Zone.BATTLEFIELD,zone=destination?.zone,zonePlayer=if(destination?.zone==Zone.BATTLEFIELD) "UNKNOWN" else "ANY",details=obj.details+assumptions.last(),
-                    unresolved=restrictions.takeIf { it.isNotEmpty() }?.joinToString("; "))
+                    unresolved=restrictions.takeIf { it.isNotEmpty() }?.joinToString("; "),entryPlayer=null,cardEntry=null)
                 // Original collections keep IDs, not a success count. Model the no-replacement arrival
                 // branch explicitly; filtered partitions remain unresolved rather than treating all IDs as moved.
                 frame.collections[e.from]=if(e.filter==null) moved else source.copy(battlefield=source.battlefield || moved.battlefield,actor=if(source.actor==moved.actor) source.actor else "UNKNOWN",zone=null,zonePlayer="UNKNOWN",unresolved="Filtered move can leave mixed zones; source membership is not only moved objects")
