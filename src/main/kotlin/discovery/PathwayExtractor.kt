@@ -161,13 +161,18 @@ class PathwayExtractor {
         support(path,value,status,reason)
     }
     private fun add(path: String, operation: String, origin: String, objectScope: ObjectScope,
-                    native: JsonElement, frame: Frame, incidental: Boolean = false, operationCompatibility: Verdict = Verdict.MATCH) {
+                    native: JsonElement, frame: Frame, incidental: Boolean = false, operationCompatibility: Verdict = Verdict.MATCH,
+                    sacrificeChoice: SacrificeChoice? = null) {
         val kind=when(operation) { "SACRIFICE"->FactKind.SACRIFICE;"DAMAGE_POTENTIALLY_LETHAL"->FactKind.DAMAGE;"TOUGHNESS_REDUCTION"->FactKind.TOUGHNESS_CHANGE;else->FactKind.OTHER_OPERATION }
         val id="$actionId|$path|$operation|${facts.count { it.actionId==actionId && it.path==path && it.operation==operation }}"
+        val sacrificeGuard = if (sacrificeChoice == null) Verdict.MATCH else all(listOf(frame.factGuard,
+            if ((actionNative as? JsonObject)?.get("controlledByTriggeringEntityController") == JsonPrimitive(true)) Verdict.UNKNOWN else Verdict.MATCH))
         facts += MechanicalFact(id,card.name,face,actionId,path,kind,operation,if(frame.resolutionCost && origin=="EFFECT") "RESOLUTION_COST" else origin,
             objectScope.filter,sourceZone=objectScope.zone ?: if(objectScope.battlefield) Zone.BATTLEFIELD else null,sourcePlayer=objectScope.actor,
-            confidence=all(listOf(operationCompatibility,frame.guardConfidence)),native=native,prerequisites=frame.assumptions,
-            circumstances=circumstances(origin,objectScope,frame),unresolved=listOfNotNull(objectScope.unresolved))
+            destinationZone=sacrificeChoice?.let { Zone.GRAVEYARD },destinationController=if(sacrificeChoice != null) "OWNER" else "UNKNOWN",
+            confidence=all(listOf(operationCompatibility,frame.guardConfidence,sacrificeGuard)),native=native,prerequisites=frame.assumptions,
+            circumstances=circumstances(origin,objectScope,frame),unresolved=listOfNotNull(objectScope.unresolved),
+            ownerScope=objectScope.ownerScope,sacrificeChoice=sacrificeChoice)
         pathways += Pathway(card,face,actionId,path,operation,if(frame.resolutionCost && origin == "EFFECT") "RESOLUTION_COST" else origin,objectScope,
             prerequisites=frame.assumptions + "Face $face must be available; transformation/flip prerequisites are not simulated" + "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed",native=native,
             factId=id, incidentalRemoval=incidental, operationCompatibility=all(listOf(operationCompatibility,frame.guardConfidence)),
@@ -358,7 +363,8 @@ class PathwayExtractor {
                 else -> listOf("Variable sacrifice count requires a positive payable choice")
             }
             val zero=c is CostAtom.Sacrifice && c.count<=0
-            add(path,"SACRIFICE",origin,ObjectScope(filter,frame.actor,battlefield=!zero),nativeJson.encodeToJsonElement(CostAtom.serializer(),c),frame.copy(assumptions=frame.assumptions+constraints))
+            add(path,"SACRIFICE",origin,ObjectScope(filter,frame.actor,battlefield=!zero),nativeJson.encodeToJsonElement(CostAtom.serializer(),c),frame.copy(assumptions=frame.assumptions+constraints),
+                sacrificeChoice=(c as? CostAtom.Sacrifice)?.takeIf { it.count > 0 }?.let { SacrificeChoice(it.count,it.excludeSelf) })
             support(path,c,SupportStatus.SUPPORTED,"Native sacrifice cost restrictions/count retained; per-object death events conditional on payment and no replacement")
         }
         else if(c !is CostAtom.Mana && c !is CostAtom.PayLife && c !is CostAtom.TapPermanents && c !is CostAtom.Discard && c !is CostAtom.ExileFrom)
@@ -640,7 +646,8 @@ class PathwayExtractor {
             }
             is SacrificeEffect -> add(path,"SACRIFICE","EFFECT",ObjectScope(
                 if(frame.actor != "YOU" && e.filter.controllerPredicate != null) e.filter.copy(controllerPredicate=null) else e.filter,
-                frame.actor,unresolved=if(frame.actor != "YOU" && e.filter.controllerPredicate != null) "Controller filter rebound by player iteration" else null),e.tree(),frame.copy(objectRestrictions=frame.objectRestrictions+if(e.excludeSource) listOf("EXCLUDES_SOURCE") else emptyList()),frame.actor != "YOU" || removals(rootEffect).isNotEmpty())
+                frame.actor,unresolved=if(frame.actor != "YOU" && e.filter.controllerPredicate != null) "Controller filter rebound by player iteration" else null),e.tree(),frame.copy(objectRestrictions=frame.objectRestrictions+if(e.excludeSource) listOf("EXCLUDES_SOURCE") else emptyList()),frame.actor != "YOU" || removals(rootEffect).isNotEmpty(),
+                sacrificeChoice=e.takeIf { it === rootEffect && !it.any && it.count > 0 }?.let { SacrificeChoice(it.count,it.excludeSource) })
             SacrificeSelfEffect -> add(path,"SACRIFICE","EFFECT",ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN"),e.tree(),frame,removals(rootEffect).isNotEmpty())
             is SacrificeTargetEffect -> {
                 val obj=targetScope(e.target,frame,selfCreature)

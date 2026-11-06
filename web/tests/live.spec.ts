@@ -5,6 +5,56 @@ import type {Run, Evidence, CommanderView} from '../src/api';
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to a running Kotlin application.');
 const objective = 'own-nontoken-creature-deaths';
 
+test('discover conditional graveyard contributions from native Judith results', async ({page}) => {
+  await page.goto('/');
+  const completed = page.waitForResponse(r => r.url().endsWith('/api/v1/discover') && r.ok());
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const run: Run = await (await completed).json();
+  expect(run.objective).toBe(objective);
+  const found = run.cards.filter(card => card.conditionalGraveyardContribution);
+  expect(found.length).toBeGreaterThan(3);
+  expect(found.every(card => card.pathways.MATCH > 0)).toBe(true);
+  const view = page.getByRole('button', {name: /Potential graveyard contributions/});
+  await expect(view).toContainText(`${found.length} cards`);
+  await view.click();
+  const results = page.getByRole('region', {name: 'Discovery results', exact: true});
+  const detail = page.getByRole('region', {name: 'Result inspection'});
+  const relationship = detail.getByRole('region', {name: 'Graveyard contribution'});
+  const firstCard = results.locator('button.card').first();
+  await expect(firstCard).toHaveAccessibleName(found[0].card);
+  await firstCard.click();
+  await expect(relationship).toContainText('I have at least one creature card in my graveyard');
+  await expect(relationship).toContainText('through the checkpoint');
+  await expect(relationship).toContainText('finality counter');
+  await expect(relationship).toContainText('animated land');
+  await relationship.getByText('Native evidence', {exact: true}).click();
+  await expect(relationship.getByRole('link', {name: 'Open authored native definition'}))
+    .toHaveAttribute('href', new RegExp(run.argentumCommit));
+  await relationship.getByText('Separate engine validation', {exact: true}).click();
+  await expect(relationship).toContainText('previously false');
+  await detail.screenshot({path: '../generated/explorer/relationship-desktop.png'});
+
+  await page.getByLabel('Card name').fill('Viscera Seer');
+  await results.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
+  await expect(relationship).toContainText('to activate the ability');
+  await expect(relationship).toContainText('does not create that material');
+  await expect(relationship).toContainText('source may be chosen');
+  await page.setViewportSize({width: 390, height: 844});
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await relationship.screenshot({path: '../generated/explorer/relationship-mobile.png'});
+
+  await page.getByRole('button', {name: /Needs interpretation/}).click();
+  await page.getByLabel('Card name').fill('Agent of Shauku');
+  await results.getByRole('button', {name: 'Agent of Shauku', exact: true}).click();
+  await expect(relationship).toContainText('Unresolved.');
+  await page.getByRole('button', {name: /All findings/}).click();
+  await page.getByLabel('Card name').fill('Murder');
+  await results.getByRole('button', {name: 'Murder', exact: true}).click();
+  await expect(detail.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
+  await expect(relationship).toHaveCount(0);
+  expect(found.map(card => card.card)).not.toContain('Reassembling Skeleton');
+});
+
 test('all existing objectives changed commanders and blocked selections still execute genuine Kotlin discovery', async ({page}) => {
   const runs: Run[] = []; const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
