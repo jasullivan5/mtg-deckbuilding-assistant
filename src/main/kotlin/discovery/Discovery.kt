@@ -2,6 +2,7 @@ package dev.mtg.assistant.discovery
 
 import com.wingedsheep.sdk.model.CardDefinition
 import dev.mtg.assistant.Catalog
+import dev.mtg.assistant.objectives.conditionalSacrificeArrivals
 import io.github.classgraph.ClassGraph
 import java.lang.reflect.Modifier
 import java.nio.file.Files
@@ -137,7 +138,8 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     )
     return DiscoveryReport(objective="own-nontoken-creature-deaths",commander=commander.name,
         allowedIdentity=allowed.map { it.name }.sorted(),conventionalQuery=conventionalQuery,counts=counts,
-        eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name },translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) })
+        eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name },translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) },
+        conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts))
 }
 
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {

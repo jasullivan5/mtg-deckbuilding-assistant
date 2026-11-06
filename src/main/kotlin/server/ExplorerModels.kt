@@ -4,6 +4,8 @@ import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.TranslationAssurance
+import dev.mtg.assistant.objectives.ConditionalArrival
+import dev.mtg.assistant.objectives.GRAVEYARD_CREATURE_CRITERION
 import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.util.UUID
@@ -21,7 +23,8 @@ val objectives = listOf(
 @Serializable data class CardFinding(
     val index: Int, val card: String, val pathways: Map<String, Int>, val branches: List<Contribution>,
     val unsupportedRecords: Int, val partialPathways: Int, val reason: String?, val mechanics: List<String> = emptyList(),
-    val browsingState: String = "UNINTERPRETED", val recordedConcern: Boolean = false
+    val browsingState: String = "UNINTERPRETED", val recordedConcern: Boolean = false,
+    val conditionalGraveyardContribution: Boolean = false
 )
 @Serializable data class RunSummary(
     val schemaVersion: Int = 1, val execution: String = "FRESH_STRUCTURAL_DISCOVERY",
@@ -32,6 +35,11 @@ val objectives = listOf(
     val cards: List<CardFinding>
 )
 @Serializable data class AuthoredCardText(val manaCost: String, val typeLine: String, val text: String)
+@Serializable data class ArrivalInspection(
+    val relationship: ConditionalArrival, val stateCriterion: String = GRAVEYARD_CREATURE_CRITERION,
+    val mechanism: String? = null, val prerequisites: List<String> = emptyList(),
+    val sources: List<String> = emptyList()
+)
 @Serializable data class CardEvidence(
     val runId: String, val card: String, val authoredCard: AuthoredCardText?,
     val results: List<ResultEvidence>, val actions: List<ActionEvidence>,
@@ -39,7 +47,8 @@ val objectives = listOf(
     val structuralSupport: List<StructuralSupport>, val eligibility: List<EligibilityEvidence>,
     val translationAssurance: List<TranslationAssurance>, val explanations: List<PathwayExplanation>,
     val abilities: List<AbilityInspection> = emptyList(), val evidenceSummary: List<EvidenceIndicator> = emptyList(),
-    val concerns: List<ResearchConcern> = emptyList(), val rules: List<RulesLine> = emptyList()
+    val concerns: List<ResearchConcern> = emptyList(), val rules: List<RulesLine> = emptyList(),
+    val graveyardContributions: List<ArrivalInspection> = emptyList()
 )
 @Serializable data class CommanderView(
     val inspection: CommanderInspection, val authoredCard: AuthoredCardText?, val headline: String,
@@ -78,6 +87,7 @@ class StoredRun(
     private val support = report.structuralSupport.groupBy { it.card }
     private val eligibility = report.eligibility.groupBy { it.card }
     private val assurance = report.translationAssurance.groupBy { it.card }
+    private val arrivals = report.conditionalArrivals.groupBy { it.card }
     private val deathPayoffCommander = catalog.card(report.commander)?.takeIf {
         commanderObjectiveConnection(it, report.objective) != null
     }?.name
@@ -99,7 +109,8 @@ class StoredRun(
                     rows.any { it.verdict == Verdict.UNKNOWN } -> "UNRESOLVED"
                     unsupported[card].orEmpty().isNotEmpty() -> "UNINTERPRETED"
                     else -> "NOT_QUALIFYING" },
-                assurance[card].orEmpty().any { materialConcerns(it).any { c -> c.state == EvidenceState.KNOWN_PROBLEM } })
+                assurance[card].orEmpty().any { materialConcerns(it).any { c -> c.state == EvidenceState.KNOWN_PROBLEM } },
+                arrivals[card].orEmpty().any { it.decision.verdict == Verdict.MATCH })
         }
     )
     val coverage = compareCoverage(catalog, report, summary.cards, results, actions, facts, eligibility)
@@ -123,6 +134,11 @@ class StoredRun(
             abilities,
             evidenceIndicators(results[name].orEmpty(), review, scenarios, "Card-level discovery findings")
                 .filterNot { it.id == "mechanic" && results[name].isNullOrEmpty() }, materialConcerns(review),
-            rulesLines(name, native?.oracleText.orEmpty(), abilities))
+            rulesLines(name, native?.oracleText.orEmpty(), abilities),
+            arrivals[name].orEmpty().map { arrival ->
+                val fact = facts[name].orEmpty().firstOrNull { it.id == arrival.factId }
+                val row = results[name].orEmpty().firstOrNull { it.actionId == arrival.actionId && it.abilityPath == arrival.path }
+                inspectArrival(arrival, fact, row)
+            })
     }
 }

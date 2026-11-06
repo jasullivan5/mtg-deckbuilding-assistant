@@ -34,8 +34,9 @@ const diagnostics = [
   ['NO_MATCH', 'Has nonqualifying checks'], ['UNSUPPORTED', 'Has unread instructions'],
 ] as const;
 const inCategory = (card: Finding, category: string) => category === 'ALL' ||
+  (category === 'GRAVEYARD' ? card.conditionalGraveyardContribution === true :
   (category === 'IDENTIFIED' || category === 'UNRESOLVED' ? card.browsingState === category :
-    category === 'UNSUPPORTED' ? card.unsupportedRecords > 0 : card.pathways[category] > 0);
+    category === 'UNSUPPORTED' ? card.unsupportedRecords > 0 : card.pathways[category] > 0));
 function Json({value}: {value: unknown}) { return <pre>{JSON.stringify(value, null, 2)}</pre>; }
 function RawDetails({label, value}: {label: string; value: unknown}) {
   const [expanded, setExpanded] = useState(false);
@@ -212,6 +213,12 @@ export function App() {
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description} aria-description={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
         </nav>
+        {run.objective === 'own-nontoken-creature-deaths' && <div className="actions discovery-investigation">
+          <button aria-pressed={category === 'GRAVEYARD'} onClick={() => {setCategory('GRAVEYARD'); setName(''); setMechanic('ALL'); setPage(0);}}>
+            Potential graveyard contributions · {run.cards.filter(c => inCategory(c, 'GRAVEYARD')).length.toLocaleString()} cards
+          </button>
+          <span className="hint">Research view within identified mechanics</span>
+        </div>}
         <details className="diagnostic-views"><summary>Research and diagnostic views</summary>
           <p className="hint">These counts overlap and count distinct cards, not abilities. Identified mechanics remain useful even when another part of a card is excluded or unread. Do not add these counts together.</p>
           <nav className="diagnostics" aria-label="Diagnostic finding categories">
@@ -244,7 +251,8 @@ export function App() {
             <h2>{selectedCard?.card ?? 'Select a finding'}</h2>
             {detailLoading && <p role="status">Loading card evidence…</p>}
             {detailError && <p role="alert" className="warning">{detailError}</p>}
-            {shownDetail && <CardInspection key={shownDetail.card} evidence={shownDetail} image={imageFor(selected!)} revision={run.applicationRevision}/>}
+            {shownDetail && <CardInspection key={`${shownDetail.card}-${category === 'GRAVEYARD'}`} evidence={shownDetail}
+              image={imageFor(selected!)} revision={run.applicationRevision} preferGraveyard={category === 'GRAVEYARD'}/>}
 
           </section>
         </div>

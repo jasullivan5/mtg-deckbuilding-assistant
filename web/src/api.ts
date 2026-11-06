@@ -9,6 +9,7 @@ export type Finding = {
   index: number; card: string; pathways: Record<string, number>; branches: string[];
   unsupportedRecords: number; partialPathways: number; reason: string | null; mechanics: string[];
   browsingState: string; recordedConcern: boolean;
+  conditionalGraveyardContribution?: boolean;
 };
 export type Run = {
   schemaVersion: number; execution: string; runId: string; startedAt: string; durationMs: number;
@@ -23,12 +24,17 @@ export type Row = {
   sourceReferences: string[]; circumstances: RecordData | null;
 };
 export type Explanation = {summary: string; requirements: string[]; unknowns: string[]; mechanic: string; outcome: string};
+export type ArrivalInspection = {
+  relationship: {actionId: string; path: string; factId: string | null; decision: {verdict: string; reason: string}};
+  stateCriterion: string; mechanism: string | null; prerequisites: string[]; sources: string[];
+};
 export type Evidence = {
   runId: string; card: string; authoredCard: {manaCost: string; typeLine: string; text: string} | null;
   results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string; actionId: string; path: string; nativeType: string}[];
   structuralSupport: RecordData[]; eligibility: RecordData[]; translationAssurance: RecordData[];
   explanations: Explanation[]; abilities: AbilityInspection[]; evidenceSummary: EvidenceIndicator[]; concerns: ResearchConcern[];
   rules: RulesLine[];
+  graveyardContributions?: ArrivalInspection[];
 };
 export type EvidenceState = 'ESTABLISHED' | 'NOT_RECORDED' | 'INCOMPLETE' | 'KNOWN_PROBLEM' | 'OUTDATED';
 export type EvidenceIndicator = {
