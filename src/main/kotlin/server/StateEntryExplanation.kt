@@ -18,6 +18,7 @@ internal fun stateEntryExplanation(row: ResultEvidence, action: ActionEvidence?,
         GraveyardRoute.DISCARD -> if (entry.discardsSource) "discard this creature card from your hand"
             else "discard $cards from your hand" + if (entry.random) " at random" else ""
         GraveyardRoute.SACRIFICE -> (if (entry.sourcePlayer == "OPPONENT") "an opponent sacrifices " else "sacrifice ") + when {
+            entry.sacrificesSource -> "this permanent"
             entry.excludesSource && count == 1 -> "another creature"
             entry.excludesSource -> "$count creatures other than the source"
             count == 1 -> "a creature"
@@ -29,7 +30,7 @@ internal fun stateEntryExplanation(row: ResultEvidence, action: ActionEvidence?,
         "CASTING_COST" -> " as part of casting this spell"
         "OPTIONAL_CASTING_COST", "ALTERNATIVE_CASTING_COST" -> " if you use this casting payment"
         "RESOLUTION_COST" -> " as a payment during resolution"
-        else -> ""
+        else -> if (entry.sacrificesSource) " when its trigger resolves" else ""
     }
     val conditional = row.verdict == Verdict.MATCH
     val summary = if (conditional)
@@ -43,8 +44,12 @@ internal fun stateEntryExplanation(row: ResultEvidence, action: ActionEvidence?,
             GraveyardRoute.DISCARD -> if (entry.discardsSource)
                 "Meet the timing, mana costs and any target requirements. You pay by discarding this exact card before the ability resolves."
             else "An eligible creature card must be among the cards actually discarded."
-            GraveyardRoute.SACRIFICE -> "An eligible creature you own must reach your graveyard as a creature card."
+            GraveyardRoute.SACRIFICE -> if (entry.sacrificesSource)
+                "You must control this same permanent to sacrifice it. You must own the physical card for it to reach your graveyard."
+            else "An eligible creature you own must reach your graveyard as a creature card."
         })
+        if (entry.sacrificesSource && row.costOrEffect == "ACTIVATION_COST")
+            add("Meet the timing, any other costs and any legal target requirements before paying.")
         add("The card must stay in your graveyard through the checkpoint. Replacement effects can redirect the move.")
     } else emptyList()
     return PathwayExplanation(summary, requirements, emptyList(), mechanic(row),

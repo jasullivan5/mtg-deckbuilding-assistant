@@ -52,6 +52,37 @@ class BootstrapGuards(unittest.TestCase):
     def test_reuses_clean_sibling_without_fetch(self):
         self.succeeds()
         self.succeeds()
+    def fake_java(self, specification, status=0):
+        if self.shell != "bash":
+            self.skipTest("Bash Java probe regression")
+        tools = self.base / "test-bin"
+        tools.mkdir()
+        java = tools / "java"
+        java.write_text(
+            "#!/usr/bin/env bash\n"
+            f"printf '    java.specification.version = {specification}\\r\\n' >&2\n"
+            "printf '%08192d\\n' {1..64} >&2\n"
+            f"exit {status}\n",
+            newline="\n",
+        )
+        java.chmod(0o755)
+        self.env["PATH"] = str(tools) + os.pathsep + self.env["PATH"]
+
+    def test_bash_accepts_jdk21_with_verbose_properties(self):
+        self.fake_java("21")
+        self.succeeds()
+
+    def test_bash_rejects_unsupported_jdk(self):
+        self.fake_java("210")
+        result = self.setup()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("JDK 21 is required", result.stderr)
+
+    def test_bash_rejects_failed_java_probe_even_with_jdk21_output(self):
+        self.fake_java("21", status=3)
+        result = self.setup()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("JDK 21 is required", result.stderr)
     def test_new_app_stable_commit_needs_no_pin_approval(self):
         (self.repo / "source").write_text("compatible change")
         self.g("commit", "-qam", "next")

@@ -7,7 +7,12 @@ update=${1:-}
 [[ "$update" == '' || "$update" == '--update' ]] || { echo 'Usage: setup.sh [--update]' >&2; exit 2; }
 command -v git >/dev/null || { echo 'Install Git first.' >&2; exit 1; }
 command -v java >/dev/null || { echo 'Install JDK 21 first.' >&2; exit 1; }
-java -XshowSettings:properties -version 2>&1 | tr -d '\r' | grep -Eq 'java.specification.version = 21$' || { echo 'JDK 21 is required. Set JAVA_HOME and PATH.' >&2; exit 1; }
+# Collect the complete probe before matching so grep cannot close Java's output pipe early.
+if ! java_properties=$(java -XshowSettings:properties -version 2>&1) ||
+   ! grep -Eq '^[[:space:]]*java\.specification\.version = 21[[:space:]]*$' <<< "$java_properties"; then
+  echo 'JDK 21 is required. Set JAVA_HOME and PATH.' >&2
+  exit 1
+fi
 if [ ! -e "$source_dir" ]; then
   [ -z "${ARGENTUM_CANDIDATE_REVISION:-}" ] || { echo 'Candidate checkout must already exist.' >&2; exit 1; }
   git clone --branch app-stable --single-branch "$repository" "$source_dir"

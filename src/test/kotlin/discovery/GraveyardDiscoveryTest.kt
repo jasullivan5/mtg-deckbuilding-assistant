@@ -75,7 +75,6 @@ class GraveyardDiscoveryTest : FunSpec({
         evaluateStateEntry(mill.copy(destinationZone = null), GraveyardRoute.MILL).verdict shouldBe Verdict.UNKNOWN
         evaluateStateEntry(mill.copy(cardEntry = CardEntry(GraveyardRoute.MILL, 0)), GraveyardRoute.MILL).verdict shouldBe Verdict.NO_MATCH
         evaluateStateEntry(mill.copy(cardEntry = CardEntry(GraveyardRoute.MILL, null)), GraveyardRoute.MILL).verdict shouldBe Verdict.UNKNOWN
-        rows("Mogg Fanatic").single().verdict shouldBe Verdict.UNKNOWN
         rows("Agent of Shauku").single().verdict shouldBe Verdict.UNKNOWN
     }
 
@@ -115,6 +114,36 @@ class GraveyardDiscoveryTest : FunSpec({
         val land = rows("Sokenzan, Crucible of Defiance").single { it.stateEntry?.route == GraveyardRoute.DISCARD }
         land.verdict shouldBe Verdict.NO_MATCH
         land.decisions.single().reason.contains("noncreature card") shouldBe true
+    }
+
+    test("exact source sacrifices distinguish the arrival type from the battlefield event") {
+        for ((name, role) in listOf("Mogg Fanatic" to "ACTIVATION_COST", "Spark Elemental" to "EFFECT",
+            "Reckless Barbarian" to "ACTIVATION_COST", "Ball Lightning" to "EFFECT")) {
+            val row = rows(name).single { it.stateEntry?.sacrificesSource == true }
+            val fact = facts(name).single { it.id == row.stateEntry!!.factId }
+            row.verdict shouldBe Verdict.MATCH
+            row.costOrEffect shouldBe role
+            row.stateEntry!!.deathComparison.verdict shouldBe Verdict.MATCH
+            fact.binding shouldBe "SELF"
+            fact.sourceZone shouldBe Zone.BATTLEFIELD
+            fact.sourcePlayer shouldBe "YOU"
+            fact.destinationZone shouldBe Zone.GRAVEYARD
+            fact.destinationController shouldBe "OWNER"
+            fact.ownerScope shouldBe "ANY"
+            fact.sacrificeChoice shouldBe null
+            fact.cardEntry shouldBe CardEntry(GraveyardRoute.SACRIFICE, 1, sourceCreatureAtArrival = Verdict.MATCH)
+        }
+        for (name in listOf("Seal of Fire", "Evolving Wilds")) {
+            val row = rows(name).single { it.stateEntry?.sacrificesSource == true }
+            row.verdict shouldBe Verdict.NO_MATCH
+            row.stateEntry!!.deathComparison.verdict shouldBe Verdict.UNKNOWN
+        }
+        val mogg = facts("Mogg Fanatic").single()
+        evaluateStateEntry(mogg.copy(ownerScope = "OPPONENT"), GraveyardRoute.SACRIFICE).verdict shouldBe Verdict.NO_MATCH
+        evaluateStateEntry(mogg.copy(movesOriginalCard = false), GraveyardRoute.SACRIFICE).verdict shouldBe Verdict.NO_MATCH
+        evaluateStateEntry(mogg.copy(cardEntry = mogg.cardEntry!!.copy(sourceCreatureAtArrival = Verdict.UNKNOWN)),
+            GraveyardRoute.SACRIFICE).verdict shouldBe Verdict.UNKNOWN
+        rows("Pit Raptor").single { it.operation == "SACRIFICE" }.verdict shouldBe Verdict.UNKNOWN
     }
 
     test("unsupported source characteristics and inconsistent activation zones never become a match") {
