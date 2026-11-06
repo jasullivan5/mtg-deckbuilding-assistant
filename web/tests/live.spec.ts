@@ -62,12 +62,32 @@ test('independent graveyard discovery finds mill discard and sacrifice through K
   await mechanic.selectOption('Sacrifice');
   await results.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('This same sacrifice can cause a death');
-  await page.getByRole('button', {name: /Needs interpretation/}).click();
   await page.getByLabel('Card name').fill('Mogg Fanatic');
   await results.getByRole('button', {name: 'Mogg Fanatic', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('Sacrifice this permanent to activate this ability');
+  await expect(detail.locator('.objective-notes')).toContainText('You must own the physical card');
+  await expect(detail.locator('.objective-notes')).toContainText('Replacement effects can redirect the move');
+  await detail.getByRole('button', {name: /Discovery/}).click();
+  await expect(detail.getByRole('region', {name: 'Discovery evidence'})).toContainText('This same sacrifice can cause a death');
+  await detail.screenshot({path: '../generated/explorer/source-sacrifice-desktop.png'});
+  await page.setViewportSize({width: 390, height: 844});
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await detail.screenshot({path: '../generated/explorer/source-sacrifice-mobile.png'});
+  await page.setViewportSize({width: 1365, height: 950});
+
+  await page.getByLabel('Card name').fill('Spark Elemental');
+  await results.getByRole('button', {name: 'Spark Elemental', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('Sacrifice this permanent when its trigger resolves');
+
+  await page.getByRole('button', {name: /Needs interpretation/}).click();
+  await page.getByLabel('Card name').fill('Pit Raptor');
+  await results.getByRole('button', {name: 'Pit Raptor', exact: true}).click();
   await expect(detail.locator('.objective-notes')).toContainText('leaves the creature-card arrival unresolved');
 
   await page.getByRole('button', {name: /All findings/}).click();
+  await page.getByLabel('Card name').fill('Seal of Fire');
+  await results.getByRole('button', {name: 'Seal of Fire', exact: true}).click();
+  await expect(detail.locator('.objective-notes')).toContainText('it is a noncreature card there');
   await mechanic.selectOption('Discard');
   await page.getByLabel('Card name').fill('Sokenzan, Crucible of Defiance');
   await results.getByRole('button', {name: 'Sokenzan, Crucible of Defiance', exact: true}).click();

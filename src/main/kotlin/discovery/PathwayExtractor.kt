@@ -17,7 +17,8 @@ private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), 
 private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
     val movementTargets: MutableMap<String,List<ObjectScope>> = mutableMapOf(),
-    val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList())
+    val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList(),
+    val directBattlefieldStepTrigger: Boolean = false)
 private data class Removal(val effect: Effect, val target: EffectTarget?, val operation: String, val magnitude: Int? = null, val prerequisites: List<String> = emptyList(), val confidence: Verdict = Verdict.MATCH)
 private fun removal(e: Effect): Removal? = when(e) {
     is MoveToZoneEffect -> when {
@@ -182,17 +183,19 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     }
     private fun add(path: String, operation: String, origin: String, objectScope: ObjectScope,
                     native: JsonElement, frame: Frame, incidental: Boolean = false, operationCompatibility: Verdict = Verdict.MATCH,
-                    sacrificeChoice: SacrificeChoice? = null) {
+                    sacrificeChoice: SacrificeChoice? = null, sourceEntry: CardEntry? = null) {
         val kind=when(operation) { "SACRIFICE"->FactKind.SACRIFICE;"DAMAGE_POTENTIALLY_LETHAL"->FactKind.DAMAGE;"TOUGHNESS_REDUCTION"->FactKind.TOUGHNESS_CHANGE;else->FactKind.OTHER_OPERATION }
         val id="$actionId|$path|$operation|${facts.count { it.actionId==actionId && it.path==path && it.operation==operation }}"
-        val sacrificeGuard = if (sacrificeChoice == null) Verdict.MATCH else all(listOf(frame.factGuard,
+        val sacrificeGuard = if (sacrificeChoice == null && sourceEntry == null) Verdict.MATCH else all(listOf(frame.factGuard,
             if ((actionNative as? JsonObject)?.get("controlledByTriggeringEntityController") == JsonPrimitive(true)) Verdict.UNKNOWN else Verdict.MATCH))
         facts += MechanicalFact(id,card.name,face,actionId,path,kind,operation,if(frame.resolutionCost && origin=="EFFECT") "RESOLUTION_COST" else origin,
             objectScope.filter,sourceZone=objectScope.zone ?: if(objectScope.battlefield) Zone.BATTLEFIELD else null,sourcePlayer=objectScope.actor,
-            destinationZone=sacrificeChoice?.let { Zone.GRAVEYARD },destinationController=if(sacrificeChoice != null) "OWNER" else "UNKNOWN",
+            destinationZone=if(sacrificeChoice != null || sourceEntry != null) Zone.GRAVEYARD else null,
+            destinationController=if(sacrificeChoice != null || sourceEntry != null) "OWNER" else "UNKNOWN",
             confidence=all(listOf(operationCompatibility,frame.guardConfidence,sacrificeGuard)),native=native,prerequisites=frame.assumptions,
+            binding=sourceEntry?.let { "SELF" },selection=if(sourceEntry!=null) "Exactly the source permanent; no sacrifice choice" else "Native node/targets define quantity and chooser",
             circumstances=circumstances(origin,objectScope,frame),unresolved=listOfNotNull(objectScope.unresolved),
-            ownerScope=objectScope.ownerScope,sacrificeChoice=sacrificeChoice)
+            ownerScope=objectScope.ownerScope,sacrificeChoice=sacrificeChoice,cardEntry=sourceEntry)
         pathways += Pathway(card,face,actionId,path,operation,if(frame.resolutionCost && origin == "EFFECT") "RESOLUTION_COST" else origin,objectScope,
             prerequisites=frame.assumptions + "Face $face must be available; transformation/flip prerequisites are not simulated" + "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed",native=native,
             factId=id, incidentalRemoval=incidental, operationCompatibility=all(listOf(operationCompatibility,frame.guardConfidence)),
@@ -231,11 +234,12 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         actionId="${card.name}|$label|script"
         actions += ActionEvidence(actionId,card.name,label,"script",emptyList(),nativeJson.encodeToJsonElement(CardScript.serializer(),script))
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
-                   assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD, costs: () -> Unit = {}) {
+                   assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
+                   directBattlefieldStepTrigger: Boolean = false, costs: () -> Unit = {}) {
             actionId="${card.name}|$label|$path"; rootEffect=effect; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
             actions += ActionEvidence(actionId,card.name,label,path,assumptions,value)
-            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone)
+            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger)
             costs()
             effect?.let { walk(it,if(path == "script.spell") "script.spellEffect" else "$path.effect",frame) }
         }
@@ -275,7 +279,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             // single location for multi-zone abilities in this bounded correction.
             val sourceZone=if(trigger is EventPattern.ZoneChangeEvent && ability.binding == TriggerBinding.SELF) trigger.to
                 else ability.activeZones.singleOrNull() ?: Zone.BATTLEFIELD
-            action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone)
+            action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
+                directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
+                    ability.interveningIf == null && ability.triggerRestriction == null && !ability.controlledByTriggeringEntityController)
             if(trigger is EventPattern.ZoneChangeEvent && trigger.from == Zone.BATTLEFIELD && trigger.to == Zone.GRAVEYARD) {
                 var eventScope=ObjectScope(trigger.filter)
                 if(ability.binding == TriggerBinding.SELF) eventScope=eventScope.copy(actor="YOU",printedSelfCreature=creature)
@@ -343,6 +349,26 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             }
         }
     }
+    private fun sourceCardCreature(): Boolean? = selfCreature.takeIf {
+        card.layout == CardLayout.NORMAL && card.backFace == null && card.flipSide == null && card.cardFaces.isEmpty()
+    }
+
+    private fun selfSacrifice(path: String, origin: String, instruction: Any, native: JsonElement, frame: Frame,
+                              supportedArrival: Boolean, incidental: Boolean = false) {
+        val entry = if (inspectCardEntries && supportedArrival && frame.selfZone == Zone.BATTLEFIELD) {
+            val arrivalType = when (sourceCardCreature()) {
+                true -> Verdict.MATCH
+                false -> Verdict.NO_MATCH
+                null -> Verdict.UNKNOWN
+            }
+            support(path,instruction,if(arrivalType == Verdict.UNKNOWN) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
+                "Exact source permanent and owner destination retained; graveyard card type=$arrivalType")
+            CardEntry(GraveyardRoute.SACRIFICE,1,sourceCreatureAtArrival=arrivalType)
+        } else null
+        val scope = targetScope(EffectTarget.Self,frame,selfCreature)
+        add(path,"SACRIFICE",origin,scope,native,frame,incidental,sourceEntry=entry)
+    }
+
     private fun abilityCost(c: AbilityCost,path: String,frame: Frame) {
         when(c) {
             is AbilityCost.Composite -> c.costs.forEachIndexed { i,child -> abilityCost(child,"$path.costs[$i]",frame) }
@@ -352,16 +378,16 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                     issue(path,c,"Activation cost not interpreted")
                     return
                 }
-                val singleFace = card.layout == CardLayout.NORMAL && card.backFace == null &&
-                    card.flipSide == null && card.cardFaces.isEmpty()
+                val arrivalCreature = sourceCardCreature()
                 val source = ObjectScope(battlefield = false, zone = Zone.HAND, zonePlayer = frame.actor,
-                    ownerScope = frame.actor, printedSelfCreature = selfCreature.takeIf { singleFace },
-                    unresolved = if (singleFace) null else "Source card characteristics in the graveyard need face-specific interpretation")
+                    ownerScope = frame.actor, printedSelfCreature = arrivalCreature,
+                    unresolved = if (arrivalCreature != null) null else "Source card characteristics in the graveyard need face-specific interpretation")
                 recordMovement(path,nativeJson.encodeToJsonElement(AbilityCost.serializer(),c),source,
                     Zone.GRAVEYARD,"OWNER",frame,binding="SELF",selection="Exactly the source card; no discard choice",
                     role="ACTIVATION_COST",cardEntry=CardEntry(GraveyardRoute.DISCARD,1,discardsSource=true))
             }
-            AbilityCost.SacrificeSelf -> add(path,"SACRIFICE","ACTIVATION_COST",ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN"),nativeJson.encodeToJsonElement(AbilityCost.serializer(),c),frame)
+            AbilityCost.SacrificeSelf -> selfSacrifice(path,"ACTIVATION_COST",c,nativeJson.encodeToJsonElement(AbilityCost.serializer(),c),frame,
+                supportedArrival=true)
             AbilityCost.Free, AbilityCost.Tap, AbilityCost.Untap, is AbilityCost.Loyalty -> Unit
             else -> issue(path,c,"Activation cost not interpreted")
         }
@@ -726,7 +752,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 if(frame.actor != "YOU" && e.filter.controllerPredicate != null) e.filter.copy(controllerPredicate=null) else e.filter,
                 frame.actor,unresolved=if(frame.actor != "YOU" && e.filter.controllerPredicate != null) "Controller filter rebound by player iteration" else null),e.tree(),frame.copy(objectRestrictions=frame.objectRestrictions+if(e.excludeSource) listOf("EXCLUDES_SOURCE") else emptyList()),frame.actor != "YOU" || removals(rootEffect).isNotEmpty(),
                 sacrificeChoice=e.takeIf { it === rootEffect && !it.any && it.count > 0 }?.let { SacrificeChoice(it.count,it.excludeSource) })
-            SacrificeSelfEffect -> add(path,"SACRIFICE","EFFECT",ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN"),e.tree(),frame,removals(rootEffect).isNotEmpty())
+            SacrificeSelfEffect -> selfSacrifice(path,"EFFECT",e,e.tree(),frame,
+                supportedArrival=frame.directBattlefieldStepTrigger && e === rootEffect && path.endsWith(".effect") && !frame.delayed,
+                incidental=removals(rootEffect).isNotEmpty())
             is SacrificeTargetEffect -> {
                 val obj=targetScope(e.target,frame,selfCreature)
                 val bound=e.target as? EffectTarget.PipelineTarget

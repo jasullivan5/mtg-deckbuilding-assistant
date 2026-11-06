@@ -12,7 +12,9 @@ import kotlinx.serialization.json.JsonElement
 @Serializable data class SacrificeChoice(val count: Int, val excludesSource: Boolean)
 @Serializable enum class GraveyardRoute { SACRIFICE, MILL, DISCARD }
 @Serializable data class CardEntry(val route: GraveyardRoute, val count: Int?, val random: Boolean = false,
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val discardsSource: Boolean = false)
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val discardsSource: Boolean = false,
+    /** The bound source card's type after arrival, separate from the departing permanent's type. */
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val sourceCreatureAtArrival: Verdict? = null)
 @Serializable data class MechanicalFact(
     val id: String, val card: String, val face: String, val actionId: String, val path: String,
     val kind: FactKind, val operation: String, val costOrEffect: String,
