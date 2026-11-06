@@ -16,9 +16,21 @@ This fetches and fast-forwards only. Rebuild/relaunch afterward. The branch choo
 
 ## Engine corrections
 
-Develop engine corrections on feature branches, using a temporary worktree when the application's normal stable checkout must remain available. Before merging into app-stable, check appropriate native regressions and application compatibility against the exact candidate. Engine workflow CI tests the PR merge revision and runs again after stable pushes. Application CI independently resolves app-stable once, records its SHA and runs its checks. Failed checks require investigation; there is no automatic rollback or qualification promotion.
+Develop engine corrections on feature branches, using a temporary worktree when the application's normal stable checkout must remain available. Before merging into app-stable, check appropriate native regressions and application compatibility against the exact clean candidate.
+
+The application's **Verify** workflow and the maintained engine branch's **CI** and **Application compatibility** workflows run on manual dispatch. Local verification is the developer's responsibility. GitHub does not automatically test PR updates or stable pushes with these workflows, or enforce the local results at merge time. Record the tested SHAs and outcomes in the PR so reviewers can confirm the evidence still applies after updates. Dispatch the retained workflows when hosted verification is useful.
 
 For explicit candidate validation only, set ARGENTUM_ENGINE_DIR to an absolute clean isolated engine checkout and ARGENTUM_CANDIDATE_REVISION to its exact 40-character HEAD. Use the usual wrappers. Unset both afterward. Setup refuses branch/origin/dirty mismatches and never advances a candidate. Engine main tracks upstream; upstream merging is not ordinary application work.
+
+## Complete local verification
+
+1. From a clean application checkout, record `git rev-parse HEAD` and `git -C ../argentum-engine rev-parse HEAD`. For a candidate, record the isolated checkout's HEAD instead. Use JDK 21, Python 3, Node and pnpm as described in the [README](../README.md).
+2. From the application root, run `bash scripts/bootstrap.sh`, then `python3 scripts/test-bootstrap.py`, `python3 scripts/test-oracle-snapshot.py` and `bash scripts/verify.sh full`. The full gate reruns all Kotlin tests, including the source-discard and source-sacrifice scenarios, installs the CLI and runs the catalog checks. On Windows, `.\scripts\bootstrap.ps1` and `.\dev.ps1 test --rerun` cover setup and Kotlin. Use Bash with the same toolchain for the full catalog gate.
+3. For an engine correction, run the relevant native regressions in the exact engine checkout with `just test-class <ClassName> --rerun` or the broader `just test-rules`. Include `SparkElementalScenarioTest` and source-instance and source-zone regressions for source-identity changes.
+4. Build the Explorer and run `pnpm test:ui` and `pnpm test:live` from `web` using the [browser verification procedure](EXPLORER.md). Live tests require the URL of the freshly built Kotlin service. Check `/api/v1/health` to confirm the application and engine SHAs before testing.
+5. For changes that may affect discovery, run the CLI's JSON discovery for Judith with each objective on both revisions. Compare the exact `mechanicalInputCards` lists before interpreting changes. Compare results, actions, facts, eligibility and assurance, separating SHA-bound source references and historical evidence from mechanical differences. Use `audit diff --before <report> --after <report> --json` for the report comparison. Record pass, fail and unexecuted checks.
+
+The current catalog gate requires one engine revision across its runs, zero confirmed mismatches in the retained benchmarks and an empty diff when a report is compared with itself. The summary separately reports equality with the frozen whole-report fingerprints. Those fingerprints describe an older implementation and remain available as a strict check for historical replay with `bash scripts/check-catalog.sh historical`.
 
 ## Evidence and history
 

@@ -86,7 +86,7 @@ pnpm test:live
 Pop-Location
 ```
 
-The fixture browser suite tests UI states using explicitly synthetic transport records; it does not claim live mechanics. The live suite executes real browser → Kotlin queries and writes actual screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. CI runs the locked frontend build and fixture browser suite; genuine live browser execution is recorded separately in the local verification below.
+The fixture browser suite tests UI states using explicitly synthetic transport records. The live suite executes real browser → Kotlin queries and writes screenshots under ignored `generated/explorer/`. Its mobile check covers keyboard access and horizontal containment at 390 px. Run both suites locally. The manually dispatched Verify workflow also runs the locked frontend build and fixture browser suite.
 
 HTTP parity compares every serialized DiscoveryReport field with fresh CLI output for each objective, using streaming/hashing to avoid extra giant report trees. Selected-card evidence is also compared field-by-field. Boundary tests retain malformed/blocked/error/busy/timeout checks. The existing CLI and frozen expectations are unchanged.
 

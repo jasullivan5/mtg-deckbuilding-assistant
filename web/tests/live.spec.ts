@@ -4,6 +4,12 @@ import type {Run, Evidence, CommanderView} from '../src/api';
 
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to a running Kotlin application.');
 const objective = 'own-nontoken-creature-deaths';
+const reviewedCoverageEngine = '03869c08665bf476a8b40dacbfbcd501c54a33bd';
+const unsearchedCoverageCards = ['Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer', 'Reassembling Skeleton'];
+const historicalGapLabel = '4 Outside current objective coverage';
+const unexplainedLabel = '5 Insufficient evidence';
+const historicalDiagnosis = 'leaves land and creature overlap unresolved';
+const differentEngineDiagnosis = 'Inspect the current decision records. The retained diagnosis used a different engine revision.';
 
 test('independent graveyard discovery finds mill discard and sacrifice through Kotlin', async ({page}) => {
   const searches: string[] = [];
@@ -355,7 +361,11 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
 
 test('Discovery Coverage counts and filters the fixed cohort and inspects recognized, omitted and unresolved cards', async ({page}) => {
   await page.goto('/');
+  const completed = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const run: Run = await (await completed).json();
+  const reviewed = run.argentumCommit === reviewedCoverageEngine;
+  const omissionLabel = reviewed ? historicalGapLabel : unexplainedLabel;
   await page.getByRole('button', {name: 'Investigate Discovery Coverage'}).click({timeout: 130_000});
   const nav = page.getByRole('navigation', {name: 'Coverage categories'});
   const list = page.getByRole('region', {name: 'Cohort cards'});
@@ -364,9 +374,9 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
     ['4 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper']],
     ['1 Unresolved relationship', ['Agent of Shauku']],
     ['1 Excluded by objective policy', ['Murder']],
-    ['4 Outside current objective coverage', ['Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer', 'Reassembling Skeleton']],
-    ['1 Ordinary creature body', ['Walking Corpse']],
     ['1 Excluded by Commander eligibility', ['Dryad Arbor']],
+    [omissionLabel, reviewed ? unsearchedCoverageCards : [...unsearchedCoverageCards, 'Walking Corpse']],
+    ...(reviewed ? [['1 Ordinary creature body', ['Walking Corpse']] as const] : []),
   ] as const;
   await expect(nav.getByRole('button', {name: '12 All cards'})).toBeVisible();
   for (const [label, names] of groups) {
@@ -374,22 +384,28 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
     await expect(list.getByRole('button')).toHaveCount(names.length);
     for (const name of names) await expect(list.getByRole('button', {name, exact: true})).toBeVisible();
   }
-  await nav.getByRole('button', {name: groups[0][0]}).click();
+  if (!reviewed) {
+    await expect(nav.getByRole('button', {name: '0 Outside current objective coverage', exact: true})).toBeDisabled();
+    await expect(nav.getByRole('button', {name: '0 Ordinary creature body', exact: true})).toBeDisabled();
+  }
+  await nav.getByRole('button', {name: '4 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Viscera Seer'}).click();
   await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
-  await expect(detail).toContainText('activation cost');
-  await nav.getByRole('button', {name: groups[3][0]}).click();
+  await expect(detail.getByRole('button', {name: /Discovery.*Creature sacrifice cost identified/})).toBeVisible();
+  await expect(detail).toContainText(reviewed ? 'activation cost' : differentEngineDiagnosis);
+  await nav.getByRole('button', {name: omissionLabel, exact: true}).click();
   await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
   await expect(detail).toContainText('In the ordinary findings index');
   await expect(detail).toContainText('No pathway check for the reviewed relationship');
   await list.getByRole('button', {name: 'Pitiless Plunderer'}).click();
   await expect(detail).toContainText('Absent from the ordinary findings index');
   await expect(detail).toContainText('No pathway check for the reviewed relationship');
+  if (!reviewed) await expect(detail).toContainText('The available records do not establish the outcome for this relationship.');
   await expect(detail.getByRole('button', {name: /Rules comparison/})).toBeVisible();
   await detail.getByText('Retained Oracle text and identity').click();
   await expect(detail.getByRole('link', {name: 'Scryfall printing record'})).toBeVisible();
-  await nav.getByRole('button', {name: groups[1][0]}).click();
-  await expect(detail).toContainText('leaves land and creature overlap unresolved');
+  await nav.getByRole('button', {name: '1 Unresolved relationship', exact: true}).click();
+  await expect(detail).toContainText(reviewed ? historicalDiagnosis : differentEngineDiagnosis);
   await page.getByRole('button', {name: 'Back to discovery results'}).click();
   await expect(page.getByRole('navigation', {name: 'Finding categories', exact: true})).toBeVisible();
 });
@@ -631,7 +647,10 @@ test('objective scope and research navigation preserve a live Judith result at d
   expect(box?.width).toBeGreaterThan(300);
   await page.screenshot({path: shots + '/after-scope-mobile.png'});
   await page.setViewportSize({width: 1440, height: 1100});
+  const completed = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const run: Run = await (await completed).json();
+  const reviewed = run.argentumCommit === reviewedCoverageEngine;
   await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
   const after = page.getByRole('region', {name: 'Scope of this search'});
   await expect(after).toContainText('renewable sacrifice material');
@@ -651,14 +670,14 @@ test('objective scope and research navigation preserve a live Judith result at d
     await expect(navigation).toBeFocused();
     const coverage = page.getByRole('region', {name: 'Discovery Coverage', exact: true});
     const detail = coverage.getByRole('region', {name: 'Coverage card inspection'});
-    await coverage.getByRole('button', {name: '4 Outside current objective coverage'}).click();
+    await coverage.getByRole('button', {name: reviewed ? historicalGapLabel : unexplainedLabel, exact: true}).click();
     await coverage.getByRole('button', {name: 'Pitiless Plunderer', exact: true}).click();
     await expect(detail).toContainText('No pathway check for the reviewed relationship');
     await expect(detail).toContainText('No formal comparison recorded');
     await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
     await expect(detail.getByRole('button', {name: /Discovery.*Excluded by objective policy/})).toBeVisible();
     await coverage.getByRole('button', {name: '1 Unresolved relationship'}).click();
-    await expect(detail).toContainText('leaves land and creature overlap unresolved');
+    await expect(detail).toContainText(reviewed ? historicalDiagnosis : differentEngineDiagnosis);
     if (width === 1440) {
       await coverage.getByRole('button', {name: '4 Recognized contribution'}).click();
       await coverage.getByRole('button', {name: 'Viscera Seer', exact: true}).click();

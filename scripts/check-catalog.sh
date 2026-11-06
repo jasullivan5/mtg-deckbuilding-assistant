@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+mode=${1:-current}
+case "$mode" in
+ current|historical) ;;
+ *) echo 'Usage: scripts/check-catalog.sh [current|historical]' >&2; exit 2 ;;
+esac
 "${PYTHON:-python3}" scripts/test-catalog-comparison.py
 out=generated/verification/catalog
 mkdir -p "$out"
@@ -20,4 +25,4 @@ done
 "$cli" audit coverage --snapshot "$out/judith-c.json" --json --output "$out/coverage.json"
 "$cli" audit inconsistencies --snapshot "$out/judith-c.json" --benchmark src/test/resources/regression/tokens.json --json --output "$out/examination.json"
 "$cli" audit diff --before "$out/judith-a.json" --after "$out/judith-a.json" --json --output "$out/diff-identical.json"
-"${PYTHON:-python3}" scripts/compare-baseline.py "$out" src/test/resources/regression/catalog-baseline.json
+"${PYTHON:-python3}" scripts/compare-baseline.py "$out" src/test/resources/regression/catalog-baseline.json --mode "$mode"
