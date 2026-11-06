@@ -64,13 +64,28 @@ class CatalogComparisonTest(unittest.TestCase):
                 write(name + "-benchmark.json", {"numerators": {"confirmed_mismatch_cases": 0}})
             write("diff-identical.json", {"changes": []})
             self.assertTrue(comparison.compare_reports(root, baseline, self.paths)["passed"])
+
+            def current_checks():
+                return comparison.compare_reports(root, baseline, self.paths, mode="current")
+
+            changed = copy.deepcopy(self.current)
+            changed["results"][0]["quantity"] = 2
+            write("b.json", changed)
+            self.assertFalse(comparison.compare_reports(root, baseline, self.paths)["passed"])
+            self.assertFalse(current_checks()["historicalFingerprintsMatch"])
+            self.assertTrue(current_checks()["passed"])
             write("b-benchmark.json", {"numerators": {"confirmed_mismatch_cases": 1}})
             self.assertFalse(comparison.compare_reports(root, baseline, self.paths)["passed"])
+            self.assertFalse(current_checks()["passed"])
             write("b-benchmark.json", {"numerators": {"confirmed_mismatch_cases": 0}})
             mixed = copy.deepcopy(self.current)
             mixed["argentumCommit"] = "another"
             write("b.json", mixed)
             self.assertFalse(comparison.compare_reports(root, baseline, self.paths)["passed"])
+            self.assertFalse(current_checks()["passed"])
+            write("b.json", self.current)
+            write("diff-identical.json", {"changes": ["unexpected change"]})
+            self.assertFalse(current_checks()["passed"])
 
 
 if __name__ == "__main__":

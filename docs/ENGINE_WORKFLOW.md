@@ -30,6 +30,8 @@ For explicit candidate validation only, set ARGENTUM_ENGINE_DIR to an absolute c
 4. Build the Explorer and run `pnpm test:ui` and `pnpm test:live` from `web` using the [browser verification procedure](EXPLORER.md). Live tests require the URL of the freshly built Kotlin service. Check `/api/v1/health` to confirm the application and engine SHAs before testing.
 5. For changes that may affect discovery, run the CLI's JSON discovery for Judith with each objective on both revisions. Compare the exact `mechanicalInputCards` lists before interpreting changes. Compare results, actions, facts, eligibility and assurance, separating SHA-bound source references and historical evidence from mechanical differences. Use `audit diff --before <report> --after <report> --json` for the report comparison. Record pass, fail and unexecuted checks.
 
+The current catalog gate requires one engine revision across its runs, zero confirmed mismatches in the retained benchmarks and an empty diff when a report is compared with itself. The summary separately reports equality with the frozen whole-report fingerprints. Those fingerprints describe an older implementation and remain available as a strict check for historical replay with `bash scripts/check-catalog.sh historical`.
+
 ## Evidence and history
 
 Generated engine-build.properties is packaged in the application. Reports and native source URLs use that actual SHA, including when a source checkout later moves. `mtg-assistant stats` reports the mode and implementation fingerprint; runtime does not require Git.
