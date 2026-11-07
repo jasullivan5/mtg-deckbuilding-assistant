@@ -7,6 +7,7 @@ import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.discovery.*
 import kotlinx.serialization.json.*
+import kotlinx.serialization.Serializable
 import java.net.InetSocketAddress
 import java.net.BindException
 import java.nio.file.Files
@@ -24,11 +25,12 @@ private fun applicationRevision(): String = Properties().run {
 }
 
 /** One shared catalog, one discovery worker and one retained run. No browser-supplied commands or files. */
-class ExplorerServer(
+internal class ExplorerServer(
     private val catalog: Catalog, port: Int = 8787, private val assets: Path? = null,
     private val revision: String = applicationRevision(), private val timeoutSeconds: Long = 120,
     private val images: CardImages = CardImages(assets?.toAbsolutePath()?.parent?.parent?.resolve("generated/explorer/image-metadata")),
-    private val discovery: (String, String) -> DiscoveryReport = { name, objective -> discover(catalog, name, objective = objective) }
+    private val discovery: (String, String) -> DiscoveryReport = { name, objective -> discover(catalog, name, objective = objective) },
+    private val lab: (LabScenario, String) -> LabResult = ::executeLab
 ) : AutoCloseable {
     companion object {
         init {
@@ -82,6 +84,10 @@ class ExplorerServer(
             "/api/v1/objectives" -> if (x.requestMethod == "GET") { x.json(200, objectives); return }
             "/api/v1/commander", "/api/v1/discover" -> { research(x, path.endsWith("discover")); return }
             "/api/v1/commander-view" -> { research(x, false, true); return }
+            "/api/v1/lab/scenarios" -> if (x.requestMethod == "GET") {
+                x.json(200, labListing()); return
+            }
+            "/api/v1/lab/execute" -> { executeScenario(x); return }
         }
         if (path.startsWith("/api/v1/runs/")) { evidence(x, path); return }
         if (path.startsWith("/api/")) { x.json(404, ApiError("NOT_FOUND", "Unknown API route or method.")); return }
@@ -89,50 +95,76 @@ class ExplorerServer(
     }
 
     private data class Response(val status: Int, val body: JsonElement)
-    private fun research(x: HttpExchange, discoveryRequested: Boolean, viewRequested: Boolean = false) {
-        if (x.requestMethod != "POST") { x.json(405, ApiError("METHOD_NOT_ALLOWED", "Use POST with JSON.")); return }
-        if (!x.requestHeaders.getFirst("Content-Type")?.substringBefore(';')?.trim().equals("application/json", true)) {
-            x.json(415, ApiError("CONTENT_TYPE", "Use application/json.")); return
+    @Serializable private data class LabRequest(val scenarioId: String)
+
+    private fun executeScenario(x: HttpExchange) {
+        val request = x.readRequest<LabRequest>("Supply only a curated scenario ID.") ?: return
+        val scenario = LabScenarios.all[request.scenarioId]
+        if (scenario == null) {
+            x.json(404, ApiError("SCENARIO_NOT_FOUND", "Choose a scenario from the Lab.")); return
         }
-        val bytes = x.requestBody.readNBytes(4097)
-        if (bytes.size > 4096) { x.json(413, ApiError("REQUEST_TOO_LARGE", "Request limit is 4096 bytes.")); return }
-        val request = try {
-            reportJson.decodeFromString<ResearchRequest>(bytes.toString(Charsets.UTF_8)).also {
-                require(it.commander.isNotBlank() && it.commander.length <= 200 && it.commander.none(Char::isISOControl))
-                require(if (discoveryRequested || viewRequested) objectives.any { o -> o.id == it.objective } else it.objective == null)
-            }
+        runResearch(x) { _, _ ->
+            Response(200, reportJson.encodeToJsonElement(lab(scenario, revision)))
+        }
+    }
+
+    private inline fun <reified T> HttpExchange.readRequest(message: String, validate: (T) -> Unit = {}): T? {
+        if (requestMethod != "POST") { json(405, ApiError("METHOD_NOT_ALLOWED", "Use POST with JSON.")); return null }
+        if (!requestHeaders.getFirst("Content-Type")?.substringBefore(';')?.trim().equals("application/json", true)) {
+            json(415, ApiError("CONTENT_TYPE", "Use application/json.")); return null
+        }
+        val bytes = requestBody.readNBytes(4097)
+        if (bytes.size > 4096) { json(413, ApiError("REQUEST_TOO_LARGE", "Request limit is 4096 bytes.")); return null }
+        return try {
+            reportJson.decodeFromString<T>(bytes.toString(Charsets.UTF_8)).also(validate)
         } catch (_: IllegalArgumentException) {
-            x.json(400, ApiError("INVALID_REQUEST", "Supply one exact commander name and, for discovery, an existing objective ID.")); return
+            json(400, ApiError("INVALID_REQUEST", message)); null
         }
+    }
+
+    private fun research(x: HttpExchange, discoveryRequested: Boolean, viewRequested: Boolean = false) {
+        val request = x.readRequest<ResearchRequest>("Supply one exact commander name and, for discovery, an existing objective ID.") {
+            require(it.commander.isNotBlank() && it.commander.length <= 200 && it.commander.none(Char::isISOControl))
+            require(if (discoveryRequested || viewRequested) objectives.any { o -> o.id == it.objective } else it.objective == null)
+        } ?: return
+        runResearch(x, discoveryRequested) { started, startedNanos ->
+            val inspected = inspectCommander(catalog, request.commander)
+            if (!discoveryRequested) Response(200, if (viewRequested) {
+                val image = catalog.card(request.commander)?.takeIf { inspected.selectable }?.let { images.resolve(listOf(0 to it)).single() }
+                reportJson.encodeToJsonElement(commanderView(catalog, request.commander, inspected, request.objective!!, image))
+            } else reportJson.encodeToJsonElement(inspected))
+            else if (!inspected.selectable) Response(422, reportJson.encodeToJsonElement(ApiError(
+                "COMMANDER_BLOCKED", "This commander cannot be selected in this catalog.", inspected)))
+            else {
+                val report = discovery(request.commander, request.objective!!)
+                val elapsed = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedNanos)
+                if (elapsed >= timeoutSeconds * 1000) Response(504, reportJson.encodeToJsonElement(timeoutError()))
+                else {
+                    val run = StoredRun(catalog, report, started, elapsed, revision)
+                    val body = reportJson.encodeToJsonElement(run.summary)
+                    if (System.nanoTime() - startedNanos >= TimeUnit.SECONDS.toNanos(timeoutSeconds))
+                        Response(504, reportJson.encodeToJsonElement(timeoutError()))
+                    else {
+                        // Publish before releasing the gate: newer requests cannot be overwritten by older handlers.
+                        latest = run
+                        Response(200, body)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun runResearch(x: HttpExchange, invalidateDiscovery: Boolean = false, work: (Instant, Long) -> Response) {
         if (!occupied.compareAndSet(false, true)) { x.json(409, ApiError("BUSY", "Research is still running. Wait before retrying.")); return }
-        if (discoveryRequested) latest = null
+        if (invalidateDiscovery) latest = null
         val started = Instant.now()
         val startedNanos = System.nanoTime()
         val future = worker.submit(Callable {
             try {
-                val inspected = inspectCommander(catalog, request.commander)
-                if (!discoveryRequested) Response(200, if (viewRequested) {
-                    val image = catalog.card(request.commander)?.takeIf { inspected.selectable }?.let { images.resolve(listOf(0 to it)).single() }
-                    reportJson.encodeToJsonElement(commanderView(catalog, request.commander, inspected, request.objective!!, image))
-                } else reportJson.encodeToJsonElement(inspected))
-                else if (!inspected.selectable) Response(422, reportJson.encodeToJsonElement(ApiError(
-                    "COMMANDER_BLOCKED", "This commander cannot be selected in this catalog.", inspected)))
-                else {
-                    val report = discovery(request.commander, request.objective!!)
-                    val elapsed = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedNanos)
-                    if (elapsed >= timeoutSeconds * 1000) Response(504, reportJson.encodeToJsonElement(timeoutError()))
-                    else {
-                        val run = StoredRun(catalog, report, started, elapsed, revision)
-                        val body = reportJson.encodeToJsonElement(run.summary)
-                        if (System.nanoTime() - startedNanos >= TimeUnit.SECONDS.toNanos(timeoutSeconds))
-                            Response(504, reportJson.encodeToJsonElement(timeoutError()))
-                        else {
-                            // Publish before releasing the gate: newer requests cannot be overwritten by older handlers.
-                            latest = run
-                            Response(200, body)
-                        }
-                    }
-                }
+                val response = work(started, startedNanos)
+                if (!invalidateDiscovery && System.nanoTime() - startedNanos >= TimeUnit.SECONDS.toNanos(timeoutSeconds))
+                    Response(504, reportJson.encodeToJsonElement(timeoutError()))
+                else response
             } finally { occupied.set(false) }
         })
         try {

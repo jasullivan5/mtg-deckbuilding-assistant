@@ -16,6 +16,8 @@ The command installs locked frontend dependencies, type-checks/builds the React 
 
 Stop with **Ctrl+C** in that terminal. No separate frontend server needs cleanup. An occupied port is reported before the build; choose `-Port 8788` if needed. The command rebuilds saved changes on launch; this launch does not provide hot reload. `pnpm dev` alone is a frontend source server, not the supported live application launch.
 
+Open **Mechanical Verification Lab** under **Research and learning**, or **Investigate execution** from a supported finding, to run a curated position in the local Argentum engine. See the [three guided investigations](MECHANICAL_VERIFICATION_LAB.md).
+
 Windows PowerShell 7/JDK 21 was executed. Other platforms are not claimed tested for the launch script.
 
 ## Try three inspections

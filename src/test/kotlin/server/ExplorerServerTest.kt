@@ -30,6 +30,45 @@ class ExplorerServerTest : FunSpec({
     fun post(server: ExplorerServer, route: String, name: String, objective: String? = null) = request(server, route,
         buildJsonObject { put("commander",name); objective?.let { put("objective",it) } }.toString())
 
+    test("Lab registry exposes verified printings and only allows curated fresh runs") {
+        ExplorerServer(catalog, 0, revision = "lab-http-test").use { server ->
+            server.start()
+            val listing = reportJson.decodeFromString<LabListing>(request(server, "lab/scenarios").body())
+            listing.scenarios.map { it.id }.toSet() shouldBe LabScenarios.all.keys
+            listing.images.values.map { it.status }.toSet() shouldBe setOf("VERIFIED")
+            request(server, "lab/execute", """{"scenarioId":"unknown"}""").statusCode() shouldBe 404
+            request(server, "lab/execute", """{"scenarioId":"mogg-pay","state":{}}""").statusCode() shouldBe 400
+            request(server, "lab/execute").statusCode() shouldBe 405
+            for (scenario in listing.scenarios) {
+                val response = request(server, "lab/execute", buildJsonObject { put("scenarioId", scenario.id) }.toString())
+                response.statusCode() shouldBe 200
+                val result = reportJson.decodeFromString<LabResult>(response.body())
+                result.scenarioId shouldBe scenario.id
+                result.execution shouldBe "FRESH_NATIVE"
+                result.comparison shouldBe "AGREES"
+                result.applicationRevision shouldBe "lab-http-test"
+            }
+        }
+    }
+
+    test("Lab timeouts and failures use the bounded research worker") {
+        val release = CountDownLatch(1)
+        ExplorerServer(catalog, 0, timeoutSeconds = 1, lab = { scenario, _ ->
+            if (scenario.info.id == "mogg-pay") release.await(10, TimeUnit.SECONDS)
+            error("deliberate test failure")
+        }).use { server ->
+            server.start()
+            try {
+                request(server, "lab/execute", """{"scenarioId":"mogg-pay"}""").statusCode() shouldBe 504
+                post(server, "commander", "Judith, the Scourge Diva").statusCode() shouldBe 409
+            } finally { release.countDown() }
+        }
+        ExplorerServer(catalog, 0, lab = { _, _ -> error("deliberate test failure") }).use { server ->
+            server.start()
+            request(server, "lab/execute", """{"scenarioId":"mogg-no-target"}""").statusCode() shouldBe 500
+        }
+    }
+
     test("inspection preserves exact eligibility, blockers and missing definition feedback") {
         ExplorerServer(catalog, 0).use { server ->
             server.start()

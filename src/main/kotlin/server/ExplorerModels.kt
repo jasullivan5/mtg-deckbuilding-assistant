@@ -52,7 +52,8 @@ val objectives = listOf(
     val translationAssurance: List<TranslationAssurance>, val explanations: List<PathwayExplanation>,
     val abilities: List<AbilityInspection> = emptyList(), val evidenceSummary: List<EvidenceIndicator> = emptyList(),
     val concerns: List<ResearchConcern> = emptyList(), val rules: List<RulesLine> = emptyList(),
-    val graveyardContributions: List<ArrivalInspection> = emptyList()
+    val graveyardContributions: List<ArrivalInspection> = emptyList(),
+    val labScenarioIds: List<String> = emptyList()
 )
 @Serializable data class CommanderView(
     val inspection: CommanderInspection, val authoredCard: AuthoredCardText?, val headline: String,
@@ -145,6 +146,6 @@ class StoredRun(
                 val fact = facts[name].orEmpty().firstOrNull { it.id == arrival.factId }
                 val row = results[name].orEmpty().firstOrNull { it.actionId == arrival.actionId && it.abilityPath == arrival.path }
                 inspectArrival(arrival, fact, row)
-            })
+            }, labScenariosFor(native))
     }
 }

@@ -11,6 +11,81 @@ const unexplainedLabel = '5 Insufficient evidence';
 const historicalDiagnosis = 'leaves land and creature overlap unresolved';
 const differentEngineDiagnosis = 'Inspect the current decision records. The retained diagnosis used a different engine revision.';
 
+test('Mechanical Verification Lab connects real discovery, cost payment and target rejection', async ({page}) => {
+  await page.goto('/');
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('stock-own-graveyard');
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  const name = page.getByRole('textbox', {name: 'Card name'});
+  await name.fill('Mogg Fanatic');
+  const inspector = page.getByRole('region', {name: 'Result inspection'});
+  await expect(inspector.getByRole('heading', {name: 'Mogg Fanatic'})).toBeVisible();
+  const investigate = inspector.getByRole('button', {name: 'Investigate execution'});
+  await investigate.focus();
+  await page.keyboard.press('Enter');
+  const lab = page.getByRole('region', {name: 'Mechanical Verification Lab', exact: true});
+  await expect(lab.getByText('From discovery', {exact: false})).toBeVisible();
+  const executed = page.waitForResponse(r => r.url().endsWith('/api/v1/lab/execute') && r.ok());
+  await lab.getByRole('button', {name: 'Run scenario'}).click();
+  const result = await (await executed).json();
+  expect(result.scenarioId).toBe('mogg-pay');
+  expect(result.execution).toBe('FRESH_NATIVE');
+  await expect(lab.getByText('Mogg Fanatic was sacrificed.', {exact: true})).toBeVisible();
+  await expect(lab.getByText('Source graveyard · Creature', {exact: false}).first()).toContainText('Opponent 20 life');
+  await expect(lab.getByText('Mogg Fanatic dealt 1 damage to the opponent.')).toBeVisible();
+  await expect(lab.getByText('Observed', {exact: true})).toHaveCount(2);
+  await lab.getByText('Exact revisions, object references, native actions, events and state').click();
+  await expect(lab.locator('.lab-technical')).toContainText(result.argentumCommit);
+  await expect(lab.locator('.lab-technical')).toContainText('ZoneChangeEvent');
+  await lab.getByText('Exact revisions, object references, native actions, events and state').click();
+  await mkdir('../generated/explorer/lab', {recursive: true});
+  await page.screenshot({path: '../generated/explorer/lab/desktop-mogg.png', fullPage: true});
+  await lab.getByRole('button', {name: 'Omit the required target'}).click();
+  await expect(lab.getByRole('heading', {name: 'What happened'})).toHaveCount(0);
+  await lab.getByRole('button', {name: 'Run scenario'}).click();
+  await expect(lab.getByText('Rejected by Argentum.', {exact: false})).toBeVisible();
+  await expect(lab.getByText('Did not occur', {exact: true})).toHaveCount(2);
+
+  await page.getByRole('button', {name: 'Back to discovery results'}).click();
+  await expect(inspector.getByRole('heading', {name: 'Mogg Fanatic'})).toBeVisible();
+  await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption(objective);
+  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
+  await name.fill('Spark Elemental');
+  await expect(inspector.getByRole('heading', {name: 'Spark Elemental'})).toBeVisible();
+  await inspector.getByRole('button', {name: 'Investigate execution'}).click();
+  await expect(lab.getByRole('button', {name: 'Spark Elemental', exact: true})).toHaveAttribute('aria-pressed', 'true');
+  await expect(lab.getByRole('heading', {name: 'What happened'})).toHaveCount(0);
+});
+
+test('Mechanical Verification Lab shows the deceptive land and both Spark outcomes at 390 pixels', async ({page}) => {
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto('/');
+  await page.getByRole('button', {name: 'Mechanical Verification Lab', exact: true}).click();
+  const lab = page.getByRole('region', {name: 'Mechanical Verification Lab', exact: true});
+  await lab.getByRole('button', {name: 'Evolving Wilds', exact: true}).focus();
+  await page.keyboard.press('Enter');
+  const run = lab.getByRole('button', {name: 'Run scenario'});
+  await run.focus();
+  await page.keyboard.press('Enter');
+  await expect(lab.getByText('Observed outcome agrees with the rules expectation')).toBeVisible();
+  await expect(lab.getByText('Observed', {exact: true})).toHaveCount(1);
+  await expect(lab.getByText('Did not occur', {exact: true})).toHaveCount(1);
+  await expect(lab.getByText('graveyard · Land', {exact: true})).toBeVisible();
+  await expect(lab.getByText('the basic land search still on the stack', {exact: false})).toBeVisible();
+  await mkdir('../generated/explorer/lab', {recursive: true});
+  await page.screenshot({path: '../generated/explorer/lab/mobile-wilds-390.png', fullPage: true});
+  await lab.getByRole('button', {name: 'Spark Elemental', exact: true}).click();
+  await run.click();
+  await expect(lab.getByText('Spark Elemental was sacrificed.', {exact: true})).toBeVisible();
+  await lab.getByRole('button', {name: 'Blink in response to the trigger'}).click();
+  await run.click();
+  await expect(lab.getByText('The permanent that returned is a new game object.', {exact: false})).toBeVisible();
+  await expect(lab.getByText('battlefield · Creature — Elemental', {exact: true})).toHaveCount(2);
+  await expect(lab.getByText('Spark Elemental was sacrificed.', {exact: true})).toHaveCount(0);
+  await lab.getByText('Exact revisions, object references, native actions, events and state').click();
+  await expect(lab.locator('.lab-technical')).toContainText('"generation"');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+});
+
 test('independent graveyard discovery finds mill discard and sacrifice through Kotlin', async ({page}) => {
   const searches: string[] = [];
   page.on('request', request => {
