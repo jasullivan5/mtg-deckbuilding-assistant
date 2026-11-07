@@ -315,6 +315,7 @@ button.rules-line:hover { background: #273c41; }
 .lab-timeline { padding-left: 28px; }
 .lab-timeline li { padding: 8px 4px; border-bottom: 1px solid #41575c; }
 .lab-timeline p { margin: 2px 0; }
+.lab-timeline small { display: block; }
 .lab-technical pre, .lab-limits pre { max-width: 100%; max-height: 24rem; overflow: auto; }
 @media (max-width: 550px) {
   .lab-intro, .lab-checkpoints, .lab-observations { grid-template-columns: minmax(0, 1fr); }
