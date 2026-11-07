@@ -7,16 +7,19 @@ import {CommanderPanel} from './CommanderPanel';
 import {DiscoveryCoverage} from './DiscoveryCoverage';
 import {ObjectiveScope} from './ObjectiveScope';
 import {evidenceTerms} from './evidenceTerms';
+import type {LabContext} from './VerificationLab';
 import './style.css';
 
 const ContributionValidation = lazy(() => import('./ContributionValidation'));
 const IntegrationPrimer = lazy(() => import('./IntegrationPrimer'));
 const IntegrationChange = lazy(() => import('./IntegrationChange'));
+const VerificationLab = lazy(() => import('./VerificationLab'));
 
 const judith = 'Judith, the Scourge Diva';
 const creatureDeaths = 'own-nontoken-creature-deaths';
 
 const destinations = [
+  {id: 'lab', label: 'Mechanical Verification Lab', purpose: 'Run curated Magic interactions in Argentum, including cases that discovery may leave out.'},
   {id: 'primer', label: 'How Card Integration Works', purpose: 'Learn how card mechanics become research evidence.'},
   {id: 'coverage', label: 'Discovery Coverage', purpose: 'Investigate recognized, omitted, unresolved and excluded relationships in a live Judith run.'},
   {id: 'case', label: 'Integration Change Case Study', purpose: 'Inspect a controlled historical discovery correction.'},
@@ -52,6 +55,7 @@ export function App() {
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
   const [activeResearch, setActiveResearch] = useState<ResearchView>();
+  const [labContext, setLabContext] = useState<LabContext>();
   const [visited, setVisited] = useState<ResearchView[]>([]);
   const [agentCoverageVisits, setAgentCoverageVisits] = useState(0);
   const coverageReady = run?.commander === judith && run.objective === creatureDeaths;
@@ -114,6 +118,7 @@ export function App() {
   }, [runId, visibleIds]);
 
   function changed() {
+    setLabContext(undefined);
     setAgentCoverageVisits(0);
     setCommanderOpen(false); setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
@@ -139,11 +144,13 @@ export function App() {
   }, [activeResearch]);
 
   function openResearch(view: ResearchView) {
+    setLabContext(undefined);
     setVisited(previous => previous.includes(view) ? previous : [...previous, view]);
     setActiveResearch(view);
   }
 
   function returnToDiscovery() {
+    setLabContext(undefined);
     setActiveResearch(undefined);
     requestAnimationFrame(() => {
       (run ? detailRef.current : findRef.current)?.focus();
@@ -164,7 +171,7 @@ export function App() {
 
   const selectedObjective = objectives.find(item => item.id === objective);
   const runObjective = objectives.find(item => item.id === run?.objective);
-  const shownDetail = detail?.card === selectedCard?.card ? detail : null;
+  const shownDetail = detail?.runId === runId && detail?.card === selectedCard?.card ? detail : null;
   const imageFor = (index: number) => images[`${runId}:${index}`];
   const mechanics = [...new Set(run?.cards.flatMap(c => c.mechanics ?? []) ?? [])].sort();
 
@@ -253,6 +260,14 @@ export function App() {
             {detailError && <p role="alert" className="warning">{detailError}</p>}
             {shownDetail && <CardInspection key={`${shownDetail.card}-${category === 'GRAVEYARD'}`} evidence={shownDetail}
               image={imageFor(selected!)} revision={run.applicationRevision} preferGraveyard={category === 'GRAVEYARD'}/>}
+            {!!shownDetail?.labScenarioIds?.length && selectedCard && <div className="actions lab-invite">
+              <button onClick={() => {
+                openResearch('lab');
+                setLabContext({run, card: shownDetail.card, scenarioId: shownDetail.labScenarioIds![0],
+                  objectiveLabel: runObjective?.label ?? run.objective, finding: selectedCard.reason});
+              }}>Investigate execution</button>
+              <span className="hint">Run a curated position with {shownDetail.card}.</span>
+            </div>}
 
           </section>
         </div>
@@ -271,7 +286,7 @@ export function App() {
         </details>
       </>}
       </div>
-      <nav id="research-and-learning" className="research-destinations" aria-label="Research and learning" tabIndex={-1}>
+      <nav hidden={activeResearch === 'lab'} id="research-and-learning" className="research-destinations" aria-label="Research and learning" tabIndex={-1}>
         <h2>Research and learning</h2>
         <ul>{destinations.map(({id, label, purpose}) => {
           const isOpen = activeResearch === id;
@@ -293,6 +308,9 @@ export function App() {
           {error && <p role="alert" className="warning">{error}</p>}
         </div>
       </section>}
+      {activeResearch === 'lab' && <Suspense fallback={<p role="status">Loading the Lab…</p>}>
+        <VerificationLab key={labContext?.run.runId ?? 'curated'} context={labContext}/>
+      </Suspense>}
       {visited.includes('primer') && <div hidden={activeResearch !== 'primer'}>
         <Suspense fallback={<p role="status">Loading primer…</p>}>
           <IntegrationPrimer busy={!!busy || !objectives.length} openCoverage={() => void openAgentCoverage()}

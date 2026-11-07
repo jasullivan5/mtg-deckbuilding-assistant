@@ -30,6 +30,7 @@ export type ArrivalInspection = {
   stateCriterion: string; mechanism: string | null; prerequisites: string[]; sources: string[];
 };
 export type Evidence = {
+  labScenarioIds?: string[];
   runId: string; card: string; authoredCard: {manaCost: string; typeLine: string; text: string} | null;
   results: Row[]; actions: RecordData[]; facts: RecordData[]; unsupported: {reason: string; actionId: string; path: string; nativeType: string}[];
   structuralSupport: RecordData[]; eligibility: RecordData[]; translationAssurance: RecordData[];

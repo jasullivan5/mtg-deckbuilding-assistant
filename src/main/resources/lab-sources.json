@@ -1,0 +1,170 @@
+{
+  "reviewedOn": "2026-11-06",
+  "rulesUrl": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+  "rulesSha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+  "cards": [
+    {
+      "card": {
+        "name": "Mogg Fanatic",
+        "id": "ca2ecfd4-c874-4468-8601-87aa110d5a00",
+        "oracle_id": "7efd5d62-6da2-428a-98e3-5b842f668656",
+        "lang": "en",
+        "set": "tmp",
+        "collector_number": "190",
+        "layout": "normal",
+        "type_line": "Creature — Goblin",
+        "mana_cost": "{R}",
+        "oracle_text": "Sacrifice this creature: It deals 1 damage to any target.",
+        "artist": "Brom",
+        "scryfall_uri": "https://scryfall.com/card/tmp/190/mogg-fanatic?utm_source=api",
+        "image_uris": {
+          "normal": "https://cards.scryfall.io/normal/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627"
+        }
+      },
+      "snapshotSha256": "636b40a38623728286d428f3f415201cc5fdcb5458bc3783baf6be6c501a0410",
+      "rulingsSha256": "0b01732c60ae122d3104a4b7c652628b7d0f6e6ae0045a631484e16678b705f1",
+      "rulings": [
+        {
+          "source": "wotc",
+          "published_at": "2016-06-08",
+          "comment": "Once Mogg Fanatic has dealt and been dealt combat damage, it’s too late to activate its ability before it’s destroyed."
+        }
+      ]
+    },
+    {
+      "card": {
+        "name": "Evolving Wilds",
+        "id": "bc7e0407-fea1-43ef-8580-82271e440bb3",
+        "oracle_id": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+        "lang": "en",
+        "set": "roe",
+        "collector_number": "228",
+        "layout": "normal",
+        "type_line": "Land",
+        "mana_cost": "",
+        "oracle_text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+        "artist": "Steven Belledin",
+        "scryfall_uri": "https://scryfall.com/card/roe/228/evolving-wilds?utm_source=api",
+        "image_uris": {
+          "normal": "https://cards.scryfall.io/normal/front/b/c/bc7e0407-fea1-43ef-8580-82271e440bb3.jpg?1783941954"
+        }
+      },
+      "snapshotSha256": "0cd11b0a987413b3825409cdfe4d25353d6d6a98cbbd2503445ac5478665db8b",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "rulings": []
+    },
+    {
+      "card": {
+        "name": "Spark Elemental",
+        "id": "b9c8bcb2-8247-4d91-baf6-b08de1eb9cde",
+        "oracle_id": "50608b7e-b6b2-40ca-91ec-db3e03dbb1af",
+        "lang": "en",
+        "set": "5dn",
+        "collector_number": "79",
+        "layout": "normal",
+        "type_line": "Creature — Elemental",
+        "mana_cost": "{R}",
+        "oracle_text": "Trample, haste (This creature can deal excess combat damage to the player or planeswalker it's attacking. This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice this creature.",
+        "artist": "John Avon",
+        "scryfall_uri": "https://scryfall.com/card/5dn/79/spark-elemental?utm_source=api",
+        "image_uris": {
+          "normal": "https://cards.scryfall.io/normal/front/b/9/b9c8bcb2-8247-4d91-baf6-b08de1eb9cde.jpg?1783944392"
+        }
+      },
+      "snapshotSha256": "b6ab7826217a311f90c3e5ab814db64113aa0a90dac28de2ec15406d84f1cb9d",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "rulings": []
+    },
+    {
+      "card": {
+        "name": "Momentary Blink",
+        "id": "032e072a-0630-472b-9106-5df554dff785",
+        "oracle_id": "a3ec6b5d-08ec-4ae0-b1db-c4b87a1849c7",
+        "lang": "en",
+        "set": "tsp",
+        "collector_number": "29",
+        "layout": "normal",
+        "type_line": "Instant",
+        "mana_cost": "{1}{W}",
+        "oracle_text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+        "artist": "Anthony S. Waters",
+        "scryfall_uri": "https://scryfall.com/card/tsp/29/momentary-blink?utm_source=api",
+        "image_uris": {
+          "normal": "https://cards.scryfall.io/normal/front/0/3/032e072a-0630-472b-9106-5df554dff785.jpg?1783943252"
+        }
+      },
+      "snapshotSha256": "209c77fbc003f6246bf1e195332c77f40d3e43261112984298a3f640fcfb6a3a",
+      "rulingsSha256": "47e2445ce530693d916c17caa91821f971009fc768c4910386efb867bb436884",
+      "rulings": [
+        {
+          "source": "wotc",
+          "published_at": "2022-12-08",
+          "comment": "When the card returns to the battlefield, it will be a new object with no connection to the card that was exiled. Auras attached to the exiled creature will be put into their owners' graveyards. Any Equipment will become unattached and remain on the battlefield. Any counters on the exiled creature will cease to exist."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2022-12-08",
+          "comment": "If a token is exiled this way, it will cease to exist and won't return to the battlefield."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "\"Flashback [cost]\" means \"You may cast this card from your graveyard by paying [cost] rather than paying its mana cost\" and \"If the flashback cost was paid, exile this card instead of putting it anywhere else any time it would leave the stack.\""
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "You must still follow any timing restrictions and permissions, including those based on the card's type. For instance, you can cast a sorcery using flashback only when you could normally cast a sorcery."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "To determine the total cost of a spell, start with the mana cost or alternative cost (such as a flashback cost) you're paying, add any cost increases, then apply any cost reductions. The mana value of the spell is determined only by its mana cost, no matter what the total cost to cast the spell was."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "A spell cast using flashback will always be exiled afterward, whether it resolves, is countered, or leaves the stack in some other way."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "You can cast a spell using flashback even if it was somehow put into your graveyard without having been cast."
+        },
+        {
+          "source": "wotc",
+          "published_at": "2021-03-19",
+          "comment": "If a card with flashback is put into your graveyard during your turn, you can cast it if it's legal to do so before any other player can take any actions."
+        }
+      ]
+    },
+    {
+      "card": {
+        "name": "Lifespark Spellbomb",
+        "id": "0adde668-67af-4a08-a36a-2a49893ab20d",
+        "oracle_id": "3f351696-1402-4b69-b924-f0ba14320287",
+        "lang": "en",
+        "set": "mrd",
+        "collector_number": "197",
+        "layout": "normal",
+        "type_line": "Artifact",
+        "mana_cost": "{1}",
+        "oracle_text": "{G}, Sacrifice this artifact: Until end of turn, target land becomes a 3/3 creature that's still a land.\n{1}, Sacrifice this artifact: Draw a card.",
+        "artist": "Jim Nelson",
+        "scryfall_uri": "https://scryfall.com/card/mrd/197/lifespark-spellbomb?utm_source=api",
+        "image_uris": {
+          "normal": "https://cards.scryfall.io/normal/front/0/a/0adde668-67af-4a08-a36a-2a49893ab20d.jpg?1783944515"
+        }
+      },
+      "snapshotSha256": "b17cbfa92a7cfca86fbc92bb8bb579aa42a790f17cd6b81a4aaaa2ac7dfba924",
+      "rulingsSha256": "af19da4eb71efec7a9e6b933d045e8110db1af108641e9842eef41aa44ff5f0a",
+      "rulings": [
+        {
+          "source": "wotc",
+          "published_at": "2008-08-01",
+          "comment": "A noncreature permanent that turns into a creature can attack, and its {T} abilities can be activated, only if its controller has continuously controlled that permanent since the beginning of their most recent turn. It doesn’t matter how long the permanent has been a creature."
+        }
+      ]
+    }
+  ]
+}
