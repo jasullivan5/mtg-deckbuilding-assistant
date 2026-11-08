@@ -39,7 +39,8 @@ val coverageObjectives = listOf("own-nontoken-creature-deaths","reanimate-own-cr
     val counts: Map<String,Int>, val poolExclusions: Map<String,Int>, val records: List<CoverageCard>,
     val unresolvedPoolRecords: List<PoolIssue>, val nativeWithoutExternalMatch: List<NativeIdentity>,
     val timingsMillis: Map<String,Long>, val enrichment: EnrichmentContext? = null, val eligibilityCorrections: List<CorrectionEligibilityImpact> = emptyList(),
-    val correctionValidationMillis: Long = 0, val limitations: List<String> = listOf(
+    val correctionValidationMillis: Long = 0, val scope: String = "COMMANDER_IDENTITY",
+    val populationPolicy: String = "physical-format-population-v1", val limitations: List<String> = listOf(
         "Snapshot legality/identity and pinned native eligibility are distinct sources; original disagreement remains visible; only explicitly reviewed corrections affect effective native eligibility.",
         "Native availability is authored coverage, not independent verification of all card behavior.",
         "Missing or uncertain associations are not mechanical NO_MATCH. Confident associations may attach existing native evaluations even when metadata disagrees; only explicitly reviewed corrections can change native eligibility.",
@@ -97,13 +98,14 @@ class NativeIndex(val cards: List<NativeIdentity>, snapshot: OracleSnapshot? = n
     }
 }
 
-fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: String,
+fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: String?,
     objectives: List<String> = emptyList(), ledger: TranslationLedger? = null, catalogLoadMillis: Long = 0): CatalogCoverageReport {
     require(objectives.distinct().size==objectives.size && objectives.all { it in coverageObjectives }) { "Unsupported/duplicate objective" }
-    val commander = resolveCommander(catalog,commanderName)
+    require(commanderName != null || objectives.isEmpty()) { "Global availability does not run commander-specific objectives" }
+    val commander = commanderName?.let { resolveCommander(catalog,it) }
     val resolver=catalog.eligibility
-    resolver.requireSource(snapshot.manifest.sha256,listOf(commander.name))
-    val allowed = (resolver.resolve(commander).colors + identityRestrictions(commander)).map { it.symbol.toString() }.toSet()
+    if (commander != null) resolver.requireSource(snapshot.manifest.sha256,listOf(commander.name))
+    val allowed = commander?.let { (resolver.resolve(it).colors + identityRestrictions(it)).map { c -> c.symbol.toString() }.toSet() }
     if(ledger!=null) {
         require(ledger.snapshotSha256==snapshot.manifest.sha256) { "Translation ledger snapshot mismatch" }
         require(ledger.cards.map { it.oracleId }.distinct().size==ledger.cards.size && ledger.cards.all { oracleId(it.oracleId)!=null }) { "Translation ledger identity collision/invalid ID" }
@@ -129,7 +131,7 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     }
     val matchingMillis = (System.nanoTime()-started)/1_000_000
     val evaluationStart = System.nanoTime()
-    val reports = objectives.associateWith { discover(catalog,commanderName,objective=it) }
+    val reports = objectives.associateWith { discover(catalog,requireNotNull(commanderName),objective=it) }
     // Group once, rather than rescanning the entire discovery report for every external card.
     val evaluations = reports.mapValues { (_,report) ->
         val results=report.results.groupBy { it.card }; val unsupported=report.unsupported.groupBy { it.card }
@@ -181,16 +183,20 @@ fun catalogCoverage(catalog: Catalog, snapshot: OracleSnapshot, commanderName: S
     CatalogStatus.entries.forEach { status -> counts[status.name.lowercase(Locale.ROOT)] = records.count { it.status==status } }
     check(CatalogStatus.entries.sumOf { counts.getValue(it.name.lowercase(Locale.ROOT)) }==records.size)
     check(records.size+counts.getValue("excluded_records")+unresolved.size==snapshot.cards.size)
-    return CatalogCoverageReport(snapshot=snapshot.manifest,commander=commanderName,allowedIdentity=allowed.sorted(),counts=counts,
+    if (commanderName == null) {
+        for (legality in listOf("legal","banned","not_legal","restricted")) counts["source_${legality}_records"] = snapshot.cards.count { it.legalities["commander"] == legality }
+        counts["source_unknown_legality_records"] = snapshot.cards.count { it.legalities["commander"] !in setOf("legal","banned","not_legal","restricted") }
+    }
+    return CatalogCoverageReport(snapshot=snapshot.manifest,commander=commanderName ?: "All Commander-legal cards",allowedIdentity=allowed?.sorted().orEmpty(),counts=counts,
         poolExclusions=exclusions,records=records,unresolvedPoolRecords=unresolved,
         nativeWithoutExternalMatch=index.enrichment!!.assignments.filter { it.confidence!=IdentityConfidence.CONFIDENT }.map { it.native },
         enrichment=index.enrichment!!.context,
-        eligibilityCorrections=resolver.reviewed().map { effective ->
+        eligibilityCorrections=if (commanderName == null) emptyList() else resolver.reviewed().map { effective ->
             val card=nativeCards.getValue(effective.nativeName)
-            val colors=allowed.map { symbol -> com.wingedsheep.sdk.core.Color.entries.single { it.symbol.toString()==symbol } }.toSet()
+            val colors=requireNotNull(allowed).map { symbol -> com.wingedsheep.sdk.core.Color.entries.single { it.symbol.toString()==symbol } }.toSet()
             CorrectionEligibilityImpact(effective,commanderFormatLegality(card),selectedCommanderEligibility(card,colors),
                 effective.commanderLegality,selectedCommanderEligibility(card,colors,effective))
-        },correctionValidationMillis=resolver.validationMillis,
+        },correctionValidationMillis=resolver.validationMillis, scope=if(commanderName == null) "ALL_COMMANDER_LEGAL" else "COMMANDER_IDENTITY",
         timingsMillis=mapOf("snapshotLoadAndHash" to snapshot.loadMillis,"catalogLoad" to catalogLoadMillis,
             "poolAndMapping" to matchingMillis,"objectiveEvaluation" to (System.nanoTime()-evaluationStart)/1_000_000))
 }
@@ -202,12 +208,13 @@ fun catalogCoverageCommand(args: List<String>, catalog: () -> Catalog, out: (Str
     val options=linkedMapOf<String,String>(); var json=false; var i=1
     while(i<args.size) {
         val key=args[i++]
-        if(key=="--json") { require(!json) { "Duplicate --json" }; json=true }
+        if(key=="--global") { require(key !in options) { "Duplicate --global" }; options[key]="true" }
+        else if(key=="--json") { require(!json) { "Duplicate --json" }; json=true }
         else { require(key.startsWith("--") && i<args.size && !args[i].startsWith("--") && key !in options) { "Missing/duplicate option: $key" }; options[key]=args[i++] }
     }
     fun required(key: String)=requireNotNull(options[key]) { "$key required" }
     val inventory=args.first()=="catalog-missing"
-    val allowed=if(inventory) setOf("--report","--limit","--offset","--name","--status","--output") else setOf("--commander","--oracle-cards","--manifest","--objective","--translation-review","--output","--enrichment-output")
+    val allowed=if(inventory) setOf("--report","--limit","--offset","--name","--status","--output") else setOf("--global","--commander","--oracle-cards","--manifest","--objective","--translation-review","--output","--enrichment-output")
     require(options.keys.all { it in allowed }) { "Unknown coverage option: ${options.keys-allowed}" }
     val text = if(inventory) {
         val report=snapshotJson.decodeFromString<CatalogCoverageReport>(Files.readString(Path.of(required("--report"))))
@@ -224,7 +231,8 @@ fun catalogCoverageCommand(args: List<String>, catalog: () -> Catalog, out: (Str
         val objectives=options["--objective"]?.let { if(it=="all") coverageObjectives else listOf(it) }.orEmpty()
         val ledger=options["--translation-review"]?.let { snapshotJson.decodeFromString<TranslationLedger>(Files.readString(Path.of(it))) }
         val start=System.nanoTime();val data=catalog();val elapsed=(System.nanoTime()-start)/1_000_000
-        val report=catalogCoverage(data,snapshot,required("--commander"),objectives,ledger,elapsed)
+        require(("--global" in options) != ("--commander" in options)) { "Supply exactly one of --global or --commander" }
+        val report=catalogCoverage(data,snapshot,if("--global" in options) null else required("--commander"),objectives,ledger,elapsed)
         options["--enrichment-output"]?.let { destination ->
             val artifact=OracleEnrichment(physicalCards(data.cards).map { nativeIdentity(it,data.provenance(it.name).origin) },snapshot).artifact()
             val output=Path.of(destination).toAbsolutePath();Files.createDirectories(output.parent)

@@ -52,6 +52,9 @@ val applicationDirty = applicationStatus.inputStream.bufferedReader().readText()
 check(applicationStatus.waitFor() == 0) { "Cannot record application source state" }
 val applicationRevision = applicationCommit + if (applicationDirty) "+dirty" else ""
 val recordEngineBuild by tasks.registering {
+    val fidelitySource = file("src/main/kotlin/server/FidelityPilot.kt").readText().replace("\r\n", "\n")
+    val fidelityHash = MessageDigest.getInstance("SHA-256").digest(fidelitySource.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
+    inputs.property("fidelityHarness", fidelityHash)
     inputs.property("engineRevision", engineRevision)
     inputs.property("engineImplementationSha256", engineImplementationSha256)
     inputs.property("applicationRevision", applicationRevision)
@@ -63,6 +66,7 @@ val recordEngineBuild by tasks.registering {
         output.parentFile.mkdirs()
         output.writeText("revision=$engineRevision\nimplementationSha256=$engineImplementationSha256\nmode=${inputs.properties["mode"]}\n")
         output.resolveSibling("application-build.properties").writeText("revision=$applicationRevision\n")
+        output.resolveSibling("fidelity-harness.properties").writeText("sha256=$fidelityHash\n")
     }
 }
 sourceSets.main { resources.srcDir(generatedEngineResources) }
@@ -70,7 +74,7 @@ tasks.processResources {
     dependsOn(recordEngineBuild)
     // Existing review sources travel with installed builds; presentation checks their recorded hashes.
     from("src/test/resources") {
-        include("cards/*-source.json", "cards/*-rulings.json")
+        include("cards/*-source.json", "cards/*-rulings.json", "fidelity/source-sacrifice/*.json")
         into("retained-evidence")
     }
 }

@@ -14,6 +14,8 @@ Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script buil
 
 **Discover** searches the four existing objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
 
+Progress now separates global **Cards**, bounded **Commander selection**, and **Objective search reach**, and includes the reusable source-bound sacrifice pilot. See [global coverage, exact scopes, baseline CLI and guided investigations](docs/GLOBAL_COMMANDER_COVERAGE.md). A compatible explicit source snapshot is required for global external measurements.
+
 ## Two sibling repositories
 
 ```text

@@ -79,6 +79,12 @@ internal class ExplorerServer(
         }
         val path = x.requestURI.path
         when (path) {
+            "/api/v1/progress/global-baseline" -> if (x.requestMethod == "GET") {
+                val source = javaClass.getResourceAsStream("/global-commander-baseline.json.gz")
+                if(source == null) x.json(404,ApiError("BASELINE_UNAVAILABLE","No global baseline is packaged; no trend can be inferred."))
+                else java.util.zip.GZIPInputStream(source).bufferedReader(Charsets.UTF_8).use { x.json(200,reportJson.parseToJsonElement(it.readText())) }
+                return
+            }
             "/api/v1/health" -> if (x.requestMethod == "GET") {
                 x.json(200, mapOf("status" to "ready", "argentumCommit" to EngineBuild.revision,
                     "engineMode" to EngineBuild.mode, "applicationRevision" to revision)); return
@@ -90,8 +96,12 @@ internal class ExplorerServer(
                 else x.json(200, reportJson.parseToJsonElement(source.readText()))
                 return
             }
-            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
+            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
                 runResearch(x) { _, _ -> Response(200, when (path) {
+                    "/api/v1/progress/global" -> progress.globalRecords?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
+                    "/api/v1/progress/commanders" -> progress.commanders?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
+                    "/api/v1/progress/objectives" -> reportJson.encodeToJsonElement(progress.objectiveInventory)
+                    "/api/v1/progress/pilot" -> reportJson.encodeToJsonElement(progress.pilot)
                     "/api/v1/progress/instructions" -> reportJson.encodeToJsonElement(progress.instructionRecords)
                     "/api/v1/progress/facts" -> reportJson.encodeToJsonElement(progress.factRecords)
                     "/api/v1/progress/mechanics" -> reportJson.encodeToJsonElement(progress.nativeCoverage)

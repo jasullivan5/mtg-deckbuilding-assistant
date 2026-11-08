@@ -40,7 +40,7 @@ internal object SacrificePilot {
     val requirements by lazy { reader.parseToJsonElement(requirementsText).jsonObject }
     val scopes by lazy { reader.decodeFromJsonElement<List<PilotScope>>(requirements.getValue("scopes")) }
     val requirementsHash get() = evidenceTextDigest(requirementsText)
-    val harnessHash: String by lazy { Properties().apply { javaClass.getResourceAsStream("/fidelity-harness.properties")!!.use(::load) }.getProperty("sha256") }
+    val harnessHash: String by lazy { Properties().apply { SacrificePilot::class.java.getResourceAsStream("/fidelity-harness.properties")!!.use(::load) }.getProperty("sha256") }
 
     fun review(catalog: Catalog, scope: PilotScope): PilotReview {
         val card = catalog.card(scope.card)
@@ -66,7 +66,7 @@ internal object SacrificePilot {
         check("COST_OR_RESOLUTION_ROLE",f?.let { it.costOrEffect == if(scope.role == "COST") "ACTIVATION_COST" else "EFFECT" },"Expected ${scope.role}; observed ${f?.costOrEffect}")
         check("ARRIVING_CARD_CHARACTERISTICS",f?.cardEntry?.sourceCreatureAtArrival?.let { it == if(scope.creatureAtArrival) Verdict.MATCH else Verdict.NO_MATCH },"Creature at arrival expected ${scope.creatureAtArrival}; departure animation is separate")
         check("TARGET_DECLARATION",action?.let { ((it["targetRequirements"] as? JsonArray).orEmpty().isNotEmpty() || it["targetRequirement"] != null) == scope.targetRequired },"Source-derived target requirement ${scope.targetRequired}; declaration only, not every legal target")
-        check("TAP_REQUIREMENT",action?.let { declaredType(it["cost"],"Tap") == scope.tapRequired },"Source-derived tap requirement ${scope.tapRequired}")
+        check("TAP_REQUIREMENT",action?.let { declaredType(it["cost"],"CostTap") == scope.tapRequired },"Source-derived tap requirement ${scope.tapRequired}; native SDK CostTap discriminator")
         check("TRIGGER_TIMING",action?.let { if(scope.role == "COST") it["trigger"] == null else {
             val trigger=it["trigger"] as? JsonObject
             trigger?.get("type")?.jsonPrimitive?.contentOrNull == "StepEvent" && trigger["step"]?.jsonPrimitive?.contentOrNull?.uppercase() == "END"
@@ -83,6 +83,9 @@ internal object SacrificePilot {
         val counts = linkedMapOf("reviewed_ability_scopes" to reviews.size,"shared_requirement_definitions" to reviews.flatMap { it.checks }.map { it.requirement }.distinct().size,
             "reusable_native_check_applications" to reviews.sumOf { it.checks.count { c -> c.requirement != "OBJECT_GENERATION_IN_EXECUTION" } },
             "held_out_scopes" to reviews.count { it.scope.heldOut },"source_specific_expectation_records" to scopes.size,
+            "held_out_native_checks_supported" to reviews.count { it.scope.heldOut && it.checks.filter { c -> c.requirement != "OBJECT_GENERATION_IN_EXECUTION" }.all { c -> c.state == "SUPPORTED" } },
+            "ordinary_execution_patterns" to scopes.map { it.role }.distinct().size,
+            "existing_curated_positions_reused" to LabScenarios.all.size,
             "card_specific_acceptance_rules" to 0)
         for(state in listOf("SUPPORTED","CONTRADICTED","UNRESOLVED","UNTESTED")) counts[state.lowercase()] = reviews.sumOf { it.checks.count { c -> c.state == state } }
         counts["current_execution_scenarios"] = if(current) receipt!!.scenarios.count { it.state != "NOT_STARTED" } else 0

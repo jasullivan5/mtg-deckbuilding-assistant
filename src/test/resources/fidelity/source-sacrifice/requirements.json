@@ -89,79 +89,87 @@
     {
       "card": "Mogg Fanatic",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/tmp-190.json",
-      "sourceSha256": "4506eb914a7709f3e2b960b27c1d00386cd9091b6ec4f270a25272ea125a1731",
+      "sourceSha256": "1a6ade7d0a1de2fc90ab9aa94ba786a97fe6b34d0a1cc3f63efbb26eac28e69b",
       "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
       "printingId": "ca2ecfd4-c874-4468-8601-87aa110d5a00",
       "role": "COST",
       "targetRequired": true,
       "tapRequired": false,
       "creatureAtArrival": true,
-      "heldOut": false
+      "heldOut": false,
+      "rawCaptureSha256": "4506eb914a7709f3e2b960b27c1d00386cd9091b6ec4f270a25272ea125a1731"
     },
     {
       "card": "Seal of Fire",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/nem-98.json",
-      "sourceSha256": "d6ead007dadc7c82cbee11e5ef575144434e93bd025ba8a79920400267edd2b0",
+      "sourceSha256": "dd1bcfb32acb87e27e71389b0ca975588ee6ec13a13886f8d4f7746bc9b0c72a",
       "oracleId": "348a345e-4639-41ca-b015-a5d43459eb64",
       "printingId": "37eaf1f6-4bdc-4669-9a15-50b65e016ccf",
       "role": "COST",
       "targetRequired": true,
       "tapRequired": false,
       "creatureAtArrival": false,
-      "heldOut": false
+      "heldOut": false,
+      "rawCaptureSha256": "d6ead007dadc7c82cbee11e5ef575144434e93bd025ba8a79920400267edd2b0"
     },
     {
       "card": "Evolving Wilds",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/roe-228.json",
-      "sourceSha256": "be17fa0e65d8bee8a7782cfe8031145cb99b09fc092085b6ba15a4222e012f06",
+      "sourceSha256": "b88c10928504f52c1e6450cd470f7255f3ed7a5ca4a0883683312c550e384e97",
       "oracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
       "printingId": "bc7e0407-fea1-43ef-8580-82271e440bb3",
       "role": "COST",
       "targetRequired": false,
       "tapRequired": true,
       "creatureAtArrival": false,
-      "heldOut": false
+      "heldOut": false,
+      "rawCaptureSha256": "be17fa0e65d8bee8a7782cfe8031145cb99b09fc092085b6ba15a4222e012f06"
     },
     {
       "card": "Spark Elemental",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/5dn-79.json",
-      "sourceSha256": "2677e139c97136c0404a46ce901274b030d5a7f2dc65a9d84571228381054ba5",
+      "sourceSha256": "1723d98e56a33e13f5048c9c9ab6b2e1196ac1c2b7a92988f2a3321a186bb34c",
       "oracleId": "50608b7e-b6b2-40ca-91ec-db3e03dbb1af",
       "printingId": "b9c8bcb2-8247-4d91-baf6-b08de1eb9cde",
       "role": "EFFECT",
       "targetRequired": false,
       "tapRequired": false,
       "creatureAtArrival": true,
-      "heldOut": false
+      "heldOut": false,
+      "rawCaptureSha256": "2677e139c97136c0404a46ce901274b030d5a7f2dc65a9d84571228381054ba5"
     },
     {
       "card": "Reckless Barbarian",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/clb-193.json",
-      "sourceSha256": "a24deb87254ea37be783b747380caa270f16bcd1d48e8430ceb5e046b825019b",
+      "sourceSha256": "a1bf7ac61336bd95f214bf9da868daa3ab60155de9af7bbb3d926bdfb74ae75b",
       "oracleId": "a621ae15-122a-4e11-bfcf-11dfc09784c0",
       "printingId": "c912e984-1d27-4da2-9733-d56e437bcf58",
       "role": "COST",
       "targetRequired": false,
       "tapRequired": false,
       "creatureAtArrival": true,
-      "heldOut": true
+      "heldOut": true,
+      "rawCaptureSha256": "a24deb87254ea37be783b747380caa270f16bcd1d48e8430ceb5e046b825019b"
     },
     {
       "card": "Ball Lightning",
       "sourceFile": "src/test/resources/fidelity/source-sacrifice/drk-57.json",
-      "sourceSha256": "1557929d289a647353f67ec19742223fec7e89f998359975a3110a47d0ad0b45",
+      "sourceSha256": "c5b7cd38706e7b3a633a806a2686bed1c54178f90ef44f4d9a8ff28ffb44b072",
       "oracleId": "7485cf25-eb41-4397-be13-7f0b8c10c70a",
       "printingId": "c1ba83ab-83f5-421d-bba1-0f925870b5c8",
       "role": "EFFECT",
       "targetRequired": false,
       "tapRequired": false,
       "creatureAtArrival": true,
-      "heldOut": true
+      "heldOut": true,
+      "rawCaptureSha256": "1557929d289a647353f67ec19742223fec7e89f998359975a3110a47d0ad0b45"
     }
   ],
   "limits": [
     "Single relevant sacrifice ability per card; wider card text is outside review.",
     "Replacement, borrowed and token cases require execution, not inference from native availability.",
     "Current source snapshots for this pilot are separate from the dated global-universe bulk snapshot."
-  ]
+  ],
+  "sourceHashFormat": "SHA256_UTF8_LF",
+  "hashCorrection": "Initial capture hashed Windows CRLF bytes. Both original capture digests and canonical UTF8 LF digests are retained; no source wording or mechanical expectation changed."
 }
