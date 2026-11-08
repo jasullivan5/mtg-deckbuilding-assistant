@@ -1,6 +1,9 @@
-param([ValidateRange(1024,65535)][int]$Port = 8787)
+param([ValidateRange(1024,65535)][int]$Port = 8787, [string]$OracleSnapshot)
 $ErrorActionPreference = 'Stop'
 $Root = Split-Path $PSScriptRoot -Parent
+if ($OracleSnapshot) {
+    $env:EXPLORER_ORACLE_SNAPSHOT = (Resolve-Path -LiteralPath $OracleSnapshot -ErrorAction Stop).Path
+}
 # VS Code can retain the environment from before tools were installed.
 # Refresh saved paths without depending on its PowerShell profile loading.
 if ([Environment]::OSVersion.Platform -eq [PlatformID]::Win32NT) {

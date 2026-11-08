@@ -1,5 +1,7 @@
 # Explorer — Card Discovery
 
+The current primary experience is **Discover / Progress / Primer**. Open Progress before any discovery run to inspect native coverage, optional explicit-snapshot external coverage, narrower assurance, controlled reusable gains and research obstacles. See [dashboard definitions and three guided tasks](RESEARCH_PROGRESS.md). Historical research experiences remain in the collapsed **Developer research index**.
+
 The Explorer is a local browser interface over the application's existing Kotlin discovery. The first Prototype Lab review did not accept M1 as a usable research experience. The revised experience shows card text once, marks reliably associated abilities, adds brief objective-specific notes, and presents compact evidence fields with optional technical records. Mechanic browsing and verified printing/face imagery are preserved. Product Studio subsequently accepted the bounded M1 and M2 experiences against separate criteria. See the [milestone decisions](EXPLORER_MILESTONES.md#m1-and-m2-acceptance). Existing mechanical classifications and CLI evidence remain authoritative. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
 ## Launch on Windows
@@ -16,13 +18,13 @@ The command installs locked frontend dependencies, type-checks/builds the React 
 
 Stop with **Ctrl+C** in that terminal. No separate frontend server needs cleanup. An occupied port is reported before the build; choose `-Port 8788` if needed. The command rebuilds saved changes on launch; this launch does not provide hot reload. `pnpm dev` alone is a frontend source server, not the supported live application launch.
 
-Open **Mechanical Verification Lab** under **Research and learning**, or **Investigate execution** from a supported finding, to run a curated position in the local Argentum engine. See the [three guided investigations](MECHANICAL_VERIFICATION_LAB.md).
+Open **Mechanical Verification Lab** under the collapsed **Developer research index**, or expand **Archived execution investigation** in a supported finding, to run a curated position in the local Argentum engine. See the [three guided investigations](MECHANICAL_VERIFICATION_LAB.md).
 
 Windows PowerShell 7/JDK 21 was executed. Other platforms are not claimed tested for the launch script.
 
 ## Try three inspections
 
-For the controlled comparison of a creature death and a graveyard state, open **Contribution Model Study → Event-to-state experiment** under **Research and learning**. See the [Prototype Lab exercises and evidence](EVENT_TO_STATE.md).
+For the controlled comparison of a creature death and a graveyard state, open **Contribution Model Study → Event-to-state experiment** under the collapsed **Developer research index**. See the [Prototype Lab exercises and evidence](EVENT_TO_STATE.md).
 
 1. Leave **Judith, the Scourge Diva** and **My nontoken creatures die** selected. Open **About commander** and **About objective** before searching: labeled properties, verified art and a marked death trigger; three brief search categories. Inspect **Rules comparison** and **Engine tests** to distinguish retained sources, capture gaps and historical execution. Then **Find cards**, choose the **Sacrifice** mechanic, and inspect **Accursed Centaur**, **Viscera Seer** and **Attrition**. Compare required sacrifice on resolution, optional repeated activation and the legal nonblack-target prerequisite. Expand **Discovery** for what was checked.
 2. Compare **Akki Scrapchomper** under **Identified mechanics** with **Agent of Shauku** under **Needs interpretation**. Akki names its artifact-or-land cost and accepted artifact-creature route; its land alternative remains unresolved. Agent names its land cost and unresolved overlap, without declaring creature-lands impossible or always requiring animation. Costs/targets are game conditions; the unhandled overlap is the research limitation. Original decisions remain under **Technical investigation**. Primary inclusion policy alternatives are documented in [the boundary investigation](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open).

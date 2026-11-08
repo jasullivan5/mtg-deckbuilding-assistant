@@ -1,5 +1,9 @@
 # Card Discovery Explorer — Milestones and Development Rhythm
 
+## Approved Research Progress increment
+
+The bounded Progress increment simplifies primary navigation to Discover, Progress and Primer. Its [metric contract and guided tasks](RESEARCH_PROGRESS.md) define the dashboard evaluation: representation/interpretation, trust scope, controlled reusable gains, grounded obstacles and remaining contextual capabilities. Secondary investigations move to the collapsed developer research index. Passing implementation checks does not establish Product Studio experience acceptance or independent translation qualification. Product Studio review remains pending; no next research increment is authorized by this record.
+
 **Status:** Working product plan; not authorization to implement all milestones  
 **Home:** `mtg-deckbuilding-assistant/docs/EXPLORER_MILESTONES.md`  
 **Ownership:** Product Studio (user + ChatGPT) sets experience goals and accepts direction; Codex Build implements approved increments; Prototype Lab reviews what actually runs.

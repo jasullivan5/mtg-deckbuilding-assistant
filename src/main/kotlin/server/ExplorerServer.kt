@@ -42,6 +42,8 @@ internal class ExplorerServer(
     private val worker = Executors.newSingleThreadExecutor()
     private val requests = ThreadPoolExecutor(4, 4, 0L, TimeUnit.MILLISECONDS, ArrayBlockingQueue(16))
     private val occupied = AtomicBoolean(false)
+    private val progress = ResearchProgressService(catalog, revision,
+        System.getenv("EXPLORER_ORACLE_SNAPSHOT")?.takeIf { it.isNotBlank() }?.let(Path::of))
     @Volatile private var latest: StoredRun? = null
     private val server = HttpServer.create(InetSocketAddress("127.0.0.1", port), 16)
     val port: Int get() = server.address.port
@@ -82,6 +84,22 @@ internal class ExplorerServer(
                     "engineMode" to EngineBuild.mode, "applicationRevision" to revision)); return
             }
             "/api/v1/objectives" -> if (x.requestMethod == "GET") { x.json(200, objectives); return }
+            "/api/v1/progress/history" -> if (x.requestMethod == "GET") {
+                val source = javaClass.getResource("/research-history.json")
+                if (source == null) x.json(404, ApiError("BASELINE_UNAVAILABLE", "No retained comparable baseline is packaged."))
+                else x.json(200, reportJson.parseToJsonElement(source.readText()))
+                return
+            }
+            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
+                runResearch(x) { _, _ -> Response(200, when (path) {
+                    "/api/v1/progress/instructions" -> reportJson.encodeToJsonElement(progress.instructionRecords)
+                    "/api/v1/progress/facts" -> reportJson.encodeToJsonElement(progress.factRecords)
+                    "/api/v1/progress/mechanics" -> reportJson.encodeToJsonElement(progress.nativeCoverage)
+                    "/api/v1/progress/external" -> progress.externalRecords?.let { reportJson.encodeToJsonElement(it) }
+                        ?: reportJson.encodeToJsonElement(progress.report.external)
+                    else -> reportJson.encodeToJsonElement(progress.report)
+                }) }; return
+            }
             "/api/v1/commander", "/api/v1/discover" -> { research(x, path.endsWith("discover")); return }
             "/api/v1/commander-view" -> { research(x, false, true); return }
             "/api/v1/lab/scenarios" -> if (x.requestMethod == "GET") {
