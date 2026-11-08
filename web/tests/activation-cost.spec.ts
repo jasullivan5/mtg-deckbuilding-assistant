@@ -43,6 +43,9 @@ test('Complete costs keep payment depth separate from reviewed cards and whole-a
     await page.setViewportSize({width,height:width===390?844:1000});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
     await panel.screenshot({path:`../docs/images/activation-cost/${width}-evidence.png`});
+    await inspect.click();
+    await panel.screenshot({path:`../docs/images/activation-cost/${width}-summary.png`});
+    await inspect.click();
     await panel.evaluate(el=>el.scrollIntoView({block:'start'}));
     await page.screenshot({path:`../docs/images/activation-cost/${width}-viewport.png`});
     await page.evaluate(()=>window.scrollTo(0,0));
