@@ -104,7 +104,9 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
         receipt ?: return
         receipt.scenarios.filterNot { it.scenarioId.startsWith("mutant:") }.forEach { s->
             val scope=scopes.singleOrNull { it.card==s.card } ?: return@forEach
-            records+=VerificationRecord("execution:${s.scenarioId}:${receipt.engine}:${receipt.executedAt}",scope.oracleId,s.card,"EXECUTION","sacrifice:${scope.oracleId}",s.mechanic,face=scope.card,printingId=scope.printingId,
+            val reviewedAbility=(pilot.reviews+challenge.reviews).singleOrNull { it.scope.oracleId==scope.oracleId }?.fact?.actionId
+            val boundScope=if(current && reviewedAbility!=null) reviewedAbility else "unallocated-historical-sacrifice:${scope.oracleId}"
+            records+=VerificationRecord("execution:${s.scenarioId}:${receipt.engine}:${receipt.executedAt}",scope.oracleId,s.card,"EXECUTION",boundScope,s.mechanic,face=scope.card,printingId=scope.printingId,
                 definitionSha256=receipt.definitions[s.card],engine=receipt.engine,applicationRevision=receipt.applicationRevision,author="Codex Build native harness",
                 result=when(s.state) { "AGREES"->"PASS";"DIFFERS"->"FAIL";else->"UNKNOWN" },expected=s.mechanic,observed="${s.state}; ${s.problem.orEmpty()}",source=listOf(EvidenceReference(scope.sourceFile,scope.sourceSha256)),
                 requirements=listOf(receipt.requirementsSha256),scenarioId=s.scenarioId,observedAt=receipt.executedAt,sourceValidated=current,

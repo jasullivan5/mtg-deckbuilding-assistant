@@ -54,6 +54,9 @@ class VerificationCoverageTest:FunSpec({
         report.evidence.map { it.record.id }.distinct().size shouldBe report.evidence.size
         report.evidence.any { it.freshness=="HISTORICAL" && it.record.result=="FAIL" } shouldBe true
         report.evidence.filter { it.record.kind=="EXECUTION" && it.freshness=="CURRENT" }.all { it.record.scenarioId!=null && it.record.definitionSha256!=null && it.record.engine==EngineBuild.revision } shouldBe true
+        report.evidence.filter { it.record.kind=="EXECUTION" && it.freshness=="CURRENT" }.all { execution->
+            report.evidence.any { review->review.record.kind=="SOURCE_REVIEW" && review.record.oracleId==execution.record.oracleId && review.record.scopeId==execution.record.scopeId }
+        } shouldBe true
         report.evidence.any { it.record.materialConcerns.isNotEmpty() } shouldBe true
         val changed=compareVerification(report,report.copy(measurementDefinition="different-v2"))
         changed.comparable shouldBe false;changed.newSourceScopes shouldBe emptyList()
