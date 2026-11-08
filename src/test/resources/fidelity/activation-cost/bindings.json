@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "inspectedApplication": "a3aa91a9ffe061a96a14e584e2db6ede6470e632",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "author": "Codex Build",
+  "inspectedAt": "2026-11-08T19:31:22.155455+00:00",
+  "note": "Native bindings inspected after source expectations were committed. They select an exact native scope, not a card-specific cost acceptance rule.",
+  "bindings": [
+    {
+      "scopeId": "mogg-fanatic:0",
+      "nativeName": "Mogg Fanatic",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Mogg Fanatic:1",
+      "definitionSha256": "5d678b75ddd599cc0aa3edf1f70ddd11ce160f6551028f66674e83178f812673"
+    },
+    {
+      "scopeId": "caustic-caterpillar:0",
+      "nativeName": "Caustic Caterpillar",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Caustic Caterpillar:1",
+      "definitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c"
+    },
+    {
+      "scopeId": "evolving-wilds:0",
+      "nativeName": "Evolving Wilds",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Evolving Wilds:1",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77"
+    },
+    {
+      "scopeId": "hapless-researcher:0",
+      "nativeName": "Hapless Researcher",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Hapless Researcher:1",
+      "definitionSha256": "7aa7be71ab7765d5b2d542229839a2113ec8343cc1b3f0232e0ebe2c6ec52101"
+    },
+    {
+      "scopeId": "sakura-tribe-elder:0",
+      "nativeName": "Sakura-Tribe Elder",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Sakura-Tribe Elder:1",
+      "definitionSha256": "c7a1ae66032683e064606daf19f3d5f7cd17670526fd00f8946dc7438be6657b"
+    },
+    {
+      "scopeId": "burnished-hart:0",
+      "nativeName": "Burnished Hart",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Burnished Hart:1",
+      "definitionSha256": "687a301cdb75801e8b44caa0a402576f1d44d73862dd143bd3a9af934f7b5ed7"
+    },
+    {
+      "scopeId": "mind-stone:1",
+      "nativeName": "Mind Stone",
+      "nativeIndex": 1,
+      "nativeAbilityId": "Mind Stone:2",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf"
+    },
+    {
+      "scopeId": "viscera-seer:0",
+      "nativeName": "Viscera Seer",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Viscera Seer:1",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663"
+    },
+    {
+      "scopeId": "greed:0",
+      "nativeName": "Greed",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Greed:1",
+      "definitionSha256": "9f2a7b963cdb3fcaa24b44f57c67bf1b4feed7e0e8481ff759952d7fe03d3fba"
+    },
+    {
+      "scopeId": "mind-stone:0",
+      "nativeName": "Mind Stone",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Mind Stone:1",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf"
+    }
+  ]
+}

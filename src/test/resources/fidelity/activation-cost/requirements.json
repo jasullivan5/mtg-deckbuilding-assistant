@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "author": "Codex Build",
+  "independentApproval": null,
+  "qualification": "PENDING_SEPARATE_REVIEW",
+  "sourceHashFormat": "SHA256_UTF8_LF",
+  "rules": {
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+    "sha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "excerpts": [
+      "107.4a There are five primary colored mana symbols: {W} is white, {U} blue, {B} black, {R} red, and {G} green. These symbols are used to represent colored mana, and also to represent colored mana in costs. Colored mana in costs can be paid only with the appropriate color of mana. See rule 202, “Mana Cost and Color.”",
+      "107.4b Numerical symbols (such as {1}) and variable symbols (such as {X}) represent generic mana in costs. Generic mana in costs can be paid with any type of mana. For more information about {X}, see rule 107.3.",
+      "107.4c The colorless mana symbol {C} is used to represent one colorless mana, and also to represent a cost that can be paid only with one colorless mana.",
+      "118.1. A cost is an action or payment necessary to take another action or to stop another action from taking place. To pay a cost, a player carries out the instructions specified by the spell, ability, or effect that contains that cost.",
+      "118.3. A player can’t pay a cost without having the necessary resources to pay it fully. For example, a player with only 1 life can’t pay a cost of 2 life, and a permanent that’s already tapped can’t be tapped to pay a cost. See rule 202, “Mana Cost and Color,” and rule 602, “Activating Activated Abilities.”",
+      "118.3a Paying mana is done by removing the indicated mana from a player’s mana pool. (Players can always pay 0 mana.) If excess mana remains in that player’s mana pool after making that payment, the player announces what mana is still there.",
+      "118.9. Some spells have alternative costs. An alternative cost is a cost listed in a spell’s text, or applied to it from another effect, that its controller may pay rather than paying the spell’s mana cost. Alternative costs are usually phrased, “You may [action] rather than pay [this object’s] mana cost,” or “You may cast [this object] without paying its mana cost.” Note that some alternative costs are listed in keywords; see rule 702.",
+      "302.6. A creature’s activated ability with the tap symbol or the untap symbol in its activation cost can’t be activated unless the creature has been under its controller’s control continuously since their most recent turn began. A creature can’t attack unless it has been under its controller’s control continuously since their most recent turn began. This rule is informally called the “summoning sickness” rule.",
+      "601.2h The player pays the total cost. First, they pay all costs that don’t involve random elements or moving objects from the library to a public zone, in any order. Then they pay all remaining costs in any order. Partial payments are not allowed. Unpayable costs can’t be paid.",
+      "602.1. Activated abilities have a cost and an effect. They are written as “[Cost]: [Effect.] [Activation instructions (if any).]”",
+      "602.1a The activation cost is everything before the colon (:). An ability’s activation cost must be paid by the player who is activating it.",
+      "602.2. To activate an ability is to put it onto the stack and pay its costs, so that it will eventually resolve and have its effect. Only an object’s controller (or its owner, if it doesn’t have a controller) can activate its activated ability unless the object specifically says otherwise. Activating an ability follows the steps listed below, in order. If, at any point during the activation of an ability, a player is unable to comply with any of those steps, the activation is illegal; the game returns to the moment before that ability started to be activated (see rule 734, “Handling Illegal Actions”). Announcements and payments can’t be altered after they’ve been made.",
+      "602.2a The player announces that they are activating the ability. If an activated ability is being activated from a hidden zone, the card that has that ability is revealed (see rule 701.20a). That ability is created on the stack as an object that’s not a card. It becomes the topmost object on the stack. It has the text of the ability that created it, and no other characteristics. Its controller is the player who activated the ability. The ability remains on the stack until it’s countered, it resolves, or an effect moves it elsewhere.",
+      "602.2b The remainder of the process for activating an ability is identical to the process for casting a spell listed in rules 601.2b–i. Those rules apply to activating an ability just as they apply to casting a spell. An activated ability’s analog to a spell’s mana cost (as referenced in rule 601.2f) is its activation cost.",
+      "701.21a To sacrifice a permanent, its controller moves it from the battlefield directly to its owner’s graveyard. A player can’t sacrifice something that isn’t a permanent, or something that’s a permanent they don’t control. Sacrificing a permanent doesn’t destroy it, so regeneration or other effects that replace destruction can’t affect this action."
+    ]
+  },
+  "scope": "Printed base activation payment only; no contextual payment/legality interpreter",
+  "independence": "Initial five were historically familiar. Four technical held-out cards were selected by filename availability, with source expectations captured before reading native definitions. Same implementing agent; neither blind nor independent certification.",
+  "scopes": [
+    {
+      "id": "mogg-fanatic:0",
+      "card": "Mogg Fanatic",
+      "sourceAbility": "Sacrifice to deal damage",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/ema-138.json",
+      "sourceSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "printingId": "d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": false,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Legal target required; damage resolution is outside cost review.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "sourceAbility": "Destroy artifact or enchantment",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/ori-170.json",
+      "sourceSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "oracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+      "printingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{1}{G}"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": false,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Target artifact/enchantment required; neither targeting fidelity nor destruction resolution is certified.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "evolving-wilds:0",
+      "card": "Evolving Wilds",
+      "sourceAbility": "Search for a basic land",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/trc-527.json",
+      "sourceSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "oracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+      "printingId": "6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "TAP_SELF"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": false,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Land search, tapped arrival and shuffle are outside cost review.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "hapless-researcher:0",
+      "card": "Hapless Researcher",
+      "sourceAbility": "Draw then discard",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/jud-42.json",
+      "sourceSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "oracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+      "printingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": false,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Draw/discard resolution is outside cost review.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "sakura-tribe-elder:0",
+      "card": "Sakura-Tribe Elder",
+      "sourceAbility": "Search for a basic land",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/soc-285.json",
+      "sourceSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "oracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+      "printingId": "7a8b1c49-8594-426d-b585-41140235bb0e",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": false,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Retain the earlier exact-printing concern; source-derived physical Oracle association is separate.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "burnished-hart:0",
+      "card": "Burnished Hart",
+      "sourceAbility": "Search for basic lands",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/fdn-250.json",
+      "sourceSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "oracleId": "893fed41-c144-433f-af88-bc7d419b7fb3",
+      "printingId": "65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{3}"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": true,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Search quantity, arrival and shuffle remain unreviewed.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "mind-stone:1",
+      "card": "Mind Stone",
+      "sourceAbility": "Draw a card",
+      "sourceOrdinal": 1,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{1}"
+          },
+          {
+            "kind": "TAP_SELF"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "heldOut": true,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "The separate tap-for-mana ability is not this scope; draw resolution remains unreviewed.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "sourceAbility": "Scry",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/soc-229.json",
+      "sourceSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "printingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELECTED",
+            "count": 1,
+            "filter": "CREATURE",
+            "excludeSelf": false,
+            "distinctNames": false
+          }
+        ]
+      },
+      "heldOut": true,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Payer controls the chosen creature, ownership may differ; source is allowed but not required. Selection legality and scry need execution.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "greed:0",
+      "card": "Greed",
+      "sourceAbility": "Draw a card",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/mh2-274.json",
+      "sourceSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "oracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+      "printingId": "851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{B}"
+          },
+          {
+            "kind": "PAY_LIFE",
+            "amount": 2
+          }
+        ]
+      },
+      "heldOut": true,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "A non-sacrifice mechanic variation. Player must be able to pay; draw resolution remains unreviewed.",
+        "Timing, activation permissions, targets, contextual cost modifiers and resolving effects are separate unverified dependencies."
+      ]
+    },
+    {
+      "id": "mind-stone:0",
+      "card": "Mind Stone",
+      "sourceAbility": "Add colorless mana",
+      "sourceOrdinal": 0,
+      "sourceFile": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "expected": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "TAP_SELF"
+          }
+        ]
+      },
+      "heldOut": true,
+      "sourceZone": "BATTLEFIELD",
+      "payer": "ABILITY_CONTROLLER",
+      "sacrificeController": "PAYER",
+      "sacrificeDestination": "OWNER_GRAVEYARD_BEFORE_REPLACEMENTS",
+      "dependencies": [
+        "Mana production is resolving behavior; only tap payment is reviewed. Mana ability special timing remains a declaration dependency."
+      ]
+    }
+  ],
+  "unsupported": [
+    "Hybrid/phyrexian/snow/X mana",
+    "Dynamic/conditional payments and contextual cost modifications",
+    "Generic alternative-payment comparison; preserve native Forage as unsupported alternative structure",
+    "Nontrivial sacrifice predicates, variable quantities and other unsupported nonmana payments"
+  ],
+  "comparisonContract": "All mandatory components and their multiplicity must agree. Only supported ALL conjunction association/order and fixed-mana addition are normalized; alternatives and unknown subcomponents never pass. No cost pass certifies declaration legality or resolving effects.",
+  "rulesAnalysis": {
+    "declaration": "Controller/permission, source zone, legal timing, targets and announced choices precede or constrain activation; they are not certified by cost equality.",
+    "payment": "Everything before the source colon is mandatory payment. All components must be payable and paid; costs may not be partially paid. Supported source costs have only fixed mana, tap, sacrifice or fixed life components.",
+    "resolution": "Draw, discard, search, damage, scry and destruction occur separately and are not certified by payment. Mana abilities may resolve during activation; that does not make produced mana a paid cost.",
+    "mana": "Colored, generic and required colorless mana are different. Fixed generic and colored quantities are preserved; hybrid, snow, phyrexian and variable symbols remain outside v1.",
+    "alternatives": "No source cohort cost is an OR. Native Forage is a genuine specialized choice, not a generic mana-or-sacrifice constructor. It remains unverified; the spell-specific alternative-cost rule is not used to infer activation permissions.",
+    "sacrifice": "A permanent must be controlled by the payer and moves nominally from battlefield to its owner graveyard; it need not be owned by the payer. Replacement outcomes and source generations need native execution.",
+    "independence": "Expectations fixed before reading held-out definitions. Familiar starting controls are not called blind. No independent approval is created."
+  }
+}

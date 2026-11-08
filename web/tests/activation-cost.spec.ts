@@ -1,0 +1,58 @@
+import {test,expect} from '@playwright/test';
+import {mkdir,writeFile} from 'node:fs/promises';
+
+test.skip(!process.env.EXPLORER_URL,'Requires real Kotlin costs, frozen sources and executed native receipt.');
+test('Complete costs keep payment depth separate from reviewed cards and whole-ability assurance',async({page})=>{
+  test.setTimeout(300_000);
+  await page.goto('/#progress');
+  const panel=page.locator('#activation-costs');
+  await expect(panel).toBeVisible({timeout:220_000});
+  const response=await page.request.get('/api/v1/progress/activation-costs');expect(response.ok()).toBe(true);
+  const data=await response.json();
+  expect(data.counts.source_reviewed_ability_scopes).toBe(10);
+  expect(data.counts.distinct_reviewed_physical_cards).toBe(9);
+  expect(data.counts.previously_reviewed_scopes_strengthened).toBe(5);
+  expect(data.counts.additional_source_reviewed_cards).toBe(4);
+  expect(data.counts.defects_detected).toBe(10);
+  expect(data.counts.defects_unresolved).toBe(1);
+  expect(data.counts.outside_payment_scope).toBe(1);
+  expect(data.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  expect(data.execution.observations).toHaveLength(26);
+  expect(data.mutations.find((m:{id:string})=>m.id==='missing-mana').comparison.state).toBe('CONTRADICTED');
+  expect(data.mutations.find((m:{id:string})=>m.id==='alternative-not-combined').comparison.state).toBe('UNRESOLVED');
+  expect(data.qualification).toContain('PENDING_SEPARATE_REVIEW');
+  await expect(panel).toContainText('Missing-mana defect: CONTRADICTED');
+  const inspect=panel.getByText('Compare source payments, held-out costs and original defects',{exact:true});
+  await inspect.focus();await page.keyboard.press('Enter');
+  const scope=panel.getByLabel('Activation-cost ability scope');
+  await expect(panel).toContainText('{1}{G} AND Sacrifice this source');
+  await scope.selectOption('mogg-fanatic:0');
+  await expect(panel.getByText('Source: Sacrifice this source',{exact:true})).toBeVisible();
+  await scope.selectOption('viscera-seer:0');
+  await expect(panel).toContainText('payer-controlled creature');
+  await expect(panel).toContainText('BORROWED_SELECTION · AGREES');
+  await expect(panel).toContainText('UNANNOUNCED_SELECTION · UNRESOLVED');
+  await scope.selectOption('greed:0');await expect(panel).toContainText('{B} AND Pay 2 life');
+  await scope.selectOption('caustic-caterpillar:0');
+  const mutant=panel.locator('summary').filter({hasText:'Remove required {1}{G}, retain sacrifice'});
+  await mutant.click();await expect(panel).toContainText('Mandatory fixed payment');
+  await mkdir('../docs/images/activation-cost',{recursive:true});
+  await mkdir('../generated/activation-cost',{recursive:true});
+  await writeFile('../generated/activation-cost/browser-measurements.json',JSON.stringify({application:data.applicationRevision,engine:data.engine,counts:data.counts,potentialReach:data.potentialReach,requirementsSha256:data.requirementsSha256,bindingsSha256:data.bindingsSha256,executionState:data.executionState},null,2));
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:width===390?844:1000});
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
+    await panel.screenshot({path:`../docs/images/activation-cost/${width}-evidence.png`});
+    await inspect.click();
+    await panel.screenshot({path:`../docs/images/activation-cost/${width}-summary.png`});
+    await inspect.click();
+    await panel.evaluate(el=>el.scrollIntoView({block:'start'}));
+    await page.screenshot({path:`../docs/images/activation-cost/${width}-viewport.png`});
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:`../docs/images/activation-cost/${width}-overview.png`});
+  }
+  await page.getByRole('button',{name:'Primer',exact:true}).click();
+  await expect(page.getByRole('heading',{name:/How Card Integration Works/i})).toBeVisible();
+  await page.getByRole('button',{name:'Discover',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Find cards',exact:true})).toBeVisible();
+});

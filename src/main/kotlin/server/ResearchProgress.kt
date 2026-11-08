@@ -73,7 +73,8 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val commanders: CommanderInventory? by lazy { globalRecords?.let { commanderInventory(catalog,it) } }
     val objectiveInventory: ObjectiveInventory by lazy { dev.mtg.assistant.coverage.objectiveInventory(catalog) }
     val pilot: FidelityPilot by lazy { SacrificePilot.report(catalog,factRecords) }
-    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report()) }
+    val activationCosts: ActivationCostReport by lazy { ActivationCostFidelity.report(catalog,revision) }
+    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts) }
     val report: ResearchProgress by lazy {
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
@@ -101,7 +102,7 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             obstacles = listOf(
                 ProgressObstacle("fidelity", "Inherited source fidelity is not established", "${assurance.notMeasured} native physical definitions outside the application assurance ledger; broader fidelity not measured.",
                     "Discovery can faithfully read a native definition that mistranslates Oracle requirements.", "Tatterkite retains a material concern in the extension ledger; inherited definitions receive no implied review.",
-                    "Independently examine the indexed source/ability evidence and the sacrifice challenge's missed cost and target-filter defects before broadening fidelity claims.", "Measured ledger/index scopes; corpus fidelity unquantified", "verification-coverage"),
+                    "Independently examine the complete printed-base cost bundle, incomplete selected-payment observations and remaining target/effect gaps before broadening fidelity claims.", "Measured ledger/index scopes; corpus fidelity unquantified", "verification-coverage"),
                 ProgressObstacle("mechanics", "Native structures remain partly read or unclassified", "$incomplete of ${audit.encounteredTypedNodes} typed nodes are not explicitly SUPPORTED. This includes unclassified metadata, not just missing mechanics.",
                     "Unresolved enclosing branches can limit an otherwise recognized operation. No emitted pathway is not a negative.", "Pit Raptor's nested pay-or-sacrifice branch; specialized token operations such as Amass/populate.",
                     "Inspect partial and unsupported groups, then source-review one recurring branch shape before extending extraction.", "Measured native audit; no Oracle recall claim", "mechanics"),

@@ -79,8 +79,8 @@ internal class ExplorerServer(
         }
         val path = x.requestURI.path
         when (path) {
-            "/api/v1/progress/global-baseline", "/api/v1/progress/verification-baseline" -> if (x.requestMethod == "GET") {
-                val source = javaClass.getResourceAsStream(if(path.endsWith("verification-baseline")) "/verification-baseline.json.gz" else "/global-commander-baseline.json.gz")
+            "/api/v1/progress/global-baseline", "/api/v1/progress/verification-baseline", "/api/v1/progress/verification-cost-baseline" -> if (x.requestMethod == "GET") {
+                val source = javaClass.getResourceAsStream(when { path.endsWith("verification-cost-baseline")->"/verification-cost-baseline.json.gz";path.endsWith("verification-baseline")->"/verification-baseline.json.gz";else->"/global-commander-baseline.json.gz" })
                 if(source == null) x.json(404,ApiError("BASELINE_UNAVAILABLE","No requested baseline is packaged; no trend can be inferred."))
                 else java.util.zip.GZIPInputStream(source).bufferedReader(Charsets.UTF_8).use { x.json(200,reportJson.parseToJsonElement(it.readText())) }
                 return
@@ -96,20 +96,21 @@ internal class ExplorerServer(
                 else x.json(200, reportJson.parseToJsonElement(source.readText()))
                 return
             }
-            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
-                runResearch(x) { _, _ -> Response(200, when (path) {
-                    "/api/v1/progress/global" -> progress.globalRecords?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
-                    "/api/v1/progress/commanders" -> progress.commanders?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
-                    "/api/v1/progress/objectives" -> reportJson.encodeToJsonElement(progress.objectiveInventory)
-                    "/api/v1/progress/pilot" -> reportJson.encodeToJsonElement(progress.pilot)
-                    "/api/v1/progress/verification" -> reportJson.encodeToJsonElement(progress.verification)
-                    "/api/v1/progress/instructions" -> reportJson.encodeToJsonElement(progress.instructionRecords)
-                    "/api/v1/progress/facts" -> reportJson.encodeToJsonElement(progress.factRecords)
-                    "/api/v1/progress/mechanics" -> reportJson.encodeToJsonElement(progress.nativeCoverage)
-                    "/api/v1/progress/external" -> progress.externalRecords?.let { reportJson.encodeToJsonElement(it) }
-                        ?: reportJson.encodeToJsonElement(progress.report.external)
-                    else -> reportJson.encodeToJsonElement(progress.report)
-                }) }; return
+            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/activation-costs", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
+                runResearch(x) { _, _ -> when (path) {
+                    "/api/v1/progress/global" -> progress.globalRecords?.let { exportResponse(it) } ?: exportResponse(progress.report.global)
+                    "/api/v1/progress/commanders" -> progress.commanders?.let { exportResponse(it) } ?: exportResponse(progress.report.global)
+                    "/api/v1/progress/objectives" -> exportResponse(progress.objectiveInventory)
+                    "/api/v1/progress/pilot" -> exportResponse(progress.pilot)
+                    "/api/v1/progress/verification" -> exportResponse(progress.verification)
+                    "/api/v1/progress/activation-costs" -> exportResponse(progress.activationCosts)
+                    "/api/v1/progress/instructions" -> exportResponse(progress.instructionRecords)
+                    "/api/v1/progress/facts" -> exportResponse(progress.factRecords)
+                    "/api/v1/progress/mechanics" -> exportResponse(progress.nativeCoverage)
+                    "/api/v1/progress/external" -> progress.externalRecords?.let { exportResponse(it) }
+                        ?: exportResponse(progress.report.external)
+                    else -> exportResponse(progress.report)
+                } }; return
             }
             "/api/v1/commander", "/api/v1/discover" -> { research(x, path.endsWith("discover")); return }
             "/api/v1/commander-view" -> { research(x, false, true); return }
@@ -123,7 +124,9 @@ internal class ExplorerServer(
         staticFile(x, path)
     }
 
-    private data class Response(val status: Int, val body: JsonElement)
+    private data class Response(val status: Int, val body: JsonElement? = null, val write: ((HttpExchange)->Unit)? = null)
+    // Keep the original typed immutable report until streaming; a second complete JSON tree can exhaust 1 GB.
+    private inline fun <reified T> exportResponse(value:T)=Response(200,write={ exchange->exchange.json(200,value) })
     @Serializable private data class LabRequest(val scenarioId: String)
 
     private fun executeScenario(x: HttpExchange) {
@@ -198,7 +201,7 @@ internal class ExplorerServer(
         })
         try {
             val response = future.get(timeoutSeconds, TimeUnit.SECONDS)
-            x.json(response.status, response.body)
+            response.write?.invoke(x) ?: x.json(response.status, requireNotNull(response.body))
         } catch (_: TimeoutException) {
             // Do not release the gate or queue another extraction while uninterruptible work finishes.
             // Late results are never published (deadline checked in the worker).

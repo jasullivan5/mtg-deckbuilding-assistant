@@ -16,6 +16,8 @@ Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script buil
 
 Progress now separates global **Cards**, bounded **Commander selection**, and **Objective search reach**, and includes the reusable source-bound sacrifice pilot. See [global coverage, exact scopes, baseline CLI and guided investigations](docs/GLOBAL_COMMANDER_COVERAGE.md). A compatible explicit source snapshot is required for global external measurements.
 
+The Cards/Trust area also compares complete printed activation payments with source-first requirements. Inspect missing-mana mutations, bounded native payment observations and unsupported choices without treating a cost pass as whole-ability certification. See [activation-cost evidence and reproduction](docs/ACTIVATION_COST_FIDELITY.md).
+
 ## Two sibling repositories
 
 ```text
