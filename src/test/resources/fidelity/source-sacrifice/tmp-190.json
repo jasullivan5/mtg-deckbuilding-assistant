@@ -1,0 +1,147 @@
+{
+  "retrievedAt": "2026-11-08T07:41:50.277760+00:00",
+  "sourceUrl": "https://scryfall.com/card/tmp/190/mogg-fanatic?utm_source=api",
+  "card": {
+    "object": "card",
+    "id": "ca2ecfd4-c874-4468-8601-87aa110d5a00",
+    "oracle_id": "7efd5d62-6da2-428a-98e3-5b842f668656",
+    "multiverse_ids": [
+      4832
+    ],
+    "mtgo_id": 9577,
+    "mtgo_foil_id": 9578,
+    "tcgplayer_id": 5636,
+    "cardmarket_id": 8925,
+    "name": "Mogg Fanatic",
+    "lang": "en",
+    "released_at": "1997-10-14",
+    "uri": "https://api.scryfall.com/cards/ca2ecfd4-c874-4468-8601-87aa110d5a00",
+    "scryfall_uri": "https://scryfall.com/card/tmp/190/mogg-fanatic?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_updated_at": "2026-07-13T12:43:47Z",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627",
+      "normal": "https://cards.scryfall.io/normal/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627",
+      "large": "https://cards.scryfall.io/large/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627",
+      "png": "https://cards.scryfall.io/png/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.png?1783946627",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627",
+      "thumb": "https://cards.scryfall.io/thumb/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.webp?1783946627",
+      "grid": "https://cards.scryfall.io/grid/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.webp?1783946627",
+      "display": "https://cards.scryfall.io/display/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.webp?1783946627",
+      "art": "https://cards.scryfall.io/art/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.webp?1783946627",
+      "crop": "https://cards.scryfall.io/crop/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.webp?1783946627",
+      "jpeg": "https://cards.scryfall.io/normal/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1783946627"
+    },
+    "mana_cost": "{R}",
+    "cmc": 1.0,
+    "type_line": "Creature — Goblin",
+    "oracle_text": "Sacrifice this creature: It deals 1 damage to any target.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "competitivebrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "legal",
+      "predh": "legal",
+      "tlr": "legal"
+    },
+    "games": [
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "10df3a67-178e-4363-8668-34f0e6edf2a7",
+    "set": "tmp",
+    "set_name": "Tempest",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/10df3a67-178e-4363-8668-34f0e6edf2a7",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmp&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/tmp?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/ca2ecfd4-c874-4468-8601-87aa110d5a00/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A7efd5d62-6da2-428a-98e3-5b842f668656&unique=prints",
+    "collector_number": "190",
+    "digital": false,
+    "rarity": "common",
+    "flavor_text": "\"I got it! I got it! I—\"",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Brom",
+    "artist_ids": [
+      "bd79c951-2552-45dd-aae7-a333c2b7c1ef"
+    ],
+    "illustration_id": "31c63073-0141-40ae-9756-73e700c2ab94",
+    "border_color": "black",
+    "frame": "1997",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 12237,
+    "penny_rank": 1890,
+    "prices": {
+      "usd": "0.98",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "1.45",
+      "eur_foil": null,
+      "tix": "0.28"
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=4832&printed=false",
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DMogg%2BFanatic",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DMogg%2BFanatic",
+      "edhrec": "https://edhrec.com/route/?cc=Mogg+Fanatic"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F5636%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=8925&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards/9577?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  "rulings": [
+    {
+      "object": "ruling",
+      "oracle_id": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "source": "wotc",
+      "published_at": "2016-06-08",
+      "comment": "Once Mogg Fanatic has dealt and been dealt combat damage, it’s too late to activate its ability before it’s destroyed."
+    }
+  ]
+}
