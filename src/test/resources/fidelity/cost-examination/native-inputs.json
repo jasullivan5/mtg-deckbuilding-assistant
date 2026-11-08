@@ -1,0 +1,748 @@
+{
+  "schemaVersion": 1,
+  "applicationRevision": "0b23d5e16ac3145118a4ae15e7a66c99b610d24a",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "exportedAt": "2026-11-08T22:27:02.621873+00:00",
+  "nativeDefinitions": [
+    {
+      "name": "Mogg Fanatic",
+      "definitionSha256": "5d678b75ddd599cc0aa3edf1f70ddd11ce160f6551028f66674e83178f812673",
+      "nativeDefinition": {
+        "name": "Mogg Fanatic",
+        "manaCost": "{R}",
+        "typeLine": "Creature \u2014 Goblin",
+        "oracleText": "Sacrifice this creature: It deals 1 damage to any target.",
+        "creatureStats": {
+          "power": 1,
+          "toughness": 1
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Mogg Fanatic:1",
+              "cost": "CostSacrificeSelf",
+              "effect": {
+                "type": "DealDamage",
+                "amount": {
+                  "type": "Fixed",
+                  "amount": 1
+                },
+                "target": {
+                  "type": "BoundVariable",
+                  "name": "t0"
+                }
+              },
+              "targetRequirements": [
+                {
+                  "type": "AnyTarget",
+                  "id": "t0"
+                }
+              ],
+              "descriptionOverride": "Sacrifice this creature: It deals 1 damage to any target."
+            }
+          ]
+        },
+        "setCode": "TMP",
+        "metadata": {
+          "collectorNumber": "190",
+          "artist": "Brom",
+          "flavorText": "\"I got it! I got it! I\u2014\"",
+          "imageUri": "https://cards.scryfall.io/normal/front/c/a/ca2ecfd4-c874-4468-8601-87aa110d5a00.jpg?1562056411",
+          "releaseDate": "1997-10-14"
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "PREMODERN",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "RED"
+        ]
+      }
+    },
+    {
+      "name": "Caustic Caterpillar",
+      "definitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c",
+      "nativeDefinition": {
+        "name": "Caustic Caterpillar",
+        "manaCost": "{G}",
+        "typeLine": "Creature \u2014 Insect",
+        "oracleText": "{1}{G}, Sacrifice this creature: Destroy target artifact or enchantment.",
+        "creatureStats": {
+          "power": 1,
+          "toughness": 1
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Caustic Caterpillar:1",
+              "cost": {
+                "type": "CostComposite",
+                "costs": [
+                  {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                      "type": "AtomMana",
+                      "cost": "{1}{G}"
+                    }
+                  },
+                  "CostSacrificeSelf"
+                ]
+              },
+              "effect": {
+                "type": "MoveToZone",
+                "target": {
+                  "type": "BoundVariable",
+                  "name": "t0"
+                },
+                "destination": "Graveyard",
+                "byDestruction": true
+              },
+              "targetRequirements": [
+                {
+                  "type": "TargetObject",
+                  "filter": {
+                    "baseFilter": "artifact|enchantment"
+                  },
+                  "id": "t0"
+                }
+              ]
+            }
+          ]
+        },
+        "setCode": "ORI",
+        "metadata": {
+          "collectorNumber": "170",
+          "artist": "Jack Wang",
+          "flavorText": "\"The rare and beautiful butterflies inspire the design of our thopters. The larvae, however, are a different story entirely.\" \u2014Kiran Nalaar, Ghirapur inventor",
+          "imageUri": "https://cards.scryfall.io/normal/front/f/0/f03d4e0d-bddd-4835-91b8-11c2f15e54c3.jpg?1783938324",
+          "releaseDate": "2015-07-17"
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "PIONEER",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "GREEN"
+        ]
+      }
+    },
+    {
+      "name": "Evolving Wilds",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77",
+      "nativeDefinition": {
+        "name": "Evolving Wilds",
+        "manaCost": "",
+        "typeLine": "Land",
+        "oracleText": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Evolving Wilds:1",
+              "cost": {
+                "type": "CostComposite",
+                "costs": [
+                  "CostTap",
+                  "CostSacrificeSelf"
+                ]
+              },
+              "effect": {
+                "type": "Composite",
+                "effects": [
+                  {
+                    "type": "GatherCards",
+                    "source": {
+                      "type": "FromZone",
+                      "zone": "Library",
+                      "filter": "basicland"
+                    },
+                    "storeAs": "searchable",
+                    "search": true
+                  },
+                  {
+                    "type": "SelectFromCollection",
+                    "from": "searchable",
+                    "selection": {
+                      "type": "ChooseUpTo",
+                      "count": {
+                        "type": "Fixed",
+                        "amount": 1
+                      }
+                    },
+                    "storeSelected": "found",
+                    "prompt": "Search your library for a basic land card to put onto the battlefield tapped",
+                    "selectedLabel": "Put onto the battlefield tapped"
+                  },
+                  {
+                    "type": "MoveCollection",
+                    "from": "found",
+                    "destination": {
+                      "type": "ToZone",
+                      "zone": "Battlefield",
+                      "placement": "Tapped"
+                    }
+                  },
+                  "ShuffleLibrary",
+                  "EmitLibrarySearchedEvent"
+                ]
+              }
+            }
+          ]
+        },
+        "setCode": "ROE",
+        "metadata": {
+          "collectorNumber": "228",
+          "artist": "Steven Belledin",
+          "flavorText": "Every world is an organism, able to grow new lands. Some just do it faster than others.",
+          "imageUri": "https://cards.scryfall.io/normal/front/b/c/bc7e0407-fea1-43ef-8580-82271e440bb3.jpg?1562708057",
+          "releaseDate": "2010-04-23"
+        },
+        "legalFormats": [
+          "BRAWL",
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "PIONEER",
+          "STANDARD",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": []
+      }
+    },
+    {
+      "name": "Hapless Researcher",
+      "definitionSha256": "7aa7be71ab7765d5b2d542229839a2113ec8343cc1b3f0232e0ebe2c6ec52101",
+      "nativeDefinition": {
+        "name": "Hapless Researcher",
+        "manaCost": "{U}",
+        "typeLine": "Creature \u2014 Human Wizard",
+        "oracleText": "Sacrifice this creature: Draw a card, then discard a card.",
+        "creatureStats": {
+          "power": 1,
+          "toughness": 1
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Hapless Researcher:1",
+              "cost": "CostSacrificeSelf",
+              "effect": {
+                "type": "Composite",
+                "effects": [
+                  {
+                    "type": "DrawCards",
+                    "count": {
+                      "type": "Fixed",
+                      "amount": 1
+                    }
+                  },
+                  {
+                    "type": "Composite",
+                    "effects": [
+                      {
+                        "type": "GatherCards",
+                        "source": {
+                          "type": "FromZone",
+                          "zone": "Hand"
+                        },
+                        "storeAs": "hand"
+                      },
+                      {
+                        "type": "SelectFromCollection",
+                        "from": "hand",
+                        "selection": {
+                          "type": "ChooseExactly",
+                          "count": {
+                            "type": "Fixed",
+                            "amount": 1
+                          }
+                        },
+                        "storeSelected": "discarded",
+                        "prompt": "Choose 1 card to discard"
+                      },
+                      {
+                        "type": "MoveCollection",
+                        "from": "discarded",
+                        "destination": {
+                          "type": "ToZone",
+                          "zone": "Graveyard"
+                        },
+                        "moveType": "Discard"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "setCode": "JUD",
+        "metadata": {
+          "collectorNumber": "42",
+          "artist": "Ron Spears",
+          "flavorText": "Scholars possess such lofty knowledge that it shouldn't be surprising when they fall.",
+          "imageUri": "https://cards.scryfall.io/normal/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg",
+          "releaseDate": "2002-05-27"
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "PAUPER",
+          "PREMODERN",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "BLUE"
+        ]
+      }
+    },
+    {
+      "name": "Sakura-Tribe Elder",
+      "definitionSha256": "c7a1ae66032683e064606daf19f3d5f7cd17670526fd00f8946dc7438be6657b",
+      "nativeDefinition": {
+        "name": "Sakura-Tribe Elder",
+        "manaCost": "{1}{G}",
+        "typeLine": "Creature \u2014 Snake Shaman",
+        "oracleText": "Sacrifice this creature: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+        "creatureStats": {
+          "power": 1,
+          "toughness": 1
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Sakura-Tribe Elder:1",
+              "cost": "CostSacrificeSelf",
+              "effect": {
+                "type": "Composite",
+                "effects": [
+                  {
+                    "type": "GatherCards",
+                    "source": {
+                      "type": "FromZone",
+                      "zone": "Library",
+                      "filter": "basicland"
+                    },
+                    "storeAs": "searchable",
+                    "search": true
+                  },
+                  {
+                    "type": "SelectFromCollection",
+                    "from": "searchable",
+                    "selection": {
+                      "type": "ChooseUpTo",
+                      "count": {
+                        "type": "Fixed",
+                        "amount": 1
+                      }
+                    },
+                    "storeSelected": "found",
+                    "prompt": "Search your library for a basic land card to put onto the battlefield tapped",
+                    "selectedLabel": "Put onto the battlefield tapped"
+                  },
+                  {
+                    "type": "MoveCollection",
+                    "from": "found",
+                    "destination": {
+                      "type": "ToZone",
+                      "zone": "Battlefield",
+                      "placement": "Tapped"
+                    }
+                  },
+                  "ShuffleLibrary",
+                  "EmitLibrarySearchedEvent"
+                ]
+              }
+            }
+          ]
+        },
+        "setCode": "CHK",
+        "metadata": {
+          "collectorNumber": "239",
+          "artist": "Carl Critchlow",
+          "flavorText": "There were no tombstones in orochi territory. Slain warriors were buried with a tree sapling, so they would become a part of the forest after death.",
+          "imageUri": "https://cards.scryfall.io/normal/front/9/1/91c7707a-bae0-4196-bf26-d276f57b7369.jpg",
+          "releaseDate": "2004-10-01"
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "GREEN"
+        ]
+      }
+    },
+    {
+      "name": "Burnished Hart",
+      "definitionSha256": "687a301cdb75801e8b44caa0a402576f1d44d73862dd143bd3a9af934f7b5ed7",
+      "nativeDefinition": {
+        "name": "Burnished Hart",
+        "manaCost": "{3}",
+        "typeLine": "Artifact Creature \u2014 Elk",
+        "oracleText": "{3}, Sacrifice this creature: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+        "creatureStats": {
+          "power": 2,
+          "toughness": 2
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Burnished Hart:1",
+              "cost": {
+                "type": "CostComposite",
+                "costs": [
+                  {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                      "type": "AtomMana",
+                      "cost": "{3}"
+                    }
+                  },
+                  "CostSacrificeSelf"
+                ]
+              },
+              "effect": {
+                "type": "Composite",
+                "effects": [
+                  {
+                    "type": "GatherCards",
+                    "source": {
+                      "type": "FromZone",
+                      "zone": "Library",
+                      "filter": "basicland"
+                    },
+                    "storeAs": "searchable",
+                    "search": true
+                  },
+                  {
+                    "type": "SelectFromCollection",
+                    "from": "searchable",
+                    "selection": {
+                      "type": "ChooseUpTo",
+                      "count": {
+                        "type": "Fixed",
+                        "amount": 2
+                      }
+                    },
+                    "storeSelected": "found",
+                    "prompt": "Search your library for up to two basic land cards to put onto the battlefield tapped",
+                    "selectedLabel": "Put onto the battlefield tapped"
+                  },
+                  {
+                    "type": "MoveCollection",
+                    "from": "found",
+                    "destination": {
+                      "type": "ToZone",
+                      "zone": "Battlefield",
+                      "placement": "Tapped"
+                    }
+                  },
+                  "ShuffleLibrary",
+                  "EmitLibrarySearchedEvent"
+                ]
+              }
+            }
+          ]
+        },
+        "setCode": "THS",
+        "metadata": {
+          "collectorNumber": "213",
+          "rarity": "UNCOMMON",
+          "artist": "Yeong-Hao Han",
+          "flavorText": "Forged by divine hands to wander mortal realms.",
+          "imageUri": "https://cards.scryfall.io/normal/front/7/7/772cbcba-9efa-4894-9b57-e73fd296333d.jpg",
+          "releaseDate": "2013-09-27"
+        },
+        "legalFormats": [
+          "BRAWL",
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PIONEER",
+          "STANDARD",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": []
+      }
+    },
+    {
+      "name": "Mind Stone",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+      "nativeDefinition": {
+        "name": "Mind Stone",
+        "manaCost": "{2}",
+        "typeLine": "Artifact",
+        "oracleText": "{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Mind Stone:1",
+              "cost": "CostTap",
+              "effect": {
+                "type": "AddColorlessMana",
+                "amount": {
+                  "type": "Fixed",
+                  "amount": 1
+                }
+              },
+              "timing": "ManaAbility",
+              "isManaAbility": true
+            },
+            {
+              "id": "Mind Stone:2",
+              "cost": {
+                "type": "CostComposite",
+                "costs": [
+                  {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                      "type": "AtomMana",
+                      "cost": "{1}"
+                    }
+                  },
+                  "CostTap",
+                  "CostSacrificeSelf"
+                ]
+              },
+              "effect": {
+                "type": "DrawCards",
+                "count": {
+                  "type": "Fixed",
+                  "amount": 1
+                }
+              }
+            }
+          ]
+        },
+        "setCode": "WTH",
+        "metadata": {
+          "collectorNumber": "153",
+          "artist": "Adam Rex",
+          "imageUri": "https://cards.scryfall.io/normal/front/1/6/162e81d3-6cd4-4cb8-8ed8-cfbd8d34ca71.jpg",
+          "releaseDate": "1997-06-09"
+        },
+        "legalFormats": [
+          "BRAWL",
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "PREMODERN",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": []
+      }
+    },
+    {
+      "name": "Viscera Seer",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "nativeDefinition": {
+        "name": "Viscera Seer",
+        "manaCost": "{B}",
+        "typeLine": "Creature \u2014 Vampire Wizard",
+        "oracleText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+        "creatureStats": {
+          "power": 1,
+          "toughness": 1
+        },
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Viscera Seer:1",
+              "cost": {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomSacrifice",
+                  "filter": "creature"
+                }
+              },
+              "effect": {
+                "type": "Scry",
+                "count": 1
+              }
+            }
+          ]
+        },
+        "setCode": "M11",
+        "metadata": {
+          "collectorNumber": "120",
+          "artist": "John Stanko",
+          "flavorText": "In matters of life and death, he trusts his gut.",
+          "imageUri": "https://cards.scryfall.io/normal/front/6/1/6179f847-e334-4f7f-9a4e-0013942a394f.jpg",
+          "releaseDate": "2010-07-16",
+          "rulings": [
+            {
+              "date": "2010-08-15",
+              "text": "You can sacrifice Viscera Seer to activate its own ability."
+            },
+            {
+              "date": "2010-08-15",
+              "text": "If you sacrifice an attacking or blocking creature during the declare blockers step, it won't deal combat damage. If you wait until the combat damage step, but that creature is dealt lethal damage, it'll be destroyed before you get a chance to sacrifice it."
+            }
+          ]
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PAUPER",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "BLACK"
+        ]
+      }
+    },
+    {
+      "name": "Greed",
+      "definitionSha256": "9f2a7b963cdb3fcaa24b44f57c67bf1b4feed7e0e8481ff759952d7fe03d3fba",
+      "nativeDefinition": {
+        "name": "Greed",
+        "manaCost": "{3}{B}",
+        "typeLine": "Enchantment",
+        "oracleText": "{B}, Pay 2 life: Draw a card.",
+        "script": {
+          "activatedAbilities": [
+            {
+              "id": "Greed:1",
+              "cost": {
+                "type": "CostComposite",
+                "costs": [
+                  {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                      "type": "AtomMana",
+                      "cost": "{B}"
+                    }
+                  },
+                  {
+                    "type": "CostAtomWrapper",
+                    "atom": {
+                      "type": "AtomPayLife",
+                      "amount": {
+                        "type": "Fixed",
+                        "amount": 2
+                      }
+                    }
+                  }
+                ]
+              },
+              "effect": {
+                "type": "DrawCards",
+                "count": {
+                  "type": "Fixed",
+                  "amount": 1
+                }
+              }
+            }
+          ]
+        },
+        "setCode": "LEG",
+        "metadata": {
+          "collectorNumber": "101",
+          "rarity": "RARE",
+          "artist": "Phil Foglio",
+          "flavorText": "\"There is no calamity greater than lavish desires./ There is no greater guilt than discontentment./ And there is no greater disaster than greed.\" \u2014*Tao T\u00ea Ching 46*",
+          "imageUri": "https://cards.scryfall.io/normal/front/1/1/111a16a2-e875-4756-80db-290f9e8606db.jpg?1783948066",
+          "releaseDate": "1994-06-01"
+        },
+        "legalFormats": [
+          "COMMANDER",
+          "LEGACY",
+          "MODERN",
+          "PREMODERN",
+          "VINTAGE"
+        ],
+        "colorIdentityOverride": [
+          "BLACK"
+        ]
+      }
+    }
+  ],
+  "abilityBindings": [
+    {
+      "scopeId": "mogg-fanatic:0",
+      "nativeName": "Mogg Fanatic",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Mogg Fanatic:1",
+      "definitionSha256": "5d678b75ddd599cc0aa3edf1f70ddd11ce160f6551028f66674e83178f812673"
+    },
+    {
+      "scopeId": "caustic-caterpillar:0",
+      "nativeName": "Caustic Caterpillar",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Caustic Caterpillar:1",
+      "definitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c"
+    },
+    {
+      "scopeId": "evolving-wilds:0",
+      "nativeName": "Evolving Wilds",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Evolving Wilds:1",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77"
+    },
+    {
+      "scopeId": "hapless-researcher:0",
+      "nativeName": "Hapless Researcher",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Hapless Researcher:1",
+      "definitionSha256": "7aa7be71ab7765d5b2d542229839a2113ec8343cc1b3f0232e0ebe2c6ec52101"
+    },
+    {
+      "scopeId": "sakura-tribe-elder:0",
+      "nativeName": "Sakura-Tribe Elder",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Sakura-Tribe Elder:1",
+      "definitionSha256": "c7a1ae66032683e064606daf19f3d5f7cd17670526fd00f8946dc7438be6657b"
+    },
+    {
+      "scopeId": "burnished-hart:0",
+      "nativeName": "Burnished Hart",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Burnished Hart:1",
+      "definitionSha256": "687a301cdb75801e8b44caa0a402576f1d44d73862dd143bd3a9af934f7b5ed7"
+    },
+    {
+      "scopeId": "mind-stone:1",
+      "nativeName": "Mind Stone",
+      "nativeIndex": 1,
+      "nativeAbilityId": "Mind Stone:2",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf"
+    },
+    {
+      "scopeId": "viscera-seer:0",
+      "nativeName": "Viscera Seer",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Viscera Seer:1",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663"
+    },
+    {
+      "scopeId": "greed:0",
+      "nativeName": "Greed",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Greed:1",
+      "definitionSha256": "9f2a7b963cdb3fcaa24b44f57c67bf1b4feed7e0e8481ff759952d7fe03d3fba"
+    },
+    {
+      "scopeId": "mind-stone:0",
+      "nativeName": "Mind Stone",
+      "nativeIndex": 0,
+      "nativeAbilityId": "Mind Stone:1",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf"
+    }
+  ],
+  "sourcePhaseSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+  "exclusions": "Prior source expectations, structural comparison results, mutation verdicts and execution observations intentionally excluded. Direct fresh native exports from exact merged-main application and maintained engine."
+}
