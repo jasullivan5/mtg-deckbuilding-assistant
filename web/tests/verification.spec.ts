@@ -37,12 +37,16 @@ test('Verification separates reference cards partial scopes dated observations a
   await panel.locator('summary').filter({hasText:'Hapless Researcher · source review · CURRENT'}).click();
   await expect(panel).toContainText('all other card behaviors outside review');
   await expect(panel).toContainText('OBJECT_GENERATION_IN_EXECUTION'.replaceAll('_',' ').toLowerCase());
+  await mkdir('../generated/verification-coverage/screenshots',{recursive:true});
+  await panel.locator('summary').filter({hasText:'Hapless Researcher · source review · CURRENT'}).locator('..').screenshot({path:'../generated/verification-coverage/screenshots/desktop-partial-card.png'});
   await inspection.click();
   const challenge=panel.getByText('Challenge findings: what the sacrifice method detects and misses',{exact:true});await challenge.click();
   await expect(panel.locator('#verification-challenge')).toContainText('2 missed adversarial defects');
   await expect(panel.locator('#verification-challenge')).toContainText('DIFFERS');
   await panel.locator('summary').filter({hasText:'Remove required {1}{G} mana payment'}).click();
   await expect(panel.locator('#verification-challenge')).toContainText('no full-cost requirement');
+  await panel.locator('summary').filter({hasText:'Remove required {1}{G} mana payment'}).click();
+  await panel.locator('#verification-challenge').screenshot({path:'../generated/verification-coverage/screenshots/desktop-challenge.png'});
   await challenge.click();
   await mkdir('../generated/verification-coverage/screenshots',{recursive:true});
   await writeFile('../generated/verification-coverage/browser-measurements.json',JSON.stringify({application:data.applicationRevision,engine:data.engine,snapshot:data.snapshot,populationSha256:data.populationSha256,counts:data.counts,qualification:data.qualification,challenge:data.challenge.counts,adverseExecution:data.challenge.adversarialExecution},null,2));
