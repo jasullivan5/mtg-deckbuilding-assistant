@@ -1,5 +1,7 @@
 # Architecture and extension points
 
+`coverage/VerificationCoverage.kt` joins exact scoped evidence to the retained global identity baseline and existing assurance gate. `server/SacrificeChallenge.kt` examines the unchanged pilot method with isolated adversarial definitions and explicit native execution. Neither extends discovery interpretation, Commander eligibility or independent approval. See [verification identity, ingestion and completeness boundaries](VERIFICATION_COVERAGE.md).
+
 Global Commander coverage, bounded single-commander inventory and objective reach reuse the catalog audit, effective metadata and existing discovery queries. The Progress projection and immutable baseline contract are documented in [Global Commander coverage](GLOBAL_COMMANDER_COVERAGE.md#architecture-and-api); the narrow sacrifice pilot does not introduce another interpreter or qualification gate.
 
 ## Current implementation
