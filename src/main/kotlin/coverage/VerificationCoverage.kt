@@ -61,9 +61,11 @@ fun indexVerification(record:VerificationRecord,definitionSha256:String?,engine:
     return IndexedVerification(record,freshness,reasons)
 }
 
-fun retainedGlobalBaseline():GlobalBaseline = GlobalBaseline::class.java.getResourceAsStream("/global-commander-baseline.json.gz")!!.let {
+private val verificationReferenceBaseline:GlobalBaseline by lazy { GlobalBaseline::class.java.getResourceAsStream("/global-commander-baseline.json.gz")!!.let {
     GZIPInputStream(it).bufferedReader().use { reader->reportJson.decodeFromString(reader.readText()) }
-}
+} }
+/** One immutable packaged population, shared by the index and scoped methods. No live source refresh. */
+fun retainedGlobalBaseline():GlobalBaseline = verificationReferenceBaseline
 
 fun requireVerificationIdentityBinding(baseline:GlobalBaseline,identities:List<NativeIdentity>) {
     require(baseline.identityAlgorithm==IDENTITY_ALGORITHM && baseline.populationPolicy=="physical-format-population-v1") { "Verification reference identity/population policy changed; select an explicitly reviewed compatible baseline" }

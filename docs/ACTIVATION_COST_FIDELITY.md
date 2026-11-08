@@ -33,7 +33,9 @@ Supported vocabulary: fixed generic/colored/colorless mana; mandatory conjunctio
 
 The SDK has no generic mana-OR-sacrifice constructor at this revision. Its real Forage choice is retained as an unsupported alternative, not flattened into AND. Therefore generic alternative-vs-combined fidelity is **not demonstrated**. Untap has structural unit controls, but no source-reviewed untap cohort/native execution claim. Contextual reductions, additional global costs, activation permissions, source-zone/timing restrictions, summoning sickness, targets, replacement outcomes and resolving effects remain explicit dependencies. The result is named complete **printed base** payment to preserve this boundary.
 
-`ActivationCostFidelity` joins existing confident physical identities and native action IDs. It reuses the immutable global baseline and existing definition digest. No new association system, Oracle parser, payment solver or certification gate is introduced. `ActivationCostExecution` parameterizes the existing Lab native transaction builder, which delegates actions to genuine Argentum `ActionProcessor`. Test-only mutated card copies never enter the production catalog or translation ledger.
+`ActivationCostFidelity` joins existing confident physical identities and native action IDs. It reuses the immutable global baseline and existing definition digest. No new association system, Oracle parser, payment solver or certification gate is introduced. Potential reach enumerates each confidently associated primary definition's script.activatedAbilities only; back/flip faces, granted abilities and keyword-lowered actions are excluded. `ActivationCostExecution` parameterizes the existing Lab native transaction builder, which delegates actions to genuine Argentum `ActionProcessor`. Test-only mutated card copies never enter the production catalog or translation ledger.
+
+The initial complete browser run exhausted the launcher's unchanged 1 GB heap when serializing the mechanical audit after multiple research views. Progress responses now stream their typed reports instead of allocating a second complete JSON tree, and the immutable packaged reference baseline is shared rather than decoded again for each method. Measurements, deadlines and discovery policy remain unchanged. The final complete browser run exercises the same workload at 1 GB.
 
 The existing verification index receives an additive SOURCE_REVIEW record per cost tree and attributable production execution observations. Its counting definition remains `scope-aware-verification-v1`; the added method is independently versioned `printed-base-activation-cost-v1`. Ten cost-tree comparisons become ten requirement applications in that index. The 26 source tree nodes (including conjunction nodes) are reported separately; they are not 26 independent tests or certifications. Five existing action scopes gain depth, five scopes are additional, and four additional physical cards receive review. No duplicate new-card gain is inferred from the strengthened familiar scopes.
 
@@ -69,11 +71,11 @@ Use clean maintained `app-stable` at `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1` 
 ```powershell
 .\dev.ps1 test
 .\dev.ps1 installDist
-# With build/install/mtg-assistant/lib/* on the Java classpath, MainKt:
-# research activation-cost-execution --output generated/cost-execution-new.json
-# research activation-cost-report --output generated/cost-report-new.json
-# research verification-baseline --output generated/cost-baseline-new.json.gz
-# research verification-compare --before src/main/resources/verification-baseline.json.gz --after generated/cost-baseline-new.json.gz --output generated/cost-change-new.json
+$java = Join-Path $env:JAVA_HOME 'bin/java.exe'
+& $java '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research activation-cost-execution --output generated/cost-execution-new.json
+& $java '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research activation-cost-report --output generated/cost-report-new.json
+& $java '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research verification-baseline --output generated/cost-baseline-new.json.gz
+& $java '-Xmx1g' '-XX:ActiveProcessorCount=4' -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research verification-compare --before src/main/resources/verification-baseline.json.gz --after generated/cost-baseline-new.json.gz --output generated/cost-change-new.json
 cd web
 pnpm build
 $env:EXPLORER_URL='http://127.0.0.1:8800'
