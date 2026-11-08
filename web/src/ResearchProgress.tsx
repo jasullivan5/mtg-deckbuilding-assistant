@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {createContext, useContext, useEffect, useState} from 'react';
 import {api} from './api';
 
 type AssuranceRecord = {card: string; evidenceCurrent: boolean; sourceFidelity: string; engineExecution: string; qualification: string; reasons: string[]; evidence: unknown};
@@ -23,7 +23,11 @@ type History = {
 const number = (n: number) => n.toLocaleString();
 const human = (s: string) => s.replaceAll('_', ' ').toLowerCase();
 const repository = 'https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/';
-function SourceLink({path}: {path: string}) {return <a href={`${repository}main/${path}`} target="_blank" rel="noreferrer">Read investigation</a>;}
+const RevisionContext = createContext('main');
+function SourceLink({path}: {path: string}) {
+  const revision = useContext(RevisionContext).replace(/\+dirty$/, '');
+  return <a href={`${repository}${revision}/${path}`} target="_blank" rel="noreferrer">Read investigation</a>;
+}
 function Counts({counts, caption}: {counts: Record<string, number>; caption: string}) {
   return <div className="progress-table"><table><caption>{caption}</caption><thead><tr><th>Category</th><th>Count</th></tr></thead><tbody>
     {Object.entries(counts).map(([key, count]) => <tr key={key}><th scope="row">{human(key)}</th><td>{number(count)}</td></tr>)}
@@ -70,7 +74,7 @@ export default function ResearchProgress() {
     `${g.nativeType} ${g.representatives.map(r => r.card).join(' ')}`.toLowerCase().includes(query.toLowerCase())) ?? [];
   const comparison = history?.comparisons[selectedComparison];
   const historyRows = comparison?.changes.filter(r => r.card.toLowerCase().includes(historyQuery.toLowerCase())) ?? [];
-  return <article className="progress-page" aria-label="Research Progress Dashboard">
+  return <RevisionContext.Provider value={data.applicationRevision}><article className="progress-page" aria-label="Research Progress Dashboard">
     <div className="progress-heading"><div><p className="eyebrow">BREADTH · TRUST · REUSABLE GAINS</p><h2>Research Progress Dashboard</h2>
       <p className="progress-intro">How much can we understand today, and what will unlock the next useful research capability?</p></div>
       <span className="progress-badge">Current native inventory<br/>Historical gains kept separate</span></div>
@@ -185,5 +189,5 @@ export default function ResearchProgress() {
       <p>Application <code>{data.applicationRevision}</code><br/>Engine <code>{data.argentumCommit}</code></p><p>All present-tense native counts use these packaged build revisions. Historical comparisons name separate source revisions. A change in catalog, engine or denominator requires a fresh controlled comparison; this page does not join unmatched baselines.</p>
       <p><a href="/api/v1/progress" target="_blank" rel="noreferrer">Inspect complete Kotlin dashboard report</a> · <SourceLink path="docs/RESEARCH_PROGRESS.md"/></p>
     </details>
-  </article>;
+  </article></RevisionContext.Provider>;
 }

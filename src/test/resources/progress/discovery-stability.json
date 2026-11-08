@@ -1,0 +1,53 @@
+{
+  "baselineApplication": "b6e7cc7045a9cc01fbc76779d59c80d40bb2bb2e",
+  "candidateApplication": "3967b05d0acd604ce0496bba4428ed91de7654f8",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "commander": "Judith, the Scourge Diva",
+  "query": null,
+  "objectives": {
+    "own-nontoken-creature-deaths": {
+      "byteIdentical": true,
+      "sha256": "0a8dd1e0b5bbd780d135fbb358b1ecc4233cb59d6330e0470d55b5d86c30d011",
+      "eligiblePhysicalCards": 6111,
+      "pathways": 3049,
+      "matchingPathways": 499,
+      "matchingCards": 487,
+      "unknownPathways": 410,
+      "nonmatchPathways": 2140,
+      "unsupportedRecords": 8702
+    },
+    "reanimate-own-creatures": {
+      "byteIdentical": true,
+      "sha256": "2c0c5336f5da2575e8e5291ce3cfd18b9b975a592e7a84a970289bc6d05e4963",
+      "eligiblePhysicalCards": 6111,
+      "pathways": 2056,
+      "matchingPathways": 106,
+      "matchingCards": 104,
+      "unknownPathways": 93,
+      "nonmatchPathways": 1857,
+      "unsupportedRecords": 8318
+    },
+    "create-creature-tokens": {
+      "byteIdentical": true,
+      "sha256": "78fa6aad8b7b6a6750c33c54c44561b985962b0e4ed15a81c38733f8cead9748",
+      "eligiblePhysicalCards": 6111,
+      "pathways": 648,
+      "matchingPathways": 363,
+      "matchingCards": 346,
+      "unknownPathways": 55,
+      "nonmatchPathways": 230,
+      "unsupportedRecords": 8702
+    },
+    "stock-own-graveyard": {
+      "byteIdentical": true,
+      "sha256": "1d17fa4762db9be96a5e27df334b65c61907d31cb8ae96c2f8c275fedae4e6e8",
+      "eligiblePhysicalCards": 6111,
+      "pathways": 1446,
+      "matchingPathways": 535,
+      "matchingCards": 508,
+      "unknownPathways": 576,
+      "nonmatchPathways": 335,
+      "unsupportedRecords": 8537
+    }
+  }
+}

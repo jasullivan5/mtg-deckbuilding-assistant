@@ -18,6 +18,7 @@ test('Progress opens without discovery and shows scoped Kotlin coverage trust ga
   await expect(dashboard.locator('#node-coverage')).toHaveAttribute('max', String(data.mechanics.denominator));
   await expect(dashboard).toContainText('Not measured at catalog scale');
   await expect(dashboard).toContainText('not NO_MATCH');
+  await expect(dashboard.getByRole('link', {name:'Read investigation'}).first()).toHaveAttribute('href', new RegExp(`/blob/${data.applicationRevision.replace(/\+dirty$/, '')}/`));
   expect(data.assurance.qualification.QUALIFIED).toBe(0);
   expect(data.assurance.notMeasured).toBeGreaterThan(0);
   if (data.external.state === 'MEASURED') {

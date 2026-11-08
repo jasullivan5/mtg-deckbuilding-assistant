@@ -72,10 +72,54 @@ Source discard: 9 new matching pathways / 8 newly matching cards, 6 new nonmatch
 
 ## Verification and visual review
 
-Verification receipt and screenshots are recorded after the running Kotlin-backed application is checked. Current measurements and the stability comparison use maintained engine `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`, not the historical comparison engine. Application baseline is current main `b6e7cc7045a9cc01fbc76779d59c80d40bb2bb2e`. Candidate commands and outcomes are recorded in the delivery receipt below.
+Current measurements and the stability comparison use maintained engine `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`, not the historical comparison engine. Application baseline is current main `b6e7cc7045a9cc01fbc76779d59c80d40bb2bb2e`. Backend implementation/stability candidate is `3967b05d0acd604ce0496bba4428ed91de7654f8`; final frontend/navigation implementation is `11c50350fe89b9b04df17e23bb79053d40cbc78e`. The later change modifies frontend navigation/presentation and documentation only. The final clean Windows build packages `11c50350fe89b9b04df17e23bb79053d40cbc78e`; subsequent receipt/test-only commits do not change the running implementation.
+
+### Observed current counts
+
+| Measurement | Result | Scope |
+| --- | ---: | --- |
+| Native physical definitions | 17,017 | 16,995 inherited + 22 application extensions |
+| Registered names | 17,373 | Includes faces/aliases, a different unit |
+| External reference records | 39,049 | Exact explicit snapshot above |
+| Judith-eligible external physical identities | 12,828 | 26,221 excluded; 0 unresolved pool records |
+| Confident native associations | 6,658 / 12,828 (51.9%) | 6,649 inherited + 9 extension associations; not fidelity or discovery eligibility |
+| Missing native definitions | 6,159 | Within the same external eligible denominator |
+| Uncertain associations | 11 | 1 ambiguous + 10 identity-review-required |
+| Effective source/native metadata disagreements | 575 | Within confidently associated records; not silently repaired |
+| Native typed nodes | 192,992 | Entire native physical population, no Commander filter |
+| Explicitly supported nodes | 7,863 (4.1%) | Local typed-node coverage, not all mechanics understood |
+| Partially supported nodes | 2,962 | Same typed-node denominator |
+| Unsupported nodes | 22,537 | Same typed-node denominator |
+| Unsupported or unresolved nodes | 41,991 | Same typed-node denominator |
+| Observed without local pathway | 117,639 | Unclassified including metadata/outside-objective structures; not NO_MATCH |
+| Native type labels with explicit support | 19 | 1,628 distinct serialized type values observed; this is not an all-mechanic-family denominator |
+| Emitted facts | 13,632 | 12,689 MATCH-confidence / 938 UNKNOWN / 5 NO_MATCH-confidence; separate from objective verdicts |
+| Extension assurance scopes | 22 | 0 current / 22 stale / 0 without recorded evidence |
+| Qualification | 0 qualified / 21 provisional / 1 blocked / 0 withdrawn | Extension gate only; Tatterkite remains blocked |
+| Inherited definitions outside assurance process | 16,995 | Catalog fidelity and qualification not measured |
+
+These populations are not interchangeable. In particular, the external eligible population (12,828), confidently associated external population (6,658), and controlled native discovery input (6,111) answer different questions. The external association audit evaluates no objective; its zero objective counters do not mean zero unknown mechanics.
+
+### Commands and outcomes
+
+- `git fetch origin` in both repositories; inspect current remote branches; application feature branch from current `origin/main`; clean engine fast-forward to `origin/app-stable`. No engine implementation edits.
+- `node scripts/retain-progress.mjs generated/discard-baseline/stock-own-graveyard.json generated/discard-candidate/stock-own-graveyard.json generated/source-sacrifice-candidate/stock-own-graveyard.json`: passed all exact historical source hashes, population/eligibility equality and expected positive/negative transition checks.
+- `python scripts/oracle-snapshot.py download --directory generated/oracle --manifest src/test/resources/progress/reference-snapshot.manifest.json`: exact replay passed size/SHA checks. The initial replay used the identical archived manifest; the retained manifest removes any runtime dependency on that archive.
+- `.\dev.ps1 test --tests '*ResearchProgressTest'`: 5 focused tests passed. Includes disjoint node populations, overlapping cards, stale/missing assurance, unavailable external source, unsupported/enclosing structures and exact historical baselines.
+- `.\dev.ps1 test ':assistant:installDist'`: **561 tests / 74 suites, 0 failures, 0 errors, 0 skips**. Includes existing mapping/missing/ambiguous/source-revision checks, regression benchmarks, assurance gates, native scenarios and full CLI/HTTP discovery parity.
+- `pnpm build`: TypeScript (including Playwright files) and production Vite build passed. Progress and Primer are lazy loaded; the initial bundle is approximately 234 kB before gzip.
+- `.\scripts\explorer.ps1 -Port 8797 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz`: genuine one-step Windows build and foreground Kotlin service reached readiness. Default port 8787 and the no-snapshot launch remain supported.
+- With `EXPLORER_URL=http://127.0.0.1:8797` and `EXPLORER_BROWSER_CHANNEL=msedge`, `pnpm exec playwright test`: **27 passed (2.2 minutes)**. Includes all eight transport/interface regressions, nineteen live research/dashboard checks, genuine discovery across all objectives, archived tools, direct Progress/Primer access, keyboard navigation, record drill-downs, unavailable historical baseline, desktop and 390px overflow checks. The first full browser run had 26 passes and one obsolete keyboard assumption (Commander first); the corrected test explicitly verifies Discover → Progress → Primer → Commander before continuing. That initial failed receipt/context remains under ignored `generated/progress/`; it was not relabelled as a pass. The full corrected suite was rerun successfully.
+- Build current main in isolated `../mtg-progress-baseline` against the same clean engine; run each of the four CLI objectives on baseline and candidate with Judith, no search filter and JSON output. **All four complete reports are byte-identical**, including their 6,111-card inputs, eligibility, pathways, decisions, unsupported records and evidence. The [compact receipt](../src/test/resources/progress/discovery-stability.json) records exact report hashes and counts; raw outputs stay under ignored `generated/progress/`. Reproduce each with `mtg-assistant discover --commander 'Judith, the Scourge Diva' --objective <id> --json --output <path>`, then compare SHA-256. The isolated baseline was needed for simultaneous source/build separation, not a replacement development checkout.
+
+The initial sandboxed Gradle attempt could not write the shared cache lock; the authorized build outside the restricted sandbox passed. The sandboxed preview did not reach readiness and was stopped; actual Edge checks ran outside that process sandbox. These attempts are not counted as passed verification. Standalone engine-suite execution, non-Windows launch, other browsers, exhaustive accessibility and other external source snapshots were not executed in this increment. Existing engine-backed application scenarios were executed by the full Kotlin suite.
+
+### Visual review
+
+Actual captures from the running Kotlin-backed dashboard, with the explicit snapshot selected: [desktop first screen](images/progress/desktop-first-screen.png), [390px first screen](images/progress/mobile-first-screen.png), [desktop complete page](images/progress/desktop.png), [390px complete page](images/progress/mobile.png). Both widths were inspected. The review moved the developer index below primary content and removed the duplicate return control from Progress/Primer. Headline figures, separate historical scope, uncertainties, obstacle accents and the capability table remain readable without exposing raw diagnostics by default. Tables can scroll inside the narrow viewport; browser checks establish no document-level horizontal overflow. No synthetic image or illustrated execution substitutes for these captures.
 
 ## Limits and next decision
 
 Source fidelity across inherited definitions, scenario-to-ability execution coverage, SDK-versus-bespoke reuse, independent objective consumer reuse and reusable verification-pattern breadth remain unmeasured. There is no current-versus-historical trend across unmatched engine/catalog baselines. Default launch intentionally has no external denominator until a source is explicitly selected. Group representatives are samples of native locations, not independent Oracle adjudications. No new scenarios, objectives, integrations or engine changes were added.
 
-The recommended next bounded investigation is a source-first review of one recurring native mechanic family across a small positive/negative/deceptive/held-out cohort, with exact Oracle, definition and engine bindings and an explicit independent review boundary. The inherited fidelity gap applies across the whole native catalog, and wider extraction reach would otherwise amplify an unmeasured source assumption. Choose the family from the dashboard's observed occurrence table. This increment does not start that investigation.
+The recommended next bounded investigation is a **current source-fidelity audit of the shared source-bound sacrifice representation in inherited definitions**. Use the existing Mogg Fanatic, Seal of Fire, Evolving Wilds and Spark Elemental source-led cases plus held-out Reckless Barbarian/Ball Lightning variants to check source identity, controller versus owner, battlefield departure versus arriving card type, and same-object requirements. Bind findings to current Oracle snapshots, native definitions and engine revision, explicitly separating author/source review from independent approval. Do not infer that existing stale bundles or the rest of the catalog are renewed. This family already demonstrates reusable breadth in the controlled comparison, while inherited source fidelity remains unmeasured. This increment does not start that investigation.

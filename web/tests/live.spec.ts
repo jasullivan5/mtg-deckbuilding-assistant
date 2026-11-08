@@ -254,6 +254,10 @@ test('all existing objectives changed commanders and blocked selections still ex
 test('commander and objective disclosures work before discovery with precise review fields at 390 pixels', async ({page}) => {
   let searches = 0; page.on('request', r => {if (r.url().endsWith('/discover')) searches++;});
   await page.setViewportSize({width: 390, height: 844}); await page.goto('/');
+  for (const destination of ['Discover', 'Progress', 'Primer']) {
+    await page.keyboard.press('Tab');
+    await expect(page.getByRole('navigation', {name: 'Primary navigation'}).getByRole('button', {name: destination, exact: true})).toBeFocused();
+  }
   await page.keyboard.press('Tab'); await expect(page.getByRole('combobox', {name: 'Commander', exact: true})).toBeFocused();
   await page.keyboard.press('Tab'); await expect(page.getByRole('combobox', {name: 'Objective', exact: true})).toBeFocused();
   await page.keyboard.press('Tab'); await expect(page.getByRole('button', {name: 'Find cards', exact: true})).toBeFocused();
