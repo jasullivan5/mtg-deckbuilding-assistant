@@ -1,0 +1,117 @@
+{
+  "beforeApplication": "f5b37fa1550e6261ae6daf09ffff0e80b476f5b9",
+  "afterApplication": "a6be6779633a49676567f49d2d8cb069aa65728c",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "sourceSnapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-11-08T02:40:04.607119+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "populationSha256": "95d869de7e43ce9bc6dbcb7ae2341192b409ce9d099885b2e8f6962b5d5a0086",
+  "representationBaselineSha256": "c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911",
+  "verificationBaselineSha256": "373191816510bb0c0c5d886d3667f67a2e8f95639511f2c68f8ef90764123440",
+  "counts": {
+    "commander_legal_physical_cards": 32109,
+    "definition_available_cards": 16927,
+    "interpretation_evidenced_cards": 14528,
+    "interpretation_records": 38232,
+    "interpretation_cards_with_partial_or_unsupported": 13023,
+    "source_review_current_cards": 9,
+    "source_review_stale_cards": 22,
+    "source_review_unresolved_cards": 2,
+    "execution_current_cards": 9,
+    "execution_current_pass_cards": 9,
+    "execution_current_fail_cards": 0,
+    "execution_current_unknown_cards": 0,
+    "execution_historical_cards": 1,
+    "execution_stale_cards": 0,
+    "cards_with_indexed_source_or_execution": 33,
+    "cards_with_any_indexed_evidence": 14531,
+    "source_review_scopes_current": 9,
+    "requirement_applications_current": 81,
+    "execution_observations_current": 15,
+    "execution_observations_historical": 1,
+    "evidence_records_outside_reference_population": 0,
+    "current_records_with_contradictions": 1
+  },
+  "qualification": {
+    "PROVISIONAL": 21,
+    "QUALIFIED": 0,
+    "BLOCKED": 1,
+    "WITHDRAWN": 0,
+    "qualified_scope_cards": 0,
+    "not_measured_under_qualification_process": 32087
+  },
+  "challenge": {
+    "source_scopes": 5,
+    "available_native_scopes": 3,
+    "missing_native_scopes": 2,
+    "held_out_available_scopes": 1,
+    "detected_contradictions": 4,
+    "not_accepted_unresolved": 2,
+    "missed_adversarial_defects": 2,
+    "execution_dependent_classes": 2
+  },
+  "controlledDiscovery": [
+    {
+      "objective": "own-nontoken-creature-deaths",
+      "eligiblePhysicalCards": 6111,
+      "sha256": "0a8dd1e0b5bbd780d135fbb358b1ecc4233cb59d6330e0470d55b5d86c30d011",
+      "bytes": 48399732,
+      "byteIdentical": true
+    },
+    {
+      "objective": "reanimate-own-creatures",
+      "eligiblePhysicalCards": 6111,
+      "sha256": "2c0c5336f5da2575e8e5291ce3cfd18b9b975a592e7a84a970289bc6d05e4963",
+      "bytes": 49046277,
+      "byteIdentical": true
+    },
+    {
+      "objective": "create-creature-tokens",
+      "eligiblePhysicalCards": 6111,
+      "sha256": "78fa6aad8b7b6a6750c33c54c44561b985962b0e4ed15a81c38733f8cead9748",
+      "bytes": 40362125,
+      "byteIdentical": true
+    },
+    {
+      "objective": "stock-own-graveyard",
+      "eligiblePhysicalCards": 6111,
+      "sha256": "1d17fa4762db9be96a5e27df334b65c61907d31cb8ae96c2f8c275fedae4e6e8",
+      "bytes": 43442168,
+      "byteIdentical": true
+    }
+  ],
+  "kotlin": {
+    "tests": 577,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "limits": [
+    "Before and after use independent installed distributions and the same native engine; original definition and eligibility evidence are preserved byte-for-byte.",
+    "Source, execution and qualification categories overlap. No whole-card completeness is established.",
+    "The deliberately incorrect mutant execution is retained only in the challenge receipt, outside production-card execution totals."
+  ],
+  "browserValidation": {
+    "startTime": "2026-11-08T16:55:18.840Z",
+    "duration": 195418.14,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "browser": "Windows Edge",
+    "api": "Real local Kotlin API for consequential progress/discovery checks; deterministic interface/missing-data fixtures also included",
+    "applicationRevision": "cb4347ef92cad2227403b1ca0d97a5dc35f55676",
+    "desktopViewport": 1440,
+    "mobileViewport": 390
+  }
+}

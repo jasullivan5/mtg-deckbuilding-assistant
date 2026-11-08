@@ -375,3 +375,9 @@ button.rules-line:hover { background: #273c41; }
   .lab-intro, .lab-checkpoints, .lab-observations { grid-template-columns: minmax(0, 1fr); }
   .lab-intro > .picture { width: min(54%, 154px); }
 }
+
+.verification-matrix { overflow-x:auto; }
+.verification-matrix table { width:100%; border-collapse:collapse; }
+.verification-matrix th,.verification-matrix td { text-align:left; border-bottom:1px solid var(--line); padding:12px 8px; }
+.verification-matrix progress { width:100%; min-width:80px; accent-color:#b7d9c5; }
+@media(max-width:600px) { .verification-matrix th,.verification-matrix td { padding:10px 4px; font-size:.8rem; } .verification-matrix th { min-width:115px; } }

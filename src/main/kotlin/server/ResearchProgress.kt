@@ -73,6 +73,7 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val commanders: CommanderInventory? by lazy { globalRecords?.let { commanderInventory(catalog,it) } }
     val objectiveInventory: ObjectiveInventory by lazy { dev.mtg.assistant.coverage.objectiveInventory(catalog) }
     val pilot: FidelityPilot by lazy { SacrificePilot.report(catalog,factRecords) }
+    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report()) }
     val report: ResearchProgress by lazy {
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
@@ -96,11 +97,11 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             factKinds = extracted.facts.groupingBy { it.kind.name }.eachCount().toSortedMap(),
             factConfidence = Verdict.entries.associate { it.name to extracted.facts.count { f -> f.confidence == it } },
             assurance = assurance,
-            execution = "Not measured at catalog scale. The extension ledger records card-level historical execution, without a scenario/ability outcome index. No scenario pass total is inferred. Curated Lab runs are on demand; retained observations keep their original engine revision. Missing evidence is not a failure. See the research index and source-sacrifice investigation for the retained Spark Elemental failure.",
+            execution = "Not measured at catalog scale as whole-card verification. The scoped verification index above reconciles attributable source and execution observations against the retained Commander universe. The extension ledger's historical card-level execution claims do not supply new scenario passes. Curated Lab reads are not execution. Missing evidence is not failure; retained observations keep their original date and engine revision.",
             obstacles = listOf(
                 ProgressObstacle("fidelity", "Inherited source fidelity is not established", "${assurance.notMeasured} native physical definitions outside the application assurance ledger; broader fidelity not measured.",
                     "Discovery can faithfully read a native definition that mistranslates Oracle requirements.", "Tatterkite retains a material concern in the extension ledger; inherited definitions receive no implied review.",
-                    "Review one recurring native mechanic against a small source-bound cohort with positive, negative and held-out controls.", "Measured ledger scope; corpus fidelity unquantified", "assurance"),
+                    "Independently examine the indexed source/ability evidence and the sacrifice challenge's missed cost and target-filter defects before broadening fidelity claims.", "Measured ledger/index scopes; corpus fidelity unquantified", "verification-coverage"),
                 ProgressObstacle("mechanics", "Native structures remain partly read or unclassified", "$incomplete of ${audit.encounteredTypedNodes} typed nodes are not explicitly SUPPORTED. This includes unclassified metadata, not just missing mechanics.",
                     "Unresolved enclosing branches can limit an otherwise recognized operation. No emitted pathway is not a negative.", "Pit Raptor's nested pay-or-sacrifice branch; specialized token operations such as Amass/populate.",
                     "Inspect partial and unsupported groups, then source-review one recurring branch shape before extending extraction.", "Measured native audit; no Oracle recall claim", "mechanics"),
@@ -115,9 +116,9 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
                 ProgressObstacle("objective-quality", "Objective correctness and expressiveness remain narrow", "Four bounded questions; independent catalog-scale search correctness is not measured.",
                     "Operational matches do not establish complete recall, precision or useful deck value.", "Grim Haruspex death-triggered draw is outside the current death objective; cross-card dependencies remain uncomposed.",
                     "Review one existing frozen card-objective relationship cohort independently before defining a broader benchmark.", "Documented scope; operational counts measured separately", "objectives"),
-                ProgressObstacle("execution", "Reusable execution evidence has narrow reach", "Scenario-to-ability coverage at catalog scale is not measured.",
+                ProgressObstacle("execution", "Reusable execution evidence has narrow reach", "The verification index reports bounded attributable observations; complete source-to-native scope enumeration is not established.",
                     "Structural potential cannot establish behavior after object identity, targets or zones change.", "The source-sacrifice investigation retained Spark Elemental's old-trigger/new-object failure. Later Lab observations remain separately revision-bound.",
-                    "Index existing scenario identities, mechanics, engine revisions and outcomes before attempting a catalog-wide count.", "Historically observed failure; breadth unquantified", "execution"),
+                    "Establish a source-derived complete scope inventory for one reviewed card before defining whole-card assurance.", "Indexed bounded receipts; historical failure retained; completeness unmeasured", "verification-coverage"),
                 ProgressObstacle("context", "Discovery does not yet evaluate a deck slot in context", "System capability gap; affected-card count is not a meaningful unit.",
                     "A useful mechanical contribution can still be unaffordable or displace a better complementary card.", "Reassembling Skeleton plus Viscera Seer needs mana, timing and another card; discovery does not evaluate the package or its opportunity cost.",
                     "Specify one bounded cross-card dependency question using existing facts, with explicit resource and timing requirements.", "Documented capability limit", "capabilities")

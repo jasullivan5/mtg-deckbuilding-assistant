@@ -95,6 +95,15 @@ fun researchCommand(args: List<String>, catalog: () -> Catalog, out: (String)->U
         "baseline" -> { require(options.keys == setOf("--oracle-cards","--output")); reportJson.encodeToString(GlobalBaseline.serializer(),globalBaseline(catalog(),loadOracleSnapshot(Path.of(required("--oracle-cards"))),revision)) }
         "compare" -> { require(options.keys == setOf("--before","--after","--output")); reportJson.encodeToString(GlobalCoverageChange.serializer(),compareGlobalBaselines(readGlobalBaseline(Path.of(required("--before"))),readGlobalBaseline(Path.of(required("--after"))))) }
         "fidelity-pilot" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),SacrificePilot.execute(catalog(),revision)) }
+        "fidelity-challenge" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),dev.mtg.assistant.explorer.SacrificeChallenge.execute(catalog(),revision)) }
+        "verification-baseline" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(VerificationCoverage.serializer(),dev.mtg.assistant.explorer.ResearchProgressService(catalog(),revision).verification) }
+        "verification-compare" -> {
+            require(options.keys == setOf("--before","--after","--output"))
+            fun read(key:String):VerificationCoverage = Files.newInputStream(Path.of(required(key))).let { input ->
+                (if(required(key).endsWith(".gz")) GZIPInputStream(input) else input).bufferedReader().use { reportJson.decodeFromString<VerificationCoverage>(it.readText()) }
+            }
+            reportJson.encodeToString(VerificationChange.serializer(),compareVerification(read("--before"),read("--after")))
+        }
         else -> error("Usage: research {baseline --oracle-cards <snapshot>|compare --before <baseline> --after <baseline>|fidelity-pilot} --output <new path>")
     }
     output.toAbsolutePath().parent?.let(Files::createDirectories)

@@ -52,6 +52,8 @@ Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. 
 
 ## Current documentation
 
+- [Verification coverage and fidelity challenge](docs/VERIFICATION_COVERAGE.md)
+
 - [Repository layout and historical export](docs/REPOSITORY_LAYOUT.md)
 - [Agent instructions](AGENTS.md), [architecture](docs/ARCHITECTURE.md), [environment](docs/CODEX_ENVIRONMENT.md)
 - [Explorer launch/evaluation](docs/EXPLORER.md) and [milestones](docs/EXPLORER_MILESTONES.md)

@@ -1,5 +1,7 @@
 # Current translation assurance procedure
 
+The [scope-aware verification index](VERIFICATION_COVERAGE.md) projects these records alongside ability-level source comparisons and attributable native execution receipts. It retains stale concerns and broad legacy scope, issues no approvals and cannot establish whole-card completeness from partial evidence.
+
 Discovery, faithful translation, native execution and strategic usefulness are different claims. The application exposes representation, source fidelity, recorded execution and qualification separately. Inherited engine definitions receive no silent application certification.
 
 The packaged ledger is src/main/resources/translation-assurance.json. Its source/requirements/test references bind exact retained reference files and hashes. Current source-led/author tests support provisional research; independent qualification requires explicit separate human approval of the exact evidence bundle. Runtime checks definition/engine compatibility and recorded bindings; tests check the referenced files. Neither fetches live Oracle text as an implicit approval.

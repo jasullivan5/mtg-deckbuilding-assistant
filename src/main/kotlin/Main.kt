@@ -29,6 +29,9 @@ Usage:
   mtg-assistant research baseline --oracle-cards <snapshot> --output <new-baseline.json.gz>
   mtg-assistant research compare --before <baseline> --after <baseline> --output <new-comparison.json>
   mtg-assistant research fidelity-pilot --output <new-execution.json>
+  mtg-assistant research fidelity-challenge --output <new-execution.json>
+  mtg-assistant research verification-baseline --output <new-baseline.json.gz>
+  mtg-assistant research verification-compare --before <baseline> --after <baseline> --output <new-comparison.json>
   mtg-assistant explorer <frontend-dist-directory> <port>
   mtg-assistant audit catalog-coverage {--global|--commander <name>} --oracle-cards <snapshot> [--objective <objective|all>] [--translation-review <review.json>] [--enrichment-output <identities.json>] [--json] [--output <path>]
   mtg-assistant audit catalog-missing --report <coverage.json> [--name <substring>] [--status <STATUS>] [--limit 20] [--offset 0] [--json]
