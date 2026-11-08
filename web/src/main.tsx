@@ -281,22 +281,7 @@ export function App() {
         </details>
       </>}
       </div>
-      <details id="research-and-learning" className="research-archive">
-        <summary>Developer research index</summary>
-        <p>Retained investigations and curated execution tools. These have bounded historical scopes and are not additional coverage or certification.</p>
-        <ul>{destinations.filter(d => !['progress', 'primer'].includes(d.id)).map(({id, label, purpose}) => {
-          const isOpen = activeResearch === id;
-          return <li key={id}>
-            <button aria-expanded={isOpen} disabled={id === 'coverage' && !coverageReady}
-              onClick={() => isOpen ? returnToDiscovery() : openResearch(id)}>
-              {isOpen ? 'Close ' : id === 'case' || id === 'contribution' ? 'Open ' : ''}{label}
-            </button>
-            <p>{purpose}</p>
-            {id === 'coverage' && !coverageReady && <p className="hint">Run Judith with “My nontoken creatures die” to open this investigation.</p>}
-          </li>;
-        })}</ul>
-      </details>
-      {activeResearch && <section className="research-return" ref={researchRef} tabIndex={-1}
+      {activeResearch && !['progress', 'primer'].includes(activeResearch) && <section className="research-return" ref={researchRef} tabIndex={-1}
         aria-label={destinations.find(item => item.id === activeResearch)?.label + ' navigation'}>
         <button onClick={returnToDiscovery}>{run ? 'Back to discovery results' : 'Back to Commander discovery'}</button>
         <div aria-live="polite">
@@ -320,6 +305,21 @@ export function App() {
       {coverageReady && visited.includes('coverage') && <div hidden={activeResearch !== 'coverage'}>
         <DiscoveryCoverage key={run.runId} run={run}/>
       </div>}
+      <details id="research-and-learning" className="research-archive">
+        <summary>Developer research index</summary>
+        <p>Retained investigations and curated execution tools. These have bounded historical scopes and are not additional coverage or certification.</p>
+        <ul>{destinations.filter(d => !['progress', 'primer'].includes(d.id)).map(({id, label, purpose}) => {
+          const isOpen = activeResearch === id;
+          return <li key={id}>
+            <button aria-expanded={isOpen} disabled={id === 'coverage' && !coverageReady}
+              onClick={() => isOpen ? returnToDiscovery() : openResearch(id)}>
+              {isOpen ? 'Close ' : id === 'case' || id === 'contribution' ? 'Open ' : ''}{label}
+            </button>
+            <p>{purpose}</p>
+            {id === 'coverage' && !coverageReady && <p className="hint">Run Judith with “My nontoken creatures die” to open this investigation.</p>}
+          </li>;
+        })}</ul>
+      </details>
       <details className="shared-help"><summary>About the evidence checks</summary>
         <dl className="evidence-fields">
           <div><dt>Source-reviewed expectation</dt><dd>{evidenceTerms.expectation}</dd></div>
