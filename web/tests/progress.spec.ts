@@ -12,6 +12,7 @@ test('Progress opens without discovery and shows scoped Kotlin coverage trust ga
   const data = await (await response).json();
   const dashboard = page.getByRole('article', {name:'Research Progress Dashboard'});
   await expect(dashboard).toBeVisible();
+  await expect(dashboard.locator('#fidelity-pilot')).toContainText('reviewed ability scopes', {timeout:150_000});
   expect(data.mechanics.denominator).toBe(Object.values(data.mechanics.counts).reduce((sum: number,n) => sum + Number(n),0));
   expect(data.population.length).toBe(Object.values(data.definitionOrigins).reduce((sum: number,n) => sum + Number(n),0));
   await expect(dashboard.locator('#node-coverage')).toHaveAttribute('value', String(data.mechanics.counts.SUPPORTED));

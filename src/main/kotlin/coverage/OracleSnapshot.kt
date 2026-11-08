@@ -27,7 +27,7 @@ internal fun oracleId(value: String?): String? = value?.lowercase(Locale.ROOT)?.
     val format: String, val compression: String, val sha256: String, val bytes: Long
 )
 @Serializable data class OracleFace(val name: String?, val typeLine: String?, val oracleText: String?,
-    val manaCost: String?, val colorIndicator: List<String>?, val oracleId: String?)
+    val manaCost: String?, val colorIndicator: List<String>?, val oracleId: String?, val power: String? = null, val toughness: String? = null)
 @Serializable data class OracleSource(val scryfallId: String?, val uri: String?, val rulingsUri: String?,
     val set: String?, val collectorNumber: String?, val releasedAt: String?)
 @Serializable data class OracleIdentity(
@@ -35,7 +35,7 @@ internal fun oracleId(value: String?): String? = value?.lowercase(Locale.ROOT)?.
     val typeLine: String?, val oracleText: String?, val manaCost: String?,
     val faces: List<OracleFace>, val legalities: Map<String,String>, val keywords: List<String>,
     val relatedParts: List<String>, val source: OracleSource, val issues: List<String> = emptyList(),
-    val mappingNotes: List<String> = emptyList()
+    val mappingNotes: List<String> = emptyList(), val power: String? = null, val toughness: String? = null
 ) {
     val aliases: Set<String> get() = (listOfNotNull(name) + faces.mapNotNull { it.name }).map { it.lowercase(Locale.ROOT) }.toSet()
     /** Printing metadata may differ; Oracle content and physical layout may not. */
@@ -55,7 +55,7 @@ private fun readIdentity(o: JsonObject): OracleIdentity {
     val layout = o.text("layout"); if (layout.isNullOrBlank()) issues += "MISSING_LAYOUT"
     val faces = (o["card_faces"] as? JsonArray).orEmpty().map { face ->
         val f = face.jsonObject
-        OracleFace(f.text("name"),f.text("type_line"),f.text("oracle_text"),f.text("mana_cost"),f.strings("color_indicator"),oracleId(f.text("oracle_id")))
+        OracleFace(f.text("name"),f.text("type_line"),f.text("oracle_text"),f.text("mana_cost"),f.strings("color_indicator"),oracleId(f.text("oracle_id")),f.text("power"),f.text("toughness"))
     }
     if (faces.any { it.name.isNullOrBlank() || it.typeLine.isNullOrBlank() || it.oracleText == null }) issues += "INCOMPLETE_FACE_METADATA"
     if (layout in setOf("transform","modal_dfc","split","adventure","flip","reversible_card") && faces.size < 2)
@@ -67,7 +67,7 @@ private fun readIdentity(o: JsonObject): OracleIdentity {
     if (legality["commander"] !in setOf("legal","not_legal","banned","restricted")) issues += "MISSING_OR_UNKNOWN_COMMANDER_LEGALITY"
     return OracleIdentity(id,name,layout,identity?.sorted(),o.text("type_line"),o.text("oracle_text"),o.text("mana_cost"),
         faces,legality,o.strings("keywords").orEmpty(),(o["all_parts"] as? JsonArray).orEmpty().map { it.toString() },
-        OracleSource(o.text("id"),o.text("scryfall_uri"),o.text("rulings_uri"),o.text("set"),o.text("collector_number"),o.text("released_at")),issues)
+        OracleSource(o.text("id"),o.text("scryfall_uri"),o.text("rulings_uri"),o.text("set"),o.text("collector_number"),o.text("released_at")),issues,power=o.text("power"),toughness=o.text("toughness"))
 }
 
 fun sha256(path: Path): String {
@@ -120,7 +120,7 @@ fun loadOracleSnapshot(path: Path, manifestPath: Path = Path.of("$path.manifest.
 @Serializable data class PoolDecision(val state: PoolState, val reasons: List<String>, val constructionNotes: List<String> = emptyList())
 
 /** Ordinary inclusion only; Scryfall's full identity is authoritative, never mana-cost color search. */
-fun externalEligibility(card: OracleIdentity, allowed: Set<String>): PoolDecision {
+fun externalEligibility(card: OracleIdentity, allowed: Set<String>?): PoolDecision {
     val notes = buildList {
         if(card.keywords.any { it.equals("Companion",true) }) add("COMPANION_ROLE_NOT_EVALUATED; ordinary inclusion only")
         if(card.keywords.any { it.lowercase(Locale.ROOT) in setOf("partner","choose a background","friends forever","doctor's companion") }) add("PAIRING_NOT_EVALUATED; selected commander remains unchanged")
@@ -128,6 +128,23 @@ fun externalEligibility(card: OracleIdentity, allowed: Set<String>): PoolDecisio
         if((listOfNotNull(card.oracleText)+card.faces.mapNotNull { it.oracleText }).any { it.contains("A deck can have",true) }) add("DECK_QUANTITY_EXCEPTION_NOT_EVALUATED; singleton/deck validation outside scope")
     }
     if(card.legalities["commander"] in setOf("not_legal","banned")) return PoolDecision(PoolState.EXCLUDED,listOf("NOT_COMMANDER_LEGAL"),notes)
+    // Whole-format mode has no color restriction. Keep physical identity exclusions separate
+    // from legality, and never treat missing identity/legality as a confident exclusion.
+    if (allowed == null) {
+        if (card.layout in setOf("token","double_faced_token","emblem","art_series","vanguard","scheme","planar","phenomenon","front_card"))
+            return PoolDecision(PoolState.EXCLUDED,listOf("NON_DECK_PHYSICAL_LAYOUT"),notes)
+        if (card.layout == "meld") {
+            val parts = card.relatedParts.map { snapshotJson.parseToJsonElement(it).jsonObject }
+            val own = parts.singleOrNull { it.text("id") == card.source.scryfallId }
+                ?: parts.singleOrNull { it.text("name") == card.name }
+            if (own?.text("component") == "meld_result") return PoolDecision(PoolState.EXCLUDED,listOf("MELD_RESULT_NOT_SEPARATE_PHYSICAL_CARD"),notes)
+            if (own?.text("component") != "meld_part") return PoolDecision(PoolState.UNRESOLVED,listOf("MELD_PHYSICAL_ROLE_UNRESOLVED"),notes)
+        }
+        val identityIssues = card.issues.filter { it in setOf("MISSING_OR_INVALID_ORACLE_ID","MISSING_NAME","MISSING_LAYOUT","MISSING_PHYSICAL_FACES","CONFLICTING_RECORDS_FOR_ORACLE_ID") }
+        if (identityIssues.isNotEmpty()) return PoolDecision(PoolState.UNRESOLVED,identityIssues,notes)
+        if (card.legalities["commander"] != "legal") return PoolDecision(PoolState.UNRESOLVED,listOf("UNSUPPORTED_LEGALITY"),notes)
+        return PoolDecision(PoolState.ELIGIBLE,emptyList(),notes)
+    }
     if(card.issues.isNotEmpty()) return PoolDecision(PoolState.UNRESOLVED,card.issues,notes)
     if(card.legalities["commander"]!="legal") return PoolDecision(PoolState.UNRESOLVED,listOf("UNSUPPORTED_LEGALITY"),notes)
     if(!allowed.containsAll(card.colorIdentity.orEmpty())) return PoolDecision(PoolState.EXCLUDED,listOf("COLOR_IDENTITY_OUTSIDE_COMMANDER"),notes)

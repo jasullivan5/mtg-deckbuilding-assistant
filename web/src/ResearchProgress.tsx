@@ -1,11 +1,13 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 import {api} from './api';
+import CoverageDimensions from './CoverageDimensions';
 
 type AssuranceRecord = {card: string; evidenceCurrent: boolean; sourceFidelity: string; engineExecution: string; qualification: string; reasons: string[]; evidence: unknown};
 type Progress = {
   applicationRevision: string; argentumCommit: string; measuredAt: string; population: string[]; registeredNames: number;
   definitionOrigins: Record<string, number>;
   external: {state: string; reason: string; snapshot?: {sha256: string; updatedAt: string}; commander: string; counts: Record<string, number>; exclusions: Record<string, number>};
+  global: Progress['external'];
   mechanics: {unit: string; denominator: number; counts: Record<string, number>};
   families: {nativeType: string; occurrences: number; supported: number}[];
   factKinds: Record<string, number>; factConfidence: Record<string, number>;
@@ -78,7 +80,9 @@ export default function ResearchProgress() {
     <div className="progress-heading"><div><p className="eyebrow">BREADTH · TRUST · REUSABLE GAINS</p><h2>Research Progress Dashboard</h2>
       <p className="progress-intro">How much can we understand today, and what will unlock the next useful research capability?</p></div>
       <span className="progress-badge">Current native inventory<br/>Historical gains kept separate</span></div>
-    <p className="hint">Measured {new Date(data.measuredAt).toLocaleString()} · All authored native physical definitions, with no Commander or objective filter. External coverage below has its own population.</p>
+    <p className="hint">Measured {new Date(data.measuredAt).toLocaleString()} · Cards, Commanders and Objectives have separate populations. Source snapshot and exact application/engine revisions remain inspectable.</p>
+    <CoverageDimensions global={data.global} revision={data.applicationRevision}/>
+    <h3>Supporting interpretation and trust measurements</h3>
     <div className="progress-headlines">
       <a href="#definitions" className="progress-stat"><strong>{number(data.population.length)}</strong><span>native physical definitions</span><small>{number(data.registeredNames)} registered names, including faces</small></a>
       <a href="#mechanics" className="progress-stat"><strong>{percentage === undefined ? 'Not measured' : `${percentage.toFixed(1)}%`}</strong><span>typed nodes explicitly supported</span><small>{number(supported)} / {number(mechanics.denominator)} nodes; local interpretation only</small></a>

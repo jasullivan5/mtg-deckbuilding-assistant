@@ -1,0 +1,187 @@
+{
+  "beforeApplication": "fbc49a10245161954e14e70744c5215a60090464",
+  "afterApplication": "bac84a5ba50739f9af950518072550be67cf700b",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "sourceSnapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-11-08T02:40:04.607119+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "globalBaselineSha256": "c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911",
+  "globalCounts": {
+    "raw_snapshot_records": 39049,
+    "duplicate_records_collapsed": 0,
+    "distinct_snapshot_records": 39049,
+    "eligible_oracle_cards": 32109,
+    "excluded_records": 6940,
+    "unresolved_pool_records": 0,
+    "confident_oracle_id_matches": 16927,
+    "confident_native_identity_associations": 16927,
+    "existing_native_oracle_id_matches": 22,
+    "enriched_identity_associations": 16905,
+    "native_physical_definitions": 17017,
+    "matched_upstream_definitions": 16905,
+    "matched_application_extensions": 22,
+    "identity_review_required": 37,
+    "identity_conflicts": 0,
+    "native_metadata_discrepancies": 1059,
+    "effective_metadata_discrepancies": 1052,
+    "approved_corrections_in_external_pool": 7,
+    "native_not_evaluated": 32109,
+    "native_mechanical_unresolved_any_objective": 0,
+    "native_eligibility_disagreements": 1059,
+    "missing_investigated": 0,
+    "missing_uninvestigated": 15143,
+    "native_available": 15875,
+    "native_metadata_unresolved": 1052,
+    "native_mechanically_unresolved": 0,
+    "native_definition_missing": 15143,
+    "ambiguous_mapping": 2,
+    "native_identity_review_required": 37,
+    "source_legal_records": 32116,
+    "source_banned_records": 83,
+    "source_not_legal_records": 6850,
+    "source_restricted_records": 0,
+    "source_unknown_legality_records": 0
+  },
+  "commanders": {
+    "identified_single_candidates": 3436,
+    "confident_native_candidates": 1658,
+    "selection_gate_passed": 1466,
+    "native_missing": 1772,
+    "association_uncertain": 6,
+    "unsupported_configuration": 0,
+    "unresolved_or_blocked": 192,
+    "special_noncreature_forms_for_review": 32,
+    "background_components": 29,
+    "source_unresolved": 19
+  },
+  "objectiveReach": [
+    {
+      "id": "own-nontoken-creature-deaths",
+      "counts": {
+        "eligible_physical_cards_examined": 6111,
+        "distinct_matching_cards": 487,
+        "distinct_unknown_cards": 373,
+        "distinct_nonmatch_cards": 1763,
+        "distinct_cards_with_unsupported_records": 4359,
+        "cards_without_emitted_relevant_pathway": 3810,
+        "matching_pathways": 499,
+        "unknown_pathways": 410,
+        "nonmatch_pathways": 2140,
+        "unsupported_records": 8702
+      }
+    },
+    {
+      "id": "reanimate-own-creatures",
+      "counts": {
+        "eligible_physical_cards_examined": 6111,
+        "distinct_matching_cards": 104,
+        "distinct_unknown_cards": 85,
+        "distinct_nonmatch_cards": 1555,
+        "distinct_cards_with_unsupported_records": 4221,
+        "cards_without_emitted_relevant_pathway": 4433,
+        "matching_pathways": 106,
+        "unknown_pathways": 93,
+        "nonmatch_pathways": 1857,
+        "unsupported_records": 8318
+      }
+    },
+    {
+      "id": "create-creature-tokens",
+      "counts": {
+        "eligible_physical_cards_examined": 6111,
+        "distinct_matching_cards": 346,
+        "distinct_unknown_cards": 48,
+        "distinct_nonmatch_cards": 215,
+        "distinct_cards_with_unsupported_records": 4359,
+        "cards_without_emitted_relevant_pathway": 5515,
+        "matching_pathways": 363,
+        "unknown_pathways": 55,
+        "nonmatch_pathways": 230,
+        "unsupported_records": 8702
+      }
+    },
+    {
+      "id": "stock-own-graveyard",
+      "counts": {
+        "eligible_physical_cards_examined": 6111,
+        "distinct_matching_cards": 508,
+        "distinct_unknown_cards": 527,
+        "distinct_nonmatch_cards": 315,
+        "distinct_cards_with_unsupported_records": 4323,
+        "cards_without_emitted_relevant_pathway": 4823,
+        "matching_pathways": 535,
+        "unknown_pathways": 576,
+        "nonmatch_pathways": 335,
+        "unsupported_records": 8537
+      }
+    }
+  ],
+  "controlledDiscovery": [
+    {
+      "objective": "own-nontoken-creature-deaths",
+      "sha256": "0a8dd1e0b5bbd780d135fbb358b1ecc4233cb59d6330e0470d55b5d86c30d011",
+      "bytes": 48399732,
+      "eligiblePhysicalCards": 6111,
+      "byteIdentical": true
+    },
+    {
+      "objective": "reanimate-own-creatures",
+      "sha256": "2c0c5336f5da2575e8e5291ce3cfd18b9b975a592e7a84a970289bc6d05e4963",
+      "bytes": 49046277,
+      "eligiblePhysicalCards": 6111,
+      "byteIdentical": true
+    },
+    {
+      "objective": "create-creature-tokens",
+      "sha256": "78fa6aad8b7b6a6750c33c54c44561b985962b0e4ed15a81c38733f8cead9748",
+      "bytes": 40362125,
+      "eligiblePhysicalCards": 6111,
+      "byteIdentical": true
+    },
+    {
+      "objective": "stock-own-graveyard",
+      "sha256": "1d17fa4762db9be96a5e27df334b65c61907d31cb8ae96c2f8c275fedae4e6e8",
+      "bytes": 43442168,
+      "eligiblePhysicalCards": 6111,
+      "byteIdentical": true
+    }
+  ],
+  "pilotCounts": {
+    "reviewed_ability_scopes": 6,
+    "shared_requirement_definitions": 9,
+    "reusable_native_check_applications": 48,
+    "held_out_scopes": 2,
+    "source_specific_expectation_records": 6,
+    "held_out_native_checks_supported": 2,
+    "ordinary_execution_patterns": 2,
+    "existing_curated_positions_reused": 5,
+    "card_specific_acceptance_rules": 0,
+    "supported": 48,
+    "contradicted": 0,
+    "unresolved": 0,
+    "untested": 6,
+    "current_execution_scenarios": 11,
+    "current_execution_failures": 0,
+    "current_execution_incomplete": 0
+  },
+  "pilotPotentialReach": {
+    "structurally_applicable_physical_definitions": 647,
+    "source_bound_fact_occurrences": 671
+  },
+  "pilotExecutionState": "RECORDED_CURRENT_BINDINGS",
+  "limits": [
+    "CLI discovery reports do not contain source or application provenance; exact generating revisions and unfiltered population are bound by this receipt.",
+    "Before/after discovery uses the same native eligibility population; global source coverage is a separate measurement.",
+    "A transient fourth CLI launch overlapped installDist replacement and failed class loading; the completed rerun after packaging is compared here."
+  ]
+}

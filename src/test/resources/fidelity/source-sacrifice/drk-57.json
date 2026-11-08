@@ -1,0 +1,164 @@
+{
+  "retrievedAt": "2026-11-08T07:41:53.378090+00:00",
+  "sourceUrl": "https://scryfall.com/card/drk/57/ball-lightning?utm_source=api",
+  "card": {
+    "object": "card",
+    "id": "c1ba83ab-83f5-421d-bba1-0f925870b5c8",
+    "oracle_id": "7485cf25-eb41-4397-be13-7f0b8c10c70a",
+    "multiverse_ids": [
+      1783
+    ],
+    "tcgplayer_id": 3481,
+    "cardmarket_id": 7337,
+    "name": "Ball Lightning",
+    "lang": "en",
+    "released_at": "1994-08-01",
+    "uri": "https://api.scryfall.com/cards/c1ba83ab-83f5-421d-bba1-0f925870b5c8",
+    "scryfall_uri": "https://scryfall.com/card/drk/57/ball-lightning?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_updated_at": "2026-07-13T13:05:37Z",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937",
+      "normal": "https://cards.scryfall.io/normal/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937",
+      "large": "https://cards.scryfall.io/large/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937",
+      "png": "https://cards.scryfall.io/png/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.png?1783947937",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937",
+      "thumb": "https://cards.scryfall.io/thumb/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.webp?1783947937",
+      "grid": "https://cards.scryfall.io/grid/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.webp?1783947937",
+      "display": "https://cards.scryfall.io/display/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.webp?1783947937",
+      "art": "https://cards.scryfall.io/art/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.webp?1783947937",
+      "crop": "https://cards.scryfall.io/crop/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.webp?1783947937",
+      "jpeg": "https://cards.scryfall.io/normal/front/c/1/c1ba83ab-83f5-421d-bba1-0f925870b5c8.jpg?1783947937"
+    },
+    "mana_cost": "{R}{R}{R}",
+    "cmc": 3.0,
+    "type_line": "Creature — Elemental",
+    "oracle_text": "Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nHaste (This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice this creature.",
+    "power": "6",
+    "toughness": "1",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [
+      "Haste",
+      "Trample"
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "c1ba83ab-83f5-421d-bba1-0f925870b5c8",
+        "component": "combo_piece",
+        "name": "Ball Lightning",
+        "type_line": "Creature — Elemental",
+        "uri": "https://api.scryfall.com/cards/c1ba83ab-83f5-421d-bba1-0f925870b5c8"
+      },
+      {
+        "object": "related_card",
+        "id": "3f7b6c5b-0883-43ff-8ae5-560f5af2df90",
+        "component": "combo_piece",
+        "name": "Stormforged Armor",
+        "type_line": "Legendary Artifact — Equipment",
+        "uri": "https://api.scryfall.com/cards/3f7b6c5b-0883-43ff-8ae5-560f5af2df90"
+      }
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "legal",
+      "brawl": "legal",
+      "competitivebrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "legal",
+      "premodern": "legal",
+      "predh": "legal",
+      "tlr": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "a21c6836-c435-459a-81e3-22d2da174549",
+    "set": "drk",
+    "set_name": "The Dark",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/a21c6836-c435-459a-81e3-22d2da174549",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Adrk&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/drk?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c1ba83ab-83f5-421d-bba1-0f925870b5c8/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A7485cf25-eb41-4397-be13-7f0b8c10c70a&unique=prints",
+    "collector_number": "57",
+    "digital": false,
+    "rarity": "rare",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Quinton Hoover",
+    "artist_ids": [
+      "1a2db619-92a5-431a-822b-101cdcc5bd5d"
+    ],
+    "illustration_id": "5a032ef0-d987-4229-b150-6586bac38142",
+    "border_color": "black",
+    "frame": "1993",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 8685,
+    "penny_rank": 3867,
+    "prices": {
+      "usd": "50.41",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "33.27",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=1783&printed=false",
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DBall%2BLightning",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DBall%2BLightning",
+      "edhrec": "https://edhrec.com/route/?cc=Ball+Lightning"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F3481%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=7337&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Ball+Lightning&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  "rulings": [
+    {
+      "object": "ruling",
+      "oracle_id": "7485cf25-eb41-4397-be13-7f0b8c10c70a",
+      "source": "wotc",
+      "published_at": "2007-02-01",
+      "comment": "The creature is sacrificed at the end of every turn in which it is on the battlefield. There is no choice about what turn to sacrifice it."
+    }
+  ]
+}

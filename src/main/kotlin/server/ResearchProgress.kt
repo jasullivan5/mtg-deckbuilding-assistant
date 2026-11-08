@@ -25,7 +25,7 @@ import java.time.Instant
 @Serializable data class ResearchProgress(val schemaVersion: Int = 1, val applicationRevision: String,
     val argentumCommit: String = EngineBuild.revision, val measuredAt: String,
     val population: List<String>, val registeredNames: Int, val definitionOrigins: Map<String, Int>,
-    val external: ProgressExternal, val mechanics: ProgressDistribution, val families: List<ProgressFamily>,
+    val external: ProgressExternal, val global: ProgressExternal, val mechanics: ProgressDistribution, val families: List<ProgressFamily>,
     val factKinds: Map<String, Int>, val factConfidence: Map<String, Int>,
     val assurance: ProgressAssurance, val execution: String,
     val obstacles: List<ProgressObstacle>, val capabilities: List<ProgressCapability>)
@@ -63,10 +63,16 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
         coverage(physical, report)
     }
     // An explicit snapshot is optional. Failure is visible and never becomes a zero missing-card count.
+    private val snapshotAttempt by lazy { snapshotPath?.let { runCatching { loadOracleSnapshot(it) } } }
     private val externalAttempt by lazy { snapshotPath?.let { runCatching {
-        catalogCoverage(catalog, loadOracleSnapshot(it), "Judith, the Scourge Diva")
+        catalogCoverage(catalog, requireNotNull(snapshotAttempt).getOrThrow(), "Judith, the Scourge Diva")
     } } }
+    private val globalAttempt by lazy { snapshotPath?.let { runCatching { catalogCoverage(catalog, requireNotNull(snapshotAttempt).getOrThrow(), null) } } }
     val externalRecords: CatalogCoverageReport? get() = externalAttempt?.getOrNull()
+    val globalRecords: CatalogCoverageReport? get() = globalAttempt?.getOrNull()
+    val commanders: CommanderInventory? by lazy { globalRecords?.let { commanderInventory(catalog,it) } }
+    val objectiveInventory: ObjectiveInventory by lazy { dev.mtg.assistant.coverage.objectiveInventory(catalog) }
+    val pilot: FidelityPilot by lazy { SacrificePilot.report(catalog,factRecords) }
     val report: ResearchProgress by lazy {
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
@@ -77,10 +83,13 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             if (snapshotPath == null) "No external snapshot selected. Native inventory is measurable; a percentage of all Magic cards is not. Use the explicit snapshot workflow and launch with -OracleSnapshot."
             else "The selected snapshot could not be measured: ${externalAttempt?.exceptionOrNull()?.message}")
         val incomplete = audit.groups.filter { it.supportStatus != "SUPPORTED" }.sumOf { it.occurrences }
+        val global = globalRecords?.let { ProgressExternal("MEASURED", "All Commander-legal physical identities; no commander color restriction. Availability is not fidelity.",it.snapshot,it.commander,it.counts,it.poolExclusions) }
+            ?: ProgressExternal(if(snapshotPath == null) "NOT_MEASURED" else "UNAVAILABLE",
+                if(snapshotPath == null) "No explicit snapshot selected. Global Commander coverage is not measured." else "Selected source unavailable or incompatible: ${globalAttempt?.exceptionOrNull()?.message}",commander="All Commander-legal cards")
         ResearchProgress(applicationRevision = revision, measuredAt = Instant.now().toString(),
             population = physical.map { it.name }, registeredNames = catalog.cards.size,
             definitionOrigins = physical.groupingBy { catalog.provenance(it.name).origin }.eachCount().toSortedMap(),
-            external = external, mechanics = progressDistribution(audit),
+            external = external, global = global, mechanics = progressDistribution(audit),
             families = audit.groups.groupBy { it.nativeType }.map { (type, groups) ->
                 ProgressFamily(type, groups.sumOf { it.occurrences }, groups.filter { it.supportStatus == "SUPPORTED" }.sumOf { it.occurrences })
             }.sortedWith(compareByDescending<ProgressFamily> { it.supported }.thenBy { it.nativeType }),
@@ -96,10 +105,16 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
                     "Unresolved enclosing branches can limit an otherwise recognized operation. No emitted pathway is not a negative.", "Pit Raptor's nested pay-or-sacrifice branch; specialized token operations such as Amass/populate.",
                     "Inspect partial and unsupported groups, then source-review one recurring branch shape before extending extraction.", "Measured native audit; no Oracle recall claim", "mechanics"),
                 ProgressObstacle("availability", "External cards may lack native definitions or confident identities",
-                    if (external.state == "MEASURED") "${external.counts["native_definition_missing"]} missing definitions in ${external.counts["eligible_oracle_cards"]} Judith-eligible external identities; identity uncertainty is separate."
+                    if (global.state == "MEASURED") "${global.counts["native_definition_missing"]} missing definitions in ${global.counts["eligible_oracle_cards"]} Commander-legal external physical identities; identity uncertainty is separate."
                     else "External missing/ambiguous population not measured without an explicit snapshot.",
                     "Absent definitions never enter mechanical discovery; uncertain associations cannot establish source coverage.", "Back faces and meld results are not additional physical cards. Missing and competing identity claims remain quarantined by the coverage audit.",
-                    "Run the existing catalog-coverage audit against an explicit hash-checked snapshot; inspect missing and ambiguous records separately.", if (external.state == "MEASURED") "Measured within selected snapshot" else "Unquantified", "external"),
+                    "Run the existing catalog-coverage audit against an explicit hash-checked snapshot; inspect missing and ambiguous records separately.", if (global.state == "MEASURED") "Measured within selected snapshot" else "Unquantified", "global-cards"),
+                ProgressObstacle("commander-configurations", "Commander configuration coverage is incomplete", "Selection predicates are measured separately; all legal pair combinations and per-commander execution are not counted.",
+                    "An eligible legendary card is not proof that its required configuration or identity is usable.", "Choose a Background pairs and pre-game chosen identities; current rules also permit noncreature forms beyond the application gate.",
+                    "Source-review one unsupported configuration family before proposing an eligibility-policy change.", "Measured bounded inventory; configuration denominator unmeasured", "commanders"),
+                ProgressObstacle("objective-quality", "Objective correctness and expressiveness remain narrow", "Four bounded questions; independent catalog-scale search correctness is not measured.",
+                    "Operational matches do not establish complete recall, precision or useful deck value.", "Grim Haruspex death-triggered draw is outside the current death objective; cross-card dependencies remain uncomposed.",
+                    "Review one existing frozen card-objective relationship cohort independently before defining a broader benchmark.", "Documented scope; operational counts measured separately", "objectives"),
                 ProgressObstacle("execution", "Reusable execution evidence has narrow reach", "Scenario-to-ability coverage at catalog scale is not measured.",
                     "Structural potential cannot establish behavior after object identity, targets or zones change.", "The source-sacrifice investigation retained Spark Elemental's old-trigger/new-object failure. Later Lab observations remain separately revision-bound.",
                     "Index existing scenario identities, mechanics, engine revisions and outcomes before attempting a catalog-wide count.", "Historically observed failure; breadth unquantified", "execution"),
