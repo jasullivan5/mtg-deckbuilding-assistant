@@ -1,0 +1,144 @@
+{
+  "retrievedAt": "2026-11-08T15:59:19.027607+00:00",
+  "sourceUrl": "https://api.scryfall.com/cards/22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+  "card": {
+    "object": "card",
+    "id": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+    "oracle_id": "240a349a-79f8-4e11-9a05-a78148e70a62",
+    "multiverse_ids": [
+      36115
+    ],
+    "mtgo_id": 17442,
+    "mtgo_foil_id": 17443,
+    "tcgplayer_id": 10202,
+    "cardmarket_id": 2168,
+    "name": "Hapless Researcher",
+    "lang": "en",
+    "released_at": "2002-05-27",
+    "uri": "https://api.scryfall.com/cards/22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+    "scryfall_uri": "https://scryfall.com/card/jud/42/hapless-researcher?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_updated_at": "2026-07-13T12:18:48Z",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128",
+      "normal": "https://cards.scryfall.io/normal/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128",
+      "large": "https://cards.scryfall.io/large/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128",
+      "png": "https://cards.scryfall.io/png/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.png?1783945128",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128",
+      "thumb": "https://cards.scryfall.io/thumb/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.webp?1783945128",
+      "grid": "https://cards.scryfall.io/grid/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.webp?1783945128",
+      "display": "https://cards.scryfall.io/display/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.webp?1783945128",
+      "art": "https://cards.scryfall.io/art/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.webp?1783945128",
+      "crop": "https://cards.scryfall.io/crop/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.webp?1783945128",
+      "jpeg": "https://cards.scryfall.io/normal/front/2/2/22ed0ee7-6749-4f38-8e53-c11b46b17e5d.jpg?1783945128"
+    },
+    "mana_cost": "{U}",
+    "cmc": 1.0,
+    "type_line": "Creature — Human Wizard",
+    "oracle_text": "Sacrifice this creature: Draw a card, then discard a card.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "legal",
+      "pauper": "legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "competitivebrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "legal",
+      "predh": "legal",
+      "tlr": "legal"
+    },
+    "games": [
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": true,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "cd82de1a-36fd-4618-bfe8-b45532a582d9",
+    "set": "jud",
+    "set_name": "Judgment",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/cd82de1a-36fd-4618-bfe8-b45532a582d9",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Ajud&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/jud?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/22ed0ee7-6749-4f38-8e53-c11b46b17e5d/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A240a349a-79f8-4e11-9a05-a78148e70a62&unique=prints",
+    "collector_number": "42",
+    "digital": false,
+    "rarity": "common",
+    "flavor_text": "Scholars possess such lofty knowledge that it shouldn't be surprising when they fall.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Ron Spears",
+    "artist_ids": [
+      "fce9030b-86bd-4439-b06a-920a1eeb184c"
+    ],
+    "illustration_id": "0b67d811-a11e-47fb-a983-8d684bf2fa5a",
+    "border_color": "black",
+    "frame": "1997",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 20619,
+    "penny_rank": 2196,
+    "prices": {
+      "usd": "0.24",
+      "usd_foil": "5.69",
+      "usd_etched": null,
+      "eur": "0.27",
+      "eur_foil": "4.78",
+      "tix": "0.04"
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=36115&printed=false",
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DHapless%2BResearcher",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DHapless%2BResearcher",
+      "edhrec": "https://edhrec.com/route/?cc=Hapless+Researcher"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F10202%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=2168&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards/17442?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  "rulings": {
+    "object": "list",
+    "has_more": false,
+    "data": []
+  }
+}

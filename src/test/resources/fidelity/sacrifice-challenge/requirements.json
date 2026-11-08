@@ -118,6 +118,32 @@
       "creatureAtArrival": true,
       "heldOut": true,
       "additionalRequirements": "One generic mana; target must be artifact or enchantment. Exalted is outside the sacrifice scope."
+    },
+    {
+      "card": "Caustic Caterpillar",
+      "sourceFile": "src/test/resources/fidelity/sacrifice-challenge/ori-170.json",
+      "sourceSha256": "82690dcee7db3397359ba3e9eb146a1188ad3691446af63c82169854b043bab9",
+      "oracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+      "printingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "role": "COST",
+      "targetRequired": true,
+      "tapRequired": false,
+      "creatureAtArrival": true,
+      "heldOut": true,
+      "additionalRequirements": "Pay one generic and one green mana; target artifact or enchantment. Target filter and full mana cost are outside original checks."
+    },
+    {
+      "card": "Hapless Researcher",
+      "sourceFile": "src/test/resources/fidelity/sacrifice-challenge/jud-42.json",
+      "sourceSha256": "717b3d08c8dcf1555a309aeadc70c82f52bf07d552616cd96a81f66f0fd722a1",
+      "oracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+      "printingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "role": "COST",
+      "targetRequired": false,
+      "tapRequired": false,
+      "creatureAtArrival": true,
+      "heldOut": false,
+      "additionalRequirements": "Sacrifice as cost, draw then discard as resolving sequence; non-sacrifice effect completeness remains outside review."
     }
   ],
   "independence": "Source expectations retained before inspecting these three native definitions. Same implementing agent; no independent or fully blind certification. Qasali held out from method development; its public rules were known.",
@@ -125,5 +151,6 @@
     "Wrong source, cost/effect, target presence, tap and arriving creature classification should not be supported.",
     "Target filter correctness, mana payment quantity, activation window, source ownership and replacement outcomes are not established by the eight original checks.",
     "Object generation is explicitly execution dependent; an all-supported static row cannot establish it."
-  ]
+  ],
+  "selectionNote": "Augur of Skulls and Qasali Pridemage have no authored Kotlin definition located in current catalog sources; retain as unresolved rather than integrate. Caustic Caterpillar adds a source-grounded held-out targeted/mana variant; Hapless Researcher adds a resolving draw/discard sequence. Filenames were checked for availability before source capture; native implementations were not read."
 }
