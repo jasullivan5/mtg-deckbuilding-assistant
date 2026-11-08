@@ -117,4 +117,57 @@ Commission a separate source-first review of a **complete activation-cost requir
 
 ## Delivery receipt
 
-Final measured counts, exact clean-build identities, fresh verification outcomes, controlled-comparison hashes and actual desktop/390px screenshots are appended after validation. Product acceptance remains with the user; implementation checks do not grant source qualification.
+See the concise [Product Studio report and screenshots](PRODUCT_STUDIO_VERIFICATION.md). Product acceptance remains with the user; implementation checks do not grant source qualification.
+
+| Final measure | Result |
+| --- | --- |
+| Legal physical reference population | 32,109 |
+| Confident native definition availability | 16,927 / 32,109 (52.72%); unchanged |
+| Interpretation evidence | 14,528 physical cards; 38,232 existing walker records; 13,023 cards with partial/unsupported records |
+| Current source review | Nine partial ability scopes/cards; 81 requirement applications: 71 supported, one printing-binding contradiction, nine execution-only UNTESTED |
+| Stale / unresolved source scope records | 22 legacy reviews / two missing-native scopes |
+| Current engine observations | 15 passing bounded observations across nine physical cards; zero current indexed production failures or unknown observations |
+| Historical execution | One documentation-bound Spark failure, never promoted to current |
+| Indexed source/execution evidence | 49 records across 33 physical cards, including stale/unresolved evidence |
+| Any indexed evidence, including interpretation | 14,531 physical cards; no whole-card assurance inferred |
+| Qualification | Zero gate-accepted independent approvals; 21 provisional, one blocked legacy scope; 32,087 cards not measured under the qualification process |
+| Whole-card verification | Not established at catalog scale; no count or percentage published |
+| Challenge | Four contradictions, two unresolved/rejected variants, two missed defects, two execution-dependent classes |
+
+The test-only missing-mana native mismatch is retained in the challenge bundle and excluded from production-card execution totals. Interpretation, source review and execution card populations overlap and must not be summed.
+
+Exact revisions and immutable identities:
+
+- Clean merged-main control: `f5b37fa1550e6261ae6daf09ffff0e80b476f5b9` (merged PR #39).
+- Final tested measurement code and verification baseline: `a6be6779633a49676567f49d2d8cb069aa65728c`.
+- Clean packaged browser-review build: `cb4347ef92cad2227403b1ca0d97a5dc35f55676`; subsequent delivery changes are documentation/screenshots only.
+- Fresh challenge execution: `7e938be3d06a9e158d764192bcd61cfde80c03a9`; its source, definitions and unchanged harness remain current in the final build. Four production positions agree; one deliberately incorrect mutant differs from source requirements.
+- Maintained clean `app-stable`: `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`; engine source unchanged.
+- Reference source SHA256: `081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a`; update `2026-10-26T21:01:59.922+00:00`.
+- Legal physical population SHA256 (sorted Oracle IDs, LF with trailing LF): `95d869de7e43ce9bc6dbcb7ae2341192b409ce9d099885b2e8f6962b5d5a0086`.
+- Unchanged representation baseline SHA256: `c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911`.
+- Initial verification baseline SHA256: `373191816510bb0c0c5d886d3667f67a2e8f95639511f2c68f8ef90764123440`.
+- Challenge requirements SHA256: `d2ffa23762718c7e8b60614fec9c0f9d64838fb4c367e40782a4b48b4e15a167`. The unchanged original method digest is recorded above; exact definition/harness digests and native traces are in the retained receipt.
+
+Final actual commands (JDK 21, Windows):
+
+```powershell
+.\dev.ps1 test ':assistant:installDist'
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research fidelity-challenge --output generated/verification-coverage/challenge-execution.json
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research verification-baseline --output generated/verification-coverage/verification-baseline-final.json.gz
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research verification-compare --before generated/verification-coverage/verification-baseline-final.json.gz --after generated/verification-coverage/verification-baseline-final.json.gz --output generated/verification-coverage/baseline-readback.json
+.\scripts\explorer.ps1 -Port 8799 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz
+# In web/, EXPLORER_URL=http://127.0.0.1:8799; EXPLORER_BROWSER_CHANNEL=msedge:
+pnpm build
+pnpm exec playwright test
+```
+
+The final full Kotlin suite passed **577 tests, zero failures/errors/skips**, in 6m 3s. The full Windows Edge suite passed **30 checks** in 3.3 minutes, including real Kotlin-backed verification/discovery and deterministic interface/missing-data fixtures. Consequential new verification checks used actual APIs and the retained baseline, inspected current and historical records with keyboard interaction, confirmed the native adversarial receipt, and captured actual 1440px/390px layouts without horizontal page overflow.
+
+All four controlled CLI discovery reports are **byte-identical** to a separately built, clean merged-main checkout on the same engine and 6,111-card eligible population. The command was `discover --commander 'Judith, the Scourge Diva' --objective <id> --json --output <path>` for each existing objective on both installed distributions. Exact bytes/hashes/counts are retained in [verification stability](../src/test/resources/progress/verification-stability.json). This includes original pathways, decisions, eligibility and evidence. The temporary clean control worktree was removed normally after retaining results and checking source state, upstream ancestry and active consumers; unrelated historical worktrees were preserved.
+
+The comparison CLI read the initial verification baseline successfully and reported no invented source scopes, executions, concern resolutions or population changes when compared with itself. Browser API counts equal the retained baseline. There is no earlier accepted comparable verification baseline, so this is an initial reference, not a manufactured trend.
+
+Earlier focused failures are retained: the classloader publication defect and a test expecting a contradiction where the frozen method actually remained unresolved. Those findings were corrected in the harness/test classification, not by weakening source requirements or modifying the original method. The final ingestion guards separately verify that unreviewed ledger references, missing face/scenario bindings, stale engines/definitions and attempts without native transactions cannot inflate higher evidence stages.
+
+Unexecuted/unmeasured: standalone engine suite (no engine source changes), non-Windows launchers, browsers other than Windows Edge, independent human source approval, exhaustive card/ability scope enumeration, corpus-wide search/fidelity correctness, broader owner/replacement receipts and representative gameplay validation. Existing historical test references remain unindexed where exact observation provenance is insufficient; they are not counted as passing or failing cards.

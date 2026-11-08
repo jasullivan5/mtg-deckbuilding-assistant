@@ -100,5 +100,18 @@
     "Before and after use independent installed distributions and the same native engine; original definition and eligibility evidence are preserved byte-for-byte.",
     "Source, execution and qualification categories overlap. No whole-card completeness is established.",
     "The deliberately incorrect mutant execution is retained only in the challenge receipt, outside production-card execution totals."
-  ]
+  ],
+  "browserValidation": {
+    "startTime": "2026-11-08T16:55:18.840Z",
+    "duration": 195418.14,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "browser": "Windows Edge",
+    "api": "Real local Kotlin API for consequential progress/discovery checks; deterministic interface/missing-data fixtures also included",
+    "applicationRevision": "cb4347ef92cad2227403b1ca0d97a5dc35f55676",
+    "desktopViewport": 1440,
+    "mobileViewport": 390
+  }
 }
