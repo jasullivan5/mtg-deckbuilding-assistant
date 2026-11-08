@@ -22,6 +22,9 @@ test('Verification separates reference cards partial scopes dated observations a
   expect(data.counts.execution_observations_current).toBe(15);
   expect(data.qualification.QUALIFIED).toBe(0);
   expect(data.completeness).toBe('NOT_ESTABLISHED_AT_CATALOG_SCALE');
+  expect(data.challenge.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  expect(data.challenge.adversarialExecution).toHaveLength(1);
+  expect(data.challenge.adversarialExecution[0].state).toBe('DIFFERS');
   expect(data.evidence.some((e:{record:{id:string}})=>e.record.id.includes('mutant:'))).toBe(false);
   expect(data.evidence.filter((e:{record:{kind:string}})=>e.record.kind==='EXECUTION')).toHaveLength(16);
   await expect(panel).toContainText('Whole-card verification: Not established at catalog scale');
@@ -54,6 +57,8 @@ test('Verification separates reference cards partial scopes dated observations a
     await page.setViewportSize({width,height:width===390?844:1000});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
     await panel.screenshot({path:`../generated/verification-coverage/screenshots/${width}-verification.png`});
+    await panel.evaluate(el=>el.scrollIntoView({block:'start'}));
+    await page.screenshot({path:`../generated/verification-coverage/screenshots/${width}-trust-viewport.png`});
     await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:`../generated/verification-coverage/screenshots/${width}-overview.png`});
     await page.getByRole('button',{name:'Discover',exact:true}).click();await expect(page.getByRole('button',{name:'Find cards',exact:true})).toBeVisible();
     await page.getByRole('button',{name:'Progress',exact:true}).click();await expect(panel.locator('progress')).toHaveCount(5,{timeout:120_000});

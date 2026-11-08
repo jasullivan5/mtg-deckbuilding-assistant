@@ -6,6 +6,7 @@ import dev.mtg.assistant.extensions.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.assertions.throwables.shouldThrow
+import kotlinx.serialization.json.*
 
 class VerificationCoverageTest:FunSpec({
     fun record(id:String="observation",scope:String="ability-1")=VerificationRecord(id,"physical-oracle","Front // Back","EXECUTION",scope,"One declared ability",face="Back",definitionSha256="definition-a",engine=EngineBuild.revision,
@@ -31,6 +32,12 @@ class VerificationCoverageTest:FunSpec({
         shouldThrow<IllegalArgumentException> { uniqueVerificationRecords(listOf(a.copy(oracleId=""))) }
     }
     test("passing partial observations and open concerns never manufacture complete-card qualification") {
+        hasNativeExecutionTrace(JsonNull) shouldBe false
+        hasNativeExecutionTrace(buildJsonObject { put("test","passed");put("state","PASS") }) shouldBe false
+        hasNativeExecutionTrace(buildJsonObject { put("nativeAction",JsonNull);put("nativeResult",buildJsonObject {}) }) shouldBe false
+        hasNativeExecutionTrace(buildJsonObject { put("nativeAction",buildJsonObject { put("type","ActivateAbility") });put("nativeResult",buildJsonObject { put("outcome","DONE") }) }) shouldBe true
+        ledgerVerificationKind(FidelityState.UNREVIEWED) shouldBe "LEDGER_REFERENCE"
+        ledgerVerificationKind(FidelityState.SOURCE_REVIEWED) shouldBe "SOURCE_REVIEW"
         val a=record().copy(materialConcerns=listOf("Unreviewed trigger condition"))
         indexVerification(a,"definition-a",EngineBuild.revision,setOf("Back")).record.materialConcerns.size shouldBe 1
         // A fresh PASS is intentionally compatible with a concern on another scope; it does not issue an approval.

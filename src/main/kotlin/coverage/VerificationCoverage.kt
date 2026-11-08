@@ -6,7 +6,7 @@ import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.explorer.*
 import dev.mtg.assistant.extensions.*
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.*
 import com.wingedsheep.sdk.tooling.CardExporter
 import java.time.Instant
 import java.util.zip.GZIPInputStream
@@ -69,6 +69,14 @@ fun requireVerificationIdentityBinding(baseline:GlobalBaseline,identities:List<N
     require(baseline.nativeIdentitySha256==nativeIdentityDigest(identities)) { "Native identity inventory changed; re-establish source associations explicitly before measuring verification coverage" }
 }
 
+/** A reference, setup or test name is not an observed native transaction. */
+fun hasNativeExecutionTrace(value:JsonElement):Boolean = when(value) {
+    is JsonObject -> (value["nativeAction"] != null && value["nativeAction"] != JsonNull && value["nativeResult"] != null && value["nativeResult"] != JsonNull) || value.values.any(::hasNativeExecutionTrace)
+    is JsonArray -> value.any(::hasNativeExecutionTrace)
+    else -> false
+}
+fun ledgerVerificationKind(state:FidelityState)=if(state==FidelityState.UNREVIEWED) "LEDGER_REFERENCE" else "SOURCE_REVIEW"
+
 internal fun verificationCoverage(catalog:Catalog,revision:String,structural:List<StructuralSupport>,pilot:FidelityPilot,
     challenge:SacrificeChallengeReport,baseline:GlobalBaseline=retainedGlobalBaseline()):VerificationCoverage {
     // Validate the immutable population through the existing comparison contract.
@@ -83,7 +91,7 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
     val assurances=catalog.cards.mapNotNull { catalog.translationAssurance(it.name) }.distinctBy { it.oracleId }
     assurances.forEach { a->
         val e=a.evidence ?: return@forEach
-        records+=VerificationRecord("ledger:${e.oracleId}:${bundleDigest(e)}",e.oracleId,a.card,"SOURCE_REVIEW","ledger-unspecified","Retained extension card-level review; per-ability allocation not established",
+        records+=VerificationRecord("ledger:${e.oracleId}:${bundleDigest(e)}",e.oracleId,a.card,ledgerVerificationKind(e.fidelity),"ledger-unspecified","Retained extension card-level review; per-ability allocation not established",
             definitionSha256=e.definitionSha256,engine=e.argentumCommit,author=e.author,result=e.fidelity.name,
             expected="Retained source-derived requirements in the existing translation ledger",observed="${e.fidelity}; recorded execution claim ${e.execution}; current gate ${a.qualification}",
             source=e.source+e.requirements+e.tests,requirements=e.requirements.map { it.path },sourceValidated=a.evidenceCurrent,
@@ -106,7 +114,8 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
             val scope=scopes.singleOrNull { it.card==s.card } ?: return@forEach
             val reviewedAbility=(pilot.reviews+challenge.reviews).singleOrNull { it.scope.oracleId==scope.oracleId }?.fact?.actionId
             val boundScope=if(current && reviewedAbility!=null) reviewedAbility else "unallocated-historical-sacrifice:${scope.oracleId}"
-            records+=VerificationRecord("execution:${s.scenarioId}:${receipt.engine}:${receipt.executedAt}",scope.oracleId,s.card,"EXECUTION",boundScope,s.mechanic,face=scope.card,printingId=scope.printingId,
+            val kind=if(hasNativeExecutionTrace(s.observations)) "EXECUTION" else "EXECUTION_ATTEMPT"
+            records+=VerificationRecord("execution:${s.scenarioId}:${receipt.engine}:${receipt.executedAt}",scope.oracleId,s.card,kind,boundScope,s.mechanic,face=scope.card,printingId=scope.printingId,
                 definitionSha256=receipt.definitions[s.card],engine=receipt.engine,applicationRevision=receipt.applicationRevision,author="Codex Build native harness",
                 result=when(s.state) { "AGREES"->"PASS";"DIFFERS"->"FAIL";else->"UNKNOWN" },expected=s.mechanic,observed="${s.state}; ${s.problem.orEmpty()}",source=listOf(EvidenceReference(scope.sourceFile,scope.sourceSha256)),
                 requirements=listOf(receipt.requirementsSha256),scenarioId=s.scenarioId,observedAt=receipt.executedAt,sourceValidated=current,
