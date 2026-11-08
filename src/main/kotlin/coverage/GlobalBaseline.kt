@@ -97,6 +97,8 @@ fun researchCommand(args: List<String>, catalog: () -> Catalog, out: (String)->U
         "fidelity-pilot" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),SacrificePilot.execute(catalog(),revision)) }
         "fidelity-challenge" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),dev.mtg.assistant.explorer.SacrificeChallenge.execute(catalog(),revision)) }
         "activation-cost-execution" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.CostExecutionReceipt.serializer(),dev.mtg.assistant.explorer.ActivationCostExecution.execute(catalog(),revision)) }
+        "cost-boundary-execution" -> { require(options.keys==setOf("--output"));reportJson.encodeToString(dev.mtg.assistant.explorer.PaymentBoundaryReceipt.serializer(),dev.mtg.assistant.explorer.CostPaymentBoundary.execute(catalog(),revision)) }
+        "cost-examination" -> { require(options.keys==setOf("--output"));reportJson.encodeToString(dev.mtg.assistant.explorer.CostExaminationReport.serializer(),dev.mtg.assistant.explorer.CostExamination.report(catalog(),revision)) }
         "activation-cost-report" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.ActivationCostReport.serializer(),dev.mtg.assistant.explorer.ResearchProgressService(catalog(),revision).activationCosts) }
         "verification-baseline" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(VerificationCoverage.serializer(),dev.mtg.assistant.explorer.ResearchProgressService(catalog(),revision).verification) }
         "verification-compare" -> {

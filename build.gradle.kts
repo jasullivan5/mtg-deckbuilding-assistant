@@ -62,6 +62,10 @@ val recordEngineBuild by tasks.registering {
         .joinToString("\n") { path -> path + "\n" + file(path).readText().replace("\r\n", "\n") }
     val activationCostHash = MessageDigest.getInstance("SHA-256").digest(activationCostSources.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
     inputs.property("activationCostHarness", activationCostHash)
+    val costBoundarySources=listOf("src/main/kotlin/server/CostPaymentBoundary.kt","src/main/kotlin/server/CostExamination.kt","src/main/kotlin/server/LabExecution.kt")
+        .joinToString("\n") { path->path+"\n"+file(path).readText().replace("\r\n","\n") }
+    val costBoundaryHash=MessageDigest.getInstance("SHA-256").digest(costBoundarySources.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) }
+    inputs.property("costBoundaryHarness",costBoundaryHash)
     inputs.property("engineRevision", engineRevision)
     inputs.property("engineImplementationSha256", engineImplementationSha256)
     inputs.property("applicationRevision", applicationRevision)
@@ -76,6 +80,7 @@ val recordEngineBuild by tasks.registering {
         output.resolveSibling("fidelity-harness.properties").writeText("sha256=$fidelityHash\n")
         output.resolveSibling("challenge-harness.properties").writeText("sha256=$challengeHash\n")
         output.resolveSibling("activation-cost-harness.properties").writeText("sha256=$activationCostHash\n")
+        output.resolveSibling("cost-boundary-harness.properties").writeText("sha256=$costBoundaryHash\n")
     }
 }
 sourceSets.main { resources.srcDir(generatedEngineResources) }
@@ -83,7 +88,7 @@ tasks.processResources {
     dependsOn(recordEngineBuild)
     // Existing review sources travel with installed builds; presentation checks their recorded hashes.
     from("src/test/resources") {
-        include("cards/*-source.json", "cards/*-rulings.json", "fidelity/source-sacrifice/*.json", "fidelity/sacrifice-challenge/*.json", "fidelity/activation-cost/*.json")
+        include("cards/*-source.json", "cards/*-rulings.json", "fidelity/source-sacrifice/*.json", "fidelity/sacrifice-challenge/*.json", "fidelity/activation-cost/*.json", "fidelity/cost-examination/*.json")
         into("retained-evidence")
     }
 }
