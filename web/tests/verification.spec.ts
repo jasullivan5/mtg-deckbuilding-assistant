@@ -1,0 +1,57 @@
+import {test,expect} from '@playwright/test';
+import {mkdir,writeFile} from 'node:fs/promises';
+test.skip(!process.env.EXPLORER_URL,'Requires real Kotlin Explorer with retained evidence resources.');
+
+test('Verification separates reference cards partial scopes dated observations and adversarial method failures',async({page})=>{
+  test.setTimeout(300_000);
+  await page.goto('/#progress');
+  const panel=page.locator('#verification-coverage');
+  await expect(panel.getByText('Representation is broader than verification',{exact:true})).toBeVisible();
+  await expect(panel.locator('progress')).toHaveCount(5,{timeout:220_000});
+  await expect(page.getByRole('status')).toHaveCount(0);
+  const response=await page.request.get('/api/v1/progress/verification');expect(response.ok()).toBe(true);
+  const data=await response.json();
+  const baselineResponse=await page.request.get('/api/v1/progress/verification-baseline');expect(baselineResponse.ok()).toBe(true);
+  const baseline=await baselineResponse.json();
+  expect(baseline.populationSha256).toBe(data.populationSha256);
+  expect(baseline.counts).toEqual(data.counts);
+  expect(data.counts.commander_legal_physical_cards).toBe(32109);
+  expect(data.counts.definition_available_cards).toBe(16927);
+  expect(data.counts.source_review_current_cards).toBe(9);
+  expect(data.counts.execution_current_cards).toBe(9);
+  expect(data.counts.execution_observations_current).toBe(15);
+  expect(data.qualification.QUALIFIED).toBe(0);
+  expect(data.completeness).toBe('NOT_ESTABLISHED_AT_CATALOG_SCALE');
+  expect(data.evidence.some((e:{record:{id:string}})=>e.record.id.includes('mutant:'))).toBe(false);
+  expect(data.evidence.filter((e:{record:{kind:string}})=>e.record.kind==='EXECUTION')).toHaveLength(16);
+  await expect(panel).toContainText('Whole-card verification: Not established at catalog scale');
+  const inspection=panel.getByText('Inspect physical cards, source scopes and execution records',{exact:true});
+  await inspection.focus();await page.keyboard.press('Enter');
+  await expect(panel.getByLabel('Verification card name')).toBeVisible();
+  await panel.getByLabel('Evidence freshness').selectOption('HISTORICAL');
+  await expect(panel.locator('summary').filter({hasText:'Spark Elemental · execution · HISTORICAL · FAIL'})).toHaveCount(1);
+  await panel.locator('summary').filter({hasText:'Spark Elemental · execution · HISTORICAL · FAIL'}).click();
+  await expect(panel).toContainText('Generation 100 was incorrectly sacrificed');
+  await panel.getByLabel('Evidence freshness').selectOption('CURRENT');
+  await panel.getByLabel('Verification card name').fill('Hapless Researcher');
+  await panel.locator('summary').filter({hasText:'Hapless Researcher · source review · CURRENT'}).click();
+  await expect(panel).toContainText('all other card behaviors outside review');
+  await expect(panel).toContainText('OBJECT_GENERATION_IN_EXECUTION'.replaceAll('_',' ').toLowerCase());
+  await inspection.click();
+  const challenge=panel.getByText('Challenge findings: what the sacrifice method detects and misses',{exact:true});await challenge.click();
+  await expect(panel.locator('#verification-challenge')).toContainText('2 missed adversarial defects');
+  await expect(panel.locator('#verification-challenge')).toContainText('DIFFERS');
+  await panel.locator('summary').filter({hasText:'Remove required {1}{G} mana payment'}).click();
+  await expect(panel.locator('#verification-challenge')).toContainText('no full-cost requirement');
+  await challenge.click();
+  await mkdir('../generated/verification-coverage/screenshots',{recursive:true});
+  await writeFile('../generated/verification-coverage/browser-measurements.json',JSON.stringify({application:data.applicationRevision,engine:data.engine,snapshot:data.snapshot,populationSha256:data.populationSha256,counts:data.counts,qualification:data.qualification,challenge:data.challenge.counts,adverseExecution:data.challenge.adversarialExecution},null,2));
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:width===390?844:1000});
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
+    await panel.screenshot({path:`../generated/verification-coverage/screenshots/${width}-verification.png`});
+    await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:`../generated/verification-coverage/screenshots/${width}-overview.png`});
+    await page.getByRole('button',{name:'Discover',exact:true}).click();await expect(page.getByRole('button',{name:'Find cards',exact:true})).toBeVisible();
+    await page.getByRole('button',{name:'Progress',exact:true}).click();await expect(panel.locator('progress')).toHaveCount(5,{timeout:120_000});
+  }
+});
