@@ -79,8 +79,8 @@ internal class ExplorerServer(
         }
         val path = x.requestURI.path
         when (path) {
-            "/api/v1/progress/global-baseline", "/api/v1/progress/verification-baseline" -> if (x.requestMethod == "GET") {
-                val source = javaClass.getResourceAsStream(if(path.endsWith("verification-baseline")) "/verification-baseline.json.gz" else "/global-commander-baseline.json.gz")
+            "/api/v1/progress/global-baseline", "/api/v1/progress/verification-baseline", "/api/v1/progress/verification-cost-baseline" -> if (x.requestMethod == "GET") {
+                val source = javaClass.getResourceAsStream(when { path.endsWith("verification-cost-baseline")->"/verification-cost-baseline.json.gz";path.endsWith("verification-baseline")->"/verification-baseline.json.gz";else->"/global-commander-baseline.json.gz" })
                 if(source == null) x.json(404,ApiError("BASELINE_UNAVAILABLE","No requested baseline is packaged; no trend can be inferred."))
                 else java.util.zip.GZIPInputStream(source).bufferedReader(Charsets.UTF_8).use { x.json(200,reportJson.parseToJsonElement(it.readText())) }
                 return
@@ -96,13 +96,14 @@ internal class ExplorerServer(
                 else x.json(200, reportJson.parseToJsonElement(source.readText()))
                 return
             }
-            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
+            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/activation-costs", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
                 runResearch(x) { _, _ -> Response(200, when (path) {
                     "/api/v1/progress/global" -> progress.globalRecords?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
                     "/api/v1/progress/commanders" -> progress.commanders?.let { reportJson.encodeToJsonElement(it) } ?: reportJson.encodeToJsonElement(progress.report.global)
                     "/api/v1/progress/objectives" -> reportJson.encodeToJsonElement(progress.objectiveInventory)
                     "/api/v1/progress/pilot" -> reportJson.encodeToJsonElement(progress.pilot)
                     "/api/v1/progress/verification" -> reportJson.encodeToJsonElement(progress.verification)
+                    "/api/v1/progress/activation-costs" -> reportJson.encodeToJsonElement(progress.activationCosts)
                     "/api/v1/progress/instructions" -> reportJson.encodeToJsonElement(progress.instructionRecords)
                     "/api/v1/progress/facts" -> reportJson.encodeToJsonElement(progress.factRecords)
                     "/api/v1/progress/mechanics" -> reportJson.encodeToJsonElement(progress.nativeCoverage)

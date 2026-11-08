@@ -88,6 +88,13 @@ internal class LabExecution(
     fun id(card: CardDefinition): EntityId = ids[seeds.indexOfFirst { it.card == card }]
     fun sourceTypes() = projectedTypeLine(state, source)
     fun rawState(): JsonElement = labNativeJson.encodeToJsonElement(state)
+    /** Read-only native state for scoped payment assertions; no application payment implementation. */
+    fun nativeState(): GameState = state
+    /** Explicit fixture seeding only, before the first real native action. */
+    fun seedResearchPosition(transform: (GameState)->GameState) {
+        check(trace.isEmpty()) { "A research seed cannot alter an observed execution" }
+        state=transform(state)
+    }
     private fun name(id: EntityId) = state.getEntity(id)?.get<CardComponent>()?.name ?: id.value
 
     fun checkpoint() = LabCheckpoint(

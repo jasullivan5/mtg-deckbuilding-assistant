@@ -30,6 +30,8 @@ Usage:
   mtg-assistant research compare --before <baseline> --after <baseline> --output <new-comparison.json>
   mtg-assistant research fidelity-pilot --output <new-execution.json>
   mtg-assistant research fidelity-challenge --output <new-execution.json>
+  mtg-assistant research activation-cost-execution --output <new-execution.json>
+  mtg-assistant research activation-cost-report --output <new-report.json.gz>
   mtg-assistant research verification-baseline --output <new-baseline.json.gz>
   mtg-assistant research verification-compare --before <baseline> --after <baseline> --output <new-comparison.json>
   mtg-assistant explorer <frontend-dist-directory> <port>

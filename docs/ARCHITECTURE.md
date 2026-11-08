@@ -2,6 +2,8 @@
 
 `coverage/VerificationCoverage.kt` joins exact scoped evidence to the retained global identity baseline and existing assurance gate. `server/SacrificeChallenge.kt` examines the unchanged pilot method with isolated adversarial definitions and explicit native execution. Neither extends discovery interpretation, Commander eligibility or independent approval. See [verification identity, ingestion and completeness boundaries](VERIFICATION_COVERAGE.md).
 
+`coverage/ActivationCostModel.kt` projects supported native payment trees without solving payment legality. Source-first requirements and inspected ability bindings feed `ActivationCostFidelity`; `ActivationCostExecution` reuses genuine Lab transactions. Their additive records enter the existing verification index and Cards/Trust view. Unknown components fail closed, and declaration/resolution dependencies remain outside printed-base payment assurance. See [cost identities, freshness and evidence limits](ACTIVATION_COST_FIDELITY.md).
+
 Global Commander coverage, bounded single-commander inventory and objective reach reuse the catalog audit, effective metadata and existing discovery queries. The Progress projection and immutable baseline contract are documented in [Global Commander coverage](GLOBAL_COMMANDER_COVERAGE.md#architecture-and-api); the narrow sacrifice pilot does not introduce another interpreter or qualification gate.
 
 ## Current implementation

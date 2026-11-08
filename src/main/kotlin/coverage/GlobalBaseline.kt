@@ -96,6 +96,8 @@ fun researchCommand(args: List<String>, catalog: () -> Catalog, out: (String)->U
         "compare" -> { require(options.keys == setOf("--before","--after","--output")); reportJson.encodeToString(GlobalCoverageChange.serializer(),compareGlobalBaselines(readGlobalBaseline(Path.of(required("--before"))),readGlobalBaseline(Path.of(required("--after"))))) }
         "fidelity-pilot" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),SacrificePilot.execute(catalog(),revision)) }
         "fidelity-challenge" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.PilotReceipt.serializer(),dev.mtg.assistant.explorer.SacrificeChallenge.execute(catalog(),revision)) }
+        "activation-cost-execution" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.CostExecutionReceipt.serializer(),dev.mtg.assistant.explorer.ActivationCostExecution.execute(catalog(),revision)) }
+        "activation-cost-report" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(dev.mtg.assistant.explorer.ActivationCostReport.serializer(),dev.mtg.assistant.explorer.ResearchProgressService(catalog(),revision).activationCosts) }
         "verification-baseline" -> { require(options.keys == setOf("--output")); reportJson.encodeToString(VerificationCoverage.serializer(),dev.mtg.assistant.explorer.ResearchProgressService(catalog(),revision).verification) }
         "verification-compare" -> {
             require(options.keys == setOf("--before","--after","--output"))

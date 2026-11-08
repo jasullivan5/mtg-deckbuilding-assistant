@@ -73,7 +73,8 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val commanders: CommanderInventory? by lazy { globalRecords?.let { commanderInventory(catalog,it) } }
     val objectiveInventory: ObjectiveInventory by lazy { dev.mtg.assistant.coverage.objectiveInventory(catalog) }
     val pilot: FidelityPilot by lazy { SacrificePilot.report(catalog,factRecords) }
-    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report()) }
+    val activationCosts: ActivationCostReport by lazy { ActivationCostFidelity.report(catalog,revision) }
+    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts) }
     val report: ResearchProgress by lazy {
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }

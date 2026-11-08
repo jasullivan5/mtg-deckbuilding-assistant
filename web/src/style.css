@@ -381,3 +381,5 @@ button.rules-line:hover { background: #273c41; }
 .verification-matrix th,.verification-matrix td { text-align:left; border-bottom:1px solid var(--line); padding:12px 8px; }
 .verification-matrix progress { width:100%; min-width:80px; accent-color:#b7d9c5; }
 @media(max-width:600px) { .verification-matrix th,.verification-matrix td { padding:10px 4px; font-size:.8rem; } .verification-matrix th { min-width:115px; } }
+
+.cost-summary {border-left: 3px solid var(--accent, #578d88); padding: 0.25rem 0 0.25rem 1rem; margin: 1.5rem 0;} .cost-summary select {width: 100%; max-width: 100%;} .cost-summary pre {max-height: 26rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere;}
