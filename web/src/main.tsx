@@ -9,9 +9,10 @@ import {ObjectiveScope} from './ObjectiveScope';
 import {evidenceTerms} from './evidenceTerms';
 import type {LabContext} from './VerificationLab';
 import './style.css';
+const ResearchProgress = lazy(() => import('./ResearchProgress'));
+const ResearchPrimer = lazy(() => import('./ResearchPrimer'));
 
 const ContributionValidation = lazy(() => import('./ContributionValidation'));
-const IntegrationPrimer = lazy(() => import('./IntegrationPrimer'));
 const IntegrationChange = lazy(() => import('./IntegrationChange'));
 const VerificationLab = lazy(() => import('./VerificationLab'));
 
@@ -24,6 +25,7 @@ const destinations = [
   {id: 'coverage', label: 'Discovery Coverage', purpose: 'Investigate recognized, omitted, unresolved and excluded relationships in a live Judith run.'},
   {id: 'case', label: 'Integration Change Case Study', purpose: 'Inspect a controlled historical discovery correction.'},
   {id: 'contribution', label: 'Contribution Model Study', purpose: 'Compare provisional contribution roles and inspect a controlled event-to-state experiment.'},
+  {id: 'progress', label: 'Progress', purpose: 'Measure research breadth, assurance and obstacles.'},
 ] as const;
 type ResearchView = typeof destinations[number]['id'];
 
@@ -54,10 +56,12 @@ export function App() {
   const [commanderView, setCommanderView] = useState<CommanderView | null>(null);
   const [commanderOpen, setCommanderOpen] = useState(false);
   const [run, setRun] = useState<Run | null>(null);
-  const [activeResearch, setActiveResearch] = useState<ResearchView>();
+  const [activeResearch, setActiveResearch] = useState<ResearchView | undefined>(() => {
+    const requested = location.hash.slice(1);
+    return destinations.some(d => d.id === requested) ? requested as ResearchView : undefined;
+  });
   const [labContext, setLabContext] = useState<LabContext>();
-  const [visited, setVisited] = useState<ResearchView[]>([]);
-  const [agentCoverageVisits, setAgentCoverageVisits] = useState(0);
+  const [visited, setVisited] = useState<ResearchView[]>(() => ['primer', location.hash.slice(1) as ResearchView]);
   const coverageReady = run?.commander === judith && run.objective === creatureDeaths;
   const [selected, setSelected] = useState<number | null>(null);
   const [detail, setDetail] = useState<Evidence | null>(null);
@@ -119,7 +123,6 @@ export function App() {
 
   function changed() {
     setLabContext(undefined);
-    setAgentCoverageVisits(0);
     setCommanderOpen(false); setCommanderView(null); setRun(null); setSelected(null); setDetail(null); setImages({});
     setError(''); setDetailError(''); setName(''); setMechanic('ALL'); setPage(0);
   }
@@ -144,29 +147,19 @@ export function App() {
   }, [activeResearch]);
 
   function openResearch(view: ResearchView) {
+    history.replaceState(null, '', `#${view}`);
     setLabContext(undefined);
     setVisited(previous => previous.includes(view) ? previous : [...previous, view]);
     setActiveResearch(view);
   }
 
   function returnToDiscovery() {
+    history.replaceState(null, '', '#discover');
     setLabContext(undefined);
     setActiveResearch(undefined);
     requestAnimationFrame(() => {
       (run ? detailRef.current : findRef.current)?.focus();
     });
-  }
-
-  async function openAgentCoverage() {
-    let matchingRun = run;
-    if (!coverageReady) {
-      setCommander(judith);
-      setObjective(creatureDeaths);
-      matchingRun = await research(true, judith, creatureDeaths) ?? null;
-    }
-    if (!matchingRun) return;
-    setAgentCoverageVisits(visits => visits + 1);
-    openResearch('coverage');
   }
 
   const selectedObjective = objectives.find(item => item.id === objective);
@@ -176,9 +169,15 @@ export function App() {
   const mechanics = [...new Set(run?.cards.flatMap(c => c.mechanics ?? []) ?? [])].sort();
 
   return <>
-    <header><h1>Card Discovery</h1>{!health && <span>Connecting…</span>}</header>
+    <header><div><p className="eyebrow">MTG DECKBUILDING R&D</p><h1>Research Explorer</h1></div>{!health && <span>Connecting…</span>}</header>
     <main>
+      <nav className="primary-navigation" aria-label="Primary navigation">
+        <button aria-current={!activeResearch ? 'page' : undefined} onClick={returnToDiscovery}>Discover</button>
+        <button aria-current={activeResearch === 'progress' ? 'page' : undefined} onClick={() => openResearch('progress')}>Progress</button>
+        <button aria-current={activeResearch === 'primer' ? 'page' : undefined} onClick={() => openResearch('primer')}>Primer</button>
+      </nav>
       <div hidden={!!activeResearch}>
+      <h2>Card Discovery</h2>
       <section className="controls" aria-label="Research controls">
         <form onSubmit={e => { e.preventDefault(); void research(true); }}>
           <label>Commander<input list="commanders" value={commander}
@@ -212,10 +211,6 @@ export function App() {
           <p className="hint">Searched {run.counts.mechanical_input_cards_after_conventional_search?.toLocaleString()} available cards · {(run.durationMs / 1000).toFixed(1)} s</p>
         </section>
         {runObjective && <ObjectiveScope objective={runObjective} afterSearch/>}
-        <div className="actions discovery-investigation">
-          {coverageReady && <button onClick={() => openResearch('coverage')}>Investigate Discovery Coverage</button>}
-          <a href="#research-and-learning">Research and learning</a>
-        </div>
         <nav className="categories" aria-label="Finding categories">
           {categories.map(([key, label, description]) => <button key={key} aria-pressed={category === key} title={description} aria-description={description}
             onClick={() => { setCategory(key); setPage(0); }}><span className="category-count">{run.cards.filter(c => inCategory(c, key)).length.toLocaleString()}</span>{label}<small>cards</small></button>)}
@@ -260,14 +255,14 @@ export function App() {
             {detailError && <p role="alert" className="warning">{detailError}</p>}
             {shownDetail && <CardInspection key={`${shownDetail.card}-${category === 'GRAVEYARD'}`} evidence={shownDetail}
               image={imageFor(selected!)} revision={run.applicationRevision} preferGraveyard={category === 'GRAVEYARD'}/>}
-            {!!shownDetail?.labScenarioIds?.length && selectedCard && <div className="actions lab-invite">
+            {!!shownDetail?.labScenarioIds?.length && selectedCard && <details className="lab-invite"><summary>Archived execution investigation</summary><div className="actions">
               <button onClick={() => {
                 openResearch('lab');
                 setLabContext({run, card: shownDetail.card, scenarioId: shownDetail.labScenarioIds![0],
                   objectiveLabel: runObjective?.label ?? run.objective, finding: selectedCard.reason});
               }}>Investigate execution</button>
               <span className="hint">Run a curated position with {shownDetail.card}.</span>
-            </div>}
+            </div></details>}
 
           </section>
         </div>
@@ -286,9 +281,10 @@ export function App() {
         </details>
       </>}
       </div>
-      <nav hidden={activeResearch === 'lab'} id="research-and-learning" className="research-destinations" aria-label="Research and learning" tabIndex={-1}>
-        <h2>Research and learning</h2>
-        <ul>{destinations.map(({id, label, purpose}) => {
+      <details id="research-and-learning" className="research-archive">
+        <summary>Developer research index</summary>
+        <p>Retained investigations and curated execution tools. These have bounded historical scopes and are not additional coverage or certification.</p>
+        <ul>{destinations.filter(d => !['progress', 'primer'].includes(d.id)).map(({id, label, purpose}) => {
           const isOpen = activeResearch === id;
           return <li key={id}>
             <button aria-expanded={isOpen} disabled={id === 'coverage' && !coverageReady}
@@ -299,7 +295,7 @@ export function App() {
             {id === 'coverage' && !coverageReady && <p className="hint">Run Judith with “My nontoken creatures die” to open this investigation.</p>}
           </li>;
         })}</ul>
-      </nav>
+      </details>
       {activeResearch && <section className="research-return" ref={researchRef} tabIndex={-1}
         aria-label={destinations.find(item => item.id === activeResearch)?.label + ' navigation'}>
         <button onClick={returnToDiscovery}>{run ? 'Back to discovery results' : 'Back to Commander discovery'}</button>
@@ -311,11 +307,9 @@ export function App() {
       {activeResearch === 'lab' && <Suspense fallback={<p role="status">Loading the Lab…</p>}>
         <VerificationLab key={labContext?.run.runId ?? 'curated'} context={labContext}/>
       </Suspense>}
+      {activeResearch === 'progress' && <Suspense fallback={<p role="status">Loading Progress…</p>}><ResearchProgress/></Suspense>}
       {visited.includes('primer') && <div hidden={activeResearch !== 'primer'}>
-        <Suspense fallback={<p role="status">Loading primer…</p>}>
-          <IntegrationPrimer busy={!!busy || !objectives.length} openCoverage={() => void openAgentCoverage()}
-            openCase={() => openResearch('case')}/>
-        </Suspense>
+        <Suspense fallback={<p role="status">Loading Primer…</p>}><ResearchPrimer/></Suspense>
       </div>}
       {visited.includes('case') && <div hidden={activeResearch !== 'case'}>
         <Suspense fallback={<p role="status">Loading comparison…</p>}><IntegrationChange/></Suspense>
@@ -324,7 +318,7 @@ export function App() {
         <Suspense fallback={<p role="status">Loading contribution study…</p>}><ContributionValidation/></Suspense>
       </div>}
       {coverageReady && visited.includes('coverage') && <div hidden={activeResearch !== 'coverage'}>
-        <DiscoveryCoverage key={run.runId + ':' + agentCoverageVisits} run={run} initialCard={agentCoverageVisits ? 'Agent of Shauku' : undefined}/>
+        <DiscoveryCoverage key={run.runId} run={run}/>
       </div>}
       <details className="shared-help"><summary>About the evidence checks</summary>
         <dl className="evidence-fields">

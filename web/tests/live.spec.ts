@@ -20,6 +20,7 @@ test('Mechanical Verification Lab connects real discovery, cost payment and targ
   const inspector = page.getByRole('region', {name: 'Result inspection'});
   await expect(inspector.getByRole('heading', {name: 'Mogg Fanatic'})).toBeVisible();
   const investigate = inspector.getByRole('button', {name: 'Investigate execution'});
+  await inspector.getByText('Archived execution investigation', {exact:true}).click();
   await investigate.focus();
   await page.keyboard.press('Enter');
   const lab = page.getByRole('region', {name: 'Mechanical Verification Lab', exact: true});
@@ -51,6 +52,7 @@ test('Mechanical Verification Lab connects real discovery, cost payment and targ
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
   await name.fill('Spark Elemental');
   await expect(inspector.getByRole('heading', {name: 'Spark Elemental'})).toBeVisible();
+  await inspector.getByText('Archived execution investigation', {exact:true}).click();
   await inspector.getByRole('button', {name: 'Investigate execution'}).click();
   await expect(lab.getByRole('button', {name: 'Spark Elemental', exact: true})).toHaveAttribute('aria-pressed', 'true');
   await expect(lab.getByRole('heading', {name: 'What happened'})).toHaveCount(0);
@@ -59,6 +61,7 @@ test('Mechanical Verification Lab connects real discovery, cost payment and targ
 test('Mechanical Verification Lab shows the deceptive land and both Spark outcomes at 390 pixels', async ({page}) => {
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   await page.getByRole('button', {name: 'Mechanical Verification Lab', exact: true}).click();
   const lab = page.getByRole('region', {name: 'Mechanical Verification Lab', exact: true});
   await lab.getByRole('button', {name: 'Evolving Wilds', exact: true}).focus();
@@ -436,12 +439,13 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
 
 test('Discovery Coverage counts and filters the fixed cohort and inspects recognized, omitted and unresolved cards', async ({page}) => {
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   const completed = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
   const run: Run = await (await completed).json();
   const reviewed = run.argentumCommit === reviewedCoverageEngine;
   const omissionLabel = reviewed ? historicalGapLabel : unexplainedLabel;
-  await page.getByRole('button', {name: 'Investigate Discovery Coverage'}).click({timeout: 130_000});
+  await page.getByRole('button', {name: 'Discovery Coverage', exact: true}).click({timeout: 130_000});
   const nav = page.getByRole('navigation', {name: 'Coverage categories'});
   const list = page.getByRole('region', {name: 'Cohort cards'});
   const detail = page.getByRole('region', {name: 'Coverage card inspection'});
@@ -488,6 +492,7 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
 test('Integration Change Case Study compares historical records and preserves live discovery', async ({page}) => {
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   const entry = page.getByRole('button', {name: 'Open Integration Change Case Study'});
   await entry.focus();
   await page.keyboard.press('Enter');
@@ -527,100 +532,24 @@ test('Integration Change Case Study compares historical records and preserves li
   await page.getByRole('button', {name: 'Close Integration Change Case Study'}).click();
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
   await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
-  await expect(page.getByRole('button', {name: 'Investigate Discovery Coverage'})).toBeVisible();
+  await expect(page.getByRole('button', {name: 'Discovery Coverage', exact: true})).toBeVisible();
 });
 
-test('integration primer reveals both examples and leads to the existing investigations', async ({page}) => {
+test('Primer explains the pipeline and assurance without running discovery', async ({page}) => {
+  let searches = 0;
+  page.on('request', r => {if(r.url().endsWith('/api/v1/discover')) searches++;});
   await page.setViewportSize({width: 390, height: 844});
-  const discoveryRequests: unknown[] = [];
-  page.on('request', request => {
-    if (request.url().endsWith('/api/v1/discover')) discoveryRequests.push(request.postDataJSON());
-  });
-  await page.goto('/');
-  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  const primer = page.getByRole('region', {name: 'How Card Integration Works', exact: true});
-  const parts = primer.getByRole('navigation', {name: 'Primer parts'});
-  await expect(parts.getByRole('button', {name: '1. The goal'})).toHaveAttribute('aria-current', 'step');
-  await primer.getByRole('button', {name: /Replenish sacrifice material/}).click();
-  await expect(primer).toContainText('It returns tapped');
-  await primer.getByRole('button', {name: /Respond to a death/}).click();
-  await expect(primer).toContainText('outside the present death query');
-  const system = primer.getByRole('button', {name: 'Next · The system'});
-  await system.focus();
-  await page.keyboard.press('Enter');
-  await expect(primer.getByRole('heading', {name: 'How does the system work?'})).toBeFocused();
+  await page.goto('/#primer');
+  const primer = page.getByRole('article', {name: 'Primer', exact: true});
+  await expect(primer.getByRole('heading', {name: 'How Card Integration Works'})).toBeVisible();
   await primer.getByRole('button', {name: /Native definition/}).click();
   await expect(primer).toContainText('input to gameplay and to mechanical extraction');
-  await primer.getByRole('button', {name: 'Commander eligibility', exact: true}).click();
-  await expect(primer).toContainText('Dryad Arbor’s green color identity');
-  await primer.getByRole('button', {name: 'Evidence and verification', exact: true}).click();
-  await expect(primer).toContainText('can progress independently');
+  await expect(primer).toContainText('inherited catalog fidelity is not measured');
+  await expect(primer).toContainText('separate human must explicitly approve');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
-
-  await primer.getByRole('button', {name: /Next · Today/}).click();
-  await expect(primer).toContainText('Viscera Seer’s sacrifice');
-  await primer.getByRole('button', {name: 'Measured', exact: true}).click();
-  await expect(primer).toContainText('6,111 eligible Judith card inputs');
-  await expect(primer).toContainText('95 → 104 distinct cards');
-  await expect(primer).toContainText('12-card Judith death-objective cohort');
-  await primer.getByText('Measurement scope and revisions').click();
-  await expect(primer).toContainText('03869c08665bf476a8b40dacbfbcd501c54a33bd');
-  await primer.getByRole('button', {name: 'Unmeasured', exact: true}).click();
-  await expect(primer).toContainText('discovery recall unmeasured');
-  await primer.getByRole('button', {name: 'Future research', exact: true}).click();
-  await expect(primer).toContainText('renewable sacrifice material');
-  expect(discoveryRequests).toEqual([]);
-  await primer.getByRole('button', {name: 'Next · Research examples'}).click();
-  await expect(primer).toContainText('Bloodghast’s ability triggers here.');
-  await expect(primer).toContainText('ILLUSTRATED RULES RELATIONSHIP');
-  await expect(primer.getByText('Excluded → Recognized')).toHaveCount(0);
-  await expect(primer.getByRole('button', {name: 'Open Bloodghast’s historical case study'})).toHaveCount(0);
-  const prediction = primer.getByRole('button', {name: 'It recognized the return'});
-  await prediction.focus();
-  await page.keyboard.press('Space');
-  await expect(prediction).toHaveAttribute('aria-pressed', 'true');
-  await expect(primer).toContainText('Excluded → Recognized');
-  await expect(primer).toContainText('No such scenario or independent qualification is linked');
-  await primer.getByRole('button', {name: 'Open Bloodghast’s historical case study'}).click();
-  const study = page.getByRole('region', {name: 'When a return trigger works from the graveyard'});
-  await expect(study).toContainText('95 → 104');
-  await expect(study.getByRole('region', {name: 'Bloodghast', exact: true})).toBeVisible();
-  expect(discoveryRequests).toEqual([]);
-
-  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  await expect(primer).toContainText('Excluded → Recognized');
-  await primer.getByRole('button', {name: 'Next: Agent of Shauku'}).click();
-  await expect(primer.getByRole('heading', {name: 'When a land could also be a creature'})).toBeFocused();
-  await primer.getByRole('button', {name: 'A land that is only a land'}).click();
-  await expect(primer).toContainText('does not count as a creature death');
-  await primer.getByRole('button', {name: 'A land that is also a nontoken creature'}).click();
-  await expect(primer).toContainText('leaves the actual board setup open');
-  await expect(primer).toContainText('Recorded M3.1 finding · Unresolved relationship.');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
-  await primer.getByRole('button', {name: 'Continue to recap'}).click();
-  await primer.getByText('Would nine extra matches convince you?').click();
-  await expect(primer.getByText(/Reassembling Skeleton stayed recognized/)).toBeVisible();
-  await primer.getByRole('button', {name: 'Agent of Shauku', exact: true}).click();
-  await expect(primer).toContainText('leaves the actual board setup open');
-  await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();
-  const coverage = page.getByRole('region', {name: 'Discovery Coverage', exact: true});
-  const agent = coverage.getByRole('region', {name: 'Coverage card inspection'});
-  await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible({timeout: 130_000});
-  await expect(agent).toContainText('Unresolved relationship');
-  expect(discoveryRequests).toEqual([{commander: 'Judith, the Scourge Diva', objective: 'own-nontoken-creature-deaths'}]);
-  await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
-  await expect(agent.getByRole('heading', {name: 'Murder', exact: true})).toBeVisible();
-
-  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  await primer.getByRole('button', {name: 'Open Agent in Discovery Coverage'}).click();
-  await expect(agent.getByRole('heading', {name: 'Agent of Shauku', exact: true})).toBeVisible();
-  expect(discoveryRequests).toHaveLength(1);
-  await page.getByRole('button', {name: 'How Card Integration Works', exact: true}).click();
-  await primer.getByRole('button', {name: 'Restart primer'}).click();
-  await expect(primer.getByRole('heading', {name: 'What are we building?'})).toBeFocused();
-  await expect(primer.getByText('Excluded → Recognized')).toHaveCount(0);
-  await page.setViewportSize({width: 1365, height: 950});
-  await expect(primer).toBeVisible();
+  await page.getByRole('button', {name: 'Discover', exact:true}).click();
+  await expect(page.getByRole('button', {name:'Find cards',exact:true})).toBeVisible();
+  expect(searches).toBe(0);
 });
 
 test('contribution study compares roles against the same mechanics without a new discovery run', async ({page}) => {
@@ -628,6 +557,7 @@ test('contribution study compares roles against the same mechanics without a new
   page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) discoveryRequests++;});
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   const open = page.getByRole('button', {name: 'Open Contribution Model Study'});
   await open.focus();
   await page.keyboard.press('Enter');
@@ -670,6 +600,7 @@ test('contribution follow-up distinguishes state access from scaling and keeps m
   page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) discoveryRequests++;});
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   await page.getByRole('button', {name: 'Open Contribution Model Study'}).click();
   const study = page.getByRole('region', {name: 'How do cards contribute to a strategy?'});
   await study.getByRole('button', {name: 'Events versus states'}).click();
@@ -700,82 +631,21 @@ test('contribution follow-up distinguishes state access from scaling and keeps m
   expect(discoveryRequests).toBe(0);
 });
 
-test('objective scope and research navigation preserve a live Judith result at desktop and 390 px', async ({page}) => {
-  const shots = '../generated/explorer/clarity-navigation';
-  await mkdir(shots, {recursive: true});
-  let searches = 0;
-  page.on('request', request => {if (request.url().endsWith('/api/v1/discover')) searches++;});
-  await page.setViewportSize({width: 1440, height: 1100});
+test('Primary navigation preserves live discovery at desktop and 390 px', async ({page}) => {
   await page.goto('/');
-  const scope = page.getByRole('region', {name: 'Objective and search scope'});
-  await expect(scope).toContainText('A nontoken creature you control moves from the battlefield to a graveyard');
-  await expect(scope).toContainText('Currently searched');
-  await expect(scope).toContainText('General death rewards, such as Treasure');
-  const research = page.getByRole('navigation', {name: 'Research and learning'});
-  await expect(research.getByRole('button', {name: 'Discovery Coverage', exact: true})).toBeDisabled();
-  await expect(research).toContainText('Run Judith');
-  await page.screenshot({path: shots + '/after-home-desktop.png'});
-  await page.setViewportSize({width: 390, height: 844});
-  await page.getByText('About objective', {exact: true}).click();
-  const explanation = page.locator('.objective-help');
-  const box = await explanation.boundingBox();
-  expect(box?.width).toBeGreaterThan(300);
-  await page.screenshot({path: shots + '/after-scope-mobile.png'});
-  await page.setViewportSize({width: 1440, height: 1100});
-  const completed = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
-  await page.getByRole('button', {name: 'Find cards', exact: true}).click();
-  const run: Run = await (await completed).json();
-  const reviewed = run.argentumCommit === reviewedCoverageEngine;
-  await expect(page.getByRole('region', {name: 'Completed discovery'})).toBeVisible({timeout: 130_000});
-  const after = page.getByRole('region', {name: 'Scope of this search'});
-  await expect(after).toContainText('renewable sacrifice material');
-  await after.scrollIntoViewIfNeeded();
-  await page.screenshot({path: shots + '/after-results-desktop.png'});
-  const name = page.getByLabel('Card name');
-  const inspection = page.getByRole('region', {name: 'Result inspection'});
-  await name.fill('Viscera Seer');
-  await expect(inspection.getByRole('button', {name: /Creature sacrifice cost identified/})).toBeVisible();
-  await inspection.getByRole('button', {name: /Rules comparison/}).click();
-
-  for (const width of [1440, 390]) {
-    await page.setViewportSize({width, height: width === 390 ? 844 : 1100});
-    await page.getByRole('button', {name: 'Investigate Discovery Coverage'}).focus();
-    await page.keyboard.press('Enter');
-    const navigation = page.getByRole('region', {name: 'Discovery Coverage navigation', exact: true});
-    await expect(navigation).toBeFocused();
-    const coverage = page.getByRole('region', {name: 'Discovery Coverage', exact: true});
-    const detail = coverage.getByRole('region', {name: 'Coverage card inspection'});
-    await coverage.getByRole('button', {name: reviewed ? historicalGapLabel : unexplainedLabel, exact: true}).click();
-    await coverage.getByRole('button', {name: 'Pitiless Plunderer', exact: true}).click();
-    await expect(detail).toContainText('No pathway check for the reviewed relationship');
-    await expect(detail).toContainText('No formal comparison recorded');
-    await coverage.getByRole('button', {name: '1 Excluded by objective policy'}).click();
-    await expect(detail.getByRole('button', {name: /Discovery.*Excluded by objective policy/})).toBeVisible();
-    await coverage.getByRole('button', {name: '1 Unresolved relationship'}).click();
-    await expect(detail).toContainText(reviewed ? historicalDiagnosis : differentEngineDiagnosis);
-    if (width === 1440) {
-      await coverage.getByRole('button', {name: '4 Recognized contribution'}).click();
-      await coverage.getByRole('button', {name: 'Viscera Seer', exact: true}).click();
-      await coverage.getByRole('heading', {name: 'Discovery Coverage', exact: true}).scrollIntoViewIfNeeded();
-      await page.screenshot({path: shots + '/after-coverage-desktop.png'});
-    }
+  await page.getByRole('button', {name:'Find cards',exact:true}).click();
+  const inspection = page.getByRole('region', {name:'Result inspection'});
+  await page.getByLabel('Card name').fill('Viscera Seer');
+  await expect(inspection.getByRole('heading',{name:'Viscera Seer',exact:true})).toBeVisible();
+  for (const width of [1440,390]) {
+    await page.setViewportSize({width,height:950});
+    await page.getByRole('button',{name:'Primer',exact:true}).click();
+    await expect(page.getByRole('article',{name:'Primer',exact:true})).toBeVisible();
+    await page.getByRole('button',{name:'Discover',exact:true}).click();
+    await expect(page.getByLabel('Card name')).toHaveValue('Viscera Seer');
+    await expect(inspection.getByRole('heading',{name:'Viscera Seer',exact:true})).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
-    await navigation.getByRole('button', {name: 'Back to discovery results'}).click();
-    await expect(inspection).toBeFocused();
-    await expect(name).toHaveValue('Viscera Seer');
-    await expect(inspection.getByRole('button', {name: /Rules comparison/})).toHaveAttribute('aria-expanded', 'true');
   }
-
-  await page.getByRole('link', {name: 'Research and learning'}).click();
-  await expect(research).toContainText('Learn how card mechanics become research evidence');
-  await expect(research).toContainText('Inspect a controlled historical discovery correction');
-  await research.getByRole('button', {name: 'Open Contribution Model Study'}).click();
-  const study = page.getByRole('region', {name: 'How do cards contribute to a strategy?'});
-  await expect(study).toContainText('Choose a research comparison');
-  await expect(study).toContainText('These controls do not run discovery');
-  await page.getByRole('button', {name: 'Back to discovery results'}).click();
-  await expect(name).toHaveValue('Viscera Seer');
-  expect(searches).toBe(1);
 });
 
 test('event-to-state research distinguishes observed death and checkpoint state', async ({page}) => {
@@ -785,6 +655,7 @@ test('event-to-state research distinguishes observed death and checkpoint state'
   });
   await page.setViewportSize({width: 390, height: 844});
   await page.goto('/');
+  await page.getByText('Developer research index', {exact:true}).click();
   await page.getByRole('button', {name: 'Open Contribution Model Study'}).click();
   await page.getByRole('button', {name: 'Open event-to-state experiment'}).click();
   const study = page.getByRole('region', {name: 'Can a death establish a graveyard state?'});

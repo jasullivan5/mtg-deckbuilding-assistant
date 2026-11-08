@@ -12,6 +12,8 @@ Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the l
 
 Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script builds both layers; catalog startup can take tens of seconds. Stop with **Ctrl+C**. See [guided exercises and API](docs/EXPLORER.md).
 
+**Discover** searches the four existing objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
+
 ## Two sibling repositories
 
 ```text

@@ -4,6 +4,57 @@
   background: #101b21;
   font-synthesis: none;
 }
+.primary-navigation { display: flex; gap: 6px; border-bottom: 1px solid #42575c; margin-bottom: 28px; padding-bottom: 12px; }
+.primary-navigation button { min-width: 110px; background: transparent; border-color: transparent; }
+.primary-navigation [aria-current=page] { background: #b6d9c3; color: #14262b; font-weight: 650; }
+.progress-page { max-width: 1120px; margin: 0 auto; }
+.progress-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
+.progress-heading h2 { font: 400 clamp(28px, 3.3vw, 42px)/1.15 Georgia, serif; max-width: 650px; }
+.progress-intro { color: #bdcccf; max-width: 720px; font-size: 17px; }
+.progress-badge { display: inline-block; font-size: 12px; line-height: 1.5; color: #f1d49d; background: #302c25; border: 1px solid #736348; padding: 9px 12px; border-radius: 6px; }
+.progress-headlines { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px 0; }
+.progress-stat { color: inherit; text-decoration: none; background: #1d3338; border: 1px solid #48615f; border-top: 3px solid #b6d9c3; border-radius: 8px; padding: 20px 16px; }
+.progress-stat strong { display: block; font: 400 31px/1.2 Georgia, serif; margin-bottom: 12px; color: #c7e8d3; }
+.progress-stat span { display: block; font-size: 14px; }
+.progress-stat small { display: block; color: #b6c6c8; line-height: 1.5; margin-top: 10px; }
+.progress-stat.uncertainty { border-top-color: #d5ad76; background: #2a2c2b; }
+.progress-stat.uncertainty strong { color: #f1d49d; }
+.progress-panel { border: 1px solid #3c5158; background: #17282e; border-radius: 10px; padding: 25px 28px; margin: 18px 0; scroll-margin-top: 18px; }
+.progress-panel h3 { font: 400 27px/1.2 Georgia, serif; margin: 8px 0 14px; }
+.progress-panel h4 { margin: 16px 0 8px; }
+.progress-panel p { font-size: 14px; }
+.progress-panel details { margin-top: 18px; }
+.progress-panel summary { cursor: pointer; line-height: 1.5; padding: 8px 0; color: #c2e3d5; }
+.progress-panel code { overflow-wrap: anywhere; font-size: 12px; }
+.progress-callout { border-left: 3px solid #d5ad76; padding: 6px 16px; background: #222e30; margin: 20px 0; }
+.progress-table { max-width: 100%; overflow-x: auto; margin: 18px 0; }
+.progress-table table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 0; }
+.progress-table caption { text-align: left; line-height: 1.5; color: #b6c6c8; padding-bottom: 10px; }
+.progress-table th, .progress-table td { text-align: left; vertical-align: top; padding: 12px 10px; border-bottom: 1px solid #354c51; }
+.progress-table tbody th { font-weight: 450; }
+.progress-table thead { color: #bce0cf; }
+.progress-panel progress { display: block; width: 100%; height: 17px; margin: 10px 0; accent-color: #a9d5bf; }
+.progress-trust { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
+.progress-trust > div { min-width: 0; }
+.progress-record { border-top: 1px solid #42575c; padding: 8px 0; }
+.progress-obstacles { border-color: #78654a; }
+.progress-obstacles ol { padding-left: 24px; }
+.progress-obstacles li { padding: 2px 0 15px 8px; border-bottom: 1px solid #42575c; }
+.research-archive { margin: 18px 0; font-size: 13px; color: #b6c6c8; }
+.research-archive summary { cursor: pointer; padding: 8px 0; }
+.progress-page pre { max-height: 400px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
+@media (max-width: 800px) {
+  .progress-headlines { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .progress-trust { grid-template-columns: 1fr; gap: 8px; }
+  .progress-heading { flex-direction: column; gap: 4px; }
+}
+@media (max-width: 480px) {
+  .primary-navigation button { min-width: 0; flex: 1; }
+  .progress-panel { padding: 20px 16px; }
+  .progress-stat { padding: 16px 12px; }
+  .progress-stat strong { font-size: 26px; }
+  .progress-page .filters { grid-template-columns: 1fr; }
+}
 * { box-sizing: border-box; }
 body { margin: 0; }
 header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px max(24px, calc((100vw - 1420px)/2)); border-bottom: 1px solid #344349; }

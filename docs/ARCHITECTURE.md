@@ -8,6 +8,8 @@ Argentum owns native `CardDefinition`/`CardScript` data and DSLs, card discovery
 
 ## Research interface
 
+The primary interface is **Discover / Progress / Primer**. `server/ResearchProgress.kt` projects catalog provenance, the existing independent native-node audit, shared extraction facts, explicit-snapshot catalog coverage and the existing extension assurance gate. It runs under the existing bounded worker and caches measurements per server/build without replacing the latest discovery. React presents those measurements; it does not interpret mechanics. Compact historical comparison evidence is packaged separately with exact original populations and revisions. Secondary investigations remain behind the developer research index. See [measurement definitions and boundaries](RESEARCH_PROGRESS.md).
+
 The Explorer implements an independent React / TypeScript / Vite frontend in `web/`, served by the application-owned JDK `HttpServer`. It directly calls existing Kotlin commander inspection and discovery services. The CLI and headless pipeline remain supported; React adds no mechanical acceptance rules.
 
 ```text
