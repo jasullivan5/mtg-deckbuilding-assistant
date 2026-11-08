@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "applicationBase": "0b23d5e16ac3145118a4ae15e7a66c99b610d24a",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "sourceOnlyInputs": [
+    {
+      "path": "src/test/resources/fidelity/activation-cost/ema-138.json",
+      "sha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "printingId": "d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "card": "Mogg Fanatic",
+      "sourceUrl": "https://api.scryfall.com/cards/d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "retrievedAt": "2026-11-08T19:25:27.668423+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/fdn-250.json",
+      "sha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "oracleId": "893fed41-c144-433f-af88-bc7d419b7fb3",
+      "printingId": "65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "card": "Burnished Hart",
+      "sourceUrl": "https://api.scryfall.com/cards/65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "retrievedAt": "2026-11-08T19:25:30.616318+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/jud-42.json",
+      "sha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "oracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+      "printingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "card": "Hapless Researcher",
+      "sourceUrl": "https://api.scryfall.com/cards/22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "retrievedAt": "2026-11-08T19:25:29.486524+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/mh2-274.json",
+      "sha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "oracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+      "printingId": "851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "card": "Greed",
+      "sourceUrl": "https://api.scryfall.com/cards/851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "retrievedAt": "2026-11-08T19:25:32.517991+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/ori-170.json",
+      "sha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "oracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+      "printingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "card": "Caustic Caterpillar",
+      "sourceUrl": "https://api.scryfall.com/cards/f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "retrievedAt": "2026-11-08T19:25:28.300083+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/soc-229.json",
+      "sha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "printingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "card": "Viscera Seer",
+      "sourceUrl": "https://api.scryfall.com/cards/f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "retrievedAt": "2026-11-08T19:25:31.861951+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/soc-285.json",
+      "sha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "oracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+      "printingId": "7a8b1c49-8594-426d-b585-41140235bb0e",
+      "card": "Sakura-Tribe Elder",
+      "sourceUrl": "https://api.scryfall.com/cards/7a8b1c49-8594-426d-b585-41140235bb0e",
+      "retrievedAt": "2026-11-08T19:25:30.023849+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "card": "Mind Stone",
+      "sourceUrl": "https://api.scryfall.com/cards/091600ae-6578-4353-8e0f-d170f555bcd0",
+      "retrievedAt": "2026-11-08T19:25:31.232854+00:00"
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/trc-527.json",
+      "sha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "oracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+      "printingId": "6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "card": "Evolving Wilds",
+      "sourceUrl": "https://api.scryfall.com/cards/6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "retrievedAt": "2026-11-08T19:25:28.912427+00:00"
+    }
+  ],
+  "rules": {
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+    "sha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "localReadOnlyPath": "generated/activation-cost/rules.txt"
+  },
+  "protocol": {
+    "source": "Derive requirements from original sources without native definitions, prior requirements, verdicts, reports or execution. Freeze output before native inspection.",
+    "native": "Inspect separately supplied native definitions and native rules against frozen source expectations, before existing comparison verdicts. Freeze output.",
+    "adjudication": "Only after earlier outputs are frozen, compare with original checks, mutations and receipts. Do not count reread observations as new execution.",
+    "independence": "Isolated no-history agent under the same provider/coordinator, tool-instruction access boundary only; not human examination, not automatic independent qualification. Existing author/coordinator has prior conclusions. No approval record authorized."
+  }
+}
