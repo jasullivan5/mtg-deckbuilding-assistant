@@ -3,6 +3,7 @@
 **/build/
 *.hprof
 /generated/
+/output/
 *.zip
 __pycache__/
 .env

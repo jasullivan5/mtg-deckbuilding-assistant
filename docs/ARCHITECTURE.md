@@ -1,5 +1,7 @@
 # Architecture and extension points
 
+Global Commander coverage, bounded single-commander inventory and objective reach reuse the catalog audit, effective metadata and existing discovery queries. The Progress projection and immutable baseline contract are documented in [Global Commander coverage](GLOBAL_COMMANDER_COVERAGE.md#architecture-and-api); the narrow sacrifice pilot does not introduce another interpreter or qualification gate.
+
 ## Current implementation
 
 The application is an external Kotlin Gradle application module at the repository root attached through `gradle/argentum.init.gradle` to the sibling `../argentum-engine` on the maintained fork's `app-stable` branch. `dev`/`dev.ps1` enforce branch, clean source and fork origin. The branch selects the dependency; generated build metadata and reports record the actual engine SHA. Native/application compatibility is checked before engine acceptance. See [engine workflow](ENGINE_WORKFLOW.md).

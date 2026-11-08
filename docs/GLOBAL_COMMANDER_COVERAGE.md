@@ -129,4 +129,53 @@ The recommended next bounded decision is an independent source-first review of t
 
 ## Delivery evidence
 
-Final measured counts, exact clean build revisions, controlled comparison hashes, executed commands, screenshots and unexecuted checks are recorded in the delivery receipt after local validation. Product Studio's assessment of the running experience determines product acceptance; tests and a PR alone do not.
+The concise [Product Studio report](PRODUCT_STUDIO_GLOBAL_COVERAGE.md) provides the working experience, guided investigations and screenshots. Product Studio's assessment determines product acceptance; tests and a PR alone do not.
+
+| Measurement | Result and unit |
+| --- | --- |
+| Global legal physical identities | 32,109 |
+| Confident native associations | 16,927 / 32,109 (52.72%); inherited 16,905, extension 22 |
+| Missing / uncertain associations | 15,143 / 39 (2 ambiguous, 37 identity review) |
+| Effective metadata disagreements | 1,052 associated definitions; overlaps with availability |
+| Raw source legal / banned / not legal | 32,116 / 83 / 6,850; seven legal meld results excluded from physical denominator |
+| Unresolved legality / physical pool | 0 / 0 in this selected snapshot |
+| Judith external eligible / confidently associated | 12,828 / 6,658 |
+| Bounded single candidates / selection gate passed | 3,436 / 1,466; not all legal commanders or per-candidate execution |
+| Candidate missing / uncertain / unresolved-blocked | 1,772 / 6 / 192 |
+| Separately flagged special noncreature / Background / unresolved source forms | 32 / 29 / 19; outside identified-single denominator |
+| Objectives and common examined population | Four / 6,111 native physical cards each |
+| Pilot static check applications | 48 supported, 0 contradicted, 0 unresolved; 6 execution-only requirements untested statically |
+| Actual execution | 11 passing bounded scenarios across six cards; two generic ordinary patterns and five existing curated positions |
+| Potential structural reach | 647 native physical definitions, 671 source-bound facts; only six abilities source reviewed |
+
+Revisions and source bindings:
+
+- Base merged main: `fbc49a10245161954e14e70744c5215a60090464` (PR #38).
+- Clean implementation/baseline/pilot execution: `bac84a5ba50739f9af950518072550be67cf700b`.
+- Packaged evidence build used for browser review: `2494b64ab231f71c374c1ca02f7aa32ece4ee64b` (its parents contain all measured Kotlin code; later delivery changes are frontend anchor repair, documentation and receipts).
+- Clean maintained engine: `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`, `app-stable`; no engine changes.
+- Global source update: `2026-10-26T21:01:59.922+00:00`; SHA256 `081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a`; 25,135,745 bytes.
+- Retained compressed baseline SHA256: `c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911`.
+- Pilot requirements SHA256: `a52cf900e5788cca7e85b51aaa9d9b8ae0f194d15bf2e836cbcd1a6d49f2fbfc`; harness SHA256 `520a5b3d03a024731586b6ca6e37d3e23acfd6d1fb934f97a6ea154536519e7a`.
+- Pilot executed `2026-11-08T08:18:53.942330500Z`. Exact six definition hashes, native actions, events, scenario IDs and observations are in `src/main/resources/pilot-execution.json`.
+
+Actual validation commands (JDK 21, Windows; outputs in ignored `generated/global-coverage/`):
+
+```powershell
+.\dev.ps1 test ':assistant:installDist'
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research fidelity-pilot --output generated/global-coverage/pilot-final.json
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research baseline --oracle-cards generated/oracle/oracle-cards-20261026210159.jsonl.gz --output generated/global-coverage/baseline-final.json.gz
+java -Xmx1g -XX:ActiveProcessorCount=4 -cp 'build/install/mtg-assistant/lib/*' dev.mtg.assistant.MainKt research compare --before src/main/resources/global-commander-baseline.json.gz --after generated/global-coverage/baseline-final.json.gz --output generated/global-coverage/baseline-readback.json
+.\scripts\explorer.ps1 -Port 8798 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz
+# In web/, with EXPLORER_URL=http://127.0.0.1:8798 and EXPLORER_BROWSER_CHANNEL=msedge:
+pnpm build
+pnpm exec playwright test
+```
+
+The full Kotlin suite passed **571 tests, zero failures/errors/skips** (7m 9s). The retained baseline was read through the comparison CLI: valid record-derived numerator/denominator, identical universe/definitions and no fabricated changes. Independently recomputed live API global counts equal all retained baseline counts.
+
+The controlled discovery command was `discover --commander 'Judith, the Scourge Diva' --objective <id> --json --output <path>`, run on an isolated clean merged-main worktree and the new packaged implementation, with the same engine. All four full report files are **byte-for-byte identical**, including eligibility, decisions, pathways and evidence. Compact hashes, population and exact revisions are retained in [global coverage stability](../src/test/resources/progress/global-coverage-stability.json). Bulk reports remain ignored. The clean completed worktree was removed normally after checking source state, upstream ancestry and active consumers.
+
+The first browser run passed 28/29 checks and exposed a duplicate HTML ID between the new commander panel and Discover's existing datalist. The panel now uses `commander-coverage`; neither eligibility nor data changed. The final full browser rerun passed **29/29 checks** in 2.1 minutes; actual 1440px and 390px screenshots validate this repair. The first fourth-objective CLI launch overlapped the launcher's installDist refresh and failed class loading; a completed rerun after packaging is the retained comparison, and its complete report is identical to main. This was a validation orchestration failure, not a concealed mechanical difference.
+
+No standalone engine suite was run because engine source was unchanged; the application suite and pilot execute the actual maintained engine. macOS/Linux launchers and browsers other than Windows Edge were not exercised. No independent human source approval, exhaustive commander discovery run, global objective-quality benchmark or representative-gameplay validation was performed. Historical Judith gains and Spark failures remain historical observations, not fresh executions on the current build.

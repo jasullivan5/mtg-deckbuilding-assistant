@@ -19,10 +19,10 @@ test('Cards Commanders Objectives and reusable fidelity expose actual separate p
   await expect(dashboard.locator('#global-cards')).toContainText(report.global.counts.eligible_oracle_cards.toLocaleString());
   expect(commanders.counts.selection_gate_passed).toBeGreaterThan(0);
   expect(commanders.counts.selection_gate_passed).toBeLessThan(commanders.counts.identified_single_candidates);
-  await expect(dashboard.locator('#commanders')).toContainText('not successful execution for every candidate');
+  await expect(dashboard.locator('#commander-coverage')).toContainText('not successful execution for every candidate');
   await dashboard.getByText('Inspect commander candidates and blockers',{exact:true}).click();
   await dashboard.getByLabel('Commander candidate name').fill('Daretti');
-  await expect(dashboard.locator('#commanders')).toContainText('native missing');
+  await expect(dashboard.locator('#commander-coverage')).toContainText('native missing');
   await dashboard.getByText('Inspect commander candidates and blockers',{exact:true}).click();
   expect(objectives.objectives).toHaveLength(4);
   expect(new Set(objectives.objectives.map((o:{counts:Record<string,number>})=>o.counts.eligible_physical_cards_examined)).size).toBe(1);
@@ -44,7 +44,7 @@ test('Cards Commanders Objectives and reusable fidelity expose actual separate p
     await page.setViewportSize({width,height:width===390?844:1000});await page.evaluate(()=>window.scrollTo(0,0));
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
     await page.screenshot({path:`../generated/global-coverage/screenshots/${width}-overview.png`});
-    for(const id of ['global-cards','commanders','objectives','fidelity-pilot'])await dashboard.locator('#'+id).screenshot({path:`../generated/global-coverage/screenshots/${width}-${id}.png`});
+    for(const id of ['global-cards','commander-coverage','objectives','fidelity-pilot'])await dashboard.locator('#'+id).screenshot({path:`../generated/global-coverage/screenshots/${width}-${id}.png`});
     await page.getByRole('button',{name:'Discover',exact:true}).click();
     await expect(page.getByRole('button',{name:'Find cards',exact:true})).toBeVisible();
     await page.getByRole('button',{name:'Progress',exact:true}).click();
@@ -58,7 +58,7 @@ test('Absent snapshot displays unmeasured global and commander coverage without 
   await page.route('**/api/v1/progress/commanders',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({state:'NOT_MEASURED'})}));
   await page.goto('/#progress');
   await expect(page.locator('#global-cards')).toContainText('No explicit snapshot selected');
-  await expect(page.locator('#commanders')).toContainText('not measured without a compatible explicit snapshot');
+  await expect(page.locator('#commander-coverage')).toContainText('not measured without a compatible explicit snapshot');
   await expect(page.locator('#global-cards progress')).toHaveCount(0);
   await expect(page.locator('#fidelity-pilot')).toContainText('reviewed ability scopes',{timeout:120_000});
 });
