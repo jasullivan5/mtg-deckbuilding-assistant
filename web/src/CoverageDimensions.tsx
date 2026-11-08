@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
 import {api} from './api';
+import VerificationCoverage, {type VerificationData} from './VerificationCoverage';
 
 type External = {state:string;reason:string;commander:string;counts:Record<string,number>;snapshot?:{sha256:string;updatedAt:string};exclusions:Record<string,number>};
 type Commander = {counts:Record<string,number>;eligibilityScope:string;operationalScope:string;limits:string[];unsupportedFamilies:string[];records:{card:string;sourceClass:string;nativeName:string|null;selection:string;blockers:string[];configurationFamilies:string[]}[]};
@@ -13,6 +14,7 @@ function Exact({value}:{value:unknown}) {return <pre>{JSON.stringify(value,null,
 
 export default function CoverageDimensions({global,revision}:{global:External;revision:string}) {
   const [commanders,setCommanders]=useState<Commander>(); const [objectives,setObjectives]=useState<Objectives>();const [pilot,setPilot]=useState<Pilot>();
+  const [verification,setVerification]=useState<VerificationData>();
   const [loading,setLoading]=useState('');const [error,setError]=useState('');const [query,setQuery]=useState('');const [selected,setSelected]=useState('');
   const lifetime=useRef(new AbortController());
   async function measure() {
@@ -22,7 +24,8 @@ export default function CoverageDimensions({global,revision}:{global:External;re
       const commanders=await api<Commander&{state?:string}>('progress/commanders',undefined,lifetime.current.signal);if(!commanders.state)setCommanders(commanders);
       setLoading('Running the four existing objectives over the same native population…');
       setObjectives(await api<Objectives>('progress/objectives',undefined,lifetime.current.signal));
-      setLoading('Reading the bounded fidelity investigation…');setPilot(await api<Pilot>('progress/pilot',undefined,lifetime.current.signal));
+      setLoading('Reading the bounded fidelity investigation…');const loadedPilot=await api<Pilot>('progress/pilot',undefined,lifetime.current.signal);
+      setLoading('Indexing scope-aware verification evidence…');setVerification(await api<VerificationData>('progress/verification',undefined,lifetime.current.signal));setPilot(loadedPilot);
     } catch(e) {if(!lifetime.current.signal.aborted)setError(e instanceof Error?e.message:String(e));} finally {if(!lifetime.current.signal.aborted)setLoading('');}
   }
   useEffect(()=>{void measure();return()=>lifetime.current.abort();},[]);
@@ -44,6 +47,7 @@ export default function CoverageDimensions({global,revision}:{global:External;re
       <p>Compare this full-format target with the retained Judith-specific external population below. Native mechanical interpretation uses a third population: all authored physical definitions.</p>
       <details><summary>First global baseline and future comparison</summary><p>This increment records the first dated global baseline. There is no earlier comparable global trend. Historical Judith discovery gains remain separate. Baseline comparisons distinguish source growth, legality changes, newly integrated existing cards, resolved uncertain associations and lost coverage; changed measurement definitions are flagged.</p><a href="/api/v1/progress/global-baseline" target="_blank" rel="noreferrer">Inspect retained baseline and exact population</a></details>
     </section>
+    <VerificationCoverage data={verification}/>
     <section className="progress-panel" id="commander-coverage"><p className="eyebrow">COMMANDERS / SELECTION AND CONFIGURATION</p><h3>Which commanders can we support?</h3>
       {commanders?<><p>{commanders.eligibilityScope}</p><p><strong>{n(commanders.counts.selection_gate_passed)} / {n(commanders.counts.identified_single_candidates)}</strong> identified source candidates pass the current native selection gate and have agreeing effective source/native metadata. This measures supported single-commander selection predicates, not successful execution for every candidate.</p><p>{commanders.operationalScope}</p>
       <details><summary>Inspect commander candidates and blockers</summary><Rows counts={commanders.counts} caption="Individual source candidates · selection outcomes form a partition within the identified single-candidate denominator"/><label>Commander candidate name<input value={query} onChange={e=>setQuery(e.target.value)}/></label>{commanders.records.filter(c=>c.card.toLowerCase().includes(query.toLowerCase())).slice(0,25).map(c=><details key={c.card}><summary>{c.card} · {label(c.selection)}</summary><p>Source class: {c.sourceClass}. Native: {c.nativeName??'No confident native association'}.</p><ul>{c.blockers.map((b,i)=><li key={i}>{b}</li>)}</ul><p>Configuration families: {c.configurationFamilies.join(', ')||'No special family identified in this bounded inventory'}.</p></details>)}<p>Showing at most 25 matching records.</p><a href="/api/v1/progress/commanders" target="_blank" rel="noreferrer">Complete commander inventory</a></details>
