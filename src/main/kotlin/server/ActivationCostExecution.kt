@@ -92,7 +92,7 @@ internal object ActivationCostExecution {
                 "fixed_mana_actually_spent" to (if(ability.isManaAbility) game.events.filterIsInstance<ManaSpentEvent>().isEmpty() else totals(paidMana).all { it==0 }),
                 "life_actually_paid" to (after.getEntity(game.player)!!.get<LifeTotalComponent>()!!.life==beforeLife-life),
                 "tap_actually_observed" to (!tap || game.events.filterIsInstance<TappedEvent>().any { it.entityId==game.source }),
-                "exact_sacrifice_and_owner_destination" to (!(self || selected) || (paidId in sacrifices && movement!=null && movement.oldObject==originalRef && movement.newObject!=originalRef && movement.fromZone==Zone.BATTLEFIELD && movement.toZone==Zone.GRAVEYARD && movement.requestedDestination==Zone.GRAVEYARD && movement.ownerId==originalOwner && movement.lastKnown?.controllerId==game.player)),
+                "exact_sacrifice_and_owner_destination" to (!(self || selected) || (paidId in sacrifices && movement!=null && movement.oldObject==originalRef && movement.newObject!=originalRef && movement.fromZone==Zone.BATTLEFIELD && movement.toZone==Zone.GRAVEYARD && movement.requestedDestination==Zone.GRAVEYARD && movement.ownerId==originalOwner && movement.lastKnown?.controllerId==game.player && originalOwner!=null && paidId in after.getGraveyard(originalOwner))),
                 "unrelated_objects_preserved" to before.getBattlefield().filter { it!=paidId }.all { id->after.objectRef(id)==before.objectRef(id) && id in after.getBattlefield() },
                 "ordinary_effects_remain_on_stack" to (ability.isManaAbility || after.stack.size==before.stack.size+1))
             val executed=game.actions.any { it.nativeAction!=JsonNull && it.nativeResult!=JsonNull }
