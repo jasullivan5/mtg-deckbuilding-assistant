@@ -64,10 +64,16 @@ fun retainedGlobalBaseline():GlobalBaseline = GlobalBaseline::class.java.getReso
     GZIPInputStream(it).bufferedReader().use { reader->reportJson.decodeFromString(reader.readText()) }
 }
 
+fun requireVerificationIdentityBinding(baseline:GlobalBaseline,identities:List<NativeIdentity>) {
+    require(baseline.identityAlgorithm==IDENTITY_ALGORITHM && baseline.populationPolicy=="physical-format-population-v1") { "Verification reference identity/population policy changed; select an explicitly reviewed compatible baseline" }
+    require(baseline.nativeIdentitySha256==nativeIdentityDigest(identities)) { "Native identity inventory changed; re-establish source associations explicitly before measuring verification coverage" }
+}
+
 internal fun verificationCoverage(catalog:Catalog,revision:String,structural:List<StructuralSupport>,pilot:FidelityPilot,
     challenge:SacrificeChallengeReport,baseline:GlobalBaseline=retainedGlobalBaseline()):VerificationCoverage {
     // Validate the immutable population through the existing comparison contract.
     compareGlobalBaselines(baseline,baseline)
+    requireVerificationIdentityBinding(baseline,physicalCards(catalog.cards).map { nativeIdentity(it,catalog.provenance(it.name).origin) })
     val legal=baseline.records.filter { it.poolState=="ELIGIBLE" }.associateBy { it.oracleId }
     val native=legal.values.filter { it.association=="CONFIDENT" }.mapNotNull { row->row.nativeName?.let(catalog::card)?.let { row.oracleId to it } }.toMap()
     val byName=native.entries.associate { it.value.name to it.key }

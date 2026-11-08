@@ -43,6 +43,8 @@ class VerificationCoverageTest:FunSpec({
         baseline.counts.getValue("eligible_oracle_cards") shouldBe 32109
         baseline.counts.getValue("confident_native_identity_associations") shouldBe 16927
         compareGlobalBaselines(baseline,baseline).definitionChanges shouldBe emptyList()
+        shouldThrow<IllegalArgumentException> { requireVerificationIdentityBinding(baseline,emptyList()) }
+        shouldThrow<IllegalArgumentException> { requireVerificationIdentityBinding(baseline.copy(identityAlgorithm="unknown-mapping"),emptyList()) }
         val service=ResearchProgressService(Catalog(),"test")
         val report=service.verification
         report.completeness shouldBe "NOT_ESTABLISHED_AT_CATALOG_SCALE"
