@@ -31,6 +31,7 @@ export default function ContributionValidation() {
   return <section id="contribution-validation" className="detail primer contribution-study" aria-labelledby="contribution-title">
     <p className="eyebrow">SOURCE-REVIEWED CONCEPTUAL EXPERIMENT</p>
     <h2 id="contribution-title">How do cards contribute to a strategy?</h2>
+    <p className="hint"><strong>Historical vocabulary study.</strong> The comparisons below retain their original four- and five-role proposals. The current six-role direction is explained in Primer; this study is not a role classifier or a new requirement to adopt its earlier recommendations.</p>
     <p>Choose a research comparison or start with <strong>Events versus states</strong>. Both provisional models use the same ability and game conditions. These controls do not run discovery.</p>
     <button aria-expanded={experiment} onClick={() => setExperiment(!experiment)}>
       {experiment ? 'Back to role comparison' : 'Open event-to-state experiment'}

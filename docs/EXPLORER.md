@@ -6,6 +6,8 @@ The Explorer is a local browser interface over the application's existing Kotlin
 
 ## Launch on Windows
 
+For current conceptual direction, open **Primer** (`/#primer`): the five-stage map, objective-relative six-role vocabulary, selective layering examples and future empirical evaluation hypothesis. Four queries and curated native positions are implemented; role classification/filtering, composition and deck simulation are not. See [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) for precise decisions and [README](../README.md#current-state-and-authority) for current status.
+
 From the application checkout:
 
 ```powershell
@@ -30,7 +32,7 @@ For the controlled comparison of a creature death and a graveyard state, open **
 2. Compare **Akki Scrapchomper** under **Identified mechanics** with **Agent of Shauku** under **Needs interpretation**. Akki names its artifact-or-land cost and accepted artifact-creature route; its land alternative remains unresolved. Agent names its land cost and unresolved overlap, without declaring creature-lands impossible or always requiring animation. Costs/targets are game conditions; the unhandled overlap is the research limitation. Original decisions remain under **Technical investigation**. Primary inclusion policy alternatives are documented in [the boundary investigation](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open).
 3. Under the death objective, **Reassembling Skeleton** and **Bloodghast** have no accepted resource-replenishment contribution. Switch to **Return our creatures**: both now have recognized original-card returns, with mana/tapped-entry or landfall in their printed rules. Bloodghast's former false rejection is corrected. This is existing reanimation coverage, not a new recurring-fuel search. A vanilla **Walking Corpse** has no death finding; **Grim Haruspex**'s draw payoff remains outside this query. These omissions do not mean those cards lack strategic relevance. For a retained historical concern, inspect **Tatterkite** under **All findings** and open its investigation details.
 
-Opening commander information after searching preserves the results. Change a commander/objective to start a new search. **Murder** remains a blocked commander selection. The three technical objective IDs are unchanged. Search population, full-identity eligibility, exclusions and implementation coverage remain under the findings' research details. General evidence methodology lives in the shared **About the evidence checks** disclosure rather than repeating across cards.
+Opening commander information after searching preserves the results. Change a commander/objective to start a new search. **Murder** remains a blocked commander selection. The four current objective IDs are listed in [README](../README.md#current-objectives). Search population, full-identity eligibility, exclusions and implementation coverage remain under the findings' research details. General evidence methodology lives in the shared **About the evidence checks** disclosure rather than repeating across cards.
 
 ## Reading findings honestly
 
@@ -51,7 +53,7 @@ All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander
 | Method and path | Request | Response |
 | --- | --- | --- |
 | GET /health | none | ready state, actual engine SHA/mode, packaged application revision |
-| GET /objectives | none | three Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
+| GET /objectives | none | four Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
 | POST /commander | {commander} | unchanged CommanderInspection; HTTP 200 also covers blocked selections |
 | POST /commander-view | {commander, objective} | original inspection plus verified image/fallback, readable card text, color identity, bounded objective connection and applicable scoped evidence; does not run whole-catalog discovery |
 | POST /discover | {commander, objective} | RunSummary: run ID, fresh structural execution mode/time, revisions, scope/counts, limitations and compact card index |
@@ -125,7 +127,11 @@ Judith's native death trigger and one-damage/any-target effect are represented t
 
 The commander presentation uses the existing native walker on the selected card only. The directly associated trigger is marked in the displayed rules. The redundant cause-neutral sentence is no longer displayed; its existing API value remains available in commander technical records. A bounded formatter describes the directly represented death trigger and effect without treating the query's removal classification as the definition of the objective. It does not certify rules fidelity or replace objective policies. Unsupported connections receive no invented relationship. Commander artwork is 220 px wide on desktop and remains compact on mobile. Commander imagery uses the same printing/face verifier, bounded provider requests, cache and explicit fallback as result imagery.
 
-## Verified implementation and current limits
+## Historical delivery records
+
+The sections below retain original bounded deliveries, measurements, review language and tested revisions. They are not a current inventory or mandatory Prototype Lab workflow. Later PRs #37–42 added curated fresh execution and Progress/trust capabilities; [README](../README.md#current-state-and-authority) is the current entry point. [Objective direction](OBJECTIVE_MODEL.md) and the current Primer supersede earlier vocabulary/map recommendations without rewriting source evidence.
+
+## Verified implementation and limits at the M1 delivery
 
 Fresh verification on 2026-11-02 used clean sibling engine **03869c08665bf476a8b40dacbfbcd501c54a33bd**, mode **app-stable**. Production extraction was tested at **877f9ee90fea7120f85096de583db7d898e6fd56**. Subsequent commits strengthen source/ability-scope tests and refine presentation; the final running candidate was **f4cbe602e4fdbcffa982841c8cfe7d62d93db40c**. Later documentation commits are not new test executions.
 

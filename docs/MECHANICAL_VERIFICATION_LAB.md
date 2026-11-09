@@ -5,7 +5,7 @@ From the application checkout, run `.\scripts\explorer.ps1` with JDK 21 and the 
 ## Three investigations
 
 1. Choose **I have at least one creature card in my graveyard**, select **Find cards**, and filter for **Mogg Fanatic**. Open **Investigate execution** and run **Pay the sacrifice cost**. Compare the opponent's life during payment and after resolution. Run **Omit the required target** and check the rejection, the empty graveyard and the unchanged battlefield.
-2. Open **Research and learning → Mechanical Verification Lab** and select **Evolving Wilds**. Run **Animate and sacrifice the land**. Compare the land's type in the zone-change event with its type at the final checkpoint. The checkpoint stops before the basic land search resolves.
+2. Open **Developer research index → Mechanical Verification Lab** and select **Evolving Wilds**. Run **Animate and sacrifice the land**. Compare the land's type in the zone-change event with its type at the final checkpoint. The checkpoint stops before the basic land search resolves.
 3. Select **Spark Elemental** and run **Let the end-step trigger resolve**. Then run **Blink in response to the trigger**. Compare the zone movements and final battlefield. Expand the exact native evidence to compare the original object's generation, the source reference on the trigger, and the returned object's generation.
 
 The result applies to the stated position. It can agree with the rules even when the selected objective does not occur. Discovery matches describe conditional potential, and the Lab carries no whole-card certification or independent qualification.

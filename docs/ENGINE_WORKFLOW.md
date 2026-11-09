@@ -4,6 +4,8 @@ Keep the application and maintained engine as separate sibling repositories. Nor
 
 ## Everyday use
 
+Product direction and research principles live in the application repository's [objective model](OBJECTIVE_MODEL.md); implementation and engine stewardship remain split between the repositories. Older fork guidance mentioning Project references does not require the retired attachments. This alignment does not change engine code or the clean-source integration policy.
+
 Run the Explorer or dev/dev.ps1 from the application. Setup creates the sibling on app-stable if absent, otherwise validates and reuses it. It does not automatically fetch, change branches, reset, stash or delete work.
 
 To deliberately obtain merged stable improvements:

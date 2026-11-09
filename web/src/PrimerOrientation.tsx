@@ -3,10 +3,10 @@ import comparison from './integration-change-evidence.json';
 import cohort from '../../src/main/resources/discovery-coverage-v1.json';
 
 const contributions = [
-  {role: 'Sacrifice outlet', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.'},
-  {role: 'Replenish sacrifice material', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.'},
-  {role: 'Respond to a death', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.'},
-  {role: 'Ordinary creature body', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.'},
+  {role: 'Event facilitator', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.', coverage: 'The death query identifies this sacrifice contribution. This does not verify the whole ability.'},
+  {role: 'Provider', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.', coverage: 'Reanimation finds the return; renewable creature fuel is not yet recognized by the death query.'},
+  {role: 'Event responder', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.', coverage: 'This illustrates an intended role, not a current death-payoff discovery result.'},
+  {role: 'Ordinary material', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.', coverage: 'Participating as ordinary material does not establish a distinctive contribution.'},
 ];
 
 export function PrimerPurpose() {
@@ -24,7 +24,8 @@ export function PrimerPurpose() {
       <p>{example.mechanic}</p>
       <p><strong>What has to be true?</strong> {example.requirement}</p>
     </div>
-    <p>Cards with different text can work together. Knowing how they contribute lets us ask whether the deck can afford the mana, supply the pieces, and get more value here than from another card. Comparing that value across decks and alternatives is future work.</p>
+    <p><strong>Current coverage.</strong> {example.coverage}</p>
+    <p>These are illustrative roles relative to a creature-death objective, not classifications produced by the app. One ability can have several roles. Consuming a creature describes a payment; it is not a separate role in the working six-role vocabulary. Renewability and repeatability describe resource qualities.</p>
   </>;
 }
 
@@ -33,26 +34,22 @@ const stages = [
     example: 'The reviewed Bloodghast printing supplies the Oracle wording for its optional landfall return.',
     limit: 'A printing association establishes which card the evidence describes. Rules fidelity requires comparing the relevant behavior.',
     connection: 'The source gives us an expectation to compare with the native definition.'},
-  {label: 'Native definition', status: 'Available for authored cards', question: 'How is the card written in a form the engine can use?',
+  {label: 'Native definitions', status: 'Available for authored cards', question: 'How is the card written in a form the engine can use?',
     example: 'Bloodghast’s definition expresses a land-entry trigger active in the graveyard and a move to the battlefield.',
     limit: 'A definition can be missing, incomplete or mistranslate an instruction.',
     connection: 'The same definition is input to gameplay and to mechanical extraction.'},
-  {label: 'Mechanical facts', status: 'Implemented within supported structures', question: 'What reusable facts can we read from the native ability?',
+  {label: 'Mechanical facts and capabilities', status: 'Implemented within supported structures', question: 'What reusable facts can we read from the native ability?',
     example: 'Bloodghast can move itself from the graveyard to the battlefield under the landfall condition.',
-    limit: 'The old reading assumed the trigger source was on the battlefield. Some structures are still unread or only partly interpreted.',
+    limit: 'Costs, conditions, events and state changes need their original bindings. Some structures are still unread or only partly interpreted.',
     connection: 'The objective uses those facts to decide which relationships it can recognize.'},
-  {label: 'Objective discovery', status: 'Implemented for selected objectives', question: 'Which represented capabilities fit the chosen objective?',
+  {label: 'Objective discovery, subroles and composition', status: 'Four queries implemented; role filtering and composition intended', question: 'Which contributions does this objective need?',
     example: 'A battlefield return can fit reanimation. Blood Speaker’s return to hand falls outside that check.',
-    limit: 'An unresolved relationship stays open when a required condition cannot be established. Policy can also exclude a possible relationship.',
-    connection: 'A finding gives us a candidate relationship to investigate in a strategy.'},
-  {label: 'Strategic relationships', status: 'Research direction', question: 'How might capabilities work together?',
-    example: 'Skeleton can replenish a creature that Viscera Seer can sacrifice, potentially creating a death that Grim Haruspex rewards.',
-    limit: 'The app does not establish this as a complete multi-card interaction. Mana, timing and object requirements still need to line up.',
-    connection: 'A supported connection would inform a future comparison of deck choices.'},
-  {label: 'Deck evaluation', status: 'Future research', question: 'Is this contribution worth a slot in this deck?',
-    example: 'Skeleton’s recurring mana cost may matter differently in two decks with different resource demands.',
-    limit: 'The Explorer has no contextual deck evaluation. Discovery does not settle trade-offs among alternatives.',
-    connection: 'The intended evaluation would use the mechanics, requirements and connections established earlier.'},
+    limit: 'A structural MATCH is conditional potential. General role classification, subrole filters and selective objective composition are not implemented.',
+    connection: 'Mechanical requirements can guide complementary questions without proving that two cards work together.'},
+  {label: 'Experimental deck evaluation', status: 'Future research hypothesis', question: 'Does this choice help this deck under controlled conditions?',
+    example: 'Compare a deck with and without a renewable creature resource, measuring access, objective progress and resilience under disruption.',
+    limit: 'No deck evaluator, objective-aware pilot or deck simulation is implemented. Results would depend on mechanics, decision policies, baselines and environment.',
+    connection: 'We want to test how far mechanics, objectives and empirical comparisons can take us without a separate card-to-card strategic synergy model.'},
   {label: 'Commander eligibility', status: 'Separate gate before discovery', question: 'May this card go in the selected Commander deck?',
     example: 'Dryad Arbor’s green color identity places it outside Judith’s black-red pool.',
     limit: 'Unknown eligibility can exclude a card from the search. An eligible card can still have unresolved mechanics.',
@@ -66,17 +63,17 @@ const stages = [
 export function PrimerMap() {
   const [selected, setSelected] = useState(0);
   const stage = stages[selected];
-  const maturity = ['Demonstrated', 'Demonstrated', 'Implemented · partial', 'Implemented · bounded', 'Active research', 'Future work'];
+  const maturity = ['Reviewed sources', 'Authored catalog', 'Implemented · partial', 'Queries now · layering intended', 'Hypothesis · future work'];
   const control = (index: number) => <button aria-pressed={selected === index} onClick={() => setSelected(index)}>
     <span>{stages[index].label}</span>{maturity[index] && <small className="stage-maturity">{maturity[index]}</small>}
   </button>;
   return <>
-    <p>Select a step to follow the reasoning from a card’s rules to a possible deck choice. Eligibility filters what enters discovery. Evidence can inform any step.</p>
+    <p>Select a step from today’s mechanical research toward future deck experiments. This is a conceptual map, not a claim that every stage is complete. Eligibility filters what enters discovery; evidence can inform any step.</p>
     <ol className="primer-map" aria-label="From card rules to deck choices">
-      {stages.slice(0, 6).map(({label}, index) => <li key={label}>{control(index)}</li>)}
+      {stages.slice(0, 5).map(({label}, index) => <li key={label}>{control(index)}</li>)}
     </ol>
     <div className="primer-support" role="group" aria-label="What supports the reasoning">
-      {control(6)}{control(7)}
+      {control(5)}{control(6)}
     </div>
     <div className="primer-reveal" aria-live="polite">
       <p className="eyebrow">{stage.status}</p>
@@ -94,14 +91,14 @@ const capabilityTopics = ['Demonstrated', 'Measured', 'Known limits', 'Unmeasure
 export function PrimerCapabilities() {
   const [selected, setSelected] = useState(0);
   const observations = [
-    <><p>The Explorer can filter by Commander legality and full color identity, then search supported mechanics for creature deaths, creature tokens or reanimation. You can inspect the card and the specific relationship it found.</p>
+    <><p>The Explorer can filter by Commander legality and full color identity, then search supported mechanics for creature deaths, creature tokens, reanimation or creature cards in our graveyard. You can inspect the card and the specific relationship it found.</p>
       <p>For example, the death query recognizes Viscera Seer’s sacrifice, and the reanimation query recognizes Skeleton’s paid return. Retained source comparisons and bounded engine scenarios exist for selected cards. The Bitterblossom ledger records a historical source review and execution pass with provisional evidence.</p></>,
     <><p><strong>Historical reanimation comparison.</strong> On the same {population.toLocaleString()} eligible Judith card inputs, accepted results changed from <strong>{totals.before.cards} → {totals.after.cards} distinct cards</strong> and <strong>{totals.before.pathways} → {totals.after.pathways} pathways</strong>. The correction changed {objectives.reanimation.verdictChanges} verdicts. The engine and input pool were held fixed.</p>
       <p>M3.1 instead uses a deliberately selected {cohort.cards.length}-card Judith death-objective cohort to investigate different kinds of findings and omissions.</p></>,
     <><p>The death query recognizes selected death sources and death-enhanced removal. General draw payoffs such as Grim Haruspex and recurring fuel such as Skeleton remain outside its present coverage. Agent’s land-creature overlap remains unresolved in the reviewed finding.</p>
       <p>The Explorer can expose an unsupported instruction or missing review. Eligibility, mechanical recognition and assurance stay separate.</p></>,
     <p>These studies leave catalog-wide rules fidelity, gameplay reliability and discovery recall unmeasured. The selected cohort gives examples of gaps. Scenario passes and authored definitions describe their own scopes. Independent assurance needs evidence bound to specific requirements and revisions.</p>,
-    <p>One bounded next question is whether the system can recognize a returning creature as renewable sacrifice material while retaining the mana, timing and repeatability constraints. Connecting several cards and evaluating whether they are worth slots in a particular deck are later research.</p>,
+    <p>Recognizing renewable creature resources, filtering objective-relative roles and selectively layering objectives are intended research. Controlled deck experiments may investigate value without a separate pairwise strategic synergy model. These are hypotheses and future capabilities, not an authorized next increment.</p>,
   ];
   return <>
     <p>Explore what the running Explorer supports and what the recorded investigations establish.</p>

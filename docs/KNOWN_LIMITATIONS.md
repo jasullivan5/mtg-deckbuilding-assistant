@@ -1,5 +1,7 @@
 # Current research boundaries
 
+[README](../README.md#current-state-and-authority) owns current status; [objective direction](OBJECTIVE_MODEL.md) separates adopted direction from unvalidated hypotheses.
+
 - Discovery covers eligible authored native definitions and application extensions, not every Commander-legal Magic card. Unknown format legality/full identity is excluded explicitly before mechanical extraction.
 - Supported selection is a single fixed-identity commander. Partner/Background pairs, pre-game chosen identities and whole-deck legality are not implemented.
 - MATCH is conditional structural potential. Costs, legal choices, targets, resources, timing, replacement effects and other game state can prevent the actual outcome. No emitted pathway is not a proven nonmatch.
@@ -9,8 +11,11 @@
 - Native actions/facts and objective acceptance are distinct. Objective A retains legacy death/removal projection; shared action IDs do not prove whole-action causality. There is no general satisfiability solver or additional Oracle mechanics parser.
 - Author/source-led tests and bounded native scenarios are not independent whole-card certification. Tatterkite remains blocked by its retained concern; other application records remain provisional without independent approval.
 - Explorer retains only the latest run. New discovery expires old evidence URLs, including other tabs. Full exports can be about 40–49 MB; catalog loading takes time. Verified images require matching printing and face metadata. Missing, conflicting or unsupported identities and unavailable networks receive fallbacks; supported image layouts are deliberately bounded.
-- The Explorer is structural research, not a deck editor, scenario sandbox, strategic ranking or recommendation system. Windows launch and bounded browser checks are recorded; other platforms and exhaustive accessibility are not claimed tested.
+- The Explorer supports structural discovery and curated native Lab positions, not a deck editor, arbitrary scenario sandbox, strategic ranking or recommendation system. Windows launch and bounded browser checks are recorded; other platforms and exhaustive accessibility are not claimed tested.
 
-- Explorer evidence records are often card-level and historical, with no mapping of individual scenario outcomes to the selected ability. Source review, successful bounded execution and independent approval remain different claims. A scoped identified mechanic does not establish full-ability correctness; complex conditions may need the exact retained records.
+- Legacy Explorer evidence records are often card-level and historical, with no mapping of individual scenario outcomes to the selected ability. The newer scope-aware verification index maps attributable requirements and observations, but does not establish whole-card completeness. Source review, successful bounded execution and independent approval remain different claims; complex conditions may need the exact retained records.
+- General six-role classification, objective-subrole filters, selective layering and complementary-objective suggestions are intended, not implemented. Grouping does not prove an interaction; an interaction does not establish contextual value.
+- Probability/resource-access experiments, objective-aware pilots, controlled substitutions, representative native deck simulation and pressure/disruption testing remain future research. No explicit pairwise strategic synergy model is currently required; whether the empirical approach supplies enough strategic guidance is unvalidated. Outcomes would depend on mechanics, policies, baselines and environment.
+- The [phased examination](COST_EXAMINATION.md) retains two current-bound payment contradictions: tapped Mind Stone mana and Evolving Wilds complete under Explicit without the required tap; AutoPay controls refuse. Source/native cost agreement does not establish enforcement. The separately scoped engine correction has not begun in this alignment increment; other strategies and broader affected-card counts are not established.
 
 Completed phase reports, old counts and reproduction instructions belong to the movable historical export. [Repository layout](REPOSITORY_LAYOUT.md) distinguishes that material from retained current regression inputs and source evidence.
