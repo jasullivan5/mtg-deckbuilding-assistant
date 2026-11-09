@@ -561,7 +561,7 @@ for (const width of [1440, 390]) test(`Primer separates current discovery, inten
   await expect(primer).toContainText('No deck evaluator, objective-aware pilot or deck simulation is implemented');
   await expect(primer).toContainText('not currently a prerequisite');
   await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
-  const roles = primer.locator('section', {has: primer.getByRole('heading', {name: 'Take the roles your objective needs'})});
+  const roles = primer.getByRole('region', {name: 'Take the roles your objective needs', exact:true});
   for (const role of ['Provider', 'Event responder', 'Event facilitator', 'State facilitator', 'State responder', 'Modifier']) {
     await expect(roles.locator('dt').filter({hasText: new RegExp(`^${role}$`)})).toBeVisible();
   }
