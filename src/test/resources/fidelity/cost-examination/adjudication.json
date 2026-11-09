@@ -1,0 +1,4063 @@
+{
+  "schemaVersion": 1,
+  "examiner": "source_examiner",
+  "phase": "C-adjudication",
+  "startedAt": "2026-11-08T23:53:36.2244623Z",
+  "completedAt": "2026-11-08T23:57:38.6585502Z",
+  "bindings": {
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "sourcePhaseSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+    "nativePhaseSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+    "executionReceiptSha256": "59d6c913ba8ae58e714916a9e82153a8409d3eb7bb90467dce94763661034b0c"
+  },
+  "bindingHashConvention": "Top-level bindings retain original frozen artifact raw-byte SHA256 values and raw execution receipt SHA256. Receipt inputs use UTF8 LF-normalized text SHA256; those distinct hashes are explicitly preserved below, never silently substituted.",
+  "examinerProvenance": {
+    "isolatedSourceFirstAgent": true,
+    "sameProviderAndCoordinator": true,
+    "accessIsolation": "Instruction-based tool access only; no independently enforced cross-agent filesystem boundary.",
+    "phasesFrozenBeforeExposure": "Source phase frozen before native inspection; native phase frozen before original method and native execution observations were exposed.",
+    "notHumanIndependentQualification": true,
+    "nativeExecutionsPerformedByExaminer": 0,
+    "originalExpectationsOrProductionEdited": false,
+    "approvalRecorded": false,
+    "qualification": "PENDING",
+    "exactFilesConsulted": [
+      {
+        "path": "generated/cost-examination/source-examination.json",
+        "actualSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3"
+      },
+      {
+        "path": "generated/cost-examination/native-examination.json",
+        "actualSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a"
+      },
+      {
+        "path": "src/main/resources/cost-boundary-execution.json",
+        "actualSha256": "59d6c913ba8ae58e714916a9e82153a8409d3eb7bb90467dce94763661034b0c"
+      },
+      {
+        "path": "src/main/resources/activation-cost-execution.json",
+        "actualSha256": "a8f3203a89a571c428839252d7260901c22d76fb39d71a83ba41ae432f37477b"
+      },
+      {
+        "path": "generated/cost-examination/main-native-report.json",
+        "actualSha256": "bd9f1a3352bf94720943e748f3a7a914a88d833c19ccc269c21d7cf050c4f225"
+      },
+      {
+        "path": "src/main/kotlin/coverage/ActivationCostModel.kt",
+        "actualSha256": "b27ded83c564d6069b738e9cb05caf5fa0dcf90e4bab8009a1df506afeedfeaf"
+      },
+      {
+        "path": "src/main/kotlin/server/ActivationCostFidelity.kt",
+        "actualSha256": "01b3e08a5ba18ff894195d286632fe57f4aab1b066c169390c4c1afdea52b81a"
+      },
+      {
+        "path": "src/main/kotlin/server/ActivationCostExecution.kt",
+        "actualSha256": "ea0545330abec1960417090ae717a7307458bb509f31495d048eef1c61a9899e"
+      },
+      {
+        "path": "src/main/kotlin/server/CostPaymentBoundary.kt",
+        "actualSha256": "f87335bec39b0c13319375591df953cf24a8a114b29b1f1c50fde7bba0842b50"
+      },
+      {
+        "path": "src/main/kotlin/server/CostExamination.kt",
+        "actualSha256": "93decd59b2cc92576b7cb9f09efa7c173ed3f73548158f34e09099c6e8f76662"
+      },
+      {
+        "path": "src/main/kotlin/server/LabExecution.kt",
+        "actualSha256": "c0a66133a68e0ba05294a1554be5e1b5845216824abccfe4a6e1a11f69a1cff4"
+      },
+      {
+        "path": "src/main/kotlin/extensions/TranslationAssurance.kt",
+        "actualSha256": "5bc991a92ae1eed31b5ae6334fe1b3c84c1f8f7e6e4ca57b9de8cc28a8c1f091"
+      },
+      {
+        "path": "build.gradle.kts",
+        "actualSha256": "9c12c4d36ed55f3119a35baa5a5634349198d756067ab8bb9edaf67431a29a51"
+      },
+      {
+        "path": "src/test/resources/fidelity/activation-cost/requirements.json",
+        "actualSha256": "de73dc9fea4e306e6da5ce971f243225b30afdb93d3c0218275ed1054f1d730f"
+      },
+      {
+        "path": "src/test/resources/fidelity/activation-cost/bindings.json",
+        "actualSha256": "e8e231f4189efd0c32836f651af3d33d9e04f7c54778be21659b05ed2970db92"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/source-examination.json",
+        "actualSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-examination.json",
+        "actualSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-inputs.json",
+        "actualSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/inputs.json",
+        "actualSha256": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/execution-requirements.json",
+        "actualSha256": "64055a261f711d6affefe51ea8320594348560307947e45206a523ab4d8502da"
+      }
+    ],
+    "additionalContext": "Native code inspected in frozen Phase B remains the semantic explanation; no new native code reads or executions in Phase C. Build task and evidence hash helper read only to examine provenance; LabExecution read to verify harness transaction path."
+  },
+  "evidenceChronology": {
+    "freshBoundaryReceipt": {
+      "path": "src/main/resources/cost-boundary-execution.json",
+      "applicationRevision": "b4cccd8bb8418c22faf8160847cf23e33a74c77b",
+      "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+      "executedAt": "2026-11-08T23:51:57.673805800Z",
+      "scenarioCount": 14,
+      "actionCount": 16,
+      "assessment": "Fresh observations produced by coordinator/harness after frozen phases; independently examined here, not executed by examiner."
+    },
+    "priorReceipt": {
+      "path": "src/main/resources/activation-cost-execution.json",
+      "actualSha256": "a8f3203a89a571c428839252d7260901c22d76fb39d71a83ba41ae432f37477b",
+      "applicationRevision": "6fd70e848990a393b94c551d044921c14265f0c9",
+      "executedAt": "2026-11-08T20:16:22.690996500Z",
+      "observationCount": 26,
+      "assessment": "Retained earlier execution receipt. Examining it now is not a new execution; main-native-report freshly recomputes report fields while embedding these earlier observations."
+    }
+  },
+  "sourceAndNativePhaseFinding": "Ten printed payment structures across nine source cards agree with the independent source derivation at reviewed scope. Runtime enforcement disagrees in two new explicit-payment cases; structure agreement and runtime fidelity must remain separate.",
+  "caseFindings": [
+    {
+      "caseId": "selected-creature:SELF",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Activator selects lab-source, a controlled creature; that exact object is sacrificed, goes from battlefield generation 1 to owner graveyard generation 4, and one ability remains on stack. No scry resolution tested.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": {
+              "sacrificedPermanents": [
+                "lab-source"
+              ],
+              "discardedCards": [],
+              "lifePaid": 0,
+              "exiledCards": [],
+              "variableCostPermanents": null,
+              "beheldCards": [],
+              "revealedCards": [],
+              "cardsPutOnLibrary": [],
+              "tappedPermanents": [],
+              "bouncedPermanents": [],
+              "blightTargets": [],
+              "blightAmount": 0,
+              "payXLifeAmount": 0,
+              "distributedCounterRemovals": []
+            },
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-card-1",
+              "lab-card-2"
+            ],
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-source",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-player",
+              "oldObject": {
+                "entityId": "lab-source",
+                "generation": 1
+              },
+              "newObject": {
+                "entityId": "lab-source",
+                "generation": 4
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": false
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "selected-creature:OTHER",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Activator selects lab-card-1, a different controlled creature; only that object is sacrificed, its generation changes 2 to 4, source remains, and ability is stacked.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": {
+              "sacrificedPermanents": [
+                "lab-card-1"
+              ],
+              "discardedCards": [],
+              "lifePaid": 0,
+              "exiledCards": [],
+              "variableCostPermanents": null,
+              "beheldCards": [],
+              "revealedCards": [],
+              "cardsPutOnLibrary": [],
+              "tappedPermanents": [],
+              "bouncedPermanents": [],
+              "blightTargets": [],
+              "blightAmount": 0,
+              "payXLifeAmount": 0,
+              "distributedCounterRemovals": []
+            },
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-2"
+            ],
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-card-1"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-card-1",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-player",
+              "oldObject": {
+                "entityId": "lab-card-1",
+                "generation": 2
+              },
+              "newObject": {
+                "entityId": "lab-card-1",
+                "generation": 4
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": false
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "selected-creature:BORROWED",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Before action CardComponent/OwnerComponent assign lab-card-1 to opponent while controller is lab-player. Native sacrifice credits lab-player, routes exact object to lab-opponent graveyard, and changes generation 2 to 4. Supports control versus ownership separation in this seeded position.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": {
+              "sacrificedPermanents": [
+                "lab-card-1"
+              ],
+              "discardedCards": [],
+              "lifePaid": 0,
+              "exiledCards": [],
+              "variableCostPermanents": null,
+              "beheldCards": [],
+              "revealedCards": [],
+              "cardsPutOnLibrary": [],
+              "tappedPermanents": [],
+              "bouncedPermanents": [],
+              "blightTargets": [],
+              "blightAmount": 0,
+              "payXLifeAmount": 0,
+              "distributedCounterRemovals": []
+            },
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-2"
+            ],
+            {
+              "ownerId": "lab-opponent",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-card-1"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-card-1",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-opponent",
+              "oldObject": {
+                "entityId": "lab-card-1",
+                "generation": 2
+              },
+              "newObject": {
+                "entityId": "lab-card-1",
+                "generation": 4
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": false
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "selected-creature:FOREIGN_CONTROL",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "SOURCE_REFUSAL_SUPPORTED_DIAGNOSTIC_LIMIT",
+      "independentFinding": "Payer owns lab-card-1 but opponent controls it. Native rejects with ExecutionFailed, returns identical state and no events. Illegal payment is not accepted. Generic validation failed to reject the submitted choice as IllegalAction; downstream CostHandler supplies refusal.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": {
+              "sacrificedPermanents": [
+                "lab-card-1"
+              ],
+              "discardedCards": [],
+              "lifePaid": 0,
+              "exiledCards": [],
+              "variableCostPermanents": null,
+              "beheldCards": [],
+              "revealedCards": [],
+              "cardsPutOnLibrary": [],
+              "tappedPermanents": [],
+              "bouncedPermanents": [],
+              "blightTargets": [],
+              "blightAmount": 0,
+              "payXLifeAmount": 0,
+              "distributedCounterRemovals": []
+            },
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "ExecutionFailed",
+              "message": "Can only sacrifice permanents you control"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "selected-creature:NONCREATURE",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "SOURCE_REFUSAL_SUPPORTED_DIAGNOSTIC_LIMIT",
+      "independentFinding": "Prefilled artifact selection is rejected as ExecutionFailed with identical state and no events. Another legal creature exists, so generic ability affordability is not evidence that the particular selection is legal. Source payment safety holds for this input; dispatch diagnostic is limited.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": {
+              "sacrificedPermanents": [
+                "lab-card-2"
+              ],
+              "discardedCards": [],
+              "lifePaid": 0,
+              "exiledCards": [],
+              "variableCostPermanents": null,
+              "beheldCards": [],
+              "revealedCards": [],
+              "cardsPutOnLibrary": [],
+              "tappedPermanents": [],
+              "bouncedPermanents": [],
+              "blightTargets": [],
+              "blightAmount": 0,
+              "payXLifeAmount": 0,
+              "distributedCounterRemovals": []
+            },
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "ExecutionFailed",
+              "message": "Sacrifice target does not match the required filter"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "selected-creature:CHOICE",
+      "scopeId": "viscera-seer:0",
+      "definitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "First action pauses with native question r0, options exactly source and controlled Mogg Fanatic, count exactly one; no sacrifice or ability stack entry yet. Invalid artifact answer is rejected as IllegalAction with identical suspended state and zero events; question persists in continuationStack. Valid answer then sacrifices Mogg Fanatic, clears continuation stack and creates one ability. This refutes interpreting the earlier driver stop as proof that native selection continuation is unsupported.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Viscera Seer:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Paused",
+            "decision": {
+              "type": "SelectCardsDecision",
+              "id": "r0",
+              "playerId": "lab-player",
+              "prompt": "Select 1 permanent to sacrifice for Viscera Seer",
+              "context": {
+                "sourceId": "lab-source",
+                "sourceName": "Viscera Seer",
+                "phase": "CASTING",
+                "triggeringEntityId": null,
+                "inlineOnTrigger": false,
+                "effectHint": null,
+                "subjectEntityId": null,
+                "abilityIdentity": null
+              },
+              "options": [
+                "lab-source",
+                "lab-card-1"
+              ],
+              "minSelections": 1,
+              "maxSelections": 1,
+              "ordered": false,
+              "cardInfo": null,
+              "useTargetingUI": false,
+              "selectedLabel": null,
+              "remainderLabel": null,
+              "nonSelectableOptions": [],
+              "onePerCardType": false,
+              "onePerColor": false,
+              "availableColors": null,
+              "onePerCardName": false,
+              "onePerBasicLandType": false,
+              "onePerPower": false,
+              "maxTotalManaValue": null,
+              "minTotalManaValue": null,
+              "maxTotalPower": null,
+              "conditionalMinimums": [],
+              "declineLabel": null,
+              "librarySearch": false,
+              "selectionLimits": null
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "DecisionRequestedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": [
+            {
+              "type": "SelectCardsDecision",
+              "id": "r0",
+              "playerId": "lab-player",
+              "prompt": "Select 1 permanent to sacrifice for Viscera Seer",
+              "context": {
+                "sourceId": "lab-source",
+                "sourceName": "Viscera Seer",
+                "phase": "CASTING",
+                "triggeringEntityId": null,
+                "inlineOnTrigger": false,
+                "effectHint": null,
+                "subjectEntityId": null,
+                "abilityIdentity": null
+              },
+              "options": [
+                "lab-source",
+                "lab-card-1"
+              ],
+              "minSelections": 1,
+              "maxSelections": 1,
+              "ordered": false,
+              "cardInfo": null,
+              "useTargetingUI": false,
+              "selectedLabel": null,
+              "remainderLabel": null,
+              "nonSelectableOptions": [],
+              "onePerCardType": false,
+              "onePerColor": false,
+              "availableColors": null,
+              "onePerCardName": false,
+              "onePerBasicLandType": false,
+              "onePerPower": false,
+              "maxTotalManaValue": null,
+              "minTotalManaValue": null,
+              "maxTotalPower": null,
+              "conditionalMinimums": [],
+              "declineLabel": null,
+              "librarySearch": false,
+              "selectionLimits": null
+            }
+          ]
+        },
+        {
+          "label": "Submit noncandidate decision response",
+          "action": {
+            "type": "SubmitDecision",
+            "playerId": "lab-player",
+            "response": {
+              "type": "CardsSelectedResponse",
+              "decisionId": "r0",
+              "selectedCards": [
+                "lab-card-2"
+              ]
+            }
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "IllegalAction",
+              "message": "Invalid selection: lab-card-2 is not a valid option"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": [
+            {
+              "type": "SelectCardsDecision",
+              "id": "r0",
+              "playerId": "lab-player",
+              "prompt": "Select 1 permanent to sacrifice for Viscera Seer",
+              "context": {
+                "sourceId": "lab-source",
+                "sourceName": "Viscera Seer",
+                "phase": "CASTING",
+                "triggeringEntityId": null,
+                "inlineOnTrigger": false,
+                "effectHint": null,
+                "subjectEntityId": null,
+                "abilityIdentity": null
+              },
+              "options": [
+                "lab-source",
+                "lab-card-1"
+              ],
+              "minSelections": 1,
+              "maxSelections": 1,
+              "ordered": false,
+              "cardInfo": null,
+              "useTargetingUI": false,
+              "selectedLabel": null,
+              "remainderLabel": null,
+              "nonSelectableOptions": [],
+              "onePerCardType": false,
+              "onePerColor": false,
+              "availableColors": null,
+              "onePerCardName": false,
+              "onePerBasicLandType": false,
+              "onePerPower": false,
+              "maxTotalManaValue": null,
+              "minTotalManaValue": null,
+              "maxTotalPower": null,
+              "conditionalMinimums": [],
+              "declineLabel": null,
+              "librarySearch": false,
+              "selectionLimits": null
+            }
+          ]
+        },
+        {
+          "label": "Submit valid decision response",
+          "action": {
+            "type": "SubmitDecision",
+            "playerId": "lab-player",
+            "response": {
+              "type": "CardsSelectedResponse",
+              "decisionId": "r0",
+              "selectedCards": [
+                "lab-card-1"
+              ]
+            }
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "DecisionSubmittedEvent",
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-2"
+            ],
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-card-1"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-card-1",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-player",
+              "oldObject": {
+                "entityId": "lab-card-1",
+                "generation": 2
+              },
+              "newObject": {
+                "entityId": "lab-card-1",
+                "generation": 4
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": false
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "activation-boundary:unpayable-mana",
+      "scopeId": "caustic-caterpillar:0",
+      "definitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Valid artifact target, empty mana pool and no appropriate mana sources: IllegalAction, exact input state retained, no events or sacrifice. Supports separate mana-affordability refusal.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Caustic Caterpillar:1",
+            "targets": [
+              {
+                "type": "Permanent",
+                "entityId": "lab-card-2"
+              }
+            ],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "IllegalAction",
+              "message": "Cannot pay ability cost"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "activation-boundary:invalid-target",
+      "scopeId": "caustic-caterpillar:0",
+      "definitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Pool has green 1 and colorless 1, but selected Mogg Fanatic is neither artifact nor enchantment. IllegalAction with identical state and no events; neither mana nor sacrifice is paid. This is declaration refusal, not a mismatch in printed cost.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Caustic Caterpillar:1",
+            "targets": [
+              {
+                "type": "Permanent",
+                "entityId": "lab-card-1"
+              }
+            ],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "IllegalAction",
+              "message": "Target does not match filter: artifact or enchantment"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 1,
+            "colorless": 1,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 1,
+            "colorless": 1,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source",
+              "lab-card-1",
+              "lab-card-2"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:UNTAPPED_EXPLICIT",
+      "scopeId": "mind-stone:0",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Initially untapped source, Explicit empty mana-source list: Done, TappedEvent, source becomes tapped, colorless mana 0 to 1 and no stack ability. Supports legal tap payment and mana-ability immediate resolution in this position.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Mind Stone:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "Explicit",
+              "manaAbilitiesToActivate": [],
+              "phyrexianLifePayments": []
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "TappedEvent",
+            "AbilityActivatedEvent",
+            "ManaAddedEvent",
+            "ManaAbilityResolvedEvent",
+            "ManaPoolChangedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": true,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 1,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {
+              "lab-source": 1
+            },
+            "manaByCardType": {
+              "ARTIFACT": 1
+            },
+            "snowMana": {},
+            "manaUnits": [
+              {
+                "color": null,
+                "source": {
+                  "sourceId": "lab-source",
+                  "subtypes": [],
+                  "cardTypes": [
+                    "ARTIFACT"
+                  ],
+                  "isSnow": false
+                }
+              }
+            ],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:TAPPED_AUTO",
+      "scopeId": "mind-stone:0",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Initially tapped source with AutoPay: IllegalAction, exact input state retained, zero events and colorless mana remains zero.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Mind Stone:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "IllegalAction",
+              "message": "This permanent is already tapped"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": true,
+          "sourceTappedAfter": true,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:TAPPED_EXPLICIT",
+      "scopeId": "mind-stone:0",
+      "definitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+      "assessment": "SOURCE_PAYMENT_REQUIREMENT_CONTRADICTED",
+      "independentFinding": "Initially tapped source with Explicit empty mana-source list: Done, source stays tapped, no TappedEvent, and colorless mana rises 0 to 1. Native accepts activation without a payable tap, contradicting frozen source rule requirement. This is an observed public transaction result, not only missing event evidence.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Mind Stone:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "Explicit",
+              "manaAbilitiesToActivate": [],
+              "phyrexianLifePayments": []
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "AbilityActivatedEvent",
+            "ManaAddedEvent",
+            "ManaAbilityResolvedEvent",
+            "ManaPoolChangedEvent"
+          ],
+          "sourceTappedBefore": true,
+          "sourceTappedAfter": true,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 1,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {
+              "lab-source": 1
+            },
+            "manaByCardType": {
+              "ARTIFACT": 1
+            },
+            "snowMana": {},
+            "manaUnits": [
+              {
+                "color": null,
+                "source": {
+                  "sourceId": "lab-source",
+                  "subtypes": [],
+                  "cardTypes": [
+                    "ARTIFACT"
+                  ],
+                  "isSnow": false
+                }
+              }
+            ],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:UNTAPPED_EXPLICIT",
+      "scopeId": "evolving-wilds:0",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Initially untapped source with Explicit: Done, TappedEvent before sacrifice, source moves battlefield generation 1 to owner graveyard generation 2, last-known wasTapped true, one ability on stack. No search resolution tested.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Evolving Wilds:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "Explicit",
+              "manaAbilitiesToActivate": [],
+              "phyrexianLifePayments": []
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "TappedEvent",
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": false,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [],
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-source",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-player",
+              "oldObject": {
+                "entityId": "lab-source",
+                "generation": 1
+              },
+              "newObject": {
+                "entityId": "lab-source",
+                "generation": 2
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": true
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:TAPPED_AUTO",
+      "scopeId": "evolving-wilds:0",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77",
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED",
+      "independentFinding": "Initially tapped source with AutoPay: IllegalAction, exact input state retained, zero events, no sacrifice or stack ability.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Evolving Wilds:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "AutoPay"
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Rejected",
+            "reason": {
+              "type": "IllegalAction",
+              "message": "Cannot pay ability cost"
+            }
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": true,
+          "eventTypes": [],
+          "sourceTappedBefore": true,
+          "sourceTappedAfter": true,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [],
+          "movements": [],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT",
+      "scopeId": "evolving-wilds:0",
+      "definitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77",
+      "assessment": "SOURCE_PAYMENT_REQUIREMENT_CONTRADICTED",
+      "independentFinding": "Initially tapped source with Explicit: Done without TappedEvent, source is sacrificed to owner graveyard with new generation and ability is stacked. An already-tapped source could not pay the required tap even though its separate sacrifice occurred. Contradicts source payment and illegality rollback requirement.",
+      "basis": "Raw before/action/nativeResult/after fields, not receipt result/diagnostic/check labels.",
+      "observedSteps": [
+        {
+          "label": "Submit activation",
+          "action": {
+            "type": "ActivateAbility",
+            "playerId": "lab-player",
+            "sourceId": "lab-source",
+            "abilityId": "Evolving Wilds:1",
+            "targets": [],
+            "costPayment": null,
+            "manaColorChoice": null,
+            "xValue": null,
+            "repeatCount": 1,
+            "paymentStrategy": {
+              "type": "Explicit",
+              "manaAbilitiesToActivate": [],
+              "phyrexianLifePayments": []
+            },
+            "alternativePayment": null,
+            "damageDistribution": null,
+            "opponentTargetsChosen": false,
+            "targetGroupCounts": null,
+            "chosenModes": null,
+            "modeTargetGroupCountsOrdered": [],
+            "modeTargetsOrdered": []
+          },
+          "nativeOutcome": {
+            "type": "Done"
+          },
+          "stateAfterEqualsNativeResult": true,
+          "statePreserved": false,
+          "eventTypes": [
+            "PermanentsSacrificedEvent",
+            "ZoneChangeEvent",
+            "AbilityActivatedEvent"
+          ],
+          "sourceTappedBefore": true,
+          "sourceTappedAfter": false,
+          "payerManaBefore": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "payerManaAfter": {
+            "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+            "white": 0,
+            "blue": 0,
+            "black": 0,
+            "red": 0,
+            "green": 0,
+            "colorless": 0,
+            "restrictedMana": [],
+            "manaBySubtype": {},
+            "manaBySource": {},
+            "manaByCardType": {},
+            "snowMana": {},
+            "manaUnits": [],
+            "snowColorless": 0
+          },
+          "zonesBefore": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "zonesAfter": [
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Battlefield"
+            },
+            [],
+            {
+              "ownerId": "lab-player",
+              "zoneType": "Graveyard"
+            },
+            [
+              "lab-source"
+            ]
+          ],
+          "stackBefore": [],
+          "stackAfter": [
+            "e0"
+          ],
+          "movements": [
+            {
+              "entityId": "lab-source",
+              "fromZone": "Battlefield",
+              "toZone": "Graveyard",
+              "requestedDestination": "Graveyard",
+              "ownerId": "lab-player",
+              "oldObject": {
+                "entityId": "lab-source",
+                "generation": 1
+              },
+              "newObject": {
+                "entityId": "lab-source",
+                "generation": 2
+              },
+              "lastKnownController": "lab-player",
+              "wasTapped": true
+            }
+          ],
+          "pendingQuestionsAfter": []
+        }
+      ],
+      "limits": [
+        "One controlled position per case. Ordinary nonmana resolution is unexecuted. No replacement, animated-source, haste, alternative-payment or arbitrary pool completeness claim."
+      ]
+    }
+  ],
+  "perSourceFindings": [
+    {
+      "sourceAbilityId": "ema-138-ability-1",
+      "scopeId": "mogg-fanatic:0",
+      "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "printingId": "d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "sourceSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:mogg-fanatic:0:SUFFICIENT"
+      ],
+      "assessment": "No new boundary payment-completion observation for this ability; prior native receipt and frozen static review provide only their recorded bounded evidence.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "fdn-250-ability-1",
+      "scopeId": "burnished-hart:0",
+      "oracleId": "893fed41-c144-433f-af88-bc7d419b7fb3",
+      "printingId": "65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "sourceSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{3}"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:burnished-hart:0:SUFFICIENT",
+        "activation-cost:burnished-hart:0:NO_MANA"
+      ],
+      "assessment": "No new boundary payment-completion observation for this ability; prior native receipt and frozen static review provide only their recorded bounded evidence.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "jud-42-ability-1",
+      "scopeId": "hapless-researcher:0",
+      "oracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+      "printingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "sourceSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:hapless-researcher:0:SUFFICIENT"
+      ],
+      "assessment": "No new boundary payment-completion observation for this ability; prior native receipt and frozen static review provide only their recorded bounded evidence.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "mh2-274-ability-1",
+      "scopeId": "greed:0",
+      "oracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+      "printingId": "851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "sourceSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{B}"
+          },
+          {
+            "kind": "PAY_LIFE",
+            "amount": 2
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:greed:0:SUFFICIENT",
+        "activation-cost:greed:0:NO_MANA",
+        "activation-cost:greed:0:WRONG_COLOR",
+        "activation-cost:greed:0:NO_LIFE"
+      ],
+      "assessment": "Prior raw receipt pays black mana and life 20 to 18; missing mana/wrong color and life 1 reject. Exact life 2/payment prohibition and state-based loss cases remain unexecuted.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "ori-170-ability-1",
+      "scopeId": "caustic-caterpillar:0",
+      "oracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+      "printingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "sourceSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{1}{G}"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        "activation-boundary:unpayable-mana",
+        "activation-boundary:invalid-target"
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:caustic-caterpillar:0:SUFFICIENT",
+        "activation-cost:caustic-caterpillar:0:NO_MANA",
+        "activation-cost:caustic-caterpillar:0:WRONG_COLOR"
+      ],
+      "assessment": "No new boundary payment-completion observation for this ability; prior native receipt and frozen static review provide only their recorded bounded evidence.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "soc-229-ability-1",
+      "scopeId": "viscera-seer:0",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "printingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "sourceSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELECTED",
+            "count": 1,
+            "filter": "CREATURE",
+            "excludeSelf": false,
+            "distinctNames": false
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        "selected-creature:SELF",
+        "selected-creature:OTHER",
+        "selected-creature:BORROWED",
+        "selected-creature:FOREIGN_CONTROL",
+        "selected-creature:NONCREATURE",
+        "selected-creature:CHOICE"
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:viscera-seer:0:SUFFICIENT",
+        "activation-cost:viscera-seer:0:SELF_SELECTION",
+        "activation-cost:viscera-seer:0:BORROWED_SELECTION",
+        "activation-cost:viscera-seer:0:ILLEGAL_SELECTION",
+        "activation-cost:viscera-seer:0:UNANNOUNCED_SELECTION"
+      ],
+      "assessment": "New data supports self/other/borrowed selections, refuses illegal controller/type selections and completes the choice continuation. Diagnostic classification caveat persists.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "soc-285-ability-1",
+      "scopeId": "sakura-tribe-elder:0",
+      "oracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+      "printingId": "7a8b1c49-8594-426d-b585-41140235bb0e",
+      "sourceSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:sakura-tribe-elder:0:SUFFICIENT"
+      ],
+      "assessment": "No new boundary payment-completion observation for this ability; prior native receipt and frozen static review provide only their recorded bounded evidence.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "trc-497-ability-1",
+      "scopeId": "mind-stone:0",
+      "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "TAP_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        "tap-boundary:mind-stone:0:UNTAPPED_EXPLICIT",
+        "tap-boundary:mind-stone:0:TAPPED_AUTO",
+        "tap-boundary:mind-stone:0:TAPPED_EXPLICIT"
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:mind-stone:0:SUFFICIENT",
+        "activation-cost:mind-stone:0:TAPPED"
+      ],
+      "assessment": "New Explicit tapped-source contradiction prevents unconditional runtime payment fidelity despite correct serialized cost.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "trc-497-ability-2",
+      "scopeId": "mind-stone:1",
+      "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "MANA",
+            "mana": "{1}"
+          },
+          {
+            "kind": "TAP_SELF"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        null
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:mind-stone:1:SUFFICIENT",
+        "activation-cost:mind-stone:1:NO_MANA",
+        "activation-cost:mind-stone:1:TAPPED"
+      ],
+      "assessment": "Prior raw receipt pays floating colorless 1 to 0, taps and sacrifices exact source while preserving same-named witness; AutoPay zero-mana and already-tapped controls reject. New boundary receipt does not execute Mind Stone:2 with Explicit, so that member of Phase B hypothesis remains unproven.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    },
+    {
+      "sourceAbilityId": "trc-527-ability-1",
+      "scopeId": "evolving-wilds:0",
+      "oracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+      "printingId": "6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "sourceSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "originalExpectedTree": {
+        "kind": "ALL",
+        "children": [
+          {
+            "kind": "TAP_SELF"
+          },
+          {
+            "kind": "SACRIFICE_SELF"
+          }
+        ]
+      },
+      "structuralComparison": "Original expectation and current projector agree with independent frozen source payment components for this scope. No revised source requirement is needed.",
+      "freshBoundaryCaseIds": [
+        "tap-boundary:evolving-wilds:0:UNTAPPED_EXPLICIT",
+        "tap-boundary:evolving-wilds:0:TAPPED_AUTO",
+        "tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT"
+      ],
+      "priorReceiptCaseIds": [
+        "activation-cost:evolving-wilds:0:SUFFICIENT",
+        "activation-cost:evolving-wilds:0:TAPPED"
+      ],
+      "assessment": "New Explicit tapped-source contradiction prevents unconditional runtime payment fidelity despite correct serialized conjunction.",
+      "resolutionQualification": "Unreviewed; no whole-card or whole-ability approval."
+    }
+  ],
+  "priorReceiptExamination": [
+    {
+      "scenarioId": "activation-cost:mogg-fanatic:0:SUFFICIENT",
+      "scopeId": "mogg-fanatic:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent",
+        "CommitCrimeEvent",
+        "TargetsChosenEvent",
+        "BecomesTargetEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:SUFFICIENT",
+      "scopeId": "caustic-caterpillar:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent",
+        "TargetsChosenEvent",
+        "BecomesTargetEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 1,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:NO_MANA",
+      "scopeId": "caustic-caterpillar:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:WRONG_COLOR",
+      "scopeId": "caustic-caterpillar:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 1,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 1,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:evolving-wilds:0:SUFFICIENT",
+      "scopeId": "evolving-wilds:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "TappedEvent",
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:evolving-wilds:0:TAPPED",
+      "scopeId": "evolving-wilds:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:hapless-researcher:0:SUFFICIENT",
+      "scopeId": "hapless-researcher:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:sakura-tribe-elder:0:SUFFICIENT",
+      "scopeId": "sakura-tribe-elder:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:burnished-hart:0:SUFFICIENT",
+      "scopeId": "burnished-hart:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 3,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:burnished-hart:0:NO_MANA",
+      "scopeId": "burnished-hart:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:SUFFICIENT",
+      "scopeId": "mind-stone:1",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "TappedEvent",
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:NO_MANA",
+      "scopeId": "mind-stone:1",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:TAPPED",
+      "scopeId": "mind-stone:1",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:SUFFICIENT",
+      "scopeId": "viscera-seer:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-card-1"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:SELF_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:BORROWED_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-card-1"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:ILLEGAL_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "ExecutionFailed",
+          "message": "Sacrifice target does not match the required filter"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Selected illegal noncreature is refused with exact state rollback and no events; older INCOMPLETE label reflects driver/diagnostic limitation, not accepted illegal payment.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:UNANNOUNCED_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Paused",
+        "decision": {
+          "type": "SelectCardsDecision",
+          "id": "r0",
+          "playerId": "lab-player",
+          "prompt": "Select 1 permanent to sacrifice for Viscera Seer",
+          "context": {
+            "sourceId": "lab-source",
+            "sourceName": "Viscera Seer",
+            "phase": "CASTING",
+            "triggeringEntityId": null,
+            "inlineOnTrigger": false,
+            "effectHint": null,
+            "subjectEntityId": null,
+            "abilityIdentity": null
+          },
+          "options": [
+            "lab-source",
+            "lab-card-1"
+          ],
+          "minSelections": 1,
+          "maxSelections": 1,
+          "ordered": false,
+          "cardInfo": null,
+          "useTargetingUI": false,
+          "selectedLabel": null,
+          "remainderLabel": null,
+          "nonSelectableOptions": [],
+          "onePerCardType": false,
+          "onePerColor": false,
+          "availableColors": null,
+          "onePerCardName": false,
+          "onePerBasicLandType": false,
+          "onePerPower": false,
+          "maxTotalManaValue": null,
+          "minTotalManaValue": null,
+          "maxTotalPower": null,
+          "conditionalMinimums": [],
+          "declineLabel": null,
+          "librarySearch": false,
+          "selectionLimits": null
+        }
+      },
+      "eventTypes": [
+        "DecisionRequestedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native requests a legal selection before payment. Driver did not continue; no completed payment proven.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:SUFFICIENT",
+      "scopeId": "greed:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "LifeChangedEvent",
+        "AbilityActivatedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 18,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 1,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:NO_MANA",
+      "scopeId": "greed:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:WRONG_COLOR",
+      "scopeId": "greed:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 1,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 1,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:NO_LIFE",
+      "scopeId": "greed:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "Cannot pay ability cost"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 1,
+      "payerLifeAfter": 1,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 1,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 1,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:0:SUFFICIENT",
+      "scopeId": "mind-stone:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "TappedEvent",
+        "AbilityActivatedEvent",
+        "ManaAddedEvent",
+        "ManaAbilityResolvedEvent",
+        "ManaPoolChangedEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {
+          "lab-source": 1
+        },
+        "manaByCardType": {
+          "ARTIFACT": 1
+        },
+        "snowMana": {},
+        "manaUnits": [
+          {
+            "color": null,
+            "source": {
+              "sourceId": "lab-source",
+              "subtypes": [],
+              "cardTypes": [
+                "ARTIFACT"
+              ],
+              "isSnow": false
+            }
+          }
+        ],
+        "snowColorless": 0
+      },
+      "finding": "Recorded normal AutoPay payment transition supports the printed components exercised in this seeded position; ordinary resolution remains outside evidence.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:0:TAPPED",
+      "scopeId": "mind-stone:0",
+      "mutant": false,
+      "variant": null,
+      "nativeOutcome": {
+        "type": "Rejected",
+        "reason": {
+          "type": "IllegalAction",
+          "message": "This permanent is already tapped"
+        }
+      },
+      "eventTypes": [],
+      "statePreserved": true,
+      "sacrificedIds": [],
+      "stackAfter": [],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Native refusal with exact state rollback/no events supports the bounded insufficient-resource case.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:NO_MANA:mutant-missing-mana",
+      "scopeId": "caustic-caterpillar:0",
+      "mutant": true,
+      "variant": "missing-mana",
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "PermanentsSacrificedEvent",
+        "ZoneChangeEvent",
+        "AbilityActivatedEvent",
+        "TargetsChosenEvent",
+        "BecomesTargetEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [
+        "lab-source"
+      ],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Counterfactual mutated definition: assess as source-defect detection control, not production engine failure.",
+      "newExecutionByExaminer": false
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:SUFFICIENT:mutant-missing-sacrifice",
+      "scopeId": "caustic-caterpillar:0",
+      "mutant": true,
+      "variant": "missing-sacrifice",
+      "nativeOutcome": {
+        "type": "Done"
+      },
+      "eventTypes": [
+        "AbilityActivatedEvent",
+        "TargetsChosenEvent",
+        "BecomesTargetEvent"
+      ],
+      "statePreserved": false,
+      "sacrificedIds": [],
+      "stackAfter": [
+        "e0"
+      ],
+      "payerLifeBefore": 20,
+      "payerLifeAfter": 20,
+      "payerManaBefore": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 1,
+        "colorless": 1,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "payerManaAfter": {
+        "type": "com.wingedsheep.engine.state.components.player.ManaPoolComponent",
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "restrictedMana": [],
+        "manaBySubtype": {},
+        "manaBySource": {},
+        "manaByCardType": {},
+        "snowMana": {},
+        "manaUnits": [],
+        "snowColorless": 0
+      },
+      "finding": "Counterfactual mutated definition: assess as source-defect detection control, not production engine failure.",
+      "newExecutionByExaminer": false
+    }
+  ],
+  "inspectionConcernAdjudication": [
+    {
+      "id": "explicit-tapped-source-affordability",
+      "status": "CONFIRMED_FOR_TWO_ABILITIES_UNRESOLVED_FOR_THIRD",
+      "confirmedCases": [
+        "tap-boundary:mind-stone:0:TAPPED_EXPLICIT",
+        "tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT"
+      ],
+      "unresolved": "Mind Stone:2 Explicit tapped-source variant was not executed. General reach to other tap-cost abilities remains a code-path hypothesis, not source-reviewed catalog impact.",
+      "reason": "Both raw native results are Done with meaningful activation consequences despite initially tapped source and no payable tap. Paired legal Explicit and illegal AutoPay controls distinguish payment strategy."
+    },
+    {
+      "id": "selected-controller-owner-destination",
+      "status": "SUPPORTED_WITHIN_SEEDED_CASES",
+      "reason": "Borrowed controlled creature goes to opponent owner graveyard; owned opponent-controlled creature is refused atomically. Projected continuous-control effects, source-self stolen ownership, replacements and tokens remain unexecuted."
+    },
+    {
+      "id": "selection-continuation-unsupported",
+      "status": "REFUTED_AS_GENERAL_NATIVE_CLAIM",
+      "reason": "New raw native sequence pauses, rejects an invalid answer without losing question, then completes a legal answer. Old driver label UNSUPPORTED_DECISION reports absent curated response, not an unsupported native continuation."
+    },
+    {
+      "id": "prefilled-invalid-selection-diagnostic",
+      "status": "CONFIRMED_DIAGNOSTIC_LIMIT",
+      "reason": "Noncreature and foreign-controlled prefilled choices produce ExecutionFailed instead of IllegalAction, but public transaction refuses and returns exact prior state with no events. Source rules require refusal/rollback; they do not define engine enum names."
+    }
+  ],
+  "harnessAssessment": {
+    "transactionPath": "LabExecution.perform calls ActionProcessor.process, records actual action/result before driver stopping, and installs returned native state. CostPaymentBoundary catches LabStopped only after observation, reads native Outcome directly and sends actual SubmitDecision actions. It does not implement payment or replace a native result.",
+    "rawConsistency": "All 16 after states equal the corresponding nativeResult.state. Every observed rejected boundary action preserves exact serialized input state and has zero events. Choice pending state is serialized in continuationStack Suspension.question, not a top-level pendingDecision property.",
+    "seeding": "Native positions are explicitly constructed research fixtures, not organically played histories. Owner/controller edits occur before actions only; borrowed fixture changes both owner fields. No claim about arbitrary continuous-effect control or legal game-reachability.",
+    "harnessHashRecorded": "5ea519e6be5b8212104ed46ef05921da85a03e04e2b4ce7fafd69d37cd32cce1",
+    "harnessHashIndependentlyComputed": "6eab1f5a2594c7de4b7cd83e43c802a78a39c1104039b4ac646a11c06b4db922",
+    "harnessHashMatches": false,
+    "limits": [
+      "Current new boundary harness tests only three source ability scopes and two Caterpillar refusal cases; it is not ten-scope runtime qualification.",
+      "Normal nonmana effects are left on stack. Scope checks cannot establish scry/draw/search/damage/destruction behavior.",
+      "Freshness definition equality is checked only over receipt-provided definition keys; hardcoded bounded scenario inventory is not an exhaustive catalog sample.",
+      "Boundary diagnostic/check labels are derived convenience summaries and were not used as source authority.",
+      "Original harness hardcodes rejected success as ILLEGAL_ACTION and treats native Paused as driver unsupported. This mislabels downstream refusal/incomplete workflow without corrupting retained raw native results.",
+      "Original sufficient-mana checks inspect final pool totals; these seeded no-producing-side-effect cases are informative but not a general mana payment/event accounting proof."
+    ]
+  },
+  "provenanceFinding": {
+    "receiptNormalizedInputHashes": {
+      "inputs.json": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+      "source-examination.json": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+      "native-inputs.json": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+      "native-examination.json": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+      "execution-requirements.json": "bf4db6f1eca7ebb3ef4df2314ef8390566dd7a81cbd9bcd8cc69e614216913e9"
+    },
+    "independentlyComputedNormalizedInputHashes": {
+      "execution-requirements.json": "bf4db6f1eca7ebb3ef4df2314ef8390566dd7a81cbd9bcd8cc69e614216913e9",
+      "native-examination.json": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+      "source-examination.json": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+      "native-inputs.json": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+      "inputs.json": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4"
+    },
+    "rawSourceFrozenSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+    "sourceNormalizedSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+    "rawNativeFrozenSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+    "nativeNormalizedSha256": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+    "sourceRetainedContentEqualsOriginalAfterCRLFNormalization": true,
+    "nativeRetainedContentEqualsOriginalAfterCRLFNormalization": true,
+    "issue": "CostExamination.report compares raw frozen source/native hashes stored in execution-requirements and nested phase records with evidenceTextDigest LF-normalized hashes. Raw source 151853... differs from normalized ff1ce6...; raw native 07a44c... differs from normalized 6eb291.... Thus sourceCurrent/nativeCurrent predicates as inspected reject these same-content frozen inputs as stale. The native observations remain hash-bound; this is a report freshness convention mismatch, not evidence that source mechanics changed.",
+    "adjudicationConsequence": "Top-level frozen raw hashes are intentionally not rewritten to make current reader pass. Report freshness and adjudication-current status remain limited until hash conventions are reconciled in separately authorized work. No approval is inferred from a matching hash."
+  },
+  "originalMethodAssessment": {
+    "requirements": "Original ten expected payment trees agree with frozen independent source derivation; whole-source ability coverage includes both Mind Stone abilities. Declaration/resolution dependencies remain separate.",
+    "comparison": "Useful reusable bounded structural comparator: flattens mandatory ALL conjunctions, preserves nonmana multiplicity and source/granter/selected distinction, adds exact fixed mana quantities, distinguishes generic from required colorless and rejects unknown/dynamic/alternative structures as unresolved.",
+    "semanticBoundary": "SACRIFICE_SELECTED canonical text bakes controller/owner/destination labels into comparison. Those labels require native-semantic evidence and bounded execution such as Phase B/new borrowed case; equality alone does not prove them.",
+    "mutations": "Original twelve mutations contain ten structurally detected contradictions, one unsupported Forage alternative and one intentionally unchanged-cost target/effect defect outside payment scope. Only missing-mana and missing-sacrifice mutants were executed in retained receipt; raw observations demonstrate respectively free-of-mana activation and failure to sacrifice. Reexamining them does not constitute fresh mutation execution.",
+    "additionalChallenge": "CostExamination.additionalChallenge makes Viscera Seer excludeSelf=true. Frozen source and SDK defaults require source allowed; comparator includes excludeSelf, so this is a valid additional structural distinction. No execution of that mutant was performed or independently observed in Phase C.",
+    "limits": [
+      "Hand-selected source cohort and finite designed mutants do not establish whole-catalog recall or mutation completeness.",
+      "Held-out claims are technical sequencing within same implementing coordinator, not human blind qualification.",
+      "No printed cost mutation exercises the new strategy-dependent runtime bug because serialized costs remain correct.",
+      "Target/effect defect remains outside payment comparator scope. No whole-ability, whole-card or strategic recommendation follows.",
+      "Potential tap-tree counts are native inventory only; do not count them as confirmed affected/source-reviewed physical cards."
+    ]
+  },
+  "reuseAssessment": "Reuse frozen source expectations, exact native bindings, bounded structural projection, raw native receipt format and public transaction/decision driver for research. Preserve observed runtime contradictions and diagnostic/freshness limits. Do not reuse structural SUPPORTED or broad counts as payment-execution certification or automatically promote assurance.",
+  "recommendedNextDecision": {
+    "decision": "Authorize one focused native engine correction of source-tap payment enforcement across Explicit and AutoPay paths, with targeted public-transaction regressions and application compatibility evidence before considering qualification.",
+    "scope": "Fix the demonstrated generic affordability/payment boundary rather than card-specific exceptions; include the unexecuted Mind Stone draw variant in bounded regression scope.",
+    "approvalByExaminer": false,
+    "qualificationRemains": "PENDING"
+  }
+}

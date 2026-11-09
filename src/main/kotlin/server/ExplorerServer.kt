@@ -96,7 +96,7 @@ internal class ExplorerServer(
                 else x.json(200, reportJson.parseToJsonElement(source.readText()))
                 return
             }
-            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/activation-costs", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
+            "/api/v1/progress", "/api/v1/progress/mechanics", "/api/v1/progress/external", "/api/v1/progress/global", "/api/v1/progress/commanders", "/api/v1/progress/objectives", "/api/v1/progress/pilot", "/api/v1/progress/verification", "/api/v1/progress/activation-costs", "/api/v1/progress/cost-examination", "/api/v1/progress/instructions", "/api/v1/progress/facts" -> if (x.requestMethod == "GET") {
                 runResearch(x) { _, _ -> when (path) {
                     "/api/v1/progress/global" -> progress.globalRecords?.let { exportResponse(it) } ?: exportResponse(progress.report.global)
                     "/api/v1/progress/commanders" -> progress.commanders?.let { exportResponse(it) } ?: exportResponse(progress.report.global)
@@ -104,6 +104,7 @@ internal class ExplorerServer(
                     "/api/v1/progress/pilot" -> exportResponse(progress.pilot)
                     "/api/v1/progress/verification" -> exportResponse(progress.verification)
                     "/api/v1/progress/activation-costs" -> exportResponse(progress.activationCosts)
+                    "/api/v1/progress/cost-examination" -> exportResponse(progress.costExamination)
                     "/api/v1/progress/instructions" -> exportResponse(progress.instructionRecords)
                     "/api/v1/progress/facts" -> exportResponse(progress.factRecords)
                     "/api/v1/progress/mechanics" -> exportResponse(progress.nativeCoverage)

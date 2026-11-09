@@ -88,7 +88,7 @@ tasks.processResources {
     dependsOn(recordEngineBuild)
     // Existing review sources travel with installed builds; presentation checks their recorded hashes.
     from("src/test/resources") {
-        include("cards/*-source.json", "cards/*-rulings.json", "fidelity/source-sacrifice/*.json", "fidelity/sacrifice-challenge/*.json", "fidelity/activation-cost/*.json", "fidelity/cost-examination/*.json")
+        include("cards/*-source.json", "cards/*-rulings.json", "fidelity/source-sacrifice/*.json", "fidelity/sacrifice-challenge/*.json", "fidelity/activation-cost/*.json", "fidelity/cost-examination/*.json", "fidelity/cost-examination/*.gz")
         into("retained-evidence")
     }
 }

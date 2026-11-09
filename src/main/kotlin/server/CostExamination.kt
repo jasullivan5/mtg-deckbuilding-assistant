@@ -6,12 +6,14 @@ import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.discovery.reportJson
 import dev.mtg.assistant.extensions.definitionDigest
 import dev.mtg.assistant.extensions.evidenceTextDigest
+import dev.mtg.assistant.extensions.evidenceDigest
 import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.costs.CostAtom
 import com.wingedsheep.sdk.tooling.CardExporter
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.*
 import java.util.Properties
+import java.util.zip.GZIPInputStream
 
 @Serializable data class CostExaminationReport(val schemaVersion:Int=1,val applicationRevision:String,val engine:String,
     val reviewStatus:String="ISOLATED_AGENT_EXAMINATION_PENDING_EXTERNAL_QUALIFICATION",val sourceState:String,val nativeState:String,
@@ -27,11 +29,22 @@ internal object CostExamination {
     fun text(name:String)=requireNotNull(javaClass.getResourceAsStream("/retained-evidence/fidelity/cost-examination/$name")).bufferedReader(Charsets.UTF_8).use { it.readText() }
     fun data(name:String)=reportJson.parseToJsonElement(text(name)).jsonObject
     val inputs:Map<String,String> by lazy { inputNames.associateWith { evidenceTextDigest(text(it)) } }
+    fun frozenArtifactCurrent(name:String,actualLfHash:String=inputs.getValue(name))=
+        data("hash-bindings.json").getValue("files").jsonObject.getValue(name).jsonObject.getValue("utf8LfSha256").jsonPrimitive.content==actualLfHash
+    /** Preserve the actual freeze bytes; Git's LF transport must neither invalidate nor rewrite the recorded raw hash. */
+    fun frozenHash(name:String):String {
+        val binding=data("hash-bindings.json").getValue("files").jsonObject.getValue(name).jsonObject
+        val raw=GZIPInputStream(requireNotNull(javaClass.getResourceAsStream("/retained-evidence/fidelity/cost-examination/"+binding.getValue("rawArchive").jsonPrimitive.content))).bufferedReader(Charsets.UTF_8).use { it.readText() }
+        val hash=evidenceDigest(raw)
+        require(hash==binding.getValue("rawFreezeSha256").jsonPrimitive.content && evidenceTextDigest(raw)==binding.getValue("utf8LfSha256").jsonPrimitive.content) { "Frozen raw/canonical archive no longer agrees: $name" }
+        return hash
+    }
     val harnessHash:String by lazy { Properties().apply { CostExamination::class.java.getResourceAsStream("/cost-boundary-harness.properties")!!.use(::load) }.getProperty("sha256") }
     private fun optional(name:String)=javaClass.getResourceAsStream(name)?.bufferedReader(Charsets.UTF_8)?.use { reportJson.parseToJsonElement(it.readText()).jsonObject }
 
     fun bindingsCurrent(record:PaymentBoundaryReceipt,engine:String,harness:String,currentInputs:Map<String,String>,definitions:Map<String,String>) =
-        record.engine==engine && record.harnessSha256==harness && record.inputs==currentInputs && record.definitions==definitions
+        record.engine==engine && record.harnessSha256==harness && record.inputs==currentInputs && record.definitions==definitions &&
+            record.scenarios.map { it.id }.distinct().size==record.scenarios.size && record.scenarios.all { scenario->scenario.steps.isNotEmpty() && scenario.steps.all { it.action!=JsonNull && it.nativeResult!=JsonNull } }
 
     fun additionalChallenge(catalog:Catalog):CostMutation {
         val binding=ActivationCostFidelity.bindings.single { it.scopeId=="viscera-seer:0" }
@@ -48,26 +61,29 @@ internal object CostExamination {
 
     fun report(catalog:Catalog,revision:String):CostExaminationReport {
         val manifest=data("inputs.json");val source=data("source-examination.json");val native=data("native-examination.json");val packet=data("native-inputs.json");val plan=data("execution-requirements.json")
-        val sourceCurrent=plan.getValue("sourcePhaseSha256").jsonPrimitive.content==inputs.getValue("source-examination.json") && source.getValue("manifest").jsonObject.getValue("actualSha256").jsonPrimitive.content==inputs.getValue("inputs.json") &&
+        val sourceCurrent=frozenArtifactCurrent("inputs.json") && frozenArtifactCurrent("source-examination.json") && plan.getValue("sourcePhaseSha256").jsonPrimitive.content==frozenHash("source-examination.json") && source.getValue("manifest").jsonObject.getValue("actualSha256").jsonPrimitive.content==frozenHash("inputs.json") &&
             manifest.getValue("sourceOnlyInputs").jsonArray.all { row->
                 val r=row.jsonObject;val path=r.getValue("path").jsonPrimitive.content.removePrefix("src/test/resources/")
                 javaClass.getResourceAsStream("/retained-evidence/$path")?.bufferedReader(Charsets.UTF_8)?.use { evidenceTextDigest(it.readText()) }==r.getValue("sha256").jsonPrimitive.content
             }
-        val nativeCurrent=sourceCurrent && native.getValue("frozenSource").jsonObject.getValue("actualSha256").jsonPrimitive.content==inputs.getValue("source-examination.json") &&
-            native.getValue("nativeInputs").jsonObject.getValue("actualSha256").jsonPrimitive.content==inputs.getValue("native-inputs.json") &&
-            plan.getValue("sourcePhaseSha256").jsonPrimitive.content==inputs.getValue("source-examination.json") && plan.getValue("nativePhaseSha256").jsonPrimitive.content==inputs.getValue("native-examination.json") &&
+        val nativeCurrent=sourceCurrent && frozenArtifactCurrent("native-inputs.json") && frozenArtifactCurrent("native-examination.json") && native.getValue("frozenSource").jsonObject.getValue("actualSha256").jsonPrimitive.content==frozenHash("source-examination.json") &&
+            native.getValue("nativeInputs").jsonObject.getValue("actualSha256").jsonPrimitive.content==frozenHash("native-inputs.json") &&
+            plan.getValue("sourcePhaseSha256").jsonPrimitive.content==frozenHash("source-examination.json") && plan.getValue("nativePhaseSha256").jsonPrimitive.content==frozenHash("native-examination.json") &&
             packet.getValue("engine").jsonPrimitive.content==EngineBuild.revision && packet.getValue("nativeDefinitions").jsonArray.all { row->
                 val r=row.jsonObject;catalog.card(r.getValue("name").jsonPrimitive.content)?.let(::definitionDigest)==r.getValue("definitionSha256").jsonPrimitive.content
             }
         val receipt=optional("/cost-boundary-execution.json")?.let { reportJson.decodeFromJsonElement<PaymentBoundaryReceipt>(it) }
-        val definitions=receipt?.definitions?.keys?.associateWith { catalog.card(it)?.let(::definitionDigest).orEmpty() }.orEmpty()
+        val definitions=receipt?.let { (it.scenarios.map { s->s.card }+listOf("Mogg Fanatic","Lifespark Spellbomb")).distinct().associateWith { name->catalog.card(name)?.let(::definitionDigest).orEmpty() } }.orEmpty()
         val current=receipt!=null && nativeCurrent && bindingsCurrent(receipt,EngineBuild.revision,harnessHash,inputs,definitions)
-        val adjudication=optional("/retained-evidence/fidelity/cost-examination/adjudication.json")
+        val currentAdjudication=optional("/retained-evidence/fidelity/cost-examination/adjudication-current.json")
+        val adjudication=currentAdjudication ?: optional("/retained-evidence/fidelity/cost-examination/adjudication.json")
         val adjudicated=adjudication?.get("bindings") as? JsonObject
         val adjudicationCurrent=current && adjudicated!=null && adjudicated["engine"]?.jsonPrimitive?.content==EngineBuild.revision &&
-            adjudicated["sourcePhaseSha256"]?.jsonPrimitive?.content==inputs["source-examination.json"] && adjudicated["nativePhaseSha256"]?.jsonPrimitive?.content==inputs["native-examination.json"] &&
+            adjudicated["sourcePhaseSha256"]?.jsonPrimitive?.content==frozenHash("source-examination.json") && adjudicated["nativePhaseSha256"]?.jsonPrimitive?.content==frozenHash("native-examination.json") &&
             adjudicated["executionReceiptSha256"]?.jsonPrimitive?.content==javaClass.getResourceAsStream("/cost-boundary-execution.json")?.bufferedReader(Charsets.UTF_8)?.use { evidenceTextDigest(it.readText()) }
-        val phases=inputs+if(adjudication!=null) mapOf("adjudication.json" to evidenceTextDigest(text("adjudication.json"))) else emptyMap()
+        val phases=inputs+mapOf("hash-bindings.json" to evidenceTextDigest(text("hash-bindings.json")))+
+            (if(adjudication!=null) mapOf("adjudication.json" to evidenceTextDigest(text("adjudication.json"))) else emptyMap())+
+            (if(currentAdjudication!=null) mapOf("adjudication-current.json" to evidenceTextDigest(text("adjudication-current.json"))) else emptyMap())
         val eligible=retainedGlobalBaseline().records.filter { it.poolState=="ELIGIBLE" && it.association=="CONFIDENT" }.mapNotNull { it.nativeName?.let(catalog::card) }
         val tap=eligible.flatMap { card->card.activatedAbilities.map { card.name to canonicalActivationCost(projectActivationCost(it.cost)) } }.filter { it.second?.contains("TAP_SELF")==true }
         val observations=if(current) receipt!!.scenarios else emptyList()
