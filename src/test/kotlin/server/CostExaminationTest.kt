@@ -8,6 +8,11 @@ import kotlinx.serialization.json.*
 class CostExaminationTest:FunSpec({
     val catalog by lazy { Catalog() }
     val receipt by lazy { CostPaymentBoundary.execute(catalog,"test-native-examination") }
+    val historical by lazy {
+        CostExamination::class.java.getResourceAsStream("/cost-boundary-execution.json")!!.bufferedReader().use {
+            dev.mtg.assistant.discovery.reportJson.decodeFromString<PaymentBoundaryReceipt>(it.readText())
+        }
+    }
     test("source and native phases preserve raw freeze identities through LF transport without granting qualification") {
         CostExamination.frozenHash("source-examination.json") shouldBe "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3"
         CostExamination.frozenHash("native-examination.json") shouldBe "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a"
@@ -15,7 +20,11 @@ class CostExaminationTest:FunSpec({
         CostExamination.frozenArtifactCurrent("source-examination.json","changed requirement content") shouldBe false
         val report=CostExamination.report(catalog,"test")
         report.sourceState shouldBe "CURRENT_SOURCE_BINDINGS"
-        report.nativeState shouldBe "CURRENT_NATIVE_BINDINGS"
+        val sameEngine=report.engine==historical.engine
+        report.nativeState shouldBe if(sameEngine) "CURRENT_NATIVE_BINDINGS" else "STALE_NATIVE_BINDINGS"
+        report.executionState shouldBe if(sameEngine) "RECORDED_CURRENT_BINDINGS" else "STALE"
+        report.adjudicationState shouldBe if(sameEngine) "CURRENT_BINDINGS" else "STALE"
+        report.counts.getValue("current_scenarios") shouldBe if(sameEngine) 14 else 0
         report.counts.getValue("examined_source_scopes") shouldBe 10
         report.counts.getValue("examined_native_scopes") shouldBe 10
         report.counts.getValue("independent_approvals") shouldBe 0
@@ -52,20 +61,42 @@ class CostExaminationTest:FunSpec({
         rows.getValue("activation-boundary:unpayable-mana").steps.single().rejection shouldBe "IllegalAction"
         rows.getValue("activation-boundary:invalid-target").steps.single().rejection shouldBe "IllegalAction"
     }
-    test("known Explicit tap-payment failures remain visible despite structurally correct costs and passing research assertions") {
-        receipt.scenarios.size shouldBe 14
-        receipt.scenarios.sumOf { it.steps.size } shouldBe 16
-        receipt.scenarios.count { it.result=="SOURCE_EXPECTATION_CONTRADICTED" } shouldBe 2
+    test("the frozen old-engine receipt retains its two observed Explicit payment failures") {
+        historical.engine shouldBe "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1"
+        historical.scenarios.size shouldBe 14
+        historical.scenarios.sumOf { it.steps.size } shouldBe 16
+        historical.scenarios.count { it.result=="SOURCE_EXPECTATION_CONTRADICTED" } shouldBe 2
         for(scope in listOf("mind-stone:0","evolving-wilds:0")) {
-            val rows=receipt.scenarios.associateBy { it.id }
-            rows.getValue("tap-boundary:$scope:UNTAPPED_EXPLICIT").result shouldBe "BOUNDED_EXPECTATION_SUPPORTED"
-            rows.getValue("tap-boundary:$scope:TAPPED_AUTO").steps.single().rejection shouldBe "IllegalAction"
+            val rows=historical.scenarios.associateBy { it.id }
             val broken=rows.getValue("tap-boundary:$scope:TAPPED_EXPLICIT")
             broken.result shouldBe "SOURCE_EXPECTATION_CONTRADICTED"
             broken.steps.single().validationMessage shouldBe null
             broken.steps.single().outcome shouldBe "Done"
             broken.checks.getValue("unchanged_state") shouldBe false
             broken.steps.single().nativeResult.jsonObject.getValue("events").jsonArray.none { it.jsonObject.getValue("type").jsonPrimitive.content=="TappedEvent" } shouldBe true
+        }
+    }
+    test("fresh payment execution separates the known old-engine defect from corrected-engine refusals") {
+        receipt.scenarios.size shouldBe 14
+        receipt.scenarios.sumOf { it.steps.size } shouldBe 16
+        val sameEngine=receipt.engine==historical.engine
+        receipt.scenarios.count { it.result=="SOURCE_EXPECTATION_CONTRADICTED" } shouldBe if(sameEngine) 2 else 0
+        for(scope in listOf("mind-stone:0","evolving-wilds:0")) {
+            val rows=receipt.scenarios.associateBy { it.id }
+            rows.getValue("tap-boundary:$scope:UNTAPPED_EXPLICIT").result shouldBe "BOUNDED_EXPECTATION_SUPPORTED"
+            rows.getValue("tap-boundary:$scope:TAPPED_AUTO").steps.single().rejection shouldBe "IllegalAction"
+            val explicit=rows.getValue("tap-boundary:$scope:TAPPED_EXPLICIT")
+            if(sameEngine) {
+                explicit.result shouldBe "SOURCE_EXPECTATION_CONTRADICTED"
+                explicit.steps.single().outcome shouldBe "Done"
+            } else {
+                explicit.result shouldBe "BOUNDED_EXPECTATION_SUPPORTED"
+                explicit.steps.single().outcome shouldBe "Rejected"
+                explicit.steps.single().rejection shouldBe "IllegalAction"
+                explicit.checks.values.all { it } shouldBe true
+                explicit.steps.single().before shouldBe explicit.steps.single().after
+                explicit.steps.single().nativeResult.jsonObject.getValue("events").jsonArray.size shouldBe 0
+            }
         }
     }
 })

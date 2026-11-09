@@ -2,6 +2,8 @@
 
 This bounded investigation examines the ten Increment 4 cost scopes. It does not extend objectives, Commander selection, card registrations, the native engine or the independent-approval gate.
 
+This report retains the original observations at engine `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`. The subsequent [source-tap correction candidate and compatibility report](TAP_PAYMENT_CORRECTION.md) records fresh executions separately; it does not replace these failure receipts or grant qualification.
+
 ## Examination protocol and independence
 
 The starting application is merged main `0b23d5e16ac3145118a4ae15e7a66c99b610d24a`. The maintained engine was fetched and verified clean on app-stable at `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1` and remains unchanged.

@@ -20,15 +20,21 @@ test('Verification separates reference cards partial scopes dated observations a
   expect(data.counts.commander_legal_physical_cards).toBe(32109);
   expect(data.counts.definition_available_cards).toBe(16927);
   expect(data.counts.source_review_current_cards).toBe(13);
-  expect(data.counts.execution_current_cards).toBe(13);
-  expect(data.counts.execution_observations_current).toBe(53);
+  const sameEngine=data.engine===costBaseline.engine;
+  expect(data.counts.execution_current_cards).toBe(sameEngine?13:0);
+  expect(data.counts.execution_observations_current).toBe(sameEngine?53:0);
   expect(data.qualification.QUALIFIED).toBe(0);
   expect(data.completeness).toBe('NOT_ESTABLISHED_AT_CATALOG_SCALE');
-  expect(data.challenge.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  expect(data.challenge.executionState).toBe(sameEngine?'RECORDED_CURRENT_BINDINGS':'STALE');
   expect(data.challenge.adversarialExecution).toHaveLength(1);
   expect(data.challenge.adversarialExecution[0].state).toBe('DIFFERS');
   expect(data.evidence.some((e:{record:{id:string}})=>e.record.id.includes('mutant:'))).toBe(false);
   expect(data.evidence.filter((e:{record:{kind:string}})=>e.record.kind==='EXECUTION')).toHaveLength(54);
+  if(!sameEngine) {
+    const stale=data.evidence.filter((e:{freshness:string;record:{kind:string;historical:boolean}})=>e.record.kind==='EXECUTION'&&!e.record.historical);
+    expect(stale).toHaveLength(53);
+    expect(stale.every((e:{freshness:string})=>e.freshness==='STALE')).toBe(true);
+  }
   await expect(panel).toContainText('Whole-card verification: Not established at catalog scale');
   const inspection=panel.getByText('Inspect physical cards, source scopes and execution records',{exact:true});
   await inspection.focus();await page.keyboard.press('Enter');
