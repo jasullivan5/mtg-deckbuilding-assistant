@@ -4,7 +4,13 @@ The current primary experience is **Discover / Progress / Primer**. Open Progres
 
 The Explorer is a local browser interface over the application's existing Kotlin discovery. The first Prototype Lab review did not accept M1 as a usable research experience. The revised experience shows card text once, marks reliably associated abilities, adds brief objective-specific notes, and presents compact evidence fields with optional technical records. Mechanic browsing and verified printing/face imagery are preserved. Product Studio subsequently accepted the bounded M1 and M2 experiences against separate criteria. See the [milestone decisions](EXPLORER_MILESTONES.md#m1-and-m2-acceptance). Existing mechanical classifications and CLI evidence remain authoritative. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
+## Current Primer
+
+Open `/#primer` for the existing five-stage map and **Build a precise objective**. Compare counter placement, power increase and reaching power 4; open **Events, states, game elements and effects** for the working concepts. The examples change explanations without running discovery. Four existing queries remain the implemented boundary. See the [source-grounded assessment and actual screenshots](OBJECTIVE_BUILDING_BLOCKS.md) and [living direction](OBJECTIVE_MODEL.md). No snapshot is needed just to read Primer.
+
 ## Primer alignment review — 2026-11-09
+
+The review, screenshots, commands and results below retain the preceding six-role proposal and its original engine/payment status. They are historical observations; current instructions are above.
 
 Open **Primer** (`/#primer`) for the five-stage map, objective-relative six-role vocabulary, selective layering examples and empirical evaluation hypothesis. Four queries and curated native positions are implemented; role classification/filtering, composition and deck simulation are not. Mechanical dependencies remain necessary; a dedicated pairwise strategic synergy stage is not a prerequisite. [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) owns the precise direction and open research questions.
 

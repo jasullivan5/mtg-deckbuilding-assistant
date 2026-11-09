@@ -1,0 +1,831 @@
+{
+  "scope": "Read-only existing API observations, not gameplay execution, independent qualification or new objective implementation",
+  "application": "577306e60f94d8b7f46dc2033dd74e0e29228d65",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "criteriaCommit": "577306e60f94d8b7f46dc2033dd74e0e29228d65",
+  "commander": "Kenrith, the Returned King",
+  "conventionalQuery": "name:\"Viscera Seer\" OR name:\"Pitiless Plunderer\" OR name:\"Grim Haruspex\" OR name:\"Zulaport Cutthroat\" OR name:\"Tragic Slip\" OR name:\"Flamewake Phoenix\" OR name:\"Scute Swarm\" OR name:\"Cranial Plating\" OR name:\"Goblin Chieftain\" OR name:\"Travel Preparations\" OR name:\"Hardened Scales\" OR name:\"Walking Ballista\" OR name:\"Wall of Roots\" OR name:\"Doomed Dissenter\" OR name:\"Garruk's Packleader\" OR name:\"Abzan Falconer\"",
+  "mechanicalInputCards": [
+    "Abzan Falconer",
+    "Doomed Dissenter",
+    "Flamewake Phoenix",
+    "Garruk's Packleader",
+    "Grim Haruspex",
+    "Hardened Scales",
+    "Pitiless Plunderer",
+    "Scute Swarm",
+    "Tragic Slip",
+    "Travel Preparations",
+    "Viscera Seer",
+    "Zulaport Cutthroat"
+  ],
+  "identityBoundary": "Native Oracle IDs are null in the inspected definitions. Source and native printing metadata and wording are separately retained; this investigation grants no identity or eligibility approval. Walking Ballista has MATCH format and UNKNOWN deck identity and is excluded before discovery.",
+  "sourceNativeBindings": [
+    {
+      "name": "Viscera Seer",
+      "heldOut": false,
+      "source": "src/test/resources/cards/viscera-seer-source.json",
+      "sha256": "5840b4b6a3bf4a5248aaa37eb350dcb17f772356d94ec9e64aa18439cdac3d87",
+      "printingId": "6179f847-e334-4f7f-9a4e-0013942a394f",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt",
+          "sha256RawBytes": "98830d44d02e24e759b003daf3dd69f6ac9974e6c84c43daeaca00f533dcffeb",
+          "sha256Utf8Lf": "e78fb8c51afb9730326a49443b25b7872a3d157175df6e7f4efdb054e4aed140"
+        }
+      ]
+    },
+    {
+      "name": "Pitiless Plunderer",
+      "heldOut": false,
+      "source": "src/test/resources/cards/pitiless-plunderer-source.json",
+      "sha256": "50ea5539bb9edb21852ec90f0ed87c377f75224d841a7a5b0e4e795e7087eefc",
+      "printingId": "c87ebffe-5907-427b-9f9b-7c36a12b4a03",
+      "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/PitilessPlunderer.kt",
+          "sha256RawBytes": "f4c5b73c42fa6853daffe6acac090a9a3a4b46ec2fe289002f8659c5aa274fda",
+          "sha256Utf8Lf": "d661960782424cf316d085daf4cfd0a04f2d6ac7b99088b31ba2310391c5ffe0"
+        }
+      ]
+    },
+    {
+      "name": "Grim Haruspex",
+      "heldOut": false,
+      "source": "src/test/resources/cards/grim-haruspex-source.json",
+      "sha256": "5b101cdbd942b61ed3f298cf3090e4697543d23761663084314966dd3a11ae6a",
+      "printingId": "cf1fe2bf-1640-4781-87b4-09a1f7d35831",
+      "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/GrimHaruspex.kt",
+          "sha256RawBytes": "30b5a2274a8e9e81851d98a8ce295fca3341a378c6fcbb16018f91dcd55e3277",
+          "sha256Utf8Lf": "60646fa43594559a313b0c04999280c50e1682e07a01984741b49f7223be3ee0"
+        }
+      ]
+    },
+    {
+      "name": "Zulaport Cutthroat",
+      "heldOut": false,
+      "source": "src/test/resources/cards/zulaport-cutthroat-source.json",
+      "sha256": "87ff535fe9a4e7c36bf2c06f6815f9170363c1b02cbdc880f6b993c52b6d4040",
+      "printingId": "5c963d97-c948-45d9-84cc-58e246d35970",
+      "oracleId": "76b003e0-15af-4f22-bdf2-1ade5430964a",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/ZulaportCutthroat.kt",
+          "sha256RawBytes": "cba1eaef14f339a02b41dadd657f66bfd526ffad0963de6f93afc759435b8a0f",
+          "sha256Utf8Lf": "c833fae638092582d9b08011bbb8bbcec4641f13ccb9a68628cf7ccc8a95ed15"
+        }
+      ]
+    },
+    {
+      "name": "Tragic Slip",
+      "heldOut": false,
+      "source": "src/test/resources/cards/tragic-slip-source.json",
+      "sha256": "6f0c1ae57dec74f01823d9f5295520fba2ed8db4ead0236d82bde2bb9388dc47",
+      "printingId": "09666671-601e-4fca-bdfb-fb288bf2672c",
+      "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+          "sha256RawBytes": "706e4075367771936322835509e1094df4dc841375b1a1004710d85372a1bb7c",
+          "sha256Utf8Lf": "53142e55e0e369abc23c0ab032aa7c5b1c9920b8d03fb3b60cae14d29cc89d7c"
+        }
+      ]
+    },
+    {
+      "name": "Flamewake Phoenix",
+      "heldOut": false,
+      "source": "src/test/resources/cards/flamewake-phoenix-source.json",
+      "sha256": "b7c2f4b53bb1016e3934321e9d9cd9b8a3a7d5f76fad44eaaaf9cc349fa22e18",
+      "printingId": "fefd5848-9fe1-4129-a5d7-e51606bf76ef",
+      "oracleId": "9e43805d-3576-47d4-9331-524869ab99d0",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/frf/cards/FlamewakePhoenix.kt",
+          "sha256RawBytes": "7f134d00d0a5cfb5762e27823b728ccc42032fdc8dd469210d2bd2c4b4db12a8",
+          "sha256Utf8Lf": "0ac6fca01903488acd8d119523315c15f5a365e94213a17a7f2c7bcbfcaee348"
+        }
+      ]
+    },
+    {
+      "name": "Scute Swarm",
+      "heldOut": false,
+      "source": "src/test/resources/cards/scute-swarm-source.json",
+      "sha256": "65c2e7ee208f2b4381ae46d139ab50fd15e42477240f545a3e502f461bb59f7c",
+      "printingId": "61f42823-8a48-4b81-a037-664ba1c69f29",
+      "oracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ScuteSwarm.kt",
+          "sha256RawBytes": "5230db7d8a88800af35dacb4dd341a039b5ce1bc3f30d39a033ac94cdab689d3",
+          "sha256Utf8Lf": "c18fc30050c5f0929ecd846b2a14918c317f0ce7590c3ae2aec05a2c6d1670b3"
+        }
+      ]
+    },
+    {
+      "name": "Cranial Plating",
+      "heldOut": false,
+      "source": "src/test/resources/cards/cranial-plating-source.json",
+      "sha256": "053f590a5d6f22c322afb13acd84cf6dc8f86856c592bc073ce3b7252b49744e",
+      "printingId": "90ea95d0-9f95-462b-a080-22a5da7b2e97",
+      "oracleId": "75564721-e4e9-463a-b49e-f0c7cd6f53a7",
+      "nativeFiles": []
+    },
+    {
+      "name": "Goblin Chieftain",
+      "heldOut": false,
+      "source": "src/test/resources/cards/goblin-chieftain-source.json",
+      "sha256": "dcfec39837191672cdb6b9b9aca10dc4e40045afe3e506b7476d28c7bb229893",
+      "printingId": "2540ec6b-9ffa-4ab0-bbd3-ddf1efd2db60",
+      "oracleId": "368b4052-174e-4458-a6e6-eaf8093aa0fe",
+      "nativeFiles": []
+    },
+    {
+      "name": "Doomed Dissenter",
+      "heldOut": true,
+      "source": "src/test/resources/cards/doomed-dissenter-source.json",
+      "sha256": "a6e44719a752bac81d55baa7d3fe80bef99deb89586dd375451b6cb14503f07d",
+      "printingId": "a1c0b645-de43-46d0-84c1-03f295def217",
+      "oracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/DoomedDissenter.kt",
+          "sha256RawBytes": "8e3436e6842d3455aab86a5d9f3750a4c1815d9b9f21c8c952067e8a9c1694c2",
+          "sha256Utf8Lf": "79a2180fe92d1e62a96338c6b7597e8754651b0c1832551bb74a2c6823830eab"
+        }
+      ]
+    },
+    {
+      "name": "Travel Preparations",
+      "heldOut": false,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Travel Preparations",
+      "sha256CanonicalJsonUtf8": "54c462d363cf05ed997557c3023a341512568b39bfd38f54adfd1fe36979e875",
+      "printingId": "41190fb8-f5d5-4a8b-bdc8-a4516e7075b5",
+      "oracleId": "8432729e-5fd4-4661-8b79-e41b1d03eb7b",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/TravelPreparations.kt",
+          "sha256RawBytes": "a6bf85c1c7d24932ae8f24ab913dc312145f318c9c236cc642c8a6f9908ac3df",
+          "sha256Utf8Lf": "7071d5cfe3fa84d8e476393487d56c4f81d86375e1637e44e3d15ee1fe5183f6"
+        }
+      ]
+    },
+    {
+      "name": "Hardened Scales",
+      "heldOut": false,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Hardened Scales",
+      "sha256CanonicalJsonUtf8": "fbe4c21fddbb46d82f8f815bbd7f1ad974c15aeac31b4a2da73c76ac0d1f7bb3",
+      "printingId": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+      "oracleId": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HardenedScales.kt",
+          "sha256RawBytes": "af9cb5b1828eb7fdcc69f793c17bac9f623655d53af116b93bf9854a66846a4d",
+          "sha256Utf8Lf": "7ea2d7ff0f11eae27aabc551951ce9452158cf42e24bddde4bf5049619a91bd8"
+        }
+      ]
+    },
+    {
+      "name": "Walking Ballista",
+      "heldOut": false,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Walking Ballista",
+      "sha256CanonicalJsonUtf8": "946f71d0a2ba4afa1a3d8fae4f5616eee6d0cb032468340f12580e7ba81d55fe",
+      "printingId": "5272436e-74f0-44c4-a291-ea8ebc3f1525",
+      "oracleId": "4b515bb0-f275-4400-8032-3173b799ab40",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/WalkingBallista.kt",
+          "sha256RawBytes": "e2202c100b3c50c1b1fcae09cba40c3439b4a6129f3d4b198db553ac206357e9",
+          "sha256Utf8Lf": "08b720d45b4c4dc207904371aa5064f7c25bbaf0237274a994c774e130860657"
+        }
+      ]
+    },
+    {
+      "name": "Wall of Roots",
+      "heldOut": false,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Wall of Roots",
+      "sha256CanonicalJsonUtf8": "0cf4eab307171cbe29118f8535c6918268d9ce8af0d70aadf06632a3cdab9baf",
+      "printingId": "e4e7d3b7-9b0c-463d-975c-ef81d7fd8dad",
+      "oracleId": "3a21a6ae-b2f2-4f0c-acfd-5f3e8d63fd2f",
+      "nativeFiles": []
+    },
+    {
+      "name": "Garruk's Packleader",
+      "heldOut": true,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Garruk's Packleader",
+      "sha256CanonicalJsonUtf8": "a45e2ce24a25bcb2d86eadce74416ee0d781c4f804397e746ea25d87797d82d6",
+      "printingId": "dafeafa0-b937-4387-8626-449a810486b4",
+      "oracleId": "13279222-422d-4447-9451-2463b0c714c6",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/GarruksPackleader.kt",
+          "sha256RawBytes": "b47db0d5e9664cc9b3d97f47ca3294d537d63106cfccaaefd72840ae209425c1",
+          "sha256Utf8Lf": "7f9c965581f7d526c1ac6556b9cb2b18a42eb6ed5128579ec690a86e60cf2081"
+        }
+      ]
+    },
+    {
+      "name": "Abzan Falconer",
+      "heldOut": true,
+      "source": "src/test/resources/cards/objective-building-blocks-sources.json",
+      "recordKey": "Abzan Falconer",
+      "sha256CanonicalJsonUtf8": "38149dcd90ba3b34a32f0757bd512ec5e72d7b3021a8432afe23cd5c31da7ffa",
+      "printingId": "f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884",
+      "oracleId": "8b972819-507a-40a9-ab1f-1a674ea56083",
+      "nativeFiles": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/AbzanFalconer.kt",
+          "sha256RawBytes": "644ca6b23b7d3bac262b81f9a2d6285e4ddbdfba03c8744e9bfb1f50ae0120d1",
+          "sha256Utf8Lf": "5cde65ed961a20d722d1b82f0af0ba12198e79f4f011b9e2002f686a6abb8f78"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshotSha256": "6d317b3c4fc4718bc3da53803cc76fbde5b48381e0e38038f2e8e0a9f98d7c8f",
+  "sourceSnapshotHashFormat": "SHA256_UTF8_LF",
+  "codeBindings": [
+    {
+      "path": "src/main/kotlin/discovery/PathwayExtractor.kt",
+      "sha256RawBytes": "a76f3bd831dc8279e95a0c96c628865bee526a5165071d897fd4d3b47d5ddd0d",
+      "sha256Utf8Lf": "1fd7194602c14577e6ba90ee36322a13ed83cbad4c7f7daf4f80bc9084a9db1e"
+    },
+    {
+      "path": "src/main/kotlin/discovery/MechanicalFacts.kt",
+      "sha256RawBytes": "c740240763f19774010c01583b98dbe2184686c6e7884147cc5d8ba3bebcaceb",
+      "sha256Utf8Lf": "f1757b39d527e4619d9d42a76d45a0f00ad572f717bbea81f9fe68d3c9e4680c"
+    },
+    {
+      "path": "src/main/kotlin/discovery/MechanicalQuery.kt",
+      "sha256RawBytes": "005c71d0d1c9be7e2069c4e6855dd79b417b3b7625180095c0090f0fff884cff",
+      "sha256Utf8Lf": "160467928b3071eb5315b5973bf098090172f724bb594c562a3915a7a7b88c84"
+    },
+    {
+      "path": "src/main/kotlin/discovery/Reanimation.kt",
+      "sha256RawBytes": "a4bd9ef6a2e69c05cac456b34dcf707025fc54156f0d9785b4b2c928324a12c0",
+      "sha256Utf8Lf": "4c2a11e6b7c1675058640986913b86d3f6fa019654bb8c3fcfc9041ab4134ec5"
+    },
+    {
+      "path": "src/main/kotlin/discovery/Discovery.kt",
+      "sha256RawBytes": "3e4ace4d254a52f7211e5f5d59431ac500e6a20ae24288a44e834f931078e9e4",
+      "sha256Utf8Lf": "8f8183faa93335d12dc9ce2c766efc8bd591951e08b602c99157a275a0ffa71d"
+    }
+  ],
+  "rawObservations": [
+    {
+      "path": "generated/objective-building-blocks/native-extraction.json",
+      "sha256": "48d91267b1e34cd8b2db3ed97a0e02f972562b0ceb8e3cabf91bc49500363f71"
+    },
+    {
+      "path": "generated/objective-building-blocks/own-nontoken-creature-deaths.json",
+      "sha256": "ed9eb65d0f011d9678ce36d10fd20662d05dfc97815252f24c100a0266fa5bb5"
+    },
+    {
+      "path": "generated/objective-building-blocks/reanimate-own-creatures.json",
+      "sha256": "a0092ce99b937493e959471a6b5fa77df192ff5579dd0ab04453fb47175a0419"
+    },
+    {
+      "path": "generated/objective-building-blocks/create-creature-tokens.json",
+      "sha256": "531db897882e388c9252e27ab6adf13e2663918be52c654035955a5a0d850b17"
+    },
+    {
+      "path": "generated/objective-building-blocks/stock-own-graveyard.json",
+      "sha256": "ee0efb89ee69e35dc8bcdd17b4bc89b837777c8d6bc4605aeef7794b47d452b2"
+    },
+    {
+      "path": "generated/objective-building-blocks/InspectObjectiveCohort.java",
+      "sha256": "e0d0fc2833957c29d953ba91ef559ed0ccd3db8156a65b62a7ac708fb1d4fd7a"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Viscera Seer",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "M11",
+      "nativeCollectorNumber": "120",
+      "facts": [
+        {
+          "kind": "SACRIFICE",
+          "operation": "SACRIFICE",
+          "actionId": "Viscera Seer|front|script.activatedAbilities[0]",
+          "path": "script.activatedAbilities[0].cost.atom",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [
+          {
+            "operation": "SACRIFICE",
+            "verdict": "MATCH",
+            "abilityPath": "script.activatedAbilities[0].cost.atom",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": [
+          {
+            "operation": "SACRIFICE",
+            "verdict": "MATCH",
+            "abilityPath": "script.activatedAbilities[0].cost.atom",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pitiless Plunderer",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "RIX",
+      "nativeCollectorNumber": "81",
+      "facts": [
+        {
+          "kind": "CREATE_TOKEN",
+          "operation": "CREATE_TOKEN",
+          "actionId": "Pitiless Plunderer|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [
+          {
+            "operation": "CREATE_TOKEN",
+            "verdict": "NO_MATCH",
+            "abilityPath": "script.triggeredAbilities[0].effect",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Grim Haruspex",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "KTK",
+      "nativeCollectorNumber": "73",
+      "facts": [],
+      "unsupported": [
+        {
+          "card": "Grim Haruspex",
+          "face": "front",
+          "path": "keywordAbilities[0]",
+          "nativeType": "com.wingedsheep.sdk.scripting.KeywordAbility$Morph",
+          "reason": "Keyword-granted actions are not expanded",
+          "actionId": "Grim Haruspex|front|keywordAbilities"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Zulaport Cutthroat",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "BFZ",
+      "nativeCollectorNumber": "126",
+      "facts": [],
+      "unsupported": [
+        {
+          "card": "Zulaport Cutthroat",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.LoseLifeEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]"
+        },
+        {
+          "card": "Zulaport Cutthroat",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.GainLifeEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Tragic Slip",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "DKA",
+      "nativeCollectorNumber": "76",
+      "facts": [
+        {
+          "kind": "TOUGHNESS_CHANGE",
+          "operation": "TOUGHNESS_REDUCTION",
+          "actionId": "Tragic Slip|front|script.spell",
+          "path": "script.spellEffect.then",
+          "confidence": "MATCH"
+        },
+        {
+          "kind": "TOUGHNESS_CHANGE",
+          "operation": "TOUGHNESS_REDUCTION",
+          "actionId": "Tragic Slip|front|script.spell",
+          "path": "script.spellEffect.otherwise",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [
+          {
+            "operation": "TOUGHNESS_REDUCTION",
+            "verdict": "NO_MATCH",
+            "abilityPath": "script.spellEffect.then",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          },
+          {
+            "operation": "TOUGHNESS_REDUCTION",
+            "verdict": "NO_MATCH",
+            "abilityPath": "script.spellEffect.otherwise",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          },
+          {
+            "operation": "TOUGHNESS_REDUCTION",
+            "verdict": "MATCH",
+            "abilityPath": "script.spellEffect.gate.condition",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Flamewake Phoenix",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "FRF",
+      "nativeCollectorNumber": "100",
+      "facts": [
+        {
+          "kind": "MOVE_OBJECT",
+          "operation": "MOVE_OBJECT",
+          "actionId": "Flamewake Phoenix|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Flamewake Phoenix",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.gate.cost",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.PayManaCostEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Flamewake Phoenix|front|script.triggeredAbilities[0]"
+        },
+        {
+          "card": "Flamewake Phoenix",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.MoveToZoneEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Flamewake Phoenix|front|script.triggeredAbilities[0]"
+        },
+        {
+          "card": "Flamewake Phoenix",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "nativeType": "com.wingedsheep.sdk.scripting.MustAttack",
+          "reason": "Static ability not interpreted for this objective",
+          "actionId": "Flamewake Phoenix|front|script.staticAbilities[0]"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [
+          {
+            "operation": "MOVE_OBJECT",
+            "verdict": "MATCH",
+            "abilityPath": "script.triggeredAbilities[0].effect.then",
+            "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Scute Swarm",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "ZNR",
+      "nativeCollectorNumber": "203",
+      "facts": [
+        {
+          "kind": "CREATE_TOKEN",
+          "operation": "CREATE_TOKEN",
+          "actionId": "Scute Swarm|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "confidence": "UNKNOWN"
+        },
+        {
+          "kind": "CREATE_TOKEN",
+          "operation": "CREATE_TOKEN",
+          "actionId": "Scute Swarm|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect.otherwise",
+          "confidence": "UNKNOWN"
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Scute Swarm",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then.tokenConstraints",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenCopyOfSourceEffect",
+          "reason": "Unresolved token variant: creature=MATCH; controller=YOU; quantity=MATCH; []",
+          "actionId": "Scute Swarm|front|script.triggeredAbilities[0]"
+        },
+        {
+          "card": "Scute Swarm",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.otherwise.tokenConstraints",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.CreateTokenEffect",
+          "reason": "Unresolved token variant: creature=MATCH; controller=YOU; quantity=MATCH; []",
+          "actionId": "Scute Swarm|front|script.triggeredAbilities[0]"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [
+          {
+            "operation": "CREATE_TOKEN",
+            "verdict": "UNKNOWN",
+            "abilityPath": "script.triggeredAbilities[0].effect.then",
+            "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED"
+          },
+          {
+            "operation": "CREATE_TOKEN",
+            "verdict": "UNKNOWN",
+            "abilityPath": "script.triggeredAbilities[0].effect.otherwise",
+            "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Cranial Plating",
+      "heldOut": false,
+      "nativeAvailable": false,
+      "nativeOracleId": null,
+      "nativeSet": null,
+      "nativeCollectorNumber": null,
+      "facts": [],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Goblin Chieftain",
+      "heldOut": false,
+      "nativeAvailable": false,
+      "nativeOracleId": null,
+      "nativeSet": null,
+      "nativeCollectorNumber": null,
+      "facts": [],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Travel Preparations",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "ISD",
+      "nativeCollectorNumber": "206",
+      "facts": [],
+      "unsupported": [
+        {
+          "card": "Travel Preparations",
+          "face": "front",
+          "path": "script.spellEffect.body",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.AddCountersEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Travel Preparations|front|script.spell"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Hardened Scales",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "KTK",
+      "nativeCollectorNumber": "133",
+      "facts": [],
+      "unsupported": [
+        {
+          "card": "Hardened Scales",
+          "face": "front",
+          "path": "script.replacementEffects",
+          "nativeType": "com.wingedsheep.sdk.model.CardScript",
+          "reason": "Additional script field retained but not interpreted",
+          "actionId": "Hardened Scales|front|script.unsupported"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Walking Ballista",
+      "heldOut": false,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "AER",
+      "nativeCollectorNumber": "181",
+      "facts": [
+        {
+          "kind": "DAMAGE",
+          "operation": "DAMAGE_POTENTIALLY_LETHAL",
+          "actionId": "Walking Ballista|front|script.activatedAbilities[1]",
+          "path": "script.activatedAbilities[1].effect",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Walking Ballista",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.AddCountersEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Walking Ballista|front|script.activatedAbilities[0]"
+        },
+        {
+          "card": "Walking Ballista",
+          "face": "front",
+          "path": "script.activatedAbilities[1].cost.atom",
+          "nativeType": "com.wingedsheep.sdk.scripting.costs.CostAtom$RemoveCounters",
+          "reason": "Cost atom not interpreted",
+          "actionId": "Walking Ballista|front|script.activatedAbilities[1]"
+        },
+        {
+          "card": "Walking Ballista",
+          "face": "front",
+          "path": "script.replacementEffects",
+          "nativeType": "com.wingedsheep.sdk.model.CardScript",
+          "reason": "Additional script field retained but not interpreted",
+          "actionId": "Walking Ballista|front|script.unsupported"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Wall of Roots",
+      "heldOut": false,
+      "nativeAvailable": false,
+      "nativeOracleId": null,
+      "nativeSet": null,
+      "nativeCollectorNumber": null,
+      "facts": [],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Doomed Dissenter",
+      "heldOut": true,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "AKH",
+      "nativeCollectorNumber": "87",
+      "facts": [
+        {
+          "kind": "CREATE_TOKEN",
+          "operation": "CREATE_TOKEN",
+          "actionId": "Doomed Dissenter|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect",
+          "confidence": "MATCH"
+        }
+      ],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [
+          {
+            "operation": "CREATE_TOKEN",
+            "verdict": "MATCH",
+            "abilityPath": "script.triggeredAbilities[0].effect",
+            "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED"
+          }
+        ],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Garruk's Packleader",
+      "heldOut": true,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "M11",
+      "nativeCollectorNumber": "177",
+      "facts": [],
+      "unsupported": [],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    },
+    {
+      "name": "Abzan Falconer",
+      "heldOut": true,
+      "nativeAvailable": true,
+      "nativeOracleId": null,
+      "nativeSet": "KTK",
+      "nativeCollectorNumber": "2",
+      "facts": [],
+      "unsupported": [
+        {
+          "card": "Abzan Falconer",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "nativeType": "com.wingedsheep.sdk.scripting.effects.AddCountersEffect",
+          "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+          "actionId": "Abzan Falconer|front|script.activatedAbilities[0]"
+        },
+        {
+          "card": "Abzan Falconer",
+          "face": "front",
+          "path": "script.staticAbilities[0]",
+          "nativeType": "com.wingedsheep.sdk.scripting.GrantKeywordByCounter",
+          "reason": "Static ability not interpreted for this objective",
+          "actionId": "Abzan Falconer|front|script.staticAbilities[0]"
+        }
+      ],
+      "discovery": {
+        "own-nontoken-creature-deaths": [],
+        "reanimate-own-creatures": [],
+        "create-creature-tokens": [],
+        "stock-own-graveyard": []
+      }
+    }
+  ]
+}

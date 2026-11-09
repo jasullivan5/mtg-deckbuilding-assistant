@@ -1,14 +1,35 @@
 # Objective and evaluation direction
 
-This is the living product-direction record, not authorization to implement future capabilities. The original distinctive-contribution direction was adopted on 2026-11-02. The 2026-11-09 Product Studio assignment updates the conceptual architecture, working roles and evaluation hypothesis below. Earlier vocabulary studies remain [historical research](CONTRIBUTION_VALIDATION.md); their sources and conclusions are preserved. [README](../README.md#current-state-and-authority) owns current status; [architecture](ARCHITECTURE.md) describes implementation.
+This is the living product-direction record, not authorization to implement future capabilities. The original distinctive-contribution direction was adopted on 2026-11-02. The 2026-11-09 [bounded building-block assessment](OBJECTIVE_BUILDING_BLOCKS.md) refines the earlier six-role proposal: use mechanically precise subjects and directional relationships as the working foundation, with role labels as optional descriptions. This is supported as a research/explanation direction in the retained sample, not a validated universal schema or implemented objective builder. Earlier [four-/five-role research](CONTRIBUTION_VALIDATION.md) retains its original evidence and disagreements. [README](../README.md#current-state-and-authority) owns current status; [architecture](ARCHITECTURE.md) describes implementation.
 
 ## Conceptual architecture
 
-**Card identity and rules → Native definitions → Mechanical facts and capabilities → Objective discovery, subroles and composition → Experimental deck evaluation**
+**Card identity and rules → Native definitions → Mechanical facts and capabilities → Objective discovery and selective layering → Experimental deck evaluation**
 
 The foundation progressively establishes physical identity, rules and source requirements; Commander eligibility; native representability and execution boundaries; and reusable costs, effects, conditions, events and state changes. Objectives interpret capabilities for a question. Availability, representability, source fidelity, execution, discovery and objective relevance remain separate claims. Representation does not establish understanding of every card or interaction.
 
-This is a conceptual direction, not a new module plan. Four bounded queries exist; general role classification, role filters, selective composition and deck evaluation do not. The death query retains a legacy projection; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
+This is a conceptual direction, not a new module plan. Four bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains a legacy projection; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
+
+## Objective subjects and mechanical relationships
+
+| Working concept | Objective-level question | Mechanics to preserve |
+| --- | --- | --- |
+| Events | What should happen, or happen repeatedly? | Cause/enable, respond to, prevent, or check history of a qualifying occurrence; a trigger and a history check are different. |
+| States | What condition should hold, and when? | Establish/maintain/change a predicate, or depend on it for access, a branch or magnitude. Preserve the checkpoint or continuous evaluation. |
+| Game elements | What mechanically relevant thing or resource do we need to supply or use? | Supply, replenish, preserve, consume, target, move or transform it; retain type, quantity, identity, owner/controller, zone and permissions. |
+| Effects and outcomes | What operation connects inputs and conditions to a possible result? | Counter placement, movement, draw, damage, life changes and modifications have different semantics and possible consequences. An effect is not defined by whether it helps win. |
+
+The first three provide useful possible subjects. Effects/outcomes supply connecting vocabulary, not necessarily an equivalent fourth objective-subject category. A requested operation such as *put +1/+1 counters on my creatures* is also a useful precise criterion. These concepts overlap: an effect can produce an event and establish a state. They are not four exclusive card types or an adopted software schema.
+
+**Game elements** is provisional and broader than Magic's technical game objects. A counter is not a token; a player, mana quantity, characteristic, permission and zone do not share one object's lifecycle. Do not erase those differences to fit the umbrella term.
+
+Use one ability/branch as the explanatory unit. Pitiless Plunderer's qualifying death starts a trigger whose output is Treasure; the token is a possible later input to mana production, not mana already produced by that trigger. Abzan Falconer's outlast places a counter, while its separate static ability gives flying to qualifying counter-bearing creatures. A card-wide label cannot substitute for either chain.
+
+## State dependence without a role for every condition
+
+Ask whether establishing the chosen condition makes a mechanic available, more frequent or more effective. This can unite discovery questions about requirements and leveraging without equating their mechanics. Phoenix requires power 4 at combat's beginning and again on resolution; Swarm's six-land condition selects output at resolution; Plating continuously counts artifacts. Garruk's Packleader tests an entering creature's power for triggering, without rechecking it at resolution. Threshold, amount, duration, recipients and evaluation time remain necessary even if all are described as state dependence.
+
+The counter comparison separates *place +1/+1 counters*, *increase power* and *control power 4*. A continuous Goblin bonus can support the latter two without placing counters. Scales modifies another placement; it does not initiate one. A 0/-1 counter does not raise power. A large body can establish a threshold without boosting a creature already present. These distinctions improve the source-defined research filters; no new query or general state solver is implemented. [The assessment](OBJECTIVE_BUILDING_BLOCKS.md) records entry-counter and observation-window ambiguities rather than inventing a universal rule.
 
 ## Distinctive contributions
 
@@ -20,7 +41,7 @@ Keep mechanical possibility, required setup, objective-policy relevance, strateg
 
 ## Working objective-relative roles
 
-The preferred vocabulary has six role concepts. These descriptions guide research; they are not a complete formal ontology or implemented classification criteria.
+The preceding six-role proposal used the descriptions below. Retain them as optional, objective-relative summaries of relationships, not foundational categories requiring every card to be classified. The bounded comparison found useful communication cues but no demonstration that adding labels supplies the underlying mechanical information or improves user comprehension. No final numerical taxonomy is adopted.
 
 | Role | Working question relative to an objective |
 | --- | --- |
@@ -35,13 +56,13 @@ A card or ability can have multiple roles, and the same capability can serve dif
 
 Earlier producer/replenisher language describes resource supply and informs Provider. Consumer describes a cost/use relationship, not a seventh role; facilitator and observer language motivate more specific event/state questions without a one-to-one relabeling. Renewability, availability across zones, repeatability, flexibility, persistence and restrictions remain resource qualities. The historical Leverage State proposal explored state dependence; it is evidence to examine when distinguishing State responder, State facilitator and Modifier, not an automatic synonym or mandatory layer.
 
-Role boundaries, overlapping classifications, event triggers versus history checks, state access versus scaling, and modification versus facilitation still require source-grounded mechanical research and validation. Do not turn unresolved distinctions into universal labels or acceptance algorithms merely to complete the vocabulary.
+Event versus history, state access versus scaling, and modification versus facilitation still need precise relationships. Exploration's extra land-play permission remains an example where two role labels describe one change. Roles may summarize a relationship after it is established; they cannot decide source fidelity, objective admission or contextual value.
 
-## Subroles and selective layering
+## Directional filtering and selective layering
 
-An intended capability is filtering contributions by role **within** an objective. A creature-death plan might use a creature-token objective for its creature-resource providers without including the token objective's event responders. Another plan might seek only responders from a complementary objective. Combining every match from both queries would conceal that distinction.
+An intended capability is selecting contributions by how they relate **within** an objective. A creature-death plan might borrow creature-producing effects from a token objective without taking every mechanic that benefits from tokens. Another plan might seek only responses to a complementary event. Role words can be useful display shorthand, but the selection needs the underlying operation and direction, not a permanent card category.
 
-The user may eventually layer selected roles across objectives; the application may suggest complementary questions by recognizing requirements, available capabilities and missing roles. Neither subrole filtering, selective layering nor automatic suggestions are implemented.
+The application might eventually suggest complementary questions from a mechanic's requirements: establishing a power threshold could enable Phoenix, for example. That is a hypothesis about connecting available capabilities, not evidence of a tested two-card interaction. Neither general directional filtering, selective layering nor automatic suggestions are implemented.
 
 **Grouping** retains each objective's candidates, sources and uncertainty. **Connecting** requires evidence joining appropriate sources, objects, resources, owners/controllers, zones, timing, conditions, costs, effects and causal branches. Shared keywords or membership in complementary objectives prove neither an individual interaction nor strategic value. Mechanical dependencies remain necessary even though a dedicated pairwise strategic synergy model is not currently required.
 
@@ -65,4 +86,4 @@ The four queries are listed in [README](../README.md#current-objectives). The de
 
 The earlier renewable-creature experiment remains unimplemented and needs a separate assignment: test native self-return as distinctive nontoken creature supply. Keep Skeleton/Bloodghast as positive controls, Walking Corpse as ordinary material, and token copies, return-to-hand, one-use/exile costs, opponent-controlled entry and unsupported conditions as adversarial controls. Correlate the original card, graveyard source, battlefield entry, controller, optionality, payment, placement and trigger/activation within the same action. Preserve landfall and mana as prerequisites; Wolfbat's retained finality-counter evidence guards against assuming indefinite fuel. This does not imply a new interpreter, card-name exceptions or general role classifier.
 
-The immediate mechanical priority remains the separately scoped native Explicit tap-payment correction identified in [PR #42's examination](PRODUCT_STUDIO_COST_EXAMINATION.md). It is not combined with this documentation/Primer increment. [Known limitations](KNOWN_LIMITATIONS.md) owns current boundaries; historical studies retain their observations and proposed follow-ups without becoming an implementation queue.
+The [source-tap correction](TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44; its original receipts remain revision-bound. This increment changes no mechanics or payment evidence. The smallest proposed next discovery increment is a bounded, shared **death-conditioned draw/token outcome relationship**, described in the [assessment](OBJECTIVE_BUILDING_BLOCKS.md#smallest-useful-next-increment). It is not implemented or authorized by this record. [Known limitations](KNOWN_LIMITATIONS.md) owns current boundaries; historical follow-ups are evidence, not an automatic implementation queue.

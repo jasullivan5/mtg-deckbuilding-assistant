@@ -539,7 +539,7 @@ test('Integration Change Case Study compares historical records and preserves li
   await expect(page.getByRole('button', {name: 'Discovery Coverage', exact: true})).toBeVisible();
 });
 
-for (const width of [1440, 390]) test(`Primer separates current discovery, intended layering and future experiments at ${width}px`, async ({page}) => {
+for (const width of [1440, 390]) test(`Primer distinguishes objective questions relationships and implemented coverage at ${width}px`, async ({page}) => {
   let searches = 0;
   page.on('request', r => {if(r.url().endsWith('/api/v1/discover')) searches++;});
   await page.setViewportSize({width, height: width === 390 ? 844 : 1000});
@@ -551,36 +551,56 @@ for (const width of [1440, 390]) test(`Primer separates current discovery, inten
   await expect(map.getByRole('button', {name: /Strategic relationships/})).toHaveCount(0);
   await primer.getByRole('button', {name: /Native definitions/}).click();
   await expect(primer).toContainText('input to gameplay and to mechanical extraction');
-  const layering = map.getByRole('button', {name: /Objective discovery, subroles and composition/});
+  const layering = map.getByRole('button', {name: /Objective discovery and selective layering/});
   await layering.focus(); await page.keyboard.press('Enter');
   await expect(layering).toHaveAttribute('aria-pressed', 'true');
-  await expect(primer).toContainText('Four queries implemented; role filtering and composition intended');
+  await expect(primer).toContainText('Four queries implemented; relationship filtering and layering intended');
   await expect(primer).toContainText('not implemented');
   await map.getByRole('button', {name: /Experimental deck evaluation/}).click();
   await expect(primer).toContainText('Future research hypothesis');
   await expect(primer).toContainText('No deck evaluator, objective-aware pilot or deck simulation is implemented');
   await expect(primer).toContainText('not currently a prerequisite');
-  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
-  const roles = primer.getByRole('region', {name: 'Take the roles your objective needs', exact:true});
-  for (const role of ['Provider', 'Event responder', 'Event facilitator', 'State facilitator', 'State responder', 'Modifier']) {
-    await expect(roles.locator('dt').filter({hasText: new RegExp(`^${role}$`)})).toBeVisible();
+  const questions = primer.getByRole('region', {name: 'Build a precise objective', exact:true});
+  await questions.getByText('Events, states, game elements and effects', {exact:true}).click();
+  for (const concept of ['Events', 'States', 'Game elements', 'Effects and outcomes']) {
+    await expect(questions.locator('dt').filter({hasText: new RegExp(`^${concept}$`)})).toBeVisible();
   }
-  await expect(roles).toContainText('not a filter available today');
+  await expect(questions).toContainText('checking whether one happened earlier');
+  await expect(questions).toContainText('broader than a Magic game object');
+  await expect(questions).toContainText('rather than requiring an equivalent fourth kind');
+  await expect(questions).toContainText('not start that placement');
+  const power=questions.getByRole('button',{name:'Increase power',exact:true});
+  await power.focus(); await page.keyboard.press('Space');
+  await expect(power).toHaveAttribute('aria-pressed','true');
+  await expect(questions).toContainText('through +1/+1 counters');
+  await expect(questions).toContainText('through a continuous bonus');
+  await expect(questions).toContainText('0/−1 counter');
+  await expect(questions).toContainText('source-only examples');
+  await expect(questions).toContainText('not implemented');
+  await mkdir('../generated/explorer/primer-building-blocks', {recursive:true});
+  await questions.screenshot({path:`../generated/explorer/primer-building-blocks/${width}-relationships.png`});
+  const threshold=questions.getByRole('button',{name:'Reach power 4',exact:true});
+  await threshold.focus(); await page.keyboard.press('Enter');
+  await expect(threshold).toHaveAttribute('aria-pressed','true');
+  await expect(questions).toContainText('without a power increase');
+  await expect(questions).toContainText('again when its return trigger resolves');
+  await questions.screenshot({path:`../generated/explorer/primer-building-blocks/${width}-threshold.png`});
+  await questions.getByText('What happens to the earlier role names?',{exact:true}).click();
+  await expect(questions).toContainText('optional role descriptions');
+  await expect(questions).toContainText('neither a final taxonomy nor a general classifier');
   await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
-  await primer.getByRole('button', {name: /Provider.*Reassembling Skeleton/}).click();
+  await primer.getByRole('button', {name: /Supply a creature.*Reassembling Skeleton/}).click();
   await expect(primer).toContainText('renewable creature fuel is not yet recognized by the death query');
-  await primer.getByRole('button', {name: /Event responder.*Grim Haruspex/}).click();
+  await primer.getByRole('button', {name: /Respond with draw.*Grim Haruspex/}).click();
   await expect(primer).toContainText('not a current death-payoff discovery result');
   await expect(primer).toContainText('inherited catalog fidelity is not measured');
   await expect(primer).toContainText('separate human must explicitly approve');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
-  await mkdir('../generated/explorer/primer', {recursive:true});
   await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
-  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
+  await questions.getByText('Events, states, game elements and effects',{exact:true}).click();
+  await questions.getByText('What happens to the earlier role names?',{exact:true}).click();
   await page.evaluate(() => window.scrollTo(0,0));
-  await page.screenshot({path:`../generated/explorer/primer/${width}-overview.png`, fullPage:true});
-  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
-  await roles.screenshot({path:`../generated/explorer/primer/${width}-roles.png`});
+  await page.screenshot({path:`../generated/explorer/primer-building-blocks/${width}-overview.png`, fullPage:true});
   await page.getByRole('button', {name: 'Discover', exact:true}).click();
   await expect(page.getByRole('button', {name:'Find cards',exact:true})).toBeVisible();
   expect(searches).toBe(0);

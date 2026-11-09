@@ -28,17 +28,17 @@ The running application and live Git are the living sources of product direction
 
 PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have explicit bounded experience acceptance; later merges and demonstrations do not imply blanket acceptance or independent qualification. [Milestones](docs/EXPLORER_MILESTONES.md) retains the original plan and acceptance history. Current measurements live in Progress and their revision-bound receipts. Global external measurements require an explicit compatible snapshot; see the Progress guide.
 
-The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery, subroles/composition → experimental deck evaluation**. Six objective-relative roles and selective layering are intended research. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General role filters, composition, objective-aware piloting and deck evaluation are not implemented.
+The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation**. The bounded [building-block assessment](docs/OBJECTIVE_BUILDING_BLOCKS.md) favors events, states, game elements and directional effect/outcome relationships as a working foundation; role names remain optional descriptions. This is not an implemented objective schema. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General relationship filters, composition, objective-aware piloting and deck evaluation are not implemented.
 
 | Authority | Home |
 | --- | --- |
-| Product decisions, working roles and evaluation hypotheses | [OBJECTIVE_MODEL](docs/OBJECTIVE_MODEL.md) |
+| Product decisions, objective building blocks and evaluation hypotheses | [OBJECTIVE_MODEL](docs/OBJECTIVE_MODEL.md) |
 | Actual responsibilities and engine integration | [ARCHITECTURE](docs/ARCHITECTURE.md), [ENGINE_WORKFLOW](docs/ENGINE_WORKFLOW.md) |
 | Current boundaries and unresolved problems | [KNOWN_LIMITATIONS](docs/KNOWN_LIMITATIONS.md), linked focused investigations |
 | How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
 | Source/definition/revision-bound evidence | Retained resources, focused reports and original test receipts linked from Progress |
 
-The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The separate native Explicit tap-payment enforcement correction remains the immediate mechanical priority; this Primer/documentation alignment does not begin it.
+The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current research/Primer increment changes no engine mechanics or discovery objectives.
 
 ## Two sibling repositories
 
