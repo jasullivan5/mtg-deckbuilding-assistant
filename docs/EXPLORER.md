@@ -4,9 +4,54 @@ The current primary experience is **Discover / Progress / Primer**. Open Progres
 
 The Explorer is a local browser interface over the application's existing Kotlin discovery. The first Prototype Lab review did not accept M1 as a usable research experience. The revised experience shows card text once, marks reliably associated abilities, adds brief objective-specific notes, and presents compact evidence fields with optional technical records. Mechanic browsing and verified printing/face imagery are preserved. Product Studio subsequently accepted the bounded M1 and M2 experiences against separate criteria. See the [milestone decisions](EXPLORER_MILESTONES.md#m1-and-m2-acceptance). Existing mechanical classifications and CLI evidence remain authoritative. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
-## Launch on Windows
+## Primer alignment review — 2026-11-09
 
-For current conceptual direction, open **Primer** (`/#primer`): the five-stage map, objective-relative six-role vocabulary, selective layering examples and future empirical evaluation hypothesis. Four queries and curated native positions are implemented; role classification/filtering, composition and deck simulation are not. See [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) for precise decisions and [README](../README.md#current-state-and-authority) for current status.
+Open **Primer** (`/#primer`) for the five-stage map, objective-relative six-role vocabulary, selective layering examples and empirical evaluation hypothesis. Four queries and curated native positions are implemented; role classification/filtering, composition and deck simulation are not. Mechanical dependencies remain necessary; a dedicated pairwise strategic synergy stage is not a prerequisite. [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) owns the precise direction and open research questions.
+
+The Primer preserves the existing navigation, interactive map, keyboard controls, example chooser and evidence explanation. It now labels current queries separately from intended role filters/composition and future deck experiments. The earlier Contribution Model Study is visibly historical, with its original proposals and evidence preserved.
+
+### Documentation audit and authority
+
+| Location | Alignment |
+| --- | --- |
+| [README](../README.md#current-state-and-authority) | One current-status entry point and authority map; includes merged PR #37–42 capabilities without inferring acceptance |
+| [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) | Living product decisions, six working roles, older resource vocabulary, selective layering and unvalidated evaluation hypothesis |
+| [ARCHITECTURE](ARCHITECTURE.md) | Actual Kotlin / React / local HTTP / Argentum responsibilities; acknowledges curated Lab and shared fact queries; future concepts do not require a rewrite |
+| [AGENTS](../AGENTS.md) | Practical implementation, safety, evidence, verification and delivery rules; retired Project authorities removed; optional hands-on review replaces mandatory Prototype Lab |
+| [Milestones](EXPLORER_MILESTONES.md), [contribution study](CONTRIBUTION_VALIDATION.md) and older records below | Clearly historical plans/vocabulary/receipts; M1/M2 acceptance retained; scenario functionality no longer described as unstarted |
+| [Limits](KNOWN_LIMITATIONS.md), [Lab](MECHANICAL_VERIFICATION_LAB.md), [engine workflow](ENGINE_WORKFLOW.md) | Current scope, four objectives, navigation and cross-repository authority clarified |
+
+Older three-objective receipts, rejected vocabulary alternatives, original source artifacts and failures remain under their original scopes. The engine fork still has an older Project-reference sentence in its own guidance; the current user direction and application authority explicitly supersede that dependency. No engine files were changed.
+
+### Inspect the revised explanation
+
+Launch with `.\scripts\explorer.ps1` and open `http://127.0.0.1:8787/#primer`. No Oracle snapshot is required for Primer. Select **Objective discovery, subroles and composition**, then **Experimental deck evaluation**; compare their maturity and limits. Open the six-role disclosure, then compare Skeleton and Haruspex under **Why mechanical contributions need context**. Their examples identify gaps in today's death query rather than presenting intended roles as discovery results.
+
+No consequential ambiguity blocked this increment. Role-classification criteria, overlaps and useful empirical piloting remain research questions for separately bounded assignments. The native Explicit tap-payment correction remains the separate immediate mechanical priority; it was not started here.
+
+Actual Kotlin-backed Edge captures at implementation `d3e20e4a485d1f7e0b8e430d6f468d434d89769c`, engine `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`. The desktop map selects the future evaluation hypothesis; the narrow capture expands the working roles. [Complete 390px page](images/primer/mobile.png).
+
+![Updated five-stage Primer and explicit current/future boundaries on desktop](images/primer/desktop.png)
+
+![Working objective-relative roles and selective layering at 390px](images/primer/mobile-roles.png)
+
+### Alignment verification
+
+Tested clean implementation: `d3e20e4a485d1f7e0b8e430d6f468d434d89769c`; unchanged clean app-stable engine: `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`. Subsequent delivery edits add this review and screenshots only.
+
+| Command / check | Actual result |
+| --- | --- |
+| `pnpm --dir web build` | TypeScript and production Vite build passed |
+| `.\scripts\explorer.ps1 -Port 8790 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz` | Locked install, frontend build, Kotlin `installDist` and ready health response passed on the exact implementation/engine above |
+| In `web`: `pnpm exec playwright test interface.spec.ts live.spec.ts progress.spec.ts` with `$env:EXPLORER_URL='http://127.0.0.1:8790'` and `$env:EXPLORER_BROWSER_CHANNEL='msedge'` | **28 passed**, zero failed/skipped, final complete run. Covers four real objectives, blocked selection, live Lab, research navigation, retained studies, Progress, keyboard interaction and both Primer layouts |
+| Local documentation audit | All 33 tracked Markdown files checked for local anchor consistency; changed document links resolved; no active former-attachment dependencies in current authority documents |
+| Diff against merged main `c2cb89aca5b2c8e9140f02bb2fce57700ee3d577` | No changes in `src/`, Gradle/build configuration, integration scripts, workflows or lockfile; engine working tree unchanged. Mechanical, eligibility, assurance, receipt and baseline behavior preserved by scope; no new qualification claims |
+
+The first browser run passed 25 checks and failed three: one request preceded readiness, and both new Primer tests had an incorrectly nested locator. The locator was corrected to the existing named accessible region, the clean revision was rebuilt, readiness was confirmed, and the complete 28-check run then passed. Initial JSON and traces remain under `generated/explorer/primer/`; this is not a claim that the initial run passed.
+
+Full Kotlin/native suites, fresh CLI byte-for-byte catalog comparison, the separate activation-cost/cost-examination/global/verification browser files, other browsers/platforms and manual screen-reader testing were **not executed** for this presentation/documentation increment. Earlier receipts remain historical; the successful build and browser checks do not certify mechanics or independent source fidelity.
+
+## Launch on Windows
 
 From the application checkout:
 
