@@ -539,18 +539,48 @@ test('Integration Change Case Study compares historical records and preserves li
   await expect(page.getByRole('button', {name: 'Discovery Coverage', exact: true})).toBeVisible();
 });
 
-test('Primer explains the pipeline and assurance without running discovery', async ({page}) => {
+for (const width of [1440, 390]) test(`Primer separates current discovery, intended layering and future experiments at ${width}px`, async ({page}) => {
   let searches = 0;
   page.on('request', r => {if(r.url().endsWith('/api/v1/discover')) searches++;});
-  await page.setViewportSize({width: 390, height: 844});
+  await page.setViewportSize({width, height: width === 390 ? 844 : 1000});
   await page.goto('/#primer');
   const primer = page.getByRole('article', {name: 'Primer', exact: true});
   await expect(primer.getByRole('heading', {name: 'How Card Integration Works'})).toBeVisible();
-  await primer.getByRole('button', {name: /Native definition/}).click();
+  const map = primer.getByRole('list', {name: 'From card rules to deck choices'});
+  await expect(map.getByRole('button')).toHaveCount(5);
+  await expect(map.getByRole('button', {name: /Strategic relationships/})).toHaveCount(0);
+  await primer.getByRole('button', {name: /Native definitions/}).click();
   await expect(primer).toContainText('input to gameplay and to mechanical extraction');
+  const layering = map.getByRole('button', {name: /Objective discovery, subroles and composition/});
+  await layering.focus(); await page.keyboard.press('Enter');
+  await expect(layering).toHaveAttribute('aria-pressed', 'true');
+  await expect(primer).toContainText('Four queries implemented; role filtering and composition intended');
+  await expect(primer).toContainText('not implemented');
+  await map.getByRole('button', {name: /Experimental deck evaluation/}).click();
+  await expect(primer).toContainText('Future research hypothesis');
+  await expect(primer).toContainText('No deck evaluator, objective-aware pilot or deck simulation is implemented');
+  await expect(primer).toContainText('not currently a prerequisite');
+  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
+  const roles = primer.getByRole('region', {name: 'Take the roles your objective needs', exact:true});
+  for (const role of ['Provider', 'Event responder', 'Event facilitator', 'State facilitator', 'State responder', 'Modifier']) {
+    await expect(roles.locator('dt').filter({hasText: new RegExp(`^${role}$`)})).toBeVisible();
+  }
+  await expect(roles).toContainText('not a filter available today');
+  await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
+  await primer.getByRole('button', {name: /Provider.*Reassembling Skeleton/}).click();
+  await expect(primer).toContainText('renewable creature fuel is not yet recognized by the death query');
+  await primer.getByRole('button', {name: /Event responder.*Grim Haruspex/}).click();
+  await expect(primer).toContainText('not a current death-payoff discovery result');
   await expect(primer).toContainText('inherited catalog fidelity is not measured');
   await expect(primer).toContainText('separate human must explicitly approve');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
+  await mkdir('../generated/explorer/primer', {recursive:true});
+  await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
+  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
+  await page.evaluate(() => window.scrollTo(0,0));
+  await page.screenshot({path:`../generated/explorer/primer/${width}-overview.png`, fullPage:true});
+  await primer.getByText('Our working six-role vocabulary', {exact:true}).click();
+  await roles.screenshot({path:`../generated/explorer/primer/${width}-roles.png`});
   await page.getByRole('button', {name: 'Discover', exact:true}).click();
   await expect(page.getByRole('button', {name:'Find cards',exact:true})).toBeVisible();
   expect(searches).toBe(0);

@@ -1,5 +1,13 @@
 # Architecture and extension points
 
+[README](../README.md#current-state-and-authority) is the current-status entry point. [Objective direction](OBJECTIVE_MODEL.md) owns product concepts and hypotheses; this document owns actual implementation responsibilities.
+
+## Conceptual direction and implementation boundary
+
+Card identity/rules → native definitions → mechanical facts/capabilities → objective discovery, subroles/composition → experimental deck evaluation. The last two stages combine current bounded discovery with intended capabilities; they are not completed services or a module-refactoring plan. General role filters, selective composition and deck evaluation remain unimplemented. A dedicated pairwise strategic synergy layer is not a prerequisite in the current hypothesis; source/object/resource/zone/timing/condition/cost/effect bindings remain necessary for causal mechanical relationships. See the product record for the six working roles and empirical direction.
+
+## Coverage and evidence projections
+
 `server/CostExamination.kt` projects frozen source/native/adjudication phases and revision-bound native payment observations into the existing verification index. `CostPaymentBoundary.kt` uses genuine Argentum transactions and preserves rejected, paused and contradicted behavior separately. Raw/LF artifact identities are explicit; examination does not issue independent approval. See [phased examination and payment boundary findings](COST_EXAMINATION.md).
 
 `coverage/VerificationCoverage.kt` joins exact scoped evidence to the retained global identity baseline and existing assurance gate. `server/SacrificeChallenge.kt` examines the unchanged pilot method with isolated adversarial definitions and explicit native execution. Neither extends discovery interpretation, Commander eligibility or independent approval. See [verification identity, ingestion and completeness boundaries](VERIFICATION_COVERAGE.md).
@@ -33,11 +41,11 @@ React research UI (application-owned)
 
 One exclusive research worker prevents overlapping expensive queries. Four bounded HTTP workers serve loopback requests; research has a 120-second response deadline, with the worker reserved until timed-out work actually ends. Only the latest run is retained: starting another discovery expires earlier evidence URLs. Host/origin validation, bounded JSON bodies and resolved static-path containment constrain the local boundary. See [schema, lifecycle, errors and observed limits](EXPLORER.md).
 
-The Windows launcher installs locked frontend dependencies, builds both layers and starts one foreground JVM. Fresh CLI parity, boundary tests, fixture browser checks and genuine live browser interactions are recorded in the M1 receipt. Readiness for user evaluation does not establish acceptance or translation certification. Verified imagery and focused finding navigation are implemented; comprehensive catalog browsing and a gameplay scenario interface remain outside this revision. The first Prototype Lab review did not accept M1; this revised experience requires fresh user evaluation.
+The Windows launcher installs locked frontend dependencies, builds both layers and starts one foreground JVM. Live discovery, verified imagery/fallbacks, focused finding inspection and Progress are implemented. The Mechanical Verification Lab seeds curated positions and submits genuine native actions through Argentum, showing expected/observed outcomes and exact state/events; it is not an arbitrary sandbox or deck simulator. See [Lab responsibilities and limits](MECHANICAL_VERIFICATION_LAB.md#runtime-design). M1/M2 have bounded user acceptance; later merged features and tests do not imply blanket experience acceptance or translation certification. [Review history](EXPLORER_MILESTONES.md) retains earlier failures and decisions.
 
 The frontend presents native extraction and application decisions. Accounts, multiplayer, deck editing, databases, desktop packaging, hosted infrastructure, new objectives and replacement rules execution remain outside M1. Selective reuse of Argentum client assets still requires coupling, provenance and licensing review. [Presentation safeguards](../AGENTS.md#visualization-fidelity) apply to future increments.
 
-The adopted [objective direction v1](OBJECTIVE_MODEL.md) allows distinctive resource contributions as well as events and capabilities. Current query coverage remains narrower; this decision does not implement roles, resource discovery or objective composition.
+The [objective direction](OBJECTIVE_MODEL.md) distinguishes mechanical capabilities, objective-relative roles and contextual value. Current query coverage remains narrower; future composition and evaluation require separately approved assignments.
 
 ## Application pipeline
 
@@ -54,7 +62,7 @@ Files below are relative to `src/main/kotlin/`.
 | One native walker | `discovery/PathwayExtractor.kt`; actions, costs/effects, branches, bindings and unsupported structures |
 | Reusable facts, predicates and quantities | `discovery/MechanicalFacts.kt`, `TokenFacts.kt`, `AmountBounds.kt` |
 | Death objective A | Legacy death/removal projection and `MechanicalQuery.kt`, assembled in `Discovery.kt` |
-| Reanimation B / token C | Fact compositions and common reporting in `discovery/Reanimation.kt`; no separate native walkers |
+| Reanimation B / token C / graveyard state | Fact compositions and common reporting in `discovery/Reanimation.kt`, using shared movement/token facts; no separate native walkers |
 | Evidence and CLI | `discovery/Evidence.kt`, `Discovery.kt`, `Main.kt`; native source provenance binds the exact fork revision |
 | Identity/coverage observations | `coverage/OracleSnapshot.kt`, `OracleEnrichment.kt`, `CatalogCoverage.kt`; offline source snapshots and bounded mappings |
 | Translation assurance | `extensions/TranslationAssurance.kt`, packaged `translation-assurance.json`; exact definition/implementation/evidence bundle and independent-approval checks |

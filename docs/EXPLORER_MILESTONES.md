@@ -1,95 +1,43 @@
-# Card Discovery Explorer — Milestones and Development Rhythm
+# Explorer milestones and review history
 
-## Approved Research Progress increment
+**Current status starts in [README](../README.md#current-state-and-authority).** This document retains the original M1–M4 plan and explicit acceptance history. It is not the implementation inventory or authorization to execute remaining milestones. [Objective direction](OBJECTIVE_MODEL.md) owns evolving product concepts; [AGENTS](../AGENTS.md) owns engineering and delivery rules.
 
-The bounded Progress increment simplifies primary navigation to Discover, Progress and Primer. Its [metric contract and guided tasks](RESEARCH_PROGRESS.md) define the dashboard evaluation: representation/interpretation, trust scope, controlled reusable gains, grounded obstacles and remaining contextual capabilities. Secondary investigations move to the collapsed developer research index. Passing implementation checks does not establish Product Studio experience acceptance or independent translation qualification. Product Studio review remains pending; no next research increment is authorized by this record.
+## Original milestone plan
 
-**Status:** Working product plan; not authorization to implement all milestones  
-**Home:** `mtg-deckbuilding-assistant/docs/EXPLORER_MILESTONES.md`  
-**Ownership:** Product Studio (user + ChatGPT) sets experience goals and accepts direction; Codex Build implements approved increments; Prototype Lab reviews what actually runs.
+The original journey was supported commander → objective → live Kotlin discovery → card inspection → prerequisites/evidence/limits. It began with three objectives; the application now has four. Technology Audit 001 was a read-only reference, not a live application milestone. The independent React/local Kotlin integration subsequently delivered the journey.
 
-## 1. Purpose and first journey
-
-Build an engaging research interface for the existing Commander discovery application. The Explorer should help a player investigate **why a card may matter for a chosen objective**, what must be true for its mechanics to contribute, and where the application's knowledge stops. It is a research instrument, not a general card ranking or deck recommendation engine.
-
-The first coherent journey is:
-
-1. Select and inspect a **supported** commander.
-2. Choose one of the application's **existing three** discovery objectives.
-3. Run **genuine** discovery through the Kotlin application using the adopted Argentum revision.
-4. Browse the returned cards and pathways; inspect a card in readable MTG terms.
-5. Expand prerequisites, decisions, source identity, translation status, unsupported structures, and evidence.
-6. Understand the run's scope, limitations, and revision provenance rather than mistaking a structural match for a verified or valuable inclusion.
-
-The Technology Audit 001 read-only React viewer is a useful design/integration reference, **not** an integrated live application or an accepted Explorer milestone. Reuse selectively where appropriate. M1 now adds a live React UI and local Kotlin adapter, preserving the CLI and diagnostics. See [the runnable delivery](EXPLORER.md).
-
-## 2. Sequenced experience milestones
-
-The order below reflects learning dependencies, **not** a promise of dates, final specifications, or blanket authorization. Each milestone can be split into small reviewable increments. A milestone is accepted only after the user has tried its meaningful end-to-end experience.
-
-| Milestone | What the user gains | Minimum useful demonstration | Deliberately deferred |
-| --- | --- | --- | --- |
-| **M1 — Live discovery foundation** | Start the local Explorer, choose a supported commander and objective, run actual discovery, and inspect at least one result and one meaningful limitation | Browser → bounded local Kotlin integration → existing discovery logic; parity with CLI on representative input; clear errors/unknowns; straightforward Windows launch | Comprehensive card art, advanced charts, arbitrary objectives, gameplay |
-| **M2 — Card-first exploration** | A compelling card grid/list, identity-safe imagery, filtering/navigation, and a readable **why this card appeared** detail view | Verified card/printing/face imagery or honest fallback; accessible controls; explanation and expandable prerequisites/raw evidence; useful result filtering | Deck editing, strategic strength ratings, general dependency graph |
-| **M3 — Evidence and visual exploration** | Understand the population behind results and investigate surprising matches, omissions, unsupported mechanics and assurance concerns | At least one useful interactive chart/filter with drill-down to contributing records; scoped counts, exclusions, unknowns and revisions; separate source/translation/execution/discovery claims | Whole-deck evaluation and unsupported confidence percentages |
-| **M4 — Scenario inspection (conditional)** | Inspect actual mechanics through recorded scenarios, including decisions, events and expected-vs-observed outcomes | Reproducible, revision-bound **recorded** engine scenario viewer; no fabricated states; clear differentiation from fresh execution | Live configurable sandbox, arbitrary game-state editing, multiplayer |
-
-**Decision point after M3:** Try the Explorer and decide whether scenario inspection is the most useful next research experience. M4 is a candidate, not an automatic phase. The UI should ultimately support deeper strategic questions—dependencies, substitutes and contextual deck value—but those need independent research and authorization rather than being smuggled into these milestones.
-
-### M1 and M2 acceptance
-
-Following Prototype Lab evaluation, Product Studio accepted M1 and M2 against separate experience criteria. M1 acceptance covers launching the local Explorer, selecting a supported commander and objective, running live Kotlin discovery, and inspecting findings, conditions, evidence and uncertainty. M2 acceptance covers the card list and inspector, verified imagery and fallbacks, filtering by name and recognized mechanics, readable ability explanations, prerequisites and evidence, and the implemented keyboard and responsive controls.
-
-The card-first functionality was delivered through iterative M1 Prototype Lab development. See the [Explorer delivery and verification records](EXPLORER.md), [objective coverage](OBJECTIVE_COVERAGE.md), and [known limitations](KNOWN_LIMITATIONS.md).
-
-The acceptance scope is bounded. Whole-catalog coverage, complete or independently qualified translations, exhaustive execution and accessibility testing, general death-payoff discovery, renewable creature fuel under the death objective, custom or composable objectives, and contextual deck value remain outside it. The [Agent of Shauku and Akki Scrapchomper primary-inclusion decision](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open) remains open.
-
-M3 is in progress with the Discovery Coverage and Omissions Explorer as its first authorized increment. Prototype Lab review of that increment is pending.
-
-## 3. How increments are proposed, built and accepted
-
-**One approved task at a time.** Product Studio maintains the direction; Codex may sequence ordinary technical subtasks within an approved increment, but must not execute subsequent milestones merely because they are written here. Prefer a single focused PR per meaningful increment; use more than one only when there is a concrete isolation or review benefit. Avoid a sprawling PR that implements multiple future milestones.
-
-For each increment:
-
-1. **Choose an observable question.** State what a user can do after the change, which real MTG examples demonstrate it, and what misleading/negative/unknown case should be visible. Define the smallest defensible acceptance boundary and explicitly excluded work. A brief is enough; avoid ceremony.
-2. **Inspect live Git and implement.** Codex starts from current application `main`, checks `AGENTS.md`, architecture, sibling engine revision, relevant code/tests, local changes and known limits; makes routine technical choices; keeps the existing Kotlin/CLI mechanics authoritative; implements on a feature branch. Fork-only native engine corrections require a separate scoped decision and native/application compatibility checks before app-stable acceptance.
-3. **Test at the right layers.** Use focused Kotlin parity/integration tests, frontend component/browser tests, error/unknown cases, and representative live interactions. Preserve exact source and engine revisions, source/data provenance, actual commands, failures and skipped checks. Test claims must not outgrow their evidence.
-4. **Deliver something to try.** Provide an easy local Windows setup/launch, **what can I do now?**, two or three guided actions (one should expose a real limitation), and screenshots only when captured from the actual running build. Include the PR and concise known issues. No automatic merges.
-5. **Prototype Lab review.** The user runs the app and judges navigation, clarity, usefulness, appearance and surprising results. ChatGPT helps separate UI misunderstandings, projection bugs, mechanical/translation errors, missing source data and strategic disagreement. This is **product acceptance**, not independent translation certification.
-6. **Accept, revise, or redirect.** If accepted, the user may merge the PR; update this plan's milestone status and the next concrete question in Git. If not accepted, assign a bounded revision. Only then authorize the next increment. Backend-only corrective investigations are permitted when they are the cheapest adequate way to resolve a concrete obstacle.
-
-**Expected review cadence:** Favor reviewable experiences that can be tried after each meaningful increment. Do not wait for the entire Explorer to be completed before the user sees it. Do not create a new planning exercise after every routine fix; adjust the next increment based on actual experience.
-
-## 4. Quality boundaries that apply to every milestone
-
-- **Mechanics remain in Kotlin and recorded Argentum builds.** Frontend code renders application-owned results; it must not implement a competing Oracle parser, rules engine, Commander legality policy, or mechanical acceptance gate. Maintain CLI/headless operation.
-- **Eligibility first.** Commander legality and full color identity precede candidate discovery. Unknown eligibility, unsupported commander configurations, missing native definitions and unsupported actions are distinct conditions; don't silently convert them into `NO_MATCH`.
-- **Evidence is layered.** Distinguish identity/source → representability → translation fidelity → engine execution → structural discovery → objective relevance → contextual deck value. `MATCH` is conditional structural possibility, not resolved play, card certification or a deck recommendation.
-- **Visual truth is mandatory.** A chart identifies its measured population, unit (distinct cards, faces, pathways, tests, etc.), filters, objective/commander, exclusions, missing/unknown categories and relevant revisions. Meaningful chart categories should link to their contributing records. No pathway emitted does not mean proven nonmatch.
-- **Imagery is identity-safe.** Images must correspond to a verified card, printing and face; show a fallback rather than guess. Observe image-provider terms, attribution and caching limits.
-- **Execution modes are named accurately.** Imported read-only report, live discovery, historical recorded scenario and fresh live engine scenario are different things. Do not invent gameplay state, progress measurements, coverage percentages or confidence scores.
-- **Approachable before exhaustive.** Show readable MTG explanations first, with optional deeper evidence, raw native structures, exact prerequisites and uncertainty. Accessibility, keyboard operation, clear failures and responsive navigation count as research quality.
-- **Preserve engine stewardship.** Application and independent engine development repositories remain siblings; the application normally uses the clean sibling engine on app-stable and records its actual revision. Do not merge upstream or alter assurance records to make a UI look successful.
-- **Stay local and narrow.** Initially use a loopback-only application-owned integration, bounded requests and clear errors. No accounts, hosted server, databases, deck editor, multiplayer, general sandbox or packaging without a demonstrated need and approval.
-
-## 5. Repository and workstation conventions
-
-Work from the user's existing Windows development workspace containing **both** repositories. Discover actual local paths; do not assume directory names or commit machine-specific absolute paths. Paths may contain spaces and `&`, so quote them correctly. Use ordinary feature branches in the primary checkout; preserve dirty, untracked, local-only and worktree changes. Do not reset/clean or restructure the workspace as a convenience. Keep package lockfiles and reproducible scripts, not `node_modules`, generated large reports or local caches.
-
-Aim for **one practical launch command** from the application repo (or one documented script that orchestrates frontend and backend) once a live increment is delivered. Make failures and required prerequisites legible. Windows execution is essential for the first increment; do not claim other platforms were tested when they were not.
-
-Current code, `AGENTS.md`, `docs/ARCHITECTURE.md`, tests and the recorded engine revision are authoritative for implementation. This document tracks *user-facing direction and review state*, not exact APIs, current test counts or pinned SHAs. Architectural changes with meaningful tradeoffs return to Product Studio for a decision.
-
-## 6. Lightweight status and decision log
-
-Keep this section brief and record demonstrated readiness separately from acceptance; mark acceptance only **after** user review. No dates or completion claims without observed evidence.
-
-| Milestone | Status | Next product decision |
+| Original milestone | Intended experience | Present interpretation |
 | --- | --- | --- |
-| M1 — Live discovery foundation | **Accepted** | Bounded live discovery experience |
-| M2 — Card-first exploration | **Accepted** | Bounded card-first experience |
-| M3 — Evidence and visualization | **In progress** | Review M3.2 Integration Change Case Study and the revised system orientation in Prototype Lab. Review the Contribution Model Study before choosing a vocabulary. Review the clarity and navigation pass with the three Explorer exercises. |
-| M4 — Scenario inspection | **Conditional / not started** | Reconsider after the earlier Explorer experiences |
+| M1 — Live discovery foundation | Launch, select commander/objective, run discovery and inspect findings and limits | Bounded experience accepted; see below |
+| M2 — Card-first exploration | Verified imagery/fallbacks, readable findings, filters, keyboard/responsive controls | Bounded experience accepted; see below |
+| M3 — Evidence and visualization | Inspect populations, omissions, unsupported mechanics, assurance and reusable changes | Multiple merged implementations exist; merge and demonstration do not establish blanket experience acceptance |
+| M4 — Scenario inspection (originally conditional) | Revision-bound recorded-scenario viewer; arbitrary sandbox deferred | A later separately assigned live curated Lab merged in PR #37. “Not started” no longer describes scenario functionality; it does not imply acceptance of every original M4 criterion |
 
-Update only decisions that alter the work: *accepted experience, observed gap, changed milestone, or next authorized increment*. Keep detailed technical diagnostics, test receipts and PR history in the corresponding repository records instead of duplicating them here.
+These are historical milestones, not required architecture layers. The current conceptual direction does not require a pairwise strategic relationship stage before deck experiments.
+
+## M1 and M2 acceptance
+
+Following the hands-on review then called Prototype Lab, Product Studio accepted M1 and M2 against separate criteria. M1 acceptance covers local launch, supported commander/objective selection, live Kotlin discovery and inspection of findings, conditions, evidence and uncertainty. M2 covers the card list/inspector, verified imagery/fallbacks, name/mechanic filters, readable explanations, prerequisites/evidence and implemented keyboard/responsive controls.
+
+Acceptance excludes whole-catalog fidelity, complete independent qualification, exhaustive execution/accessibility, general death payoffs, renewable death fuel, role filtering/composition and contextual deck value. The [type-dependent sacrifice admission decision](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open) remains open. Earlier review failures and receipts remain in [Explorer's historical records](EXPLORER.md#historical-delivery-records).
+
+## Later merged functionality
+
+| PR | Demonstrated implementation and detailed record |
+| --- | --- |
+| [#37](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/37) | [Mechanical Verification Lab](MECHANICAL_VERIFICATION_LAB.md): curated fresh native positions, expected/observed outcomes and exact events/state |
+| [#38](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/38) | [Progress](RESEARCH_PROGRESS.md): Discover / Progress / Primer, scoped inventory, trust, historical gains and obstacles |
+| [#39](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/39) | [Global coverage](GLOBAL_COMMANDER_COVERAGE.md): Cards, bounded commander selection and four objectives' operational reach |
+| [#40](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/40) | [Verification coverage](VERIFICATION_COVERAGE.md): scoped evidence and adversarial method challenge |
+| [#41](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/41) | [Activation-cost fidelity](ACTIVATION_COST_FIDELITY.md): supported printed payments, bounded execution and limits |
+| [#42](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/42) | [Phased examination](PRODUCT_STUDIO_COST_EXAMINATION.md): source/native/adjudication evidence and two retained native payment contradictions |
+
+These establish implementation and bounded demonstration, not automatic user acceptance or independent approval. No later blanket milestone acceptance is recorded here. The original four-/five-role study remains historical; the [six-role direction](OBJECTIVE_MODEL.md#working-objective-relative-roles) supersedes its recommendations without rewriting evidence.
+
+## Current collaboration and next decisions
+
+The user retains goals, priorities, consequential decisions and acceptance. Product Studio examines direction/evidence; Codex Build implements approved bounded assignments and delivers reviewable PRs, results, limitations and useful demonstrations. Hands-on product review is optional when it adds information. A mandatory separate Prototype Lab process is retired; its historical decisions remain valid records.
+
+Choose a meaningful question and proportionate verification rather than completing this old plan automatically. Merged functionality, successful demonstration, user acceptance and independent qualification remain different claims. Detailed engineering and delivery rules live in [AGENTS](../AGENTS.md).
+
+The native Explicit tap-payment correction remains the next separately scoped mechanical priority from PR #42. General roles, selective composition, piloting, simulation and deck evaluation are intended research, not current capabilities or authorization to begin. Follow [README](../README.md#current-state-and-authority), [objective direction](OBJECTIVE_MODEL.md) and [known limits](KNOWN_LIMITATIONS.md) for current decisions and boundaries.

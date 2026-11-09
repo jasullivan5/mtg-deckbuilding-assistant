@@ -1,5 +1,7 @@
 # Contribution model validation
 
+**Historical vocabulary study.** The original four-/five-role protocols, recommendations, sources and verification below are retained as evidence. They are not the current role specification or an implementation queue. The [2026-11-09 six-role direction](OBJECTIVE_MODEL.md#working-objective-relative-roles) supersedes the vocabulary recommendations while retaining their open mechanical questions. Prototype Lab below names the historical review context; a separate mandatory role is no longer required. The current Primer identifies this distinction.
+
 ## Comparison protocol
 
 The comparison unit is a single contribution to a stated objective requirement. Describe the capability, its causal connection, and its prerequisites before assigning labels. Keep objective admission and deck value separate.

@@ -4,6 +4,53 @@ The current primary experience is **Discover / Progress / Primer**. Open Progres
 
 The Explorer is a local browser interface over the application's existing Kotlin discovery. The first Prototype Lab review did not accept M1 as a usable research experience. The revised experience shows card text once, marks reliably associated abilities, adds brief objective-specific notes, and presents compact evidence fields with optional technical records. Mechanic browsing and verified printing/face imagery are preserved. Product Studio subsequently accepted the bounded M1 and M2 experiences against separate criteria. See the [milestone decisions](EXPLORER_MILESTONES.md#m1-and-m2-acceptance). Existing mechanical classifications and CLI evidence remain authoritative. See [repository layout](REPOSITORY_LAYOUT.md) for current versus historical evidence.
 
+## Primer alignment review — 2026-11-09
+
+Open **Primer** (`/#primer`) for the five-stage map, objective-relative six-role vocabulary, selective layering examples and empirical evaluation hypothesis. Four queries and curated native positions are implemented; role classification/filtering, composition and deck simulation are not. Mechanical dependencies remain necessary; a dedicated pairwise strategic synergy stage is not a prerequisite. [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) owns the precise direction and open research questions.
+
+The Primer preserves the existing navigation, interactive map, keyboard controls, example chooser and evidence explanation. It now labels current queries separately from intended role filters/composition and future deck experiments. The earlier Contribution Model Study is visibly historical, with its original proposals and evidence preserved.
+
+### Documentation audit and authority
+
+| Location | Alignment |
+| --- | --- |
+| [README](../README.md#current-state-and-authority) | One current-status entry point and authority map; includes merged PR #37–42 capabilities without inferring acceptance |
+| [OBJECTIVE_MODEL](OBJECTIVE_MODEL.md) | Living product decisions, six working roles, older resource vocabulary, selective layering and unvalidated evaluation hypothesis |
+| [ARCHITECTURE](ARCHITECTURE.md) | Actual Kotlin / React / local HTTP / Argentum responsibilities; acknowledges curated Lab and shared fact queries; future concepts do not require a rewrite |
+| [AGENTS](../AGENTS.md) | Practical implementation, safety, evidence, verification and delivery rules; retired Project authorities removed; optional hands-on review replaces mandatory Prototype Lab |
+| [Milestones](EXPLORER_MILESTONES.md), [contribution study](CONTRIBUTION_VALIDATION.md) and older records below | Clearly historical plans/vocabulary/receipts; M1/M2 acceptance retained; scenario functionality no longer described as unstarted |
+| [Limits](KNOWN_LIMITATIONS.md), [Lab](MECHANICAL_VERIFICATION_LAB.md), [engine workflow](ENGINE_WORKFLOW.md) | Current scope, four objectives, navigation and cross-repository authority clarified |
+
+Older three-objective receipts, rejected vocabulary alternatives, original source artifacts and failures remain under their original scopes. The engine fork still has an older Project-reference sentence in its own guidance; the current user direction and application authority explicitly supersede that dependency. No engine files were changed.
+
+### Inspect the revised explanation
+
+Launch with `.\scripts\explorer.ps1` and open `http://127.0.0.1:8787/#primer`. No Oracle snapshot is required for Primer. Select **Objective discovery, subroles and composition**, then **Experimental deck evaluation**; compare their maturity and limits. Open the six-role disclosure, then compare Skeleton and Haruspex under **Why mechanical contributions need context**. Their examples identify gaps in today's death query rather than presenting intended roles as discovery results.
+
+No consequential ambiguity blocked this increment. Role-classification criteria, overlaps and useful empirical piloting remain research questions for separately bounded assignments. The native Explicit tap-payment correction remains the separate immediate mechanical priority; it was not started here.
+
+Actual Kotlin-backed Edge captures at implementation `d3e20e4a485d1f7e0b8e430d6f468d434d89769c`, engine `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`. The desktop map selects the future evaluation hypothesis; the narrow capture expands the working roles. [Complete 390px page](images/primer/mobile.png).
+
+![Updated five-stage Primer and explicit current/future boundaries on desktop](images/primer/desktop.png)
+
+![Working objective-relative roles and selective layering at 390px](images/primer/mobile-roles.png)
+
+### Alignment verification
+
+Tested clean implementation: `d3e20e4a485d1f7e0b8e430d6f468d434d89769c`; unchanged clean app-stable engine: `84fb6147f5b6ae11445f215ce23c3a9bb6a72db1`. Subsequent delivery edits add this review and screenshots only.
+
+| Command / check | Actual result |
+| --- | --- |
+| `pnpm --dir web build` | TypeScript and production Vite build passed |
+| `.\scripts\explorer.ps1 -Port 8790 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz` | Locked install, frontend build, Kotlin `installDist` and ready health response passed on the exact implementation/engine above |
+| In `web`: `pnpm exec playwright test interface.spec.ts live.spec.ts progress.spec.ts` with `$env:EXPLORER_URL='http://127.0.0.1:8790'` and `$env:EXPLORER_BROWSER_CHANNEL='msedge'` | **28 passed**, zero failed/skipped, final complete run. Covers four real objectives, blocked selection, live Lab, research navigation, retained studies, Progress, keyboard interaction and both Primer layouts |
+| Local documentation audit | All 33 tracked Markdown files checked for local anchor consistency; changed document links resolved; no active former-attachment dependencies in current authority documents |
+| Diff against merged main `c2cb89aca5b2c8e9140f02bb2fce57700ee3d577` | No changes in `src/`, Gradle/build configuration, integration scripts, workflows or lockfile; engine working tree unchanged. Mechanical, eligibility, assurance, receipt and baseline behavior preserved by scope; no new qualification claims |
+
+The first browser run passed 25 checks and failed three: one request preceded readiness, and both new Primer tests had an incorrectly nested locator. The locator was corrected to the existing named accessible region, the clean revision was rebuilt, readiness was confirmed, and the complete 28-check run then passed. Initial JSON and traces remain under `generated/explorer/primer/`; this is not a claim that the initial run passed.
+
+Full Kotlin/native suites, fresh CLI byte-for-byte catalog comparison, the separate activation-cost/cost-examination/global/verification browser files, other browsers/platforms and manual screen-reader testing were **not executed** for this presentation/documentation increment. Earlier receipts remain historical; the successful build and browser checks do not certify mechanics or independent source fidelity.
+
 ## Launch on Windows
 
 From the application checkout:
@@ -30,7 +77,7 @@ For the controlled comparison of a creature death and a graveyard state, open **
 2. Compare **Akki Scrapchomper** under **Identified mechanics** with **Agent of Shauku** under **Needs interpretation**. Akki names its artifact-or-land cost and accepted artifact-creature route; its land alternative remains unresolved. Agent names its land cost and unresolved overlap, without declaring creature-lands impossible or always requiring animation. Costs/targets are game conditions; the unhandled overlap is the research limitation. Original decisions remain under **Technical investigation**. Primary inclusion policy alternatives are documented in [the boundary investigation](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open).
 3. Under the death objective, **Reassembling Skeleton** and **Bloodghast** have no accepted resource-replenishment contribution. Switch to **Return our creatures**: both now have recognized original-card returns, with mana/tapped-entry or landfall in their printed rules. Bloodghast's former false rejection is corrected. This is existing reanimation coverage, not a new recurring-fuel search. A vanilla **Walking Corpse** has no death finding; **Grim Haruspex**'s draw payoff remains outside this query. These omissions do not mean those cards lack strategic relevance. For a retained historical concern, inspect **Tatterkite** under **All findings** and open its investigation details.
 
-Opening commander information after searching preserves the results. Change a commander/objective to start a new search. **Murder** remains a blocked commander selection. The three technical objective IDs are unchanged. Search population, full-identity eligibility, exclusions and implementation coverage remain under the findings' research details. General evidence methodology lives in the shared **About the evidence checks** disclosure rather than repeating across cards.
+Opening commander information after searching preserves the results. Change a commander/objective to start a new search. **Murder** remains a blocked commander selection. The four current objective IDs are listed in [README](../README.md#current-objectives). Search population, full-identity eligibility, exclusions and implementation coverage remain under the findings' research details. General evidence methodology lives in the shared **About the evidence checks** disclosure rather than repeating across cards.
 
 ## Reading findings honestly
 
@@ -51,7 +98,7 @@ All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander
 | Method and path | Request | Response |
 | --- | --- | --- |
 | GET /health | none | ready state, actual engine SHA/mode, packaged application revision |
-| GET /objectives | none | three Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
+| GET /objectives | none | four Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
 | POST /commander | {commander} | unchanged CommanderInspection; HTTP 200 also covers blocked selections |
 | POST /commander-view | {commander, objective} | original inspection plus verified image/fallback, readable card text, color identity, bounded objective connection and applicable scoped evidence; does not run whole-catalog discovery |
 | POST /discover | {commander, objective} | RunSummary: run ID, fresh structural execution mode/time, revisions, scope/counts, limitations and compact card index |
@@ -125,7 +172,11 @@ Judith's native death trigger and one-damage/any-target effect are represented t
 
 The commander presentation uses the existing native walker on the selected card only. The directly associated trigger is marked in the displayed rules. The redundant cause-neutral sentence is no longer displayed; its existing API value remains available in commander technical records. A bounded formatter describes the directly represented death trigger and effect without treating the query's removal classification as the definition of the objective. It does not certify rules fidelity or replace objective policies. Unsupported connections receive no invented relationship. Commander artwork is 220 px wide on desktop and remains compact on mobile. Commander imagery uses the same printing/face verifier, bounded provider requests, cache and explicit fallback as result imagery.
 
-## Verified implementation and current limits
+## Historical delivery records
+
+The sections below retain original bounded deliveries, measurements, review language and tested revisions. They are not a current inventory or mandatory Prototype Lab workflow. Later PRs #37–42 added curated fresh execution and Progress/trust capabilities; [README](../README.md#current-state-and-authority) is the current entry point. [Objective direction](OBJECTIVE_MODEL.md) and the current Primer supersede earlier vocabulary/map recommendations without rewriting source evidence.
+
+## Verified implementation and limits at the M1 delivery
 
 Fresh verification on 2026-11-02 used clean sibling engine **03869c08665bf476a8b40dacbfbcd501c54a33bd**, mode **app-stable**. Production extraction was tested at **877f9ee90fea7120f85096de583db7d898e6fd56**. Subsequent commits strengthen source/ability-scope tests and refine presentation; the final running candidate was **f4cbe602e4fdbcffa982841c8cfe7d62d93db40c**. Later documentation commits are not new test executions.
 

@@ -14,11 +14,31 @@ Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script buil
 
 **Discover** searches the four existing objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
 
-Progress now separates global **Cards**, bounded **Commander selection**, and **Objective search reach**, and includes the reusable source-bound sacrifice pilot. See [global coverage, exact scopes, baseline CLI and guided investigations](docs/GLOBAL_COMMANDER_COVERAGE.md). A compatible explicit source snapshot is required for global external measurements.
+## Current state and authority
 
-The Cards/Trust area also compares complete printed activation payments with source-first requirements. Inspect missing-mana mutations, bounded native payment observations and unsupported choices without treating a cost pass as whole-ability certification. See [activation-cost evidence and reproduction](docs/ACTIVATION_COST_FIDELITY.md).
+The running application and live Git are the living sources of product direction, implementation guidance, evidence and limitations. Start here for current capabilities; use the linked documents for detail. Former permanent ChatGPT Project attachments and old Project Instructions are retired authorities.
 
-The phased [cost examination](docs/COST_EXAMINATION.md) now exposes selected-creature dispatch boundaries and two recorded native Explicit/tap payment failures. Source/native agreement and execution enforcement remain separate; independent qualification is pending.
+| Available today | Detail and evidence |
+| --- | --- |
+| Discover: four bounded queries, card imagery/fallbacks, readable findings and prerequisites | [Explorer](docs/EXPLORER.md) and the objective list below |
+| Progress: representation, bounded commander selection, objective reach, scoped trust and historical gains | [Progress](docs/RESEARCH_PROGRESS.md), [global coverage](docs/GLOBAL_COMMANDER_COVERAGE.md), [verification coverage](docs/VERIFICATION_COVERAGE.md) |
+| Complete printed-payment comparison and phased examination, including two recorded Explicit tap-payment failures | [Cost fidelity](docs/ACTIVATION_COST_FIDELITY.md), [latest examination](docs/PRODUCT_STUDIO_COST_EXAMINATION.md) |
+| Curated fresh native scenarios in **Developer research index** | [Mechanical Verification Lab](docs/MECHANICAL_VERIFICATION_LAB.md); specified positions, not deck simulation |
+| Primer: conceptual direction, current limits and future hypotheses | Open **Primer** (`/#primer`); [objective direction](docs/OBJECTIVE_MODEL.md) records precise decisions |
+
+PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have explicit bounded experience acceptance; later merges and demonstrations do not imply blanket acceptance or independent qualification. [Milestones](docs/EXPLORER_MILESTONES.md) retains the original plan and acceptance history. Current measurements live in Progress and their revision-bound receipts. Global external measurements require an explicit compatible snapshot; see the Progress guide.
+
+The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery, subroles/composition → experimental deck evaluation**. Six objective-relative roles and selective layering are intended research. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General role filters, composition, objective-aware piloting and deck evaluation are not implemented.
+
+| Authority | Home |
+| --- | --- |
+| Product decisions, working roles and evaluation hypotheses | [OBJECTIVE_MODEL](docs/OBJECTIVE_MODEL.md) |
+| Actual responsibilities and engine integration | [ARCHITECTURE](docs/ARCHITECTURE.md), [ENGINE_WORKFLOW](docs/ENGINE_WORKFLOW.md) |
+| Current boundaries and unresolved problems | [KNOWN_LIMITATIONS](docs/KNOWN_LIMITATIONS.md), linked focused investigations |
+| How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
+| Source/definition/revision-bound evidence | Retained resources, focused reports and original test receipts linked from Progress |
+
+The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The separate native Explicit tap-payment enforcement correction remains the immediate mechanical priority; this Primer/documentation alignment does not begin it.
 
 ## Two sibling repositories
 
