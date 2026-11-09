@@ -1,5 +1,7 @@
 # Architecture and extension points
 
+`server/CostExamination.kt` projects frozen source/native/adjudication phases and revision-bound native payment observations into the existing verification index. `CostPaymentBoundary.kt` uses genuine Argentum transactions and preserves rejected, paused and contradicted behavior separately. Raw/LF artifact identities are explicit; examination does not issue independent approval. See [phased examination and payment boundary findings](COST_EXAMINATION.md).
+
 `coverage/VerificationCoverage.kt` joins exact scoped evidence to the retained global identity baseline and existing assurance gate. `server/SacrificeChallenge.kt` examines the unchanged pilot method with isolated adversarial definitions and explicit native execution. Neither extends discovery interpretation, Commander eligibility or independent approval. See [verification identity, ingestion and completeness boundaries](VERIFICATION_COVERAGE.md).
 
 `coverage/ActivationCostModel.kt` projects supported native payment trees without solving payment legality. Source-first requirements and inspected ability bindings feed `ActivationCostFidelity`; `ActivationCostExecution` reuses genuine Lab transactions. Their additive records enter the existing verification index and Cards/Trust view. Unknown components fail closed, and declaration/resolution dependencies remain outside printed-base payment assurance. See [cost identities, freshness and evidence limits](ACTIVATION_COST_FIDELITY.md).
