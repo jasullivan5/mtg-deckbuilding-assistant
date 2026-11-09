@@ -31,7 +31,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt",
-          "sha256": "98830d44d02e24e759b003daf3dd69f6ac9974e6c84c43daeaca00f533dcffeb"
+          "sha256RawBytes": "98830d44d02e24e759b003daf3dd69f6ac9974e6c84c43daeaca00f533dcffeb",
+          "sha256Utf8Lf": "e78fb8c51afb9730326a49443b25b7872a3d157175df6e7f4efdb054e4aed140"
         }
       ]
     },
@@ -45,7 +46,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/PitilessPlunderer.kt",
-          "sha256": "f4c5b73c42fa6853daffe6acac090a9a3a4b46ec2fe289002f8659c5aa274fda"
+          "sha256RawBytes": "f4c5b73c42fa6853daffe6acac090a9a3a4b46ec2fe289002f8659c5aa274fda",
+          "sha256Utf8Lf": "d661960782424cf316d085daf4cfd0a04f2d6ac7b99088b31ba2310391c5ffe0"
         }
       ]
     },
@@ -59,7 +61,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/GrimHaruspex.kt",
-          "sha256": "30b5a2274a8e9e81851d98a8ce295fca3341a378c6fcbb16018f91dcd55e3277"
+          "sha256RawBytes": "30b5a2274a8e9e81851d98a8ce295fca3341a378c6fcbb16018f91dcd55e3277",
+          "sha256Utf8Lf": "60646fa43594559a313b0c04999280c50e1682e07a01984741b49f7223be3ee0"
         }
       ]
     },
@@ -73,7 +76,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/ZulaportCutthroat.kt",
-          "sha256": "cba1eaef14f339a02b41dadd657f66bfd526ffad0963de6f93afc759435b8a0f"
+          "sha256RawBytes": "cba1eaef14f339a02b41dadd657f66bfd526ffad0963de6f93afc759435b8a0f",
+          "sha256Utf8Lf": "c833fae638092582d9b08011bbb8bbcec4641f13ccb9a68628cf7ccc8a95ed15"
         }
       ]
     },
@@ -87,7 +91,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
-          "sha256": "706e4075367771936322835509e1094df4dc841375b1a1004710d85372a1bb7c"
+          "sha256RawBytes": "706e4075367771936322835509e1094df4dc841375b1a1004710d85372a1bb7c",
+          "sha256Utf8Lf": "53142e55e0e369abc23c0ab032aa7c5b1c9920b8d03fb3b60cae14d29cc89d7c"
         }
       ]
     },
@@ -101,7 +106,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/frf/cards/FlamewakePhoenix.kt",
-          "sha256": "7f134d00d0a5cfb5762e27823b728ccc42032fdc8dd469210d2bd2c4b4db12a8"
+          "sha256RawBytes": "7f134d00d0a5cfb5762e27823b728ccc42032fdc8dd469210d2bd2c4b4db12a8",
+          "sha256Utf8Lf": "0ac6fca01903488acd8d119523315c15f5a365e94213a17a7f2c7bcbfcaee348"
         }
       ]
     },
@@ -115,7 +121,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ScuteSwarm.kt",
-          "sha256": "5230db7d8a88800af35dacb4dd341a039b5ce1bc3f30d39a033ac94cdab689d3"
+          "sha256RawBytes": "5230db7d8a88800af35dacb4dd341a039b5ce1bc3f30d39a033ac94cdab689d3",
+          "sha256Utf8Lf": "c18fc30050c5f0929ecd846b2a14918c317f0ce7590c3ae2aec05a2c6d1670b3"
         }
       ]
     },
@@ -147,7 +154,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/DoomedDissenter.kt",
-          "sha256": "8e3436e6842d3455aab86a5d9f3750a4c1815d9b9f21c8c952067e8a9c1694c2"
+          "sha256RawBytes": "8e3436e6842d3455aab86a5d9f3750a4c1815d9b9f21c8c952067e8a9c1694c2",
+          "sha256Utf8Lf": "79a2180fe92d1e62a96338c6b7597e8754651b0c1832551bb74a2c6823830eab"
         }
       ]
     },
@@ -162,7 +170,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/TravelPreparations.kt",
-          "sha256": "a6bf85c1c7d24932ae8f24ab913dc312145f318c9c236cc642c8a6f9908ac3df"
+          "sha256RawBytes": "a6bf85c1c7d24932ae8f24ab913dc312145f318c9c236cc642c8a6f9908ac3df",
+          "sha256Utf8Lf": "7071d5cfe3fa84d8e476393487d56c4f81d86375e1637e44e3d15ee1fe5183f6"
         }
       ]
     },
@@ -177,7 +186,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HardenedScales.kt",
-          "sha256": "af9cb5b1828eb7fdcc69f793c17bac9f623655d53af116b93bf9854a66846a4d"
+          "sha256RawBytes": "af9cb5b1828eb7fdcc69f793c17bac9f623655d53af116b93bf9854a66846a4d",
+          "sha256Utf8Lf": "7ea2d7ff0f11eae27aabc551951ce9452158cf42e24bddde4bf5049619a91bd8"
         }
       ]
     },
@@ -192,7 +202,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/WalkingBallista.kt",
-          "sha256": "e2202c100b3c50c1b1fcae09cba40c3439b4a6129f3d4b198db553ac206357e9"
+          "sha256RawBytes": "e2202c100b3c50c1b1fcae09cba40c3439b4a6129f3d4b198db553ac206357e9",
+          "sha256Utf8Lf": "08b720d45b4c4dc207904371aa5064f7c25bbaf0237274a994c774e130860657"
         }
       ]
     },
@@ -217,7 +228,8 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/GarruksPackleader.kt",
-          "sha256": "b47db0d5e9664cc9b3d97f47ca3294d537d63106cfccaaefd72840ae209425c1"
+          "sha256RawBytes": "b47db0d5e9664cc9b3d97f47ca3294d537d63106cfccaaefd72840ae209425c1",
+          "sha256Utf8Lf": "7f9c965581f7d526c1ac6556b9cb2b18a42eb6ed5128579ec690a86e60cf2081"
         }
       ]
     },
@@ -232,32 +244,39 @@
       "nativeFiles": [
         {
           "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/AbzanFalconer.kt",
-          "sha256": "644ca6b23b7d3bac262b81f9a2d6285e4ddbdfba03c8744e9bfb1f50ae0120d1"
+          "sha256RawBytes": "644ca6b23b7d3bac262b81f9a2d6285e4ddbdfba03c8744e9bfb1f50ae0120d1",
+          "sha256Utf8Lf": "5cde65ed961a20d722d1b82f0af0ba12198e79f4f011b9e2002f686a6abb8f78"
         }
       ]
     }
   ],
-  "sourceSnapshotSha256": "a8db458a734fe5e056a418df799eec970138c6119b20125f1eee8a5726178472",
+  "sourceSnapshotSha256": "6d317b3c4fc4718bc3da53803cc76fbde5b48381e0e38038f2e8e0a9f98d7c8f",
+  "sourceSnapshotHashFormat": "SHA256_UTF8_LF",
   "codeBindings": [
     {
       "path": "src/main/kotlin/discovery/PathwayExtractor.kt",
-      "sha256RawBytes": "a76f3bd831dc8279e95a0c96c628865bee526a5165071d897fd4d3b47d5ddd0d"
+      "sha256RawBytes": "a76f3bd831dc8279e95a0c96c628865bee526a5165071d897fd4d3b47d5ddd0d",
+      "sha256Utf8Lf": "1fd7194602c14577e6ba90ee36322a13ed83cbad4c7f7daf4f80bc9084a9db1e"
     },
     {
       "path": "src/main/kotlin/discovery/MechanicalFacts.kt",
-      "sha256RawBytes": "c740240763f19774010c01583b98dbe2184686c6e7884147cc5d8ba3bebcaceb"
+      "sha256RawBytes": "c740240763f19774010c01583b98dbe2184686c6e7884147cc5d8ba3bebcaceb",
+      "sha256Utf8Lf": "f1757b39d527e4619d9d42a76d45a0f00ad572f717bbea81f9fe68d3c9e4680c"
     },
     {
       "path": "src/main/kotlin/discovery/MechanicalQuery.kt",
-      "sha256RawBytes": "005c71d0d1c9be7e2069c4e6855dd79b417b3b7625180095c0090f0fff884cff"
+      "sha256RawBytes": "005c71d0d1c9be7e2069c4e6855dd79b417b3b7625180095c0090f0fff884cff",
+      "sha256Utf8Lf": "160467928b3071eb5315b5973bf098090172f724bb594c562a3915a7a7b88c84"
     },
     {
       "path": "src/main/kotlin/discovery/Reanimation.kt",
-      "sha256RawBytes": "a4bd9ef6a2e69c05cac456b34dcf707025fc54156f0d9785b4b2c928324a12c0"
+      "sha256RawBytes": "a4bd9ef6a2e69c05cac456b34dcf707025fc54156f0d9785b4b2c928324a12c0",
+      "sha256Utf8Lf": "4c2a11e6b7c1675058640986913b86d3f6fa019654bb8c3fcfc9041ab4134ec5"
     },
     {
       "path": "src/main/kotlin/discovery/Discovery.kt",
-      "sha256RawBytes": "3e4ace4d254a52f7211e5f5d59431ac500e6a20ae24288a44e834f931078e9e4"
+      "sha256RawBytes": "3e4ace4d254a52f7211e5f5d59431ac500e6a20ae24288a44e834f931078e9e4",
+      "sha256Utf8Lf": "8f8183faa93335d12dc9ce2c766efc8bd591951e08b602c99157a275a0ffa71d"
     }
   ],
   "rawObservations": [

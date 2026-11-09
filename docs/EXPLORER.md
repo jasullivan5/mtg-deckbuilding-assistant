@@ -8,7 +8,7 @@ The Explorer is a local browser interface over the application's existing Kotlin
 
 Open `/#primer` for the existing five-stage map and **Build a precise objective**. Compare counter placement, power increase and reaching power 4; open **Events, states, game elements and effects** for the working concepts. The examples change explanations without running discovery. Four existing queries remain the implemented boundary. See the [source-grounded assessment and actual screenshots](OBJECTIVE_BUILDING_BLOCKS.md) and [living direction](OBJECTIVE_MODEL.md). No snapshot is needed just to read Primer.
 
-## Historical PR #43 Primer alignment review — 2026-11-09
+## Primer alignment review — 2026-11-09
 
 The review, screenshots, commands and results below retain the preceding six-role proposal and its original engine/payment status. They are historical observations; current instructions are above.
 

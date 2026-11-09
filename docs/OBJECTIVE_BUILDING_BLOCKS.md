@@ -64,8 +64,8 @@ Here “conditional” names a mechanically described route, not a solved game s
 | Plating's static bonus | No placement | Continuous count-dependent increase | Requires attachment, controlled recipient, base power and enough controlled artifacts; source-only |
 | Hardened Scales | Modifies another **one-or-more** placement, including entry counters; does not initiate it | Indirectly changes counter-based increase | Conditional on another placement and the resulting quantity; zero counters is not changed to one |
 | Walking Ballista | Entry with X counters and its {4} grow activation place counters; removing one as a cost does not | Grow activation increases power; removal reduces its counter contribution. Entry's starting power versus an increase to an already-present creature needs an explicit observation window | Casting with sufficient X or later growth can establish the predicate under costs/conditions; no actual discovery result because identity is UNKNOWN |
-| Wall of Roots | No: its counter is 0/−1 | No power increase from that counter; mana output is a separate resource | No intrinsic power-4 route from that ability. An unspecified external pump is not a direct contribution; source-only |
-| **Held-out Abzan Falconer** | Outlast places one on itself; its separate flying ability places none | Outlast's counter contributes power; flying itself does not | Conditional growth from base power 2; two outlast uses require legal sorcery timing, tap availability and payment, not an assumed immediate pair of activations |
+| Wall of Roots | No: puts a 0/−1 counter on itself as a cost to add {G}, once each turn | No power increase from that counter; mana output is a separate resource | No intrinsic power-4 route from that ability. An unspecified external pump is not a direct contribution; source-only |
+| **Held-out Abzan Falconer** | Outlast places one on itself; its separate flying ability places none | Outlast's counter contributes power; flying itself does not | Conditional growth from base power 2; two {W}, {T} outlast activations require legal sorcery timing and tap availability, not an assumed immediate pair |
 
 Falconer is the strongest control against classifying a whole card as merely “uses counters.” The frozen **ability/branch** unit handles both the positive outlast operation and the negative static ability without revising the criteria. Native outlast and counter-based flying exist, but AddCounters and GrantKeywordByCounter are unsupported in the walker. Travel's AddCounters, Ballista's counter placement/removal and entry replacement, and Scales' placement replacement likewise lack reusable interpreted counter/power relationships; Ballista's separate DAMAGE fact does not establish those missing capabilities.
 
@@ -86,6 +86,12 @@ Selective layering could choose only creature-producing relationships from anoth
 
 ## Smallest useful next increment
 
+| Existing capability | Reusable part | Missing relationship |
+| --- | --- | --- |
+| `PathwayExtractor.triggered/action/walk` | Same-ability IDs, original trigger/binding/active-zone data, branch paths and prerequisites | Trigger context is largely retained as native data and assumptions, not a generally queryable trigger-to-output contract; draw leaves are skipped |
+| `MechanicalFacts` / `FactQuery` | Correlated movement/token facts and accumulating controller/owner/type/zone constraints | No general draw, counter placement/removal, positive-power or continuous-state fact; a raw SDK node is not interpreted support |
+| `Discovery` / `Reanimation` / `MechanicalQuery` | Existing objective/policy separation and shared fact consumers | Legacy death/removal acceptance is not a universal outcome predicate. Static/replacement counter and power semantics would need additional interpretation, not a renamed role |
+
 Propose **death-triggered draw and token outcomes in Discover**, as a separately approved extension to the existing death objective. Reuse the walker, action/branch identity, source zones, native death trigger filters and CREATE_TOKEN facts. Add the smallest shared typed draw outcome and a supported **same-ability trigger → output relationship**; preserve self/another, controller/nontoken filters, optionality, quantity and unresolved conditions. Expose responses separately from causing deaths and from the existing special removal branch. Include Treasure as an artifact-token output, not a creature-token false positive or mana already produced.
 
 That would make Haruspex, Plunderer and Dissenter useful inspectable responses in Discover. The relation could later serve different outcome questions without reinterpreting their triggers for each objective. Discriminating controls include Haruspex's self/token exclusion, Plunderer's token-inclusive trigger, Dissenter's self binding, Swarm's nondeath land-entry trigger and Slip's history check. Unsupported conditions and other outputs such as Cutthroat's life changes must stay visibly outside the bounded interpretation; no source/card-name exceptions or blanket role classifier.
@@ -96,4 +102,21 @@ This is smaller and more consequential now than a universal effect lexicon or th
 
 The existing Primer panel now compares the three candidate questions, explains subjects and connecting outcomes, keeps role names optional, and labels all examples as conceptual. Its five-stage map, keyboard controls, context chooser and evidence boundaries remain. Historical study bodies, old screenshots, payment receipts and qualifications are unchanged. Only their current-context notices point to this assessment.
 
-Running-application verification, exact implementation revision, actual screenshots and final PR link will be recorded here after the UI check. Read-only inspection first failed to compile because its diagnostic imported CardScript from the wrong SDK package; the corrected import succeeded. This changed no application or engine code. No new gameplay scenarios or full mechanical regressions were run for this presentation/research increment.
+Tested clean UI implementation: **`9d8880bd453e3c9ee98a17c7cffe26ee87e8df5e`**. Clean unchanged stable engine: **`bd26b756b8b4d347f19e92bc77ef020919ebfa48`**. Subsequent changes add this delivery record/screenshots and clarify LF-normalized research hashes; no executable application changes follow the tested commit. Original raw source hashes and records are preserved.
+
+| Command / check | Actual result |
+| --- | --- |
+| Isolated `./dev.ps1 installDist`, JDK 21 | Passed; source/native inspection used clean criteria commit `577306e` with the current stable engine |
+| Read-only `InspectObjectiveCohort.java` via `java -Xmx2g -XX:ActiveProcessorCount=4 --class-path build/install/mtg-assistant/lib/* <script> <output>` | Existing extraction inspected 13 definitions; four existing queries used the identical 12-name Kenrith cohort. No new query implementations or engine actions in this inspection |
+| `./scripts/explorer.ps1 -Port 8792` in the isolated worktree | Locked frontend install, TypeScript/Vite build, Kotlin installation and ready health response passed for exact UI/engine SHAs above; no Oracle snapshot needed for Primer |
+| In `web`: `EXPLORER_URL=http://127.0.0.1:8792 EXPLORER_BROWSER_CHANNEL=msedge pnpm exec playwright test interface.spec.ts live.spec.ts progress.spec.ts` | **28 passed**, zero failed/skipped/flaky outcomes: 8 synthetic interface and 20 service-backed checks, including both Primer widths, four existing queries, navigation, Progress, historical studies and existing curated Lab |
+| Primer behavior and visual inspection | At 1440 px and 390 px: keyboard selection, counter/bonus distinction, threshold checkpoints, optional role disclosure, source-only/unimplemented labels, no horizontal overflow and zero discovery requests from Primer; actual captures inspected |
+| Scope / integrity | No `src/main/kotlin`, `src/main/resources`, engine, build-script, lockfile, mechanical test, old source/evidence/qualification or historical-image changes. New research records are documentation evidence, not runtime evidence ingestion |
+
+The inspection first failed to compile because the diagnostic imported CardScript from the wrong SDK package; the corrected import succeeded. All browser checks passed on their first complete run. No new gameplay scenarios were authored or executed for the 16-case conceptual comparison; browser smoke exercised existing curated Lab cases. Kotlin/native regression suites, hosted CI, a fresh Oracle download, exhaustive fidelity/recall checks and human comprehension/usability measurement were not run. This is proportionate to unchanged mechanical code and does not establish new experience acceptance or qualification.
+
+Actual running-application captures, UI `9d8880b` / engine `bd26b756`, not fictional gameplay or observed candidate-objective results:
+
+![Existing Primer panel explains the concepts and compares counter-based and continuous power contributions](images/objective-building-blocks/desktop-relationships.png)
+
+[390 px threshold example and its timing/implementation boundaries](images/objective-building-blocks/mobile-threshold.png). Full-page and additional question captures are retained in the local delivery bundle.
