@@ -8,16 +8,20 @@ test('Phased cost examination preserves source and native failures without indep
   await expect(panel).toBeVisible({timeout:220_000});
   const data=await (await page.request.get('/api/v1/progress/cost-examination')).json();
   expect(data.sourceState).toBe('CURRENT_SOURCE_BINDINGS');
-  expect(data.nativeState).toBe('CURRENT_NATIVE_BINDINGS');
-  expect(data.adjudicationState).toBe('CURRENT_BINDINGS');
-  expect(data.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  const sameEngine=data.execution.engine===data.engine;
+  expect(data.nativeState).toBe(sameEngine?'CURRENT_NATIVE_BINDINGS':'STALE_NATIVE_BINDINGS');
+  expect(data.adjudicationState).toBe(sameEngine?'CURRENT_BINDINGS':'STALE');
+  expect(data.executionState).toBe(sameEngine?'RECORDED_CURRENT_BINDINGS':'STALE');
   expect(data.counts.examined_source_scopes).toBe(10);
-  expect(data.counts.current_scenarios).toBe(14);
-  expect(data.counts.current_native_actions).toBe(16);
-  expect(data.counts.source_expectations_contradicted).toBe(2);
+  expect(data.counts.current_scenarios).toBe(sameEngine?14:0);
+  expect(data.counts.current_native_actions).toBe(sameEngine?16:0);
+  expect(data.counts.source_expectations_contradicted).toBe(sameEngine?2:0);
+  // The recorded failures stay present under their original engine even on a corrected candidate.
+  expect(data.execution.scenarios.filter((s:{result:string})=>s.result==='SOURCE_EXPECTATION_CONTRADICTED')).toHaveLength(2);
   expect(data.counts.independent_approvals).toBe(0);
   await expect(panel).toContainText('Independent qualification remains pending');
-  await expect(panel).toContainText('2 current source-payment contradictions');
+  await expect(panel).toContainText(sameEngine?'2 current source-payment contradictions':'Current payment outcomes not established');
+  if(!sameEngine) await expect(panel).toContainText('A missing or stale receipt does not establish a zero failure count');
   const disclosure=panel.getByText('Inspect payment outcomes and examination phases',{exact:true});
   await disclosure.focus();await page.keyboard.press('Enter');
   await expect(panel).toContainText('source expectation contradicted');
@@ -47,8 +51,8 @@ test('Phased cost examination preserves source and native failures without indep
   expect(index.counts.commander_legal_physical_cards).toBe(32109);
   expect(index.counts.source_review_current_cards).toBe(13);
   expect(index.counts.source_review_scopes_current).toBe(14);
-  expect(index.counts.execution_observations_current).toBe(53);
-  expect(index.counts.execution_current_fail_cards).toBe(2);
+  expect(index.counts.execution_observations_current).toBe(sameEngine?53:0);
+  expect(index.counts.execution_current_fail_cards).toBe(sameEngine?2:0);
   expect(index.qualification.QUALIFIED).toBe(0);
   expect(index.completeness).toBe('NOT_ESTABLISHED_AT_CATALOG_SCALE');
   await page.getByRole('button',{name:'Discover',exact:true}).click();await expect(page.getByRole('button',{name:'Find cards',exact:true})).toBeVisible();

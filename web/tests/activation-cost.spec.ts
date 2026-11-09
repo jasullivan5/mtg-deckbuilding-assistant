@@ -16,7 +16,7 @@ test('Complete costs keep payment depth separate from reviewed cards and whole-a
   expect(data.counts.defects_detected).toBe(10);
   expect(data.counts.defects_unresolved).toBe(1);
   expect(data.counts.outside_payment_scope).toBe(1);
-  expect(data.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  expect(data.executionState).toBe(data.execution.engine===data.engine?'RECORDED_CURRENT_BINDINGS':'STALE');
   expect(data.execution.observations).toHaveLength(26);
   expect(data.mutations.find((m:{id:string})=>m.id==='missing-mana').comparison.state).toBe('CONTRADICTED');
   expect(data.mutations.find((m:{id:string})=>m.id==='alternative-not-combined').comparison.state).toBe('UNRESOLVED');

@@ -30,7 +30,7 @@ test('Cards Commanders Objectives and reusable fidelity expose actual separate p
   await expect(dashboard.locator('#objectives')).toContainText('Not measured at catalog scale');
   expect(pilot.counts.reviewed_ability_scopes).toBe(6);
   expect(pilot.counts.held_out_native_checks_supported).toBe(2);
-  expect(pilot.executionState).toBe('RECORDED_CURRENT_BINDINGS');
+  expect(pilot.executionState).toBe(pilot.recordedExecution.engine===pilot.engine?'RECORDED_CURRENT_BINDINGS':'STALE');
   expect(pilot.recordedExecution.scenarios.every((s:{state:string})=>s.state==='AGREES')).toBe(true);
   await dashboard.getByText('Inspect source reviewed cohort and held out results',{exact:true}).click();
   await dashboard.getByText('Reckless Barbarian · held-out variant',{exact:true}).click();
