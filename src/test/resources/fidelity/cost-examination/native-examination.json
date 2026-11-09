@@ -1,0 +1,1358 @@
+{
+  "schemaVersion": 1,
+  "examiner": "source_examiner",
+  "phase": "B-native-payment-review",
+  "startedAt": "2026-11-08T22:27:44.5810082Z",
+  "completedAt": "2026-11-08T22:32:37.2344912Z",
+  "timestampNote": "First recorded phase-B UTC time; native input and engine AGENTS had been read immediately before this timestamp.",
+  "frozenSource": {
+    "path": "generated/cost-examination/source-examination.json",
+    "actualSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+    "coordinatorReportedFreezeCommit": "0849db4",
+    "freezeCommitIndependentlyInspected": false
+  },
+  "nativeInputs": {
+    "path": "generated/cost-examination/native-inputs.json",
+    "actualSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57",
+    "applicationRevision": "0b23d5e16ac3145118a4ae15e7a66c99b610d24a",
+    "engineRevision": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "exportedAt": "2026-11-08T16:27:02.621873-06:00"
+  },
+  "engine": {
+    "revision": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "status": "",
+    "revisionMatchesExport": true
+  },
+  "independence": {
+    "isolatedAgent": true,
+    "sameProviderAndCoordinator": true,
+    "isolation": "Instruction-based access isolation only, not an independently enforced repository sandbox.",
+    "sourceArtifactFrozenBeforeNativeInspection": true,
+    "originalMethodResultsExposed": false,
+    "excluded": "No application ActivationCostModel/Fidelity/Execution code, original requirements, tests, native-report, comparison verdicts, mutations, old reports or receipts read.",
+    "qualification": "Pending. This is bounded agent source/code inspection, not human independent qualification, approval or acceptance."
+  },
+  "exactFilesConsulted": [
+    {
+      "path": "AGENTS.md",
+      "actualSha256": "0992d80bf5c3e98d01d8c83b427d5456294b709d74122b2a7501a743165a036a"
+    },
+    {
+      "path": "generated/cost-examination/source-examination.json",
+      "actualSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3"
+    },
+    {
+      "path": "generated/cost-examination/native-inputs.json",
+      "actualSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57"
+    },
+    {
+      "path": "../argentum-engine/AGENTS.md",
+      "actualSha256": "7792796f627d2952bd7e7ef0ce2567880bb0730f15f847206a0acc9027fd8de1"
+    },
+    {
+      "path": "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/ActivatedAbility.kt",
+      "actualSha256": "4fda7b8746e7e9bf031ad3b83c9748a4b804f07c1925ed4457eb0a292bbbfdb3"
+    },
+    {
+      "path": "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/costs/CostAtom.kt",
+      "actualSha256": "f8cbcbb0090a5d1930b1075dc9c4131da9677879c61e971f20e2204f45fc4248"
+    },
+    {
+      "path": "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/AdditionalCost.kt",
+      "actualSha256": "2ab56a067d4ff992d3acafa1593c8f4899ecf1a75ef3bdcf9a6500ac25c321f0"
+    },
+    {
+      "path": "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/filters/unified/ObjectFilter.kt",
+      "actualSha256": "8e022df9988871354973d3df95f0ffd2e8ed70d87e5b27655b4454ed0906c72e"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt",
+      "actualSha256": "6cd819cfd38f18f8a3839d6b2e6ada927b50ee5a281cf20f4a9d7a42284818cd"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/effects/ZoneTransitionService.kt",
+      "actualSha256": "9f7bcc7e09bb1b391c3177e3912ec9a17da8da3d6dca0616f20a553c2cd1a2b9"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationValidator.kt",
+      "actualSha256": "460fe50e708fb388f1f008c376f95425e4c4b7eab40c8005a410d136a5110f9e"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationCostPayer.kt",
+      "actualSha256": "c063c698df98a68e6642a3ddec159c0355185d6777a071ecb8b42ca599c4ea56"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationChoicePauses.kt",
+      "actualSha256": "77eace9ee509d039b95a1dd0b57030b38f79362bbd545132fdc69644b8c23a36"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivateAbilityHandler.kt",
+      "actualSha256": "0bb86a75986e5fd827378a7b990bf116501af4f86fe6c463b331b0bcc8bc1706"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/continuations/ActivateAbilityXCostContinuationResumer.kt",
+      "actualSha256": "c1ec8b45ae19e84ac65d7b3f183b747ef2ae21f2f96170e6a47ca1b47e965dc6"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/continuations/CostPaymentContinuationResumer.kt",
+      "actualSha256": "25089396b4cfd6fdb4c2d59d9b735afc5c9c96209e29797d6e583bc30411a26b"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/decision/SubmitDecisionHandler.kt",
+      "actualSha256": "e5e8c35bcec540695cef013231adc9556af763abc65b268075dd8821953f43c7"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/decision/DecisionValidators.kt",
+      "actualSha256": "f0e7a0cb2d9b13110a315e4dbbeb8d45c2050b6ffd7eb7bd63ad36e0eaed7154"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/costs/CostAtomAmounts.kt",
+      "actualSha256": "4687cc8e91c4e9f87749a608dc7f552fafed9bb164d117a5e50806c1a753bf85"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/state/GameState.kt",
+      "actualSha256": "bc5e4a618d5686a948001334247ff8195af51ebf197bdf40583904b26232b729"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ActionProcessor.kt",
+      "actualSha256": "f8160d86906fcbac60ce95b64541e7b37224449d4e0a9c62431e44a8c91c1a75"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/Outcome.kt",
+      "actualSha256": "0d12f7b0456cfabe5fb922520ee67e66789ab0d31ede0711a7849056fbd390b5"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ExecutionResult.kt",
+      "actualSha256": "87d7771abb0f53f896941a91ab335de7e46033997874d1275e51a08130fde0ef"
+    },
+    {
+      "path": "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/TapHelpers.kt",
+      "actualSha256": "4bd3e4d3b04baca1b04b26760d3cc62beb41db28f8d456ecf3801bba7eaa144b"
+    }
+  ],
+  "searchDisclosure": "Filename discovery searched SDK/engine main source trees. Text searches were scoped to named cost/activation/decision/continuation/state/core areas to locate the semantic code cited here. No test or report tree was searched. Files listed above include content searches that returned only brief relevant lines.",
+  "semanticEvidence": [
+    {
+      "id": "sdk-cost-kinds",
+      "files": [
+        "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/ActivatedAbility.kt ../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/costs/CostAtom.kt"
+      ],
+      "finding": "CostSacrificeSelf is the source permanent; CostTap is source tap; CostComposite stores multiple costs. AtomSacrifice defaults count=1 and excludeSelf=false; AtomMana carries mana cost; AtomPayLife carries a nonnegative fixed amount for Greed.",
+      "basis": "ActivatedAbility.kt AbilityCost subtypes around lines 463-640 and 752-765; CostAtom.kt Mana/PayLife/Sacrifice declarations."
+    },
+    {
+      "id": "conjunction",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt"
+      ],
+      "finding": "Composite affordability uses costs.all; payment iterates each subcost, propagating state and mana pool and stopping on failure. These exports therefore represent conjunction, not choice.",
+      "basis": "CostHandler.kt lines 243-245 and 639-652.",
+      "limitation": "Same-initial-state component affordability is not a general proof of arbitrary shared-resource composites. No such broader completeness claim is made."
+    },
+    {
+      "id": "source-and-controller",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationValidator.kt"
+      ],
+      "finding": "SacrificeSelf affordability requires source on battlefield and projected controller equals payer. Normal activation validator checks source controller through projected state. Self-sacrifice payment moves sourceId itself. It does not consult sacrificedPermanents as a substitute source.",
+      "basis": "CostHandler.kt lines 159-162 and 409-443; ActivationValidator.kt checkBattlefieldController.",
+      "limitation": "Low-level payAbilityCost is not independently a full legality validator. SacrificeSelf payment itself lacks the same battlefield/payer recheck present in affordability; controller/zone permission claims rely on the enclosing validated activation path."
+    },
+    {
+      "id": "selected-sacrifice",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt ../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/filters/unified/ObjectFilter.kt ../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/costs/CostAtom.kt"
+      ],
+      "finding": "Creature filter is CardPredicate.IsCreature. Candidates come from controlledBattlefield and projected predicate matching. paySacrificeList rechecks selected permanent is on battlefield, projected controlled by payer, matches filter, and respects excludeSelf. Viscera Seer default count is one, excludeSelf false.",
+      "basis": "ObjectFilter.kt line 216; CostAtom.kt lines 162-170; CostHandler.kt lines 714-723, 1154-1248 and 1814-1825.",
+      "limitation": "controlledBattlefield and predicate evaluator implementation were not separately traced; selected payment contains explicit controller and battlefield backstops."
+    },
+    {
+      "id": "owner-destination",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/effects/ZoneTransitionService.kt"
+      ],
+      "finding": "Both self and selected sacrifices delegate to moveToZone(entityId, GRAVEYARD) and mark sacrifice. ZoneTransitionService obtains ownerId from CardComponent and builds nonbattlefield destination ZoneKey(ownerId, actualDestZone). It obtains last-known controller from projected state for battlefield exits. Thus owner-destination and sacrifice-controller are separate actual code paths, not inferred from the serialized filter.",
+      "basis": "CostHandler.kt lines 422-438 and 1230-1245; ZoneTransitionService.kt lines 275-286 and 410-428.",
+      "limitation": "actualDestZone can be redirected by replacement processing. Replacement ordering, commander choices, tokens and control-change cleanup need execution; these provisions establish the normal routing intent, not observed correctness for every replacement."
+    },
+    {
+      "id": "life",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationValidator.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/costs/CostAtomAmounts.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/state/GameState.kt"
+      ],
+      "finding": "Greed encodes a fixed 2-life atom and black mana separately. checkLifeCostPayable runs for every payment strategy. Shared affordability reaches GameState.canPayLife, which accepts lifeTotal >= amount and checks payment prohibitions. CostHandler delegates actual payment to LifePaymentService.",
+      "basis": "ActivationValidator.kt checkLifeCostPayable; CostHandler.kt lines 706-713 and 862-867; CostAtomAmounts.kt lines 106-112; GameState.kt lines 1247-1272.",
+      "limitation": "LifePaymentService implementation and state-based loss sequence were not traced or executed. Exact subtraction and paying-to-zero outcome require execution; serialized amount and >= threshold are directly evidenced."
+    },
+    {
+      "id": "mana-tap-sharing",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationValidator.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationCostPayer.kt"
+      ],
+      "finding": "Composite tap costs exclude sourceId from mana solver sources. Payment excludes sourceId from both auto and explicit selected mana sources when the outer ability has a tap cost. This preserves Mind Stone draw cost distinction: its own tap-for-mana cannot alone fund its draw while paying another tap.",
+      "basis": "ActivationValidator.kt canPayAbilityCostWithSources; ActivationCostPayer.kt activateManaAbilities around lines 420-457.",
+      "limitation": "Mana solver, auto-tapper and restricted-mana correctness were not executed or comprehensively inspected."
+    },
+    {
+      "id": "choice-continuation",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationChoicePauses.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/continuations/ActivateAbilityXCostContinuationResumer.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/decision/SubmitDecisionHandler.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/decision/DecisionValidators.kt"
+      ],
+      "finding": "With more legal sacrifice candidates than count, activation pauses for SelectCardsDecision with min=max=1 for Viscera Seer. SubmitDecision checks player and decision ID, validator checks offered options and count. Sacrifice resumer checks count and stored candidates, fills AdditionalCostPayment.sacrificedPermanents and reenters handler.execute. Selected objects are rechecked by paySacrificeList.",
+      "basis": "ActivationChoicePauses.kt lines 380-419; ActivateAbilityXCostContinuationResumer.kt lines 248-288; SubmitDecisionHandler.kt lines 23-58; DecisionValidators.kt lines 285-315.",
+      "limitation": "A pause is unfinished work, not payment success or failure. Entire round trip and invalid response rollback remain unexecuted."
+    },
+    {
+      "id": "transaction-outcome",
+      "files": [
+        "../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ActionProcessor.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/Outcome.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ExecutionResult.kt"
+      ],
+      "finding": "Outcome distinguishes Done, Paused and Rejected. ActionProcessor restores the exact input state on rejected actions and removes attempted events, including execution failures after intermediate immutable work. Handler-direct results are not identical to public transactional guarantees.",
+      "basis": "ActionProcessor.kt lines 77-104; Outcome.kt and ExecutionResult.kt declarations.",
+      "limitation": "Read-only semantic evidence. No failure, rollback or continuation was executed."
+    },
+    {
+      "id": "ability-routing",
+      "files": [
+        "../argentum-engine/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting/ActivatedAbility.kt ../argentum-engine/rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivateAbilityHandler.kt"
+      ],
+      "finding": "SDK defaults are instant-speed timing, nonmana ability and battlefield activation. Mind Stone:1 explicitly sets ManaAbility/true. Handler pays before routing mana abilities to immediate resolver or nonmana abilities to putOnStack. Exported drawing/discard/search/scry instructions are effects, distinct from cost.",
+      "basis": "ActivatedAbility.kt lines 44, 46, 75; ActivateAbilityHandler.kt executeActivation stages 3 and 5.",
+      "limitation": "Individual effect executors, stack target revalidation and full resolution are outside this native-payment review."
+    }
+  ],
+  "implementationConcerns": [
+    {
+      "id": "explicit-tapped-source-affordability",
+      "status": "STATIC_CODE_CONCERN_UNEXECUTED",
+      "affects": [
+        "Mind Stone:1",
+        "Mind Stone:2",
+        "Evolving Wilds:1"
+      ],
+      "sourceRequirement": "A source already tapped cannot pay its tap-symbol activation cost (frozen Phase A: 107.5, 118.3, 701.26a).",
+      "evidence": [
+        "ActivationValidator.checkCostPayable returns null immediately for PaymentStrategy.Explicit (line 505); checkExplicitPaymentSources checks the listed mana sources, not independently the outer ability source tap payment.",
+        "CostHandler.payAbilityCost AbilityCost.Tap calls tap and unconditionally returns success; no affordability call appears at the start of payAbilityCost.",
+        "TapHelpers.tap returns unchanged state and no tap event when the source is already tapped (lines 114-117).",
+        "ActivateAbilityHandler adds an already-tapped guard only when lockedCost != null (around lines 187-191). Ordinary explicit submitted activations use the default lockedCost=null path.",
+        "For Mind Stone:2, existing floating mana or another selected legal mana source can satisfy the mana component without addressing the already-tapped outer source."
+      ],
+      "assessment": "The inspected chain appears to permit an explicit activation with an already-tapped source while paying no actual tap. This is an implementation-path concern despite correct printed serialized costs. It is not a runtime observation or an executed counterexample.",
+      "proposedFreshProbe": [
+        "Submit each affected native ability through ActionProcessor with source initially tapped and PaymentStrategy.Explicit; supply adequate floating/other-source mana for Mind Stone:2. Expect rejection with unchanged state, no sacrifice or stack ability, and no extra mana.",
+        "Compare with otherwise identical untapped-source legal control and AutoPay tapped-source negative control. Record outcome, state, events, zone movement, source tap state and stack or mana result.",
+        "Keep direct handler calls separate from public ActionProcessor guarantees; do not infer rejection solely from absence of a tap event."
+      ]
+    }
+  ],
+  "abilityCount": 10,
+  "abilities": [
+    {
+      "sourceAbilityId": "ema-138-ability-1",
+      "sourceOracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+      "sourcePrintingId": "d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/ema-138.json",
+      "sourceSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "Sacrifice this creature: It deals 1 damage to any target.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Mogg Fanatic",
+        "exportedDefinitionSha256": "5d678b75ddd599cc0aa3edf1f70ddd11ce160f6551028f66674e83178f812673",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "TMP",
+        "nativeDefinitionCollectorNumber": "190",
+        "nativeAbilityId": "Mogg Fanatic:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": "CostSacrificeSelf",
+        "nativeAbility": {
+          "id": "Mogg Fanatic:1",
+          "cost": "CostSacrificeSelf",
+          "effect": {
+            "type": "DealDamage",
+            "amount": {
+              "type": "Fixed",
+              "amount": 1
+            },
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            }
+          },
+          "targetRequirements": [
+            {
+              "type": "AnyTarget",
+              "id": "t0"
+            }
+          ],
+          "descriptionOverride": "Sacrifice this creature: It deals 1 damage to any target."
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "Self-sacrifice cost is source-bound; AnyTarget remains a declaration requirement and DealDamage remains resolution. No damage or sacrifice-trigger execution observed."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "fdn-250-ability-1",
+      "sourceOracleId": "893fed41-c144-433f-af88-bc7d419b7fb3",
+      "sourcePrintingId": "65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/fdn-250.json",
+      "sourceSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "{3}, Sacrifice this creature: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 3,
+            "coloredAmounts": {},
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Burnished Hart",
+        "exportedDefinitionSha256": "687a301cdb75801e8b44caa0a402576f1d44d73862dd143bd3a9af934f7b5ed7",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "THS",
+        "nativeDefinitionCollectorNumber": "213",
+        "nativeAbilityId": "Burnished Hart:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": {
+          "type": "CostComposite",
+          "costs": [
+            {
+              "type": "CostAtomWrapper",
+              "atom": {
+                "type": "AtomMana",
+                "cost": "{3}"
+              }
+            },
+            "CostSacrificeSelf"
+          ]
+        },
+        "nativeAbility": {
+          "id": "Burnished Hart:1",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomMana",
+                  "cost": "{3}"
+                }
+              },
+              "CostSacrificeSelf"
+            ]
+          },
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromZone",
+                  "zone": "Library",
+                  "filter": "basicland"
+                },
+                "storeAs": "searchable",
+                "search": true
+              },
+              {
+                "type": "SelectFromCollection",
+                "from": "searchable",
+                "selection": {
+                  "type": "ChooseUpTo",
+                  "count": {
+                    "type": "Fixed",
+                    "amount": 2
+                  }
+                },
+                "storeSelected": "found",
+                "prompt": "Search your library for up to two basic land cards to put onto the battlefield tapped",
+                "selectedLabel": "Put onto the battlefield tapped"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "found",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield",
+                  "placement": "Tapped"
+                }
+              },
+              "ShuffleLibrary",
+              "EmitLibrarySearchedEvent"
+            ]
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "AtomMana {3} plus source sacrifice. Up-to-two search, tapped entry and shuffle appear in effect; zero cards found is not missing payment."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "conjunction",
+        "mana-tap-sharing",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "jud-42-ability-1",
+      "sourceOracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+      "sourcePrintingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/jud-42.json",
+      "sourceSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "Sacrifice this creature: Draw a card, then discard a card.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Hapless Researcher",
+        "exportedDefinitionSha256": "7aa7be71ab7765d5b2d542229839a2113ec8343cc1b3f0232e0ebe2c6ec52101",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "JUD",
+        "nativeDefinitionCollectorNumber": "42",
+        "nativeAbilityId": "Hapless Researcher:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": "CostSacrificeSelf",
+        "nativeAbility": {
+          "id": "Hapless Researcher:1",
+          "cost": "CostSacrificeSelf",
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "DrawCards",
+                "count": {
+                  "type": "Fixed",
+                  "amount": 1
+                }
+              },
+              {
+                "type": "Composite",
+                "effects": [
+                  {
+                    "type": "GatherCards",
+                    "source": {
+                      "type": "FromZone",
+                      "zone": "Hand"
+                    },
+                    "storeAs": "hand"
+                  },
+                  {
+                    "type": "SelectFromCollection",
+                    "from": "hand",
+                    "selection": {
+                      "type": "ChooseExactly",
+                      "count": {
+                        "type": "Fixed",
+                        "amount": 1
+                      }
+                    },
+                    "storeSelected": "discarded",
+                    "prompt": "Choose 1 card to discard"
+                  },
+                  {
+                    "type": "MoveCollection",
+                    "from": "discarded",
+                    "destination": {
+                      "type": "ToZone",
+                      "zone": "Graveyard"
+                    },
+                    "moveType": "Discard"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "Only source sacrifice is a payment. DrawCards then hand selection/move-to-graveyard Discard are effects. Initial hand contents must not be misclassified as an activation payment; empty-hand resolution remains unexecuted."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "mh2-274-ability-1",
+      "sourceOracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+      "sourcePrintingId": "851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/mh2-274.json",
+      "sourceSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "{B}, Pay 2 life: Draw a card.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 0,
+            "coloredAmounts": {
+              "B": 1
+            },
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "pay life",
+            "amount": 2,
+            "payer": "activating player",
+            "minimumLifeTotal": 2,
+            "lifeLoss": true
+          }
+        ],
+        "selectionConstraints": "No object selection in payment.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Greed",
+        "exportedDefinitionSha256": "9f2a7b963cdb3fcaa24b44f57c67bf1b4feed7e0e8481ff759952d7fe03d3fba",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "LEG",
+        "nativeDefinitionCollectorNumber": "101",
+        "nativeAbilityId": "Greed:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": {
+          "type": "CostComposite",
+          "costs": [
+            {
+              "type": "CostAtomWrapper",
+              "atom": {
+                "type": "AtomMana",
+                "cost": "{B}"
+              }
+            },
+            {
+              "type": "CostAtomWrapper",
+              "atom": {
+                "type": "AtomPayLife",
+                "amount": {
+                  "type": "Fixed",
+                  "amount": 2
+                }
+              }
+            }
+          ]
+        },
+        "nativeAbility": {
+          "id": "Greed:1",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomMana",
+                  "cost": "{B}"
+                }
+              },
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomPayLife",
+                  "amount": {
+                    "type": "Fixed",
+                    "amount": 2
+                  }
+                }
+              }
+            ]
+          },
+          "effect": {
+            "type": "DrawCards",
+            "count": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "AtomMana {B} AND AtomPayLife Fixed(2). No sacrifice or tap. Shared life affordability permits exactly 2 unless a prohibition applies; loss-at-zero and actual life subtraction remain execution scope."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "conjunction",
+        "mana-tap-sharing",
+        "life"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "ori-170-ability-1",
+      "sourceOracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+      "sourcePrintingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/ori-170.json",
+      "sourceSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "{1}{G}, Sacrifice this creature: Destroy target artifact or enchantment.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 1,
+            "coloredAmounts": {
+              "G": 1
+            },
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Caustic Caterpillar",
+        "exportedDefinitionSha256": "0a475a0deaf7948aa06ce4b451cbfe1bdb3a82fc3cb33cd14dca2619956ef75c",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "ORI",
+        "nativeDefinitionCollectorNumber": "170",
+        "nativeAbilityId": "Caustic Caterpillar:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": {
+          "type": "CostComposite",
+          "costs": [
+            {
+              "type": "CostAtomWrapper",
+              "atom": {
+                "type": "AtomMana",
+                "cost": "{1}{G}"
+              }
+            },
+            "CostSacrificeSelf"
+          ]
+        },
+        "nativeAbility": {
+          "id": "Caustic Caterpillar:1",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomMana",
+                  "cost": "{1}{G}"
+                }
+              },
+              "CostSacrificeSelf"
+            ]
+          },
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Graveyard",
+            "byDestruction": true
+          },
+          "targetRequirements": [
+            {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": "artifact|enchantment"
+              },
+              "id": "t0"
+            }
+          ]
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "AtomMana {1}{G} plus source sacrifice. Artifact-or-enchantment target is separate from payment; MoveToZone byDestruction is an effect. Target legality/destruction behavior not certified."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "conjunction",
+        "mana-tap-sharing",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "soc-229-ability-1",
+      "sourceOracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "sourcePrintingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/soc-229.json",
+      "sourceSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "a creature permanent chosen by activating player",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly one creature the activator controls; may be Viscera Seer itself or another controlled creature, including a token. Not an opponent-controlled creature, even if owned by the activator.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Viscera Seer",
+        "exportedDefinitionSha256": "c225f932162eae139830af875fdea83a8ab7d20e828b448121945d983c7eb663",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "M11",
+        "nativeDefinitionCollectorNumber": "120",
+        "nativeAbilityId": "Viscera Seer:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": {
+          "type": "CostAtomWrapper",
+          "atom": {
+            "type": "AtomSacrifice",
+            "filter": "creature"
+          }
+        },
+        "nativeAbility": {
+          "id": "Viscera Seer:1",
+          "cost": {
+            "type": "CostAtomWrapper",
+            "atom": {
+              "type": "AtomSacrifice",
+              "filter": "creature"
+            }
+          },
+          "effect": {
+            "type": "Scry",
+            "count": 1
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "AtomSacrifice filter creature has default count=1 and excludeSelf=false. Controller constraint is imposed by candidates/payment, not the exported bare creature filter. Seer or another controlled creature can be selected. Scry 1 is effect."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "owner-destination",
+        "selected-sacrifice",
+        "choice-continuation"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "soc-285-ability-1",
+      "sourceOracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+      "sourcePrintingId": "7a8b1c49-8594-426d-b585-41140235bb0e",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/soc-285.json",
+      "sourceSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "Sacrifice this creature: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Sakura-Tribe Elder",
+        "exportedDefinitionSha256": "c7a1ae66032683e064606daf19f3d5f7cd17670526fd00f8946dc7438be6657b",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "CHK",
+        "nativeDefinitionCollectorNumber": "239",
+        "nativeAbilityId": "Sakura-Tribe Elder:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": "CostSacrificeSelf",
+        "nativeAbility": {
+          "id": "Sakura-Tribe Elder:1",
+          "cost": "CostSacrificeSelf",
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromZone",
+                  "zone": "Library",
+                  "filter": "basicland"
+                },
+                "storeAs": "searchable",
+                "search": true
+              },
+              {
+                "type": "SelectFromCollection",
+                "from": "searchable",
+                "selection": {
+                  "type": "ChooseUpTo",
+                  "count": {
+                    "type": "Fixed",
+                    "amount": 1
+                  }
+                },
+                "storeSelected": "found",
+                "prompt": "Search your library for a basic land card to put onto the battlefield tapped",
+                "selectedLabel": "Put onto the battlefield tapped"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "found",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield",
+                  "placement": "Tapped"
+                }
+              },
+              "ShuffleLibrary",
+              "EmitLibrarySearchedEvent"
+            ]
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "Source sacrifice only. Search/ChooseUpTo 1/basic-land/tapped entry/shuffle appear in effect, consistent with source distinction between activation and resolution."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional."
+      ]
+    },
+    {
+      "sourceAbilityId": "trc-497-ability-1",
+      "sourceOracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "sourcePrintingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "{T}: Add {C}.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          }
+        ],
+        "selectionConstraints": "No object selection in payment.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Mind Stone",
+        "exportedDefinitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "WTH",
+        "nativeDefinitionCollectorNumber": "153",
+        "nativeAbilityId": "Mind Stone:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": "CostTap",
+        "nativeAbility": {
+          "id": "Mind Stone:1",
+          "cost": "CostTap",
+          "effect": {
+            "type": "AddColorlessMana",
+            "amount": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          },
+          "timing": "ManaAbility",
+          "isManaAbility": true
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "CostTap only; AddColorlessMana(1) is effect, timing explicitly ManaAbility, isManaAbility true. No sacrifice or mana payment is encoded. Explicit tapped-source concern remains."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome"
+      ],
+      "implementationConcernIds": [
+        "explicit-tapped-source-affordability"
+      ],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional.",
+        "Tap affordability has an unexecuted explicit-payment code-path concern; no unconditional runtime agreement is asserted."
+      ]
+    },
+    {
+      "sourceAbilityId": "trc-497-ability-2",
+      "sourceOracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+      "sourcePrintingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "sourceAbilityOrdinal": 2,
+      "sourceAbilityText": "{1}, {T}, Sacrifice this artifact: Draw a card.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 1,
+            "coloredAmounts": {},
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Mind Stone",
+        "exportedDefinitionSha256": "432f19db6db0ae04e4e50f6cca341a16170f1fd6b95f1e604c8a1702baad70cf",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "WTH",
+        "nativeDefinitionCollectorNumber": "153",
+        "nativeAbilityId": "Mind Stone:2",
+        "nativeAbilityOrdinal": 2,
+        "nativeCost": {
+          "type": "CostComposite",
+          "costs": [
+            {
+              "type": "CostAtomWrapper",
+              "atom": {
+                "type": "AtomMana",
+                "cost": "{1}"
+              }
+            },
+            "CostTap",
+            "CostSacrificeSelf"
+          ]
+        },
+        "nativeAbility": {
+          "id": "Mind Stone:2",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomMana",
+                  "cost": "{1}"
+                }
+              },
+              "CostTap",
+              "CostSacrificeSelf"
+            ]
+          },
+          "effect": {
+            "type": "DrawCards",
+            "count": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "AtomMana {1}, CostTap and CostSacrificeSelf are three required components, in feasible tap-before-sacrifice order. DrawCards is effect. Source is excluded from mana production used to pay this outer tap cost. Explicit tapped-source concern remains."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "conjunction",
+        "mana-tap-sharing",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [
+        "explicit-tapped-source-affordability"
+      ],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional.",
+        "Tap affordability has an unexecuted explicit-payment code-path concern; no unconditional runtime agreement is asserted."
+      ]
+    },
+    {
+      "sourceAbilityId": "trc-527-ability-1",
+      "sourceOracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+      "sourcePrintingId": "6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-527.json",
+      "sourceSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "sourceAbilityOrdinal": 1,
+      "sourceAbilityText": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "sourcePayment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "nativeBinding": {
+        "inputPath": "generated/cost-examination/native-inputs.json",
+        "definitionName": "Evolving Wilds",
+        "exportedDefinitionSha256": "472f1e1d98426d189657472dec840bd58d947c19f73208f9cef0708bf1946f77",
+        "definitionHashVerification": "Hash is supplied by native exporter; not independently recomputed from SDK serialization. Exact enclosing native-input file hash independently calculated.",
+        "nativeDefinitionSet": "ROE",
+        "nativeDefinitionCollectorNumber": "228",
+        "nativeAbilityId": "Evolving Wilds:1",
+        "nativeAbilityOrdinal": 1,
+        "nativeCost": {
+          "type": "CostComposite",
+          "costs": [
+            "CostTap",
+            "CostSacrificeSelf"
+          ]
+        },
+        "nativeAbility": {
+          "id": "Evolving Wilds:1",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              "CostTap",
+              "CostSacrificeSelf"
+            ]
+          },
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromZone",
+                  "zone": "Library",
+                  "filter": "basicland"
+                },
+                "storeAs": "searchable",
+                "search": true
+              },
+              {
+                "type": "SelectFromCollection",
+                "from": "searchable",
+                "selection": {
+                  "type": "ChooseUpTo",
+                  "count": {
+                    "type": "Fixed",
+                    "amount": 1
+                  }
+                },
+                "storeSelected": "found",
+                "prompt": "Search your library for a basic land card to put onto the battlefield tapped",
+                "selectedLabel": "Put onto the battlefield tapped"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "found",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield",
+                  "placement": "Tapped"
+                }
+              },
+              "ShuffleLibrary",
+              "EmitLibrarySearchedEvent"
+            ]
+          }
+        },
+        "identityAssociation": "Unique exact card name and matching full Oracle text/type within this bounded export; native canonical printing metadata often differs from source printing. No claim of identical physical printing or independent image verification.",
+        "fullOracleTextMatches": true
+      },
+      "printedPaymentFinding": {
+        "status": "STRUCTURAL_AGREEMENT_WITHIN_REVIEWED_SCOPE",
+        "finding": "The exported cost represents every frozen printed payment component with the same quantities and conjunction; no printed-payment structure disagreement identified.",
+        "details": "Tap then same-source sacrifice. Library basic-land selection (ChooseUpTo 1), tapped entry and shuffle are effects, not mana payment. Printed cost agrees; explicit tapped-source concern remains."
+      },
+      "semanticEvidenceIds": [
+        "sdk-cost-kinds",
+        "source-and-controller",
+        "ability-routing",
+        "transaction-outcome",
+        "conjunction",
+        "owner-destination"
+      ],
+      "implementationConcernIds": [
+        "explicit-tapped-source-affordability"
+      ],
+      "executionNeededLimitations": [
+        "No engine execution performed. Correct cost data does not establish total activation legality, successful payment, rollback, effects or whole-card fidelity.",
+        "Printed payment has been compared; game-state cost modifiers, prohibitions and replacement interactions remain conditional.",
+        "Tap affordability has an unexecuted explicit-payment code-path concern; no unconditional runtime agreement is asserted."
+      ]
+    }
+  ],
+  "perScopeFindings": {
+    "printedPaymentStructure": "All ten exported structures agree with frozen printed-payment requirements at reviewed scope.",
+    "controllerOwnerDestination": "Normal selected/self sacrifice controller and owner destination routing are evidenced by actual SDK/engine code, with low-level and replacement caveats. Not inferred from native labels alone.",
+    "declaration": "Priority, controller, tap-symbol creature restriction and targets have separate validation paths; all game-state conditions not comprehensively examined.",
+    "resolution": "Exported effects reviewed only to distinguish them from payments. No whole-effect or whole-card verdict.",
+    "runtimePayment": "Unexecuted. Explicit already-tapped-source path is a concrete static concern requiring fresh adversarial execution.",
+    "rollbackAndContinuations": "Public ActionProcessor atomic-rejection contract and decision/resume paths inspected but not executed."
+  },
+  "executionsPerformed": [],
+  "approvalRecorded": false,
+  "productionFilesEdited": false,
+  "pendingReview": [
+    "Freeze this artifact before exposing original method results or fresh execution findings.",
+    "Fresh execution should investigate the explicit tapped-source concern and normal/invalid payment controls; paused work must be resumed before characterizing final payment.",
+    "Retain qualification pending; structural agreement and code inspection are not overall runtime fidelity certification."
+  ]
+}

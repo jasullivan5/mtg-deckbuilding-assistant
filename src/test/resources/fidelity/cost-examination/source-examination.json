@@ -1,0 +1,1234 @@
+{
+  "schemaVersion": 1,
+  "examiner": "source_examiner",
+  "phase": "A-source-only",
+  "startedAt": "2026-11-08T22:20:23.2578146Z",
+  "completedAt": "2026-11-08T22:23:21.3285200Z",
+  "timestampNote": "startedAt is the first recorded UTC timestamp during source inspection; root instructions and the input manifest had already been read immediately before that timestamp.",
+  "independence": {
+    "isolatedAgent": true,
+    "sameProviderAndCoordinator": true,
+    "boundary": "Instruction-based access isolation only; no separately enforced filesystem sandbox between agents.",
+    "priorConversationOrAuthorExpectedAnswers": "Not supplied to this isolated examiner",
+    "excludedMaterials": "No native definitions, prior requirements, tests, comparison verdicts, receipts, reports, PDF or production implementation consulted.",
+    "qualification": "Not a human independent examination; no automatic independent qualification, approval or acceptance record is created."
+  },
+  "exactFilesConsulted": [
+    "AGENTS.md",
+    "src/test/resources/fidelity/cost-examination/inputs.json",
+    "src/test/resources/fidelity/activation-cost/ema-138.json",
+    "src/test/resources/fidelity/activation-cost/fdn-250.json",
+    "src/test/resources/fidelity/activation-cost/jud-42.json",
+    "src/test/resources/fidelity/activation-cost/mh2-274.json",
+    "src/test/resources/fidelity/activation-cost/ori-170.json",
+    "src/test/resources/fidelity/activation-cost/soc-229.json",
+    "src/test/resources/fidelity/activation-cost/soc-285.json",
+    "src/test/resources/fidelity/activation-cost/trc-497.json",
+    "src/test/resources/fidelity/activation-cost/trc-527.json",
+    "generated/activation-cost/rules.txt"
+  ],
+  "manifest": {
+    "path": "src/test/resources/fidelity/cost-examination/inputs.json",
+    "actualSha256": "46a2cb1c209ce01713cb4a94192d61164e99765afef028358301c02a6a2275b5"
+  },
+  "instructionFile": {
+    "path": "AGENTS.md",
+    "actualSha256": "0992d80bf5c3e98d01d8c83b427d5456294b709d74122b2a7501a743165a036a"
+  },
+  "sources": [
+    {
+      "path": "src/test/resources/fidelity/activation-cost/ema-138.json",
+      "actualSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "expectedSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+      "retrievedAt": "2026-11-08T13:25:27.668423-06:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "7efd5d62-6da2-428a-98e3-5b842f668656",
+          "source": "wotc",
+          "published_at": "2016-06-08",
+          "comment": "Once Mogg Fanatic has dealt and been dealt combat damage, it’s too late to activate its ability before it’s destroyed."
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/fdn-250.json",
+      "actualSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "expectedSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/65ebbff0-fbe6-4310-a33f-e00bb2534979",
+      "retrievedAt": "2026-11-08T13:25:30.616318-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/jud-42.json",
+      "actualSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "expectedSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+      "retrievedAt": "2026-11-08T13:25:29.486524-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/mh2-274.json",
+      "actualSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "expectedSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/851f8d1f-163c-4c4f-beee-431b64ec8a99",
+      "retrievedAt": "2026-11-08T13:25:32.517991-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/ori-170.json",
+      "actualSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "expectedSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+      "retrievedAt": "2026-11-08T13:25:28.300083-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/soc-229.json",
+      "actualSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "expectedSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "retrievedAt": "2026-11-08T13:25:31.861951-06:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "f82a4e85-526d-4456-b700-7760043a31be",
+          "source": "wotc",
+          "published_at": "2010-08-15",
+          "comment": "You can sacrifice Viscera Seer to activate its own ability."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "f82a4e85-526d-4456-b700-7760043a31be",
+          "source": "wotc",
+          "published_at": "2010-08-15",
+          "comment": "If you sacrifice an attacking or blocking creature during the declare blockers step, it won't deal combat damage. If you wait until the combat damage step, but that creature is dealt lethal damage, it'll be destroyed before you get a chance to sacrifice it."
+        }
+      ]
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/soc-285.json",
+      "actualSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "expectedSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/7a8b1c49-8594-426d-b585-41140235bb0e",
+      "retrievedAt": "2026-11-08T13:25:30.023849-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "actualSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "expectedSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/091600ae-6578-4353-8e0f-d170f555bcd0",
+      "retrievedAt": "2026-11-08T13:25:31.232854-06:00",
+      "rulings": []
+    },
+    {
+      "path": "src/test/resources/fidelity/activation-cost/trc-527.json",
+      "actualSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "expectedSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "hashMatches": true,
+      "sourceUrl": "https://api.scryfall.com/cards/6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+      "retrievedAt": "2026-11-08T13:25:28.912427-06:00",
+      "rulings": []
+    }
+  ],
+  "comprehensiveRules": {
+    "path": "generated/activation-cost/rules.txt",
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+    "actualSha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "expectedSha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "hashMatches": true,
+    "effectiveDate": "2026-11-06",
+    "consultationMethod": "Full original local rules text loaded; relevant numbered provisions searched and verified against that full text, rather than relying on preselected rules excerpts or implementation vocabulary.",
+    "verifiedProvisions": {
+      "101.3": "101.3. Any part of an instruction that’s impossible to perform is ignored. (In many cases the card will specify consequences for this; if it doesn’t, there’s no effect.)",
+      "107.4a": "107.4a There are five primary colored mana symbols: {W} is white, {U} blue, {B} black, {R} red, and {G} green. These symbols are used to represent colored mana, and also to represent colored mana in costs. Colored mana in costs can be paid only with the appropriate color of mana. See rule 202, “Mana Cost and Color.”",
+      "107.4b": "107.4b Numerical symbols (such as {1}) and variable symbols (such as {X}) represent generic mana in costs. Generic mana in costs can be paid with any type of mana. For more information about {X}, see rule 107.3.",
+      "107.4c": "107.4c The colorless mana symbol {C} is used to represent one colorless mana, and also to represent a cost that can be paid only with one colorless mana.",
+      "107.5": "107.5. The tap symbol is {T}. The tap symbol in an activation cost means “Tap this permanent.” A permanent that’s already tapped can’t be tapped again to pay the cost. A creature’s activated ability with the tap symbol in its activation cost can’t be activated unless the creature has been under its controller’s control continuously since their most recent turn began. See rule 302.6.",
+      "109.2": "109.2. If a spell or ability uses a description of an object that includes a card type or subtype, but doesn’t refer to a specific zone or include the word “card,” “spell,” “source,” or “scheme,” it means a permanent of that card type or subtype on the battlefield.",
+      "109.5": "109.5. The words “you” and “your” on an object refer to the object’s controller, its would-be controller (if a player is attempting to play, cast, or activate it), or its owner (if it has no controller). For a static ability, this is the current controller of the object it’s on. For an activated ability, this is the player who activated the ability. For a triggered ability, this is the controller of the object when the ability triggered, unless it’s a delayed triggered ability. To determine the controller of a delayed triggered ability, see rules 603.7d–g.",
+      "113.6": "113.6. Abilities of an instant or sorcery spell usually function only while that object is on the stack. Abilities of all other objects usually function only while that object is on the battlefield. The exceptions are as follows:",
+      "113.7a": "113.7a Once activated or triggered, an ability exists on the stack independently of its source. Destruction or removal of the source after that time won’t affect the ability. Note that some abilities cause a source to do something (for example, “This creature deals 1 damage to any target”) rather than the ability doing anything directly. In these cases, any activated or triggered ability that references information about the source for use while announcing an activated ability or putting a triggered ability on the stack checks that information when the ability is put onto the stack. Otherwise, it will check that information when it resolves. In both instances, if the source is no longer in the zone it’s expected to be in at that time, its last known information is used. The source can still perform the action even though it no longer exists.",
+      "115.4": "115.4. Some spells and abilities that refer to damage require “any target,” “another target,” “two targets,” or similar rather than “target [something].” These targets may be creatures, players, planeswalkers, or battles. Other game objects, such as noncreature artifacts or spells, can’t be chosen.",
+      "117.1b": "117.1b A player may activate an activated ability any time they have priority.",
+      "117.5": "117.5. Each time a player would get priority, the game first performs all applicable state-based actions as a single event (see rule 704, “State-Based Actions”), then repeats this process until no state-based actions are performed. Then triggered abilities are put on the stack (see rule 603, “Handling Triggered Abilities”). These steps repeat in order until no further state-based actions are performed and no abilities trigger. Then the player who would have received priority does so.",
+      "118.1": "118.1. A cost is an action or payment necessary to take another action or to stop another action from taking place. To pay a cost, a player carries out the instructions specified by the spell, ability, or effect that contains that cost.",
+      "118.2": "118.2. If a cost includes a mana payment, the player paying the cost has a chance to activate mana abilities. Paying the cost to cast a spell or activate an activated ability follows the steps in rules 601.2f–h.",
+      "118.3": "118.3. A player can’t pay a cost without having the necessary resources to pay it fully. For example, a player with only 1 life can’t pay a cost of 2 life, and a permanent that’s already tapped can’t be tapped to pay a cost. See rule 202, “Mana Cost and Color,” and rule 602, “Activating Activated Abilities.”",
+      "118.3a": "118.3a Paying mana is done by removing the indicated mana from a player’s mana pool. (Players can always pay 0 mana.) If excess mana remains in that player’s mana pool after making that payment, the player announces what mana is still there.",
+      "118.3b": "118.3b Paying life is done by subtracting the indicated amount of life from a player’s life total. (Players can always pay 0 life.)",
+      "118.7": "118.7. What a player actually needs to do to pay a cost may be changed or reduced by effects. If the mana component of a cost is reduced to nothing by cost reduction effects, it’s considered to be {0}. Paying a cost changed or reduced by an effect counts as paying the original cost.",
+      "118.7a": "118.7a Effects that reduce a cost by an amount of generic mana affect only the generic mana component of that cost. They can’t affect the colored or colorless mana components of that cost.",
+      "118.8": "118.8. Some spells and abilities have additional costs. An additional cost is a cost listed in a spell’s rules text, or applied to a spell or ability from another effect, that its controller must pay at the same time they pay the spell’s mana cost or the ability’s activation cost. Note that some additional costs are listed in keywords; see rule 702.",
+      "118.10": "118.10. Each payment of a cost applies to only one spell, ability, or effect. For example, a player can’t sacrifice just one creature to activate the activated abilities of two permanents that each require sacrificing a creature as a cost. Also, the resolution of a spell or ability doesn’t pay another spell or ability’s cost, even if part of its effect is doing the same thing the other cost asks for.",
+      "118.11": "118.11. The actions performed when paying a cost may be modified by effects. Even if they are, meaning the actions that are performed don’t match the actions that are called for, the cost has still been paid.",
+      "119.4": "119.4. If a cost or effect allows a player to pay an amount of life greater than 0, the player may do so only if their life total is greater than or equal to the amount of the payment. If a player pays life, the payment is subtracted from their life total; in other words, the player loses that much life.",
+      "121.1": "121.1. A player draws a card by putting the top card of their library into their hand. This is done as a turn-based action during each player’s draw step. It may also be done as part of a cost or effect of a spell or ability.",
+      "302.6": "302.6. A creature’s activated ability with the tap symbol or the untap symbol in its activation cost can’t be activated unless the creature has been under its controller’s control continuously since their most recent turn began. A creature can’t attack unless it has been under its controller’s control continuously since their most recent turn began. This rule is informally called the “summoning sickness” rule.",
+      "400.3": "400.3. If an object would go to any library, graveyard, or hand other than its owner’s, it goes to its owner’s corresponding zone.",
+      "601.2c": "601.2c The player announces their choice of an appropriate object or player for each target the spell requires. A spell may require some targets only if an alternative or additional cost (such as a kicker cost) or a particular mode was chosen for it; otherwise, the spell is cast as though it did not require those targets. Similarly, a spell may require alternative targets only if an alternative or additional cost was chosen for it. If the spell has a variable number of targets, the player announces how many targets they will choose before they announce those targets. In some cases, the number of targets will be defined by the spell’s text. Once the number of targets the spell has is determined, that number doesn’t change, even if the information used to determine the number of targets does. The same target can’t be chosen multiple times for any one instance of the word “target” on the spell. However, if the spell uses the word “target” in multiple places, the same object or player can be chosen once for each instance of the word “target” (as long as it fits the targeting criteria). If any effects say that an object or player must be chosen as a target, the player chooses targets so that they obey the maximum possible number of such effects without violating any rules or effects that say that an object or player can’t be chosen as a target. The chosen objects and/or players each become a target of that spell. (Any abilities that trigger when those objects and/or players become the target of a spell trigger at this point; they’ll wait to be put on the stack until the spell has finished being cast.)",
+      "601.2f": "601.2f The player determines the total cost of the spell. Usually this is just the mana cost. Some spells have additional or alternative costs. Some effects may increase or reduce the cost to pay, or may provide other alternative costs. Costs may include paying mana, tapping permanents, sacrificing permanents, discarding cards, and so on. The total cost is the mana cost or alternative cost (as determined in rule 601.2b), plus all additional costs and cost increases, and minus all cost reductions. If multiple cost reductions apply, the player may apply them in any order. If the mana component of the total cost is reduced to nothing by cost reduction effects, it is considered to be {0}. It can’t be reduced to less than {0}. Once the total cost is determined, any effects that directly affect the total cost are applied. Then the resulting total cost becomes “locked in.” If effects would change the total cost after this time, they have no effect.",
+      "601.2g": "601.2g If the total cost includes a mana payment, the player then has a chance to activate mana abilities (see rule 605, “Mana Abilities”). Mana abilities must be activated before costs are paid.",
+      "601.2h": "601.2h The player pays the total cost. First, they pay all costs that don’t involve random elements or moving objects from the library to a public zone, in any order. Then they pay all remaining costs in any order. Partial payments are not allowed. Unpayable costs can’t be paid.",
+      "602.1": "602.1. Activated abilities have a cost and an effect. They are written as “[Cost]: [Effect.] [Activation instructions (if any).]”",
+      "602.1a": "602.1a The activation cost is everything before the colon (:). An ability’s activation cost must be paid by the player who is activating it.",
+      "602.1b": "602.1b Some text after the colon of an activated ability states instructions that must be followed while activating that ability. Such text may state which players can activate that ability, may restrict when a player can activate the ability, or may define some aspect of the activation cost. This text is not part of the ability’s effect. It functions at all times. If an activated ability has any activation instructions, they appear last, after the ability’s effect.",
+      "602.2": "602.2. To activate an ability is to put it onto the stack and pay its costs, so that it will eventually resolve and have its effect. Only an object’s controller (or its owner, if it doesn’t have a controller) can activate its activated ability unless the object specifically says otherwise. Activating an ability follows the steps listed below, in order. If, at any point during the activation of an ability, a player is unable to comply with any of those steps, the activation is illegal; the game returns to the moment before that ability started to be activated (see rule 734, “Handling Illegal Actions”). Announcements and payments can’t be altered after they’ve been made.",
+      "602.2a": "602.2a The player announces that they are activating the ability. If an activated ability is being activated from a hidden zone, the card that has that ability is revealed (see rule 701.20a). That ability is created on the stack as an object that’s not a card. It becomes the topmost object on the stack. It has the text of the ability that created it, and no other characteristics. Its controller is the player who activated the ability. The ability remains on the stack until it’s countered, it resolves, or an effect moves it elsewhere.",
+      "602.2b": "602.2b The remainder of the process for activating an ability is identical to the process for casting a spell listed in rules 601.2b–i. Those rules apply to activating an ability just as they apply to casting a spell. An activated ability’s analog to a spell’s mana cost (as referenced in rule 601.2f) is its activation cost.",
+      "602.5": "602.5. A player can’t begin to activate an ability that’s prohibited from being activated.",
+      "602.5a": "602.5a A creature’s activated ability with the tap symbol ({T}) or the untap symbol ({Q}) in its activation cost can’t be activated unless the creature has been under its controller’s control since the start of their most recent turn. Ignore this rule for creatures with haste (see rule 702.10).",
+      "605.1a": "605.1a An activated ability is a mana ability if it meets all of the following criteria: it doesn’t require a target (see rule 115.6), it could add mana to a player’s mana pool when it resolves, it’s not a loyalty ability (see rule 606, “Loyalty Abilities”), and its cost and effect don’t move any card to or from a library. Do not take into account replacement effects that may apply, other than self-replacement effects, when evaluating these criteria.",
+      "605.3a": "605.3a A player may activate an activated mana ability whenever they have priority, whenever they are casting a spell or activating an ability that requires a mana payment, or whenever a rule or effect asks for a mana payment, even if it’s in the middle of casting or resolving a spell or activating or resolving an ability.",
+      "605.3b": "605.3b An activated mana ability doesn’t go on the stack, so it can’t be targeted, countered, or otherwise responded to. Rather, it resolves immediately after it is activated. (See rule 405.6c.)",
+      "605.5": "605.5. Abilities that don’t meet the criteria specified in rules 605.1a–b and spells aren’t mana abilities.",
+      "608.2b": "608.2b If the spell or ability specifies targets, it checks whether the targets are still legal. A target that’s no longer in the zone it was in when it was targeted is illegal. Other changes to the game state may cause a target to no longer be legal; for example, its characteristics may have changed or an effect may have changed the text of the spell. If the source of an ability has left the zone it was in, its last known information is used during this process. If all its targets, for every instance of the word “target,” are now illegal, the spell or ability doesn’t resolve. It’s removed from the stack and, if it’s a spell, put into its owner’s graveyard. Otherwise, the spell or ability will resolve normally. Illegal targets, if any, won’t be affected by parts of a resolving spell’s effect for which they’re illegal. Other parts of the effect for which those targets are not illegal may still affect them. If the spell or ability creates any continuous effects that affect game rules (see rule 613.11), those effects don’t apply to illegal targets. If part of the effect requires information about an illegal target, it fails to determine any such information. Any part of the effect that requires that information won’t happen.",
+      "608.2c": "608.2c The controller of the spell or ability follows its instructions in the order written. However, replacement effects may modify these actions. In some cases, later text on the card may modify the meaning of earlier text (for example, “Destroy target creature. It can’t be regenerated” or “Counter target spell. If that spell is countered this way, put it on top of its owner’s library instead of into its owner’s graveyard.”) Don’t just apply effects step by step without thinking in these cases—read the whole text and apply the rules of English to the text.",
+      "608.2d": "608.2d If an effect of a spell or ability offers any choices other than choices already made as part of casting the spell, activating the ability, or otherwise putting the spell or ability on the stack, the player announces these while applying the effect. The player can’t choose an option that’s illegal or impossible, with the exception that having a library with no cards in it doesn’t make drawing a card an impossible action (see rule 121.3). If an effect divides or distributes something, such as damage or counters, as a player chooses among any number of untargeted players and/or objects, the player chooses the amount and division such that each chosen player or object receives at least one of whatever is being divided. (Note that if an effect divides or distributes something, such as damage or counters, as a player chooses among some number of target objects and/or players, the amount and division were determined as the spell or ability was put onto the stack rather than at this time; see rule 601.2d.)",
+      "608.2h": "608.2h If an effect requires information from the game (such as the number of creatures on the battlefield), the answer is determined only once, when the effect is applied. If the effect requires information from a specific object, including the source of the ability itself, the effect uses the current information of that object if it’s in the public zone it was expected to be in; if it’s no longer in that zone, or if the effect has moved it from a public zone to a hidden zone, the effect uses the object’s last known information. See rule 113.7a. If an ability states that an object does something, it’s the object as it exists—or as it most recently existed—that does it, not the ability.",
+      "701.9a": "701.9a To discard a card, move it from its owner’s hand to that player’s graveyard.",
+      "701.21a": "701.21a To sacrifice a permanent, its controller moves it from the battlefield directly to its owner’s graveyard. A player can’t sacrifice something that isn’t a permanent, or something that’s a permanent they don’t control. Sacrificing a permanent doesn’t destroy it, so regeneration or other effects that replace destruction can’t affect this action.",
+      "701.22a": "701.22a To “scry N” means to look at the top N cards of your library, then put any number of them on the bottom of your library in any order and the rest on top of your library in any order.",
+      "701.23a": "701.23a To search for a card in a zone, look at all cards in that zone (even if it’s a hidden zone) and find a card that matches the given description.",
+      "701.23b": "701.23b If a player is searching a hidden zone for cards with a stated quality, such as a card with a certain card type or color, that player isn’t required to find some or all of those cards even if they’re present in that zone.",
+      "701.24a": "701.24a To shuffle a library or a face-down pile of cards, randomize the cards within it so that no player knows their order.",
+      "701.24e": "701.24e If an effect causes a player to shuffle a library containing zero or one cards, abilities that trigger when a library is shuffled will still trigger.",
+      "701.26a": "701.26a To tap a permanent, turn it sideways from an upright position. Only untapped permanents can be tapped.",
+      "704.3": "704.3. Whenever a player would get priority (see rule 117, “Timing and Priority”), the game checks for any of the listed conditions for state-based actions, then performs all applicable state-based actions simultaneously as a single event. If any state-based actions are performed as a result of a check, the check is repeated; otherwise all triggered abilities that are waiting to be put on the stack are put on the stack, then the check is repeated. Once no more state-based actions have been performed as the result of a check and no triggered abilities are waiting to be put on the stack, the appropriate player gets priority. This process also occurs during the cleanup step (see rule 514), except that if no state-based actions are performed as the result of the step’s first check and no triggered abilities are waiting to be put on the stack, then no player gets priority and the step ends.",
+      "704.5a": "704.5a If a player has 0 or less life, that player loses the game.",
+      "704.5g": "704.5g If a creature has toughness greater than 0, it has damage marked on it, and the total damage marked on it is greater than or equal to its toughness, that creature has been dealt lethal damage and is destroyed. Regeneration can replace this event."
+    }
+  },
+  "abilityCount": 10,
+  "abilities": [
+    {
+      "abilityId": "ema-138-ability-1",
+      "physicalIdentity": {
+        "name": "Mogg Fanatic",
+        "oracleId": "7efd5d62-6da2-428a-98e3-5b842f668656",
+        "printingId": "d479ca28-bdc2-4b87-abf7-5aeb229a3f1e",
+        "set": "ema",
+        "collectorNumber": "138",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Mogg Fanatic",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Creature — Goblin"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/ema-138.json",
+      "sourceSha256": "b706d623a353f70692bf8a2e00485d3a96aff67f68a6b65508ff5b1ef160151d",
+      "oracleText": "Sacrifice this creature: It deals 1 damage to any target.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "Sacrifice this creature: It deals 1 damage to any target.",
+      "printedPaymentText": "Sacrifice this creature",
+      "completePrintedPaymentPlainLanguage": "Sacrifice this source permanent you control; no printed mana, tap, life or discard payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": {
+        "count": 1,
+        "allowed": "creature, player, planeswalker or battle",
+        "controllerRestriction": "none printed",
+        "selectedAt": "activation before payment"
+      },
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "Choose a legal required target before paying costs. If the sole target later becomes illegal, the ability does not resolve; already paid costs are not returned."
+      ],
+      "resolutionDependencies": [
+        "Source deals 1 damage to the target if still legal, using source last-known information as necessary. Sacrificing the source does not remove its ability."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "115.4",
+        "601.2c",
+        "608.2b",
+        "608.2h",
+        "704.3",
+        "704.5g",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "Its supplied ruling prevents waiting until after lethal combat damage and then sacrificing before destruction. It can target itself if otherwise legal, but after sacrificing itself that sole target is illegal and the ability will not resolve.",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "fdn-250-ability-1",
+      "physicalIdentity": {
+        "name": "Burnished Hart",
+        "oracleId": "893fed41-c144-433f-af88-bc7d419b7fb3",
+        "printingId": "65ebbff0-fbe6-4310-a33f-e00bb2534979",
+        "set": "fdn",
+        "collectorNumber": "250",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Burnished Hart",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Artifact Creature — Elk"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/fdn-250.json",
+      "sourceSha256": "f00e701a70f0ff5c578a395e152b384cc829913486f0794b8fdff2df73346e4a",
+      "oracleText": "{3}, Sacrifice this creature: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{3}, Sacrifice this creature: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+      "printedPaymentText": "{3}, Sacrifice this creature",
+      "completePrintedPaymentPlainLanguage": "Pay three generic mana AND sacrifice this same source permanent you control.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 3,
+            "coloredAmounts": {},
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "On resolution search the activator library for up to two basic land cards, put those found onto the battlefield tapped, then shuffle. Finding zero is allowed; availability of lands is not an activation payment."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.4a",
+        "107.4b",
+        "118.2",
+        "118.3a",
+        "118.7a",
+        "601.2g",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "701.23a",
+        "701.23b",
+        "701.24a",
+        "701.24e",
+        "608.2c",
+        "608.2d",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Generic mana is payable with mana of any type; printed colored mana requires that color. Mana here is an activation payment, distinct from the card casting cost.",
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "jud-42-ability-1",
+      "physicalIdentity": {
+        "name": "Hapless Researcher",
+        "oracleId": "240a349a-79f8-4e11-9a05-a78148e70a62",
+        "printingId": "22ed0ee7-6749-4f38-8e53-c11b46b17e5d",
+        "set": "jud",
+        "collectorNumber": "42",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Hapless Researcher",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Creature — Human Wizard"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/jud-42.json",
+      "sourceSha256": "e6969fa2fcd4a21f3975646551a9c9f15decf1996de7390b3934192c1c01a80a",
+      "oracleText": "Sacrifice this creature: Draw a card, then discard a card.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "Sacrifice this creature: Draw a card, then discard a card.",
+      "printedPaymentText": "Sacrifice this creature",
+      "completePrintedPaymentPlainLanguage": "Sacrifice this source permanent you control; no printed mana, tap, life or discard payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "Activator draws a card, then discards a card. Discard is an effect after drawing, not a prerequisite or payment; an initially empty hand does not prohibit activation. Follow as much as possible if a draw/discard cannot occur."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "121.1",
+        "701.9a",
+        "608.2c",
+        "608.2d",
+        "101.3",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "mh2-274-ability-1",
+      "physicalIdentity": {
+        "name": "Greed",
+        "oracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+        "printingId": "851f8d1f-163c-4c4f-beee-431b64ec8a99",
+        "set": "mh2",
+        "collectorNumber": "274",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Greed",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Enchantment"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/mh2-274.json",
+      "sourceSha256": "d559c2be2eea7038579d84fa1efd34adb585bd457fbde2af2f21a0991b20ebfe",
+      "oracleText": "{B}, Pay 2 life: Draw a card.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{B}, Pay 2 life: Draw a card.",
+      "printedPaymentText": "{B}, Pay 2 life",
+      "completePrintedPaymentPlainLanguage": "Pay one black mana AND pay two life; do not sacrifice or tap Greed.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 0,
+            "coloredAmounts": {
+              "B": 1
+            },
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "pay life",
+            "amount": 2,
+            "payer": "activating player",
+            "minimumLifeTotal": 2,
+            "lifeLoss": true
+          }
+        ],
+        "selectionConstraints": "No object selection in payment.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "Activator draws one card on resolution; an empty library is not an activation-cost insufficiency."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.4a",
+        "107.4b",
+        "118.2",
+        "118.3a",
+        "118.7a",
+        "601.2g",
+        "118.3b",
+        "119.4",
+        "704.5a",
+        "117.5",
+        "121.1",
+        "608.2c",
+        "117.1b",
+        "602.5",
+        "113.7a"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Generic mana is payable with mana of any type; printed colored mana requires that color. Mana here is an activation payment, distinct from the card casting cost.",
+        "Exactly 2 life is enough to pay; paying to 0 does not make the payment illegal, but normally causes loss at the next state-based-action check before this draw resolves. Less than 2 cannot pay. Life payment prohibitions still apply.",
+        "The mana and life are conjunctive, not alternatives. Paying life is not damage.",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "ori-170-ability-1",
+      "physicalIdentity": {
+        "name": "Caustic Caterpillar",
+        "oracleId": "45d35128-76e6-43f9-8d23-41f7506c3a71",
+        "printingId": "f03d4e0d-bddd-4835-91b8-11c2f15e54c3",
+        "set": "ori",
+        "collectorNumber": "170",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Caustic Caterpillar",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Creature — Insect"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/ori-170.json",
+      "sourceSha256": "1fa0a1af15b070d8c8332ca59b3e74bcd912618892c40a071c5711473e85ab3b",
+      "oracleText": "{1}{G}, Sacrifice this creature: Destroy target artifact or enchantment.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{1}{G}, Sacrifice this creature: Destroy target artifact or enchantment.",
+      "printedPaymentText": "{1}{G}, Sacrifice this creature",
+      "completePrintedPaymentPlainLanguage": "Pay one generic mana AND one green mana AND sacrifice this same source permanent you control.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 1,
+            "coloredAmounts": {
+              "G": 1
+            },
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": {
+        "count": 1,
+        "allowed": "artifact or enchantment permanent",
+        "controllerRestriction": "none printed",
+        "selectedAt": "activation before payment"
+      },
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "Choose a legal required target before paying costs. If the sole target later becomes illegal, the ability does not resolve; already paid costs are not returned."
+      ],
+      "resolutionDependencies": [
+        "Destroy the target if still legal. Target legality is checked on resolution; inability to destroy an indestructible target is distinct from inability to choose a legal target."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.4a",
+        "107.4b",
+        "118.2",
+        "118.3a",
+        "118.7a",
+        "601.2g",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "109.2",
+        "601.2c",
+        "608.2b",
+        "608.2c",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Generic mana is payable with mana of any type; printed colored mana requires that color. Mana here is an activation payment, distinct from the card casting cost.",
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "The two mana units are distinct. A legal target is necessary to declare the activation, separate from cost affordability.",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "soc-229-ability-1",
+      "physicalIdentity": {
+        "name": "Viscera Seer",
+        "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "printingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+        "set": "soc",
+        "collectorNumber": "229",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Viscera Seer",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Creature — Vampire Wizard"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/soc-229.json",
+      "sourceSha256": "2d3f808450b7080f5cc902f655704fc360f65c6f9d9288a49337f25e14b5357c",
+      "oracleText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "printedPaymentText": "Sacrifice a creature",
+      "completePrintedPaymentPlainLanguage": "Sacrifice exactly one creature permanent you control; it may be this source or another creature. No printed mana or tap payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "a creature permanent chosen by activating player",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly one creature the activator controls; may be Viscera Seer itself or another controlled creature, including a token. Not an opponent-controlled creature, even if owned by the activator.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "Activator scries 1 on resolution: inspect the top library card, then leave it on top or put it on the bottom. This is not an activation payment or a target."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "701.22a",
+        "608.2c",
+        "608.2d",
+        "704.3",
+        "704.5g",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "Supplied ruling explicitly permits self-sacrifice. Other supplied ruling prevents sacrificing a lethally damaged creature after combat damage before destruction.",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "soc-285-ability-1",
+      "physicalIdentity": {
+        "name": "Sakura-Tribe Elder",
+        "oracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+        "printingId": "7a8b1c49-8594-426d-b585-41140235bb0e",
+        "set": "soc",
+        "collectorNumber": "285",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Sakura-Tribe Elder",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Creature — Snake Shaman"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/soc-285.json",
+      "sourceSha256": "d368d899e0511de7e7bcbc63a0c817839652e289bfb32f886b7f2bb831e202d1",
+      "oracleText": "Sacrifice this creature: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "Sacrifice this creature: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "printedPaymentText": "Sacrifice this creature",
+      "completePrintedPaymentPlainLanguage": "Sacrifice this source permanent you control; no printed mana, tap, life or discard payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "On resolution search the activator library for a basic land card, put that card onto the battlefield tapped, then shuffle. Hidden-zone quality search may find no card even if one is present."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "701.23a",
+        "701.23b",
+        "701.24a",
+        "701.24e",
+        "608.2c",
+        "608.2d",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "No tap-symbol payment is printed, so being tapped or newly controlled does not alone prevent this activation; other applicable game restrictions may still do so."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "trc-497-ability-1",
+      "physicalIdentity": {
+        "name": "Mind Stone",
+        "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+        "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+        "set": "trc",
+        "collectorNumber": "497",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Mind Stone",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Artifact"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "oracleText": "{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{T}: Add {C}.",
+      "printedPaymentText": "{T}",
+      "completePrintedPaymentPlainLanguage": "Tap this source permanent; no printed mana or sacrifice payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          }
+        ],
+        "selectionConstraints": "No object selection in payment.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Activate with priority or at the special mana-payment opportunities in 605.3a; no stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "This is an activated mana ability: add one colorless mana to activator mana pool immediately, without the stack or a response window."
+      ],
+      "manaAbility": true,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.5",
+        "701.26a",
+        "302.6",
+        "602.5a",
+        "107.4c",
+        "605.1a",
+        "605.3a",
+        "605.3b"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "A tapped source cannot pay this tap cost. If the source is a creature, the control-since-turn-began requirement applies unless an exception such as haste applies; the printed noncreature types alone do not impose summoning sickness.",
+        "The {C} appears in the effect, not in the activation payment."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "trc-497-ability-2",
+      "physicalIdentity": {
+        "name": "Mind Stone",
+        "oracleId": "c97361b5-af16-4a7b-af85-a429dbaf4ad2",
+        "printingId": "091600ae-6578-4353-8e0f-d170f555bcd0",
+        "set": "trc",
+        "collectorNumber": "497",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Mind Stone",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Artifact"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-497.json",
+      "sourceSha256": "df4f41e720b24600599a40211f3b07b54fabc935a04d218625f7f548914d1844",
+      "oracleText": "{T}: Add {C}.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+      "sourceAbilityOrdinal": 2,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{1}, {T}, Sacrifice this artifact: Draw a card.",
+      "printedPaymentText": "{1}, {T}, Sacrifice this artifact",
+      "completePrintedPaymentPlainLanguage": "Pay one generic mana AND tap this source permanent AND sacrifice this same source permanent you control.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "pay mana",
+            "payer": "activating player",
+            "genericAmount": 1,
+            "coloredAmounts": {},
+            "requiredColorlessAmount": 0,
+            "distinctManaUnits": true
+          },
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "Activator draws one card on resolution. This is not a mana ability."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.4a",
+        "107.4b",
+        "118.2",
+        "118.3a",
+        "118.7a",
+        "601.2g",
+        "107.5",
+        "701.26a",
+        "302.6",
+        "602.5a",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "121.1",
+        "605.5",
+        "608.2c",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "Generic mana is payable with mana of any type; printed colored mana requires that color. Mana here is an activation payment, distinct from the card casting cost.",
+        "A tapped source cannot pay this tap cost. If the source is a creature, the control-since-turn-began requirement applies unless an exception such as haste applies; the printed noncreature types alone do not impose summoning sickness.",
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "The tap and sacrifice refer to the very same source. A feasible payment order must tap before sacrificing. The printed comma order does not generally impose a fixed order on all payments.",
+        "Activating the first ability to obtain mana taps the source, so without an untap or other relevant intervention it cannot also pay the draw ability tap cost. Mana availability alone does not satisfy the three-part cost."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    },
+    {
+      "abilityId": "trc-527-ability-1",
+      "physicalIdentity": {
+        "name": "Evolving Wilds",
+        "oracleId": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
+        "printingId": "6e01ec28-d815-47a8-ab0f-d383a4736ebe",
+        "set": "trc",
+        "collectorNumber": "527",
+        "language": "en",
+        "layout": "normal",
+        "faceIndex": 0,
+        "faceName": "Evolving Wilds",
+        "faceIdentityBasis": "Single-face normal-layout source; no separate card_faces record or separate face UUID supplied.",
+        "typeLine": "Land"
+      },
+      "sourcePath": "src/test/resources/fidelity/activation-cost/trc-527.json",
+      "sourceSha256": "72dd39c2f8c1e22b4292e8d67815f4a9f62c7c19caaf8739e2fe34b683cbc783",
+      "oracleText": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "sourceAbilityOrdinal": 1,
+      "ordinalBasis": "1-based activated-ability order in this single face Oracle text",
+      "sourceAbilityText": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "printedPaymentText": "{T}, Sacrifice this land",
+      "completePrintedPaymentPlainLanguage": "Tap this source permanent AND sacrifice this same source permanent you control; no printed mana payment.",
+      "payment": {
+        "relation": "all components required together",
+        "components": [
+          {
+            "action": "tap",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "initialState": "untapped",
+            "payer": "activating player"
+          },
+          {
+            "action": "sacrifice",
+            "quantity": 1,
+            "object": "this same source permanent",
+            "zone": "battlefield",
+            "mustBeControlledBy": "activating player",
+            "mustBeOwnedBy": "no ownership requirement",
+            "destination": "owner graveyard unless a replacement applies",
+            "sourceMayBeChosen": true,
+            "anotherRequired": false,
+            "targeted": false
+          }
+        ],
+        "selectionConstraints": "Exactly the source; another object, including another with the same name, cannot substitute. No free creature selection.",
+        "controllerConstraint": "Activator is source controller; each sacrificed permanent must also be controlled by activator.",
+        "ownerConstraint": "Activator need not own source or sacrificed permanent; sacrifice moves to owner graveyard absent replacement.",
+        "printedAlternativePayments": [],
+        "printedOptionalPayments": [],
+        "printedExtraTimingRestrictions": []
+      },
+      "targetRequirements": null,
+      "declarationDependencies": [
+        "Normally requires priority; no printed sorcery-only, once-per-turn or other timing restriction. Ability uses the stack.",
+        "Source ability functions from the battlefield and normally only its controller can activate it. All printed payment components must be payable in full for one activation; partial payment and reusing one payment for a second ability are forbidden.",
+        "No targets are printed. Library searches, drawing, discarding and scry choices, where present, occur during resolution rather than paying this activation."
+      ],
+      "resolutionDependencies": [
+        "On resolution search the activator library for a basic land card, put it onto the battlefield tapped, then shuffle. This is not a mana ability; it does not add mana."
+      ],
+      "manaAbility": false,
+      "applicableRuleReferences": [
+        "113.6",
+        "109.5",
+        "602.1",
+        "602.1a",
+        "602.2",
+        "602.2b",
+        "118.3",
+        "118.10",
+        "118.11",
+        "601.2f",
+        "601.2h",
+        "107.5",
+        "701.26a",
+        "302.6",
+        "602.5a",
+        "701.21a",
+        "113.7a",
+        "400.3",
+        "701.23a",
+        "701.23b",
+        "701.24a",
+        "701.24e",
+        "608.2c",
+        "608.2d",
+        "605.5",
+        "117.1b",
+        "602.5"
+      ],
+      "paymentConditionsOftenOverlooked": [
+        "A tapped source cannot pay this tap cost. If the source is a creature, the control-since-turn-began requirement applies unless an exception such as haste applies; the printed noncreature types alone do not impose summoning sickness.",
+        "Sacrifice is payment during activation, not a resolution effect; it does not destroy. Ownership does not substitute for control. A replacement of the sacrifice destination does not by itself make payment unpaid (118.11).",
+        "Tap and sacrifice refer to the same source; tap must precede sacrificing in any feasible payment order. The fetched land entering tapped is a resolution instruction, distinct from tapping Evolving Wilds as payment."
+      ],
+      "uncertainties": [
+        "Actual total payment and activation permission depend on game-state cost modifiers, prohibitions, replacement effects and granted/lost abilities; this entry specifies the original source ability, not all possible modified game states.",
+        "The supplied Scryfall snapshot has Oracle text and physical printing identifiers but no printed_text field; this examination does not visually verify historical ink or card art. No external sources or images were consulted."
+      ],
+      "proposedReviewScope": [
+        "Compare every printed payment component, conjunction, quantity, source-versus-selected-object binding and controller/owner relation to separately supplied native evidence after this artifact is frozen.",
+        "Review declaration legality separately from successful resolution; preserve unsupported or uncertain total-cost/game-state interactions. No implementation verdict is made here."
+      ]
+    }
+  ],
+  "overallScope": "All printed activated abilities represented in the nine original single-face Oracle snapshots, including both Mind Stone abilities; printed payment expectations and necessary declaration/resolution boundaries only.",
+  "scopeLimitations": [
+    "No native comparison, execution, overall card fidelity verdict, approval or certification.",
+    "No new network retrieval; all source statements are bound to the supplied raw snapshot hashes.",
+    "Physical identity is the supplied printing identity, not an independent image or historical-ink authentication.",
+    "Generic effects that may alter payment are flagged rather than exhaustively enumerating every card interaction or multiplayer variant."
+  ]
+}

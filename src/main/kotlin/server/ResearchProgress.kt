@@ -74,7 +74,8 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val objectiveInventory: ObjectiveInventory by lazy { dev.mtg.assistant.coverage.objectiveInventory(catalog) }
     val pilot: FidelityPilot by lazy { SacrificePilot.report(catalog,factRecords) }
     val activationCosts: ActivationCostReport by lazy { ActivationCostFidelity.report(catalog,revision) }
-    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts) }
+    val costExamination: CostExaminationReport by lazy { CostExamination.report(catalog,revision) }
+    val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts,costExamination=costExamination) }
     val report: ResearchProgress by lazy {
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
@@ -117,9 +118,11 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
                 ProgressObstacle("objective-quality", "Objective correctness and expressiveness remain narrow", "Four bounded questions; independent catalog-scale search correctness is not measured.",
                     "Operational matches do not establish complete recall, precision or useful deck value.", "Grim Haruspex death-triggered draw is outside the current death objective; cross-card dependencies remain uncomposed.",
                     "Review one existing frozen card-objective relationship cohort independently before defining a broader benchmark.", "Documented scope; operational counts measured separately", "objectives"),
-                ProgressObstacle("execution", "Reusable execution evidence has narrow reach", "The verification index reports bounded attributable observations; complete source-to-native scope enumeration is not established.",
-                    "Structural potential cannot establish behavior after object identity, targets or zones change.", "The source-sacrifice investigation retained Spark Elemental's old-trigger/new-object failure. Later Lab observations remain separately revision-bound.",
-                    "Establish a source-derived complete scope inventory for one reviewed card before defining whole-card assurance.", "Indexed bounded receipts; historical failure retained; completeness unmeasured", "verification-coverage"),
+                ProgressObstacle("execution", "Native payment enforcement has a measured gap",
+                    if(costExamination.executionState=="RECORDED_CURRENT_BINDINGS") "${costExamination.counts["source_expectations_contradicted"]} source-payment contradictions in ${costExamination.counts["current_scenarios"]} bounded current scenarios; affected catalog breadth is not established."
+                    else "Payment-boundary evidence is missing or stale; current affected scope is not established.",
+                    "A correct printed cost tree does not ensure the engine enforces every payment strategy.", "Already-tapped Mind Stone's mana ability and Evolving Wilds completed under Explicit; AutoPay controls refused. Spark's historical generation failure remains retained.",
+                    "Verify and correct source-tap payment enforcement across native payment strategies in one scoped engine investigation, before broadening assurance.", "Bounded native observations; independent qualification pending; potential reach is not confirmed impact", "cost-examination"),
                 ProgressObstacle("context", "Discovery does not yet evaluate a deck slot in context", "System capability gap; affected-card count is not a meaningful unit.",
                     "A useful mechanical contribution can still be unaffordable or displace a better complementary card.", "Reassembling Skeleton plus Viscera Seer needs mana, timing and another card; discovery does not evaluate the package or its opportunity cost.",
                     "Specify one bounded cross-card dependency question using existing facts, with explicit resource and timing requirements.", "Documented capability limit", "capabilities")

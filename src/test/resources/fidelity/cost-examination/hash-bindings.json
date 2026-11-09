@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Explicit transport equivalence only; no JSON field or mechanical normalization. Frozen source/native findings are unchanged.",
+  "files": {
+    "inputs.json": {
+      "rawFreezeSha256": "46a2cb1c209ce01713cb4a94192d61164e99765afef028358301c02a6a2275b5",
+      "utf8LfSha256": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+      "rawArchive": "inputs.json.raw.gz",
+      "transformation": "CRLF_TO_LF_ONLY",
+      "reconstruction": "Exact freeze bytes reconstructed by line endings and verified against examiner-observed SHA256"
+    },
+    "source-examination.json": {
+      "rawFreezeSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+      "utf8LfSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+      "rawArchive": "source-examination.json.raw.gz",
+      "transformation": "CRLF_TO_LF_ONLY",
+      "reconstruction": "Original examiner/export bytes preserved"
+    },
+    "native-inputs.json": {
+      "rawFreezeSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57",
+      "utf8LfSha256": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+      "rawArchive": "native-inputs.json.raw.gz",
+      "transformation": "CRLF_TO_LF_ONLY",
+      "reconstruction": "Original examiner/export bytes preserved"
+    },
+    "native-examination.json": {
+      "rawFreezeSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+      "utf8LfSha256": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+      "rawArchive": "native-examination.json.raw.gz",
+      "transformation": "CRLF_TO_LF_ONLY",
+      "reconstruction": "Original examiner/export bytes preserved"
+    }
+  }
+}

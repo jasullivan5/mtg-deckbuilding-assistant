@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "frozenBeforeFreshExecution": true,
+  "sourcePhaseSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+  "nativePhaseSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "nativeContract": [
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/core/Outcome.kt",
+      "sha256": "d74169d473b2349586640a7b1f29028c8373fae67001917d9416f7f1599ad40d"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ExecutionResult.kt",
+      "sha256": "9f8454651f309b5489d5aac69a01126b1913c3cd7afb792ca51bcd25d8c81657"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/core/ActionProcessor.kt",
+      "sha256": "1abad1829bcb1413ddf909299db5ccf525ffcf40242245ce8e537ab39bac2f34"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/core/GameAction.kt",
+      "sha256": "9d39860ef5bd6bf50475a81d50a409f52be267c273b98be49dc8b529d00b6fde"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationValidator.kt",
+      "sha256": "9d1f36c82114452704aa19cec73f7e4a4c9ee52fa74df516039b87c855c93d71"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/actions/ability/ActivationChoicePauses.kt",
+      "sha256": "1f0588ab38cf9a1c3becfa72bccfad94452762331904a04c52a4eb1bf08552e8"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/CostHandler.kt",
+      "sha256": "b899b1ab52cc8d5ce4f10e8378cf41e2c23c7aaf194fb20244b09797ed52d37a"
+    },
+    {
+      "path": "rules-engine/src/main/kotlin/com/wingedsheep/engine/handlers/continuations/ActivateAbilityXCostContinuationResumer.kt",
+      "sha256": "b45ad6dc5f421d454b6d061b4928ded02be98532e0739a9ea9d73e372c5dc310"
+    }
+  ],
+  "rulesExpectation": "Only controlled creatures can pay Viscera Seer; owner may differ. Every tap requirement must actually be payable: an already-tapped permanent cannot pay tap. Illegal payments/activations must not be accepted or cause paid state changes. Rules do not prescribe engine diagnostic enum names.",
+  "transactionContract": "Native Outcome distinguishes validation IllegalAction, downstream ExecutionFailed and Paused pending decisions; ActionProcessor rolls back either rejected outcome. Capture both source-payment result and dispatch diagnostic; unchanged state alone is insufficient.",
+  "codeInspectionHypotheses": [
+    "Prefilled noncreature/foreign-controller choices bypass candidate selection, pass generic affordability when another valid creature exists, then fail CostHandler selection validation.",
+    "Unspecified choice with multiple candidates pauses before payment, rather than proving unsupported native workflow.",
+    "PaymentStrategy.Explicit bypasses general affordability and source tap may be treated as a successful no-op when already tapped. This is an unexecuted hypothesis until fresh receipt; source expectation remains refusal."
+  ],
+  "newControls": [
+    "self creature",
+    "other controlled creature",
+    "borrowed creature",
+    "owned but opponent-controlled creature",
+    "noncreature prefilled choice",
+    "missing selection then invalid decision then valid recovery",
+    "unpayable mana with valid target",
+    "invalid target with payable mana",
+    "Mind Stone tap-only: untapped Explicit, tapped AutoPay, tapped Explicit",
+    "Evolving Wilds combined payment: untapped Explicit, tapped AutoPay, tapped Explicit"
+  ],
+  "additionalStructuralChallenge": "Change Viscera Seer to sacrifice another creature, excluding the source; reject any claim that this is equivalent to its printed selection."
+}

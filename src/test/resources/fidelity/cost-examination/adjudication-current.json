@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "examiner": "source_examiner",
+  "phase": "C-updated-receipt-adjudication",
+  "startedAt": "2026-11-09T00:07:07.9429441Z",
+  "completedAt": "2026-11-09T00:08:40.9649205Z",
+  "bindings": {
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "sourcePhaseSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+    "nativePhaseSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+    "executionReceiptSha256": "f860245a9a137f1d12af8246b4e7ddbff9b27081dee15f0175798e8b4702b573"
+  },
+  "priorAdjudication": {
+    "rawSha256": "01dddfa794877ce8fee58afa227bfc7dd7321b23ee7dc75845d50d8acf9d4a3b",
+    "expectedRawSha256": "01dddfa794877ce8fee58afa227bfc7dd7321b23ee7dc75845d50d8acf9d4a3b",
+    "historicalAssessmentPreserved": true,
+    "initialReceiptRawSha256": "59d6c913ba8ae58e714916a9e82153a8409d3eb7bb90467dce94763661034b0c",
+    "initialReceiptArchive": "src/test/resources/fidelity/cost-examination/initial-execution.json.gz"
+  },
+  "provenance": {
+    "sameExaminerAsPriorPhases": true,
+    "sameProviderAndCoordinator": true,
+    "independenceBoundary": "Instruction-based isolated access for original source/native phases only; no independently enforced filesystem isolation or independent human reviewer. This follow-up creates no additional reviewer or source-reviewed card.",
+    "qualification": "PENDING",
+    "approvalRecorded": false,
+    "nativeExecutionsByExaminer": 0,
+    "sourceOrCodeEditsByExaminer": false,
+    "exactFilesConsulted": [
+      {
+        "path": "src/main/resources/cost-boundary-execution.json",
+        "actualSha256": "f860245a9a137f1d12af8246b4e7ddbff9b27081dee15f0175798e8b4702b573"
+      },
+      {
+        "path": "generated/cost-examination/adjudication.json",
+        "actualSha256": "01dddfa794877ce8fee58afa227bfc7dd7321b23ee7dc75845d50d8acf9d4a3b"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/hash-bindings.json",
+        "actualSha256": "27b31bff23ec7d654fea30c591dd25fbde3a1b2828b12800668cb60037d7ab87"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/initial-execution.json.gz",
+        "actualSha256": "f78fc7b89f3c5b66af069c9600dd73557d4bcb8366d550dbbac446cf120a25d7"
+      },
+      {
+        "path": "src/main/kotlin/server/CostExamination.kt",
+        "actualSha256": "30e61e4495bbf3bacca8d4af232cb14d7e805199f47f6c976eb2402bb3811ee4"
+      },
+      {
+        "path": "src/main/kotlin/server/CostPaymentBoundary.kt",
+        "actualSha256": "f87335bec39b0c13319375591df953cf24a8a114b29b1f1c50fde7bba0842b50"
+      },
+      {
+        "path": "src/main/kotlin/server/LabExecution.kt",
+        "actualSha256": "c0a66133a68e0ba05294a1554be5e1b5845216824abccfe4a6e1a11f69a1cff4"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/inputs.json.raw.gz",
+        "actualSha256": "651dbd9c6f8974367b58e88ec67572a92ec09892df57bddbad76810426b9edac"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/inputs.json",
+        "actualSha256": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/source-examination.json.raw.gz",
+        "actualSha256": "621c4ddd0c0997038d16303b4d67666c3c6815d854a9e5dda36b7d947c9aab31"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/source-examination.json",
+        "actualSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-inputs.json.raw.gz",
+        "actualSha256": "b406e3d23e194fe67aeee1efbf45b613b66fd78bfa213279fc7ec0525f67df89"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-inputs.json",
+        "actualSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-examination.json.raw.gz",
+        "actualSha256": "f0b8c6881d0d6eecfba4d2f9585cae532b5956284a63971cf86af0f7f8be5865"
+      },
+      {
+        "path": "src/test/resources/fidelity/cost-examination/native-examination.json",
+        "actualSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a"
+      }
+    ]
+  },
+  "finalReceipt": {
+    "applicationRevision": "ec6bc9989df4558b9e4db3fda24aa14a5327aba6",
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "executedAt": "2026-11-09T00:05:29.460068Z",
+    "scenarioCount": 14,
+    "nativeActionCount": 16,
+    "executionOrigin": "New harness execution recorded by coordinator after provenance/report changes; examiner only reads and adjudicates supplied observations.",
+    "recordedHarnessSha256": "c9badf76708f04157e494746973fb5c5d7ff3bc8e24f4a1b6e265acbc4629591",
+    "independentlyComputedHarnessSha256": "c9badf76708f04157e494746973fb5c5d7ff3bc8e24f4a1b6e265acbc4629591",
+    "definitionsUnchanged": true,
+    "inputTextHashesUnchanged": true
+  },
+  "whatChanged": "Application revision, execution timestamp and harness provenance hash changed because CostExamination report/ingestion code changed. A new receipt was recorded; prior execution was not relabeled as current. CostPaymentBoundary and LabExecution raw file hashes equal their recorded prior Phase C values.",
+  "whatDidNotChange": "All fourteen cases and sixteen before/action/nativeResult/after observations are identical to the prior receipt. Native definitions, engine revision, payment source expectations and observed mechanical behavior are unchanged.",
+  "caseChecks": [
+    {
+      "caseId": "selected-creature:SELF",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "selected-creature:OTHER",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "selected-creature:BORROWED",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "selected-creature:FOREIGN_CONTROL",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "SOURCE_REFUSAL_SUPPORTED_DIAGNOSTIC_LIMIT"
+    },
+    {
+      "caseId": "selected-creature:NONCREATURE",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "SOURCE_REFUSAL_SUPPORTED_DIAGNOSTIC_LIMIT"
+    },
+    {
+      "caseId": "selected-creature:CHOICE",
+      "nativeActions": 3,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "activation-boundary:unpayable-mana",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "activation-boundary:invalid-target",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:UNTAPPED_EXPLICIT",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:TAPPED_AUTO",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "tap-boundary:mind-stone:0:TAPPED_EXPLICIT",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "SOURCE_PAYMENT_REQUIREMENT_CONTRADICTED"
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:UNTAPPED_EXPLICIT",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:TAPPED_AUTO",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "BOUNDED_SOURCE_REQUIREMENT_SUPPORTED"
+    },
+    {
+      "caseId": "tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT",
+      "nativeActions": 1,
+      "rawObservationsIdenticalToPriorReceipt": true,
+      "assessment": "SOURCE_PAYMENT_REQUIREMENT_CONTRADICTED"
+    }
+  ],
+  "hashBindingAssessment": {
+    "checks": [
+      {
+        "file": "inputs.json",
+        "rawArchive": "inputs.json.raw.gz",
+        "rawSha256": "46a2cb1c209ce01713cb4a94192d61164e99765afef028358301c02a6a2275b5",
+        "utf8LfSha256": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+        "rawMatchesDeclared": true,
+        "lfMatchesDeclared": true,
+        "exactCRLFOnlyEquivalence": true
+      },
+      {
+        "file": "source-examination.json",
+        "rawArchive": "source-examination.json.raw.gz",
+        "rawSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+        "utf8LfSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+        "rawMatchesDeclared": true,
+        "lfMatchesDeclared": true,
+        "exactCRLFOnlyEquivalence": true
+      },
+      {
+        "file": "native-inputs.json",
+        "rawArchive": "native-inputs.json.raw.gz",
+        "rawSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57",
+        "utf8LfSha256": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+        "rawMatchesDeclared": true,
+        "lfMatchesDeclared": true,
+        "exactCRLFOnlyEquivalence": true
+      },
+      {
+        "file": "native-examination.json",
+        "rawArchive": "native-examination.json.raw.gz",
+        "rawSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+        "utf8LfSha256": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+        "rawMatchesDeclared": true,
+        "lfMatchesDeclared": true,
+        "exactCRLFOnlyEquivalence": true
+      }
+    ],
+    "finding": "All four gzip archives decompress to the declared raw frozen byte hashes. Applying only CRLF-to-LF yields the declared UTF8 LF hash and exactly the current text artifact, with no JSON-field or payment-requirement normalization. The input-manifest archive is explicitly described as reconstructed bytes; matching its previously recorded raw digest verifies transport reconstruction, not a fresh source retrieval.",
+    "ingestion": "Revised CostExamination separates frozenArtifactCurrent LF transport checks from frozenHash original raw-archive checks, and compares nested raw phase/plan hashes to frozenHash. This directly addresses the earlier raw-versus-LF mismatch while preserving original recorded hashes. Current adjudication binding compares original source/native raw hashes and final receipt hash.",
+    "limit": "This is static ingestion-code and archive verification, not execution of the final report reader. Matching provenance does not approve mechanics. Scenario uniqueness/nonempty raw fields are checked, but exact scenario inventory completeness is still not generally proved by bindingsCurrent."
+  },
+  "currentMechanicalAssessment": "Prior Phase C conclusions continue unchanged: Explicit activates already-tapped Mind Stone mana ability and creates colorless mana, and activates already-tapped Evolving Wilds by sacrificing it and stacking its ability, with no payable tap. Paired AutoPay cases reject. Viscera Seer self/other/borrowed choices, refused illegal choices with exact rollback, and native question/invalid-answer/recovery sequence remain supported within seeded positions.",
+  "remainingConcerns": [
+    "Confirmed generic explicit-payment source-tap enforcement failure remains at unchanged engine revision; no correction is claimed.",
+    "Mind Stone draw ability under Explicit remains unexecuted; catalog-wide reach, replacements, continuous-control effects and ordinary nonmana resolution remain unqualified.",
+    "Prefilled foreign/noncreature selections still reject as ExecutionFailed rather than validation IllegalAction; source payment refusal/rollback holds in these cases, but diagnostic limitation remains.",
+    "Structural equality and finite mutations do not certify runtime affordability, whole cards, whole-catalog recall or independent qualification.",
+    "Rereading either receipt is not fresh execution by this examiner; the repeated bounded run adds no new source scopes or independent reviewer."
+  ],
+  "recommendedNextDecision": {
+    "decision": "Authorize one focused native engine correction of source-tap payment enforcement across Explicit and AutoPay paths, with targeted public-transaction regressions and application compatibility evidence before considering qualification.",
+    "scope": "Fix the demonstrated generic affordability/payment boundary rather than card-specific exceptions; include the unexecuted Mind Stone draw variant in bounded regression scope.",
+    "approvalByExaminer": false,
+    "qualificationRemains": "PENDING"
+  }
+}

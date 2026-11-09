@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "measurement": "phased-activation-cost-examination-v1",
+  "applicationStart": "0b23d5e16ac3145118a4ae15e7a66c99b610d24a",
+  "browserApplication": "f20da9b66172743c6cea91f7c967552445b48517",
+  "executionApplication": "ec6bc9989df4558b9e4db3fda24aa14a5327aba6",
+  "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+  "sourceSnapshot": {
+    "schemaVersion": 1,
+    "bulkType": "oracle_cards",
+    "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+    "updatedAt": "2026-10-26T21:01:59.922+00:00",
+    "downloadedAt": "2026-11-08T02:40:04.607119+00:00",
+    "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+    "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+    "format": "jsonl",
+    "compression": "gzip",
+    "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "bytes": 25135745
+  },
+  "populationSha256": "95d869de7e43ce9bc6dbcb7ae2341192b409ce9d099885b2e8f6962b5d5a0086",
+  "priorImmutableBaselines": {
+    "representationBaselineSha256": {
+      "path": "src/main/resources/global-commander-baseline.json.gz",
+      "sha256": "c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911"
+    },
+    "originalVerificationBaselineSha256": {
+      "path": "src/main/resources/verification-baseline.json.gz",
+      "sha256": "373191816510bb0c0c5d886d3667f67a2e8f95639511f2c68f8ef90764123440"
+    },
+    "additiveVerificationBaselineSha256": {
+      "path": "src/main/resources/verification-cost-baseline.json.gz",
+      "sha256": "628d6bf4d4650259b39b22234a9d98d3943c8bfce0fd1426b3b661203d6b398a"
+    }
+  },
+  "originalRequirementsSha256": "de73dc9fea4e306e6da5ce971f243225b30afdb93d3c0218275ed1054f1d730f",
+  "originalBindingsSha256": "e8e231f4189efd0c32836f651af3d33d9e04f7c54778be21659b05ed2970db92",
+  "originalExecutionHarnessSha256": "51ea3da6f2c929dab79052d712d27f7d2593e3ffa464c5b5ec6298308009aeac",
+  "phaseHashBindings": {
+    "schemaVersion": 1,
+    "purpose": "Explicit transport equivalence only; no JSON field or mechanical normalization. Frozen source/native findings are unchanged.",
+    "files": {
+      "inputs.json": {
+        "rawFreezeSha256": "46a2cb1c209ce01713cb4a94192d61164e99765afef028358301c02a6a2275b5",
+        "utf8LfSha256": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+        "rawArchive": "inputs.json.raw.gz",
+        "transformation": "CRLF_TO_LF_ONLY",
+        "reconstruction": "Exact freeze bytes reconstructed by line endings and verified against examiner-observed SHA256"
+      },
+      "source-examination.json": {
+        "rawFreezeSha256": "151853ce0c427845a04c359f1aa5a58e56c92c1a817e43060d726189e581c6b3",
+        "utf8LfSha256": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+        "rawArchive": "source-examination.json.raw.gz",
+        "transformation": "CRLF_TO_LF_ONLY",
+        "reconstruction": "Original examiner/export bytes preserved"
+      },
+      "native-inputs.json": {
+        "rawFreezeSha256": "335cb221b6705d303d71062ff261b5f97e9cc1aaef93603ab702e7518f656f57",
+        "utf8LfSha256": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+        "rawArchive": "native-inputs.json.raw.gz",
+        "transformation": "CRLF_TO_LF_ONLY",
+        "reconstruction": "Original examiner/export bytes preserved"
+      },
+      "native-examination.json": {
+        "rawFreezeSha256": "07a44c79b23ba32805df78ec3d534bcc19ba4deb996303be53346b45c743e40a",
+        "utf8LfSha256": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+        "rawArchive": "native-examination.json.raw.gz",
+        "transformation": "CRLF_TO_LF_ONLY",
+        "reconstruction": "Original examiner/export bytes preserved"
+      }
+    }
+  },
+  "examination": {
+    "schemaVersion": 1,
+    "applicationRevision": "5d1b9381f4dcf070c64392d0df87e3e33a963e79",
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "reviewStatus": "ISOLATED_AGENT_EXAMINATION_PENDING_EXTERNAL_QUALIFICATION",
+    "sourceState": "CURRENT_SOURCE_BINDINGS",
+    "nativeState": "CURRENT_NATIVE_BINDINGS",
+    "phaseFiles": {
+      "inputs.json": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+      "source-examination.json": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+      "native-inputs.json": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+      "native-examination.json": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+      "execution-requirements.json": "bf4db6f1eca7ebb3ef4df2314ef8390566dd7a81cbd9bcd8cc69e614216913e9",
+      "hash-bindings.json": "27b31bff23ec7d654fea30c591dd25fbde3a1b2828b12800668cb60037d7ab87",
+      "adjudication.json": "f82b86e5198e2ded24ac4a50982b1db48586a17dd2f608d45e262674baea7df3",
+      "adjudication-current.json": "d8701e8dff5b609d9a4a23ba3c235200b0f9aa215a6d03b2209d0e0e3c7ec07f"
+    },
+    "adjudicationState": "CURRENT_BINDINGS",
+    "executionState": "RECORDED_CURRENT_BINDINGS",
+    "counts": {
+      "examined_source_scopes": 10,
+      "examined_native_scopes": 10,
+      "independent_approvals": 0,
+      "current_scenarios": 14,
+      "current_native_actions": 16,
+      "source_expectations_contradicted": 2,
+      "refusal_diagnostic_limits": 2,
+      "bounded_expectations_supported": 10
+    },
+    "potentialTapReach": {
+      "primary_cost_trees_with_source_tap": 2965,
+      "distinct_native_physical_cards": 2102
+    }
+  },
+  "liveBrowserMeasurements": {
+    "application": "f20da9b66172743c6cea91f7c967552445b48517",
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "phaseFiles": {
+      "inputs.json": "6d7e3730dad3f22364751b948ef3a9858df06eb37628ce95e23c83d0f49ee3b4",
+      "source-examination.json": "ff1ce690534e1ec8ee0554a72e9f5582d875800d397ab0939796c2d254079084",
+      "native-inputs.json": "8b9072e5686c09f3c39ccd25ebea82a78a49de0b86ae6fcd99f7683d12a9beb2",
+      "native-examination.json": "6eb2918ab6a952206f47dbe160f2076a14e11ba3ad7f324c06a011600064a978",
+      "execution-requirements.json": "bf4db6f1eca7ebb3ef4df2314ef8390566dd7a81cbd9bcd8cc69e614216913e9",
+      "hash-bindings.json": "27b31bff23ec7d654fea30c591dd25fbde3a1b2828b12800668cb60037d7ab87",
+      "adjudication.json": "f82b86e5198e2ded24ac4a50982b1db48586a17dd2f608d45e262674baea7df3",
+      "adjudication-current.json": "d8701e8dff5b609d9a4a23ba3c235200b0f9aa215a6d03b2209d0e0e3c7ec07f"
+    },
+    "counts": {
+      "examined_source_scopes": 10,
+      "examined_native_scopes": 10,
+      "independent_approvals": 0,
+      "current_scenarios": 14,
+      "current_native_actions": 16,
+      "source_expectations_contradicted": 2,
+      "refusal_diagnostic_limits": 2,
+      "bounded_expectations_supported": 10
+    },
+    "potentialTapReach": {
+      "primary_cost_trees_with_source_tap": 2965,
+      "distinct_native_physical_cards": 2102
+    },
+    "executionState": "RECORDED_CURRENT_BINDINGS",
+    "adjudicationState": "CURRENT_BINDINGS"
+  },
+  "finalExecutionReceipt": {
+    "path": "src/main/resources/cost-boundary-execution.json",
+    "sha256": "f860245a9a137f1d12af8246b4e7ddbff9b27081dee15f0175798e8b4702b573",
+    "scenarioCount": 14,
+    "actionCount": 16,
+    "supportedExpectations": 10,
+    "refusalDiagnosticLimits": 2,
+    "sourceContradictions": 2,
+    "executedAt": "2026-11-09T00:05:29.460068Z"
+  },
+  "currentIndexCounts": {
+    "commander_legal_physical_cards": 32109,
+    "definition_available_cards": 16927,
+    "interpretation_evidenced_cards": 14528,
+    "interpretation_records": 38232,
+    "interpretation_cards_with_partial_or_unsupported": 13023,
+    "source_review_current_cards": 13,
+    "source_review_stale_cards": 22,
+    "source_review_unresolved_cards": 2,
+    "execution_current_cards": 13,
+    "execution_current_pass_cards": 13,
+    "execution_current_fail_cards": 2,
+    "execution_current_unknown_cards": 1,
+    "execution_historical_cards": 1,
+    "execution_stale_cards": 0,
+    "cards_with_indexed_source_or_execution": 37,
+    "cards_with_any_indexed_evidence": 14532,
+    "source_review_scopes_current": 14,
+    "requirement_applications_current": 91,
+    "execution_observations_current": 53,
+    "execution_observations_historical": 1,
+    "evidence_records_outside_reference_population": 0,
+    "current_records_with_contradictions": 3
+  },
+  "qualification": {
+    "PROVISIONAL": 21,
+    "QUALIFIED": 0,
+    "BLOCKED": 1,
+    "WITHDRAWN": 0,
+    "qualified_scope_cards": 0,
+    "not_measured_under_qualification_process": 32087
+  },
+  "completeness": "NOT_ESTABLISHED_AT_CATALOG_SCALE",
+  "comparisonWithPR41": {
+    "comparable": true,
+    "definitionChanges": [],
+    "newSourceScopes": [],
+    "newExecutionObservations": [
+      "payment-boundary:activation-boundary:invalid-target:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:activation-boundary:unpayable-mana:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:BORROWED:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:CHOICE:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:FOREIGN_CONTROL:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:NONCREATURE:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:OTHER:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:selected-creature:SELF:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:evolving-wilds:0:TAPPED_AUTO:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:evolving-wilds:0:UNTAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:mind-stone:0:TAPPED_AUTO:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:mind-stone:0:TAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:mind-stone:0:UNTAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z"
+    ],
+    "becameStale": [],
+    "newlyContradictory": [
+      "payment-boundary:tap-boundary:evolving-wilds:0:TAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z",
+      "payment-boundary:tap-boundary:mind-stone:0:TAPPED_EXPLICIT:84fb6147f5b6ae11445f215ce23c3a9bb6a72db1:2026-11-09T00:05:29.460068Z"
+    ],
+    "resolvedConcerns": [],
+    "qualificationChanged": false,
+    "sourcePopulationChanged": false,
+    "addedPopulation": [],
+    "removedPopulation": [],
+    "sourceScopesInAddedPopulation": [],
+    "limits": "New records and reclassifications are separate; changed measurement definitions suppress gain claims. Current-binding evidence is not necessarily newly executed."
+  },
+  "controlledDiscovery": {
+    "beforeApplication": "0b23d5e16ac3145118a4ae15e7a66c99b610d24a",
+    "afterApplication": "ec6bc9989df4558b9e4db3fda24aa14a5327aba6",
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "controlledDiscovery": [
+      {
+        "objective": "create-creature-tokens",
+        "eligiblePhysicalCards": 6111,
+        "beforeSha256": "78fa6aad8b7b6a6750c33c54c44561b985962b0e4ed15a81c38733f8cead9748",
+        "afterSha256": "78fa6aad8b7b6a6750c33c54c44561b985962b0e4ed15a81c38733f8cead9748",
+        "bytes": 40362125,
+        "byteIdentical": true,
+        "counts": {
+          "authored_physical_cards": 17017,
+          "upstream_authored_physical_cards": 16995,
+          "application_extension_physical_cards": 22,
+          "registry_names_including_faces": 17373,
+          "commander_legal_cards": 16652,
+          "format_legality_unknown_cards": 352,
+          "commander_eligible_cards": 6111,
+          "identity_unknown_legal_cards": 697,
+          "mechanical_input_cards_after_conventional_search": 6111,
+          "mechanical_facts": 5631,
+          "token_creation_facts": 648,
+          "accepted_token_creation_pathways": 363,
+          "accepted_token_creation_cards": 346,
+          "unknown_query_pathways": 55,
+          "rejected_token_creation_pathways": 230,
+          "unsupported_structure_records": 8702,
+          "cards_with_unsupported_structures": 4359,
+          "creature_compatible_creation_pathways": 385,
+          "our_controller_compatible_creation_pathways": 376,
+          "accepted_fixed_quantity_pathways": 354,
+          "accepted_dynamic_quantity_pathways": 9
+        }
+      },
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "eligiblePhysicalCards": 6111,
+        "beforeSha256": "0a8dd1e0b5bbd780d135fbb358b1ecc4233cb59d6330e0470d55b5d86c30d011",
+        "afterSha256": "0a8dd1e0b5bbd780d135fbb358b1ecc4233cb59d6330e0470d55b5d86c30d011",
+        "bytes": 48399732,
+        "byteIdentical": true,
+        "counts": {
+          "authored_physical_cards": 17017,
+          "upstream_authored_physical_cards": 16995,
+          "application_extension_physical_cards": 22,
+          "registry_names_including_faces": 17373,
+          "commander_legal_cards": 16652,
+          "format_legality_unknown_cards": 352,
+          "commander_eligible_cards": 6111,
+          "identity_unknown_legal_cards": 697,
+          "mechanical_input_cards_after_conventional_search": 6111,
+          "extracted_potential_death_operations": 2916,
+          "potential_creature_death_pathways": 1471,
+          "our_creature_pathways": 1333,
+          "our_nontoken_creature_pathways": 1327,
+          "mechanically_compatible_direct_pathways": 1327,
+          "mechanically_compatible_policy_rejected_pathways": 850,
+          "accepted_direct_pathways": 474,
+          "accepted_direct_cards": 462,
+          "accepted_self_toughness_exchange_pathways": 12,
+          "mandatory_unlinked_sacrifice_pathways": 157,
+          "policy_unknown_compatible_pathways": 3,
+          "accepted_death_enhanced_removal_pathways": 25,
+          "accepted_death_enhanced_removal_cards": 25,
+          "policy_rejected_removal_pathways": 850,
+          "controller_incompatible_pathways": 164,
+          "nontoken_incompatible_pathways": 6,
+          "unknown_query_pathways": 410,
+          "pathways_with_any_unknown_decision": 1044,
+          "unsupported_structure_records": 8702,
+          "cards_with_unsupported_structures": 4359
+        }
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "eligiblePhysicalCards": 6111,
+        "beforeSha256": "2c0c5336f5da2575e8e5291ce3cfd18b9b975a592e7a84a970289bc6d05e4963",
+        "afterSha256": "2c0c5336f5da2575e8e5291ce3cfd18b9b975a592e7a84a970289bc6d05e4963",
+        "bytes": 49046277,
+        "byteIdentical": true,
+        "counts": {
+          "authored_physical_cards": 17017,
+          "upstream_authored_physical_cards": 16995,
+          "application_extension_physical_cards": 22,
+          "registry_names_including_faces": 17373,
+          "commander_legal_cards": 16652,
+          "format_legality_unknown_cards": 352,
+          "commander_eligible_cards": 6111,
+          "identity_unknown_legal_cards": 697,
+          "mechanical_input_cards_after_conventional_search": 6111,
+          "mechanical_facts": 5631,
+          "movement_facts": 2056,
+          "accepted_reanimation_pathways": 106,
+          "accepted_reanimation_cards": 104,
+          "unknown_query_pathways": 93,
+          "rejected_movement_pathways": 1857,
+          "unsupported_structure_records": 8318,
+          "cards_with_unsupported_structures": 4221
+        }
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "eligiblePhysicalCards": 6111,
+        "beforeSha256": "1d17fa4762db9be96a5e27df334b65c61907d31cb8ae96c2f8c275fedae4e6e8",
+        "afterSha256": "1d17fa4762db9be96a5e27df334b65c61907d31cb8ae96c2f8c275fedae4e6e8",
+        "bytes": 43442168,
+        "byteIdentical": true,
+        "counts": {
+          "authored_physical_cards": 17017,
+          "upstream_authored_physical_cards": 16995,
+          "application_extension_physical_cards": 22,
+          "registry_names_including_faces": 17373,
+          "commander_legal_cards": 16652,
+          "format_legality_unknown_cards": 352,
+          "commander_eligible_cards": 6111,
+          "identity_unknown_legal_cards": 697,
+          "mechanical_input_cards_after_conventional_search": 6111,
+          "mechanical_facts": 5765,
+          "state_arrival_facts": 1446,
+          "accepted_state_arrival_pathways": 535,
+          "accepted_state_arrival_cards": 508,
+          "unknown_query_pathways": 576,
+          "rejected_state_arrival_pathways": 335,
+          "state_policy_excluded_pathways": 0,
+          "compared_death_policy_excluded_pathways": 32,
+          "accepted_state_sacrifice_pathways": 243,
+          "accepted_state_mill_pathways": 58,
+          "accepted_state_discard_pathways": 234,
+          "unsupported_structure_records": 8537,
+          "cards_with_unsupported_structures": 4323
+        }
+      }
+    ]
+  },
+  "kotlinFull": {
+    "tests": 587,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "applicationRevision": "5d1b9381f4dcf070c64392d0df87e3e33a963e79",
+    "engine": "84fb6147f5b6ae11445f215ce23c3a9bb6a72db1",
+    "command": ".\\dev.ps1 test :assistant:installDist",
+    "suites": 82,
+    "note": "Passing research assertions retain two genuine native source-payment contradictions; not a native correctness certificate."
+  },
+  "catalogComparisonTests": 5,
+  "browser": {
+    "startTime": "2026-11-09T00:21:52.589Z",
+    "duration": 198672.258,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserCommand": "pnpm exec playwright test (web); EXPLORER_URL=http://127.0.0.1:8801; EXPLORER_BROWSER_CHANNEL=msedge",
+  "frontendCommand": "pnpm --dir web build",
+  "frontendResult": "PASSED after correction of initial JSX build failure",
+  "screenshots": {
+    "1440-evidence.png": "1cf1b5328596af07376e6b24a2f56a458ce4669c1f168e9ecdd356b8c596a39d",
+    "1440-summary.png": "494a474afc1a8829f6181751936755f1ba5b4efa9a4ac3d9b8cd1d31faa03dc5",
+    "1440-viewport.png": "0095b830ef523d4b72f07d36377b5280de1f3889c0c4a923b0ab6351c1454723",
+    "390-evidence.png": "a9e0cde955ec51a34eee3886c66155207acacffa6262cfd9458a7abcc5f32978",
+    "390-summary.png": "94279d5d265ed1789d1e5994926d595984a5a272d6bf270748a2595069e1de2d",
+    "390-viewport.png": "199f7648b5dc0c407de29fc76cad0cc7bc338fc0a2b7592501d49219605e734a"
+  },
+  "unexecuted": [
+    "Native module just test-class ActionProcessorAtomicityTest --rerun: just executable unavailable. No native-module pass claimed.",
+    "External human examination and independent qualification remain pending.",
+    "Other strategies, Untap, contextual modifications, replacement effects, activation timing/permissions, target/effect fidelity and exhaustive whole-card scope remain unverified."
+  ],
+  "independence": "No-history isolated phased source_examiner agent; instruction-only separation, same provider/coordinator and shared filesystem; not human certification or enforced isolation. No approval record.",
+  "nextDecision": "Separate bounded native source-tap payment-enforcement correction across strategies, native regressions and isolated application compatibility before explicit approval for app-stable integration; not started."
+}

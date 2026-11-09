@@ -30,6 +30,7 @@ import java.util.zip.GZIPInputStream
     val qualification:Map<String,Int>,val unindexed:List<String>,val challenge:SacrificeChallengeReport,
     val nativeReviewDefinitions:Map<String,JsonElement> = emptyMap(),val qualifiedScopes:List<String> = emptyList(),
     val activationCosts:ActivationCostReport? = null,
+    val costExamination:CostExaminationReport? = null,
     val completeness:String="NOT_ESTABLISHED_AT_CATALOG_SCALE",
     val completenessRequirements:List<String> = listOf("A source-derived inventory accounts for all relevant faces, printed abilities, keywords, alternative and intrinsic mechanics under a declared bounded review scope.",
         "Every inventoried material scope has current identity/source/definition-bound fidelity requirements and comparisons; supported facts alone are insufficient.",
@@ -81,7 +82,7 @@ fun hasNativeExecutionTrace(value:JsonElement):Boolean = when(value) {
 fun ledgerVerificationKind(state:FidelityState)=if(state==FidelityState.UNREVIEWED) "LEDGER_REFERENCE" else "SOURCE_REVIEW"
 
 internal fun verificationCoverage(catalog:Catalog,revision:String,structural:List<StructuralSupport>,pilot:FidelityPilot,
-    challenge:SacrificeChallengeReport,baseline:GlobalBaseline=retainedGlobalBaseline(),activationCosts:ActivationCostReport?=null):VerificationCoverage {
+    challenge:SacrificeChallengeReport,baseline:GlobalBaseline=retainedGlobalBaseline(),activationCosts:ActivationCostReport?=null,costExamination:CostExaminationReport?=null):VerificationCoverage {
     // Validate the immutable population through the existing comparison contract.
     compareGlobalBaselines(baseline,baseline)
     requireVerificationIdentityBinding(baseline,physicalCards(catalog.cards).map { nativeIdentity(it,catalog.provenance(it.name).origin) })
@@ -149,6 +150,21 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
                 sourceValidated=cost.executionState=="RECORDED_CURRENT_BINDINGS",reference="src/main/resources/activation-cost-execution.json",limits=review.scope.dependencies+"Native observations establish only the recorded payment position, not all activation contexts.")
         }
     }
+    costExamination?.execution?.let { receipt ->
+        receipt.scenarios.forEach { observation ->
+            val review=activationCosts!!.reviews.single { it.scope.id==observation.scopeId }
+            val traces=buildJsonArray { observation.steps.forEach { step->add(buildJsonObject { put("nativeAction",step.action);put("nativeResult",step.nativeResult) }) } }
+            records+=VerificationRecord("payment-boundary:${observation.id}:${receipt.engine}:${receipt.executedAt}",review.scope.oracleId,review.scope.card,
+                if(hasNativeExecutionTrace(traces)) "EXECUTION" else "EXECUTION_ATTEMPT",review.actionId!!,observation.sourceExpectation,face=review.scope.card,printingId=review.scope.printingId,
+                definitionSha256=observation.definitionSha256,engine=receipt.engine,applicationRevision=receipt.applicationRevision,author="Codex Build native payment-boundary harness; isolated agent adjudication is separate",
+                result=when(observation.result) { "SOURCE_EXPECTATION_CONTRADICTED"->"FAIL";"BOUNDED_EXPECTATION_SUPPORTED"->"PASS";else->"UNKNOWN" },
+                expected=observation.sourceExpectation,observed="${observation.result}; ${observation.diagnostic}; ${observation.checks}",
+                source=listOf(EvidenceReference(review.scope.sourceFile,review.scope.sourceSha256)),requirements=listOf(receipt.inputs.getValue("execution-requirements.json")),
+                scenarioId=observation.id,observedAt=receipt.executedAt,sourceValidated=costExamination.executionState=="RECORDED_CURRENT_BINDINGS",
+                reference="src/main/resources/cost-boundary-execution.json",materialConcerns=listOfNotNull(observation.concern),
+                limits=review.scope.dependencies+"One fresh bounded scenario, potentially containing multiple native actions; no duplicate observation is created by source/native/adjudication review.")
+        }
+    }
     val spark=pilot.reviews.single { it.scope.card=="Spark Elemental" }.scope
     records+=VerificationRecord("historical:spark-blink:03869c0",spark.oracleId,spark.card,"EXECUTION","sacrifice:${spark.oracleId}","Old end-step source trigger after exile/return",engine="03869c08665bf476a8b40dacbfbcd501c54a33bd",author="Recorded source-sacrifice investigation; no independent approval",
         result="FAIL",expected="New object stays on battlefield after old trigger resolves",observed="Generation 100 was incorrectly sacrificed to generation 102",scenarioId="spark-blink",historical=true,
@@ -186,7 +202,7 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
             "The five Lab positions are already represented by their pilot receipt observations; reading the registry again does not create five more observations.",
             "Adversarial mutant definitions are method-challenge evidence only. They are not production-card failures or newly available cards."),challenge=challenge,
         nativeReviewDefinitions=native.filterKeys { id->inPopulation.any { it.record.oracleId==id } }.values.associate { it.name to reportJson.parseToJsonElement(CardExporter.exportToJson(it)) },
-        qualifiedScopes=assurances.filter { it.evidenceCurrent && it.qualification==QualificationState.QUALIFIED && it.oracleId in legal }.map { "${it.oracleId}:ledger-unspecified:${bundleDigest(it.evidence!!)}" }.sorted(),activationCosts=activationCosts)
+        qualifiedScopes=assurances.filter { it.evidenceCurrent && it.qualification==QualificationState.QUALIFIED && it.oracleId in legal }.map { "${it.oracleId}:ledger-unspecified:${bundleDigest(it.evidence!!)}" }.sorted(),activationCosts=activationCosts,costExamination=costExamination)
 }
 
 @Serializable data class VerificationChange(val comparable:Boolean,val definitionChanges:List<String>,val newSourceScopes:List<String>,

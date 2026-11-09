@@ -16,19 +16,19 @@ test('Verification separates reference cards partial scopes dated observations a
   expect(baseline.populationSha256).toBe(data.populationSha256);
   expect(baseline.counts.source_review_current_cards).toBe(9); // Immutable PR40 evidence depth is preserved.
   const costBaseline=await (await page.request.get('/api/v1/progress/verification-cost-baseline')).json();
-  expect(costBaseline.counts).toEqual(data.counts);
+  expect(costBaseline.counts.execution_observations_current).toBe(39); // Immutable Increment 4 baseline; fresh boundary observations are additive.
   expect(data.counts.commander_legal_physical_cards).toBe(32109);
   expect(data.counts.definition_available_cards).toBe(16927);
   expect(data.counts.source_review_current_cards).toBe(13);
   expect(data.counts.execution_current_cards).toBe(13);
-  expect(data.counts.execution_observations_current).toBe(39);
+  expect(data.counts.execution_observations_current).toBe(53);
   expect(data.qualification.QUALIFIED).toBe(0);
   expect(data.completeness).toBe('NOT_ESTABLISHED_AT_CATALOG_SCALE');
   expect(data.challenge.executionState).toBe('RECORDED_CURRENT_BINDINGS');
   expect(data.challenge.adversarialExecution).toHaveLength(1);
   expect(data.challenge.adversarialExecution[0].state).toBe('DIFFERS');
   expect(data.evidence.some((e:{record:{id:string}})=>e.record.id.includes('mutant:'))).toBe(false);
-  expect(data.evidence.filter((e:{record:{kind:string}})=>e.record.kind==='EXECUTION')).toHaveLength(40);
+  expect(data.evidence.filter((e:{record:{kind:string}})=>e.record.kind==='EXECUTION')).toHaveLength(54);
   await expect(panel).toContainText('Whole-card verification: Not established at catalog scale');
   const inspection=panel.getByText('Inspect physical cards, source scopes and execution records',{exact:true});
   await inspection.focus();await page.keyboard.press('Enter');

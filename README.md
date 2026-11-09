@@ -18,6 +18,8 @@ Progress now separates global **Cards**, bounded **Commander selection**, and **
 
 The Cards/Trust area also compares complete printed activation payments with source-first requirements. Inspect missing-mana mutations, bounded native payment observations and unsupported choices without treating a cost pass as whole-ability certification. See [activation-cost evidence and reproduction](docs/ACTIVATION_COST_FIDELITY.md).
 
+The phased [cost examination](docs/COST_EXAMINATION.md) now exposes selected-creature dispatch boundaries and two recorded native Explicit/tap payment failures. Source/native agreement and execution enforcement remain separate; independent qualification is pending.
+
 ## Two sibling repositories
 
 ```text
