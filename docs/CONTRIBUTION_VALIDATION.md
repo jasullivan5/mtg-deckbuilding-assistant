@@ -1,6 +1,6 @@
 # Contribution model validation
 
-**Historical vocabulary study.** The original four-/five-role protocols, recommendations, sources and verification below are retained as evidence. They are not the current role specification or an implementation queue. The [2026-11-09 six-role direction](OBJECTIVE_MODEL.md#working-objective-relative-roles) supersedes the vocabulary recommendations while retaining their open mechanical questions. Prototype Lab below names the historical review context; a separate mandatory role is no longer required. The current Primer identifies this distinction.
+**Historical vocabulary study.** The original four-/five-role protocols, recommendations, sources and verification below are retained as evidence, not a current role specification or implementation queue. The later six-role proposal and [building-block assessment](OBJECTIVE_BUILDING_BLOCKS.md) are compared in the [living objective direction](OBJECTIVE_MODEL.md). The current framing retains directional relationships and optional role descriptions without adopting a final taxonomy. Everything below preserves its original research scope. Prototype Lab names the historical review context; a separate mandatory role is no longer required.
 
 ## Comparison protocol
 

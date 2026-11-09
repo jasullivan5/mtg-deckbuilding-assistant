@@ -4,7 +4,7 @@
 
 ## Conceptual direction and implementation boundary
 
-Card identity/rules → native definitions → mechanical facts/capabilities → objective discovery, subroles/composition → experimental deck evaluation. The last two stages combine current bounded discovery with intended capabilities; they are not completed services or a module-refactoring plan. General role filters, selective composition and deck evaluation remain unimplemented. A dedicated pairwise strategic synergy layer is not a prerequisite in the current hypothesis; source/object/resource/zone/timing/condition/cost/effect bindings remain necessary for causal mechanical relationships. See the product record for the six working roles and empirical direction.
+Card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation. The last two stages combine current bounded discovery with intended capabilities; they are not completed services or a module-refactoring plan. General relationship filters, selective composition and deck evaluation remain unimplemented. A dedicated pairwise strategic synergy layer is not a prerequisite in the current hypothesis; source/object/resource/zone/timing/condition/cost/effect bindings remain necessary for causal mechanical relationships. See the product record and [bounded assessment](OBJECTIVE_BUILDING_BLOCKS.md) for the working building-block framing, optional role descriptions and empirical direction. No new schema, extractor or objective implementation follows from this explanation.
 
 ## Coverage and evidence projections
 

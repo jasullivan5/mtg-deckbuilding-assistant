@@ -32,7 +32,7 @@ Acceptance excludes whole-catalog fidelity, complete independent qualification, 
 | [#41](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/41) | [Activation-cost fidelity](ACTIVATION_COST_FIDELITY.md): supported printed payments, bounded execution and limits |
 | [#42](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/42) | [Phased examination](PRODUCT_STUDIO_COST_EXAMINATION.md): source/native/adjudication evidence and two retained native payment contradictions |
 
-These establish implementation and bounded demonstration, not automatic user acceptance or independent approval. No later blanket milestone acceptance is recorded here. The original four-/five-role study remains historical; the [six-role direction](OBJECTIVE_MODEL.md#working-objective-relative-roles) supersedes its recommendations without rewriting evidence.
+These establish implementation and bounded demonstration, not automatic user acceptance or independent approval. No later blanket milestone acceptance is recorded here. The original four-/five-role study remains historical; the [living objective direction](OBJECTIVE_MODEL.md) compares it with the later six-role proposal and building-block assessment without rewriting evidence.
 
 ## Current collaboration and next decisions
 
