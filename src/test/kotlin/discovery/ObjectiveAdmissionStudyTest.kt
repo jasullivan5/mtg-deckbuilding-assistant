@@ -27,8 +27,8 @@ class ObjectiveAdmissionStudyTest : FunSpec({
     test("opt-in source-bound admission observations use unchanged extraction and discovery") {
         val directory=System.getenv("OBJECTIVE_ADMISSION_EXPORT") ?: return@test
         val output=File(directory).apply { mkdirs() }
-        val criteria=Json.parseToJsonElement(File("docs/evidence/objective-admission-criteria.json").readText()).jsonObject
-        val supplement=Json.parseToJsonElement(File("docs/evidence/objective-admission-supplement.json").readText()).jsonObject
+        val criteria=Json.parseToJsonElement(File("src/test/resources/regression/objective-admission-criteria.json").readText()).jsonObject
+        val supplement=Json.parseToJsonElement(File("src/test/resources/regression/objective-admission-supplement.json").readText()).jsonObject
         val names=(criteria.getValue("familiarControls").jsonArray.map { it.jsonPrimitive.content }+
             criteria.getValue("heldOutSelection").jsonArray.map { it.jsonObject.getValue("card").jsonPrimitive.content }+
             supplement.getValue("source").jsonObject.getValue("name").jsonPrimitive.content).toSet()
