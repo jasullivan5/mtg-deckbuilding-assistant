@@ -1,0 +1,728 @@
+{
+  "scope": "Complete public API capture; original pages remain in ignored generated/selection-composition/scryfall and the portable bundle. These are functional query observations, not rules verification.",
+  "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
+  "queries": {
+    "lands": {
+      "query": "legal:commander id<=wubrg t:land",
+      "initialUrl": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards&order=name",
+      "pages": [
+        {
+          "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards&order=name",
+          "file": "lands-1.json",
+          "sha256": "a17b74d4543bcd4065e6522a0d1b4118a3f5aaf4cebdd0c0be249b85e80bc24f",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-2.json",
+          "sha256": "97749f56b97e32a03d5c914b3e669c2a1355966343c80fdf639049d2bc40dd2e",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-3.json",
+          "sha256": "fdf0e83f0aeb85b092d752dd34c551951d2d1808dac8b7c10cbe4afa574ee0af",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-4.json",
+          "sha256": "487ffe6b8d589fc9829febb2d30e2f76fbd4bcf4075acfa6f3fbdf30aa971b4c",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-5.json",
+          "sha256": "1256bf7c90d8cb14f66ede18fa3d00d9c40fa813c1bc855808d25a6cf7ca3851",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-6.json",
+          "sha256": "334afe21b08398bc57560a75411a1d00a81e07bb694be85bd999ef1ed4f1cbe9",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=7&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-7.json",
+          "sha256": "a77e7c9db576aa9514f4001e759dbabb4afb922bee60d0aa0709185de1bbd807",
+          "warnings": [],
+          "totalCards": 1235
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=8&q=legal%3Acommander+id%3C%3Dwubrg+t%3Aland&unique=cards",
+          "file": "lands-8.json",
+          "sha256": "2ae90021e0b6d1f0f43680395fec405f6b98713e85248aeaa1f1caa152982821",
+          "warnings": [],
+          "totalCards": 1235
+        }
+      ],
+      "status": "COMPLETE",
+      "count": 1235
+    },
+    "power4": {
+      "query": "legal:commander id<=wubrg t:creature pow>=4",
+      "initialUrl": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards&order=name",
+      "pages": [
+        {
+          "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards&order=name",
+          "file": "power4-1.json",
+          "sha256": "6aaf3fc2d841313ed4e8aa54b4139f725699eff14876c581b93c01d326781bbb",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-2.json",
+          "sha256": "498c8f787df7137b1f8e9e3ec0944801c12da76b59dccc9f29a68df4550a8008",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-3.json",
+          "sha256": "4406852435b4429687d935b26b4fdc6056fb2dfc48b2f6826726d52d73499f24",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-4.json",
+          "sha256": "7f779724bf1de70fac6216a18aa5a31dc7157a47c88d0e75b02a1a3f93fa6d4d",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-5.json",
+          "sha256": "a116dc29b52bd695034e9cee1d9a8798c438565c1fca6d22489630b62bab785c",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-6.json",
+          "sha256": "0910e78e3465578bf85665e4a0b823659315a4a0e6470fe21aa95983e265c031",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=7&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-7.json",
+          "sha256": "901a054c0a770734b0b06b28416dd46fcaaaa2ae5f797f34343a5da5d9c19bd3",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=8&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-8.json",
+          "sha256": "61586eabdf1e221fc9c04bee77a5eae7ca6ebbccb8c6b4a226a54dafc3709ebc",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=9&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-9.json",
+          "sha256": "f6b3b68f42ab3ed3b21641b878eea6424724400bfe7da97296b59161c790ed6c",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=10&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-10.json",
+          "sha256": "a764d8997677af1243f4dd06ba11c613574f321ae24ba0abb8adfce3935c4a94",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=11&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-11.json",
+          "sha256": "5af64e266225e0fec87ec43acde5ce12150637773fd61b58ebd7314b23255598",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=12&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-12.json",
+          "sha256": "35124b03a3db6fc3b46bde1addd0411a732d08a63d5c24b8c8f09f80fc545388",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=13&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-13.json",
+          "sha256": "41b3fe879d83768b24ab51a2fc4d4af89f399f9c7093b198ba93c1e2c87670e7",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=14&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-14.json",
+          "sha256": "0ced60e9de0f6df1af0042bc3fdd7a859cb8f33ae628b7b10f8253c10e02d763",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=15&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-15.json",
+          "sha256": "b0497849bc75966a92d590564256cc3df98d0c157aec75198ef9e6d04659e184",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=16&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-16.json",
+          "sha256": "5b947d600b6bced671967f1ab1e3320d616be532aa969ab3ad3bc54b94ade60c",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=17&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-17.json",
+          "sha256": "1c30f38a02af76331f9240ca79b3ee277edc877fce230c7bb744b3cbd9ba7824",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=18&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-18.json",
+          "sha256": "e5bf7b383489994ff16ff25c0fbe34c334eef3659ad98090cec74c233f2ebc36",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=19&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-19.json",
+          "sha256": "a64009435f2f407073aae71f6d7a58286a9b700c448c2f192926545f69f9f6e7",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=20&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-20.json",
+          "sha256": "0879060ab480101fb240c5f38a9cb59022a7cfcc71bd764788e1e6eb556bd0cd",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=21&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-21.json",
+          "sha256": "cab53a39e3c71de73729a8864581f24c6b1ee5eab086ec0ce9958c5d67ad8a1f",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=22&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-22.json",
+          "sha256": "28f06d7e0ff0b09d4dca1161a37426f0faaeb5d8219bbf52d22278064d648580",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=23&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-23.json",
+          "sha256": "3d1afa8e0024d3217c171bc44b33c456e977ba05de9502eede9e878338917597",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=24&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-24.json",
+          "sha256": "2ea26a858f23844ea842d34e7dc5b471bc7e4faeb12e9b994460a4535a074d4f",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=25&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-25.json",
+          "sha256": "5339e3e3f0c64fdb6868dada11e043957184e6917450f35df6b23191412dd246",
+          "warnings": [],
+          "totalCards": 4493
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=26&q=legal%3Acommander+id%3C%3Dwubrg+t%3Acreature+pow%3E%3D4&unique=cards",
+          "file": "power4-26.json",
+          "sha256": "6f6b7907fc6c634be26ab07470c70de8b34aa54eedfc917927b062df915c9a15",
+          "warnings": [],
+          "totalCards": 4493
+        }
+      ],
+      "status": "COMPLETE",
+      "count": 4493
+    },
+    "boardwipe": {
+      "query": "legal:commander id<=wubrg otag:boardwipe",
+      "initialUrl": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards&order=name",
+      "pages": [
+        {
+          "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards&order=name",
+          "file": "boardwipe-1.json",
+          "sha256": "59c06045498aea4c3bee7335128882ad11202ba355867fd51db1022ac7ad4461",
+          "warnings": [],
+          "totalCards": 919
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+          "file": "boardwipe-2.json",
+          "sha256": "f3c42af8918127b7a92e974ce02d48df5468cf13d025736dd5a8806b06699abf",
+          "warnings": [],
+          "totalCards": 919
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+          "file": "boardwipe-3.json",
+          "sha256": "d91a41ee692bf2019ae8085df889e50aa4a9e7a4c1f772cb2f8778c0b8172fa1",
+          "warnings": [],
+          "totalCards": 919
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+          "file": "boardwipe-4.json",
+          "sha256": "e261c54419171e933aa40c7ce93af8c8ce8ed9cd7c99fdedc03becc975ac42b9",
+          "warnings": [],
+          "totalCards": 919
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+          "file": "boardwipe-5.json",
+          "sha256": "89e5a9eaa36dd5100061f1a1f92b7f40c70a67e7015fa6d7e52e8998e6695544",
+          "warnings": [],
+          "totalCards": 919
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+          "file": "boardwipe-6.json",
+          "sha256": "e334a58b52354514463128eb51e5ff8a2dd4c9145c58f6dbb4cd2881b773ca93",
+          "warnings": [],
+          "totalCards": 919
+        }
+      ],
+      "status": "COMPLETE",
+      "count": 919
+    },
+    "removal": {
+      "query": "legal:commander id<=wubrg otag:removal",
+      "initialUrl": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards&order=name",
+      "pages": [
+        {
+          "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards&order=name",
+          "file": "removal-1.json",
+          "sha256": "7acc77bb992621c4ff80a3b0c2d7089f760c525ecdb5d1fdc80838925038ee3d",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-2.json",
+          "sha256": "228fb1ff91c199f9e94d58e56940d380c19a5a5130cf0ff87d87b48d4e300fd4",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-3.json",
+          "sha256": "3dd96a1cf064a244fdc49db7a6b76bb61144300e4f465b8296b69ed3db30b497",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-4.json",
+          "sha256": "252324a83cee4d08ea7ca41f714c2abec353c9a99dc97f044fe66a06fbaf7b18",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-5.json",
+          "sha256": "e4186f8ddc503fcebe37050f45b4c486866b130afbbc53d4410660a1c64205ad",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-6.json",
+          "sha256": "fd8aaba1929fe54eadb4e991302ef5db5983a9d6551bcab49739901885da25a0",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=7&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-7.json",
+          "sha256": "43cabfe85a432d9dde1f21988e761cf01582b6a598a23d0dbb3628f89f725a9a",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=8&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-8.json",
+          "sha256": "731674043500b2c0dee87c7c2b3bd17e73b62db3ff923a375b08cd6bf26158a6",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=9&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-9.json",
+          "sha256": "7e34515fc8af646147658c0c97f34f43de082fea1ed7e0b3962eaf1249a95cee",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=10&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-10.json",
+          "sha256": "dae894834b642df6520e340c8070cbe7295c59b7f92b50be433c68c49c53264e",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=11&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-11.json",
+          "sha256": "1e854e9f2f72454c642e607691df383935e0f779605caa2968802728de1f5e3c",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=12&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-12.json",
+          "sha256": "e2de555399670a2e18c88c9075188a7a0d5941961d79bd7ad34b0bdc137e2369",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=13&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-13.json",
+          "sha256": "5036245c88a9abd861f7a408b4b7dddc86e465b848875d6611af09589061cc98",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=14&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-14.json",
+          "sha256": "b81701ed0a881da504fdb73dbad6269df9a60e8292a885cb872f47f1484f8d59",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=15&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-15.json",
+          "sha256": "02954ad6cf3af5595f857c964dcc14575c4cc68de7225a0addee7b963580ca01",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=16&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-16.json",
+          "sha256": "7aabbe2f6fa613d09dd9648cee632382101c2eaf106ab6dd55bc38c5b3c20d05",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=17&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-17.json",
+          "sha256": "2d68d349a58fd0f13706d85d1ec7e39e2744c375a9fec3bafb6824245ec9de73",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=18&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-18.json",
+          "sha256": "48a69fdf3ed0dc1d08ba538b41efa60071e752f49a60ea7dda1eddbac718bcb6",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=19&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-19.json",
+          "sha256": "ddba2f4fdc5dfffc4a71e916ffcc706d9f00714d73dfe2d081809875894188fb",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=20&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-20.json",
+          "sha256": "bc6ebb1d40e7cbdacf34c6aeabd60523adedb583b4de8ed11d49c8973b346b04",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=21&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-21.json",
+          "sha256": "c8dba90903d44677d3526f6c6bd9789cf18003b3fb1aa25aa77f5ffdae854c1b",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=22&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-22.json",
+          "sha256": "7b11c2be14ae9e02253c2297737778fc8a46724a0a9343375710cb9f971f87d1",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=23&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-23.json",
+          "sha256": "7704042f960922c4d277cefb4a6943b514ae6fa4472f92146c088b8bfd9002e4",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=24&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-24.json",
+          "sha256": "accd2885e667ed8d4f81c094e1f95b391c03f2aefa29239d750a7c6746484e3f",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=25&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-25.json",
+          "sha256": "c973ad2cea7b400b970b42ed1b9b37989c15dda16c4cd66f9083a022c2b5175a",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=26&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-26.json",
+          "sha256": "43c009aa2df5e5d3d0964d537803c02799da8cd5a8fedf788056e03f2f3ecf92",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=27&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-27.json",
+          "sha256": "fd0eab4386950e664bf6d3778d92d7a0edd429670ee1d0621e6ab98437a9fb95",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=28&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-28.json",
+          "sha256": "091e479d98ff3757668a72b2fbcd3575b3d1aba18277e03c7090aa5f3203e867",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=29&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-29.json",
+          "sha256": "22b50bdf82ae48e2e1083a9eb3b36b2667727abd551dd09f14d19f41964bddbb",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=30&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-30.json",
+          "sha256": "2bab3a5104f8301fa304f6de3ba7f7223f5ccb106d7ce3c5fec3c5c8e4f50a8a",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=31&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-31.json",
+          "sha256": "64d8fb3d04e62544572878eef24121de4a69d8385e77b34ceea61bd8ddbbd84a",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=32&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-32.json",
+          "sha256": "8ab086f40230c2faab96a4caf6ba343e67291ab71b906f885bee8c37c236cb3d",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=33&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-33.json",
+          "sha256": "67846a0d7fd047747dfad2dfd2d60df6878b3d9911cae2e4631ab56c584abecb",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=34&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-34.json",
+          "sha256": "e526a3c14db637833e3354f7df7fce86b381659b0fc746a7795e37501c833e89",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=35&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-35.json",
+          "sha256": "880ac881082dc94189dd1dfe25aadba2be491e7a540a38858f51d9e3741d160e",
+          "warnings": [],
+          "totalCards": 6264
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=36&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+          "file": "removal-36.json",
+          "sha256": "6ba77b48a59ff8d9881223151f0ecbdbf8556f97bc3ad8110b6a657bfae0fa10",
+          "warnings": [],
+          "totalCards": 6264
+        }
+      ],
+      "status": "COMPLETE",
+      "count": 6264
+    },
+    "deathwipes": {
+      "query": "legal:commander id<=wubrg otag:boardwipe otag:removal-creature otag:removal-destroy",
+      "initialUrl": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards&order=name",
+      "pages": [
+        {
+          "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards&order=name",
+          "file": "deathwipes-1.json",
+          "sha256": "64acb74b3c18deeffc97129c539ee48be9807b98653a7f6ecdfbbe6a8dbf8774",
+          "warnings": [],
+          "totalCards": 246
+        },
+        {
+          "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards",
+          "file": "deathwipes-2.json",
+          "sha256": "be1220eef5247aebdc87836b91502312eb8b9e7a013d3e68c65498302c79a876",
+          "warnings": [],
+          "totalCards": 246
+        }
+      ],
+      "status": "COMPLETE",
+      "count": 246,
+      "capturedAtUtc": "2026-11-10T20:05:22.262218+00:00"
+    }
+  },
+  "cohortMemberships": {
+    "Wastes": {
+      "lands": true,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Wrath of God": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": true
+    },
+    "Fleshbag Marauder": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Llanowar Elves": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Sol Ring": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Grave Pact": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Grim Haruspex": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Tannuk, Memorial Ensign": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Beast Within": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Murder": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Reassembling Skeleton": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Hardened Scales": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Attrition": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Scute Swarm": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Forest": {
+      "lands": true,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Damnation": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": true
+    },
+    "Cyclonic Rift": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Tragic Slip": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Walking Corpse": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    }
+  }
+}
