@@ -42,7 +42,7 @@ const stages = [
     example: 'Bloodghast can move itself from the graveyard to the battlefield under the landfall condition.',
     limit: 'Costs, conditions, events and state changes need their original bindings. Some structures are still unread or only partly interpreted.',
     connection: 'The objective uses those facts to decide which relationships it can recognize.'},
-  {label: 'Objective discovery and selective layering', status: 'Four queries implemented; relationship filtering and layering intended', question: 'Which contributions does this objective need?',
+  {label: 'Objective discovery and selective layering', status: 'Five bounded queries implemented; relationship filtering and layering intended', question: 'Which contributions does this objective need?',
     example: 'A battlefield return can fit reanimation. Blood Speaker’s return to hand falls outside that check.',
     limit: 'A structural MATCH is conditional potential. General relationship filtering and selective objective composition are not implemented.',
     connection: 'Mechanical requirements can guide complementary questions without proving that two cards work together.'},

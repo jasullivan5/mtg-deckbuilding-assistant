@@ -1,0 +1,437 @@
+{
+  "legacy": {
+    "judith-create-creature-tokens": {
+      "exact": true,
+      "differences": [],
+      "eligible": 6111,
+      "results": {
+        "MATCH": {
+          "paths": 363,
+          "cards": 346
+        },
+        "UNKNOWN": {
+          "paths": 55,
+          "cards": 48
+        },
+        "NO_MATCH": {
+          "paths": 230,
+          "cards": 215
+        }
+      },
+      "beforeSha256": "aa3d3edd226c4578c58319d36af4dfcf089c7cbd7ba2ee5d7d58cf04feb8f3f8",
+      "afterSha256": "aa3d3edd226c4578c58319d36af4dfcf089c7cbd7ba2ee5d7d58cf04feb8f3f8"
+    },
+    "judith-own-nontoken-creature-deaths": {
+      "exact": true,
+      "differences": [],
+      "eligible": 6111,
+      "results": {
+        "MATCH": {
+          "paths": 566,
+          "cards": 551
+        },
+        "UNKNOWN": {
+          "paths": 508,
+          "cards": 467
+        },
+        "NO_MATCH": {
+          "paths": 2320,
+          "cards": 1904
+        }
+      },
+      "beforeSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+      "afterSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7"
+    },
+    "judith-reanimate-own-creatures": {
+      "exact": true,
+      "differences": [],
+      "eligible": 6111,
+      "results": {
+        "MATCH": {
+          "paths": 106,
+          "cards": 104
+        },
+        "UNKNOWN": {
+          "paths": 93,
+          "cards": 85
+        },
+        "NO_MATCH": {
+          "paths": 1857,
+          "cards": 1555
+        }
+      },
+      "beforeSha256": "df7895ca0f37a593cbe5ce99acd4e4b72e98e420ef5f65eb1c943f6626bdb8da",
+      "afterSha256": "df7895ca0f37a593cbe5ce99acd4e4b72e98e420ef5f65eb1c943f6626bdb8da"
+    },
+    "judith-stock-own-graveyard": {
+      "exact": true,
+      "differences": [],
+      "eligible": 6111,
+      "results": {
+        "MATCH": {
+          "paths": 535,
+          "cards": 508
+        },
+        "UNKNOWN": {
+          "paths": 576,
+          "cards": 527
+        },
+        "NO_MATCH": {
+          "paths": 335,
+          "cards": 315
+        }
+      },
+      "beforeSha256": "3f9a2bb62fb18a4389ede72c86da1cbe318b125837784df4d190007508547952",
+      "afterSha256": "3f9a2bb62fb18a4389ede72c86da1cbe318b125837784df4d190007508547952"
+    },
+    "krenko-create-creature-tokens": {
+      "exact": true,
+      "differences": [],
+      "eligible": 3472,
+      "results": {
+        "MATCH": {
+          "paths": 190,
+          "cards": 182
+        },
+        "UNKNOWN": {
+          "paths": 33,
+          "cards": 28
+        },
+        "NO_MATCH": {
+          "paths": 139,
+          "cards": 131
+        }
+      },
+      "beforeSha256": "bfa7ba070657fb96316f678e53fa175cd7744762a9ed0f11cc9e6e6a6da93fae",
+      "afterSha256": "bfa7ba070657fb96316f678e53fa175cd7744762a9ed0f11cc9e6e6a6da93fae"
+    },
+    "krenko-own-nontoken-creature-deaths": {
+      "exact": true,
+      "differences": [],
+      "eligible": 3472,
+      "results": {
+        "MATCH": {
+          "paths": 225,
+          "cards": 220
+        },
+        "UNKNOWN": {
+          "paths": 223,
+          "cards": 207
+        },
+        "NO_MATCH": {
+          "paths": 1386,
+          "cards": 1113
+        }
+      },
+      "beforeSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+      "afterSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96"
+    },
+    "krenko-reanimate-own-creatures": {
+      "exact": true,
+      "differences": [],
+      "eligible": 3472,
+      "results": {
+        "MATCH": {
+          "paths": 19,
+          "cards": 18
+        },
+        "UNKNOWN": {
+          "paths": 35,
+          "cards": 31
+        },
+        "NO_MATCH": {
+          "paths": 811,
+          "cards": 689
+        }
+      },
+      "beforeSha256": "333334b3ee7ea4d58e9abddc3e23600a51185a9d0604f773068f235466f8a51a",
+      "afterSha256": "333334b3ee7ea4d58e9abddc3e23600a51185a9d0604f773068f235466f8a51a"
+    },
+    "krenko-stock-own-graveyard": {
+      "exact": true,
+      "differences": [],
+      "eligible": 3472,
+      "results": {
+        "MATCH": {
+          "paths": 239,
+          "cards": 230
+        },
+        "UNKNOWN": {
+          "paths": 252,
+          "cards": 235
+        },
+        "NO_MATCH": {
+          "paths": 182,
+          "cards": 173
+        }
+      },
+      "beforeSha256": "50137229bb7d63f1b98bc91e86c3bc77af717cb57cc52fdc9eaa5a64f42b3e7c",
+      "afterSha256": "50137229bb7d63f1b98bc91e86c3bc77af717cb57cc52fdc9eaa5a64f42b3e7c"
+    }
+  },
+  "state": {
+    "judith": {
+      "historySha256": "fafa39528cd9d3c43912438b31b9dcc6f9e65f13a7c409a43cb4c5e9f6c58b04",
+      "deathSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "deathBaselineSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+      "deathBaselineExact": true,
+      "eligible": 6111,
+      "history": {
+        "MATCH": {
+          "paths": 6,
+          "cards": 6
+        },
+        "UNKNOWN": {
+          "paths": 9,
+          "cards": 9
+        },
+        "NO_MATCH": {
+          "paths": 0,
+          "cards": 0
+        }
+      },
+      "retainedDependencyScopes": {
+        "UNRESOLVED": 599,
+        "SOURCE_ABILITY_HISTORY": 8,
+        "DEATH_HISTORY": 15,
+        "BATTLEFIELD_COUNT": 33
+      },
+      "matchedCards": [
+        "Morkrut Banshee",
+        "Rictus Robber",
+        "Skirsdag High Priest",
+        "Tragic Banshee",
+        "Tragic Slip",
+        "Wakedancer"
+      ],
+      "unresolvedCards": [
+        "Barad-d\u00fbr",
+        "Cult Conscript",
+        "Death-Priest of Myrkul",
+        "Gravelighter",
+        "Old Flitterfang",
+        "Reaper from the Abyss",
+        "Scorpion, Seething Striker",
+        "Slumbering Cerberus",
+        "Undercity Scrounger"
+      ],
+      "proposedProjection": {
+        "legacyAccepted": 25,
+        "notProvenHistoryOnly": 23,
+        "matchedPathwaysBefore": 566,
+        "matchedPathwaysProjected": 564,
+        "matchedCardsBefore": 551,
+        "matchedCardsProjected": 549,
+        "withheld": [
+          {
+            "card": "Tragic Banshee",
+            "actionId": "Tragic Banshee|front|script.triggeredAbilities[0]",
+            "abilityPath": "script.triggeredAbilities[0].effect.gate.condition",
+            "dependency": "CreatureDiedThisTurnCondition",
+            "nativeOperation": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            }
+          },
+          {
+            "card": "Tragic Slip",
+            "actionId": "Tragic Slip|front|script.spell",
+            "abilityPath": "script.spellEffect.gate.condition",
+            "dependency": "CreatureDiedThisTurnCondition",
+            "nativeOperation": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            }
+          }
+        ],
+        "onlyTheseMatchedCardsWouldLeave": [
+          "Tragic Banshee",
+          "Tragic Slip"
+        ]
+      }
+    },
+    "krenko": {
+      "historySha256": "104370edde3a1cfc8fcef72affed32faeaf8b3d7c63347ab8b07171a9dffa421",
+      "deathSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "deathBaselineSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+      "deathBaselineExact": true,
+      "eligible": 3472,
+      "history": {
+        "MATCH": {
+          "paths": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "paths": 1,
+          "cards": 1
+        },
+        "NO_MATCH": {
+          "paths": 0,
+          "cards": 0
+        }
+      },
+      "retainedDependencyScopes": {
+        "UNRESOLVED": 311,
+        "SOURCE_ABILITY_HISTORY": 7,
+        "BATTLEFIELD_COUNT": 22,
+        "DEATH_HISTORY": 1
+      },
+      "matchedCards": [],
+      "unresolvedCards": [
+        "Slumbering Cerberus"
+      ],
+      "proposedProjection": {
+        "legacyAccepted": 8,
+        "notProvenHistoryOnly": 8,
+        "matchedPathwaysBefore": 225,
+        "matchedPathwaysProjected": 225,
+        "matchedCardsBefore": 220,
+        "matchedCardsProjected": 220,
+        "withheld": [],
+        "onlyTheseMatchedCardsWouldLeave": []
+      }
+    },
+    "kenrith": {
+      "historySha256": "9e7867bd146c8fc54f4a47712079e338445cfceb1d53ec33db0329f7d709aa6b",
+      "deathSha256": "417cafcb37a405a205f66647192aaea8b2be2d04b89d34b8b2c80f87a9bd7e0a",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "deathBaselineSha256": "417cafcb37a405a205f66647192aaea8b2be2d04b89d34b8b2c80f87a9bd7e0a",
+      "deathBaselineExact": true,
+      "eligible": 15955,
+      "history": {
+        "MATCH": {
+          "paths": 14,
+          "cards": 14
+        },
+        "UNKNOWN": {
+          "paths": 15,
+          "cards": 15
+        },
+        "NO_MATCH": {
+          "paths": 0,
+          "cards": 0
+        }
+      },
+      "retainedDependencyScopes": {
+        "UNRESOLVED": 1527,
+        "SOURCE_ABILITY_HISTORY": 30,
+        "DEATH_HISTORY": 29,
+        "BATTLEFIELD_COUNT": 94
+      },
+      "matchedCards": [
+        "Bulette",
+        "Cackling Prowler",
+        "Denethor, Ruling Steward",
+        "Essenceknit Scholar",
+        "Faramir, Field Commander",
+        "Hunger of the Howlpack",
+        "Morkrut Banshee",
+        "Needletooth Pack",
+        "Osai Vultures",
+        "Rictus Robber",
+        "Skirsdag High Priest",
+        "Tragic Banshee",
+        "Tragic Slip",
+        "Wakedancer"
+      ],
+      "unresolvedCards": [
+        "Barad-d\u00fbr",
+        "Barrensteppe Siege",
+        "Cult Conscript",
+        "Death-Priest of Myrkul",
+        "Drag the Canal",
+        "Gravelighter",
+        "Muster the Departed",
+        "Old Flitterfang",
+        "Reaper from the Abyss",
+        "Scorpion, Seething Striker",
+        "Slumbering Cerberus",
+        "Sm\u00e9agol, Helpful Guide",
+        "Undercity Scrounger",
+        "Wardens of the Cycle",
+        "White Glove Gourmand"
+      ],
+      "proposedProjection": {
+        "legacyAccepted": 30,
+        "notProvenHistoryOnly": 28,
+        "matchedPathwaysBefore": 975,
+        "matchedPathwaysProjected": 973,
+        "matchedCardsBefore": 946,
+        "matchedCardsProjected": 944,
+        "withheld": [
+          {
+            "card": "Tragic Banshee",
+            "actionId": "Tragic Banshee|front|script.triggeredAbilities[0]",
+            "abilityPath": "script.triggeredAbilities[0].effect.gate.condition",
+            "dependency": "CreatureDiedThisTurnCondition",
+            "nativeOperation": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            }
+          },
+          {
+            "card": "Tragic Slip",
+            "actionId": "Tragic Slip|front|script.spell",
+            "abilityPath": "script.spellEffect.gate.condition",
+            "dependency": "CreatureDiedThisTurnCondition",
+            "nativeOperation": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            }
+          }
+        ],
+        "onlyTheseMatchedCardsWouldLeave": [
+          "Tragic Banshee",
+          "Tragic Slip"
+        ]
+      }
+    }
+  },
+  "scope": "Diagnostic only; old admissions are unchanged. Unproven legacy rows are retained."
+}

@@ -1,0 +1,69 @@
+{
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": [
+    {
+      "name": "Denethor, Ruling Steward",
+      "id": "fa8654cf-431c-427b-b78f-0e48f6007e9e",
+      "oracle_id": "1b82312c-f748-4c36-8934-ecbcfc10cc7d",
+      "oracle_text": "At the beginning of your end step, if a creature died under your control this turn, create a 1/1 white Human Soldier creature token.\n{2}, Sacrifice another creature: Each opponent loses 1 life and you gain 1 life.",
+      "scryfall_uri": "https://scryfall.com/card/ltr/198/denethor-ruling-steward?utm_source=api",
+      "expectation": "Own controlled creature death; intervening-if checked at end-step trigger and again at resolution; separate sacrifice ability."
+    },
+    {
+      "name": "Hunger of the Howlpack",
+      "id": "23676697-2b84-4e9f-9e38-4fd58085a698",
+      "oracle_id": "296dee6b-6ec1-4ea4-8dc3-23080dd37646",
+      "oracle_text": "Put a +1/+1 counter on target creature.\nMorbid — Put three +1/+1 counters on that creature instead if a creature died this turn.",
+      "scryfall_uri": "https://scryfall.com/card/cns/168/hunger-of-the-howlpack?utm_source=api",
+      "expectation": "Any creature death this turn; three counters instead of one at resolution."
+    },
+    {
+      "name": "Grave Pact",
+      "id": "f5a4970b-2ba6-4c91-a301-369369cdf360",
+      "oracle_id": "6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2",
+      "oracle_text": "Whenever a creature you control dies, each other player sacrifices a creature of their choice.",
+      "scryfall_uri": "https://scryfall.com/card/cmm/165/grave-pact?utm_source=api",
+      "expectation": "Direct death trigger; each other player sacrifices. Verify catalog availability separately."
+    },
+    {
+      "name": "Grim Haruspex",
+      "id": "f5c19b87-e114-46d4-9f6c-c02e838a08dd",
+      "oracle_id": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "oracle_text": "Morph {B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhenever another nontoken creature you control dies, draw a card.",
+      "scryfall_uri": "https://scryfall.com/card/clb/754/grim-haruspex?utm_source=api",
+      "expectation": "Direct death trigger, not a history check."
+    },
+    {
+      "name": "Tannuk, Memorial Ensign",
+      "id": "52498b7b-0389-4e7b-b29f-7ac86aab9229",
+      "oracle_id": "76cb1912-3791-44b8-b594-b92dab21bafc",
+      "oracle_text": "Landfall — Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card.",
+      "scryfall_uri": "https://scryfall.com/card/eoe/233/tannuk-memorial-ensign?utm_source=api",
+      "expectation": "Land entry and this ability's second resolution, not trigger count or independent state."
+    },
+    {
+      "name": "Hardened Scales",
+      "id": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+      "oracle_id": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+      "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on it instead.",
+      "scryfall_uri": "https://scryfall.com/card/soc/272/hardened-scales?utm_source=api",
+      "expectation": "Counter placement replacement, not a triggered response or independent state gate."
+    },
+    {
+      "name": "Scute Swarm",
+      "id": "ea630ba1-22f9-4a10-bdc6-0d03128214f4",
+      "oracle_id": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+      "oracle_text": "Landfall — Whenever a land you control enters, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of this creature instead.",
+      "scryfall_uri": "https://scryfall.com/card/dsc/197/scute-swarm?utm_source=api",
+      "expectation": "Land-entry trigger; six controlled lands checked at resolution; copy remains unresolved."
+    },
+    {
+      "name": "Tragic Slip",
+      "id": "132ccc20-cb42-4474-b747-7e41a661060e",
+      "oracle_id": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "oracle_text": "Target creature gets -1/-1 until end of turn.\nMorbid — That creature gets -13/-13 until end of turn instead if a creature died this turn.",
+      "scryfall_uri": "https://scryfall.com/card/inr/134/tragic-slip?utm_source=api",
+      "expectation": "Any creature death this turn; -13/-13 instead of -1/-1 at resolution, no death trigger."
+    }
+  ]
+}

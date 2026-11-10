@@ -16,6 +16,8 @@ Discover now separates **Produces deaths**, **Benefits from deaths**, and **Deat
 
 Grim Haruspex, Pitiless Plunderer and Doomed Dissenter now expose supported responses; Treasure remains a noncreature artifact token, not mana already generated. Viscera Seer's sacrifice is still death production, while Tragic Slip remains a history-enhanced removal spell. Shared extraction also records nondeath entry/landfall outcomes without admitting them to the death objective. The [implementation report](EVENT_OUTCOME_DISCOVERY.md) records source controls, complete population comparisons, actual revisions and running-application screenshots. The earlier observations and omitted results below are historical and retained unchanged. This is structural possibility, not gameplay execution, universal payoff discovery or input-supplier recognition.
 
+The [historical-state objective](STATE_DEPENDENCY_DISCOVERY.md) separately recognizes supported history checks such as Tragic Slip. The legacy enhanced-removal results in this objective remain unchanged; that branch is not an event-response label.
+
 ## What the code accepts
 
 Discovery.kt evaluates two separate branches over the existing PathwayExtractor:

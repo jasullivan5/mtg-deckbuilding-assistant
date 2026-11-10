@@ -8,7 +8,7 @@ This is the living product-direction record, not authorization to implement futu
 
 The foundation progressively establishes physical identity, rules and source requirements; Commander eligibility; native representability and execution boundaries; and reusable costs, effects, conditions, events and state changes. Objectives interpret capabilities for a question. Availability, representability, source fidelity, execution, discovery and objective relevance remain separate claims. Representation does not establish understanding of every card or interaction.
 
-This is a conceptual direction, not a new module plan. Four bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains its legacy death/removal projection and adds shared triggered event-to-draw/token and intrinsic original-creature self-return relationships; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
+This is a conceptual direction, not a new module plan. Five bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains its legacy death/removal projection and adds shared triggered event-to-draw/token and intrinsic original-creature self-return relationships; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
 
 ## Focused anchors and mechanical relationships
 
@@ -66,6 +66,10 @@ Earlier producer/replenisher language describes resource supply and informs Prov
 
 Event versus history, state access versus scaling, and modification versus facilitation still need precise relationships. Exploration's extra land-play permission remains an example where two role labels describe one change. Roles may summarize a relationship after it is established; they cannot decide source fidelity, objective admission or contextual value.
 
+## Implemented historical-state dependency
+
+[A creature died this turn](STATE_DEPENDENCY_DISCOVERY.md) now searches for supported same-action benefits of a native death-history check. This is a state of the current turn, not a direct dies trigger or a restriction to our nontoken creatures. Native restrictions and checkpoints remain explicit. The shared condition records also retain bounded battlefield count comparisons and source-ability history for inspection; there is no second production state query or general state solver. The existing creature-death objective still identifies legacy enhanced-removal results separately.
+
 ## Directional filtering and selective layering
 
 ### Operational model under investigation
@@ -98,7 +102,7 @@ Simulation is neither implemented deck evaluation nor an inherently authoritativ
 
 ## Implemented coverage and a retained future experiment
 
-The four queries are listed in [README](../README.md#current-objectives). The death query recognizes selected death sources, supported triggered draw/token responses, intrinsic original-creature self-return inputs and death-enhanced removal. Life-change and general payoff discovery remain unsupported. Removal's privileged treatment reflects historical query design, not a permanent principle. Skeleton/Bloodghast return relationships do not prove repeatability, a complete sacrifice/return cycle or useful execution.
+The five queries are listed in [README](../README.md#current-objectives). The death query recognizes selected death sources, supported triggered draw/token responses, intrinsic original-creature self-return inputs and death-enhanced removal. Life-change and general payoff discovery remain unsupported. Removal's privileged treatment reflects historical query design, not a permanent principle. Skeleton/Bloodghast return relationships do not prove repeatability, a complete sacrifice/return cycle or useful execution.
 
 The earlier renewable-creature proposal was implemented in the bounded [creature-input increment](CREATURE_INPUT_DISCOVERY.md), retaining original-card/action/branch binding, zones, controller, optionality, payment and limits. Walking Corpse remains ordinary material; token copies and return-to-hand do not qualify. Unsupported requirements and Wolfbat's finality limit remain unresolved for death input supply. This does not establish a general provider classifier or indefinite fuel.
 

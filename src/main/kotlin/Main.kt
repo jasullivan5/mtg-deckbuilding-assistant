@@ -49,7 +49,7 @@ Usage:
   mtg-assistant card <exact card name>
   mtg-assistant search <Argentum query>
   mtg-assistant discover --commander <exact name> [--search <Argentum query>]
-      [--objective {own-nontoken-creature-deaths|reanimate-own-creatures|create-creature-tokens|stock-own-graveyard}] [--json] [--diagnostics] [--output <path>]
+      [--objective {own-nontoken-creature-deaths|reanimate-own-creatures|create-creature-tokens|stock-own-graveyard|creature-died-this-turn}] [--json] [--diagnostics] [--output <path>]
 Examples:
   mtg-assistant card "Lightning Bolt"
   mtg-assistant search 't:instant c:r mv=1 name:bolt'

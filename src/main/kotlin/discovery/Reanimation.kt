@@ -9,6 +9,7 @@ import kotlinx.serialization.json.*
 /** Project shared fact decisions into discovery results; native traversal lives in PathwayExtractor. */
 fun factObjectiveReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,
     eligibility: List<EligibilityEvidence>,counts: Map<String,Int>,extracted: PathwayExtractor,inputCards: List<String>,objective: String = "reanimate-own-creatures"): DiscoveryReport {
+    if(objective==DEATH_HISTORY_OBJECTIVE) return stateBeneficiaryReport(catalog,commander,identity,query,eligibility,counts,extracted,inputCards)
     val tokens=objective=="create-creature-tokens"
     val state=objective==GRAVEYARD_CREATURE_OBJECTIVE
     val category=when {

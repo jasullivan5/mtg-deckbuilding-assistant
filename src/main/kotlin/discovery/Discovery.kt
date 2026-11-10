@@ -48,7 +48,7 @@ val discoveryLimitations = listOf(
     "No card-name matching or Oracle-text matching is used by mechanical extraction. Native commander designation and the unsupported chosen-color selection guard are the only text-based eligibility checks."
 )
 fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String? = null, objective: String = "own-nontoken-creature-deaths"): DiscoveryReport {
-    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens",GRAVEYARD_CREATURE_OBJECTIVE)) { "Unsupported objective: $objective" }
+    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens",GRAVEYARD_CREATURE_OBJECTIVE,DEATH_HISTORY_OBJECTIVE)) { "Unsupported objective: $objective" }
     val commander=resolveCommander(catalog,commanderName)
     val allowed=catalog.eligibility.resolve(commander).colors + identityRestrictions(commander)
     val roots=physicalCards(catalog.cards)
@@ -65,7 +65,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     val eligible=legal.filter { byName.getValue(it.name).deck == Verdict.MATCH }
     val conventionalNames=conventionalQuery?.let { catalog.search(it).map { it.name }.toSet() }
     val input=eligible.filter { conventionalNames == null || it.name in conventionalNames }
-    val extracted=PathwayExtractor(inspectCardEntries=objective==GRAVEYARD_CREATURE_OBJECTIVE).extract(input)
+    val extracted=PathwayExtractor(inspectCardEntries=objective==GRAVEYARD_CREATURE_OBJECTIVE,inspectStateDependencies=objective==DEATH_HISTORY_OBJECTIVE).extract(input)
     if(objective != "own-nontoken-creature-deaths") return factObjectiveReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
         linkedMapOf("authored_physical_cards" to roots.size,"upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin=="UPSTREAM_ARGENTUM" },
             "application_extension_physical_cards" to roots.count { catalog.provenance(it.name).origin=="APPLICATION_EXTENSION" },"registry_names_including_faces" to catalog.cards.size,
@@ -173,7 +173,11 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         appendLine("Commander: ${report.commander}; allowed identity: ${report.allowedIdentity}")
         report.counts.forEach { (k,v)-> appendLine("$k: $v") }
         report.translationAssurance.forEach { appendLine("Translation assurance: ${it.card}: ${it.qualification}; fidelity=${it.sourceFidelity}; engine=${it.engineExecution}; ${it.reasons}") }
-        for(branch in Contribution.entries.filter { (it == Contribution.GRAVEYARD_CREATURE_ARRIVAL) == (objective == GRAVEYARD_CREATURE_OBJECTIVE) }) {
+        for(branch in Contribution.entries.filter { when(objective) {
+            DEATH_HISTORY_OBJECTIVE -> it==Contribution.STATE_BENEFICIARY
+            GRAVEYARD_CREATURE_OBJECTIVE -> it==Contribution.GRAVEYARD_CREATURE_ARRIVAL
+            else -> it !in setOf(Contribution.GRAVEYARD_CREATURE_ARRIVAL,Contribution.STATE_BENEFICIARY)
+        } }) {
             appendLine("\n$branch")
             report.results.filter { it.branch == branch && it.verdict == Verdict.MATCH }.forEach { r ->
                 appendLine("${r.card} | ${r.face} | ${r.abilityPath} | ${r.operation} | ${r.costOrEffect}")

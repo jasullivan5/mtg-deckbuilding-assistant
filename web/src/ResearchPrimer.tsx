@@ -15,13 +15,13 @@ export default function ResearchPrimer() {
     <section className="progress-panel"><h3>What can we trust?</h3>
       <dl className="evidence-fields">
         <div><dt>Native definitions</dt><dd>Argentum SDK constructs represent a card for the rules engine. Availability establishes representation, not correspondence to Oracle text.</dd></div>
-        <div><dt>Extraction and objectives</dt><dd>The application reads shared mechanical facts, then applies one of four bounded objective policies. MATCH is conditional structural potential. Unread structures, prerequisites and UNKNOWN remain visible.</dd></div>
+        <div><dt>Extraction and objectives</dt><dd>The application reads shared mechanical facts, then applies a bounded objective policy. MATCH is conditional structural potential. Unread structures, prerequisites and UNKNOWN remain visible.</dd></div>
         <div><dt>Execution</dt><dd>Argentum executes a specified position. A passing observation covers that scenario and engine revision, not the entire card or every gameplay condition. Historical failures remain evidence.</dd></div>
         <div><dt>Translation fidelity</dt><dd>Source review compares Oracle requirements with a native definition. The application ledger mainly covers its own extensions; inherited catalog fidelity is not measured at catalog scale.</dd></div>
         <div><dt>Independent qualification</dt><dd>A separate human must explicitly approve the exact source- and revision-bound evidence bundle. Author tests and successful demonstrations cannot substitute for that review. Stale and blocked evidence remain distinct.</dd></div>
       </dl>
     </section>
     <details className="progress-panel"><summary>Why mechanical contributions need context</summary><PrimerPurpose/></details>
-    <p><strong>Available today.</strong> Discover runs four bounded queries. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. General relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
+    <p><strong>Available today.</strong> Discover runs five bounded queries. <strong>A creature died this turn</strong> finds abilities that check death history. <strong>My nontoken creatures die</strong> includes separate direct death responses. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. General relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
   </article>;
 }

@@ -116,7 +116,8 @@ fun objectiveReach(report: DiscoveryReport, definition: Objective): ObjectiveRea
 
 fun objectiveInventory(catalog: Catalog, commander: String = "Judith, the Scourge Diva"): ObjectiveInventory {
     var population: List<String>? = null
-    val reports = objectives.map { definition ->
+    // Keep the established Progress coverage cohort separate from the new Discover objective.
+    val reports = objectives.filterNot { it.id == dev.mtg.assistant.discovery.DEATH_HISTORY_OBJECTIVE }.map { definition ->
         val report = discover(catalog,commander,objective=definition.id)
         if(population == null) population = report.mechanicalInputCards else check(population == report.mechanicalInputCards)
         objectiveReach(report,definition)

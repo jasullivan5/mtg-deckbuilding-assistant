@@ -62,6 +62,7 @@ Files below are relative to `src/main/kotlin/`.
 | One native walker | `discovery/PathwayExtractor.kt`; actions, costs/effects, branches, bindings and unsupported structures |
 | Reusable facts, predicates and quantities | `discovery/MechanicalFacts.kt`, `TokenFacts.kt`, `AmountBounds.kt`; `EventOutcomes.kt` joins native trigger context to same-branch draw/token outputs using existing action IDs, token facts and correlated filters |
 | Death objective A | Legacy death/removal projection plus shared `EventOutcomes.kt` triggered event/outcome intersection, and `SelfReplenishment.kt` original-source movement/context joins, assembled in `Discovery.kt` |
+| Historical-state benefits | The existing walker records native condition, same-action branch and checkpoint in `StateDependencies.kt`; `StateBeneficiaryReport.kt` projects supported history checks into Discover. The state records are opt-in so the four existing report contracts stay unchanged. |
 | Reanimation B / token C / graveyard state | Fact compositions and common reporting in `discovery/Reanimation.kt`, using shared movement/token facts; no separate native walkers |
 | Evidence and CLI | `discovery/Evidence.kt`, `Discovery.kt`, `Main.kt`; native source provenance binds the exact fork revision |
 | Identity/coverage observations | `coverage/OracleSnapshot.kt`, `OracleEnrichment.kt`, `CatalogCoverage.kt`; offline source snapshots and bounded mappings |

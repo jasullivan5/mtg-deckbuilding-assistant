@@ -12,7 +12,7 @@ Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the l
 
 Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script builds both layers; catalog startup can take tens of seconds. Stop with **Ctrl+C**. See [guided exercises and API](docs/EXPLORER.md).
 
-**Discover** searches the four existing objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
+**Discover** searches five bounded objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
 
 ## Current state and authority
 
@@ -20,7 +20,7 @@ The running application and live Git are the living sources of product direction
 
 | Available today | Detail and evidence |
 | --- | --- |
-| Discover: four bounded queries, card imagery/fallbacks, readable findings and prerequisites | [Explorer](docs/EXPLORER.md) and the objective list below |
+| Discover: five bounded queries, card imagery/fallbacks, readable findings and prerequisites | [Explorer](docs/EXPLORER.md) and the objective list below |
 | Progress: representation, bounded commander selection, objective reach, scoped trust and historical gains | [Progress](docs/RESEARCH_PROGRESS.md), [global coverage](docs/GLOBAL_COMMANDER_COVERAGE.md), [verification coverage](docs/VERIFICATION_COVERAGE.md) |
 | Complete printed-payment comparison and phased examination, including two recorded Explicit tap-payment failures | [Cost fidelity](docs/ACTIVATION_COST_FIDELITY.md), [latest examination](docs/PRODUCT_STUDIO_COST_EXAMINATION.md) |
 | Curated fresh native scenarios in **Developer research index** | [Mechanical Verification Lab](docs/MECHANICAL_VERIFICATION_LAB.md); specified positions, not deck simulation |
@@ -57,6 +57,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 | own-nontoken-creature-deaths | Selected death generation, intrinsic creature-input replenishment, death-enhanced removal and qualifying triggered draw/token responses ([input-supply report](docs/CREATURE_INPUT_DISCOVERY.md), [event-outcome report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
+| creature-died-this-turn | Supported effects that check death history at activation, triggering/resolution or resolution ([implementation and evidence](docs/STATE_DEPENDENCY_DISCOVERY.md)) |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |
 
 Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](docs/KNOWN_LIMITATIONS.md).

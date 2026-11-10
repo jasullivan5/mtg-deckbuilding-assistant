@@ -91,6 +91,6 @@ class DeathObjectiveCoverageTest : FunSpec({
     }
     test("death scope help describes bounded responses and the objective menu includes the independent state search") {
         objectives.first().coverageNote!!.contains("Input supply is bounded") shouldBe true
-        objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "stock-own-graveyard")
+        objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "creature-died-this-turn", "stock-own-graveyard")
     }
 })

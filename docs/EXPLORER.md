@@ -6,7 +6,7 @@ The Explorer is a local browser interface over the application's existing Kotlin
 
 ## Current Primer
 
-Open `/#primer` for the existing five-stage map and **Build a precise objective**. Compare counter placement, power increase and reaching power 4; open **Events, states, game elements and effects** for the working concepts. The examples change explanations without running discovery. Four existing queries remain the implemented boundary. See the [source-grounded assessment and actual screenshots](OBJECTIVE_BUILDING_BLOCKS.md) and [living direction](OBJECTIVE_MODEL.md). No snapshot is needed just to read Primer.
+Open `/#primer` for the existing five-stage map and **Build a precise objective**. Compare counter placement, power increase and reaching power 4; open **Events, states, game elements and effects** for the working concepts. The examples change explanations without running discovery. Discover offers five bounded queries, including a [death-history state objective](STATE_DEPENDENCY_DISCOVERY.md). See the [source-grounded assessment and actual screenshots](OBJECTIVE_BUILDING_BLOCKS.md) and [living direction](OBJECTIVE_MODEL.md). No snapshot is needed just to read Primer.
 
 ## Primer alignment review — 2026-11-09
 
@@ -104,7 +104,7 @@ All API paths start with `/api/v1`. JSON bodies reject unknown fields; commander
 | Method and path | Request | Response |
 | --- | --- | --- |
 | GET /health | none | ready state, actual engine SHA/mode, packaged application revision |
-| GET /objectives | none | four Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
+| GET /objectives | none | five Objective records: exact id, label, legacy explanation, concise capability bullets and optional coverage note |
 | POST /commander | {commander} | unchanged CommanderInspection; HTTP 200 also covers blocked selections |
 | POST /commander-view | {commander, objective} | original inspection plus verified image/fallback, readable card text, color identity, bounded objective connection and applicable scoped evidence; does not run whole-catalog discovery |
 | POST /discover | {commander, objective} | RunSummary: run ID, fresh structural execution mode/time, revisions, scope/counts, limitations and compact card index |
