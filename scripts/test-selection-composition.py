@@ -74,6 +74,12 @@ class SelectionTest(unittest.TestCase):
         with self.assertRaises(ValueError):run(values)
         values=inputs();values[2]['context']['snapshotSha256']='other'
         with self.assertRaises(ValueError):run(values)
+    def test_basic_selection_uses_full_identity_not_printed_color_and_preserves_unknown(self):
+        c=card();c['colors']=['B'];c['color_identity']=['R']
+        self.assertEqual(run(inputs([c]))['counts']['basic-creatures']['cards'],0)
+        c['color_identity']=None
+        result=run(inputs([c]))
+        self.assertEqual(result['population']['omittedNormalLayoutOrIdentity'][0]['reason'],'UNKNOWN_EXTERNAL_IDENTITY')
     def test_failed_functional_query_is_not_an_empty_mechanical_negative(self):
         values=inputs();values[3]['queries']['deathwipes']['status']='FAILED'
         with self.assertRaises(ValueError):run(values)
