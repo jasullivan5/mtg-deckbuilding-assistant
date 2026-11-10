@@ -91,7 +91,7 @@ internal fun deathResponseResults(catalog: dev.mtg.assistant.Catalog, outcomes: 
         ResultEvidence(card=o.card,identifier=card.oracleId ?: "${card.setCode}:${card.metadata.collectorNumber}:${card.name}",face=o.face,
             actionId=o.actionId,abilityPath=o.path,branch=Contribution.DEATH_TRIGGERED_OUTCOME,verdict=row.verdict,
             operation=o.kind.name,costOrEffect="EFFECT",affectedScope=o.event.trigger.description,
-            prerequisites=o.prerequisites+o.event.requirements+listOf("The qualifying nontoken creature must actually die; death replacements, trigger suppression, legal targets and resolution can prevent this outcome", "Binding=${o.event.binding}; source face ${o.face} and active zones ${o.event.activeZones} must be available"),
+            prerequisites=o.prerequisites+o.event.requirements+listOf("The qualifying nontoken creature must actually die; death replacements, trigger suppression, legal targets and resolution can prevent this outcome", "Binding=${o.event.binding}; source face ${o.face}, native active-zone rules ${o.event.activeZones} and last-known information must permit triggering"),
             dependency=o.event.trigger.description,nativeOperation=o.native,decisions=row.decisions,
             sourceReferences=listOfNotNull(source?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },if(provenance.origin=="APPLICATION_EXTENSION") provenance.source else null),
             commanderLegality=e.format,deckEligibility=e.deck,

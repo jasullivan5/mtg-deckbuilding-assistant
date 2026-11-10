@@ -280,7 +280,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),
                 if(ability.activeZones.isEmpty()) Verdict.NO_MATCH else if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController ||
                     ability.binding==TriggerBinding.ATTACHED || ability.activeZones!=setOf(Zone.BATTLEFIELD) || extra.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
-                assumptions + "Source must be available in declared active zones; trigger/turn limits must permit this occurrence; actual resolution is not guaranteed" +
+                assumptions + "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed" +
                     listOfNotNull("This source's ability triggers only once during its battlefield lifetime".takeIf { ability.triggersOnce },
                         "Do this only once each turn: resolution action budget must remain; declining does not spend it".takeIf { ability.effectOncePerTurn }))
             // A trigger observing another object can itself be active in a non-battlefield zone.

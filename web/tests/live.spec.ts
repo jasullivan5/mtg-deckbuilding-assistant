@@ -471,7 +471,7 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
     await expect(nav.getByRole('button', {name: '0 Outside current objective coverage', exact: true})).toBeDisabled();
     await expect(nav.getByRole('button', {name: '0 Ordinary creature body', exact: true})).toBeDisabled();
   }
-  await nav.getByRole('button', {name: '4 Recognized contribution', exact: true}).click();
+  await nav.getByRole('button', {name: '7 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Viscera Seer'}).click();
   await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
   await expect(detail.getByRole('button', {name: /Discovery.*Creature sacrifice cost identified/})).toBeVisible();

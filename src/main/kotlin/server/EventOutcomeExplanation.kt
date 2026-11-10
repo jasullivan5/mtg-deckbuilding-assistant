@@ -53,7 +53,13 @@ internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): Path
     }
     val requirements=listOf("Required event: ${incomingEvent(o)}.",
         "For this objective, a nontoken creature you control must actually reach the graveyard from the battlefield. The native trigger may also accept other deaths.",
-        "This source must be available in its declared active zones: ${o.event.activeZones}. Self/another binding: ${o.event.binding}.",
+        "This ability must be active in its native zones at the trigger checkpoint: ${o.event.activeZones.joinToString { it.displayName }}. Last-known information can permit a death trigger even though its source has left the battlefield.",
+        when(o.event.binding) {
+            TriggerBinding.SELF -> "This source itself must be the qualifying dying creature. It need not remain on the battlefield for the ability to resolve."
+            TriggerBinding.OTHER -> "The dying creature must be another object, not this source."
+            TriggerBinding.ATTACHED -> "The trigger refers to the attached object; the attachment relationship is not fully interpreted."
+            else -> "The dying object must meet the native trigger's printed restrictions."
+        },
         "Native trigger conditions, turn caps, targets, choices and positive quantity must permit this branch. Replacements, trigger suppression and failed resolution can prevent the outcome.") +
         (if(o.optional) listOf("The output is optional; it is not an automatic resource gain.") else emptyList()) + caps
     val unknowns=buildList {

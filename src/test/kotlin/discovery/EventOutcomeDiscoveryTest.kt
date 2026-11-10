@@ -48,4 +48,11 @@ class EventOutcomeDiscoveryTest : FunSpec({
         rows.any { it.branch==Contribution.DIRECT_DEATH_GENERATOR && it.verdict==Verdict.NO_MATCH } shouldBe true
         (rows.map { it.actionId }.distinct().size > 1) shouldBe true
     }
+    test("a real entry token response qualifies the shared nondeath event query") {
+        val o=PathwayExtractor().extract(listOf(catalog.card("Hanged Executioner")!!)).eventOutcomes.single()
+        o.kind shouldBe OutcomeKind.CREATE_TOKEN
+        eventIntersection(o.event,ZoneEventRequirement(to=com.wingedsheep.sdk.core.Zone.BATTLEFIELD,controller=Controller.YOU)) shouldBe Verdict.MATCH
+        deathResponses(listOf(o)).single().verdict shouldBe Verdict.NO_MATCH
+    }
+
 })
