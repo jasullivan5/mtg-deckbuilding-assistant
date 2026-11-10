@@ -8,8 +8,6 @@ import com.wingedsheep.sdk.scripting.references.Player
 import dev.mtg.assistant.discovery.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
-import kotlinx.serialization.encodeToString
-import java.io.File
 
 class StateDependencyTest : FunSpec({
     val catalog by lazy { Catalog() }
@@ -66,7 +64,7 @@ class StateDependencyTest : FunSpec({
         val synthetic=card("Threshold test fixture") {
             typeLine="Enchantment"; manaCost="{G}"
             triggeredAbility {
-                trigger=checkNotNull(d.incomingEvent).trigger
+                trigger=Triggers.a(GameObjectFilter.Land.youControl()).enters()
                 effect=Effects.If(d.condition,DrawCardsEffect(2),DrawCardsEffect(1))
             }
         }
@@ -88,18 +86,5 @@ class StateDependencyTest : FunSpec({
         val nested=d.copy(condition=NotCondition(CreatureDiedThisTurnCondition),whenFalse=null,contextSupport=Verdict.MATCH)
         verdict(nested,StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
         verdict(nested.copy(whenFalse=DrawCardsEffect(2)),StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
-    }
-    test("export unchanged-pool comparisons when explicitly requested") {
-        val dir=System.getenv("STATE_STUDY_EXPORT")?.let(::File) ?: return@test
-        dir.mkdirs()
-        File(dir,"kenrith-history.json").writeText(reportJson.encodeToString(report))
-        for((slug,commander) in listOf("judith" to "Judith, the Scourge Diva","krenko" to "Krenko, Mob Boss")) {
-            for(objective in listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens","stock-own-graveyard",DEATH_HISTORY_OBJECTIVE)) {
-                val r=discover(catalog,commander,objective=objective)
-                File(dir,"$slug-$objective.json").writeText(reportJson.encodeToString(r))
-            }
-        }
-        File(dir,"kenrith-death.json").writeText(reportJson.encodeToString(discover(catalog,"Kenrith, the Returned King")))
-        File(dir,"grave-pact-available.txt").writeText((catalog.card("Grave Pact")!=null).toString())
     }
 })
