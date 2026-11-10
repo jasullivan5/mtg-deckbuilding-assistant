@@ -128,7 +128,7 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
                     "Specify one bounded cross-card dependency question using existing facts, with explicit resource and timing requirements.", "Documented capability limit", "capabilities")
             ), capabilities = listOf(
                 ProgressCapability("Commander eligibility and source identity", "Implemented with limits", "Single fixed-identity commander; unknown metadata and physical associations remain explicit."),
-                ProgressCapability("Mechanical representation and discovery", "Implemented with limits", "Four bounded objectives over authored native definitions; unsupported structures remain."),
+                ProgressCapability("Mechanical representation and discovery", "Implemented with limits", "Five bounded Discover objectives over authored native definitions; the retained coverage comparison uses the original four."),
                 ProgressCapability("Source fidelity and engine verification", "Early research capability", "Extension ledger and bounded scenarios; inherited catalog fidelity not measured."),
                 ProgressCapability("Composable objectives and cross-card dependencies", "Early research capability", "Shared facts and atomic queries; no general cross-card package analysis."),
                 ProgressCapability("Resources, timing and complementary packages", "Not yet implemented", "Prerequisites are reported; affordability and whole-package feasibility are not solved."),

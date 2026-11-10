@@ -27,6 +27,7 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
   const unassigned = evidence.unsupported.filter(u => !evidence.abilities.some(a => a.actionId === u.actionId));
   const arrivals = evidence.graveyardContributions?.filter(item => item.relationship.actionId === ability?.actionId) ?? [];
   const supplies = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'INTRINSIC_CREATURE_INPUT') ?? [];
+  const stateChecks = rows.filter(row => row.branch === 'STATE_BENEFICIARY');
   const responses = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'DEATH_TRIGGERED_OUTCOME') ?? [];
   return <>
     <div className="card-overview"><CardPicture image={image}/>
@@ -47,6 +48,15 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
           <p>{evidence.explanations[i].summary}</p>
           <List title="How the creature becomes available" values={evidence.explanations[i].requirements}/>
           <List title="Continued availability and limits" values={evidence.explanations[i].unknowns}/>
+        </div>)}
+      </section>}
+      {stateChecks.length > 0 && <section className="pathway" aria-label="Death history">
+        <h3>{stateChecks.some(row => row.verdict === 'MATCH') ? 'Benefits from death history' : 'Death history needs investigation'}</h3>
+        {ability.resultIndexes.filter(i => evidence.results[i].branch === 'STATE_BENEFICIARY').map(i => <div key={i}>
+          <p>{evidence.explanations[i].summary}</p>
+          <p>{evidence.explanations[i].outcome}</p>
+          <List title="When checked and what must hold" values={evidence.explanations[i].requirements}/>
+          <List title="Interpretation limits" values={evidence.explanations[i].unknowns}/>
         </div>)}
       </section>}
       {responses.length > 0 && <section className="pathway" aria-label="Death response">

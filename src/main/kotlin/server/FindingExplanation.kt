@@ -70,6 +70,7 @@ private fun costDescriptions(node: JsonObject?): List<String> = when (node.text(
 }
 
 fun mechanic(result: ResultEvidence): String = when {
+    result.branch==Contribution.STATE_BENEFICIARY -> if(result.verdict==Verdict.MATCH) "Benefits from death history" else "Death history check"
     result.branch==Contribution.INTRINSIC_CREATURE_INPUT -> when(result.verdict) {
         Verdict.MATCH->"Supplies creature inputs";Verdict.UNKNOWN->"Creature input needs investigation";else->"Nonqualifying self-return check"
     }
@@ -88,6 +89,7 @@ fun mechanic(result: ResultEvidence): String = when {
 }
 
 fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExplanation {
+    result.stateDependency?.let { return stateDependencyExplanation(result,it) }
     result.selfReturn?.let { return selfReturnExplanation(result,it) }
     result.eventOutcome?.let { return eventOutcomeExplanation(result,it) }
     result.stateEntry?.let { return stateEntryExplanation(result, action, it) }

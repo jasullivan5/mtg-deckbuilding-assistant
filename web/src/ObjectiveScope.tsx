@@ -16,6 +16,11 @@ const scope: Record<string, {goal: string; searched: string; limits: string}> = 
     searched: 'Supported token-creation effects, including recognized variable amounts that can produce at least one creature token.',
     limits: 'Noncreature tokens are outside this goal. Unknown token types, quantities or conditions can leave a check unresolved.',
   },
+  'creature-died-this-turn': {
+    goal: 'At least one creature has died during the current turn.',
+    searched: 'Abilities with supported checks that use this history to enable or strengthen an outcome.',
+    limits: 'Some abilities restrict whose death counts. This search does not look for ways to cause deaths or treat a direct dies trigger as a history check.',
+  },
   'stock-own-graveyard': {
     goal: 'Have at least one creature card in your graveyard at a checkpoint.',
     searched: 'Supported sacrifices, mills and discards that could put a creature card into your graveyard.',

@@ -140,7 +140,9 @@ internal fun deathDependency(c: Condition): Pair<Verdict,ObjectScope> = when(c) 
 }
 
 /** Native objects in, individual operations out. No card names or Oracle text are inspected. */
-class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
+class PathwayExtractor(private val inspectCardEntries: Boolean = false, private val inspectStateDependencies: Boolean = false) {
+    val stateDependencies = mutableListOf<StateDependency>()
+    private var stateRootPath: String? = null
     val eventOutcomes = mutableListOf<EventOutcome>()
     val selfReturns = mutableListOf<SelfReturnLink>()
     private var sourceReplacementLimits = emptyList<ReturnLimit>()
@@ -175,7 +177,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     })
 
     fun extract(cards: List<CardDefinition>): PathwayExtractor {
-        pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear(); selfReturns.clear()
+        pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear(); selfReturns.clear(); stateDependencies.clear()
         for(c in cards) { card=c; inspectDefinition(c,"front") }
         return this
     }
@@ -242,7 +244,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
                    directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null, costs: () -> Unit = {}) {
-            actionId="${card.name}|$label|$path"; rootEffect=effect; actionNative=value
+            actionId="${card.name}|$label|$path"; rootEffect=effect; stateRootPath=if(path=="script.spell") "script.spellEffect" else "$path.effect"; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
             actions += ActionEvidence(actionId,card.name,label,path,assumptions,value)
             val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource)
@@ -278,6 +280,12 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) }+
                     if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList())) {
                 abilityCost(ability.cost,"$path.cost",frame)
+            }
+            ability.restrictions.forEachIndexed { i, restriction ->
+                if(restriction is ActivationRestriction.OnlyIfCondition) recordState(
+                    restriction.condition,"$path.restrictions[$i].condition","$path.effect",ability.effect,null,
+                    StateCheckpoint.ACTIVATION,frame,
+                    extra.isEmpty() && ability.restrictions.size==1 && ability.conditionalCostReduction==null && ability.genericCostReduction==null)
             }
             ability.conditionalCostReduction?.let { reduction ->
                 removals(ability.effect).forEach { enhanced("$path.conditionalCostReduction", reduction.condition.description + "; cost reduced by ${reduction.reduction}",deathDependency(reduction.condition),it,frame,
@@ -322,6 +330,12 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
                 event=event,returnSource=returnSource,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
                     ability.interveningIf == null && ability.triggerRestriction == null && !ability.controlledByTriggeringEntityController)
+            ability.interveningIf?.let { condition ->
+                recordState(condition,"$path.interveningIf","$path.effect",ability.effect,null,StateCheckpoint.TRIGGER_AND_RESOLUTION,
+                    Frame(ability.allTargetRequirements,assumptions=assumptions,selfZone=sourceZone,event=event),
+                    ability.triggerRestriction==null && ability.elseEffect==null && !ability.controlledByTriggeringEntityController &&
+                        ability.binding!=TriggerBinding.ATTACHED && ability.activeZones==setOf(Zone.BATTLEFIELD) && extra.isEmpty())
+            }
             if(trigger is EventPattern.ZoneChangeEvent && trigger.from == Zone.BATTLEFIELD && trigger.to == Zone.GRAVEYARD) {
                 var eventScope=ObjectScope(trigger.filter)
                 if(ability.binding == TriggerBinding.SELF) eventScope=eventScope.copy(actor="YOU",printedSelfCreature=creature)
@@ -613,6 +627,16 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         if(partial) issue("$path.tokenConstraints",e,"Unresolved token variant: creature=$creature; controller=$controller; quantity=$positive; $unresolved",SupportStatus.PARTIALLY_SUPPORTED)
         return true
     }
+    private fun recordState(condition: Condition, conditionPath: String, outcomePath: String, yes: Effect, no: Effect?,
+                            checkpoint: StateCheckpoint, frame: Frame, boundedContext: Boolean) {
+        if(!inspectStateDependencies) return
+        val scope=stateScope(condition)
+        stateDependencies += StateDependency(card.name,face,actionId,conditionPath,outcomePath,condition,scope,checkpoint,
+            yes,no,if(boundedContext && scope!=StateScope.SOURCE_ABILITY_HISTORY) Verdict.MATCH else Verdict.UNKNOWN,
+            frame.assumptions + listOfNotNull("Source checkpoint zone: ${frame.selfZone}".takeIf { frame.selfZone!=null },
+                "Native targets: ${frame.targets}".takeIf { frame.targets.isNotEmpty() }),
+            frame.event)
+    }
     private fun walk(e: Effect,path: String,frame: Frame) {
         if(recordToken(e,path,frame)) return
         if(e is DrawCardsEffect && frame.event!=null) {
@@ -670,6 +694,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             }
             is GatedEffect -> {
                 val condition=(e.gate as? Gate.WhenCondition)?.condition
+                if(condition!=null) recordState(condition,"$path.gate.condition","$path.then",e.then,e.otherwise,
+                    StateCheckpoint.RESOLUTION,frame,stateRootPath==path && e.decisionMaker==null && !frame.delayed &&
+                        (frame.event==null || frame.event.confidence==Verdict.MATCH) && frame.factGuard==Verdict.MATCH)
                 val assumptions=frame.assumptions+"Gate=${nativeJson.encodeToJsonElement(Gate.serializer(),e.gate)}; success branch"
                 val branch=frame.copy(returnGuard=all(listOf(frame.returnGuard,returnGateSupport(e.gate,frame.selfZone,e.decisionMaker))),outcomeGuard=if(e.gate is Gate.MayDecide) frame.outcomeGuard else Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=assumptions,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
                 when(val gate=e.gate) {

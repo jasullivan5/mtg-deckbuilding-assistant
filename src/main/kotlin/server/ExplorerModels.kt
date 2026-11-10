@@ -18,6 +18,9 @@ val objectives = listOf(
         "Incoming death restrictions and same-ability branches must qualify. Conditions can remain uncertain. Input supply is bounded to original-creature self-return; ordinary bodies and generic reanimation are not intrinsic self-return suppliers. Other resources, life-change/mana payoffs, general replacement effects and composition are not implemented. Ordinary removal is still not admitted merely because it can target your creature."),
     Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield.", listOf("Return original creature cards from your graveyard to your battlefield.")),
     Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token.")),
+    Objective(DEATH_HISTORY_OBJECTIVE, "A creature died this turn", "Find abilities that check for a creature death earlier this turn and gain access to an effect or change its magnitude.",
+        listOf("Benefits from death history: supported checks at resolution, activation or both triggering and resolution."),
+        "A token or an opponent's creature can establish the broad history. Some abilities narrow whose creature counts. Direct dies triggers and ways to cause deaths are separate."),
     Objective(GRAVEYARD_CREATURE_OBJECTIVE, GRAVEYARD_CREATURE_CRITERION, "Find ways to put a creature card into your graveyard through supported native mechanics.",
         listOf("Sacrifice a creature.", "Mill cards from your library.", "Discard cards from your hand."),
         "The current search covers supported fixed-count routes. Actual card choices, replacement effects and the graveyard at the checkpoint depend on play.")

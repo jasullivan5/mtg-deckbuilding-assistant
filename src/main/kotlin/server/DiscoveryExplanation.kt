@@ -26,6 +26,16 @@ internal fun sacrificeObject(row: ResultEvidence): String {
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
+    row.stateDependency?.let { d ->
+        val explanation=stateDependencyExplanation(row,d)
+        add(EvidenceField("Relationship",explanation.summary))
+        add(EvidenceField("Required history",d.condition.description))
+        add(EvidenceField("When checked",stateCheckpointLabel(d.checkpoint)))
+        add(EvidenceField("When true",d.whenTrue.description))
+        add(EvidenceField("Otherwise",d.whenFalse?.description ?: "This outcome is unavailable."))
+        if(row.verdict==Verdict.UNKNOWN) add(EvidenceField("Unresolved","The predicate, branch context or effect change is not fully interpreted."))
+        return@buildList
+    }
     row.selfReturn?.let { link ->
         add(EvidenceField("Relationship",contributionRelationship(row) ?: "Nonqualifying intrinsic return"))
         add(EvidenceField("Resource criterion","Must return the originating card's own original nontoken creature; not a token copy or a generic reanimation target"))
