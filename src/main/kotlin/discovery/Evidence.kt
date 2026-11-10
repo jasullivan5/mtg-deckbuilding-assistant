@@ -18,7 +18,7 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
 @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }
 @Serializable data class StructuralSupport(val card: String,val face: String,val path: String,val nativeType: String,
     val status: SupportStatus,val reason: String,val actionId: String)
-@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME }
+@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME, INTRINSIC_CREATURE_INPUT }
 @Serializable data class ActionEvidence(val id: String, val card: String, val face: String, val path: String,
     val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null)
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
@@ -49,7 +49,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val mechanicalCapability: String? = null, val circumstances: Circumstances? = null,
     val strategicDesirability: String = "NOT_EVALUATED", val localSupport: SupportStatus? = null,
     val stateEntry: dev.mtg.assistant.objectives.StateEntryEvidence? = null,
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcome: EventOutcome? = null)
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcome: EventOutcome? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val selfReturn: SelfReturnLink? = null)
 @Serializable data class DiscoveryReport(val argentumCommit: String = ARGENTUM_SHA, val objective: String,
     val commander: String, val allowedIdentity: List<String>, val conventionalQuery: String?,
     val counts: Map<String, Int>, val eligibility: List<EligibilityEvidence>, val results: List<ResultEvidence>,
@@ -58,7 +59,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val facts: List<MechanicalFact> = emptyList(), val mechanicalInputCards: List<String>? = null,
     val translationAssurance: List<dev.mtg.assistant.extensions.TranslationAssurance> = emptyList(),
     val conditionalArrivals: List<dev.mtg.assistant.objectives.ConditionalArrival> = emptyList(),
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcomes: List<EventOutcome> = emptyList())
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcomes: List<EventOutcome> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val selfReturns: List<SelfReturnLink> = emptyList())
 
 /** Keyword/self alternative payments link to the card script, whose spell action owns resolution. */
 fun associatedSpellAction(actions: Map<String,ActionEvidence>,actionId: String): String? =

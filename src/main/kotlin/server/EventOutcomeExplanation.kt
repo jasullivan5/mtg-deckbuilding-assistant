@@ -13,6 +13,11 @@ import dev.mtg.assistant.discovery.*
 fun contributionRelationship(row: ResultEvidence): String? = when(row.branch) {
     Contribution.DIRECT_DEATH_GENERATOR -> "Produces deaths".takeIf { row.verdict==Verdict.MATCH }
     Contribution.DEATH_ENHANCED_REMOVAL -> "Death-enhanced removal".takeIf { row.verdict==Verdict.MATCH }
+    Contribution.INTRINSIC_CREATURE_INPUT -> when(row.verdict) {
+        Verdict.MATCH -> "Supplies creature inputs"
+        Verdict.UNKNOWN -> "Creature input needs investigation"
+        else -> null
+    }
     Contribution.DEATH_TRIGGERED_OUTCOME -> when(row.verdict) {
         Verdict.MATCH -> "Benefits from deaths"
         Verdict.UNKNOWN -> "Death response needs investigation"

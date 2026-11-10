@@ -19,7 +19,8 @@ private data class Frame(val targets: List<TargetRequirement>, val tokenControll
     val movementTargets: MutableMap<String,List<ObjectScope>> = mutableMapOf(),
     val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList(),
     val directBattlefieldStepTrigger: Boolean = false, val event: EventContext? = null,
-    val outcomeGuard: Verdict = Verdict.MATCH)
+    val outcomeGuard: Verdict = Verdict.MATCH, val returnSource: ReturnSourceContext? = null,
+    val returnGuard: Verdict = Verdict.MATCH, val returnLimits: List<ReturnLimit> = emptyList())
 private data class Removal(val effect: Effect, val target: EffectTarget?, val operation: String, val magnitude: Int? = null, val prerequisites: List<String> = emptyList(), val confidence: Verdict = Verdict.MATCH)
 private fun removal(e: Effect): Removal? = when(e) {
     is MoveToZoneEffect -> when {
@@ -141,6 +142,8 @@ internal fun deathDependency(c: Condition): Pair<Verdict,ObjectScope> = when(c) 
 /** Native objects in, individual operations out. No card names or Oracle text are inspected. */
 class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     val eventOutcomes = mutableListOf<EventOutcome>()
+    val selfReturns = mutableListOf<SelfReturnLink>()
+    private var sourceReplacementLimits = emptyList<ReturnLimit>()
     val facts = mutableListOf<MechanicalFact>()
     val pathways = mutableListOf<Pathway>()
     val actions = mutableListOf<ActionEvidence>()
@@ -172,7 +175,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     })
 
     fun extract(cards: List<CardDefinition>): PathwayExtractor {
-        pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear()
+        pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear(); selfReturns.clear()
         for(c in cards) { card=c; inspectDefinition(c,"front") }
         return this
     }
@@ -233,15 +236,16 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
     }
     private fun inspectScript(script: CardScript, label: String, creature: Boolean, keywordAbilities: List<KeywordAbility> = emptyList()) {
         face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
+        sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
         actionId="${card.name}|$label|script"
         actions += ActionEvidence(actionId,card.name,label,"script",emptyList(),nativeJson.encodeToJsonElement(CardScript.serializer(),script))
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
-                   directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, costs: () -> Unit = {}) {
+                   directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null, costs: () -> Unit = {}) {
             actionId="${card.name}|$label|$path"; rootEffect=effect; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
             actions += ActionEvidence(actionId,card.name,label,path,assumptions,value)
-            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event)
+            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource)
             costs()
             effect?.let { walk(it,if(path == "script.spell") "script.spellEffect" else "$path.effect",frame) }
         }
@@ -263,7 +267,15 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         }
         fun activated(ability: ActivatedAbility,path: String, extra: List<String> = emptyList()) {
             val frame=Frame(ability.targetRequirements,selfZone=ability.activateFromZone,assumptions=extra + "Timing=${ability.timing}; restrictions=${ability.restrictions}; activateFrom=${ability.activateFromZone}")
-            action(path,nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),ability),ability.effect,frame.targets,frame.assumptions,sourceZone=ability.activateFromZone) {
+            action(path,nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),ability),ability.effect,frame.targets,frame.assumptions,sourceZone=ability.activateFromZone,returnSource=ReturnSourceContext("ACTIVATED",setOf(ability.activateFromZone),ability.description,ability.cost.description,
+                if(ability.restrictions.any { it is ActivationRestriction.MaxPerTurn && it.count<=0 }) Verdict.NO_MATCH else if(extra.isEmpty() && ability.restrictions.none { it is ActivationRestriction.OnlyIfCondition || it==ActivationRestriction.AnyPlayerMay || it is ActivationRestriction.All }) Verdict.MATCH else Verdict.UNKNOWN,
+                sourceCostCompatibility=sourceCostCompatibility(ability.cost,ability.activateFromZone),requirements=frame.assumptions+"Pay all activation costs, with legal resources; the original return card must remain available",
+                limits=ability.restrictions.mapIndexed { i,r -> ReturnLimit("ACTIVATION_RESTRICTION","$path.restrictions[$i]",when(r) {
+                    ActivationRestriction.Once -> "This ability is limited to one activation; do not assume the allowance resets across zone changes."
+                    ActivationRestriction.OncePerTurn -> "At most one activation each turn; an unused allowance is required."
+                    is ActivationRestriction.MaxPerTurn -> "At most ${r.count} activations each turn; an unused allowance is required."
+                    else -> "Native activation restriction: $r; do not infer unbounded reuse across zone changes"
+                },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) })) {
                 abilityCost(ability.cost,"$path.cost",frame)
             }
             ability.conditionalCostReduction?.let { reduction ->
@@ -288,8 +300,18 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             // single location for multi-zone abilities in this bounded correction.
             val sourceZone=if(trigger is EventPattern.ZoneChangeEvent && ability.binding == TriggerBinding.SELF) trigger.to
                 else ability.activeZones.singleOrNull() ?: Zone.BATTLEFIELD
+            val returnSource=ReturnSourceContext("TRIGGERED",ability.activeZones,ability.description,confidence=
+                    if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController || extra.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
+                    selfDeathTransition=ability.binding==TriggerBinding.SELF && trigger is EventPattern.ZoneChangeEvent && trigger.from==Zone.BATTLEFIELD && trigger.to==Zone.GRAVEYARD,
+                    requirements=assumptions+listOf("Trigger timing, native conditions and limits must permit this occurrence; source in a graveyard is owned by the ability controller unless native rebinding changes that", "Trigger cap=${ability.perTurnTriggerCap}; lifetime cap=${ability.triggersOnce}; resolution-once-per-turn=${ability.effectOncePerTurn}"),
+                    limits=buildList {
+                        val native=nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability)
+                        ability.perTurnTriggerCap?.let { add(ReturnLimit("TRIGGER_LIMIT",path,"At most $it matching triggers each turn; an unused trigger allowance is required.",native)) }
+                        if(ability.triggersOnce) add(ReturnLimit("TRIGGER_LIMIT",path,"The native lifetime trigger limit applies; further use across zone changes is not established.",native))
+                        if(ability.effectOncePerTurn) add(ReturnLimit("TRIGGER_LIMIT",path,"The action can be taken only once each turn; its resolution budget must remain.",native))
+                    })
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
-                event=event,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
+                event=event,returnSource=returnSource,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
                     ability.interveningIf == null && ability.triggerRestriction == null && !ability.controlledByTriggeringEntityController)
             if(trigger is EventPattern.ZoneChangeEvent && trigger.from == Zone.BATTLEFIELD && trigger.to == Zone.GRAVEYARD) {
                 var eventScope=ObjectScope(trigger.filter)
@@ -298,7 +320,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 if(ability.controlledByTriggeringEntityController) eventScope=eventScope.copy(unresolved="Trigger controller rebound to event entity")
                 removals(ability.effect).forEach { enhanced("$path.trigger",trigger.toString(),Verdict.MATCH to eventScope,it,Frame(ability.allTargetRequirements,assumptions=assumptions,selfZone=sourceZone),Verdict.MATCH) }
             }
-            ability.elseEffect?.let { walk(it,"$path.elseEffect",Frame(ability.allTargetRequirements,assumptions=assumptions+"Intervening condition failed",selfZone=sourceZone,event=event,outcomeGuard=Verdict.UNKNOWN)) }
+            ability.elseEffect?.let { walk(it,"$path.elseEffect",Frame(ability.allTargetRequirements,assumptions=assumptions+"Intervening condition failed",selfZone=sourceZone,event=event,outcomeGuard=Verdict.UNKNOWN,returnSource=returnSource,returnGuard=Verdict.UNKNOWN)) }
         }
         script.activatedAbilities.forEachIndexed { i,a -> activated(a,"script.activatedAbilities[$i]") }
         script.triggeredAbilities.forEachIndexed { i,a -> triggered(a,"script.triggeredAbilities[$i]") }
@@ -467,6 +489,17 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             card.name,face,actionId,path,FactKind.MOVE_OBJECT,cardEntry?.route?.name ?: "MOVE_OBJECT",role,filter,obj.zone,obj.zonePlayer,destination,controller,
             all(listOf(confidence,frame.guardConfidence,frame.factGuard,if((actionNative as? JsonObject)?.get("controlledByTriggeringEntityController")==JsonPrimitive(true)) Verdict.UNKNOWN else Verdict.MATCH,if(obj.possible) Verdict.MATCH else Verdict.NO_MATCH)),frame.assumptions+"Only actual successful movement; legal choices/resources and no replacing effects assumed"+obj.details,
             native,binding,selection,circumstances(role,obj,frame),problems,ownerScope=obj.ownerScope,cardEntry=cardEntry)
+        val f=facts.last()
+        if(binding=="Self" || f.sourceZone==Zone.GRAVEYARD && f.destinationZone==Zone.BATTLEFIELD) {
+            val movement=native as? JsonObject
+            val limits=frame.returnLimits+sourceReplacementLimits
+            selfReturns+=SelfReturnLink(f.id,card.name,face,actionId,path,
+                when(sourceCardCreature()) { true->Verdict.MATCH;false->Verdict.NO_MATCH;null->Verdict.UNKNOWN },
+                if(binding=="Self" && movement?.get("target")?.jsonObject?.get("type")?.jsonPrimitive?.content=="Self") Verdict.MATCH else Verdict.UNKNOWN,
+                frame.returnSource ?: ReturnSourceContext(actionKind,emptySet(),"Native action $actionId; source activation/trigger context not established",confidence=Verdict.UNKNOWN),
+                all(listOf(frame.returnGuard,frame.factGuard,frame.guardConfidence)),frame.optional,frame.delayed,
+                frame.assumptions,limits,sourceZone=f.sourceZone,destinationZone=f.destinationZone,sourcePlayer=f.sourcePlayer,destinationController=f.destinationController)
+        }
     }
     private fun recordTargetMove(e: MoveToZoneEffect,path: String,frame: Frame) {
         val requirement=when(val t=e.target) { is EffectTarget.ContextTarget->frame.targets.getOrNull(t.index);is EffectTarget.BoundVariable->frame.targets.find { it.id==t.name };else->null }
@@ -477,7 +510,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             val incompatible=e.fromZone!=null && raw.zone!=null && e.fromZone!=raw.zone
             val obj=raw.copy(zone=e.fromZone ?: raw.zone,zonePlayer=if(e.target==EffectTarget.Self && actionKind=="ACTIVATED" && frame.selfZone==Zone.GRAVEYARD) "YOU" else raw.zonePlayer)
             val controller=if(e.controllerOverride==null) "OWNER" else playerScope(e.controllerOverride!!,frame)
-            recordMovement(path,e.tree(),obj,e.destination,controller,frame,binding=e.target.toString(),
+            recordMovement(path,e.tree(),obj,e.destination,controller,frame.copy(returnLimits=frame.returnLimits+
+                if(e.entryCounters.any { it.counterType==com.wingedsheep.sdk.core.CounterType.FINALITY }) listOf(ReturnLimit("DEATH_REPLACEMENT",path,"A finality entry counter exiles this creature instead of a later death while present; counter removal is not assumed.",e.tree())) else emptyList()),binding=e.target.toString(),
                 selection=requirement?.let { "targeted=true; count=${it.count}; min=${it.minCount}; optional=${it.optional}; chooser=${it.chooser}; native=$it" } ?: "Binding=${e.target}; selection not inferred as targeting",
                 confidence=if(incompatible || requirement?.count==0) Verdict.NO_MATCH else Verdict.MATCH,
                 extra=listOfNotNull(if(e.faceDown!=null) "Face-down arrival unresolved" else null))
@@ -616,16 +650,19 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 val payer=playerScope(e.player,frame)
                 payCost(e.cost,"$path.cost",frame.copy(actor=payer,resolutionCost=true,optional=true,
                     assumptions=frame.assumptions+"Optional native payment by $payer; this branch avoids the suffer outcome"))
-                walk(e.suffer,"$path.suffer",frame.copy(outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Native PayOrSuffer: payment ${e.cost} by $payer was not made; failure branch executes"))
+                walk(e.suffer,"$path.suffer",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Native PayOrSuffer: payment ${e.cost} by $payer was not made; failure branch executes"))
             }
             is CompositeEffect -> {
                 val local=frame.copy(movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
-                e.effects.forEachIndexed { i,child -> walk(child,"$path.effects[$i]",local) }
+                e.effects.forEachIndexed { i,child ->
+                    val following=e.effects.drop(i+1).mapIndexedNotNull { j,next -> followingReturnLimit(next,"$path.effects[${i+j+1}]") }
+                    walk(child,"$path.effects[$i]",local.copy(returnLimits=frame.returnLimits+following))
+                }
             }
             is GatedEffect -> {
                 val condition=(e.gate as? Gate.WhenCondition)?.condition
                 val assumptions=frame.assumptions+"Gate=${nativeJson.encodeToJsonElement(Gate.serializer(),e.gate)}; success branch"
-                val branch=frame.copy(outcomeGuard=if(e.gate is Gate.MayDecide) frame.outcomeGuard else Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=assumptions,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
+                val branch=frame.copy(returnGuard=all(listOf(frame.returnGuard,returnGateSupport(e.gate,frame.selfZone,e.decisionMaker))),outcomeGuard=if(e.gate is Gate.MayDecide) frame.outcomeGuard else Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=assumptions,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
                 when(val gate=e.gate) {
                     is Gate.DoAction -> walk(gate.action,"$path.gate.action",branch.copy(assumptions=frame.assumptions+"Action outcome gates associated payoff: ${gate.successCriterion}",relationship=if(gate.successCriterion is SuccessCriterion.PermanentsSacrificed) "SACRIFICE_SUCCESS_ENABLES_OUTCOME" else "UNRESOLVED_SUCCESS_DEPENDENCY"))
                     is Gate.MayPay -> walk(gate.cost,"$path.gate.cost",branch.copy(assumptions=frame.assumptions+"Optional resolution payment",resolutionCost=true))
@@ -633,7 +670,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                     else -> issue("$path.gate",gate,"Gate payment/decision semantics not interpreted")
                 }
                 walk(e.then,"$path.then",branch.copy(optional=frame.optional || e.gate is Gate.MayDecide || e.gate is Gate.MayPay))
-                e.otherwise?.let { walk(it,"$path.otherwise",frame.copy(outcomeGuard=Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=frame.assumptions+"Gate failed: ${e.gate}",movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())) }
+                e.otherwise?.let { walk(it,"$path.otherwise",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=frame.assumptions+"Gate failed: ${e.gate}",movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())) }
                 if(condition != null) {
                     val baseline=removals(e.otherwise)
                     removals(e.then).forEach { r ->
@@ -653,7 +690,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 e.additionalCostPerExtraMode?.let { issue("$path.additionalCostPerExtraMode",it,"Optional extra-mode cost not expanded") }
                 e.modes.forEachIndexed { i,m ->
                 val parent=rootEffect; rootEffect=m.effect
-                val branch=frame.copy(outcomeGuard=Verdict.UNKNOWN,targets=frame.targets+m.targetRequirements,
+                val branch=frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,targets=frame.targets+m.targetRequirements,
                     assumptions=frame.assumptions+"Mode $i selected; chooseCount=${e.chooseCount}; mode mana=${m.additionalManaCost}; extra-mode cost=${e.additionalCostPerExtraMode}",movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
                 if(actionKind=="SPELL" && path=="script.spellEffect") {
                     val costs=m.additionalCosts ?: baseCastingCosts
@@ -671,7 +708,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                     is IterationSpace.Players -> frame.copy(actor=actor(s.players))
                     else -> frame.copy(iteration=ObjectScope(unresolved="Iteration space not interpreted: ${s.javaClass.simpleName}"))
                 }
-                val child=next.copy(outcomeGuard=Verdict.UNKNOWN,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap(),assumptions=frame.assumptions+"Iteration=${e.space}")
+                val child=next.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap(),assumptions=frame.assumptions+"Iteration=${e.space}")
                 if(e.space is IterationSpace.Players) { child.collections.clear();child.collectionMax.clear() }
                 walk(e.body,"$path.body",child)
             }
@@ -796,11 +833,11 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 add(path,"SACRIFICE","EFFECT",ObjectScope(e.filter,a),e.tree(),frame,incidental=a != "YOU")
             }
             is ReflexiveTriggerEffect -> {
-                walk(e.action,"$path.action",frame.copy(outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Reflexive action optional=${e.optional}",relationship="REFLEXIVE_ACTION_ENABLES_OUTCOME"))
-                walk(e.reflexiveEffect,"$path.reflexiveEffect",frame.copy(outcomeGuard=Verdict.UNKNOWN,targets=e.reflexiveTargetRequirements,
+                walk(e.action,"$path.action",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Reflexive action optional=${e.optional}",relationship="REFLEXIVE_ACTION_ENABLES_OUTCOME"))
+                walk(e.reflexiveEffect,"$path.reflexiveEffect",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,targets=e.reflexiveTargetRequirements,
                     assumptions=frame.assumptions+"Reflexive trigger after successful action"))
             }
-            is CreateDelayedTriggerEffect -> walk(e.effect,"$path.effect",frame.copy(assumptions=frame.assumptions+"Delayed trigger: $e",delayed=true))
+            is CreateDelayedTriggerEffect -> walk(e.effect,"$path.effect",frame.copy(returnGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Delayed trigger: $e",delayed=true))
             else -> {
                 val r=removal(e)
                 if(r != null && r.target != null) {

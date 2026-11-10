@@ -105,7 +105,8 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
             nontokenCompatibility=p.scope.compatible(Requirements(token=TokenStatus.NONTOKEN)))
     }
     val responseResults=deathResponseResults(catalog,extracted.eventOutcomes,byName,extracted.unsupported)
-    val results=legacyResults+responseResults
+    val inputResults=creatureInputResults(catalog,extracted,byName)
+    val results=legacyResults+responseResults+inputResults
     val counts=linkedMapOf(
         "authored_physical_cards" to roots.size,
         "upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin == "UPSTREAM_ARGENTUM" },
@@ -132,6 +133,9 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
         "policy_rejected_removal_pathways" to direct.count { e -> e.decisions.last().verdict == Verdict.NO_MATCH && all(e.decisions.take(3).map { it.verdict }) == Verdict.MATCH },
         "controller_incompatible_pathways" to direct.count { it.decisions[1].verdict == Verdict.NO_MATCH && it.decisions[0].verdict != Verdict.NO_MATCH },
         "nontoken_incompatible_pathways" to direct.count { it.decisions[2].verdict == Verdict.NO_MATCH && all(it.decisions.take(2).map { d -> d.verdict }) != Verdict.NO_MATCH },
+        "accepted_creature_input_pathways" to inputResults.count { it.verdict==Verdict.MATCH },
+        "accepted_creature_input_cards" to inputResults.filter { it.verdict==Verdict.MATCH }.map { it.card }.distinct().size,
+        "unknown_creature_input_pathways" to inputResults.count { it.verdict==Verdict.UNKNOWN },
         "accepted_death_response_pathways" to responseResults.count { it.verdict==Verdict.MATCH },
         "accepted_death_response_cards" to responseResults.filter { it.verdict==Verdict.MATCH }.map { it.card }.distinct().size,
         "unknown_death_response_pathways" to responseResults.count { it.verdict==Verdict.UNKNOWN },
@@ -143,7 +147,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     return DiscoveryReport(objective="own-nontoken-creature-deaths",commander=commander.name,
         allowedIdentity=allowed.map { it.name }.sorted(),conventionalQuery=conventionalQuery,counts=counts,
         eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name },translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) },
-        conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts),eventOutcomes=extracted.eventOutcomes)
+        conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts),eventOutcomes=extracted.eventOutcomes,selfReturns=extracted.selfReturns)
 }
 
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {

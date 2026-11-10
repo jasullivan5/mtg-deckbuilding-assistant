@@ -38,7 +38,7 @@ The conceptual direction is **card identity/rules → native definitions → mec
 | How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
 | Source/definition/revision-bound evidence | Retained resources, focused reports and original test receipts linked from Progress |
 
-The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current bounded application increment adds shared triggered draw/token relationships to the existing death objective; it changes no engine mechanics.
+The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current bounded application increment adds shared triggered draw/token and intrinsic creature-input relationships to the existing death objective; it changes no engine mechanics.
 
 ## Two sibling repositories
 
@@ -54,7 +54,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 
 | Objective ID | Bounded question |
 |---|---|
-| own-nontoken-creature-deaths | Selected death generation, death-enhanced removal and qualifying triggered draw/token responses ([increment report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
+| own-nontoken-creature-deaths | Selected death generation, intrinsic creature-input replenishment, death-enhanced removal and qualifying triggered draw/token responses ([increment report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |

@@ -26,6 +26,16 @@ internal fun sacrificeObject(row: ResultEvidence): String {
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
+    row.selfReturn?.let { link ->
+        add(EvidenceField("Relationship",contributionRelationship(row) ?: "Nonqualifying intrinsic return"))
+        add(EvidenceField("Resource criterion","Must return the originating card's own original nontoken creature; not a token copy or a generic reanimation target"))
+        add(EvidenceField("Return route",link.context.opportunity))
+        add(EvidenceField("Zones and control","Original card in its owner's graveyard â†’ battlefield under our control; owner must be us"))
+        add(EvidenceField("Continued availability","Conditional on a later graveyard arrival, native costs/opportunity and retained limits. No sacrifice/return cycle is proven."))
+        if(link.limits.isNotEmpty()) add(EvidenceField("Limits",link.limits.joinToString { it.explanation }))
+        if(row.verdict==Verdict.UNKNOWN) add(EvidenceField("Unresolved","Return association, conditions or future-death barriers are not fully established"))
+        return@buildList
+    }
     row.eventOutcome?.let { o ->
         add(EvidenceField("Relationship",contributionRelationship(row) ?: "Nonqualifying event response"))
         add(EvidenceField("Required event",incomingEvent(o)))
