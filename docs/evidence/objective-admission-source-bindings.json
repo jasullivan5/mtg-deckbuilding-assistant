@@ -1,0 +1,2663 @@
+{
+  "context": {
+    "algorithm": "physical-identity-v1",
+    "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "nativeIdentitySha256": "af45623ce691b4d3f129121b0ce73e7224adf941295be45d414d0906f3ad0adb"
+  },
+  "note": "Fresh native extraction, but identity associations reused from PR47 run against identical engine identity digest and snapshot. Association is not source fidelity. Multiple authored source files and existing first-pointer choices are retained; a physical image-literal match is a diagnostic, not whole-card certification.",
+  "cases": [
+    {
+      "card": "Attrition",
+      "sourceOracleId": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+      "sourcePrinting": "f8f29b57-172e-407b-b55e-32fe96198f92",
+      "sourceUrl": "https://scryfall.com/card/cmd/72/attrition?utm_source=api",
+      "sourceRecordSha256": "eee8884227d2b85c1a5ff9e0953984a6196c7f83671b792114acbf0684f1398d",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Attrition",
+          "oracleId": null,
+          "aliases": [
+            "attrition"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Attrition",
+              "manaCost": "{1}{B}{B}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Attrition",
+          "scryfallId": null,
+          "setCode": "UDS",
+          "collectorNumber": "52",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+        "candidateOracleIds": [
+          "a85ee0cf-39ce-49f2-874a-f6f54ca1775f"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/uds/cards/Attrition.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/uds/cards/Attrition.kt",
+          "lfSha256": "a83022c65de98d558202adee90a280db6b4e3006a4ed00e42800b4892372b95f",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "e6deec7669603617e8cda1f891727b8c76d263ff25c6b39433322fd2a375fb31"
+    },
+    {
+      "card": "Bloodghast",
+      "sourceOracleId": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+      "sourcePrinting": "cee85485-598f-4dfc-aa0b-7b1de86c7788",
+      "sourceUrl": "https://scryfall.com/card/soc/210/bloodghast?utm_source=api",
+      "sourceRecordSha256": "1c4113378fd92f02edbdf21e8590b5b2b81d4b2719cd14f4e59afe8327758f00",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Bloodghast",
+          "oracleId": null,
+          "aliases": [
+            "bloodghast"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Bloodghast",
+              "manaCost": "{B}{B}",
+              "typeLine": "Creature — Vampire Spirit"
+            }
+          ],
+          "physicalName": "Bloodghast",
+          "scryfallId": null,
+          "setCode": "ZEN",
+          "collectorNumber": "83",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+        "candidateOracleIds": [
+          "e97f9c2b-b41e-4f36-9245-77c0ac125647"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/Bloodghast.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/Bloodghast.kt",
+          "lfSha256": "cf589bbf8eafb781839fcf9e74f09a5c1ca63a2dc81e0bf2a933cd0dd92024cd",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "eccc1ff5101c1c67c8c0788ef051e210be61d363d957e01f46c8aab9e3f8c1d7"
+    },
+    {
+      "card": "Colossal Dreadmaw",
+      "sourceOracleId": "08c7db90-c0cf-4482-b7ee-bb033e5996d2",
+      "sourcePrinting": "8059c52b-5d25-4052-b48a-e9e219a7a546",
+      "sourceUrl": "https://scryfall.com/card/m21/176/colossal-dreadmaw?utm_source=api",
+      "sourceRecordSha256": "aba4057fdc523cd7249daf626cd41fc8a5873ee747bdcf012383f90668e16115",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Colossal Dreadmaw",
+          "oracleId": null,
+          "aliases": [
+            "colossal dreadmaw"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Colossal Dreadmaw",
+              "manaCost": "{4}{G}{G}",
+              "typeLine": "Creature — Dinosaur"
+            }
+          ],
+          "physicalName": "Colossal Dreadmaw",
+          "scryfallId": null,
+          "setCode": "XLN",
+          "collectorNumber": "180",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "08c7db90-c0cf-4482-b7ee-bb033e5996d2",
+        "candidateOracleIds": [
+          "08c7db90-c0cf-4482-b7ee-bb033e5996d2"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/ColossalDreadmaw.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/ColossalDreadmaw.kt",
+          "lfSha256": "ce2d17e7317e98a774b9beff274bbc3315d8e847d47b738d596ca0e3f1772444",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "370539fdd46c2461d7363f2c3b78e4381e1eafb1f79d99e53141ad1eb89054aa"
+    },
+    {
+      "card": "Conclave Mentor",
+      "sourceOracleId": "a2fe5937-212c-4e71-8d6e-f408b38100aa",
+      "sourcePrinting": "c6d36786-6e36-4a9b-97ad-ad7d9d2b8d92",
+      "sourceUrl": "https://scryfall.com/card/moc/320/conclave-mentor?utm_source=api",
+      "sourceRecordSha256": "f95d159471aab9819fe8bb042b2f1d082a2d271cc80499be219d7fa4d753b4e1",
+      "available": false,
+      "identity": null,
+      "existingDiscoverySourcePointer": null,
+      "sourceCandidates": [],
+      "serializedNativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "card": "Cultivate",
+      "sourceOracleId": "8b755881-a72d-4e21-a369-d2924eb4585a",
+      "sourcePrinting": "e60deb92-f7dd-4f4e-9036-e47dd586f985",
+      "sourceUrl": "https://scryfall.com/card/msc/172/cultivate?utm_source=api",
+      "sourceRecordSha256": "599b905e7d3a3e94c815b92e7949b40e78ca56739ab883449474135aae33b619",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Cultivate",
+          "oracleId": null,
+          "aliases": [
+            "cultivate"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Cultivate",
+              "manaCost": "{2}{G}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Cultivate",
+          "scryfallId": null,
+          "setCode": "M11",
+          "collectorNumber": "168",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "8b755881-a72d-4e21-a369-d2924eb4585a",
+        "candidateOracleIds": [
+          "8b755881-a72d-4e21-a369-d2924eb4585a"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/Cultivate.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/cmr/cards/Cultivate.kt",
+          "lfSha256": "1faaba38b9e35bc44df351231e61b53091239fc4a5051e4a0d94e9d983add105",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/Cultivate.kt",
+          "lfSha256": "57d74bf983a95257ba92bfc3599931a7922e9e1cb5cbac286fb865547e73b2f6",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "9f6c6722acdbe44af84246cd10c41d5fc8ed2fd204d8430ce4937025bf6f90a6"
+    },
+    {
+      "card": "Damnation",
+      "sourceOracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+      "sourcePrinting": "d3c0aac5-b9f1-4446-bfea-3e1dd1cf1f2f",
+      "sourceUrl": "https://scryfall.com/card/2x2/73/damnation?utm_source=api",
+      "sourceRecordSha256": "4ad0d197c782ad4aebfe797b5811b9b8226d8a07496330f355558cddb94f46a1",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Damnation",
+          "oracleId": null,
+          "aliases": [
+            "damnation"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Damnation",
+              "manaCost": "{2}{B}{B}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Damnation",
+          "scryfallId": null,
+          "setCode": "PLC",
+          "collectorNumber": "85",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+        "candidateOracleIds": [
+          "d57a8f0b-7989-4db5-8756-6f2690097252"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/Damnation.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/Damnation.kt",
+          "lfSha256": "8b10e017675f1b582945ea418aae3e4c57e00b5dd0cfebc0b1215ec265084c73",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "5a7050c4745ddf0da325e23b4fe0e7478efb4c68d443afa82c48a6eceee59876"
+    },
+    {
+      "card": "Darksteel Relic",
+      "sourceOracleId": "2bda1fb1-528c-4e66-89f1-bb1a85e9181e",
+      "sourcePrinting": "0fd8c918-62d9-41be-a3e1-32ddac71b7e7",
+      "sourceUrl": "https://scryfall.com/card/nph/134/darksteel-relic?utm_source=api",
+      "sourceRecordSha256": "bf8e99a0ceaed9a42840da149029d190db52cf2b605f70385a9812b7127d6976",
+      "available": false,
+      "identity": null,
+      "existingDiscoverySourcePointer": null,
+      "sourceCandidates": [],
+      "serializedNativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "card": "Decree of Pain",
+      "sourceOracleId": "932668fa-d6e3-41c0-ad0c-8e0a00e68d11",
+      "sourcePrinting": "bd594aeb-f5cc-4435-8ea8-c35c5824b58c",
+      "sourceUrl": "https://scryfall.com/card/dsc/136/decree-of-pain?utm_source=api",
+      "sourceRecordSha256": "a039b405cee6e16e1639c0b2880a5cd8011b575eb4e2fb09f59e8c93af070326",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Decree of Pain",
+          "oracleId": null,
+          "aliases": [
+            "decree of pain"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Decree of Pain",
+              "manaCost": "{6}{B}{B}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Decree of Pain",
+          "scryfallId": null,
+          "setCode": "SCG",
+          "collectorNumber": "64",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "932668fa-d6e3-41c0-ad0c-8e0a00e68d11",
+        "candidateOracleIds": [
+          "932668fa-d6e3-41c0-ad0c-8e0a00e68d11"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/DecreeOfPain.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/DecreeOfPain.kt",
+          "lfSha256": "02bd85fdd11396d84950075f5d22549ef4b5d17a777f422774d824ac772602f7",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "1dd4b6a4b9334c24356b06c4d1bc83c1f647325882c9ac74a3689b4542571aff"
+    },
+    {
+      "card": "Doomed Dissenter",
+      "sourceOracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+      "sourcePrinting": "f7c0cf16-81ea-45e3-99cc-4424d59bb44b",
+      "sourceUrl": "https://scryfall.com/card/vow/106/doomed-dissenter?utm_source=api",
+      "sourceRecordSha256": "3f42d1c3d052e4a5c9a2da0f9666baf1cae812f1ff48bc95d3f84fa68937927d",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Doomed Dissenter",
+          "oracleId": null,
+          "aliases": [
+            "doomed dissenter"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Doomed Dissenter",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Human"
+            }
+          ],
+          "physicalName": "Doomed Dissenter",
+          "scryfallId": null,
+          "setCode": "AKH",
+          "collectorNumber": "87",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+        "candidateOracleIds": [
+          "11cb509d-21af-48f1-b355-135ebd3e4bd1"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/DoomedDissenter.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/DoomedDissenter.kt",
+          "lfSha256": "79a2180fe92d1e62a96338c6b7597e8754651b0c1832551bb74a2c6823830eab",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "c4398839fd71d6c018e3c44af1c745b92ac0833c22993b66fb3d12a0d1a52afe"
+    },
+    {
+      "card": "Exploration",
+      "sourceOracleId": "0c2841bb-038c-4fbf-8360-bc0a1522b58d",
+      "sourcePrinting": "5b372045-a4a0-44c8-96ec-1e201d61ed26",
+      "sourceUrl": "https://scryfall.com/card/dmr/159/exploration?utm_source=api",
+      "sourceRecordSha256": "b34a8cc57d9914f52f67888cc3f2b95e3b58e6e2164531622d506cbd6a61e739",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Exploration",
+          "oracleId": null,
+          "aliases": [
+            "exploration"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Exploration",
+              "manaCost": "{G}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Exploration",
+          "scryfallId": null,
+          "setCode": "USG",
+          "collectorNumber": "250",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "0c2841bb-038c-4fbf-8360-bc0a1522b58d",
+        "candidateOracleIds": [
+          "0c2841bb-038c-4fbf-8360-bc0a1522b58d"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/Exploration.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/usg/cards/Exploration.kt",
+          "lfSha256": "cf7e5a9c22538868d72c34924e5c1a1bb06b6a3ac2fcf4971ef9c3d151243fc9",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "0bf6159b936b2e7677357779c7ea7facd88e7816357fb60517ee93e2ed2e4905"
+    },
+    {
+      "card": "Fleshbag Marauder",
+      "sourceOracleId": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+      "sourcePrinting": "fce2baa4-2976-4bbd-b6c5-a5a3c6a901be",
+      "sourceUrl": "https://scryfall.com/card/clu/111/fleshbag-marauder?utm_source=api",
+      "sourceRecordSha256": "27fdb26b05b9bf1cc3eefa32a018f6889f31fa3c00956e2d4eff08d8083f773f",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Fleshbag Marauder",
+          "oracleId": null,
+          "aliases": [
+            "fleshbag marauder"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Fleshbag Marauder",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Zombie Warrior"
+            }
+          ],
+          "physicalName": "Fleshbag Marauder",
+          "scryfallId": null,
+          "setCode": "ALA",
+          "collectorNumber": "76",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+        "candidateOracleIds": [
+          "4b1bf05e-753e-4350-a913-894cf3cecc0c"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/FleshbagMarauder.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/FleshbagMarauder.kt",
+          "lfSha256": "72720a6f4a5c2d99a824e4bea79e02edd615380715724ed4aaae6884ee777731",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "278d69e395a11e57e6e8940799567441ef15aac63835e191af092f587aa97c44"
+    },
+    {
+      "card": "Footlight Fiend",
+      "sourceOracleId": "77a5305a-2611-4a64-adb4-da131dcea233",
+      "sourcePrinting": "73083658-5e25-4d06-acba-ce8f771b5e52",
+      "sourceUrl": "https://scryfall.com/card/clu/191/footlight-fiend?utm_source=api",
+      "sourceRecordSha256": "b8f0eac743613fa3bf1c5d46335e031c9ba57aae243b4b7ed0c86ef9e356a537",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Footlight Fiend",
+          "oracleId": null,
+          "aliases": [
+            "footlight fiend"
+          ],
+          "identity": [
+            "B",
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Footlight Fiend",
+              "manaCost": "{B/R}",
+              "typeLine": "Creature — Devil"
+            }
+          ],
+          "physicalName": "Footlight Fiend",
+          "scryfallId": null,
+          "setCode": "RNA",
+          "collectorNumber": "216",
+          "derivedIdentity": [
+            "B",
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "77a5305a-2611-4a64-adb4-da131dcea233",
+        "candidateOracleIds": [
+          "77a5305a-2611-4a64-adb4-da131dcea233"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B",
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "B",
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B",
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/FootlightFiend.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/FootlightFiend.kt",
+          "lfSha256": "7d23c910e491034ba943ceee9910986d68e5ebca616583e697584bf0031329c9",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "4e690872969e84e95a12f411c1015a28f87f3fd6bec340e1a15d2be65cdc5ac4"
+    },
+    {
+      "card": "Forest",
+      "sourceOracleId": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+      "sourcePrinting": "2e781bfd-f8cb-4d20-b977-4359f3a21311",
+      "sourceUrl": "https://scryfall.com/card/mdd/301/forest?utm_source=api",
+      "sourceRecordSha256": "722a3b08d4519db5b3a92f3a2a6414229b6a736f3940b40c06f353c11988f8e1",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Forest",
+          "oracleId": null,
+          "aliases": [
+            "forest"
+          ],
+          "identity": null,
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Forest",
+              "manaCost": "",
+              "typeLine": "Basic Land — Forest"
+            }
+          ],
+          "physicalName": "Forest",
+          "scryfallId": null,
+          "setCode": "FRA",
+          "collectorNumber": "396",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+        "candidateOracleIds": [
+          "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": null,
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [
+            "NATIVE_FULL_IDENTITY_MISSING"
+          ],
+          "candidateCorrections": [
+            {
+              "field": "colorIdentityOverride",
+              "nativeValue": null,
+              "externalValue": [
+                "G"
+              ],
+              "disposition": "REVIEW_ONLY_NOT_APPLIED"
+            }
+          ]
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/10e/cards/TenthEditionBasicLands.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/10e/cards/TenthEditionBasicLands.kt",
+          "lfSha256": "9e33110b1cf707afb34d6fc94ac1c39b21d630f869c96795e4c12e14dc01af6d",
+          "sameImageUriLiteral": false
+        }
+      ],
+      "serializedNativeSha256": "06909373d1106cc3783f2f27090c719d4ce0b3fbb0a66d86d0dda9b7817ae62a"
+    },
+    {
+      "card": "Garruk's Packleader",
+      "sourceOracleId": "13279222-422d-4447-9451-2463b0c714c6",
+      "sourcePrinting": "dafeafa0-b937-4387-8626-449a810486b4",
+      "sourceUrl": "https://scryfall.com/card/c19/168/garruks-packleader?utm_source=api",
+      "sourceRecordSha256": "a45e2ce24a25bcb2d86eadce74416ee0d781c4f804397e746ea25d87797d82d6",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Garruk's Packleader",
+          "oracleId": null,
+          "aliases": [
+            "garruk's packleader"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Garruk's Packleader",
+              "manaCost": "{4}{G}",
+              "typeLine": "Creature — Beast"
+            }
+          ],
+          "physicalName": "Garruk's Packleader",
+          "scryfallId": null,
+          "setCode": "M11",
+          "collectorNumber": "177",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "13279222-422d-4447-9451-2463b0c714c6",
+        "candidateOracleIds": [
+          "13279222-422d-4447-9451-2463b0c714c6"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/GarruksPackleader.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/GarruksPackleader.kt",
+          "lfSha256": "7f9c965581f7d526c1ac6556b9cb2b18a42eb6ed5128579ec690a86e60cf2081",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "bfba4b2cc5ac972592c2eedba74537de6976838fd017942a9321635d957453ca"
+    },
+    {
+      "card": "Giant Growth",
+      "sourceOracleId": "5748ebf1-24e3-499d-ab7c-c2cebd462a24",
+      "sourcePrinting": "fd1f95bf-48ea-455a-8a6c-0249b11c8900",
+      "sourceUrl": "https://scryfall.com/card/msh/167/giant-growth?utm_source=api",
+      "sourceRecordSha256": "65ef99c17151d8917f6408229b81557d672e23a655e408f01ed7a3150d723fca",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Giant Growth",
+          "oracleId": null,
+          "aliases": [
+            "giant growth"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Giant Growth",
+              "manaCost": "{G}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Giant Growth",
+          "scryfallId": null,
+          "setCode": "LEA",
+          "collectorNumber": "197",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "5748ebf1-24e3-499d-ab7c-c2cebd462a24",
+        "candidateOracleIds": [
+          "5748ebf1-24e3-499d-ab7c-c2cebd462a24"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/GiantGrowth.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/8ed/cards/GiantGrowth.kt",
+          "lfSha256": "f4109d7dbfb2006c0db30228b8d84f7adaa714547c87ed5cd9fa877385a30efe",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/10e/cards/GiantGrowth.kt",
+          "lfSha256": "d601094e057e6af845fa80a8bdeede93bab93a376c5940745ddc85a084d22e6c",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/leb/cards/GiantGrowth.kt",
+          "lfSha256": "004e3968cd1d6f0f1a2a21afaecb12c16d253e55752f0331e6dfed3e7d3d4f91",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/GiantGrowth.kt",
+          "lfSha256": "18c15366d1f6c24b33daa75220e23b3fea2f70e2ecd195e46c8bd1c7cf0ed060",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "f3636ae73860fdce222872ae8872a4d985894edbf8a3920c421f8809360d72c4"
+    },
+    {
+      "card": "Goblin Bombardment",
+      "sourceOracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+      "sourcePrinting": "e262f55e-9239-4a97-a19e-9b08fb34502e",
+      "sourceUrl": "https://scryfall.com/card/mh2/279/goblin-bombardment?utm_source=api",
+      "sourceRecordSha256": "5310d607b1600d01812621ea92019aac6789a4aeb109b5f83cb8ddc5aa65d344",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Goblin Bombardment",
+          "oracleId": null,
+          "aliases": [
+            "goblin bombardment"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Goblin Bombardment",
+              "manaCost": "{1}{R}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Goblin Bombardment",
+          "scryfallId": null,
+          "setCode": "TMP",
+          "collectorNumber": "179",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+        "candidateOracleIds": [
+          "edad60c6-80de-4033-af1b-a703ac332983"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/GoblinBombardment.kt",
+          "lfSha256": "f8756451951d7d1f7eb18b1b1f2bec5f33066e9128f7d94bc036adca0df36d53",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "a25ffbf8993a58a3808dfc9b6401a297e0f9467d4731670ffd51d31e08c9d21f"
+    },
+    {
+      "card": "Goblin Sharpshooter",
+      "sourceOracleId": "d81285b7-a718-411a-8be3-ecc0cfe0bcb0",
+      "sourcePrinting": "4f72e9e2-ed47-40ff-bc2e-8446ef545022",
+      "sourceUrl": "https://scryfall.com/card/c13/111/goblin-sharpshooter?utm_source=api",
+      "sourceRecordSha256": "3324e056e8919033da25ecff1fb14dde9ff714d0fa64bf0a6d4e57b4622e9f59",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Goblin Sharpshooter",
+          "oracleId": null,
+          "aliases": [
+            "goblin sharpshooter"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Goblin Sharpshooter",
+              "manaCost": "{2}{R}",
+              "typeLine": "Creature — Goblin"
+            }
+          ],
+          "physicalName": "Goblin Sharpshooter",
+          "scryfallId": null,
+          "setCode": "ONS",
+          "collectorNumber": "207",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "d81285b7-a718-411a-8be3-ecc0cfe0bcb0",
+        "candidateOracleIds": [
+          "d81285b7-a718-411a-8be3-ecc0cfe0bcb0"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/GoblinSharpshooter.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/GoblinSharpshooter.kt",
+          "lfSha256": "9252759360b15338b941f0c7b00425f92866b195880d72ff5442726c28c554f5",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "5f98b370bae33fe8aa493876d2bad55ca8fa2023ae027e1af0a021da1f858e7b"
+    },
+    {
+      "card": "Grim Haruspex",
+      "sourceOracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "sourcePrinting": "f5c19b87-e114-46d4-9f6c-c02e838a08dd",
+      "sourceUrl": "https://scryfall.com/card/clb/754/grim-haruspex?utm_source=api",
+      "sourceRecordSha256": "af77460302343362aa465b8bcfe01e9be1506d236d67d53ec5bd59e6064a5119",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Grim Haruspex",
+          "oracleId": null,
+          "aliases": [
+            "grim haruspex"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Grim Haruspex",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Human Wizard"
+            }
+          ],
+          "physicalName": "Grim Haruspex",
+          "scryfallId": null,
+          "setCode": "KTK",
+          "collectorNumber": "73",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+        "candidateOracleIds": [
+          "72aef1d8-11df-4bc2-af83-907b05df73a8"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/GrimHaruspex.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/GrimHaruspex.kt",
+          "lfSha256": "60646fa43594559a313b0c04999280c50e1682e07a01984741b49f7223be3ee0",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "743b4cf172f742910797d982a4b284c5a25261f6b10dec917a2cecf10a6ef6b7"
+    },
+    {
+      "card": "Hardened Scales",
+      "sourceOracleId": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+      "sourcePrinting": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+      "sourceUrl": "https://scryfall.com/card/soc/272/hardened-scales?utm_source=api",
+      "sourceRecordSha256": "fbe4c21fddbb46d82f8f815bbd7f1ad974c15aeac31b4a2da73c76ac0d1f7bb3",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Hardened Scales",
+          "oracleId": null,
+          "aliases": [
+            "hardened scales"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Hardened Scales",
+              "manaCost": "{G}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Hardened Scales",
+          "scryfallId": null,
+          "setCode": "KTK",
+          "collectorNumber": "133",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+        "candidateOracleIds": [
+          "a1f3da21-af6d-450e-bf0b-985d158418e6"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HardenedScales.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HardenedScales.kt",
+          "lfSha256": "7ea2d7ff0f11eae27aabc551951ce9452158cf42e24bddde4bf5049619a91bd8",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "c234a2df67b7d8702e3af88d459563e6b2142c69174d8eff7543d0b6a685e44b"
+    },
+    {
+      "card": "Harrow",
+      "sourceOracleId": "705509e9-a034-4a5a-9c65-66f58748b8a2",
+      "sourcePrinting": "3e76be46-cf81-4fef-bc5b-f87666cb0413",
+      "sourceUrl": "https://scryfall.com/card/eoc/98/harrow?utm_source=api",
+      "sourceRecordSha256": "d0efab5b6f67299cb4f338c3e4292e6fb1804f00ec379259e8c02dfe74576599",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Harrow",
+          "oracleId": null,
+          "aliases": [
+            "harrow"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Harrow",
+              "manaCost": "{2}{G}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Harrow",
+          "scryfallId": null,
+          "setCode": "TMP",
+          "collectorNumber": "230",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "705509e9-a034-4a5a-9c65-66f58748b8a2",
+        "candidateOracleIds": [
+          "705509e9-a034-4a5a-9c65-66f58748b8a2"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/Harrow.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/Harrow.kt",
+          "lfSha256": "fa62c2a2244132af81c8a636ff7db581a8da32eb15c20cd16c7a21688ea6659e",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "c75c7f66ac62a250347222e79f35cea60aed9684b6103a698517652a712d829d"
+    },
+    {
+      "card": "Judith, the Scourge Diva",
+      "sourceOracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+      "sourcePrinting": "d6fb929c-1b8d-4d1d-aa69-ac6189cd7ebf",
+      "sourceUrl": "https://scryfall.com/card/cmm/341/judith-the-scourge-diva?utm_source=api",
+      "sourceRecordSha256": "8fb1265a966aaf2db63642e28b70945718e82b1bef7e3714084bc19002135c39",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Judith, the Scourge Diva",
+          "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+          "aliases": [
+            "judith, the scourge diva"
+          ],
+          "identity": [
+            "B",
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "APPLICATION_EXTENSION",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Judith, the Scourge Diva",
+              "manaCost": "{1}{B}{R}",
+              "typeLine": "Legendary Creature — Human Shaman"
+            }
+          ],
+          "physicalName": "Judith, the Scourge Diva",
+          "scryfallId": "0a742125-730d-4082-bfd8-5feb7733def4",
+          "setCode": "RNA",
+          "collectorNumber": "185",
+          "derivedIdentity": [
+            "B",
+            "R"
+          ],
+          "declaredOracleId": "c01516e0-eec3-4370-b935-7674982e8850"
+        },
+        "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+        "candidateOracleIds": [
+          "c01516e0-eec3-4370-b935-7674982e8850"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "ORACLE_ID",
+        "evidence": [
+          "EXISTING_NATIVE_ORACLE_ID_PRESERVED",
+          "NATIVE_PRINTING_ID_NOT_IN_REPRESENTATIVE_SNAPSHOT; NOT_AN_ORACLE_CONFLICT"
+        ],
+        "metadata": {
+          "nativeOracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+          "nativeIdentity": [
+            "B",
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "B",
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B",
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": null,
+      "sourceCandidates": [],
+      "serializedNativeSha256": "99ec81472dac9910172a179a0fc994c1ed7b200fc13e8ec4beaef67aa7d2ec00"
+    },
+    {
+      "card": "Lotus Cobra",
+      "sourceOracleId": "8ad91f64-ccab-4edc-bd54-b2ee9267d614",
+      "sourcePrinting": "a4b759f0-901f-4be3-93fa-224609b08d48",
+      "sourceUrl": "https://scryfall.com/card/znr/193/lotus-cobra?utm_source=api",
+      "sourceRecordSha256": "a7f73eedc5884d7c3c1f0465482bcca9cc83832ac7664f74e6b376859a2f9d8f",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Lotus Cobra",
+          "oracleId": null,
+          "aliases": [
+            "lotus cobra"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Lotus Cobra",
+              "manaCost": "{1}{G}",
+              "typeLine": "Creature — Snake"
+            }
+          ],
+          "physicalName": "Lotus Cobra",
+          "scryfallId": null,
+          "setCode": "ZEN",
+          "collectorNumber": "168",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "8ad91f64-ccab-4edc-bd54-b2ee9267d614",
+        "candidateOracleIds": [
+          "8ad91f64-ccab-4edc-bd54-b2ee9267d614"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/LotusCobra.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/zen/cards/LotusCobra.kt",
+          "lfSha256": "03d5ce5e2fb6d0a36d79db649fc9fa514055ee8d2b638a7737e33026a0c8c07e",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "96b913f6a64715ca7ba1fad84b22eb2820d6953dd7ceb3eba112ecceacc48ae0"
+    },
+    {
+      "card": "Murder",
+      "sourceOracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+      "sourcePrinting": "2c249609-9cf7-46f1-b94c-9329add966bb",
+      "sourceUrl": "https://scryfall.com/card/dsk/110/murder?utm_source=api",
+      "sourceRecordSha256": "16834a7ba66e2356f39df188e2aa8fc994ac37de67d998c484bb080552efd7c5",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Murder",
+          "oracleId": null,
+          "aliases": [
+            "murder"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Murder",
+              "manaCost": "{1}{B}{B}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Murder",
+          "scryfallId": null,
+          "setCode": "M13",
+          "collectorNumber": "101",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+        "candidateOracleIds": [
+          "938b4e2c-88d9-4637-bc00-e228920c9a78"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/Murder.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/cmr/cards/Murder.kt",
+          "lfSha256": "79fca2564ceb10ad63349f28ad5ad35aff6a7077d41c2355069b0f6cef1235e2",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/Murder.kt",
+          "lfSha256": "d0de638c154cfb70fff8a5eb000e0642420f18474c1de72f3ebc8f63d83140c3",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "0d7cc13338e1bab3c6277b068a274da25a14882c33ff4908c5d4dc16e9529d67"
+    },
+    {
+      "card": "Myr Battlesphere",
+      "sourceOracleId": "c53ba31a-ba27-4e17-9a92-311acb1cab29",
+      "sourcePrinting": "71e7ef4a-2032-4571-afc6-5207d4b40c3d",
+      "sourceUrl": "https://scryfall.com/card/tdc/322/myr-battlesphere?utm_source=api",
+      "sourceRecordSha256": "4be0e58d4976406d328befeba918da2ba13708ac9cc7c9ce83b3423314dd336f",
+      "available": false,
+      "identity": null,
+      "existingDiscoverySourcePointer": null,
+      "sourceCandidates": [],
+      "serializedNativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "card": "Ornithopter",
+      "sourceOracleId": "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
+      "sourcePrinting": "305078a5-ac18-4721-bba2-3434eba5b1cf",
+      "sourceUrl": "https://scryfall.com/card/dmr/233/ornithopter?utm_source=api",
+      "sourceRecordSha256": "52d40da7cd8d1dfe482601f92763d67514d1f2420d19e7495792d24c386b240f",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Ornithopter",
+          "oracleId": null,
+          "aliases": [
+            "ornithopter"
+          ],
+          "identity": [],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Ornithopter",
+              "manaCost": "{0}",
+              "typeLine": "Artifact Creature — Thopter"
+            }
+          ],
+          "physicalName": "Ornithopter",
+          "scryfallId": null,
+          "setCode": "ATQ",
+          "collectorNumber": "60",
+          "derivedIdentity": [],
+          "declaredOracleId": null
+        },
+        "oracleId": "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
+        "candidateOracleIds": [
+          "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [],
+          "derivedNativeIdentity": [],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/Ornithopter.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/10e/cards/Ornithopter.kt",
+          "lfSha256": "652ecd01032b65d855bf188b37ee8539f11e584ed33c77fe2213490dfd2d928e",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/Ornithopter.kt",
+          "lfSha256": "d8031cf5d65df13b8368a38d2e5f57724ade3b92456cddd38b87af054fc5139f",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "b164fc28d3f0206cab71e2e56246cc1f771f2d86f142b80a02c9950ad26d3af5"
+    },
+    {
+      "card": "Pitiless Plunderer",
+      "sourceOracleId": "a784481f-eccb-4112-bb38-04a659319660",
+      "sourcePrinting": "5b5cd187-857a-44dd-8595-a52857a0b753",
+      "sourceUrl": "https://scryfall.com/card/lcc/208/pitiless-plunderer?utm_source=api",
+      "sourceRecordSha256": "daccd7690516848459d86b2d99b43197b7fdf55968ad9257063dc601114b072a",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Pitiless Plunderer",
+          "oracleId": null,
+          "aliases": [
+            "pitiless plunderer"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Pitiless Plunderer",
+              "manaCost": "{3}{B}",
+              "typeLine": "Creature — Human Pirate"
+            }
+          ],
+          "physicalName": "Pitiless Plunderer",
+          "scryfallId": null,
+          "setCode": "RIX",
+          "collectorNumber": "81",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+        "candidateOracleIds": [
+          "a784481f-eccb-4112-bb38-04a659319660"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/PitilessPlunderer.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/PitilessPlunderer.kt",
+          "lfSha256": "d661960782424cf316d085daf4cfd0a04f2d6ac7b99088b31ba2310391c5ffe0",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "348b5263c7403a945c4012ec26c2f36f984b2d9b6652d8f28b07a66bd20e8f8b"
+    },
+    {
+      "card": "Rancor",
+      "sourceOracleId": "9d2d6479-531c-4ce1-b52b-00e36fa63b64",
+      "sourcePrinting": "86d6b411-4a31-4bfc-8dd6-e19f553bb29b",
+      "sourceUrl": "https://scryfall.com/card/2x2/156/rancor?utm_source=api",
+      "sourceRecordSha256": "d5cf93cc48970d53842dbfb94f7eee5f9aed2fc05ff4fc1cae0d322e45b666ae",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Rancor",
+          "oracleId": null,
+          "aliases": [
+            "rancor"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Rancor",
+              "manaCost": "{G}",
+              "typeLine": "Enchantment — Aura"
+            }
+          ],
+          "physicalName": "Rancor",
+          "scryfallId": null,
+          "setCode": "ULG",
+          "collectorNumber": "110",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "9d2d6479-531c-4ce1-b52b-00e36fa63b64",
+        "candidateOracleIds": [
+          "9d2d6479-531c-4ce1-b52b-00e36fa63b64"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ulg/cards/Rancor.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ulg/cards/Rancor.kt",
+          "lfSha256": "67e60cf6839754d98ff70dc520ba0d07230bd6b0ded9536bca804af71bffe0b1",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "7c48e7ea06e07aaea9c70f62ab1781cdb027abf2163312ed0dad5ace61b4ed75"
+    },
+    {
+      "card": "Reanimate",
+      "sourceOracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+      "sourcePrinting": "368b6903-5fc4-43e7-bd44-46b8107c8bb4",
+      "sourceUrl": "https://scryfall.com/card/dsc/155/reanimate?utm_source=api",
+      "sourceRecordSha256": "45fa391e513c5b14b8d642230180a10db7ffd230ba6642308f409584f918cea1",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Reanimate",
+          "oracleId": null,
+          "aliases": [
+            "reanimate"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Reanimate",
+              "manaCost": "{B}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Reanimate",
+          "scryfallId": null,
+          "setCode": "TMP",
+          "collectorNumber": "151",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+        "candidateOracleIds": [
+          "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/Reanimate.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmp/cards/Reanimate.kt",
+          "lfSha256": "5bd60b8a0a6b831f958cb852d6977af6a7820c0dfa2117ea861b309c02846fdf",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "17ed40ee7e1808bcd84456d37e68b917f7e1d8ab142506e06a3ce0f039aed710"
+    },
+    {
+      "card": "Reassembling Skeleton",
+      "sourceOracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "sourcePrinting": "4d431445-d7db-4ce1-b422-41494d9be1b4",
+      "sourceUrl": "https://scryfall.com/card/tdc/195/reassembling-skeleton?utm_source=api",
+      "sourceRecordSha256": "a93a50e407b794f75590885ab49a08871dc1cf3659bc9e72a862e550077c01d1",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Reassembling Skeleton",
+          "oracleId": null,
+          "aliases": [
+            "reassembling skeleton"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Reassembling Skeleton",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Skeleton Warrior"
+            }
+          ],
+          "physicalName": "Reassembling Skeleton",
+          "scryfallId": null,
+          "setCode": "ARC",
+          "collectorNumber": "22",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+        "candidateOracleIds": [
+          "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arc/cards/ReassemblingSkeleton.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fdn/cards/ReassemblingSkeleton.kt",
+          "lfSha256": "f581530ab58b934ee63cd0dac8c19a80e2749794edb24f94ad19d4038a21300c",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arc/cards/ReassemblingSkeleton.kt",
+          "lfSha256": "19194cbb9e6ea22b23d739cacf922f95a8d607eac6e71cd0e3d7702c2e1d4706",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "f7791f0e695d8b2660dff2b96dc94545819e7c578fa9f0289615c939bc211030"
+    },
+    {
+      "card": "Sakura-Tribe Elder",
+      "sourceOracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+      "sourcePrinting": "7a8b1c49-8594-426d-b585-41140235bb0e",
+      "sourceUrl": "https://scryfall.com/card/soc/285/sakura-tribe-elder?utm_source=api",
+      "sourceRecordSha256": "5ec4c50210ee746c72840722c3a2f3d5a8ed3e7658647a2e5394de22ed97c3e7",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Sakura-Tribe Elder",
+          "oracleId": null,
+          "aliases": [
+            "sakura-tribe elder"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Sakura-Tribe Elder",
+              "manaCost": "{1}{G}",
+              "typeLine": "Creature — Snake Shaman"
+            }
+          ],
+          "physicalName": "Sakura-Tribe Elder",
+          "scryfallId": null,
+          "setCode": "CHK",
+          "collectorNumber": "239",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "e3afc704-220f-498f-9eaa-0821b17dc24c",
+        "candidateOracleIds": [
+          "e3afc704-220f-498f-9eaa-0821b17dc24c"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/SakuraTribeElder.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/SakuraTribeElder.kt",
+          "lfSha256": "23180c118f2de23b55653fbb8fde5ebe312111d2e20918d05d8afafa066fb8cf",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "d9768b419e9a9b4bd348c7d22c61b4b33ae69dbd8454504ed097b0daf2127e8f"
+    },
+    {
+      "card": "Scute Swarm",
+      "sourceOracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+      "sourcePrinting": "ea630ba1-22f9-4a10-bdc6-0d03128214f4",
+      "sourceUrl": "https://scryfall.com/card/dsc/197/scute-swarm?utm_source=api",
+      "sourceRecordSha256": "c500b1f2c5193dd2d34fee858c0390f4471024ba600d17fb7999e998f88ccd13",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Scute Swarm",
+          "oracleId": null,
+          "aliases": [
+            "scute swarm"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Scute Swarm",
+              "manaCost": "{2}{G}",
+              "typeLine": "Creature — Insect"
+            }
+          ],
+          "physicalName": "Scute Swarm",
+          "scryfallId": null,
+          "setCode": "ZNR",
+          "collectorNumber": "203",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+        "candidateOracleIds": [
+          "aa854d50-444c-49d9-bfb1-5476b33c1c0b"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ScuteSwarm.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ScuteSwarm.kt",
+          "lfSha256": "c18fc30050c5f0929ecd846b2a14918c317f0ce7590c3ae2aec05a2c6d1670b3",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "d69bb679fda7c2af61594aaa679424fe42e2d37a5ce730ce1783820bcfe7e859"
+    },
+    {
+      "card": "Tragic Slip",
+      "sourceOracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "sourcePrinting": "132ccc20-cb42-4474-b747-7e41a661060e",
+      "sourceUrl": "https://scryfall.com/card/inr/134/tragic-slip?utm_source=api",
+      "sourceRecordSha256": "b3247311ef906cf5a7155498002f64f850012a7c7dc6eb749862732038d7f7b5",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Tragic Slip",
+          "oracleId": null,
+          "aliases": [
+            "tragic slip"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Tragic Slip",
+              "manaCost": "{B}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Tragic Slip",
+          "scryfallId": null,
+          "setCode": "DKA",
+          "collectorNumber": "76",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "candidateOracleIds": [
+          "fa6e2a47-a8cb-4224-ae3e-f61c90477285"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+          "lfSha256": "53142e55e0e369abc23c0ab032aa7c5b1c9920b8d03fb3b60cae14d29cc89d7c",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "fbe513e1dfb949324e47380ed69b3b01093543abada5e5250a92e727668ba73e"
+    },
+    {
+      "card": "Viscera Seer",
+      "sourceOracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "sourcePrinting": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "sourceUrl": "https://scryfall.com/card/soc/229/viscera-seer?utm_source=api",
+      "sourceRecordSha256": "c4d5b313b62c7851fdd6fee856ad643fb250b5ca033024dba3b426527f043116",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Viscera Seer",
+          "oracleId": null,
+          "aliases": [
+            "viscera seer"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Viscera Seer",
+              "manaCost": "{B}",
+              "typeLine": "Creature — Vampire Wizard"
+            }
+          ],
+          "physicalName": "Viscera Seer",
+          "scryfallId": null,
+          "setCode": "M11",
+          "collectorNumber": "120",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "candidateOracleIds": [
+          "f82a4e85-526d-4456-b700-7760043a31be"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/VisceraSeer.kt",
+          "lfSha256": "e78fb8c51afb9730326a49443b25b7872a3d157175df6e7f4efdb054e4aed140",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "7b3a5331026c13b1392f99f8a9fcec57e7fee99855f6106be020a703ccb17b77"
+    },
+    {
+      "card": "Walking Corpse",
+      "sourceOracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+      "sourcePrinting": "053b59b4-a22c-4228-aadc-ae9da6bb465e",
+      "sourceUrl": "https://scryfall.com/card/m21/128/walking-corpse?utm_source=api",
+      "sourceRecordSha256": "801ef40f990acb340248fd06c9c3273cc70d4b914b18cebc6caf7acbb1521573",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Walking Corpse",
+          "oracleId": null,
+          "aliases": [
+            "walking corpse"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Walking Corpse",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Zombie"
+            }
+          ],
+          "physicalName": "Walking Corpse",
+          "scryfallId": null,
+          "setCode": "ISD",
+          "collectorNumber": "126",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+        "candidateOracleIds": [
+          "fea95888-e16a-4209-9cd4-623f7f4d2f67"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/WalkingCorpse.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/WalkingCorpse.kt",
+          "lfSha256": "71d7bf5728cdf2ae8ad3dff7cb2061f3cff754339b2524b9f259c4de879dc1f7",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "66004ec4b6be16c072063832e7025e5bb422f81dce3d6dfa0a3c0fac0eb2c703"
+    },
+    {
+      "card": "Wayward Swordtooth",
+      "sourceOracleId": "3875aef0-3102-4fbf-be90-e4139f7a2348",
+      "sourcePrinting": "95a5d742-187a-4eba-82e4-7a4cc5c4e6f3",
+      "sourceUrl": "https://scryfall.com/card/lcc/263/wayward-swordtooth?utm_source=api",
+      "sourceRecordSha256": "bbf069d35dfeca0dab5c909f257f4083590bd6a76911b2358bacbdfed3d4bc8f",
+      "available": false,
+      "identity": null,
+      "existingDiscoverySourcePointer": null,
+      "sourceCandidates": [],
+      "serializedNativeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "card": "Wolfbat",
+      "sourceOracleId": "adc47a25-daab-49c7-93a5-5bbf2bc20cf9",
+      "sourcePrinting": "2ae83b4e-e5a4-4c98-8d16-eef3c71b8ff2",
+      "sourceUrl": "https://scryfall.com/card/tla/122/wolfbat?utm_source=api",
+      "sourceRecordSha256": "0b943ea57e872f9719ce38b09cefacb2770f3f5c18743643a713b95cac51d64b",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Wolfbat",
+          "oracleId": null,
+          "aliases": [
+            "wolfbat"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Wolfbat",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Wolf Bat"
+            }
+          ],
+          "physicalName": "Wolfbat",
+          "scryfallId": null,
+          "setCode": "TLA",
+          "collectorNumber": "122",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "adc47a25-daab-49c7-93a5-5bbf2bc20cf9",
+        "candidateOracleIds": [
+          "adc47a25-daab-49c7-93a5-5bbf2bc20cf9"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/Wolfbat.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/Wolfbat.kt",
+          "lfSha256": "1f58d6ef972f1c37f6f8ecce0791437719f9a8c2afc55586822f427cb57f81f5",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "2ae393910e47153893f65658d3a17f1a380bcb1dcef595822ba1689f8a5b0d99"
+    },
+    {
+      "card": "Wrath of God",
+      "sourceOracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+      "sourcePrinting": "537d2b05-3f52-45d6-8fe3-26282085d0c6",
+      "sourceUrl": "https://scryfall.com/card/cmm/70/wrath-of-god?utm_source=api",
+      "sourceRecordSha256": "564b606d2c4762942f7118f53c80499e42fafb698034eb30bde123e084fac2fd",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Wrath of God",
+          "oracleId": null,
+          "aliases": [
+            "wrath of god"
+          ],
+          "identity": [
+            "W"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Wrath of God",
+              "manaCost": "{2}{W}{W}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Wrath of God",
+          "scryfallId": null,
+          "setCode": "LEA",
+          "collectorNumber": "45",
+          "derivedIdentity": [
+            "W"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+        "candidateOracleIds": [
+          "34515b16-c9a4-4f98-8c77-416a7a523407"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "W"
+          ],
+          "derivedNativeIdentity": [
+            "W"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "W"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/WrathOfGod.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/por/cards/WrathOfGod.kt",
+          "lfSha256": "c66dcdf5b7f02aa69b6fe39f9f0bf62781db624ec4c9295a249e9f2ebbd0bb8b",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/8ed/cards/WrathOfGod.kt",
+          "lfSha256": "ab84703d5bb7ec6ef15cafcbf6ce5800e1cb436cc92e4136eb5c44ad71c21167",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/10e/cards/WrathOfGod.kt",
+          "lfSha256": "7200f4f1c48ee235ce5161d4e1a89fe1158b0e58fc671144a9fbd0a1dd187b11",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/leb/cards/WrathOfGod.kt",
+          "lfSha256": "62786466abc3c9dd0c8af30ba43257f242f98a4bea875b177ef9bc3355eddd96",
+          "sameImageUriLiteral": false
+        },
+        {
+          "path": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/WrathOfGod.kt",
+          "lfSha256": "a080f392768737ca00d554ec45f0dd96f226b4b06d7a5a3e699b9db0f53562df",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "42d854a4d742073ffebdb67b998516c7a4ed83694cdf34060dedc9b042c1c85f"
+    },
+    {
+      "card": "Yargle, Glutton of Urborg",
+      "sourceOracleId": "ed66cd31-958f-4b28-82a3-e04acc819afc",
+      "sourcePrinting": "04c816fb-5951-4db1-8834-ed3f0b36bfe1",
+      "sourceUrl": "https://scryfall.com/card/fra/241/yargle-glutton-of-urborg?utm_source=api",
+      "sourceRecordSha256": "a4f049696e01c5da1e3a44e36a09f183c5124a9b5a9dc596199086f476bd61c4",
+      "available": true,
+      "identity": {
+        "native": {
+          "name": "Yargle, Glutton of Urborg",
+          "oracleId": null,
+          "aliases": [
+            "yargle, glutton of urborg"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Yargle, Glutton of Urborg",
+              "manaCost": "{4}{B}",
+              "typeLine": "Legendary Creature — Frog Spirit"
+            }
+          ],
+          "physicalName": "Yargle, Glutton of Urborg",
+          "scryfallId": null,
+          "setCode": "DOM",
+          "collectorNumber": "113",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "ed66cd31-958f-4b28-82a3-e04acc819afc",
+        "candidateOracleIds": [
+          "ed66cd31-958f-4b28-82a3-e04acc819afc"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "existingDiscoverySourcePointer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/YargleGluttonOfUrborg.kt",
+      "sourceCandidates": [
+        {
+          "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/YargleGluttonOfUrborg.kt",
+          "lfSha256": "652a102a3c51af1789ddd673944a9667379b7dab7daf7301b1cbf3f8723e0814",
+          "sameImageUriLiteral": true
+        }
+      ],
+      "serializedNativeSha256": "ad7ffff3db79482d821f9febbd3e9e4c321457ad0e4f42d0a83d94a1c0d842b7"
+    }
+  ]
+}

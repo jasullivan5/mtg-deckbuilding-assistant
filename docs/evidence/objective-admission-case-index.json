@@ -1,0 +1,1640 @@
+{
+  "expectations": "objective-admission-expectations.json",
+  "observations": "objective-admission-observations.json",
+  "rows": [
+    {
+      "relationshipId": "R01",
+      "card": "Walking Corpse",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R02",
+      "card": "Reassembling Skeleton",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R03",
+      "card": "Bloodghast",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.triggeredAbilities[0].effect.then",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.triggeredAbilities[0].effect.then",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R04",
+      "card": "Wolfbat",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R05",
+      "card": "Murder",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.spellEffect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R06",
+      "card": "Wrath of God",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.spellEffect.body",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.body",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R07",
+      "card": "Damnation",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R08",
+      "card": "Fleshbag Marauder",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R09",
+      "card": "Attrition",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].cost.costs[1].atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            },
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.activatedAbilities[0].cost.costs[1].atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R10",
+      "card": "Goblin Bombardment",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].cost.atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            },
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.activatedAbilities[0].cost.atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R11",
+      "card": "Tragic Slip",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.spellEffect.then",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            },
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.spellEffect.otherwise",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            },
+            {
+              "branch": "DEATH_ENHANCED_REMOVAL",
+              "path": "script.spellEffect.gate.condition",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R12",
+      "card": "Judith, the Scourge Diva",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            },
+            {
+              "branch": "DEATH_ENHANCED_REMOVAL",
+              "path": "script.triggeredAbilities[0].trigger",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R13",
+      "card": "Footlight Fiend",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            },
+            {
+              "branch": "DEATH_ENHANCED_REMOVAL",
+              "path": "script.triggeredAbilities[0].trigger",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R14",
+      "card": "Goblin Sharpshooter",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "NO_MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R15",
+      "card": "Grim Haruspex",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DEATH_TRIGGERED_OUTCOME",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R16",
+      "card": "Pitiless Plunderer",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DEATH_TRIGGERED_OUTCOME",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R17",
+      "card": "Doomed Dissenter",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DEATH_TRIGGERED_OUTCOME",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R18",
+      "card": "Viscera Seer",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].cost.atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.activatedAbilities[0].cost.atom",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R19",
+      "card": "Reanimate",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R20",
+      "card": "Reanimate",
+      "objective": "Reanimate own creatures",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[1]",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R21",
+      "card": "Forest",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R22",
+      "card": "Forest",
+      "objective": "Pay mana for another mechanic",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R23",
+      "card": "Exploration",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R24",
+      "card": "Wayward Swordtooth",
+      "objective": "Land enters under our control",
+      "nativeAvailable": false,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R25",
+      "card": "Cultivate",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[3]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            },
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[4]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R26",
+      "card": "Harrow",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.additionalCosts[0].atom",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.spellEffect.effects[2]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.additionalCosts[0].atom",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R27",
+      "card": "Sakura-Tribe Elder",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].cost",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.activatedAbilities[0].effect.effects[2]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.activatedAbilities[0].cost",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R28",
+      "card": "Sakura-Tribe Elder",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DIRECT_DEATH_GENERATOR",
+              "path": "script.activatedAbilities[0].cost",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.activatedAbilities[0].effect.effects[2]",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "GRAVEYARD_CREATURE_ARRIVAL",
+              "path": "script.activatedAbilities[0].cost",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R29",
+      "card": "Lotus Cobra",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R30",
+      "card": "Scute Swarm",
+      "objective": "Land enters under our control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect.then",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": null
+            },
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect.otherwise",
+              "verdict": "UNKNOWN",
+              "mechanicalCompatibility": "UNKNOWN",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R31",
+      "card": "Colossal Dreadmaw",
+      "objective": "Control a creature with power 4 or greater",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R32",
+      "card": "Yargle, Glutton of Urborg",
+      "objective": "Control a creature with power 4 or greater",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R33",
+      "card": "Garruk's Packleader",
+      "objective": "Control a creature with power 4 or greater",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R34",
+      "card": "Garruk's Packleader",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R35",
+      "card": "Darksteel Relic",
+      "objective": "Control at least five artifacts",
+      "nativeAvailable": false,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R36",
+      "card": "Ornithopter",
+      "objective": "Control at least five artifacts",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R37",
+      "card": "Myr Battlesphere",
+      "objective": "Control at least five artifacts",
+      "nativeAvailable": false,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R38",
+      "card": "Pitiless Plunderer",
+      "objective": "Control at least five artifacts",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DEATH_TRIGGERED_OUTCOME",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R39",
+      "card": "Pitiless Plunderer",
+      "objective": "Create creature tokens",
+      "nativeAvailable": true,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "DEATH_TRIGGERED_OUTCOME",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "MATCH",
+              "mechanicalCompatibility": "MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "CREATE_CREATURE_TOKEN",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R40",
+      "card": "Giant Growth",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R41",
+      "card": "Rancor",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "INTRINSIC_CREATURE_INPUT",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": "MATCH"
+            }
+          ]
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": [
+            {
+              "branch": "REANIMATE_OWN_CREATURE",
+              "path": "script.triggeredAbilities[0].effect",
+              "verdict": "NO_MATCH",
+              "mechanicalCompatibility": "NO_MATCH",
+              "policyAcceptance": null
+            }
+          ]
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R42",
+      "card": "Hardened Scales",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R43",
+      "card": "Conclave Mentor",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": false,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R44",
+      "card": "Walking Corpse",
+      "objective": "Increase power of a creature we control",
+      "nativeAvailable": true,
+      "queryImplemented": false,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": true,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": true,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": true,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": true,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    },
+    {
+      "relationshipId": "R45",
+      "card": "Conclave Mentor",
+      "objective": "Our nontoken creatures die",
+      "nativeAvailable": false,
+      "queryImplemented": true,
+      "actualQueries": {
+        "own-nontoken-creature-deaths": {
+          "eligible": false,
+          "rows": []
+        },
+        "reanimate-own-creatures": {
+          "eligible": false,
+          "rows": []
+        },
+        "create-creature-tokens": {
+          "eligible": false,
+          "rows": []
+        },
+        "stock-own-graveyard": {
+          "eligible": false,
+          "rows": []
+        }
+      },
+      "uncertaintyNote": "Actual rows are ability/path-level evidence; their presence on this card does not establish the source expectation relationship. Conceptual anchors are not implemented; source-only proposals are not matches."
+    }
+  ]
+}
