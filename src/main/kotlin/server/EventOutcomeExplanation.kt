@@ -40,6 +40,8 @@ internal fun producedOutcome(o: EventOutcome): String {
 internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): PathwayExplanation {
     val ability=o.event.nativeAbility.obj()
     val caps=buildList {
+        if(ability?.get("triggersOnce")?.toString()=="true") add("This ability triggers only once during this source's battlefield lifetime; its allowance must remain.")
+        if(ability?.get("effectOncePerTurn")?.toString()=="true") add("The action can be taken only once each turn. Its resolution budget must remain; declining does not spend it.")
         if(ability?.get("oncePerTurn")?.toString()=="true") add("This ability triggers at most once each turn; its trigger allowance must remain.")
         ability.text("triggersPerTurn")?.let { add("This ability triggers at most $it times each turn; its trigger allowance must remain.") }
         if(ability?.get("interveningIf")!=null) add("The source's intervening condition must hold both when it triggers and when it resolves. This condition is not fully interpreted; read its rules paragraph above.")

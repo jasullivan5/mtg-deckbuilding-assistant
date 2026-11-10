@@ -375,7 +375,7 @@ test('source investigation distinguishes death sources removal policy and new no
   await page.getByRole('button',{name:'Find cards',exact:true}).click();const run:Run=await(await completed).json();
   const detail=page.getByRole('region',{name:'Result inspection'});const nav=page.getByRole('navigation',{name:'Finding categories',exact:true});
   const cases:Record<string,unknown>={};
-  for(const [name,expected] of [['Accursed Centaur','sacrificed and die'],['Judith, the Scourge Diva','does not cause that first death'],['Tragic Slip','enable or improve this removal'],['Murder','choosing your own creature'],['Midnight Reaper','damage affects a player'],['Blood Artist','No discovery relationship was evaluated']]) {
+  for(const [name,expected] of [['Accursed Centaur','sacrificed and die'],['Judith, the Scourge Diva','does not cause that first death'],['Tragic Slip','enable or improve this removal'],['Murder','choosing your own creature'],['Midnight Reaper','draw 1'],['Blood Artist','No discovery relationship was evaluated']]) {
     await nav.getByRole('button',{name:/All findings/}).click();await page.getByLabel('Card name').fill(name);
     await expect(detail.getByRole('heading',{name,exact:true})).toBeVisible();
     if(name==='Blood Artist'){await expect(detail).toContainText(expected);continue;}

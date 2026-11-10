@@ -280,7 +280,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                 nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),
                 if(ability.activeZones.isEmpty()) Verdict.NO_MATCH else if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController ||
                     ability.binding==TriggerBinding.ATTACHED || ability.activeZones!=setOf(Zone.BATTLEFIELD) || extra.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
-                assumptions + "Source must be available in declared active zones; trigger/turn limits must permit this occurrence; actual resolution is not guaranteed")
+                assumptions + "Source must be available in declared active zones; trigger/turn limits must permit this occurrence; actual resolution is not guaranteed" +
+                    listOfNotNull("This source's ability triggers only once during its battlefield lifetime".takeIf { ability.triggersOnce },
+                        "Do this only once each turn: resolution action budget must remain; declining does not spend it".takeIf { ability.effectOncePerTurn }))
             // A trigger observing another object can itself be active in a non-battlefield zone.
             // Keep self zone-change triggers bound to their resulting zone; do not infer a
             // single location for multi-zone abilities in this bounded correction.
@@ -559,7 +561,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
         frame.event?.let { context ->
             eventOutcomes += EventOutcome("$actionId|$path|TOKEN",card.name,face,actionId,path,context,OutcomeKind.CREATE_TOKEN,amount,controller,
                 all(listOf(confidence,frame.outcomeGuard,context.confidence,if(frame.delayed || unresolved.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH)),positive,frame.optional,
-                prerequisites,e.tree(),detail,facts.last().id,linkage=if(frame.delayed) "UNRESOLVED_DEFERRED_LINK" else "SAME_TRIGGER_BRANCH",
+                prerequisites.map { it.replace("Intervening condition failed", "Announcement-time target selection produced nothing (unresolved alternative branch)") },e.tree(),detail,facts.last().id,linkage=if(frame.delayed) "UNRESOLVED_DEFERRED_LINK" else "SAME_TRIGGER_BRANCH",
                 unresolved=unresolved + if(frame.outcomeGuard==Verdict.UNKNOWN || frame.delayed) listOf("Nested payment, iteration, branch or deferred context is not resolved for this relationship") else emptyList())
         }
         val partial=confidence==Verdict.UNKNOWN || creature==Verdict.UNKNOWN || controller=="UNKNOWN" || positive==Verdict.UNKNOWN || unresolved.isNotEmpty()
@@ -576,7 +578,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             val confidence=all(listOf(frame.guardConfidence,frame.factGuard,frame.outcomeGuard,context.confidence,
                 if(frame.delayed) Verdict.UNKNOWN else Verdict.MATCH))
             eventOutcomes += EventOutcome("$actionId|$path|DRAW",card.name,face,actionId,path,context,OutcomeKind.DRAW_CARDS,e.count,recipient,confidence,
-                tokenQuantityPotential(e.count),frame.optional,frame.assumptions+context.requirements+
+                tokenQuantityPotential(e.count),frame.optional,frame.assumptions.map { it.replace("Intervening condition failed", "Announcement-time target selection produced nothing (unresolved alternative branch)") }+context.requirements+
                     "Native trigger, targets, choices, resources and draw replacements apply; drawing is not guaranteed or a deck-value score",e.tree(),
                 linkage=if(frame.delayed) "UNRESOLVED_DEFERRED_LINK" else "SAME_TRIGGER_BRANCH",
                 unresolved=if(confidence==Verdict.UNKNOWN || recipient=="UNKNOWN") listOf("Trigger/branch/receiver context is not fully interpreted") else emptyList())

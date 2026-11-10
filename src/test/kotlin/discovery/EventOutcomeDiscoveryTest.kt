@@ -17,6 +17,14 @@ class EventOutcomeDiscoveryTest : FunSpec({
             when(obj.getValue("expected").jsonPrimitive.content) {
                 "MATCH" -> rows.any { it.verdict==Verdict.MATCH } shouldBe true
                 "UNKNOWN" -> rows.any { it.verdict==Verdict.UNKNOWN } shouldBe true
+                "NONDEATH" -> {
+                    x.eventOutcomes.any { it.kind==OutcomeKind.DRAW_CARDS && it.confidence==Verdict.MATCH } shouldBe true
+                    rows.all { it.verdict==Verdict.NO_MATCH } shouldBe true
+                }
+                "NONDEATH_UNKNOWN_BRANCHES" -> {
+                    x.eventOutcomes.any { it.kind==OutcomeKind.CREATE_TOKEN && it.confidence==Verdict.UNKNOWN } shouldBe true
+                    rows.all { it.verdict==Verdict.NO_MATCH } shouldBe true
+                }
                 else -> rows.any { it.verdict==Verdict.MATCH || it.verdict==Verdict.UNKNOWN } shouldBe false
             }
         }

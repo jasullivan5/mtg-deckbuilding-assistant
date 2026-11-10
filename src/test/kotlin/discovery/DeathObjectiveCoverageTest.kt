@@ -72,7 +72,7 @@ class DeathObjectiveCoverageTest : FunSpec({
         val reaper = rows("Midnight Reaper").single { it.branch==Contribution.DIRECT_DEATH_GENERATOR }
         reaper.verdict shouldBe Verdict.NO_MATCH
         reaper.branch shouldBe Contribution.DIRECT_DEATH_GENERATOR
-        fields(reaper.card).single { it.label == "Why not included" }.value shouldBe "This damage affects a player, not a creature."
+        discoveryFields(listOf(reaper), report.actions.first { it.id==reaper.actionId }).single { it.label == "Why not included" }.value shouldBe "This damage affects a player, not a creature."
     }
     test("Tragic Slip is death-enhanced removal whereas Murder is deliberately policy excluded") {
         source("tragic-slip").getValue("oracle_text").jsonPrimitive.content.contains("-13/-13") shouldBe true
@@ -89,8 +89,8 @@ class DeathObjectiveCoverageTest : FunSpec({
         agent.getValue("Death relationship").contains("unresolved") shouldBe true
         agent.containsKey("Why it qualifies") shouldBe false
     }
-    test("death scope help excludes general payoffs and the objective menu includes the independent state search") {
-        objectives.first().coverageNote!!.contains("not searched as independent payoffs") shouldBe true
+    test("death scope help describes bounded responses and the objective menu includes the independent state search") {
+        objectives.first().coverageNote!!.contains("Renewable creature inputs") shouldBe true
         objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "stock-own-graveyard")
     }
 })
