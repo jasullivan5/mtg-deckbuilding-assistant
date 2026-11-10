@@ -4,6 +4,8 @@
 
 ## Current creature-input increment
 
+The [delivery report](CREATURE_INPUT_DISCOVERY.md) records source requirements, actual native scenarios, complete unchanged-population comparisons, restrictions and running-application screenshots.
+
 **Supplies creature inputs** identifies supported intrinsic return of the source's own original nontoken creature card from its owner's graveyard to the battlefield under our control. Skeleton's graveyard activation and Bloodghast's graveyard landfall trigger now qualify, independently of any sacrifice outlet. The shared join retains the movement fact, physical card/face, action/branch, active zones, ownership/control, payment and requirements. Generic reanimation of another card, ordinary creature material, return to hand and token copies do not establish this contribution.
 
 A return is not a death and does not prove a repeatable cycle. Conditions, one-use/turn allowances, subsequent instructions and replacements remain explicit. Wolfbat's native self-return is visible but its use for a later qualifying death remains UNKNOWN: finality exiles it instead while the counter remains, and no counter removal is assumed. Complex source zones, bindings and branch requirements also remain uncertain. The earlier source-zone research below is historical; its movement facts are reused without changing the other objectives.

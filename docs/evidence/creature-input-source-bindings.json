@@ -1,0 +1,1182 @@
+{
+  "context": {
+    "algorithm": "physical-identity-v1",
+    "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "nativeIdentitySha256": "af45623ce691b4d3f129121b0ce73e7224adf941295be45d414d0906f3ad0adb"
+  },
+  "note": "Identity association is not source-fidelity certification. Retained physical printing and representative snapshot printing may differ; native printing fields are preserved. Missing native definitions remain separate.",
+  "cases": [
+    {
+      "card": "Reassembling Skeleton",
+      "expected": "MATCH",
+      "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "assignment": {
+        "native": {
+          "name": "Reassembling Skeleton",
+          "oracleId": null,
+          "aliases": [
+            "reassembling skeleton"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Reassembling Skeleton",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Skeleton Warrior"
+            }
+          ],
+          "physicalName": "Reassembling Skeleton",
+          "scryfallId": null,
+          "setCode": "ARC",
+          "collectorNumber": "22",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+        "candidateOracleIds": [
+          "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Bloodghast",
+      "expected": "MATCH",
+      "oracleId": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+      "assignment": {
+        "native": {
+          "name": "Bloodghast",
+          "oracleId": null,
+          "aliases": [
+            "bloodghast"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Bloodghast",
+              "manaCost": "{B}{B}",
+              "typeLine": "Creature — Vampire Spirit"
+            }
+          ],
+          "physicalName": "Bloodghast",
+          "scryfallId": null,
+          "setCode": "ZEN",
+          "collectorNumber": "83",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+        "candidateOracleIds": [
+          "e97f9c2b-b41e-4f36-9245-77c0ac125647"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Bladewing's Thrall",
+      "expected": "MATCH",
+      "oracleId": "f068a0f3-48bc-4d5d-be79-c23c0be11c27",
+      "assignment": {
+        "native": {
+          "name": "Bladewing's Thrall",
+          "oracleId": null,
+          "aliases": [
+            "bladewing's thrall"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Bladewing's Thrall",
+              "manaCost": "{2}{B}{B}",
+              "typeLine": "Creature — Zombie"
+            }
+          ],
+          "physicalName": "Bladewing's Thrall",
+          "scryfallId": null,
+          "setCode": "SCG",
+          "collectorNumber": "55",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "f068a0f3-48bc-4d5d-be79-c23c0be11c27",
+        "candidateOracleIds": [
+          "f068a0f3-48bc-4d5d-be79-c23c0be11c27"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Forsaken Miner",
+      "expected": "MATCH",
+      "oracleId": "d37e0127-6f68-438e-8b9e-a71bb3c34733",
+      "assignment": {
+        "native": {
+          "name": "Forsaken Miner",
+          "oracleId": null,
+          "aliases": [
+            "forsaken miner"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Forsaken Miner",
+              "manaCost": "{B}",
+              "typeLine": "Creature — Skeleton Rogue"
+            }
+          ],
+          "physicalName": "Forsaken Miner",
+          "scryfallId": null,
+          "setCode": "OTJ",
+          "collectorNumber": "88",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "d37e0127-6f68-438e-8b9e-a71bb3c34733",
+        "candidateOracleIds": [
+          "d37e0127-6f68-438e-8b9e-a71bb3c34733"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Flamewake Phoenix",
+      "expected": "UNKNOWN",
+      "oracleId": "9e43805d-3576-47d4-9331-524869ab99d0",
+      "assignment": {
+        "native": {
+          "name": "Flamewake Phoenix",
+          "oracleId": null,
+          "aliases": [
+            "flamewake phoenix"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Flamewake Phoenix",
+              "manaCost": "{1}{R}{R}",
+              "typeLine": "Creature — Phoenix"
+            }
+          ],
+          "physicalName": "Flamewake Phoenix",
+          "scryfallId": null,
+          "setCode": "FRF",
+          "collectorNumber": "100",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "9e43805d-3576-47d4-9331-524869ab99d0",
+        "candidateOracleIds": [
+          "9e43805d-3576-47d4-9331-524869ab99d0"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Phoenix Chick",
+      "expected": "MATCH",
+      "oracleId": "40bb7b6b-a75d-4b59-ba45-a5801dcd59a1",
+      "assignment": {
+        "native": {
+          "name": "Phoenix Chick",
+          "oracleId": null,
+          "aliases": [
+            "phoenix chick"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Phoenix Chick",
+              "manaCost": "{R}",
+              "typeLine": "Creature — Phoenix"
+            }
+          ],
+          "physicalName": "Phoenix Chick",
+          "scryfallId": null,
+          "setCode": "DMU",
+          "collectorNumber": "140",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "40bb7b6b-a75d-4b59-ba45-a5801dcd59a1",
+        "candidateOracleIds": [
+          "40bb7b6b-a75d-4b59-ba45-a5801dcd59a1"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Persistent Marshstalker",
+      "expected": "UNKNOWN",
+      "oracleId": "77eb76cf-a361-44e0-aeee-e8ef4b695799",
+      "assignment": {
+        "native": {
+          "name": "Persistent Marshstalker",
+          "oracleId": null,
+          "aliases": [
+            "persistent marshstalker"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Persistent Marshstalker",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Rat Berserker"
+            }
+          ],
+          "physicalName": "Persistent Marshstalker",
+          "scryfallId": null,
+          "setCode": "BLB",
+          "collectorNumber": "104",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "77eb76cf-a361-44e0-aeee-e8ef4b695799",
+        "candidateOracleIds": [
+          "77eb76cf-a361-44e0-aeee-e8ef4b695799"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Wolfbat",
+      "expected": "UNKNOWN",
+      "oracleId": "adc47a25-daab-49c7-93a5-5bbf2bc20cf9",
+      "assignment": {
+        "native": {
+          "name": "Wolfbat",
+          "oracleId": null,
+          "aliases": [
+            "wolfbat"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Wolfbat",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Wolf Bat"
+            }
+          ],
+          "physicalName": "Wolfbat",
+          "scryfallId": null,
+          "setCode": "TLA",
+          "collectorNumber": "122",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "adc47a25-daab-49c7-93a5-5bbf2bc20cf9",
+        "candidateOracleIds": [
+          "adc47a25-daab-49c7-93a5-5bbf2bc20cf9"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Haunted Dead",
+      "expected": "MATCH",
+      "oracleId": "03259490-a789-4f96-8c5b-b410425bdd02",
+      "assignment": {
+        "native": {
+          "name": "Haunted Dead",
+          "oracleId": null,
+          "aliases": [
+            "haunted dead"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Haunted Dead",
+              "manaCost": "{3}{B}",
+              "typeLine": "Creature — Zombie"
+            }
+          ],
+          "physicalName": "Haunted Dead",
+          "scryfallId": null,
+          "setCode": "EMN",
+          "collectorNumber": "92",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "03259490-a789-4f96-8c5b-b410425bdd02",
+        "candidateOracleIds": [
+          "03259490-a789-4f96-8c5b-b410425bdd02"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Tymaret, the Murder King",
+      "expected": "NO_MATCH",
+      "oracleId": "0a029c61-b1de-427b-a8e8-36f3a23f001b",
+      "assignment": {
+        "native": {
+          "name": "Tymaret, the Murder King",
+          "oracleId": null,
+          "aliases": [
+            "tymaret, the murder king"
+          ],
+          "identity": [
+            "B",
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Tymaret, the Murder King",
+              "manaCost": "{B}{R}",
+              "typeLine": "Legendary Creature — Zombie Warrior"
+            }
+          ],
+          "physicalName": "Tymaret, the Murder King",
+          "scryfallId": null,
+          "setCode": "THS",
+          "collectorNumber": "207",
+          "derivedIdentity": [
+            "B",
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "0a029c61-b1de-427b-a8e8-36f3a23f001b",
+        "candidateOracleIds": [
+          "0a029c61-b1de-427b-a8e8-36f3a23f001b"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B",
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "B",
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B",
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Squee, Goblin Nabob",
+      "expected": "NO_MATCH",
+      "oracleId": "0ef760f4-bbec-4735-8d60-fc24d973452a",
+      "assignment": {
+        "native": {
+          "name": "Squee, Goblin Nabob",
+          "oracleId": null,
+          "aliases": [
+            "squee, goblin nabob"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Squee, Goblin Nabob",
+              "manaCost": "{2}{R}",
+              "typeLine": "Legendary Creature — Goblin"
+            }
+          ],
+          "physicalName": "Squee, Goblin Nabob",
+          "scryfallId": null,
+          "setCode": "MMQ",
+          "collectorNumber": "214",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "0ef760f4-bbec-4735-8d60-fc24d973452a",
+        "candidateOracleIds": [
+          "0ef760f4-bbec-4735-8d60-fc24d973452a"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Reanimate",
+      "expected": "NO_MATCH",
+      "oracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+      "assignment": {
+        "native": {
+          "name": "Reanimate",
+          "oracleId": null,
+          "aliases": [
+            "reanimate"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Reanimate",
+              "manaCost": "{B}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Reanimate",
+          "scryfallId": null,
+          "setCode": "TMP",
+          "collectorNumber": "151",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0",
+        "candidateOracleIds": [
+          "a044474a-cd72-4e9d-bd8d-a08f2de9cdc0"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Phyrexian Delver",
+      "expected": "NO_MATCH",
+      "oracleId": "a13cbac0-4c76-4970-b61e-5f4e020ee95c",
+      "assignment": {
+        "native": {
+          "name": "Phyrexian Delver",
+          "oracleId": null,
+          "aliases": [
+            "phyrexian delver"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Phyrexian Delver",
+              "manaCost": "{3}{B}{B}",
+              "typeLine": "Creature — Phyrexian Zombie"
+            }
+          ],
+          "physicalName": "Phyrexian Delver",
+          "scryfallId": null,
+          "setCode": "INV",
+          "collectorNumber": "115",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a13cbac0-4c76-4970-b61e-5f4e020ee95c",
+        "candidateOracleIds": [
+          "a13cbac0-4c76-4970-b61e-5f4e020ee95c"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Walking Corpse",
+      "expected": "NONE",
+      "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+      "assignment": {
+        "native": {
+          "name": "Walking Corpse",
+          "oracleId": null,
+          "aliases": [
+            "walking corpse"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Walking Corpse",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Zombie"
+            }
+          ],
+          "physicalName": "Walking Corpse",
+          "scryfallId": null,
+          "setCode": "ISD",
+          "collectorNumber": "126",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+        "candidateOracleIds": [
+          "fea95888-e16a-4209-9cd4-623f7f4d2f67"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Heat Shimmer",
+      "expected": "NONE",
+      "oracleId": "5c80d39e-f3af-4d24-bca0-19f0bd0f5082",
+      "assignment": {
+        "native": {
+          "name": "Heat Shimmer",
+          "oracleId": null,
+          "aliases": [
+            "heat shimmer"
+          ],
+          "identity": [
+            "R"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Heat Shimmer",
+              "manaCost": "{2}{R}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Heat Shimmer",
+          "scryfallId": null,
+          "setCode": "LRW",
+          "collectorNumber": "175",
+          "derivedIdentity": [
+            "R"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "5c80d39e-f3af-4d24-bca0-19f0bd0f5082",
+        "candidateOracleIds": [
+          "5c80d39e-f3af-4d24-bca0-19f0bd0f5082"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R"
+          ],
+          "derivedNativeIdentity": [
+            "R"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Tenacious Dead",
+      "expected": "MISSING",
+      "oracleId": "9ae376d5-c68f-4a4b-851c-ebfd385b86dd",
+      "assignment": null,
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Mimic Vat",
+      "expected": "MISSING",
+      "oracleId": "6ebdc9f3-6b23-4716-8011-48f00d7e30c8",
+      "assignment": null,
+      "cohort": "Preimplementation source requirements for intrinsic original-creature self-return; structural author evidence, not loop execution or qualification"
+    },
+    {
+      "card": "Falkenrath Forebear",
+      "expected": "MATCH",
+      "oracleId": "940080ce-c504-48c8-a763-326fef907217",
+      "assignment": {
+        "native": {
+          "name": "Falkenrath Forebear",
+          "oracleId": null,
+          "aliases": [
+            "falkenrath forebear"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Falkenrath Forebear",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Vampire"
+            }
+          ],
+          "physicalName": "Falkenrath Forebear",
+          "scryfallId": null,
+          "setCode": "VOW",
+          "collectorNumber": "334",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "940080ce-c504-48c8-a763-326fef907217",
+        "candidateOracleIds": [
+          "940080ce-c504-48c8-a763-326fef907217"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Additional source validation selected from the uncurated catalog output after first extraction; not part of the preimplementation cohort or independent qualification"
+    },
+    {
+      "card": "Grafted Butcher",
+      "expected": "MATCH",
+      "oracleId": "6c4a0e3d-c63c-4acf-8386-b51f1ec37463",
+      "assignment": {
+        "native": {
+          "name": "Grafted Butcher",
+          "oracleId": null,
+          "aliases": [
+            "grafted butcher"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Grafted Butcher",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Phyrexian Samurai"
+            }
+          ],
+          "physicalName": "Grafted Butcher",
+          "scryfallId": null,
+          "setCode": "MOM",
+          "collectorNumber": "109",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "6c4a0e3d-c63c-4acf-8386-b51f1ec37463",
+        "candidateOracleIds": [
+          "6c4a0e3d-c63c-4acf-8386-b51f1ec37463"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Additional source validation selected from the uncurated catalog output after first extraction; not part of the preimplementation cohort or independent qualification"
+    },
+    {
+      "card": "Retrofitted Transmogrant",
+      "expected": "MATCH",
+      "oracleId": "058dae67-807e-4542-ae51-f2b1216ffaed",
+      "assignment": {
+        "native": {
+          "name": "Retrofitted Transmogrant",
+          "oracleId": null,
+          "aliases": [
+            "retrofitted transmogrant"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Retrofitted Transmogrant",
+              "manaCost": "{B}",
+              "typeLine": "Artifact Creature — Zombie"
+            }
+          ],
+          "physicalName": "Retrofitted Transmogrant",
+          "scryfallId": null,
+          "setCode": "MH3",
+          "collectorNumber": "106",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "058dae67-807e-4542-ae51-f2b1216ffaed",
+        "candidateOracleIds": [
+          "058dae67-807e-4542-ae51-f2b1216ffaed"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      "cohort": "Additional source validation selected from the uncurated catalog output after first extraction; not part of the preimplementation cohort or independent qualification"
+    }
+  ]
+}
