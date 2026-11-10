@@ -60,6 +60,7 @@ def project_event(row, action):
     if row['verdict']!='MATCH':return 'NOT_CURRENT_MATCH'
     if row['branch'] in KEPT_BRANCHES:return 'RETAIN_CURRENT_RELATIONSHIP'
     if row['branch']!='DEATH_ENHANCED_REMOVAL':return 'UNRESOLVED_BRANCH'
+    if action is None:return 'UNRESOLVED_ACTION_ASSOCIATION'
     # This is a projection of an ALREADY accepted legacy dependency. It does not
     # walk new effects or infer an event/filter match from Oracle text.
     trigger=(action or {}).get('native',{}).get('trigger')
@@ -67,6 +68,16 @@ def project_event(row, action):
     if trigger.get('type')=='ZoneChangeEvent' and trigger.get('from')=='Battlefield' and trigger.get('to')=='Graveyard':
         if row.get('mechanicalCompatibility')=='MATCH':return 'RETAIN_LEGACY_DEATH_TRIGGER_DEPENDENCY'
     return 'UNRESOLVED_LEGACY_TRIGGER_FORM'
+
+def attach_source_overlay(result, profiles, observations):
+    if profiles.get('status')!='SOURCE_EXPECTATION_OVERLAY_NOT_EXTRACTED_ADMISSION':
+        raise ValueError('Manual source profiles require an explicit nonmechanical label')
+    original=digest(result['selections'])
+    by_name={x['card']:x for x in observations['cards']}
+    result['sourceExpectationOverlay']={'status':profiles['status'],'basis':profiles['basis'],
+        'profiles':[dict(profile=p,currentNativeObservation=by_name.get(p['card']),
+            membershipEffect='NONE: source expectations never add accepted relationships') for p in profiles['profiles']]}
+    assert digest(result['selections'])==original
 
 def experiment(report, records, identities, tags, report_hash, snapshot_hash):
     if report['objective']!='own-nontoken-creature-deaths':raise ValueError('Expected the unchanged death report')
@@ -163,9 +174,13 @@ def experiment(report, records, identities, tags, report_hash, snapshot_hash):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for name in ['report','snapshot','identities','tags','output']:p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--profiles',type=Path)
+    p.add_argument('--observations',type=Path)
     a=p.parse_args()
     result=experiment(load(a.report),snapshot_cards(a.snapshot),load(a.identities),load(a.tags),
         hashlib.sha256(a.report.read_bytes()).hexdigest(),hashlib.sha256(a.snapshot.read_bytes()).hexdigest())
+    if bool(a.profiles)!=bool(a.observations):p.error('--profiles and --observations must be supplied together')
+    if a.profiles:attach_source_overlay(result,load(a.profiles),load(a.observations))
     a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(dict(context=result['context'],counts=result['counts']),ensure_ascii=False))

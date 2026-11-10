@@ -64,6 +64,14 @@ Event versus history, state access versus scaling, and modification versus facil
 
 ## Directional filtering and selective layering
 
+### Operational model under investigation
+
+The [bounded selection experiment](SELECTION_COMPOSITION.md) tests focused mechanical discovery alongside **basic selectors** for ordinary resources, characteristics and functional categories. Normal land mana and printed creature power can be retrieved without asserting a distinctive focused relationship. Merely exercising an ordinary category capability, or an interactive operation alone, is insufficient under the proposed primary-admission policy; a qualifying cost or event/state dependency may occur within that same ability. These are working boundaries, not a general implemented baseline classifier or changes to current Discover admission.
+
+For this investigation, earlier-event history is a **state** dependency: Tragic Slip checks whether a creature died this turn rather than responding to a death. Tannuk's own ability-resolution history is a significant internal prerequisite, not automatically a separately discoverable state contribution. Scute Swarm's independently meaningful land-count condition can overlap its land-entry event relationship. Hardened Scales remains a replacement modifying placement, not a trigger initiating it.
+
+A research-only CLI can add candidates or restrict one selection by another while preserving physical identity and inclusion reasons. Basic functional selections can conjoin source tags to specify a narrower category. This is not production composition, a strategic relationship, an implemented state-objective system or universal validation of the model. The earlier physical observations that a large body can establish a threshold remain mechanically true; they do not by themselves decide focused primary admission. PR #48 remains separate unmerged research, with its original recommendations retained rather than overwritten.
+
 An intended capability is selecting contributions by how they relate **within** an objective. A creature-death plan might borrow creature-producing effects from a token objective without taking every mechanic that benefits from tokens. Another plan might seek only responses to a complementary event. Role words can be useful display shorthand, but the selection needs the underlying operation and direction, not a permanent card category.
 
 The application might eventually suggest complementary questions from a mechanic's requirements: establishing a power threshold could enable Phoenix, for example. That is a hypothesis about connecting available capabilities, not evidence of a tested two-card interaction. Neither general directional filtering, selective layering nor automatic suggestions are implemented.

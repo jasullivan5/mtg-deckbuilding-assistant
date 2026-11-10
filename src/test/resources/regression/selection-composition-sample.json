@@ -745,6 +745,27 @@
       "object": "card"
     }
   ],
+  "controlOracleIds": {
+    "Tannuk, Memorial Ensign": "76cb1912-3791-44b8-b594-b92dab21bafc",
+    "Forest": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+    "Wastes": "05d24b0c-904a-46b6-b42a-96a4d91a0dd4",
+    "Fleshbag Marauder": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+    "Tragic Slip": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+    "Beast Within": "7735eeba-693b-47e2-bd51-414379cf1016",
+    "Scute Swarm": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+    "Llanowar Elves": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
+    "Walking Corpse": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+    "Grim Haruspex": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+    "Hardened Scales": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+    "Sol Ring": "6ad8011d-3471-4369-9d68-b264cc027487",
+    "Wrath of God": "34515b16-c9a4-4f98-8c77-416a7a523407",
+    "Murder": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+    "Cyclonic Rift": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+    "Attrition": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+    "Grave Pact": "6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2",
+    "Reassembling Skeleton": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+    "Damnation": "d57a8f0b-7989-4db5-8756-6f2690097252"
+  },
   "report": {
     "objective": "own-nontoken-creature-deaths",
     "commander": "Kenrith, the Returned King",
@@ -3713,6 +3734,7 @@
       "boardwipe": {
         "status": "COMPLETE",
         "query": "legal:commander id<=wubrg otag:boardwipe",
+        "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
         "pages": [
           {
             "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards&order=name",
@@ -3799,6 +3821,7 @@
       "removal": {
         "status": "COMPLETE",
         "query": "legal:commander id<=wubrg otag:removal",
+        "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
         "pages": [
           {
             "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards&order=name",
@@ -4167,6 +4190,7 @@
       "deathwipes": {
         "status": "COMPLETE",
         "query": "legal:commander id<=wubrg otag:boardwipe otag:removal-creature otag:removal-destroy",
+        "capturedAtUtc": "2026-11-10T20:05:22.262218+00:00",
         "pages": [
           {
             "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards&order=name",
