@@ -38,7 +38,7 @@ The conceptual direction is **card identity/rules → native definitions → mec
 | How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
 | Source/definition/revision-bound evidence | Retained resources, focused reports and original test receipts linked from Progress |
 
-The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current research/Primer increment changes no engine mechanics or discovery objectives.
+The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current bounded application increment adds shared triggered draw/token relationships to the existing death objective; it changes no engine mechanics.
 
 ## Two sibling repositories
 

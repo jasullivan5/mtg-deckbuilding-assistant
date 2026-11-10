@@ -22,6 +22,6 @@ export default function ResearchPrimer() {
       </dl>
     </section>
     <details className="progress-panel"><summary>Why mechanical contributions need context</summary><PrimerPurpose/></details>
-    <p><strong>Available today.</strong> Discover runs four bounded queries. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. Relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
+    <p><strong>Available today.</strong> Discover runs four bounded queries. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. General relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
   </article>;
 }
