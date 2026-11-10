@@ -2,6 +2,9 @@ package dev.mtg.assistant.explorer
 
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.scripting.EventPattern
+import com.wingedsheep.sdk.scripting.GameObjectFilter
+import com.wingedsheep.sdk.scripting.predicates.CardPredicate
+import com.wingedsheep.sdk.scripting.predicates.ControllerPredicate
 import com.wingedsheep.sdk.scripting.TriggerBinding
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
 import dev.mtg.assistant.discovery.*
@@ -18,23 +21,53 @@ fun contributionRelationship(row: ResultEvidence): String? = when(row.branch) {
     else -> null
 }
 
+/** Plain wording for the supported simple filters; complex filters retain the native description. */
+private fun eventObject(filter: GameObjectFilter): String {
+    val simple=setOf(CardPredicate.IsCreature,CardPredicate.IsNontoken,CardPredicate.IsToken)
+    if(filter.anyOf.isNotEmpty() || filter.statePredicates.isNotEmpty() ||
+        CardPredicate.IsCreature !in filter.cardPredicates || filter.cardPredicates.any { it !in simple }) return filter.description
+    val relation=when(filter.controllerPredicate) {
+        null,ControllerPredicate.ControlledByAny -> ""
+        ControllerPredicate.ControlledByYou -> " you control"
+        ControllerPredicate.ControlledByOpponent -> " an opponent controls"
+        ControllerPredicate.OwnedByYou -> " you own"
+        ControllerPredicate.OwnedByOpponent -> " an opponent owns"
+        else -> return filter.description
+    }
+    val token=when {
+        CardPredicate.IsNontoken in filter.cardPredicates && CardPredicate.IsToken in filter.cardPredicates -> return filter.description
+        CardPredicate.IsNontoken in filter.cardPredicates -> "nontoken "
+        CardPredicate.IsToken in filter.cardPredicates -> "token "
+        else -> ""
+    }
+    return "${token}creature$relation"
+}
 internal fun incomingEvent(o: EventOutcome): String {
     val event=o.event.trigger as? EventPattern.ZoneChangeEvent ?: return o.event.trigger.description
     val subject=when(o.event.binding) {
         TriggerBinding.SELF -> if(o.event.sourceIsCreature) "this creature" else "this source"
-        TriggerBinding.OTHER -> "another ${event.filter.description.removePrefix("a ").removePrefix("an ")}"
+        TriggerBinding.OTHER -> "another ${eventObject(event.filter).removePrefix("a ").removePrefix("an ")}"
         TriggerBinding.ATTACHED -> "the attached object (${event.filter.description})"
-        else -> event.filter.description
+        else -> eventObject(event.filter)
     }
     return if(event.from==Zone.BATTLEFIELD && event.to==Zone.GRAVEYARD) "$subject dies"
         else "$subject moves from ${event.from?.displayName ?: "the recorded source zone"} to ${event.to?.displayName ?: "a permitted destination"}"
 }
 internal fun producedOutcome(o: EventOutcome): String {
-    val receiver=when(o.recipient) { "YOU"->"you";"OPPONENT"->"an opponent";"ANY"->"a permitted player";else->"the unresolved receiver" }
+    val nativePlayer=o.native.obj()?.get("target").obj()?.get("player").obj().text("type")
+    val receiver=when(nativePlayer) { "Each"->"each player";"EachOpponent"->"each opponent";else->when(o.recipient) { "YOU"->"you";"OPPONENT"->"an opponent";"ANY"->"a permitted player";else->"the unresolved receiver" } }
     val amount=(o.quantity as? DynamicAmount.Fixed)?.amount?.toString() ?: o.quantity.description
     return when(o.kind) {
         OutcomeKind.DRAW_CARDS -> "$receiver can draw $amount card(s)${if(o.optional) " if the optional choice is made" else ""}"
-        OutcomeKind.CREATE_TOKEN -> "$receiver can create $amount token(s): ${o.token?.templateReference ?: "native template"}${if(o.optional) " if the optional choice is made" else ""}"
+        OutcomeKind.CREATE_TOKEN -> {
+            val template=o.token?.templateReference.orEmpty()
+            val output=when {
+                template.startsWith("PredefinedTokens:") -> "${template.removePrefix("PredefinedTokens:")} token(s)"
+                template.startsWith("Native creature template:") -> "${template.removePrefix("Native creature template:").trim()} creature token(s)"
+                else -> "token(s) using the recorded native template or copy"
+            }
+            "$receiver can create $amount $output${if(o.optional) " if the optional choice is made" else ""}"
+        }
     }
 }
 internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): PathwayExplanation {
@@ -47,7 +80,7 @@ internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): Path
         if(ability?.get("interveningIf")!=null) add("The source's intervening condition must hold both when it triggers and when it resolves. This condition is not fully interpreted; read its rules paragraph above.")
         if(ability?.get("triggerRestriction")!=null) add("The source's additional trigger-time restriction must hold. It is not fully interpreted and is not a resolution-time recheck.")
         if(o.kind==OutcomeKind.CREATE_TOKEN) {
-            addAll(o.token?.characteristics.orEmpty().filterNot { it.contains("retained in native node") })
+            addAll(o.token?.characteristics.orEmpty().filterNot { it.contains("retained in native node") }.map { it.removePrefix("Native ").replace("type line=", "Token type: ").replace("template=", "Token name: ") })
             if(o.native.obj()?.get("tapped")?.toString()=="true") add("The created token enters tapped.")
         }
     }

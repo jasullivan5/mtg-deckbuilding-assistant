@@ -18,6 +18,7 @@ test('Discover separates death production responses and history removal with abi
   await expect(detail.getByRole('region',{name:'Death response'})).toContainText('another');
   await expect(detail.getByRole('region',{name:'Death response'})).toContainText('draw 1');
   await expect(detail).toContainText('does not cause the initial death');
+  await expect(detail.getByText('Checking the printing and complete face identities.',{exact:true})).toHaveCount(0,{timeout:45_000});
   await page.screenshot({path:'../generated/explorer/event-outcomes/discover-relationships.png',fullPage:true});
   for (const [name,outcome] of [['Pitiless Plunderer','Treasure'],['Doomed Dissenter','Zombie']]) {
     await page.getByLabel('Card name').fill(name);
@@ -33,6 +34,22 @@ test('Discover separates death production responses and history removal with abi
   await page.getByLabel('Card name').fill('Tragic Slip');
   await expect(detail.getByRole('heading',{name:'Tragic Slip',exact:true})).toBeVisible();
   await expect(detail.getByRole('region',{name:'Death response'})).toHaveCount(0);
+  await mechanic.selectOption('Benefits from deaths');
+  await page.getByLabel('Card name').fill('High-Society Hunter');
+  await expect(detail.getByRole('heading',{name:'High-Society Hunter',exact:true})).toBeVisible();
+  await detail.locator('button.rules-line').filter({hasText:'Whenever another nontoken creature dies'}).click();
+  await expect(detail.getByRole('region',{name:'Death response'})).toContainText('draw 1');
+  await detail.screenshot({path:'../generated/explorer/event-outcomes/hunter-response.png'});
+  await detail.locator('button.rules-line').filter({hasText:'Whenever this creature attacks'}).click();
+  await expect(detail.getByRole('region',{name:'Death response'})).toHaveCount(0);
+  await detail.screenshot({path:'../generated/explorer/event-outcomes/hunter-production.png'});
+  await page.getByRole('navigation',{name:'Finding categories',exact:true}).getByRole('button',{name:/Needs interpretation/}).click();
+  await mechanic.selectOption('Death response needs investigation');
+  await page.getByLabel('Card name').fill('Xathrid Necromancer');
+  await expect(detail.getByRole('heading',{name:'Xathrid Necromancer',exact:true})).toBeVisible();
+  await expect(detail.getByRole('region',{name:'Death response'})).toContainText('needs investigation');
+  await detail.screenshot({path:'../generated/explorer/event-outcomes/xathrid-uncertain.png'});
+  await page.getByRole('navigation',{name:'Finding categories',exact:true}).getByRole('button',{name:/Identified mechanics/}).click();
   await mechanic.selectOption('Benefits from deaths');
   await page.getByLabel('Card name').fill('Grim Haruspex');
   await page.setViewportSize({width:390,height:844});
