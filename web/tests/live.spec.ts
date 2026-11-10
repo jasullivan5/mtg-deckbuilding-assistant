@@ -5,9 +5,9 @@ import type {Run, Evidence, CommanderView} from '../src/api';
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to a running Kotlin application.');
 const objective = 'own-nontoken-creature-deaths';
 const reviewedCoverageEngine = '03869c08665bf476a8b40dacbfbcd501c54a33bd';
-const unsearchedCoverageCards = ['Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer', 'Reassembling Skeleton'];
-const historicalGapLabel = '4 Outside current objective coverage';
-const unexplainedLabel = '5 Insufficient evidence';
+const unsearchedCoverageCards = ['Reassembling Skeleton'];
+const historicalGapLabel = '1 Outside current objective coverage';
+const unexplainedLabel = '2 Insufficient evidence';
 const historicalDiagnosis = 'leaves land and creature overlap unresolved';
 const differentEngineDiagnosis = 'Inspect the current decision records. The retained diagnosis used a different engine revision.';
 
@@ -367,7 +367,7 @@ test('keyboard card selection focuses the compact inspector without a jump link 
 });
 
 
-test('source investigation distinguishes death sources removal policy and omitted non-removal payoffs', async ({page}) => {
+test('source investigation distinguishes death sources removal policy and new non-removal responses', async ({page}) => {
   await page.goto('/'); await page.getByText('About objective', {exact: true}).click();
   await expect(page.locator('.objective-help')).not.toContainText('not searched as independent payoffs');
   await expect(page.locator('.objective-help li')).toHaveCount(3);
@@ -375,7 +375,7 @@ test('source investigation distinguishes death sources removal policy and omitte
   await page.getByRole('button',{name:'Find cards',exact:true}).click();const run:Run=await(await completed).json();
   const detail=page.getByRole('region',{name:'Result inspection'});const nav=page.getByRole('navigation',{name:'Finding categories',exact:true});
   const cases:Record<string,unknown>={};
-  for(const [name,expected] of [['Accursed Centaur','sacrificed and die'],['Judith, the Scourge Diva','does not cause that first death'],['Tragic Slip','enable or improve this removal'],['Murder','choosing your own creature'],['Midnight Reaper','damage affects a player'],['Blood Artist','No discovery relationship was evaluated']]) {
+  for(const [name,expected] of [['Accursed Centaur','sacrificed and die'],['Judith, the Scourge Diva','does not cause that first death'],['Tragic Slip','enable or improve this removal'],['Murder','choosing your own creature'],['Midnight Reaper','draw 1'],['Blood Artist','No discovery relationship was evaluated']]) {
     await nav.getByRole('button',{name:/All findings/}).click();await page.getByLabel('Card name').fill(name);
     await expect(detail.getByRole('heading',{name,exact:true})).toBeVisible();
     if(name==='Blood Artist'){await expect(detail).toContainText(expected);continue;}
@@ -388,9 +388,9 @@ test('source investigation distinguishes death sources removal policy and omitte
       await expect(button).not.toContainText('✓');
     }
   }
-  expect(run.cards.find(c=>c.card==='Pitiless Plunderer')).toBeUndefined();
-  const draw=run.cards.find(c=>c.card==='Grim Haruspex');expect(draw?.pathways.MATCH??0).toBe(0);
-  await writeFile('../generated/explorer/coverage-observation.json',JSON.stringify({applicationRevision:run.applicationRevision,engineRevision:run.argentumCommit,runId:run.runId,cases,omissions:['Pitiless Plunderer has no finding','Grim Haruspex has no accepted payoff']},null,2));
+  expect(run.cards.find(c=>c.card==='Pitiless Plunderer')?.pathways.MATCH).toBeGreaterThan(0);
+  const draw=run.cards.find(c=>c.card==='Grim Haruspex');expect(draw?.pathways.MATCH??0).toBeGreaterThan(0);
+  await writeFile('../generated/explorer/coverage-observation.json',JSON.stringify({applicationRevision:run.applicationRevision,engineRevision:run.argentumCommit,runId:run.runId,cases,gains:['Pitiless Plunderer and Grim Haruspex have accepted death responses']},null,2));
   await writeFile('../generated/explorer/coverage-report.json',await(await page.request.get(`/api/v1/runs/${run.runId}/report`)).body());
   await page.getByRole('combobox',{name:'Objective',exact:true}).selectOption('create-creature-tokens');await page.getByRole('button',{name:'Find cards',exact:true}).click();
   await expect(page.getByRole('region',{name:'Completed discovery'})).toBeVisible({timeout:130_000});await page.getByLabel('Card name').fill('Doomed Dissenter');
@@ -428,7 +428,7 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
     await detail.screenshot({path: `../generated/explorer/boundary-${name.toLowerCase().replaceAll(' ', '-')}.png`});
   }
   await page.getByText('Search scope, counts, exclusions and source revisions', {exact: true}).click();
-  await expect(page.locator('.provenance')).toContainText('not searched as independent payoffs');
+  await expect(page.locator('.provenance')).toContainText('Renewable creature inputs');
   await writeFile('../generated/explorer/boundary-report.json', await (await page.request.get(`/api/v1/runs/${run.runId}/report`)).body());
   await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('reanimate-own-creatures');
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
@@ -454,7 +454,7 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
   const list = page.getByRole('region', {name: 'Cohort cards'});
   const detail = page.getByRole('region', {name: 'Coverage card inspection'});
   const groups = [
-    ['4 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper']],
+    ['7 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper', 'Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer']],
     ['1 Unresolved relationship', ['Agent of Shauku']],
     ['1 Excluded by objective policy', ['Murder']],
     ['1 Excluded by Commander eligibility', ['Dryad Arbor']],
@@ -471,7 +471,7 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
     await expect(nav.getByRole('button', {name: '0 Outside current objective coverage', exact: true})).toBeDisabled();
     await expect(nav.getByRole('button', {name: '0 Ordinary creature body', exact: true})).toBeDisabled();
   }
-  await nav.getByRole('button', {name: '4 Recognized contribution', exact: true}).click();
+  await nav.getByRole('button', {name: '7 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Viscera Seer'}).click();
   await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
   await expect(detail.getByRole('button', {name: /Discovery.*Creature sacrifice cost identified/})).toBeVisible();
@@ -480,10 +480,10 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
   await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
   await expect(detail).toContainText('In the ordinary findings index');
   await expect(detail).toContainText('No pathway check for the reviewed relationship');
+  await nav.getByRole('button', {name: '7 Recognized contribution', exact:true}).click();
   await list.getByRole('button', {name: 'Pitiless Plunderer'}).click();
-  await expect(detail).toContainText('Absent from the ordinary findings index');
-  await expect(detail).toContainText('No pathway check for the reviewed relationship');
-  if (!reviewed) await expect(detail).toContainText('The available records do not establish the outcome for this relationship.');
+  await expect(detail).toContainText('In the ordinary findings index');
+  await expect(detail).toContainText('Current discovery recognizes a qualifying death response');
   await expect(detail.getByRole('button', {name: /Rules comparison/})).toBeVisible();
   await detail.getByText('Retained Oracle text and identity').click();
   await expect(detail.getByRole('link', {name: 'Scryfall printing record'})).toBeVisible();
@@ -561,7 +561,7 @@ for (const width of [1440, 390]) test(`Primer distinguishes objective questions 
   await expect(primer).toContainText('No deck evaluator, objective-aware pilot or deck simulation is implemented');
   await expect(primer).toContainText('not currently a prerequisite');
   const questions = primer.getByRole('region', {name: 'Build a precise objective', exact:true});
-  await questions.getByText('Events, states, game elements and effects', {exact:true}).click();
+  await questions.getByText('Events, states, modifications and game elements', {exact:true}).click();
   for (const concept of ['Events', 'States', 'Game elements', 'Effects and outcomes']) {
     await expect(questions.locator('dt').filter({hasText: new RegExp(`^${concept}$`)})).toBeVisible();
   }
@@ -592,12 +592,12 @@ for (const width of [1440, 390]) test(`Primer distinguishes objective questions 
   await primer.getByRole('button', {name: /Supply a creature.*Reassembling Skeleton/}).click();
   await expect(primer).toContainText('renewable creature fuel is not yet recognized by the death query');
   await primer.getByRole('button', {name: /Respond with draw.*Grim Haruspex/}).click();
-  await expect(primer).toContainText('not a current death-payoff discovery result');
+  await expect(primer).toContainText('Discover now identifies this same-ability draw response as Benefits from deaths.');
   await expect(primer).toContainText('inherited catalog fidelity is not measured');
   await expect(primer).toContainText('separate human must explicitly approve');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
   await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
-  await questions.getByText('Events, states, game elements and effects',{exact:true}).click();
+  await questions.getByText('Events, states, modifications and game elements',{exact:true}).click();
   await questions.getByText('What happens to the earlier role names?',{exact:true}).click();
   await page.evaluate(() => window.scrollTo(0,0));
   await page.screenshot({path:`../generated/explorer/primer-building-blocks/${width}-overview.png`, fullPage:true});

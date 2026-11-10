@@ -26,6 +26,14 @@ internal fun sacrificeObject(row: ResultEvidence): String {
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
+    row.eventOutcome?.let { o ->
+        add(EvidenceField("Relationship",contributionRelationship(row) ?: "Nonqualifying event response"))
+        add(EvidenceField("Required event",incomingEvent(o)))
+        add(EvidenceField("Possible outcome",producedOutcome(o)))
+        add(EvidenceField("Scope","Same native ability and branch; not the cause of the initial death or a gameplay guarantee"))
+        if(row.verdict==Verdict.UNKNOWN) add(EvidenceField("Unresolved","Event restrictions, branch or receiver need further interpretation"))
+        return@buildList
+    }
     row.stateEntry?.let {
         val explanation = stateEntryExplanation(row, action, it)
         add(EvidenceField("Movement", explanation.summary))

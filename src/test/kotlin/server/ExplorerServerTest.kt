@@ -118,11 +118,11 @@ class ExplorerServerTest : FunSpec({
                     coverageResponse.statusCode() shouldBe 200
                     val comparison = reportJson.decodeFromString<CoverageComparison>(coverageResponse.body())
                     val omitted = comparison.cards.single { it.source.card == "Pitiless Plunderer" }
-                    omitted.inFindings shouldBe false
+                    omitted.inFindings shouldBe true
                     val omittedResponse = request(server, "runs/${summary.runId}/cards/${omitted.index}")
                     omittedResponse.statusCode() shouldBe 200
                     val omittedCard = reportJson.decodeFromString<CardEvidence>(omittedResponse.body())
-                    omittedCard.results.isEmpty() shouldBe true
+                    omittedCard.results.any { it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH } shouldBe true
                     omittedCard.facts shouldBe live.report.facts.filter { it.card == omitted.source.card }
                 } else {
                     coverageResponse.statusCode() shouldBe 404

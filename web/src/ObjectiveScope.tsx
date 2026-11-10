@@ -3,8 +3,8 @@ import type {Objective} from './api';
 const scope: Record<string, {goal: string; searched: string; limits: string}> = {
   'own-nontoken-creature-deaths': {
     goal: 'A nontoken creature you control moves from the battlefield to a graveyard.',
-    searched: 'Recognized sacrifices and other supported ways a creature can cause its own death, plus removal that a death triggers, enables or improves.',
-    limits: 'General death rewards, such as Treasure, and renewable sacrifice material are outside this search. Ordinary removal aimed at your own creature is excluded by policy.',
+    searched: 'Produces deaths through supported sacrifice and own-source operations; benefits from deaths through qualifying triggered draw and creature or noncreature token creation, including Treasure; separately identifies death-enhanced removal.',
+    limits: 'Life-change/mana payoffs, general replacement effects and renewable sacrifice material are outside this search. Event restrictions and same-ability branches must qualify; unresolved conditions stay uncertain. Ordinary removal aimed at your own creature is excluded by policy.',
   },
   'reanimate-own-creatures': {
     goal: 'Return creature cards from your graveyard to the battlefield under your control.',

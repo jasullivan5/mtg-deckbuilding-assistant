@@ -46,20 +46,20 @@ class DeathObjectiveCoverageTest : FunSpec({
         val why = card.abilities.first { it.verdict == Verdict.MATCH }.evidence.single { it.id == "mechanic" }.fields.single { it.label == "Why it qualifies" }.value
         why.contains("does not cause that first death") shouldBe true
     }
-    test("death-triggered draw and treasure are authored but are not independent death-objective results") {
+    test("death-triggered draw and treasure now have separately attributed response results") {
         source("grim-haruspex").getValue("oracle_text").jsonPrimitive.content.contains("draw a card") shouldBe true
         source("pitiless-plunderer").getValue("oracle_text").jsonPrimitive.content.contains("Treasure token") shouldBe true
         for (name in listOf("Grim Haruspex", "Pitiless Plunderer")) {
             report.eligibility.single { it.card == name }.deck shouldBe Verdict.MATCH
             report.actions.any { it.card == name && it.path.startsWith("script.triggeredAbilities") } shouldBe true
-            rows(name).isEmpty() shouldBe true // Absence is not an emitted NO_MATCH.
+            rows(name).any { it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH } shouldBe true
         }
         report.actions.filter { it.card == "Grim Haruspex" }.any { "DrawCards" in it.native.toString() } shouldBe true
         report.facts.any { it.card == "Pitiless Plunderer" && it.kind == FactKind.CREATE_TOKEN } shouldBe true
     }
-    test("a death-triggered creature token is available to the token objective but not the death objective") {
+    test("a death-triggered creature token retains token admission and gains a death response") {
         source("doomed-dissenter").getValue("oracle_text").jsonPrimitive.content.contains("dies") shouldBe true
-        rows("Doomed Dissenter").none { it.verdict == Verdict.MATCH } shouldBe true
+        rows("Doomed Dissenter").any { it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH } shouldBe true
         report.facts.any { it.card == "Doomed Dissenter" && it.kind == FactKind.CREATE_TOKEN } shouldBe true
         val tokens = discover(catalog, report.commander, objective = "create-creature-tokens")
         tokens.results.any { it.card == "Doomed Dissenter" && it.verdict == Verdict.MATCH } shouldBe true
@@ -69,10 +69,10 @@ class DeathObjectiveCoverageTest : FunSpec({
         source("midnight-reaper").getValue("oracle_text").jsonPrimitive.content.contains("draw a card") shouldBe true
         rows("Blood Artist").isEmpty() shouldBe true
         report.unsupported.any { it.card == "Blood Artist" && it.nativeType.endsWith("LoseLifeEffect") } shouldBe true
-        val reaper = rows("Midnight Reaper").single()
+        val reaper = rows("Midnight Reaper").single { it.branch==Contribution.DIRECT_DEATH_GENERATOR }
         reaper.verdict shouldBe Verdict.NO_MATCH
         reaper.branch shouldBe Contribution.DIRECT_DEATH_GENERATOR
-        fields(reaper.card).single { it.label == "Why not included" }.value shouldBe "This damage affects a player, not a creature."
+        discoveryFields(listOf(reaper), report.actions.first { it.id==reaper.actionId }).single { it.label == "Why not included" }.value shouldBe "This damage affects a player, not a creature."
     }
     test("Tragic Slip is death-enhanced removal whereas Murder is deliberately policy excluded") {
         source("tragic-slip").getValue("oracle_text").jsonPrimitive.content.contains("-13/-13") shouldBe true
@@ -89,8 +89,8 @@ class DeathObjectiveCoverageTest : FunSpec({
         agent.getValue("Death relationship").contains("unresolved") shouldBe true
         agent.containsKey("Why it qualifies") shouldBe false
     }
-    test("death scope help excludes general payoffs and the objective menu includes the independent state search") {
-        objectives.first().coverageNote!!.contains("not searched as independent payoffs") shouldBe true
+    test("death scope help describes bounded responses and the objective menu includes the independent state search") {
+        objectives.first().coverageNote!!.contains("Renewable creature inputs") shouldBe true
         objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "stock-own-graveyard")
     }
 })

@@ -121,7 +121,7 @@ class SacrificeBoundaryTest : FunSpec({
         report.eligibility.single { it.card == "Walking Corpse" }.deck shouldBe Verdict.MATCH
         catalog.card("Walking Corpse")!!.script.hasBehavior shouldBe false
         report.results.none { it.card == "Walking Corpse" } shouldBe true
-        report.results.none { it.card == "Grim Haruspex" } shouldBe true
+        report.results.any { it.card == "Grim Haruspex" && it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH } shouldBe true
         report.actions.any { it.card == "Grim Haruspex" && "DrawCards" in it.native.toString() } shouldBe true
         report.results.any { it.card == "Judith, the Scourge Diva" && it.branch == Contribution.DEATH_ENHANCED_REMOVAL && it.verdict == Verdict.MATCH } shouldBe true
     }

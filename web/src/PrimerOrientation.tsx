@@ -5,7 +5,7 @@ import cohort from '../../src/main/resources/discovery-coverage-v1.json';
 const contributions = [
   {role: 'Cause an event', card: 'Viscera Seer', mechanic: 'Sacrifice a creature to scry 1. Sacrificing a nontoken creature can supply the death.', requirement: 'You need a creature you can sacrifice. For this objective, it must be nontoken and reach the graveyard.', coverage: 'The death query identifies this sacrifice contribution. This does not verify the whole ability.'},
   {role: 'Supply a creature', card: 'Reassembling Skeleton', mechanic: 'Return Skeleton from your graveyard so you have a creature to sacrifice later.', requirement: 'Pay {1}{B} while Skeleton is in the graveyard. It returns tapped. A separate sacrifice ability can use it later.', coverage: 'Reanimation finds the return; renewable creature fuel is not yet recognized by the death query.'},
-  {role: 'Respond with draw', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.', coverage: 'This illustrates a mechanical relationship, not a current death-payoff discovery result.'},
+  {role: 'Respond with draw', card: 'Grim Haruspex', mechanic: 'Draw when another nontoken creature you control dies.', requirement: 'The death has to happen first. Haruspex’s draw is outside the present death query’s payoff coverage.', coverage: 'Discover now identifies this same-ability draw response as Benefits from deaths.'},
   {role: 'Ordinary material', card: 'Walking Corpse', mechanic: 'A creature body can pay a sacrifice cost even without a special ability.', requirement: 'You still need the creature on the battlefield and a way to sacrifice it. The card adds no distinctive sacrifice or return ability.', coverage: 'Participating as ordinary material does not establish a distinctive contribution.'},
 ];
 
@@ -76,11 +76,12 @@ export function PrimerObjectives() {
   const [selected, setSelected] = useState(0);
   const example = objectiveExamples[selected];
   return <>
-    <p>Start with a precise question about an <strong>event</strong>, a <strong>state</strong> or a <strong>game element</strong>. Then ask how a mechanic causes, responds to, establishes, supplies, consumes or changes it. These relationships can overlap within one ability.</p>
-    <details><summary>Events, states, game elements and effects</summary>
+    <p>Start with a precise question about an <strong>event</strong>, a <strong>state</strong> or a <strong>modification</strong>. These are working focused anchors, not a final schema. Then ask how a mechanic causes, responds to, establishes, supplies, consumes or changes it. These relationships can overlap within one ability.</p>
+    <details><summary>Events, states, modifications and game elements</summary>
       <dl className="evidence-fields">
         <div><dt>Events</dt><dd>Things happening, such as a creature dying. Causing a death, triggering from it and checking whether one happened earlier are different relationships.</dd></div>
         <div><dt>States</dt><dd>Conditions such as controlling a creature with power 4. A condition can enable an ability, select its result or change its size; when it is checked still matters.</dd></div>
+        <div><dt>Modifications</dt><dd>Changes such as increasing power, modifying counter placement or reducing spell costs. An effect can both depend on an opportunity and enhance it.</dd></div>
         <div><dt>Game elements</dt><dd>Things mechanics operate on: creatures, cards, tokens, counters, mana, players, zones or permissions. This working umbrella is broader than a Magic game object; these things follow different rules.</dd></div>
         <div><dt>Effects and outcomes</dt><dd>What the instructions do and what can follow. They connect the subjects rather than requiring an equivalent fourth kind of objective. Asking for a particular change, such as counter placement, is still useful.</dd></div>
       </dl>
@@ -136,7 +137,7 @@ export function PrimerCapabilities() {
       <p>For example, the death query recognizes Viscera Seer’s sacrifice, and the reanimation query recognizes Skeleton’s paid return. Retained source comparisons and bounded engine scenarios exist for selected cards. The Bitterblossom ledger records a historical source review and execution pass with provisional evidence.</p></>,
     <><p><strong>Historical reanimation comparison.</strong> On the same {population.toLocaleString()} eligible Judith card inputs, accepted results changed from <strong>{totals.before.cards} → {totals.after.cards} distinct cards</strong> and <strong>{totals.before.pathways} → {totals.after.pathways} pathways</strong>. The correction changed {objectives.reanimation.verdictChanges} verdicts. The engine and input pool were held fixed.</p>
       <p>M3.1 instead uses a deliberately selected {cohort.cards.length}-card Judith death-objective cohort to investigate different kinds of findings and omissions.</p></>,
-    <><p>The death query recognizes selected death sources and death-enhanced removal. General draw payoffs such as Grim Haruspex and recurring fuel such as Skeleton remain outside its present coverage. Agent’s land-creature overlap remains unresolved in the reviewed finding.</p>
+    <><p>The death query distinguishes selected death sources, death-enhanced removal and supported death-triggered draw or token responses such as Grim Haruspex. Recurring fuel such as Skeleton remains outside its present coverage. Agent’s land-creature overlap remains unresolved in the reviewed finding.</p>
       <p>The Explorer can expose an unsupported instruction or missing review. Eligibility, mechanical recognition and assurance stay separate.</p></>,
     <p>These studies leave catalog-wide rules fidelity, gameplay reliability and discovery recall unmeasured. The selected cohort gives examples of gaps. Scenario passes and authored definitions describe their own scopes. Independent assurance needs evidence bound to specific requirements and revisions.</p>,
     <p>Recognizing renewable creature resources, filtering objective-relative roles and selectively layering objectives are intended research. Controlled deck experiments may investigate value without a separate pairwise strategic synergy model. These are hypotheses and future capabilities, not an authorized next increment.</p>,

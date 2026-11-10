@@ -13,9 +13,9 @@ import java.util.UUID
 
 @Serializable data class Objective(val id: String, val label: String, val explanation: String, val capabilities: List<String> = emptyList(), val coverageNote: String? = null)
 val objectives = listOf(
-    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Search recognized ways to cause your nontoken creatures to die and removal that responds to or benefits from a death. This is not a general search for death payoffs.",
-        listOf("Ways to sacrifice your nontoken creatures.", "Recognized effects that can cause the card itself to die.", "Removal triggered, enabled or improved by a creature's death."),
-        "Death-triggered draw, mana, tokens and life changes are not searched as independent payoffs. A card may still appear for another supported interaction. Ordinary removal does not qualify merely because it can target your creature."),
+    Objective("own-nontoken-creature-deaths", "My nontoken creatures die", "Find ways to produce your nontoken creatures' deaths, supported draw/token responses that benefit from them, and separately identified death-enhanced removal.",
+        listOf("Produces deaths: supported sacrifice and own-source death operations.", "Benefits from deaths: supported triggered card draw and creature or noncreature token creation, including Treasure.", "Death-enhanced removal: retained removal that a death triggers, enables or improves."),
+        "Incoming death restrictions and same-ability branches must qualify. Conditions can remain uncertain. Renewable creature inputs, life-change/mana payoffs, general replacement effects and composition are not implemented. Ordinary removal is still not admitted merely because it can target your creature."),
     Objective("reanimate-own-creatures", "Return our creatures", "Explore ways to bring creature cards from your graveyard onto your battlefield.", listOf("Return original creature cards from your graveyard to your battlefield.")),
     Objective("create-creature-tokens", "Create creature tokens", "Explore ways to create creature tokens you control, and the conditions they need.", listOf("Create one or more creature tokens under your control.", "Recognized variable amounts, with conditions for creating at least one token.")),
     Objective(GRAVEYARD_CREATURE_OBJECTIVE, GRAVEYARD_CREATURE_CRITERION, "Find ways to put a creature card into your graveyard through supported native mechanics.",
@@ -111,7 +111,7 @@ class StoredRun(
                 (rows.firstOrNull { it.verdict == Verdict.MATCH } ?: rows.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: rows.firstOrNull())
                     ?.let { explain(it, actions[card].orEmpty().firstOrNull { a -> a.id == it.actionId }).summary },
                 (if(report.objective == GRAVEYARD_CREATURE_OBJECTIVE && rows.any { it.verdict == Verdict.MATCH })
-                    rows.filter { it.verdict == Verdict.MATCH } else rows).map(::mechanic).distinct(),
+                    rows.filter { it.verdict == Verdict.MATCH } else rows).let { selected -> (selected.map(::mechanic)+selected.mapNotNull(::contributionRelationship)).distinct() },
                 when { rows.any { it.verdict == Verdict.MATCH } -> "IDENTIFIED"
                     rows.any { it.verdict == Verdict.UNKNOWN } -> "UNRESOLVED"
                     unsupported[card].orEmpty().isNotEmpty() -> "UNINTERPRETED"
