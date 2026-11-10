@@ -32,6 +32,16 @@ test('Discover separates original-creature suppliers from deaths rewards and ord
   await page.getByLabel('Card name').fill('Haunted Dead');
   await expect(detail.getByRole('heading',{name:'Haunted Dead',exact:true})).toBeVisible();
   await expect(supply).toContainText(/discard.*(2|two)/i);
+  await page.getByLabel('Card name').fill('Grafted Butcher');
+  await expect(detail.getByRole('heading',{name:'Grafted Butcher',exact:true})).toBeVisible();
+  await expect(supply).toContainText('Activate only as a sorcery');
+  const graft=run.cards.find((c:{card:string})=>c.card==='Grafted Butcher');
+  const evidence=await(await page.request.get(`/api/v1/runs/${run.runId}/cards/${graft.index}`)).json();
+  const producer=evidence.results.find((r:{branch:string;verdict:string})=>r.branch==='DIRECT_DEATH_GENERATOR'&&r.verdict==='MATCH');
+  const supplier=evidence.results.find((r:{branch:string;verdict:string})=>r.branch==='INTRINSIC_CREATURE_INPUT'&&r.verdict==='MATCH');
+  expect(producer.actionId).toBe(supplier.actionId);
+  expect(producer.abilityPath).not.toBe(supplier.abilityPath);
+  await detail.screenshot({path:'../generated/explorer/creature-inputs/grafted-overlap.png'});
   for(const name of ['Walking Corpse','Reanimate','Tymaret, the Murder King']) {
     await page.getByLabel('Card name').fill(name);
     await expect(results).toContainText('No cards in this view.');
