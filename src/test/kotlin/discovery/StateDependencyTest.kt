@@ -6,6 +6,7 @@ import com.wingedsheep.sdk.scripting.conditions.*
 import com.wingedsheep.sdk.scripting.effects.DrawCardsEffect
 import com.wingedsheep.sdk.scripting.references.Player
 import dev.mtg.assistant.discovery.*
+import dev.mtg.assistant.explorer.stateDependencyExplanation
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
@@ -35,6 +36,9 @@ class StateDependencyTest : FunSpec({
         verdict(d,StateAnchor.DeathHistory(controller=Controller.OPPONENT)) shouldBe Verdict.NO_MATCH
         verdict(d,StateAnchor.DeathHistory(controller=Controller.YOU,token=TokenStatus.TOKEN)) shouldBe Verdict.MATCH
         (d.actionId.contains("triggeredAbilities[0]")) shouldBe true
+        val explanation=stateDependencyExplanation(r,d)
+        explanation.summary.contains("separate from the ability's trigger") shouldBe true
+        explanation.requirements.any { it.startsWith("Incoming trigger:") && it.contains("End Step") } shouldBe true
     }
     test("event, source resolution history and replacement remain distinct") {
         val grim=extract("Grim Haruspex")
