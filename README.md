@@ -76,6 +76,8 @@ Bash: `bash scripts/bootstrap.sh`, `./dev test`, `bash scripts/verify.sh full`. 
 
 ## Current documentation
 
+- [Focused/basic selection and add/restrict research prototype](docs/SELECTION_COMPOSITION.md) — standalone CLI evidence; production Discover admission is unchanged.
+
 - [Verification coverage and fidelity challenge](docs/VERIFICATION_COVERAGE.md)
 
 - [Repository layout and historical export](docs/REPOSITORY_LAYOUT.md)

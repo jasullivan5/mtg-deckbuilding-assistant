@@ -591,98 +591,7 @@
     }
   },
   "cohortMemberships": {
-    "Wastes": {
-      "lands": true,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Wrath of God": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": true,
-      "removal": true,
-      "deathwipes": true
-    },
-    "Fleshbag Marauder": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": true,
-      "deathwipes": false
-    },
-    "Llanowar Elves": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Sol Ring": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Grave Pact": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": true,
-      "deathwipes": false
-    },
-    "Grim Haruspex": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
     "Tannuk, Memorial Ensign": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Beast Within": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": true,
-      "deathwipes": false
-    },
-    "Murder": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": true,
-      "deathwipes": false
-    },
-    "Reassembling Skeleton": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Hardened Scales": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": false,
-      "deathwipes": false
-    },
-    "Attrition": {
-      "lands": false,
-      "power4": false,
-      "boardwipe": false,
-      "removal": true,
-      "deathwipes": false
-    },
-    "Scute Swarm": {
       "lands": false,
       "power4": false,
       "boardwipe": false,
@@ -696,17 +605,17 @@
       "removal": false,
       "deathwipes": false
     },
-    "Damnation": {
-      "lands": false,
+    "Wastes": {
+      "lands": true,
       "power4": false,
-      "boardwipe": true,
-      "removal": true,
-      "deathwipes": true
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
     },
-    "Cyclonic Rift": {
+    "Fleshbag Marauder": {
       "lands": false,
       "power4": false,
-      "boardwipe": true,
+      "boardwipe": false,
       "removal": true,
       "deathwipes": false
     },
@@ -717,12 +626,139 @@
       "removal": true,
       "deathwipes": false
     },
+    "Beast Within": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Scute Swarm": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Llanowar Elves": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
     "Walking Corpse": {
       "lands": false,
       "power4": false,
       "boardwipe": false,
       "removal": false,
       "deathwipes": false
+    },
+    "Grim Haruspex": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Hardened Scales": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Sol Ring": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Wrath of God": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": true
+    },
+    "Murder": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Cyclonic Rift": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Attrition": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Grave Pact": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": true,
+      "deathwipes": false
+    },
+    "Reassembling Skeleton": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": false,
+      "removal": false,
+      "deathwipes": false
+    },
+    "Damnation": {
+      "lands": false,
+      "power4": false,
+      "boardwipe": true,
+      "removal": true,
+      "deathwipes": true
     }
-  }
+  },
+  "verifiedTagVocabulary": {
+    "url": "https://tagger.scryfall.com/card/lea/45",
+    "observedCard": "Wrath of God (LEA #45)",
+    "cardTags": [
+      "hate-regenerate",
+      "removal-creature",
+      "removal-destroy",
+      "sweeper",
+      "symmetrical"
+    ],
+    "mode": "Read-only browser UI; the narrowed public API query is separately captured, rather than inferred from this one card"
+  },
+  "captureDirectories": {
+    "lands": "scryfall",
+    "power4": "scryfall",
+    "boardwipe": "scryfall",
+    "removal": "scryfall",
+    "deathwipes": "verified-tag-conjunction"
+  },
+  "failedTagProbes": [
+    {
+      "path": "narrow-tags",
+      "manifestSha256": "a319ec6928c38271cd37a0681be996986908b5d2db779a0fff35c6f6b81f0991",
+      "note": "HTTP404 empty/unknown combinations retained as failed probes, not mechanical negatives"
+    },
+    {
+      "path": "narrow-tags-final",
+      "manifestSha256": "a29857e13eb68ea07988eaafecdc326fd15ac820cbb1ac394bddf6c31dcaf52e",
+      "note": "HTTP404 empty/unknown combinations retained as failed probes, not mechanical negatives"
+    },
+    {
+      "path": "tag-combinations",
+      "manifestSha256": "5a6f4ee61420af3d8f635dbd87e492a039b5bee210c222214f11796756f7adfc",
+      "note": "HTTP404 empty/unknown combinations retained as failed probes, not mechanical negatives"
+    }
+  ]
 }
