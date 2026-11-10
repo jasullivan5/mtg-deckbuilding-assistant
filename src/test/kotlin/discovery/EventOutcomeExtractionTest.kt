@@ -116,7 +116,7 @@ class EventOutcomeExtractionTest : FunSpec({
         val x=PathwayExtractor().extract(listOf(c))
         val response=deathResponses(x.eventOutcomes).single()
         response.verdict shouldBe Verdict.MATCH
-        x.pathways.filter { it.actionId!=response.outcome.actionId }.isNotEmpty() shouldBe true
+        evaluateDeathGeneration(x.pathways).any { it.verdict==Verdict.MATCH && it.pathway.actionId!=response.outcome.actionId } shouldBe true
     }
 
 })

@@ -75,7 +75,7 @@ class FindingExplanationTest : FunSpec({
         for (name in listOf("Agent of Shauku", "Acolyte of Aclazotz", "Accursed Centaur")) {
             val finding = stored.summary.cards.single { it.card == name }
             stored.card(finding.index)!!.results shouldBe report.results.filter { it.card == name }
-            finding.mechanics shouldBe listOf("Sacrifice")
+            finding.mechanics shouldBe listOf("Sacrifice", "Produces deaths")
         }
         val excluded = report.results.first { row -> row.decisions.any { it.verdict == Verdict.NO_MATCH && it.basis == "POLICY" } }
         explain(excluded).outcome.contains("selection rules") shouldBe true
