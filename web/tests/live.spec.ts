@@ -554,7 +554,8 @@ for (const width of [1440, 390]) test(`Primer distinguishes objective questions 
   const layering = map.getByRole('button', {name: /Objective discovery and selective layering/});
   await layering.focus(); await page.keyboard.press('Enter');
   await expect(layering).toHaveAttribute('aria-pressed', 'true');
-  await expect(primer).toContainText('Four queries implemented; relationship filtering and layering intended');
+  await expect(primer).toContainText('Five bounded queries implemented; relationship filtering and layering intended');
+  await expect(primer).toContainText('A creature died this turn');
   await expect(primer).toContainText('not implemented');
   await map.getByRole('button', {name: /Experimental deck evaluation/}).click();
   await expect(primer).toContainText('Future research hypothesis');
