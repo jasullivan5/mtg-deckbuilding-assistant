@@ -1,0 +1,38 @@
+{
+  "status": "Research-only protocol and source-first expectations; no production rule adoption",
+  "applicationBase": "f039a6bcde462424d9d3a82a06819abbe418a978",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "priorResearch": {"pr":48,"commit":"3264dc30f5fd29bc490df71ac2f90e2ea80bae14","statusAtStart":"OPEN_UNMERGED","reuse":"Existing source expectations, current full reports and identity evidence; do not merge, cherry-pick or overwrite branch"},
+  "unit": "Source-grounded ability/branch relative to an anchor; composition operates on confidently resolved physical Oracle identities and retains independent membership evidence",
+  "frozenExpectations": [
+    {"card":"Grave Pact","newControl":true,"expected":"Qualifying own nontoken death can trigger opponents' creature sacrifice; interaction is an event response, not an exclusion. Verify native trigger and affected players before projecting any relationship."},
+    {"card":"Tannuk, Memorial Ensign","newControl":true,"expected":"Own land entry event response with extra draw gated on this ability resolving for the second time in a turn. Verify exact source; triggering is not resolving. Internal ability history is significant but not an independently promoted state anchor."},
+    {"card":"Wastes","newControl":true,"expected":"Printed ordinary tap-for-one land mana tests baseline beyond intrinsic basic-land-type abilities. Basic land selection should recover it without claiming a distinctive focused engine."},
+    {"card":"Llanowar Elves","newControl":true,"expected":"Tap-for-one mana on a creature challenges category-relative ordinary baseline: may be distinctive relative to creatures but conventional mana-dork functionality. Do not automatically solve the baseline through amount or printed text."},
+    {"card":"Sol Ring","newControl":true,"expected":"Tap for two colorless demonstrates quantity distinct from one mana, but amount alone does not establish a universal engine or baseline category policy. No loop or value claim."},
+    {"card":"Cyclonic Rift","newControl":true,"expected":"Overloaded bounce is a broad board wipe without producing deaths. A functional board-wipe tag may validly retrieve it while being insufficient evidence for mass destruction or a creature-death relationship."},
+    {"card":"Beast Within","newControl":true,"expected":"Destroy plus token for the destroyed permanent's controller; extra outcome does not automatically supply the required original nontoken creature or event dependency. Verify exact target/controller and native availability."},
+    {"card":"Forest","newControl":false,"expected":"Ordinary land/mana recovered through basic source metadata. Retain prior native eligibility UNKNOWN; external eligibility is distinct, not an authorized correction."},
+    {"card":"Murder","newControl":false,"expected":"Focused primary exclusion; basic removal retrieval does not change mechanical death possibility or grant focused membership."},
+    {"card":"Wrath of God","newControl":false,"expected":"Focused primary exclusion under the revised model even though it includes own creatures. Basic board-wipe selection retrieves it; union preserves that reason."},
+    {"card":"Damnation","newControl":false,"expected":"Same interaction-only primary boundary as Wrath; retain compatibility and basic membership."},
+    {"card":"Attrition","newControl":false,"expected":"Qualifying sacrifice-cost contribution remains included; preserve activation, target and output association. Removal is a separate contribution."},
+    {"card":"Grim Haruspex","newControl":false,"expected":"Another own nontoken death causes draw through a supported event relationship."},
+    {"card":"Reassembling Skeleton","newControl":false,"expected":"Original self-return supplies potential nontoken material; no death or repeated loop is implied."},
+    {"card":"Tragic Slip","newControl":false,"expected":"Current historical enhanced-removal match retained in original evidence; proposed event selection withholds its history-only pathway. A creature died this turn is a historical state with broader subject scope, not our nontoken event."},
+    {"card":"Scute Swarm","newControl":false,"expected":"Own land-entry response and independently meaningful six-land condition at resolution can overlap; unsupported branches remain uncertain and are not manufactured matches."},
+    {"card":"Hardened Scales","newControl":false,"expected":"Replacement modifies impending positive counter placement on own creature; does not initiate placement or become a triggered response."},
+    {"card":"Walking Corpse","newControl":false,"expected":"Basic creature-card selection includes ordinary material without adding a focused supply relationship."},
+    {"card":"Fleshbag Marauder","newControl":false,"expected":"Symmetrical sacrifice-only interaction challenges the boundary with costs. Revised primary expectation excludes the interaction-only effect, rather than admitting every SACRIFICE operation."}
+  ],
+  "experiment": [
+    "Use the unchanged current death report for a five-color eligible commander so Wrath is not excluded merely by color. Keep original results, checks and eligibility intact.",
+    "Create a read-only projected event selection: retain current accepted direct, supplier and draw/token response paths; retain legacy enhanced-removal paths only where their recorded native action is a supported direct death trigger. History-only and unresolved associations remain separately visible. This reuses current policies, not proof that a general admission algorithm exists.",
+    "Select ordinary land/creature cards and printed power thresholds from retained external structured metadata with explicit normal-layout scope. Observe live Scryfall search syntax and functional tag results; pin queries and original responses with timestamps and hashes.",
+    "Restrict live functional membership to the same retained external Oracle population and commander legality/identity scope; report live-only, missing, changed identity and unavailable-native cases without coercing identity.",
+    "Union focused contributors with a basic board-wipe selection; intersect focused contributors with basic creature selection. Deduplicate physical Oracle identity while retaining all selection memberships and ability/path evidence.",
+    "Do not put manual expected classifications into accepted mechanical results. Source expectation overlays remain explicit, including event/state/internal-history/modification examples with unsupported facts.",
+    "Test ambiguous identity, missing native definitions, same-card multiple paths, same-name different identities, token versus original card, tag breadth, empty sets, conflicting context and historical versus event dependencies."
+  ],
+  "limits":"Known-card purposive controls, not blinded qualification. Seven new controls are frozen before source/native outcome inspection. No production changes, general extractor, permanent composition schema, rules parser or strategic classifier. No inferred multi-card causal chain or recommendation from union/intersection."
+}
