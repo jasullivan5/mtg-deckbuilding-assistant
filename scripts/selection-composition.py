@@ -132,6 +132,8 @@ def experiment(report, records, identities, tags, report_hash, snapshot_hash):
         ref=dict(reportFileSha256=report_hash,rowIndex=index,rowSha256=digest(row),nativeCard=row['card'],
             actionId=row['actionId'],abilityPath=row['abilityPath'],branch=row['branch'],
             mechanicalCompatibility=row.get('mechanicalCompatibility'),policyAcceptance=row.get('policyAcceptance'),
+            interpretation=row.get('interpretation'),localSupport=row.get('localSupport'),
+            dependency=row.get('dependency'),prerequisites=row.get('prerequisites',[]),
             note='Existing structural MATCH, not successful gameplay or whole-card certification')
         put('current-focused',pool[identity],'UNCHANGED_PRODUCTION_RESULT',**ref)
         status=project_event(row,actions.get(row['actionId']))
