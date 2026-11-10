@@ -1,0 +1,4239 @@
+{
+  "scope": "Pinned limited real-data test sample, not full population. Production observations and basic memberships are separate.",
+  "sourceContext": {
+    "algorithm": "physical-identity-v1",
+    "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+    "nativeIdentitySha256": "af45623ce691b4d3f129121b0ce73e7224adf941295be45d414d0906f3ad0adb"
+  },
+  "cards": [
+    {
+      "id": "baf8f4f2-9f25-4cd2-8d78-1041e134aeac",
+      "oracle_id": "05d24b0c-904a-46b6-b42a-96a4d91a0dd4",
+      "name": "Wastes",
+      "type_line": "Basic Land",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "537d2b05-3f52-45d6-8fe3-26282085d0c6",
+      "oracle_id": "34515b16-c9a4-4f98-8c77-416a7a523407",
+      "name": "Wrath of God",
+      "type_line": "Sorcery",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "W"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "not_legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "fce2baa4-2976-4bbd-b6c5-a5a3c6a901be",
+      "oracle_id": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+      "name": "Fleshbag Marauder",
+      "type_line": "Creature — Zombie Warrior",
+      "layout": "normal",
+      "power": "3",
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "6a0b230b-d391-4998-a3f7-7b158a0ec2cd",
+      "oracle_id": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
+      "name": "Llanowar Elves",
+      "type_line": "Creature — Elf Druid",
+      "layout": "normal",
+      "power": "1",
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "fc817e07-c1f3-469f-9cf7-0945dea7400f",
+      "oracle_id": "6ad8011d-3471-4369-9d68-b264cc027487",
+      "name": "Sol Ring",
+      "type_line": "Artifact",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "banned",
+        "pauper": "not_legal",
+        "vintage": "restricted",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "banned",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "banned",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "banned"
+      },
+      "object": "card"
+    },
+    {
+      "id": "f5a4970b-2ba6-4c91-a301-369369cdf360",
+      "oracle_id": "6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2",
+      "name": "Grave Pact",
+      "type_line": "Enchantment",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "not_legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "f5c19b87-e114-46d4-9f6c-c02e838a08dd",
+      "oracle_id": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "name": "Grim Haruspex",
+      "type_line": "Creature — Human Wizard",
+      "layout": "normal",
+      "power": "3",
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "52498b7b-0389-4e7b-b29f-7ac86aab9229",
+      "oracle_id": "76cb1912-3791-44b8-b594-b92dab21bafc",
+      "name": "Tannuk, Memorial Ensign",
+      "type_line": "Legendary Creature — Kavu Pilot",
+      "layout": "normal",
+      "power": "2",
+      "color_identity": [
+        "G",
+        "R"
+      ],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "400b43aa-c1d2-4435-b863-061f43889422",
+      "oracle_id": "7735eeba-693b-47e2-bd51-414379cf1016",
+      "name": "Beast Within",
+      "type_line": "Instant",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "2c249609-9cf7-46f1-b94c-9329add966bb",
+      "oracle_id": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+      "name": "Murder",
+      "type_line": "Instant",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "4d431445-d7db-4ce1-b422-41494d9be1b4",
+      "oracle_id": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+      "name": "Reassembling Skeleton",
+      "type_line": "Creature — Skeleton Warrior",
+      "layout": "normal",
+      "power": "1",
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+      "oracle_id": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+      "name": "Hardened Scales",
+      "type_line": "Enchantment",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "f8f29b57-172e-407b-b55e-32fe96198f92",
+      "oracle_id": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+      "name": "Attrition",
+      "type_line": "Enchantment",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "ea630ba1-22f9-4a10-bdc6-0d03128214f4",
+      "oracle_id": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+      "name": "Scute Swarm",
+      "type_line": "Creature — Insect",
+      "layout": "normal",
+      "power": "1",
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "2e781bfd-f8cb-4d20-b977-4359f3a21311",
+      "oracle_id": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+      "name": "Forest",
+      "type_line": "Basic Land — Forest",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "legal",
+        "predh": "legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "d3c0aac5-b9f1-4446-bfea-3e1dd1cf1f2f",
+      "oracle_id": "d57a8f0b-7989-4db5-8756-6f2690097252",
+      "name": "Damnation",
+      "type_line": "Sorcery",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal",
+        "tlr": "not_legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "dfb7c4b9-f2f4-4d4e-baf2-86551c8150fe",
+      "oracle_id": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+      "name": "Cyclonic Rift",
+      "type_line": "Instant",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "U"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "cbcb0668-e88c-4462-b079-34f140c0277e",
+      "oracle_id": "eaddc7cf-5d58-422a-ba00-6708dee2d853",
+      "name": "Llanowar Elves",
+      "type_line": "Token Creature — Elf Druid",
+      "layout": "token",
+      "power": "1",
+      "color_identity": [
+        "G"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "timeless": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "not_legal",
+        "legacy": "not_legal",
+        "pauper": "not_legal",
+        "vintage": "not_legal",
+        "penny": "not_legal",
+        "commander": "not_legal",
+        "oathbreaker": "not_legal",
+        "standardbrawl": "not_legal",
+        "brawl": "not_legal",
+        "competitivebrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "not_legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "not_legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "132ccc20-cb42-4474-b747-7e41a661060e",
+      "oracle_id": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "name": "Tragic Slip",
+      "type_line": "Instant",
+      "layout": "normal",
+      "power": null,
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    },
+    {
+      "id": "053b59b4-a22c-4228-aadc-ae9da6bb465e",
+      "oracle_id": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+      "name": "Walking Corpse",
+      "type_line": "Creature — Zombie",
+      "layout": "normal",
+      "power": "2",
+      "color_identity": [
+        "B"
+      ],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "not_legal",
+        "brawl": "legal",
+        "competitivebrawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "not_legal",
+        "tlr": "legal"
+      },
+      "object": "card"
+    }
+  ],
+  "controlOracleIds": {
+    "Tannuk, Memorial Ensign": "76cb1912-3791-44b8-b594-b92dab21bafc",
+    "Forest": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+    "Wastes": "05d24b0c-904a-46b6-b42a-96a4d91a0dd4",
+    "Fleshbag Marauder": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+    "Tragic Slip": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+    "Beast Within": "7735eeba-693b-47e2-bd51-414379cf1016",
+    "Scute Swarm": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+    "Llanowar Elves": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
+    "Walking Corpse": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+    "Grim Haruspex": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+    "Hardened Scales": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+    "Sol Ring": "6ad8011d-3471-4369-9d68-b264cc027487",
+    "Wrath of God": "34515b16-c9a4-4f98-8c77-416a7a523407",
+    "Murder": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+    "Cyclonic Rift": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+    "Attrition": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+    "Grave Pact": "6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2",
+    "Reassembling Skeleton": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+    "Damnation": "d57a8f0b-7989-4db5-8756-6f2690097252"
+  },
+  "report": {
+    "objective": "own-nontoken-creature-deaths",
+    "commander": "Kenrith, the Returned King",
+    "allowedIdentity": [
+      "BLACK",
+      "BLUE",
+      "GREEN",
+      "RED",
+      "WHITE"
+    ],
+    "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "mechanicalInputCards": [
+      "Attrition",
+      "Beast Within",
+      "Cyclonic Rift",
+      "Damnation",
+      "Fleshbag Marauder",
+      "Grim Haruspex",
+      "Hardened Scales",
+      "Llanowar Elves",
+      "Murder",
+      "Reassembling Skeleton",
+      "Scute Swarm",
+      "Sol Ring",
+      "Tannuk, Memorial Ensign",
+      "Tragic Slip",
+      "Walking Corpse",
+      "Wrath of God"
+    ],
+    "results": [
+      {
+        "card": "Attrition",
+        "identifier": "UDS:52:Attrition",
+        "face": "front",
+        "actionId": "Attrition|front|script.activatedAbilities[0]",
+        "abilityPath": "script.activatedAbilities[0].cost.costs[1].atom",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "MATCH",
+        "operation": "SACRIFICE",
+        "costOrEffect": "ACTIVATION_COST",
+        "affectedScope": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+          "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "AtomSacrifice",
+          "filter": {
+            "cardPredicates": [
+              {
+                "type": "IsCreature"
+              }
+            ]
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=YOU; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "MATCH",
+            "basis": "POLICY",
+            "reason": "Sacrifice is a cost of this action; no utility assumption"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/uds/cards/Attrition.kt",
+          "native:front.script.activatedAbilities[0].cost.costs[1].atom",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": "DIRECT_DEATH_GENERATOR",
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "SACRIFICE_PAYS_FOR_ACTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "ACTIVATED",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Sacrifice count=1; each qualifying creature produces its own death event if not replaced; excludeSelf=false; distinctNames=false; all required objects must be payable"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each activation subject to native costs/timing/limits",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Attrition",
+        "identifier": "UDS:52:Attrition",
+        "face": "front",
+        "actionId": "Attrition|front|script.activatedAbilities[0]",
+        "abilityPath": "script.activatedAbilities[0].effect",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DESTROY",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "nonblack creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+          "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "MoveToZone",
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "destination": "Graveyard",
+          "byDestruction": true
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "UNKNOWN",
+            "basis": "MECHANICAL",
+            "reason": "nonblack creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "UNKNOWN",
+            "basis": "MECHANICAL",
+            "reason": "nonblack creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "UNKNOWN",
+            "basis": "MECHANICAL",
+            "reason": "nonblack creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/uds/cards/Attrition.kt",
+          "native:front.script.activatedAbilities[0].effect",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "UNKNOWN",
+        "nontokenCompatibility": "UNKNOWN",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "UNKNOWN",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": null,
+        "circumstances": {
+          "actionKind": "ACTIVATED",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each activation subject to native costs/timing/limits",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "PARTIALLY_SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Beast Within",
+        "identifier": "NPH:103:Beast Within",
+        "face": "front",
+        "actionId": "Beast Within|front|script.spell",
+        "abilityPath": "script.spellEffect.effects[0]",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DESTROY",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "permanent; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "MoveToZone",
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "destination": "Graveyard",
+          "byDestruction": true
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "permanent; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "permanent; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "permanent; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nph/cards/BeastWithin.kt",
+          "native:front.script.spellEffect.effects[0]",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Damnation",
+        "identifier": "PLC:85:Damnation",
+        "face": "front",
+        "actionId": "Damnation|front|script.spell",
+        "abilityPath": "script.spellEffect.effects[1]",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DESTROY",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Collection destroyAll_gathered move: sourceBattlefield=true; destination=ToZone(zone=GRAVEYARD, player=You, placement=Default); operation=Destroy; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "MoveCollection",
+          "from": "destroyAll_gathered",
+          "destination": {
+            "type": "ToZone",
+            "zone": "Graveyard"
+          },
+          "moveType": "Destroy",
+          "noRegenerate": true
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: symmetrical/incidental opposing removal is not enabled by our death; compatibility is retained"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/plc/cards/Damnation.kt",
+          "native:front.script.spellEffect.effects[1]",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Collection destroyAll_gathered move: sourceBattlefield=true; destination=ToZone(zone=GRAVEYARD, player=You, placement=Default); operation=Destroy; filter=null; order=Preserve; ownerControl=false; faceDown=null; only actual arrivals qualify; replacements/failures may prevent entry or death"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [
+            "Native source restrictions: BattlefieldMatching(filter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), player=Each, excludeSelf=false, includeAttachments=false, excludeTriggering=false, excludeChosenTargets=false)"
+          ],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Fleshbag Marauder",
+        "identifier": "ALA:76:Fleshbag Marauder",
+        "face": "front",
+        "actionId": "Fleshbag Marauder|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "SACRIFICE",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "ForceSacrifice",
+          "filter": {
+            "cardPredicates": [
+              {
+                "type": "IsCreature"
+              }
+            ]
+          },
+          "target": {
+            "type": "PlayerRef",
+            "player": {
+              "type": "Each"
+            }
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: symmetrical/incidental opposing removal is not enabled by our death; compatibility is retained"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ala/cards/FleshbagMarauder.kt",
+          "native:front.script.triggeredAbilities[0].effect",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "TRIGGERED",
+          "mandatory": "MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Murder",
+        "identifier": "M13:101:Murder",
+        "face": "front",
+        "actionId": "Murder|front|script.spell",
+        "abilityPath": "script.spellEffect",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DESTROY",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "MoveToZone",
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "destination": "Graveyard",
+          "byDestruction": true
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/Murder.kt",
+          "native:front.script.spellEffect",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Tannuk, Memorial Ensign",
+        "identifier": "EOE:233:Tannuk, Memorial Ensign",
+        "face": "front",
+        "actionId": "Tannuk, Memorial Ensign|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DAMAGE_POTENTIALLY_LETHAL",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "card; actor=ANY; selfCreature=null; battlefieldCompatible=false; ; constraints=[]",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=ANY; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Damage amount must be positive and lethal in the actual state",
+          "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "DealDamage",
+          "amount": {
+            "type": "Fixed",
+            "amount": 1
+          },
+          "target": {
+            "type": "PlayerRef",
+            "player": {
+              "type": "EachOpponent"
+            }
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "NO_MATCH",
+            "basis": "MECHANICAL",
+            "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=false; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "NO_MATCH",
+            "basis": "MECHANICAL",
+            "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=false; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "NO_MATCH",
+            "basis": "MECHANICAL",
+            "reason": "card; actor=ANY; selfCreature=null; battlefieldCompatible=false; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/TannukMemorialEnsign.kt",
+          "native:front.script.triggeredAbilities[0].effect.effects[0]",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "PARTIAL_ACTION_SUPPORTED_PATHWAY_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "NO_MATCH",
+        "nontokenCompatibility": "NO_MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "MANDATORY_OR_INCIDENTAL_TRIGGER",
+        "mechanicalCompatibility": "NO_MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": null,
+        "circumstances": {
+          "actionKind": "TRIGGERED",
+          "mandatory": "MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=ANY; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Damage amount must be positive and lethal in the actual state",
+            "Damage amount must be sufficient after prevention; indestructibility and replacement effects matter"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Per matching trigger/branch; source deaths consume that battlefield object",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Tragic Slip",
+        "identifier": "DKA:76:Tragic Slip",
+        "face": "front",
+        "actionId": "Tragic Slip|front|script.spell",
+        "abilityPath": "script.spellEffect.then",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "TOUGHNESS_REDUCTION",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Gate={\"type\":\"Gate.WhenCondition\",\"condition\":{\"type\":\"CreatureDiedThisTurn\"}}; success branch",
+          "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+          "Toughness must reach zero or damage become lethal in the actual game state",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "ModifyStats",
+          "powerModifier": {
+            "type": "Fixed",
+            "amount": -13
+          },
+          "toughnessModifier": {
+            "type": "Fixed",
+            "amount": -13
+          },
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+          "native:front.script.spellEffect.then",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Gate={\"type\":\"Gate.WhenCondition\",\"condition\":{\"type\":\"CreatureDiedThisTurn\"}}; success branch",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Toughness must reach zero or damage become lethal in the actual game state"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Tragic Slip",
+        "identifier": "DKA:76:Tragic Slip",
+        "face": "front",
+        "actionId": "Tragic Slip|front|script.spell",
+        "abilityPath": "script.spellEffect.otherwise",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "TOUGHNESS_REDUCTION",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Gate failed: WhenCondition(condition=CreatureDiedThisTurnCondition)",
+          "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+          "Toughness must reach zero or damage become lethal in the actual game state",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "ModifyStats",
+          "powerModifier": {
+            "type": "Fixed",
+            "amount": -1
+          },
+          "toughnessModifier": {
+            "type": "Fixed",
+            "amount": -1
+          },
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+          "native:front.script.spellEffect.otherwise",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Gate failed: WhenCondition(condition=CreatureDiedThisTurnCondition)",
+            "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+            "Toughness must reach zero or damage become lethal in the actual game state"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Wrath of God",
+        "identifier": "LEA:45:Wrath of God",
+        "face": "front",
+        "actionId": "Wrath of God|front|script.spell",
+        "abilityPath": "script.spellEffect.body",
+        "branch": "DIRECT_DEATH_GENERATOR",
+        "verdict": "NO_MATCH",
+        "operation": "DESTROY",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Iteration=Group(filter=GroupFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSelf=false, chosenSubtypeKey=null, excludeTarget=false, excludeTriggeringEntity=false, scope=Battlefield), noRegenerate=true)",
+          "Destruction must succeed (indestructible/regeneration/protection may prevent it)",
+          "Face front must be available; transformation/flip prerequisites are not simulated",
+          "Potential only: legal choices, resources, applicable zones, and no death-replacing effects are assumed"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "MoveToZone",
+          "target": {
+            "type": "IterationEntity"
+          },
+          "destination": "Graveyard",
+          "byDestruction": true
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-generation-policy",
+            "verdict": "NO_MATCH",
+            "basis": "POLICY",
+            "reason": "Policy: ordinary friendly-target removal; choosing our creature alone does not qualify"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/WrathOfGod.kt",
+          "native:front.script.spellEffect.body",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNLINKED_RESOLUTION",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "NO_MATCH",
+        "mechanicalCapability": "CREATURE_DEATH_PATHWAY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+            "Iteration=Group(filter=GroupFilter(baseFilter=GameObjectFilter(cardPredicates=[IsCreature], statePredicates=[], controllerPredicate=null, anyOf=[]), excludeSelf=false, chosenSubtypeKey=null, excludeTarget=false, excludeTriggeringEntity=false, scope=Battlefield), noRegenerate=true)",
+            "Destruction must succeed (indestructible/regeneration/protection may prevent it)"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Tragic Slip",
+        "identifier": "DKA:76:Tragic Slip",
+        "face": "front",
+        "actionId": "Tragic Slip|front|script.spell",
+        "abilityPath": "script.spellEffect.gate.condition",
+        "branch": "DEATH_ENHANCED_REMOVAL",
+        "verdict": "MATCH",
+        "operation": "TOUGHNESS_REDUCTION",
+        "costOrEffect": "DEPENDENCY",
+        "affectedScope": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script",
+          "Toughness modifier must be strictly negative; actual toughness/death threshold and native conditions still apply",
+          "Death event must precede/trigger the removal action; all other native requirements still apply"
+        ],
+        "dependency": "CreatureDiedThisTurnCondition",
+        "nativeOperation": {
+          "type": "ModifyStats",
+          "powerModifier": {
+            "type": "Fixed",
+            "amount": -13
+          },
+          "toughnessModifier": {
+            "type": "Fixed",
+            "amount": -13
+          },
+          "target": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "decisions": [
+          {
+            "stage": "potential-creature-death",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "controller-YOU",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "token-NONTOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+          },
+          {
+            "stage": "death-enhancement",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "CreatureDiedThisTurnCondition"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+          "native:front.script.spellEffect.gate.condition",
+          "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sdk/src/main/kotlin/com/wingedsheep/sdk/scripting"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": "DEATH_ENHANCED_REMOVAL",
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "UNRESOLVED",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": null,
+        "mechanicalCapability": "DEATH_EVENT_REMOVAL_DEPENDENCY",
+        "circumstances": {
+          "actionKind": "SPELL",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each cast subject to native costs/timing/permissions",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      },
+      {
+        "card": "Grim Haruspex",
+        "identifier": "KTK:73:Grim Haruspex",
+        "face": "front",
+        "actionId": "Grim Haruspex|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "branch": "DEATH_TRIGGERED_OUTCOME",
+        "verdict": "MATCH",
+        "operation": "DRAW_CARDS",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "a creature nontoken you control would die",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed",
+          "Native trigger, targets, choices, resources and draw replacements apply; drawing is not guaranteed or a deck-value score",
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed",
+          "The qualifying nontoken creature must actually die; death replacements, trigger suppression, legal targets and resolution can prevent this outcome",
+          "Binding=OTHER; source face front, native active-zone rules [BATTLEFIELD] and last-known information must permit triggering"
+        ],
+        "dependency": "a creature nontoken you control would die",
+        "nativeOperation": {
+          "type": "DrawCards",
+          "count": {
+            "type": "Fixed",
+            "amount": 1
+          }
+        },
+        "decisions": [
+          {
+            "stage": "qualifying-death-event",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Intersection with our nontoken creature's battlefield-to-graveyard event; native binding=OTHER; trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false)"
+          },
+          {
+            "stage": "same-ability-outcome",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Grim Haruspex|front|script.triggeredAbilities[0] / script.triggeredAbilities[0].effect; SAME_TRIGGER_BRANCH; unsupported conditions remain unresolved"
+          },
+          {
+            "stage": "outcome-recipient",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Native outcome receiver=YOU; not a strategic value judgment"
+          },
+          {
+            "stage": "positive-outcome-quantity",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Positive native quantity required: Fixed(amount=1)"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/GrimHaruspex.kt"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": "DEATH_TRIGGERED_OUTCOME",
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "DEATH_TRIGGERS_OUTCOME",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "MATCH",
+        "mechanicalCapability": "DEATH_TRIGGERED_DRAW_CARDS",
+        "circumstances": {
+          "actionKind": "TRIGGERED",
+          "mandatory": "MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed",
+            "Native trigger, targets, choices, resources and draw replacements apply; drawing is not guaranteed or a deck-value score"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [
+            "Binding=OTHER"
+          ],
+          "repeatability": "Per matching native event and retained turn caps/conditions; not guaranteed repeatability",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null,
+        "eventOutcome": {
+          "id": "Grim Haruspex|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect|DRAW",
+          "card": "Grim Haruspex",
+          "face": "front",
+          "actionId": "Grim Haruspex|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect",
+          "event": {
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "filter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsCreature"
+                  },
+                  {
+                    "type": "IsNontoken"
+                  }
+                ],
+                "statePredicates": [],
+                "controllerPredicate": {
+                  "type": "ControlledByYou"
+                },
+                "anyOf": []
+              },
+              "from": "Battlefield",
+              "to": "Graveyard",
+              "excludeTo": null,
+              "excludeSacrifice": false,
+              "requireCraftMaterial": false,
+              "description": "a creature nontoken you control would die"
+            },
+            "binding": "OTHER",
+            "activeZones": [
+              "Battlefield"
+            ],
+            "sourceIsCreature": true,
+            "nativeAbility": {
+              "id": "Grim Haruspex:1",
+              "trigger": {
+                "type": "ZoneChangeEvent",
+                "filter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    },
+                    {
+                      "type": "IsNontoken"
+                    }
+                  ],
+                  "controllerPredicate": {
+                    "type": "ControlledByYou"
+                  }
+                },
+                "from": "Battlefield",
+                "to": "Graveyard"
+              },
+              "binding": "OTHER",
+              "effect": {
+                "type": "DrawCards",
+                "count": {
+                  "type": "Fixed",
+                  "amount": 1
+                }
+              }
+            },
+            "confidence": "MATCH",
+            "requirements": [
+              "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+              "InterveningIf=null; restriction=null; cap=null",
+              "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed"
+            ]
+          },
+          "kind": "DRAW_CARDS",
+          "quantity": {
+            "type": "Fixed",
+            "amount": 1,
+            "description": "1"
+          },
+          "recipient": "YOU",
+          "confidence": "MATCH",
+          "positiveQuantity": "MATCH",
+          "optional": false,
+          "prerequisites": [
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed",
+            "Native trigger, targets, choices, resources and draw replacements apply; drawing is not guaranteed or a deck-value score"
+          ],
+          "native": {
+            "type": "DrawCards",
+            "count": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          },
+          "token": null,
+          "factId": null,
+          "mechanism": "TRIGGERED_ABILITY",
+          "linkage": "SAME_TRIGGER_BRANCH",
+          "unresolved": []
+        }
+      },
+      {
+        "card": "Reassembling Skeleton",
+        "identifier": "ARC:22:Reassembling Skeleton",
+        "face": "front",
+        "actionId": "Reassembling Skeleton|front|script.activatedAbilities[0]",
+        "abilityPath": "script.activatedAbilities[0].effect",
+        "branch": "INTRINSIC_CREATURE_INPUT",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "Original source creature; GRAVEYARD/YOU → BATTLEFIELD/OWNER",
+        "prerequisites": [
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD",
+          "Only actual successful movement; legal choices/resources and no replacing effects assumed",
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD",
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD",
+          "Pay all activation costs, with legal resources; the original return card must remain available",
+          "Source card must be ours and remain available; all native costs, conditions, choices and replacement effects apply",
+          "The return does not cause a death; another legal mechanism is needed. No sacrifice/return loop or unlimited recursion is demonstrated"
+        ],
+        "dependency": "{1}{B}: Put this creature onto the battlefield tapped",
+        "nativeOperation": {
+          "type": "MoveToZone",
+          "target": {
+            "type": "Self"
+          },
+          "destination": "Battlefield",
+          "placement": "Tapped",
+          "fromZone": "Graveyard"
+        },
+        "decisions": [
+          {
+            "stage": "originating-card-binding",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Explicit original source binding; fact=Reassembling Skeleton|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect|MOVE_OBJECT|0; action=Reassembling Skeleton|front|script.activatedAbilities[0]; face=front. A target or collection is not assumed to be this card."
+          },
+          {
+            "stage": "original-creature-card",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Normal original creature card required; multi-face/type-changing interpretations remain unresolved. A token copy is a different resource."
+          },
+          {
+            "stage": "own-graveyard-to-own-battlefield",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Original card in its owner's graveyard; owner and returning controller must be us. Native explicit movement/filter/zone constraints are retained; legacy confidence=MATCH, source-aware confidence=MATCH, source-aware zone=GRAVEYARD. Ambiguous legacy fallback does not become a definitive negative; existing facts and objectives are unchanged."
+          },
+          {
+            "stage": "source-availability",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "ACTIVATED; active zones=[GRAVEYARD]; bound self-death transition=NO_MATCH; source-consuming cost=MATCH. Source must remain available for this native route."
+          },
+          {
+            "stage": "same-supported-return-branch",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "Native action and branch Reassembling Skeleton|front|script.activatedAbilities[0]/script.activatedAbilities[0].effect; conditions, payments, timing and other resources remain prerequisites."
+          },
+          {
+            "stage": "future-death-barriers",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "[] Supported return is not proof of a later death or a repeatable sacrifice/return cycle."
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/arc/cards/ReassemblingSkeleton.kt"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "PARTIAL_ACTION_SELF_RETURN_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": "INTRINSIC_CREATURE_INPUT",
+        "controllerCompatibility": "MATCH",
+        "nontokenCompatibility": "MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "ORIGINAL_SOURCE_CREATURE_REPLENISHMENT",
+        "mechanicalCompatibility": "MATCH",
+        "policyAcceptance": "MATCH",
+        "mechanicalCapability": "INTRINSIC_ORIGINAL_CREATURE_RETURN",
+        "circumstances": {
+          "actionKind": "ACTIVATED",
+          "mandatory": "NO_MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Each activation subject to native costs/timing/limits",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "PARTIALLY_SUPPORTED",
+        "stateEntry": null,
+        "selfReturn": {
+          "factId": "Reassembling Skeleton|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect|MOVE_OBJECT|0",
+          "card": "Reassembling Skeleton",
+          "face": "front",
+          "actionId": "Reassembling Skeleton|front|script.activatedAbilities[0]",
+          "path": "script.activatedAbilities[0].effect",
+          "sourceCreature": "MATCH",
+          "binding": "MATCH",
+          "context": {
+            "kind": "ACTIVATED",
+            "activeZones": [
+              "Graveyard"
+            ],
+            "opportunity": "{1}{B}: Put this creature onto the battlefield tapped",
+            "activationCost": "{1}{B}",
+            "confidence": "MATCH",
+            "selfDeathTransition": "NO_MATCH",
+            "sourceCostCompatibility": "MATCH",
+            "requirements": [
+              "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD",
+              "Pay all activation costs, with legal resources; the original return card must remain available"
+            ],
+            "limits": []
+          },
+          "branchSupport": "MATCH",
+          "optional": false,
+          "delayed": false,
+          "requirements": [
+            "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD"
+          ],
+          "limits": [],
+          "sourceZone": "Graveyard",
+          "destinationZone": "Battlefield",
+          "sourcePlayer": "YOU",
+          "destinationController": "OWNER"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "Attrition|front|script.activatedAbilities[0]",
+        "card": "Attrition",
+        "face": "front",
+        "path": "script.activatedAbilities[0]",
+        "prerequisites": [
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=BATTLEFIELD"
+        ],
+        "native": {
+          "id": "Attrition:1",
+          "cost": {
+            "type": "CostComposite",
+            "costs": [
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomMana",
+                  "cost": "{B}"
+                }
+              },
+              {
+                "type": "CostAtomWrapper",
+                "atom": {
+                  "type": "AtomSacrifice",
+                  "filter": {
+                    "cardPredicates": [
+                      {
+                        "type": "IsCreature"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Graveyard",
+            "byDestruction": true
+          },
+          "targetRequirements": [
+            {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    },
+                    {
+                      "type": "NotColor",
+                      "color": "BLACK"
+                    }
+                  ]
+                }
+              },
+              "id": "t0"
+            }
+          ]
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Beast Within|front|script.spell",
+        "card": "Beast Within",
+        "face": "front",
+        "path": "script.spell",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+        ],
+        "native": {
+          "spellEffect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "MoveToZone",
+                "target": {
+                  "type": "BoundVariable",
+                  "name": "t0"
+                },
+                "destination": "Graveyard",
+                "byDestruction": true
+              },
+              {
+                "type": "CreateToken",
+                "power": 3,
+                "toughness": 3,
+                "colors": [
+                  "GREEN"
+                ],
+                "creatureTypes": [
+                  "Beast"
+                ],
+                "imageUri": "https://cards.scryfall.io/normal/front/d/9/d93d0098-2147-4e84-af15-91dec8b98d21.jpg?1721427669",
+                "controller": {
+                  "type": "TargetController"
+                }
+              }
+            ]
+          },
+          "targetRequirements": [
+            {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsPermanent"
+                    }
+                  ]
+                }
+              },
+              "id": "t0"
+            }
+          ]
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Damnation|front|script.spell",
+        "card": "Damnation",
+        "face": "front",
+        "path": "script.spell",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+        ],
+        "native": {
+          "spellEffect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "BattlefieldMatching",
+                  "filter": {
+                    "cardPredicates": [
+                      {
+                        "type": "IsCreature"
+                      }
+                    ]
+                  }
+                },
+                "storeAs": "destroyAll_gathered"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "destroyAll_gathered",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Graveyard"
+                },
+                "moveType": "Destroy",
+                "noRegenerate": true
+              }
+            ]
+          }
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Fleshbag Marauder|front|script.triggeredAbilities[0]",
+        "card": "Fleshbag Marauder",
+        "face": "front",
+        "path": "script.triggeredAbilities[0]",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null"
+        ],
+        "native": {
+          "id": "Fleshbag Marauder:1",
+          "trigger": {
+            "type": "ZoneChangeEvent",
+            "to": "Battlefield"
+          },
+          "effect": {
+            "type": "ForceSacrifice",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            },
+            "target": {
+              "type": "PlayerRef",
+              "player": {
+                "type": "Each"
+              }
+            }
+          }
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Grim Haruspex|front|script.triggeredAbilities[0]",
+        "card": "Grim Haruspex",
+        "face": "front",
+        "path": "script.triggeredAbilities[0]",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsCreature, IsNontoken], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=BATTLEFIELD, to=GRAVEYARD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=OTHER; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null"
+        ],
+        "native": {
+          "id": "Grim Haruspex:1",
+          "trigger": {
+            "type": "ZoneChangeEvent",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "IsNontoken"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            },
+            "from": "Battlefield",
+            "to": "Graveyard"
+          },
+          "binding": "OTHER",
+          "effect": {
+            "type": "DrawCards",
+            "count": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          }
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Murder|front|script.spell",
+        "card": "Murder",
+        "face": "front",
+        "path": "script.spell",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+        ],
+        "native": {
+          "spellEffect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Graveyard",
+            "byDestruction": true
+          },
+          "targetRequirements": [
+            {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ]
+                }
+              },
+              "id": "t0"
+            }
+          ]
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Reassembling Skeleton|front|script.activatedAbilities[0]",
+        "card": "Reassembling Skeleton",
+        "face": "front",
+        "path": "script.activatedAbilities[0]",
+        "prerequisites": [
+          "Timing=InstantSpeed; restrictions=[]; activateFrom=GRAVEYARD"
+        ],
+        "native": {
+          "id": "Reassembling Skeleton:1",
+          "cost": {
+            "type": "CostAtomWrapper",
+            "atom": {
+              "type": "AtomMana",
+              "cost": "{1}{B}"
+            }
+          },
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "Self"
+            },
+            "destination": "Battlefield",
+            "placement": "Tapped",
+            "fromZone": "Graveyard"
+          },
+          "activateFromZone": "Graveyard"
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Tannuk, Memorial Ensign|front|script.triggeredAbilities[0]",
+        "card": "Tannuk, Memorial Ensign",
+        "face": "front",
+        "path": "script.triggeredAbilities[0]",
+        "prerequisites": [
+          "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[IsLand], statePredicates=[], controllerPredicate=ControlledByYou, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=ANY; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null"
+        ],
+        "native": {
+          "id": "Tannuk, Memorial Ensign:1",
+          "trigger": {
+            "type": "ZoneChangeEvent",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsLand"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            },
+            "to": "Battlefield"
+          },
+          "binding": "ANY",
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "DealDamage",
+                "amount": {
+                  "type": "Fixed",
+                  "amount": 1
+                },
+                "target": {
+                  "type": "PlayerRef",
+                  "player": {
+                    "type": "EachOpponent"
+                  }
+                }
+              },
+              {
+                "type": "IncrementAbilityResolutionCount"
+              },
+              {
+                "type": "Gated",
+                "gate": {
+                  "type": "Gate.WhenCondition",
+                  "condition": {
+                    "type": "Compare",
+                    "left": {
+                      "type": "EntityProperty",
+                      "entity": {
+                        "type": "Self"
+                      },
+                      "numericProperty": {
+                        "type": "AbilityResolutionsThisTurn"
+                      }
+                    },
+                    "operator": "EQ",
+                    "right": {
+                      "type": "Fixed",
+                      "amount": 2
+                    }
+                  }
+                },
+                "then": {
+                  "type": "DrawCards",
+                  "count": {
+                    "type": "Fixed",
+                    "amount": 1
+                  }
+                }
+              }
+            ]
+          },
+          "descriptionOverride": "Landfall — Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card."
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Tragic Slip|front|script.spell",
+        "card": "Tragic Slip",
+        "face": "front",
+        "path": "script.spell",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+        ],
+        "native": {
+          "spellEffect": {
+            "type": "Gated",
+            "gate": {
+              "type": "Gate.WhenCondition",
+              "condition": {
+                "type": "CreatureDiedThisTurn"
+              }
+            },
+            "then": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -13
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            },
+            "otherwise": {
+              "type": "ModifyStats",
+              "powerModifier": {
+                "type": "Fixed",
+                "amount": -1
+              },
+              "toughnessModifier": {
+                "type": "Fixed",
+                "amount": -1
+              },
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            }
+          },
+          "targetRequirements": [
+            {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ]
+                }
+              },
+              "id": "t0"
+            }
+          ]
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Wrath of God|front|script.spell",
+        "card": "Wrath of God",
+        "face": "front",
+        "path": "script.spell",
+        "prerequisites": [
+          "Cast timing, mana and additional costs, cast restrictions and legal targets from native script"
+        ],
+        "native": {
+          "spellEffect": {
+            "type": "ForEach",
+            "space": {
+              "type": "IterationSpace.Group",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ]
+                }
+              },
+              "noRegenerate": true
+            },
+            "body": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "IterationEntity"
+              },
+              "destination": "Graveyard",
+              "byDestruction": true
+            }
+          }
+        },
+        "associatedActionId": null
+      }
+    ]
+  },
+  "identities": {
+    "context": {
+      "algorithm": "physical-identity-v1",
+      "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+      "nativeIdentitySha256": "af45623ce691b4d3f129121b0ce73e7224adf941295be45d414d0906f3ad0adb"
+    },
+    "assignments": [
+      {
+        "native": {
+          "name": "Attrition",
+          "oracleId": null,
+          "aliases": [
+            "attrition"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Attrition",
+              "manaCost": "{1}{B}{B}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Attrition",
+          "scryfallId": null,
+          "setCode": "UDS",
+          "collectorNumber": "52",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+        "candidateOracleIds": [
+          "a85ee0cf-39ce-49f2-874a-f6f54ca1775f"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Beast Within",
+          "oracleId": null,
+          "aliases": [
+            "beast within"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Beast Within",
+              "manaCost": "{2}{G}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Beast Within",
+          "scryfallId": null,
+          "setCode": "NPH",
+          "collectorNumber": "103",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "7735eeba-693b-47e2-bd51-414379cf1016",
+        "candidateOracleIds": [
+          "7735eeba-693b-47e2-bd51-414379cf1016"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Cyclonic Rift",
+          "oracleId": null,
+          "aliases": [
+            "cyclonic rift"
+          ],
+          "identity": [
+            "U"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Cyclonic Rift",
+              "manaCost": "{1}{U}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Cyclonic Rift",
+          "scryfallId": null,
+          "setCode": "RTR",
+          "collectorNumber": "35",
+          "derivedIdentity": [
+            "U"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+        "candidateOracleIds": [
+          "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "U"
+          ],
+          "derivedNativeIdentity": [
+            "U"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "U"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Damnation",
+          "oracleId": null,
+          "aliases": [
+            "damnation"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Damnation",
+              "manaCost": "{2}{B}{B}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Damnation",
+          "scryfallId": null,
+          "setCode": "PLC",
+          "collectorNumber": "85",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+        "candidateOracleIds": [
+          "d57a8f0b-7989-4db5-8756-6f2690097252"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Fleshbag Marauder",
+          "oracleId": null,
+          "aliases": [
+            "fleshbag marauder"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Fleshbag Marauder",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Zombie Warrior"
+            }
+          ],
+          "physicalName": "Fleshbag Marauder",
+          "scryfallId": null,
+          "setCode": "ALA",
+          "collectorNumber": "76",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+        "candidateOracleIds": [
+          "4b1bf05e-753e-4350-a913-894cf3cecc0c"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Forest",
+          "oracleId": null,
+          "aliases": [
+            "forest"
+          ],
+          "identity": null,
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Forest",
+              "manaCost": "",
+              "typeLine": "Basic Land — Forest"
+            }
+          ],
+          "physicalName": "Forest",
+          "scryfallId": null,
+          "setCode": "FRA",
+          "collectorNumber": "396",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
+        "candidateOracleIds": [
+          "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": null,
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [
+            "NATIVE_FULL_IDENTITY_MISSING"
+          ],
+          "candidateCorrections": [
+            {
+              "field": "colorIdentityOverride",
+              "nativeValue": null,
+              "externalValue": [
+                "G"
+              ],
+              "disposition": "REVIEW_ONLY_NOT_APPLIED"
+            }
+          ]
+        }
+      },
+      {
+        "native": {
+          "name": "Grim Haruspex",
+          "oracleId": null,
+          "aliases": [
+            "grim haruspex"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Grim Haruspex",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Human Wizard"
+            }
+          ],
+          "physicalName": "Grim Haruspex",
+          "scryfallId": null,
+          "setCode": "KTK",
+          "collectorNumber": "73",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+        "candidateOracleIds": [
+          "72aef1d8-11df-4bc2-af83-907b05df73a8"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Hardened Scales",
+          "oracleId": null,
+          "aliases": [
+            "hardened scales"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Hardened Scales",
+              "manaCost": "{G}",
+              "typeLine": "Enchantment"
+            }
+          ],
+          "physicalName": "Hardened Scales",
+          "scryfallId": null,
+          "setCode": "KTK",
+          "collectorNumber": "133",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+        "candidateOracleIds": [
+          "a1f3da21-af6d-450e-bf0b-985d158418e6"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Llanowar Elves",
+          "oracleId": null,
+          "aliases": [
+            "llanowar elves"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Llanowar Elves",
+              "manaCost": "{G}",
+              "typeLine": "Creature — Elf Druid"
+            }
+          ],
+          "physicalName": "Llanowar Elves",
+          "scryfallId": null,
+          "setCode": "LEA",
+          "collectorNumber": "210",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
+        "candidateOracleIds": [
+          "68954295-54e3-4303-a6bc-fc4547a4e3a3"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Murder",
+          "oracleId": null,
+          "aliases": [
+            "murder"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Murder",
+              "manaCost": "{1}{B}{B}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Murder",
+          "scryfallId": null,
+          "setCode": "M13",
+          "collectorNumber": "101",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+        "candidateOracleIds": [
+          "938b4e2c-88d9-4637-bc00-e228920c9a78"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Reassembling Skeleton",
+          "oracleId": null,
+          "aliases": [
+            "reassembling skeleton"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Reassembling Skeleton",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Skeleton Warrior"
+            }
+          ],
+          "physicalName": "Reassembling Skeleton",
+          "scryfallId": null,
+          "setCode": "ARC",
+          "collectorNumber": "22",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5",
+        "candidateOracleIds": [
+          "9dbc3530-b278-4c8d-b2cc-a09dfac9d5e5"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Scute Swarm",
+          "oracleId": null,
+          "aliases": [
+            "scute swarm"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Scute Swarm",
+              "manaCost": "{2}{G}",
+              "typeLine": "Creature — Insect"
+            }
+          ],
+          "physicalName": "Scute Swarm",
+          "scryfallId": null,
+          "setCode": "ZNR",
+          "collectorNumber": "203",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+        "candidateOracleIds": [
+          "aa854d50-444c-49d9-bfb1-5476b33c1c0b"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Sol Ring",
+          "oracleId": null,
+          "aliases": [
+            "sol ring"
+          ],
+          "identity": [],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Sol Ring",
+              "manaCost": "{1}",
+              "typeLine": "Artifact"
+            }
+          ],
+          "physicalName": "Sol Ring",
+          "scryfallId": null,
+          "setCode": "LEA",
+          "collectorNumber": "269",
+          "derivedIdentity": [],
+          "declaredOracleId": null
+        },
+        "oracleId": "6ad8011d-3471-4369-9d68-b264cc027487",
+        "candidateOracleIds": [
+          "6ad8011d-3471-4369-9d68-b264cc027487"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [],
+          "derivedNativeIdentity": [],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Tannuk, Memorial Ensign",
+          "oracleId": null,
+          "aliases": [
+            "tannuk, memorial ensign"
+          ],
+          "identity": [
+            "R",
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Tannuk, Memorial Ensign",
+              "manaCost": "{1}{R}{G}",
+              "typeLine": "Legendary Creature — Kavu Pilot"
+            }
+          ],
+          "physicalName": "Tannuk, Memorial Ensign",
+          "scryfallId": null,
+          "setCode": "EOE",
+          "collectorNumber": "233",
+          "derivedIdentity": [
+            "R",
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "76cb1912-3791-44b8-b594-b92dab21bafc",
+        "candidateOracleIds": [
+          "76cb1912-3791-44b8-b594-b92dab21bafc"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "R",
+            "G"
+          ],
+          "derivedNativeIdentity": [
+            "R",
+            "G"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "G",
+            "R"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Tragic Slip",
+          "oracleId": null,
+          "aliases": [
+            "tragic slip"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Tragic Slip",
+              "manaCost": "{B}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Tragic Slip",
+          "scryfallId": null,
+          "setCode": "DKA",
+          "collectorNumber": "76",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "candidateOracleIds": [
+          "fa6e2a47-a8cb-4224-ae3e-f61c90477285"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Walking Corpse",
+          "oracleId": null,
+          "aliases": [
+            "walking corpse"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Walking Corpse",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Zombie"
+            }
+          ],
+          "physicalName": "Walking Corpse",
+          "scryfallId": null,
+          "setCode": "ISD",
+          "collectorNumber": "126",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "fea95888-e16a-4209-9cd4-623f7f4d2f67",
+        "candidateOracleIds": [
+          "fea95888-e16a-4209-9cd4-623f7f4d2f67"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "B"
+          ],
+          "derivedNativeIdentity": [
+            "B"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "B"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      },
+      {
+        "native": {
+          "name": "Wastes",
+          "oracleId": null,
+          "aliases": [
+            "wastes"
+          ],
+          "identity": null,
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Wastes",
+              "manaCost": "",
+              "typeLine": "Basic Land"
+            }
+          ],
+          "physicalName": "Wastes",
+          "scryfallId": null,
+          "setCode": "FIN",
+          "collectorNumber": "309",
+          "derivedIdentity": [],
+          "declaredOracleId": null
+        },
+        "oracleId": "05d24b0c-904a-46b6-b42a-96a4d91a0dd4",
+        "candidateOracleIds": [
+          "05d24b0c-904a-46b6-b42a-96a4d91a0dd4"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": null,
+          "derivedNativeIdentity": [],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [],
+          "externalCommanderLegality": "legal",
+          "issues": [
+            "NATIVE_FULL_IDENTITY_MISSING"
+          ],
+          "candidateCorrections": [
+            {
+              "field": "colorIdentityOverride",
+              "nativeValue": null,
+              "externalValue": [],
+              "disposition": "REVIEW_ONLY_NOT_APPLIED"
+            }
+          ]
+        }
+      },
+      {
+        "native": {
+          "name": "Wrath of God",
+          "oracleId": null,
+          "aliases": [
+            "wrath of god"
+          ],
+          "identity": [
+            "W"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Wrath of God",
+              "manaCost": "{2}{W}{W}",
+              "typeLine": "Sorcery"
+            }
+          ],
+          "physicalName": "Wrath of God",
+          "scryfallId": null,
+          "setCode": "LEA",
+          "collectorNumber": "45",
+          "derivedIdentity": [
+            "W"
+          ],
+          "declaredOracleId": null
+        },
+        "oracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+        "candidateOracleIds": [
+          "34515b16-c9a4-4f98-8c77-416a7a523407"
+        ],
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "metadata": {
+          "nativeOracleId": null,
+          "nativeIdentity": [
+            "W"
+          ],
+          "derivedNativeIdentity": [
+            "W"
+          ],
+          "nativeCommanderLegality": "MATCH",
+          "externalIdentity": [
+            "W"
+          ],
+          "externalCommanderLegality": "legal",
+          "issues": [],
+          "candidateCorrections": []
+        }
+      }
+    ]
+  },
+  "tags": {
+    "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
+    "queries": {
+      "boardwipe": {
+        "status": "COMPLETE",
+        "query": "legal:commander id<=wubrg otag:boardwipe",
+        "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
+        "pages": [
+          {
+            "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards&order=name",
+            "file": "boardwipe-1.json",
+            "sha256": "59c06045498aea4c3bee7335128882ad11202ba355867fd51db1022ac7ad4461",
+            "warnings": [],
+            "totalCards": 919
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+            "file": "boardwipe-2.json",
+            "sha256": "f3c42af8918127b7a92e974ce02d48df5468cf13d025736dd5a8806b06699abf",
+            "warnings": [],
+            "totalCards": 919
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+            "file": "boardwipe-3.json",
+            "sha256": "d91a41ee692bf2019ae8085df889e50aa4a9e7a4c1f772cb2f8778c0b8172fa1",
+            "warnings": [],
+            "totalCards": 919
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+            "file": "boardwipe-4.json",
+            "sha256": "e261c54419171e933aa40c7ce93af8c8ce8ed9cd7c99fdedc03becc975ac42b9",
+            "warnings": [],
+            "totalCards": 919
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+            "file": "boardwipe-5.json",
+            "sha256": "89e5a9eaa36dd5100061f1a1f92b7f40c70a67e7015fa6d7e52e8998e6695544",
+            "warnings": [],
+            "totalCards": 919
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe&unique=cards",
+            "file": "boardwipe-6.json",
+            "sha256": "e334a58b52354514463128eb51e5ff8a2dd4c9145c58f6dbb4cd2881b773ca93",
+            "warnings": [],
+            "totalCards": 919
+          }
+        ],
+        "members": [
+          {
+            "oracleId": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+            "printingId": "dfb7c4b9-f2f4-4d4e-baf2-86551c8150fe",
+            "name": "Cyclonic Rift",
+            "typeLine": "Instant",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "U"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+            "printingId": "d3c0aac5-b9f1-4446-bfea-3e1dd1cf1f2f",
+            "name": "Damnation",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+            "printingId": "1eac116d-bc78-4585-8b97-2775c3d0bdb4",
+            "name": "Wrath of God",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "W"
+            ],
+            "commanderLegality": "legal"
+          }
+        ]
+      },
+      "removal": {
+        "status": "COMPLETE",
+        "query": "legal:commander id<=wubrg otag:removal",
+        "capturedAtUtc": "2026-11-10T19:52:21.221395+00:00",
+        "pages": [
+          {
+            "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards&order=name",
+            "file": "removal-1.json",
+            "sha256": "7acc77bb992621c4ff80a3b0c2d7089f760c525ecdb5d1fdc80838925038ee3d",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-2.json",
+            "sha256": "228fb1ff91c199f9e94d58e56940d380c19a5a5130cf0ff87d87b48d4e300fd4",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=3&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-3.json",
+            "sha256": "3dd96a1cf064a244fdc49db7a6b76bb61144300e4f465b8296b69ed3db30b497",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=4&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-4.json",
+            "sha256": "252324a83cee4d08ea7ca41f714c2abec353c9a99dc97f044fe66a06fbaf7b18",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=5&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-5.json",
+            "sha256": "e4186f8ddc503fcebe37050f45b4c486866b130afbbc53d4410660a1c64205ad",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=6&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-6.json",
+            "sha256": "fd8aaba1929fe54eadb4e991302ef5db5983a9d6551bcab49739901885da25a0",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=7&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-7.json",
+            "sha256": "43cabfe85a432d9dde1f21988e761cf01582b6a598a23d0dbb3628f89f725a9a",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=8&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-8.json",
+            "sha256": "731674043500b2c0dee87c7c2b3bd17e73b62db3ff923a375b08cd6bf26158a6",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=9&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-9.json",
+            "sha256": "7e34515fc8af646147658c0c97f34f43de082fea1ed7e0b3962eaf1249a95cee",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=10&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-10.json",
+            "sha256": "dae894834b642df6520e340c8070cbe7295c59b7f92b50be433c68c49c53264e",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=11&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-11.json",
+            "sha256": "1e854e9f2f72454c642e607691df383935e0f779605caa2968802728de1f5e3c",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=12&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-12.json",
+            "sha256": "e2de555399670a2e18c88c9075188a7a0d5941961d79bd7ad34b0bdc137e2369",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=13&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-13.json",
+            "sha256": "5036245c88a9abd861f7a408b4b7dddc86e465b848875d6611af09589061cc98",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=14&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-14.json",
+            "sha256": "b81701ed0a881da504fdb73dbad6269df9a60e8292a885cb872f47f1484f8d59",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=15&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-15.json",
+            "sha256": "02954ad6cf3af5595f857c964dcc14575c4cc68de7225a0addee7b963580ca01",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=16&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-16.json",
+            "sha256": "7aabbe2f6fa613d09dd9648cee632382101c2eaf106ab6dd55bc38c5b3c20d05",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=17&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-17.json",
+            "sha256": "2d68d349a58fd0f13706d85d1ec7e39e2744c375a9fec3bafb6824245ec9de73",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=18&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-18.json",
+            "sha256": "48a69fdf3ed0dc1d08ba538b41efa60071e752f49a60ea7dda1eddbac718bcb6",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=19&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-19.json",
+            "sha256": "ddba2f4fdc5dfffc4a71e916ffcc706d9f00714d73dfe2d081809875894188fb",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=20&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-20.json",
+            "sha256": "bc6ebb1d40e7cbdacf34c6aeabd60523adedb583b4de8ed11d49c8973b346b04",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=21&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-21.json",
+            "sha256": "c8dba90903d44677d3526f6c6bd9789cf18003b3fb1aa25aa77f5ffdae854c1b",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=22&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-22.json",
+            "sha256": "7b11c2be14ae9e02253c2297737778fc8a46724a0a9343375710cb9f971f87d1",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=23&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-23.json",
+            "sha256": "7704042f960922c4d277cefb4a6943b514ae6fa4472f92146c088b8bfd9002e4",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=24&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-24.json",
+            "sha256": "accd2885e667ed8d4f81c094e1f95b391c03f2aefa29239d750a7c6746484e3f",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=25&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-25.json",
+            "sha256": "c973ad2cea7b400b970b42ed1b9b37989c15dda16c4cd66f9083a022c2b5175a",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=26&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-26.json",
+            "sha256": "43c009aa2df5e5d3d0964d537803c02799da8cd5a8fedf788056e03f2f3ecf92",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=27&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-27.json",
+            "sha256": "fd0eab4386950e664bf6d3778d92d7a0edd429670ee1d0621e6ab98437a9fb95",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=28&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-28.json",
+            "sha256": "091e479d98ff3757668a72b2fbcd3575b3d1aba18277e03c7090aa5f3203e867",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=29&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-29.json",
+            "sha256": "22b50bdf82ae48e2e1083a9eb3b36b2667727abd551dd09f14d19f41964bddbb",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=30&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-30.json",
+            "sha256": "2bab3a5104f8301fa304f6de3ba7f7223f5ccb106d7ce3c5fec3c5c8e4f50a8a",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=31&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-31.json",
+            "sha256": "64d8fb3d04e62544572878eef24121de4a69d8385e77b34ceea61bd8ddbbd84a",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=32&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-32.json",
+            "sha256": "8ab086f40230c2faab96a4caf6ba343e67291ab71b906f885bee8c37c236cb3d",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=33&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-33.json",
+            "sha256": "67846a0d7fd047747dfad2dfd2d60df6878b3d9911cae2e4631ab56c584abecb",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=34&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-34.json",
+            "sha256": "e526a3c14db637833e3354f7df7fce86b381659b0fc746a7795e37501c833e89",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=35&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-35.json",
+            "sha256": "880ac881082dc94189dd1dfe25aadba2be491e7a540a38858f51d9e3741d160e",
+            "warnings": [],
+            "totalCards": 6264
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=36&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aremoval&unique=cards",
+            "file": "removal-36.json",
+            "sha256": "6ba77b48a59ff8d9881223151f0ecbdbf8556f97bc3ad8110b6a657bfae0fa10",
+            "warnings": [],
+            "totalCards": 6264
+          }
+        ],
+        "members": [
+          {
+            "oracleId": "a85ee0cf-39ce-49f2-874a-f6f54ca1775f",
+            "printingId": "f8f29b57-172e-407b-b55e-32fe96198f92",
+            "name": "Attrition",
+            "typeLine": "Enchantment",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "7735eeba-693b-47e2-bd51-414379cf1016",
+            "printingId": "1929cf4b-0d18-4f7d-a631-621a378ff015",
+            "name": "Beast Within",
+            "typeLine": "Instant",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "G"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "d75b9c82-1b49-4c3e-a1b5-aeef57d6644b",
+            "printingId": "dfb7c4b9-f2f4-4d4e-baf2-86551c8150fe",
+            "name": "Cyclonic Rift",
+            "typeLine": "Instant",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "U"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+            "printingId": "d3c0aac5-b9f1-4446-bfea-3e1dd1cf1f2f",
+            "name": "Damnation",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "4b1bf05e-753e-4350-a913-894cf3cecc0c",
+            "printingId": "fce2baa4-2976-4bbd-b6c5-a5a3c6a901be",
+            "name": "Fleshbag Marauder",
+            "typeLine": "Creature — Zombie Warrior",
+            "power": "3",
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2",
+            "printingId": "f5a4970b-2ba6-4c91-a301-369369cdf360",
+            "name": "Grave Pact",
+            "typeLine": "Enchantment",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "938b4e2c-88d9-4637-bc00-e228920c9a78",
+            "printingId": "1f29d9e4-3100-43cb-9723-7d5c23f89b12",
+            "name": "Murder",
+            "typeLine": "Instant",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+            "printingId": "132ccc20-cb42-4474-b747-7e41a661060e",
+            "name": "Tragic Slip",
+            "typeLine": "Instant",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+            "printingId": "1eac116d-bc78-4585-8b97-2775c3d0bdb4",
+            "name": "Wrath of God",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "W"
+            ],
+            "commanderLegality": "legal"
+          }
+        ]
+      },
+      "deathwipes": {
+        "status": "COMPLETE",
+        "query": "legal:commander id<=wubrg otag:boardwipe otag:removal-creature otag:removal-destroy",
+        "capturedAtUtc": "2026-11-10T20:05:22.262218+00:00",
+        "pages": [
+          {
+            "url": "https://api.scryfall.com/cards/search?q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards&order=name",
+            "file": "deathwipes-1.json",
+            "sha256": "64acb74b3c18deeffc97129c539ee48be9807b98653a7f6ecdfbbe6a8dbf8774",
+            "warnings": [],
+            "totalCards": 246
+          },
+          {
+            "url": "https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&include_variations=false&order=name&page=2&q=legal%3Acommander+id%3C%3Dwubrg+otag%3Aboardwipe+otag%3Aremoval-creature+otag%3Aremoval-destroy&unique=cards",
+            "file": "deathwipes-2.json",
+            "sha256": "be1220eef5247aebdc87836b91502312eb8b9e7a013d3e68c65498302c79a876",
+            "warnings": [],
+            "totalCards": 246
+          }
+        ],
+        "members": [
+          {
+            "oracleId": "d57a8f0b-7989-4db5-8756-6f2690097252",
+            "printingId": "d3c0aac5-b9f1-4446-bfea-3e1dd1cf1f2f",
+            "name": "Damnation",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "B"
+            ],
+            "commanderLegality": "legal"
+          },
+          {
+            "oracleId": "34515b16-c9a4-4f98-8c77-416a7a523407",
+            "printingId": "1eac116d-bc78-4585-8b97-2775c3d0bdb4",
+            "name": "Wrath of God",
+            "typeLine": "Sorcery",
+            "power": null,
+            "layout": "normal",
+            "colorIdentity": [
+              "W"
+            ],
+            "commanderLegality": "legal"
+          }
+        ]
+      }
+    }
+  }
+}
