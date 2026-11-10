@@ -1,0 +1,2205 @@
+{
+  "scope": "Author/source-led structural discovery verification; not independent qualification or exhaustive recall",
+  "revisions": {
+    "before": "bf7d97bc4cdea6501c90646d945add5dd9d261bd",
+    "fullGateAndInitialBrowser": "6fdeedec43885dd21f6bb4a6e756d0bbb100742a",
+    "finalApplication": "a591bf3103d2ac0cb525d087a9d7a6b6d2a0bc89",
+    "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48"
+  },
+  "sourceExpectationsSha256": "4a79e3884647fe278b395f58df87d45ea8c58e6cbe7dead75fd08e7cb929074c",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "controlledComparisons": {
+    "judith-create-creature-tokens": {
+      "sha256Before": "cd6926c5dd0db66f71aadf826a0ddbcd851bd22b0a9df44a59b5a1ada002e90c",
+      "sha256After": "e57aa3c0124ef26f401a32501f448e34fa7538323783c3afa2c8e0af74a94c82",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 6111,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 363,
+          "cards": 346
+        },
+        "UNKNOWN": {
+          "pathways": 55,
+          "cards": 48
+        },
+        "NO_MATCH": {
+          "pathways": 230,
+          "cards": 215
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 363,
+          "cards": 346
+        },
+        "UNKNOWN": {
+          "pathways": 55,
+          "cards": 48
+        },
+        "NO_MATCH": {
+          "pathways": 230,
+          "cards": 215
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 346,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [],
+      "countChanges": {}
+    },
+    "judith-own-nontoken-creature-deaths": {
+      "sha256Before": "d779f33a228decf4e80420b4a4ca71dca833a2ef895eb1ea492bf601180bcadc",
+      "sha256After": "d880a1eed9775392c10bbcd02727bbb7a1d7fc849235dca5693a4a10cad52aac",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 6111,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 499,
+          "cards": 487
+        },
+        "UNKNOWN": {
+          "pathways": 410,
+          "cards": 373
+        },
+        "NO_MATCH": {
+          "pathways": 2140,
+          "cards": 1763
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 552,
+          "cards": 538
+        },
+        "UNKNOWN": {
+          "pathways": 452,
+          "cards": 414
+        },
+        "NO_MATCH": {
+          "pathways": 2143,
+          "cards": 1766
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 53,
+          "cards": 52
+        },
+        "UNKNOWN": {
+          "pathways": 42,
+          "cards": 42
+        },
+        "NO_MATCH": {
+          "pathways": 3,
+          "cards": 3
+        }
+      },
+      "newMatchCards": [
+        "Adorned Crocodile",
+        "Agent Venom",
+        "Agents of HYDRA",
+        "Anticausal Vestige",
+        "Beamsaw Prospector",
+        "Bloated Processor",
+        "Blood Petal Celebrant",
+        "Callous Inspector",
+        "Circuit Mender",
+        "Common Crook",
+        "Conscripted Infantry",
+        "Deathbloom Thallid",
+        "Dire Fleet Hoarder",
+        "Discordant Piper",
+        "Doomed Dissenter",
+        "Dragon Egg",
+        "Filigree Familiar",
+        "Friendly Teddy",
+        "Furnace Gremlin",
+        "Girder Goons",
+        "Gleaming Barrier",
+        "Gravpack Monoist",
+        "Greedy Freebooter",
+        "Grim Haruspex",
+        "Harried Spearguard",
+        "Harvester of Souls",
+        "Hobbling Zombie",
+        "Infestation Sage",
+        "Injector Crocodile",
+        "Kothophed, Soul Hoarder",
+        "Liliana, Dreadhorde General",
+        "Maalfeld Twins",
+        "Magic Pot",
+        "Midnight Reaper",
+        "Mintstrosity",
+        "Nezumi Linkbreaker",
+        "Novice Occultist",
+        "Piggy Bank",
+        "Pitiless Plunderer",
+        "Riveteers Requisitioner",
+        "Rotlung Reanimator",
+        "Scavenger's Talent",
+        "Slagstone Refinery",
+        "Solemn Simulacrum",
+        "Stinging Hivemaster",
+        "Synapse Necromage",
+        "The Master of Lake-town",
+        "Totentanz, Swarm Piper",
+        "Undercity Dire Rat",
+        "Voldaren Bloodcaster",
+        "Wurmcoil Larva"
+      ],
+      "retainedMatchCards": 487,
+      "lostMatchCards": [],
+      "responses": [
+        {
+          "card": "Adorned Crocodile",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Agent Venom",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Agents of HYDRA",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Akki Ember-Keeper",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Anticausal Vestige",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Ashiok's Reaper",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Atsushi, the Blazing Sky",
+          "path": "script.triggeredAbilities[0].effect.modes[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Beamsaw Prospector",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Bloated Processor",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Blood Petal Celebrant",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Bloodtracker",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Callous Inspector",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Circuit Mender",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Common Crook",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Conscripted Infantry",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Crossway Troublemakers",
+          "path": "script.triggeredAbilities[0].effect.then.effects[1]",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Deathbloom Thallid",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Demonic Ruckus",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Dire Fleet Hoarder",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Disciple of Perdition",
+          "path": "script.triggeredAbilities[0].effect.modes[0].effect.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Discordant Piper",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Doomed Dissenter",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Dragon Egg",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Experimental Confectioner",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Filigree Familiar",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Friendly Teddy",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Furnace Gremlin",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Garna, Bloodfist of Keld",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Ghoulish Procession",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Gift of Wrath",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Girder Goons",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Gleaming Barrier",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Gravpack Monoist",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Greedy Freebooter",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Grim Haruspex",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Harried Spearguard",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Harvester of Souls",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Headless Rider",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "High-Society Hunter",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Hobbling Zombie",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Infestation Sage",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Injector Crocodile",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Jerren, Corrupted Bishop",
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Kinzu of the Bleak Coven",
+          "path": "script.triggeredAbilities[0].effect.then.then",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Kothophed, Soul Hoarder",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Krenko, Baron of Tin Street",
+          "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Liliana, Dreadhorde General",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Maalfeld Twins",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Magic Pot",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Marketback Walker",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Mask of Griselbrand",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Massacre Girl, Known Killer",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "NO_MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Mephitic Draught",
+          "path": "script.triggeredAbilities[1].effect.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Midnight Reaper",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Mintstrosity",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Moonstone Eulogist",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "NO_MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Morbid Opportunist",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Mouser Foundry",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Nested Shambler",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Nezumi Linkbreaker",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Novice Occultist",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Nutrient Block",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Oni-Cult Anvil",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Papercraft Decoy",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Piggy Bank",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Pitiless Plunderer",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Promising Duskmage",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Prowess of the Fair",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Riveteers Requisitioner",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Robot Domination",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Rotlung Reanimator",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Rotlung Reanimator",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Rukh Egg",
+          "path": "script.triggeredAbilities[0].effect.effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Runed Servitor",
+          "path": "script.triggeredAbilities[0].effect.body",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Scavenger's Talent",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Shambling Ghast",
+          "path": "script.triggeredAbilities[0].effect.modes[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Skittering Precursor",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Skullclamp",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Slagstone Refinery",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Slagstone Refinery",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Solemn Simulacrum",
+          "path": "script.triggeredAbilities[1].effect.then",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Spiteful Banditry",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Sticky Fingers",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Stinging Hivemaster",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Synapse Necromage",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Tangled Colony",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "The Master of Lake-town",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Thought-Knot Seer",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "NO_MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Totentanz, Swarm Piper",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Transmogrant's Crown",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Undead Augur",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Undercity Dire Rat",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Urza's Miter",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Voldaren Bloodcaster",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Warehouse Tabby",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Wurmcoil Larva",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Wurmcoil Larva",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Xathrid Necromancer",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        }
+      ],
+      "duplicateLegacyIdentityKeys": [
+        {
+          "identity": [
+            "Faerie Fencing",
+            "Faerie Fencing|front|script.spell",
+            "script.spellEffect.gate.condition",
+            "DEATH_ENHANCED_REMOVAL"
+          ],
+          "count": 2
+        }
+      ],
+      "countChanges": {
+        "accepted_death_response_pathways": {
+          "before": null,
+          "after": 53
+        },
+        "accepted_death_response_cards": {
+          "before": null,
+          "after": 52
+        },
+        "unknown_death_response_pathways": {
+          "before": null,
+          "after": 42
+        },
+        "unknown_query_pathways": {
+          "before": 410,
+          "after": 452
+        },
+        "pathways_with_any_unknown_decision": {
+          "before": 1044,
+          "after": 1086
+        }
+      }
+    },
+    "judith-reanimate-own-creatures": {
+      "sha256Before": "a35b80402a40cd8863e320aeccddb52d1e2fdf42469526560050990b92c694e6",
+      "sha256After": "db81109e68710f990d267085366cebf68404846ea554bf23d2e24473708208e4",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 6111,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 106,
+          "cards": 104
+        },
+        "UNKNOWN": {
+          "pathways": 93,
+          "cards": 85
+        },
+        "NO_MATCH": {
+          "pathways": 1857,
+          "cards": 1555
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 106,
+          "cards": 104
+        },
+        "UNKNOWN": {
+          "pathways": 93,
+          "cards": 85
+        },
+        "NO_MATCH": {
+          "pathways": 1857,
+          "cards": 1555
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 104,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [
+        {
+          "identity": [
+            "Bumi Bash",
+            "Bumi Bash|front|script.spell",
+            "script.spellEffect.modes[1].effect",
+            "REANIMATE_OWN_CREATURE"
+          ],
+          "count": 2
+        },
+        {
+          "identity": [
+            "Sorceress's Schemes",
+            "Sorceress's Schemes|front|script.spell",
+            "script.spellEffect.effects[0]",
+            "REANIMATE_OWN_CREATURE"
+          ],
+          "count": 2
+        }
+      ],
+      "countChanges": {}
+    },
+    "judith-stock-own-graveyard": {
+      "sha256Before": "7497ce34ceb37c8c925bbc14c532557a2a486533833e15144a0e306a986db4d2",
+      "sha256After": "cf87350ec594d832caa55f53c8ffbcbcce04b9aea358ca05f94aacc35caed965",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 6111,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 535,
+          "cards": 508
+        },
+        "UNKNOWN": {
+          "pathways": 576,
+          "cards": 527
+        },
+        "NO_MATCH": {
+          "pathways": 335,
+          "cards": 315
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 535,
+          "cards": 508
+        },
+        "UNKNOWN": {
+          "pathways": 576,
+          "cards": 527
+        },
+        "NO_MATCH": {
+          "pathways": 335,
+          "cards": 315
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 508,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [
+        {
+          "identity": [
+            "Sazacap's Brew",
+            "Sazacap's Brew|front|script.spell",
+            "script.additionalCosts[0].atom",
+            "GRAVEYARD_CREATURE_ARRIVAL"
+          ],
+          "count": 2
+        }
+      ],
+      "countChanges": {}
+    },
+    "krenko-create-creature-tokens": {
+      "sha256Before": "8c1e2602cbb6ad184eeaaa115fb857188fbe19feefc6782f7b3fa7de8c8d10a2",
+      "sha256After": "97d1e386dfcf9f900e7e8e5789a6e076d303cd329ba1d128faf943aef2ce13f2",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 3472,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 190,
+          "cards": 182
+        },
+        "UNKNOWN": {
+          "pathways": 33,
+          "cards": 28
+        },
+        "NO_MATCH": {
+          "pathways": 139,
+          "cards": 131
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 190,
+          "cards": 182
+        },
+        "UNKNOWN": {
+          "pathways": 33,
+          "cards": 28
+        },
+        "NO_MATCH": {
+          "pathways": 139,
+          "cards": 131
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 182,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [],
+      "countChanges": {}
+    },
+    "krenko-own-nontoken-creature-deaths": {
+      "sha256Before": "18ba3f633c0f87d9ac009c58c72111ce72154a9863ef397a7592d409947a8af5",
+      "sha256After": "9197f3f0ed534af7421e710b6a6a76e014856bfdd94b76525bee73dc3bb4120a",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 3472,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 208,
+          "cards": 203
+        },
+        "UNKNOWN": {
+          "pathways": 190,
+          "cards": 175
+        },
+        "NO_MATCH": {
+          "pathways": 1343,
+          "cards": 1080
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 223,
+          "cards": 218
+        },
+        "UNKNOWN": {
+          "pathways": 207,
+          "cards": 192
+        },
+        "NO_MATCH": {
+          "pathways": 1344,
+          "cards": 1081
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 15,
+          "cards": 15
+        },
+        "UNKNOWN": {
+          "pathways": 17,
+          "cards": 17
+        },
+        "NO_MATCH": {
+          "pathways": 1,
+          "cards": 1
+        }
+      },
+      "newMatchCards": [
+        "Anticausal Vestige",
+        "Blood Petal Celebrant",
+        "Circuit Mender",
+        "Conscripted Infantry",
+        "Dragon Egg",
+        "Filigree Familiar",
+        "Friendly Teddy",
+        "Furnace Gremlin",
+        "Gleaming Barrier",
+        "Harried Spearguard",
+        "Magic Pot",
+        "Piggy Bank",
+        "Riveteers Requisitioner",
+        "Slagstone Refinery",
+        "Solemn Simulacrum"
+      ],
+      "retainedMatchCards": 203,
+      "lostMatchCards": [],
+      "responses": [
+        {
+          "card": "Akki Ember-Keeper",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Anticausal Vestige",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Atsushi, the Blazing Sky",
+          "path": "script.triggeredAbilities[0].effect.modes[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Blood Petal Celebrant",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Circuit Mender",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Conscripted Infantry",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Demonic Ruckus",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Dragon Egg",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Filigree Familiar",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Friendly Teddy",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Furnace Gremlin",
+          "path": "script.triggeredAbilities[0].effect.effects[0]",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Gift of Wrath",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Gleaming Barrier",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Harried Spearguard",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Krenko, Baron of Tin Street",
+          "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Magic Pot",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Marketback Walker",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Mouser Foundry",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Nutrient Block",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Papercraft Decoy",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Piggy Bank",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Riveteers Requisitioner",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Rukh Egg",
+          "path": "script.triggeredAbilities[0].effect.effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Runed Servitor",
+          "path": "script.triggeredAbilities[0].effect.body",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Skittering Precursor",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Skullclamp",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Slagstone Refinery",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Slagstone Refinery",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "MATCH",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Solemn Simulacrum",
+          "path": "script.triggeredAbilities[1].effect.then",
+          "verdict": "MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Spiteful Banditry",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "UNKNOWN",
+          "operation": "CREATE_TOKEN"
+        },
+        {
+          "card": "Sticky Fingers",
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Thought-Knot Seer",
+          "path": "script.triggeredAbilities[1].effect",
+          "verdict": "NO_MATCH",
+          "operation": "DRAW_CARDS"
+        },
+        {
+          "card": "Urza's Miter",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "verdict": "UNKNOWN",
+          "operation": "DRAW_CARDS"
+        }
+      ],
+      "duplicateLegacyIdentityKeys": [],
+      "countChanges": {
+        "accepted_death_response_pathways": {
+          "before": null,
+          "after": 15
+        },
+        "accepted_death_response_cards": {
+          "before": null,
+          "after": 15
+        },
+        "unknown_death_response_pathways": {
+          "before": null,
+          "after": 17
+        },
+        "unknown_query_pathways": {
+          "before": 190,
+          "after": 207
+        },
+        "pathways_with_any_unknown_decision": {
+          "before": 568,
+          "after": 585
+        }
+      }
+    },
+    "krenko-reanimate-own-creatures": {
+      "sha256Before": "6ec21f20be0f8e286c7c3ec9541fd6fe1239d3c1f3c7acf04c0d544e2296d6d7",
+      "sha256After": "a9760315207211c65068642d3ed89428bc1dfe1bfb7697b0b9677c725f060827",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 3472,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 19,
+          "cards": 18
+        },
+        "UNKNOWN": {
+          "pathways": 35,
+          "cards": 31
+        },
+        "NO_MATCH": {
+          "pathways": 811,
+          "cards": 689
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 19,
+          "cards": 18
+        },
+        "UNKNOWN": {
+          "pathways": 35,
+          "cards": 31
+        },
+        "NO_MATCH": {
+          "pathways": 811,
+          "cards": 689
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 18,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [
+        {
+          "identity": [
+            "Bumi Bash",
+            "Bumi Bash|front|script.spell",
+            "script.spellEffect.modes[1].effect",
+            "REANIMATE_OWN_CREATURE"
+          ],
+          "count": 2
+        },
+        {
+          "identity": [
+            "Sorceress's Schemes",
+            "Sorceress's Schemes|front|script.spell",
+            "script.spellEffect.effects[0]",
+            "REANIMATE_OWN_CREATURE"
+          ],
+          "count": 2
+        }
+      ],
+      "countChanges": {}
+    },
+    "krenko-stock-own-graveyard": {
+      "sha256Before": "4ac89bcd3e18b59880d4f563462787a2c2fb2bfd2c23e65b07a91cdd981ede85",
+      "sha256After": "cce77d0f15dd18a946a1de0fc5e9aeee2189b02b6fd0b9b876df0cb249d085a4",
+      "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "eligibleInputCards": 3472,
+      "identicalFields": {
+        "mechanicalInputCards": true,
+        "eligibility": true,
+        "actions": true,
+        "facts": true,
+        "unsupported": true,
+        "structuralSupport": true,
+        "translationAssurance": true,
+        "conditionalArrivals": true
+      },
+      "legacyResultsExact": true,
+      "before": {
+        "MATCH": {
+          "pathways": 239,
+          "cards": 230
+        },
+        "UNKNOWN": {
+          "pathways": 252,
+          "cards": 235
+        },
+        "NO_MATCH": {
+          "pathways": 182,
+          "cards": 173
+        }
+      },
+      "after": {
+        "MATCH": {
+          "pathways": 239,
+          "cards": 230
+        },
+        "UNKNOWN": {
+          "pathways": 252,
+          "cards": 235
+        },
+        "NO_MATCH": {
+          "pathways": 182,
+          "cards": 173
+        }
+      },
+      "newResponses": {
+        "MATCH": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "UNKNOWN": {
+          "pathways": 0,
+          "cards": 0
+        },
+        "NO_MATCH": {
+          "pathways": 0,
+          "cards": 0
+        }
+      },
+      "newMatchCards": [],
+      "retainedMatchCards": 230,
+      "lostMatchCards": [],
+      "responses": [],
+      "duplicateLegacyIdentityKeys": [
+        {
+          "identity": [
+            "Sazacap's Brew",
+            "Sazacap's Brew|front|script.spell",
+            "script.additionalCosts[0].atom",
+            "GRAVEYARD_CREATURE_ARRIVAL"
+          ],
+          "count": 2
+        }
+      ],
+      "countChanges": {}
+    }
+  },
+  "finalExportEquivalence": {
+    "judith-create-creature-tokens.json": {
+      "finalSha256": "e57aa3c0124ef26f401a32501f448e34fa7538323783c3afa2c8e0af74a94c82",
+      "mechanicalBuildSha256": "e57aa3c0124ef26f401a32501f448e34fa7538323783c3afa2c8e0af74a94c82",
+      "byteIdentical": true
+    },
+    "judith-own-nontoken-creature-deaths.json": {
+      "finalSha256": "d880a1eed9775392c10bbcd02727bbb7a1d7fc849235dca5693a4a10cad52aac",
+      "mechanicalBuildSha256": "d880a1eed9775392c10bbcd02727bbb7a1d7fc849235dca5693a4a10cad52aac",
+      "byteIdentical": true
+    },
+    "judith-reanimate-own-creatures.json": {
+      "finalSha256": "db81109e68710f990d267085366cebf68404846ea554bf23d2e24473708208e4",
+      "mechanicalBuildSha256": "db81109e68710f990d267085366cebf68404846ea554bf23d2e24473708208e4",
+      "byteIdentical": true
+    },
+    "judith-stock-own-graveyard.json": {
+      "finalSha256": "cf87350ec594d832caa55f53c8ffbcbcce04b9aea358ca05f94aacc35caed965",
+      "mechanicalBuildSha256": "cf87350ec594d832caa55f53c8ffbcbcce04b9aea358ca05f94aacc35caed965",
+      "byteIdentical": true
+    },
+    "krenko-create-creature-tokens.json": {
+      "finalSha256": "97d1e386dfcf9f900e7e8e5789a6e076d303cd329ba1d128faf943aef2ce13f2",
+      "mechanicalBuildSha256": "97d1e386dfcf9f900e7e8e5789a6e076d303cd329ba1d128faf943aef2ce13f2",
+      "byteIdentical": true
+    },
+    "krenko-own-nontoken-creature-deaths.json": {
+      "finalSha256": "9197f3f0ed534af7421e710b6a6a76e014856bfdd94b76525bee73dc3bb4120a",
+      "mechanicalBuildSha256": "9197f3f0ed534af7421e710b6a6a76e014856bfdd94b76525bee73dc3bb4120a",
+      "byteIdentical": true
+    },
+    "krenko-reanimate-own-creatures.json": {
+      "finalSha256": "a9760315207211c65068642d3ed89428bc1dfe1bfb7697b0b9677c725f060827",
+      "mechanicalBuildSha256": "a9760315207211c65068642d3ed89428bc1dfe1bfb7697b0b9677c725f060827",
+      "byteIdentical": true
+    },
+    "krenko-stock-own-graveyard.json": {
+      "finalSha256": "cce77d0f15dd18a946a1de0fc5e9aeee2189b02b6fd0b9b876df0cb249d085a4",
+      "mechanicalBuildSha256": "cce77d0f15dd18a946a1de0fc5e9aeee2189b02b6fd0b9b876df0cb249d085a4",
+      "byteIdentical": true
+    }
+  },
+  "identityBindings": {
+    "context": {
+      "algorithm": "physical-identity-v1",
+      "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+      "nativeIdentitySha256": "af45623ce691b4d3f129121b0ce73e7224adf941295be45d414d0906f3ad0adb"
+    },
+    "cohort": [
+      {
+        "card": "Grim Haruspex",
+        "sourceOracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+        "representativePrintingId": "f5c19b87-e114-46d4-9f6c-c02e838a08dd",
+        "native": {
+          "name": "Grim Haruspex",
+          "oracleId": null,
+          "aliases": [
+            "grim haruspex"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Grim Haruspex",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Human Wizard"
+            }
+          ],
+          "physicalName": "Grim Haruspex",
+          "scryfallId": null,
+          "setCode": "KTK",
+          "collectorNumber": "73",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Pitiless Plunderer",
+        "sourceOracleId": "a784481f-eccb-4112-bb38-04a659319660",
+        "representativePrintingId": "5b5cd187-857a-44dd-8595-a52857a0b753",
+        "native": {
+          "name": "Pitiless Plunderer",
+          "oracleId": null,
+          "aliases": [
+            "pitiless plunderer"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Pitiless Plunderer",
+              "manaCost": "{3}{B}",
+              "typeLine": "Creature — Human Pirate"
+            }
+          ],
+          "physicalName": "Pitiless Plunderer",
+          "scryfallId": null,
+          "setCode": "RIX",
+          "collectorNumber": "81",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "a784481f-eccb-4112-bb38-04a659319660",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Doomed Dissenter",
+        "sourceOracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+        "representativePrintingId": "f7c0cf16-81ea-45e3-99cc-4424d59bb44b",
+        "native": {
+          "name": "Doomed Dissenter",
+          "oracleId": null,
+          "aliases": [
+            "doomed dissenter"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Doomed Dissenter",
+              "manaCost": "{1}{B}",
+              "typeLine": "Creature — Human"
+            }
+          ],
+          "physicalName": "Doomed Dissenter",
+          "scryfallId": null,
+          "setCode": "AKH",
+          "collectorNumber": "87",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Viscera Seer",
+        "sourceOracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "representativePrintingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+        "native": {
+          "name": "Viscera Seer",
+          "oracleId": null,
+          "aliases": [
+            "viscera seer"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Viscera Seer",
+              "manaCost": "{B}",
+              "typeLine": "Creature — Vampire Wizard"
+            }
+          ],
+          "physicalName": "Viscera Seer",
+          "scryfallId": null,
+          "setCode": "M11",
+          "collectorNumber": "120",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Tragic Slip",
+        "sourceOracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "representativePrintingId": "132ccc20-cb42-4474-b747-7e41a661060e",
+        "native": {
+          "name": "Tragic Slip",
+          "oracleId": null,
+          "aliases": [
+            "tragic slip"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Tragic Slip",
+              "manaCost": "{B}",
+              "typeLine": "Instant"
+            }
+          ],
+          "physicalName": "Tragic Slip",
+          "scryfallId": null,
+          "setCode": "DKA",
+          "collectorNumber": "76",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Garruk's Packleader",
+        "sourceOracleId": "13279222-422d-4447-9451-2463b0c714c6",
+        "representativePrintingId": "dafeafa0-b937-4387-8626-449a810486b4",
+        "native": {
+          "name": "Garruk's Packleader",
+          "oracleId": null,
+          "aliases": [
+            "garruk's packleader"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Garruk's Packleader",
+              "manaCost": "{4}{G}",
+              "typeLine": "Creature — Beast"
+            }
+          ],
+          "physicalName": "Garruk's Packleader",
+          "scryfallId": null,
+          "setCode": "M11",
+          "collectorNumber": "177",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "13279222-422d-4447-9451-2463b0c714c6",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Scute Swarm",
+        "sourceOracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+        "representativePrintingId": "ea630ba1-22f9-4a10-bdc6-0d03128214f4",
+        "native": {
+          "name": "Scute Swarm",
+          "oracleId": null,
+          "aliases": [
+            "scute swarm"
+          ],
+          "identity": [
+            "G"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Scute Swarm",
+              "manaCost": "{2}{G}",
+              "typeLine": "Creature — Insect"
+            }
+          ],
+          "physicalName": "Scute Swarm",
+          "scryfallId": null,
+          "setCode": "ZNR",
+          "collectorNumber": "203",
+          "derivedIdentity": [
+            "G"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Midnight Reaper",
+        "sourceOracleId": "e8c7566d-7cc0-48af-a986-83223ec7e06c",
+        "representativePrintingId": "f229b0e6-1ffd-410e-b04b-a0afc179c58c",
+        "native": {
+          "name": "Midnight Reaper",
+          "oracleId": null,
+          "aliases": [
+            "midnight reaper"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Midnight Reaper",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Zombie Knight"
+            }
+          ],
+          "physicalName": "Midnight Reaper",
+          "scryfallId": null,
+          "setCode": "GRN",
+          "collectorNumber": "77",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "e8c7566d-7cc0-48af-a986-83223ec7e06c",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Harvester of Souls",
+        "sourceOracleId": "5987ce77-10ad-4871-900a-5a005fcf4955",
+        "representativePrintingId": "870ebc0b-b748-4a21-b939-a48811451bba",
+        "native": {
+          "name": "Harvester of Souls",
+          "oracleId": null,
+          "aliases": [
+            "harvester of souls"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Harvester of Souls",
+              "manaCost": "{4}{B}{B}",
+              "typeLine": "Creature — Demon"
+            }
+          ],
+          "physicalName": "Harvester of Souls",
+          "scryfallId": null,
+          "setCode": "AVR",
+          "collectorNumber": "107",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "5987ce77-10ad-4871-900a-5a005fcf4955",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Ogre Slumlord",
+        "sourceOracleId": "0a5e3748-2e58-4e53-9653-8af4e21cf223",
+        "representativePrintingId": "76995067-81a3-41c5-bc95-bfa5a953700d",
+        "native": {
+          "name": "Ogre Slumlord",
+          "oracleId": null,
+          "aliases": [
+            "ogre slumlord"
+          ],
+          "identity": null,
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Ogre Slumlord",
+              "manaCost": "{3}{B}{B}",
+              "typeLine": "Creature — Ogre Rogue"
+            }
+          ],
+          "physicalName": "Ogre Slumlord",
+          "scryfallId": null,
+          "setCode": "GTC",
+          "collectorNumber": "74",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "0a5e3748-2e58-4e53-9653-8af4e21cf223",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Xathrid Necromancer",
+        "sourceOracleId": "a6b38874-c8be-47f7-a656-ba49ec9e967f",
+        "representativePrintingId": "7b76e49c-1b02-4ef0-a707-9d85099435bf",
+        "native": {
+          "name": "Xathrid Necromancer",
+          "oracleId": null,
+          "aliases": [
+            "xathrid necromancer"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Xathrid Necromancer",
+              "manaCost": "{2}{B}",
+              "typeLine": "Creature — Human Wizard"
+            }
+          ],
+          "physicalName": "Xathrid Necromancer",
+          "scryfallId": null,
+          "setCode": "M14",
+          "collectorNumber": "123",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "a6b38874-c8be-47f7-a656-ba49ec9e967f",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Liliana, Dreadhorde General",
+        "sourceOracleId": "5e958212-6a5b-4288-8d31-f1572619d7dc",
+        "representativePrintingId": "cb28d217-795e-4320-a032-cd713f7ecc8a",
+        "native": {
+          "name": "Liliana, Dreadhorde General",
+          "oracleId": null,
+          "aliases": [
+            "liliana, dreadhorde general"
+          ],
+          "identity": [
+            "B"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Liliana, Dreadhorde General",
+              "manaCost": "{4}{B}{B}",
+              "typeLine": "Legendary Planeswalker — Liliana"
+            }
+          ],
+          "physicalName": "Liliana, Dreadhorde General",
+          "scryfallId": null,
+          "setCode": "WAR",
+          "collectorNumber": "97",
+          "derivedIdentity": [
+            "B"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "5e958212-6a5b-4288-8d31-f1572619d7dc",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      },
+      {
+        "card": "Hanged Executioner",
+        "sourceOracleId": "6ff4ff67-ad08-447f-a112-1a071c1474a4",
+        "representativePrintingId": "7676deeb-b80d-49c9-b810-5ed0a68fa618",
+        "native": {
+          "name": "Hanged Executioner",
+          "oracleId": null,
+          "aliases": [
+            "hanged executioner"
+          ],
+          "identity": [
+            "W"
+          ],
+          "commanderLegality": "MATCH",
+          "origin": "UPSTREAM_ARGENTUM",
+          "layout": "normal",
+          "faces": [
+            {
+              "name": "Hanged Executioner",
+              "manaCost": "{2}{W}",
+              "typeLine": "Creature — Spirit"
+            }
+          ],
+          "physicalName": "Hanged Executioner",
+          "scryfallId": null,
+          "setCode": "M20",
+          "collectorNumber": "22",
+          "derivedIdentity": [
+            "W"
+          ],
+          "declaredOracleId": null
+        },
+        "associationOracleId": "6ff4ff67-ad08-447f-a112-1a071c1474a4",
+        "confidence": "CONFIDENT",
+        "method": "PHYSICAL_NAME_LAYOUT_COST_TYPES",
+        "evidence": [
+          "UNIQUE_FULL_PHYSICAL_NAME",
+          "COMPLETE_ORDERED_FACE_STRUCTURE",
+          "MATCHING_CAST_COSTS_AND_CARD_TYPES",
+          "NO_ORACLE_TEXT_SIMILARITY_USED"
+        ],
+        "sameOracleIdentity": true
+      }
+    ]
+  },
+  "toolDiffDiagnostics": {
+    "judith-create-creature-tokens": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": []
+    },
+    "judith-own-nontoken-creature-deaths": {
+      "comparablePool": true,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 51,
+        "ACCEPTED_CARD_CLASSIFICATIONS_CHANGED": 1,
+        "PATHWAY_ADDED": 98
+      },
+      "ambiguousPathwayBases": [
+        "WOE:90:Faerie Fencing|front|script.spellEffect.gate.condition|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL"
+      ]
+    },
+    "judith-reanimate-own-creatures": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": [
+        "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+      ]
+    },
+    "judith-stock-own-graveyard": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": [
+        "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+      ]
+    },
+    "krenko-create-creature-tokens": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": []
+    },
+    "krenko-own-nontoken-creature-deaths": {
+      "comparablePool": true,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 15,
+        "PATHWAY_ADDED": 33
+      },
+      "ambiguousPathwayBases": []
+    },
+    "krenko-reanimate-own-creatures": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": [
+        "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+      ]
+    },
+    "krenko-stock-own-graveyard": {
+      "comparablePool": true,
+      "counts": {},
+      "ambiguousPathwayBases": [
+        "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+      ]
+    }
+  },
+  "verification": {
+    "fullApplicationTests": {
+      "passed": 615,
+      "failed": 0,
+      "revision": "6fdeedec43885dd21f6bb4a6e756d0bbb100742a"
+    },
+    "finalFocusedTests": {
+      "passed": 30,
+      "failed": 0,
+      "revision": "a591bf3103d2ac0cb525d087a9d7a6b6d2a0bc89"
+    },
+    "fullBrowserTests": {
+      "passed": 34,
+      "failed": 0,
+      "revision": "6fdeedec43885dd21f6bb4a6e756d0bbb100742a"
+    },
+    "finalExpandedBrowserFlow": {
+      "passed": 1,
+      "failed": 0,
+      "revision": "a591bf3103d2ac0cb525d087a9d7a6b6d2a0bc89"
+    },
+    "catalogGate": "current passed; historical fingerprints changed",
+    "baselineAdmissionTests": {
+      "tests": 3,
+      "failures": 3,
+      "expected": "Missing Haruspex/Plunderer/Dissenter response admission"
+    }
+  }
+}

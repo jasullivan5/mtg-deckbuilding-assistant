@@ -54,7 +54,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 
 | Objective ID | Bounded question |
 |---|---|
-| own-nontoken-creature-deaths | Selected death generation, death-enhanced removal and qualifying triggered draw/token responses |
+| own-nontoken-creature-deaths | Selected death generation, death-enhanced removal and qualifying triggered draw/token responses ([increment report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |
