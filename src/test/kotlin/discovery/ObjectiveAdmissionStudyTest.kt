@@ -28,8 +28,10 @@ class ObjectiveAdmissionStudyTest : FunSpec({
         val directory=System.getenv("OBJECTIVE_ADMISSION_EXPORT") ?: return@test
         val output=File(directory).apply { mkdirs() }
         val criteria=Json.parseToJsonElement(File("docs/evidence/objective-admission-criteria.json").readText()).jsonObject
+        val supplement=Json.parseToJsonElement(File("docs/evidence/objective-admission-supplement.json").readText()).jsonObject
         val names=(criteria.getValue("familiarControls").jsonArray.map { it.jsonPrimitive.content }+
-            criteria.getValue("heldOutSelection").jsonArray.map { it.jsonObject.getValue("card").jsonPrimitive.content }).toSet()
+            criteria.getValue("heldOutSelection").jsonArray.map { it.jsonObject.getValue("card").jsonPrimitive.content }+
+            supplement.getValue("source").jsonObject.getValue("name").jsonPrimitive.content).toSet()
         val cards=names.sorted().map { name ->
             buildJsonObject {
                 put("card",name)
