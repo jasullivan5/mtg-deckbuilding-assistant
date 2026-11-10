@@ -5,9 +5,9 @@ import type {Run, Evidence, CommanderView} from '../src/api';
 test.skip(!process.env.EXPLORER_URL, 'Set EXPLORER_URL to a running Kotlin application.');
 const objective = 'own-nontoken-creature-deaths';
 const reviewedCoverageEngine = '03869c08665bf476a8b40dacbfbcd501c54a33bd';
-const unsearchedCoverageCards = ['Reassembling Skeleton'];
-const historicalGapLabel = '1 Outside current objective coverage';
-const unexplainedLabel = '2 Insufficient evidence';
+const unsearchedCoverageCards: string[] = [];
+const historicalGapLabel = '0 Outside current objective coverage';
+const unexplainedLabel = '1 Insufficient evidence';
 const historicalDiagnosis = 'leaves land and creature overlap unresolved';
 const differentEngineDiagnosis = 'Inspect the current decision records. The retained diagnosis used a different engine revision.';
 
@@ -286,7 +286,7 @@ test('commander and objective disclosures work before discovery with precise rev
   await engine.getByText('Technical evidence and recorded interactions', {exact: true}).click();
   expect(searches).toBe(0);
   await page.getByText('About objective', {exact: true}).click();
-  await expect(page.locator('.objective-help li')).toHaveCount(3);
+  await expect(page.locator('.objective-help li')).toHaveCount(4);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.screenshot({path: '../generated/explorer/hierarchy-mobile-commander.png', fullPage: true});
 });
@@ -370,7 +370,7 @@ test('keyboard card selection focuses the compact inspector without a jump link 
 test('source investigation distinguishes death sources removal policy and new non-removal responses', async ({page}) => {
   await page.goto('/'); await page.getByText('About objective', {exact: true}).click();
   await expect(page.locator('.objective-help')).not.toContainText('not searched as independent payoffs');
-  await expect(page.locator('.objective-help li')).toHaveCount(3);
+  await expect(page.locator('.objective-help li')).toHaveCount(4);
   const completed=page.waitForResponse(r=>r.url().endsWith('/api/v1/discover')&&r.ok());
   await page.getByRole('button',{name:'Find cards',exact:true}).click();const run:Run=await(await completed).json();
   const detail=page.getByRole('region',{name:'Result inspection'});const nav=page.getByRole('navigation',{name:'Finding categories',exact:true});
@@ -428,7 +428,7 @@ test('sacrifice type boundaries retain real restrictions and renewable creatures
     await detail.screenshot({path: `../generated/explorer/boundary-${name.toLowerCase().replaceAll(' ', '-')}.png`});
   }
   await page.getByText('Search scope, counts, exclusions and source revisions', {exact: true}).click();
-  await expect(page.locator('.provenance')).toContainText('Renewable creature inputs');
+  await expect(page.locator('.provenance')).toContainText('Input supply is bounded');
   await writeFile('../generated/explorer/boundary-report.json', await (await page.request.get(`/api/v1/runs/${run.runId}/report`)).body());
   await page.getByRole('combobox', {name: 'Objective', exact: true}).selectOption('reanimate-own-creatures');
   await page.getByRole('button', {name: 'Find cards', exact: true}).click();
@@ -454,11 +454,11 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
   const list = page.getByRole('region', {name: 'Cohort cards'});
   const detail = page.getByRole('region', {name: 'Coverage card inspection'});
   const groups = [
-    ['7 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper', 'Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer']],
+    ['8 Recognized contribution', ['Accursed Centaur', 'Viscera Seer', 'Attrition', 'Akki Scrapchomper', 'Grim Haruspex', 'Doomed Dissenter', 'Pitiless Plunderer', 'Reassembling Skeleton']],
     ['1 Unresolved relationship', ['Agent of Shauku']],
     ['1 Excluded by objective policy', ['Murder']],
     ['1 Excluded by Commander eligibility', ['Dryad Arbor']],
-    [omissionLabel, reviewed ? unsearchedCoverageCards : [...unsearchedCoverageCards, 'Walking Corpse']],
+    ...(!reviewed ? [[omissionLabel, ['Walking Corpse']] as const] : []),
     ...(reviewed ? [['1 Ordinary creature body', ['Walking Corpse']] as const] : []),
   ] as const;
   await expect(nav.getByRole('button', {name: '12 All cards'})).toBeVisible();
@@ -471,16 +471,16 @@ test('Discovery Coverage counts and filters the fixed cohort and inspects recogn
     await expect(nav.getByRole('button', {name: '0 Outside current objective coverage', exact: true})).toBeDisabled();
     await expect(nav.getByRole('button', {name: '0 Ordinary creature body', exact: true})).toBeDisabled();
   }
-  await nav.getByRole('button', {name: '7 Recognized contribution', exact: true}).click();
+  await nav.getByRole('button', {name: '8 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Viscera Seer'}).click();
   await expect(detail.getByRole('button', {name: /Engine tests/})).toBeVisible();
   await expect(detail.getByRole('button', {name: /Discovery.*Creature sacrifice cost identified/})).toBeVisible();
   await expect(detail).toContainText(reviewed ? 'activation cost' : differentEngineDiagnosis);
-  await nav.getByRole('button', {name: omissionLabel, exact: true}).click();
+  await nav.getByRole('button', {name: '8 Recognized contribution', exact: true}).click();
   await list.getByRole('button', {name: 'Reassembling Skeleton'}).click();
   await expect(detail).toContainText('In the ordinary findings index');
-  await expect(detail).toContainText('No pathway check for the reviewed relationship');
-  await nav.getByRole('button', {name: '7 Recognized contribution', exact:true}).click();
+  await expect(detail).toContainText('Current discovery recognizes intrinsic original-creature self-return');
+  await nav.getByRole('button', {name: '8 Recognized contribution', exact:true}).click();
   await list.getByRole('button', {name: 'Pitiless Plunderer'}).click();
   await expect(detail).toContainText('In the ordinary findings index');
   await expect(detail).toContainText('Current discovery recognizes a qualifying death response');
@@ -590,7 +590,7 @@ for (const width of [1440, 390]) test(`Primer distinguishes objective questions 
   await expect(questions).toContainText('neither a final taxonomy nor a general classifier');
   await primer.getByText('Why mechanical contributions need context', {exact:true}).click();
   await primer.getByRole('button', {name: /Supply a creature.*Reassembling Skeleton/}).click();
-  await expect(primer).toContainText('renewable creature fuel is not yet recognized by the death query');
+  await expect(primer).toContainText('Discover now recognizes this intrinsic self-return as Supplies creature inputs');
   await primer.getByRole('button', {name: /Respond with draw.*Grim Haruspex/}).click();
   await expect(primer).toContainText('Discover now identifies this same-ability draw response as Benefits from deaths.');
   await expect(primer).toContainText('inherited catalog fidelity is not measured');

@@ -26,6 +26,7 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
     ? {...item, status: 'Excluded by objective policy'} : item) : ability?.evidence;
   const unassigned = evidence.unsupported.filter(u => !evidence.abilities.some(a => a.actionId === u.actionId));
   const arrivals = evidence.graveyardContributions?.filter(item => item.relationship.actionId === ability?.actionId) ?? [];
+  const supplies = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'INTRINSIC_CREATURE_INPUT') ?? [];
   const responses = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'DEATH_TRIGGERED_OUTCOME') ?? [];
   return <>
     <div className="card-overview"><CardPicture image={image}/>
@@ -38,6 +39,16 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
       {available.map(a => <option key={a.id} value={a.id}>{a.title}{a.face ? ` · ${a.face}` : ''}</option>)}
     </select></label>}
     {ability ? <article className="ability-inspection">
+      {supplies.length > 0 && <section className="pathway" aria-label="Creature input supply">
+        <h3>{supplies.some(i => evidence.results[i].verdict === 'MATCH') ? 'Supplies creature inputs' : 'Potential creature input'}</h3>
+        {supplies.map(i => <div key={evidence.results[i].abilityPath}>
+          {evidence.results[i].verdict === 'UNKNOWN' && <p><strong>Creature input needs investigation.</strong></p>}
+          {evidence.results[i].verdict === 'NO_MATCH' && <p><strong>This movement does not qualify.</strong></p>}
+          <p>{evidence.explanations[i].summary}</p>
+          <List title="How the creature becomes available" values={evidence.explanations[i].requirements}/>
+          <List title="Continued availability and limits" values={evidence.explanations[i].unknowns}/>
+        </div>)}
+      </section>}
       {responses.length > 0 && <section className="pathway" aria-label="Death response">
         <h3>{responses.some(i => evidence.results[i].verdict === 'MATCH') ? 'Benefits from deaths' : 'Potential death response'}</h3>
         {responses.map(i => <div key={evidence.results[i].abilityPath}>

@@ -90,7 +90,7 @@ class DeathObjectiveCoverageTest : FunSpec({
         agent.containsKey("Why it qualifies") shouldBe false
     }
     test("death scope help describes bounded responses and the objective menu includes the independent state search") {
-        objectives.first().coverageNote!!.contains("Renewable creature inputs") shouldBe true
+        objectives.first().coverageNote!!.contains("Input supply is bounded") shouldBe true
         objectives.map { it.id } shouldBe listOf("own-nontoken-creature-deaths", "reanimate-own-creatures", "create-creature-tokens", "stock-own-graveyard")
     }
 })

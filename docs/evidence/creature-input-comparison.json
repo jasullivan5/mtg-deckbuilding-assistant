@@ -1,0 +1,2509 @@
+{
+  "judith-create-creature-tokens": {
+    "sha256Before": "e57aa3c0124ef26f401a32501f448e34fa7538323783c3afa2c8e0af74a94c82",
+    "sha256After": "aa3d3edd226c4578c58319d36af4dfcf089c7cbd7ba2ee5d7d58cf04feb8f3f8",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 6111,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 363,
+        "cards": 346
+      },
+      "UNKNOWN": {
+        "pathways": 55,
+        "cards": 48
+      },
+      "NO_MATCH": {
+        "pathways": 230,
+        "cards": 215
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 363,
+        "cards": 346
+      },
+      "UNKNOWN": {
+        "pathways": 55,
+        "cards": 48
+      },
+      "NO_MATCH": {
+        "pathways": 230,
+        "cards": 215
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 346,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [],
+    "countChanges": {}
+  },
+  "judith-own-nontoken-creature-deaths": {
+    "sha256Before": "d880a1eed9775392c10bbcd02727bbb7a1d7fc849235dca5693a4a10cad52aac",
+    "sha256After": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 6111,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 552,
+        "cards": 538
+      },
+      "UNKNOWN": {
+        "pathways": 452,
+        "cards": 414
+      },
+      "NO_MATCH": {
+        "pathways": 2143,
+        "cards": 1766
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 566,
+        "cards": 551
+      },
+      "UNKNOWN": {
+        "pathways": 508,
+        "cards": 467
+      },
+      "NO_MATCH": {
+        "pathways": 2320,
+        "cards": 1904
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 14,
+        "cards": 14
+      },
+      "UNKNOWN": {
+        "pathways": 56,
+        "cards": 56
+      },
+      "NO_MATCH": {
+        "pathways": 177,
+        "cards": 169
+      }
+    },
+    "newMatchCards": [
+      "Bladewing's Thrall",
+      "Bloodghast",
+      "Falkenrath Forebear",
+      "Forsaken Miner",
+      "Ghoulsteed",
+      "Haunted Dead",
+      "Persistent Specimen",
+      "Phoenix Chick",
+      "Razorlash Transmogrant",
+      "Reassembling Skeleton",
+      "Retrofitted Transmogrant",
+      "Tunnel Rats",
+      "Warcry Phoenix"
+    ],
+    "retainedMatchCards": 538,
+    "lostMatchCards": [],
+    "supplierChecks": [
+      {
+        "card": "Abzan Devotee",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Alesha, Who Laughs at Fate",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "All Hallow's Eve",
+        "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "All Hallow's Eve",
+        "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[1].effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Animate Dead",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Archpriest of Shadows",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Archwing Dragon",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Artificer's Dragon",
+        "path": "script.activatedAbilities[1].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Artisan of Kozilek",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ashcloud Phoenix",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ashen Powder",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ashnod's Harvester",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ayara, Widow of the Realm",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Azra Smokeshaper",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Back for Seconds",
+        "path": "script.spellEffect.effects[1].then.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Back on Track",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Balduvian Atrocity",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Behold the Sinister Six!",
+        "path": "script.spellEffect.body",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Betrayal of Flesh",
+        "path": "script.spellEffect.modes[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Biting-Palm Ninja",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Black Sun's Twilight",
+        "path": "script.spellEffect.effects[1].then.effects[2]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bladewing the Risen",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bladewing's Thrall",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Blood Speaker",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bloodfeather Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bloodghast",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bloodline Bidding",
+        "path": "script.spellEffect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bloodsoaked Champion",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Boarded Window",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Body Launderer",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bonecaller Cleric",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Brackish Trudge",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Breaching Dragonstorm",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bringer of the Last Gift",
+        "path": "script.triggeredAbilities[0].effect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Carnage, Crimson Chaos",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cauldron Dance",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Chorale of the Void",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cityscape Leveler",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Clay Revenant",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Coalstoke Gearhulk",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Coiling Rebirth",
+        "path": "script.spellEffect.modes[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Coiling Rebirth",
+        "path": "script.spellEffect.modes[1].effect.effects[1].effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Come Back Wrong",
+        "path": "script.spellEffect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Confront the Past",
+        "path": "script.spellEffect.modes[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Convenient Target",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Corpses of the Lost",
+        "path": "script.triggeredAbilities[1].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Corroding Dragonstorm",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Crown of Flames",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cult Conscript",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cyclopean Mummy",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cyclopean Snare",
+        "path": "script.activatedAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Daretti, Rocketeer Engineer",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Daretti, Rocketeer Engineer",
+        "path": "script.triggeredAbilities[1].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dark Revenant",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Deadly Plot",
+        "path": "script.spellEffect.modes[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Deathless Ancient",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Deathless Pilot",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Defossilize",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dokuchi Shadow-Walker",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dokuchi Silencer",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Doomed Necromancer",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dose of Dawnglow",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Draconic Destiny",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dread",
+        "path": "script.triggeredAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dread Return",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Driver of the Dead",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Dungeon Crawler",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Durable Coilbug",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Edgar's Awakening",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Eldrazi Ravager",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Endless Cockroaches",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Evil Reawakened",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Falkenrath Forebear",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Fell Horseman",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Flamewake Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Fleeting Effigy",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Fleshless Gladiator",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Flitting Guerrilla",
+        "path": "script.triggeredAbilities[0].effect.effects[2].action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Forsaken Miner",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Forum Necroscribe",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Funeral Room // Awakening Hall",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gangrenous Goliath",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Garland, Knight of Cornelia",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gastal Thrillroller",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Geth, Thane of Contracts",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ghastly Remains",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ghoulsteed",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gixian Puppeteer",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gollum the Abandoned",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gollum, Patient Plotter",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Grafted Butcher",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Grave Researcher",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gravespawn Sovereign",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Graveyard Shift",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Grim Reaper, Lethal Legionnaire",
+        "path": "script.triggeredAbilities[0].effect.reflexiveEffect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Grim Reminder",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gurgling Anointer",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Haunt of the Dead Marshes",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Haunted Dead",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Heavyweight Demolisher",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Hell's Caretaker",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Hostility",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Illicit Masquerade",
+        "path": "script.triggeredAbilities[1].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Infernal Vessel",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ink-Eyes, Servant of Oni",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ink-Eyes, Servant of Oni",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "It Doesn't Add Up",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Junji, the Midnight Sky",
+        "path": "script.triggeredAbilities[0].effect.modes[1].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Kami of Industry",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Kraul Swarm",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lamplight Phoenix",
+        "path": "script.triggeredAbilities[0].effect.gate.cost.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lamplight Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Leashling",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lembas",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lethal Vapors",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lich-Knights' Conquest",
+        "path": "script.spellEffect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Liliana Vess",
+        "path": "script.activatedAbilities[2].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Liliana, Death's Majesty",
+        "path": "script.activatedAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lingering Phantom",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Live or Die",
+        "path": "script.spellEffect.modes[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lively Dirge",
+        "path": "script.spellEffect.modes[1].effect.effects[2]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magma Phoenix",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magmatic Sprinter",
+        "path": "script.triggeredAbilities[1].effect.then.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magmatic Sprinter",
+        "path": "script.triggeredAbilities[1].effect.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Makeshift Mannequin",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mazemind Tome",
+        "path": "script.stateTriggeredAbilities[0].effect.gate.action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Meathook Massacre II",
+        "path": "script.triggeredAbilities[1].effect.then.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Meathook Massacre II",
+        "path": "script.triggeredAbilities[2].effect.suffer.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Merchant of Many Hats",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mishra's Juggernaut",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mishra's Research Desk",
+        "path": "script.activatedAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Molten Gatekeeper",
+        "path": "script.activatedAbilities[0].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Molten Gatekeeper",
+        "path": "script.activatedAbilities[0].effect.then.effects[3].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Moseo, Vein's New Dean",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mourning",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mukotai Ambusher",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nashi, Moon Sage's Scion",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Necrogen Communion",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nezumi Graverobber",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nezumi Prowler",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nim Devourer",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nine-Lives Familiar",
+        "path": "script.triggeredAbilities[0].effect.effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ninja of the New Moon",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "No One Left Behind",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Nullpriest of Oblivion",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Okiba Salvage",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Olivia, Crimson Bride",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ovalchase Daredevil",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Paramecia Coloniex",
+        "path": "script.triggeredAbilities[1].effect.action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Patriarch's Bidding",
+        "path": "script.spellEffect.effects[1].body.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Persistent Marshstalker",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Persistent Specimen",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Phoenix Chick",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Phyrexian Delver",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Phyrexian Dragon Engine",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Portal to Phyrexia",
+        "path": "script.triggeredAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Postmortem Professor",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Prison Break",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Profane Command",
+        "path": "script.spellEffect.modes[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Project Deathlok Soldier",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Push the Limit",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Pyre Zombie",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Queen's Bay Paladin",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Queen's Bay Paladin",
+        "path": "script.triggeredAbilities[1].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rakalite",
+        "path": "script.activatedAbilities[0].effect.effects[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rakdos Joins Up",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ral Zarek, Guest Lecturer",
+        "path": "script.activatedAbilities[2].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Random Encounter",
+        "path": "script.spellEffect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Razorlash Transmogrant",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Reanimate",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Reassembling Skeleton",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Reinforced Ronin",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Relentless X-ATM092",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Resurrected Cultist",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Retched Wretch",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Retrofitted Transmogrant",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Return of the Nightstalkers",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Riders of the Mark",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ringwraiths",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rise of the Dark Realms",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rocket Launcher",
+        "path": "script.activatedAbilities[0].effect.effects[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Sanitarium Skeleton",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scarecrone",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scavenger's Talent",
+        "path": "script.classLevels[1].triggeredAbilities[0].effect.then.effects[2]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scion of Darkness",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrap Welder",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrapwork Mutt",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrapwork Rager",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrounge for Eternity",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scythe of the Wretched",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Sensei's Divining Top",
+        "path": "script.activatedAbilities[1].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Shambling Cie'th",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Shark Shredder, Killer Clone",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Sheoldred",
+        "path": "script.sagaChapters[2].effect.effects[1]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Shivan Phoenix",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Sidisi, Regent of the Mire",
+        "path": "script.activatedAbilities[0].effect.effects[3]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Soul Exchange",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Soulcoil Viper",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Spine of Ish Sah",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Spit Flame",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Squee, Goblin Nabob",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Supper for Spiders",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Tergrid, God of Fright",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Tergrid, God of Fright",
+        "path": "script.triggeredAbilities[1].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Terror Ballista",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Terror of Towashi",
+        "path": "script.triggeredAbilities[0].effect.reflexiveEffect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Balrog of Moria",
+        "path": "script.triggeredAbilities[0].effect.action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Balrog, Flame of Ud\u00fbn",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Cruelty of Gix",
+        "path": "script.sagaChapters[2].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Eldest Reborn",
+        "path": "script.sagaChapters[2].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Rise of Sozin",
+        "path": "script.triggeredAbilities[1].effect.then.reflexiveEffect.effects[1]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "The Soul Stone",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Too Evil to Stay Dead",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Trash for Treasure",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Triassic Egg",
+        "path": "script.activatedAbilities[1].effect.modes[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Tunnel Rats",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Twilight's Call",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Tymaret, the Murder King",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Undead Butler",
+        "path": "script.triggeredAbilities[1].effect.action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Undead Gladiator",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Undying Beast",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Unearth",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Unforgiving One",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Unstoppable Slasher",
+        "path": "script.triggeredAbilities[1].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Valgavoth's Faithful",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Vat Emergence",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Vat of Rebirth",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Viashino Cutthroat",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Viashino Sandscout",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Victimize",
+        "path": "script.spellEffect.then.body",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Vigor Mortis",
+        "path": "script.spellEffect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Vigor Mortis",
+        "path": "script.spellEffect.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Vincent Valentine",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Virtue of Persistence",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Wake to Slaughter",
+        "path": "script.spellEffect.effects[1].ifNotEmpty.effects[2]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Warcry Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Whisper, Blood Liturgist",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Wolfbat",
+        "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Xu-Ifit, Osteoharmonist",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Yawgmoth's Vile Offering",
+        "path": "script.spellEffect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Yidaro, Wandering Monster",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Yidaro, Wandering Monster",
+        "path": "script.triggeredAbilities[0].effect.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zodiac Dragon",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zombify",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zuko's Conviction",
+        "path": "script.spellEffect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zuko, Conflicted",
+        "path": "script.triggeredAbilities[0].effect.modes[3].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zuko, Conflicted",
+        "path": "script.triggeredAbilities[0].effect.modes[3].effect.effects[2]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      }
+    ],
+    "duplicateLegacyIdentityKeys": [
+      {
+        "identity": [
+          "Faerie Fencing",
+          "Faerie Fencing|front|script.spell",
+          "script.spellEffect.gate.condition",
+          "DEATH_ENHANCED_REMOVAL"
+        ],
+        "count": 2
+      }
+    ],
+    "countChanges": {
+      "accepted_creature_input_pathways": {
+        "before": null,
+        "after": 14
+      },
+      "accepted_creature_input_cards": {
+        "before": null,
+        "after": 14
+      },
+      "unknown_creature_input_pathways": {
+        "before": null,
+        "after": 56
+      },
+      "unknown_query_pathways": {
+        "before": 452,
+        "after": 508
+      },
+      "pathways_with_any_unknown_decision": {
+        "before": 1086,
+        "after": 1275
+      }
+    }
+  },
+  "judith-reanimate-own-creatures": {
+    "sha256Before": "db81109e68710f990d267085366cebf68404846ea554bf23d2e24473708208e4",
+    "sha256After": "df7895ca0f37a593cbe5ce99acd4e4b72e98e420ef5f65eb1c943f6626bdb8da",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 6111,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 106,
+        "cards": 104
+      },
+      "UNKNOWN": {
+        "pathways": 93,
+        "cards": 85
+      },
+      "NO_MATCH": {
+        "pathways": 1857,
+        "cards": 1555
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 106,
+        "cards": 104
+      },
+      "UNKNOWN": {
+        "pathways": 93,
+        "cards": 85
+      },
+      "NO_MATCH": {
+        "pathways": 1857,
+        "cards": 1555
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 104,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [
+      {
+        "identity": [
+          "Bumi Bash",
+          "Bumi Bash|front|script.spell",
+          "script.spellEffect.modes[1].effect",
+          "REANIMATE_OWN_CREATURE"
+        ],
+        "count": 2
+      },
+      {
+        "identity": [
+          "Sorceress's Schemes",
+          "Sorceress's Schemes|front|script.spell",
+          "script.spellEffect.effects[0]",
+          "REANIMATE_OWN_CREATURE"
+        ],
+        "count": 2
+      }
+    ],
+    "countChanges": {}
+  },
+  "judith-stock-own-graveyard": {
+    "sha256Before": "cf87350ec594d832caa55f53c8ffbcbcce04b9aea358ca05f94aacc35caed965",
+    "sha256After": "3f9a2bb62fb18a4389ede72c86da1cbe318b125837784df4d190007508547952",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 6111,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 535,
+        "cards": 508
+      },
+      "UNKNOWN": {
+        "pathways": 576,
+        "cards": 527
+      },
+      "NO_MATCH": {
+        "pathways": 335,
+        "cards": 315
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 535,
+        "cards": 508
+      },
+      "UNKNOWN": {
+        "pathways": 576,
+        "cards": 527
+      },
+      "NO_MATCH": {
+        "pathways": 335,
+        "cards": 315
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 508,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [
+      {
+        "identity": [
+          "Sazacap's Brew",
+          "Sazacap's Brew|front|script.spell",
+          "script.additionalCosts[0].atom",
+          "GRAVEYARD_CREATURE_ARRIVAL"
+        ],
+        "count": 2
+      }
+    ],
+    "countChanges": {}
+  },
+  "krenko-create-creature-tokens": {
+    "sha256Before": "97d1e386dfcf9f900e7e8e5789a6e076d303cd329ba1d128faf943aef2ce13f2",
+    "sha256After": "bfa7ba070657fb96316f678e53fa175cd7744762a9ed0f11cc9e6e6a6da93fae",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 3472,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 190,
+        "cards": 182
+      },
+      "UNKNOWN": {
+        "pathways": 33,
+        "cards": 28
+      },
+      "NO_MATCH": {
+        "pathways": 139,
+        "cards": 131
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 190,
+        "cards": 182
+      },
+      "UNKNOWN": {
+        "pathways": 33,
+        "cards": 28
+      },
+      "NO_MATCH": {
+        "pathways": 139,
+        "cards": 131
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 182,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [],
+    "countChanges": {}
+  },
+  "krenko-own-nontoken-creature-deaths": {
+    "sha256Before": "9197f3f0ed534af7421e710b6a6a76e014856bfdd94b76525bee73dc3bb4120a",
+    "sha256After": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 3472,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 223,
+        "cards": 218
+      },
+      "UNKNOWN": {
+        "pathways": 207,
+        "cards": 192
+      },
+      "NO_MATCH": {
+        "pathways": 1344,
+        "cards": 1081
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 225,
+        "cards": 220
+      },
+      "UNKNOWN": {
+        "pathways": 223,
+        "cards": 207
+      },
+      "NO_MATCH": {
+        "pathways": 1386,
+        "cards": 1113
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 2,
+        "cards": 2
+      },
+      "UNKNOWN": {
+        "pathways": 16,
+        "cards": 16
+      },
+      "NO_MATCH": {
+        "pathways": 42,
+        "cards": 41
+      }
+    },
+    "newMatchCards": [
+      "Phoenix Chick",
+      "Warcry Phoenix"
+    ],
+    "retainedMatchCards": 218,
+    "lostMatchCards": [],
+    "supplierChecks": [
+      {
+        "card": "Archwing Dragon",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Artificer's Dragon",
+        "path": "script.activatedAbilities[1].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Artisan of Kozilek",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Ashcloud Phoenix",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Bloodfeather Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Boarded Window",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Breaching Dragonstorm",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cityscape Leveler",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Convenient Target",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Crown of Flames",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Cyclopean Snare",
+        "path": "script.activatedAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Daretti, Rocketeer Engineer",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Daretti, Rocketeer Engineer",
+        "path": "script.triggeredAbilities[1].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Draconic Destiny",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Eldrazi Ravager",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Flamewake Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Fleeting Effigy",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Gastal Thrillroller",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Heavyweight Demolisher",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Hostility",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Kami of Industry",
+        "path": "script.triggeredAbilities[0].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lamplight Phoenix",
+        "path": "script.triggeredAbilities[0].effect.gate.cost.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lamplight Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Leashling",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Lembas",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magma Phoenix",
+        "path": "script.activatedAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magmatic Sprinter",
+        "path": "script.triggeredAbilities[1].effect.then.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Magmatic Sprinter",
+        "path": "script.triggeredAbilities[1].effect.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mazemind Tome",
+        "path": "script.stateTriggeredAbilities[0].effect.gate.action",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mishra's Juggernaut",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Mishra's Research Desk",
+        "path": "script.activatedAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Molten Gatekeeper",
+        "path": "script.activatedAbilities[0].effect.then.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Molten Gatekeeper",
+        "path": "script.activatedAbilities[0].effect.then.effects[3].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Phoenix Chick",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Phyrexian Dragon Engine",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Portal to Phyrexia",
+        "path": "script.triggeredAbilities[1].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Push the Limit",
+        "path": "script.spellEffect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rakalite",
+        "path": "script.activatedAbilities[0].effect.effects[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Random Encounter",
+        "path": "script.spellEffect.effects[3]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Reinforced Ronin",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Relentless X-ATM092",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Riders of the Mark",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Rocket Launcher",
+        "path": "script.activatedAbilities[0].effect.effects[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scarecrone",
+        "path": "script.activatedAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrap Welder",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scrapwork Mutt",
+        "path": "script.activatedAbilities[0].effect.effects[0]",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Scythe of the Wretched",
+        "path": "script.triggeredAbilities[0].effect.effects[0]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Sensei's Divining Top",
+        "path": "script.activatedAbilities[1].effect.effects[1]",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Shivan Phoenix",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Spine of Ish Sah",
+        "path": "script.triggeredAbilities[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Spit Flame",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Squee, Goblin Nabob",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Trash for Treasure",
+        "path": "script.spellEffect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Triassic Egg",
+        "path": "script.activatedAbilities[1].effect.modes[1].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Viashino Cutthroat",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Viashino Sandscout",
+        "path": "script.triggeredAbilities[0].effect",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Warcry Phoenix",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Yidaro, Wandering Monster",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "UNKNOWN",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Yidaro, Wandering Monster",
+        "path": "script.triggeredAbilities[0].effect.otherwise",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      },
+      {
+        "card": "Zodiac Dragon",
+        "path": "script.triggeredAbilities[0].effect.then",
+        "verdict": "NO_MATCH",
+        "operation": "MOVE_OBJECT"
+      }
+    ],
+    "duplicateLegacyIdentityKeys": [],
+    "countChanges": {
+      "accepted_creature_input_pathways": {
+        "before": null,
+        "after": 2
+      },
+      "accepted_creature_input_cards": {
+        "before": null,
+        "after": 2
+      },
+      "unknown_creature_input_pathways": {
+        "before": null,
+        "after": 16
+      },
+      "unknown_query_pathways": {
+        "before": 207,
+        "after": 223
+      },
+      "pathways_with_any_unknown_decision": {
+        "before": 585,
+        "after": 623
+      }
+    }
+  },
+  "krenko-reanimate-own-creatures": {
+    "sha256Before": "a9760315207211c65068642d3ed89428bc1dfe1bfb7697b0b9677c725f060827",
+    "sha256After": "333334b3ee7ea4d58e9abddc3e23600a51185a9d0604f773068f235466f8a51a",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 3472,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 19,
+        "cards": 18
+      },
+      "UNKNOWN": {
+        "pathways": 35,
+        "cards": 31
+      },
+      "NO_MATCH": {
+        "pathways": 811,
+        "cards": 689
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 19,
+        "cards": 18
+      },
+      "UNKNOWN": {
+        "pathways": 35,
+        "cards": 31
+      },
+      "NO_MATCH": {
+        "pathways": 811,
+        "cards": 689
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 18,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [
+      {
+        "identity": [
+          "Bumi Bash",
+          "Bumi Bash|front|script.spell",
+          "script.spellEffect.modes[1].effect",
+          "REANIMATE_OWN_CREATURE"
+        ],
+        "count": 2
+      },
+      {
+        "identity": [
+          "Sorceress's Schemes",
+          "Sorceress's Schemes|front|script.spell",
+          "script.spellEffect.effects[0]",
+          "REANIMATE_OWN_CREATURE"
+        ],
+        "count": 2
+      }
+    ],
+    "countChanges": {}
+  },
+  "krenko-stock-own-graveyard": {
+    "sha256Before": "cce77d0f15dd18a946a1de0fc5e9aeee2189b02b6fd0b9b876df0cb249d085a4",
+    "sha256After": "50137229bb7d63f1b98bc91e86c3bc77af717cb57cc52fdc9eaa5a64f42b3e7c",
+    "engineBefore": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "engineAfter": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "eligibleInputCards": 3472,
+    "identicalFields": {
+      "mechanicalInputCards": true,
+      "eligibility": true,
+      "actions": true,
+      "facts": true,
+      "unsupported": true,
+      "structuralSupport": true,
+      "translationAssurance": true,
+      "conditionalArrivals": true,
+      "eventOutcomes": true
+    },
+    "legacyResultsExact": true,
+    "before": {
+      "MATCH": {
+        "pathways": 239,
+        "cards": 230
+      },
+      "UNKNOWN": {
+        "pathways": 252,
+        "cards": 235
+      },
+      "NO_MATCH": {
+        "pathways": 182,
+        "cards": 173
+      }
+    },
+    "after": {
+      "MATCH": {
+        "pathways": 239,
+        "cards": 230
+      },
+      "UNKNOWN": {
+        "pathways": 252,
+        "cards": 235
+      },
+      "NO_MATCH": {
+        "pathways": 182,
+        "cards": 173
+      }
+    },
+    "newSuppliers": {
+      "MATCH": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "UNKNOWN": {
+        "pathways": 0,
+        "cards": 0
+      },
+      "NO_MATCH": {
+        "pathways": 0,
+        "cards": 0
+      }
+    },
+    "newMatchCards": [],
+    "retainedMatchCards": 230,
+    "lostMatchCards": [],
+    "supplierChecks": [],
+    "duplicateLegacyIdentityKeys": [
+      {
+        "identity": [
+          "Sazacap's Brew",
+          "Sazacap's Brew|front|script.spell",
+          "script.additionalCosts[0].atom",
+          "GRAVEYARD_CREATURE_ARRIVAL"
+        ],
+        "count": 2
+      }
+    ],
+    "countChanges": {}
+  }
+}

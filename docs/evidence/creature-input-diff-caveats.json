@@ -1,0 +1,78 @@
+{
+  "judith-create-creature-tokens": {
+    "ambiguousPathwayBases": [],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "judith-own-nontoken-creature-deaths": {
+    "ambiguousPathwayBases": [
+      "WOE:90:Faerie Fencing|front|script.spellEffect.gate.condition|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL"
+    ],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "judith-reanimate-own-creatures": {
+    "ambiguousPathwayBases": [
+      "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+      "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+    ],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "judith-stock-own-graveyard": {
+    "ambiguousPathwayBases": [
+      "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+    ],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "krenko-create-creature-tokens": {
+    "ambiguousPathwayBases": [],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "krenko-own-nontoken-creature-deaths": {
+    "ambiguousPathwayBases": [],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "krenko-reanimate-own-creatures": {
+    "ambiguousPathwayBases": [
+      "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+      "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+    ],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  },
+  "krenko-stock-own-graveyard": {
+    "ambiguousPathwayBases": [
+      "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+    ],
+    "limitations": [
+      "Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.",
+      "No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.",
+      "Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."
+    ]
+  }
+}

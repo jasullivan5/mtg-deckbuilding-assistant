@@ -73,11 +73,11 @@ class SacrificeBoundaryTest : FunSpec({
         ObjectScope(com.wingedsheep.sdk.scripting.GameObjectFilter.Artifact, "YOU").compatible(Requirements(controller = Controller.YOU, token = TokenStatus.NONTOKEN)) shouldBe Verdict.MATCH
         ObjectScope(com.wingedsheep.sdk.scripting.GameObjectFilter.Land, "YOU").compatible(Requirements(controller = Controller.YOU, token = TokenStatus.NONTOKEN)) shouldBe Verdict.UNKNOWN // Unsupported overlap, not impossibility.
     }
-    test("renewable self creatures are represented without being silently added as death contributors") {
+    test("intrinsic self returns supply creature inputs without being labeled as deaths") {
         val returns = discover(catalog, report.commander, objective = "reanimate-own-creatures")
         for (name in listOf("Reassembling Skeleton", "Bloodghast")) {
             report.eligibility.single { it.card == name }.deck shouldBe Verdict.MATCH
-            report.results.none { it.card == name } shouldBe true
+            report.results.any { it.card == name && it.branch==Contribution.INTRINSIC_CREATURE_INPUT && it.verdict==Verdict.MATCH } shouldBe true
             report.facts.any { it.card == name && it.kind == FactKind.MOVE_OBJECT && it.sourceZone == com.wingedsheep.sdk.core.Zone.GRAVEYARD && it.destinationZone == com.wingedsheep.sdk.core.Zone.BATTLEFIELD } shouldBe true
             returns.results.any { it.card == name && it.verdict == Verdict.MATCH } shouldBe true
         }
