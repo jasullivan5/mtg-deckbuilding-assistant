@@ -1,0 +1,44 @@
+{
+  "status": "Research protocol, not adopted product policy; frozen before new held-out source/native outcome inspection",
+  "baselineApplication": "f039a6bcde462424d9d3a82a06819abbe418a978",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "unit": "One native ability or supported causal branch relative to one specified objective; ordinary card entry is a separately stated conceptual route, not an invented extracted ability",
+  "criteria": [
+    "Record source identity, original source text, native availability and representation before relating extraction to expected admission. Missing definition, excluded eligibility, no emitted relationship, UNKNOWN and NO_MATCH remain distinct.",
+    "Input supply needs an identifiable operation or permission changing availability, quantity, access, replenishment or usability of an objective-required resource, beyond the source merely having a qualifying type or characteristic.",
+    "Do not apply the input-only criterion to direct event production or state establishment. Test a separate stronger universal ordinary-participation exclusion for counterexamples.",
+    "State checkpoints: immediately after a permanent successfully enters under our control, or while a specified continuous modifier applies; power modification compares the same creature before/after an applicable effect. Printed power is not itself a positive change to an existing creature.",
+    "Death event means our nontoken creature actually moves battlefield to graveyard. Replacement, indestructibility, resources, legal targets and resolution remain prerequisites. A morbid history check is not a death trigger.",
+    "Land-entry event means a land enters under our control. Permission to play another land changes opportunity, not the land count already entered; mana production is a different operation.",
+    "Mark plausible interactive use from operation, recipients, controllers, choices and dependencies; do not classify every removal/damage/counter operation as interaction-only.",
+    "Test both a strict independent-contribution reading and a relationship-sensitive reading allowing one operation to serve interaction and the objective. Do not require separate printed abilities.",
+    "Costs and outputs in one action remain distinct causal contributions. A sacrifice cost can produce a qualifying death independently of the removal outcome, conditional on actual graveyard arrival.",
+    "Separate source-grounded expected contribution/admission, native expressibility, current extraction, actual query result and policy judgment. Conceptual objectives have no production query; manual judgments are not executable rules.",
+    "Counterfactual catalog diagnostic may withdraw the existing DEATH_ENHANCED_REMOVAL branch from primary results while retaining all original evidence. This is a precisely evaluated branch-withdrawal scenario, not an interaction classifier or a full evaluation of the general hypotheses.",
+    "Evaluate preservation, false-admission/exclusion risks, uncertainty, reuse, specialized meaning, feasibility and player explanation qualitatively. Do not estimate precision or recall from this purposive cohort."
+  ],
+  "candidateFormulations": {
+    "A": "Existing specialized policies and current four-objective acceptance.",
+    "B": "Reject type-only suppliers and interaction-only contributions unless another qualifying contribution can be distinguished within the same or another branch. Stress-test a rigid interpretation requiring separation from the interactive operation; separately test universal ordinary-participation exclusion.",
+    "C": "Require an explicit objective-relative relationship; allow the same operation to interact and directly produce/establish the anchor. Interaction-only remains unresolved where mechanics do not establish intended use.",
+    "D": "Apply ordinary-eligibility exclusion only to supplier claims; retain objective-specific producer/state/beneficiary criteria and existing death policies pending a separate decision."
+  },
+  "familiarControls": [
+    "Walking Corpse", "Reassembling Skeleton", "Bloodghast", "Wolfbat", "Murder", "Attrition", "Tragic Slip", "Wrath of God", "Damnation", "Fleshbag Marauder", "Judith, the Scourge Diva", "Grim Haruspex", "Pitiless Plunderer", "Doomed Dissenter", "Viscera Seer", "Scute Swarm", "Exploration", "Forest", "Cultivate", "Colossal Dreadmaw", "Darksteel Relic", "Hardened Scales", "Giant Growth", "Garruk's Packleader", "Reanimate"
+  ],
+  "heldOutSelection": [
+    {"card":"Wayward Swordtooth","challenge":"Extra land play permission versus ordinary land participation"},
+    {"card":"Sakura-Tribe Elder","challenge":"One ability produces own death and supplies a land-entry resource"},
+    {"card":"Harrow","challenge":"Sacrificed land versus lands put onto battlefield; resource and event types differ"},
+    {"card":"Lotus Cobra","challenge":"Land-entry beneficiary producing mana is not the land itself supplying mana"},
+    {"card":"Yargle, Glutton of Urborg","challenge":"Printed high power establishes a state without modifying another creature"},
+    {"card":"Ornithopter","challenge":"Ordinary artifact/creature participation versus direct artifact-count establishment"},
+    {"card":"Myr Battlesphere","challenge":"Artifact-producing ability and ordinary artifact presence are separate contributions"},
+    {"card":"Rancor","challenge":"Continuous power modification and return-to-hand are different relationships"},
+    {"card":"Conclave Mentor","challenge":"Replacement enhancement is not an initiating triggered placement"},
+    {"card":"Goblin Bombardment","challenge":"Sacrifice cost with creature/player damage; interaction does not erase production"},
+    {"card":"Footlight Fiend","challenge":"Self-death damage can target creatures or players"},
+    {"card":"Goblin Sharpshooter","challenge":"Death beneficiary can grant usability without conventional draw/token payoff"}
+  ],
+  "selectionLimitations": "Known-card purposive challenges, not blinded, random, independent or representative. Familiar cases reuse retained research; held-out means not newly source/native-inspected for this study before the protocol commit. Native availability is not assumed. Missing definitions will not be silently replaced."
+}

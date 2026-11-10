@@ -1,0 +1,861 @@
+{
+  "status": "Source expectations frozen after protocol and retained-source capture, before new native/extraction observation; candidates are proposed judgments, not production verdicts",
+  "criteriaCommit": "112e2a4",
+  "rows": [
+    {
+      "id": "R01",
+      "card": "Walking Corpse",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Printed nontoken creature body",
+      "relationship": "Potential ordinary material",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "None",
+      "requirements": "Must enter under us; a separate death mechanism would be needed",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_SUPPLIER",
+        "C_relationship_sensitive": "EXCLUDE_SUPPLIER",
+        "D_input_only": "EXCLUDE_SUPPLIER"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R02",
+      "card": "Reassembling Skeleton",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Self-return",
+      "relationship": "Supplies input",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Original creature becomes available again",
+      "requirements": "Original card in own graveyard; {1}{B}; tapped entry; later actual death requires another mechanism",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R03",
+      "card": "Bloodghast",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Landfall self-return",
+      "relationship": "Supplies input",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Original creature becomes available again",
+      "requirements": "Original card in own graveyard; own land entry; optional choice; later actual death requires another mechanism",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R04",
+      "card": "Wolfbat",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Conditional original self-return with finality",
+      "relationship": "Potential input",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Return exists; later death barred while finality remains",
+      "requirements": "Second draw of turn; pay {B}; source graveyard; optional",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "UNRESOLVED",
+        "C_relationship_sensitive": "UNRESOLVED",
+        "D_input_only": "UNRESOLVED"
+      },
+      "ambiguity": "Do not assume counter removal or unlimited reuse"
+    },
+    {
+      "id": "R05",
+      "card": "Murder",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Targeted destruction",
+      "relationship": "Potential producer by choosing our creature",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Answers a creature chosen as target",
+      "contributionBeyondInteraction": "Same destruction could produce death, but no structural intent is known",
+      "requirements": "Legal own nontoken creature; not indestructible; actual graveyard arrival",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE",
+        "C_relationship_sensitive": "UNRESOLVED",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "General direct-production test alone would admit it; exclusion needs objective-purpose meaning"
+    },
+    {
+      "id": "R06",
+      "card": "Wrath of God",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Destroy all creatures; no regeneration",
+      "relationship": "Produces own deaths and interacts in one effect",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Removes opposing and own creatures",
+      "contributionBeyondInteraction": "Same operation includes our creatures without friendly-target redirection",
+      "requirements": "Our nontoken creature on battlefield; actual graveyard arrival; replacement/indestructibility matter",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_STRICT_INDEPENDENCE",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "Strict interaction exclusion may reject a substantive producer"
+    },
+    {
+      "id": "R07",
+      "card": "Damnation",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Destroy all creatures; no regeneration",
+      "relationship": "Produces own deaths and interacts in one effect",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Removes opposing and own creatures",
+      "contributionBeyondInteraction": "Same operation includes our creatures without friendly-target redirection",
+      "requirements": "Our nontoken creature on battlefield; actual graveyard arrival; replacement/indestructibility matter",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_STRICT_INDEPENDENCE",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "Strict interaction exclusion may reject a substantive producer"
+    },
+    {
+      "id": "R08",
+      "card": "Fleshbag Marauder",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Each player sacrifices a creature on entry",
+      "relationship": "Produces own deaths and interacts in one effect",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Opponents also sacrifice",
+      "contributionBeyondInteraction": "Same effect imposes own sacrifice; can choose source",
+      "requirements": "Entry; each chooses; our chosen nontoken creature must reach graveyard",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_STRICT_INDEPENDENCE",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R09",
+      "card": "Attrition",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice cost then destroy nonblack creature",
+      "relationship": "Produces death through cost",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Removal or damage outcome",
+      "contributionBeyondInteraction": "Cost causes a distinct qualifying death regardless of successful removal resolution",
+      "requirements": "{B}; another creature available as cost; legal nonblack creature target; sacrifice must actually reach graveyard",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R10",
+      "card": "Goblin Bombardment",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice cost then one damage to any target",
+      "relationship": "Produces death through cost",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Removal or damage outcome",
+      "contributionBeyondInteraction": "Cost causes a distinct qualifying death regardless of successful removal resolution",
+      "requirements": "A creature available as cost; legal target; sacrifice must actually reach graveyard",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R11",
+      "card": "Tragic Slip",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Earlier death selects -13/-13 instead of -1/-1",
+      "relationship": "Benefits from earlier death through removal",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Removal strengthened by morbid",
+      "contributionBeyondInteraction": "No separate noninteractive output; mechanical dependency is real",
+      "requirements": "Creature died this turn; legal creature target; resolve spell",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_PRIMARY_PROPOSED",
+        "C_relationship_sensitive": "EXCLUDE_PRIMARY_PROPOSED",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "Moving to contextual interaction would be a consequential policy change, not a mechanical negative"
+    },
+    {
+      "id": "R12",
+      "card": "Judith, the Scourge Diva",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Death-triggered one damage to any target",
+      "relationship": "Beneficiary; creature or player outcome",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Creature target may answer a threat; opponent target may be payoff",
+      "contributionBeyondInteraction": "Player damage is a direct payoff; same operation also permits interaction",
+      "requirements": "Our nontoken death; source active at event; legal target; not the initiating death",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "UNRESOLVED_STRICT_INDEPENDENCE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "Damage is not inherently interaction-only"
+    },
+    {
+      "id": "R13",
+      "card": "Footlight Fiend",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Death-triggered one damage to any target",
+      "relationship": "Beneficiary; creature or player outcome",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Creature target may answer a threat; opponent target may be payoff",
+      "contributionBeyondInteraction": "Player damage is a direct payoff; same operation also permits interaction",
+      "requirements": "Source itself dies; legal target; not the initiating death",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "UNRESOLVED_STRICT_INDEPENDENCE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "RETAIN_CURRENT_POLICY"
+      },
+      "ambiguity": "Damage is not inherently interaction-only"
+    },
+    {
+      "id": "R14",
+      "card": "Goblin Sharpshooter",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Death trigger untaps source",
+      "relationship": "Beneficiary through restored usability",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Separate tap-damage ability can interact",
+      "contributionBeyondInteraction": "Untap is an objective-conditioned change in usability, not draw/token",
+      "requirements": "A creature dies, including a qualifying own nontoken creature; source in battlefield; tap timing matters",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_PROPOSED",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "REQUIRES_NEW_BENEFIT_INTERPRETATION"
+      },
+      "ambiguity": "No assumed repeated-damage loop"
+    },
+    {
+      "id": "R15",
+      "card": "Grim Haruspex",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Draw a card",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Noninteractive output tied to qualifying event",
+      "requirements": "Another own nontoken creature dies; native trigger/output branch and active zone must agree",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R16",
+      "card": "Pitiless Plunderer",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Create Treasure",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Noninteractive output tied to qualifying event",
+      "requirements": "Another own creature dies; token restriction does not exclude nontoken event; native trigger/output branch and active zone must agree",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R17",
+      "card": "Doomed Dissenter",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Create 2/2 Zombie",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Noninteractive output tied to qualifying event",
+      "requirements": "This creature dies; native trigger/output branch and active zone must agree",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R18",
+      "card": "Viscera Seer",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice creature cost; scry outcome",
+      "relationship": "Producer",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Cost produces actual death; scry is not death-triggered",
+      "requirements": "Own nontoken creature as cost, graveyard arrival; legal activation",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R19",
+      "card": "Reanimate",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Generic graveyard creature return",
+      "relationship": "Potential supplier of another card",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "May take opponent graveyard creature",
+      "contributionBeyondInteraction": "Distinct resource access, but not intrinsic self-replenishment",
+      "requirements": "Original target card; graveyard; under us; lose life; supplied type matters",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "UNRESOLVED_SCOPE",
+        "C_relationship_sensitive": "UNRESOLVED_SCOPE",
+        "D_input_only": "RETAIN_CURRENT_NARROW_SUPPLY"
+      },
+      "ambiguity": "Narrow implemented supplier capability is not the entire general principle"
+    },
+    {
+      "id": "R20",
+      "card": "Reanimate",
+      "objective": "Reanimate own creatures",
+      "anchor": "EVENT",
+      "sourceOperation": "Original card graveyard to battlefield",
+      "relationship": "Direct producer",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Could affect another graveyard; chosen own route is not inherently an answer",
+      "contributionBeyondInteraction": "Directly accomplishes the selected anchor",
+      "requirements": "Own original creature card in graveyard; legal target; under us",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R21",
+      "card": "Forest",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Normal land play",
+      "relationship": "Direct event producer through ordinary participation",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "The ordinary action itself is exactly the requested event",
+      "requirements": "Land in hand; available land play; main phase and empty stack; entry under us",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "OBJECTIVE_SCOPE_DECISION",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Counterexample to universal ordinary-participation exclusion"
+    },
+    {
+      "id": "R22",
+      "card": "Forest",
+      "objective": "Pay mana for another mechanic",
+      "anchor": "RESOURCE",
+      "sourceOperation": "Tap for {G}",
+      "relationship": "Ordinary resource eligibility",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "No distinctive increase beyond normal mana-producing land",
+      "requirements": "Untapped Forest under us; mana ability and other requirements",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE_SUPPLIER",
+        "C_relationship_sensitive": "EXCLUDE_SUPPLIER",
+        "D_input_only": "EXCLUDE_SUPPLIER"
+      },
+      "ambiguity": "Ordinary resource baseline must be explicit; not a claim that mana ability is absent"
+    },
+    {
+      "id": "R23",
+      "card": "Exploration",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Additional land play permission",
+      "relationship": "Supplies usability/opportunity",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Changes number of legal land plays",
+      "requirements": "Our turn; another land in hand; normal land timing; permission active",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_PROPOSED",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "INCLUDE_PROPOSED"
+      },
+      "ambiguity": "Permission is not an already executed land entry"
+    },
+    {
+      "id": "R24",
+      "card": "Wayward Swordtooth",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Additional land play permission",
+      "relationship": "Supplies usability/opportunity",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Changes number of legal land plays",
+      "requirements": "Our turn; another land in hand; normal land timing; permission active",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_PROPOSED",
+        "C_relationship_sensitive": "INCLUDE_PROPOSED",
+        "D_input_only": "INCLUDE_PROPOSED"
+      },
+      "ambiguity": "Permission is not an already executed land entry"
+    },
+    {
+      "id": "R25",
+      "card": "Cultivate",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Search up to two basics; one battlefield tapped, one hand",
+      "relationship": "Produces entry; supplies access",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Native instruction puts land onto battlefield, not normal land play",
+      "requirements": "Library basics; spell resolves; choose sufficient cards; actual land enters under us",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R26",
+      "card": "Harrow",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice land additional cost; search up to two basics onto battlefield",
+      "relationship": "Produces entry; supplies access",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Native instruction puts land onto battlefield, not normal land play",
+      "requirements": "Sacrifice our land as cost; basics in library; spell resolves; actual land enters under us",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R27",
+      "card": "Sakura-Tribe Elder",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice self; search basic onto battlefield tapped",
+      "relationship": "Produces entry; supplies access",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Native instruction puts land onto battlefield, not normal land play",
+      "requirements": "Source on battlefield; sacrifice cost; basic in library; actual land enters under us",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R28",
+      "card": "Sakura-Tribe Elder",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Sacrifice source as cost",
+      "relationship": "Produces own death",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Cost consumes original creature",
+      "requirements": "Source under us; nontoken; actual graveyard arrival",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R29",
+      "card": "Lotus Cobra",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Add one mana of any color",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Event-conditioned output",
+      "requirements": "Own land entry; source active; choose color",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_SOURCE_EXPECTATION",
+        "C_relationship_sensitive": "INCLUDE_SOURCE_EXPECTATION",
+        "D_input_only": "INCLUDE_SOURCE_EXPECTATION"
+      },
+      "ambiguity": "Extraction/query support evaluated separately"
+    },
+    {
+      "id": "R30",
+      "card": "Scute Swarm",
+      "objective": "Land enters under our control",
+      "anchor": "EVENT",
+      "sourceOperation": "Create Insect or conditional source-copy token",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Event-conditioned output",
+      "requirements": "Own land entry; six lands tested on resolution; branch exact",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_SOURCE_EXPECTATION",
+        "C_relationship_sensitive": "INCLUDE_SOURCE_EXPECTATION",
+        "D_input_only": "INCLUDE_SOURCE_EXPECTATION"
+      },
+      "ambiguity": "Extraction/query support evaluated separately"
+    },
+    {
+      "id": "R31",
+      "card": "Colossal Dreadmaw",
+      "objective": "Control a creature with power 4 or greater",
+      "anchor": "STATE",
+      "sourceOperation": "Printed power 6",
+      "relationship": "Direct establisher at successful own entry checkpoint",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Printed characteristic directly satisfies state, not supplier classification",
+      "requirements": "Successfully enter and control source; no lowering modifier at checkpoint",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "INCLUDE_DIRECT_STATE",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Baseline source body is not a power increase to an existing creature"
+    },
+    {
+      "id": "R32",
+      "card": "Yargle, Glutton of Urborg",
+      "objective": "Control a creature with power 4 or greater",
+      "anchor": "STATE",
+      "sourceOperation": "Printed power 9",
+      "relationship": "Direct establisher at successful own entry checkpoint",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Printed characteristic directly satisfies state, not supplier classification",
+      "requirements": "Successfully enter and control source; no lowering modifier at checkpoint",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "INCLUDE_DIRECT_STATE",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Baseline source body is not a power increase to an existing creature"
+    },
+    {
+      "id": "R33",
+      "card": "Garruk's Packleader",
+      "objective": "Control a creature with power 4 or greater",
+      "anchor": "STATE",
+      "sourceOperation": "Printed power 4",
+      "relationship": "Direct establisher at successful own entry checkpoint",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Printed characteristic directly satisfies state, not supplier classification",
+      "requirements": "Successfully enter and control source; no lowering modifier at checkpoint",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "INCLUDE_DIRECT_STATE",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Baseline source body is not a power increase to an existing creature"
+    },
+    {
+      "id": "R34",
+      "card": "Garruk's Packleader",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Power-filtered creature-entry draw",
+      "relationship": "Does not increase power; depends on entering power",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Beneficiary of entry condition, not of an increase event",
+      "requirements": "Another own creature enters with power 3+; optional draw",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE",
+        "C_relationship_sensitive": "EXCLUDE",
+        "D_input_only": "EXCLUDE"
+      },
+      "ambiguity": "A boost after entry cannot retroactively trigger this ability"
+    },
+    {
+      "id": "R35",
+      "card": "Darksteel Relic",
+      "objective": "Control at least five artifacts",
+      "anchor": "STATE",
+      "sourceOperation": "Ordinary artifact permanent entry",
+      "relationship": "Contributes one to artifact-count state",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Direct count establishment, not distinctive supplier for another input",
+      "requirements": "Successfully enter under us; four other artifacts for threshold five",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "INCLUDE_CONDITIONAL_STATE",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Source alone does not establish five artifacts; indestructibility/flying not evidence of producing extra artifacts"
+    },
+    {
+      "id": "R36",
+      "card": "Ornithopter",
+      "objective": "Control at least five artifacts",
+      "anchor": "STATE",
+      "sourceOperation": "Ordinary artifact permanent entry",
+      "relationship": "Contributes one to artifact-count state",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Direct count establishment, not distinctive supplier for another input",
+      "requirements": "Successfully enter under us; four other artifacts for threshold five",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "ORDINARY_UNIVERSAL_EXCLUDES",
+        "C_relationship_sensitive": "INCLUDE_CONDITIONAL_STATE",
+        "D_input_only": "ALLOW_DIRECT_CRITERIA"
+      },
+      "ambiguity": "Source alone does not establish five artifacts; indestructibility/flying not evidence of producing extra artifacts"
+    },
+    {
+      "id": "R37",
+      "card": "Myr Battlesphere",
+      "objective": "Control at least five artifacts",
+      "anchor": "STATE",
+      "sourceOperation": "Entry creates four Myr artifact creature tokens",
+      "relationship": "Produces artifacts; conditionally establishes count",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No for entry branch",
+      "contributionBeyondInteraction": "Four additional artifacts plus artifact source can establish five",
+      "requirements": "Source enters under us; trigger resolves; four tokens remain; source remains for five",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": "Separate attack ability must not lend its damage or power change to entry trigger"
+    },
+    {
+      "id": "R38",
+      "card": "Pitiless Plunderer",
+      "objective": "Control at least five artifacts",
+      "anchor": "STATE",
+      "sourceOperation": "Death-triggered Treasure",
+      "relationship": "Produces artifact count",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Treasure is noncreature artifact, not mana already produced",
+      "requirements": "Qualifying death; trigger resolves; enough other artifacts for five",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R39",
+      "card": "Pitiless Plunderer",
+      "objective": "Create creature tokens",
+      "anchor": "EVENT",
+      "sourceOperation": "Create Treasure",
+      "relationship": "Does not produce creature token",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "None for creature-token anchor",
+      "requirements": "Treasure has artifact type and no creature type in this outcome",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE",
+        "C_relationship_sensitive": "EXCLUDE",
+        "D_input_only": "EXCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R40",
+      "card": "Giant Growth",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Target gets +3/+3 until end of turn",
+      "relationship": "Direct power modifier",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Can change combat, but not inherently interaction-only",
+      "contributionBeyondInteraction": "Same own recipient has higher power while modifier applies",
+      "requirements": "Legal own creature target; resolve; positive effect until end of turn",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R41",
+      "card": "Rancor",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Enchanted creature gets +2/+0 continuously",
+      "relationship": "Direct power modifier",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "Can change combat, but not inherently interaction-only",
+      "contributionBeyondInteraction": "Same own recipient has higher power while modifier applies",
+      "requirements": "Aura attached to own creature; continuous bonus applies",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE",
+        "C_relationship_sensitive": "INCLUDE",
+        "D_input_only": "INCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R42",
+      "card": "Hardened Scales",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Replacement adds one to positive +1/+1 counter placement on own creature",
+      "relationship": "Enhances modification; does not initiate placement",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Additional counters can increase power compared with unmodified placement",
+      "requirements": "Another one-or-more placement; own creature recipient; replacement active; actual placement",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_CONDITIONAL",
+        "C_relationship_sensitive": "INCLUDE_CONDITIONAL",
+        "D_input_only": "INCLUDE_CONDITIONAL"
+      },
+      "ambiguity": "Replacement effect, not a triggered ability or original placement producer"
+    },
+    {
+      "id": "R43",
+      "card": "Conclave Mentor",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Replacement adds one to positive +1/+1 counter placement on own creature",
+      "relationship": "Enhances modification; does not initiate placement",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Additional counters can increase power compared with unmodified placement",
+      "requirements": "Another one-or-more placement; own creature recipient; replacement active; actual placement",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_CONDITIONAL",
+        "C_relationship_sensitive": "INCLUDE_CONDITIONAL",
+        "D_input_only": "INCLUDE_CONDITIONAL"
+      },
+      "ambiguity": "Replacement effect, not a triggered ability or original placement producer"
+    },
+    {
+      "id": "R44",
+      "card": "Walking Corpse",
+      "objective": "Increase power of a creature we control",
+      "anchor": "MODIFICATION",
+      "sourceOperation": "Printed power 2",
+      "relationship": "No positive change",
+      "ordinaryEligibilityOnly": true,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "None",
+      "requirements": "No imagined external power-changing effect",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "EXCLUDE",
+        "C_relationship_sensitive": "EXCLUDE",
+        "D_input_only": "EXCLUDE"
+      },
+      "ambiguity": ""
+    },
+    {
+      "id": "R45",
+      "card": "Conclave Mentor",
+      "objective": "Our nontoken creatures die",
+      "anchor": "EVENT",
+      "sourceOperation": "Self dies; gain life equal to power",
+      "relationship": "Beneficiary",
+      "ordinaryEligibilityOnly": false,
+      "plausibleInteraction": "No",
+      "contributionBeyondInteraction": "Life gain is distinct from replacement ability",
+      "requirements": "Source dies; applicable last-known power; gain life output",
+      "expected": {
+        "A": "OBSERVE_EXISTING_QUERY_OR_UNIMPLEMENTED",
+        "B_strict": "INCLUDE_SOURCE_EXPECTATION",
+        "C_relationship_sensitive": "INCLUDE_SOURCE_EXPECTATION",
+        "D_input_only": "REQUIRES_NEW_BENEFIT_INTERPRETATION"
+      },
+      "ambiguity": "Keep separate ability from counter replacement"
+    }
+  ]
+}
