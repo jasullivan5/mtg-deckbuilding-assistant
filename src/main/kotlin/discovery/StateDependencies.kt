@@ -53,7 +53,9 @@ private fun predicateCompatibility(c: Condition, anchor: StateAnchor): Verdict =
         if(player!=null && player !in setOf(Player.Each,Player.You)) Verdict.UNKNOWN
         else all(listOf(support,scope.compatible(Requirements(controller=anchor.controller,token=anchor.token))))
     }
-    is StateAnchor.BattlefieldCount -> if(stateScope(c)!=StateScope.BATTLEFIELD_COUNT) Verdict.NO_MATCH else {
+    is StateAnchor.BattlefieldCount -> if(stateScope(c)!=StateScope.BATTLEFIELD_COUNT) {
+        if(stateScope(c)==StateScope.UNRESOLVED) Verdict.UNKNOWN else Verdict.NO_MATCH
+    } else {
         c as Compare
         val count=c.left as? DynamicAmount.AggregateBattlefield
         val limit=(c.right as? DynamicAmount.Fixed)?.amount
@@ -106,10 +108,17 @@ internal fun stateEffectBenefit(a: Effect,b: Effect?): Verdict = when {
     else -> Verdict.UNKNOWN
 }
 
-fun stateDependencyDecisions(d: StateDependency, anchor: StateAnchor): List<Decision> = listOf(
-    Decision("state-predicate",predicateCompatibility(d.condition,anchor),"MECHANICAL",d.condition.description),
+fun stateDependencyDecisions(d: StateDependency, anchor: StateAnchor): List<Decision> {
+    val predicate=predicateCompatibility(d.condition,anchor)
+    // A stronger false branch could be the benefit under a negated or compound condition.
+    // Do not use the true-branch comparison to reject an unresolved anchor polarity.
+    val change=if(predicate==Verdict.UNKNOWN && d.whenTrue!=d.whenFalse) Verdict.UNKNOWN
+        else stateEffectBenefit(d.whenTrue,d.whenFalse)
+    return listOf(
+    Decision("state-predicate",predicate,"MECHANICAL",d.condition.description),
     Decision("state-checkpoint-and-branch",d.contextSupport,"MECHANICAL",
         "${d.checkpoint}: ${d.actionId}, ${d.conditionPath} controls ${d.outcomePath}; additional prerequisites remain"),
-    Decision("state-effect-change",stateEffectBenefit(d.whenTrue,d.whenFalse),"MECHANICAL",
+    Decision("state-effect-change",change,"MECHANICAL",
         "When true: ${d.whenTrue.description}; otherwise: ${d.whenFalse?.description ?: "this outcome is unavailable"}")
 )
+}

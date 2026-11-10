@@ -64,10 +64,15 @@ class StateDependencyTest : FunSpec({
         verdict(d,six.copy(player=Player.EachOpponent)) shouldBe Verdict.NO_MATCH
         verdict(d,six.copy(filter=GameObjectFilter.Creature)) shouldBe Verdict.UNKNOWN
         val synthetic=card("Threshold test fixture") {
-            typeLine="Sorcery"; manaCost="{G}"
-            spell { effect=Effects.If(d.condition,DrawCardsEffect(2),DrawCardsEffect(1)) }
+            typeLine="Enchantment"; manaCost="{G}"
+            triggeredAbility {
+                trigger=checkNotNull(d.incomingEvent).trigger
+                effect=Effects.If(d.condition,DrawCardsEffect(2),DrawCardsEffect(1))
+            }
         }
         val test=PathwayExtractor(inspectStateDependencies=true).extract(listOf(synthetic)).stateDependencies.single()
+        test.incomingEvent?.trigger shouldBe d.incomingEvent?.trigger
+        test.incomingEvent?.confidence shouldBe Verdict.MATCH
         verdict(test,six) shouldBe Verdict.MATCH
         verdict(test,six.copy(count=5)) shouldBe Verdict.NO_MATCH
         verdict(test,StateAnchor.DeathHistory()) shouldBe Verdict.NO_MATCH
@@ -82,6 +87,7 @@ class StateDependencyTest : FunSpec({
         verdict(d,StateAnchor.DeathHistory()) shouldBe Verdict.NO_MATCH
         val nested=d.copy(condition=NotCondition(CreatureDiedThisTurnCondition),whenFalse=null,contextSupport=Verdict.MATCH)
         verdict(nested,StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
+        verdict(nested.copy(whenFalse=DrawCardsEffect(2)),StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
     }
     test("export unchanged-pool comparisons when explicitly requested") {
         val dir=System.getenv("STATE_STUDY_EXPORT")?.let(::File) ?: return@test
