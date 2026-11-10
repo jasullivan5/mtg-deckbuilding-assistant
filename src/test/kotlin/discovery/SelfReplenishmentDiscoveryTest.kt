@@ -55,4 +55,22 @@ class SelfReplenishmentDiscoveryTest : FunSpec({
         report.results.any { it.card=="Tymaret, the Murder King" && it.branch==Contribution.DIRECT_DEATH_GENERATOR && it.verdict==Verdict.MATCH } shouldBe true
         report.results.filter { it.card=="Tymaret, the Murder King" && it.branch==Contribution.INTRINSIC_CREATURE_INPUT }.all { it.verdict==Verdict.NO_MATCH } shouldBe true
     }
+    test("additional catalog-selected source controls challenge resource costs and return riders") {
+        val file=java.io.File("src/test/resources/regression/self-replenishment-catalog-controls.json")
+        for(raw in Json.parseToJsonElement(file.readText()).jsonObject.getValue("cases").jsonArray) {
+            val c=raw.jsonObject;val name=c.getValue("card").jsonPrimitive.content
+            report.results.any { it.card==name && it.branch==Contribution.INTRINSIC_CREATURE_INPUT && it.verdict==Verdict.MATCH } shouldBe true
+            val text=java.io.File(System.getenv("ARGENTUM_ENGINE_DIR") ?: "../argentum-engine",c.getValue("nativeSource").jsonPrimitive.content).readText().replace("\r\n","\n")
+            MessageDigest.getInstance("SHA-256").digest(text.toByteArray()).joinToString("") { "%02x".format(it) } shouldBe c.getValue("nativeSourceLfSha256").jsonPrimitive.content
+        }
+    }
+    test("Grafted Butcher's cost and self-return are distinct contributions within one native action") {
+        val rows=report.results.filter { it.card=="Grafted Butcher" && it.verdict==Verdict.MATCH }
+        val producer=rows.single { it.branch==Contribution.DIRECT_DEATH_GENERATOR }
+        val supplier=rows.single { it.branch==Contribution.INTRINSIC_CREATURE_INPUT }
+        producer.actionId shouldBe supplier.actionId
+        (producer.abilityPath!=supplier.abilityPath) shouldBe true
+        producer.costOrEffect shouldBe "ACTIVATION_COST";supplier.costOrEffect shouldBe "EFFECT"
+    }
+
 })

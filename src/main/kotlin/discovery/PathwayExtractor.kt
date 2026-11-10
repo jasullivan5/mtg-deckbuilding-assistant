@@ -275,7 +275,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
                     ActivationRestriction.OncePerTurn -> "At most one activation each turn; an unused allowance is required."
                     is ActivationRestriction.MaxPerTurn -> "At most ${r.count} activations each turn; an unused allowance is required."
                     else -> "Native activation restriction: $r; do not infer unbounded reuse across zone changes"
-                },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) })) {
+                },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) }+
+                    if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList())) {
                 abilityCost(ability.cost,"$path.cost",frame)
             }
             ability.conditionalCostReduction?.let { reduction ->
@@ -301,14 +302,22 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false) {
             val sourceZone=if(trigger is EventPattern.ZoneChangeEvent && ability.binding == TriggerBinding.SELF) trigger.to
                 else ability.activeZones.singleOrNull() ?: Zone.BATTLEFIELD
             val returnSource=ReturnSourceContext("TRIGGERED",ability.activeZones,ability.description,confidence=
-                    if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController || extra.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
-                    selfDeathTransition=ability.binding==TriggerBinding.SELF && trigger is EventPattern.ZoneChangeEvent && trigger.from==Zone.BATTLEFIELD && trigger.to==Zone.GRAVEYARD,
+                    if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController || extra.isNotEmpty() ||
+                        ability.binding==TriggerBinding.ATTACHED || ability.binding==TriggerBinding.SELF && Zone.GRAVEYARD in ability.activeZones ||
+                        trigger is EventPattern.ZoneChangeEvent && trigger.filter.statePredicates.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
+                    selfDeathTransition=when {
+                        ability.binding!=TriggerBinding.SELF -> Verdict.NO_MATCH
+                        trigger is EventPattern.ZoneChangeEvent && trigger.from==Zone.BATTLEFIELD && trigger.to==Zone.GRAVEYARD && trigger.excludeTo!=Zone.GRAVEYARD -> Verdict.MATCH
+                        trigger is EventPattern.ZoneChangeEvent && (trigger.to!=null && trigger.to!=Zone.GRAVEYARD || trigger.excludeTo==Zone.GRAVEYARD) -> Verdict.NO_MATCH
+                        else -> Verdict.UNKNOWN
+                    },
                     requirements=assumptions+listOf("Trigger timing, native conditions and limits must permit this occurrence; source in a graveyard is owned by the ability controller unless native rebinding changes that", "Trigger cap=${ability.perTurnTriggerCap}; lifetime cap=${ability.triggersOnce}; resolution-once-per-turn=${ability.effectOncePerTurn}"),
                     limits=buildList {
                         val native=nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability)
                         ability.perTurnTriggerCap?.let { add(ReturnLimit("TRIGGER_LIMIT",path,"At most $it matching triggers each turn; an unused trigger allowance is required.",native)) }
                         if(ability.triggersOnce) add(ReturnLimit("TRIGGER_LIMIT",path,"The native lifetime trigger limit applies; further use across zone changes is not established.",native))
                         if(ability.effectOncePerTurn) add(ReturnLimit("TRIGGER_LIMIT",path,"The action can be taken only once each turn; its resolution budget must remain.",native))
+                        if(trigger is EventPattern.ZoneChangeEvent && trigger.excludeSacrifice) add(ReturnLimit("TRIGGER_RESTRICTION",path,"This trigger excludes sacrifices; sacrificing the source does not supply this return opportunity.",native))
                     })
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
                 event=event,returnSource=returnSource,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&

@@ -60,7 +60,7 @@ class SelfReplenishmentExtractionTest : FunSpec({
             typeLine="Creature — Spirit";power=1;toughness=1
             triggeredAbility { trigger=Triggers.self.dies();effect=move }
         }
-        val e=evaluate(c).single();e.link.context.selfDeathTransition shouldBe true;e.verdict shouldBe Verdict.MATCH
+        val e=evaluate(c).single();e.link.context.selfDeathTransition shouldBe Verdict.MATCH;e.verdict shouldBe Verdict.MATCH
     }
     test("an unrelated battlefield entry ability cannot make a generic target into its own source") {
         val c=card("Synthetic generic reanimating creature") {
@@ -152,6 +152,35 @@ class SelfReplenishmentExtractionTest : FunSpec({
     }
     test("delegated payment or optionality is retained as unresolved actor interpretation") {
         evaluate(fixture(e=GatedEffect(Gate.MayDecide(),move,decisionMaker=EffectTarget.PlayerRef(Player.AnOpponent)))).single().verdict shouldBe Verdict.UNKNOWN
+    }
+
+    test("graveyard-active SELF combat and attached-object bindings cannot manufacture return support") {
+        for(attached in listOf(false,true)) {
+            val c=card("Synthetic unsupported source event") {
+                typeLine="Creature — Spirit";power=1;toughness=1
+                triggeredAbility { trigger=if(attached) Triggers.attached.dies() else Triggers.self.attacks();triggerZone=Zone.GRAVEYARD;effect=move }
+            }
+            evaluate(c).single().verdict shouldBe Verdict.UNKNOWN
+        }
+    }
+    test("an unresolved SELF event alternative stays unknown instead of inheriting a fallback rejection") {
+        val c=card("Synthetic SELF alternatives") {
+            typeLine="Creature — Spirit";power=1;toughness=1
+            triggeredAbility { trigger=Triggers.self.dies();effect=move }
+        }
+        val original=c.script.triggeredAbilities.single()
+        val changed=c.copy(script=c.script.copy(triggeredAbilities=listOf(original.copy(trigger=EventPattern.AnyOf(listOf(original.trigger,EventPattern.ZoneChangeEvent(to=Zone.BATTLEFIELD)))))))
+        evaluate(changed).single().verdict shouldBe Verdict.UNKNOWN
+    }
+
+    test("an omitted movement from-zone does not turn an unresolved SELF alternative into a battlefield negative") {
+        val c=card("Synthetic implicit origin") {
+            typeLine="Creature — Spirit";power=1;toughness=1
+            triggeredAbility { trigger=Triggers.self.dies();effect=Effects.Move(EffectTarget.Self,Zone.BATTLEFIELD) }
+        }
+        val a=c.script.triggeredAbilities.single()
+        val mixed=c.copy(script=c.script.copy(triggeredAbilities=listOf(a.copy(trigger=EventPattern.AnyOf(listOf(a.trigger,EventPattern.ZoneChangeEvent(to=Zone.BATTLEFIELD)))))))
+        evaluate(mixed).single().verdict shouldBe Verdict.UNKNOWN
     }
 
 })

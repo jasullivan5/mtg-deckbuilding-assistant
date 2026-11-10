@@ -13,7 +13,7 @@ import kotlinx.serialization.json.*
 @Serializable data class ReturnSourceContext(
     val kind: String, val activeZones: Set<Zone>, val opportunity: String,
     val activationCost: String? = null, val confidence: Verdict = Verdict.MATCH,
-    val selfDeathTransition: Boolean = false, val sourceCostCompatibility: Verdict = Verdict.MATCH,
+    val selfDeathTransition: Verdict = Verdict.NO_MATCH, val sourceCostCompatibility: Verdict = Verdict.MATCH,
     val requirements: List<String> = emptyList(), val limits: List<ReturnLimit> = emptyList()
 )
 @Serializable data class ReturnLimit(val kind: String, val path: String, val explanation: String, val native: JsonElement)
@@ -64,10 +64,18 @@ internal fun followingReturnLimit(effect: Effect, path: String): ReturnLimit? = 
 }
 
 /** Preserve legacy facts while retaining uncertainty about their single-zone/type fallback. */
-private fun returnMovementView(link: SelfReturnLink,f: MechanicalFact): MechanicalFact =
-    if(f.confidence==Verdict.NO_MATCH && link.binding==Verdict.MATCH &&
-        (link.context.activeZones.size>1 && Zone.GRAVEYARD in link.context.activeZones || link.context.sourceCostCompatibility==Verdict.UNKNOWN))
-        f.copy(confidence=Verdict.UNKNOWN) else f
+private fun returnMovementView(link: SelfReturnLink,f: MechanicalFact): MechanicalFact {
+    val c=link.context
+    val unresolvedTransition=link.binding==Verdict.MATCH && (c.activeZones.size>1 && Zone.GRAVEYARD in c.activeZones ||
+        c.sourceCostCompatibility==Verdict.UNKNOWN || c.selfDeathTransition==Verdict.UNKNOWN)
+    // A missing from-zone under an uninterpreted SELF event is not a known battlefield
+    // origin. Native explicit zones and all owner/controller restrictions stay intact.
+    val from=(f.native as? JsonObject)?.get("fromZone")
+    val missingFrom=from==null || from is JsonNull
+    val sourceZone=if(link.binding==Verdict.MATCH && c.kind=="TRIGGERED" && c.selfDeathTransition==Verdict.UNKNOWN && missingFrom) null else f.sourceZone
+    return f.copy(confidence=if(unresolvedTransition && f.confidence==Verdict.NO_MATCH) Verdict.UNKNOWN else f.confidence,
+        sourceZone=sourceZone)
+}
 
 data class EvaluatedSelfReturn(val link: SelfReturnLink,val fact: MechanicalFact,val decisions: List<Decision>) {
     val verdict get()=all(decisions.map { it.verdict })
@@ -80,14 +88,14 @@ fun originalCreatureSelfReturns(links: List<SelfReturnLink>,facts: List<Mechanic
         val active=when {
             c.kind=="ACTIVATED" && c.activeZones==setOf(Zone.GRAVEYARD) -> Verdict.MATCH
             c.kind=="TRIGGERED" && c.activeZones==setOf(Zone.GRAVEYARD) -> Verdict.MATCH
-            c.kind=="TRIGGERED" && c.activeZones==setOf(Zone.BATTLEFIELD) && c.selfDeathTransition -> Verdict.MATCH
-            c.activeZones.size!=1 || c.kind !in setOf("ACTIVATED","TRIGGERED") || c.sourceCostCompatibility==Verdict.UNKNOWN -> Verdict.UNKNOWN
+            c.kind=="TRIGGERED" && c.activeZones==setOf(Zone.BATTLEFIELD) && c.selfDeathTransition==Verdict.MATCH -> Verdict.MATCH
+            c.activeZones.size!=1 || c.kind !in setOf("ACTIVATED","TRIGGERED") || c.sourceCostCompatibility==Verdict.UNKNOWN || c.selfDeathTransition==Verdict.UNKNOWN -> Verdict.UNKNOWN
             else -> Verdict.NO_MATCH
         }
         EvaluatedSelfReturn(link,f,listOf(
             Decision("originating-card-binding",link.binding,"MECHANICAL","Explicit original source binding; fact=${f.id}; action=${link.actionId}; face=${link.face}. A target or collection is not assumed to be this card."),
             Decision("original-creature-card",all(listOf(link.sourceCreature,if(f.movesOriginalCard && f.kind==FactKind.MOVE_OBJECT) Verdict.MATCH else Verdict.NO_MATCH)),"MECHANICAL","Normal original creature card required; multi-face/type-changing interpretations remain unresolved. A token copy is a different resource."),
-            Decision("own-graveyard-to-own-battlefield",movement.compatible(FactConstraints(kind=FactKind.MOVE_OBJECT,creature=link.sourceCreature!=Verdict.UNKNOWN,token=TokenStatus.NONTOKEN,owner=Controller.YOU,controller=Controller.YOU,from=Zone.GRAVEYARD,to=Zone.BATTLEFIELD)),"MECHANICAL","Original card in its owner's graveyard; owner and returning controller must be us. Native movement/filter/zone constraints are retained."),
+            Decision("own-graveyard-to-own-battlefield",movement.compatible(FactConstraints(kind=FactKind.MOVE_OBJECT,creature=link.sourceCreature!=Verdict.UNKNOWN,token=TokenStatus.NONTOKEN,owner=Controller.YOU,controller=Controller.YOU,from=Zone.GRAVEYARD,to=Zone.BATTLEFIELD)),"MECHANICAL","Original card in its owner's graveyard; owner and returning controller must be us. Native explicit movement/filter/zone constraints are retained; legacy confidence=${f.confidence}, source-aware confidence=${movement.confidence}, source-aware zone=${movement.sourceZone}. Ambiguous legacy fallback does not become a definitive negative; existing facts and objectives are unchanged."),
             Decision("source-availability",all(listOf(active,c.confidence,c.sourceCostCompatibility)),"MECHANICAL","${c.kind}; active zones=${c.activeZones}; bound self-death transition=${c.selfDeathTransition}; source-consuming cost=${c.sourceCostCompatibility}. Source must remain available for this native route."),
             Decision("same-supported-return-branch",all(listOf(link.branchSupport,if(link.delayed) Verdict.UNKNOWN else Verdict.MATCH)),"MECHANICAL","Native action and branch ${link.actionId}/${link.path}; conditions, payments, timing and other resources remain prerequisites.")
         ))

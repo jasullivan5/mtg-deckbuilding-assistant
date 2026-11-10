@@ -1,0 +1,36 @@
+{
+  "scope": "Additional source validation selected from the uncurated catalog output after first extraction; not part of the preimplementation cohort or independent qualification",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "cases": [
+    {
+      "card": "Falkenrath Forebear",
+      "expected": "MATCH",
+      "printingId": "451559d0-b62d-4757-8eb5-f6b0e240899c",
+      "oracleId": "940080ce-c504-48c8-a763-326fef907217",
+      "sourceUrl": "https://api.scryfall.com/cards/451559d0-b62d-4757-8eb5-f6b0e240899c",
+      "sourceText": "Flying\nThis creature can't block.\nWhenever this creature deals combat damage to a player, create a Blood token.\n{B}, Sacrifice two Blood tokens: Return this card from your graveyard to the battlefield.",
+      "nativeSource": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/FalkenrathForebear.kt",
+      "nativeSourceLfSha256": "c4acb00508cdefbab8516263ad98b87ce9a49e15e526423f0d7cc6d680ccc752"
+    },
+    {
+      "card": "Grafted Butcher",
+      "expected": "MATCH",
+      "printingId": "e22f11a1-0cbd-4b36-8dbd-37ba29ad4608",
+      "oracleId": "6c4a0e3d-c63c-4acf-8386-b51f1ec37463",
+      "sourceUrl": "https://api.scryfall.com/cards/e22f11a1-0cbd-4b36-8dbd-37ba29ad4608",
+      "sourceText": "When this creature enters, Phyrexians you control gain menace until end of turn.\nOther Phyrexians you control get +1/+1.\n{3}{B}, Sacrifice an artifact or creature: Return this card from your graveyard to the battlefield. Activate only as a sorcery.",
+      "nativeSource": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/GraftedButcher.kt",
+      "nativeSourceLfSha256": "1a7d70b837de9e786919a1c63128b60619cd2026536240b120afc6e8451d3b03"
+    },
+    {
+      "card": "Retrofitted Transmogrant",
+      "expected": "MATCH",
+      "printingId": "12c1b83d-710b-4680-855a-02ba1f72abf0",
+      "oracleId": "058dae67-807e-4542-ae51-f2b1216ffaed",
+      "sourceUrl": "https://api.scryfall.com/cards/12c1b83d-710b-4680-855a-02ba1f72abf0",
+      "sourceText": "{3}{B}: Return this card from your graveyard to the battlefield tapped with two +1/+1 counters on it.",
+      "nativeSource": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/RetrofittedTransmogrant.kt",
+      "nativeSourceLfSha256": "c7e1219c1b6f0d8cc345398f71ea88673095bd3cc1933a4604629d9c56272deb"
+    }
+  ]
+}
