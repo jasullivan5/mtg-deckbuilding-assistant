@@ -2201,5 +2201,6 @@
       "failures": 3,
       "expected": "Missing Haruspex/Plunderer/Dissenter response admission"
     }
-  }
+  },
+  "pullRequest": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/46"
 }

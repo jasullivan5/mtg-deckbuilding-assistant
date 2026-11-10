@@ -1,6 +1,6 @@
 # Event-anchored discovery: Product Studio report
 
-2026-11-10 · Application implementation, author verification and review handoff. **Not merged or independently qualified.**
+2026-11-10 · Application implementation, author verification and review handoff. **Not merged or independently qualified.** Review: [application PR #46](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/46).
 
 ## 1. Mechanical implementation
 
