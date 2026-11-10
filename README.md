@@ -28,7 +28,7 @@ The running application and live Git are the living sources of product direction
 
 PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have explicit bounded experience acceptance; later merges and demonstrations do not imply blanket acceptance or independent qualification. [Milestones](docs/EXPLORER_MILESTONES.md) retains the original plan and acceptance history. Current measurements live in Progress and their revision-bound receipts. Global external measurements require an explicit compatible snapshot; see the Progress guide.
 
-The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation**. The bounded [building-block assessment](docs/OBJECTIVE_BUILDING_BLOCKS.md) favors events, states, game elements and directional effect/outcome relationships as a working foundation; role names remain optional descriptions. This is not an implemented objective schema. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General relationship filters, composition, objective-aware piloting and deck evaluation are not implemented.
+The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation**. The bounded [building-block assessment](docs/OBJECTIVE_BUILDING_BLOCKS.md) informs the current hypothesis: focused event, state or modification anchors, described through game elements and overlapping directional effect/outcome relationships; role names remain optional descriptions. This is not an implemented objective schema. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General relationship filters, composition, objective-aware piloting and deck evaluation are not implemented.
 
 | Authority | Home |
 | --- | --- |
@@ -54,7 +54,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 
 | Objective ID | Bounded question |
 |---|---|
-| own-nontoken-creature-deaths | Direct death generation and separately classified death-enhanced removal |
+| own-nontoken-creature-deaths | Selected death generation, death-enhanced removal and qualifying triggered draw/token responses |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |

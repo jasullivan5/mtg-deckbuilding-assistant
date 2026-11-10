@@ -82,7 +82,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     val acceptedEnhanced=enhanced.filter { it.verdict == Verdict.MATCH }
     val evaluated=direct+enhanced
     val extractedActions=extracted.actions.associateBy { it.id }
-    val results=evaluated.map { evaluatedPath ->
+    val legacyResults=evaluated.map { evaluatedPath ->
         val p=evaluatedPath.pathway
         val eligibilityEvidence=byName.getValue(p.card.name)
         val provenance=catalog.provenance(p.card.name)
@@ -104,6 +104,8 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
             controllerCompatibility=p.scope.compatible(Requirements(controller=Controller.YOU)),
             nontokenCompatibility=p.scope.compatible(Requirements(token=TokenStatus.NONTOKEN)))
     }
+    val responseResults=deathResponseResults(catalog,extracted.eventOutcomes,byName,extracted.unsupported)
+    val results=legacyResults+responseResults
     val counts=linkedMapOf(
         "authored_physical_cards" to roots.size,
         "upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin == "UPSTREAM_ARGENTUM" },
@@ -130,15 +132,18 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
         "policy_rejected_removal_pathways" to direct.count { e -> e.decisions.last().verdict == Verdict.NO_MATCH && all(e.decisions.take(3).map { it.verdict }) == Verdict.MATCH },
         "controller_incompatible_pathways" to direct.count { it.decisions[1].verdict == Verdict.NO_MATCH && it.decisions[0].verdict != Verdict.NO_MATCH },
         "nontoken_incompatible_pathways" to direct.count { it.decisions[2].verdict == Verdict.NO_MATCH && all(it.decisions.take(2).map { d -> d.verdict }) != Verdict.NO_MATCH },
-        "unknown_query_pathways" to evaluated.count { it.verdict == Verdict.UNKNOWN },
-        "pathways_with_any_unknown_decision" to evaluated.count { e -> e.decisions.any { it.verdict == Verdict.UNKNOWN } },
+        "accepted_death_response_pathways" to responseResults.count { it.verdict==Verdict.MATCH },
+        "accepted_death_response_cards" to responseResults.filter { it.verdict==Verdict.MATCH }.map { it.card }.distinct().size,
+        "unknown_death_response_pathways" to responseResults.count { it.verdict==Verdict.UNKNOWN },
+        "unknown_query_pathways" to results.count { it.verdict == Verdict.UNKNOWN },
+        "pathways_with_any_unknown_decision" to results.count { e -> e.decisions.any { it.verdict == Verdict.UNKNOWN } },
         "unsupported_structure_records" to extracted.unsupported.size,
         "cards_with_unsupported_structures" to extracted.unsupported.map { it.card }.distinct().size
     )
     return DiscoveryReport(objective="own-nontoken-creature-deaths",commander=commander.name,
         allowedIdentity=allowed.map { it.name }.sorted(),conventionalQuery=conventionalQuery,counts=counts,
         eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,limitations=discoveryLimitations,structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=input.map { it.name },translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) },
-        conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts))
+        conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts),eventOutcomes=extracted.eventOutcomes)
 }
 
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {

@@ -1,6 +1,12 @@
 # Creature-death objective coverage
 
-`own-nontoken-creature-deaths` retains the label **My nontoken creatures die** as a research goal. Its implemented search is narrower than general death synergy: it accepts selected death sources and death-related removal. The name alone does not promise all payoffs; About objective and search-scope details state the boundary explicitly.
+`own-nontoken-creature-deaths` retains the label **My nontoken creatures die** as a research goal. Its implemented search is narrower than general death synergy: it accepts selected death sources, death-related removal and supported triggered draw/token responses. The name alone does not promise all payoffs; About objective and search-scope details state the boundary explicitly.
+
+## Current event-to-outcome increment (2026-11-10)
+
+Discover now separates **Produces deaths**, **Benefits from deaths**, and **Death-enhanced removal**. The shared walker connects a native trigger/binding/active zone to draw and existing token facts in the same ability/branch. The death query intersects that incoming event with our nontoken creature dying; a broader token-inclusive trigger can qualify. Another-object and SELF bindings remain distinct. Opponent-only or token-only deaths do not qualify; subtype, branch, deferred and unsupported conditions remain uncertain.
+
+Grim Haruspex, Pitiless Plunderer and Doomed Dissenter now expose supported responses; Treasure remains a noncreature artifact token, not mana already generated. Viscera Seer's sacrifice is still death production, while Tragic Slip remains a history-enhanced removal spell. Shared extraction also records nondeath entry/landfall outcomes without admitting them to the death objective. The earlier observations and omitted results below are historical and retained unchanged. This is structural possibility, not gameplay execution, universal payoff discovery or input-supplier recognition.
 
 ## What the code accepts
 

@@ -55,7 +55,12 @@ internal fun compareCoverage(
         val bound = native != null && printingIdentity(native) == source.printingId
         val finding = findingByName[name].takeIf { bound }
         val rows = results[name].orEmpty().takeIf { bound }.orEmpty()
-        val checked = rows.filter { it.operation == source.probe && it.branch == Contribution.DIRECT_DEATH_GENERATOR }
+        val checked = rows.filter {
+            (it.operation == source.probe && it.branch == Contribution.DIRECT_DEATH_GENERATOR) ||
+                (it.branch == Contribution.DEATH_TRIGGERED_OUTCOME && it.operation == when(source.probe) {
+                    "DrawCards" -> "DRAW_CARDS"; "CREATE_TOKEN" -> "CREATE_TOKEN"; else -> ""
+                })
+        }
         val eligible = eligibility[name]?.singleOrNull().takeIf { bound }
         val reviewedEngine = report.argentumCommit == coverageSpec.reviewedEngine
         val category = when {
@@ -77,6 +82,9 @@ internal fun compareCoverage(
             else -> CoverageCategory.UNEXPLAINED
         }
         val explanation = when (category) {
+            CoverageCategory.RECOGNIZED -> if (checked.any { it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH })
+                "Current discovery recognizes a qualifying death response and its same-ability outcome. The retained source diagnosis describes the earlier query."
+                else if(reviewedEngine) source.diagnosis else "Inspect the current decision records. The retained diagnosis used a different engine revision."
             CoverageCategory.MISSING_DEFINITION -> "The catalog has no native definition under the reviewed name."
             CoverageCategory.IDENTITY_UNRESOLVED -> "The catalog printing could not be bound to the reviewed snapshot."
             CoverageCategory.UNEXPLAINED -> "The available records do not establish the outcome for this relationship."

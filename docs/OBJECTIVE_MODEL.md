@@ -8,9 +8,13 @@ This is the living product-direction record, not authorization to implement futu
 
 The foundation progressively establishes physical identity, rules and source requirements; Commander eligibility; native representability and execution boundaries; and reusable costs, effects, conditions, events and state changes. Objectives interpret capabilities for a question. Availability, representability, source fidelity, execution, discovery and objective relevance remain separate claims. Representation does not establish understanding of every card or interaction.
 
-This is a conceptual direction, not a new module plan. Four bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains a legacy projection; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
+This is a conceptual direction, not a new module plan. Four bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains its legacy death/removal projection and adds shared triggered event-to-draw/token relationships; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
 
-## Objective subjects and mechanical relationships
+## Focused anchors and mechanical relationships
+
+The current working hypothesis investigates one focused **event, state or modification** anchor per objective. Mechanics can produce/establish it, supply required inputs, or benefit from/enhance it; these relationships overlap. Game elements describe subjects, requirements and consequences; effects/outcomes connect them. Hardened Scales can depend on a counter-placement opportunity while modifying it through replacement, rather than a triggered ability. These anchors are neither exclusive native categories nor proof that every desired goal has one anchor. Input-supplier discovery and composition are future work.
+
+The earlier subject assessment below remains useful background; game elements are not required to be an equivalent anchor category.
 
 | Working concept | Objective-level question | Mechanics to preserve |
 | --- | --- | --- |
@@ -19,7 +23,7 @@ This is a conceptual direction, not a new module plan. Four bounded queries exis
 | Game elements | What mechanically relevant thing or resource do we need to supply or use? | Supply, replenish, preserve, consume, target, move or transform it; retain type, quantity, identity, owner/controller, zone and permissions. |
 | Effects and outcomes | What operation connects inputs and conditions to a possible result? | Counter placement, movement, draw, damage, life changes and modifications have different semantics and possible consequences. An effect is not defined by whether it helps win. |
 
-The first three provide useful possible subjects. Effects/outcomes supply connecting vocabulary, not necessarily an equivalent fourth objective-subject category. A requested operation such as *put +1/+1 counters on my creatures* is also a useful precise criterion. These concepts overlap: an effect can produce an event and establish a state. They are not four exclusive card types or an adopted software schema.
+These concepts provide useful descriptions of an anchor and its requirements. Effects/outcomes supply connecting vocabulary, not necessarily an equivalent fourth objective-subject category. A requested operation such as *put +1/+1 counters on my creatures* is also a useful precise criterion. These concepts overlap: an effect can produce an event and establish a state. They are not four exclusive card types or an adopted software schema.
 
 **Game elements** is provisional and broader than Magic's technical game objects. A counter is not a token; a player, mana quantity, characteristic, permission and zone do not share one object's lifecycle. Do not erase those differences to fit the umbrella term.
 
@@ -86,4 +90,4 @@ The four queries are listed in [README](../README.md#current-objectives). The de
 
 The earlier renewable-creature experiment remains unimplemented and needs a separate assignment: test native self-return as distinctive nontoken creature supply. Keep Skeleton/Bloodghast as positive controls, Walking Corpse as ordinary material, and token copies, return-to-hand, one-use/exile costs, opponent-controlled entry and unsupported conditions as adversarial controls. Correlate the original card, graveyard source, battlefield entry, controller, optionality, payment, placement and trigger/activation within the same action. Preserve landfall and mana as prerequisites; Wolfbat's retained finality-counter evidence guards against assuming indefinite fuel. This does not imply a new interpreter, card-name exceptions or general role classifier.
 
-The [source-tap correction](TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44; its original receipts remain revision-bound. This increment changes no mechanics or payment evidence. The smallest proposed next discovery increment is a bounded, shared **death-conditioned draw/token outcome relationship**, described in the [assessment](OBJECTIVE_BUILDING_BLOCKS.md#smallest-useful-next-increment). It is not implemented or authorized by this record. [Known limitations](KNOWN_LIMITATIONS.md) owns current boundaries; historical follow-ups are evidence, not an automatic implementation queue.
+The [source-tap correction](TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44; its original receipts remain revision-bound. This increment changes no mechanics or payment evidence. A bounded shared **triggered event-to-draw/token outcome relationship** is now implemented and consumed by the death objective. It does not implement general replacement interpretation, input suppliers, objective construction or composition. [Known limitations](KNOWN_LIMITATIONS.md) owns current boundaries; historical follow-ups remain evidence, not an automatic implementation queue.

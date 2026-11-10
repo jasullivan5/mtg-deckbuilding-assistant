@@ -34,16 +34,16 @@ class DiscoveryCoverageTest : FunSpec({
         val comparison = stored.coverage!!
         val reviewed = report.argentumCommit == REVIEWED_ENGINE
         comparison.cards.groupingBy { it.category }.eachCount() shouldBe mapOf(
-            CoverageCategory.RECOGNIZED to 4, CoverageCategory.UNRESOLVED to 1,
+            CoverageCategory.RECOGNIZED to 7, CoverageCategory.UNRESOLVED to 1,
             CoverageCategory.POLICY_EXCLUDED to 1, CoverageCategory.INELIGIBLE to 1
         ) + if (reviewed) {
-            mapOf(CoverageCategory.OBJECTIVE_GAP to 4, CoverageCategory.ORDINARY_BODY to 1)
+            mapOf(CoverageCategory.OBJECTIVE_GAP to 1, CoverageCategory.ORDINARY_BODY to 1)
         } else {
-            mapOf(CoverageCategory.UNEXPLAINED to 5)
+            mapOf(CoverageCategory.UNEXPLAINED to 2)
         }
         if (!reviewed) {
             comparison.cards.filter { it.category == CoverageCategory.UNEXPLAINED }.map { it.source.card }.toSet() shouldBe
-                setOf("Grim Haruspex", "Doomed Dissenter", "Pitiless Plunderer", "Reassembling Skeleton", "Walking Corpse")
+                setOf("Reassembling Skeleton", "Walking Corpse")
             comparison.cards.single { it.source.card == "Agent of Shauku" }.explanation shouldBe
                 "Inspect the current decision records. The retained diagnosis used a different engine revision."
         }
@@ -60,8 +60,8 @@ class DiscoveryCoverageTest : FunSpec({
         val skeleton = comparison.cards.single { it.source.card == "Reassembling Skeleton" }
         skeleton.inFindings shouldBe true // A diagnostic can be indexed without a pathway.
         val plunderer = comparison.cards.single { it.source.card == "Pitiless Plunderer" }
-        plunderer.inFindings shouldBe false
-        stored.card(plunderer.index!!)!!.results.isEmpty() shouldBe true
+        plunderer.inFindings shouldBe true
+        stored.card(plunderer.index!!)!!.results.any { it.branch==Contribution.DEATH_TRIGGERED_OUTCOME && it.verdict==Verdict.MATCH } shouldBe true
         stored.card(skeleton.index!!)!!.results.isEmpty() shouldBe true
         val arbor = comparison.cards.single { it.source.card == "Dryad Arbor" }
         arbor.eligibility!!.deck shouldBe Verdict.NO_MATCH

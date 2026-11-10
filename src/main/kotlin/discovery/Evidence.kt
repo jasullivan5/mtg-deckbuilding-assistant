@@ -2,6 +2,7 @@ package dev.mtg.assistant.discovery
 
 import com.wingedsheep.sdk.model.CardDefinition
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 
@@ -17,7 +18,7 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
 @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }
 @Serializable data class StructuralSupport(val card: String,val face: String,val path: String,val nativeType: String,
     val status: SupportStatus,val reason: String,val actionId: String)
-@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL }
+@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME }
 @Serializable data class ActionEvidence(val id: String, val card: String, val face: String, val path: String,
     val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null)
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
@@ -47,7 +48,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val mechanicalCompatibility: Verdict? = null, val policyAcceptance: Verdict? = null,
     val mechanicalCapability: String? = null, val circumstances: Circumstances? = null,
     val strategicDesirability: String = "NOT_EVALUATED", val localSupport: SupportStatus? = null,
-    val stateEntry: dev.mtg.assistant.objectives.StateEntryEvidence? = null)
+    val stateEntry: dev.mtg.assistant.objectives.StateEntryEvidence? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcome: EventOutcome? = null)
 @Serializable data class DiscoveryReport(val argentumCommit: String = ARGENTUM_SHA, val objective: String,
     val commander: String, val allowedIdentity: List<String>, val conventionalQuery: String?,
     val counts: Map<String, Int>, val eligibility: List<EligibilityEvidence>, val results: List<ResultEvidence>,
@@ -55,7 +57,8 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val structuralSupport: List<StructuralSupport> = emptyList(),
     val facts: List<MechanicalFact> = emptyList(), val mechanicalInputCards: List<String>? = null,
     val translationAssurance: List<dev.mtg.assistant.extensions.TranslationAssurance> = emptyList(),
-    val conditionalArrivals: List<dev.mtg.assistant.objectives.ConditionalArrival> = emptyList())
+    val conditionalArrivals: List<dev.mtg.assistant.objectives.ConditionalArrival> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcomes: List<EventOutcome> = emptyList())
 
 /** Keyword/self alternative payments link to the card script, whose spell action owns resolution. */
 fun associatedSpellAction(actions: Map<String,ActionEvidence>,actionId: String): String? =
