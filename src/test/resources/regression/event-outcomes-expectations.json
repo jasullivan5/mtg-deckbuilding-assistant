@@ -1,0 +1,148 @@
+{
+  "scope": "Source-derived discovery interpretation expectations; not engine execution or qualification",
+  "baselineApplication": "bf7d97bc4cdea6501c90646d945add5dd9d261bd",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "sourceSnapshot": "oracle-cards-20261026210159.jsonl.gz",
+  "sourceSnapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": [
+    {
+      "card": "Grim Haruspex",
+      "expected": "MATCH",
+      "expectation": "Another controlled nontoken creature dies; draw one",
+      "printingId": "f5c19b87-e114-46d4-9f6c-c02e838a08dd",
+      "oracleId": "72aef1d8-11df-4bc2-af83-907b05df73a8",
+      "sourceUrl": "https://scryfall.com/card/clb/754/grim-haruspex?utm_source=api",
+      "sourceText": "Morph {B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhenever another nontoken creature you control dies, draw a card.",
+      "sourceRecordSha256": "af77460302343362aa465b8bcfe01e9be1506d236d67d53ec5bd59e6064a5119"
+    },
+    {
+      "card": "Pitiless Plunderer",
+      "expected": "MATCH",
+      "expectation": "Another controlled creature dies; Treasure, including when the death is nontoken",
+      "printingId": "5b5cd187-857a-44dd-8595-a52857a0b753",
+      "oracleId": "a784481f-eccb-4112-bb38-04a659319660",
+      "sourceUrl": "https://scryfall.com/card/lcc/208/pitiless-plunderer?utm_source=api",
+      "sourceText": "Whenever another creature you control dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "sourceRecordSha256": "daccd7690516848459d86b2d99b43197b7fdf55968ad9257063dc601114b072a"
+    },
+    {
+      "card": "Doomed Dissenter",
+      "expected": "MATCH",
+      "expectation": "Self death; one 2/2 Zombie",
+      "printingId": "f7c0cf16-81ea-45e3-99cc-4424d59bb44b",
+      "oracleId": "11cb509d-21af-48f1-b355-135ebd3e4bd1",
+      "sourceUrl": "https://scryfall.com/card/vow/106/doomed-dissenter?utm_source=api",
+      "sourceText": "When this creature dies, create a 2/2 black Zombie creature token.",
+      "sourceRecordSha256": "3f42d1c3d052e4a5c9a2da0f9666baf1cae812f1ff48bc95d3f84fa68937927d"
+    },
+    {
+      "card": "Viscera Seer",
+      "expected": "NONE",
+      "expectation": "Sacrifice cost causes death; scry is not a triggered death response",
+      "printingId": "f511830b-1c1f-4d30-aa5d-4314726d142e",
+      "oracleId": "f82a4e85-526d-4456-b700-7760043a31be",
+      "sourceUrl": "https://scryfall.com/card/soc/229/viscera-seer?utm_source=api",
+      "sourceText": "Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "sourceRecordSha256": "c4d5b313b62c7851fdd6fee856ad643fb250b5ca033024dba3b426527f043116"
+    },
+    {
+      "card": "Tragic Slip",
+      "expected": "NONE",
+      "expectation": "Prior death history at spell resolution, not a death trigger",
+      "printingId": "132ccc20-cb42-4474-b747-7e41a661060e",
+      "oracleId": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+      "sourceUrl": "https://scryfall.com/card/inr/134/tragic-slip?utm_source=api",
+      "sourceText": "Target creature gets -1/-1 until end of turn.\nMorbid — That creature gets -13/-13 until end of turn instead if a creature died this turn.",
+      "sourceRecordSha256": "b3247311ef906cf5a7155498002f64f850012a7c7dc6eb749862732038d7f7b5"
+    },
+    {
+      "card": "Garruk's Packleader",
+      "expected": "NONDEATH",
+      "expectation": "Another controlled power-3 entrant; optional draw; shared relation but no death response",
+      "printingId": "dafeafa0-b937-4387-8626-449a810486b4",
+      "oracleId": "13279222-422d-4447-9451-2463b0c714c6",
+      "sourceUrl": "https://scryfall.com/card/c19/168/garruks-packleader?utm_source=api",
+      "sourceText": "Whenever another creature you control with power 3 or greater enters, you may draw a card.",
+      "sourceRecordSha256": "a45e2ce24a25bcb2d86eadce74416ee0d781c4f804397e746ea25d87797d82d6"
+    },
+    {
+      "card": "Scute Swarm",
+      "expected": "NONDEATH_UNKNOWN_BRANCHES",
+      "expectation": "Land entry; conditional token branches; no death response",
+      "printingId": "ea630ba1-22f9-4a10-bdc6-0d03128214f4",
+      "oracleId": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+      "sourceUrl": "https://scryfall.com/card/dsc/197/scute-swarm?utm_source=api",
+      "sourceText": "Landfall — Whenever a land you control enters, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of this creature instead.",
+      "sourceRecordSha256": "c500b1f2c5193dd2d34fee858c0390f4471024ba600d17fb7999e998f88ccd13"
+    },
+    {
+      "card": "Midnight Reaper",
+      "expected": "MATCH",
+      "expectation": "Controlled nontoken death; self damage and draw remain separate outcomes",
+      "printingId": "f229b0e6-1ffd-410e-b04b-a0afc179c58c",
+      "oracleId": "e8c7566d-7cc0-48af-a986-83223ec7e06c",
+      "sourceUrl": "https://scryfall.com/card/fdn/609/midnight-reaper?utm_source=api",
+      "sourceText": "Whenever a nontoken creature you control dies, this creature deals 1 damage to you and you draw a card.",
+      "sourceRecordSha256": "d70efa55bc64eab311e9a3b12ad2b70b5c0c1969cb7c61ee960677babf2ac9be"
+    },
+    {
+      "card": "Harvester of Souls",
+      "expected": "MATCH",
+      "expectation": "Another nontoken creature dies, any controller; optional draw",
+      "printingId": "870ebc0b-b748-4a21-b939-a48811451bba",
+      "oracleId": "5987ce77-10ad-4871-900a-5a005fcf4955",
+      "sourceUrl": "https://scryfall.com/card/jmp/243/harvester-of-souls?utm_source=api",
+      "sourceText": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nWhenever another nontoken creature dies, you may draw a card.",
+      "sourceRecordSha256": "3cfb54b48bb9bf95aae7c56fa170d1762dc19cdc0d487d80b8edcc4dd8e10e28"
+    },
+    {
+      "card": "Ogre Slumlord",
+      "expected": "MATCH",
+      "expectation": "Another nontoken creature dies, any controller; optional Rat",
+      "printingId": "76995067-81a3-41c5-bc95-bfa5a953700d",
+      "oracleId": "0a5e3748-2e58-4e53-9653-8af4e21cf223",
+      "sourceUrl": "https://scryfall.com/card/otc/145/ogre-slumlord?utm_source=api",
+      "sourceText": "Whenever another nontoken creature dies, you may create a 1/1 black Rat creature token.\nRats you control have deathtouch.",
+      "sourceRecordSha256": "785d103e9d16406a2b3e7aa40dabfb49c0e664e814b77a5f6bb3539ad1b0499a"
+    },
+    {
+      "card": "Xathrid Necromancer",
+      "expected": "UNKNOWN",
+      "expectation": "Self or another controlled Human; subtype intersection remains unresolved in bounded predicate support",
+      "printingId": "7b76e49c-1b02-4ef0-a707-9d85099435bf",
+      "oracleId": "a6b38874-c8be-47f7-a656-ba49ec9e967f",
+      "sourceUrl": "https://scryfall.com/card/c20/141/xathrid-necromancer?utm_source=api",
+      "sourceText": "Whenever this creature or another Human creature you control dies, create a tapped 2/2 black Zombie creature token.",
+      "sourceRecordSha256": "deb1c00e4ddc022a53d2a220a80e98674915b5632b1c9f4418b18a211baf96a0"
+    },
+    {
+      "card": "Liliana, Dreadhorde General",
+      "expected": "MATCH",
+      "expectation": "Controlled creature death draw, separate sacrifice-producing loyalty ability",
+      "printingId": "cb28d217-795e-4320-a032-cd713f7ecc8a",
+      "oracleId": "5e958212-6a5b-4288-8d31-f1572619d7dc",
+      "sourceUrl": "https://scryfall.com/card/fdn/176/liliana-dreadhorde-general?utm_source=api",
+      "sourceText": "Whenever a creature you control dies, draw a card.\n+1: Create a 2/2 black Zombie creature token.\n−4: Each player sacrifices two creatures of their choice.\n−9: Each opponent chooses a permanent they control of each permanent type and sacrifices the rest.",
+      "sourceRecordSha256": "a98ad059ea36c3c190dd58db99e07fcb60a56159f72702ff9e47049e02d742b4"
+    },
+    {
+      "card": "Hanged Executioner",
+      "expected": "NONE",
+      "expectation": "Entry token and distinct removal activation cannot be joined into a death response",
+      "printingId": "7676deeb-b80d-49c9-b810-5ed0a68fa618",
+      "oracleId": "6ff4ff67-ad08-447f-a112-1a071c1474a4",
+      "sourceUrl": "https://scryfall.com/card/voc/89/hanged-executioner?utm_source=api",
+      "sourceText": "Flying\nWhen this creature enters, create a 1/1 white Spirit creature token with flying.\n{3}{W}, Exile this creature: Exile target creature.",
+      "sourceRecordSha256": "3d90f66161ef070b77aef899d7de514e5ecf2e5a231ac7c086e9132befd7f761"
+    }
+  ],
+  "adversarialNativeControls": [
+    "opponent-only death is NO_MATCH",
+    "token-only death is NO_MATCH",
+    "attached/unresolved source binding is UNKNOWN",
+    "intervening-if and unhandled branches remain UNKNOWN",
+    "no cross-ability or delayed/reflexive false direct link",
+    "zero quantity and opposing output recipient do not qualify",
+    "same-card cause and response retain separate paths"
+  ]
+}
