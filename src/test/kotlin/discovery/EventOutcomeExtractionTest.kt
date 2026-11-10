@@ -119,4 +119,33 @@ class EventOutcomeExtractionTest : FunSpec({
         evaluateDeathGeneration(x.pathways).any { it.verdict==Verdict.MATCH && it.pathway.actionId!=response.outcome.actionId } shouldBe true
     }
 
+    test("requested owner and controller restrictions remain independent") {
+        val o=PathwayExtractor().extract(listOf(fixture(GameObjectFilter.Creature.copy(controllerPredicate=ControllerPredicate.OwnedByOpponent)))).eventOutcomes.single()
+        eventIntersection(o.event,ZoneEventRequirement(Zone.BATTLEFIELD,Zone.GRAVEYARD,controller=Controller.YOU,owner=Controller.YOU)) shouldBe Verdict.NO_MATCH
+        eventIntersection(o.event,ZoneEventRequirement(Zone.BATTLEFIELD,Zone.GRAVEYARD,controller=Controller.YOU,owner=Controller.OPPONENT)) shouldBe Verdict.MATCH
+    }
+    test("attached source and rebound trigger controller stay unresolved") {
+        for(attached in listOf(true,false)) {
+            val c=card("Synthetic source restriction") {
+                typeLine="Enchantment"
+                triggeredAbility {
+                    trigger=if(attached) Triggers.attached.dies() else Triggers.another(GameObjectFilter.Creature.youControl()).dies()
+                    controlledByTriggeringEntityController=!attached
+                    effect=Effects.DrawCards(1)
+                }
+            }
+            deathResponses(PathwayExtractor().extract(listOf(c)).eventOutcomes).single().verdict shouldBe Verdict.UNKNOWN
+        }
+    }
+    test("native trigger cap and lifetime budget remain inspectable prerequisites") {
+        val c=card("Synthetic limited trigger") {
+            typeLine="Creature — Human";power=1;toughness=1
+            triggeredAbility { trigger=Triggers.self.dies();oncePerTurn=true;triggersOnce=true;effect=Effects.DrawCards(1) }
+        }
+        val o=PathwayExtractor().extract(listOf(c)).eventOutcomes.single()
+        o.event.requirements.any { it.contains("cap=1") } shouldBe true
+        o.event.requirements.any { it.contains("battlefield lifetime") } shouldBe true
+        deathResponses(listOf(o)).single().verdict shouldBe Verdict.MATCH
+    }
+
 })
