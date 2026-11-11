@@ -20,11 +20,13 @@ for (const width of [1365, 390]) {
     await expect(detail.getByRole('heading', {name: 'Zulaport Cutthroat', exact: true})).toBeVisible();
     await expect(response).toContainText('each opponent loses 1 life');
     await expect(response).toContainText('you gain 1 life');
+    await expect(response.getByText(/^Required event:/)).toHaveCount(1);
     await (width === 390 ? response : detail).screenshot({path: `../generated/explorer/triggered-operations/zulaport-${width}.png`});
 
     await search.fill('Pyretic Prankster');
     await expect(detail.getByRole('heading', {name: /Pyretic Prankster/})).toBeVisible();
     await expect(response).toContainText(/each opponent sacrifices/i);
+    await expect(response).toContainText('This ability belongs to the back face.');
     await expect(response).toContainText(/any resulting creature death happens later/i);
     await (width === 390 ? response : detail).screenshot({path: `../generated/explorer/triggered-operations/prankster-${width}.png`});
 
