@@ -20,7 +20,8 @@ private data class Frame(val targets: List<TargetRequirement>, val tokenControll
     val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList(),
     val directBattlefieldStepTrigger: Boolean = false, val event: EventContext? = null,
     val outcomeGuard: Verdict = Verdict.MATCH, val returnSource: ReturnSourceContext? = null,
-    val returnGuard: Verdict = Verdict.MATCH, val returnLimits: List<ReturnLimit> = emptyList())
+    val returnGuard: Verdict = Verdict.MATCH, val returnLimits: List<ReturnLimit> = emptyList(),
+    val operationGuard: Verdict = Verdict.MATCH, val operationPlayers: Player? = null)
 private data class Removal(val effect: Effect, val target: EffectTarget?, val operation: String, val magnitude: Int? = null, val prerequisites: List<String> = emptyList(), val confidence: Verdict = Verdict.MATCH)
 private fun removal(e: Effect): Removal? = when(e) {
     is MoveToZoneEffect -> when {
@@ -107,6 +108,41 @@ private fun playerScope(target: EffectTarget, frame: Frame): String = when(targe
     is EffectTarget.ContextTarget -> when(frame.targets.getOrNull(target.index)) { is TargetOpponent -> "OPPONENT"; is TargetPlayer -> "ANY"; else -> "UNKNOWN" }
     is EffectTarget.BoundVariable -> when(frame.targets.find { it.id == target.name }) { is TargetOpponent -> "OPPONENT"; is TargetPlayer -> "ANY"; else -> "UNKNOWN" }
     else -> "UNKNOWN"
+}
+
+private fun targetRequirement(target: EffectTarget, frame: Frame): TargetRequirement? = when (target) {
+    is EffectTarget.ContextTarget -> frame.targets.getOrNull(target.index)
+    is EffectTarget.BoundVariable -> frame.targets.find { it.id == target.name }
+    else -> null
+}
+
+private fun isPossiblePlayerDamage(target: EffectTarget, frame: Frame): Boolean =
+    target == EffectTarget.Controller || target is EffectTarget.PlayerRef ||
+        target == EffectTarget.ControllerOfTriggeringEntity ||
+        when (targetRequirement(target, frame)) {
+            is TargetPlayer, is TargetOpponent, is AnyTarget, is TargetCreatureOrPlayer,
+            is TargetPermanentOrPlayer, is TargetPlayerOrPlaneswalker -> true
+            else -> false
+        }
+
+private fun eventOperationRecipient(target: EffectTarget, frame: Frame): Pair<String, String> {
+    val player = when (target) {
+        EffectTarget.Controller -> frame.operationPlayers ?: Player.You
+        is EffectTarget.PlayerRef -> if (target.player == Player.You) frame.operationPlayers ?: Player.You else target.player
+        else -> null
+    }
+    return when (player) {
+        Player.You -> "YOU" to "you"
+        Player.Each, Player.ActivePlayerFirst, Player.EachStartingWithYou -> "ANY" to "each player"
+        Player.EachOpponent -> "OPPONENT" to "each opponent"
+        Player.AnOpponent -> "OPPONENT" to "an opponent"
+        Player.OwnerOfSource -> "OWNER" to "the source's owner"
+        else -> when (targetRequirement(target, frame)) {
+            is TargetPlayer -> "ANY" to "the targeted player"
+            is TargetOpponent -> "OPPONENT" to "the targeted opponent"
+            else -> "UNKNOWN" to "the unresolved player"
+        }
+    }
 }
 
 /** Resolve the same native player reference used by the collection source and destination. */
@@ -657,8 +693,53 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 "Native targets: ${frame.targets}".takeIf { frame.targets.isNotEmpty() }),
             frame.event, otherwisePath, causalChange = conditionalEffectChange(yes, no))
     }
+    private fun recordPlayerOperation(effect: Effect, path: String, frame: Frame, sacrifice: MechanicalFact? = null): EventOutcome? {
+        val event = frame.event ?: return null
+        if (frame.resolutionCost) return null
+        val (kind, quantity, target) = when (effect) {
+            is ForceSacrificeEffect -> Triple(OutcomeKind.FORCED_SACRIFICE,
+                effect.dynamicCount ?: DynamicAmount.Fixed(effect.count), effect.target)
+            is LoseLifeEffect -> Triple(OutcomeKind.LOSE_LIFE, effect.amount, effect.target)
+            is GainLifeEffect -> Triple(OutcomeKind.GAIN_LIFE, effect.amount, effect.target)
+            is DealDamageEffect -> {
+                if (!isPossiblePlayerDamage(effect.target, frame)) return null
+                Triple(OutcomeKind.DEAL_PLAYER_DAMAGE, effect.amount, effect.target)
+            }
+            else -> return null
+        }
+        val (recipient, description) = eventOperationRecipient(target, frame)
+        val positive = (quantity as? DynamicAmount.Fixed)?.let {
+            if (it.amount > 0) Verdict.MATCH else Verdict.NO_MATCH
+        } ?: Verdict.UNKNOWN
+        val branch = all(listOf(frame.guardConfidence, frame.factGuard, frame.outcomeGuard, frame.operationGuard,
+            if (frame.delayed) Verdict.UNKNOWN else Verdict.MATCH))
+        val objectScope = sacrifice?.compatible(FactConstraints(kind = FactKind.SACRIFICE, from = Zone.BATTLEFIELD)) ?: Verdict.MATCH
+        val sourceSupported = effect !is DealDamageEffect || effect.damageSource == null || effect.damageSource == EffectTarget.Self
+        val unresolved = buildList {
+            if (event.confidence == Verdict.UNKNOWN || branch == Verdict.UNKNOWN) add("The trigger or branch prerequisites are not fully interpreted.")
+            if (recipient == "UNKNOWN") add("The affected player binding is unresolved.")
+            if (positive == Verdict.UNKNOWN) add("The native quantity depends on game state and is not interpreted here.")
+            if (objectScope == Verdict.UNKNOWN) add("The eligible sacrifice objects are not fully interpreted.")
+            if (!sourceSupported) add("The native damage source is not fully interpreted.")
+        }
+        val requirements = frame.assumptions + when (kind) {
+            OutcomeKind.FORCED_SACRIFICE -> listOf(
+                "Each affected player chooses from eligible permanents they control, if able.",
+                "A later death requires a creature to reach a graveyard from the battlefield. Replacements can change that result.")
+            OutcomeKind.DEAL_PLAYER_DAMAGE -> listOf("Native damage source, prevention and replacement rules apply.")
+            else -> emptyList()
+        }
+        val confidence = all(listOf(event.confidence, branch, objectScope, if (sourceSupported) Verdict.MATCH else Verdict.UNKNOWN))
+        return EventOutcome("$actionId|$path|$kind", card.name, face, actionId, path, event, kind,
+            quantity, recipient, confidence, positive, frame.optional, requirements, effect.tree(),
+            factId = sacrifice?.id, linkage = if (frame.delayed) "UNRESOLVED_DEFERRED_LINK" else "SAME_TRIGGER_BRANCH",
+            unresolved = unresolved, playerBinding = EventPlayerBinding(target, frame.operationPlayers, description))
+            .also { eventOutcomes += it }
+    }
+
     private fun walk(e: Effect,path: String,frame: Frame) {
         if(recordToken(e,path,frame)) return
+        if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
         if(e is DrawCardsEffect && frame.event!=null) {
             val context=frame.event
             val recipient=playerScope(e.target,frame)
@@ -726,7 +807,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     is Gate.WhenCondition, is Gate.MayDecide -> Unit
                     else -> issue("$path.gate",gate,"Gate payment/decision semantics not interpreted")
                 }
-                walk(e.then,"$path.then",branch.copy(optional=frame.optional || e.gate is Gate.MayDecide || e.gate is Gate.MayPay))
+                walk(e.then,"$path.then",branch.copy(optional=frame.optional || e.gate is Gate.MayDecide || e.gate is Gate.MayPay,
+                    operationGuard = if (e.gate is Gate.MayDecide && e.decisionMaker != null) Verdict.UNKNOWN else frame.operationGuard))
                 e.otherwise?.let { walk(it,"$path.otherwise",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=frame.assumptions+"Gate failed: ${e.gate}",movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())) }
                 if(condition != null) {
                     val baseline=removals(e.otherwise)
@@ -765,7 +847,12 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     is IterationSpace.Players -> frame.copy(actor=actor(s.players))
                     else -> frame.copy(iteration=ObjectScope(unresolved="Iteration space not interpreted: ${s.javaClass.simpleName}"))
                 }
-                val child=next.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap(),assumptions=frame.assumptions+"Iteration=${e.space}")
+                val players = (e.space as? IterationSpace.Players)?.players?.takeIf {
+                    it in setOf(Player.Each, Player.EachOpponent, Player.ActivePlayerFirst, Player.EachStartingWithYou) &&
+                        (e.body is ForceSacrificeEffect || e.body is LoseLifeEffect || e.body is GainLifeEffect || e.body is DealDamageEffect)
+                }
+                val child=next.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=if (players == null) Verdict.UNKNOWN else frame.outcomeGuard,
+                    operationPlayers=players,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap(),assumptions=frame.assumptions+"Iteration=${e.space}")
                 if(e.space is IterationSpace.Players) { child.collections.clear();child.collectionMax.clear() }
                 walk(e.body,"$path.body",child)
             }
@@ -888,6 +975,13 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             is ForceSacrificeEffect -> {
                 val a=playerScope(e.target,frame)
                 add(path,"SACRIFICE","EFFECT",ObjectScope(e.filter,a),e.tree(),frame,incidental=a != "YOU")
+                recordPlayerOperation(e, path, frame, facts.last())
+            }
+            is LoseLifeEffect, is GainLifeEffect -> {
+                val operation = recordPlayerOperation(e, path, frame)
+                if (operation != null && operation.recipient != "UNKNOWN" && operation.positiveQuantity != Verdict.UNKNOWN)
+                    support(path, e, SupportStatus.SUPPORTED, "Direct life change retains its native player and fixed amount")
+                else issue(path, e, "Effect not interpreted; native action retained (may contain further capabilities)")
             }
             is ReflexiveTriggerEffect -> {
                 walk(e.action,"$path.action",frame.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Reflexive action optional=${e.optional}",relationship="REFLEXIVE_ACTION_ENABLES_OUTCOME"))

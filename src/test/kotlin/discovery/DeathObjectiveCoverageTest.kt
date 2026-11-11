@@ -67,8 +67,10 @@ class DeathObjectiveCoverageTest : FunSpec({
     test("life changes and self-player damage do not become creature removal merely because death triggers them") {
         source("blood-artist").getValue("oracle_text").jsonPrimitive.content.contains("loses 1 life") shouldBe true
         source("midnight-reaper").getValue("oracle_text").jsonPrimitive.content.contains("draw a card") shouldBe true
-        rows("Blood Artist").isEmpty() shouldBe true
-        report.unsupported.any { it.card == "Blood Artist" && it.nativeType.endsWith("LoseLifeEffect") } shouldBe true
+        val artist = rows("Blood Artist")
+        artist.map { it.branch }.toSet() shouldBe setOf(Contribution.DEATH_TRIGGERED_OUTCOME)
+        artist.filter { it.verdict == Verdict.MATCH }.map { it.eventOutcome!!.kind }.toSet() shouldBe
+            setOf(OutcomeKind.LOSE_LIFE, OutcomeKind.GAIN_LIFE)
         val reaper = rows("Midnight Reaper").single { it.branch==Contribution.DIRECT_DEATH_GENERATOR }
         reaper.verdict shouldBe Verdict.NO_MATCH
         reaper.branch shouldBe Contribution.DIRECT_DEATH_GENERATOR

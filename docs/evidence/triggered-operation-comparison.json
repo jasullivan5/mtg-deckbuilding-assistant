@@ -1,0 +1,4161 @@
+{
+  "judith-create-creature-tokens.json": {
+    "eligible": 6111,
+    "beforeSha256": "aa3d3edd226c4578c58319d36af4dfcf089c7cbd7ba2ee5d7d58cf04feb8f3f8",
+    "afterSha256": "9355fb52116358ad56f999f986fcf6ea63285bc4f128cb04eceeb91fcad917f5",
+    "before": {
+      "MATCH": {
+        "cards": 346,
+        "pathways": 363
+      },
+      "UNKNOWN": {
+        "cards": 48,
+        "pathways": 55
+      },
+      "NO_MATCH": {
+        "cards": 215,
+        "pathways": 230
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 346,
+        "pathways": 363
+      },
+      "UNKNOWN": {
+        "cards": 48,
+        "pathways": 55
+      },
+      "NO_MATCH": {
+        "cards": 215,
+        "pathways": 230
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "GAIN_LIFE": 136,
+      "LOSE_LIFE": 258,
+      "FORCED_SACRIFICE": 57,
+      "DEAL_PLAYER_DAMAGE": 270
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "judith-creature-died-this-turn.json": {
+    "eligible": 6111,
+    "beforeSha256": "bb342dd939565e188706e4925dde16e1735da60ca08a40146c0d9be762228c76",
+    "afterSha256": "076965d2e77a9e5516c3e21af207701444cb53b0caeab8c0d509703f18ef3204",
+    "before": {
+      "MATCH": {
+        "cards": 7,
+        "pathways": 7
+      },
+      "UNKNOWN": {
+        "cards": 8,
+        "pathways": 8
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 7,
+        "pathways": 7
+      },
+      "UNKNOWN": {
+        "cards": 8,
+        "pathways": 8
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "GAIN_LIFE": 136,
+      "LOSE_LIFE": 258,
+      "FORCED_SACRIFICE": 57,
+      "DEAL_PLAYER_DAMAGE": 270
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "stateDependencies",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "judith-own-nontoken-creature-deaths.json": {
+    "eligible": 6111,
+    "beforeSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+    "afterSha256": "3fa49697ae0cd7e148dd854939f6f90c5513eaeb674bda4af2030ca5f312c95f",
+    "before": {
+      "MATCH": {
+        "cards": 551,
+        "pathways": 566
+      },
+      "UNKNOWN": {
+        "cards": 467,
+        "pathways": 508
+      },
+      "NO_MATCH": {
+        "cards": 1904,
+        "pathways": 2320
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 585,
+        "pathways": 620
+      },
+      "UNKNOWN": {
+        "cards": 509,
+        "pathways": 577
+      },
+      "NO_MATCH": {
+        "cards": 1906,
+        "pathways": 2328
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 42,
+        "pathways": 54
+      },
+      "UNKNOWN": {
+        "cards": 58,
+        "pathways": 69
+      },
+      "NO_MATCH": {
+        "cards": 7,
+        "pathways": 8
+      }
+    },
+    "newResponseKinds": {
+      "DEAL_PLAYER_DAMAGE": {
+        "MATCH": {
+          "cards": 9,
+          "pathways": 9
+        },
+        "UNKNOWN": {
+          "cards": 31,
+          "pathways": 31
+        },
+        "NO_MATCH": {
+          "cards": 2,
+          "pathways": 2
+        }
+      },
+      "FORCED_SACRIFICE": {
+        "MATCH": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "UNKNOWN": {
+          "cards": 2,
+          "pathways": 2
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "GAIN_LIFE": {
+        "MATCH": {
+          "cards": 18,
+          "pathways": 18
+        },
+        "UNKNOWN": {
+          "cards": 13,
+          "pathways": 13
+        },
+        "NO_MATCH": {
+          "cards": 3,
+          "pathways": 3
+        }
+      },
+      "LOSE_LIFE": {
+        "MATCH": {
+          "cards": 26,
+          "pathways": 26
+        },
+        "UNKNOWN": {
+          "cards": 21,
+          "pathways": 23
+        },
+        "NO_MATCH": {
+          "cards": 3,
+          "pathways": 3
+        }
+      }
+    },
+    "newlyMatchedCards": [
+      "Al Bhed Salvagers",
+      "Anodet Lurker",
+      "Bastion of Remembrance",
+      "Blistergrub",
+      "Blood Artist",
+      "Deathcurse Ogre",
+      "Disciple of the Vault",
+      "Dreadhound",
+      "Dross Harvester",
+      "Enatu Golem",
+      "Etched Familiar",
+      "Falkenrath Noble",
+      "Funeral Room // Awakening Hall",
+      "Guardian Automaton",
+      "Hunted Bonebrute",
+      "Infectious Host",
+      "Magma Phoenix",
+      "Marionette Apprentice",
+      "Ninja Teen",
+      "Onulet",
+      "Plague Spitter",
+      "Sell-Sword Brute",
+      "Serrated Scorpion",
+      "Smoldering Efreet",
+      "Soulcage Fiend",
+      "Steampath Charger",
+      "Susurian Voidborn",
+      "Syr Konrad, the Grim",
+      "Tattered Mummy",
+      "The Meathook Massacre",
+      "Venerated Stormsinger",
+      "Vengeful Bloodwitch",
+      "Vengeful Dead",
+      "Zulaport Cutthroat"
+    ],
+    "newRows": [
+      {
+        "card": "Abattoir Ghoul",
+        "face": "front",
+        "actionId": "Abattoir Ghoul|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Agent Venom",
+        "face": "front",
+        "actionId": "Agent Venom|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Al Bhed Salvagers",
+        "face": "front",
+        "actionId": "Al Bhed Salvagers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Al Bhed Salvagers",
+        "face": "front",
+        "actionId": "Al Bhed Salvagers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Anodet Lurker",
+        "face": "front",
+        "actionId": "Anodet Lurker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Archfiend of the Dross",
+        "face": "front",
+        "actionId": "Archfiend of the Dross|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Arnyn, Deathbloom Botanist",
+        "face": "front",
+        "actionId": "Arnyn, Deathbloom Botanist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Arnyn, Deathbloom Botanist",
+        "face": "front",
+        "actionId": "Arnyn, Deathbloom Botanist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Axelrod Gunnarson",
+        "face": "front",
+        "actionId": "Axelrod Gunnarson|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Axelrod Gunnarson",
+        "face": "front",
+        "actionId": "Axelrod Gunnarson|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Baneblade Scoundrel",
+        "face": "front.backFace",
+        "actionId": "Baneblade Scoundrel|front.backFace|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Bastion of Remembrance",
+        "face": "front",
+        "actionId": "Bastion of Remembrance|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Bastion of Remembrance",
+        "face": "front",
+        "actionId": "Bastion of Remembrance|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Blistergrub",
+        "face": "front",
+        "actionId": "Blistergrub|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Blood Artist",
+        "face": "front",
+        "actionId": "Blood Artist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Blood Artist",
+        "face": "front",
+        "actionId": "Blood Artist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Boggart Cursecrafter",
+        "face": "front",
+        "actionId": "Boggart Cursecrafter|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Boggart Mischief",
+        "face": "front",
+        "actionId": "Boggart Mischief|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Boggart Mischief",
+        "face": "front",
+        "actionId": "Boggart Mischief|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Boggart Shenanigans",
+        "face": "front",
+        "actionId": "Boggart Shenanigans|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Brazen Cannonade",
+        "face": "front",
+        "actionId": "Brazen Cannonade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Callous Inspector",
+        "face": "front",
+        "actionId": "Callous Inspector|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Crossway Troublemakers",
+        "face": "front",
+        "actionId": "Crossway Troublemakers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Deathcurse Ogre",
+        "face": "front",
+        "actionId": "Deathcurse Ogre|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Dingus Egg",
+        "face": "front",
+        "actionId": "Dingus Egg|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Disciple of Perdition",
+        "face": "front",
+        "actionId": "Disciple of Perdition|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Disciple of Perdition",
+        "face": "front",
+        "actionId": "Disciple of Perdition|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[1].effect.effects[2]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Disciple of the Vault",
+        "face": "front",
+        "actionId": "Disciple of the Vault|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Dreadhound",
+        "face": "front",
+        "actionId": "Dreadhound|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Dross Harvester",
+        "face": "front",
+        "actionId": "Dross Harvester|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Dynamite Diver",
+        "face": "front",
+        "actionId": "Dynamite Diver|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Electro, Assaulting Battery",
+        "face": "front",
+        "actionId": "Electro, Assaulting Battery|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Ember-Fist Zubera",
+        "face": "front",
+        "actionId": "Ember-Fist Zubera|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Enatu Golem",
+        "face": "front",
+        "actionId": "Enatu Golem|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Etched Familiar",
+        "face": "front",
+        "actionId": "Etched Familiar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Etched Familiar",
+        "face": "front",
+        "actionId": "Etched Familiar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Falkenrath Noble",
+        "face": "front",
+        "actionId": "Falkenrath Noble|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Falkenrath Noble",
+        "face": "front",
+        "actionId": "Falkenrath Noble|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Fear of Lost Teeth",
+        "face": "front",
+        "actionId": "Fear of Lost Teeth|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Fear of Lost Teeth",
+        "face": "front",
+        "actionId": "Fear of Lost Teeth|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Footlight Fiend",
+        "face": "front",
+        "actionId": "Footlight Fiend|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Forge Boss",
+        "face": "front",
+        "actionId": "Forge Boss|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Funeral Room // Awakening Hall",
+        "face": "front.cardFaces[0]:Funeral Room",
+        "actionId": "Funeral Room // Awakening Hall|front.cardFaces[0]:Funeral Room|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Funeral Room // Awakening Hall",
+        "face": "front.cardFaces[0]:Funeral Room",
+        "actionId": "Funeral Room // Awakening Hall|front.cardFaces[0]:Funeral Room|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Garna, Bloodfist of Keld",
+        "face": "front",
+        "actionId": "Garna, Bloodfist of Keld|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.otherwise",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Gimli, Counter of Kills",
+        "face": "front",
+        "actionId": "Gimli, Counter of Kills|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Gluttonous Guest",
+        "face": "front",
+        "actionId": "Gluttonous Guest|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Goblin Arsonist",
+        "face": "front",
+        "actionId": "Goblin Arsonist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Greed's Gambit",
+        "face": "front",
+        "actionId": "Greed's Gambit|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[3]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Greed's Gambit",
+        "face": "front",
+        "actionId": "Greed's Gambit|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[4]",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Guardian Automaton",
+        "face": "front",
+        "actionId": "Guardian Automaton|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Heartfire Hero",
+        "face": "front",
+        "actionId": "Heartfire Hero|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Hunted Bonebrute",
+        "face": "front",
+        "actionId": "Hunted Bonebrute|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Impending Doom",
+        "face": "front",
+        "actionId": "Impending Doom|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Infectious Host",
+        "face": "front",
+        "actionId": "Infectious Host|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Infernal Phantom",
+        "face": "front",
+        "actionId": "Infernal Phantom|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Invasion of Ulgrotha",
+        "face": "front.backFace",
+        "actionId": "Invasion of Ulgrotha|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Jerren, Corrupted Bishop",
+        "face": "front",
+        "actionId": "Jerren, Corrupted Bishop|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Judith, the Scourge Diva",
+        "face": "front",
+        "actionId": "Judith, the Scourge Diva|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Junji, the Midnight Sky",
+        "face": "front",
+        "actionId": "Junji, the Midnight Sky|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Junji, the Midnight Sky",
+        "face": "front",
+        "actionId": "Junji, the Midnight Sky|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[1].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Kalastria Highborn",
+        "face": "front",
+        "actionId": "Kalastria Highborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Kalastria Highborn",
+        "face": "front",
+        "actionId": "Kalastria Highborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Keldon Marauders",
+        "face": "front",
+        "actionId": "Keldon Marauders|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Kheru Bloodsucker",
+        "face": "front",
+        "actionId": "Kheru Bloodsucker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Kheru Bloodsucker",
+        "face": "front",
+        "actionId": "Kheru Bloodsucker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Kothophed, Soul Hoarder",
+        "face": "front",
+        "actionId": "Kothophed, Soul Hoarder|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Lead Pipe",
+        "face": "front",
+        "actionId": "Lead Pipe|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Magma Phoenix",
+        "face": "front",
+        "actionId": "Magma Phoenix|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1].body",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Marionette Apprentice",
+        "face": "front",
+        "actionId": "Marionette Apprentice|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Massacre Wurm",
+        "face": "front",
+        "actionId": "Massacre Wurm|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Mephitic Draught",
+        "face": "front",
+        "actionId": "Mephitic Draught|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Midnight Reaper",
+        "face": "front",
+        "actionId": "Midnight Reaper|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Mirkwood Bats",
+        "face": "front",
+        "actionId": "Mirkwood Bats|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Molten Man, Inferno Incarnate",
+        "face": "front",
+        "actionId": "Molten Man, Inferno Incarnate|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Moonstone Eulogist",
+        "face": "front",
+        "actionId": "Moonstone Eulogist|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Moonveil Regent",
+        "face": "front",
+        "actionId": "Moonveil Regent|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Mudbutton Torchrunner",
+        "face": "front",
+        "actionId": "Mudbutton Torchrunner|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Nadier's Nightblade",
+        "face": "front",
+        "actionId": "Nadier's Nightblade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Nadier's Nightblade",
+        "face": "front",
+        "actionId": "Nadier's Nightblade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ninja Teen",
+        "face": "front",
+        "actionId": "Ninja Teen|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.body",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Novice Occultist",
+        "face": "front",
+        "actionId": "Novice Occultist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Onulet",
+        "face": "front",
+        "actionId": "Onulet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ordeal of Purphoros",
+        "face": "front",
+        "actionId": "Ordeal of Purphoros|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Outpost Siege",
+        "face": "front",
+        "actionId": "Outpost Siege|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pashalik Mons",
+        "face": "front",
+        "actionId": "Pashalik Mons|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Perilous Myr",
+        "face": "front",
+        "actionId": "Perilous Myr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pitchburn Devils",
+        "face": "front",
+        "actionId": "Pitchburn Devils|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Plague Spitter",
+        "face": "front",
+        "actionId": "Plague Spitter|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1].body",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Popular Egotist",
+        "face": "front",
+        "actionId": "Popular Egotist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Popular Egotist",
+        "face": "front",
+        "actionId": "Popular Egotist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Pyre Spawn",
+        "face": "front",
+        "actionId": "Pyre Spawn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pyretic Prankster",
+        "face": "front.backFace",
+        "actionId": "Pyretic Prankster|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Rakdos Joins Up",
+        "face": "front",
+        "actionId": "Rakdos Joins Up|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Rakish Crew",
+        "face": "front",
+        "actionId": "Rakish Crew|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Rakish Crew",
+        "face": "front",
+        "actionId": "Rakish Crew|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Robot Domination",
+        "face": "front",
+        "actionId": "Robot Domination|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Sell-Sword Brute",
+        "face": "front",
+        "actionId": "Sell-Sword Brute|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Sephiroth, Fabled SOLDIER",
+        "face": "front",
+        "actionId": "Sephiroth, Fabled SOLDIER|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Sephiroth, Fabled SOLDIER",
+        "face": "front",
+        "actionId": "Sephiroth, Fabled SOLDIER|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Serrated Scorpion",
+        "face": "front",
+        "actionId": "Serrated Scorpion|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Serrated Scorpion",
+        "face": "front",
+        "actionId": "Serrated Scorpion|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Shady Informant",
+        "face": "front",
+        "actionId": "Shady Informant|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Shriek, Treblemaker",
+        "face": "front",
+        "actionId": "Shriek, Treblemaker|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Smoldering Efreet",
+        "face": "front",
+        "actionId": "Smoldering Efreet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Soulcage Fiend",
+        "face": "front",
+        "actionId": "Soulcage Fiend|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "South Wind Avatar",
+        "face": "front",
+        "actionId": "South Wind Avatar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Spiteful Prankster",
+        "face": "front",
+        "actionId": "Spiteful Prankster|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Steampath Charger",
+        "face": "front",
+        "actionId": "Steampath Charger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Susurian Voidborn",
+        "face": "front",
+        "actionId": "Susurian Voidborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Susurian Voidborn",
+        "face": "front",
+        "actionId": "Susurian Voidborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Syr Konrad, the Grim",
+        "face": "front",
+        "actionId": "Syr Konrad, the Grim|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Tablet of Epityr",
+        "face": "front",
+        "actionId": "Tablet of Epityr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tattered Mummy",
+        "face": "front",
+        "actionId": "Tattered Mummy|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "The Meathook Massacre",
+        "face": "front",
+        "actionId": "The Meathook Massacre|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "The Meathook Massacre",
+        "face": "front",
+        "actionId": "The Meathook Massacre|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "The Sackville-Bagginses",
+        "face": "front",
+        "actionId": "The Sackville-Bagginses|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Tibalt's Rager",
+        "face": "front",
+        "actionId": "Tibalt's Rager|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Undead Augur",
+        "face": "front",
+        "actionId": "Undead Augur|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Venerated Stormsinger",
+        "face": "front",
+        "actionId": "Venerated Stormsinger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Venerated Stormsinger",
+        "face": "front",
+        "actionId": "Venerated Stormsinger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Vengeful Bloodwitch",
+        "face": "front",
+        "actionId": "Vengeful Bloodwitch|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Vengeful Bloodwitch",
+        "face": "front",
+        "actionId": "Vengeful Bloodwitch|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Vengeful Dead",
+        "face": "front",
+        "actionId": "Vengeful Dead|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vengeful Dead",
+        "face": "front",
+        "actionId": "Vengeful Dead|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vengeful Tracker",
+        "face": "front",
+        "actionId": "Vengeful Tracker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Vraan, Executioner Thane",
+        "face": "front",
+        "actionId": "Vraan, Executioner Thane|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vraan, Executioner Thane",
+        "face": "front",
+        "actionId": "Vraan, Executioner Thane|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Wicked Visitor",
+        "face": "front",
+        "actionId": "Wicked Visitor|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Zulaport Cutthroat",
+        "face": "front",
+        "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Zulaport Cutthroat",
+        "face": "front",
+        "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      }
+    ],
+    "newSharedOperations": {
+      "GAIN_LIFE": 136,
+      "LOSE_LIFE": 258,
+      "FORCED_SACRIFICE": 57,
+      "DEAL_PLAYER_DAMAGE": 270
+    },
+    "legacyRecipientPolicy": [
+      "Thought-Knot Seer"
+    ],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "judith-reanimate-own-creatures.json": {
+    "eligible": 6111,
+    "beforeSha256": "df7895ca0f37a593cbe5ce99acd4e4b72e98e420ef5f65eb1c943f6626bdb8da",
+    "afterSha256": "a95f1d8e1f4b064722a5c01e24ac878f9d60ee5659c188b7762f0bb1be1a3fd0",
+    "before": {
+      "MATCH": {
+        "cards": 104,
+        "pathways": 106
+      },
+      "UNKNOWN": {
+        "cards": 85,
+        "pathways": 93
+      },
+      "NO_MATCH": {
+        "cards": 1555,
+        "pathways": 1857
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 104,
+        "pathways": 106
+      },
+      "UNKNOWN": {
+        "cards": 85,
+        "pathways": 93
+      },
+      "NO_MATCH": {
+        "cards": 1555,
+        "pathways": 1857
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "GAIN_LIFE": 136,
+      "LOSE_LIFE": 258,
+      "FORCED_SACRIFICE": 57,
+      "DEAL_PLAYER_DAMAGE": 270
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "judith-stock-own-graveyard.json": {
+    "eligible": 6111,
+    "beforeSha256": "3f9a2bb62fb18a4389ede72c86da1cbe318b125837784df4d190007508547952",
+    "afterSha256": "82906461411bbbaa5c6ab8b81c76f320f9de8d9b4d29ef6ff2311231e0458acb",
+    "before": {
+      "MATCH": {
+        "cards": 508,
+        "pathways": 535
+      },
+      "UNKNOWN": {
+        "cards": 527,
+        "pathways": 576
+      },
+      "NO_MATCH": {
+        "cards": 315,
+        "pathways": 335
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 508,
+        "pathways": 535
+      },
+      "UNKNOWN": {
+        "cards": 527,
+        "pathways": 576
+      },
+      "NO_MATCH": {
+        "cards": 315,
+        "pathways": 335
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "GAIN_LIFE": 136,
+      "LOSE_LIFE": 258,
+      "FORCED_SACRIFICE": 57,
+      "DEAL_PLAYER_DAMAGE": 270
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "kenrith-death.json": {
+    "eligible": 15955,
+    "beforeSha256": "417cafcb37a405a205f66647192aaea8b2be2d04b89d34b8b2c80f87a9bd7e0a",
+    "afterSha256": "3ba9f1fcff878d57bcf7fdf95319ddf2a4e589acd76f48140272e29fff43ba99",
+    "before": {
+      "MATCH": {
+        "cards": 946,
+        "pathways": 975
+      },
+      "UNKNOWN": {
+        "cards": 1059,
+        "pathways": 1173
+      },
+      "NO_MATCH": {
+        "cards": 3164,
+        "pathways": 3762
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 993,
+        "pathways": 1050
+      },
+      "UNKNOWN": {
+        "cards": 1120,
+        "pathways": 1274
+      },
+      "NO_MATCH": {
+        "cards": 3166,
+        "pathways": 3770
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 60,
+        "pathways": 75
+      },
+      "UNKNOWN": {
+        "cards": 86,
+        "pathways": 101
+      },
+      "NO_MATCH": {
+        "cards": 7,
+        "pathways": 8
+      }
+    },
+    "newResponseKinds": {
+      "DEAL_PLAYER_DAMAGE": {
+        "MATCH": {
+          "cards": 9,
+          "pathways": 9
+        },
+        "UNKNOWN": {
+          "cards": 37,
+          "pathways": 37
+        },
+        "NO_MATCH": {
+          "cards": 2,
+          "pathways": 2
+        }
+      },
+      "FORCED_SACRIFICE": {
+        "MATCH": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "UNKNOWN": {
+          "cards": 7,
+          "pathways": 7
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "GAIN_LIFE": {
+        "MATCH": {
+          "cards": 35,
+          "pathways": 36
+        },
+        "UNKNOWN": {
+          "cards": 28,
+          "pathways": 28
+        },
+        "NO_MATCH": {
+          "cards": 3,
+          "pathways": 3
+        }
+      },
+      "LOSE_LIFE": {
+        "MATCH": {
+          "cards": 29,
+          "pathways": 29
+        },
+        "UNKNOWN": {
+          "cards": 27,
+          "pathways": 29
+        },
+        "NO_MATCH": {
+          "cards": 3,
+          "pathways": 3
+        }
+      }
+    },
+    "newlyMatchedCards": [
+      "Absolving Lammasu",
+      "Al Bhed Salvagers",
+      "Anodet Lurker",
+      "Aven Riftwatcher",
+      "Bastion of Remembrance",
+      "Blex, Vexing Pest",
+      "Blistergrub",
+      "Blood Artist",
+      "Centaur Safeguard",
+      "Cruel Celebrant",
+      "Deathcurse Ogre",
+      "Disciple of the Vault",
+      "Dreadhound",
+      "Dross Harvester",
+      "Enatu Golem",
+      "Etched Familiar",
+      "Falkenrath Noble",
+      "Funeral Room // Awakening Hall",
+      "Grasping Longneck",
+      "Guardian Automaton",
+      "Highland Game",
+      "Hunted Bonebrute",
+      "Infectious Host",
+      "Lunarch Veteran",
+      "Magma Phoenix",
+      "Marionette Apprentice",
+      "Ninja Teen",
+      "Onulet",
+      "Panicked Bystander",
+      "Plague Spitter",
+      "Poison-Tip Archer",
+      "Sell-Sword Brute",
+      "Serrated Scorpion",
+      "Smoldering Efreet",
+      "Soulcage Fiend",
+      "Steampath Charger",
+      "Susurian Voidborn",
+      "Syr Konrad, the Grim",
+      "Syr Vondam, Sunstar Exemplar",
+      "Tarpan",
+      "Tattered Mummy",
+      "The Meathook Massacre",
+      "Tocasia's Onulet",
+      "Venerated Stormsinger",
+      "Vengeful Bloodwitch",
+      "Vengeful Dead",
+      "Zulaport Cutthroat"
+    ],
+    "newRows": [
+      {
+        "card": "Aatchik, Emerald Radian",
+        "face": "front",
+        "actionId": "Aatchik, Emerald Radian|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Abattoir Ghoul",
+        "face": "front",
+        "actionId": "Abattoir Ghoul|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Absolving Lammasu",
+        "face": "front",
+        "actionId": "Absolving Lammasu|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Agent Venom",
+        "face": "front",
+        "actionId": "Agent Venom|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Al Bhed Salvagers",
+        "face": "front",
+        "actionId": "Al Bhed Salvagers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Al Bhed Salvagers",
+        "face": "front",
+        "actionId": "Al Bhed Salvagers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Anodet Lurker",
+        "face": "front",
+        "actionId": "Anodet Lurker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Archfiend of the Dross",
+        "face": "front",
+        "actionId": "Archfiend of the Dross|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Arnyn, Deathbloom Botanist",
+        "face": "front",
+        "actionId": "Arnyn, Deathbloom Botanist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Arnyn, Deathbloom Botanist",
+        "face": "front",
+        "actionId": "Arnyn, Deathbloom Botanist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Aven Riftwatcher",
+        "face": "front",
+        "actionId": "Aven Riftwatcher|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Axelrod Gunnarson",
+        "face": "front",
+        "actionId": "Axelrod Gunnarson|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Axelrod Gunnarson",
+        "face": "front",
+        "actionId": "Axelrod Gunnarson|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Baneblade Scoundrel",
+        "face": "front.backFace",
+        "actionId": "Baneblade Scoundrel|front.backFace|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Bastion of Remembrance",
+        "face": "front",
+        "actionId": "Bastion of Remembrance|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Bastion of Remembrance",
+        "face": "front",
+        "actionId": "Bastion of Remembrance|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Biotech Specialist",
+        "face": "front",
+        "actionId": "Biotech Specialist|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Blex, Vexing Pest",
+        "face": "front",
+        "actionId": "Blex, Vexing Pest|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Blistergrub",
+        "face": "front",
+        "actionId": "Blistergrub|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Blood Artist",
+        "face": "front",
+        "actionId": "Blood Artist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Blood Artist",
+        "face": "front",
+        "actionId": "Blood Artist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Boggart Cursecrafter",
+        "face": "front",
+        "actionId": "Boggart Cursecrafter|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Boggart Mischief",
+        "face": "front",
+        "actionId": "Boggart Mischief|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Boggart Mischief",
+        "face": "front",
+        "actionId": "Boggart Mischief|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Boggart Shenanigans",
+        "face": "front",
+        "actionId": "Boggart Shenanigans|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Brazen Cannonade",
+        "face": "front",
+        "actionId": "Brazen Cannonade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Callous Inspector",
+        "face": "front",
+        "actionId": "Callous Inspector|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Cauldron of Essence",
+        "face": "front",
+        "actionId": "Cauldron of Essence|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Cauldron of Essence",
+        "face": "front",
+        "actionId": "Cauldron of Essence|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Centaur Safeguard",
+        "face": "front",
+        "actionId": "Centaur Safeguard|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Creature Bond",
+        "face": "front",
+        "actionId": "Creature Bond|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Crossway Troublemakers",
+        "face": "front",
+        "actionId": "Crossway Troublemakers|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Cruel Celebrant",
+        "face": "front",
+        "actionId": "Cruel Celebrant|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Cruel Celebrant",
+        "face": "front",
+        "actionId": "Cruel Celebrant|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Curious Farm Animals",
+        "face": "front",
+        "actionId": "Curious Farm Animals|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Cyclops Superconductor",
+        "face": "front",
+        "actionId": "Cyclops Superconductor|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.reflexiveEffect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Daemogoth Woe-Eater",
+        "face": "front",
+        "actionId": "Daemogoth Woe-Eater|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[4]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Day of the Dragons",
+        "face": "front",
+        "actionId": "Day of the Dragons|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Deathcurse Ogre",
+        "face": "front",
+        "actionId": "Deathcurse Ogre|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Dingus Egg",
+        "face": "front",
+        "actionId": "Dingus Egg|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Diregraf Captain",
+        "face": "front",
+        "actionId": "Diregraf Captain|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Disciple of Perdition",
+        "face": "front",
+        "actionId": "Disciple of Perdition|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Disciple of Perdition",
+        "face": "front",
+        "actionId": "Disciple of Perdition|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[1].effect.effects[2]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Disciple of the Vault",
+        "face": "front",
+        "actionId": "Disciple of the Vault|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Dreadhound",
+        "face": "front",
+        "actionId": "Dreadhound|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Dross Harvester",
+        "face": "front",
+        "actionId": "Dross Harvester|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Dynamite Diver",
+        "face": "front",
+        "actionId": "Dynamite Diver|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Electro, Assaulting Battery",
+        "face": "front",
+        "actionId": "Electro, Assaulting Battery|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Embalmed Ascendant",
+        "face": "front",
+        "actionId": "Embalmed Ascendant|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Embalmed Ascendant",
+        "face": "front",
+        "actionId": "Embalmed Ascendant|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ember-Fist Zubera",
+        "face": "front",
+        "actionId": "Ember-Fist Zubera|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Enatu Golem",
+        "face": "front",
+        "actionId": "Enatu Golem|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Etched Familiar",
+        "face": "front",
+        "actionId": "Etched Familiar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Etched Familiar",
+        "face": "front",
+        "actionId": "Etched Familiar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Falkenrath Noble",
+        "face": "front",
+        "actionId": "Falkenrath Noble|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Falkenrath Noble",
+        "face": "front",
+        "actionId": "Falkenrath Noble|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Fear of Lost Teeth",
+        "face": "front",
+        "actionId": "Fear of Lost Teeth|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Fear of Lost Teeth",
+        "face": "front",
+        "actionId": "Fear of Lost Teeth|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Fleshtaker",
+        "face": "front",
+        "actionId": "Fleshtaker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Footlight Fiend",
+        "face": "front",
+        "actionId": "Footlight Fiend|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Forge Boss",
+        "face": "front",
+        "actionId": "Forge Boss|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Funeral Room // Awakening Hall",
+        "face": "front.cardFaces[0]:Funeral Room",
+        "actionId": "Funeral Room // Awakening Hall|front.cardFaces[0]:Funeral Room|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Funeral Room // Awakening Hall",
+        "face": "front.cardFaces[0]:Funeral Room",
+        "actionId": "Funeral Room // Awakening Hall|front.cardFaces[0]:Funeral Room|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Garna, Bloodfist of Keld",
+        "face": "front",
+        "actionId": "Garna, Bloodfist of Keld|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.otherwise",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Gimli, Counter of Kills",
+        "face": "front",
+        "actionId": "Gimli, Counter of Kills|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Gluttonous Guest",
+        "face": "front",
+        "actionId": "Gluttonous Guest|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Goblin Arsonist",
+        "face": "front",
+        "actionId": "Goblin Arsonist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Grasping Longneck",
+        "face": "front",
+        "actionId": "Grasping Longneck|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Greed's Gambit",
+        "face": "front",
+        "actionId": "Greed's Gambit|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[3]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Greed's Gambit",
+        "face": "front",
+        "actionId": "Greed's Gambit|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[4]",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Guardian Automaton",
+        "face": "front",
+        "actionId": "Guardian Automaton|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Haywire Mite",
+        "face": "front",
+        "actionId": "Haywire Mite|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Heartfire Hero",
+        "face": "front",
+        "actionId": "Heartfire Hero|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Hidetsugu and Kairi",
+        "face": "front",
+        "actionId": "Hidetsugu and Kairi|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[2]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Highland Game",
+        "face": "front",
+        "actionId": "Highland Game|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Hunted Bonebrute",
+        "face": "front",
+        "actionId": "Hunted Bonebrute|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Impending Doom",
+        "face": "front",
+        "actionId": "Impending Doom|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Infectious Host",
+        "face": "front",
+        "actionId": "Infectious Host|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Infernal Phantom",
+        "face": "front",
+        "actionId": "Infernal Phantom|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Invasion of Ulgrotha",
+        "face": "front.backFace",
+        "actionId": "Invasion of Ulgrotha|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Jerren, Corrupted Bishop",
+        "face": "front",
+        "actionId": "Jerren, Corrupted Bishop|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Judith, the Scourge Diva",
+        "face": "front",
+        "actionId": "Judith, the Scourge Diva|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Junji, the Midnight Sky",
+        "face": "front",
+        "actionId": "Junji, the Midnight Sky|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Junji, the Midnight Sky",
+        "face": "front",
+        "actionId": "Junji, the Midnight Sky|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.modes[1].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Kalastria Highborn",
+        "face": "front",
+        "actionId": "Kalastria Highborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Kalastria Highborn",
+        "face": "front",
+        "actionId": "Kalastria Highborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Keldon Marauders",
+        "face": "front",
+        "actionId": "Keldon Marauders|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Kheru Bloodsucker",
+        "face": "front",
+        "actionId": "Kheru Bloodsucker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Kheru Bloodsucker",
+        "face": "front",
+        "actionId": "Kheru Bloodsucker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Kothophed, Soul Hoarder",
+        "face": "front",
+        "actionId": "Kothophed, Soul Hoarder|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Laid to Rest",
+        "face": "front",
+        "actionId": "Laid to Rest|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Lead Pipe",
+        "face": "front",
+        "actionId": "Lead Pipe|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Leader's Talent",
+        "face": "front",
+        "actionId": "Leader's Talent|front|script.classLevels[0].triggeredAbilities[0]",
+        "abilityPath": "script.classLevels[0].triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Lord Xander, the Collector",
+        "face": "front",
+        "actionId": "Lord Xander, the Collector|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Lunarch Veteran",
+        "face": "front.backFace",
+        "actionId": "Lunarch Veteran|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Magma Phoenix",
+        "face": "front",
+        "actionId": "Magma Phoenix|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1].body",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Marionette Apprentice",
+        "face": "front",
+        "actionId": "Marionette Apprentice|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Market Gnome",
+        "face": "front",
+        "actionId": "Market Gnome|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Massacre Wurm",
+        "face": "front",
+        "actionId": "Massacre Wurm|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Mephitic Draught",
+        "face": "front",
+        "actionId": "Mephitic Draught|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Midnight Reaper",
+        "face": "front",
+        "actionId": "Midnight Reaper|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Mirkwood Bats",
+        "face": "front",
+        "actionId": "Mirkwood Bats|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Moldervine Reclamation",
+        "face": "front",
+        "actionId": "Moldervine Reclamation|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Molten Man, Inferno Incarnate",
+        "face": "front",
+        "actionId": "Molten Man, Inferno Incarnate|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Moonstone Eulogist",
+        "face": "front",
+        "actionId": "Moonstone Eulogist|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Moonveil Regent",
+        "face": "front",
+        "actionId": "Moonveil Regent|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Mudbutton Torchrunner",
+        "face": "front",
+        "actionId": "Mudbutton Torchrunner|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Nadier's Nightblade",
+        "face": "front",
+        "actionId": "Nadier's Nightblade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Nadier's Nightblade",
+        "face": "front",
+        "actionId": "Nadier's Nightblade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ninja Teen",
+        "face": "front",
+        "actionId": "Ninja Teen|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.body",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Novice Occultist",
+        "face": "front",
+        "actionId": "Novice Occultist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Omnath, Locus of Rage",
+        "face": "front",
+        "actionId": "Omnath, Locus of Rage|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Onulet",
+        "face": "front",
+        "actionId": "Onulet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ordeal of Purphoros",
+        "face": "front",
+        "actionId": "Ordeal of Purphoros|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Outpost Siege",
+        "face": "front",
+        "actionId": "Outpost Siege|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Packsong Pup",
+        "face": "front",
+        "actionId": "Packsong Pup|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Panicked Bystander",
+        "face": "front",
+        "actionId": "Panicked Bystander|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Panicked Bystander",
+        "face": "front.backFace",
+        "actionId": "Panicked Bystander|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Pashalik Mons",
+        "face": "front",
+        "actionId": "Pashalik Mons|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Perilous Myr",
+        "face": "front",
+        "actionId": "Perilous Myr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Personal Incarnation",
+        "face": "front",
+        "actionId": "Personal Incarnation|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the source's owner"
+      },
+      {
+        "card": "Pitchburn Devils",
+        "face": "front",
+        "actionId": "Pitchburn Devils|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Plague Spitter",
+        "face": "front",
+        "actionId": "Plague Spitter|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1].body",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Poison-Tip Archer",
+        "face": "front",
+        "actionId": "Poison-Tip Archer|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Popular Egotist",
+        "face": "front",
+        "actionId": "Popular Egotist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Popular Egotist",
+        "face": "front",
+        "actionId": "Popular Egotist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Pyre Spawn",
+        "face": "front",
+        "actionId": "Pyre Spawn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pyretic Prankster",
+        "face": "front.backFace",
+        "actionId": "Pyretic Prankster|front.backFace|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Rakdos Joins Up",
+        "face": "front",
+        "actionId": "Rakdos Joins Up|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Rakish Crew",
+        "face": "front",
+        "actionId": "Rakish Crew|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Rakish Crew",
+        "face": "front",
+        "actionId": "Rakish Crew|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Robot Domination",
+        "face": "front",
+        "actionId": "Robot Domination|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ruthless Deathfang",
+        "face": "front",
+        "actionId": "Ruthless Deathfang|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Savra, Queen of the Golgari",
+        "face": "front",
+        "actionId": "Savra, Queen of the Golgari|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Savra, Queen of the Golgari",
+        "face": "front",
+        "actionId": "Savra, Queen of the Golgari|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.then",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Sell-Sword Brute",
+        "face": "front",
+        "actionId": "Sell-Sword Brute|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Sephiroth, Fabled SOLDIER",
+        "face": "front",
+        "actionId": "Sephiroth, Fabled SOLDIER|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Sephiroth, Fabled SOLDIER",
+        "face": "front",
+        "actionId": "Sephiroth, Fabled SOLDIER|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Serrated Scorpion",
+        "face": "front",
+        "actionId": "Serrated Scorpion|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Serrated Scorpion",
+        "face": "front",
+        "actionId": "Serrated Scorpion|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Shady Informant",
+        "face": "front",
+        "actionId": "Shady Informant|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Shriek, Treblemaker",
+        "face": "front",
+        "actionId": "Shriek, Treblemaker|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Silent-Chant Zubera",
+        "face": "front",
+        "actionId": "Silent-Chant Zubera|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Skyfisher Spider",
+        "face": "front",
+        "actionId": "Skyfisher Spider|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.then.effects[0]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Slimefoot, the Stowaway",
+        "face": "front",
+        "actionId": "Slimefoot, the Stowaway|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Slimefoot, the Stowaway",
+        "face": "front",
+        "actionId": "Slimefoot, the Stowaway|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Smoldering Efreet",
+        "face": "front",
+        "actionId": "Smoldering Efreet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Soulcage Fiend",
+        "face": "front",
+        "actionId": "Soulcage Fiend|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "South Wind Avatar",
+        "face": "front",
+        "actionId": "South Wind Avatar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Spiteful Prankster",
+        "face": "front",
+        "actionId": "Spiteful Prankster|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Steampath Charger",
+        "face": "front",
+        "actionId": "Steampath Charger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Storm God's Oracle",
+        "face": "front",
+        "actionId": "Storm God's Oracle|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Sultai Flayer",
+        "face": "front",
+        "actionId": "Sultai Flayer|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Susurian Voidborn",
+        "face": "front",
+        "actionId": "Susurian Voidborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Susurian Voidborn",
+        "face": "front",
+        "actionId": "Susurian Voidborn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Syr Konrad, the Grim",
+        "face": "front",
+        "actionId": "Syr Konrad, the Grim|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Syr Vondam, Sunstar Exemplar",
+        "face": "front",
+        "actionId": "Syr Vondam, Sunstar Exemplar|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tablet of Epityr",
+        "face": "front",
+        "actionId": "Tablet of Epityr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tarpan",
+        "face": "front",
+        "actionId": "Tarpan|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tattered Mummy",
+        "face": "front",
+        "actionId": "Tattered Mummy|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "The Meathook Massacre",
+        "face": "front",
+        "actionId": "The Meathook Massacre|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "The Meathook Massacre",
+        "face": "front",
+        "actionId": "The Meathook Massacre|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "The Sackville-Bagginses",
+        "face": "front",
+        "actionId": "The Sackville-Bagginses|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "The Serpent Society",
+        "face": "front",
+        "actionId": "The Serpent Society|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Tibalt's Rager",
+        "face": "front",
+        "actionId": "Tibalt's Rager|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Titania, Voice of Gaea",
+        "face": "front",
+        "actionId": "Titania, Voice of Gaea|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tocasia's Onulet",
+        "face": "front",
+        "actionId": "Tocasia's Onulet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Undead Augur",
+        "face": "front",
+        "actionId": "Undead Augur|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Venerated Stormsinger",
+        "face": "front",
+        "actionId": "Venerated Stormsinger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Venerated Stormsinger",
+        "face": "front",
+        "actionId": "Venerated Stormsinger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Vengeful Bloodwitch",
+        "face": "front",
+        "actionId": "Vengeful Bloodwitch|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted opponent"
+      },
+      {
+        "card": "Vengeful Bloodwitch",
+        "face": "front",
+        "actionId": "Vengeful Bloodwitch|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Vengeful Dead",
+        "face": "front",
+        "actionId": "Vengeful Dead|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vengeful Dead",
+        "face": "front",
+        "actionId": "Vengeful Dead|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vengeful Tracker",
+        "face": "front",
+        "actionId": "Vengeful Tracker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Vito, Fanatic of Aclazotz",
+        "face": "front",
+        "actionId": "Vito, Fanatic of Aclazotz|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1].then",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Vito, Fanatic of Aclazotz",
+        "face": "front",
+        "actionId": "Vito, Fanatic of Aclazotz|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[2].then",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vraan, Executioner Thane",
+        "face": "front",
+        "actionId": "Vraan, Executioner Thane|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Vraan, Executioner Thane",
+        "face": "front",
+        "actionId": "Vraan, Executioner Thane|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Walltop Sentries",
+        "face": "front",
+        "actionId": "Walltop Sentries|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Wicked Visitor",
+        "face": "front",
+        "actionId": "Wicked Visitor|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "LOSE_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Willow Geist",
+        "face": "front",
+        "actionId": "Willow Geist|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Zulaport Cutthroat",
+        "face": "front",
+        "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[0]",
+        "operation": "LOSE_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Zulaport Cutthroat",
+        "face": "front",
+        "actionId": "Zulaport Cutthroat|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1]",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      }
+    ],
+    "newSharedOperations": {
+      "GAIN_LIFE": 476,
+      "LOSE_LIFE": 316,
+      "DEAL_PLAYER_DAMAGE": 347,
+      "FORCED_SACRIFICE": 81
+    },
+    "legacyRecipientPolicy": [
+      "Thought-Knot Seer"
+    ],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "kenrith-history.json": {
+    "eligible": 15955,
+    "beforeSha256": "edeccc5de03a398cc8560577c17645de8d211d1f87705dfa407f32f0cd641403",
+    "afterSha256": "e5a3b1a2253bb79ce9a37aab1dfa925d9265dad0c9f48594f3d159101b1b8663",
+    "before": {
+      "MATCH": {
+        "cards": 15,
+        "pathways": 15
+      },
+      "UNKNOWN": {
+        "cards": 14,
+        "pathways": 14
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 15,
+        "pathways": 15
+      },
+      "UNKNOWN": {
+        "cards": 14,
+        "pathways": 14
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "GAIN_LIFE": 476,
+      "LOSE_LIFE": 316,
+      "DEAL_PLAYER_DAMAGE": 347,
+      "FORCED_SACRIFICE": 81
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "stateDependencies",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "krenko-create-creature-tokens.json": {
+    "eligible": 3472,
+    "beforeSha256": "bfa7ba070657fb96316f678e53fa175cd7744762a9ed0f11cc9e6e6a6da93fae",
+    "afterSha256": "49584f93329f4ab16e4ffcc11129dfc3d9f50bc8a89ecd5ee6247c6c1f755aa9",
+    "before": {
+      "MATCH": {
+        "cards": 182,
+        "pathways": 190
+      },
+      "UNKNOWN": {
+        "cards": 28,
+        "pathways": 33
+      },
+      "NO_MATCH": {
+        "cards": 131,
+        "pathways": 139
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 182,
+        "pathways": 190
+      },
+      "UNKNOWN": {
+        "cards": 28,
+        "pathways": 33
+      },
+      "NO_MATCH": {
+        "cards": 131,
+        "pathways": 139
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "DEAL_PLAYER_DAMAGE": 210,
+      "GAIN_LIFE": 33,
+      "FORCED_SACRIFICE": 13,
+      "LOSE_LIFE": 5
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "krenko-creature-died-this-turn.json": {
+    "eligible": 3472,
+    "beforeSha256": "26b165bc8f59b5c90e27e75c32df58e3450bb80659adb14ac79b08209e2bf632",
+    "afterSha256": "3148a5d7e8740b8e0344508e7bf968d285022a329290f8b5cef70318d3865ea4",
+    "before": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 1,
+        "pathways": 1
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 1,
+        "pathways": 1
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "DEAL_PLAYER_DAMAGE": 210,
+      "GAIN_LIFE": 33,
+      "FORCED_SACRIFICE": 13,
+      "LOSE_LIFE": 5
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "stateDependencies",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "krenko-own-nontoken-creature-deaths.json": {
+    "eligible": 3472,
+    "beforeSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+    "afterSha256": "886cedd0c280e8d16ab39320cd104ebb257f659801b71aeb08246eb8ab3dbc9a",
+    "before": {
+      "MATCH": {
+        "cards": 220,
+        "pathways": 225
+      },
+      "UNKNOWN": {
+        "cards": 207,
+        "pathways": 223
+      },
+      "NO_MATCH": {
+        "cards": 1113,
+        "pathways": 1386
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 228,
+        "pathways": 233
+      },
+      "UNKNOWN": {
+        "cards": 223,
+        "pathways": 247
+      },
+      "NO_MATCH": {
+        "cards": 1113,
+        "pathways": 1387
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 8,
+        "pathways": 8
+      },
+      "UNKNOWN": {
+        "cards": 24,
+        "pathways": 24
+      },
+      "NO_MATCH": {
+        "cards": 1,
+        "pathways": 1
+      }
+    },
+    "newResponseKinds": {
+      "DEAL_PLAYER_DAMAGE": {
+        "MATCH": {
+          "cards": 4,
+          "pathways": 4
+        },
+        "UNKNOWN": {
+          "cards": 22,
+          "pathways": 22
+        },
+        "NO_MATCH": {
+          "cards": 1,
+          "pathways": 1
+        }
+      },
+      "FORCED_SACRIFICE": {
+        "MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "GAIN_LIFE": {
+        "MATCH": {
+          "cards": 4,
+          "pathways": 4
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      }
+    },
+    "newlyMatchedCards": [
+      "Anodet Lurker",
+      "Enatu Golem",
+      "Guardian Automaton",
+      "Magma Phoenix",
+      "Onulet",
+      "Sell-Sword Brute",
+      "Smoldering Efreet",
+      "Steampath Charger"
+    ],
+    "newRows": [
+      {
+        "card": "Anodet Lurker",
+        "face": "front",
+        "actionId": "Anodet Lurker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Boggart Shenanigans",
+        "face": "front",
+        "actionId": "Boggart Shenanigans|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Brazen Cannonade",
+        "face": "front",
+        "actionId": "Brazen Cannonade|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Dingus Egg",
+        "face": "front",
+        "actionId": "Dingus Egg|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Dynamite Diver",
+        "face": "front",
+        "actionId": "Dynamite Diver|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Electro, Assaulting Battery",
+        "face": "front",
+        "actionId": "Electro, Assaulting Battery|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Ember-Fist Zubera",
+        "face": "front",
+        "actionId": "Ember-Fist Zubera|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Enatu Golem",
+        "face": "front",
+        "actionId": "Enatu Golem|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Gimli, Counter of Kills",
+        "face": "front",
+        "actionId": "Gimli, Counter of Kills|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "NO_MATCH",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Goblin Arsonist",
+        "face": "front",
+        "actionId": "Goblin Arsonist|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Guardian Automaton",
+        "face": "front",
+        "actionId": "Guardian Automaton|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Heartfire Hero",
+        "face": "front",
+        "actionId": "Heartfire Hero|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "each opponent"
+      },
+      {
+        "card": "Impending Doom",
+        "face": "front",
+        "actionId": "Impending Doom|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Infernal Phantom",
+        "face": "front",
+        "actionId": "Infernal Phantom|front|script.triggeredAbilities[2]",
+        "abilityPath": "script.triggeredAbilities[2].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Keldon Marauders",
+        "face": "front",
+        "actionId": "Keldon Marauders|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Magma Phoenix",
+        "face": "front",
+        "actionId": "Magma Phoenix|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.effects[1].body",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "each player"
+      },
+      {
+        "card": "Molten Man, Inferno Incarnate",
+        "face": "front",
+        "actionId": "Molten Man, Inferno Incarnate|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "FORCED_SACRIFICE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Moonveil Regent",
+        "face": "front",
+        "actionId": "Moonveil Regent|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Mudbutton Torchrunner",
+        "face": "front",
+        "actionId": "Mudbutton Torchrunner|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Onulet",
+        "face": "front",
+        "actionId": "Onulet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "GAIN_LIFE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Ordeal of Purphoros",
+        "face": "front",
+        "actionId": "Ordeal of Purphoros|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Outpost Siege",
+        "face": "front",
+        "actionId": "Outpost Siege|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pashalik Mons",
+        "face": "front",
+        "actionId": "Pashalik Mons|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Perilous Myr",
+        "face": "front",
+        "actionId": "Perilous Myr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pitchburn Devils",
+        "face": "front",
+        "actionId": "Pitchburn Devils|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Pyre Spawn",
+        "face": "front",
+        "actionId": "Pyre Spawn|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Sell-Sword Brute",
+        "face": "front",
+        "actionId": "Sell-Sword Brute|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Smoldering Efreet",
+        "face": "front",
+        "actionId": "Smoldering Efreet|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Spiteful Prankster",
+        "face": "front",
+        "actionId": "Spiteful Prankster|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Steampath Charger",
+        "face": "front",
+        "actionId": "Steampath Charger|front|script.triggeredAbilities[1]",
+        "abilityPath": "script.triggeredAbilities[1].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "MATCH",
+        "affectedPlayers": "the targeted player"
+      },
+      {
+        "card": "Tablet of Epityr",
+        "face": "front",
+        "actionId": "Tablet of Epityr|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect.then",
+        "operation": "GAIN_LIFE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "you"
+      },
+      {
+        "card": "Tibalt's Rager",
+        "face": "front",
+        "actionId": "Tibalt's Rager|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      },
+      {
+        "card": "Vengeful Tracker",
+        "face": "front",
+        "actionId": "Vengeful Tracker|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "operation": "DEAL_PLAYER_DAMAGE",
+        "verdict": "UNKNOWN",
+        "affectedPlayers": "the unresolved player"
+      }
+    ],
+    "newSharedOperations": {
+      "DEAL_PLAYER_DAMAGE": 210,
+      "GAIN_LIFE": 33,
+      "FORCED_SACRIFICE": 13,
+      "LOSE_LIFE": 5
+    },
+    "legacyRecipientPolicy": [
+      "Thought-Knot Seer"
+    ],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "krenko-reanimate-own-creatures.json": {
+    "eligible": 3472,
+    "beforeSha256": "333334b3ee7ea4d58e9abddc3e23600a51185a9d0604f773068f235466f8a51a",
+    "afterSha256": "02fa883318af8bc7459246a9e508db2cf1431509cf3bb84097d199d2858fedd4",
+    "before": {
+      "MATCH": {
+        "cards": 18,
+        "pathways": 19
+      },
+      "UNKNOWN": {
+        "cards": 31,
+        "pathways": 35
+      },
+      "NO_MATCH": {
+        "cards": 689,
+        "pathways": 811
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 18,
+        "pathways": 19
+      },
+      "UNKNOWN": {
+        "cards": 31,
+        "pathways": 35
+      },
+      "NO_MATCH": {
+        "cards": 689,
+        "pathways": 811
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "DEAL_PLAYER_DAMAGE": 210,
+      "GAIN_LIFE": 33,
+      "FORCED_SACRIFICE": 13,
+      "LOSE_LIFE": 5
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "results",
+      "structuralSupport",
+      "unsupported"
+    ]
+  },
+  "krenko-stock-own-graveyard.json": {
+    "eligible": 3472,
+    "beforeSha256": "50137229bb7d63f1b98bc91e86c3bc77af717cb57cc52fdc9eaa5a64f42b3e7c",
+    "afterSha256": "97e30da06be1ede523709374c8eae798198d734a8a295e7077cb9aa4a66815a9",
+    "before": {
+      "MATCH": {
+        "cards": 230,
+        "pathways": 239
+      },
+      "UNKNOWN": {
+        "cards": 235,
+        "pathways": 252
+      },
+      "NO_MATCH": {
+        "cards": 173,
+        "pathways": 182
+      }
+    },
+    "after": {
+      "MATCH": {
+        "cards": 230,
+        "pathways": 239
+      },
+      "UNKNOWN": {
+        "cards": 235,
+        "pathways": 252
+      },
+      "NO_MATCH": {
+        "cards": 173,
+        "pathways": 182
+      }
+    },
+    "newResponseRows": {
+      "MATCH": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "UNKNOWN": {
+        "cards": 0,
+        "pathways": 0
+      },
+      "NO_MATCH": {
+        "cards": 0,
+        "pathways": 0
+      }
+    },
+    "newResponseKinds": {},
+    "newlyMatchedCards": [],
+    "newRows": [],
+    "newSharedOperations": {
+      "DEAL_PLAYER_DAMAGE": 210,
+      "GAIN_LIFE": 33,
+      "FORCED_SACRIFICE": 13,
+      "LOSE_LIFE": 5
+    },
+    "legacyRecipientPolicy": [],
+    "changedSections": [
+      "counts",
+      "eventOutcomes",
+      "structuralSupport",
+      "unsupported"
+    ]
+  }
+}

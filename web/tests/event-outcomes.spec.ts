@@ -5,14 +5,14 @@ test.skip(!process.env.EXPLORER_URL, 'Requires the running application.');
 test('Discover separates death production responses and history removal with ability evidence', async ({page}) => {
   await page.goto('/');
   await page.getByText('About objective', {exact:true}).click();
-  await expect(page.locator('.objective-help')).toContainText('Benefits from deaths');
+  await expect(page.locator('.objective-help')).toContainText('Responds to deaths');
   const completed=page.waitForResponse(r=>r.url().endsWith('/api/v1/discover') && r.ok());
   await page.getByRole('button',{name:'Find cards',exact:true}).click();
   const run=await (await completed).json();
   const detail=page.getByRole('region',{name:'Result inspection'});
   const mechanic=page.getByRole('combobox',{name:'Mechanic',exact:true});
   await mkdir('../generated/explorer/event-outcomes',{recursive:true});
-  await mechanic.selectOption('Benefits from deaths');
+  await mechanic.selectOption('Responds to deaths');
   await page.getByLabel('Card name').fill('Grim Haruspex');
   await expect(detail.getByRole('heading',{name:'Grim Haruspex',exact:true})).toBeVisible();
   await expect(detail.getByRole('region',{name:'Death response'})).toContainText('another');
@@ -34,7 +34,7 @@ test('Discover separates death production responses and history removal with abi
   await page.getByLabel('Card name').fill('Tragic Slip');
   await expect(detail.getByRole('heading',{name:'Tragic Slip',exact:true})).toBeVisible();
   await expect(detail.getByRole('region',{name:'Death response'})).toHaveCount(0);
-  await mechanic.selectOption('Benefits from deaths');
+  await mechanic.selectOption('Responds to deaths');
   await page.getByLabel('Card name').fill('High-Society Hunter');
   await expect(detail.getByRole('heading',{name:'High-Society Hunter',exact:true})).toBeVisible();
   await detail.locator('button.rules-line').filter({hasText:'Whenever another nontoken creature dies'}).click();
@@ -50,7 +50,7 @@ test('Discover separates death production responses and history removal with abi
   await expect(detail.getByRole('region',{name:'Death response'})).toContainText('needs investigation');
   await detail.screenshot({path:'../generated/explorer/event-outcomes/xathrid-uncertain.png'});
   await page.getByRole('navigation',{name:'Finding categories',exact:true}).getByRole('button',{name:/Identified mechanics/}).click();
-  await mechanic.selectOption('Benefits from deaths');
+  await mechanic.selectOption('Responds to deaths');
   await page.getByLabel('Card name').fill('Grim Haruspex');
   await page.setViewportSize({width:390,height:844});
   await expect(detail.getByRole('region',{name:'Death response'})).toContainText('draw 1');
