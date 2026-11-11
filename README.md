@@ -57,7 +57,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 | own-nontoken-creature-deaths | Selected death generation, intrinsic creature-input replenishment, death-enhanced removal and qualifying triggered draw/token responses ([input-supply report](docs/CREATURE_INPUT_DISCOVERY.md), [event-outcome report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
-| creature-died-this-turn | Supported effects that check death history at activation, triggering/resolution or resolution ([implementation and evidence](docs/STATE_DEPENDENCY_DISCOVERY.md)) |
+| creature-died-this-turn | Supported checks that use death history to control availability or choose an outcome ([implementation and evidence](docs/CONDITIONAL_CAUSAL_DISCOVERY.md)) |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |
 
 Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](docs/KNOWN_LIMITATIONS.md).
