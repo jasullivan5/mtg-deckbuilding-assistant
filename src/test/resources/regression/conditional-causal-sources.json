@@ -1,0 +1,31 @@
+{
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "priorCohort": "state-dependency-sources.json",
+  "cases": [
+    {
+      "name": "Gravelighter",
+      "id": "532c5b14-75cf-4e4c-9b80-2d56a86e2844",
+      "oracle_id": "45ef5ea9-70a6-4999-8778-6a11cb97d28e",
+      "printing": "NEO 98",
+      "scryfall_uri": "https://scryfall.com/card/neo/98/gravelighter",
+      "oracle_text": "Flying\nWhen this creature enters, draw a card if a creature died this turn. Otherwise, each player sacrifices a creature of their choice.",
+      "expectation": "Self entry triggers. At resolution, prior creature death selects draw one; otherwise each player sacrifices one. A sacrifice cannot change the earlier choice."
+    },
+    {
+      "name": "Skirsdag High Priest",
+      "id": "7a329b20-4e6e-45c9-aee0-51fe81dce543",
+      "oracle_id": "c6064c08-e4e0-49f4-9f0b-55cdecf443af",
+      "printing": "INR 132",
+      "scryfall_uri": "https://scryfall.com/card/inr/132/skirsdag-high-priest",
+      "oracle_text": "Morbid — {T}, Tap two untapped creatures you control: Create a 5/5 black Demon creature token with flying. Activate only if a creature died this turn.",
+      "expectation": "Prior death restricts activation. Preserve the tap costs and their controller restriction."
+    }
+  ],
+  "syntheticControls": [
+    "A battlefield threshold selects life loss for the controller versus draw.",
+    "A true check can suppress an operation in the false branch.",
+    "Equal effects provide no distinction. A sibling effect is unrelated to the gate.",
+    "A recognizable token-copy operation can distinguish branches while its output remains unresolved.",
+    "Unsupported payload, scope, polarity and nested context retain uncertainty."
+  ]
+}
