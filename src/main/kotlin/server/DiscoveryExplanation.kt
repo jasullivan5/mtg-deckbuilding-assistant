@@ -31,8 +31,8 @@ internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEviden
         add(EvidenceField("Relationship",explanation.summary))
         add(EvidenceField("Required history",d.condition.description))
         add(EvidenceField("When checked",stateCheckpointLabel(d.checkpoint)))
-        add(EvidenceField("When true",d.whenTrue.description))
-        add(EvidenceField("Otherwise",d.whenFalse?.description ?: "This outcome is unavailable."))
+        add(EvidenceField("When true",conditionalOutcomeDescription(d.whenTrue)))
+        add(EvidenceField("Otherwise",d.whenFalse?.let(::conditionalOutcomeDescription) ?: "This outcome is unavailable."))
         if(row.verdict==Verdict.UNKNOWN) add(EvidenceField("Unresolved","The predicate, branch context or effect change is not fully interpreted."))
         return@buildList
     }

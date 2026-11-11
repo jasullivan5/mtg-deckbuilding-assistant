@@ -51,7 +51,7 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
         </div>)}
       </section>}
       {stateChecks.length > 0 && <section className="pathway" aria-label="Death history">
-        <h3>{stateChecks.some(row => row.verdict === 'MATCH') ? 'Benefits from death history' : 'Death history needs investigation'}</h3>
+        <h3>{stateChecks.some(row => row.verdict === 'MATCH') ? 'Depends on death history' : 'Death history needs investigation'}</h3>
         {ability.resultIndexes.filter(i => evidence.results[i].branch === 'STATE_BENEFICIARY').map(i => <div key={i}>
           <p>{evidence.explanations[i].summary}</p>
           <p>{evidence.explanations[i].outcome}</p>

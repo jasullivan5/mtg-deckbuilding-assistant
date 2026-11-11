@@ -18,7 +18,7 @@ const scope: Record<string, {goal: string; searched: string; limits: string}> = 
   },
   'creature-died-this-turn': {
     goal: 'At least one creature has died during the current turn.',
-    searched: 'Abilities with supported checks that use this history to enable or strengthen an outcome.',
+    searched: 'Abilities with supported checks that use this history to control which operations or abilities are available.',
     limits: 'Some abilities restrict whose death counts. This search does not look for ways to cause deaths or treat a direct dies trigger as a history check.',
   },
   'stock-own-graveyard': {

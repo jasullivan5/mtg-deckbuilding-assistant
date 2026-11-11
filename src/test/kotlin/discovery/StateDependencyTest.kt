@@ -4,17 +4,60 @@ import com.wingedsheep.sdk.dsl.*
 import com.wingedsheep.sdk.scripting.GameObjectFilter
 import com.wingedsheep.sdk.scripting.conditions.*
 import com.wingedsheep.sdk.scripting.effects.DrawCardsEffect
+import com.wingedsheep.sdk.scripting.effects.LoseLifeEffect
+import com.wingedsheep.sdk.scripting.effects.ForEachEffect
+import com.wingedsheep.sdk.scripting.targets.EffectTarget
+import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.scripting.references.Player
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.explorer.stateDependencyExplanation
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
+import kotlinx.serialization.json.JsonObject
 
 class StateDependencyTest : FunSpec({
     val catalog by lazy { Catalog() }
     val report by lazy { discover(catalog,"Kenrith, the Returned King",objective=DEATH_HISTORY_OBJECTIVE) }
     fun extract(name: String) = PathwayExtractor(inspectStateDependencies=true).extract(listOf(catalog.card(name)!!))
     fun verdict(d: StateDependency, a: StateAnchor) = all(stateDependencyDecisions(d,a).map { it.verdict })
+
+    test("Gravelighter exposes a single dependency with draw and sacrifice evidence on opposite branches") {
+        val x = extract("Gravelighter")
+        val d = x.stateDependencies.single()
+        val row = report.results.single { it.card == d.card }
+        row.verdict shouldBe Verdict.MATCH
+        row.stateDependency shouldBe d
+        d.checkpoint shouldBe StateCheckpoint.RESOLUTION
+        d.condition shouldBe CreatureDiedThisTurnCondition
+        d.whenTrue shouldBe DrawCardsEffect(1)
+        (d.whenFalse is ForEachEffect) shouldBe true
+        eventIntersection(checkNotNull(d.incomingEvent), ZoneEventRequirement(to = Zone.BATTLEFIELD)) shouldBe Verdict.MATCH
+        eventIntersection(checkNotNull(d.incomingEvent), ZoneEventRequirement(from = Zone.BATTLEFIELD, to = Zone.GRAVEYARD)) shouldBe Verdict.NO_MATCH
+        val draw = x.eventOutcomes.single { it.id in d.trueLinks.eventOutcomeIds }
+        draw.path shouldBe d.outcomePath
+        d.falseLinks.eventOutcomeIds.isEmpty() shouldBe true
+        val sacrifice = x.facts.single { it.id in d.falseLinks.factIds }
+        sacrifice.actionId shouldBe d.actionId
+        sacrifice.path shouldBe "${d.otherwisePath}.body"
+        sacrifice.kind shouldBe FactKind.SACRIFICE
+        sacrifice.sourceZone shouldBe Zone.BATTLEFIELD
+        sacrifice.sourcePlayer shouldBe "ANY"
+        sacrifice.compatible(FactConstraints(kind = FactKind.SACRIFICE, creature = true,
+            token = TokenStatus.NONTOKEN, from = Zone.BATTLEFIELD, sourceController = Controller.YOU)) shouldBe Verdict.MATCH
+        stateDependencyExplanation(row, d).outcome.lowercase().contains("each player sacrifices a creature") shouldBe true
+        val eventRows = discover(catalog,"Judith, the Scourge Diva", objective="own-nontoken-creature-deaths").results
+        val eventRow = eventRows.single { it.actionId == d.actionId && it.abilityPath == sacrifice.path }
+        eventRow.mechanicalCompatibility shouldBe Verdict.MATCH
+        eventRow.policyAcceptance shouldBe Verdict.NO_MATCH
+        eventRow.verdict shouldBe Verdict.NO_MATCH
+
+        val codec = StateDependency.serializer()
+        val encoded = reportJson.encodeToJsonElement(codec, d) as JsonObject
+        val prior = JsonObject(encoded.filterKeys { it !in setOf("causalChange", "otherwisePath", "trueLinks", "falseLinks") })
+        val retained = reportJson.decodeFromJsonElement(codec, prior)
+        retained.causalChange shouldBe null
+        verdict(retained, StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
+    }
 
     test("native morbid checks change exact resolution outcomes without manufacturing a trigger") {
         for(name in listOf("Tragic Slip","Hunger of the Howlpack")) {
@@ -61,7 +104,10 @@ class StateDependencyTest : FunSpec({
         val six=StateAnchor.BattlefieldCount(Player.You,GameObjectFilter.Land,6)
         d.checkpoint shouldBe StateCheckpoint.RESOLUTION
         d.incomingEvent?.confidence shouldBe Verdict.MATCH
-        verdict(d,six) shouldBe Verdict.UNKNOWN // Copy and baseline are not comparable magnitudes.
+        verdict(d,six) shouldBe Verdict.MATCH
+        val copy = x.facts.single { it.id in d.trueLinks.factIds }
+        copy.tokenCreation?.copySource shouldBe "Self copiable values"
+        x.eventOutcomes.single { it.id in d.trueLinks.eventOutcomeIds }.confidence shouldBe Verdict.UNKNOWN
         verdict(d,six.copy(count=5)) shouldBe Verdict.NO_MATCH
         verdict(d,six.copy(player=Player.EachOpponent)) shouldBe Verdict.NO_MATCH
         verdict(d,six.copy(filter=GameObjectFilter.Creature)) shouldBe Verdict.UNKNOWN
@@ -69,7 +115,7 @@ class StateDependencyTest : FunSpec({
             typeLine="Enchantment"; manaCost="{G}"
             triggeredAbility {
                 trigger=Triggers.a(GameObjectFilter.Land.youControl()).enters()
-                effect=Effects.If(d.condition,DrawCardsEffect(2),DrawCardsEffect(1))
+                effect=Effects.If(d.condition,LoseLifeEffect(2, EffectTarget.Controller),DrawCardsEffect(1))
             }
         }
         val test=PathwayExtractor(inspectStateDependencies=true).extract(listOf(synthetic)).stateDependencies.single()
@@ -79,6 +125,23 @@ class StateDependencyTest : FunSpec({
         verdict(test,six.copy(count=5)) shouldBe Verdict.NO_MATCH
         verdict(test,StateAnchor.DeathHistory()) shouldBe Verdict.NO_MATCH
     }
+    test("true history can suppress an operation and changed recipients remain distinct") {
+        val synthetic = card("Suppression test fixture") {
+            typeLine = "Sorcery"; manaCost = "{B}"
+            spell {
+                effect = Effects.If(CreatureDiedThisTurnCondition,
+                    LoseLifeEffect(0, EffectTarget.Controller), LoseLifeEffect(2, EffectTarget.Controller))
+            }
+        }
+        val d = PathwayExtractor(inspectStateDependencies = true).extract(listOf(synthetic)).stateDependencies.single()
+        verdict(d, StateAnchor.DeathHistory()) shouldBe Verdict.MATCH
+        d.whenTrue shouldBe LoseLifeEffect(0, EffectTarget.Controller)
+        d.whenFalse shouldBe LoseLifeEffect(2, EffectTarget.Controller)
+        conditionalEffectChange(DrawCardsEffect(1), DrawCardsEffect(2)) shouldBe Verdict.MATCH
+        conditionalEffectChange(DrawCardsEffect(1), DrawCardsEffect(1, EffectTarget.PlayerRef(Player.You))) shouldBe Verdict.NO_MATCH
+        conditionalEffectChange(LoseLifeEffect(2, EffectTarget.Controller), LoseLifeEffect(2)) shouldBe Verdict.MATCH
+        conditionalEffectChange(LoseLifeEffect(0, EffectTarget.Controller), null) shouldBe Verdict.NO_MATCH
+    }
     test("equal effects, nested history and unrelated sibling effects do not manufacture a benefit") {
         val synthetic=card("Branch isolation test fixture") {
             typeLine="Sorcery"; manaCost="{B}"
@@ -87,8 +150,10 @@ class StateDependencyTest : FunSpec({
         val d=PathwayExtractor(inspectStateDependencies=true).extract(listOf(synthetic)).stateDependencies.single()
         d.whenTrue shouldBe DrawCardsEffect(1)
         verdict(d,StateAnchor.DeathHistory()) shouldBe Verdict.NO_MATCH
-        val nested=d.copy(condition=NotCondition(CreatureDiedThisTurnCondition),whenFalse=null,contextSupport=Verdict.MATCH)
+        val nested=d.copy(condition=NotCondition(CreatureDiedThisTurnCondition),contextSupport=Verdict.MATCH,
+            whenFalse=null,causalChange=conditionalEffectChange(d.whenTrue,null))
         verdict(nested,StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
-        verdict(nested.copy(whenFalse=DrawCardsEffect(2)),StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
+        val compound = nested.copy(condition = AllConditions(listOf(CreatureDiedThisTurnCondition, IsYourTurn)))
+        verdict(compound,StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
     }
 })

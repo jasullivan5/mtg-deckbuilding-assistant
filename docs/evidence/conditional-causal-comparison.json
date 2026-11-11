@@ -1,0 +1,428 @@
+{
+  "legacy": {
+    "judith-create-creature-tokens.json": {
+      "bothSha256": "aa3d3edd226c4578c58319d36af4dfcf089c7cbd7ba2ee5d7d58cf04feb8f3f8",
+      "eligible": 6111,
+      "counts": {
+        "MATCH": {
+          "cards": 346,
+          "pathways": 363
+        },
+        "NO_MATCH": {
+          "cards": 215,
+          "pathways": 230
+        },
+        "UNKNOWN": {
+          "cards": 48,
+          "pathways": 55
+        }
+      }
+    },
+    "judith-own-nontoken-creature-deaths.json": {
+      "bothSha256": "3e59e96ec29e64c0c7c29ffe28a17e0e5481d437a1cfc756c772a6d2cd6a03b7",
+      "eligible": 6111,
+      "counts": {
+        "MATCH": {
+          "cards": 551,
+          "pathways": 566
+        },
+        "NO_MATCH": {
+          "cards": 1904,
+          "pathways": 2320
+        },
+        "UNKNOWN": {
+          "cards": 467,
+          "pathways": 508
+        }
+      }
+    },
+    "judith-reanimate-own-creatures.json": {
+      "bothSha256": "df7895ca0f37a593cbe5ce99acd4e4b72e98e420ef5f65eb1c943f6626bdb8da",
+      "eligible": 6111,
+      "counts": {
+        "MATCH": {
+          "cards": 104,
+          "pathways": 106
+        },
+        "NO_MATCH": {
+          "cards": 1555,
+          "pathways": 1857
+        },
+        "UNKNOWN": {
+          "cards": 85,
+          "pathways": 93
+        }
+      }
+    },
+    "judith-stock-own-graveyard.json": {
+      "bothSha256": "3f9a2bb62fb18a4389ede72c86da1cbe318b125837784df4d190007508547952",
+      "eligible": 6111,
+      "counts": {
+        "MATCH": {
+          "cards": 508,
+          "pathways": 535
+        },
+        "NO_MATCH": {
+          "cards": 315,
+          "pathways": 335
+        },
+        "UNKNOWN": {
+          "cards": 527,
+          "pathways": 576
+        }
+      }
+    },
+    "kenrith-death.json": {
+      "bothSha256": "417cafcb37a405a205f66647192aaea8b2be2d04b89d34b8b2c80f87a9bd7e0a",
+      "eligible": 15955,
+      "counts": {
+        "MATCH": {
+          "cards": 946,
+          "pathways": 975
+        },
+        "NO_MATCH": {
+          "cards": 3164,
+          "pathways": 3762
+        },
+        "UNKNOWN": {
+          "cards": 1059,
+          "pathways": 1173
+        }
+      }
+    },
+    "krenko-create-creature-tokens.json": {
+      "bothSha256": "bfa7ba070657fb96316f678e53fa175cd7744762a9ed0f11cc9e6e6a6da93fae",
+      "eligible": 3472,
+      "counts": {
+        "MATCH": {
+          "cards": 182,
+          "pathways": 190
+        },
+        "NO_MATCH": {
+          "cards": 131,
+          "pathways": 139
+        },
+        "UNKNOWN": {
+          "cards": 28,
+          "pathways": 33
+        }
+      }
+    },
+    "krenko-own-nontoken-creature-deaths.json": {
+      "bothSha256": "051c52c55882a7598321d4bc39117b47653fcb482f7a7a0d0289df5d073b7a96",
+      "eligible": 3472,
+      "counts": {
+        "MATCH": {
+          "cards": 220,
+          "pathways": 225
+        },
+        "NO_MATCH": {
+          "cards": 1113,
+          "pathways": 1386
+        },
+        "UNKNOWN": {
+          "cards": 207,
+          "pathways": 223
+        }
+      }
+    },
+    "krenko-reanimate-own-creatures.json": {
+      "bothSha256": "333334b3ee7ea4d58e9abddc3e23600a51185a9d0604f773068f235466f8a51a",
+      "eligible": 3472,
+      "counts": {
+        "MATCH": {
+          "cards": 18,
+          "pathways": 19
+        },
+        "NO_MATCH": {
+          "cards": 689,
+          "pathways": 811
+        },
+        "UNKNOWN": {
+          "cards": 31,
+          "pathways": 35
+        }
+      }
+    },
+    "krenko-stock-own-graveyard.json": {
+      "bothSha256": "50137229bb7d63f1b98bc91e86c3bc77af717cb57cc52fdc9eaa5a64f42b3e7c",
+      "eligible": 3472,
+      "counts": {
+        "MATCH": {
+          "cards": 230,
+          "pathways": 239
+        },
+        "NO_MATCH": {
+          "cards": 173,
+          "pathways": 182
+        },
+        "UNKNOWN": {
+          "cards": 235,
+          "pathways": 252
+        }
+      }
+    }
+  },
+  "history": {
+    "judith-creature-died-this-turn.json": {
+      "eligible": 6111,
+      "beforeSha256": "fafa39528cd9d3c43912438b31b9dcc6f9e65f13a7c409a43cb4c5e9f6c58b04",
+      "afterSha256": "bb342dd939565e188706e4925dde16e1735da60ca08a40146c0d9be762228c76",
+      "before": {
+        "MATCH": {
+          "cards": 6,
+          "pathways": 6
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 9,
+          "pathways": 9
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 7,
+          "pathways": 7
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 8,
+          "pathways": 8
+        }
+      },
+      "branchChange": {
+        "UNKNOWN": 442,
+        "MATCH": 213
+      },
+      "unresolvedCards": [
+        "Barad-d\u00fbr",
+        "Cult Conscript",
+        "Death-Priest of Myrkul",
+        "Old Flitterfang",
+        "Reaper from the Abyss",
+        "Scorpion, Seething Striker",
+        "Slumbering Cerberus",
+        "Undercity Scrounger"
+      ],
+      "transitions": [
+        {
+          "card": "Gravelighter",
+          "action": "Gravelighter|front|script.triggeredAbilities[0]",
+          "conditionPath": "script.triggeredAbilities[0].effect.gate.condition",
+          "before": "UNKNOWN",
+          "after": "MATCH"
+        }
+      ]
+    },
+    "kenrith-history.json": {
+      "eligible": 15955,
+      "beforeSha256": "9e7867bd146c8fc54f4a47712079e338445cfceb1d53ec33db0329f7d709aa6b",
+      "afterSha256": "edeccc5de03a398cc8560577c17645de8d211d1f87705dfa407f32f0cd641403",
+      "before": {
+        "MATCH": {
+          "cards": 14,
+          "pathways": 14
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 15,
+          "pathways": 15
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 15,
+          "pathways": 15
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 14,
+          "pathways": 14
+        }
+      },
+      "branchChange": {
+        "UNKNOWN": 1152,
+        "MATCH": 528
+      },
+      "unresolvedCards": [
+        "Barad-d\u00fbr",
+        "Barrensteppe Siege",
+        "Cult Conscript",
+        "Death-Priest of Myrkul",
+        "Drag the Canal",
+        "Muster the Departed",
+        "Old Flitterfang",
+        "Reaper from the Abyss",
+        "Scorpion, Seething Striker",
+        "Slumbering Cerberus",
+        "Sm\u00e9agol, Helpful Guide",
+        "Undercity Scrounger",
+        "Wardens of the Cycle",
+        "White Glove Gourmand"
+      ],
+      "transitions": [
+        {
+          "card": "Gravelighter",
+          "action": "Gravelighter|front|script.triggeredAbilities[0]",
+          "conditionPath": "script.triggeredAbilities[0].effect.gate.condition",
+          "before": "UNKNOWN",
+          "after": "MATCH"
+        }
+      ]
+    },
+    "krenko-creature-died-this-turn.json": {
+      "eligible": 3472,
+      "beforeSha256": "104370edde3a1cfc8fcef72affed32faeaf8b3d7c63347ab8b07171a9dffa421",
+      "afterSha256": "26b165bc8f59b5c90e27e75c32df58e3450bb80659adb14ac79b08209e2bf632",
+      "before": {
+        "MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        }
+      },
+      "branchChange": {
+        "UNKNOWN": 222,
+        "MATCH": 119
+      },
+      "unresolvedCards": [
+        "Slumbering Cerberus"
+      ],
+      "transitions": []
+    }
+  },
+  "gravelighter": {
+    "condition": {
+      "type": "CreatureDiedThisTurn"
+    },
+    "checkpoint": "RESOLUTION",
+    "incomingTrigger": {
+      "type": "ZoneChangeEvent",
+      "filter": {
+        "cardPredicates": [],
+        "statePredicates": [],
+        "controllerPredicate": null,
+        "anyOf": []
+      },
+      "from": null,
+      "to": "Battlefield",
+      "excludeTo": null,
+      "excludeSacrifice": false,
+      "requireCraftMaterial": false,
+      "description": "a card or permanent would enter the battlefield"
+    },
+    "stateVerdict": "MATCH",
+    "trueOutcome": {
+      "id": "Gravelighter|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then|DRAW",
+      "path": "script.triggeredAbilities[0].effect.then",
+      "native": {
+        "type": "DrawCards",
+        "count": {
+          "type": "Fixed",
+          "amount": 1
+        }
+      },
+      "recipient": "YOU",
+      "confidence": "UNKNOWN"
+    },
+    "falseOperation": {
+      "id": "Gravelighter|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.otherwise.body|SACRIFICE|0",
+      "path": "script.triggeredAbilities[0].effect.otherwise.body",
+      "native": {
+        "type": "ForceSacrifice",
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsCreature"
+            }
+          ]
+        },
+        "target": {
+          "type": "Controller"
+        }
+      },
+      "objectFilter": {
+        "cardPredicates": [
+          {
+            "type": "IsCreature"
+          }
+        ],
+        "statePredicates": [],
+        "controllerPredicate": null,
+        "anyOf": []
+      },
+      "sourceZone": "Battlefield",
+      "sourcePlayer": "ANY",
+      "prerequisites": [
+        "Trigger=ZoneChangeEvent(filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]), from=null, to=BATTLEFIELD, excludeTo=null, excludeSacrifice=false, requireCraftMaterial=false); binding=SELF; activeZones=[BATTLEFIELD]",
+        "InterveningIf=null; restriction=null; cap=null",
+        "Gate failed: WhenCondition(condition=CreatureDiedThisTurnCondition)",
+        "Iteration=Players(players=Each)"
+      ]
+    },
+    "deathObjective": {
+      "verdict": "NO_MATCH",
+      "mechanicalCompatibility": "MATCH",
+      "policyAcceptance": "NO_MATCH",
+      "decisions": [
+        {
+          "stage": "potential-creature-death",
+          "verdict": "MATCH",
+          "basis": "MECHANICAL",
+          "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+        },
+        {
+          "stage": "controller-YOU",
+          "verdict": "MATCH",
+          "basis": "MECHANICAL",
+          "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+        },
+        {
+          "stage": "token-NONTOKEN",
+          "verdict": "MATCH",
+          "basis": "MECHANICAL",
+          "reason": "creature; actor=ANY; selfCreature=null; battlefieldCompatible=true; ; constraints=[]"
+        },
+        {
+          "stage": "death-generation-policy",
+          "verdict": "NO_MATCH",
+          "basis": "POLICY",
+          "reason": "Policy: symmetrical/incidental opposing removal is not enabled by our death; compatibility is retained"
+        }
+      ]
+    }
+  }
+}

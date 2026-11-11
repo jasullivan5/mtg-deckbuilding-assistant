@@ -12,7 +12,7 @@ for (const width of [1365, 390]) {
     const run = await (await complete).json();
     expect(run.objective).toBe('creature-died-this-turn');
     expect(run.cards.find((c:{card:string})=>c.card==='Tragic Slip').pathways.MATCH).toBe(1);
-    await page.getByRole('combobox',{name:'Mechanic',exact:true}).selectOption('Benefits from death history');
+    await page.getByRole('combobox',{name:'Mechanic',exact:true}).selectOption('Depends on death history');
     await page.getByLabel('Card name').fill('Tragic Slip');
     const detail = page.getByRole('region',{name:'Result inspection'});
     const history = detail.getByRole('region',{name:'Death history'});
@@ -23,5 +23,14 @@ for (const width of [1365, 390]) {
     expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await mkdir('../generated/explorer/state-dependency',{recursive:true});
     await (width===390 ? history : detail).screenshot({path:`../generated/explorer/state-dependency/tragic-slip-${width}.png`});
+    expect(run.cards.find((c:{card:string})=>c.card==='Gravelighter').pathways.MATCH).toBe(1);
+    await page.getByLabel('Card name').fill('Gravelighter');
+    await expect(detail.getByRole('heading',{name:'Gravelighter',exact:true})).toBeVisible();
+    await expect(history).toContainText('Incoming trigger: this creature enters the battlefield');
+    await expect(history).toContainText('During resolution');
+    await expect(history).toContainText(/when true: draw a card/i);
+    await expect(history).toContainText(/otherwise: each player sacrifices a creature/i);
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await (width===390 ? history : detail).screenshot({path:`../generated/explorer/state-dependency/gravelighter-${width}.png`});
   });
 }
