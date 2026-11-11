@@ -13,6 +13,7 @@ import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.explorer.stateDependencyExplanation
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
+import kotlinx.serialization.json.JsonObject
 
 class StateDependencyTest : FunSpec({
     val catalog by lazy { Catalog() }
@@ -49,6 +50,13 @@ class StateDependencyTest : FunSpec({
         eventRow.mechanicalCompatibility shouldBe Verdict.MATCH
         eventRow.policyAcceptance shouldBe Verdict.NO_MATCH
         eventRow.verdict shouldBe Verdict.NO_MATCH
+
+        val codec = StateDependency.serializer()
+        val encoded = reportJson.encodeToJsonElement(codec, d) as JsonObject
+        val prior = JsonObject(encoded.filterKeys { it !in setOf("causalChange", "otherwisePath", "trueLinks", "falseLinks") })
+        val retained = reportJson.decodeFromJsonElement(codec, prior)
+        retained.causalChange shouldBe null
+        verdict(retained, StateAnchor.DeathHistory()) shouldBe Verdict.UNKNOWN
     }
 
     test("native morbid checks change exact resolution outcomes without manufacturing a trigger") {

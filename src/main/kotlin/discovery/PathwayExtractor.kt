@@ -655,7 +655,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             yes,no,if(boundedContext && scope!=StateScope.SOURCE_ABILITY_HISTORY) Verdict.MATCH else Verdict.UNKNOWN,
             frame.assumptions + listOfNotNull("Source checkpoint zone: ${frame.selfZone}".takeIf { frame.selfZone!=null },
                 "Native targets: ${frame.targets}".takeIf { frame.targets.isNotEmpty() }),
-            frame.event, otherwisePath)
+            frame.event, otherwisePath, causalChange = conditionalEffectChange(yes, no))
     }
     private fun walk(e: Effect,path: String,frame: Frame) {
         if(recordToken(e,path,frame)) return

@@ -6,6 +6,7 @@ import com.wingedsheep.sdk.scripting.effects.*
 import com.wingedsheep.sdk.scripting.references.Player
 import com.wingedsheep.sdk.scripting.targets.EffectTarget
 import com.wingedsheep.sdk.scripting.values.*
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.Serializable
 
 const val DEATH_HISTORY_OBJECTIVE = "creature-died-this-turn"
@@ -23,10 +24,10 @@ const val DEATH_HISTORY_OBJECTIVE = "creature-died-this-turn"
     val outcomePath: String, val condition: Condition, val scope: StateScope, val checkpoint: StateCheckpoint,
     val whenTrue: Effect, val whenFalse: Effect? = null, val contextSupport: Verdict,
     val prerequisites: List<String>, val incomingEvent: EventContext? = null,
-    val otherwisePath: String? = null,
-    val trueLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
-    val falseLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
-    val causalChange: Verdict = conditionalEffectChange(whenTrue, whenFalse)
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val otherwisePath: String? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val trueLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val falseLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val causalChange: Verdict? = null
 )
 
 sealed interface StateAnchor {
@@ -147,7 +148,7 @@ fun stateDependencyDecisions(d: StateDependency, anchor: StateAnchor): List<Deci
         Decision("state-predicate",predicate,"MECHANICAL",d.condition.description),
         Decision("state-checkpoint-and-branch",d.contextSupport,"MECHANICAL",
             "${d.checkpoint}: ${d.actionId}, ${d.conditionPath} controls ${d.outcomePath}; additional prerequisites remain"),
-        Decision("state-effect-change",d.causalChange,"MECHANICAL",
+        Decision("state-effect-change",d.causalChange ?: Verdict.UNKNOWN,"MECHANICAL",
             "When true: ${d.whenTrue.description}; otherwise: ${d.whenFalse?.description ?: "this outcome is unavailable"}")
     )
 }
