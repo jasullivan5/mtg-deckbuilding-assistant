@@ -95,7 +95,10 @@ class StateDependencyTest : FunSpec({
         d.incomingEvent?.confidence shouldBe Verdict.MATCH
         d.contextSupport shouldBe Verdict.UNKNOWN
         verdict(d,StateAnchor.DeathHistory()) shouldBe Verdict.NO_MATCH
-        tannuk.eventOutcomes.single().confidence shouldBe Verdict.UNKNOWN
+        tannuk.eventOutcomes.single { it.kind == OutcomeKind.DRAW_CARDS }.confidence shouldBe Verdict.UNKNOWN
+        val damage = tannuk.eventOutcomes.single { it.kind == OutcomeKind.DEAL_PLAYER_DAMAGE }
+        damage.confidence shouldBe Verdict.MATCH
+        deathResponses(listOf(damage)).single().verdict shouldBe Verdict.NO_MATCH
         val scales=extract("Hardened Scales")
         scales.stateDependencies.isEmpty() shouldBe true
         scales.eventOutcomes.isEmpty() shouldBe true
