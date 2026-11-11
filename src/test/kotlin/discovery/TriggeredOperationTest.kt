@@ -1,5 +1,6 @@
 package dev.mtg.assistant
 
+import com.wingedsheep.sdk.core.Keyword
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.dsl.*
 import com.wingedsheep.sdk.scripting.*
@@ -109,7 +110,8 @@ class TriggeredOperationTest : FunSpec({
         deathResponses(listOf(xander)).single().verdict shouldBe Verdict.UNKNOWN
         val serpent = extract("The Serpent Society").eventOutcomes.single()
         serpent.playerBinding?.description shouldBe "each opponent"
-        (serpent.event.trigger as EventPattern.ZoneChangeEvent).filter.statePredicates.isNotEmpty() shouldBe true
+        (serpent.event.trigger as EventPattern.ZoneChangeEvent).filter.cardPredicates
+            .contains(CardPredicate.HasKeyword(Keyword.DEATHTOUCH)) shouldBe true
         deathResponses(listOf(serpent)).single().verdict shouldBe Verdict.UNKNOWN
     }
 })
