@@ -1,0 +1,82 @@
+{
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": [
+    {
+      "name": "Goblin Chieftain",
+      "id": "89fcc35b-76fa-4408-8620-a1e11b2caf1f",
+      "oracle_id": "368b4052-174e-4458-a6e6-eaf8093aa0fe",
+      "oracle_text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\nOther Goblin creatures you control get +1/+1 and have haste.",
+      "scryfall_uri": "https://scryfall.com/card/jmp/324/goblin-chieftain?utm_source=api",
+      "set": "jmp",
+      "collector_number": "324",
+      "expectation": "Continuous bonus; source only if missing."
+    },
+    {
+      "name": "Wall of Roots",
+      "id": "e4e7d3b7-9b0c-463d-975c-ef81d7fd8dad",
+      "oracle_id": "3a21a6ae-b2f2-4f0c-acfd-5f3e8d63fd2f",
+      "oracle_text": "Defender\nPut a -0/-1 counter on this creature: Add {G}. Activate only once each turn.",
+      "scryfall_uri": "https://scryfall.com/card/tdc/278/wall-of-roots?utm_source=api",
+      "set": "tdc",
+      "collector_number": "278",
+      "expectation": "Wrong counter type; source only if missing."
+    },
+    {
+      "name": "Walking Ballista",
+      "id": "5272436e-74f0-44c4-a291-ea8ebc3f1525",
+      "oracle_id": "4b515bb0-f275-4400-8032-3173b799ab40",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on this creature.\nRemove a +1/+1 counter from this creature: It deals 1 damage to any target.",
+      "scryfall_uri": "https://scryfall.com/card/2xm/306/walking-ballista?utm_source=api",
+      "set": "2xm",
+      "collector_number": "306",
+      "expectation": "X on entry and one on grow activation; removal pays for damage. Eligibility assessed separately."
+    },
+    {
+      "name": "Travel Preparations",
+      "id": "41190fb8-f5d5-4a8b-bdc8-a4516e7075b5",
+      "oracle_id": "8432729e-5fd4-4661-8b79-e41b1d03eb7b",
+      "oracle_text": "Put a +1/+1 counter on each of up to two target creatures.\nFlashback {1}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "scryfall_uri": "https://scryfall.com/card/inr/220/travel-preparations?utm_source=api",
+      "set": "inr",
+      "collector_number": "220",
+      "expectation": "One counter per chosen target, up to two; target controller unrestricted."
+    },
+    {
+      "name": "Abzan Falconer",
+      "id": "f7e2b0e1-c9ea-4f91-b19e-73b1bd6a0884",
+      "oracle_id": "8b972819-507a-40a9-ab1f-1a674ea56083",
+      "oracle_text": "Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach creature you control with a +1/+1 counter on it has flying.",
+      "scryfall_uri": "https://scryfall.com/card/moc/165/abzan-falconer?utm_source=api",
+      "set": "moc",
+      "collector_number": "165",
+      "expectation": "One from outlast with white mana, tap and sorcery timing; flying grant is separate."
+    },
+    {
+      "name": "Hardened Scales",
+      "id": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+      "oracle_id": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+      "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on it instead.",
+      "scryfall_uri": "https://scryfall.com/card/soc/272/hardened-scales?utm_source=api",
+      "set": "soc",
+      "collector_number": "272",
+      "expectation": "Add one to positive qualifying placement; battlefield source; either placer."
+    },
+    {
+      "name": "Winding Constrictor",
+      "id": "107c8aa8-c8f8-4cbf-821b-bd2cb33354f0",
+      "oracle_id": "c9404d7d-a026-4082-9fcb-1ab571a136b5",
+      "oracle_text": "If one or more counters would be put on an artifact or creature you control, that many plus one of each of those kinds of counters are put on that permanent instead.\nIf you would get one or more counters, you get that many plus one of each of those kinds of counters instead.",
+      "scryfall_uri": "https://scryfall.com/card/aer/140/winding-constrictor?utm_source=api",
+      "set": "aer",
+      "collector_number": "140",
+      "expectation": "One extra on controlled artifacts or creatures; player-counter clause is separate."
+    }
+  ],
+  "synthetic": [
+    "Zero and unresolved quantities",
+    "Opponent-only recipient",
+    "Signed additive change and wrong counter type",
+    "Guarded and optional placement",
+    "A completed counter event can trigger an instruction but is not a replacement"
+  ]
+}
