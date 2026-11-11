@@ -105,8 +105,12 @@ private fun Effect.recognizedConditionalOperation(): Boolean = when (this) {
     is CreateTokenEffect -> count.positiveFixed()
     is CreateTokenCopyOfSourceEffect -> count > 0
     is ForceSacrificeEffect -> dynamicCount == null && count > 0
-    is ForEachEffect -> (space as? IterationSpace.Players)?.players in setOf(Player.Each, Player.EachOpponent) &&
-        body is ForceSacrificeEffect && body.target == EffectTarget.Controller && body.recognizedConditionalOperation()
+    is ForEachEffect -> {
+        val players = (space as? IterationSpace.Players)?.players
+        val sacrifice = body as? ForceSacrificeEffect
+        (players == Player.Each || players == Player.EachOpponent) &&
+            sacrifice != null && sacrifice.target == EffectTarget.Controller && sacrifice.recognizedConditionalOperation()
+    }
     else -> false
 }
 
@@ -122,13 +126,20 @@ internal fun conditionalEffectChange(whenTrue: Effect, whenFalse: Effect?): Verd
     val no = whenFalse.withoutZeroLifeChange()
     if (yes == no) return Verdict.NO_MATCH
     if (listOfNotNull(yes, no).any { !it.recognizedConditionalOperation() }) return Verdict.UNKNOWN
+    if (yes is DrawCardsEffect && no is DrawCardsEffect &&
+        yes.copy(target = yes.target.canonicalController()) == no.copy(target = no.target.canonicalController())) return Verdict.NO_MATCH
     // These operation types have payload fields whose equality is not a proof of different gameplay.
     // Support selecting their distinct instruction from another operation while leaving same-type
     // property comparisons unresolved.
-    if ((yes is CreateTokenCopyOfSourceEffect && no is CreateTokenCopyOfSourceEffect) ||
-        (yes is CreateTokenEffect && no is CreateTokenEffect)) return Verdict.UNKNOWN
+    if (yes is CreateTokenCopyOfSourceEffect && no is CreateTokenCopyOfSourceEffect)
+        return if (yes.copy(count = no.count) == no) Verdict.MATCH else Verdict.UNKNOWN
+    if (yes is CreateTokenEffect && no is CreateTokenEffect)
+        return if (yes.copy(count = no.count) == no) Verdict.MATCH else Verdict.UNKNOWN
     return Verdict.MATCH
 }
+
+private fun EffectTarget.canonicalController(): EffectTarget =
+    if (this == EffectTarget.PlayerRef(Player.You)) EffectTarget.Controller else this
 
 fun stateDependencyDecisions(d: StateDependency, anchor: StateAnchor): List<Decision> {
     val predicate=predicateCompatibility(d.condition,anchor)

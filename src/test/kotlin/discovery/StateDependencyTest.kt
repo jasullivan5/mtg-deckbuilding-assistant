@@ -45,7 +45,10 @@ class StateDependencyTest : FunSpec({
             token = TokenStatus.NONTOKEN, from = Zone.BATTLEFIELD, sourceController = Controller.YOU)) shouldBe Verdict.MATCH
         stateDependencyExplanation(row, d).outcome.lowercase().contains("each player sacrifices a creature") shouldBe true
         val eventRows = discover(catalog,"Judith, the Scourge Diva", objective="own-nontoken-creature-deaths").results
-        eventRows.any { it.card == d.card && it.abilityPath == sacrifice.path && it.verdict == Verdict.MATCH } shouldBe false
+        val eventRow = eventRows.single { it.actionId == d.actionId && it.abilityPath == sacrifice.path }
+        eventRow.mechanicalCompatibility shouldBe Verdict.MATCH
+        eventRow.policyAcceptance shouldBe Verdict.NO_MATCH
+        eventRow.verdict shouldBe Verdict.NO_MATCH
     }
 
     test("native morbid checks change exact resolution outcomes without manufacturing a trigger") {
@@ -127,6 +130,7 @@ class StateDependencyTest : FunSpec({
         d.whenTrue shouldBe LoseLifeEffect(0, EffectTarget.Controller)
         d.whenFalse shouldBe LoseLifeEffect(2, EffectTarget.Controller)
         conditionalEffectChange(DrawCardsEffect(1), DrawCardsEffect(2)) shouldBe Verdict.MATCH
+        conditionalEffectChange(DrawCardsEffect(1), DrawCardsEffect(1, EffectTarget.PlayerRef(Player.You))) shouldBe Verdict.NO_MATCH
         conditionalEffectChange(LoseLifeEffect(2, EffectTarget.Controller), LoseLifeEffect(2)) shouldBe Verdict.MATCH
         conditionalEffectChange(LoseLifeEffect(0, EffectTarget.Controller), null) shouldBe Verdict.NO_MATCH
     }
