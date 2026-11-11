@@ -8,7 +8,7 @@ This is the living product-direction record, not authorization to implement futu
 
 The foundation progressively establishes physical identity, rules and source requirements; Commander eligibility; native representability and execution boundaries; and reusable costs, effects, conditions, events and state changes. Objectives interpret capabilities for a question. Availability, representability, source fidelity, execution, discovery and objective relevance remain separate claims. Representation does not establish understanding of every card or interaction.
 
-This is a conceptual direction, not a new module plan. Five bounded queries exist; general relationship filters, objective construction, selective composition and deck evaluation do not. The death query retains its legacy death/removal projection and adds shared triggered event-to-draw/token and intrinsic original-creature self-return relationships; the other objectives consume shared facts. No extraction or engine rewrite follows from this diagram.
+Five bounded queries implement parts of this direction. The death query retains its death-generation and removal projection and consumes shared triggered operations and original-creature self-return relationships. Other objectives query shared mechanical facts. General relationship filters, objective construction, selective composition and deck evaluation remain future work.
 
 ## Focused anchors and mechanical relationships
 
@@ -46,6 +46,8 @@ Reassembling Skeleton and Bloodghast replenish nontoken creature resources. That
 Keep mechanical possibility, required setup, objective-policy relevance, strategic contribution and contextual deck value separate. Policy exclusion is not mechanical impossibility; MATCH is not a deck recommendation. Printed overlapping types differ from externally established overlaps. The [Agent of Shauku / Akki Scrapchomper primary-inclusion boundary](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open) remains open.
 
 ## Admission hypotheses under review
+
+Card type or subtype alone is insufficient to establish a focused-objective relationship. Product Studio has deferred developing further discretionary exclusions while the causal model expands. New triggered operation admissions require a compatible event and a supported, non-inert same-branch operation with its prerequisites. Controller loss, opposing recipients and interaction can all satisfy that test. Existing production policies remain separately documented.
 
 The [general admission study](OBJECTIVE_ADMISSION_PRINCIPLES.md) investigates, rather than adopts, two further rules: ordinary eligibility alone is insufficient evidence of input supply, and interaction-only relevance might be insufficient for primary build-around discovery. Its recommendation is narrower supplier evidence plus objective-relative judgments, not a universal ordinary-participation exclusion or interaction classifier. A printed body can directly establish a power/count state; one operation can both interact and produce an objective event. Whether a particular contribution belongs in primary discovery remains separate from its mechanical compatibility. Existing death-generation and enhanced-removal policies are unchanged, including Tragic Slip's current admission.
 
@@ -104,7 +106,7 @@ Simulation is neither implemented deck evaluation nor an inherently authoritativ
 
 ## Implemented coverage and a retained future experiment
 
-The five queries are listed in [README](../README.md#current-objectives). The death query recognizes selected death sources, supported triggered draw/token responses, intrinsic original-creature self-return inputs and death-enhanced removal. Life-change and general payoff discovery remain unsupported. Removal's privileged treatment reflects historical query design, not a permanent principle. Skeleton/Bloodghast return relationships do not prove repeatability, a complete sacrifice/return cycle or useful execution.
+The death query recognizes selected death sources, supported triggered operations, intrinsic original-creature self-return inputs and death-enhanced removal. Triggered coverage includes draw, token creation, forced sacrifice, direct life change and bounded player damage. The other queries and their boundaries are listed in the [README](../README.md#current-objectives). [Triggered operations evidence](TRIGGERED_OPERATIONS_DISCOVERY.md)
 
 The earlier renewable-creature proposal was implemented in the bounded [creature-input increment](CREATURE_INPUT_DISCOVERY.md), retaining original-card/action/branch binding, zones, controller, optionality, payment and limits. Walking Corpse remains ordinary material; token copies and return-to-hand do not qualify. Unsupported requirements and Wolfbat's finality limit remain unresolved for death input supply. This does not establish a general provider classifier or indefinite fuel.
 

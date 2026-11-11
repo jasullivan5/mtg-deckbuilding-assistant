@@ -54,7 +54,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 
 | Objective ID | Bounded question |
 |---|---|
-| own-nontoken-creature-deaths | Selected death generation, intrinsic creature-input replenishment, death-enhanced removal and qualifying triggered draw/token responses ([input-supply report](docs/CREATURE_INPUT_DISCOVERY.md), [event-outcome report](docs/EVENT_OUTCOME_DISCOVERY.md)) |
+| own-nontoken-creature-deaths | Selected death generation, intrinsic creature-input replenishment, death-enhanced removal and supported triggered operations ([input supply](docs/CREATURE_INPUT_DISCOVERY.md), [triggered operations](docs/TRIGGERED_OPERATIONS_DISCOVERY.md)) |
 | reanimate-own-creatures | Direct movement of original creature cards from our graveyard to our battlefield |
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 | creature-died-this-turn | Supported checks that use death history to control availability or choose an outcome ([implementation and evidence](docs/CONDITIONAL_CAUSAL_DISCOVERY.md)) |
