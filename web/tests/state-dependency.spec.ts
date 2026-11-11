@@ -26,7 +26,7 @@ for (const width of [1365, 390]) {
     expect(run.cards.find((c:{card:string})=>c.card==='Gravelighter').pathways.MATCH).toBe(1);
     await page.getByLabel('Card name').fill('Gravelighter');
     await expect(detail.getByRole('heading',{name:'Gravelighter',exact:true})).toBeVisible();
-    await expect(history).toContainText('Incoming trigger:');
+    await expect(history).toContainText('Incoming trigger: this creature enters the battlefield');
     await expect(history).toContainText('During resolution');
     await expect(history).toContainText(/when true: draw a card/i);
     await expect(history).toContainText(/otherwise: each player sacrifices a creature/i);

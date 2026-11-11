@@ -1,5 +1,9 @@
 package dev.mtg.assistant.explorer
 
+import com.wingedsheep.sdk.core.Zone
+import com.wingedsheep.sdk.scripting.EventPattern
+import com.wingedsheep.sdk.scripting.GameObjectFilter
+import com.wingedsheep.sdk.scripting.TriggerBinding
 import com.wingedsheep.sdk.scripting.effects.*
 import com.wingedsheep.sdk.scripting.references.Player
 import com.wingedsheep.sdk.scripting.targets.EffectTarget
@@ -13,6 +17,17 @@ internal fun conditionalOutcomeDescription(effect: Effect): String {
     return if (players in setOf(Player.Each, Player.EachOpponent) && sacrifice?.target == EffectTarget.Controller)
         sacrifice.copy(target = EffectTarget.PlayerRef(checkNotNull(players))).description
     else effect.description
+}
+
+private fun stateTriggerDescription(event: EventContext): String {
+    val zoneChange = event.trigger as? EventPattern.ZoneChangeEvent
+    if (event.binding == TriggerBinding.SELF && zoneChange?.to == Zone.BATTLEFIELD &&
+        zoneChange.from == null && zoneChange.filter == GameObjectFilter.Any && zoneChange.excludeTo == null &&
+        !zoneChange.excludeSacrifice && !zoneChange.requireCraftMaterial) {
+        val subject = if (event.sourceIsCreature) "this creature" else "this permanent"
+        return "$subject enters the battlefield"
+    }
+    return event.trigger.description
 }
 
 internal fun stateCheckpointLabel(checkpoint: StateCheckpoint): String = when(checkpoint) {
@@ -30,7 +45,7 @@ internal fun stateDependencyExplanation(row: ResultEvidence, d: StateDependency)
     val outcome="When true: ${conditionalOutcomeDescription(d.whenTrue)}. Otherwise: ${d.whenFalse?.let(::conditionalOutcomeDescription) ?: "this outcome is unavailable"}."
     val requirements=buildList {
         add("${stateCheckpointLabel(d.checkpoint)}: ${d.condition.description}.")
-        d.incomingEvent?.let { add("Incoming trigger: ${it.trigger.description}.") }
+        d.incomingEvent?.let { add("Incoming trigger: ${stateTriggerDescription(it)}.") }
         add("Native targets, costs, timing and additional requirements still apply.")
     }
     return PathwayExplanation(summary,requirements,
