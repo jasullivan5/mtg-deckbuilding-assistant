@@ -593,7 +593,7 @@ for (const width of [1440, 390]) test(`Primer distinguishes objective questions 
   await primer.getByRole('button', {name: /Supply a creature.*Reassembling Skeleton/}).click();
   await expect(primer).toContainText('Discover now recognizes this intrinsic self-return as Supplies creature inputs');
   await primer.getByRole('button', {name: /Respond with draw.*Grim Haruspex/}).click();
-  await expect(primer).toContainText('Discover now identifies this same-ability draw response as Benefits from deaths.');
+  await expect(primer).toContainText('Discover now identifies this same-ability draw response as Responds to deaths.');
   await expect(primer).toContainText('inherited catalog fidelity is not measured');
   await expect(primer).toContainText('separate human must explicitly approve');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);

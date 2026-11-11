@@ -35,8 +35,11 @@ class StateDependencyTest : FunSpec({
         eventIntersection(checkNotNull(d.incomingEvent), ZoneEventRequirement(from = Zone.BATTLEFIELD, to = Zone.GRAVEYARD)) shouldBe Verdict.NO_MATCH
         val draw = x.eventOutcomes.single { it.id in d.trueLinks.eventOutcomeIds }
         draw.path shouldBe d.outcomePath
-        d.falseLinks.eventOutcomeIds.isEmpty() shouldBe true
+        val falseOutcome = x.eventOutcomes.single { it.id in d.falseLinks.eventOutcomeIds }
+        falseOutcome.kind shouldBe OutcomeKind.FORCED_SACRIFICE
+        falseOutcome.confidence shouldBe Verdict.UNKNOWN
         val sacrifice = x.facts.single { it.id in d.falseLinks.factIds }
+        falseOutcome.factId shouldBe sacrifice.id
         sacrifice.actionId shouldBe d.actionId
         sacrifice.path shouldBe "${d.otherwisePath}.body"
         sacrifice.kind shouldBe FactKind.SACRIFICE

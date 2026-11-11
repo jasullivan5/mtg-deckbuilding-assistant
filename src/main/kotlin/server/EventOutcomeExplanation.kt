@@ -6,6 +6,8 @@ import com.wingedsheep.sdk.scripting.GameObjectFilter
 import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import com.wingedsheep.sdk.scripting.predicates.ControllerPredicate
 import com.wingedsheep.sdk.scripting.TriggerBinding
+import com.wingedsheep.sdk.scripting.effects.Effect
+import com.wingedsheep.sdk.scripting.effects.ForceSacrificeEffect
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
 import dev.mtg.assistant.discovery.*
 
@@ -20,7 +22,7 @@ fun contributionRelationship(row: ResultEvidence): String? = when(row.branch) {
         else -> null
     }
     Contribution.DEATH_TRIGGERED_OUTCOME -> when(row.verdict) {
-        Verdict.MATCH -> "Benefits from deaths"
+        Verdict.MATCH -> "Responds to deaths"
         Verdict.UNKNOWN -> "Death response needs investigation"
         else -> null
     }
@@ -61,7 +63,7 @@ internal fun incomingEvent(o: EventOutcome): String {
 }
 internal fun producedOutcome(o: EventOutcome): String {
     val nativePlayer=o.native.obj()?.get("target").obj()?.get("player").obj().text("type")
-    val receiver=when(nativePlayer) { "Each"->"each player";"EachOpponent"->"each opponent";else->when(o.recipient) { "YOU"->"you";"OPPONENT"->"an opponent";"ANY"->"a permitted player";else->"the unresolved receiver" } }
+    val receiver=o.playerBinding?.description ?: when(nativePlayer) { "Each"->"each player";"EachOpponent"->"each opponent";else->when(o.recipient) { "YOU"->"you";"OPPONENT"->"an opponent";"ANY"->"a permitted player";else->"the unresolved receiver" } }
     val amount=(o.quantity as? DynamicAmount.Fixed)?.amount?.toString() ?: o.quantity.description
     return when(o.kind) {
         OutcomeKind.DRAW_CARDS -> "$receiver can draw $amount card(s)${if(o.optional) " if the optional choice is made" else ""}"
@@ -74,6 +76,16 @@ internal fun producedOutcome(o: EventOutcome): String {
             }
             "$receiver can create $amount $output${if(o.optional) " if the optional choice is made" else ""}"
         }
+        OutcomeKind.FORCED_SACRIFICE -> {
+            val instruction = nativeJson.decodeFromJsonElement(Effect.serializer(), o.native) as ForceSacrificeEffect
+            val eligible = instruction.filter.description.removePrefix("a ").removePrefix("an ")
+            val objects = if (o.quantity == DynamicAmount.Fixed(1)) "one $eligible" else "$amount from the eligible objects ($eligible)"
+            val verb = if (receiver == "you") "sacrifice" else "sacrifices"
+            "$receiver $verb $objects they control, if able".replace("you sacrifice $objects they control", "you sacrifice $objects you control")
+        }
+        OutcomeKind.LOSE_LIFE -> "$receiver ${if (receiver == "you") "lose" else "loses"} $amount life"
+        OutcomeKind.GAIN_LIFE -> "$receiver ${if (receiver == "you") "gain" else "gains"} $amount life"
+        OutcomeKind.DEAL_PLAYER_DAMAGE -> "the recorded source deals $amount damage to $receiver"
     }
 }
 internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): PathwayExplanation {
@@ -100,7 +112,8 @@ internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): Path
             else -> "The dying object must meet the native trigger's printed restrictions."
         },
         "Native trigger conditions, turn caps, targets, choices and positive quantity must permit this branch. Replacements, trigger suppression and failed resolution can prevent the outcome.") +
-        (if(o.optional) listOf("The output is optional; it is not an automatic resource gain.") else emptyList()) + caps
+        (if(o.optional) listOf("The operation requires the optional choice to be made.") else emptyList()) +
+        (if(o.kind==OutcomeKind.FORCED_SACRIFICE) listOf("Any resulting creature death happens later and depends on the chosen permanent and replacement effects.") else emptyList()) + caps
     val unknowns=buildList {
         if(row.verdict==Verdict.UNKNOWN) add("The application has not established the full event/branch/receiver intersection; retain the exact native conditions below.")
         addAll(o.unresolved)
@@ -109,5 +122,5 @@ internal fun eventOutcomeExplanation(row: ResultEvidence, o: EventOutcome): Path
         add("This is conditional structural discovery, not successful gameplay execution or a judgment of deck value.")
     }
     return PathwayExplanation("${if(row.verdict==Verdict.UNKNOWN) "Potential response" else "Event response"}: when ${incomingEvent(o)}, ${producedOutcome(o)}. This responds to the death; it does not cause the initial death.",
-        requirements,unknowns,mechanic(row),when(row.verdict) { Verdict.MATCH->"Can benefit if these conditions hold";Verdict.UNKNOWN->"Needs investigation";else->"The event or output does not meet this objective" })
+        requirements,unknowns,mechanic(row),when(row.verdict) { Verdict.MATCH->"Can occur if these conditions hold";Verdict.UNKNOWN->"Needs investigation";else->"The event or output does not meet this objective" })
 }

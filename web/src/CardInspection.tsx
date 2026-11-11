@@ -60,7 +60,7 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
         </div>)}
       </section>}
       {responses.length > 0 && <section className="pathway" aria-label="Death response">
-        <h3>{responses.some(i => evidence.results[i].verdict === 'MATCH') ? 'Benefits from deaths' : 'Potential death response'}</h3>
+        <h3>{responses.some(i => evidence.results[i].verdict === 'MATCH') ? 'Responds to deaths' : 'Potential death response'}</h3>
         {responses.map(i => <div key={evidence.results[i].abilityPath}>
           {evidence.results[i].verdict === 'UNKNOWN' && <p><strong>Conditional relationship needs investigation.</strong></p>}
           {evidence.results[i].verdict === 'NO_MATCH' && <p><strong>This event response does not qualify.</strong></p>}

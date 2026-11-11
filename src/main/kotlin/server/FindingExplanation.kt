@@ -74,7 +74,7 @@ fun mechanic(result: ResultEvidence): String = when {
     result.branch==Contribution.INTRINSIC_CREATURE_INPUT -> when(result.verdict) {
         Verdict.MATCH->"Supplies creature inputs";Verdict.UNKNOWN->"Creature input needs investigation";else->"Nonqualifying self-return check"
     }
-    result.branch == Contribution.DEATH_TRIGGERED_OUTCOME -> when(result.verdict) { Verdict.MATCH->"Benefits from deaths";Verdict.UNKNOWN->"Death response needs investigation";else->"Nonqualifying event response" }
+    result.branch == Contribution.DEATH_TRIGGERED_OUTCOME -> when(result.verdict) { Verdict.MATCH->"Responds to deaths";Verdict.UNKNOWN->"Death response needs investigation";else->"Nonqualifying event response" }
     result.branch == Contribution.DEATH_ENHANCED_REMOVAL -> "Benefits from a creature dying"
     result.branch == Contribution.REANIMATE_OWN_CREATURE -> "Return from the graveyard"
     result.branch == Contribution.CREATE_CREATURE_TOKEN -> "Create creature tokens"

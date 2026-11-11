@@ -4,7 +4,10 @@ import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.scripting.EventPattern
 import com.wingedsheep.sdk.scripting.GameObjectFilter
 import com.wingedsheep.sdk.scripting.TriggerBinding
+import com.wingedsheep.sdk.scripting.references.Player
+import com.wingedsheep.sdk.scripting.targets.EffectTarget
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 
@@ -15,7 +18,12 @@ import kotlinx.serialization.json.JsonElement
     val sourceIsCreature: Boolean, val nativeAbility: JsonElement,
     val confidence: Verdict, val requirements: List<String>
 )
-@Serializable enum class OutcomeKind { DRAW_CARDS, CREATE_TOKEN }
+/** Operation-specific summary. Causal identity comes from the native event, action and path. */
+@Serializable enum class OutcomeKind { DRAW_CARDS, CREATE_TOKEN, FORCED_SACRIFICE, LOSE_LIFE, GAIN_LIFE, DEAL_PLAYER_DAMAGE }
+
+@Serializable data class EventPlayerBinding(
+    val target: EffectTarget, val iteration: Player? = null, val description: String
+)
 @Serializable data class EventOutcome(
     val id: String, val card: String, val face: String, val actionId: String, val path: String,
     val event: EventContext, val kind: OutcomeKind, val quantity: DynamicAmount,
@@ -23,7 +31,8 @@ import kotlinx.serialization.json.JsonElement
     val optional: Boolean, val prerequisites: List<String>, val native: JsonElement,
     val token: TokenCreation? = null, val factId: String? = null,
     val mechanism: String = "TRIGGERED_ABILITY", val linkage: String = "SAME_TRIGGER_BRANCH",
-    val unresolved: List<String> = emptyList()
+    val unresolved: List<String> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val playerBinding: EventPlayerBinding? = null
 )
 
 /** An event intersection, not a game-state or trigger-frequency solver. Controller/owner
@@ -56,14 +65,27 @@ fun eventIntersection(context: EventContext, requirement: ZoneEventRequirement):
 data class EvaluatedEventOutcome(val outcome: EventOutcome,val decisions: List<Decision>) {
     val verdict get()=all(decisions.map { it.verdict })
 }
-fun deathResponses(outcomes: List<EventOutcome>): List<EvaluatedEventOutcome> = outcomes.map { o ->
-    EvaluatedEventOutcome(o,listOf(
-        Decision("qualifying-death-event",eventIntersection(o.event,ZoneEventRequirement(Zone.BATTLEFIELD,Zone.GRAVEYARD,true,Controller.YOU,TokenStatus.NONTOKEN)),"MECHANICAL",
-            "Intersection with our nontoken creature's battlefield-to-graveyard event; native binding=${o.event.binding}; trigger=${o.event.trigger}"),
+fun eventOperationDecisions(o: EventOutcome, requirement: ZoneEventRequirement): List<Decision> =
+    operationDecisions(o, Decision("qualifying-event", eventIntersection(o.event, requirement), "MECHANICAL",
+        "Intersection with $requirement; native binding=${o.event.binding}; trigger=${o.event.trigger}"))
+
+private fun operationDecisions(o: EventOutcome, event: Decision): List<Decision> = listOf(
+        event,
         Decision("same-ability-outcome",o.confidence,"MECHANICAL","${o.actionId} / ${o.path}; ${o.linkage}; unsupported conditions remain unresolved"),
-        Decision("outcome-recipient",when(o.recipient) { "YOU","ANY"->Verdict.MATCH;"OPPONENT"->Verdict.NO_MATCH;else->Verdict.UNKNOWN },"MECHANICAL","Native outcome receiver=${o.recipient}; not a strategic value judgment"),
+        Decision("outcome-recipient",if (o.recipient == "UNKNOWN") Verdict.UNKNOWN else Verdict.MATCH,
+            "MECHANICAL","Native outcome receiver=${o.recipient}; not a strategic value judgment"),
         Decision("positive-outcome-quantity",o.positiveQuantity,"MECHANICAL","Positive native quantity required: ${o.quantity}")
-    ))
+)
+
+private val deathEvent = ZoneEventRequirement(Zone.BATTLEFIELD, Zone.GRAVEYARD, true, Controller.YOU, TokenStatus.NONTOKEN)
+
+fun deathResponses(outcomes: List<EventOutcome>): List<EvaluatedEventOutcome> = outcomes.map { o ->
+    val decisions = operationDecisions(o, Decision("qualifying-death-event", eventIntersection(o.event, deathEvent), "MECHANICAL",
+        "Intersection with our nontoken creature's battlefield-to-graveyard event; native binding=${o.event.binding}; trigger=${o.event.trigger}"))
+    val legacyPolicy = if ((o.kind == OutcomeKind.DRAW_CARDS || o.kind == OutcomeKind.CREATE_TOKEN) && o.recipient == "OPPONENT")
+        listOf(Decision("legacy-draw-token-recipient", Verdict.NO_MATCH, "POLICY", "The historical draw and token response policy excludes opponent-only recipients."))
+    else emptyList()
+    EvaluatedEventOutcome(o, decisions + legacyPolicy)
 }
 
 private fun potentialUninterpretedDeath(event: EventPattern): Boolean = when(event) {
@@ -97,7 +119,9 @@ internal fun deathResponseResults(catalog: dev.mtg.assistant.Catalog, outcomes: 
             commanderLegality=e.format,deckEligibility=e.deck,
             interpretation=if(partial) "PARTIAL_ACTION_SUPPORTED_OUTCOME_NOT_GAMEPLAY_VERIFIED" else "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
             contributionClassification=Contribution.DEATH_TRIGGERED_OUTCOME.takeIf { row.verdict==Verdict.MATCH },
-            provenance=provenance,enablingRelationship="DEATH_TRIGGERS_OUTCOME",mechanicalCompatibility=row.verdict,policyAcceptance=Verdict.MATCH,
+            provenance=provenance,enablingRelationship="DEATH_TRIGGERS_OUTCOME",
+            mechanicalCompatibility=all(row.decisions.filter { it.basis == "MECHANICAL" }.map { it.verdict }),
+            policyAcceptance=all(row.decisions.filter { it.basis == "POLICY" }.map { it.verdict }),
             mechanicalCapability="DEATH_TRIGGERED_${o.kind}".takeIf { row.verdict==Verdict.MATCH },localSupport=if(partial || row.verdict==Verdict.UNKNOWN) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
             controllerCompatibility=eventIntersection(o.event,ZoneEventRequirement(Zone.BATTLEFIELD,Zone.GRAVEYARD,controller=Controller.YOU)),
             nontokenCompatibility=eventIntersection(o.event,ZoneEventRequirement(Zone.BATTLEFIELD,Zone.GRAVEYARD,token=TokenStatus.NONTOKEN)),
