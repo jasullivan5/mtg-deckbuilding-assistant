@@ -13,6 +13,7 @@ import dev.mtg.assistant.discovery.*
 
 /** Formats existing decisions and native relationships; never evaluates objective admission. */
 fun contributionRelationship(row: ResultEvidence): String? = when(row.branch) {
+    Contribution.COUNTER_PLACEMENT, Contribution.COUNTER_MODIFICATION -> mechanic(row).takeIf { row.verdict != Verdict.NO_MATCH }
     Contribution.STATE_BENEFICIARY -> if(row.verdict==Verdict.MATCH) "Depends on death history" else null
     Contribution.DIRECT_DEATH_GENERATOR -> "Produces deaths".takeIf { row.verdict==Verdict.MATCH }
     Contribution.DEATH_ENHANCED_REMOVAL -> "Death-enhanced removal".takeIf { row.verdict==Verdict.MATCH }

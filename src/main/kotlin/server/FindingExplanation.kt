@@ -70,6 +70,8 @@ private fun costDescriptions(node: JsonObject?): List<String> = when (node.text(
 }
 
 fun mechanic(result: ResultEvidence): String = when {
+    result.branch == Contribution.COUNTER_PLACEMENT -> "Places +1/+1 counters"
+    result.branch == Contribution.COUNTER_MODIFICATION -> "Modifies +1/+1 counter placement"
     result.branch==Contribution.STATE_BENEFICIARY -> if(result.verdict==Verdict.MATCH) "Depends on death history" else "Death history check"
     result.branch==Contribution.INTRINSIC_CREATURE_INPUT -> when(result.verdict) {
         Verdict.MATCH->"Supplies creature inputs";Verdict.UNKNOWN->"Creature input needs investigation";else->"Nonqualifying self-return check"
@@ -89,6 +91,30 @@ fun mechanic(result: ResultEvidence): String = when {
 }
 
 fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExplanation {
+    result.counterPlacement?.let { fact ->
+        val summary = if (fact.timing == PlacementTiming.ENTRY)
+            "This placement happens as the permanent enters the battlefield. ${fact.action.description}."
+        else "${fact.action.description.replace("context target 0", "the chosen target")}."
+        val choices = fact.targets.map { "Native target selection: ${it.description}." }
+        return PathwayExplanation(summary, fact.action.prerequisites + choices +
+            "The qualifying recipient is a creature you control at the placement checkpoint.",
+            result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
+            "Quantity per recipient: ${fact.amount.description}")
+    }
+    result.counterModifier?.let { fact ->
+        val change = when {
+            fact.delta == null -> "The native change is retained for inspection."
+            fact.delta > 0 -> "It adds ${fact.delta} to the number placed."
+            fact.delta < 0 -> "It subtracts ${-fact.delta.toLong()} from the number placed, to a minimum of zero."
+            else -> "Its signed change is zero."
+        }
+        return PathwayExplanation("This replacement changes an impending placement. $change",
+            fact.action.prerequisites + listOf("Pattern: ${fact.pattern.description}.",
+                "Active source zones: ${fact.activeZones.joinToString { it.displayName }}.",
+                if (fact.placedByYou) "The modifier's controller must place the counters." else "Either player can place the counters."),
+            result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
+            "Another operation must initiate the placement.")
+    }
     result.stateDependency?.let { return stateDependencyExplanation(result,it) }
     result.selfReturn?.let { return selfReturnExplanation(result,it) }
     result.eventOutcome?.let { return eventOutcomeExplanation(result,it) }

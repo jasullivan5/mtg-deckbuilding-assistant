@@ -28,6 +28,8 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
   const arrivals = evidence.graveyardContributions?.filter(item => item.relationship.actionId === ability?.actionId) ?? [];
   const supplies = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'INTRINSIC_CREATURE_INPUT') ?? [];
   const stateChecks = rows.filter(row => row.branch === 'STATE_BENEFICIARY');
+  const counterChecks = ability?.resultIndexes.filter(i =>
+    ['COUNTER_PLACEMENT', 'COUNTER_MODIFICATION'].includes(evidence.results[i].branch)) ?? [];
   const responses = ability?.resultIndexes.filter(i => evidence.results[i].branch === 'DEATH_TRIGGERED_OUTCOME') ?? [];
   const sharedResponseText = (field: 'requirements' | 'unknowns') =>
     evidence.explanations[responses[0]]?.[field].filter(line =>
@@ -45,6 +47,19 @@ export function CardInspection({evidence, image, revision, preferGraveyard}: {ev
       {available.map(a => <option key={a.id} value={a.id}>{a.title}{a.face ? ` · ${a.face}` : ''}</option>)}
     </select></label>}
     {ability ? <article className="ability-inspection">
+      {counterChecks.length > 0 && <section className="pathway" aria-label="Counter placement">
+        {counterChecks.map(i => {
+          const explanation = evidence.explanations[i];
+          return <div key={i}>
+            <h3>{explanation.mechanic}</h3>
+            <p>{explanation.summary}</p>
+            <p>{explanation.outcome}</p>
+            <List title="What must hold" values={explanation.requirements}/>
+            <List title="Interpretation limits" values={explanation.unknowns}/>
+          </div>;
+        })}
+        <List title="Costs" values={ability.costs}/>
+      </section>}
       {supplies.length > 0 && <section className="pathway" aria-label="Creature input supply">
         <h3>{supplies.some(i => evidence.results[i].verdict === 'MATCH') ? 'Supplies creature inputs' : 'Potential creature input'}</h3>
         {supplies.map(i => <div key={evidence.results[i].abilityPath}>

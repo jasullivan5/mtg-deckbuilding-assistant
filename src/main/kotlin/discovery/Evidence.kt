@@ -18,7 +18,7 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
 @Serializable enum class SupportStatus { SUPPORTED, PARTIALLY_SUPPORTED, UNSUPPORTED }
 @Serializable data class StructuralSupport(val card: String,val face: String,val path: String,val nativeType: String,
     val status: SupportStatus,val reason: String,val actionId: String)
-@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME, INTRINSIC_CREATURE_INPUT, STATE_BENEFICIARY }
+@Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME, INTRINSIC_CREATURE_INPUT, STATE_BENEFICIARY, COUNTER_PLACEMENT, COUNTER_MODIFICATION }
 @Serializable data class ActionEvidence(val id: String, val card: String, val face: String, val path: String,
     val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null)
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
@@ -51,7 +51,9 @@ data class Pathway(val card: CardDefinition, val face: String, val actionId: Str
     val stateEntry: dev.mtg.assistant.objectives.StateEntryEvidence? = null,
     @EncodeDefault(EncodeDefault.Mode.NEVER) val eventOutcome: EventOutcome? = null,
     @EncodeDefault(EncodeDefault.Mode.NEVER) val selfReturn: SelfReturnLink? = null,
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val stateDependency: StateDependency? = null)
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val stateDependency: StateDependency? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val counterPlacement: CounterPlacement? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val counterModifier: CounterPlacementModifier? = null)
 @Serializable data class DiscoveryReport(val argentumCommit: String = ARGENTUM_SHA, val objective: String,
     val commander: String, val allowedIdentity: List<String>, val conventionalQuery: String?,
     val counts: Map<String, Int>, val eligibility: List<EligibilityEvidence>, val results: List<ResultEvidence>,

@@ -23,7 +23,11 @@ val objectives = listOf(
         "A token or an opponent's creature can establish the broad history. Some abilities narrow whose creature counts. Direct dies triggers and ways to cause deaths are separate."),
     Objective(GRAVEYARD_CREATURE_OBJECTIVE, GRAVEYARD_CREATURE_CRITERION, "Find ways to put a creature card into your graveyard through supported native mechanics.",
         listOf("Sacrifice a creature.", "Mill cards from your library.", "Discard cards from your hand."),
-        "The current search covers supported fixed-count routes. Actual card choices, replacement effects and the graveyard at the checkpoint depend on play.")
+        "The current search covers supported fixed-count routes. Actual card choices, replacement effects and the graveyard at the checkpoint depend on play."),
+    Objective(COUNTER_OBJECTIVE, "Put +1/+1 counters on creatures I control",
+        "Find supported mechanics that place these counters or change a qualifying placement.",
+        listOf("Places +1/+1 counters: supported instructions and entry counters.",
+            "Modifies +1/+1 counter placement: supported replacements that need a separate placement opportunity."))
 )
 @Serializable data class ResearchRequest(val commander: String, val objective: String? = null)
 @Serializable data class ApiError(val code: String, val message: String, val inspection: CommanderInspection? = null)
