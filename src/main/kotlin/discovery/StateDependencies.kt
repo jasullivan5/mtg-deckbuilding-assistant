@@ -12,11 +12,21 @@ const val DEATH_HISTORY_OBJECTIVE = "creature-died-this-turn"
 
 @Serializable enum class StateScope { DEATH_HISTORY, BATTLEFIELD_COUNT, SOURCE_ABILITY_HISTORY, UNRESOLVED }
 @Serializable enum class StateCheckpoint { RESOLUTION, TRIGGER_AND_RESOLUTION, ACTIVATION }
+/** References to existing walker evidence. Polarity follows the literal native predicate. */
+@Serializable data class ConditionalBranchLinks(
+    val factIds: List<String> = emptyList(),
+    val eventOutcomeIds: List<String> = emptyList()
+)
+
 @Serializable data class StateDependency(
     val card: String, val face: String, val actionId: String, val conditionPath: String,
     val outcomePath: String, val condition: Condition, val scope: StateScope, val checkpoint: StateCheckpoint,
     val whenTrue: Effect, val whenFalse: Effect? = null, val contextSupport: Verdict,
-    val prerequisites: List<String>, val incomingEvent: EventContext? = null
+    val prerequisites: List<String>, val incomingEvent: EventContext? = null,
+    val otherwisePath: String? = null,
+    val trueLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
+    val falseLinks: ConditionalBranchLinks = ConditionalBranchLinks(),
+    val causalChange: Verdict = conditionalEffectChange(whenTrue, whenFalse)
 )
 
 sealed interface StateAnchor {
@@ -78,47 +88,55 @@ private fun predicateCompatibility(c: Condition, anchor: StateAnchor): Verdict =
     }
 }
 
-private fun fixed(amount: DynamicAmount) = (amount as? DynamicAmount.Fixed)?.amount
-private fun increase(a: Int?, b: Int?): Verdict = when {
-    a==null || b==null -> Verdict.UNKNOWN
-    a>b && b>=0 -> Verdict.MATCH
-    else -> Verdict.NO_MATCH
+private fun DynamicAmount.positiveFixed() = this is DynamicAmount.Fixed && amount > 0
+
+/** Bounded operation recognition. Native execution and the output of a copy have separate evidence. */
+private fun Effect.recognizedConditionalOperation(): Boolean = when (this) {
+    is DrawCardsEffect -> count.positiveFixed()
+    is AddCountersEffect -> count > 0
+    is DealDamageEffect -> amount.positiveFixed()
+    is LoseLifeEffect -> amount.positiveFixed()
+    is GainLifeEffect -> amount.positiveFixed()
+    is ModifyStatsEffect -> {
+        val power = powerModifier as? DynamicAmount.Fixed
+        val toughness = toughnessModifier as? DynamicAmount.Fixed
+        power != null && toughness != null && (power.amount != 0 || toughness.amount != 0)
+    }
+    is CreateTokenEffect -> count.positiveFixed()
+    is CreateTokenCopyOfSourceEffect -> count > 0
+    is ForceSacrificeEffect -> dynamicCount == null && count > 0
+    is ForEachEffect -> (space as? IterationSpace.Players)?.players in setOf(Player.Each, Player.EachOpponent) &&
+        body is ForceSacrificeEffect && body.target == EffectTarget.Controller && body.recognizedConditionalOperation()
+    else -> false
 }
 
-/** Compare only known, like-for-like effect magnitudes. No ranking of unlike effects. */
-internal fun stateEffectBenefit(a: Effect,b: Effect?): Verdict = when {
-    a==b -> Verdict.NO_MATCH
-    a is DrawCardsEffect && (b==null || b is DrawCardsEffect && a.target==b.target) ->
-        increase(fixed(a.count),if(b==null) 0 else fixed((b as DrawCardsEffect).count))
-    a is AddCountersEffect && (b==null || b is AddCountersEffect && a.target==b.target && a.counterType==b.counterType) ->
-        increase(a.count,(b as? AddCountersEffect)?.count ?: 0)
-    a is DealDamageEffect && (b==null || b is DealDamageEffect && a.copy(amount=b.amount)==b) ->
-        increase(fixed(a.amount),if(b==null) 0 else fixed((b as DealDamageEffect).amount))
-    a is ModifyStatsEffect && (b==null || b is ModifyStatsEffect && a.target==b.target && a.duration==b.duration) -> {
-        val ap=fixed(a.powerModifier); val at=fixed(a.toughnessModifier)
-        val bp=if(b==null) 0 else fixed((b as ModifyStatsEffect).powerModifier)
-        val bt=if(b==null) 0 else fixed((b as ModifyStatsEffect).toughnessModifier)
-        if(ap==null || at==null || bp==null || bt==null) Verdict.UNKNOWN
-        else if(ap<=bp && at<=bt && ap<=0 && at<=0 && bp<=0 && bt<=0 && (ap<bp || at<bt)) Verdict.MATCH
-        else if(ap>=bp && at>=bt && ap>=0 && at>=0 && bp>=0 && bt>=0 && (ap>bp || at>bt)) Verdict.MATCH
-        else Verdict.UNKNOWN
-    }
-    a is CreateTokenEffect && b==null && a.controller==null && !a.attacking && a.dynamicPower==null && a.dynamicToughness==null ->
-        increase(fixed(a.count),0)
-    else -> Verdict.UNKNOWN
+/** A zero fixed life change is the identity operation for the supported life effects. */
+private fun Effect?.withoutZeroLifeChange(): Effect? = when (this) {
+    is LoseLifeEffect -> takeUnless { amount == DynamicAmount.Fixed(0) }
+    is GainLifeEffect -> takeUnless { amount == DynamicAmount.Fixed(0) }
+    else -> this
+}
+
+internal fun conditionalEffectChange(whenTrue: Effect, whenFalse: Effect?): Verdict {
+    val yes = whenTrue.withoutZeroLifeChange()
+    val no = whenFalse.withoutZeroLifeChange()
+    if (yes == no) return Verdict.NO_MATCH
+    if (listOfNotNull(yes, no).any { !it.recognizedConditionalOperation() }) return Verdict.UNKNOWN
+    // These operation types have payload fields whose equality is not a proof of different gameplay.
+    // Support selecting their distinct instruction from another operation while leaving same-type
+    // property comparisons unresolved.
+    if ((yes is CreateTokenCopyOfSourceEffect && no is CreateTokenCopyOfSourceEffect) ||
+        (yes is CreateTokenEffect && no is CreateTokenEffect)) return Verdict.UNKNOWN
+    return Verdict.MATCH
 }
 
 fun stateDependencyDecisions(d: StateDependency, anchor: StateAnchor): List<Decision> {
     val predicate=predicateCompatibility(d.condition,anchor)
-    // A stronger false branch could be the benefit under a negated or compound condition.
-    // Do not use the true-branch comparison to reject an unresolved anchor polarity.
-    val change=if(predicate==Verdict.UNKNOWN && d.whenTrue!=d.whenFalse) Verdict.UNKNOWN
-        else stateEffectBenefit(d.whenTrue,d.whenFalse)
     return listOf(
-    Decision("state-predicate",predicate,"MECHANICAL",d.condition.description),
-    Decision("state-checkpoint-and-branch",d.contextSupport,"MECHANICAL",
-        "${d.checkpoint}: ${d.actionId}, ${d.conditionPath} controls ${d.outcomePath}; additional prerequisites remain"),
-    Decision("state-effect-change",change,"MECHANICAL",
-        "When true: ${d.whenTrue.description}; otherwise: ${d.whenFalse?.description ?: "this outcome is unavailable"}")
-)
+        Decision("state-predicate",predicate,"MECHANICAL",d.condition.description),
+        Decision("state-checkpoint-and-branch",d.contextSupport,"MECHANICAL",
+            "${d.checkpoint}: ${d.actionId}, ${d.conditionPath} controls ${d.outcomePath}; additional prerequisites remain"),
+        Decision("state-effect-change",d.causalChange,"MECHANICAL",
+            "When true: ${d.whenTrue.description}; otherwise: ${d.whenFalse?.description ?: "this outcome is unavailable"}")
+    )
 }

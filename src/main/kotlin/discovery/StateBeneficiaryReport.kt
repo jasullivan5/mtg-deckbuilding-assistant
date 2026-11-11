@@ -32,7 +32,7 @@ internal fun stateBeneficiaryReport(catalog: Catalog,commander: String,identity:
             "unknown_query_pathways" to results.count { it.verdict==Verdict.UNKNOWN },"unsupported_structure_records" to extracted.unsupported.size,
             "cards_with_unsupported_structures" to extracted.unsupported.distinctBy { it.card }.size),
         eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,
-        limitations=discoveryLimitations+listOf("Supported native positive history checks only; not direct dies triggers or ways of establishing the history.",
+        limitations=discoveryLimitations+listOf("Supported native history checks control a branch or availability. Direct dies triggers and ways of establishing history are separate.",
             "State checks and branches are structural. Native costs, targets, timing, restrictions and actual state still apply.",
             "Compound conditions, conditional discounts, replacement effects and other unsupported check locations are not fully interpreted."),
         structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=inputCards,

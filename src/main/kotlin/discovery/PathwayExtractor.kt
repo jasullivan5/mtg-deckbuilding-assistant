@@ -179,7 +179,27 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     fun extract(cards: List<CardDefinition>): PathwayExtractor {
         pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear(); selfReturns.clear(); stateDependencies.clear()
         for(c in cards) { card=c; inspectDefinition(c,"front") }
+        if (inspectStateDependencies) linkConditionalBranches()
         return this
+    }
+
+    private fun linkConditionalBranches() {
+        val factsByAction = facts.groupBy { it.actionId }
+        val outcomesByAction = eventOutcomes.groupBy { it.actionId }
+        for ((index, dependency) in stateDependencies.withIndex()) {
+            fun links(path: String?): ConditionalBranchLinks {
+                if (path == null) return ConditionalBranchLinks()
+                fun under(candidate: String) = candidate == path || candidate.startsWith("$path.") || candidate.startsWith("$path[")
+                return ConditionalBranchLinks(
+                    factsByAction[dependency.actionId].orEmpty().filter { under(it.path) }.map { it.id },
+                    outcomesByAction[dependency.actionId].orEmpty().filter { under(it.path) }.map { it.id }
+                )
+            }
+            stateDependencies[index] = dependency.copy(
+                trueLinks = links(dependency.outcomePath),
+                falseLinks = links(dependency.otherwisePath)
+            )
+        }
     }
     private fun support(path: String, value: Any, status: SupportStatus, reason: String) {
         structuralSupport += StructuralSupport(card.name,face,path,value.javaClass.simpleName,status,reason,actionId)
@@ -628,14 +648,14 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         return true
     }
     private fun recordState(condition: Condition, conditionPath: String, outcomePath: String, yes: Effect, no: Effect?,
-                            checkpoint: StateCheckpoint, frame: Frame, boundedContext: Boolean) {
+                            checkpoint: StateCheckpoint, frame: Frame, boundedContext: Boolean, otherwisePath: String? = null) {
         if(!inspectStateDependencies) return
         val scope=stateScope(condition)
         stateDependencies += StateDependency(card.name,face,actionId,conditionPath,outcomePath,condition,scope,checkpoint,
             yes,no,if(boundedContext && scope!=StateScope.SOURCE_ABILITY_HISTORY) Verdict.MATCH else Verdict.UNKNOWN,
             frame.assumptions + listOfNotNull("Source checkpoint zone: ${frame.selfZone}".takeIf { frame.selfZone!=null },
                 "Native targets: ${frame.targets}".takeIf { frame.targets.isNotEmpty() }),
-            frame.event)
+            frame.event, otherwisePath)
     }
     private fun walk(e: Effect,path: String,frame: Frame) {
         if(recordToken(e,path,frame)) return
@@ -696,7 +716,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 val condition=(e.gate as? Gate.WhenCondition)?.condition
                 if(condition!=null) recordState(condition,"$path.gate.condition","$path.then",e.then,e.otherwise,
                     StateCheckpoint.RESOLUTION,frame,stateRootPath==path && e.decisionMaker==null && !frame.delayed &&
-                        (frame.event==null || frame.event.confidence==Verdict.MATCH) && frame.factGuard==Verdict.MATCH)
+                        (frame.event==null || frame.event.confidence==Verdict.MATCH) && frame.factGuard==Verdict.MATCH,
+                    otherwisePath = e.otherwise?.let { "$path.otherwise" })
                 val assumptions=frame.assumptions+"Gate=${nativeJson.encodeToJsonElement(Gate.serializer(),e.gate)}; success branch"
                 val branch=frame.copy(returnGuard=all(listOf(frame.returnGuard,returnGateSupport(e.gate,frame.selfZone,e.decisionMaker))),outcomeGuard=if(e.gate is Gate.MayDecide) frame.outcomeGuard else Verdict.UNKNOWN,factGuard=if(condition!=null) Verdict.UNKNOWN else frame.factGuard,assumptions=assumptions,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap())
                 when(val gate=e.gate) {
