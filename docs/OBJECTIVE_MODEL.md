@@ -72,9 +72,11 @@ Event versus history, state access versus scaling, and modification versus facil
 
 ## Implemented historical-state dependency
 
-[A creature died this turn](STATE_DEPENDENCY_DISCOVERY.md) now searches for supported same-action benefits of a native death-history check. This is a state of the current turn, not a direct dies trigger or a restriction to our nontoken creatures. Native restrictions and checkpoints remain explicit. The shared condition records also retain bounded battlefield count comparisons and source-ability history for inspection; there is no second production state query or general state solver. The existing creature-death objective still identifies legacy enhanced-removal results separately.
+[A creature died this turn](CONDITIONAL_CAUSAL_DISCOVERY.md) searches for supported dependencies on a native death-history check within the same action. This current-turn history can affect availability or select between mechanically distinct outcomes. Native restrictions and checkpoints remain explicit. The shared condition records also retain bounded battlefield count comparisons and source-ability history for inspection. The existing creature-death objective still identifies legacy enhanced-removal results separately.
 
 ## Directional filtering and selective layering
+
+Discover now includes a bounded operation question about putting +1/+1 counters on creatures we control. An initiating placement and a replacement of an impending placement are distinct causal relationships. Each retains its own subject, checkpoint, requirements and native evidence. The placement can affect a later power or toughness state, which would require a separate question. Increasing and decreasing a quantity are interpreted mechanically. The type-only admission boundary remains in force and additional discretionary exclusions remain deferred. [Counter placement implementation and evidence](COUNTER_PLACEMENT_DISCOVERY.md)
 
 ### Operational model under investigation
 

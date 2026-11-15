@@ -12,7 +12,7 @@ Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the l
 
 Open **http://127.0.0.1:8787** after **Explorer ready** appears. The script builds both layers; catalog startup can take tens of seconds. Stop with **Ctrl+C**. See [guided exercises and API](docs/EXPLORER.md).
 
-**Discover** searches five bounded objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
+**Discover** searches six bounded objectives. **Progress** opens without a discovery run and measures native representation, typed-node interpretation, narrower assurance, reusable historical gains and research obstacles. **Primer** explains the system and evidence limits. Secondary investigations are in the collapsed developer research index. See [Progress definitions, snapshot launch and three guided tasks](docs/RESEARCH_PROGRESS.md).
 
 ## Current state and authority
 
@@ -20,7 +20,7 @@ The running application and live Git are the living sources of product direction
 
 | Available today | Detail and evidence |
 | --- | --- |
-| Discover: five bounded queries, card imagery/fallbacks, readable findings and prerequisites | [Explorer](docs/EXPLORER.md) and the objective list below |
+| Discover: six bounded queries, card imagery/fallbacks, readable findings and prerequisites | [Explorer](docs/EXPLORER.md) and the objective list below |
 | Progress: representation, bounded commander selection, objective reach, scoped trust and historical gains | [Progress](docs/RESEARCH_PROGRESS.md), [global coverage](docs/GLOBAL_COMMANDER_COVERAGE.md), [verification coverage](docs/VERIFICATION_COVERAGE.md) |
 | Complete printed-payment comparison and phased examination, including two recorded Explicit tap-payment failures | [Cost fidelity](docs/ACTIVATION_COST_FIDELITY.md), [latest examination](docs/PRODUCT_STUDIO_COST_EXAMINATION.md) |
 | Curated fresh native scenarios in **Developer research index** | [Mechanical Verification Lab](docs/MECHANICAL_VERIFICATION_LAB.md); specified positions, not deck simulation |
@@ -38,7 +38,7 @@ The conceptual direction is **card identity/rules → native definitions → mec
 | How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
 | Source/definition/revision-bound evidence | Retained resources, focused reports and original test receipts linked from Progress |
 
-The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The current bounded application increment adds shared triggered draw/token and intrinsic creature-input relationships to the existing death objective; it changes no engine mechanics.
+The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The [counter-placement increment](docs/COUNTER_PLACEMENT_DISCOVERY.md) extends application interpretation and Discover on the unchanged engine.
 
 ## Two sibling repositories
 
@@ -59,6 +59,7 @@ The application uses the sibling [maintained engine](https://github.com/jasulliv
 | create-creature-tokens | Creature-token creation under our control with type, quantity and controller prerequisites |
 | creature-died-this-turn | Supported checks that use death history to control availability or choose an outcome ([implementation and evidence](docs/CONDITIONAL_CAUSAL_DISCOVERY.md)) |
 | stock-own-graveyard | Conditional creature-card arrivals in our graveyard through supported sacrifice, mill and discard routes |
+| place-plus-one-counters | Direct +1/+1 counter placement on creatures we control and supported replacements that change such placement ([implementation and evidence](docs/COUNTER_PLACEMENT_DISCOVERY.md)) |
 
 Commander legality and full color identity precede mechanical extraction. Unknown eligibility and unsupported structures remain explicit. A structural match, a passed scenario, independently qualified translation and strategic value are separate claims. See [limitations](docs/KNOWN_LIMITATIONS.md).
 

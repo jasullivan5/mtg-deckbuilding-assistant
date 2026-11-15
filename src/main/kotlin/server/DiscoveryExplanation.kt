@@ -26,6 +26,12 @@ internal fun sacrificeObject(row: ResultEvidence): String {
 /** Explains the recorded query, not a second acceptance test or a game-state evaluator. */
 internal fun discoveryFields(results: List<ResultEvidence>, action: ActionEvidence?): List<EvidenceField> = buildList {
     val row = results.firstOrNull { it.verdict == Verdict.MATCH } ?: results.firstOrNull { it.verdict == Verdict.UNKNOWN } ?: results.firstOrNull() ?: return@buildList
+    if (row.counterPlacement != null || row.counterModifier != null) {
+        val detail = explain(row, action)
+        add(EvidenceField("Relationship", detail.summary))
+        add(EvidenceField("Placement", detail.outcome))
+        return@buildList
+    }
     row.stateDependency?.let { d ->
         val explanation=stateDependencyExplanation(row,d)
         add(EvidenceField("Relationship",explanation.summary))

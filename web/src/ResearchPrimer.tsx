@@ -22,6 +22,6 @@ export default function ResearchPrimer() {
       </dl>
     </section>
     <details className="progress-panel"><summary>Why mechanical contributions need context</summary><PrimerPurpose/></details>
-    <p><strong>Available today.</strong> Discover runs five bounded queries. <strong>A creature died this turn</strong> finds abilities that check death history. <strong>My nontoken creatures die</strong> includes separate direct death responses. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. General relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
+    <p><strong>Available today.</strong> Discover runs six bounded queries. <strong>Put +1/+1 counters on creatures I control</strong> distinguishes placement from a replacement that changes another placement. <strong>A creature died this turn</strong> finds abilities that check death history. <strong>My nontoken creatures die</strong> includes separate direct death responses. Progress inspects representation, partial interpretation and scoped trust evidence. The curated Mechanical Verification Lab runs specific native positions; it is not a deck simulator. General relationship filtering, objective composition, substitutions and contextual deck evaluation remain future work.</p>
   </article>;
 }

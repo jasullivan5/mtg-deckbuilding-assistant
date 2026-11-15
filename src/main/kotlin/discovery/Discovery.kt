@@ -48,7 +48,7 @@ val discoveryLimitations = listOf(
     "No card-name matching or Oracle-text matching is used by mechanical extraction. Native commander designation and the unsupported chosen-color selection guard are the only text-based eligibility checks."
 )
 fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String? = null, objective: String = "own-nontoken-creature-deaths"): DiscoveryReport {
-    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens",GRAVEYARD_CREATURE_OBJECTIVE,DEATH_HISTORY_OBJECTIVE)) { "Unsupported objective: $objective" }
+    require(objective in setOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens",GRAVEYARD_CREATURE_OBJECTIVE,DEATH_HISTORY_OBJECTIVE,COUNTER_OBJECTIVE)) { "Unsupported objective: $objective" }
     val commander=resolveCommander(catalog,commanderName)
     val allowed=catalog.eligibility.resolve(commander).colors + identityRestrictions(commander)
     val roots=physicalCards(catalog.cards)
@@ -65,7 +65,8 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
     val eligible=legal.filter { byName.getValue(it.name).deck == Verdict.MATCH }
     val conventionalNames=conventionalQuery?.let { catalog.search(it).map { it.name }.toSet() }
     val input=eligible.filter { conventionalNames == null || it.name in conventionalNames }
-    val extracted=PathwayExtractor(inspectCardEntries=objective==GRAVEYARD_CREATURE_OBJECTIVE,inspectStateDependencies=objective==DEATH_HISTORY_OBJECTIVE).extract(input)
+    val extracted=PathwayExtractor(inspectCardEntries=objective==GRAVEYARD_CREATURE_OBJECTIVE,inspectStateDependencies=objective==DEATH_HISTORY_OBJECTIVE,
+        inspectCounters=objective==COUNTER_OBJECTIVE).extract(input)
     if(objective != "own-nontoken-creature-deaths") return factObjectiveReport(catalog,commander.name,allowed.map { it.name }.sorted(),conventionalQuery,eligibility,
         linkedMapOf("authored_physical_cards" to roots.size,"upstream_authored_physical_cards" to roots.count { catalog.provenance(it.name).origin=="UPSTREAM_ARGENTUM" },
             "application_extension_physical_cards" to roots.count { catalog.provenance(it.name).origin=="APPLICATION_EXTENSION" },"registry_names_including_faces" to catalog.cards.size,

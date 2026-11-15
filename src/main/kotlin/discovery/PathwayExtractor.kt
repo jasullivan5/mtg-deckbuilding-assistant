@@ -1,6 +1,7 @@
 package dev.mtg.assistant.discovery
 
 import com.wingedsheep.sdk.core.Zone
+import com.wingedsheep.sdk.core.CounterType
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.model.CardLayout
 import com.wingedsheep.sdk.model.CardScript
@@ -21,7 +22,8 @@ private data class Frame(val targets: List<TargetRequirement>, val tokenControll
     val directBattlefieldStepTrigger: Boolean = false, val event: EventContext? = null,
     val outcomeGuard: Verdict = Verdict.MATCH, val returnSource: ReturnSourceContext? = null,
     val returnGuard: Verdict = Verdict.MATCH, val returnLimits: List<ReturnLimit> = emptyList(),
-    val operationGuard: Verdict = Verdict.MATCH, val operationPlayers: Player? = null)
+    val operationGuard: Verdict = Verdict.MATCH, val operationPlayers: Player? = null,
+    val counterTargetIteration: Boolean = false)
 private data class Removal(val effect: Effect, val target: EffectTarget?, val operation: String, val magnitude: Int? = null, val prerequisites: List<String> = emptyList(), val confidence: Verdict = Verdict.MATCH)
 private fun removal(e: Effect): Removal? = when(e) {
     is MoveToZoneEffect -> when {
@@ -176,7 +178,10 @@ internal fun deathDependency(c: Condition): Pair<Verdict,ObjectScope> = when(c) 
 }
 
 /** Native objects in, individual operations out. No card names or Oracle text are inspected. */
-class PathwayExtractor(private val inspectCardEntries: Boolean = false, private val inspectStateDependencies: Boolean = false) {
+class PathwayExtractor(private val inspectCardEntries: Boolean = false, private val inspectStateDependencies: Boolean = false,
+                       private val inspectCounters: Boolean = false) {
+    val counterPlacements = mutableListOf<CounterPlacement>()
+    val counterModifiers = mutableListOf<CounterPlacementModifier>()
     val stateDependencies = mutableListOf<StateDependency>()
     private var stateRootPath: String? = null
     val eventOutcomes = mutableListOf<EventOutcome>()
@@ -213,6 +218,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     })
 
     fun extract(cards: List<CardDefinition>): PathwayExtractor {
+        counterPlacements.clear(); counterModifiers.clear()
         pathways.clear(); actions.clear(); unsupported.clear(); structuralSupport.clear(); facts.clear(); eventOutcomes.clear(); selfReturns.clear(); stateDependencies.clear()
         for(c in cards) { card=c; inspectDefinition(c,"front") }
         if (inspectStateDependencies) linkConditionalBranches()
@@ -294,6 +300,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
     private fun inspectScript(script: CardScript, label: String, creature: Boolean, keywordAbilities: List<KeywordAbility> = emptyList()) {
         face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
+        if (inspectCounters) script.replacementEffects.forEachIndexed(::recordCounterReplacement)
         sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
         actionId="${card.name}|$label|script"
         actions += ActionEvidence(actionId,card.name,label,"script",emptyList(),nativeJson.encodeToJsonElement(CardScript.serializer(),script))
@@ -431,7 +438,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actionId="${card.name}|$label|script.unsupported"
         val scriptTree=nativeJson.encodeToJsonElement(CardScript.serializer(),script).jsonObject
         val handled=setOf("spellEffect","additionalCosts","targetRequirements","activatedAbilities","triggeredAbilities","stateTriggeredAbilities","sagaChapters","classLevels","staticAbilities","selfAlternativeCost")
-        val remainder=JsonObject(scriptTree.filterKeys { it !in handled })
+        val remainder=JsonObject(scriptTree.filterKeys { it !in handled && !(inspectCounters && it == "replacementEffects") })
         if(remainder.isNotEmpty()) {
             actions += ActionEvidence(actionId,card.name,label,"script.unsupported",emptyList(),remainder)
             remainder.forEach { (key,_) -> issue("script.$key",script,"Additional script field retained but not interpreted") }
@@ -737,7 +744,116 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             .also { eventOutcomes += it }
     }
 
+    private fun recordCounterReplacement(index: Int, effect: ReplacementEffect) {
+        val path = "script.replacementEffects[$index]"
+        val id = "${card.name}|$face|$path"
+        actionId = id
+        val native = nativeJson.encodeToJsonElement(ReplacementEffect.serializer(), effect)
+        val checkpoint = when (effect) {
+            is ModifyCounterPlacement, is DoubleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
+            is EntersWithCounters, is EntersWithDynamicCounters -> "Counters are placed as part of entering the battlefield. The native entry and casting requirements apply."
+            else -> {
+                actions += ActionEvidence(id, card.name, face, path, emptyList(), native)
+                issue(path, effect, "Replacement declaration retained without counter-placement interpretation")
+                return
+            }
+        }
+        val origin = CounterAction(card.name, face, id, path, native, effect.description, listOf(checkpoint))
+        actions += ActionEvidence(id, card.name, face, path, origin.prerequisites, native)
+        val confidence = when (effect) {
+            is ModifyCounterPlacement -> {
+                val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
+                    effect.placedByYou, effect.activeZones, selfCreature)
+                counterModifiers += modifier
+                modifier.recipientCompatibility(Requirements(creature = false))
+            }
+            is DoubleCounterPlacement -> {
+                counterModifiers += CounterPlacementModifier(origin, effect.appliesTo, null,
+                    effect.placedByYou, effect.activeZones, selfCreature)
+                Verdict.UNKNOWN
+            }
+            is EntersWithCounters -> recordEntryCounters(origin, effect.counterType, DynamicAmount.Fixed(effect.count),
+                effect.appliesTo, effect.activeZones, effect.selfOnly, effect.otherOnly, effect.condition?.description)
+            is EntersWithDynamicCounters -> recordEntryCounters(origin, effect.counterType, effect.count,
+                effect.appliesTo, effect.activeZones, !effect.otherOnly, effect.otherOnly, null)
+            else -> Verdict.UNKNOWN
+        }
+        recordCounterSupport(path, effect, confidence)
+    }
+
+    private fun recordEntryCounters(origin: CounterAction, type: CounterType, amount: DynamicAmount, pattern: EventPattern,
+                                    active: Set<Zone>, self: Boolean, other: Boolean, condition: String?): Verdict {
+        val entry = pattern as? EventPattern.ZoneChangeEvent
+        val recipient = when {
+            self && !other -> CounterRecipient(controller = "YOU", sourceCreature = selfCreature)
+            other && !self && entry != null -> CounterRecipient(filter = entry.filter)
+            else -> CounterRecipient(unresolved = "Entry source versus other entrants is not fully interpreted")
+        }
+        val simple = entry?.to == Zone.BATTLEFIELD && !entry.excludeSacrifice && !entry.requireCraftMaterial &&
+            entry.excludeTo == null && (!self || entry.from == null)
+        val context = when {
+            Zone.BATTLEFIELD !in active || self && other -> Verdict.NO_MATCH
+            !simple || condition != null -> Verdict.UNKNOWN
+            else -> Verdict.MATCH
+        }
+        val castX = amount == DynamicAmount.XValue && self && card.manaCost.xCount > 0
+        val prerequisites = origin.prerequisites + listOfNotNull(
+            "The entrant must meet the entry pattern: ${pattern.description}",
+            "The native entry condition must hold: $condition".takeIf { condition != null },
+            "Cast this permanent with X greater than zero and pay the native X cost.".takeIf { castX }
+        )
+        val quantity = if (castX) Verdict.MATCH else amountBounds(amount).positivePotential()
+        counterPlacements += CounterPlacement(origin.copy(prerequisites = prerequisites), type, amount, PlacementTiming.ENTRY,
+            recipient, EffectTarget.Self.takeIf { self && !other }, emptyList(), false, quantity, context)
+        return counterSupportConfidence(context, quantity, recipient)
+    }
+
+    private fun counterSupportConfidence(context: Verdict, quantity: Verdict, recipient: CounterRecipient): Verdict =
+        if (Verdict.UNKNOWN in listOf(context, quantity, recipient.compatible(Requirements(creature = false)))) Verdict.UNKNOWN else Verdict.MATCH
+
+    private fun recordCounterSupport(path: String, native: Any, confidence: Verdict) {
+        if (confidence == Verdict.UNKNOWN)
+            issue(path, native, "Counter operation retained with unresolved quantity, applicability or context", SupportStatus.PARTIALLY_SUPPORTED)
+        else support(path, native, SupportStatus.SUPPORTED, "Native counter operation and its scope are interpreted")
+    }
+
+    private fun recordCounterInstruction(effect: Effect, path: String, frame: Frame): Boolean {
+        val (type, amount, target) = when (effect) {
+            is AddCountersEffect -> Triple(effect.counterType, DynamicAmount.Fixed(effect.count), effect.target)
+            is AddDynamicCountersEffect -> Triple(effect.counterType, effect.amount, effect.target)
+            is AddCountersWithLimitEffect -> Triple(effect.counterType, effect.amount, effect.target)
+            is AddCountersUpToEffect -> Triple(effect.counterType, effect.max, effect.target)
+            else -> return false
+        }
+        val requirement = if (frame.counterTargetIteration && target == EffectTarget.ContextTarget(0))
+            frame.targets.singleOrNull() else targetRequirement(target, frame)
+        val scope = if (frame.counterTargetIteration && target == EffectTarget.ContextTarget(0))
+            requirementScope(requirement) else targetScope(target, frame, selfCreature)
+        val recipient = CounterRecipient(scope.filter, scope.actor, scope.printedSelfCreature, scope.battlefield, scope.unresolved)
+        val countSupport = when {
+            requirement?.dynamicMaxCount != null || requirement?.dynamicMinCount != null -> Verdict.UNKNOWN
+            requirement != null && !requirement.unlimited && requirement.count == 0 -> Verdict.NO_MATCH
+            else -> Verdict.MATCH
+        }
+        val context = all(listOf(frame.guardConfidence, frame.factGuard, frame.outcomeGuard, countSupport,
+            if (frame.delayed || frame.resolutionCost || effect is AddCountersWithLimitEffect ||
+                frame.event?.confidence == Verdict.UNKNOWN) Verdict.UNKNOWN else Verdict.MATCH))
+        val prerequisites = frame.assumptions + listOfNotNull(
+            "Chosen targets must still be legal. At least one qualifying recipient must be chosen.".takeIf { requirement != null },
+            "Only the current chosen target receives this quantity in each iteration.".takeIf { frame.counterTargetIteration },
+            "A positive quantity must be chosen.".takeIf { effect is AddCountersUpToEffect }
+        )
+        val quantity = amountBounds(amount).positivePotential()
+        counterPlacements += CounterPlacement(CounterAction(card.name, face, actionId, path, effect.tree(), effect.description,
+            prerequisites), type, amount, PlacementTiming.RESOLUTION, recipient, target, frame.targets,
+            frame.optional || requirement?.optional == true || effect is AddCountersUpToEffect,
+            quantity, context)
+        recordCounterSupport(path, effect, counterSupportConfidence(context, quantity, recipient))
+        return true
+    }
+
     private fun walk(e: Effect,path: String,frame: Frame) {
+        if (inspectCounters && recordCounterInstruction(e, path, frame)) return
         if(recordToken(e,path,frame)) return
         if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
         if(e is DrawCardsEffect && frame.event!=null) {
@@ -851,7 +967,11 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     it in setOf(Player.Each, Player.EachOpponent, Player.ActivePlayerFirst, Player.EachStartingWithYou) &&
                         (e.body is ForceSacrificeEffect || e.body is LoseLifeEffect || e.body is GainLifeEffect || e.body is DealDamageEffect)
                 }
-                val child=next.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=if (players == null) Verdict.UNKNOWN else frame.outcomeGuard,
+                val counterTargets = inspectCounters && e.space == IterationSpace.Targets &&
+                    frame.targets.singleOrNull() is TargetObject &&
+                    (e.body is AddCountersEffect || e.body is AddDynamicCountersEffect)
+                val child=next.copy(returnGuard=Verdict.UNKNOWN,outcomeGuard=if (players == null && !counterTargets) Verdict.UNKNOWN else frame.outcomeGuard,
+                    counterTargetIteration=counterTargets,
                     operationPlayers=players,movementTargets=frame.movementTargets.toMutableMap(),collections=frame.collections.toMutableMap(),collectionMax=frame.collectionMax.toMutableMap(),assumptions=frame.assumptions+"Iteration=${e.space}")
                 if(e.space is IterationSpace.Players) { child.collections.clear();child.collectionMax.clear() }
                 walk(e.body,"$path.body",child)
