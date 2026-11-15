@@ -1,115 +1,77 @@
-# Objective and evaluation direction
+# Product direction and the three working models
 
-This is the living product-direction record, not authorization to implement future capabilities. The original distinctive-contribution direction was adopted on 2026-11-02. The 2026-11-09 [bounded building-block assessment](OBJECTIVE_BUILDING_BLOCKS.md) refines the earlier six-role proposal: use mechanically precise subjects and directional relationships as the working foundation, with role labels as optional descriptions. This is supported as a research/explanation direction in the retained sample, not a validated universal schema or implemented objective builder. Earlier [four-/five-role research](CONTRIBUTION_VALIDATION.md) retains its original evidence and disagreements. [README](../README.md#current-state-and-authority) owns current status; [architecture](ARCHITECTURE.md) describes implementation.
+This document records adopted product direction, the working discovery model, and the research direction for deck evaluation. Current capabilities are listed in the [README](../README.md#current-state-and-authority). Implementation details and evidence live in [Architecture](ARCHITECTURE.md) and [Known limitations](KNOWN_LIMITATIONS.md).
 
-## Conceptual architecture
-
-**Card identity and rules → Native definitions → Mechanical facts and capabilities → Objective discovery and selective layering → Experimental deck evaluation**
-
-The foundation progressively establishes physical identity, rules and source requirements; Commander eligibility; native representability and execution boundaries; and reusable costs, effects, conditions, events and state changes. Objectives interpret capabilities for a question. Availability, representability, source fidelity, execution, discovery and objective relevance remain separate claims. Representation does not establish understanding of every card or interaction.
-
-Five bounded queries implement parts of this direction. The death query retains its death-generation and removal projection and consumes shared triggered operations and original-creature self-return relationships. Other objectives query shared mechanical facts. General relationship filters, objective construction, selective composition and deck evaluation remain future work.
-
-## Focused anchors and mechanical relationships
-
-The current working hypothesis investigates one focused **event, state or modification** anchor per objective. Mechanics can produce/establish it, supply required inputs, or benefit from/enhance it; these relationships overlap. Game elements describe subjects, requirements and consequences; effects/outcomes connect them. Hardened Scales can depend on a counter-placement opportunity while modifying it through replacement, rather than a triggered ability. These anchors are neither exclusive native categories nor proof that every desired goal has one anchor. Bounded intrinsic original-creature self-return is now an input-supply contribution to the death objective. General resource-provider discovery and composition remain future work.
-
-The earlier subject assessment below remains useful background; game elements are not required to be an equivalent anchor category.
-
-| Working concept | Objective-level question | Mechanics to preserve |
-| --- | --- | --- |
-| Events | What should happen, or happen repeatedly? | Cause/enable, respond to, prevent, or check history of a qualifying occurrence; a trigger and a history check are different. |
-| States | What condition should hold, and when? | Establish/maintain/change a predicate, or depend on it for access, a branch or magnitude. Preserve the checkpoint or continuous evaluation. |
-| Game elements | What mechanically relevant thing or resource do we need to supply or use? | Supply, replenish, preserve, consume, target, move or transform it; retain type, quantity, identity, owner/controller, zone and permissions. |
-| Effects and outcomes | What operation connects inputs and conditions to a possible result? | Counter placement, movement, draw, damage, life changes and modifications have different semantics and possible consequences. An effect is not defined by whether it helps win. |
-
-These concepts provide useful descriptions of an anchor and its requirements. Effects/outcomes supply connecting vocabulary, not necessarily an equivalent fourth objective-subject category. A requested operation such as *put +1/+1 counters on my creatures* is also a useful precise criterion. These concepts overlap: an effect can produce an event and establish a state. They are not four exclusive card types or an adopted software schema.
-
-**Game elements** is provisional and broader than Magic's technical game objects. A counter is not a token; a player, mana quantity, characteristic, permission and zone do not share one object's lifecycle. Do not erase those differences to fit the umbrella term.
-
-Use one ability/branch as the explanatory unit. Pitiless Plunderer's qualifying death starts a trigger whose output is Treasure; the token is a possible later input to mana production, not mana already produced by that trigger. Abzan Falconer's outlast places a counter, while its separate static ability gives flying to qualifying counter-bearing creatures. A card-wide label cannot substitute for either chain.
-
-## State dependence without a role for every condition
-
-Mechanical interpretation records which events, states, modifications and resources control an operation or its requirements. This principle applies to all anchors. A consequence can be enabled, suppressed, replaced, redirected or otherwise changed regardless of its value to a deck. Focused objectives query those relationships for structural relevance. Players can then select and combine candidates, and future evaluation can investigate their contextual value.
-
-For a state dependency, ask what changes when the condition holds and when the check occurs. Phoenix requires power 4 at combat's beginning and again on resolution. Swarm's six-land condition selects a token operation at resolution. Plating continuously counts artifacts. Garruk's Packleader tests an entering creature's power for triggering, without rechecking it at resolution. Threshold, amount, duration and recipients belong to the evidence. Discover applies this principle to supported native history checks. [Conditional causal relationships](CONDITIONAL_CAUSAL_DISCOVERY.md) documents the implemented scope.
-
-The counter comparison separates *place +1/+1 counters*, *increase power* and *control power 4*. A continuous Goblin bonus can support the latter two without placing counters. Scales modifies another placement; it does not initiate one. A 0/-1 counter does not raise power. A large body can establish a threshold without boosting a creature already present. These distinctions improve the source-defined research filters; no new query or general state solver is implemented. [The assessment](OBJECTIVE_BUILDING_BLOCKS.md) records entry-counter and observation-window ambiguities rather than inventing a universal rule.
-
-## Distinctive contributions
-
-Objectives can concern events, resources, states, capabilities, prerequisites or strategic outcomes. A card belongs in primary discovery when its own mechanics provide a distinctive, recognizable contribution to the objective or a necessary resource or capability. It need not independently accomplish the final event. Normal costs, targets, timing and resource requirements do not invalidate that contribution.
-
-Reassembling Skeleton and Bloodghast replenish nontoken creature resources. That is a distinctive contribution to a death strategy even though the return itself neither causes nor observes a death. A vanilla creature supplies ordinary material without an intrinsic advantage in sustaining that strategy. An ordinary land does not gain a distinctive death contribution merely because another effect could animate it.
-
-Keep mechanical possibility, required setup, objective-policy relevance, strategic contribution and contextual deck value separate. Policy exclusion is not mechanical impossibility; MATCH is not a deck recommendation. Printed overlapping types differ from externally established overlaps. The [Agent of Shauku / Akki Scrapchomper primary-inclusion boundary](OBJECTIVE_COVERAGE.md#primary-inclusion-decision-still-open) remains open.
-
-## Admission hypotheses under review
-
-Card type or subtype alone is insufficient to establish a focused-objective relationship. Product Studio has deferred developing further discretionary exclusions while the causal model expands. New triggered operation admissions require a compatible event and a supported, non-inert same-branch operation with its prerequisites. Controller loss, opposing recipients and interaction can all satisfy that test. Existing production policies remain separately documented.
-
-The [general admission study](OBJECTIVE_ADMISSION_PRINCIPLES.md) investigates, rather than adopts, two further rules: ordinary eligibility alone is insufficient evidence of input supply, and interaction-only relevance might be insufficient for primary build-around discovery. Its recommendation is narrower supplier evidence plus objective-relative judgments, not a universal ordinary-participation exclusion or interaction classifier. A printed body can directly establish a power/count state; one operation can both interact and produce an objective event. Whether a particular contribution belongs in primary discovery remains separate from its mechanical compatibility. Existing death-generation and enhanced-removal policies are unchanged, including Tragic Slip's current admission.
-
-## Working objective-relative roles
-
-The preceding six-role proposal used the descriptions below. Retain them as optional, objective-relative summaries of relationships, not foundational categories requiring every card to be classified. The bounded comparison found useful communication cues but no demonstration that adding labels supplies the underlying mechanical information or improves user comprehension. No final numerical taxonomy is adopted.
-
-| Role | Working question relative to an objective |
+| Model | Core question |
 | --- | --- |
-| Provider | What relevant resource or capability does this mechanic supply or replenish? |
-| Event responder | How does it respond to an event relevant to this objective? |
-| Event facilitator | How does it help the event happen? |
-| State facilitator | How does it help establish or maintain a needed condition? |
-| State responder | How does it use or benefit from an established condition? |
-| Modifier | How does it change a relevant characteristic, permission or effect? |
+| Card Integration | What does this card do, and how confidently do we understand it? |
+| Composable Objective Discovery | Which cards relate to what the player wants to accomplish? |
+| Deck Construction and Contextual Evaluation | How reliably and effectively does a particular deck accomplish those goals? |
 
-A card or ability can have multiple roles, and the same capability can serve different objectives differently. Viscera Seer illustrates facilitating a death by consuming a creature. Grim Haruspex illustrates responding to a death and providing cards. These explanatory examples do not assert that today's death query discovers all these roles.
+Card Integration supplies native definitions, interpreted relationships, and evidence. Discovery queries that understanding for objective relevance. Deck evaluation uses it to study a particular configuration under explicit assumptions. Each downstream model reuses the same mechanical interpretation and Argentum rules.
 
-Earlier producer/replenisher language describes resource supply and informs Provider. Consumer describes a cost/use relationship, not a seventh role; facilitator and observer language motivate more specific event/state questions without a one-to-one relabeling. Renewability, availability across zones, repeatability, flexibility, persistence and restrictions remain resource qualities. The historical Leverage State proposal explored state dependence; it is evidence to examine when distinguishing State responder, State facilitator and Modifier, not an automatic synonym or mandatory layer.
+**Near-term priority:** Expand trustworthy, reusable mechanical understanding and card integration. Substantial, measurable gains in what the application understands across the card pool are worthwhile before returning to major UI, composition, or deck-evaluation work. This priority sets no fixed sequence of milestones.
 
-Event versus history, state access versus scaling, and modification versus facilitation still need precise relationships. Exploration's extra land-play permission remains an example where two role labels describe one change. Roles may summarize a relationship after it is established; they cannot decide source fidelity, objective admission or contextual value.
+## A. Card Integration
 
-## Implemented historical-state dependency
+Establish what cards do, recognize reusable relationships in their mechanics, and determine how much confidence the evidence supports.
 
-[A creature died this turn](CONDITIONAL_CAUSAL_DISCOVERY.md) searches for supported dependencies on a native death-history check within the same action. This current-turn history can affect availability or select between mechanically distinct outcomes. Native restrictions and checkpoints remain explicit. The shared condition records also retain bounded battlefield count comparisons and source-ability history for inspection. The existing creature-death objective still identifies legacy enhanced-removal results separately.
+- **Identity and native representation.** Bind the correct physical card and face, Oracle rules, characteristics, and source requirements. Represent abilities in the maintained Argentum engine, preserving costs, effects, conditions, targets, choices, timing, quantities, zones, ownership, control, and causal dependencies.
+- **Shared mechanical interpretation.** Extract reusable facts and relationships independently of a particular objective. Examples include requirements, conditional outcome selection, parameter changes, event-to-operation relationships, and counter-placement replacement. Preserve the affected operation and its ability or branch, the condition or other prerequisite, the evaluation checkpoint, the quantity, restrictions, and exact native and source evidence. Develop relationship families through demonstrated cases. The same family can support several objective-relative contributions.
+- **Verification and trust.** Distinguish catalog availability, native representability, fidelity to source, observed native execution, the application's structural interpretation, and independent qualification. Preserve provenance, the scope of each observation, and unresolved behavior. A native definition, a passed scenario, and a structural match each support a bounded claim. Whole-card qualification requires separate evidence.
 
-## Directional filtering and selective layering
+Interpretation is outcome-neutral. A condition may select, enable, or suppress an operation regardless of whether the outcome helps a deck. Keep a direct dies trigger separate from a check of earlier death history, and a replacement of an impending operation separate from a response to the completed event. A Treasure token can be a later input to mana production. Creating it records a token operation. The subjects of such mechanics include cards, tokens, counters, players, resources, and permissions, each with its own properties and rules.
 
-Discover now includes a bounded operation question about putting +1/+1 counters on creatures we control. An initiating placement and a replacement of an impending placement are distinct causal relationships. Each retains its own subject, checkpoint, requirements and native evidence. The placement can affect a later power or toughness state, which would require a separate question. Increasing and decreasing a quantity are interpreted mechanically. The type-only admission boundary remains in force and additional discretionary exclusions remain deferred. [Counter placement implementation and evidence](COUNTER_PLACEMENT_DISCOVERY.md)
+Improvements to shared interpretation should add understanding across previously integrated cards as well as future objectives. [Building-block research](OBJECTIVE_BUILDING_BLOCKS.md) · [Conditional causal evidence](CONDITIONAL_CAUSAL_DISCOVERY.md) · [Triggered operations evidence](TRIGGERED_OPERATIONS_DISCOVERY.md) · [Translation assurance](TRANSLATION_RELIABILITY.md)
 
-### Operational model under investigation
+## B. Composable Objective Discovery
 
-The [bounded selection experiment](SELECTION_COMPOSITION.md) tests focused mechanical discovery alongside **basic selectors** for ordinary resources, characteristics and functional categories. Normal land mana and printed creature power can be retrieved without asserting a distinctive focused relationship. Merely exercising an ordinary category capability, or an interactive operation alone, is insufficient under the proposed primary-admission policy; a qualifying cost or event/state dependency may occur within that same ability. These are working boundaries, not a general implemented baseline classifier or changes to current Discover admission.
+Let players define what they want to accomplish and discover cards and commanders with relevant mechanical relationships. The working model has two component types:
 
-For this investigation, earlier-event history is a **state** dependency: Tragic Slip checks whether a creature died this turn rather than responding to a death. Tannuk's own ability-resolution history is a significant internal prerequisite, not automatically a separately discoverable state contribution. Scute Swarm's independently meaningful land-count condition can overlap its land-entry event relationship. Hardened Scales remains a replacement modifying placement, not a trigger initiating it.
+- A **focused objective** finds rules-text-supported causal contributions to one precise event, state, or modification.
+- An **attribute selector** finds candidates by characteristics such as type, subtype, color, mana cost, name, and printed power or toughness.
 
-A research-only CLI can add candidates or restrict one selection by another while preserving physical identity and inclusion reasons. Basic functional selections can conjoin source tags to specify a narrower category. This is not production composition, a strategic relationship, an implemented state-objective system or universal validation of the model. The earlier physical observations that a large body can establish a threshold remain mechanically true; they do not by themselves decide focused primary admission. PR #48 remains separate unmerged research, with its original recommendations retained rather than overwritten.
+| Focused anchor | Contribution modes |
+| --- | --- |
+| Event | Generates the event, responds to the event, supplies inputs |
+| State | Contributes to the state, depends on the state |
+| Modification | Provides the modification, is subject to the modification |
 
-An intended capability is selecting contributions by how they relate **within** an objective. A creature-death plan might borrow creature-producing effects from a token objective without taking every mechanic that benefits from tokens. Another plan might seek only responses to a complementary event. Role words can be useful display shorthand, but the selection needs the underlying operation and direction, not a permanent card category.
+These modes describe contributions relative to the chosen anchor and can overlap on one card or ability. The shared relationship families supply the detailed evidence. For example, original-creature self-return can supply an input to a later death. A direct instruction can initiate counter placement. Hardened Scales modifies a separate qualifying placement. Placing a counter, changing power, and reaching a power threshold ask different mechanical questions. Shared eligibility for an objective establishes neither a complete interaction nor contextual value. [Creature-input evidence](CREATURE_INPUT_DISCOVERY.md) · [Counter placement evidence](COUNTER_PLACEMENT_DISCOVERY.md)
 
-The application might eventually suggest complementary questions from a mechanic's requirements: establishing a power threshold could enable Phoenix, for example. That is a hypothesis about connecting available capabilities, not evidence of a tested two-card interaction. Neither general directional filtering, selective layering nor automatic suggestions are implemented.
+### Focused admission and basic lands
 
-**Grouping** retains each objective's candidates, sources and uncertainty. **Connecting** requires evidence joining appropriate sources, objects, resources, owners/controllers, zones, timing, conditions, costs, effects and causal branches. Shared keywords or membership in complementary objectives prove neither an individual interaction nor strategic value. Mechanical dependencies remain necessary even though a dedicated pairwise strategic synergy model is not currently required.
+Adopted product policy requires at least one qualifying causal relationship supported by the card's rules text. Printed characteristics can establish whether a rules-text mechanic applies. Characteristics alone cannot qualify a card, and an unrelated printed ability does not supply the missing relationship. Apply no further categorical exclusion based on card strength, ordinary mechanics, interaction, or assumed strategic purpose.
 
-## Experimental deck evaluation hypothesis
+Explicit product policy excludes basic lands from all discovery results, including attribute-selector results. A future deck assembler can still use basic lands in a legal mana base.
 
-We want to investigate how far trustworthy mechanics, objectives and selective composition can take us through empirical evaluation without a separate card-to-card strategic synergy abstraction. That abstraction is not a prerequisite in the current direction; experimentation may later establish a worthwhile need. This is an active hypothesis, not proof that sophisticated piloting can emerge without strategic guidance.
+Today's fixed queries use their existing objective-specific policies, including the specialized creature-death admission and its historical removal pathway. The discovery-wide basic-land exclusion is an adopted policy for future implementation. PRs #48 and #49 merged their research records. Earlier role proposals, distinctive-contribution criteria, ordinary-capability and interaction hypotheses, and experimental selector results retain their original findings and evidence. [Contribution research](CONTRIBUTION_VALIDATION.md) · [Admission assessment](OBJECTIVE_ADMISSION_PRINCIPLES.md) · [Selection and composition experiment](SELECTION_COMPOSITION.md)
 
-Future experiments may combine:
+### Composition
 
-- Probability and resource-access analysis.
-- Objective-aware piloting and native game simulation where sufficiently supported.
-- Controlled deck substitutions and comparisons against defensible baselines.
-- Pressure and disruption tests.
-- Measurements of objective progress, resource efficiency, resilience, competitive outcomes and uncertainty.
+- **Include** adds matching candidates.
+- **Require** restricts the result to candidates that satisfy the component.
+- **Exclude** removes matching candidates.
 
-Simulation is neither implemented deck evaluation nor an inherently authoritative substitute for validating mechanics. Results depend on rules fidelity, decision policies, objectives, baselines and environment. Bounded curated Lab executions observe specified native positions; they do not establish representative deck performance. No simulator, pilot, optimization system or strategic score is authorized by this record.
+The intended result is **(Include A OR Include B) AND Require C AND Require D, excluding E**. Preserve candidate identity, overlapping inclusion reasons, uncertainty, and provenance across the operations. The historical research CLI demonstrated a bounded union and restriction. General production composition, objective construction, and attribute selection remain future capabilities.
 
-## Implemented coverage and a retained future experiment
+### Commander exploration
 
-The death query recognizes selected death sources, supported triggered operations, intrinsic original-creature self-return inputs and death-enhanced removal. Triggered coverage includes draw, token creation, forced sacrifice, direct life change and bounded player damage. The other queries and their boundaries are listed in the [README](../README.md#current-objectives). [Triggered operations evidence](TRIGGERED_OPERATIONS_DISCOVERY.md)
+Commander-first and objective-first are equally valid entry points in the intended system.
 
-The earlier renewable-creature proposal was implemented in the bounded [creature-input increment](CREATURE_INPUT_DISCOVERY.md), retaining original-card/action/branch binding, zones, controller, optionality, payment and limits. Walking Corpse remains ordinary material; token copies and return-to-hand do not qualify. Unsupported requirements and Wolfbat's finality limit remain unresolved for death input supply. This does not establish a general provider classifier or indefinite fuel.
+- **Commander-first** starts with a commander, inspects its recognized mechanics, and explores related objectives and selectors.
+- **Objective-first** starts by constructing objectives and discovering relevant cards and commander candidates, then selects a commander.
 
-The [source-tap correction](TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44; its original receipts remain revision-bound. This increment changes no mechanics or payment evidence. A bounded shared **triggered event-to-draw/token outcome relationship** is now implemented and consumed by the death objective. A subsequent bounded intrinsic creature-input increment consumes original-card self-return relationships; this does not implement general replacement interpretation, all input providers, objective construction or composition. [Known limitations](KNOWN_LIMITATIONS.md) owns current boundaries; historical follow-ups remain evidence, not an automatic implementation queue.
+Selecting a commander adds Commander legality and color-identity constraints while preserving the underlying objectives. Selection is optional during exploration and required before assembling a complete Commander deck. Guided exploration should suggest connections grounded in recognized mechanical capabilities. A shared noun or complementary candidate list is insufficient evidence for a card-to-card interaction.
+
+Today Discover uses a selected commander and six fixed objectives, including the merged counter-placement query. Objective-first commander discovery and guided suggestions remain future work. [Current objective inventory](../README.md#current-objectives)
+
+## C. Deck Construction and Contextual Evaluation
+
+The research direction is to construct provisional decks and investigate how reliably and effectively each configuration meets the chosen objectives. The methods below are proposals for investigation.
+
+- **Initial deck assembly.** Use a selected commander, composed objectives, discovered candidates, necessary resources, and transparent construction heuristics. Players can supply an existing deck in place of automatic initial assembly. Either starting point is provisional.
+- **Contextual evaluation.** Investigate probabilities and resource access, simple explicit sequencing policies, and optional player-supplied sequencing profiles for priorities at the deck, objective, card, or card-combination level. Use isolated native experiments and controlled pressure or disruption tests. Measure consistency, timing, objective progress, efficiency, resilience, and uncertainty under stated conditions.
+- **Iterative refinement.** Identify bottlenecks and compare substitutions or alternative configurations under matched assumptions. Account for what a displaced card contributed, and refine the deck using measured results within that context.
+
+Favor simple statistical methods, controlled native experiments, and interpretable heuristics. The research can proceed without sophisticated learning models, AI API dependencies, full multiplayer simulation, a mandatory pairwise synergy graph, or a universal card rating. The existing Lab observes curated native positions. Its evidence and the proposed methods have not been validated as predictors of actual Commander performance. [Mechanical Verification Lab](MECHANICAL_VERIFICATION_LAB.md) · [Known limitations](KNOWN_LIMITATIONS.md)
