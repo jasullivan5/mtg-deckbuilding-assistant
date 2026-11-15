@@ -27,6 +27,8 @@ class CounterPlacementTest : FunSpec({
         x.eventOutcomes.isEmpty() shouldBe true
         val effect = x.counterModifiers.single()
         x.actions.single { it.id == effect.action.actionId }.native shouldBe effect.action.native
+        x.structuralSupport.single { it.path == effect.action.path }.status shouldBe SupportStatus.SUPPORTED
+        x.unsupported.any { it.path.startsWith("script.replacementEffects") } shouldBe false
         val q = CounterQuestion(plus, ours, amount = 2, placer = Controller.OPPONENT, sourceZone = Zone.BATTLEFIELD)
         isolatedCounterModification(effect, q) shouldBe 3
         isolatedCounterModification(effect, q.copy(amount = 0)) shouldBe null
@@ -43,6 +45,8 @@ class CounterPlacementTest : FunSpec({
         fact.amount shouldBe DynamicAmount.Fixed(1)
         fact.targets.single().count shouldBe 2
         fact.optional shouldBe true
+        x.structuralSupport.single { it.path == fact.action.path }.status shouldBe SupportStatus.SUPPORTED
+        x.unsupported.any { it.path == fact.action.path } shouldBe false
         placement(fact) shouldBe Verdict.MATCH
         placement(fact, Requirements(controller = Controller.OPPONENT)) shouldBe Verdict.MATCH
         x.counterModifiers.isEmpty() shouldBe true

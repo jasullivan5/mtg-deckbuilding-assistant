@@ -43,7 +43,17 @@ const val COUNTER_OBJECTIVE = "place-plus-one-counters"
 @Serializable data class CounterPlacementModifier(
     val action: CounterAction, val pattern: EventPattern, val delta: Int?,
     val placedByYou: Boolean, val activeZones: Set<Zone>, val sourceCreature: Boolean
-)
+) {
+    fun recipientCompatibility(requirement: Requirements): Verdict {
+        fun compatible(recipient: Recipient): Verdict = when (recipient) {
+            Recipient.Self -> CounterRecipient(controller = "YOU", sourceCreature = sourceCreature).compatible(requirement)
+            is Recipient.Object -> CounterRecipient(filter = recipient.filter).compatible(requirement)
+            is Recipient.AnyOf -> any(recipient.options.map(::compatible))
+            is Recipient.Player, Recipient.AnotherPlayer -> Verdict.NO_MATCH
+        }
+        return (pattern as? EventPattern.CounterPlacementEvent)?.recipient?.let(::compatible) ?: Verdict.UNKNOWN
+    }
+}
 
 /** Structural questions can use a different counter type or recipient without rereading native scripts. */
 data class CounterQuestion(
@@ -65,12 +75,6 @@ fun counterPlacementDecisions(fact: CounterPlacement, type: CounterType, recipie
 
 fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQuestion): List<Decision> {
     val event = fact.pattern as? EventPattern.CounterPlacementEvent
-    fun compatible(recipient: Recipient): Verdict = when (recipient) {
-        Recipient.Self -> CounterRecipient(controller = "YOU", sourceCreature = fact.sourceCreature).compatible(question.recipient)
-        is Recipient.Object -> CounterRecipient(filter = recipient.filter).compatible(question.recipient)
-        is Recipient.AnyOf -> any(recipient.options.map(::compatible))
-        is Recipient.Player, Recipient.AnotherPlayer -> Verdict.NO_MATCH
-    }
     val counterType = when {
         event == null -> Verdict.UNKNOWN
         event.counterType == null || event.counterType == question.type -> Verdict.MATCH
@@ -84,13 +88,13 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
     }
     return listOf(
         Decision("modified-counter-type", counterType, "MECHANICAL", fact.pattern.description),
-        Decision("modified-recipient", event?.recipient?.let(::compatible) ?: Verdict.UNKNOWN, "MECHANICAL",
+        Decision("modified-recipient", fact.recipientCompatibility(question.recipient), "MECHANICAL",
             event?.recipient?.description ?: "Uninterpreted placement pattern"),
         Decision("positive-original-placement", if (question.amount != null && question.amount <= 0) Verdict.NO_MATCH else Verdict.MATCH,
             "MECHANICAL", "Requires a separate placement of one or more counters"),
         Decision("modifier-source", active, "MECHANICAL", "Source active zones: ${fact.activeZones}"),
         Decision("placing-player", if (fact.placedByYou && question.placer == Controller.OPPONENT) Verdict.NO_MATCH else Verdict.MATCH,
-            "MECHANICAL", if (fact.placedByYou) "The modifier's controller must place the counters" else "Either player may place the counters"),
+            "MECHANICAL", if (fact.placedByYou) "The modifier's controller must place the counters" else "Any player may place the counters"),
         Decision("placement-change", when (fact.delta) { null -> Verdict.UNKNOWN; 0 -> Verdict.NO_MATCH; else -> Verdict.MATCH },
             "MECHANICAL", fact.action.description)
     )

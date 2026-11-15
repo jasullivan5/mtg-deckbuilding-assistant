@@ -438,7 +438,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actionId="${card.name}|$label|script.unsupported"
         val scriptTree=nativeJson.encodeToJsonElement(CardScript.serializer(),script).jsonObject
         val handled=setOf("spellEffect","additionalCosts","targetRequirements","activatedAbilities","triggeredAbilities","stateTriggeredAbilities","sagaChapters","classLevels","staticAbilities","selfAlternativeCost")
-        val remainder=JsonObject(scriptTree.filterKeys { it !in handled })
+        val remainder=JsonObject(scriptTree.filterKeys { it !in handled && !(inspectCounters && it == "replacementEffects") })
         if(remainder.isNotEmpty()) {
             actions += ActionEvidence(actionId,card.name,label,"script.unsupported",emptyList(),remainder)
             remainder.forEach { (key,_) -> issue("script.$key",script,"Additional script field retained but not interpreted") }
@@ -747,29 +747,42 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     private fun recordCounterReplacement(index: Int, effect: ReplacementEffect) {
         val path = "script.replacementEffects[$index]"
         val id = "${card.name}|$face|$path"
+        actionId = id
         val native = nativeJson.encodeToJsonElement(ReplacementEffect.serializer(), effect)
         val checkpoint = when (effect) {
             is ModifyCounterPlacement, is DoubleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
             is EntersWithCounters, is EntersWithDynamicCounters -> "Counters are placed as part of entering the battlefield. The native entry and casting requirements apply."
-            else -> return
+            else -> {
+                actions += ActionEvidence(id, card.name, face, path, emptyList(), native)
+                issue(path, effect, "Replacement declaration retained without counter-placement interpretation")
+                return
+            }
         }
         val origin = CounterAction(card.name, face, id, path, native, effect.description, listOf(checkpoint))
         actions += ActionEvidence(id, card.name, face, path, origin.prerequisites, native)
-        when (effect) {
-            is ModifyCounterPlacement -> counterModifiers += CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
-                effect.placedByYou, effect.activeZones, selfCreature)
-            is DoubleCounterPlacement -> counterModifiers += CounterPlacementModifier(origin, effect.appliesTo, null,
-                effect.placedByYou, effect.activeZones, selfCreature)
+        val confidence = when (effect) {
+            is ModifyCounterPlacement -> {
+                val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
+                    effect.placedByYou, effect.activeZones, selfCreature)
+                counterModifiers += modifier
+                modifier.recipientCompatibility(Requirements(creature = false))
+            }
+            is DoubleCounterPlacement -> {
+                counterModifiers += CounterPlacementModifier(origin, effect.appliesTo, null,
+                    effect.placedByYou, effect.activeZones, selfCreature)
+                Verdict.UNKNOWN
+            }
             is EntersWithCounters -> recordEntryCounters(origin, effect.counterType, DynamicAmount.Fixed(effect.count),
                 effect.appliesTo, effect.activeZones, effect.selfOnly, effect.otherOnly, effect.condition?.description)
             is EntersWithDynamicCounters -> recordEntryCounters(origin, effect.counterType, effect.count,
                 effect.appliesTo, effect.activeZones, !effect.otherOnly, effect.otherOnly, null)
-            else -> Unit
+            else -> Verdict.UNKNOWN
         }
+        recordCounterSupport(path, effect, confidence)
     }
 
     private fun recordEntryCounters(origin: CounterAction, type: CounterType, amount: DynamicAmount, pattern: EventPattern,
-                                    active: Set<Zone>, self: Boolean, other: Boolean, condition: String?) {
+                                    active: Set<Zone>, self: Boolean, other: Boolean, condition: String?): Verdict {
         val entry = pattern as? EventPattern.ZoneChangeEvent
         val recipient = when {
             self && !other -> CounterRecipient(controller = "YOU", sourceCreature = selfCreature)
@@ -789,18 +802,28 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             "The native entry condition must hold: $condition".takeIf { condition != null },
             "Cast this permanent with X greater than zero and pay the native X cost.".takeIf { castX }
         )
+        val quantity = if (castX) Verdict.MATCH else amountBounds(amount).positivePotential()
         counterPlacements += CounterPlacement(origin.copy(prerequisites = prerequisites), type, amount, PlacementTiming.ENTRY,
-            recipient, EffectTarget.Self.takeIf { self && !other }, emptyList(), false,
-            if (castX) Verdict.MATCH else amountBounds(amount).positivePotential(), context)
+            recipient, EffectTarget.Self.takeIf { self && !other }, emptyList(), false, quantity, context)
+        return counterSupportConfidence(context, quantity, recipient)
     }
 
-    private fun recordCounterInstruction(effect: Effect, path: String, frame: Frame) {
+    private fun counterSupportConfidence(context: Verdict, quantity: Verdict, recipient: CounterRecipient): Verdict =
+        if (Verdict.UNKNOWN in listOf(context, quantity, recipient.compatible(Requirements(creature = false)))) Verdict.UNKNOWN else Verdict.MATCH
+
+    private fun recordCounterSupport(path: String, native: Any, confidence: Verdict) {
+        if (confidence == Verdict.UNKNOWN)
+            issue(path, native, "Counter operation retained with unresolved quantity, applicability or context", SupportStatus.PARTIALLY_SUPPORTED)
+        else support(path, native, SupportStatus.SUPPORTED, "Native counter operation and its scope are interpreted")
+    }
+
+    private fun recordCounterInstruction(effect: Effect, path: String, frame: Frame): Boolean {
         val (type, amount, target) = when (effect) {
             is AddCountersEffect -> Triple(effect.counterType, DynamicAmount.Fixed(effect.count), effect.target)
             is AddDynamicCountersEffect -> Triple(effect.counterType, effect.amount, effect.target)
             is AddCountersWithLimitEffect -> Triple(effect.counterType, effect.amount, effect.target)
             is AddCountersUpToEffect -> Triple(effect.counterType, effect.max, effect.target)
-            else -> return
+            else -> return false
         }
         val requirement = if (frame.counterTargetIteration && target == EffectTarget.ContextTarget(0))
             frame.targets.singleOrNull() else targetRequirement(target, frame)
@@ -820,14 +843,17 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             "Only the current chosen target receives this quantity in each iteration.".takeIf { frame.counterTargetIteration },
             "A positive quantity must be chosen.".takeIf { effect is AddCountersUpToEffect }
         )
+        val quantity = amountBounds(amount).positivePotential()
         counterPlacements += CounterPlacement(CounterAction(card.name, face, actionId, path, effect.tree(), effect.description,
             prerequisites), type, amount, PlacementTiming.RESOLUTION, recipient, target, frame.targets,
             frame.optional || requirement?.optional == true || effect is AddCountersUpToEffect,
-            amountBounds(amount).positivePotential(), context)
+            quantity, context)
+        recordCounterSupport(path, effect, counterSupportConfidence(context, quantity, recipient))
+        return true
     }
 
     private fun walk(e: Effect,path: String,frame: Frame) {
-        if (inspectCounters) recordCounterInstruction(e, path, frame)
+        if (inspectCounters && recordCounterInstruction(e, path, frame)) return
         if(recordToken(e,path,frame)) return
         if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
         if(e is DrawCardsEffect && frame.event!=null) {

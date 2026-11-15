@@ -1,5 +1,9 @@
 package dev.mtg.assistant.explorer
 
+import com.wingedsheep.sdk.scripting.EventPattern
+import com.wingedsheep.sdk.scripting.events.Recipient
+import com.wingedsheep.sdk.scripting.predicates.CardPredicate
+import com.wingedsheep.sdk.scripting.predicates.ControllerPredicate
 import dev.mtg.assistant.discovery.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.*
@@ -102,6 +106,13 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
             "Quantity per recipient: ${fact.amount.description}")
     }
     result.counterModifier?.let { fact ->
+        val pattern = fact.pattern as? EventPattern.CounterPlacementEvent
+        val filter = (pattern?.recipient as? Recipient.Object)?.filter
+        val scope = if (pattern != null && filter != null && filter.cardPredicates == listOf(CardPredicate.IsCreature) &&
+            filter.statePredicates.isEmpty() && filter.anyOf.isEmpty() &&
+            filter.controllerPredicate == ControllerPredicate.ControlledByYou)
+            "Applies when ${pattern.counterType?.printed ?: "any"} counters would be placed on a creature you control."
+        else "Native applicability: ${fact.pattern.description}."
         val change = when {
             fact.delta == null -> "The native change is retained for inspection."
             fact.delta > 0 -> "It adds ${fact.delta} to the number placed."
@@ -109,9 +120,9 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
             else -> "Its signed change is zero."
         }
         return PathwayExplanation("This replacement changes an impending placement. $change",
-            fact.action.prerequisites + listOf("Pattern: ${fact.pattern.description}.",
+            fact.action.prerequisites + listOf(scope,
                 "Active source zones: ${fact.activeZones.joinToString { it.displayName }}.",
-                if (fact.placedByYou) "The modifier's controller must place the counters." else "Either player can place the counters."),
+                if (fact.placedByYou) "The modifier's controller must place the counters." else "Any player can place the counters."),
             result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
             "Another operation must initiate the placement.")
     }
