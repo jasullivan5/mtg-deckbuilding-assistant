@@ -1,0 +1,677 @@
+{
+  "existingObjectives": [
+    {
+      "report": "judith-own-nontoken-creature-deaths.json",
+      "equal": true,
+      "beforeSha256": "3fa49697ae0cd7e148dd854939f6f90c5513eaeb674bda4af2030ca5f312c95f",
+      "afterSha256": "3fa49697ae0cd7e148dd854939f6f90c5513eaeb674bda4af2030ca5f312c95f"
+    },
+    {
+      "report": "judith-creature-died-this-turn.json",
+      "equal": true,
+      "beforeSha256": "076965d2e77a9e5516c3e21af207701444cb53b0caeab8c0d509703f18ef3204",
+      "afterSha256": "076965d2e77a9e5516c3e21af207701444cb53b0caeab8c0d509703f18ef3204"
+    },
+    {
+      "report": "judith-reanimate-own-creatures.json",
+      "equal": true,
+      "beforeSha256": "a95f1d8e1f4b064722a5c01e24ac878f9d60ee5659c188b7762f0bb1be1a3fd0",
+      "afterSha256": "a95f1d8e1f4b064722a5c01e24ac878f9d60ee5659c188b7762f0bb1be1a3fd0"
+    },
+    {
+      "report": "judith-create-creature-tokens.json",
+      "equal": true,
+      "beforeSha256": "9355fb52116358ad56f999f986fcf6ea63285bc4f128cb04eceeb91fcad917f5",
+      "afterSha256": "9355fb52116358ad56f999f986fcf6ea63285bc4f128cb04eceeb91fcad917f5"
+    },
+    {
+      "report": "judith-stock-own-graveyard.json",
+      "equal": true,
+      "beforeSha256": "82906461411bbbaa5c6ab8b81c76f320f9de8d9b4d29ef6ff2311231e0458acb",
+      "afterSha256": "82906461411bbbaa5c6ab8b81c76f320f9de8d9b4d29ef6ff2311231e0458acb"
+    },
+    {
+      "report": "krenko-own-nontoken-creature-deaths.json",
+      "equal": true,
+      "beforeSha256": "886cedd0c280e8d16ab39320cd104ebb257f659801b71aeb08246eb8ab3dbc9a",
+      "afterSha256": "886cedd0c280e8d16ab39320cd104ebb257f659801b71aeb08246eb8ab3dbc9a"
+    },
+    {
+      "report": "krenko-creature-died-this-turn.json",
+      "equal": true,
+      "beforeSha256": "3148a5d7e8740b8e0344508e7bf968d285022a329290f8b5cef70318d3865ea4",
+      "afterSha256": "3148a5d7e8740b8e0344508e7bf968d285022a329290f8b5cef70318d3865ea4"
+    },
+    {
+      "report": "krenko-reanimate-own-creatures.json",
+      "equal": true,
+      "beforeSha256": "02fa883318af8bc7459246a9e508db2cf1431509cf3bb84097d199d2858fedd4",
+      "afterSha256": "02fa883318af8bc7459246a9e508db2cf1431509cf3bb84097d199d2858fedd4"
+    },
+    {
+      "report": "krenko-create-creature-tokens.json",
+      "equal": true,
+      "beforeSha256": "49584f93329f4ab16e4ffcc11129dfc3d9f50bc8a89ecd5ee6247c6c1f755aa9",
+      "afterSha256": "49584f93329f4ab16e4ffcc11129dfc3d9f50bc8a89ecd5ee6247c6c1f755aa9"
+    },
+    {
+      "report": "krenko-stock-own-graveyard.json",
+      "equal": true,
+      "beforeSha256": "97e30da06be1ede523709374c8eae798198d734a8a295e7077cb9aa4a66815a9",
+      "afterSha256": "97e30da06be1ede523709374c8eae798198d734a8a295e7077cb9aa4a66815a9"
+    },
+    {
+      "report": "kenrith-own-nontoken-creature-deaths.json",
+      "equal": true,
+      "beforeSha256": "3ba9f1fcff878d57bcf7fdf95319ddf2a4e589acd76f48140272e29fff43ba99",
+      "afterSha256": "3ba9f1fcff878d57bcf7fdf95319ddf2a4e589acd76f48140272e29fff43ba99"
+    },
+    {
+      "report": "kenrith-creature-died-this-turn.json",
+      "equal": true,
+      "beforeSha256": "e5a3b1a2253bb79ce9a37aab1dfa925d9265dad0c9f48594f3d159101b1b8663",
+      "afterSha256": "e5a3b1a2253bb79ce9a37aab1dfa925d9265dad0c9f48594f3d159101b1b8663"
+    },
+    {
+      "report": "kenrith-reanimate-own-creatures.json",
+      "equal": true,
+      "beforeSha256": "246612938d09b86c084b0686a8631e09ab673631359776b71ac84141e93fa8d4",
+      "afterSha256": "246612938d09b86c084b0686a8631e09ab673631359776b71ac84141e93fa8d4"
+    },
+    {
+      "report": "kenrith-create-creature-tokens.json",
+      "equal": true,
+      "beforeSha256": "e81440ab53f8cae8e4a7f96029f7247a204edd61374f45e57cbb06c6cc20345c",
+      "afterSha256": "e81440ab53f8cae8e4a7f96029f7247a204edd61374f45e57cbb06c6cc20345c"
+    },
+    {
+      "report": "kenrith-stock-own-graveyard.json",
+      "equal": true,
+      "beforeSha256": "07517c34ec20934467d2f0d17e9b4812904cc8e5258ca9ed9f131dad9140da9c",
+      "afterSha256": "07517c34ec20934467d2f0d17e9b4812904cc8e5258ca9ed9f131dad9140da9c"
+    }
+  ],
+  "counterObjective": [
+    {
+      "commander": "Judith, the Scourge Diva",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "unsupportedStructures": 8110,
+      "structuralSupportRecords": 12531,
+      "total": {
+        "MATCH": {
+          "cards": 176,
+          "pathways": 184
+        },
+        "UNKNOWN": {
+          "cards": 136,
+          "pathways": 140
+        },
+        "NO_MATCH": {
+          "cards": 198,
+          "pathways": 234
+        }
+      },
+      "byRelationship": {
+        "COUNTER_PLACEMENT": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 135,
+            "pathways": 139
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "COUNTER_MODIFICATION": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        }
+      },
+      "controls": {
+        "Hardened Scales": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "GREEN"
+            ]
+          },
+          "pathways": []
+        },
+        "Travel Preparations": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "GREEN",
+              "WHITE"
+            ]
+          },
+          "pathways": []
+        },
+        "Walking Ballista": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "UNKNOWN",
+            "identity": []
+          },
+          "pathways": []
+        },
+        "Abzan Falconer": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "WHITE"
+            ]
+          },
+          "pathways": []
+        },
+        "Winding Constrictor": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "BLACK",
+              "GREEN"
+            ]
+          },
+          "pathways": []
+        },
+        "Wall of Roots": {
+          "eligibility": null,
+          "pathways": []
+        },
+        "Goblin Chieftain": {
+          "eligibility": null,
+          "pathways": []
+        }
+      },
+      "representativeUnknowns": [
+        "Adder-Staff Boggart",
+        "Agatha's Soul Cauldron",
+        "Arcbound Condor",
+        "Arcbound Slasher",
+        "Arcbound Whelp",
+        "Archenemy's Charm",
+        "Ashnod's Transmogrant",
+        "Auntie Blyte, Bad Influence",
+        "Ayara's Oathsworn",
+        "Azula Always Lies",
+        "Beetle-Headed Merchants",
+        "Blacksnag Buzzard"
+      ],
+      "samePopulationAsExistingObjectives": true
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "unsupportedStructures": 4700,
+      "structuralSupportRecords": 6777,
+      "total": {
+        "MATCH": {
+          "cards": 83,
+          "pathways": 88
+        },
+        "UNKNOWN": {
+          "cards": 62,
+          "pathways": 64
+        },
+        "NO_MATCH": {
+          "cards": 110,
+          "pathways": 136
+        }
+      },
+      "byRelationship": {
+        "COUNTER_PLACEMENT": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "COUNTER_MODIFICATION": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        }
+      },
+      "controls": {
+        "Hardened Scales": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "GREEN"
+            ]
+          },
+          "pathways": []
+        },
+        "Travel Preparations": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "GREEN",
+              "WHITE"
+            ]
+          },
+          "pathways": []
+        },
+        "Walking Ballista": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "UNKNOWN",
+            "identity": []
+          },
+          "pathways": []
+        },
+        "Abzan Falconer": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "WHITE"
+            ]
+          },
+          "pathways": []
+        },
+        "Winding Constrictor": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "NO_MATCH",
+            "identity": [
+              "BLACK",
+              "GREEN"
+            ]
+          },
+          "pathways": []
+        },
+        "Wall of Roots": {
+          "eligibility": null,
+          "pathways": []
+        },
+        "Goblin Chieftain": {
+          "eligibility": null,
+          "pathways": []
+        }
+      },
+      "representativeUnknowns": [
+        "Adder-Staff Boggart",
+        "Agatha's Soul Cauldron",
+        "Arcbound Slasher",
+        "Arcbound Whelp",
+        "Ashnod's Transmogrant",
+        "Auntie Blyte, Bad Influence",
+        "Blazing Bomb",
+        "Bloodthirsty Adversary",
+        "Child of the Volcano",
+        "Clamor Shaman",
+        "First Day of Class",
+        "Forge Armor"
+      ],
+      "samePopulationAsExistingObjectives": true
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "unsupportedStructures": 23647,
+      "structuralSupportRecords": 35442,
+      "total": {
+        "MATCH": {
+          "cards": 658,
+          "pathways": 694
+        },
+        "UNKNOWN": {
+          "cards": 605,
+          "pathways": 652
+        },
+        "NO_MATCH": {
+          "cards": 537,
+          "pathways": 615
+        }
+      },
+      "byRelationship": {
+        "COUNTER_PLACEMENT": {
+          "MATCH": {
+            "cards": 652,
+            "pathways": 687
+          },
+          "UNKNOWN": {
+            "cards": 598,
+            "pathways": 645
+          },
+          "NO_MATCH": {
+            "cards": 535,
+            "pathways": 613
+          }
+        },
+        "COUNTER_MODIFICATION": {
+          "MATCH": {
+            "cards": 7,
+            "pathways": 7
+          },
+          "UNKNOWN": {
+            "cards": 7,
+            "pathways": 7
+          },
+          "NO_MATCH": {
+            "cards": 2,
+            "pathways": 2
+          }
+        }
+      },
+      "controls": {
+        "Hardened Scales": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "MATCH",
+            "identity": [
+              "GREEN"
+            ]
+          },
+          "pathways": [
+            {
+              "branch": "COUNTER_MODIFICATION",
+              "actionId": "Hardened Scales|front|script.replacementEffects[0]",
+              "abilityPath": "script.replacementEffects[0]",
+              "verdict": "MATCH",
+              "decisions": [
+                {
+                  "stage": "modified-counter-type",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "+1/+1 counters would be placed on you control creature"
+                },
+                {
+                  "stage": "modified-recipient",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "you control creature"
+                },
+                {
+                  "stage": "positive-original-placement",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Requires a separate placement of one or more counters"
+                },
+                {
+                  "stage": "modifier-source",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Source active zones: [BATTLEFIELD]"
+                },
+                {
+                  "stage": "placing-player",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Any player may place the counters"
+                },
+                {
+                  "stage": "placement-change",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "If +1/+1 counters would be placed on you control creature, 1 additional counter is placed"
+                }
+              ]
+            }
+          ]
+        },
+        "Travel Preparations": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "MATCH",
+            "identity": [
+              "GREEN",
+              "WHITE"
+            ]
+          },
+          "pathways": [
+            {
+              "branch": "COUNTER_PLACEMENT",
+              "actionId": "Travel Preparations|front|script.spell",
+              "abilityPath": "script.spellEffect.body",
+              "verdict": "MATCH",
+              "decisions": [
+                {
+                  "stage": "counter-type",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "+1/+1"
+                },
+                {
+                  "stage": "counter-recipient",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "creature"
+                },
+                {
+                  "stage": "positive-placement",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Quantity per eligible recipient: 1"
+                },
+                {
+                  "stage": "placement-context",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Native RESOLUTION and branch requirements apply"
+                }
+              ]
+            }
+          ]
+        },
+        "Walking Ballista": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "UNKNOWN",
+            "identity": []
+          },
+          "pathways": []
+        },
+        "Abzan Falconer": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "MATCH",
+            "identity": [
+              "WHITE"
+            ]
+          },
+          "pathways": [
+            {
+              "branch": "COUNTER_PLACEMENT",
+              "actionId": "Abzan Falconer|front|script.activatedAbilities[0]",
+              "abilityPath": "script.activatedAbilities[0].effect",
+              "verdict": "MATCH",
+              "decisions": [
+                {
+                  "stage": "counter-type",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "+1/+1"
+                },
+                {
+                  "stage": "counter-recipient",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "card"
+                },
+                {
+                  "stage": "positive-placement",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Quantity per eligible recipient: 1"
+                },
+                {
+                  "stage": "placement-context",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Native RESOLUTION and branch requirements apply"
+                }
+              ]
+            }
+          ]
+        },
+        "Winding Constrictor": {
+          "eligibility": {
+            "format": "MATCH",
+            "deck": "MATCH",
+            "identity": [
+              "BLACK",
+              "GREEN"
+            ]
+          },
+          "pathways": [
+            {
+              "branch": "COUNTER_MODIFICATION",
+              "actionId": "Winding Constrictor|front|script.replacementEffects[0]",
+              "abilityPath": "script.replacementEffects[0]",
+              "verdict": "MATCH",
+              "decisions": [
+                {
+                  "stage": "modified-counter-type",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "counters would be placed on you control artifact or creature"
+                },
+                {
+                  "stage": "modified-recipient",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "you control artifact or creature"
+                },
+                {
+                  "stage": "positive-original-placement",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Requires a separate placement of one or more counters"
+                },
+                {
+                  "stage": "modifier-source",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Source active zones: [BATTLEFIELD]"
+                },
+                {
+                  "stage": "placing-player",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Any player may place the counters"
+                },
+                {
+                  "stage": "placement-change",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "If counters would be placed on you control artifact or creature, 1 additional counter is placed"
+                }
+              ]
+            },
+            {
+              "branch": "COUNTER_MODIFICATION",
+              "actionId": "Winding Constrictor|front|script.replacementEffects[1]",
+              "abilityPath": "script.replacementEffects[1]",
+              "verdict": "NO_MATCH",
+              "decisions": [
+                {
+                  "stage": "modified-counter-type",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "counters would be placed on you"
+                },
+                {
+                  "stage": "modified-recipient",
+                  "verdict": "NO_MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "you"
+                },
+                {
+                  "stage": "positive-original-placement",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Requires a separate placement of one or more counters"
+                },
+                {
+                  "stage": "modifier-source",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Source active zones: [BATTLEFIELD]"
+                },
+                {
+                  "stage": "placing-player",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "Any player may place the counters"
+                },
+                {
+                  "stage": "placement-change",
+                  "verdict": "MATCH",
+                  "basis": "MECHANICAL",
+                  "reason": "If counters would be placed on you, 1 additional counter is placed"
+                }
+              ]
+            }
+          ]
+        },
+        "Wall of Roots": {
+          "eligibility": null,
+          "pathways": []
+        },
+        "Goblin Chieftain": {
+          "eligibility": null,
+          "pathways": []
+        }
+      },
+      "representativeUnknowns": [
+        "A Killer Among Us",
+        "Aang, Swift Savior",
+        "Aang, at the Crossroads",
+        "Abandoned Air Temple",
+        "Abzan Ascendancy",
+        "Academy Drake",
+        "Action News Crew",
+        "Adder-Staff Boggart",
+        "Additive Evolution",
+        "Advocate of the Beast",
+        "Aegis Sculptor",
+        "Aeronaut Cavalry"
+      ],
+      "samePopulationAsExistingObjectives": true
+    }
+  ]
+}
