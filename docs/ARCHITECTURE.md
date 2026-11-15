@@ -4,7 +4,7 @@
 
 ## Conceptual direction and implementation boundary
 
-Card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation. The last two stages combine current bounded discovery with intended capabilities; they are not completed services or a module-refactoring plan. General relationship filters, selective composition and deck evaluation remain unimplemented. A dedicated pairwise strategic synergy layer is not a prerequisite in the current hypothesis; source/object/resource/zone/timing/condition/cost/effect bindings remain necessary for causal mechanical relationships. See the product record and [bounded assessment](OBJECTIVE_BUILDING_BLOCKS.md) for the working building-block framing, optional role descriptions and empirical direction. No new schema, extractor or objective implementation follows from this explanation.
+The product direction assigns identity, native representation, shared interpretation, and trust to Card Integration. The application's current discovery queries reuse the resulting mechanical evidence under a selected commander's constraints. General composition and objective-first exploration are intended capabilities. Deck assembly and contextual evaluation are areas of research. [Three working models](OBJECTIVE_MODEL.md)
 
 ## Coverage and evidence projections
 
@@ -44,8 +44,6 @@ One exclusive research worker prevents overlapping expensive queries. Four bound
 The Windows launcher installs locked frontend dependencies, builds both layers and starts one foreground JVM. Live discovery, verified imagery/fallbacks, focused finding inspection and Progress are implemented. The Mechanical Verification Lab seeds curated positions and submits genuine native actions through Argentum, showing expected/observed outcomes and exact state/events; it is not an arbitrary sandbox or deck simulator. See [Lab responsibilities and limits](MECHANICAL_VERIFICATION_LAB.md#runtime-design). M1/M2 have bounded user acceptance; later merged features and tests do not imply blanket experience acceptance or translation certification. [Review history](EXPLORER_MILESTONES.md) retains earlier failures and decisions.
 
 The frontend presents native extraction and application decisions. Accounts, multiplayer, deck editing, databases, desktop packaging, hosted infrastructure, new objectives and replacement rules execution remain outside M1. Selective reuse of Argentum client assets still requires coupling, provenance and licensing review. [Presentation safeguards](../AGENTS.md#visualization-fidelity) apply to future increments.
-
-The [objective direction](OBJECTIVE_MODEL.md) distinguishes mechanical capabilities, objective-relative roles and contextual value. Current query coverage remains narrower; future composition and evaluation require separately approved assignments.
 
 ## Application pipeline
 

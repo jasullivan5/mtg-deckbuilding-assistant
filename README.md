@@ -28,11 +28,11 @@ The running application and live Git are the living sources of product direction
 
 PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have explicit bounded experience acceptance; later merges and demonstrations do not imply blanket acceptance or independent qualification. [Milestones](docs/EXPLORER_MILESTONES.md) retains the original plan and acceptance history. Current measurements live in Progress and their revision-bound receipts. Global external measurements require an explicit compatible snapshot; see the Progress guide.
 
-The conceptual direction is **card identity/rules → native definitions → mechanical facts/capabilities → objective discovery and selective layering → experimental deck evaluation**. The bounded [building-block assessment](docs/OBJECTIVE_BUILDING_BLOCKS.md) informs the current hypothesis: focused event, state or modification anchors, described through game elements and overlapping directional effect/outcome relationships; role names remain optional descriptions. This is not an implemented objective schema. A separate card-to-card strategic synergy model is not a prerequisite in the current hypothesis; valid mechanical dependencies still matter. General relationship filters, composition, objective-aware piloting and deck evaluation are not implemented.
+**Card Integration** establishes what cards do and the evidence for that understanding. **Composable Objective Discovery** uses those mechanics to find candidates relative to a player's goals. **Deck Construction and Contextual Evaluation** investigates how well a particular deck might achieve those goals. Discover currently uses a selected commander and six fixed objectives. General composition, objective-first commander exploration, and deck evaluation remain future capabilities. The near-term priority is expanding trustworthy, reusable mechanical understanding and card integration. [Three working models](docs/OBJECTIVE_MODEL.md)
 
 | Authority | Home |
 | --- | --- |
-| Product decisions, objective building blocks and evaluation hypotheses | [OBJECTIVE_MODEL](docs/OBJECTIVE_MODEL.md) |
+| The three working models, adopted policies, and evaluation research direction | [OBJECTIVE_MODEL](docs/OBJECTIVE_MODEL.md) |
 | Actual responsibilities and engine integration | [ARCHITECTURE](docs/ARCHITECTURE.md), [ENGINE_WORKFLOW](docs/ENGINE_WORKFLOW.md) |
 | Current boundaries and unresolved problems | [KNOWN_LIMITATIONS](docs/KNOWN_LIMITATIONS.md), linked focused investigations |
 | How Codex works, verifies and delivers | [AGENTS](AGENTS.md), [environment](docs/CODEX_ENVIRONMENT.md), [layout](docs/REPOSITORY_LAYOUT.md) |
