@@ -5,6 +5,11 @@ import com.wingedsheep.sdk.dsl.Conditions
 import com.wingedsheep.sdk.dsl.Costs
 import com.wingedsheep.sdk.dsl.Effects
 import com.wingedsheep.sdk.dsl.card
+import com.wingedsheep.sdk.scripting.*
+import com.wingedsheep.sdk.scripting.conditions.Compare
+import com.wingedsheep.sdk.scripting.conditions.ComparisonOperator
+import com.wingedsheep.sdk.scripting.references.Player
+import com.wingedsheep.sdk.scripting.values.DynamicAmount
 import com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition
 import com.wingedsheep.sdk.scripting.conditions.PlayerDrewCardsThisTurn
 import dev.mtg.assistant.discovery.*
@@ -40,12 +45,56 @@ class ConditionalCostTest : FunSpec({
         extracted.stateDependencies.isEmpty() shouldBe true
     }
 
-    test("Wizard predicate is retained unresolved and neither resolution effects nor Class levels become discounts") {
+    test("Wizard existence qualifies at casting and unrelated mechanics remain separate") {
         val wizard = extract("Academy Journeymage").actions.flatMap { it.conditionalCosts }.single()
-        wizard.verdict shouldBe Verdict.UNKNOWN
+        val filter = GameObjectFilter.Any.withSubtype("Wizard")
+        wizard.condition shouldBe Compare(
+            DynamicAmount.AggregateBattlefield(Player.You, filter), ComparisonOperator.GTE, DynamicAmount.Fixed(1)
+        )
+        wizard.checkpoint shouldBe PaymentCheckpoint.CASTING
+        wizard.baseMana shouldBe ManaCost.parse("{4}{U}")
+        wizard.isolatedManaWhenTrue shouldBe ManaCost.parse("{3}{U}")
+        wizard.verdict shouldBe Verdict.MATCH
         for (name in listOf("Tragic Slip", "Innkeeper's Talent", "Walking Corpse")) {
             extract(name).actions.flatMap { it.conditionalCosts }.isEmpty() shouldBe true
         }
+    }
+
+    test("supported Desert land and flying creature filters retain their full native restrictions") {
+        for ((name, price) in listOf("Cactarantula" to "{3}{G}{G}", "Winged Words" to "{1}{U}")) {
+            val cost = extract(name).actions.flatMap { it.conditionalCosts }.single()
+            val native = cost.reductionSource as CostReductionSource.FixedIfControlFilter
+            val condition = cost.condition as Compare
+            (condition.left as DynamicAmount.AggregateBattlefield).filter shouldBe native.filter
+            cost.isolatedManaWhenTrue shouldBe ManaCost.parse(price)
+        }
+        val discounts = extract("Geistlight Snare").actions.single { it.conditionalCosts.isNotEmpty() }.conditionalCosts
+        discounts.size shouldBe 2
+        discounts.map { it.declarationPath }.distinct().size shouldBe 2
+        discounts.map { it.isolatedManaWhenTrue } shouldBe List(2) { ManaCost.parse("{1}{U}") }
+    }
+
+    test("unsupported predicates and unresolved actors differ from a contradictory controller") {
+        controlledBattlefieldExistenceSupport(Player.You, GameObjectFilter.Creature.tapped()) shouldBe Verdict.UNKNOWN
+        controlledBattlefieldExistenceSupport(Player.Each, GameObjectFilter.Creature) shouldBe Verdict.UNKNOWN
+        controlledBattlefieldExistenceSupport(Player.You, GameObjectFilter.Creature.opponentControls()) shouldBe Verdict.NO_MATCH
+    }
+
+    test("zero reductions have no effect and variable base mana remains unresolved") {
+        fun cost(amount: Int, base: String, gate: CostGating = CostGating.None) = checkNotNull(selfCastingConditionalCost(
+            "synthetic.static[0]",
+            ModifySpellCost(
+                target = SpellCostTarget.SelfCast,
+                gating = gate,
+                modification = CostModification.ReduceGenericBy(
+                    CostReductionSource.FixedIfControlFilter(amount, GameObjectFilter.Artifact)
+                )
+            ),
+            ManaCost.parse(base)
+        ))
+        cost(0, "{2}{U}").verdict shouldBe Verdict.NO_MATCH
+        cost(1, "{X}{U}").verdict shouldBe Verdict.UNKNOWN
+        cost(1, "{2}{U}", CostGating.NthOfTypePerTurn(2)).verdict shouldBe Verdict.UNKNOWN
     }
 
     test("a synthetic sibling activation does not inherit another ability's discount") {

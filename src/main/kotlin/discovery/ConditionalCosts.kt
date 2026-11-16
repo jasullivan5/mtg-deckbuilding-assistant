@@ -54,11 +54,28 @@ internal fun selfCastingConditionalCost(path: String, ability: StaticAbility, ba
     if (change.target != SpellCostTarget.SelfCast) return null
     val source = (change.modification as? CostModification.ReduceGenericBy)?.source ?: return null
     if (source is CostReductionSource.Fixed && change.gating == CostGating.None && change.optionalLifePayment == null) return null
-    val deathReduction = source as? CostReductionSource.FixedIfCreatureDiedThisTurn
-    val amount = deathReduction?.amount?.takeIf { it >= 0 }
-    val isolated = amount?.takeIf { base.isFixed() && change.gating == CostGating.None && change.optionalLifePayment == null }
+    val actor = Player.You
+    val condition = when (source) {
+        is CostReductionSource.FixedIfCreatureDiedThisTurn -> CreatureDiedThisTurnCondition
+        is CostReductionSource.FixedIfControlFilter -> controlledBattlefieldExists(actor, source.filter)
+        else -> null
+    }
+    val amount = when (source) {
+        is CostReductionSource.FixedIfCreatureDiedThisTurn -> source.amount
+        is CostReductionSource.FixedIfControlFilter -> source.amount
+        else -> null
+    }?.takeIf { it >= 0 }
+    val predicateSupported = when (source) {
+        is CostReductionSource.FixedIfCreatureDiedThisTurn -> true
+        is CostReductionSource.FixedIfControlFilter ->
+            controlledBattlefieldExistenceSupport(actor, source.filter) == Verdict.MATCH
+        else -> false
+    }
+    val isolated = amount?.takeIf {
+        predicateSupported && base.isFixed() && change.gating == CostGating.None && change.optionalLifePayment == null
+    }
         ?.let(base::reduceGeneric)
-    return ConditionalCost(path, PaymentCheckpoint.CASTING, Player.You, ReductionKind.GENERIC,
-        CreatureDiedThisTurnCondition.takeIf { deathReduction != null }, source, base,
+    return ConditionalCost(path, PaymentCheckpoint.CASTING, actor, ReductionKind.GENERIC,
+        condition, source, base,
         amount?.let { ManaCost.parse("{$it}") }, isolated, nativeJson.encodeToJsonElement(StaticAbility.serializer(), change))
 }
