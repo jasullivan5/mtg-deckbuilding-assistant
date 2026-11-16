@@ -1,5 +1,7 @@
 # Counter placement and modification in Discover
 
+Supported Class-level replacements now use the same counter interpretation, with an explicit minimum source level and ordered unlock requirements. The sections below preserve the earlier delivery evidence and boundaries at those revisions. [Class availability increment](CLASS_AVAILABILITY.md)
+
 ## Multiplicative replacement increment
 
 The existing counter objective now recognizes supported native `DoubleCounterPlacement` replacements. Shared evidence distinguishes `ADDITIVE` with a signed delta from `MULTIPLICATIVE` with factor 2. Both preserve the native action and pattern, recipient restrictions, placer binding, and active zones. The multiplier also records `effectsOnly`. The previous export's signed `delta` remains readable. Historical unresolved rows retain their original verdicts.

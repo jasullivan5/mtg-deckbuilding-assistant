@@ -50,5 +50,22 @@ for (const width of [1365, 390]) {
     await expect(placement).toContainText('Another operation must initiate the placement.');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await (width === 390 ? placement : detail).screenshot({path: `${output}/doubling-season-${width}.png`});
+
+    await search.fill("Innkeeper's Talent");
+    await expect(detail.getByRole('heading', {name: "Innkeeper's Talent", exact: true})).toBeVisible();
+    await expect(placement).toContainText('Places +1/+1 counters');
+    const picker = detail.getByRole('combobox', {name: 'Ability to inspect'});
+    if (await picker.isVisible()) {
+      const levelThree = picker.locator('option[value$="|script.classLevels[1].replacementEffects[0]"]');
+      await picker.selectOption(await levelThree.getAttribute('value') ?? '');
+    } else {
+      await detail.getByRole('button', {name: /twice that many/i}).click();
+    }
+    await expect(placement).toContainText('It multiplies the number placed by 2.');
+    await expect(placement).toContainText('Class level 3 or higher.');
+    await expect(placement).toContainText('Advance at sorcery speed');
+    await expect(placement).toContainText("The modifier's controller must place the counters.");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await (width === 390 ? placement : detail).screenshot({path: `${output}/innkeepers-talent-${width}.png`});
   });
 }
