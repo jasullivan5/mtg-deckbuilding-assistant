@@ -14,6 +14,14 @@ import kotlinx.serialization.json.JsonElement
 const val COUNTER_OBJECTIVE = "place-plus-one-counters"
 
 @Serializable enum class PlacementTiming { RESOLUTION, ENTRY }
+enum class PlacementOrigin { EFFECT, COST, TURN_BASED, UNKNOWN }
+
+@Serializable sealed interface CounterTransformation {
+    @Serializable data class Additive(val delta: Int) : CounterTransformation
+    @Serializable data class Multiplicative(val factor: Int) : CounterTransformation {
+        init { require(factor == 2) { "Only native doubling is supported" } }
+    }
+}
 
 @Serializable data class CounterAction(
     val card: String, val face: String, val actionId: String, val path: String,
@@ -41,8 +49,9 @@ const val COUNTER_OBJECTIVE = "place-plus-one-counters"
 )
 
 @Serializable data class CounterPlacementModifier(
-    val action: CounterAction, val pattern: EventPattern, val delta: Int?,
-    val placedByYou: Boolean, val activeZones: Set<Zone>, val sourceCreature: Boolean
+    val action: CounterAction, val pattern: EventPattern, val transformation: CounterTransformation,
+    val placedByYou: Boolean, val activeZones: Set<Zone>, val sourceCreature: Boolean,
+    val effectsOnly: Boolean = false
 ) {
     fun recipientCompatibility(requirement: Requirements): Verdict {
         fun compatible(recipient: Recipient): Verdict = when (recipient) {
@@ -55,14 +64,15 @@ const val COUNTER_OBJECTIVE = "place-plus-one-counters"
     }
 }
 
-/** Structural questions can use a different counter type or recipient without rereading native scripts. */
+/** Omitted origin permits any compatible opportunity. UNKNOWN means a specific placement has unresolved origin. */
 data class CounterQuestion(
     val type: CounterType,
     val recipient: Requirements,
     val amount: Int? = null,
     val placer: Controller? = null,
     val sourceZone: Zone? = null,
-    val sourceIsEntering: Boolean = false
+    val sourceIsEntering: Boolean = false,
+    val origin: PlacementOrigin? = null
 )
 
 fun counterPlacementDecisions(fact: CounterPlacement, type: CounterType, recipient: Requirements): List<Decision> =
@@ -86,7 +96,7 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
         question.sourceZone != null && question.sourceZone !in fact.activeZones -> Verdict.NO_MATCH
         else -> Verdict.MATCH
     }
-    return listOf(
+    val decisions = listOf(
         Decision("modified-counter-type", counterType, "MECHANICAL", fact.pattern.description),
         Decision("modified-recipient", fact.recipientCompatibility(question.recipient), "MECHANICAL",
             event?.recipient?.description ?: "Uninterpreted placement pattern"),
@@ -95,14 +105,27 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
         Decision("modifier-source", active, "MECHANICAL", "Source active zones: ${fact.activeZones}"),
         Decision("placing-player", if (fact.placedByYou && question.placer == Controller.OPPONENT) Verdict.NO_MATCH else Verdict.MATCH,
             "MECHANICAL", if (fact.placedByYou) "The modifier's controller must place the counters" else "Any player may place the counters"),
-        Decision("placement-change", when (fact.delta) { null -> Verdict.UNKNOWN; 0 -> Verdict.NO_MATCH; else -> Verdict.MATCH },
+        Decision("placement-change", if (fact.transformation == CounterTransformation.Additive(0)) Verdict.NO_MATCH else Verdict.MATCH,
             "MECHANICAL", fact.action.description)
     )
+    if (!fact.effectsOnly) return decisions
+    val origin = when (question.origin) {
+        null, PlacementOrigin.EFFECT -> Verdict.MATCH
+        PlacementOrigin.COST, PlacementOrigin.TURN_BASED -> Verdict.NO_MATCH
+        PlacementOrigin.UNKNOWN -> Verdict.UNKNOWN
+    }
+    return decisions + Decision("placement-origin", origin, "MECHANICAL",
+        "Only effects can supply this placement. Placement costs and turn-based placements are excluded.")
 }
 
-/** One isolated additive replacement, with no claim about ordering or other applicable replacements. */
+/** One isolated replacement on a positive placement. The caller supplies any required concrete origin. */
 fun isolatedCounterModification(fact: CounterPlacementModifier, question: CounterQuestion): Int? {
     val count = question.amount ?: return null
+    if (fact.effectsOnly && question.origin == null) return null
     if (all(counterModifierDecisions(fact, question).map { it.verdict }) != Verdict.MATCH) return null
-    return (count.toLong() + checkNotNull(fact.delta)).coerceIn(0, Int.MAX_VALUE.toLong()).toInt()
+    val amount = when (val change = fact.transformation) {
+        is CounterTransformation.Additive -> count.toLong() + change.delta
+        is CounterTransformation.Multiplicative -> count.toLong() * change.factor
+    }
+    return amount.coerceIn(0, Int.MAX_VALUE.toLong()).toInt()
 }
