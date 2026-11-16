@@ -1,6 +1,10 @@
 package dev.mtg.assistant
 
 import com.wingedsheep.sdk.core.ManaCost
+import com.wingedsheep.sdk.dsl.Conditions
+import com.wingedsheep.sdk.dsl.Costs
+import com.wingedsheep.sdk.dsl.Effects
+import com.wingedsheep.sdk.dsl.card
 import com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition
 import com.wingedsheep.sdk.scripting.conditions.PlayerDrewCardsThisTurn
 import dev.mtg.assistant.discovery.*
@@ -42,5 +46,24 @@ class ConditionalCostTest : FunSpec({
         for (name in listOf("Tragic Slip", "Innkeeper's Talent", "Walking Corpse")) {
             extract(name).actions.flatMap { it.conditionalCosts }.isEmpty() shouldBe true
         }
+    }
+
+    test("a synthetic sibling activation does not inherit another ability's discount") {
+        val fixture = card("Synthetic separate payments") {
+            typeLine = "Artifact"
+            activatedAbility {
+                cost = Costs.Mana("{2}{B}")
+                effect = Effects.GainLife(1)
+                costsLessIf("{B}", Conditions.YouDrewCardsThisTurn(3))
+            }
+            activatedAbility {
+                cost = Costs.Mana("{1}")
+                effect = Effects.GainLife(1)
+            }
+        }
+        val actions = PathwayExtractor().extract(listOf(fixture)).actions
+        actions.single { it.path == "script.activatedAbilities[0]" }.conditionalCosts.single()
+            .isolatedManaWhenTrue shouldBe ManaCost.parse("{2}")
+        actions.single { it.path == "script.activatedAbilities[1]" }.conditionalCosts.isEmpty() shouldBe true
     }
 })
