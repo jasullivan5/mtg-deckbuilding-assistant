@@ -20,7 +20,8 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
     val status: SupportStatus,val reason: String,val actionId: String)
 @Serializable enum class Contribution { DIRECT_DEATH_GENERATOR, DEATH_ENHANCED_REMOVAL, REANIMATE_OWN_CREATURE, CREATE_CREATURE_TOKEN, GRAVEYARD_CREATURE_ARRIVAL, DEATH_TRIGGERED_OUTCOME, INTRINSIC_CREATURE_INPUT, STATE_BENEFICIARY, COUNTER_PLACEMENT, COUNTER_MODIFICATION }
 @Serializable data class ActionEvidence(val id: String, val card: String, val face: String, val path: String,
-    val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null)
+    val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val classAvailability: ClassAvailability? = null)
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
     val reason: String, val actionId: String)
 data class Pathway(val card: CardDefinition, val face: String, val actionId: String, val path: String,

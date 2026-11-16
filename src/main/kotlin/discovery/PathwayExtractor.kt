@@ -23,7 +23,7 @@ private data class Frame(val targets: List<TargetRequirement>, val tokenControll
     val outcomeGuard: Verdict = Verdict.MATCH, val returnSource: ReturnSourceContext? = null,
     val returnGuard: Verdict = Verdict.MATCH, val returnLimits: List<ReturnLimit> = emptyList(),
     val operationGuard: Verdict = Verdict.MATCH, val operationPlayers: Player? = null,
-    val counterTargetIteration: Boolean = false)
+    val counterTargetIteration: Boolean = false, val classAvailability: ClassAvailability? = null)
 private data class Removal(val effect: Effect, val target: EffectTarget?, val operation: String, val magnitude: Int? = null, val prerequisites: List<String> = emptyList(), val confidence: Verdict = Verdict.MATCH)
 private fun removal(e: Effect): Removal? = when(e) {
     is MoveToZoneEffect -> when {
@@ -293,24 +293,25 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             removal.effect.tree(),dependency=dependency,dependencyVerdict=all(listOf(dep.first,improvement,targetCompatible,removal.confidence,frame.guardConfidence)),circumstances=circumstances("DEPENDENCY",dep.second,frame))
     }
     private fun inspectDefinition(def: CardDefinition, label: String) {
-        inspectScript(def.script,label,def.isCreature,def.keywordAbilities)
+        inspectScript(def.script,label,def.isCreature,def.isClass,def.keywordAbilities)
         def.backFace?.let { inspectDefinition(it,"$label.backFace") }
         def.flipSide?.let { inspectDefinition(it,"$label.flipSide") }
-        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature) }
+        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass) }
     }
-    private fun inspectScript(script: CardScript, label: String, creature: Boolean, keywordAbilities: List<KeywordAbility> = emptyList()) {
+    private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, keywordAbilities: List<KeywordAbility> = emptyList()) {
         face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
-        if (inspectCounters) script.replacementEffects.forEachIndexed(::recordCounterReplacement)
+        if (inspectCounters) script.replacementEffects.forEachIndexed { i, effect -> recordCounterReplacement("script.replacementEffects[$i]", effect) }
         sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
         actionId="${card.name}|$label|script"
         actions += ActionEvidence(actionId,card.name,label,"script",emptyList(),nativeJson.encodeToJsonElement(CardScript.serializer(),script))
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
-                   directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null, costs: () -> Unit = {}) {
+                   directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null,
+                   availability: ClassAvailability? = null, costs: () -> Unit = {}) {
             actionId="${card.name}|$label|$path"; rootEffect=effect; stateRootPath=if(path=="script.spell") "script.spellEffect" else "$path.effect"; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
-            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value)
-            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource)
+            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value,classAvailability=availability)
+            val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource,classAvailability=availability)
             costs()
             effect?.let { walk(it,if(path == "script.spell") "script.spellEffect" else "$path.effect",frame) }
         }
@@ -330,8 +331,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             support(path,alternative,if(alternative.condition==null && alternative.manaSources==null) SupportStatus.SUPPORTED else SupportStatus.PARTIALLY_SUPPORTED,
                 "Alternative-cost components traversed; native availability/resource gates are prerequisites, not whole-state satisfiability proofs")
         }
-        fun activated(ability: ActivatedAbility,path: String, extra: List<String> = emptyList()) {
-            val frame=Frame(ability.targetRequirements,selfZone=ability.activateFromZone,assumptions=extra + "Timing=${ability.timing}; restrictions=${ability.restrictions}; activateFrom=${ability.activateFromZone}")
+        fun activated(ability: ActivatedAbility,path: String, availability: ClassAvailability? = null) {
+            val extra = availability?.prerequisites().orEmpty()
+            val frame=Frame(ability.targetRequirements,selfZone=ability.activateFromZone,assumptions=extra + "Timing=${ability.timing}; restrictions=${ability.restrictions}; activateFrom=${ability.activateFromZone}",classAvailability=availability)
             action(path,nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),ability),ability.effect,frame.targets,frame.assumptions,sourceZone=ability.activateFromZone,returnSource=ReturnSourceContext("ACTIVATED",setOf(ability.activateFromZone),ability.description,ability.cost.description,
                 if(ability.restrictions.any { it is ActivationRestriction.MaxPerTurn && it.count<=0 }) Verdict.NO_MATCH else if(extra.isEmpty() && ability.restrictions.none { it is ActivationRestriction.OnlyIfCondition || it==ActivationRestriction.AnyPlayerMay || it is ActivationRestriction.All }) Verdict.MATCH else Verdict.UNKNOWN,
                 sourceCostCompatibility=sourceCostCompatibility(ability.cost,ability.activateFromZone),requirements=frame.assumptions+"Pay all activation costs, with legal resources; the original return card must remain available",
@@ -341,7 +343,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     is ActivationRestriction.MaxPerTurn -> "At most ${r.count} activations each turn; an unused allowance is required."
                     else -> "Native activation restriction: $r; do not infer unbounded reuse across zone changes"
                 },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) }+
-                    if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList())) {
+                    if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList()), availability=availability) {
                 abilityCost(ability.cost,"$path.cost",frame)
             }
             ability.restrictions.forEachIndexed { i, restriction ->
@@ -356,14 +358,18 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             }
             ability.genericCostReduction?.let { issue("$path.genericCostReduction",it,"Dynamic discount not interpreted") }
         }
-        fun triggered(ability: TriggeredAbility,path: String,extra: List<String> = emptyList()) {
+        fun triggered(ability: TriggeredAbility,path: String,availability: ClassAvailability? = null) {
+            val extra = availability?.prerequisites().orEmpty()
             val assumptions=extra + listOf("Trigger=${ability.trigger}; binding=${ability.binding}; activeZones=${ability.activeZones}",
                 "InterveningIf=${ability.interveningIf}; restriction=${ability.triggerRestriction}; cap=${ability.perTurnTriggerCap}")
             val trigger=ability.trigger
+            val levelTransition = availability != null && ability.binding == TriggerBinding.SELF &&
+                trigger is EventPattern.ZoneChangeEvent && trigger.to == Zone.BATTLEFIELD
             val event=EventContext(trigger,ability.binding,ability.activeZones,creature,
                 nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),
                 if(ability.activeZones.isEmpty()) Verdict.NO_MATCH else if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController ||
-                    ability.binding==TriggerBinding.ATTACHED || ability.activeZones!=setOf(Zone.BATTLEFIELD) || extra.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
+                    ability.binding==TriggerBinding.ATTACHED || ability.activeZones!=setOf(Zone.BATTLEFIELD) ||
+                    levelTransition || availability?.support == Verdict.UNKNOWN) Verdict.UNKNOWN else Verdict.MATCH,
                 assumptions + "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed" +
                     listOfNotNull("This source's ability triggers only once during its battlefield lifetime".takeIf { ability.triggersOnce },
                         "Do this only once each turn: resolution action budget must remain; declining does not spend it".takeIf { ability.effectOncePerTurn }))
@@ -391,8 +397,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                         if(trigger is EventPattern.ZoneChangeEvent && trigger.excludeSacrifice) add(ReturnLimit("TRIGGER_RESTRICTION",path,"This trigger excludes sacrifices; sacrificing the source does not supply this return opportunity.",native))
                     })
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
-                event=event,returnSource=returnSource,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
+                event=event,returnSource=returnSource,availability=availability,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
                     ability.interveningIf == null && ability.triggerRestriction == null && !ability.controlledByTriggeringEntityController)
+            if (levelTransition) issue("$path.trigger", trigger, "Native self-entry placeholder can also dispatch on leveling up")
             ability.interveningIf?.let { condition ->
                 recordState(condition,"$path.interveningIf","$path.effect",ability.effect,null,StateCheckpoint.TRIGGER_AND_RESOLUTION,
                     Frame(ability.allTargetRequirements,assumptions=assumptions,selfZone=sourceZone,event=event),
@@ -406,7 +413,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 if(ability.controlledByTriggeringEntityController) eventScope=eventScope.copy(unresolved="Trigger controller rebound to event entity")
                 removals(ability.effect).forEach { enhanced("$path.trigger",trigger.toString(),Verdict.MATCH to eventScope,it,Frame(ability.allTargetRequirements,assumptions=assumptions,selfZone=sourceZone),Verdict.MATCH) }
             }
-            ability.elseEffect?.let { walk(it,"$path.elseEffect",Frame(ability.allTargetRequirements,assumptions=assumptions+"Intervening condition failed",selfZone=sourceZone,event=event,outcomeGuard=Verdict.UNKNOWN,returnSource=returnSource,returnGuard=Verdict.UNKNOWN)) }
+            ability.elseEffect?.let { walk(it,"$path.elseEffect",Frame(ability.allTargetRequirements,assumptions=assumptions+"Intervening condition failed",selfZone=sourceZone,event=event,outcomeGuard=Verdict.UNKNOWN,returnSource=returnSource,returnGuard=Verdict.UNKNOWN,classAvailability=availability)) }
         }
         script.activatedAbilities.forEachIndexed { i,a -> activated(a,"script.activatedAbilities[$i]") }
         script.triggeredAbilities.forEachIndexed { i,a -> triggered(a,"script.triggeredAbilities[$i]") }
@@ -415,9 +422,18 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         script.sagaChapters.forEachIndexed { i,a -> action("script.sagaChapters[$i]",nativeJson.encodeToJsonElement(SagaChapterAbility.serializer(),a),a.effect,
             listOfNotNull(a.targetRequirement)+a.additionalTargetRequirements,listOf("Saga chapter ${a.chapter}")) }
         script.classLevels.forEachIndexed { i,level ->
-            level.activatedAbilities.forEachIndexed { j,a -> activated(a,"script.classLevels[$i].activatedAbilities[$j]",listOf("Class level >= ${level.level}; level-up cost=${level.cost}")) }
-            level.triggeredAbilities.forEachIndexed { j,a -> triggered(a,"script.classLevels[$i].triggeredAbilities[$j]",listOf("Class level >= ${level.level}")) }
-            if(level.staticAbilities.isNotEmpty() || level.replacementEffects.isNotEmpty()) issue("script.classLevels[$i]",level,"Level static/replacement abilities not expanded; see face script evidence")
+            val availability = classAvailability(script.classLevels, i, isClass)
+            val path = availability.levelPath
+            level.activatedAbilities.forEachIndexed { j,a -> activated(a,"$path.activatedAbilities[$j]",availability) }
+            level.triggeredAbilities.forEachIndexed { j,a -> triggered(a,"$path.triggeredAbilities[$j]",availability) }
+            level.staticAbilities.forEachIndexed { j,a ->
+                retainClassAbility("$path.staticAbilities[$j]", a, nativeJson.encodeToJsonElement(StaticAbility.serializer(),a), availability)
+            }
+            level.replacementEffects.forEachIndexed { j,a ->
+                val child = "$path.replacementEffects[$j]"
+                if (inspectCounters) recordCounterReplacement(child, a, availability)
+                else retainClassAbility(child, a, nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),a), availability)
+            }
         }
         // Self-cast static discounts are intra-card dependencies; deck-wide discounts are out of scope.
         script.staticAbilities.forEachIndexed { i,a ->
@@ -744,8 +760,13 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             .also { eventOutcomes += it }
     }
 
-    private fun recordCounterReplacement(index: Int, effect: ReplacementEffect) {
-        val path = "script.replacementEffects[$index]"
+    private fun retainClassAbility(path: String, ability: Any, native: JsonElement, availability: ClassAvailability) {
+        actionId = "${card.name}|$face|$path"
+        actions += ActionEvidence(actionId, card.name, face, path, availability.prerequisites(), native, classAvailability = availability)
+        issue(path, ability, "Class availability retained. This ability shape is outside the current interpretation.")
+    }
+
+    private fun recordCounterReplacement(path: String, effect: ReplacementEffect, availability: ClassAvailability? = null) {
         val id = "${card.name}|$face|$path"
         actionId = id
         val native = nativeJson.encodeToJsonElement(ReplacementEffect.serializer(), effect)
@@ -753,13 +774,13 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             is ModifyCounterPlacement, is DoubleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
             is EntersWithCounters, is EntersWithDynamicCounters -> "Counters are placed as part of entering the battlefield. The native entry and casting requirements apply."
             else -> {
-                actions += ActionEvidence(id, card.name, face, path, emptyList(), native)
+                actions += ActionEvidence(id, card.name, face, path, availability?.prerequisites().orEmpty(), native, classAvailability = availability)
                 issue(path, effect, "Replacement declaration retained without counter-placement interpretation")
                 return
             }
         }
-        val origin = CounterAction(card.name, face, id, path, native, effect.description, listOf(checkpoint))
-        actions += ActionEvidence(id, card.name, face, path, origin.prerequisites, native)
+        val origin = CounterAction(card.name, face, id, path, native, effect.description, listOf(checkpoint) + availability?.prerequisites().orEmpty(), availability)
+        actions += ActionEvidence(id, card.name, face, path, origin.prerequisites, native, classAvailability = availability)
         val confidence = when (effect) {
             is ModifyCounterPlacement -> {
                 val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
@@ -780,7 +801,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 effect.appliesTo, effect.activeZones, !effect.otherOnly, effect.otherOnly, null)
             else -> Verdict.UNKNOWN
         }
-        recordCounterSupport(path, effect, confidence)
+        recordCounterSupport(path, effect, if (availability?.support == Verdict.UNKNOWN) Verdict.UNKNOWN else confidence)
     }
 
     private fun recordEntryCounters(origin: CounterAction, type: CounterType, amount: DynamicAmount, pattern: EventPattern,
@@ -795,6 +816,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             entry.excludeTo == null && (!self || entry.from == null)
         val context = when {
             Zone.BATTLEFIELD !in active || self && other -> Verdict.NO_MATCH
+            origin.classAvailability != null && self && !other -> Verdict.NO_MATCH
+            origin.classAvailability?.support == Verdict.UNKNOWN -> Verdict.UNKNOWN
             !simple || condition != null -> Verdict.UNKNOWN
             else -> Verdict.MATCH
         }
@@ -838,7 +861,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             else -> Verdict.MATCH
         }
         val context = all(listOf(frame.guardConfidence, frame.factGuard, frame.outcomeGuard, countSupport,
-            if (frame.delayed || frame.resolutionCost || effect is AddCountersWithLimitEffect ||
+            if (frame.delayed || frame.resolutionCost || effect is AddCountersWithLimitEffect || frame.classAvailability?.support == Verdict.UNKNOWN ||
                 frame.event?.confidence == Verdict.UNKNOWN) Verdict.UNKNOWN else Verdict.MATCH))
         val prerequisites = frame.assumptions + listOfNotNull(
             "Chosen targets must still be legal. At least one qualifying recipient must be chosen.".takeIf { requirement != null },
@@ -847,7 +870,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         )
         val quantity = amountBounds(amount).positivePotential()
         counterPlacements += CounterPlacement(CounterAction(card.name, face, actionId, path, effect.tree(), effect.description,
-            prerequisites), type, amount, PlacementTiming.RESOLUTION, recipient, target, frame.targets,
+            prerequisites, frame.classAvailability), type, amount, PlacementTiming.RESOLUTION, recipient, target, frame.targets,
             frame.optional || requirement?.optional == true || effect is AddCountersUpToEffect,
             quantity, context)
         recordCounterSupport(path, effect, counterSupportConfidence(context, quantity, recipient))
