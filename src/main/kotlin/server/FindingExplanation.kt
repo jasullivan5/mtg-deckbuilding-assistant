@@ -130,6 +130,17 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
             result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
             "Another operation must initiate the placement.")
     }
+    result.conditionalCost?.let { cost ->
+        val timing = if (cost.checkpoint == PaymentCheckpoint.CASTING) "casting" else "activation"
+        val requirement = cost.isolatedManaWhenTrue?.let { if (it.symbols.isEmpty()) "{0}" else it.toString() }
+        return PathwayExplanation(
+            "The turn's creature-death history changes the mana requirement at $timing.",
+            result.prerequisites + "A creature must already have died this turn.",
+            if (requirement == null) listOf("The resulting mana requirement is unresolved.") else emptyList(),
+            mechanic(result),
+            requirement?.let { "Printed mana: ${cost.baseMana}. With this reduction alone: $it." }.orEmpty()
+        )
+    }
     result.stateDependency?.let { return stateDependencyExplanation(result,it) }
     result.selfReturn?.let { return selfReturnExplanation(result,it) }
     result.eventOutcome?.let { return eventOutcomeExplanation(result,it) }

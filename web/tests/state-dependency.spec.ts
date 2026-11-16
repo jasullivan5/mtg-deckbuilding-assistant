@@ -32,5 +32,9 @@ for (const width of [1365, 390]) {
     await expect(history).toContainText(/otherwise: each player sacrifices a creature/i);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await (width===390 ? history : detail).screenshot({path:`../generated/explorer/state-dependency/gravelighter-${width}.png`});
+    await page.getByLabel('Card name').fill('Dreaded Bat-Cloud');
+    await expect(detail.getByRole('heading',{name:'Dreaded Bat-Cloud',exact:true})).toBeVisible();
+    await expect(history).toContainText('mana requirement at casting');
+    await expect(history).toContainText('With this reduction alone: {1}{B}');
   });
 }

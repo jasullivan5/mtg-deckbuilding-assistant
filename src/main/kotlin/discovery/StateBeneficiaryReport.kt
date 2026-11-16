@@ -5,6 +5,7 @@ import kotlinx.serialization.json.encodeToJsonElement
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import com.wingedsheep.sdk.scripting.effects.Effect
+import com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition
 
 internal fun stateBeneficiaryReport(catalog: Catalog,commander: String,identity: List<String>,query: String?,
     eligibility: List<EligibilityEvidence>,counts: Map<String,Int>,extracted: PathwayExtractor,inputCards: List<String>): DiscoveryReport {
@@ -25,6 +26,24 @@ internal fun stateBeneficiaryReport(catalog: Catalog,commander: String,identity:
             mechanicalCompatibility=verdict,enablingRelationship="STATE_CHECK_CONTROLS_SAME_ACTION_OUTCOME",
             localSupport=if(verdict==Verdict.UNKNOWN || extracted.unsupported.any { it.actionId==d.actionId }) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
             stateDependency=d)
+    } + extracted.actions.flatMap { action ->
+        action.conditionalCosts.filter { it.condition == CreatureDiedThisTurnCondition }.map { cost ->
+            val c = checkNotNull(catalog.card(action.card))
+            val eligible = byName.getValue(action.card)
+            val check = Decision("conditional-mana-change", cost.verdict, "MECHANICAL",
+                "A creature died earlier this turn. The condition is checked at ${cost.checkpoint.name.lowercase()}.")
+            ResultEvidence(card = action.card, identifier = c.oracleId ?: "${c.setCode}:${c.metadata.collectorNumber}:${c.name}",
+                face = action.face, actionId = action.id, abilityPath = cost.declarationPath,
+                branch = Contribution.STATE_BENEFICIARY, verdict = cost.verdict, operation = "REDUCE_MANA_COST",
+                costOrEffect = "CONDITIONAL_PAYMENT", affectedScope = check.reason, prerequisites = action.prerequisites,
+                dependency = check.reason, nativeOperation = cost.native, decisions = listOf(check),
+                sourceReferences = listOfNotNull(DefinitionSources.paths[action.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" }),
+                commanderLegality = eligible.format, deckEligibility = eligible.deck, provenance = catalog.provenance(action.card),
+                contributionClassification = Contribution.STATE_BENEFICIARY.takeIf { cost.verdict == Verdict.MATCH },
+                mechanicalCompatibility = cost.verdict, enablingRelationship = "STATE_CHECK_MODIFIES_SAME_ACTION_PAYMENT",
+                localSupport = if (cost.verdict == Verdict.UNKNOWN) SupportStatus.PARTIALLY_SUPPORTED else SupportStatus.SUPPORTED,
+                conditionalCost = cost)
+        }
     }
     val matches=results.filter { it.verdict==Verdict.MATCH }
     return DiscoveryReport(objective=DEATH_HISTORY_OBJECTIVE,commander=commander,allowedIdentity=identity,conventionalQuery=query,
@@ -34,7 +53,7 @@ internal fun stateBeneficiaryReport(catalog: Catalog,commander: String,identity:
         eligibility=eligibility,results=results,actions=extracted.actions,unsupported=extracted.unsupported,
         limitations=discoveryLimitations+listOf("Supported native history checks control a branch or availability. Direct dies triggers and ways of establishing history are separate.",
             "State checks and branches are structural. Native costs, targets, timing, restrictions and actual state still apply.",
-            "Compound conditions, conditional discounts, replacement effects and other unsupported check locations are not fully interpreted."),
+            "Supported conditional discounts describe an isolated change to the printed mana requirement. Compound conditions, competing modifiers, and other check locations remain unresolved."),
         structuralSupport=extracted.structuralSupport,facts=extracted.facts,mechanicalInputCards=inputCards,
         translationAssurance=eligibility.mapNotNull { catalog.translationAssurance(it.card) },
         eventOutcomes=extracted.eventOutcomes,selfReturns=extracted.selfReturns,stateDependencies=extracted.stateDependencies)

@@ -1,0 +1,91 @@
+{
+  "applicationBase": "457ba2a1e72d40e9cb9014238f836d1080abbd44",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": {
+    "DreadedBatCloud": {
+      "source": {
+        "name": "Dreaded Bat-Cloud",
+        "id": "67d52db5-597e-46d5-af39-c3a2de107d30",
+        "oracle_id": "3cc64ce6-45e2-4dc3-9b28-d7206a131873",
+        "set": "hob",
+        "collector_number": "66",
+        "oracle_text": "This spell costs {3} less to cast if a creature died this turn.\nFlying, deathtouch",
+        "scryfall_uri": "https://scryfall.com/card/hob/66/dreaded-bat-cloud?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/DreadedBatCloud.kt",
+      "nativeLfSha256": "85b49bca868f3482da9fc5f8ae097f7181107714a0ca0c473a5dd2779a6aba06",
+      "expected": "Creature death earlier this turn; self-casting generic reduction of three."
+    },
+    "KamiOfJealousThirst": {
+      "source": {
+        "name": "Kami of Jealous Thirst",
+        "id": "a2958c96-97f8-4961-813c-938b83e20d07",
+        "oracle_id": "5973d8f6-242c-4014-b66e-aa5c78440be7",
+        "set": "mh3",
+        "collector_number": "98",
+        "oracle_text": "Deathtouch\n{4}{B}: Each opponent loses 2 life and you gain 2 life. This ability costs {4}{B} less to activate if you've drawn three or more cards this turn. Activate only once each turn.",
+        "scryfall_uri": "https://scryfall.com/card/mh3/98/kami-of-jealous-thirst?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/KamiOfJealousThirst.kt",
+      "nativeLfSha256": "05400522ece8cae5060d38a5505c2d6cf9f3829c8578bfe048d13f83d75e5a1d",
+      "expected": "At least three draws by you this turn; reduce activation mana by {4}{B}."
+    },
+    "InnkeepersTalent": {
+      "source": {
+        "name": "Innkeeper's Talent",
+        "id": "941b0afc-0e8f-45f2-ae7f-07595e164611",
+        "oracle_id": "915b75d1-b5e3-4aca-a54c-beaccef0a2e4",
+        "set": "blb",
+        "collector_number": "180",
+        "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control.\n{G}: Level 2\nPermanents you control with counters on them have ward {1}.\n{3}{G}: Level 3\nIf you would put one or more counters on a permanent or player, put twice that many of each of those kinds of counters on that permanent or player instead.",
+        "scryfall_uri": "https://scryfall.com/card/blb/180/innkeepers-talent?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/InnkeepersTalent.kt",
+      "nativeLfSha256": "7cfd198b0d016bdd1123f5f2ac5f5051edc6adaf63cae16910aba6b4f6ac1939",
+      "expected": "Class progression payment, not a discount."
+    },
+    "GrimReapersSprint": {
+      "source": {
+        "name": "Grim Reaper's Sprint",
+        "id": "18e76286-9e06-42de-b322-eb8aa2cdca3a",
+        "oracle_id": "99a6d7fe-40a1-4f2f-a3f6-6777884d5d1a",
+        "set": "pip",
+        "collector_number": "58",
+        "oracle_text": "Morbid — This spell costs {3} less to cast if a creature died this turn.\nEnchant creature\nWhen this Aura enters, untap each creature you control. If it's your main phase, there is an additional combat phase after this phase.\nEnchanted creature gets +2/+2 and has haste.",
+        "scryfall_uri": "https://scryfall.com/card/pip/58/grim-reapers-sprint?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pip/cards/GrimReapersSprint.kt",
+      "nativeLfSha256": "9145bb95a15d33b659cf527d505f1de3e8060d6d9e0641ea6134ac9dc68430f8",
+      "expected": "Creature death earlier this turn; self-casting generic reduction of three."
+    },
+    "AcademyJourneymage": {
+      "source": {
+        "name": "Academy Journeymage",
+        "id": "a46a65e0-66a3-4896-8acc-0ad5e9927c40",
+        "oracle_id": "b400700c-1d82-4721-a166-56f88ba6ad19",
+        "set": "dom",
+        "collector_number": "41",
+        "oracle_text": "This spell costs {1} less to cast if you control a Wizard.\nWhen this creature enters, return target creature an opponent controls to its owner's hand.",
+        "scryfall_uri": "https://scryfall.com/card/dom/41/academy-journeymage?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/AcademyJourneymage.kt",
+      "nativeLfSha256": "fc114eecd2edfdf81eae9585a92c871be5dd7a4d2864cf4358682fc4b8fcf8a9",
+      "expected": "Wizard you control; initial bounded casting predicate leaves this unresolved."
+    },
+    "TragicSlip": {
+      "source": {
+        "name": "Tragic Slip",
+        "id": "132ccc20-cb42-4474-b747-7e41a661060e",
+        "oracle_id": "fa6e2a47-a8cb-4224-ae3e-f61c90477285",
+        "set": "inr",
+        "collector_number": "134",
+        "oracle_text": "Target creature gets -1/-1 until end of turn.\nMorbid — That creature gets -13/-13 until end of turn instead if a creature died this turn.",
+        "scryfall_uri": "https://scryfall.com/card/inr/134/tragic-slip?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/TragicSlip.kt",
+      "nativeLfSha256": "53142e55e0e369abc23c0ab032aa7c5b1c9920b8d03fb3b60cae14d29cc89d7c",
+      "expected": "Resolution changes, casting payment does not."
+    }
+  }
+}
