@@ -1,0 +1,77 @@
+{
+  "applicationBase": "397b74df9275817b115f29eded79a498f58a1bc1",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": {
+    "Cactarantula": {
+      "source": {
+        "name": "Cactarantula",
+        "id": "2e0e27f9-dc2c-4366-b810-3e8d0bdff8c3",
+        "oracle_id": "18a5fe34-0c97-486c-b09a-80535a99e982",
+        "set": "otj",
+        "collector_number": "158",
+        "oracle_text": "This spell costs {1} less to cast if you control a Desert.\nReach\nWhenever this creature becomes the target of a spell or ability an opponent controls, you may draw a card.",
+        "scryfall_uri": "https://scryfall.com/card/otj/158/cactarantula?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/Cactarantula.kt",
+      "nativeLfSha256": "4a4998ec03dba1304a7673ad56a9ccf8957902600ab30750dd56261e2e0bd747",
+      "expected": "Caster controls a Desert; verify native land constraint."
+    },
+    "Geistlight Snare": {
+      "source": {
+        "name": "Geistlight Snare",
+        "id": "293511f6-09c2-4311-a2a6-0b0b7ef65bef",
+        "oracle_id": "45f159dc-a5f9-4335-896b-ad544c303801",
+        "set": "inr",
+        "collector_number": "66",
+        "oracle_text": "This spell costs {1} less to cast if you control a Spirit. It also costs {1} less to cast if you control an enchantment.\nCounter target spell unless its controller pays {3}.",
+        "scryfall_uri": "https://scryfall.com/card/inr/66/geistlight-snare?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/GeistlightSnare.kt",
+      "nativeLfSha256": "f5dbf42d26235714f0c5b8b2f9f19364b4bde69bd547a6bb956364e698637aac",
+      "expected": "Separate Spirit and enchantment requirements; isolate each declaration."
+    },
+    "Academy Journeymage": {
+      "source": {
+        "name": "Academy Journeymage",
+        "id": "a46a65e0-66a3-4896-8acc-0ad5e9927c40",
+        "oracle_id": "b400700c-1d82-4721-a166-56f88ba6ad19",
+        "set": "dom",
+        "collector_number": "41",
+        "oracle_text": "This spell costs {1} less to cast if you control a Wizard.\nWhen this creature enters, return target creature an opponent controls to its owner's hand.",
+        "scryfall_uri": "https://scryfall.com/card/dom/41/academy-journeymage?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/AcademyJourneymage.kt",
+      "nativeLfSha256": "fc114eecd2edfdf81eae9585a92c871be5dd7a4d2864cf4358682fc4b8fcf8a9",
+      "expected": "Caster controls a Wizard; {4}{U} to {3}{U}."
+    },
+    "Bolt Bend": {
+      "source": {
+        "name": "Bolt Bend",
+        "id": "771b9f25-76f8-4da9-b3ab-ee51f4ad32d9",
+        "oracle_id": "c20a96f7-aa5a-4c15-b8b1-806685c99b27",
+        "set": "tle",
+        "collector_number": "163",
+        "oracle_text": "This spell costs {3} less to cast if you control a creature with power 4 or greater.\nChange the target of target spell or ability with a single target.",
+        "scryfall_uri": "https://scryfall.com/card/tle/163/bolt-bend?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/BoltBend.kt",
+      "nativeLfSha256": "d8a2052edb13aee1d6d42346a57fd84512b36ad39ad542c736cb09f4dc0f49f7",
+      "expected": "Caster controls a creature with power four or greater; {3}{R} to {R}."
+    },
+    "Winged Words": {
+      "source": {
+        "name": "Winged Words",
+        "id": "a48ebd79-95d7-4860-9785-45e34a94755d",
+        "oracle_id": "c623aeb1-e6d4-48fe-bd2a-a7a6729aa4df",
+        "set": "jmp",
+        "collector_number": "196",
+        "oracle_text": "This spell costs {1} less to cast if you control a creature with flying.\nDraw two cards.",
+        "scryfall_uri": "https://scryfall.com/card/jmp/196/winged-words?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m20/cards/WingedWords.kt",
+      "nativeLfSha256": "84557c166e414f1eb8c93fdf8f0bb20717d131cbf78591e6c47b58a9975931e4",
+      "expected": "Caster controls a creature with flying; {2}{U} to {1}{U}."
+    }
+  }
+}
