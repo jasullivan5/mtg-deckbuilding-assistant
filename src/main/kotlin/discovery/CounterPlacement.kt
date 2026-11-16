@@ -9,6 +9,7 @@ import com.wingedsheep.sdk.scripting.targets.EffectTarget
 import com.wingedsheep.sdk.scripting.targets.TargetRequirement
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.json.JsonElement
 
 const val COUNTER_OBJECTIVE = "place-plus-one-counters"
@@ -17,8 +18,8 @@ const val COUNTER_OBJECTIVE = "place-plus-one-counters"
 enum class PlacementOrigin { EFFECT, COST, TURN_BASED, UNKNOWN }
 
 @Serializable sealed interface CounterTransformation {
-    @Serializable data class Additive(val delta: Int) : CounterTransformation
-    @Serializable data class Multiplicative(val factor: Int) : CounterTransformation {
+    @Serializable @SerialName("ADDITIVE") data class Additive(val delta: Int) : CounterTransformation
+    @Serializable @SerialName("MULTIPLICATIVE") data class Multiplicative(val factor: Int) : CounterTransformation {
         init { require(factor == 2) { "Only native doubling is supported" } }
     }
 }
@@ -49,9 +50,11 @@ enum class PlacementOrigin { EFFECT, COST, TURN_BASED, UNKNOWN }
 )
 
 @Serializable data class CounterPlacementModifier(
-    val action: CounterAction, val pattern: EventPattern, val transformation: CounterTransformation,
+    val action: CounterAction, val pattern: EventPattern, val delta: Int?,
     val placedByYou: Boolean, val activeZones: Set<Zone>, val sourceCreature: Boolean,
-    val effectsOnly: Boolean = false
+    val effectsOnly: Boolean = false,
+    // Historical reports encoded only delta. Their unresolved doublers stay unresolved on read.
+    val transformation: CounterTransformation? = delta?.let { CounterTransformation.Additive(it) }
 ) {
     fun recipientCompatibility(requirement: Requirements): Verdict {
         fun compatible(recipient: Recipient): Verdict = when (recipient) {
@@ -105,7 +108,11 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
         Decision("modifier-source", active, "MECHANICAL", "Source active zones: ${fact.activeZones}"),
         Decision("placing-player", if (fact.placedByYou && question.placer == Controller.OPPONENT) Verdict.NO_MATCH else Verdict.MATCH,
             "MECHANICAL", if (fact.placedByYou) "The modifier's controller must place the counters" else "Any player may place the counters"),
-        Decision("placement-change", if (fact.transformation == CounterTransformation.Additive(0)) Verdict.NO_MATCH else Verdict.MATCH,
+        Decision("placement-change", when (fact.transformation) {
+            null -> Verdict.UNKNOWN
+            CounterTransformation.Additive(0) -> Verdict.NO_MATCH
+            else -> Verdict.MATCH
+        },
             "MECHANICAL", fact.action.description)
     )
     if (!fact.effectsOnly) return decisions
@@ -124,6 +131,7 @@ fun isolatedCounterModification(fact: CounterPlacementModifier, question: Counte
     if (fact.effectsOnly && question.origin == null) return null
     if (all(counterModifierDecisions(fact, question).map { it.verdict }) != Verdict.MATCH) return null
     val amount = when (val change = fact.transformation) {
+        null -> return null
         is CounterTransformation.Additive -> count.toLong() + change.delta
         is CounterTransformation.Multiplicative -> count.toLong() * change.factor
     }

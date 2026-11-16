@@ -762,14 +762,15 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions += ActionEvidence(id, card.name, face, path, origin.prerequisites, native)
         val confidence = when (effect) {
             is ModifyCounterPlacement -> {
-                val modifier = CounterPlacementModifier(origin, effect.appliesTo, CounterTransformation.Additive(effect.modifier),
+                val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
                     effect.placedByYou, effect.activeZones, selfCreature)
                 counterModifiers += modifier
                 modifier.recipientCompatibility(Requirements(creature = false))
             }
             is DoubleCounterPlacement -> {
-                val modifier = CounterPlacementModifier(origin, effect.appliesTo, CounterTransformation.Multiplicative(2),
-                    effect.placedByYou, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly)
+                val modifier = CounterPlacementModifier(origin, effect.appliesTo, null,
+                    effect.placedByYou, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
+                    transformation = CounterTransformation.Multiplicative(2))
                 counterModifiers += modifier
                 modifier.recipientCompatibility(Requirements(creature = false))
             }

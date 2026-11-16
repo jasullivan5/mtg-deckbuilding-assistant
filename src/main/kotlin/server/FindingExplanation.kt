@@ -114,6 +114,7 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
             "Applies when ${pattern.counterType?.printed ?: "any"} counters would be placed on a creature you control."
         else "Native applicability: ${fact.pattern.description}."
         val change = when (val transform = fact.transformation) {
+            null -> "The native change is retained for inspection."
             is CounterTransformation.Multiplicative -> "It multiplies the number placed by ${transform.factor}."
             is CounterTransformation.Additive -> when {
                 transform.delta > 0 -> "It adds ${transform.delta} to the number placed."
