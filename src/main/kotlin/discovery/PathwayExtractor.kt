@@ -2,6 +2,7 @@ package dev.mtg.assistant.discovery
 
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.core.CounterType
+import com.wingedsheep.sdk.core.ManaCost
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.model.CardLayout
 import com.wingedsheep.sdk.model.CardScript
@@ -293,12 +294,12 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             removal.effect.tree(),dependency=dependency,dependencyVerdict=all(listOf(dep.first,improvement,targetCompatible,removal.confidence,frame.guardConfidence)),circumstances=circumstances("DEPENDENCY",dep.second,frame))
     }
     private fun inspectDefinition(def: CardDefinition, label: String) {
-        inspectScript(def.script,label,def.isCreature,def.isClass,def.keywordAbilities)
+        inspectScript(def.script,label,def.isCreature,def.isClass,def.manaCost,def.keywordAbilities)
         def.backFace?.let { inspectDefinition(it,"$label.backFace") }
         def.flipSide?.let { inspectDefinition(it,"$label.flipSide") }
-        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass) }
+        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass,f.manaCost) }
     }
-    private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, keywordAbilities: List<KeywordAbility> = emptyList()) {
+    private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, manaCost: ManaCost, keywordAbilities: List<KeywordAbility> = emptyList()) {
         face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
         if (inspectCounters) script.replacementEffects.forEachIndexed { i, effect -> recordCounterReplacement("script.replacementEffects[$i]", effect) }
         sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
@@ -307,17 +308,21 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
                    directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null,
-                   availability: ClassAvailability? = null, costs: () -> Unit = {}) {
+                   availability: ClassAvailability? = null, conditionalCosts: List<ConditionalCost> = emptyList(), costs: () -> Unit = {}) {
             actionId="${card.name}|$label|$path"; rootEffect=effect; stateRootPath=if(path=="script.spell") "script.spellEffect" else "$path.effect"; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
-            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value,classAvailability=availability)
+            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value,classAvailability=availability,conditionalCosts=conditionalCosts)
             val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource,classAvailability=availability)
             costs()
             effect?.let { walk(it,if(path == "script.spell") "script.spellEffect" else "$path.effect",frame) }
         }
         val castAssumptions=listOf("Cast timing, mana and additional costs, cast restrictions and legal targets from native script")
-        if(script.spellEffect != null || script.additionalCosts.isNotEmpty() || script.selfAlternativeCost != null) action("script.spell",
-            nativeJson.encodeToJsonElement(CardScript.serializer(),script),script.spellEffect,script.targetRequirements,castAssumptions,sourceZone=Zone.STACK) {
+        val conditionalCastingCosts = script.staticAbilities.mapIndexedNotNull { i, ability ->
+            selfCastingConditionalCost("script.staticAbilities[$i]", ability, manaCost)
+        }
+        if(script.spellEffect != null || script.additionalCosts.isNotEmpty() || script.selfAlternativeCost != null || conditionalCastingCosts.isNotEmpty()) action("script.spell",
+            nativeJson.encodeToJsonElement(CardScript.serializer(),script),script.spellEffect,script.targetRequirements,castAssumptions,sourceZone=Zone.STACK,
+            conditionalCosts=conditionalCastingCosts) {
             if(script.spellEffect !is ModalEffect) script.additionalCosts.forEachIndexed { i,c -> castingCost(c,"script.additionalCosts[$i]",Frame(script.targetRequirements,assumptions=castAssumptions)) }
         }
         script.selfAlternativeCost?.let { alternative ->
@@ -343,7 +348,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     is ActivationRestriction.MaxPerTurn -> "At most ${r.count} activations each turn; an unused allowance is required."
                     else -> "Native activation restriction: $r; do not infer unbounded reuse across zone changes"
                 },nativeJson.encodeToJsonElement(ActivationRestriction.serializer(),r)) }+
-                    if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList()), availability=availability) {
+                    if(ability.timing==TimingRule.SorcerySpeed) listOf(ReturnLimit("ACTIVATION_TIMING",path,"Activate only as a sorcery: your main phase, your priority and an empty stack are required.",nativeJson.encodeToJsonElement(TimingRule.serializer(),ability.timing))) else emptyList()), availability=availability,
+                conditionalCosts=listOfNotNull(activationConditionalCost(path, ability))) {
                 abilityCost(ability.cost,"$path.cost",frame)
             }
             ability.restrictions.forEachIndexed { i, restriction ->
