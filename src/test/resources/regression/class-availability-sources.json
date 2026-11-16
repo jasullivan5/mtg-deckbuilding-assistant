@@ -1,0 +1,534 @@
+{
+  "applicationBase": "c64bd2c2ef231ea623945a0a55b2be1993ec5c6f",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "oracleSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": [
+    {
+      "source": {
+        "name": "Stormchaser's Talent",
+        "id": "a36e682d-b43d-4e08-bf5b-70d7e924dbe5",
+        "oracle_id": "00c1788d-c52f-4839-9cd8-11fb86c418b6",
+        "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create a 1/1 blue and red Otter creature token with prowess.\n{3}{U}: Level 2\nWhen this Class becomes level 2, return target instant or sorcery card from your graveyard to your hand.\n{5}{U}: Level 3\nWhenever you cast an instant or sorcery spell, create a 1/1 blue and red Otter creature token with prowess.",
+        "set": "blb",
+        "collector_number": "75",
+        "scryfall_uri": "https://scryfall.com/card/blb/75/stormchasers-talent?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/StormchasersTalent.kt",
+      "nativeSourceLfSha256": "a2c85c92d9adaea5806681dbfe1d7c6349242c6aa8740e6c1d67c8130a005779",
+      "expectation": "Level 3 cast trigger creates Otters. Level 2 uses the level-up-specific route and returns to hand."
+    },
+    {
+      "source": {
+        "name": "Innkeeper's Talent",
+        "id": "941b0afc-0e8f-45f2-ae7f-07595e164611",
+        "oracle_id": "915b75d1-b5e3-4aca-a54c-beaccef0a2e4",
+        "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control.\n{G}: Level 2\nPermanents you control with counters on them have ward {1}.\n{3}{G}: Level 3\nIf you would put one or more counters on a permanent or player, put twice that many of each of those kinds of counters on that permanent or player instead.",
+        "set": "blb",
+        "collector_number": "180",
+        "scryfall_uri": "https://scryfall.com/card/blb/180/innkeepers-talent?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/InnkeepersTalent.kt",
+      "nativeSourceLfSha256": "7cfd198b0d016bdd1123f5f2ac5f5051edc6adaf63cae16910aba6b4f6ac1939",
+      "expectation": "Level 3 doubles positive placements by its controller. Level 2 ward is out of scope."
+    },
+    {
+      "source": {
+        "name": "Caretaker's Talent",
+        "id": "ad5ea98a-e36e-4ab9-b4da-cc572f3777db",
+        "oracle_id": "c97957a2-8310-4cff-8aad-871b7901d124",
+        "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhenever one or more tokens you control enter, draw a card. This ability triggers only once each turn.\n{W}: Level 2\nWhen this Class becomes level 2, create a token that's a copy of target token you control.\n{3}{W}: Level 3\nCreature tokens you control get +2/+2.",
+        "set": "blb",
+        "collector_number": "6",
+        "scryfall_uri": "https://scryfall.com/card/blb/6/caretakers-talent?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/CaretakersTalent.kt",
+      "nativeSourceLfSha256": "1c4ee3c28c17cb49b0955c45560d8507b20067573a0f52784ff0a6d0a5cc910b",
+      "expectation": "Level 2 token copy and level 3 stat bonus are out of scope."
+    }
+  ],
+  "nativeSourceInventory": [
+    {
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/BarbarianClass.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{2}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/DruidClass.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/SorcererClass.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{U}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{U}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/WizardClass.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/ArtistsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{2}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/BanditsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/BlacksmithsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 2,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/BuildersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/CaretakersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/GossipsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/HuntersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/InnkeepersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 0,
+          "replacementEffect": 1
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/ScavengersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{2}{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/StormchasersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{3}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{5}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/AlchemistsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/FishersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{G}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 0,
+          "replacementEffect": 1
+        },
+        {
+          "level": 3,
+          "cost": "{2}{G}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 0,
+          "replacementEffect": 1
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/FortuneTellersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{3}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{2}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/GourmandsTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/CoolButRude.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{1}{R}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/DoesMachines.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{U}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/LeadersTalent.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{2}{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{3}{W}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/NinjaTeen.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 2,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{B}",
+          "activatedAbility": 0,
+          "triggeredAbility": 0,
+          "staticAbility": 1,
+          "replacementEffect": 0
+        }
+      ]
+    },
+    {
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/PartyDude.kt",
+      "levels": [
+        {
+          "level": 2,
+          "cost": "{1}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        },
+        {
+          "level": 3,
+          "cost": "{4}{G}",
+          "activatedAbility": 0,
+          "triggeredAbility": 1,
+          "staticAbility": 0,
+          "replacementEffect": 0
+        }
+      ]
+    }
+  ]
+}
