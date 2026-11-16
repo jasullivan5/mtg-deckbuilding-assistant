@@ -22,9 +22,9 @@ class CounterPlacementScenarioTest : FunSpec({
         val d = scenarioDriver(season, jace)
         val me = d.player1
         d.giveMana(me, Color.GREEN, 5)
-        d.giveMana(me, Color.BLUE, 3)
         d.submit(CastSpell(me, d.putCardInHand(me, season.name), paymentStrategy = PaymentStrategy.FromPool)).error shouldBe null
         d.resolvePendingActions()
+        d.giveMana(me, Color.BLUE, 3)
         val walker = d.putCardInHand(me, jace.name)
         d.submit(CastSpell(me, walker, paymentStrategy = PaymentStrategy.FromPool)).error shouldBe null
         d.resolvePendingActions()
