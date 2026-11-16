@@ -10,6 +10,7 @@ import com.wingedsheep.sdk.scripting.targets.TargetRequirement
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.json.JsonElement
 
 const val COUNTER_OBJECTIVE = "place-plus-one-counters"
@@ -26,7 +27,8 @@ enum class PlacementOrigin { EFFECT, COST, TURN_BASED, UNKNOWN }
 
 @Serializable data class CounterAction(
     val card: String, val face: String, val actionId: String, val path: String,
-    val native: JsonElement, val description: String, val prerequisites: List<String>
+    val native: JsonElement, val description: String, val prerequisites: List<String>,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val classAvailability: ClassAvailability? = null
 )
 
 @Serializable data class CounterRecipient(
@@ -75,7 +77,8 @@ data class CounterQuestion(
     val placer: Controller? = null,
     val sourceZone: Zone? = null,
     val sourceIsEntering: Boolean = false,
-    val origin: PlacementOrigin? = null
+    val origin: PlacementOrigin? = null,
+    val currentClassLevel: Int? = null
 )
 
 fun counterPlacementDecisions(fact: CounterPlacement, type: CounterType, recipient: Requirements): List<Decision> =
@@ -95,6 +98,7 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
     }
     val active = when {
         Zone.BATTLEFIELD !in fact.activeZones -> Verdict.NO_MATCH
+        question.sourceIsEntering && fact.action.classAvailability != null -> Verdict.NO_MATCH
         question.sourceIsEntering -> if (event?.recipient == Recipient.Self) Verdict.MATCH else Verdict.NO_MATCH
         question.sourceZone != null && question.sourceZone !in fact.activeZones -> Verdict.NO_MATCH
         else -> Verdict.MATCH
@@ -114,7 +118,10 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
             else -> Verdict.MATCH
         },
             "MECHANICAL", fact.action.description)
-    )
+    ) + listOfNotNull(fact.action.classAvailability?.let {
+        Decision("class-level", it.atLevel(question.currentClassLevel), "MECHANICAL",
+            "Source requires Class level ${it.minimumLevel} or higher.")
+    })
     if (!fact.effectsOnly) return decisions
     val origin = when (question.origin) {
         null, PlacementOrigin.EFFECT -> Verdict.MATCH
@@ -129,6 +136,7 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
 fun isolatedCounterModification(fact: CounterPlacementModifier, question: CounterQuestion): Int? {
     val count = question.amount ?: return null
     if (fact.effectsOnly && question.origin == null) return null
+    if (fact.action.classAvailability != null && question.currentClassLevel == null) return null
     if (all(counterModifierDecisions(fact, question).map { it.verdict }) != Verdict.MATCH) return null
     val amount = when (val change = fact.transformation) {
         null -> return null
