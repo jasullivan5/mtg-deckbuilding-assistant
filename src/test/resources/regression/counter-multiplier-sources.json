@@ -1,0 +1,147 @@
+{
+  "applicationBase": "31093cb83238738829486894a463814157166d5e",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "oracleSnapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": [
+    {
+      "source": {
+        "name": "Doubling Season",
+        "id": "f2c4f80e-84a0-463b-82c3-5c6503809351",
+        "oracle_id": "01546b7d-a233-4176-8843-d732074dc5b6",
+        "oracle_text": "If an effect would create one or more tokens under your control, it creates twice that many of those tokens instead.\nIf an effect would put one or more counters on a permanent you control, it puts twice that many of those counters on that permanent instead.",
+        "set": "fdn",
+        "collector_number": "216",
+        "scryfall_uri": "https://scryfall.com/card/fdn/216/doubling-season?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/DoublingSeason.kt",
+      "nativeSourceSha256": "960b3c0fb636e3ef62a67363dbfee0b0cd2e9d22f47607be944513bb1313e269",
+      "baseline": [
+        {
+          "path": "script.replacementEffects[1]",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "expectation": "Effect-originated positive placements of any counter type on permanents its controller controls. Excludes placement costs and turn-based placements."
+    },
+    {
+      "source": {
+        "name": "Corpsejack Menace",
+        "id": "29538ff4-e28f-44d9-af23-6796edd56268",
+        "oracle_id": "ca0cc02b-b106-4eca-9388-d4b48dd3be49",
+        "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, twice that many +1/+1 counters are put on it instead.",
+        "set": "cm2",
+        "collector_number": "152",
+        "scryfall_uri": "https://scryfall.com/card/cm2/152/corpsejack-menace?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/CorpsejackMenace.kt",
+      "nativeSourceSha256": "d157e3c22d9b2a689cd59e735baeaded72848ba191664762fc92b058a86b89e2",
+      "baseline": [
+        {
+          "path": "script.replacementEffects[0]",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "expectation": "Double positive +1/+1 placement on its controller’s creature, independent of placer and effect origin."
+    },
+    {
+      "source": {
+        "name": "Branching Evolution",
+        "id": "c0f1a736-8b12-4f58-a031-bf1733f65c51",
+        "oracle_id": "28fe909b-06e0-424c-9f75-c824a25f5865",
+        "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, twice that many +1/+1 counters are put on that creature instead.",
+        "set": "mh3",
+        "collector_number": "285",
+        "scryfall_uri": "https://scryfall.com/card/mh3/285/branching-evolution?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jmp/cards/BranchingEvolution.kt",
+      "nativeSourceSha256": "1cc9f1a79f634f2c459daf234ffa9cf9a5af430476d559d23f65e53defa89b93",
+      "baseline": [
+        {
+          "path": "script.replacementEffects[0]",
+          "verdict": "UNKNOWN"
+        }
+      ],
+      "expectation": "Double positive +1/+1 placement on its controller’s creature, independent of placer and effect origin."
+    },
+    {
+      "source": {
+        "name": "Hardened Scales",
+        "id": "99cfd1a8-49fd-4cc0-96f2-f9f159ce5d55",
+        "oracle_id": "a1f3da21-af6d-450e-bf0b-985d158418e6",
+        "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on it instead.",
+        "set": "soc",
+        "collector_number": "272",
+        "scryfall_uri": "https://scryfall.com/card/soc/272/hardened-scales?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/HardenedScales.kt",
+      "nativeSourceSha256": "7ea2d7ff0f11eae27aabc551951ce9452158cf42e24bddde4bf5049619a91bd8",
+      "baseline": [
+        {
+          "path": "script.replacementEffects[0]",
+          "verdict": "MATCH"
+        }
+      ],
+      "expectation": "Add one to a positive +1/+1 placement on its controller’s creature."
+    },
+    {
+      "source": {
+        "name": "Travel Preparations",
+        "id": "41190fb8-f5d5-4a8b-bdc8-a4516e7075b5",
+        "oracle_id": "8432729e-5fd4-4661-8b79-e41b1d03eb7b",
+        "oracle_text": "Put a +1/+1 counter on each of up to two target creatures.\nFlashback {1}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+        "set": "inr",
+        "collector_number": "220",
+        "scryfall_uri": "https://scryfall.com/card/inr/220/travel-preparations?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/TravelPreparations.kt",
+      "nativeSourceSha256": "7071d5cfe3fa84d8e476393487d56c4f81d86375e1637e44e3d15ee1fe5183f6",
+      "baseline": [
+        {
+          "path": "script.spellEffect.body",
+          "verdict": "MATCH"
+        }
+      ],
+      "expectation": "Direct effect adds one +1/+1 counter to each of up to two targets. No modifier."
+    },
+    {
+      "source": {
+        "name": "Walking Ballista",
+        "id": "5272436e-74f0-44c4-a291-ea8ebc3f1525",
+        "oracle_id": "4b515bb0-f275-4400-8032-3173b799ab40",
+        "oracle_text": "This creature enters with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on this creature.\nRemove a +1/+1 counter from this creature: It deals 1 damage to any target.",
+        "set": "2xm",
+        "collector_number": "306",
+        "scryfall_uri": "https://scryfall.com/card/2xm/306/walking-ballista?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/WalkingBallista.kt",
+      "nativeSourceSha256": "08b720d45b4c4dc207904371aa5064f7c25bbaf0237274a994c774e130860657",
+      "baseline": [],
+      "expectation": "X entry counters and later activated addition. Zero X does not create an addition event. Commander identity remains unresolved."
+    },
+    {
+      "source": {
+        "name": "Innkeeper's Talent",
+        "id": "941b0afc-0e8f-45f2-ae7f-07595e164611",
+        "oracle_id": "915b75d1-b5e3-4aca-a54c-beaccef0a2e4",
+        "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control.\n{G}: Level 2\nPermanents you control with counters on them have ward {1}.\n{3}{G}: Level 3\nIf you would put one or more counters on a permanent or player, put twice that many of each of those kinds of counters on that permanent or player instead.",
+        "set": "blb",
+        "collector_number": "180",
+        "scryfall_uri": "https://scryfall.com/card/blb/180/innkeepers-talent?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/InnkeepersTalent.kt",
+      "nativeSourceSha256": "7cfd198b0d016bdd1123f5f2ac5f5051edc6adaf63cae16910aba6b4f6ac1939",
+      "baseline": [
+        {
+          "path": "script.triggeredAbilities[0].effect",
+          "verdict": "MATCH"
+        }
+      ],
+      "expectation": "Level 3 and placing player are mandatory. Nested declaration remains a coverage boundary."
+    }
+  ],
+  "synthetic": [
+    "Placer-gated multiplier with opposing placer and friendly recipient",
+    "Conditional recipient filter and unsupported pattern",
+    "Effect versus cost, turn-based action and unresolved origin"
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "identicalReportSha256": {
+    "kenrith-own-nontoken-creature-deaths.json": "3ba9f1fcff878d57bcf7fdf95319ddf2a4e589acd76f48140272e29fff43ba99",
+    "kenrith-creature-died-this-turn.json": "e5a3b1a2253bb79ce9a37aab1dfa925d9265dad0c9f48594f3d159101b1b8663",
+    "kenrith-reanimate-own-creatures.json": "246612938d09b86c084b0686a8631e09ab673631359776b71ac84141e93fa8d4",
+    "kenrith-create-creature-tokens.json": "e81440ab53f8cae8e4a7f96029f7247a204edd61374f45e57cbb06c6cc20345c",
+    "kenrith-stock-own-graveyard.json": "07517c34ec20934467d2f0d17e9b4812904cc8e5258ca9ed9f131dad9140da9c",
+    "judith-own-nontoken-creature-deaths.json": "3fa49697ae0cd7e148dd854939f6f90c5513eaeb674bda4af2030ca5f312c95f",
+    "judith-creature-died-this-turn.json": "076965d2e77a9e5516c3e21af207701444cb53b0caeab8c0d509703f18ef3204",
+    "judith-reanimate-own-creatures.json": "a95f1d8e1f4b064722a5c01e24ac878f9d60ee5659c188b7762f0bb1be1a3fd0",
+    "judith-create-creature-tokens.json": "9355fb52116358ad56f999f986fcf6ea63285bc4f128cb04eceeb91fcad917f5",
+    "judith-stock-own-graveyard.json": "82906461411bbbaa5c6ab8b81c76f320f9de8d9b4d29ef6ff2311231e0458acb",
+    "krenko-own-nontoken-creature-deaths.json": "886cedd0c280e8d16ab39320cd104ebb257f659801b71aeb08246eb8ab3dbc9a",
+    "krenko-creature-died-this-turn.json": "3148a5d7e8740b8e0344508e7bf968d285022a329290f8b5cef70318d3865ea4",
+    "krenko-reanimate-own-creatures.json": "02fa883318af8bc7459246a9e508db2cf1431509cf3bb84097d199d2858fedd4",
+    "krenko-create-creature-tokens.json": "49584f93329f4ab16e4ffcc11129dfc3d9f50bc8a89ecd5ee6247c6c1f755aa9",
+    "krenko-stock-own-graveyard.json": "97e30da06be1ede523709374c8eae798198d734a8a295e7077cb9aa4a66815a9"
+  },
+  "counterObjective": [
+    {
+      "commander": "Kenrith, the Returned King",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "total": {
+          "MATCH": {
+            "cards": 658,
+            "pathways": 694
+          },
+          "UNKNOWN": {
+            "cards": 605,
+            "pathways": 652
+          },
+          "NO_MATCH": {
+            "cards": 537,
+            "pathways": 615
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 652,
+            "pathways": 687
+          },
+          "UNKNOWN": {
+            "cards": 598,
+            "pathways": 645
+          },
+          "NO_MATCH": {
+            "cards": 535,
+            "pathways": 613
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 7,
+            "pathways": 7
+          },
+          "UNKNOWN": {
+            "cards": 2,
+            "pathways": 2
+          },
+          "NO_MATCH": {
+            "cards": 2,
+            "pathways": 2
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 5,
+            "pathways": 5
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 23647,
+        "structuralSupportRecords": 35442
+      },
+      "after": {
+        "total": {
+          "MATCH": {
+            "cards": 663,
+            "pathways": 699
+          },
+          "UNKNOWN": {
+            "cards": 600,
+            "pathways": 647
+          },
+          "NO_MATCH": {
+            "cards": 537,
+            "pathways": 615
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 652,
+            "pathways": 687
+          },
+          "UNKNOWN": {
+            "cards": 598,
+            "pathways": 645
+          },
+          "NO_MATCH": {
+            "cards": 535,
+            "pathways": 613
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 7,
+            "pathways": 7
+          },
+          "UNKNOWN": {
+            "cards": 2,
+            "pathways": 2
+          },
+          "NO_MATCH": {
+            "cards": 2,
+            "pathways": 2
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 5,
+            "pathways": 5
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 23642,
+        "structuralSupportRecords": 35442
+      },
+      "transitions": {
+        "UNKNOWN -> MATCH": 5
+      },
+      "multipliers": [
+        {
+          "card": "Branching Evolution",
+          "actionId": "Branching Evolution|front|script.replacementEffects[0]",
+          "path": "script.replacementEffects[0]",
+          "before": "UNKNOWN",
+          "after": "MATCH",
+          "effectsOnly": false,
+          "unresolved": []
+        },
+        {
+          "card": "Corpsejack Menace",
+          "actionId": "Corpsejack Menace|front|script.replacementEffects[0]",
+          "path": "script.replacementEffects[0]",
+          "before": "UNKNOWN",
+          "after": "MATCH",
+          "effectsOnly": false,
+          "unresolved": []
+        },
+        {
+          "card": "Doubling Season",
+          "actionId": "Doubling Season|front|script.replacementEffects[1]",
+          "path": "script.replacementEffects[1]",
+          "before": "UNKNOWN",
+          "after": "MATCH",
+          "effectsOnly": true,
+          "unresolved": []
+        },
+        {
+          "card": "Loading Zone",
+          "actionId": "Loading Zone|front|script.replacementEffects[0]",
+          "path": "script.replacementEffects[0]",
+          "before": "UNKNOWN",
+          "after": "MATCH",
+          "effectsOnly": false,
+          "unresolved": []
+        },
+        {
+          "card": "The Earth Crystal",
+          "actionId": "The Earth Crystal|front|script.replacementEffects[0]",
+          "path": "script.replacementEffects[0]",
+          "before": "UNKNOWN",
+          "after": "MATCH",
+          "effectsOnly": false,
+          "unresolved": []
+        }
+      ]
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "total": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 136,
+            "pathways": 140
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 135,
+            "pathways": 139
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 8110,
+        "structuralSupportRecords": 12531
+      },
+      "after": {
+        "total": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 136,
+            "pathways": 140
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 135,
+            "pathways": 139
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 8110,
+        "structuralSupportRecords": 12531
+      },
+      "transitions": {},
+      "multipliers": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "total": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 4700,
+        "structuralSupportRecords": 6777
+      },
+      "after": {
+        "total": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "direct": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "additive": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "multiplicative": {
+          "MATCH": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "UNKNOWN": {
+            "cards": 0,
+            "pathways": 0
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "unsupportedStructures": 4700,
+        "structuralSupportRecords": 6777
+      },
+      "transitions": {},
+      "multipliers": []
+    }
+  ]
+}

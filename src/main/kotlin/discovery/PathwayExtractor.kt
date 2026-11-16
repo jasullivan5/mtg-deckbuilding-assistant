@@ -768,9 +768,11 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 modifier.recipientCompatibility(Requirements(creature = false))
             }
             is DoubleCounterPlacement -> {
-                counterModifiers += CounterPlacementModifier(origin, effect.appliesTo, null,
-                    effect.placedByYou, effect.activeZones, selfCreature)
-                Verdict.UNKNOWN
+                val modifier = CounterPlacementModifier(origin, effect.appliesTo, null,
+                    effect.placedByYou, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
+                    transformation = CounterTransformation.Multiplicative(2))
+                counterModifiers += modifier
+                modifier.recipientCompatibility(Requirements(creature = false))
             }
             is EntersWithCounters -> recordEntryCounters(origin, effect.counterType, DynamicAmount.Fixed(effect.count),
                 effect.appliesTo, effect.activeZones, effect.selfOnly, effect.otherOnly, effect.condition?.description)

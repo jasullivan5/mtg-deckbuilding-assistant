@@ -4,6 +4,9 @@ import com.wingedsheep.sdk.core.CounterType
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.dsl.*
 import com.wingedsheep.sdk.scripting.GameObjectFilter
+import com.wingedsheep.sdk.scripting.DoubleCounterPlacement
+import com.wingedsheep.sdk.scripting.EventPattern
+import com.wingedsheep.sdk.scripting.events.Recipient
 import com.wingedsheep.sdk.scripting.ModifyCounterPlacement
 import com.wingedsheep.sdk.scripting.effects.AddCountersEffect
 import com.wingedsheep.sdk.scripting.effects.AddDynamicCountersEffect
@@ -20,6 +23,48 @@ class CounterPlacementTest : FunSpec({
     fun extract(name: String) = PathwayExtractor(inspectCounters = true).extract(listOf(checkNotNull(catalog.card(name))))
     fun placement(fact: CounterPlacement, recipient: Requirements = ours) =
         all(counterPlacementDecisions(fact, plus, recipient).map { it.verdict })
+
+    test("authored multipliers preserve the issuing action, factor and separate restrictions") {
+        val q = CounterQuestion(plus, ours, amount = 2, placer = Controller.OPPONENT, sourceZone = Zone.BATTLEFIELD)
+        for (name in listOf("Doubling Season", "Corpsejack Menace", "Branching Evolution")) {
+            val extraction = extract(name)
+            val modifier = extraction.counterModifiers.single()
+            extraction.counterPlacements.isEmpty() shouldBe true
+            extraction.eventOutcomes.isEmpty() shouldBe true
+            extraction.actions.single { it.id == modifier.action.actionId }.native shouldBe modifier.action.native
+            modifier.transformation shouldBe CounterTransformation.Multiplicative(2)
+            modifier.effectsOnly shouldBe (name == "Doubling Season")
+            isolatedCounterModification(modifier, q.copy(origin = PlacementOrigin.EFFECT)) shouldBe 4
+            isolatedCounterModification(modifier, q.copy(amount = 0, origin = PlacementOrigin.EFFECT)) shouldBe null
+            isolatedCounterModification(modifier, q.copy(recipient = Requirements(controller = Controller.OPPONENT), origin = PlacementOrigin.EFFECT)) shouldBe null
+            isolatedCounterModification(modifier, q.copy(sourceZone = Zone.GRAVEYARD, origin = PlacementOrigin.EFFECT)) shouldBe null
+            isolatedCounterModification(modifier, q.copy(sourceIsEntering = true, origin = PlacementOrigin.EFFECT)) shouldBe null
+            isolatedCounterModification(modifier, q.copy(type = CounterType.CHARGE, origin = PlacementOrigin.EFFECT)) shouldBe
+                if (name == "Doubling Season") 4 else null
+            for (origin in listOf(PlacementOrigin.COST, PlacementOrigin.TURN_BASED)) {
+                isolatedCounterModification(modifier, q.copy(origin = origin)) shouldBe if (modifier.effectsOnly) null else 4
+            }
+        }
+        val season = extract("Doubling Season").counterModifiers.single()
+        all(counterModifierDecisions(season, q).map { it.verdict }) shouldBe Verdict.MATCH
+        all(counterModifierDecisions(season, q.copy(origin = PlacementOrigin.UNKNOWN)).map { it.verdict }) shouldBe Verdict.UNKNOWN
+        isolatedCounterModification(season, q) shouldBe null
+        isolatedCounterModification(season, q.copy(amount = null, origin = PlacementOrigin.EFFECT)) shouldBe null
+    }
+
+    test("placer-gated multipliers distinguish the actor and an unresolved recipient") {
+        fun modifier(pattern: EventPattern) = PathwayExtractor(inspectCounters = true).extract(listOf(card("Synthetic multiplier") {
+            typeLine = "Enchantment"
+            replacementEffect(DoubleCounterPlacement(placedByYou = true, appliesTo = pattern))
+        })).counterModifiers.single()
+        val q = CounterQuestion(plus, ours, amount = 2, placer = Controller.YOU)
+        val known = modifier(EventPattern.CounterPlacementEvent(plus, Recipient.CreatureYouControl))
+        isolatedCounterModification(known, q) shouldBe 4
+        isolatedCounterModification(known, q.copy(placer = Controller.OPPONENT)) shouldBe null
+        val unresolved = modifier(EventPattern.CounterPlacementEvent(plus, Recipient.Object(GameObjectFilter.Creature.tapped())))
+        all(counterModifierDecisions(unresolved, q).map { it.verdict }) shouldBe Verdict.UNKNOWN
+        isolatedCounterModification(unresolved, q) shouldBe null
+    }
 
     test("native Hardened Scales modifies a separate positive placement from either placer") {
         val x = extract("Hardened Scales")

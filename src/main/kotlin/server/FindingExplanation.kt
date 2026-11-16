@@ -113,16 +113,20 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
             filter.controllerPredicate == ControllerPredicate.ControlledByYou)
             "Applies when ${pattern.counterType?.printed ?: "any"} counters would be placed on a creature you control."
         else "Native applicability: ${fact.pattern.description}."
-        val change = when {
-            fact.delta == null -> "The native change is retained for inspection."
-            fact.delta > 0 -> "It adds ${fact.delta} to the number placed."
-            fact.delta < 0 -> "It subtracts ${-fact.delta.toLong()} from the number placed, to a minimum of zero."
-            else -> "Its signed change is zero."
+        val change = when (val transform = fact.transformation) {
+            null -> "The native change is retained for inspection."
+            is CounterTransformation.Multiplicative -> "It multiplies the number placed by ${transform.factor}."
+            is CounterTransformation.Additive -> when {
+                transform.delta > 0 -> "It adds ${transform.delta} to the number placed."
+                transform.delta < 0 -> "It subtracts ${-transform.delta.toLong()} from the number placed, to a minimum of zero."
+                else -> "Its signed change is zero."
+            }
         }
         return PathwayExplanation("This replacement changes an impending placement. $change",
             fact.action.prerequisites + listOf(scope,
                 "Active source zones: ${fact.activeZones.joinToString { it.displayName }}.",
-                if (fact.placedByYou) "The modifier's controller must place the counters." else "Any player can place the counters."),
+                if (fact.placedByYou) "The modifier's controller must place the counters." else "Any player can place the counters.") +
+                listOfNotNull("Only placements from effects qualify. Placement costs and turn-based placements are excluded.".takeIf { fact.effectsOnly }),
             result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
             "Another operation must initiate the placement.")
     }

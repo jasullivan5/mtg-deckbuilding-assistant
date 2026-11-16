@@ -11,9 +11,11 @@ for (const width of [1365, 390]) {
     const objective = page.getByRole('combobox', {name: 'Objective', exact: true});
     await expect(objective.locator('option[value="place-plus-one-counters"]')).toHaveCount(1);
     await objective.selectOption('place-plus-one-counters');
-    const complete = page.waitForResponse(response => response.url().endsWith('/api/v1/discover') && response.ok());
+    const complete = page.waitForResponse(response => response.url().endsWith('/api/v1/discover'));
     await page.getByRole('button', {name: 'Find cards', exact: true}).click();
-    const run = await (await complete).json();
+    const response = await complete;
+    if (!response.ok()) throw new Error(`Discover returned ${response.status()}: ${await response.text()}`);
+    const run = await response.json();
     expect(run.objective).toBe('place-plus-one-counters');
     expect(run.commander).toBe('Kenrith, the Returned King');
 
@@ -40,5 +42,13 @@ for (const width of [1365, 390]) {
     await expect(placement).toContainText(/another operation must initiate the placement/i);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await (width === 390 ? placement : detail).screenshot({path: `${output}/hardened-scales-${width}.png`});
+
+    await search.fill('Doubling Season');
+    await expect(detail.getByRole('heading', {name: 'Doubling Season', exact: true})).toBeVisible();
+    await expect(placement).toContainText('It multiplies the number placed by 2.');
+    await expect(placement).toContainText('Only placements from effects qualify.');
+    await expect(placement).toContainText('Another operation must initiate the placement.');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await (width === 390 ? placement : detail).screenshot({path: `${output}/doubling-season-${width}.png`});
   });
 }
