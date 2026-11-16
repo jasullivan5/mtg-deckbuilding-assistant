@@ -1,0 +1,2058 @@
+{
+  "comparisons": [
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "own-nontoken-creature-deaths",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 993,
+          "pathways": 1050
+        },
+        "UNKNOWN": {
+          "cards": 1120,
+          "pathways": 1274
+        },
+        "NO_MATCH": {
+          "cards": 3166,
+          "pathways": 3770
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 993,
+          "pathways": 1050
+        },
+        "UNKNOWN": {
+          "cards": 1120,
+          "pathways": 1274
+        },
+        "NO_MATCH": {
+          "cards": 3166,
+          "pathways": 3770
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "creature-died-this-turn",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 15,
+          "pathways": 15
+        },
+        "UNKNOWN": {
+          "cards": 14,
+          "pathways": 14
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 17,
+          "pathways": 17
+        },
+        "UNKNOWN": {
+          "cards": 14,
+          "pathways": 14
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": [
+        {
+          "card": "Dreaded Bat-Cloud",
+          "path": "script.staticAbilities[0]",
+          "verdict": "MATCH"
+        },
+        {
+          "card": "Grim Reaper's Sprint",
+          "path": "script.staticAbilities[0]",
+          "verdict": "MATCH"
+        }
+      ]
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "reanimate-own-creatures",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 176,
+          "pathways": 178
+        },
+        "UNKNOWN": {
+          "cards": 370,
+          "pathways": 399
+        },
+        "NO_MATCH": {
+          "cards": 3962,
+          "pathways": 5085
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 176,
+          "pathways": 178
+        },
+        "UNKNOWN": {
+          "cards": 370,
+          "pathways": 399
+        },
+        "NO_MATCH": {
+          "cards": 3962,
+          "pathways": 5085
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "create-creature-tokens",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 1143,
+          "pathways": 1227
+        },
+        "UNKNOWN": {
+          "cards": 211,
+          "pathways": 235
+        },
+        "NO_MATCH": {
+          "cards": 433,
+          "pathways": 473
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 1143,
+          "pathways": 1227
+        },
+        "UNKNOWN": {
+          "cards": 211,
+          "pathways": 235
+        },
+        "NO_MATCH": {
+          "cards": 433,
+          "pathways": 473
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "stock-own-graveyard",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 1049,
+          "pathways": 1113
+        },
+        "UNKNOWN": {
+          "cards": 909,
+          "pathways": 998
+        },
+        "NO_MATCH": {
+          "cards": 525,
+          "pathways": 556
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 1049,
+          "pathways": 1113
+        },
+        "UNKNOWN": {
+          "cards": 909,
+          "pathways": 998
+        },
+        "NO_MATCH": {
+          "cards": 525,
+          "pathways": 556
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Kenrith, the Returned King",
+      "objective": "place-plus-one-counters",
+      "population": 15955,
+      "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+      "before": {
+        "MATCH": {
+          "cards": 666,
+          "pathways": 703
+        },
+        "UNKNOWN": {
+          "cards": 597,
+          "pathways": 644
+        },
+        "NO_MATCH": {
+          "cards": 537,
+          "pathways": 615
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 666,
+          "pathways": 703
+        },
+        "UNKNOWN": {
+          "cards": 597,
+          "pathways": 644
+        },
+        "NO_MATCH": {
+          "cards": 537,
+          "pathways": 615
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 119
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "own-nontoken-creature-deaths",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 585,
+          "pathways": 620
+        },
+        "UNKNOWN": {
+          "cards": 509,
+          "pathways": 577
+        },
+        "NO_MATCH": {
+          "cards": 1906,
+          "pathways": 2328
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 585,
+          "pathways": 620
+        },
+        "UNKNOWN": {
+          "cards": 509,
+          "pathways": 577
+        },
+        "NO_MATCH": {
+          "cards": 1906,
+          "pathways": 2328
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "creature-died-this-turn",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 7,
+          "pathways": 7
+        },
+        "UNKNOWN": {
+          "cards": 8,
+          "pathways": 8
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 9,
+          "pathways": 9
+        },
+        "UNKNOWN": {
+          "cards": 8,
+          "pathways": 8
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": [
+        {
+          "card": "Dreaded Bat-Cloud",
+          "path": "script.staticAbilities[0]",
+          "verdict": "MATCH"
+        },
+        {
+          "card": "Grim Reaper's Sprint",
+          "path": "script.staticAbilities[0]",
+          "verdict": "MATCH"
+        }
+      ]
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "reanimate-own-creatures",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 104,
+          "pathways": 106
+        },
+        "UNKNOWN": {
+          "cards": 85,
+          "pathways": 93
+        },
+        "NO_MATCH": {
+          "cards": 1555,
+          "pathways": 1857
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 104,
+          "pathways": 106
+        },
+        "UNKNOWN": {
+          "cards": 85,
+          "pathways": 93
+        },
+        "NO_MATCH": {
+          "cards": 1555,
+          "pathways": 1857
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "create-creature-tokens",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 346,
+          "pathways": 363
+        },
+        "UNKNOWN": {
+          "cards": 48,
+          "pathways": 55
+        },
+        "NO_MATCH": {
+          "cards": 215,
+          "pathways": 230
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 346,
+          "pathways": 363
+        },
+        "UNKNOWN": {
+          "cards": 48,
+          "pathways": 55
+        },
+        "NO_MATCH": {
+          "cards": 215,
+          "pathways": 230
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "stock-own-graveyard",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 508,
+          "pathways": 535
+        },
+        "UNKNOWN": {
+          "cards": 527,
+          "pathways": 576
+        },
+        "NO_MATCH": {
+          "cards": 315,
+          "pathways": 335
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 508,
+          "pathways": 535
+        },
+        "UNKNOWN": {
+          "cards": 527,
+          "pathways": 576
+        },
+        "NO_MATCH": {
+          "cards": 315,
+          "pathways": 335
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Judith, the Scourge Diva",
+      "objective": "place-plus-one-counters",
+      "population": 6111,
+      "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+      "before": {
+        "MATCH": {
+          "cards": 176,
+          "pathways": 184
+        },
+        "UNKNOWN": {
+          "cards": 136,
+          "pathways": 140
+        },
+        "NO_MATCH": {
+          "cards": 198,
+          "pathways": 234
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 176,
+          "pathways": 184
+        },
+        "UNKNOWN": {
+          "cards": 136,
+          "pathways": 140
+        },
+        "NO_MATCH": {
+          "cards": 198,
+          "pathways": 234
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 3,
+        "UNKNOWN": 42
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "own-nontoken-creature-deaths",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 228,
+          "pathways": 233
+        },
+        "UNKNOWN": {
+          "cards": 223,
+          "pathways": 247
+        },
+        "NO_MATCH": {
+          "cards": 1113,
+          "pathways": 1387
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 228,
+          "pathways": 233
+        },
+        "UNKNOWN": {
+          "cards": 223,
+          "pathways": 247
+        },
+        "NO_MATCH": {
+          "cards": 1113,
+          "pathways": 1387
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "creature-died-this-turn",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 0,
+          "pathways": 0
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "UNKNOWN": {
+          "cards": 1,
+          "pathways": 1
+        },
+        "NO_MATCH": {
+          "cards": 0,
+          "pathways": 0
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": [
+        {
+          "card": "Grim Reaper's Sprint",
+          "path": "script.staticAbilities[0]",
+          "verdict": "MATCH"
+        }
+      ]
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "reanimate-own-creatures",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 18,
+          "pathways": 19
+        },
+        "UNKNOWN": {
+          "cards": 31,
+          "pathways": 35
+        },
+        "NO_MATCH": {
+          "cards": 689,
+          "pathways": 811
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 18,
+          "pathways": 19
+        },
+        "UNKNOWN": {
+          "cards": 31,
+          "pathways": 35
+        },
+        "NO_MATCH": {
+          "cards": 689,
+          "pathways": 811
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "create-creature-tokens",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 182,
+          "pathways": 190
+        },
+        "UNKNOWN": {
+          "cards": 28,
+          "pathways": 33
+        },
+        "NO_MATCH": {
+          "cards": 131,
+          "pathways": 139
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 182,
+          "pathways": 190
+        },
+        "UNKNOWN": {
+          "cards": 28,
+          "pathways": 33
+        },
+        "NO_MATCH": {
+          "cards": 131,
+          "pathways": 139
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "stock-own-graveyard",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 230,
+          "pathways": 239
+        },
+        "UNKNOWN": {
+          "cards": 235,
+          "pathways": 252
+        },
+        "NO_MATCH": {
+          "cards": 173,
+          "pathways": 182
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 230,
+          "pathways": 239
+        },
+        "UNKNOWN": {
+          "cards": 235,
+          "pathways": 252
+        },
+        "NO_MATCH": {
+          "cards": 173,
+          "pathways": 182
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": []
+    },
+    {
+      "commander": "Krenko, Mob Boss",
+      "objective": "place-plus-one-counters",
+      "population": 3472,
+      "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+      "before": {
+        "MATCH": {
+          "cards": 83,
+          "pathways": 88
+        },
+        "UNKNOWN": {
+          "cards": 62,
+          "pathways": 64
+        },
+        "NO_MATCH": {
+          "cards": 110,
+          "pathways": 136
+        }
+      },
+      "after": {
+        "MATCH": {
+          "cards": 83,
+          "pathways": 88
+        },
+        "UNKNOWN": {
+          "cards": 62,
+          "pathways": 64
+        },
+        "NO_MATCH": {
+          "cards": 110,
+          "pathways": 136
+        }
+      },
+      "costRecordVerdicts": {
+        "MATCH": 1,
+        "UNKNOWN": 20
+      },
+      "newObjectiveRows": []
+    }
+  ],
+  "inventories": {
+    "kenrith": [
+      {
+        "card": "Academy Journeymage",
+        "action": "Academy Journeymage|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ajani's Response",
+        "action": "Ajani's Response|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Animist's Might",
+        "action": "Animist's Might|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Arcane Epiphany",
+        "action": "Arcane Epiphany|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Assassin's Ink",
+        "action": "Assassin's Ink|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Assassin's Ink",
+        "action": "Assassin's Ink|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Banish from Edoras",
+        "action": "Banish from Edoras|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bedlam Reveler",
+        "action": "Bedlam Reveler|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bitter Downfall",
+        "action": "Bitter Downfall|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Blasphemous Act",
+        "action": "Blasphemous Act|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Blinkmoth Infusion",
+        "action": "Blinkmoth Infusion|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bloodsoaked Insight",
+        "action": "Bloodsoaked Insight|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bolt Bend",
+        "action": "Bolt Bend|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bouncer's Beatdown",
+        "action": "Bouncer's Beatdown|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Brush Off",
+        "action": "Brush Off|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bury in Books",
+        "action": "Bury in Books|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Cactarantula",
+        "action": "Cactarantula|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Chitin Gravestalker",
+        "action": "Chitin Gravestalker|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Cinderslash Ravager",
+        "action": "Cinderslash Ravager|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Claws Out",
+        "action": "Claws Out|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Cryptic Serpent",
+        "action": "Cryptic Serpent|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dark Endurance",
+        "action": "Dark Endurance|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Death-Rattle Oni",
+        "action": "Death-Rattle Oni|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Deem Inferior",
+        "action": "Deem Inferior|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Depower",
+        "action": "Depower|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Diamond Weapon",
+        "action": "Diamond Weapon|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dire Downdraft",
+        "action": "Dire Downdraft|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Diregraf Rebirth",
+        "action": "Diregraf Rebirth|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dreaded Bat-Cloud",
+        "action": "Dreaded Bat-Cloud|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Dross Golem",
+        "action": "Dross Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Eddymurk Crab",
+        "action": "Eddymurk Crab|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Emrakul, the Promised End",
+        "action": "Emrakul, the Promised End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ephara's Dispersal",
+        "action": "Ephara's Dispersal|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Fate of the Sun-Cryst",
+        "action": "Fate of the Sun-Cryst|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Fungal Colossus",
+        "action": "Fungal Colossus|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Gargantuan Leech",
+        "action": "Gargantuan Leech|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Gargantuan Leech",
+        "action": "Gargantuan Leech|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Geistlight Snare",
+        "action": "Geistlight Snare|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Geistlight Snare",
+        "action": "Geistlight Snare|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ghalta, Primal Hunger",
+        "action": "Ghalta, Primal Hunger|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ghoultree",
+        "action": "Ghoultree|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Grim Reaper's Sprint",
+        "action": "Grim Reaper's Sprint|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Grounded for Life",
+        "action": "Grounded for Life|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Grow Extra Arms",
+        "action": "Grow Extra Arms|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hearth Elemental",
+        "action": "Hearth Elemental|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hellspur Brute",
+        "action": "Hellspur Brute|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hollow Marauder",
+        "action": "Hollow Marauder|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Huskburster Swarm",
+        "action": "Huskburster Swarm|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Into Thin Air",
+        "action": "Into Thin Air|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Junk Winder",
+        "action": "Junk Winder|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Kami of Jealous Thirst",
+        "action": "Kami of Jealous Thirst|front|script.activatedAbilities[0]",
+        "declaration": "script.activatedAbilities[0].conditionalCostReduction",
+        "checkpoint": "ACTIVATION",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Knockout Blow",
+        "action": "Knockout Blow|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Lumbering Megasloth",
+        "action": "Lumbering Megasloth|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Luminous Rebuke",
+        "action": "Luminous Rebuke|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Magnificent End",
+        "action": "Magnificent End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Memory Guardian",
+        "action": "Memory Guardian|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Mistmeadow Council",
+        "action": "Mistmeadow Council|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Molderhulk",
+        "action": "Molderhulk|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Molten Monstrosity",
+        "action": "Molten Monstrosity|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Moonrager's Slash",
+        "action": "Moonrager's Slash|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Neonate's Rush",
+        "action": "Neonate's Rush|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "No One Left Behind",
+        "action": "No One Left Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ore-Scale Guardian",
+        "action": "Ore-Scale Guardian|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Orysa, Tide Choreographer",
+        "action": "Orysa, Tide Choreographer|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Out of Air",
+        "action": "Out of Air|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Out of the Way",
+        "action": "Out of the Way|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Overwhelming Remorse",
+        "action": "Overwhelming Remorse|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Oxidda Golem",
+        "action": "Oxidda Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Pearl of Wisdom",
+        "action": "Pearl of Wisdom|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Quicksand Whirlpool",
+        "action": "Quicksand Whirlpool|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Qumulox",
+        "action": "Qumulox|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Razor Golem",
+        "action": "Razor Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Razorlash Transmogrant",
+        "action": "Razorlash Transmogrant|front|script.activatedAbilities[0]",
+        "declaration": "script.activatedAbilities[0].conditionalCostReduction",
+        "checkpoint": "ACTIVATION",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ride's End",
+        "action": "Ride's End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Rime Chill",
+        "action": "Rime Chill|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Roadside Blowout",
+        "action": "Roadside Blowout|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Rowdy Research",
+        "action": "Rowdy Research|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Run Behind",
+        "action": "Run Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Run Over",
+        "action": "Run Over|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Saved by the Shell",
+        "action": "Saved by the Shell|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Search Party Captain",
+        "action": "Search Party Captain|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Seized from Slumber",
+        "action": "Seized from Slumber|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Sentry Bot",
+        "action": "Sentry Bot|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Serpent of the Pass",
+        "action": "Serpent of the Pass|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Sewer Crocodile",
+        "action": "Sewer Crocodile|front|script.activatedAbilities[0]",
+        "declaration": "script.activatedAbilities[0].conditionalCostReduction",
+        "checkpoint": "ACTIVATION",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Shadow of Mortality",
+        "action": "Shadow of Mortality|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Spectral Denial",
+        "action": "Spectral Denial|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Spire Golem",
+        "action": "Spire Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Static Snare",
+        "action": "Static Snare|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Sunderflock",
+        "action": "Sunderflock|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Swampsnare Trap",
+        "action": "Swampsnare Trap|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Swat Away",
+        "action": "Swat Away|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Tangle Golem",
+        "action": "Tangle Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Temporal Intervention",
+        "action": "Temporal Intervention|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Balrog, Durin's Bane",
+        "action": "The Balrog, Durin's Bane|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Great Henge",
+        "action": "The Great Henge|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Lord of the Eagles",
+        "action": "The Lord of the Eagles|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Pride of Hull Clade",
+        "action": "The Pride of Hull Clade|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Skullspore Nexus",
+        "action": "The Skullspore Nexus|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "This Town Ain't Big Enough",
+        "action": "This Town Ain't Big Enough|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Titanic Brawl",
+        "action": "Titanic Brawl|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Tolarian Terror",
+        "action": "Tolarian Terror|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Travel the Overworld",
+        "action": "Travel the Overworld|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Uneasy Partings",
+        "action": "Uneasy Partings|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Valkyrie Aerial Unit",
+        "action": "Valkyrie Aerial Unit|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Vanquish the Horde",
+        "action": "Vanquish the Horde|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Venom's Hunger",
+        "action": "Venom's Hunger|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Visions of Villainy",
+        "action": "Visions of Villainy|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Voyage Home",
+        "action": "Voyage Home|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Walking Skyscraper",
+        "action": "Walking Skyscraper|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Whack",
+        "action": "Whack|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wildvine Pummeler",
+        "action": "Wildvine Pummeler|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Winged Words",
+        "action": "Winged Words|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Witchstalker Frenzy",
+        "action": "Witchstalker Frenzy|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Witherbloom, the Balancer",
+        "action": "Witherbloom, the Balancer|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wizard's Lightning",
+        "action": "Wizard's Lightning|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wizard's Retort",
+        "action": "Wizard's Retort|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wolfkin Outcast",
+        "action": "Wolfkin Outcast|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Writhing Necromass",
+        "action": "Writhing Necromass|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Yavimaya Sojourner",
+        "action": "Yavimaya Sojourner|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      }
+    ],
+    "judith": [
+      {
+        "card": "Assassin's Ink",
+        "action": "Assassin's Ink|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Assassin's Ink",
+        "action": "Assassin's Ink|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bedlam Reveler",
+        "action": "Bedlam Reveler|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bitter Downfall",
+        "action": "Bitter Downfall|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Blasphemous Act",
+        "action": "Blasphemous Act|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bloodsoaked Insight",
+        "action": "Bloodsoaked Insight|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bolt Bend",
+        "action": "Bolt Bend|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Chitin Gravestalker",
+        "action": "Chitin Gravestalker|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dark Endurance",
+        "action": "Dark Endurance|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Death-Rattle Oni",
+        "action": "Death-Rattle Oni|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dreaded Bat-Cloud",
+        "action": "Dreaded Bat-Cloud|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Dross Golem",
+        "action": "Dross Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Emrakul, the Promised End",
+        "action": "Emrakul, the Promised End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Gargantuan Leech",
+        "action": "Gargantuan Leech|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Gargantuan Leech",
+        "action": "Gargantuan Leech|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Grim Reaper's Sprint",
+        "action": "Grim Reaper's Sprint|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Hearth Elemental",
+        "action": "Hearth Elemental|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hellspur Brute",
+        "action": "Hellspur Brute|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hollow Marauder",
+        "action": "Hollow Marauder|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Huskburster Swarm",
+        "action": "Huskburster Swarm|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Kami of Jealous Thirst",
+        "action": "Kami of Jealous Thirst|front|script.activatedAbilities[0]",
+        "declaration": "script.activatedAbilities[0].conditionalCostReduction",
+        "checkpoint": "ACTIVATION",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Molten Monstrosity",
+        "action": "Molten Monstrosity|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Moonrager's Slash",
+        "action": "Moonrager's Slash|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Neonate's Rush",
+        "action": "Neonate's Rush|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "No One Left Behind",
+        "action": "No One Left Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ore-Scale Guardian",
+        "action": "Ore-Scale Guardian|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Overwhelming Remorse",
+        "action": "Overwhelming Remorse|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Oxidda Golem",
+        "action": "Oxidda Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Razor Golem",
+        "action": "Razor Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Razorlash Transmogrant",
+        "action": "Razorlash Transmogrant|front|script.activatedAbilities[0]",
+        "declaration": "script.activatedAbilities[0].conditionalCostReduction",
+        "checkpoint": "ACTIVATION",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Shadow of Mortality",
+        "action": "Shadow of Mortality|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Spire Golem",
+        "action": "Spire Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Swampsnare Trap",
+        "action": "Swampsnare Trap|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Tangle Golem",
+        "action": "Tangle Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Temporal Intervention",
+        "action": "Temporal Intervention|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "The Balrog, Durin's Bane",
+        "action": "The Balrog, Durin's Bane|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Venom's Hunger",
+        "action": "Venom's Hunger|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Visions of Villainy",
+        "action": "Visions of Villainy|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Walking Skyscraper",
+        "action": "Walking Skyscraper|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Whack",
+        "action": "Whack|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Witchstalker Frenzy",
+        "action": "Witchstalker Frenzy|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wizard's Lightning",
+        "action": "Wizard's Lightning|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Writhing Necromass",
+        "action": "Writhing Necromass|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      }
+    ],
+    "krenko": [
+      {
+        "card": "Bedlam Reveler",
+        "action": "Bedlam Reveler|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Blasphemous Act",
+        "action": "Blasphemous Act|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Bolt Bend",
+        "action": "Bolt Bend|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Dross Golem",
+        "action": "Dross Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Emrakul, the Promised End",
+        "action": "Emrakul, the Promised End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Grim Reaper's Sprint",
+        "action": "Grim Reaper's Sprint|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "MATCH"
+      },
+      {
+        "card": "Hearth Elemental",
+        "action": "Hearth Elemental|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Hellspur Brute",
+        "action": "Hellspur Brute|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Molten Monstrosity",
+        "action": "Molten Monstrosity|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Moonrager's Slash",
+        "action": "Moonrager's Slash|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Neonate's Rush",
+        "action": "Neonate's Rush|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Ore-Scale Guardian",
+        "action": "Ore-Scale Guardian|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Oxidda Golem",
+        "action": "Oxidda Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Razor Golem",
+        "action": "Razor Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Spire Golem",
+        "action": "Spire Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Tangle Golem",
+        "action": "Tangle Golem|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Walking Skyscraper",
+        "action": "Walking Skyscraper|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Witchstalker Frenzy",
+        "action": "Witchstalker Frenzy|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      },
+      {
+        "card": "Wizard's Lightning",
+        "action": "Wizard's Lightning|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "checkpoint": "CASTING",
+        "verdict": "UNKNOWN"
+      }
+    ]
+  }
+}
