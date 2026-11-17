@@ -1,0 +1,12 @@
+{
+  "note": "Normal installed candidate startup; no diagnostic catalog substitution. Packaged revisions are independently recorded; no candidate health SHA is asserted.",
+  "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+  "readyHealthObserved": false,
+  "catalogCollisionObserved": true,
+  "application": "ccaf1926ec754799711fa921466de2f636137e7e",
+  "log": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-candidate-startup.log",
+  "healthError": "No connection could be made because the target machine actively refused it. (127.0.0.1:8875)",
+  "javaExitCode": 2,
+  "logSha256": "faa24031769894415c4a1e7399904ea4b54d10650c96724c5a50ddf9dd3181b2",
+  "port": 8875
+}

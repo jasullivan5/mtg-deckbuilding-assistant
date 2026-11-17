@@ -1,0 +1,222 @@
+{
+  "minimumIdentifiedCollisions": 12,
+  "limit": "Static matching by definition symbol. Runtime registry validation remains authoritative; a renamed file can add further collisions.",
+  "definitions": [
+    {
+      "symbol": "SpinedTyrranax",
+      "application": {
+        "path": "src/main/kotlin/extensions/SpinedTyrranax.kt",
+        "sha256": "e668a169b702c8a97fa35625c0ea2cd7b5213c973dea1f9aeb612542289324cf",
+        "lfSha256": "538eda0503e1704a77e9a6de64e0571d5b38ecd959df33268569737ec9a49cde",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/SpinedTyrranax.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j25/cards/SpinedTyrranax.kt",
+        "sha256": "6495972e322b19d2fda5774d751fb3a50845cf3c754890e2d876ec6a619b56fe",
+        "lfSha256": "46a3fbf81cd857dbf1faea45146ba00ecc26f7d9032a2fd56ae706b8f157af15",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j25/cards/SpinedTyrranax.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "MightOfMurasa",
+      "application": {
+        "path": "src/main/kotlin/extensions/MightOfMurasa.kt",
+        "sha256": "56a48f4a4128163bf6dbad29e69b2b76bb01e924ce5018b42de303687a32ef42",
+        "lfSha256": "591de2b92323a32112589b34c978a1e28368dc8404481987a8554d8ae2650d5d",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/MightOfMurasa.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/MightOfMurasa.kt",
+        "sha256": "f57e0f54aa8b421240a6a0e7fa80a7622f0adaa54fc6604825108862b942b999",
+        "lfSha256": "4488d74147ea3c732a1c1888abc09c7148ed3fe39db0261287979650bbcbe3fc",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/MightOfMurasa.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "LabyrinthOfSkophos",
+      "application": {
+        "path": "src/main/kotlin/extensions/LabyrinthOfSkophos.kt",
+        "sha256": "b412bb3342ad96b5ad852f659519f656d1e100fae8f532902168733bdd9e14ba",
+        "lfSha256": "5779c9f2e499a399e26528b483092e5953566e73a61aa9d3962e11eb62d22b52",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/LabyrinthOfSkophos.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/LabyrinthOfSkophos.kt",
+        "sha256": "d2d4a85990a3f34f08f08c1d4d9bd43f3c58029221152955769c214adeed92a6",
+        "lfSha256": "c00d19ef4c5c4117b2b17acdacb0588d7f14fd567278dc82fe40a92733e8e325",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/LabyrinthOfSkophos.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "GaladhrimAmbush",
+      "application": {
+        "path": "src/main/kotlin/extensions/GaladhrimAmbush.kt",
+        "sha256": "cdffc56a6b6a7035e021878cbd70617c265cd57b81cf0a0b52b3d1cfda79e5c3",
+        "lfSha256": "472cdefd7d1392b8c6ab7ad60be193587c2865a6b453510d8996b685ae5f5899",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/GaladhrimAmbush.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltc/cards/GaladhrimAmbush.kt",
+        "sha256": "4be91bf6113a03039244daef110ebf3b53fdf4794429573c3fee755e5b997bc6",
+        "lfSha256": "a3fe446e7b239a87b40732741bf020999b4246257e149205c695c1e7d77fb5a5",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltc/cards/GaladhrimAmbush.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "HourOfPromise",
+      "application": {
+        "path": "src/main/kotlin/extensions/HourOfPromise.kt",
+        "sha256": "a74528a8b2ec46268f04e6532ab381f01fef386509246d4ca1872aa12c1d8a69",
+        "lfSha256": "483d28c1c51fad6bee0f9dff0e71ab980f94279740d241814323089951ba70ca",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/HourOfPromise.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hou/cards/HourOfPromise.kt",
+        "sha256": "cbe39d4bea057abe8358c8f5bc62650524563fe798352ce74da8d40dd09f29ea",
+        "lfSha256": "23d08a3ac8662a75ba3a277042c722ea029b84aab7f231bcdfb874b0ea60a473",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hou/cards/HourOfPromise.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "ThroneOfMakindi",
+      "application": {
+        "path": "src/main/kotlin/extensions/ThroneOfMakindi.kt",
+        "sha256": "505df39c7fc4061dd7ccf64e49a1cdb9de2eaf65dd3e1655493431ef7702ef1b",
+        "lfSha256": "be948602cee4e61a7b490c24505e5999d49364f846627065a84e6c55e4252581",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/ThroneOfMakindi.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ThroneOfMakindi.kt",
+        "sha256": "37ac2d9d32823e40a69b3ae2c0380d656dca74754d720ba00e382a4b07170bdb",
+        "lfSha256": "8960a9dbea4522efc0d687f4d8bc749a5f614400c6832cecd58637c55cecd99d",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ThroneOfMakindi.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "PlanewideCelebration",
+      "application": {
+        "path": "src/main/kotlin/extensions/PlanewideCelebration.kt",
+        "sha256": "90e5b0175aff25f7f8a8c3dc21fd1812b08813c3f42d4a865d51f08fb36c481c",
+        "lfSha256": "fb0402b435d1c7e3fc8b84044c705fa2cc66ce7ca85f56c0045a0e5fa9cc2292",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/PlanewideCelebration.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/PlanewideCelebration.kt",
+        "sha256": "d31163ab982731653e1a897454f7aa41b60f0b3089775999d73049b386568781",
+        "lfSha256": "6b5fb51cb04ce441863fda706c926c5391985e9145c075e6a1ab6ab270911efb",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/PlanewideCelebration.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "TyriteSanctum",
+      "application": {
+        "path": "src/main/kotlin/extensions/TyriteSanctum.kt",
+        "sha256": "91cb5877917311ea584f4e20b0d7c0510ad04fce74e59f64e698a6a0d062b232",
+        "lfSha256": "3f2f426ad6c57e64087b1413e31aa91088b38e4b106568af1542ebe69542c9de",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/TyriteSanctum.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/TyriteSanctum.kt",
+        "sha256": "9912e2595eb94700cab049f40823b443803afce5e406f1cbf741376514ea001b",
+        "lfSha256": "8c38c7aa307a0fb3f79379efb74a871749fe09a3300f2561d52024bc825d1957",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/TyriteSanctum.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "KrenkosCommand",
+      "application": {
+        "path": "src/main/kotlin/extensions/KrenkosCommand.kt",
+        "sha256": "548884bdea7f0bb1bd203513128df4dd3ecfea5dadeeb2957fd031124e81c29e",
+        "lfSha256": "acf2838ff83824b560c4c1c75d8611fd665a1802f1104104d36702803a4e1c82",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/KrenkosCommand.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/KrenkosCommand.kt",
+        "sha256": "b9eee637a2980db20bcfd07e1542bd9cb6c6ef00ac291f5efdc4e59cdaff2a36",
+        "lfSha256": "1a4911b1162c28866e4f671f31c5227d24184d05f5de6f3b4eb43af25aaa305d",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m13/cards/KrenkosCommand.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "Bitterblossom",
+      "application": {
+        "path": "src/main/kotlin/extensions/Bitterblossom.kt",
+        "sha256": "1af1cbf15b2b2004661285f7baf612dc382208dc80eab39cbb71a1807f8e0f26",
+        "lfSha256": "a135a0c4e46758e7c3896be3404710704500e1bdf139c2682d133fe0d06c2bfa",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/Bitterblossom.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mor/cards/Bitterblossom.kt",
+        "sha256": "e886106682ab01cb475a20768a1441df7acf1dd18c5d0546acf1eab84a258163",
+        "lfSha256": "aede1ba651f062fb7f754d4ad4961b3913c26ef280700077d8aa9f1c9afa551f",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mor/cards/Bitterblossom.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "JudithTheScourgeDiva",
+      "application": {
+        "path": "src/main/kotlin/extensions/JudithTheScourgeDiva.kt",
+        "sha256": "c59ed253f062ab47b19c29420d5421fbb479b1c505cdc12c7c3623c7af407d13",
+        "lfSha256": "53b6acc1a06357cb5097986f769bf2151a8d22903c5edc2c125fb9f9818db913",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/JudithTheScourgeDiva.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/JudithTheScourgeDiva.kt",
+        "sha256": "93640c1f623fff18fe8aa9d629c75fe41afa272b64b9290c6b114fb188fda4c3",
+        "lfSha256": "4bc491598b70aadc0893b70453370f57a4f4affe066785f1bc43ae35b89109dd",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/JudithTheScourgeDiva.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    },
+    {
+      "symbol": "OviyaPashiriSageLifecrafter",
+      "application": {
+        "path": "src/main/kotlin/extensions/OviyaPashiriSageLifecrafter.kt",
+        "sha256": "a3f23ba8b5cacdf235d7163992f40d38b4e420889d28251a1cd34423c179ee36",
+        "lfSha256": "95e386c6b22990c49f378a57540d1d3cf086e01c485d434bb0caec530a60e5b9",
+        "revision": "e0fa95970f546c19b79e32bc323af74367d6c353",
+        "url": "https://github.com/jasullivan5/mtg-deckbuilding-assistant/blob/e0fa95970f546c19b79e32bc323af74367d6c353/src/main/kotlin/extensions/OviyaPashiriSageLifecrafter.kt"
+      },
+      "upstream": {
+        "path": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/OviyaPashiriSageLifecrafter.kt",
+        "sha256": "0e176636b7b564133a4207bdac9ae6d67e695962ee9f248128e2695de7e4adf3",
+        "lfSha256": "9b4fefcbbb7e96e233b681067f36c9b2643b7d4e15438159a36cc413fbac59b3",
+        "revision": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+        "url": "https://github.com/jasullivan5/argentum-engine/blob/21bc1908bad22b3a6d4c84e5447d7b736655dbd0/mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/OviyaPashiriSageLifecrafter.kt"
+      },
+      "review": "Source paths identified; mechanical equivalence and translation retirement are not established."
+    }
+  ]
+}
