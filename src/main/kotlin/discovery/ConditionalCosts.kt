@@ -8,6 +8,7 @@ import com.wingedsheep.sdk.scripting.conditions.CreatureDiedThisTurnCondition
 import com.wingedsheep.sdk.scripting.conditions.PlayerDrewCardsThisTurn
 import com.wingedsheep.sdk.scripting.costs.*
 import com.wingedsheep.sdk.scripting.references.Player
+import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 
@@ -25,7 +26,8 @@ import kotlinx.serialization.json.JsonElement
     val baseMana: ManaCost?,
     val reduction: ManaCost?,
     val isolatedManaWhenTrue: ManaCost?,
-    val native: JsonElement
+    val native: JsonElement,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val chosenTargetCondition: ChosenTargetCondition? = null
 ) {
     val verdict: Verdict get() = when {
         isolatedManaWhenTrue == null -> Verdict.UNKNOWN
@@ -49,10 +51,20 @@ internal fun activationConditionalCost(path: String, ability: ActivatedAbility):
         nativeJson.encodeToJsonElement(ConditionalCostReduction.serializer(), change))
 }
 
-internal fun selfCastingConditionalCost(path: String, ability: StaticAbility, base: ManaCost): ConditionalCost? {
+internal fun selfCastingConditionalCost(path: String, ability: StaticAbility, base: ManaCost,
+    selection: TargetSelection? = null
+): ConditionalCost? {
     val change = ability as? ModifySpellCost ?: return null
     if (change.target != SpellCostTarget.SelfCast) return null
-    val source = (change.modification as? CostModification.ReduceGenericBy)?.source ?: return null
+    val modification = change.modification
+    val source = (modification as? CostModification.ReduceGenericBy)?.source
+    val colored = modification as? CostModification.ReduceColoredIfAnyTargetMatches
+    if (source == null && colored == null) return null
+    val selected = when {
+        source is CostReductionSource.FixedIfAnyTargetMatches -> ChosenTargetCondition(source.filter)
+        colored != null -> ChosenTargetCondition(colored.filter)
+        else -> null
+    }
     if (source is CostReductionSource.Fixed && change.gating == CostGating.None && change.optionalLifePayment == null) return null
     val actor = Player.You
     val condition = when (source) {
@@ -63,19 +75,22 @@ internal fun selfCastingConditionalCost(path: String, ability: StaticAbility, ba
     val amount = when (source) {
         is CostReductionSource.FixedIfCreatureDiedThisTurn -> source.amount
         is CostReductionSource.FixedIfControlFilter -> source.amount
+        is CostReductionSource.FixedIfAnyTargetMatches -> source.amount
         else -> null
     }?.takeIf { it >= 0 }
     val predicateSupported = when (source) {
         is CostReductionSource.FixedIfCreatureDiedThisTurn -> true
         is CostReductionSource.FixedIfControlFilter ->
             controlledBattlefieldExistenceSupport(actor, source.filter) == Verdict.MATCH
-        else -> false
+        else -> selected != null && selection?.potential(selected) == Verdict.MATCH
     }
-    val isolated = amount?.takeIf {
+    val reduction = if (colored == null) amount?.let { ManaCost.parse("{$it}") }
+        else ManaCost.parse(colored.symbols).takeIf { it.symbols.all { symbol -> symbol is ManaSymbol.Colored } }
+    val isolated = reduction?.takeIf {
         predicateSupported && base.isFixed() && change.gating == CostGating.None && change.optionalLifePayment == null
-    }
-        ?.let(base::reduceGeneric)
-    return ConditionalCost(path, PaymentCheckpoint.CASTING, actor, ReductionKind.GENERIC,
-        condition, source, base,
-        amount?.let { ManaCost.parse("{$it}") }, isolated, nativeJson.encodeToJsonElement(StaticAbility.serializer(), change))
+    }?.let { if (colored == null) base.reduceGeneric(requireNotNull(amount)) else base.subtract(it) }
+    return ConditionalCost(path, PaymentCheckpoint.CASTING, actor,
+        if (colored == null) ReductionKind.GENERIC else ReductionKind.MANA_SYMBOLS,
+        condition, source, base, reduction, isolated,
+        nativeJson.encodeToJsonElement(StaticAbility.serializer(), change), selected)
 }
