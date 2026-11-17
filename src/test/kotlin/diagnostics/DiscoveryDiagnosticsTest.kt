@@ -26,14 +26,14 @@ class DiscoveryDiagnosticsTest : FunSpec({
         j.creatureStats!!.toughness.description shouldBe "2"
         j.metadata.collectorNumber shouldBe "185"; j.setCode shouldBe "RNA"
         j.metadata.scryfallId shouldBe "0a742125-730d-4082-bfd8-5feb7733def4"
-        j.metadata.rulings.size shouldBe 3
+        catalog.translationAssurance(j.name)!!.evidence!!.source.any { it.path.endsWith("judith-the-scourge-diva-rulings.json") } shouldBe true
         fullIdentity(resolveCommander(catalog,j.name)) shouldBe setOf(Color.BLACK,Color.RED)
         selectedCommanderEligibility(j,setOf(Color.RED)) shouldBe Verdict.NO_MATCH
-        catalog.provenance(j.name).origin shouldBe "APPLICATION_EXTENSION"
+        catalog.provenance(j.name).origin shouldBe "UPSTREAM_ARGENTUM"
         catalog.search("name:\"Judith, the Scourge Diva\"").any { it.name == j.name } shouldBe true
     }
     test("extension collisions fail for name and Oracle ID without overwriting") {
-        val ext=Extensions.all.single { it.definition.name==JudithTheScourgeDiva.name }
+        val ext=Extensions.all.first()
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(ext.definition),listOf(ext)) }
         shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(ext.definition.copy(name="Different Name")),listOf(ext)) }
         catalog.registry.requireCard(ext.definition.name).script shouldBe ext.definition.script

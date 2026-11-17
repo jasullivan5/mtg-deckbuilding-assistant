@@ -14,9 +14,10 @@ class Catalog(extensionDefinitions: List<dev.mtg.assistant.extensions.ExtensionD
     private val origins = mutableMapOf<String, dev.mtg.assistant.extensions.Provenance>()
     fun provenance(name: String) = origins[name] ?: dev.mtg.assistant.extensions.Provenance("UPSTREAM_ARGENTUM", dev.mtg.assistant.discovery.ARGENTUM_REPOSITORY_URL + "/tree/" + dev.mtg.assistant.discovery.ARGENTUM_SHA)
     private val reviews = mutableMapOf<String, dev.mtg.assistant.extensions.DefinitionReview>()
-    fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview()
+    fun definitionReview(name: String) = reviews[name] ?: dev.mtg.assistant.extensions.DefinitionReview(
+        assuranceEvidence = dev.mtg.assistant.extensions.RecordedTranslationEvidence.find(card(name)?.oracleId))
     fun translationAssurance(name: String): dev.mtg.assistant.extensions.TranslationAssurance? =
-        card(name)?.takeIf { provenance(name).origin=="APPLICATION_EXTENSION" }?.let {
+        card(name)?.takeIf { provenance(name).origin=="APPLICATION_EXTENSION" || definitionReview(name).assuranceEvidence!=null }?.let {
             dev.mtg.assistant.extensions.assessTranslation(it,definitionReview(name).assuranceEvidence)
         }
     val registry = CardRegistry()

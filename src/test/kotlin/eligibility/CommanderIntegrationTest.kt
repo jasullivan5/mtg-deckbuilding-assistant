@@ -28,19 +28,19 @@ class CommanderIntegrationTest : FunSpec({
         r.mechanicalReview shouldBe MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
     }
     test("missing pinned definition is distinct from Magic card nonexistence and retains exact lookup") {
-        upstreamOnly.card(OviyaPashiriSageLifecrafter.name) shouldBe null
-        val r=inspectCommander(upstreamOnly,OviyaPashiriSageLifecrafter.name)
+        val r=inspectCommander(upstreamOnly,"Unrepresented Commander Fixture")
         r.availability shouldBe DefinitionAvailability.MISSING_FROM_PINNED_CATALOG
         r.blockers.single().code shouldBe CommanderBlocker.MISSING_DEFINITION
         r.blockers.single().reason shouldContain "does not establish"
         inspectCommander(catalog,"oviya pashiri, sage lifecrafter").selectable shouldBe false
     }
-    test("application commander exposes verified provenance and bounded scenario record") {
+    test("adopted native commander preserves identity and historical assurance without inherited execution") {
         val r=inspectCommander(catalog,OviyaPashiriSageLifecrafter.name)
-        r.availability shouldBe DefinitionAvailability.APPLICATION_EXTENSION
-        r.provenance!!.verifiedAt shouldBe "2026-10-26"
-        r.mechanicalReview shouldBe MechanicalReviewStatus.ENGINE_SCENARIOS_RECORDED
-        r.scenarioReferences.size shouldBe 1
+        r.availability shouldBe DefinitionAvailability.UPSTREAM_NATIVE
+        r.provenance!!.origin shouldBe "UPSTREAM_ARGENTUM"
+        r.mechanicalReview shouldBe MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
+        r.translationAssurance!!.evidence!!.oracleId shouldBe OviyaPashiriSageLifecrafter.oracleId
+        r.translationAssurance!!.evidenceCurrent shouldBe false
         r.selectable shouldBe true
         fullIdentity(resolveCommander(catalog,r.requestedName)) shouldBe setOf(Color.GREEN)
     }

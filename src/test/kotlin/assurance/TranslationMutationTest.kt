@@ -39,6 +39,7 @@ internal fun requirementProbe(c: CardDefinition): List<String> {
             expect("PU1",c.staticAbilities.filterIsInstance<GrantActivatedAbility>().single().ability.cost==Costs.Tap)
             val damage=ns.filter {it.kind()=="DealDamage"}
             expect("PU4",damage.first()["damageSource"]!=JsonPrimitive("Self"))
+            expect("PU4-source-is-host",damage.first()["damageSource"]!=damage.first()["target"])
         }
         LeyWeaver.oracleId -> {
             expect("LW1-optional",ns.any {it["gate"]==JsonPrimitive("Gate.MayDecide")})
@@ -64,6 +65,9 @@ class TranslationMutationTest : FunSpec({
         Spec("M1","live reference loses last-known damage",PredatoryUrge,altered(PredatoryUrge) {
             if(it.kind()=="DealDamage" && it["target"]!=JsonPrimitive("Self")) it.with("damageSource",JsonPrimitive("Self")) else it
         },{ReliabilityChecks.urge(it,removeHost=true)}),
+        Spec("M10","recipient substituted for the original host as damage source",PredatoryUrge,altered(PredatoryUrge) {
+            if(it.kind()=="DealDamage" && it["target"]!=JsonPrimitive("Self")) it.with("damageSource",it.getValue("target")) else it
+        },{ReliabilityChecks.urge(it,removeHost=true,checkSource=true)}),
         Spec("M2","tap cost omitted",PredatoryUrge,PredatoryUrge.copy(script=PredatoryUrge.script.copy(staticAbilities=listOf(grant.copy(ability=grant.ability.copy(cost=Costs.Free))))),{ReliabilityChecks.urge(it)}),
         Spec("M3","optional search made mandatory",LeyWeaver,altered(LeyWeaver) {if(it.kind()=="Gated") it.getValue("then") else it},{ReliabilityChecks.ley(it)}),
         Spec("M4","targeted player's choice assigned to controller",LeyWeaver,altered(LeyWeaver) {if(it.kind()=="IterationSpace.Players") it.with("players",JsonPrimitive("You")) else it},{ReliabilityChecks.ley(it,accept=true)}),
@@ -83,7 +87,7 @@ class TranslationMutationTest : FunSpec({
         Spec("M9","required reveal omitted",LeyWeaver,altered(LeyWeaver) {if(it.kind()=="MoveCollection") it.with("revealed",JsonPrimitive(false)) else it},{ReliabilityChecks.ley(it,accept=true)})
     )
     val observations=mutableListOf<JsonObject>()
-    for(s in specs) test("${s.id} structurally valid semantic defect detected with unchanged control") {
+    for(s in specs) test(if(s.id=="M1") "M1 historical mutation is no longer discriminating with departed-Self LKI" else "${s.id} structurally valid semantic defect detected with unchanged control") {
         (definitionDigest(s.changed)==definitionDigest(s.original)) shouldBe false
         val originalLint=CardValidator.validate(s.original);val lint=CardValidator.validate(s.changed)
         lint.count {it.severity==LintSeverity.ERROR} shouldBe 0
@@ -106,7 +110,10 @@ class TranslationMutationTest : FunSpec({
             put("controlPassed",controlFailure==null)
             put("qualificationWithoutIndependentApproval",assessTranslation(s.changed,null).qualification.name)
         }
-        (failure!=null) shouldBe true
+        // The original M1 failure remains frozen in engine-compatibility-41332418.json.
+        // Explicit Self now has native departed-object/LKI semantics. Its old syntactic probe is
+        // retained as history, not a current proof of a semantic defect. M10 checks source identity.
+        (failure!=null) shouldBe (s.id!="M1")
         violations.isNotEmpty() shouldBe true
     }
     afterSpec {

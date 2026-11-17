@@ -48,9 +48,17 @@ fun eligibilityDefinitionDigest(card: CardDefinition): String {
 
 /** Reviewed data ships with the CLI. No runtime network, registry mutation or native card copies. */
 object ApprovedEligibility {
-    val plan: CorrectionPlan by lazy {
+    val historicalPlan: CorrectionPlan by lazy {
         val stream=requireNotNull(javaClass.getResourceAsStream("/eligibility/corrections.json")) { "Missing reviewed eligibility resource" }
         stream.bufferedReader(Charsets.UTF_8).use { snapshotJson.decodeFromString<CorrectionPlan>(it.readText()) }
+    }
+    val plan: CorrectionPlan by lazy {
+        val stream=requireNotNull(javaClass.getResourceAsStream("/eligibility/active-corrections.json"))
+        val active=stream.bufferedReader(Charsets.UTF_8).use { snapshotJson.decodeFromString<List<String>>(it.readText()) }
+        require(active.distinct().size==active.size && active.all { id -> historicalPlan.corrections.any { it.id==id } }) {
+            "Unknown or duplicate active eligibility correction"
+        }
+        historicalPlan.copy(corrections=historicalPlan.corrections.filter { it.id in active })
     }
 }
 

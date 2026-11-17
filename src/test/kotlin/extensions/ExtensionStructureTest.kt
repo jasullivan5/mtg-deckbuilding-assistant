@@ -5,6 +5,7 @@ import com.wingedsheep.sdk.dsl.Effects
 import com.wingedsheep.sdk.tooling.CardExporter
 import com.wingedsheep.sdk.tooling.CardLoader
 import dev.mtg.assistant.extensions.Extensions
+import dev.mtg.assistant.extensions.adoptedNativeDefinitions
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import java.nio.file.Files
@@ -16,7 +17,9 @@ class ExtensionStructureTest : FunSpec({
     test("registered extension trees match explicitly reviewed goldens and round-trip preserving ids") {
         val dir=root.resolve("src/test/resources/native-definitions")
         if(System.getenv("UPDATE_EXTENSION_SNAPSHOTS")=="1") Files.createDirectories(dir)
-        val expected=Extensions.all.map { it.definition.name.replace(Regex("[^A-Za-z0-9]+"),"_")+".json" }.sorted()
+        // Retired goldens remain immutable historical inputs; active extensions still match exactly.
+        val expected=(Extensions.all.map { it.definition }+adoptedNativeDefinitions)
+            .map { it.name.replace(Regex("[^A-Za-z0-9]+"),"_")+".json" }.sorted()
         Extensions.all.sortedBy { it.definition.name }.forEach { extension ->
             val c=extension.definition
             val json=CardExporter.exportToJson(c)
@@ -26,6 +29,10 @@ class ExtensionStructureTest : FunSpec({
             CardExporter.exportToJson(CardLoader.fromJsonPreservingIds(json)) shouldBe json
         }
         Files.list(dir).use { paths -> paths.map { it.fileName.toString() }.sorted().toList() } shouldBe expected
+        adoptedNativeDefinitions.forEach { card ->
+            val historical=CardLoader.fromJsonPreservingIds(Files.readString(dir.resolve(card.name.replace(Regex("[^A-Za-z0-9]+"),"_")+".json")))
+            historical.oracleId shouldBe card.oracleId
+        }
     }
     test("nested transform and embedded spell structures survive the SDK round-trip") {
         val embedded=Catalog(emptyList()).card("Emeritus of Conflict")!!

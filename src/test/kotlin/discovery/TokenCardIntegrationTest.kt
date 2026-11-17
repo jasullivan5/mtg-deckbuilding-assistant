@@ -31,8 +31,8 @@ class TokenCardIntegrationTest : FunSpec({
             fullIdentity(c).map { it.symbol.toString() }.toSet() shouldBe source.getValue("color_identity").jsonArray.map { it.jsonPrimitive.content }.toSet()
             c.cardFaces.isEmpty() shouldBe true;c.backFace shouldBe null;c.flipSide shouldBe null
             CardValidator.validate(c).isEmpty() shouldBe true
-            catalog.provenance(c.name).origin shouldBe "APPLICATION_EXTENSION"
-            catalog.definitionReview(c.name).scenarioReferences.isNotEmpty() shouldBe true
+            catalog.provenance(c.name).origin shouldBe "UPSTREAM_ARGENTUM"
+            catalog.definitionReview(c.name).assuranceEvidence!!.oracleId shouldBe c.oracleId
         }
         val rulings=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/cards/bitterblossom-rulings.json"))).jsonObject.getValue("data").jsonArray
         Bitterblossom.metadata.rulings.map { it.date to it.text } shouldBe rulings.map { it.jsonObject.getValue("published_at").jsonPrimitive.content to it.jsonObject.getValue("comment").jsonPrimitive.content }
@@ -62,12 +62,12 @@ class TokenCardIntegrationTest : FunSpec({
     }
     test("new verified identities become authoritative coverage matches and future upstream duplicates fail") {
         for(c in additions) {
-            val native=nativeIdentity(c,"APPLICATION_EXTENSION")
+            val native=nativeIdentity(c,"UPSTREAM_ARGENTUM")
             val source=OracleIdentity(c.oracleId,c.name,"normal",fullIdentity(c).map { it.symbol.toString() },
                 c.typeLine.toString(),c.oracleText,c.manaCost.toString(),emptyList(),mapOf("commander" to "legal"),emptyList(),emptyList(),
                 OracleSource(c.metadata.scryfallId,null,null,c.setCode,c.metadata.collectorNumber,c.metadata.releaseDate))
             NativeIndex(listOf(native)).match(source).status shouldBe CatalogStatus.NATIVE_AVAILABLE
-            val extension=Extensions.all.single { it.definition.name==c.name }
+            val extension=ExtensionDefinition(c,Provenance("APPLICATION_EXTENSION","isolated collision regression","2026-11-17"))
             shouldThrow<IllegalArgumentException> { Extensions.validate(listOf(c.copy(name="Future Upstream Name")),listOf(extension)) }
         }
     }
@@ -78,7 +78,7 @@ class TokenCardIntegrationTest : FunSpec({
             val after=discover(catalog,who,"name:Kuldotha",objective)
             after.facts shouldBe before.facts;after.actions shouldBe before.actions;after.results shouldBe before.results
             after.unsupported shouldBe before.unsupported;after.structuralSupport shouldBe before.structuralSupport
-            after.eligibility.filterNot { e -> additions.any { it.name==e.card } } shouldBe before.eligibility
+            after.eligibility shouldBe before.eligibility
         }
     }
 })

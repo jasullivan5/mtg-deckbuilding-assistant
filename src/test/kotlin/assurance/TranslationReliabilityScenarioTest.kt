@@ -24,7 +24,7 @@ internal object ReliabilityChecks {
     private val prey=card("Reliability Prey") {typeLine="Creature";power=3;toughness=7}
     private val lore=card("Lore Weaver") {typeLine="Creature — Human Wizard";power=2;toughness=2}
     fun driver(c: CardDefinition)=scenarioDriver(c,kill,prey,lore)
-    fun urge(c: CardDefinition, removeHost: Boolean=false, removeAura: Boolean=false, removeTarget: Boolean=false, opponentHost: Boolean=false) {
+    fun urge(c: CardDefinition, removeHost: Boolean=false, removeAura: Boolean=false, removeTarget: Boolean=false, opponentHost: Boolean=false, checkSource: Boolean=false) {
         val d=driver(c);val me=d.player1;val owner=if(opponentHost) d.player2 else me
         val host=d.putCreatureOnBattlefield(owner,"Grizzly Bears");d.removeSummoningSickness(host)
         val target=d.putCreatureOnBattlefield(me,prey.name);val aura=d.putCardInHand(me,c.name);d.giveMana(me,Color.GREEN,4)
@@ -44,6 +44,11 @@ internal object ReliabilityChecks {
         d.resolvePendingActions()
         if(removeTarget) (d.state.getEntity(host)?.get<DamageComponent>()?.amount ?: 0) shouldBe 0
         else (d.state.getEntity(target)?.get<DamageComponent>()?.amount ?: 0) shouldBe 2
+        if(checkSource && !removeTarget) {
+            val damage=d.events.filterIsInstance<DamageDealtEvent>().single { it.targetId==target }
+            damage.sourceId shouldBe host
+            damage.amount shouldBe 2
+        }
     }
     fun hour(c: CardDefinition, empty: Boolean=false, opponentDeserts: Boolean=false) {
         val d=driver(c);val me=d.player1

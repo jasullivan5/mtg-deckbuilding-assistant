@@ -74,7 +74,7 @@ class TranslationAssuranceTest : FunSpec({
     }
     val catalog by lazy { Catalog() }
     test("historical evidence retains its implementation binding with one blocked concern and upstream unassessed") {
-        Extensions.all.size shouldBe 22
+        Extensions.all.size shouldBe 10
         Extensions.all.forEach { ext ->
             val a=catalog.translationAssurance(ext.definition.name)!!
             a.qualification shouldBe if(ext.definition.name==Tatterkite.name) QualificationState.BLOCKED else QualificationState.PROVISIONAL
@@ -83,12 +83,22 @@ class TranslationAssuranceTest : FunSpec({
         }
         catalog.translationAssurance("Forest") shouldBe null
         catalog.card("Predatory Urge") shouldBe PredatoryUrge
+        adoptedNativeDefinitions.forEach { native ->
+            catalog.provenance(native.name).origin shouldBe "UPSTREAM_ARGENTUM"
+            val assurance=catalog.translationAssurance(native.name)!!
+            assurance.evidence!!.oracleId shouldBe native.oracleId
+            assurance.evidenceCurrent shouldBe false
+            assurance.qualification shouldBe QualificationState.PROVISIONAL
+            assurance.engineExecution shouldBe ExecutionState.NOT_TESTED
+        }
     }
     test("recorded references match retained files and physical identity") {
         val root = TestFiles.root
-        Extensions.all.forEach { ext ->
-            val e=ext.review.assuranceEvidence!!
-            e.oracleId shouldBe ext.definition.oracleId
+        val represented=Extensions.all.map { it.definition }+adoptedNativeDefinitions
+        represented.size shouldBe 22
+        represented.forEach { card ->
+            val e=catalog.translationAssurance(card.name)!!.evidence!!
+            e.oracleId shouldBe card.oracleId
             (e.source+e.requirements+e.tests).forEach { ref ->
                 withClue(ref.path) {
                     ref.hashFormat shouldBe EVIDENCE_TEXT_SHA256
