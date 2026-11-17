@@ -308,21 +308,23 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
                    directBattlefieldStepTrigger: Boolean = false, event: EventContext? = null, returnSource: ReturnSourceContext? = null,
-                   availability: ClassAvailability? = null, conditionalCosts: List<ConditionalCost> = emptyList(), costs: () -> Unit = {}) {
+                   availability: ClassAvailability? = null, conditionalCosts: List<ConditionalCost> = emptyList(), targetSelection: TargetSelection? = null, costs: () -> Unit = {}) {
             actionId="${card.name}|$label|$path"; rootEffect=effect; stateRootPath=if(path=="script.spell") "script.spellEffect" else "$path.effect"; actionNative=value
             actionKind=when { path.contains("activatedAbilities") -> "ACTIVATED"; path.contains("stateTriggeredAbilities") -> "STATE_TRIGGERED"; path.contains("triggeredAbilities") -> "TRIGGERED"; path == "script.spell" -> "SPELL"; else -> "OTHER" }
-            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value,classAvailability=availability,conditionalCosts=conditionalCosts)
+            actions += ActionEvidence(actionId,card.name,label,path,assumptions,value,classAvailability=availability,conditionalCosts=conditionalCosts,targetSelection=targetSelection)
             val frame=Frame(targets,assumptions=assumptions,selfZone=sourceZone,directBattlefieldStepTrigger=directBattlefieldStepTrigger,event=event,returnSource=returnSource,classAvailability=availability)
             costs()
             effect?.let { walk(it,if(path == "script.spell") "script.spellEffect" else "$path.effect",frame) }
         }
         val castAssumptions=listOf("Cast timing, mana and additional costs, cast restrictions and legal targets from native script")
+        val castingTargets = script.targetRequirements.takeIf { it.isNotEmpty() && script.spellEffect !is ModalEffect }
+            ?.let { TargetSelection("${card.name}|$label|script.spell", it) }
         val conditionalCastingCosts = script.staticAbilities.mapIndexedNotNull { i, ability ->
-            selfCastingConditionalCost("script.staticAbilities[$i]", ability, manaCost)
+            selfCastingConditionalCost("script.staticAbilities[$i]", ability, manaCost, castingTargets)
         }
         if(script.spellEffect != null || script.additionalCosts.isNotEmpty() || script.selfAlternativeCost != null || conditionalCastingCosts.isNotEmpty()) action("script.spell",
             nativeJson.encodeToJsonElement(CardScript.serializer(),script),script.spellEffect,script.targetRequirements,castAssumptions,sourceZone=Zone.STACK,
-            conditionalCosts=conditionalCastingCosts) {
+            conditionalCosts=conditionalCastingCosts,targetSelection=castingTargets) {
             if(script.spellEffect !is ModalEffect) script.additionalCosts.forEachIndexed { i,c -> castingCost(c,"script.additionalCosts[$i]",Frame(script.targetRequirements,assumptions=castAssumptions)) }
         }
         script.selfAlternativeCost?.let { alternative ->

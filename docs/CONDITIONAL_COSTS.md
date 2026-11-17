@@ -1,5 +1,40 @@
 # Conditional casting and activation costs
 
+## Chosen targets at casting
+
+The walker records the native target requirements and their order on the casting action. Each fixed target-dependent modifier references an any-selected-target filter at the casting-cost checkpoint. The requirement and its selection group retain the target's kind, zone and native restrictions. Related generic and colored modifiers keep separate declaration paths and isolated prices.
+
+For a concrete announcement, the shared target query can ask Argentum to bind and validate the chosen groups before filtering those same selected objects. It can return a matched object condition, a legal selection with no matching object, or unresolved evidence. The query is independent of price and can also inspect who controls a chosen object. The native engine may estimate affordability with possible targets before selection. That estimate and a target present elsewhere in the game cannot substitute for the announced target at payment.
+
+The bounded structural projection describes a compatible target within supported requirements. The remaining targeting groups, costs, and actual game state are separate prerequisites. The application calculates each native modifier in isolation. Brush Off's generic reduction yields `{1}{U}{U}` on that basis, and its blue reduction yields `{2}{U}`. Its combined price is an observation from native execution. [Frozen source and native bindings](../src/test/resources/regression/chosen-target-cost-sources.json)
+
+### Native observations and catalog comparison
+
+- **Dire Downdraft.** The selected tapped creature reduced payment from four mana to three. Selecting an untapped creature retained the four-mana price even with another tapped creature present. Three mana was insufficient for that selection. Moving the selected creature to the graveyard after casting prevented its later move to the library and left the payment spent.
+- **No One Left Behind.** A mana-value-two creature card selected in the caster's graveyard enabled a two-mana cast and returned to the battlefield. Selecting the same card in hand was rejected without payment or a return.
+- **This Town Ain't Big Enough.** Two selected opposing permanents required five mana. One or two selected caster-controlled permanents required two mana. An unselected permanent controlled by the caster did not supply the discount.
+- **Brush Off and Titanic Brawl.** Brush Off paid two mana when targeting an instant spell on the stack. A separate target query on Titanic Brawl identified the chosen controller scope and returned two groups in native order. Swapping the announced targets left the binding unresolved. The query did not read any cost record.
+
+| Commander | Eligible cards | Cast actions with target selection evidence | Cards / actions with fixed chosen-target costs | Generic declarations (supported / total) | Colored declarations (supported / total) | Distinct newly supported conditions |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Kenrith | 15,955 | 2,198 | 33 / 33 | 24 / 33 | 1 / 1 | 24 |
+| Judith | 6,111 | 923 | 7 / 7 | 4 / 7 | 0 / 0 | 4 |
+| Krenko | 3,472 | 449 | 2 / 2 | 1 / 2 | 0 / 0 | 1 |
+
+All generic declarations started UNKNOWN. Brush Off's colored declaration was absent from the previous cost export. Its two modifiers share one action and condition. No declaration transitioned to NO_MATCH. The commander populations overlap. These are counts of native interpretation and action evidence, independent of the existing Discover verdicts.
+
+Nine generic declarations remain UNKNOWN under Kenrith. Bitter Downfall uses damage history. Bouncer's Beatdown and Torch Breath use mixed creature-or-planeswalker targets. Knockout Blow restricts target eligibility by combat state. Out of the Way requires opponent-controlled targets, while Ride's End and Roadside Blowout use type alternatives. Run Over has a compound cost filter across a two-group cast. Swampsnare Trap uses an implicit Aura target outside these explicit spell target requirements. Their native declarations are retained. No source discrepancy was established in the five frozen controls. The earlier controlled-permanent fidelity concerns remain separate.
+
+The adjacent Kenrith inventory includes Fireball's target-count increase and the fixed self-cast increases on Dragon's Prey and Vanish into Eternity. These are outside the reduction family. Hinata and the three opponent-targeting taxes also retain their existing evidence.
+
+The merged baseline is application `cb3a36ee6c73508547a1544b74f34aa55cfe8947`. Its CLI runtime sources, packaged resources and build inputs equal the previously tested `8b8fafd9b22d26de8eadf491e00f79501f655a86` exports. The source cohort is `474a0a8bc1518a4cc747b8a83a70b43bd5abf5f6`. The candidate is `9d7d45407c3979ea8f0b414a2b0d668286bc4ba5`, using clean Argentum `bd26b756b8b4d347f19e92bc77ef020919ebfa48`.
+
+All 18 CLI comparisons preserved the exact eligibility, objective rows and verdicts, Class evidence, counter facts, triggered operations, state dependencies and unrelated costs. Only casting-action selection metadata and the selected cost family changed. Reproduce with `python scripts/compare-chosen-target-costs.py <baseline-dir> <candidate-dir> <receipt>`. The [comparison receipt](evidence/chosen-target-cost-comparison.json) records all declarations, exact population digests and unchanged card and pathway counts by verdict.
+
+All 11 focused checks passed. The frozen source snapshot and five normalized native hashes were recomputed. The built CLI decoded an archived PR #58 report through `audit coverage --snapshot`. The running Explorer served the application and exported a Judith reanimation run with the existing No One Left Behind match, its graveyard target requirement and its casting discount. The executable source revision was tagged `+dirty` because the report and comparison script were in progress. `bash scripts/verify.sh full` passed all 740 application tests with zero failures, errors or skips, the distribution build and the current catalog contract. The older historical fingerprints still differ, as in PR #58. Browser automation and the separate full engine suite were outside this verification.
+
+**Next Card Integration decision.** Prioritize source-relative attachment relationships. A bounded Aura cohort can test how the cast target becomes the attached object, how active-zone and controller changes affect the relationship, and which supported operations refer to that object later. This can inform triggers and continuous modifications across multiple objectives. Linked movement through intermediate zones is another high-value identity gap. Both have broader reuse than adding another cost-only predicate.
+
 ## Controlled battlefield witnesses
 
 A fixed generic self-casting discount can depend on at least one permanent the caster controls matching the complete native filter. The shared condition uses the SDK's battlefield count with a minimum of one. The enclosing record binds that condition to the casting-cost checkpoint and the affected spell. A relative caster binding and the battlefield count keep the witness separate from the spell and from its owner. A matching spell on the stack, permanent in another zone, or permanent controlled only by an opponent cannot supply the witness.

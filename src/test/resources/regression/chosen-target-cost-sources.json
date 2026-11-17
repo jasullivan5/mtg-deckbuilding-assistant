@@ -1,0 +1,77 @@
+{
+  "applicationBase": "cb3a36ee6c73508547a1544b74f34aa55cfe8947",
+  "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": {
+    "This Town Ain't Big Enough": {
+      "source": {
+        "name": "This Town Ain't Big Enough",
+        "id": "bb206e27-da4d-4abe-9d8c-6d18c5f2f52a",
+        "oracle_id": "2550c2ae-834d-46e7-9ab4-d7bf7bfa6a78",
+        "set": "otj",
+        "collector_number": "74",
+        "oracle_text": "This spell costs {3} less to cast if it targets a permanent you control.\nReturn up to two target nonland permanents to their owners' hands.",
+        "scryfall_uri": "https://scryfall.com/card/otj/74/this-town-aint-big-enough?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/ThisTownAintBigEnough.kt",
+      "nativeLfSha256": "9ec145186f430a4143334210df058bfc98d10abeea163e0acd676e0571218663",
+      "expected": "Choose up to two nonland permanents; any selected permanent you control reduces generic mana by three once."
+    },
+    "Brush Off": {
+      "source": {
+        "name": "Brush Off",
+        "id": "151eab82-d20f-433b-b3bb-1d44e2871d5c",
+        "oracle_id": "873694c0-c100-4d24-a74f-1ab26442dd18",
+        "set": "sos",
+        "collector_number": "39",
+        "oracle_text": "This spell costs {1}{U} less to cast if it targets an instant or sorcery spell.\nCounter target spell.",
+        "scryfall_uri": "https://scryfall.com/card/sos/39/brush-off?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/BrushOff.kt",
+      "nativeLfSha256": "78cb567553b218044f7d49fb0a268cd9e75a1767ea41804df0e2fa26835eebf4",
+      "expected": "Select spell on stack; instant or sorcery enables separate one generic and one blue reductions."
+    },
+    "Dire Downdraft": {
+      "source": {
+        "name": "Dire Downdraft",
+        "id": "f1931f22-974c-43ad-911e-684bf3f9995d",
+        "oracle_id": "a45065e9-951a-4c6d-80b6-bd86a49f7439",
+        "set": "blb",
+        "collector_number": "46",
+        "oracle_text": "This spell costs {1} less to cast if it targets an attacking or tapped creature.\nTarget creature's owner puts it on their choice of the top or bottom of their library.",
+        "scryfall_uri": "https://scryfall.com/card/blb/46/dire-downdraft?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/DireDowndraft.kt",
+      "nativeLfSha256": "9587daaa1f9fe7c3cba3de4adf362ab004231c11b317753d19cc8f08eb17ddc0",
+      "expected": "Cast-time selected creature must be attacking or tapped; removes one generic mana."
+    },
+    "No One Left Behind": {
+      "source": {
+        "name": "No One Left Behind",
+        "id": "4a7e030c-98d1-452c-8020-cd92a3ef02c3",
+        "oracle_id": "afe8fd01-f0c7-46a5-9e9c-e8b9599cd19a",
+        "set": "bro",
+        "collector_number": "109",
+        "oracle_text": "This spell costs {3} less to cast if it targets a creature card with mana value 3 or less.\nReturn target creature card from your graveyard to the battlefield.",
+        "scryfall_uri": "https://scryfall.com/card/bro/109/no-one-left-behind?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/NoOneLeftBehind.kt",
+      "nativeLfSha256": "e39aa7b857637222f2ab82cfbdbab79460cca1f41469ab15fb70d2cb3e90de81",
+      "expected": "Select creature card in caster graveyard; mana value at most 3 removes three generic mana."
+    },
+    "Out of Air": {
+      "source": {
+        "name": "Out of Air",
+        "id": "c263db55-fcac-4b49-b626-7c8092accfcd",
+        "oracle_id": "fcea912b-58b1-4068-ac4d-1bc89aa7f33c",
+        "set": "lci",
+        "collector_number": "69",
+        "oracle_text": "This spell costs {2} less to cast if it targets a creature spell.\nCounter target spell.",
+        "scryfall_uri": "https://scryfall.com/card/lci/69/out-of-air?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/OutOfAir.kt",
+      "nativeLfSha256": "38fb2a13c7ab231f99f4345a73a76f3432cb7f451c48b66a67660563046bdd13",
+      "expected": "Select spell on stack; a creature spell enables fixed generic reduction."
+    }
+  }
+}
