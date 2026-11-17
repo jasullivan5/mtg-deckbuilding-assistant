@@ -19,8 +19,9 @@ class TriggeredOperationTest : FunSpec({
             val definition = card("Synthetic emerge-bound response") {
                 typeLine = "Creature"; power = 2; toughness = 2
                 triggeredAbility {
-                    trigger = EventPattern.ZoneChangeEvent(from = Zone.BATTLEFIELD, to = Zone.GRAVEYARD,
-                        filter = GameObjectFilter.Creature.youControl(), requireEmergeSacrifice = restricted)
+                    val subject = Triggers.a(GameObjectFilter.Creature.youControl())
+                    trigger = if (restricted) subject.leaves(to = Zone.GRAVEYARD, asEmergeSacrifice = true)
+                        else subject.dies()
                     effect = Effects.DrawCards(1)
                 }
             }
