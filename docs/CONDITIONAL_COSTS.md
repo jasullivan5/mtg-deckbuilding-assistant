@@ -1,5 +1,35 @@
 # Conditional casting and activation costs
 
+## Controlled battlefield witnesses
+
+A fixed generic self-casting discount can depend on at least one permanent the caster controls matching the complete native filter. The shared condition uses the SDK's battlefield count with a minimum of one. The enclosing record binds that condition to the casting-cost checkpoint and the affected spell. A relative caster binding and the battlefield count keep the witness separate from the spell and from its owner. A matching spell on the stack, permanent in another zone, or permanent controlled only by an opponent cannot supply the witness.
+
+Structural support covers bounded permanent types, subtype restrictions, and selected characteristics such as flying and minimum power. The native engine checks concrete witnesses against the current projected battlefield. The extractor derives the isolated generic change to the fixed printed payment using the SDK's mana operation. A false condition contributes no discount. Each declaration retains its own condition and amount, so independent discounts on one spell remain separately inspectable. The calculated price does not settle other payments, competing modifiers, alternate prices or affordability.
+
+The source cohort retains printing and Oracle IDs separately from native code paths. A supported native interpretation may expose differences from Oracle. For example, Arcane Epiphany, Geistlight Snare's Spirit branch, Neonate's Rush and Venom's Hunger use native creature restrictions where the source text specifies a subtype alone. These differences remain visible in the native filter. [Frozen controls](../src/test/resources/regression/controlled-permanent-cost-sources.json)
+
+### Native execution and catalog impact
+
+The native scenarios submitted real spells with explicit mana pools and checked both mana spent and battlefield entry. Academy Journeymage spent five mana with no Wizard and four with the caster's Merfolk Trickster. Four mana was insufficient with only an opponent's Wizard, a caster-controlled Walking Corpse, or a Wizard moved from battlefield to graveyard. Three mana was insufficient even with a qualifying Wizard. Rejected casts preserved the mana pool and produced no arrival. Cactarantula spent six mana with Forest and five with Eroded Canyon.
+
+| Commander | Eligible cards | Cards / casting actions | Declarations | UNKNOWN → MATCH | Remain UNKNOWN |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Kenrith | 15,955 | 16 / 16 | 18 | 17 | 1 |
+| Judith | 6,111 | 6 / 6 | 7 | 7 | 0 |
+| Krenko | 3,472 | 3 / 3 | 3 | 3 | 0 |
+
+There were no UNKNOWN-to-NO_MATCH transitions in these exports. Each row is a different view of the catalog, so the rows overlap. Assassin's Ink and Geistlight Snare each carry two separate declarations on one casting action. Wolfkin Outcast's Wolf-or-Werewolf disjunction remains unresolved for structural support while its complete native filter and typed existence condition are preserved. These verdicts describe native mechanical interpretation, independently of Discover admission and source fidelity. No existing objective admits a battlefield-witness discount on that basis alone.
+
+The baseline is merged application `397b74df9275817b115f29eded79a498f58a1bc1`. The archived CLI reports were produced at `4413c8be33e48fb94576c652f3bfdd8ee11ca10c` with identical runtime sources, resources and build inputs to merged main. The source cohort was frozen at `b604e75984beaa79577728c1165f1d28b9c81d9c`. The implementation and tests are at `8b8fafd9b22d26de8eadf491e00f79501f655a86` and use clean Argentum `bd26b756b8b4d347f19e92bc77ef020919ebfa48`.
+
+All 18 built-CLI comparisons preserved exact eligibility, objective rows, verdicts, Class evidence, counter facts, triggered operations, state dependencies and unrelated costs. Only the derived condition, reduction amount and isolated price fields for the selected family changed. Reproduce with `python scripts/compare-controlled-permanent-costs.py <baseline-dir> <candidate-dir> <receipt>`. The [comparison receipt](evidence/controlled-permanent-cost-comparison.json) records each transition, card and pathway counts by verdict, and exact population digests.
+
+All 16 focused extraction and native casting checks passed after setting JDK 21 on PATH. All five frozen source and normalized native hashes were independently recomputed against the retained snapshot and engine files. The built CLI read the archived PR #57 report through `audit coverage --snapshot`. The running Explorer served its existing page and its Kenrith death-history export retained Academy Journeymage's typed casting record without adding a result. Explorer stamped the tested implementation with `+dirty` while this report and comparison script were in progress. `bash scripts/verify.sh full` passed 729 application tests with zero failures, errors or skips. The distribution and current catalog contract passed. Historical report fingerprints still differ from the older frozen baseline, as at PR #57. The full browser and separate engine suites were outside this application-only verification.
+
+A useful next research candidate is fixed chosen-target reductions. That work needs explicit target binding at payment and source-led checks for selection, origin and multiple targets.
+
+## Original conditional-cost increment (PR #57)
+
 The shared walker attaches conditional mana changes to the existing action record. Each record keeps its declaration path, casting or activation checkpoint, actor, native predicate or reduction source, printed mana component and original declaration. The containing action retains the source card, face, native costs, targets, availability and other restrictions. Older reports can omit the added fields.
 
 The supported activation form uses Argentum's pip-by-pip subtraction for a fixed mana atom. It understands the activator's draw threshold and the broad creature-death predicate. The supported casting form uses Argentum's generic reduction for a self-cast declaration based on a creature dying earlier that turn. The derived amount applies to that printed mana component in isolation. Other payments, competing adjustments and actual affordability require native execution.
