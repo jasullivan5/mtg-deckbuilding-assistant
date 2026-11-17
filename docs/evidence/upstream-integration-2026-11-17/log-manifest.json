@@ -1,0 +1,187 @@
+[
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-app-bootstrap-adapted.log",
+    "sha256": "a80da438ad085d6c0a8d97462e9ea6c40d0b848bda4c616d617da050a921c857",
+    "bytes": 13218
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-app-bootstrap-jdk21.log",
+    "sha256": "1656f0441a8e5086243b79d10ad9bec6437937cb7bdac003ea62bc8e0648262a",
+    "bytes": 15322
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-app-bootstrap.log",
+    "sha256": "8497ac34020cdbfb361d7cb96ab20026f5112ec13ae7f9034c11d5dfae8bd797",
+    "bytes": 7230
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-bootstrap-guards.log",
+    "sha256": "1db7525c283405aef9a2fd0fd91e907720a700a02246ec83cf7113e2932a1f79",
+    "bytes": 134
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-candidate-startup.log",
+    "sha256": "faa24031769894415c4a1e7399904ea4b54d10650c96724c5a50ddf9dd3181b2",
+    "bytes": 118
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-catalog-canonical-56eeb.log",
+    "sha256": "8273d4cca0735c98f298271375610d316954341711f0608069be6d309d1e1278",
+    "bytes": 52459
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-catalog-canonical-replay.log",
+    "sha256": "8b210e0bc2b4ed4ff2709f0b366268fe05da8abec9b50eb1961be90d359f2b32",
+    "bytes": 52423
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-catalog-comparator-tests.log",
+    "sha256": "f4e64386b2ecdbba9faa01988f56db6d6a61162e4166322a37f863d2a21e72f7",
+    "bytes": 108
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-combined-verification.log",
+    "sha256": "97bce51ec8e61e7c5ce0201223c068762810b3031c12ebe8b2216c135c70fd66",
+    "bytes": 3968993
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-delivery-final-verification.log",
+    "sha256": "a3d8e37e97052eb278b882f298c38a756f67ad803b660e7b430113940fed776d",
+    "bytes": 3954814
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-delivery-verification.log",
+    "sha256": "2f3ca4c1e07264732054a176736a4564417a6d0dba614602fdcb035c4545acb9",
+    "bytes": 1576
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-diff-check.log",
+    "sha256": "52d30147f38898449bd2769dbe401df1567178765fae3febde1acef057a98259",
+    "bytes": 5506
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-final-application-verification.log",
+    "sha256": "3c2e43f87ffb5016f1dd710d3085165819b5c0932f57c389d5e510ed2a484926",
+    "bytes": 153642
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-final-verification.log",
+    "sha256": "c2b9e4a89c2aeedbebcfd51b704f3817db82892426f714382c3da87398318a4a",
+    "bytes": 65480
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-merge-attempt.log",
+    "sha256": "b05d7d2b63f7bbca75f729bff109bd50e9dae1b0dd3783951f93275c39382eea",
+    "bytes": 2018
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-control-56eeb.log",
+    "sha256": "05edba7497982a6cfb8f821923f2b2bd4f4e79a2a216b22317362d1d64f3d0a6",
+    "bytes": 924
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-control-baseline.log",
+    "sha256": "eee2946729f40e02338d2c08965f1b09ecb48d70b7b76af67c24f8d7e43f6479",
+    "bytes": 912
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-control-candidate-delivery.log",
+    "sha256": "53554167f5ae2d8b357262e84c6ea95e5f87082b5f060aecd2f7542f931d3a20",
+    "bytes": 942
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-control-candidate-final.log",
+    "sha256": "05e52f664c4d010985be5db72d85820b4db8a9e68c595bc391eda1080b3cabb4",
+    "bytes": 924
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-control-candidate.log",
+    "sha256": "2ad15b1c3b91349d2fdf900958761da1677b5e80f9a0831b0fe59c084fb7b7e0",
+    "bytes": 888
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-overlap-56eeb.log",
+    "sha256": "eafcf41a1fdf31f476a062ec891d6e1b4b8dd22ae126538aff8ed00dfe5a61c7",
+    "bytes": 180
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-overlap-delivery.log",
+    "sha256": "eafcf41a1fdf31f476a062ec891d6e1b4b8dd22ae126538aff8ed00dfe5a61c7",
+    "bytes": 180
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-overlap-inventory.log",
+    "sha256": "eafcf41a1fdf31f476a062ec891d6e1b4b8dd22ae126538aff8ed00dfe5a61c7",
+    "bytes": 180
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-rules.log",
+    "sha256": "e57ffe098df5a1b4f8e3edb98107cba7ba0d40120fdf685676917cf08d116002",
+    "bytes": 892
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-native-tap.log",
+    "sha256": "94301381a85074bfbc3bbd143ba43e5511683f6aae6117f7aa103d53cf81cd66",
+    "bytes": 2146
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-snapshot-tests.log",
+    "sha256": "9e24308c9d3994c77bea3428d7821014db43fa91ba35e7d68e2898801feeca58",
+    "bytes": 689
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-stable-bootstrap.log",
+    "sha256": "313efd5a10d47f3bb735f361ca8907b17c12a0acc789cc08535a21cbfc63eb6e",
+    "bytes": 7980
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-stable-browser-live.log",
+    "sha256": "65f15918c53b4237cd433f5a62f9cd4f8b912d218f2dcdacc2c1e1a260ffd760",
+    "bytes": 8667
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-stable-discovery.log",
+    "sha256": "c00f86f9ebc84b0bd6ad6bbed638b4c637a520dc16bccc6564b1ccaf84a20fb4",
+    "bytes": 866
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-stable-service.log",
+    "sha256": "c22e5c9520261a07aa971f76190d630d881f7358659baba5c31970cb545827af",
+    "bytes": 4235
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-stable-tests.log",
+    "sha256": "0de997c91fe9b6d566f375c1a50f2c9138b84e41d2af49c5e2745b9fc8f95764",
+    "bytes": 91118
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-test-class-windows-dry-run.log",
+    "sha256": "5e75ad8c0d54bb8757a2475f27b1400f20991480049c019d443a29cbd70a1477",
+    "bytes": 312
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-test-class-windows-fixed-dry-run.log",
+    "sha256": "e66a7ee918ee9c4026da5f7fb77a38ae57495a3c5201c64fc549df4b6b9a877a",
+    "bytes": 8200
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-web-build.log",
+    "sha256": "de55e1c04178566b49b9f85c6d940c94a55bbe26cede9de03be2771942566b2e",
+    "bytes": 1036
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-web-install.log",
+    "sha256": "f7c09b536b8f36af371f51cd14b5ffe0805a75b9619fae230526f2f0ee01c654",
+    "bytes": 1526
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-web-ui-edge.log",
+    "sha256": "ca0ce2ff0ac48856b9753910c96fbb34299a038085187a3f30f3c9cb5b0e85c6",
+    "bytes": 1717
+  },
+  {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\upstream-web-ui.log",
+    "sha256": "fa536cd8e95ef0f08ed41798497ee2d50c15a9559ee5096d7c8e0ae7b9ee72f6",
+    "bytes": 20270
+  }
+]

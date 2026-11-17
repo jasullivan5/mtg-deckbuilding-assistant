@@ -1,0 +1,54 @@
+{
+  "application": "ccaf1926ec754799711fa921466de2f636137e7e",
+  "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+  "applicationSrcTree": "3d8ea7a5118dca9e4fa9bf3f102788293fcd1286",
+  "applicationWebTree": "58986141e0e7834375ddae7934b32ea36c4b15ee",
+  "baselineWebTree": "58986141e0e7834375ddae7934b32ea36c4b15ee",
+  "packagedApplicationMetadata": "revision=ccaf1926ec754799711fa921466de2f636137e7e\n",
+  "packagedEngineMetadata": "revision=56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906\nimplementationSha256=7f7018208f39ee54b9a72719eee0cebcc4eef6856380009abe6e9c3703324056\nmode=candidate\n",
+  "mergeParents": [
+    "8002e26a974775203973cc7014878c5d4f70fa71",
+    "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "21bc1908bad22b3a6d4c84e5447d7b736655dbd0"
+  ],
+  "integratedUpstream": "21bc1908bad22b3a6d4c84e5447d7b736655dbd0",
+  "deliveryUpstreamRecheck": "ec70462e5789af7789e0135d1e9a85bd607848f2",
+  "upstreamCommitsNotIntegrated": 4,
+  "forkTrackingMain": "ec70462e5789af7789e0135d1e9a85bd607848f2",
+  "protectedEngineAppStable": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "protectedApplicationOriginMain": "e0fa95970f546c19b79e32bc323af74367d6c353",
+  "existingLocalApplicationMain": "f039a6bcde462424d9d3a82a06819abbe418a978",
+  "primaryEngineCheckout": {
+    "branch": "app-stable",
+    "head": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "status": ""
+  },
+  "primaryApplicationCheckout": {
+    "branch": "feature/chosen-target-costs",
+    "head": "3689f465a69e6ae527a39681a3610faa29107cc6",
+    "status": ""
+  },
+  "junitArchive": {
+    "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\mtg-full-upstream\\generated\\upstream-integration\\delivery-junit-56eeb.zip",
+    "sha256": "ccec96b006a078911728fe2e5b7769e502be5433a62d4dca884f07f847396b2a",
+    "bytes": 7435383
+  },
+  "earlierNativeObservation": {
+    "engine": "3de9082227b0269ba6991551bc4d0395c5741619",
+    "archive": {
+      "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\mtg-full-upstream\\generated\\upstream-integration\\native-junit-3de9082.zip",
+      "sha256": "786ad907c2ed0b838f289c4a5683b0dd4de0e645b12d5af13385d3a2446bd5aa",
+      "bytes": 7598542
+    }
+  },
+  "rawCatalogObservation": {
+    "engine": "3de9082227b0269ba6991551bc4d0395c5741619",
+    "archive": {
+      "path": "C:\\Users\\joes\\Documents\\ChatGPT\\MTG Deckbuilding R&D\\mtg-full-upstream\\generated\\upstream-integration\\catalog-raw-junit-3de9082.zip",
+      "sha256": "28f7c3bc85587374ce50059332eb8cd658e603278a3ffba8e840d14e0a1b768a",
+      "bytes": 31104
+    }
+  },
+  "sourceResourcesChanged": false,
+  "note": "Observation receipt, not a qualification record. Raw catalog CRLF failure receipt is retained separately; this archive contains the final diagnostic canonical catalog replay. Subsequent application commits add only this report and evidence documentation."
+}

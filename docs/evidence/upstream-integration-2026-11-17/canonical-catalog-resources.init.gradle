@@ -1,0 +1,15 @@
+// Diagnostic replay only: canonicalize copied build resources, never source evidence.
+gradle.projectsEvaluated {
+    def catalog = gradle.rootProject.findProject(':mtg-sets')
+    if (catalog != null) {
+        catalog.tasks.named('processTestResources') { copyTask ->
+            copyTask.doLast {
+                catalog.fileTree(copyTask.destinationDir) { include 'snapshots/cards/*.json' }.each { file ->
+                    def original = file.getText('UTF-8')
+                    def canonical = original.replace('\r\n', '\n')
+                    if (canonical != original) file.setText(canonical, 'UTF-8')
+                }
+            }
+        }
+    }
+}

@@ -59,7 +59,7 @@ fun eventIntersection(context: EventContext, requirement: ZoneEventRequirement):
     val filter=witness.compatible(FactConstraints(creature=requirement.creature,token=requirement.token,owner=requirement.owner))
     return all(listOf(zones,filter,context.confidence,
         if(context.binding==TriggerBinding.SELF && requirement.creature && !context.sourceIsCreature) Verdict.UNKNOWN else Verdict.MATCH,
-        if(event.excludeSacrifice || event.requireCraftMaterial) Verdict.UNKNOWN else Verdict.MATCH))
+        if(event.excludeSacrifice || event.requireCraftMaterial || event.requireEmergeSacrifice) Verdict.UNKNOWN else Verdict.MATCH))
 }
 
 data class EvaluatedEventOutcome(val outcome: EventOutcome,val decisions: List<Decision>) {

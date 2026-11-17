@@ -4,7 +4,7 @@ import com.wingedsheep.sdk.core.CounterType
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.dsl.*
 import com.wingedsheep.sdk.scripting.GameObjectFilter
-import com.wingedsheep.sdk.scripting.DoubleCounterPlacement
+import com.wingedsheep.sdk.scripting.ScaleCounterPlacement
 import com.wingedsheep.sdk.scripting.EventPattern
 import com.wingedsheep.sdk.scripting.events.Recipient
 import com.wingedsheep.sdk.scripting.ModifyCounterPlacement
@@ -55,7 +55,7 @@ class CounterPlacementTest : FunSpec({
     test("placer-gated multipliers distinguish the actor and an unresolved recipient") {
         fun modifier(pattern: EventPattern) = PathwayExtractor(inspectCounters = true).extract(listOf(card("Synthetic multiplier") {
             typeLine = "Enchantment"
-            replacementEffect(DoubleCounterPlacement(placedByYou = true, appliesTo = pattern))
+            replacementEffect(ScaleCounterPlacement(placer = com.wingedsheep.sdk.scripting.references.Player.You, appliesTo = pattern))
         })).counterModifiers.single()
         val q = CounterQuestion(plus, ours, amount = 2, placer = Controller.YOU)
         val known = modifier(EventPattern.CounterPlacementEvent(plus, Recipient.CreatureYouControl))
@@ -64,6 +64,29 @@ class CounterPlacementTest : FunSpec({
         val unresolved = modifier(EventPattern.CounterPlacementEvent(plus, Recipient.Object(GameObjectFilter.Creature.tapped())))
         all(counterModifierDecisions(unresolved, q).map { it.verdict }) shouldBe Verdict.UNKNOWN
         isolatedCounterModification(unresolved, q) shouldBe null
+    }
+
+    test("upstream opponent placer restrictions are retained and halving stays unresolved") {
+        fun extract(placer: com.wingedsheep.sdk.scripting.references.Player,
+                    scale: com.wingedsheep.sdk.scripting.CounterPlacementScale) =
+            PathwayExtractor(inspectCounters = true).extract(listOf(card("Synthetic counter scale") {
+                typeLine = "Enchantment"
+                replacementEffect(ScaleCounterPlacement(placer = placer, scale = scale))
+            }))
+        val doubled = extract(com.wingedsheep.sdk.scripting.references.Player.EachOpponent,
+            com.wingedsheep.sdk.scripting.CounterPlacementScale.DOUBLE)
+        val modifier = doubled.counterModifiers.single()
+        modifier.placedByOpponent shouldBe true
+        val question = CounterQuestion(plus, ours, amount = 3, placer = Controller.OPPONENT)
+        isolatedCounterModification(modifier, question) shouldBe 6
+        isolatedCounterModification(modifier, question.copy(placer = Controller.YOU)) shouldBe null
+        val halved = extract(com.wingedsheep.sdk.scripting.references.Player.EachOpponent,
+            com.wingedsheep.sdk.scripting.CounterPlacementScale.HALF_ROUNDED_DOWN)
+        val unresolved = halved.counterModifiers.single()
+        unresolved.transformation shouldBe null
+        isolatedCounterModification(unresolved, question) shouldBe null
+        all(counterModifierDecisions(unresolved, question).map { it.verdict }) shouldBe Verdict.UNKNOWN
+        halved.unsupported.isNotEmpty() shouldBe true
     }
 
     test("native Hardened Scales modifies a separate positive placement from either placer") {
@@ -118,7 +141,7 @@ class CounterPlacementTest : FunSpec({
         verdicts.toSet() shouldBe setOf(Verdict.MATCH, Verdict.NO_MATCH)
         val synthetic = card("Synthetic signed replacement") {
             typeLine = "Enchantment"
-            replacementEffect(ModifyCounterPlacement(modifier = -2, placedByYou = true))
+            replacementEffect(ModifyCounterPlacement(modifier = -2, placer = com.wingedsheep.sdk.scripting.references.Player.You))
         }
         val modifier = PathwayExtractor(inspectCounters = true).extract(listOf(synthetic)).counterModifiers.single()
         val q = CounterQuestion(plus, ours, amount = 1, placer = Controller.YOU)

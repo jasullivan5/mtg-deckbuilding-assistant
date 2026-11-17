@@ -377,7 +377,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),
                 if(ability.activeZones.isEmpty()) Verdict.NO_MATCH else if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController ||
                     ability.binding==TriggerBinding.ATTACHED || ability.activeZones!=setOf(Zone.BATTLEFIELD) ||
-                    levelTransition || availability?.support == Verdict.UNKNOWN) Verdict.UNKNOWN else Verdict.MATCH,
+                    levelTransition || availability?.support == Verdict.UNKNOWN ||
+                    trigger is EventPattern.ZoneChangeEvent && trigger.requireEmergeSacrifice) Verdict.UNKNOWN else Verdict.MATCH,
                 assumptions + "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed" +
                     listOfNotNull("This source's ability triggers only once during its battlefield lifetime".takeIf { ability.triggersOnce },
                         "Do this only once each turn: resolution action budget must remain; declining does not spend it".takeIf { ability.effectOncePerTurn }))
@@ -389,9 +390,10 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             val returnSource=ReturnSourceContext("TRIGGERED",ability.activeZones,ability.description,confidence=
                     if(ability.interveningIf!=null || ability.triggerRestriction!=null || ability.controlledByTriggeringEntityController || extra.isNotEmpty() ||
                         ability.binding==TriggerBinding.ATTACHED || ability.binding==TriggerBinding.SELF && Zone.GRAVEYARD in ability.activeZones ||
-                        trigger is EventPattern.ZoneChangeEvent && trigger.filter.statePredicates.isNotEmpty()) Verdict.UNKNOWN else Verdict.MATCH,
+                        trigger is EventPattern.ZoneChangeEvent && (trigger.filter.statePredicates.isNotEmpty() || trigger.requireEmergeSacrifice)) Verdict.UNKNOWN else Verdict.MATCH,
                     selfDeathTransition=when {
                         ability.binding!=TriggerBinding.SELF -> Verdict.NO_MATCH
+                        trigger is EventPattern.ZoneChangeEvent && trigger.requireEmergeSacrifice -> Verdict.UNKNOWN
                         trigger is EventPattern.ZoneChangeEvent && trigger.from==Zone.BATTLEFIELD && trigger.to==Zone.GRAVEYARD && trigger.excludeTo!=Zone.GRAVEYARD -> Verdict.MATCH
                         trigger is EventPattern.ZoneChangeEvent && (trigger.to!=null && trigger.to!=Zone.GRAVEYARD || trigger.excludeTo==Zone.GRAVEYARD) -> Verdict.NO_MATCH
                         else -> Verdict.UNKNOWN
@@ -403,6 +405,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                         if(ability.triggersOnce) add(ReturnLimit("TRIGGER_LIMIT",path,"The native lifetime trigger limit applies; further use across zone changes is not established.",native))
                         if(ability.effectOncePerTurn) add(ReturnLimit("TRIGGER_LIMIT",path,"The action can be taken only once each turn; its resolution budget must remain.",native))
                         if(trigger is EventPattern.ZoneChangeEvent && trigger.excludeSacrifice) add(ReturnLimit("TRIGGER_RESTRICTION",path,"This trigger excludes sacrifices; sacrificing the source does not supply this return opportunity.",native))
+                        if(trigger is EventPattern.ZoneChangeEvent && trigger.requireEmergeSacrifice) add(ReturnLimit("UNRESOLVED_TRIGGER_RESTRICTION",path,"Only a sacrifice while casting with emerge supplies this trigger; that payment relationship is not interpreted.",native))
                     })
             action(path,nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability),ability.effect,ability.allTargetRequirements,assumptions,sourceZone=sourceZone,
                 event=event,returnSource=returnSource,availability=availability,directBattlefieldStepTrigger=trigger is EventPattern.StepEvent && ability.activeZones == setOf(Zone.BATTLEFIELD) &&
@@ -419,6 +422,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 if(ability.binding == TriggerBinding.SELF) eventScope=eventScope.copy(actor="YOU",printedSelfCreature=creature)
                 if(ability.binding == TriggerBinding.ATTACHED) eventScope=eventScope.copy(unresolved="Attached death-event binding not resolved against aura/attachment restrictions")
                 if(ability.controlledByTriggeringEntityController) eventScope=eventScope.copy(unresolved="Trigger controller rebound to event entity")
+                if(trigger.requireEmergeSacrifice) eventScope=eventScope.copy(unresolved="Native emerge-sacrifice trigger restriction is not interpreted")
                 removals(ability.effect).forEach { enhanced("$path.trigger",trigger.toString(),Verdict.MATCH to eventScope,it,Frame(ability.allTargetRequirements,assumptions=assumptions,selfZone=sourceZone),Verdict.MATCH) }
             }
             ability.elseEffect?.let { walk(it,"$path.elseEffect",Frame(ability.allTargetRequirements,assumptions=assumptions+"Intervening condition failed",selfZone=sourceZone,event=event,outcomeGuard=Verdict.UNKNOWN,returnSource=returnSource,returnGuard=Verdict.UNKNOWN,classAvailability=availability)) }
@@ -779,7 +783,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actionId = id
         val native = nativeJson.encodeToJsonElement(ReplacementEffect.serializer(), effect)
         val checkpoint = when (effect) {
-            is ModifyCounterPlacement, is DoubleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
+            is ModifyCounterPlacement, is ScaleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
             is EntersWithCounters, is EntersWithDynamicCounters -> "Counters are placed as part of entering the battlefield. The native entry and casting requirements apply."
             else -> {
                 actions += ActionEvidence(id, card.name, face, path, availability?.prerequisites().orEmpty(), native, classAvailability = availability)
@@ -792,16 +796,17 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         val confidence = when (effect) {
             is ModifyCounterPlacement -> {
                 val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
-                    effect.placedByYou, effect.activeZones, selfCreature)
+                    effect.placer == Player.You, effect.activeZones, selfCreature, placedByOpponent = effect.placer == Player.EachOpponent)
                 counterModifiers += modifier
                 modifier.recipientCompatibility(Requirements(creature = false))
             }
-            is DoubleCounterPlacement -> {
+            is ScaleCounterPlacement -> {
                 val modifier = CounterPlacementModifier(origin, effect.appliesTo, null,
-                    effect.placedByYou, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
-                    transformation = CounterTransformation.Multiplicative(2))
+                    effect.placer == Player.You, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
+                    transformation = CounterTransformation.Multiplicative(2).takeIf { effect.scale == CounterPlacementScale.DOUBLE },
+                    placedByOpponent = effect.placer == Player.EachOpponent)
                 counterModifiers += modifier
-                modifier.recipientCompatibility(Requirements(creature = false))
+                if (effect.scale == CounterPlacementScale.DOUBLE) modifier.recipientCompatibility(Requirements(creature = false)) else Verdict.UNKNOWN
             }
             is EntersWithCounters -> recordEntryCounters(origin, effect.counterType, DynamicAmount.Fixed(effect.count),
                 effect.appliesTo, effect.activeZones, effect.selfOnly, effect.otherOnly, effect.condition?.description)
@@ -820,7 +825,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             other && !self && entry != null -> CounterRecipient(filter = entry.filter)
             else -> CounterRecipient(unresolved = "Entry source versus other entrants is not fully interpreted")
         }
-        val simple = entry?.to == Zone.BATTLEFIELD && !entry.excludeSacrifice && !entry.requireCraftMaterial &&
+        val simple = entry?.to == Zone.BATTLEFIELD && !entry.excludeSacrifice && !entry.requireCraftMaterial && !entry.requireEmergeSacrifice &&
             entry.excludeTo == null && (!self || entry.from == null)
         val context = when {
             Zone.BATTLEFIELD !in active || self && other -> Verdict.NO_MATCH

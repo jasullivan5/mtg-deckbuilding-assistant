@@ -17,6 +17,22 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
 class ConditionalCostTest : FunSpec({
+    test("new aggregate and target-distribution constraints remain unresolved for discount potential") {
+        val base = com.wingedsheep.sdk.scripting.targets.TargetObject(
+            filter = com.wingedsheep.sdk.scripting.filters.unified.TargetFilter.Creature)
+        val condition = ChosenTargetCondition(GameObjectFilter.Creature)
+        fun potential(target: com.wingedsheep.sdk.scripting.targets.TargetObject) =
+            TargetSelection("synthetic", listOf(target)).potential(condition)
+        potential(base) shouldBe Verdict.MATCH
+        for (target in listOf(
+            base.copy(totalAtMost = com.wingedsheep.sdk.scripting.targets.TotalCap.manaValue(DynamicAmount.Fixed(2))),
+            base.copy(totalAtMost = com.wingedsheep.sdk.scripting.targets.TotalCap.power(DynamicAmount.Fixed(2))),
+            base.copy(differentNames = true), base.copy(differentControllers = true),
+            base.copy(onePerCardType = true), base.copy(onePerColor = true),
+            base.copy(chooser = com.wingedsheep.sdk.scripting.targets.TargetChooser.Opponent)
+        )) potential(target) shouldBe Verdict.UNKNOWN
+    }
+
     val catalog by lazy { Catalog() }
     fun extract(name: String) = PathwayExtractor(inspectStateDependencies = true)
         .extract(listOf(checkNotNull(catalog.card(name))))

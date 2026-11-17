@@ -1,0 +1,22 @@
+{
+  "application": "ccaf1926ec754799711fa921466de2f636137e7e",
+  "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+  "suites": 105,
+  "tests": 743,
+  "failures": 345,
+  "errors": 0,
+  "skipped": 0,
+  "firstSuiteTimestamp": "2026-11-17T21:05:17.963Z",
+  "lastSuiteTimestamp": "2026-11-17T21:06:36.236Z",
+  "sortedXmlManifestSha256": "ec302ec0f60d500566c8cf4a4c094629fbb2e061e8d607acf405a3d011239bf7",
+  "failureGroups": {
+    "extension collision": 336,
+    "org.opentest4j.AssertionFailedError: expected:<0> but was:<2>": 4,
+    "org.opentest4j.AssertionFailedError: expected:<1> but was:<2>": 1,
+    "org.opentest4j.AssertionFailedError: Expected null but actual was Oviya Pashiri, Sage Lifecrafter {G}": 1,
+    "metadata correction binding": 1,
+    "org.opentest4j.AssertionFailedError: Expected null but actual was Krenko's Command {1}{R}": 1,
+    "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>": 1
+  },
+  "note": "All failures retained; normal catalog remains blocked."
+}

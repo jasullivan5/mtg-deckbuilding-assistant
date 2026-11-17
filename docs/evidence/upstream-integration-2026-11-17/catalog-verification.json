@@ -1,0 +1,35 @@
+{
+  "rawWindowsRun": {
+    "engine": "3de9082227b0269ba6991551bc4d0395c5741619",
+    "suites": 21,
+    "tests": 493,
+    "failures": 27,
+    "errors": 0,
+    "skipped": 0
+  },
+  "earlierCanonicalBuildResourceReplay": {
+    "engine": "3de9082227b0269ba6991551bc4d0395c5741619",
+    "suites": 21,
+    "tests": 493,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "finalCanonicalBuildResourceReplay": {
+    "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+    "suites": 21,
+    "tests": 493,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "firstSuiteTimestamp": "2026-11-17T21:50:03.076Z",
+    "lastSuiteTimestamp": "2026-11-17T21:52:11.203Z",
+    "logSha256": "8273d4cca0735c98f298271375610d316954341711f0608069be6d309d1e1278",
+    "explicitRerunTasks": [
+      ":mtg-sets:processTestResources",
+      ":mtg-sets:test"
+    ]
+  },
+  "initScriptSha256": "b8dd27cb05f93e0553e2b7471f64969055df104a0dac5a7a8ca2fad2509b8cf4",
+  "note": "Only copied build resources were canonicalized. Source golden Git blobs equal all 27 original fresh mismatches byte-for-byte. Original resource files and strict assertions remain unchanged. The raw failure observation belongs to 3de9082; final replay is a diagnostic, not a re-blessing."
+}

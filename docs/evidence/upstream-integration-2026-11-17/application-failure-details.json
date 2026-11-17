@@ -1,0 +1,1456 @@
+{
+  "application": "ccaf1926ec754799711fa921466de2f636137e7e",
+  "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+  "groups": [
+    {
+      "group": "extension collision",
+      "count": 336,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "Attrition keeps payment target and destruction in one activation without claiming full verification"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "optional targets do not become mandatory activation dependencies in the formatter"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "Agent's represented land payment stays an unresolved objective relationship"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "Acolyte's alternatives and other life effects stay together without upgrading verification"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "Judith's death-trigger connection and historical card evidence do not become independent certification"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "ordinary navigation gives recognized cards priority without losing overlapping diagnostic records"
+        },
+        {
+          "class": "dev.mtg.assistant.AbilityInspectionTest",
+          "test": "commander relationship is objective-specific and does not invent a general death payoff"
+        },
+        {
+          "class": "dev.mtg.assistant.ActivationCostFidelityTest",
+          "test": "source-first bound complete costs support held-outs without whole-ability approval"
+        },
+        {
+          "class": "dev.mtg.assistant.ActivationCostFidelityTest",
+          "test": "expanded method detects missing mana and other payments while keeping historical target and alternative gaps"
+        },
+        {
+          "class": "dev.mtg.assistant.ActivationCostFidelityTest",
+          "test": "real native payment checks retain positive negative borrowed choice and deliberately incorrect observations"
+        },
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "real authored catalog is discovered and registered"
+        },
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "retrieval exposes native script and actual damage effect"
+        },
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "existing mtg-search combines conventional type color cost and name filters"
+        },
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "search projection preserves creature stats keywords and identity"
+        },
+        {
+          "class": "dev.mtg.assistant.CardImagesTest",
+          "test": "an exact printing and physical identity are required, rather than a name-only image match"
+        },
+        {
+          "class": "dev.mtg.assistant.CardImagesTest",
+          "test": "multi-face artwork requires the complete ordered physical faces"
+        },
+        {
+          "class": "dev.mtg.assistant.CardImagesTest",
+          "test": "cached metadata avoids another lookup and still rechecks identity against the current definition"
+        },
+        {
+          "class": "dev.mtg.assistant.CardImagesTest",
+          "test": "an unavailable provider does not invent an image or break research"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "Judith marks only her corresponding death trigger and does not repeat it in the connection"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "Attrition links its single complete activation while preserving both original decisions"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "Centaur adds the nontoken and mandatory requirements without restating its trigger"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "Acolyte explains the choice's relevance and Agent stays unresolved"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "ambiguous duplicated or changed text never receives an invented precise association"
+        },
+        {
+          "class": "dev.mtg.assistant.CardTextTest",
+          "test": "review fields name the bound Scryfall data without inventing a reviewer date or ability coverage"
+        },
+        {
+          "class": "dev.mtg.assistant.CatalogCoverageTest",
+          "test": "coverage denominators reconcile and absent definitions are not mechanical nonmatches"
+        },
+        {
+          "class": "dev.mtg.assistant.CatalogCoverageTest",
+          "test": "coverage is independent from objective selection and rejects unsupported commander construction"
+        },
+        {
+          "class": "dev.mtg.assistant.CatalogCoverageTest",
+          "test": "a matched native definition with unsupported mechanics remains distinct and counts its node once"
+        },
+        {
+          "class": "dev.mtg.assistant.CatalogCoverageTest",
+          "test": "translation review is snapshot-bound identity-unique and optional"
+        },
+        {
+          "class": "dev.mtg.assistant.CatalogCoverageTest",
+          "test": "bounded inventory uses saved report without constructing a native catalog"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "the extracted generic and colored Brush Off modifiers remain separate"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "Brush Off uses both native reductions against an instant on the stack"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "native binding preserves both distinct Titanic Brawl requirements"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "Downdraft binds the selected creature at casting: tapped=true mana=4"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "Downdraft binds the selected creature at casting: tapped=false mana=4"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "Downdraft binds the selected creature at casting: tapped=false mana=3"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "No One Left Behind requires its selected cheap creature card in the graveyard: GRAVEYARD"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "No One Left Behind requires its selected cheap creature card in the graveyard: HAND"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "This Town applies one fixed discount with 0 matching selected permanents"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "This Town applies one fixed discount with 1 matching selected permanents"
+        },
+        {
+          "class": "dev.mtg.assistant.ChosenTargetCostScenarioTest",
+          "test": "This Town applies one fixed discount with 2 matching selected permanents"
+        },
+        {
+          "class": "dev.mtg.assistant.ClassAvailabilityScenarioTest",
+          "test": "Innkeeper levels through two paid actions and doubles only its controller's placement"
+        },
+        {
+          "class": "dev.mtg.assistant.ClassAvailabilityScenarioTest",
+          "test": "Stormchaser's Talent cast trigger with constructed level 1"
+        },
+        {
+          "class": "dev.mtg.assistant.ClassAvailabilityScenarioTest",
+          "test": "Stormchaser's Talent cast trigger with constructed level 3"
+        },
+        {
+          "class": "dev.mtg.assistant.ClassAvailabilityTest",
+          "test": "Innkeeper's Talent retains native progression on its exact replacement path"
+        },
+        {
+          "class": "dev.mtg.assistant.ClassAvailabilityTest",
+          "test": "Stormchaser's Talent joins the same availability to a supported event outcome"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "native upstream commander is selectable without claiming independent mechanical certification"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "application commander exposes verified provenance and bounded scenario record"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "ordinary ineligible card differs from unsupported commander construction"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "native Oviya metadata and both activation structures match source snapshot"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "mono-green commander filters full identities and all objectives share identical facts"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "Judith and Krenko retain complete eligible pools and controlled A B C evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalArrivalTest",
+          "test": "eligible native choices support the same checkpoint criterion across costs and effects"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalArrivalTest",
+          "test": "a controlled resource can fail the owner, token, type or destination requirements"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalArrivalTest",
+          "test": "policy, eligibility, unsupported selection and recursion retain different outcomes"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Bat-Cloud payable with death=false and black mana=2: false"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Bat-Cloud payable with death=false and black mana=5: true"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Bat-Cloud payable with death=true and black mana=1: false"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Bat-Cloud payable with death=true and black mana=2: true"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Kami payable with activator draws=2 and black mana=0: false"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Kami payable with activator draws=0 and black mana=5: true"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostScenarioTest",
+          "test": "Kami payable with activator draws=3 and black mana=0: true"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostTest",
+          "test": "activation discount is bound to the native activated action and removes the colored pip"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostTest",
+          "test": "self-casting reduction links the declaration to the spell and retains black mana"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostTest",
+          "test": "Wizard existence qualifies at casting and unrelated mechanics remain separate"
+        },
+        {
+          "class": "dev.mtg.assistant.ConditionalCostTest",
+          "test": "supported Desert land and flying creature filters retain their full native restrictions"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=none and blue mana=4 requires 5"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=none and blue mana=6 requires 5"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=caster and blue mana=3 requires 4"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=caster and blue mana=5 requires 4"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=opponent and blue mana=4 requires 5"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=wrong subtype and blue mana=4 requires 5"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Academy casting with witness=left battlefield and blue mana=4 requires 5"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Cactarantula casting with Forest pays 6"
+        },
+        {
+          "class": "dev.mtg.assistant.ControlledPermanentCostScenarioTest",
+          "test": "Cactarantula casting with Eroded Canyon pays 5"
+        },
+        {
+          "class": "dev.mtg.assistant.CostExaminationTest",
+          "test": "source and native phases preserve raw freeze identities through LF transport without granting qualification"
+        },
+        {
+          "class": "dev.mtg.assistant.CostExaminationTest",
+          "test": "changed source engine definition or harness cannot inherit a current boundary observation"
+        },
+        {
+          "class": "dev.mtg.assistant.CostExaminationTest",
+          "test": "native selected-creature refusals and decision recovery preserve exact outcomes rather than treating rollback alone as legality"
+        },
+        {
+          "class": "dev.mtg.assistant.CostExaminationTest",
+          "test": "fresh payment execution separates the known old-engine defect from corrected-engine refusals"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Doubling Season doubles Jace Beleren's entry but skips the loyalty cost"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Doubling Season modifies Travel Preparations only for the qualifying recipient"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Walking Ballista entry with Doubling Season=false and X=2"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Walking Ballista entry with Doubling Season=true and X=2"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Walking Ballista entry with Doubling Season=true and X=0"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Travel Preparations places counters on chosen creatures with Scales active=false"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Travel Preparations places counters on chosen creatures with Scales active=true"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Walking Ballista entry under Hardened Scales with X=0"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementScenarioTest",
+          "test": "Walking Ballista entry under Hardened Scales with X=1"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementTest",
+          "test": "authored multipliers preserve the issuing action, factor and separate restrictions"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementTest",
+          "test": "native Hardened Scales modifies a separate positive placement from either placer"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementTest",
+          "test": "native Travel Preparations keeps the chosen creature group and either controller"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementTest",
+          "test": "native entry, outlast and removal remain separate operations"
+        },
+        {
+          "class": "dev.mtg.assistant.CounterPlacementTest",
+          "test": "signed transformation and native recipient alternatives generalize"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCollectionFactsTest",
+          "test": "real conditional traversal exposes held-out Breach but does not turn graveyard exiling into death"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCollectionFactsTest",
+          "test": "actual hand-to-battlefield binding transfers to Arms Race and held-out Breach"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCollectionFactsTest",
+          "test": "held-out Elemental restriction remains UNKNOWN instead of dropping the subtype"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCostFactsTest",
+          "test": "Dread Return flashback cost retains route count and associated spell"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCostFactsTest",
+          "test": "held-out optional cost transfers to Final Flourish without conflating the removal effect"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCostFactsTest",
+          "test": "mode-local sacrifice belongs only to Lash's sacrifice branch"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathCostFactsTest",
+          "test": "choice and mana forks transfer to held-out Souls and Morkrut without requiring sacrifice"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathHistoryScenarioTest",
+          "test": "Tragic Slip resolution with opposing creature death=false"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathHistoryScenarioTest",
+          "test": "Tragic Slip resolution with opposing creature death=true"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathHistoryScenarioTest",
+          "test": "Gravelighter chooses one branch with prior death=false"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathHistoryScenarioTest",
+          "test": "Gravelighter chooses one branch with prior death=true"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "coverage sources bind the exact printing and preserve raw retrieval hashes"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "Centaur causes a conditional death while Judith responds to the preceding death"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "death-triggered draw and treasure now have separately attributed response results"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "a death-triggered creature token retains token admission and gains a death response"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "life changes and self-player damage do not become creature removal merely because death triggers them"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "Tragic Slip is death-enhanced removal whereas Murder is deliberately policy excluded"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathObjectiveCoverageTest",
+          "test": "unresolved land sacrifice is not relabeled as identified creature sacrifice"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathPathwayExtractionTest",
+          "test": "mandatory sacrifice remains mechanically possible and acceptance is a separate configurable policy"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathPathwayExtractionTest",
+          "test": "real self-only toughness exchanges are potential generators with action constraints preserved"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathPathwayExtractionTest",
+          "test": "sacrifice enables Victimize and exploit while ordinary symmetry stays excluded"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathPathwayExtractionTest",
+          "test": "actual artifact-or-creature sacrifice costs recover the exact payable pathways"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathPathwayExtractionTest",
+          "test": "Wicked Guardian selection is resolved locally but damage enabling draw is not death enabling removal"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Ball Lightning mandatory sacrifice is a capability without a payoff requirement"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Spark Elemental mandatory sacrifice is a capability without a payoff requirement"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Accursed Centaur mandatory sacrifice is a capability without a payoff requirement"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Demonic Taskmaster mandatory sacrifice is a capability without a payoff requirement"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Lord of the Pit mandatory sacrifice is a capability without a payoff requirement"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "Murder and Fleshbag retain mechanical compatibility despite policy rejection"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "mandatory exclusion can be configured without changing mechanical truth"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "PayOrSuffer exposes Pit Raptor failure as an effect with conditional prerequisites"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "cardinality bounds remove Muxus buff and preserve unknown entity-power signs"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathQueryCorrectnessTest",
+          "test": "frozen reviewed benchmark matches current Judith catalog with explicit denominators"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "rewritten decision reasons are explanation-only not policy or mechanical changes"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "constraint and structural evidence changes are independent of verdict changes"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "variant coverage does not claim a whole type from one supported instance"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "both frozen reviews remain inspectable without treating unreviewed paths as confirmed errors"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "recognized sacrifice cost with unresolved filter is partial at both cost and keyword variants"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "scope presentation and new annotation schemas do not inflate structural or policy changes"
+        },
+        {
+          "class": "dev.mtg.assistant.DeathReportingTest",
+          "test": "accepted keyword cost remains incomplete when its associated spell resolution is unresolved"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryCoverageTest",
+          "test": "retained sources bind exact native printings and unchanged Oracle snapshots"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryCoverageTest",
+          "test": "cohort partitions distinct physical cards and preserves unmodified results and evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryCoverageTest",
+          "test": "only the reviewed revision can use historical gap and ordinary body diagnoses"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryCoverageTest",
+          "test": "scope, missing eligibility and missing definition are kept distinct"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryDiagnosticsTest",
+          "test": "Judith has verified original printing metadata and authoritative eligibility"
+        },
+        {
+          "class": "dev.mtg.assistant.DiscoveryDiagnosticsTest",
+          "test": "extension collisions fail for name and Oracle ID without overwriting"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Heartwood Shard"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Hooded Kavu"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Firescreamer"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Sunforger"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Toxrill, the Corrosive"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Academy Manufactor"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "reviewed real metadata and source association: Afterthought Sentry"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "observed native Firescreamer identity is black and already excludes Krenko"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "conventional identity and Commander format filters share reviewed effective metadata"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "coverage retains original disagreement history and effective agreement"
+        },
+        {
+          "class": "dev.mtg.assistant.EngineBuildTest",
+          "test": "fresh reports and native provenance use built engine revision"
+        },
+        {
+          "class": "dev.mtg.assistant.EngineBuildTest",
+          "test": "historical benchmarks can be re-evaluated without rewriting their revision"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeAdmissionTest",
+          "test": "Grim Haruspex has an admitted death-triggered outcome"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeAdmissionTest",
+          "test": "Pitiless Plunderer has an admitted death-triggered outcome"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeAdmissionTest",
+          "test": "Doomed Dissenter has an admitted death-triggered outcome"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeDiscoveryTest",
+          "test": "source-frozen response cases are interpreted without production name exceptions"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeDiscoveryTest",
+          "test": "new draw creature token and Treasure responses appear separately from causing deaths"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeDiscoveryTest",
+          "test": "legacy sacrifice and death-enhanced history removal retain their paths"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeDiscoveryTest",
+          "test": "a new response on a card does not promote its old policy-excluded sacrifice effect"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeDiscoveryTest",
+          "test": "a real entry token response qualifies the shared nondeath event query"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeExplanationTest",
+          "test": "native simple event restrictions read naturally without changing their scope"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeExplanationTest",
+          "test": "token outcomes use user-facing names while exact native references remain in evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.EventOutcomeExplanationTest",
+          "test": "drawing for each player preserves the universal receiver in the explanation"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "Lab registry exposes verified printings and only allows curated fresh runs"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "Lab timeouts and failures use the bounded research worker"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "inspection preserves exact eligibility, blockers and missing definition feedback"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "all HTTP discovery objectives agree with CLI full reports and evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "commander presentation keeps selection authority and supplies verified imagery without inapplicable mechanic states"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "image requests use current run indexes, enforce batch limits and retain verified identity"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "malformed, oversized, invalid objective, route, method and foreign-origin requests are explicit errors"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "internal failures are reported without fabricating discoveries and worker recovers"
+        },
+        {
+          "class": "dev.mtg.assistant.ExplorerServerTest",
+          "test": "timeout retains exclusive worker reservation until actual computation ends"
+        },
+        {
+          "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+          "test": "every registered extension retains independent source identity and native registry compatibility"
+        },
+        {
+          "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+          "test": "token mode is interpreted without pretending graveyard to hand is reanimation"
+        },
+        {
+          "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+          "test": "token production remains inspectable and retrace is not direct reanimation"
+        },
+        {
+          "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+          "test": "retained controlled discovery evidence is unchanged across all supported contexts"
+        },
+        {
+          "class": "dev.mtg.assistant.FidelityPilotTest",
+          "test": "six source-bound ability scopes use the same checks without inherited qualification"
+        },
+        {
+          "class": "dev.mtg.assistant.FidelityPilotTest",
+          "test": "deceptive expected creature status and wrong timing are contradicted rather than promoted"
+        },
+        {
+          "class": "dev.mtg.assistant.FidelityPilotTest",
+          "test": "fresh bounded native executions retain exact engine scenario identities negative controls and generation changes"
+        },
+        {
+          "class": "dev.mtg.assistant.FindingExplanationTest",
+          "test": "land sacrifice is investigated without claiming a represented land-creature interaction"
+        },
+        {
+          "class": "dev.mtg.assistant.FindingExplanationTest",
+          "test": "creature-or-artifact sacrifice retains the choice and excludes its source"
+        },
+        {
+          "class": "dev.mtg.assistant.FindingExplanationTest",
+          "test": "mandatory enters sacrifice is distinct from an activation cost and does not exclude self"
+        },
+        {
+          "class": "dev.mtg.assistant.FindingExplanationTest",
+          "test": "presentation index counts are physical-card sets and categories overlap without rewriting evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.GlobalBaselineTest",
+          "test": "representative selection and discovery use actual current interfaces without claiming all commanders ran"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "one state query accepts distinct native movements before any death comparison"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "the Supplier's distinct triggers both mill and neither movement causes a death"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "ownership, physical card status, type, quantity and destination constrain one movement"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "held-out targeting and opponent-only discard keep their own player and action bindings"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "discarding the source uses the actual card type and retains the activation requirements"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "exact source sacrifices distinguish the arrival type from the battlefield event"
+        },
+        {
+          "class": "dev.mtg.assistant.GraveyardDiscoveryTest",
+          "test": "Commander eligibility and the established death policy remain separate"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "all named integration fixtures actually exist at pinned revision"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "format legality is independent of serving as commander and unknown is fail closed"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "real mono multi and colorless commanders resolve their complete identities"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "hybrid requires both colors while colorless candidates fit a mono commander"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "invalid commanders and face aliases fail clearly"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Goblin Bombardment retains its activation sacrifice and associated action"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Viscera Seer retains its activation sacrifice and associated action"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Phyrexian Tower retains its activation sacrifice and associated action"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Village Rites retains its additional casting sacrifice"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Bone Splinters retains its additional casting sacrifice"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Victimize resolution sacrifice retains success gate and exact target prerequisites"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Murder can mechanically affect our nontoken creatures but is rejected by policy"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Tragic Slip enhances removal through morbid but is not a direct generator"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "symmetrical Fleshbag sacrifice is a policy rejection not a controller rejection"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Blood Artist is not a direct generator or death-enhanced creature removal"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "Gravecrawler is not a direct generator or death-enhanced creature removal"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "query conjunction preserves correlated OR scope instead of matching unrelated alternatives"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "unsupported scope retains UNKNOWN with independently inspectable decisions"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic nested composite and condition keep paths and prerequisites"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic independent abilities cannot donate sacrifice costs to another action"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic unsupported native effect is retained with action evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "unchanged removal in both conditional branches is not a positive enhancement"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "alternative face executable scripts are inspected without granting separate card eligibility"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "real damage is conditional and does not guarantee or qualify ordinary friendly-target death"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "full discovery uses eligible input and produces serializable inspectable evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic token-only and opponent-only operations are rejected after actual extraction"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic death-gated enabling and resolution-payment removal are separate contributions"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic unrelated conditional draw does not enhance removal outside that branch"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic death-triggered opposing sacrifice is removal, not damage to a player"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic self-cast death discount applies only when this action has a removal effect"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "real Cyclopean Mummy exiling its already-dead self is not battlefield removal"
+        },
+        {
+          "class": "dev.mtg.assistant.MechanicalDiscoveryTest",
+          "test": "synthetic attached death-event binding stays unknown without attachment constraints"
+        },
+        {
+          "class": "dev.mtg.assistant.ObjectiveAdmissionStudyTest",
+          "test": "current policy keeps mechanical compatibility distinct from primary admission"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Cabal Therapy 018107d1-ebf7-4657-bc91-c8374af55cc5"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Pick Your Poison 191634b4-42e5-499f-a1a8-1d0407626be8"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Lightning Bolt 4457ed35-7c10-48c8-9776-456485fdf070"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Wax // Wane 4744b086-fea2-4992-bfef-68c58cdf9cf0"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Riverglide Pathway // Lavaglide Pathway 4924b3a4-a218-4783-8a4d-82361fdecc78"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Hooded Kavu 52934f16-eb9b-4d0a-b372-155461660f6e"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Heartwood Shard 64d4bdc5-ff40-469d-bb25-82de0a49dfa4"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Sol Ring 6ad8011d-3471-4369-9d68-b264cc027487"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Bushi Tenderfoot // Kenzo the Hardhearted 82959ca2-cd96-4cca-9ce0-afb8db209860"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Tempt with Vengeance 8e356df5-ca92-4be2-871e-8965c2510fbe"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Pick Your Poison 9af4a832-d634-47aa-91ed-79d44fe08864"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Realm-Cloaked Giant // Cast Off a1d17244-9c92-4094-9843-d7ee31c85ea4"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Firescreamer b86c0c23-bb29-4af0-bbd4-50b3ae634375"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Bruna, the Fading Light bce7e45d-b2c5-43aa-91a6-3a3c24f30850"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Judith, the Scourge Diva c01516e0-eec3-4370-b935-7674982e8850"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Toxrill, the Corrosive c71b2325-bde6-4364-a93b-8477ffeb25d8"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Sunforger d1421070-a3cc-4af3-bf91-0f97372f4161"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Delver of Secrets // Insectile Aberration edd531b9-f615-4399-8c8c-1c5e18c4acbf"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Afterthought Sentry f0c533a2-751a-4c5a-8cec-b83da3c8c62f"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "source-led real catalog review: Academy Manufactor f36d1d8b-8303-44a9-ab56-531931641ea2"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "real color metadata errors do not invalidate physical identity or mutate native eligibility"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+          "test": "global mapping does not report a meld result as an independent deck physical definition"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCoverageTest",
+          "test": "confident association attaches existing conditional objective evidence without hiding metadata disagreement"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentCoverageTest",
+          "test": "an external identity association does not bypass a native color restriction"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Prismite feb4fcec-6f3a-4643-9ffb-69d3f5953322"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Wear // Tear 9842734c-1eac-4509-a731-4c22017ae586"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Kuja, Genome Sorcerer // Trance Kuja, Fate Defied 3998a60d-9521-4100-8d41-3e612972a3de"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Bloodsoaked Insight // Sanguine Morass c52fc8a1-43c6-41f8-b010-03be7c89ef1d"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Initiate of Blood // Goka the Unjust 5b18d2fd-bc65-49a2-b812-c217f125571d"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Bramble Familiar // Fetch Quest 68f36dfa-bbd2-4860-b09b-37e35136be72"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Eater of Hope 3055381a-fb6b-47a3-8e77-a44768808e27"
+        },
+        {
+          "class": "dev.mtg.assistant.OracleEnrichmentHeldOutTest",
+          "test": "post-freeze printing-reviewed held-out: Repentant Vampire a5dabc98-0db9-4b4f-b2d2-f74dbd022d22"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "development authored targeted returns preserve own graveyard and owner-default control"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "Victimize action links conditional sacrifice generation and actual gated reanimation"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "alternative flashback payment stays associated without asserting it is the normal casting cost"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "held-out hand return is recognized movement but excluded from B"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "held-out self activation preserves graveyard source and tapped entry"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "held-out different color uses same facts while remaining ineligible under Judith"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "held-out indirect Living Death sequence is visible without conflating exile with graveyard"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "native casting permission is never direct reanimation"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "attachment and mana-value boundaries remain unresolved"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "normal combined catalog retains Judith as death consumer"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationIntegrationTest",
+          "test": "requested unavailable examples are real corpus gaps"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "both objectives export identical facts and use one eligibility pipeline"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "objective B normal result is fully inspectable by existing reports"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "different objective snapshots cannot appear as a controlled same-objective regression"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "reason-only differences remain separate from mechanical verdict changes for B"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "ownership binding uncertainty is not reported as a confirmed omission"
+        },
+        {
+          "class": "dev.mtg.assistant.ReanimationReportingTest",
+          "test": "frozen B review maps expected movement while absent casting remains distinct"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "confirmed missing path is separate from ambiguity and unreviewed acceptance"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "policy disagreement preserves recovered mechanical capability and cost-effect mismatch is explicit"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "controller and token explanation contradictions are explicitly reported"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "root grouping ignores card names and presentation text but retains controller restrictions"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "probable omissions require creature and battlefield-context evidence rather than a type name alone"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "eligibility gaps group by missing data and never become mechanical omission claims"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "Murder's single ordinary removal is not suspicious merely because it contains itself"
+        },
+        {
+          "class": "dev.mtg.assistant.ReportDiagnosticsTest",
+          "test": "benchmark diff preserves denominators and discovery diff identifies policy attribution"
+        },
+        {
+          "class": "dev.mtg.assistant.ResearchProgressTest",
+          "test": "missing and stale scopes cannot inflate source review execution or qualification"
+        },
+        {
+          "class": "dev.mtg.assistant.ResearchProgressTest",
+          "test": "native audit retains unsupported enclosing branches and absence is not NO_MATCH"
+        },
+        {
+          "class": "dev.mtg.assistant.ResearchProgressTest",
+          "test": "unavailable explicit source cannot become zero missing cards"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "source snapshots retain exact physical identities hashes and actual native printing bindings"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "artifact land and broad permanent sacrifices preserve their different compatibility decisions"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "mandatory optional other-creature and self costs are retained without inferring a free repeated death"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "inherent overlap witnesses are distinct from animation and commander eligibility"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "intrinsic self returns supply creature inputs without being labeled as deaths"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeBoundaryTest",
+          "test": "ordinary bodies and unqueried observers are not rejected as irrelevant strategic resources"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeChallengeTest",
+          "test": "frozen method retains detected rejected missed and execution-dependent distinctions"
+        },
+        {
+          "class": "dev.mtg.assistant.SacrificeChallengeTest",
+          "test": "shared payment pattern executes actual positive and missing-resource positions"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentAdmissionTest",
+          "test": "Reassembling Skeleton supplies intrinsic creature inputs"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentAdmissionTest",
+          "test": "Bloodghast supplies intrinsic creature inputs"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentAdmissionTest",
+          "test": "Bladewing's Thrall supplies intrinsic creature inputs"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "predeclared source and native cases preserve positive negative unknown and missing distinctions"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "suppliers need no sacrifice outlet and do not become death producers or draw-token beneficiaries"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "a finality return stays unresolved for the death objective while generic reanimation remains accepted"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "legacy death production responses and history removal remain separate"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "additional catalog-selected source controls challenge resource costs and return riders"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentDiscoveryTest",
+          "test": "Grafted Butcher's cost and self-return are distinct contributions within one native action"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentExplanationTest",
+          "test": "activated self-return explains its full cost tapped entry and absence of a proven cycle"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentExplanationTest",
+          "test": "graveyard-triggered return preserves land entry and optionality"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentExplanationTest",
+          "test": "finality is visible as a barrier to a qualifying death"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReplenishmentExplanationTest",
+          "test": "return-to-hand nonmatches do not pretend that the recorded movement returns to battlefield"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReturnScenarioTest",
+          "test": "Skeleton pays its cost and returns the original owned creature tapped without producing a death"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReturnScenarioTest",
+          "test": "Bloodghast observes our land entering while in the graveyard and optionally returns its original card"
+        },
+        {
+          "class": "dev.mtg.assistant.SelfReturnScenarioTest",
+          "test": "Wolfbat returns with finality and is exiled instead of a subsequent qualifying death"
+        },
+        {
+          "class": "dev.mtg.assistant.StateDependencyTest",
+          "test": "Gravelighter exposes a single dependency with draw and sacrifice evidence on opposite branches"
+        },
+        {
+          "class": "dev.mtg.assistant.StateDependencyTest",
+          "test": "native morbid checks change exact resolution outcomes without manufacturing a trigger"
+        },
+        {
+          "class": "dev.mtg.assistant.StateDependencyTest",
+          "test": "intervening-if retains both checkpoints and the own-controller scope, not the unrelated cost ability"
+        },
+        {
+          "class": "dev.mtg.assistant.StateDependencyTest",
+          "test": "event, source resolution history and replacement remain distinct"
+        },
+        {
+          "class": "dev.mtg.assistant.StateDependencyTest",
+          "test": "same count predicate distinguishes six lands at resolution from the land-entry event"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCardIntegrationTest",
+          "test": "translated definitions retain independent printing identity legality Oracle text and native validation"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCardIntegrationTest",
+          "test": "new definitions are reused for multiple commanders with unchanged objective predicates"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCardIntegrationTest",
+          "test": "preexisting controlled input facts results actions and uncertainty remain byte equivalent"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "reviewed fixed and triggered creation definitions qualify with native action paths"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Krenko aggregate quantity remains native and conditional"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Ophiomancer retains the intervening condition"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Heat Shimmer copy source can be an opponent without changing token receiver"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Hunted Horror controller exclusion and Treasure type exclusion remain separate"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Kuldotha Rebirth native sacrifice and token facts preserve one action"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Haunted Dead returns and creates through distinct linked game events not one fabricated action"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "conditional copy branches retain unknown rather than unconditional creation"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "specialized Amass remains unsupported instead of a fabricated template"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "held-out fixed quantity and combat trigger transfer to generic interpretation"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "Judith remains an extension consumer without token-generation fact"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationReportingTest",
+          "test": "frozen source-reviewed benchmark evaluates development and held-out examples without mismatches"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationReportingTest",
+          "test": "token diagnostics use the existing independent SDK traversal and root grouping"
+        },
+        {
+          "class": "dev.mtg.assistant.TokenCreationReportingTest",
+          "test": "three objectives share the exact same facts on the same eligible pool"
+        },
+        {
+          "class": "dev.mtg.assistant.TranslationAssuranceTest",
+          "test": "historical evidence retains its implementation binding with one blocked concern and upstream unassessed"
+        },
+        {
+          "class": "dev.mtg.assistant.TranslationAssuranceTest",
+          "test": "inspection discovery and coverage consumers retain explicit provisional status"
+        },
+        {
+          "class": "dev.mtg.assistant.TriggeredOperationScenarioTest",
+          "test": "native entry sacrifice causes separate deaths and the death trigger changes both life totals"
+        },
+        {
+          "class": "dev.mtg.assistant.TriggeredOperationScenarioTest",
+          "test": "native self death makes its controller and opponent lose life"
+        },
+        {
+          "class": "dev.mtg.assistant.TriggeredOperationTest",
+          "test": "the live catalog distinguishes forced sacrifice, draw, damage, loss and gain"
+        },
+        {
+          "class": "dev.mtg.assistant.TriggeredOperationTest",
+          "test": "native entry sacrifice and an unresolved death quantity retain separate evidence"
+        },
+        {
+          "class": "dev.mtg.assistant.VerificationCoverageTest",
+          "test": "passing partial observations and open concerns never manufacture complete-card qualification"
+        },
+        {
+          "class": "dev.mtg.assistant.VerificationCoverageTest",
+          "test": "reference global baseline remains immutable and source scopes cannot silently qualify cards"
+        }
+      ],
+      "representativeFailure": {
+        "message": "java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten",
+        "stackTrace": "java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten\n\tat dev.mtg.assistant.extensions.Extensions.validate(Extensions.kt:93)\n\tat dev.mtg.assistant.Catalog.<init>(Catalog.kt:43)\n\tat dev.mtg.assistant.Catalog.<init>(Catalog.kt:11)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$0(AbilityInspectionTest.kt:13)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$1(AbilityInspectionTest.kt:13)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$4(AbilityInspectionTest.kt:15)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$5(AbilityInspectionTest.kt:15)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$card(AbilityInspectionTest.kt:16)\n\tat dev.mtg.assistant.AbilityInspectionTest.access$_init_$lambda$0$card(AbilityInspectionTest.kt:12)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invokeSuspend(AbilityInspectionTest.kt:22)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invoke(AbilityInspectionTest.kt)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invoke(AbilityInspectionTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat _COROUTINE._BOUNDARY._(CoroutineDebugging.kt:42)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:156)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\nCaused by: java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten\n\tat dev.mtg.assistant.extensions.Extensions.validate(Extensions.kt:93)\n\tat dev.mtg.assistant.Catalog.<init>(Catalog.kt:43)\n\tat dev.mtg.assistant.Catalog.<init>(Catalog.kt:11)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$0(AbilityInspectionTest.kt:13)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$1(AbilityInspectionTest.kt:13)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$4(AbilityInspectionTest.kt:15)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$5(AbilityInspectionTest.kt:15)\n\tat dev.mtg.assistant.AbilityInspectionTest._init_$lambda$0$card(AbilityInspectionTest.kt:16)\n\tat dev.mtg.assistant.AbilityInspectionTest.access$_init_$lambda$0$card(AbilityInspectionTest.kt:12)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invokeSuspend(AbilityInspectionTest.kt:22)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invoke(AbilityInspectionTest.kt)\n\tat dev.mtg.assistant.AbilityInspectionTest$1$1.invoke(AbilityInspectionTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "org.opentest4j.AssertionFailedError: expected:<0> but was:<2>",
+      "count": 4,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "CLI emits actual script and search results"
+        },
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "inspection CLI reports structured selection separately from successful inspection"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "all three production CLI objectives apply only reviewed corrections to the legal pool"
+        },
+        {
+          "class": "dev.mtg.assistant.EligibilityCorrectionsCatalogTest",
+          "test": "real commander CLI selection and inspection agree on corrected Toxrill identity"
+        }
+      ],
+      "representativeFailure": {
+        "message": "org.opentest4j.AssertionFailedError: expected:<0> but was:<2>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected:<0> but was:<2>\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$6.invokeSuspend(ArgentumIntegrationTest.kt:57)\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$6.invoke(ArgentumIntegrationTest.kt)\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$6.invoke(ArgentumIntegrationTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "org.opentest4j.AssertionFailedError: expected:<1> but was:<2>",
+      "count": 1,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.ArgentumIntegrationTest",
+          "test": "CLI reports missing names and invalid commands"
+        }
+      ],
+      "representativeFailure": {
+        "message": "org.opentest4j.AssertionFailedError: expected:<1> but was:<2>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected:<1> but was:<2>\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$7.invokeSuspend(ArgentumIntegrationTest.kt:66)\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$7.invoke(ArgentumIntegrationTest.kt)\n\tat dev.mtg.assistant.ArgentumIntegrationTest$1$7.invoke(ArgentumIntegrationTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "org.opentest4j.AssertionFailedError: Expected null but actual was Oviya Pashiri, Sage Lifecrafter {G}",
+      "count": 1,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.CommanderIntegrationTest",
+          "test": "missing pinned definition is distinct from Magic card nonexistence and retains exact lookup"
+        }
+      ],
+      "representativeFailure": {
+        "message": "org.opentest4j.AssertionFailedError: Expected null but actual was Oviya Pashiri, Sage Lifecrafter {G}\nLegendary Creature \u2014 Human Artificer\n{2}{G}, {T}: Create a 1/1 colorless Servo artifact creature token.\n{4}{G}, {T}: Create an X/X colorless Construct artifact creature token, where X is the number of creatures you control.\n1/2",
+        "stackTrace": "org.opentest4j.AssertionFailedError: Expected null but actual was Oviya Pashiri, Sage Lifecrafter {G}\nLegendary Creature \u2014 Human Artificer\n{2}{G}, {T}: Create a 1/1 colorless Servo artifact creature token.\n{4}{G}, {T}: Create an X/X colorless Construct artifact creature token, where X is the number of creatures you control.\n1/2\n\tat dev.mtg.assistant.CommanderIntegrationTest$1$2.invokeSuspend(CommanderIntegrationTest.kt:31)\n\tat dev.mtg.assistant.CommanderIntegrationTest$1$2.invoke(CommanderIntegrationTest.kt)\n\tat dev.mtg.assistant.CommanderIntegrationTest$1$2.invoke(CommanderIntegrationTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "metadata correction binding",
+      "count": 1,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.ExtensionAdmissionTest",
+          "test": "warning-only registration and inspection retain diagnostics without inventing incompleteness"
+        }
+      ],
+      "representativeFailure": {
+        "message": "java.lang.IllegalArgumentException: Native definition/identity changed; review correction phase29-d1421070-a3cc-4af3-bf91-0f97372f4161",
+        "stackTrace": "java.lang.IllegalArgumentException: Native definition/identity changed; review correction phase29-d1421070-a3cc-4af3-bf91-0f97372f4161\n\tat dev.mtg.assistant.eligibility.EligibilityResolver.<init>(EffectiveEligibility.kt:99)\n\tat dev.mtg.assistant.eligibility.EligibilityResolver.<init>(EffectiveEligibility.kt:58)\n\tat dev.mtg.assistant.Catalog.eligibility_delegate$lambda$0(Catalog.kt:13)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.Catalog.getEligibility(Catalog.kt:13)\n\tat dev.mtg.assistant.discovery.CommanderInspectionKt.inspectCommander(CommanderInspection.kt:73)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invokeSuspend(ExtensionAdmissionTest.kt:31)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invoke(ExtensionAdmissionTest.kt)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invoke(ExtensionAdmissionTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat _COROUTINE._BOUNDARY._(CoroutineDebugging.kt:42)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:156)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\nCaused by: java.lang.IllegalArgumentException: Native definition/identity changed; review correction phase29-d1421070-a3cc-4af3-bf91-0f97372f4161\n\tat dev.mtg.assistant.eligibility.EligibilityResolver.<init>(EffectiveEligibility.kt:99)\n\tat dev.mtg.assistant.eligibility.EligibilityResolver.<init>(EffectiveEligibility.kt:58)\n\tat dev.mtg.assistant.Catalog.eligibility_delegate$lambda$0(Catalog.kt:13)\n\tat kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:86)\n\tat dev.mtg.assistant.Catalog.getEligibility(Catalog.kt:13)\n\tat dev.mtg.assistant.discovery.CommanderInspectionKt.inspectCommander(CommanderInspection.kt:73)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invokeSuspend(ExtensionAdmissionTest.kt:31)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invoke(ExtensionAdmissionTest.kt)\n\tat dev.mtg.assistant.ExtensionAdmissionTest$1$1.invoke(ExtensionAdmissionTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "org.opentest4j.AssertionFailedError: Expected null but actual was Krenko's Command {1}{R}",
+      "count": 1,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.TokenCreationIntegrationTest",
+          "test": "candidate examples missing from pinned upstream remain recorded gaps despite later extensions"
+        }
+      ],
+      "representativeFailure": {
+        "message": "org.opentest4j.AssertionFailedError: Expected null but actual was Krenko's Command {1}{R}\nSorcery\nCreate two 1/1 red Goblin creature tokens.",
+        "stackTrace": "org.opentest4j.AssertionFailedError: Expected null but actual was Krenko's Command {1}{R}\nSorcery\nCreate two 1/1 red Goblin creature tokens.\n\tat dev.mtg.assistant.TokenCreationIntegrationTest$1$11.invokeSuspend(TokenCreationIntegrationTest.kt:68)\n\tat dev.mtg.assistant.TokenCreationIntegrationTest$1$11.invoke(TokenCreationIntegrationTest.kt)\n\tat dev.mtg.assistant.TokenCreationIntegrationTest$1$11.invoke(TokenCreationIntegrationTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    },
+    {
+      "group": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>",
+      "count": 1,
+      "cases": [
+        {
+          "class": "dev.mtg.assistant.TranslationMutationTest",
+          "test": "M1 structurally valid semantic defect detected with unchanged control"
+        }
+      ],
+      "representativeFailure": {
+        "message": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>",
+        "stackTrace": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>\n\tat dev.mtg.assistant.TranslationMutationTest$1$1.invokeSuspend(TranslationMutationTest.kt:109)\n\tat dev.mtg.assistant.TranslationMutationTest$1$1.invoke(TranslationMutationTest.kt)\n\tat dev.mtg.assistant.TranslationMutationTest$1$1.invoke(TranslationMutationTest.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invokeSuspend(FunSpecRootScope.kt:88)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.core.spec.style.scopes.FunSpecRootScope$test$1.invoke(FunSpecRootScope.kt)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$base$1.invoke(TestCaseExecutor.kt:118)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$executeWithBeforeAfter$1.invoke(TestInvocationInterceptor.kt:93)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:49)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:159)\n\tat kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:221)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeoutOrNull-KLykuaI(TimeoutInterceptor.kt:103)\n\tat io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:48)\n\tat io.kotest.engine.test.TestInvocationInterceptor$runBeforeTestAfter$wrappedTest$1$1.invoke(TestInvocationInterceptor.kt:102)\n\tat io.kotest.engine.test.TestInvocationInterceptor.runBeforeTestAfter(TestInvocationInterceptor.kt:105)\n\tat io.kotest.engine.test.TestInvocationInterceptor.access$runBeforeTestAfter(TestInvocationInterceptor.kt:18)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invokeSuspend(TestInvocationInterceptor.kt:53)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat io.kotest.engine.test.TestInvocationInterceptor$invokeWithRetry$2.invoke(TestInvocationInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:848)\n\tat io.kotest.engine.test.TestInvocationInterceptor.invokeWithRetry(TestInvocationInterceptor.kt:51)\n\tat io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.intercept(MarkOpenTest4jAbortedExceptionsAsSkippedTestInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.HandleSkippedExceptionsTestInterceptor.intercept(HandleSkippedExceptionsTestInterceptor.kt:15)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:61)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:50)\n\tat kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:233)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:29)\n\tat kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:141)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptorKt.withAppropriateTimeout-KLykuaI(TimeoutInterceptor.kt:90)\n\tat io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:60)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:87)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:26)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:29)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:48)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:151)\n\tat io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:21)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestEnabledCheckInterceptor.intercept(TestEnabledCheckInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:39)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:38)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryTestInterceptor.intercept(CoroutineDispatcherFactoryTestInterceptor.kt:41)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invokeSuspend(SupervisorScopeInterceptor.kt:23)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor$intercept$2.invoke(SupervisorScopeInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.SupervisorKt.supervisorScope(Supervisor.kt:105)\n\tat io.kotest.engine.test.interceptors.SupervisorScopeInterceptor.intercept(SupervisorScopeInterceptor.kt:22)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.InvocationCountCheckInterceptor.intercept(InvocationCountCheckInterceptor.kt:33)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestFinishedInterceptor.intercept(TestFinishedInterceptor.kt:23)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.FailFastInterceptor.intercept(FailFastInterceptor.kt:24)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invokeSuspend(TestNameContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor$intercept$2.invoke(TestNameContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.TestNameContextInterceptor.intercept(TestNameContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invokeSuspend(DescriptorPathContextInterceptor.kt:21)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor$intercept$2.invoke(DescriptorPathContextInterceptor.kt)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatched(Undispatched.kt:66)\n\tat kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:43)\n\tat kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:497)\n\tat kotlinx.coroutines.BuildersKt.withContext(Unknown Source)\n\tat io.kotest.engine.test.interceptors.DescriptorPathContextInterceptor.intercept(DescriptorPathContextInterceptor.kt:20)\n\tat io.kotest.engine.test.TestCaseExecutor$execute$3$1.invoke(TestCaseExecutor.kt:123)\n\tat io.kotest.engine.test.TestCaseExecutor.execute(TestCaseExecutor.kt:124)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.executeTest(SingleInstanceSpecExecutor.kt:76)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor.access$executeTest(SingleInstanceSpecExecutor.kt:26)\n\tat io.kotest.engine.spec.execution.SingleInstanceSpecExecutor$launchRootTests$2$1$1.invokeSuspend(SingleInstanceSpecExecutor.kt:57)\n\tat kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)\n\tat kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)\n\tat kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)\n\tat kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)\n\tat kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)\n\tat kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:22)\n\tat kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)\n\tat kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:20)\n\tat kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:86)\n\tat io.kotest.runner.junit.platform.KotestJunitPlatformTestEngine.execute(KotestJunitPlatformTestEngine.kt:56)\n"
+      }
+    }
+  ]
+}

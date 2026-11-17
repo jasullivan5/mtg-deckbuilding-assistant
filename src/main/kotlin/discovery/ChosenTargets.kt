@@ -96,7 +96,8 @@ private fun TargetObject.supportsFixedBinding() =
     !unlimited && dynamicMaxCount == null && dynamicMinCount == null && !filter.isUnion &&
         !filter.excludeTriggeringEntity && !sameController && !sameOwner && ownerDistribution == null &&
         sameNumericProperty == null && differentNumericProperty == null && !sameCreatureType &&
-        !sameCardType && totalManaValueAtMost == null
+        !sameCardType && totalAtMost == null && !differentNames && !differentControllers &&
+        !onePerCardType && !onePerColor && chooser == com.wingedsheep.sdk.scripting.targets.TargetChooser.Controller
 
 /** Recognize bounded intersections with broadly targeted objects in the selected zone. */
 private fun TargetObject.supportsIntersection(discount: GameObjectFilter): Boolean {

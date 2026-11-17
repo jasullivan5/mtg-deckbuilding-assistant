@@ -1,0 +1,209 @@
+{
+  "application": "ccaf1926ec754799711fa921466de2f636137e7e",
+  "engine": "56eeb394ef4fd2b9b7467b2ae95b3ccf04ac0906",
+  "limit": "Fresh serialization is not an update to frozen evidence or approval of translation equivalence. Default catalog still rejects overlaps.",
+  "cards": [
+    {
+      "name": "Bitterblossom",
+      "authoredOracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+      "nativeOracleId": null,
+      "authoredSha256": "3797c50c7159b3632042c9c40d46b43988d1e19a6ceb3b4d13d9c3223fc19183",
+      "nativeSha256": "489e7bc8311e65ccacc628fefbadfd25d980e1fd5c32e81ed5adec6cbd1ce416",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.imageUri",
+        ".metadata.rulings.length",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.triggeredAbilities[0].descriptionOverride",
+        ".script.triggeredAbilities[0].effect.effects[1].imageUri"
+      ]
+    },
+    {
+      "name": "Galadhrim Ambush",
+      "authoredOracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+      "nativeOracleId": null,
+      "authoredSha256": "07553246304670500e65e6279c0617a58897fba3f0fbf66c5d466343a0e22457",
+      "nativeSha256": "09c44edf702f5f232336dca5826f59e288b3a56a3d69fff4d6a47dc2deb1c92d",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": true,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "name": "Hour of Promise",
+      "authoredOracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "nativeOracleId": null,
+      "authoredSha256": "55028ed897cfe1493db5751f0c2382818e08c7f93138bf55c9403457465b9ddd",
+      "nativeSha256": "44c60b865e7fc632c7cf59aa81e2f1ab125439aaa57cb524eaa1dd5d62712fc0",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.spellEffect.effects[5].gate.condition.left.filter",
+        ".script.spellEffect.effects[5].then.imageUri"
+      ]
+    },
+    {
+      "name": "Judith, the Scourge Diva",
+      "authoredOracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+      "nativeOracleId": null,
+      "authoredSha256": "6c2c836548b3e982fcea3cf2ff04c6591c743db0174d57ccfb6985757c07d05a",
+      "nativeSha256": "9a31acd4a52ae298fe7b1c35c27039c4ff90c12a77b46c27a9a54469bffc2a23",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": true,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.rulings",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "name": "Krenko's Command",
+      "authoredOracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+      "nativeOracleId": null,
+      "authoredSha256": "580adb20b9403d974dd88af767098641db2dbf5b7bce9cd0fc76f833f11dcb5e",
+      "nativeSha256": "dfc88aca1c5137ebe50bffb2f739baa973401ac2172f0a3dd2be57c6f36607d2",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.imageUri",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.spellEffect.imageUri"
+      ]
+    },
+    {
+      "name": "Labyrinth of Skophos",
+      "authoredOracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "nativeOracleId": null,
+      "authoredSha256": "82589a00ad5a7ff62ef7895b2ac072ee056f9c4dc412ff9e0f2697679fd04a78",
+      "nativeSha256": "a78bdaba5f7e9b3b86003b604494c4eabd382414457e04364778881687254531",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.activatedAbilities[1].descriptionOverride"
+      ]
+    },
+    {
+      "name": "Might of Murasa",
+      "authoredOracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+      "nativeOracleId": null,
+      "authoredSha256": "ead7bb013dc6179328eb2d607eee364ef66f054d6e2b6757e01c3adf60418849",
+      "nativeSha256": "ab63d1877be3d7069ded450a793f2b15523486ed2c2ecaf24c22aa7ce853c26b",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": true,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.rulings",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "name": "Oviya Pashiri, Sage Lifecrafter",
+      "authoredOracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+      "nativeOracleId": null,
+      "authoredSha256": "8c3ec51165dca75b82c8830495fc32203ec85dd7ab7304053017f85d36611474",
+      "nativeSha256": "6085fa2748d69fe2dc82a7a3941d293a31264654d53576ee47e00554799ec62c",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.imageUri",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.activatedAbilities[0].descriptionOverride",
+        ".script.activatedAbilities[1].descriptionOverride",
+        ".script.activatedAbilities[1].effect.imageUri"
+      ]
+    },
+    {
+      "name": "Planewide Celebration",
+      "authoredOracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "nativeOracleId": null,
+      "authoredSha256": "5dc941885a910f435cb3455949e51798f37d725e06e45b677b8373659fe683a3",
+      "nativeSha256": "b6e7a775999a9edbf4f2690c54c29eaf3f882ec87768e7db42b3cfd8055cad61",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.rulings",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.spellEffect.modes[0].effect.imageUri",
+        ".script.spellEffect.modes[1].effect.fromZone"
+      ]
+    },
+    {
+      "name": "Spined Tyrranax",
+      "authoredOracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+      "nativeOracleId": null,
+      "authoredSha256": "0d7831bee0d5244046bd362cde0b111c4cb58d678b3364d7ef4f12d5ec7df93b",
+      "nativeSha256": "ed27fa2aba60d0ced8dd6f99809d74f4f2c64146d9939c779cf10f9eaa7e4c91",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": true,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.flavorText",
+        ".metadata.rulings[0].text",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "name": "Throne of Makindi",
+      "authoredOracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+      "nativeOracleId": null,
+      "authoredSha256": "b5b63cc564a9804b2ca2a74d5aa30ad42f005b50658fe72c8c0b938952b5342b",
+      "nativeSha256": "7fc084b899ea7a7b0da1e51236417a40bd061d54db9abce74743dfa20442f739",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".colorIdentityOverride",
+        ".legalFormats.length",
+        ".metadata.imageUri",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.activatedAbilities[1].descriptionOverride"
+      ]
+    },
+    {
+      "name": "Tyrite Sanctum",
+      "authoredOracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+      "nativeOracleId": null,
+      "authoredSha256": "cff67181f710a3233c568dbc4471ac288c81b2a28fcbba5c4961d59988d01938",
+      "nativeSha256": "b4f64af9c28e4b136fba143305c04d971cb3331b77abce61ca83127bcf75cfac",
+      "oracleTextEqual": true,
+      "scriptTreesEqual": false,
+      "differentFieldPaths": [
+        ".legalFormats.length",
+        ".metadata.rulings.length",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.activatedAbilities[1].descriptionOverride",
+        ".script.activatedAbilities[1].effect.effects[0].duration",
+        ".script.activatedAbilities[1].effect.effects[0].type",
+        ".script.activatedAbilities[2].descriptionOverride"
+      ]
+    }
+  ]
+}
