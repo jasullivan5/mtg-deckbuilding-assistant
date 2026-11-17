@@ -779,7 +779,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actionId = id
         val native = nativeJson.encodeToJsonElement(ReplacementEffect.serializer(), effect)
         val checkpoint = when (effect) {
-            is ModifyCounterPlacement, is DoubleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
+            is ModifyCounterPlacement, is ScaleCounterPlacement -> "A separate positive counter placement is required. The modifier must be active when that placement would happen."
             is EntersWithCounters, is EntersWithDynamicCounters -> "Counters are placed as part of entering the battlefield. The native entry and casting requirements apply."
             else -> {
                 actions += ActionEvidence(id, card.name, face, path, availability?.prerequisites().orEmpty(), native, classAvailability = availability)
@@ -792,16 +792,17 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         val confidence = when (effect) {
             is ModifyCounterPlacement -> {
                 val modifier = CounterPlacementModifier(origin, effect.appliesTo, effect.modifier,
-                    effect.placedByYou, effect.activeZones, selfCreature)
+                    effect.placer == Player.You, effect.activeZones, selfCreature, placedByOpponent = effect.placer == Player.EachOpponent)
                 counterModifiers += modifier
                 modifier.recipientCompatibility(Requirements(creature = false))
             }
-            is DoubleCounterPlacement -> {
+            is ScaleCounterPlacement -> {
                 val modifier = CounterPlacementModifier(origin, effect.appliesTo, null,
-                    effect.placedByYou, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
-                    transformation = CounterTransformation.Multiplicative(2))
+                    effect.placer == Player.You, effect.activeZones, selfCreature, effectsOnly = effect.effectsOnly,
+                    transformation = CounterTransformation.Multiplicative(2).takeIf { effect.scale == CounterPlacementScale.DOUBLE },
+                    placedByOpponent = effect.placer == Player.EachOpponent)
                 counterModifiers += modifier
-                modifier.recipientCompatibility(Requirements(creature = false))
+                if (effect.scale == CounterPlacementScale.DOUBLE) modifier.recipientCompatibility(Requirements(creature = false)) else Verdict.UNKNOWN
             }
             is EntersWithCounters -> recordEntryCounters(origin, effect.counterType, DynamicAmount.Fixed(effect.count),
                 effect.appliesTo, effect.activeZones, effect.selfOnly, effect.otherOnly, effect.condition?.description)

@@ -56,7 +56,8 @@ enum class PlacementOrigin { EFFECT, COST, TURN_BASED, UNKNOWN }
     val placedByYou: Boolean, val activeZones: Set<Zone>, val sourceCreature: Boolean,
     val effectsOnly: Boolean = false,
     // Historical reports encoded only delta. Their unresolved doublers stay unresolved on read.
-    val transformation: CounterTransformation? = delta?.let { CounterTransformation.Additive(it) }
+    val transformation: CounterTransformation? = delta?.let { CounterTransformation.Additive(it) },
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val placedByOpponent: Boolean = false
 ) {
     fun recipientCompatibility(requirement: Requirements): Verdict {
         fun compatible(recipient: Recipient): Verdict = when (recipient) {
@@ -110,8 +111,8 @@ fun counterModifierDecisions(fact: CounterPlacementModifier, question: CounterQu
         Decision("positive-original-placement", if (question.amount != null && question.amount <= 0) Verdict.NO_MATCH else Verdict.MATCH,
             "MECHANICAL", "Requires a separate placement of one or more counters"),
         Decision("modifier-source", active, "MECHANICAL", "Source active zones: ${fact.activeZones}"),
-        Decision("placing-player", if (fact.placedByYou && question.placer == Controller.OPPONENT) Verdict.NO_MATCH else Verdict.MATCH,
-            "MECHANICAL", if (fact.placedByYou) "The modifier's controller must place the counters" else "Any player may place the counters"),
+        Decision("placing-player", if (fact.placedByYou && question.placer == Controller.OPPONENT || fact.placedByOpponent && question.placer == Controller.YOU) Verdict.NO_MATCH else Verdict.MATCH,
+            "MECHANICAL", when { fact.placedByYou -> "The modifier's controller must place the counters"; fact.placedByOpponent -> "An opponent of the modifier's controller must place the counters"; else -> "Any player may place the counters" }),
         Decision("placement-change", when (fact.transformation) {
             null -> Verdict.UNKNOWN
             CounterTransformation.Additive(0) -> Verdict.NO_MATCH

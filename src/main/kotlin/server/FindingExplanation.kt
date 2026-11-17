@@ -125,7 +125,7 @@ fun explain(result: ResultEvidence, action: ActionEvidence? = null): PathwayExpl
         return PathwayExplanation("This replacement changes an impending placement. $change",
             fact.action.prerequisites + listOf(scope,
                 "Active source zones: ${fact.activeZones.joinToString { it.displayName }}.",
-                if (fact.placedByYou) "The modifier's controller must place the counters." else "Any player can place the counters.") +
+                when { fact.placedByYou -> "The modifier's controller must place the counters."; fact.placedByOpponent -> "An opponent of the modifier's controller must place the counters."; else -> "Any player can place the counters." }) +
                 listOfNotNull("Only placements from effects qualify. Placement costs and turn-based placements are excluded.".takeIf { fact.effectsOnly }),
             result.decisions.filter { it.verdict == Verdict.UNKNOWN }.map { it.reason }, mechanic(result),
             "Another operation must initiate the placement.")
