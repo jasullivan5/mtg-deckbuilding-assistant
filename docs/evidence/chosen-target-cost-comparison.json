@@ -1,0 +1,835 @@
+{
+  "kenrith": {
+    "declarations": 34,
+    "cards": 33,
+    "actions": 33,
+    "newlySupportedConditions": 24,
+    "transitions": {
+      "GENERIC: UNKNOWN -> MATCH": 24,
+      "GENERIC: UNKNOWN -> UNKNOWN": 9,
+      "MANA_SYMBOLS: ABSENT -> MATCH": 1
+    },
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 993,
+            "pathways": 1050
+          },
+          "UNKNOWN": {
+            "cards": 1120,
+            "pathways": 1274
+          },
+          "NO_MATCH": {
+            "cards": 3166,
+            "pathways": 3770
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 17,
+            "pathways": 17
+          },
+          "UNKNOWN": {
+            "cards": 14,
+            "pathways": 14
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 178
+          },
+          "UNKNOWN": {
+            "cards": 370,
+            "pathways": 399
+          },
+          "NO_MATCH": {
+            "cards": 3962,
+            "pathways": 5085
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1143,
+            "pathways": 1227
+          },
+          "UNKNOWN": {
+            "cards": 211,
+            "pathways": 235
+          },
+          "NO_MATCH": {
+            "cards": 433,
+            "pathways": 473
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1049,
+            "pathways": 1113
+          },
+          "UNKNOWN": {
+            "cards": 909,
+            "pathways": 998
+          },
+          "NO_MATCH": {
+            "cards": 525,
+            "pathways": 556
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 15955,
+        "populationSha256": "aaf2dea472921c55e9a70479748473c981e0256b5ac5e6b13ff5e9f76fab17b2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 666,
+            "pathways": 703
+          },
+          "UNKNOWN": {
+            "cards": 597,
+            "pathways": 644
+          },
+          "NO_MATCH": {
+            "cards": 537,
+            "pathways": 615
+          }
+        },
+        "actionsWithTargetSelection": 2198
+      }
+    ],
+    "inventory": [
+      {
+        "card": "Ajani's Response",
+        "action": "Ajani's Response|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Animist's Might",
+        "action": "Animist's Might|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "af5d7ffc1a4fea04f3cdff709fff6d5571945175427de07243e3393deb497b34",
+        "requirements": 2,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Banish from Edoras",
+        "action": "Banish from Edoras|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Bitter Downfall",
+        "action": "Bitter Downfall|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "8b78b27f63d0610fcd53ec628f8316549ca1d71485a0de4aeeb19cb6e0199f78",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Bouncer's Beatdown",
+        "action": "Bouncer's Beatdown|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "0bba51598ee651626b2a440d815ba67675b809121764342ec16d532476989729",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Brush Off",
+        "action": "Brush Off|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1c94a24807b5a9d77102aeddd9e467f96193b036c6e899ade20662a37591fc94",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Brush Off",
+        "action": "Brush Off|front|script.spell",
+        "declaration": "script.staticAbilities[1]",
+        "kind": "MANA_SYMBOLS",
+        "filterSha256": "1c94a24807b5a9d77102aeddd9e467f96193b036c6e899ade20662a37591fc94",
+        "requirements": 1,
+        "before": "ABSENT",
+        "after": "MATCH"
+      },
+      {
+        "card": "Bury in Books",
+        "action": "Bury in Books|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "eb3f02d6d57411ee277cee89abbcbf8558f4d225dc1f777c0969af611249baeb",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Dark Endurance",
+        "action": "Dark Endurance|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "76ebf4a77ddf84e3440c74c3e7ce9dc0bcb84f0741aec3f488dbe42a235376bd",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Depower",
+        "action": "Depower|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "eb3f02d6d57411ee277cee89abbcbf8558f4d225dc1f777c0969af611249baeb",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Dire Downdraft",
+        "action": "Dire Downdraft|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "dd070b4d5c056ed0776a7a9733296de16d9d47547a01e31c038ebfaff63a00b7",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Ephara's Dispersal",
+        "action": "Ephara's Dispersal|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "eb3f02d6d57411ee277cee89abbcbf8558f4d225dc1f777c0969af611249baeb",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Fate of the Sun-Cryst",
+        "action": "Fate of the Sun-Cryst|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Grounded for Life",
+        "action": "Grounded for Life|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Grow Extra Arms",
+        "action": "Grow Extra Arms|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "bbb087d120c7771241392218176e68dfffe11e0962c75ada5414934d3cd349dc",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Knockout Blow",
+        "action": "Knockout Blow|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "30c3f6981c7a5c2fd2fd1b495a10c41d79008b695f17c123d8b0afabe1351c50",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Luminous Rebuke",
+        "action": "Luminous Rebuke|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Magnificent End",
+        "action": "Magnificent End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1f095aac46e8689fbc1054edc253cf0d3176b6e78ba5aa3f1df418611e416a06",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "No One Left Behind",
+        "action": "No One Left Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b45813fe931e1b55caea1b8c56e52063e26632fdd4ed83a7e0eceae1bb5996e1",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Out of Air",
+        "action": "Out of Air|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "df266762b71e66beee13aebe129fd21f0785f825cdf92bccdf15d988e3a9e207",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Out of the Way",
+        "action": "Out of the Way|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "5679e2c45ce54f4a1620c2b8503c16edb24e4723d6a9c4652f6bd829c6ee3760",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Quicksand Whirlpool",
+        "action": "Quicksand Whirlpool|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Ride's End",
+        "action": "Ride's End|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "fe5955325cca6d7cea829a4512455d84b1c4bb37c52795c45168094ebe60cbfe",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Roadside Blowout",
+        "action": "Roadside Blowout|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "e53d61e7069a231ae0cb617378d29d24d4ebc9282630984c89f67023f71767d7",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Run Behind",
+        "action": "Run Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "eb3f02d6d57411ee277cee89abbcbf8558f4d225dc1f777c0969af611249baeb",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Run Over",
+        "action": "Run Over|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1f6482078bcea5318eb849206ce3ed193c6fa65568815f106a7ce6a8cc961293",
+        "requirements": 2,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Seized from Slumber",
+        "action": "Seized from Slumber|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b275022f4db5a31b4e1252de895fb9529b92551059bb6608873af3870bf88c09",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Swampsnare Trap",
+        "action": "Swampsnare Trap|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1c8f433485ff099798dd8d0e89529ee36f850226524e2b595a41925354c8a02f",
+        "requirements": 0,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "This Town Ain't Big Enough",
+        "action": "This Town Ain't Big Enough|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "3f43d26725b99d8b52028356684e47b7d71676d96580b0069ec199888ba59656",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Titanic Brawl",
+        "action": "Titanic Brawl|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1c5693f4c4efa80e090d14a72947e7b1fba0917676c72c3752b427751d64423c",
+        "requirements": 2,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "17e923a314232f04372244aacaafe8c8783c834eb918c034fadc163ca6512b4f",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Uneasy Partings",
+        "action": "Uneasy Partings|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "7aaf02f60ad575685dd03457b8e030616bb55dc6516fa2c05c97cc1b9842902a",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Whack",
+        "action": "Whack|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b1efe28097cb009c6567ecfa9b036bb47ef001f7401205e5fa7a8788e4277525",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      }
+    ]
+  },
+  "judith": {
+    "declarations": 7,
+    "cards": 7,
+    "actions": 7,
+    "newlySupportedConditions": 4,
+    "transitions": {
+      "GENERIC: UNKNOWN -> UNKNOWN": 3,
+      "GENERIC: UNKNOWN -> MATCH": 4
+    },
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 585,
+            "pathways": 620
+          },
+          "UNKNOWN": {
+            "cards": 509,
+            "pathways": 577
+          },
+          "NO_MATCH": {
+            "cards": 1906,
+            "pathways": 2328
+          }
+        },
+        "actionsWithTargetSelection": 923
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 9,
+            "pathways": 9
+          },
+          "UNKNOWN": {
+            "cards": 8,
+            "pathways": 8
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "actionsWithTargetSelection": 923
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 104,
+            "pathways": 106
+          },
+          "UNKNOWN": {
+            "cards": 85,
+            "pathways": 93
+          },
+          "NO_MATCH": {
+            "cards": 1555,
+            "pathways": 1857
+          }
+        },
+        "actionsWithTargetSelection": 923
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 346,
+            "pathways": 363
+          },
+          "UNKNOWN": {
+            "cards": 48,
+            "pathways": 55
+          },
+          "NO_MATCH": {
+            "cards": 215,
+            "pathways": 230
+          }
+        },
+        "actionsWithTargetSelection": 923
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 508,
+            "pathways": 535
+          },
+          "UNKNOWN": {
+            "cards": 527,
+            "pathways": 576
+          },
+          "NO_MATCH": {
+            "cards": 315,
+            "pathways": 335
+          }
+        },
+        "actionsWithTargetSelection": 923
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 6111,
+        "populationSha256": "a0393699ae09344335cbdd6512df827d8fd7b0cd5137d7fbe589626e61f09323",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 176,
+            "pathways": 184
+          },
+          "UNKNOWN": {
+            "cards": 136,
+            "pathways": 140
+          },
+          "NO_MATCH": {
+            "cards": 198,
+            "pathways": 234
+          }
+        },
+        "actionsWithTargetSelection": 923
+      }
+    ],
+    "inventory": [
+      {
+        "card": "Bitter Downfall",
+        "action": "Bitter Downfall|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "8b78b27f63d0610fcd53ec628f8316549ca1d71485a0de4aeeb19cb6e0199f78",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Dark Endurance",
+        "action": "Dark Endurance|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "76ebf4a77ddf84e3440c74c3e7ce9dc0bcb84f0741aec3f488dbe42a235376bd",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1f095aac46e8689fbc1054edc253cf0d3176b6e78ba5aa3f1df418611e416a06",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "No One Left Behind",
+        "action": "No One Left Behind|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b45813fe931e1b55caea1b8c56e52063e26632fdd4ed83a7e0eceae1bb5996e1",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Swampsnare Trap",
+        "action": "Swampsnare Trap|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1c8f433485ff099798dd8d0e89529ee36f850226524e2b595a41925354c8a02f",
+        "requirements": 0,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "17e923a314232f04372244aacaafe8c8783c834eb918c034fadc163ca6512b4f",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      },
+      {
+        "card": "Whack",
+        "action": "Whack|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "b1efe28097cb009c6567ecfa9b036bb47ef001f7401205e5fa7a8788e4277525",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      }
+    ]
+  },
+  "krenko": {
+    "declarations": 2,
+    "cards": 2,
+    "actions": 2,
+    "newlySupportedConditions": 1,
+    "transitions": {
+      "GENERIC: UNKNOWN -> MATCH": 1,
+      "GENERIC: UNKNOWN -> UNKNOWN": 1
+    },
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 228,
+            "pathways": 233
+          },
+          "UNKNOWN": {
+            "cards": 223,
+            "pathways": 247
+          },
+          "NO_MATCH": {
+            "cards": 1113,
+            "pathways": 1387
+          }
+        },
+        "actionsWithTargetSelection": 449
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "actionsWithTargetSelection": 449
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 18,
+            "pathways": 19
+          },
+          "UNKNOWN": {
+            "cards": 31,
+            "pathways": 35
+          },
+          "NO_MATCH": {
+            "cards": 689,
+            "pathways": 811
+          }
+        },
+        "actionsWithTargetSelection": 449
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 182,
+            "pathways": 190
+          },
+          "UNKNOWN": {
+            "cards": 28,
+            "pathways": 33
+          },
+          "NO_MATCH": {
+            "cards": 131,
+            "pathways": 139
+          }
+        },
+        "actionsWithTargetSelection": 449
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 230,
+            "pathways": 239
+          },
+          "UNKNOWN": {
+            "cards": 235,
+            "pathways": 252
+          },
+          "NO_MATCH": {
+            "cards": 173,
+            "pathways": 182
+          }
+        },
+        "actionsWithTargetSelection": 449
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 3472,
+        "populationSha256": "85c378be879120394e5e7887f6820e518c35e59546c5048e6be2445a3638e602",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 83,
+            "pathways": 88
+          },
+          "UNKNOWN": {
+            "cards": 62,
+            "pathways": 64
+          },
+          "NO_MATCH": {
+            "cards": 110,
+            "pathways": 136
+          }
+        },
+        "actionsWithTargetSelection": 449
+      }
+    ],
+    "inventory": [
+      {
+        "card": "Mascot Interception",
+        "action": "Mascot Interception|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "1f095aac46e8689fbc1054edc253cf0d3176b6e78ba5aa3f1df418611e416a06",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "MATCH"
+      },
+      {
+        "card": "Torch Breath",
+        "action": "Torch Breath|front|script.spell",
+        "declaration": "script.staticAbilities[0]",
+        "kind": "GENERIC",
+        "filterSha256": "17e923a314232f04372244aacaafe8c8783c834eb918c034fadc163ca6512b4f",
+        "requirements": 1,
+        "before": "UNKNOWN",
+        "after": "UNKNOWN"
+      }
+    ]
+  }
+}
