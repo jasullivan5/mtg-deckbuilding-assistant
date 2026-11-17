@@ -5,6 +5,7 @@ import dev.mtg.assistant.eligibility.*
 import dev.mtg.assistant.extensions.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
+import io.kotest.assertions.throwables.shouldThrow
 import kotlinx.serialization.json.*
 import java.nio.file.Files
 
@@ -53,5 +54,9 @@ class NativeDefinitionAdoptionTest : FunSpec({
         catalog.eligibility.resolve(catalog.card("Sunforger")!!).corrections shouldBe emptyList()
         catalog.search("name:Sunforger id<=r") shouldBe emptyList()
         catalog.search("name:Sunforger id:rw").map { it.name } shouldBe listOf("Sunforger")
+        // Its original fingerprint/approval was not edited to cover changed mechanics or identity.
+        shouldThrow<IllegalArgumentException> {
+            EligibilityResolver(physicalCards(catalog.cards),ApprovedEligibility.historicalPlan)
+        }
     }
 })

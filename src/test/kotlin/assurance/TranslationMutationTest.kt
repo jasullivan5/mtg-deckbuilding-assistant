@@ -101,6 +101,8 @@ class TranslationMutationTest : FunSpec({
         val violations=requirementProbe(s.changed)
         observations+=buildJsonObject {
             put("id",s.id);put("defect",s.defect);put("oracleId",s.original.oracleId);put("productionRegistered",false)
+            put("interpretation",if(s.id=="M1") "HISTORICAL_MUTATION_NO_LONGER_DISCRIMINATES_THIS_SCOPE" else "CURRENT_ADVERSARIAL_CONTROL")
+            put("sourceProbeKind",if(s.id=="M1") "HISTORICAL_SYNTACTIC_PROXY_NOT_CURRENT_FIDELITY_JUDGMENT" else "BOUNDED_SOURCE_PROBE")
             put("validatorErrors",lint.count {it.severity==LintSeverity.ERROR})
             put("validatorWarnings",JsonArray(lint.filter {it.severity==LintSeverity.WARNING}.map {JsonPrimitive(it.message)}))
             put("controlValidatorWarnings",JsonArray(originalLint.filter {it.severity==LintSeverity.WARNING}.map {JsonPrimitive(it.message)}))
