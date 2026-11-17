@@ -14,6 +14,25 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
 class TriggeredOperationTest : FunSpec({
+    test("emerge-only zone events retain their restriction instead of matching any creature death") {
+        for (restricted in listOf(false, true)) {
+            val definition = card("Synthetic emerge-bound response") {
+                typeLine = "Creature"; power = 2; toughness = 2
+                triggeredAbility {
+                    trigger = EventPattern.ZoneChangeEvent(from = Zone.BATTLEFIELD, to = Zone.GRAVEYARD,
+                        filter = GameObjectFilter.Creature.youControl(), requireEmergeSacrifice = restricted)
+                    effect = Effects.DrawCards(1)
+                }
+            }
+            val extraction = PathwayExtractor().extract(listOf(definition))
+            val outcome = extraction.eventOutcomes.single()
+            (outcome.event.trigger as EventPattern.ZoneChangeEvent).requireEmergeSacrifice shouldBe restricted
+            val requirement = ZoneEventRequirement(Zone.BATTLEFIELD, Zone.GRAVEYARD, true, Controller.YOU)
+            eventIntersection(outcome.event, requirement) shouldBe if (restricted) Verdict.UNKNOWN else Verdict.MATCH
+            deathResponses(listOf(outcome)).single().verdict shouldBe if (restricted) Verdict.UNKNOWN else Verdict.MATCH
+        }
+    }
+
     val catalog by lazy { Catalog() }
     val report by lazy { discover(catalog, "Judith, the Scourge Diva") }
     fun extract(name: String) = PathwayExtractor().extract(listOf(checkNotNull(catalog.card(name))))
