@@ -25,7 +25,7 @@ internal object DefinitionSources {
                 val prefix=if(era == null) "mtg-sets" else "mtg-sets/$era"
                 val source=info.sourceFile ?: continue
                 val path="$prefix/src/main/kotlin/${info.packageName.replace('.','/')}/$source"
-                val clazz=info.loadClass()
+                val clazz=Class.forName(info.name, false, DefinitionSources::class.java.classLoader)
                 for(method in clazz.declaredMethods) {
                     if(Modifier.isPublic(method.modifiers) && Modifier.isStatic(method.modifiers) && method.parameterCount == 0 && method.returnType == CardDefinition::class.java) {
                         val definition=runCatching { method.invoke(null) as CardDefinition }.getOrNull() ?: continue
