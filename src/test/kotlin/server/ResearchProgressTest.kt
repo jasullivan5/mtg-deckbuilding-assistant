@@ -18,6 +18,8 @@ class ResearchProgressTest : FunSpec({
         val full = PathwayExtractor(inspectCardEntries = true).extract(cards)
         progressRecords(cards) { it.structuralSupport } shouldBe full.structuralSupport
         progressRecords(cards) { it.facts } shouldBe full.facts
+        progressRecords(cards) { it.actions } shouldBe full.actions
+        progressRecords(cards) { it.unsupported } shouldBe full.unsupported
     }
     fun group(state: String, count: Int) = CoverageGroup(state, "FixtureFamily", "script", JsonNull,
         count, 1, 1, state, emptyList(), "UNRESOLVED", 0, emptyList(), "Review")

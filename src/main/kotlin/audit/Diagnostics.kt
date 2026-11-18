@@ -61,6 +61,9 @@ private fun canonicalShape(value: JsonElement, nodes: MutableMap<JsonElement, Js
 private fun context(path: String) = path.replace(Regex("\\[\\d+\\]"),"[]").substringBefore(".effect").substringBefore(".spellEffect")
 /** This walk starts from CardDefinition serialization, not extracted actions/pathways. */
 fun nativeNodes(cards: List<CardDefinition>, report: DiscoveryReport): List<NativeNode> = buildList {
+    visitNativeNodes(cards, report, ::add)
+}
+private fun visitNativeNodes(cards: List<CardDefinition>, report: DiscoveryReport, visit: (NativeNode) -> Unit) {
     val actionsByCardFace=report.actions.groupBy { it.card to it.face }
     fun face(def: CardDefinition, face: String, rootName: String) {
         val tree=nativeJson.encodeToJsonElement(CardDefinition.serializer(),def).jsonObject
@@ -72,7 +75,7 @@ fun nativeNodes(cards: List<CardDefinition>, report: DiscoveryReport): List<Nati
                         val action=actionsByCardFace[rootName to face].orEmpty()
                             .filter { it.face == face && (path.startsWith(it.path) || it.path == "script.spell" && path.startsWith("script.spellEffect")) }
                             .maxByOrNull { it.path.length }
-                        add(NativeNode(rootName,face,path,context(path),type,v,action?.id))
+                        visit(NativeNode(rootName,face,path,context(path),type,v,action?.id))
                     }
                     v.forEach { (k,x) -> if(k !in setOf("backFace","flipSide","cardFaces") && k !in incidentalKeys) walk(x,if(path.isEmpty()) k else "$path.$k") }
                 }
@@ -105,7 +108,6 @@ private fun work(type: String) = when(type) {
     else -> "Review native fields and enclosing action; add a reusable interpreter only with positive and negative tests"
 }
 fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageReport {
-    val nodes=nativeNodes(cards,report)
     val explicit=report.structuralSupport.groupBy { Triple(it.card,it.face,it.path) }
     val resultsByFace=report.results.groupBy { it.card to it.face }
     val issuesByFace=report.unsupported.groupBy { it.card to it.face }
@@ -114,9 +116,20 @@ fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageRepo
     val provenanceByCard=report.eligibility.associate { it.card to it.provenance }
     val actionMap=report.actions.associateBy { it.id }
     val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
-    data class Entry(val n: NativeNode,val status: String,val reasons: List<String>,val shape: JsonElement)
+    data class Key(val nativeType: String,val context: String,val status: String,val reasons: List<String>,val shape: JsonElement)
+    class Group(val key: Key) {
+        var occurrences = 0
+        var insideAcceptedActions = 0
+        val cards = mutableSetOf<String>()
+        val actions = mutableSetOf<String>()
+        val representatives = mutableListOf<CoverageOccurrence>()
+    }
+    // Retain canonical groups and bounded representatives, not every serialized definition tree.
+    val accumulated = linkedMapOf<Key, Group>()
+    var encounteredTypedNodes = 0
     val shapes = CanonicalShapePool()
-    val entries=nodes.map { n ->
+    visitNativeNodes(cards,report) { n ->
+        encounteredTypedNodes++
         val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
         val matched=Triple(n.card,n.face,n.path) in paths
         val support=explicit[Triple(n.card,n.face,n.path)].orEmpty()
@@ -133,16 +146,22 @@ fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageRepo
         val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
         if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
         if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
-        Entry(n,state,reasons.distinct().sorted(),shapes.canonical(n.native))
+        val key = Key(n.nativeType,n.context,state,reasons.distinct().sorted(),shapes.canonical(n.native))
+        val group = accumulated.getOrPut(key) { Group(key) }
+        group.occurrences++
+        group.cards += n.card
+        n.actionId?.let { group.actions += it }
+        if(n.actionId in accepted) group.insideAcceptedActions++
+        if(group.representatives.size < 5) group.representatives += CoverageOccurrence(n.card,n.face,n.path,n.actionId,state,key.reasons,
+            sources[n.actionId] ?: listOfNotNull("native:${n.face}.${n.path}", DefinitionSources.paths[n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source))
     }
-    val groups=entries.groupBy { "${it.n.nativeType}|${it.n.context}|${it.status}|${it.reasons}|${it.shape}" }.map { (key,es) ->
-        val e=es.first(); val n=e.n
-        CoverageGroup(hash(key),n.nativeType,n.context,e.shape,es.size,es.map { it.n.card }.distinct().size,
-            es.mapNotNull { it.n.actionId }.distinct().size,e.status,e.reasons,if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(n.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && n.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(n.nativeType,e.shape),
-            es.count { it.n.actionId in accepted },es.take(5).map { x -> CoverageOccurrence(x.n.card,x.n.face,x.n.path,x.n.actionId,x.status,x.reasons,
-                sources[x.n.actionId] ?: listOfNotNull("native:${x.n.face}.${x.n.path}", DefinitionSources.paths[x.n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[x.n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source)) },work(n.nativeType))
+    val groups=accumulated.values.map { g ->
+        val k=g.key
+        CoverageGroup(hash("${k.nativeType}|${k.context}|${k.status}|${k.reasons}|${k.shape}"),k.nativeType,k.context,k.shape,g.occurrences,g.cards.size,
+            g.actions.size,k.status,k.reasons,if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(k.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && k.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(k.nativeType,k.shape),
+            g.insideAcceptedActions,g.representatives,work(k.nativeType))
     }.sortedWith(compareBy<CoverageGroup> { if(it.relevance == "POTENTIALLY_RELEVANT" && it.supportStatus !in setOf("PATHWAY_EXTRACTED","SUPPORTED")) 0 else 1 }.thenByDescending { it.distinctCards }.thenBy { it.fingerprint })
-    return CoverageReport(commander=report.commander,inputCards=cards.size,encounteredTypedNodes=nodes.size,groups=groups,objective=report.objective,factCounts=report.facts.groupingBy { it.kind.name }.eachCount().toSortedMap())
+    return CoverageReport(commander=report.commander,inputCards=cards.size,encounteredTypedNodes=encounteredTypedNodes,groups=groups,objective=report.objective,factCounts=report.facts.groupingBy { it.kind.name }.eachCount().toSortedMap())
 }
 fun examine(cards: List<CardDefinition>, report: DiscoveryReport, benchmark: BenchmarkReport? = null): Examination {
     val findings=mutableListOf<Finding>()

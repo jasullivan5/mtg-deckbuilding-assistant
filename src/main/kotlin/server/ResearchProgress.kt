@@ -61,9 +61,26 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     private val physical by lazy { physicalCards(catalog.cards) }
     // These complete projections can be reproduced from the immutable catalog. They must not
     // permanently pin their JSON trees while the 1 GiB service computes another discovery run.
-    private var extractedCache = SoftReference<PathwayExtractor>(null)
-    private val extracted: PathwayExtractor get() = synchronized(this) {
-        extractedCache.get() ?: PathwayExtractor(inspectCardEntries = true).extract(physical).also {
+    private data class Extraction(val actions: List<ActionEvidence>, val unsupported: List<Unsupported>,
+        val structuralSupport: List<StructuralSupport>, val facts: List<MechanicalFact>)
+    private fun extractProgress(): Extraction {
+        val actions = mutableListOf<ActionEvidence>()
+        val unsupported = mutableListOf<Unsupported>()
+        val support = mutableListOf<StructuralSupport>()
+        val facts = mutableListOf<MechanicalFact>()
+        val walker = PathwayExtractor(inspectCardEntries = true)
+        for (card in physical) {
+            walker.extract(listOf(card))
+            actions.addAll(walker.actions)
+            unsupported.addAll(walker.unsupported)
+            support.addAll(walker.structuralSupport)
+            facts.addAll(walker.facts)
+        }
+        return Extraction(actions,unsupported,support,facts)
+    }
+    private var extractedCache = SoftReference<Extraction>(null)
+    private val extracted: Extraction get() = synchronized(this) {
+        extractedCache.get() ?: extractProgress().also {
             extractedCache = SoftReference(it)
         }
     }
