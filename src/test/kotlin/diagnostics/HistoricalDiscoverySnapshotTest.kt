@@ -52,8 +52,7 @@ class HistoricalDiscoverySnapshotTest : FunSpec({
         change.before!!.jsonObject.getValue("eventOutcome") shouldBe outcome
         change.after!!.jsonObject.getValue("eventOutcome") shouldBe changed
         change.attribution shouldContain "RECORDED_OPAQUE_EVIDENCE"
-        diffSnapshots(withResult(raw,JsonObject(result + ("eventOutcome" to outcome))),
-            withResult(raw,JsonObject(result + ("eventOutcome" to changed)))).transitions["RECORDED_OPAQUE_EVIDENCE_CHANGED"] shouldBe 1
+        diff.transitions["RECORDED_OPAQUE_EVIDENCE_CHANGED"] shouldBe 1
         change.after!!.jsonObject.getValue("verdict").jsonPrimitive.content shouldBe "NO_MATCH"
     }
 

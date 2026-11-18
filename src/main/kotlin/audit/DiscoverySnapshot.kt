@@ -13,7 +13,6 @@ internal data class DiscoverySnapshot(
     val resultNodes: Map<ResultEvidence, JsonObject>
 )
 
-private val snapshotReader = Json { ignoreUnknownKeys = true }
 private val resultCoreFields = setOf(
     "card", "identifier", "face", "actionId", "abilityPath", "branch", "verdict", "operation",
     "costOrEffect", "affectedScope", "prerequisites", "dependency", "nativeOperation", "decisions",
