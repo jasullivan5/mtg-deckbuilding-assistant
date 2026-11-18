@@ -8,6 +8,7 @@ import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.*
 import kotlinx.serialization.Serializable
+import java.lang.ref.SoftReference
 import java.nio.file.Path
 import java.time.Instant
 
@@ -51,16 +52,27 @@ internal fun progressAssurance(population: Int, records: List<TranslationAssuran
 internal class ResearchProgressService(private val catalog: Catalog, private val revision: String,
     private val snapshotPath: Path? = null) {
     private val physical by lazy { physicalCards(catalog.cards) }
-    private val extracted by lazy { PathwayExtractor(inspectCardEntries = true).extract(physical) }
+    // These complete projections can be reproduced from the immutable catalog. They must not
+    // permanently pin their JSON trees while the 1 GiB service computes another discovery run.
+    private var extractedCache = SoftReference<PathwayExtractor>(null)
+    private val extracted: PathwayExtractor get() = synchronized(this) {
+        extractedCache.get() ?: PathwayExtractor(inspectCardEntries = true).extract(physical).also {
+            extractedCache = SoftReference(it)
+        }
+    }
     val instructionRecords get() = extracted.structuralSupport.toList()
     val factRecords get() = extracted.facts.toList()
-    val nativeCoverage: CoverageReport by lazy {
+    private var nativeCoverageCache = SoftReference<CoverageReport>(null)
+    val nativeCoverage: CoverageReport get() = synchronized(this) {
+        nativeCoverageCache.get() ?: buildNativeCoverage().also { nativeCoverageCache = SoftReference(it) }
+    }
+    private fun buildNativeCoverage(): CoverageReport {
         val e = extracted
         val report = DiscoveryReport(objective = "catalog-structural-observation", commander = "No commander filter",
             allowedIdentity = emptyList(), conventionalQuery = null, counts = emptyMap(), eligibility = emptyList(),
             results = emptyList(), actions = e.actions, unsupported = e.unsupported, limitations = emptyList(),
             structuralSupport = e.structuralSupport, facts = e.facts, mechanicalInputCards = physical.map { it.name })
-        coverage(physical, report)
+        return coverage(physical, report)
     }
     // An explicit snapshot is optional. Failure is visible and never becomes a zero missing-card count.
     private val snapshotAttempt by lazy { snapshotPath?.let { runCatching { loadOracleSnapshot(it) } } }
@@ -77,6 +89,7 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val costExamination: CostExaminationReport by lazy { CostExamination.report(catalog,revision) }
     val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts,costExamination=costExamination) }
     val report: ResearchProgress by lazy {
+        val extraction = extracted
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
         val assurance = progressAssurance(physical.size, records)
@@ -96,8 +109,8 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             families = audit.groups.groupBy { it.nativeType }.map { (type, groups) ->
                 ProgressFamily(type, groups.sumOf { it.occurrences }, groups.filter { it.supportStatus == "SUPPORTED" }.sumOf { it.occurrences })
             }.sortedWith(compareByDescending<ProgressFamily> { it.supported }.thenBy { it.nativeType }),
-            factKinds = extracted.facts.groupingBy { it.kind.name }.eachCount().toSortedMap(),
-            factConfidence = Verdict.entries.associate { it.name to extracted.facts.count { f -> f.confidence == it } },
+            factKinds = extraction.facts.groupingBy { it.kind.name }.eachCount().toSortedMap(),
+            factConfidence = Verdict.entries.associate { it.name to extraction.facts.count { f -> f.confidence == it } },
             assurance = assurance,
             execution = "Not measured at catalog scale as whole-card verification. The scoped verification index above reconciles attributable source and execution observations against the retained Commander universe. The extension ledger's historical card-level execution claims do not supply new scenario passes. Curated Lab reads are not execution. Missing evidence is not failure; retained observations keep their original date and engine revision.",
             obstacles = listOf(
