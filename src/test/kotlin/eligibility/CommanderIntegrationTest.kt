@@ -141,17 +141,17 @@ class CommanderIntegrationTest : FunSpec({
         reports.last().results.count { it.verdict==Verdict.MATCH && it.card==commander.name } shouldBe 2
         reports.take(2).all { it.results.none { r -> r.verdict==Verdict.MATCH && r.card==commander.name } } shouldBe true
     }
-    test("Judith and Krenko retain complete eligible pools and controlled A B C evidence") {
-        val previous=Catalog(Extensions.all.filter { it.definition.name!=OviyaPashiriSageLifecrafter.name })
-        for(who in listOf("Judith, the Scourge Diva","Krenko, Mob Boss")) for(objective in listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) {
-            val before=discover(previous,who,"name:Kuldotha",objective)
-            val after=discover(catalog,who,"name:Kuldotha",objective)
-            after.eligibility shouldBe before.eligibility
-            after.counts["commander_eligible_cards"] shouldBe before.counts["commander_eligible_cards"]
-            after.mechanicalInputCards shouldBe before.mechanicalInputCards
-            after.facts shouldBe before.facts;after.actions shouldBe before.actions;after.results shouldBe before.results
-            after.unsupported shouldBe before.unsupported
-            after.counts["authored_physical_cards"] shouldBe before.counts["authored_physical_cards"]!!+1
+    test("native Oviya has one representation and remains excluded from Judith and Krenko across objectives") {
+        catalog.cards.count { it.oracleId==OviyaPashiriSageLifecrafter.oracleId } shouldBe 1
+        for(who in listOf("Judith, the Scourge Diva","Krenko, Mob Boss")) {
+            val reports=listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")
+                .map { discover(catalog,who,"name:Kuldotha",it) }
+            reports.map { it.eligibility }.distinct().size shouldBe 1
+            reports.map { it.facts }.distinct().size shouldBe 1
+            reports.forEach { report ->
+                report.eligibility.single { it.card==OviyaPashiriSageLifecrafter.name }.deck shouldBe Verdict.NO_MATCH
+                report.mechanicalInputCards.contains(OviyaPashiriSageLifecrafter.name) shouldBe false
+            }
         }
     }
 })

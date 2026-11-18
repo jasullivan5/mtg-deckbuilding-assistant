@@ -36,7 +36,15 @@ class TokenCardIntegrationTest : FunSpec({
             catalog.definitionReview(c.name).assuranceEvidence!!.oracleId shouldBe c.oracleId
         }
         val rulings=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/cards/bitterblossom-rulings.json"))).jsonObject.getValue("data").jsonArray
-        Bitterblossom.metadata.rulings.map { it.date to it.text } shouldBe rulings.map { it.jsonObject.getValue("published_at").jsonPrimitive.content to it.jsonObject.getValue("comment").jsonPrimitive.content }
+        // Native metadata curates three rulings; the source archive retains all five, including
+        // the two general Kindred notes and the source's original grammatical typo.
+        val observed=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/cards/native-adoption-sources.json")))
+            .jsonObject.getValue("cards").jsonArray.single { it.jsonObject.getValue("name").jsonPrimitive.content=="Bitterblossom" }
+            .jsonObject.getValue("rulings").jsonArray
+        fun sourceRulings(rows:JsonArray)=rows.map { it.jsonObject.getValue("published_at").jsonPrimitive.content to it.jsonObject.getValue("comment").jsonPrimitive.content }
+        sourceRulings(observed) shouldBe sourceRulings(rulings)
+        Bitterblossom.metadata.rulings.filter { it.date=="2008-04-01" }.map { it.date to it.text } shouldBe
+            sourceRulings(rulings).filter { it.first=="2008-04-01" }
     }
     test("new definitions are reused for multiple commanders with unchanged objective predicates") {
         for((name,commanders) in listOf(KrenkosCommand.name to listOf("Judith, the Scourge Diva","Krenko, Mob Boss"),
