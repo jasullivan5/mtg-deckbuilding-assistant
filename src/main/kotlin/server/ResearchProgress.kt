@@ -48,6 +48,13 @@ internal fun progressAssurance(population: Int, records: List<TranslationAssuran
         QualificationState.entries.associate { state -> state.name to records.count { it.qualification == state } }, records)
 }
 
+/** These records are local to each definition; discard the walker's other projections per card. */
+internal fun <T> progressRecords(cards: List<com.wingedsheep.sdk.model.CardDefinition>,
+    select: (PathwayExtractor) -> List<T>): List<T> {
+    val walker = PathwayExtractor(inspectCardEntries = true)
+    return cards.flatMap { select(walker.extract(listOf(it))) }
+}
+
 /** Cached per server/build. Uses the existing walker and independent catalog audit, never another interpreter. */
 internal class ResearchProgressService(private val catalog: Catalog, private val revision: String,
     private val snapshotPath: Path? = null) {
@@ -60,8 +67,10 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             extractedCache = SoftReference(it)
         }
     }
-    val instructionRecords get() = extracted.structuralSupport.toList()
-    val factRecords get() = extracted.facts.toList()
+    val instructionRecords get() = extractedCache.get()?.structuralSupport?.toList()
+        ?: progressRecords(physical) { it.structuralSupport }
+    val factRecords get() = extractedCache.get()?.facts?.toList()
+        ?: progressRecords(physical) { it.facts }
     private var nativeCoverageCache = SoftReference<CoverageReport>(null)
     val nativeCoverage: CoverageReport get() = synchronized(this) {
         nativeCoverageCache.get() ?: buildNativeCoverage().also { nativeCoverageCache = SoftReference(it) }

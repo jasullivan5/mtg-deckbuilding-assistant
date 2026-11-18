@@ -10,6 +10,15 @@ import io.kotest.assertions.throwables.shouldThrow
 import kotlinx.serialization.json.*
 
 class ResearchProgressTest : FunSpec({
+    test("bounded Progress projections retain complete instruction and fact order") {
+        val catalog = Catalog()
+        val cards = listOf("Judith, the Scourge Diva", "Kenrith, the Returned King", "Pit Raptor",
+            "Planewide Celebration", "Sunforger", "Tyrite Sanctum", "Spark Elemental")
+            .map { requireNotNull(catalog.card(it)) }
+        val full = PathwayExtractor(inspectCardEntries = true).extract(cards)
+        progressRecords(cards) { it.structuralSupport } shouldBe full.structuralSupport
+        progressRecords(cards) { it.facts } shouldBe full.facts
+    }
     fun group(state: String, count: Int) = CoverageGroup(state, "FixtureFamily", "script", JsonNull,
         count, 1, 1, state, emptyList(), "UNRESOLVED", 0, emptyList(), "Review")
     test("typed-node distribution is disjoint while cards and type families can overlap") {
