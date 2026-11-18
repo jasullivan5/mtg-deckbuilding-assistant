@@ -26,7 +26,7 @@ class DiscoveryDiagnosticsTest : FunSpec({
         j.creatureStats!!.toughness.description shouldBe "2"
         j.metadata.collectorNumber shouldBe "185"; j.setCode shouldBe "RNA"
         j.metadata.scryfallId shouldBe "0a742125-730d-4082-bfd8-5feb7733def4"
-        catalog.translationAssurance(j.name)!!.evidence!!.source.any { it.path.endsWith("judith-the-scourge-diva-rulings.json") } shouldBe true
+        catalog.translationAssurance(j.name)!!.evidence!!.source.any { it.path.endsWith("judith-the-scourge-diva-source.json") } shouldBe true
         fullIdentity(resolveCommander(catalog,j.name)) shouldBe setOf(Color.BLACK,Color.RED)
         selectedCommanderEligibility(j,setOf(Color.RED)) shouldBe Verdict.NO_MATCH
         catalog.provenance(j.name).origin shouldBe "UPSTREAM_ARGENTUM"
@@ -39,7 +39,7 @@ class DiscoveryDiagnosticsTest : FunSpec({
         catalog.registry.requireCard(ext.definition.name).script shouldBe ext.definition.script
     }
     test("extension requires verified identity and legality") {
-        val e=Extensions.all.single { it.definition.name==JudithTheScourgeDiva.name }
+        val e=Extensions.all.first()
         shouldThrow<IllegalArgumentException> { Extensions.validate(emptyList(),listOf(e.copy(definition=e.definition.copy(colorIdentityOverride=null)))) }
         shouldThrow<IllegalArgumentException> { Extensions.validate(emptyList(),listOf(e.copy(definition=e.definition.copy(legalFormats=emptySet())))) }
     }

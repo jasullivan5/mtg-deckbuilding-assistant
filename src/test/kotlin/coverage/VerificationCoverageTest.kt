@@ -3,12 +3,27 @@ package dev.mtg.assistant
 import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.explorer.*
 import dev.mtg.assistant.extensions.*
+import dev.mtg.assistant.discovery.physicalCards
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.assertions.throwables.shouldThrow
 import kotlinx.serialization.json.*
 
 class VerificationCoverageTest:FunSpec({
+    test("explicit current associations preserve the frozen source population and refuse stale native inventories") {
+        val historical=retainedGlobalBaseline();val current=currentVerificationBaseline();val catalog=Catalog()
+        historical.nativeProjectionVersion shouldBe "sdk-physical-v1"
+        current.nativeProjectionVersion shouldBe NATIVE_IDENTITY_PROJECTION_VERSION
+        current.snapshot.sha256 shouldBe historical.snapshot.sha256
+        current.records.map { Triple(it.oracleId,it.legality,it.poolState) } shouldBe historical.records.map { Triple(it.oracleId,it.legality,it.poolState) }
+        val identities=physicalCards(catalog.cards).map { nativeIdentity(it,catalog.provenance(it.name).origin) }
+        requireVerificationIdentityBinding(current,identities)
+        shouldThrow<IllegalArgumentException> { requireVerificationIdentityBinding(historical,identities) }
+        shouldThrow<IllegalArgumentException> { requireVerificationIdentityBinding(current.copy(nativeProjectionVersion="unreviewed"),identities) }
+        val rows=current.records.associateBy { it.oracleId }
+        historical.records.filter { it.association=="CONFIDENT" }.all { rows[it.oracleId]?.association=="CONFIDENT" } shouldBe true
+        compareGlobalBaselines(historical,current).comparableDefinitions shouldBe false
+    }
     fun record(id:String="observation",scope:String="ability-1")=VerificationRecord(id,"physical-oracle","Front // Back","EXECUTION",scope,"One declared ability",face="Back",definitionSha256="definition-a",engine=EngineBuild.revision,
         author="author",result="PASS",expected="Source requirement",observed="Recorded native state",scenarioId="scenario-a",sourceValidated=true,reference="retained/receipt.json")
     test("exact identity face definition engine and scenario are required independently") {

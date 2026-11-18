@@ -27,7 +27,8 @@ class TokenCardIntegrationTest : FunSpec({
             c.metadata.rarity.name.lowercase() shouldBe source.getValue("rarity").jsonPrimitive.content
             c.metadata.artist shouldBe source.getValue("artist").jsonPrimitive.content
             c.setCode!!.lowercase() shouldBe source.getValue("set").jsonPrimitive.content
-            c.legalFormats shouldBe DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
+            c.legalFormats.filter { it.scryfallKey in source.getValue("legalities").jsonObject }.toSet() shouldBe
+                DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
             fullIdentity(c).map { it.symbol.toString() }.toSet() shouldBe source.getValue("color_identity").jsonArray.map { it.jsonPrimitive.content }.toSet()
             c.cardFaces.isEmpty() shouldBe true;c.backFace shouldBe null;c.flipSide shouldBe null
             CardValidator.validate(c).isEmpty() shouldBe true

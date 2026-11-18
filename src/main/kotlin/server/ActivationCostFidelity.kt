@@ -44,10 +44,10 @@ internal object ActivationCostFidelity {
     val requirements by lazy { json.parseToJsonElement(requirementsText).jsonObject }
     val requirementsHash get()=evidenceTextDigest(requirementsText)
     val scopes by lazy { json.decodeFromJsonElement<List<ActivationCostScope>>(requirements.getValue("scopes")) }
-    val bindingsText by lazy { resource("/retained-evidence/fidelity/activation-cost/bindings.json") }
+    val bindingsText by lazy { resource("/retained-evidence/fidelity/activation-cost/bindings-native-2026-11-17.json") }
     val bindingsHash get()=evidenceTextDigest(bindingsText)
     val bindings by lazy { json.decodeFromJsonElement<List<ActivationCostBinding>>(json.parseToJsonElement(bindingsText).jsonObject.getValue("bindings")) }
-    private val reference by lazy { retainedGlobalBaseline() }
+    private val reference by lazy { currentVerificationBaseline() }
     private val referenceIdentities by lazy { reference.records.associateBy { it.oracleId } }
     private val priorReviews by lazy {
         GZIPInputStream(requireNotNull(javaClass.getResourceAsStream("/verification-baseline.json.gz"))).bufferedReader().use { reader ->

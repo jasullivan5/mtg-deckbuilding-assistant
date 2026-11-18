@@ -50,10 +50,12 @@ class ExtensionIntegrationTest : FunSpec({
         val reanimate=discover(catalog,"Oviya Pashiri, Sage Lifecrafter","name:Savage Conception", "reanimate-own-creatures")
         reanimate.results.none { it.card==SavageConception.name && it.verdict==Verdict.MATCH } shouldBe true
     }
-    test("the two complete Assay scripts agree after normalizing only ability ids") {
+    test("retained Assay costs and effects agree while native display descriptions remain separate") {
         fun normalize(value: JsonElement): JsonElement = when(value) {
             is JsonArray -> JsonArray(value.map(::normalize))
-            is JsonObject -> JsonObject(value.filterKeys { it!="id" || !("cost" in value && "effect" in value) }.mapValues { normalize(it.value) })
+            is JsonObject -> JsonObject(value.filterKeys {
+                it!="descriptionOverride" && (it!="id" || !("cost" in value && "effect" in value))
+            }.mapValues { normalize(it.value) })
             else -> value
         }
         for(c in listOf(ParadiseMantle,ThroneOfMakindi)) {

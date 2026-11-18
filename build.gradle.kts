@@ -113,7 +113,8 @@ tasks.test {
     inputs.dir(layout.projectDirectory.dir("src/test/resources")).withPathSensitivity(PathSensitivity.RELATIVE)
     // The source-text facade guard must rerun even when a source edit leaves bytecode unchanged.
     inputs.dir(layout.projectDirectory.dir("src/main/kotlin/extensions")).withPathSensitivity(PathSensitivity.RELATIVE)
-    maxHeapSize = "1g"
+    // HTTP/CLI parity holds the expanded catalog and two full reports in the same test JVM.
+    maxHeapSize = "2g"
     jvmArgs("-XX:ActiveProcessorCount=4")
     testLogging { events("passed", "failed", "skipped") }
 }

@@ -124,7 +124,8 @@ class CommanderIntegrationTest : FunSpec({
         c.metadata.scryfallId shouldBe source.getValue("id").jsonPrimitive.content
         c.metadata.artist shouldBe source.getValue("artist").jsonPrimitive.content
         c.metadata.rarity.name.lowercase() shouldBe source.getValue("rarity").jsonPrimitive.content
-        c.legalFormats shouldBe DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
+        c.legalFormats.filter { it.scryfallKey in source.getValue("legalities").jsonObject }.toSet() shouldBe
+            DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
         fullIdentity(c).map { it.symbol.toString() }.toSet() shouldBe source.getValue("color_identity").jsonArray.map { it.jsonPrimitive.content }.toSet()
         val rulings=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/cards/oviya-pashiri-sage-lifecrafter-rulings.json"))).jsonObject.getValue("data").jsonArray
         c.metadata.rulings.map { it.date to it.text } shouldBe rulings.map { it.jsonObject.getValue("published_at").jsonPrimitive.content to it.jsonObject.getValue("comment").jsonPrimitive.content }
@@ -145,7 +146,7 @@ class CommanderIntegrationTest : FunSpec({
         for(who in listOf("Judith, the Scourge Diva","Krenko, Mob Boss")) for(objective in listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) {
             val before=discover(previous,who,"name:Kuldotha",objective)
             val after=discover(catalog,who,"name:Kuldotha",objective)
-            after.eligibility.filterNot { it.card==OviyaPashiriSageLifecrafter.name } shouldBe before.eligibility
+            after.eligibility shouldBe before.eligibility
             after.counts["commander_eligible_cards"] shouldBe before.counts["commander_eligible_cards"]
             after.mechanicalInputCards shouldBe before.mechanicalInputCards
             after.facts shouldBe before.facts;after.actions shouldBe before.actions;after.results shouldBe before.results

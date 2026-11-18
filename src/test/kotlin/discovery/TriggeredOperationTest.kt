@@ -116,7 +116,7 @@ class TriggeredOperationTest : FunSpec({
         back.face shouldBe "front.backFace"
         back.event.binding shouldBe TriggerBinding.SELF
         extract("Viscera Seer").eventOutcomes.isEmpty() shouldBe true
-        catalog.card("Grave Pact") shouldBe null
+        extract("Grave Pact").eventOutcomes.single().kind shouldBe OutcomeKind.FORCED_SACRIFICE
     }
 
     test("native entry sacrifice and an unresolved death quantity retain separate evidence") {

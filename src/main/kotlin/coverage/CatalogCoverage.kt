@@ -10,6 +10,7 @@ import java.nio.file.Path
 import java.util.Locale
 
 val coverageObjectives = listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")
+const val NATIVE_IDENTITY_PROJECTION_VERSION = "sdk-physical-v2-omen"
 @Serializable enum class CatalogStatus { NATIVE_AVAILABLE, NATIVE_METADATA_UNRESOLVED, NATIVE_MECHANICALLY_UNRESOLVED, NATIVE_DEFINITION_MISSING, AMBIGUOUS_MAPPING, NATIVE_IDENTITY_REVIEW_REQUIRED }
 @Serializable data class NativeFaceEvidence(val name: String, val manaCost: String?, val typeLine: String?)
 @Serializable data class NativeIdentity(val name: String, val oracleId: String?, val aliases: Set<String>,
@@ -64,6 +65,8 @@ fun nativeIdentity(card: CardDefinition, origin: String): NativeIdentity {
     val layout=when {
         card.flipSide!=null -> "flip"
         card.backFace!=null -> if(card.layout.name=="MODAL_DFC") "modal_dfc" else "transform"
+        // Scryfall stores Omens under its adventure physical layout. This does not equate their mechanics.
+        card.layout.name=="OMEN" -> "adventure"
         else -> card.layout.name.lowercase(Locale.ROOT)
     }
     return NativeIdentity(card.name,oracleId(card.oracleId),names(card).map { it.lowercase(Locale.ROOT) }.toSet(),
