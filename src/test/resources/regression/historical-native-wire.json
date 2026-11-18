@@ -1,0 +1,503 @@
+{
+  "source": {
+    "application": "e0fa95970f546c19b79e32bc323af74367d6c353",
+    "engine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "report": "judith-create-creature-tokens.json",
+    "reportSha256": "51cd42f7a082a094eccdba9039aa01531c039409b4faaf34c43296a44aa0bbed",
+    "scope": "One-card serialization fixture derived from the unchanged full production report. Native rows are retained verbatim; input/counts are explicitly narrowed. No new execution or source-fidelity claim."
+  },
+  "snapshot": {
+    "argentumCommit": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+    "objective": "create-creature-tokens",
+    "commander": "Judith, the Scourge Diva",
+    "allowedIdentity": [
+      "BLACK",
+      "RED"
+    ],
+    "conventionalQuery": null,
+    "limitations": [
+      "Format legality uses pinned native values plus explicitly reviewed source-bound corrections. Unresolved legality is UNKNOWN and excluded.",
+      "Single, fixed-identity commanders supported through native eligibility. Pairs, pre-game chosen colors, newer Vehicle/Spacecraft commander forms, and special construction exceptions are unsupported.",
+      "No whole-deck size, singleton, companion, or outside-game validation is performed by a candidate discovery query.",
+      "Full identity uses native identity plus alternative faces; conventional color search is not used for eligibility.",
+      "MATCH means structural potential given stated prerequisites, not a guaranteed legal action or a gameplay-verified death. Replacement, prevention, indestructibility, resource and timing state can change outcomes.",
+      "Unknown filters, conditions, targets, costs, effects and keyword-granted abilities remain in diagnostics; no claim of exhaustive catalog recall.",
+      "Death enhancement covers positive condition gates with identifiable removal improvement, death-triggered removal, native conditional magnitudes, activation discounts, and supported self-cast morbid discounts. Other relationships remain UNKNOWN.",
+      "Back/flip aliases are excluded from card counts; alternative face scripts remain attached to the physical card. Some native layouts expose overlapping scripts; paths identify the exact authored representations.",
+      "No card-name matching or Oracle-text matching is used by mechanical extraction. Native commander designation and the unsupported chosen-color selection guard are the only text-based eligibility checks.",
+      "Creature/predefined/batch/source-copy/target-copy token variants recognized. Specialized amass/populate/chosen-copy and token-granted abilities are not automatically interpreted.",
+      "Quantity/controller/type are correlated per native variant. Positive count and copiable characteristics are prerequisites, not guaranteed gameplay outcomes."
+    ],
+    "counts": {
+      "mechanical_input_cards_after_conventional_search": 1
+    },
+    "mechanicalInputCards": [
+      "Forbidden Orchard"
+    ],
+    "eligibility": [
+      {
+        "card": "Forbidden Orchard",
+        "format": "MATCH",
+        "deck": "MATCH",
+        "identity": [],
+        "reason": "format from verified source legalFormats; identity must be a full subset of [BLACK, RED]",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "effectiveMetadata": null
+      }
+    ],
+    "results": [
+      {
+        "card": "Forbidden Orchard",
+        "identifier": "CHK:276:Forbidden Orchard",
+        "face": "front",
+        "actionId": "Forbidden Orchard|front|script.triggeredAbilities[0]",
+        "abilityPath": "script.triggeredAbilities[0].effect",
+        "branch": "CREATE_CREATURE_TOKEN",
+        "verdict": "NO_MATCH",
+        "operation": "CREATE_TOKEN",
+        "costOrEffect": "EFFECT",
+        "affectedScope": "created=TokenCreation(creature=MATCH, quantity=Fixed(amount=1), positiveQuantity=MATCH, templateReference=Native creature template: Spirit, copySource=null, creationEvent=script.triggeredAbilities[0].effect, characteristics=[Creature, colors=[], subtypes=[Spirit], P/T=1/1, entry/delayed riders and granted abilities retained in native node]); entry-controller=OPPONENT; binding=null",
+        "prerequisites": [
+          "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+          "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+          "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed",
+          "Associated native action=Forbidden Orchard|front|script.triggeredAbilities[0]; prerequisites=[Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD], InterveningIf=null; restriction=null; cap=null]; native costs/targets retained in action evidence"
+        ],
+        "dependency": null,
+        "nativeOperation": {
+          "type": "CreateToken",
+          "power": 1,
+          "toughness": 1,
+          "colors": [],
+          "creatureTypes": [
+            "Spirit"
+          ],
+          "controller": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "decisions": [
+          {
+            "stage": "operation-CREATE_TOKEN",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+          },
+          {
+            "stage": "created-creature-true",
+            "verdict": "MATCH",
+            "basis": "MECHANICAL",
+            "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+          },
+          {
+            "stage": "entry-controller-YOU",
+            "verdict": "NO_MATCH",
+            "basis": "MECHANICAL",
+            "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+          },
+          {
+            "stage": "positive-quantity-potential",
+            "verdict": "NO_MATCH",
+            "basis": "MECHANICAL",
+            "reason": "CREATE_TOKEN; source=null/UNKNOWN; destination=BATTLEFIELD/OPPONENT; filter=GameObjectFilter(cardPredicates=[], statePredicates=[], controllerPredicate=null, anyOf=[]); binding=null; confidence=MATCH; unresolved=[]"
+          }
+        ],
+        "sourceReferences": [
+          "https://github.com/jasullivan5/argentum-engine/blob/bd26b756b8b4d347f19e92bc77ef020919ebfa48/mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/ForbiddenOrchard.kt",
+          "native:front.script.triggeredAbilities[0].effect"
+        ],
+        "commanderLegality": "MATCH",
+        "deckEligibility": "MATCH",
+        "interpretation": "STRUCTURAL_POTENTIAL_NOT_GAMEPLAY_VERIFIED",
+        "contributionClassification": null,
+        "controllerCompatibility": "NO_MATCH",
+        "nontokenCompatibility": "NO_MATCH",
+        "provenance": {
+          "origin": "UPSTREAM_ARGENTUM",
+          "source": "https://github.com/jasullivan5/argentum-engine/tree/bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+          "verifiedAt": null
+        },
+        "enablingRelationship": "NATIVE_CREATION_WITH_RETAINED_BRANCH_PREREQUISITES",
+        "mechanicalCompatibility": "NO_MATCH",
+        "policyAcceptance": null,
+        "mechanicalCapability": null,
+        "circumstances": {
+          "actionKind": "TRIGGERED",
+          "mandatory": "MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "strategicDesirability": "NOT_EVALUATED",
+        "localSupport": "SUPPORTED",
+        "stateEntry": null
+      }
+    ],
+    "actions": [
+      {
+        "id": "Forbidden Orchard|front|script",
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script",
+        "prerequisites": [],
+        "native": {
+          "triggeredAbilities": [
+            {
+              "id": "Forbidden Orchard:2",
+              "trigger": {
+                "type": "LandTappedForMana",
+                "player": {
+                  "type": "You"
+                }
+              },
+              "effect": {
+                "type": "CreateToken",
+                "power": 1,
+                "toughness": 1,
+                "colors": [],
+                "creatureTypes": [
+                  "Spirit"
+                ],
+                "controller": {
+                  "type": "BoundVariable",
+                  "name": "t0"
+                }
+              },
+              "targetRequirement": {
+                "type": "TargetOpponent",
+                "id": "t0"
+              },
+              "descriptionOverride": "Whenever you tap this land for mana, target opponent creates a 1/1 colorless Spirit creature token."
+            }
+          ],
+          "activatedAbilities": [
+            {
+              "id": "Forbidden Orchard:1",
+              "cost": {
+                "type": "CostTap"
+              },
+              "effect": {
+                "type": "AddManaOfChoice"
+              },
+              "timing": {
+                "type": "ManaAbility"
+              },
+              "isManaAbility": true
+            }
+          ]
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Forbidden Orchard|front|script.activatedAbilities[0]",
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.activatedAbilities[0]",
+        "prerequisites": [
+          "Timing=ManaAbility; restrictions=[]; activateFrom=BATTLEFIELD"
+        ],
+        "native": {
+          "id": "Forbidden Orchard:1",
+          "cost": {
+            "type": "CostTap"
+          },
+          "effect": {
+            "type": "AddManaOfChoice"
+          },
+          "timing": {
+            "type": "ManaAbility"
+          },
+          "isManaAbility": true
+        },
+        "associatedActionId": null
+      },
+      {
+        "id": "Forbidden Orchard|front|script.triggeredAbilities[0]",
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.triggeredAbilities[0]",
+        "prerequisites": [
+          "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null"
+        ],
+        "native": {
+          "id": "Forbidden Orchard:2",
+          "trigger": {
+            "type": "LandTappedForMana",
+            "player": {
+              "type": "You"
+            }
+          },
+          "effect": {
+            "type": "CreateToken",
+            "power": 1,
+            "toughness": 1,
+            "colors": [],
+            "creatureTypes": [
+              "Spirit"
+            ],
+            "controller": {
+              "type": "BoundVariable",
+              "name": "t0"
+            }
+          },
+          "targetRequirement": {
+            "type": "TargetOpponent",
+            "id": "t0"
+          },
+          "descriptionOverride": "Whenever you tap this land for mana, target opponent creates a 1/1 colorless Spirit creature token."
+        },
+        "associatedActionId": null
+      }
+    ],
+    "unsupported": [
+      {
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.activatedAbilities[0].effect",
+        "nativeType": "com.wingedsheep.sdk.scripting.effects.AddManaOfChoiceEffect",
+        "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+        "actionId": "Forbidden Orchard|front|script.activatedAbilities[0]"
+      }
+    ],
+    "structuralSupport": [
+      {
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.activatedAbilities[0].effect",
+        "nativeType": "AddManaOfChoiceEffect",
+        "status": "UNSUPPORTED",
+        "reason": "Effect not interpreted; native action retained (may contain further capabilities)",
+        "actionId": "Forbidden Orchard|front|script.activatedAbilities[0]"
+      },
+      {
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.triggeredAbilities[0].effect",
+        "nativeType": "CreateTokenEffect",
+        "status": "SUPPORTED",
+        "reason": "Token variant retains correlated template/controller/quantity and native action; granted token abilities are retained but not recursively claimed as source-card actions",
+        "actionId": "Forbidden Orchard|front|script.triggeredAbilities[0]"
+      },
+      {
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "path": "script.triggeredAbilities[0].effect",
+        "nativeType": "CreateToken",
+        "status": "SUPPORTED",
+        "reason": "Generic token facts retained per correlated variant; no whole-action/gameplay verification",
+        "actionId": "Forbidden Orchard|front|script.triggeredAbilities[0]"
+      }
+    ],
+    "facts": [
+      {
+        "id": "Forbidden Orchard|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect|CREATE_TOKEN",
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "actionId": "Forbidden Orchard|front|script.triggeredAbilities[0]",
+        "path": "script.triggeredAbilities[0].effect",
+        "kind": "CREATE_TOKEN",
+        "operation": "CREATE_TOKEN",
+        "costOrEffect": "EFFECT",
+        "objectFilter": {
+          "cardPredicates": [],
+          "statePredicates": [],
+          "controllerPredicate": null,
+          "anyOf": []
+        },
+        "sourceZone": null,
+        "sourcePlayer": "UNKNOWN",
+        "destinationZone": "Battlefield",
+        "destinationController": "OPPONENT",
+        "confidence": "MATCH",
+        "prerequisites": [
+          "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+          "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+          "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed"
+        ],
+        "native": {
+          "type": "CreateToken",
+          "power": 1,
+          "toughness": 1,
+          "colors": [],
+          "creatureTypes": [
+            "Spirit"
+          ],
+          "controller": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "binding": null,
+        "selection": "One correlated native token template/group; quantity=Fixed(amount=1)",
+        "circumstances": {
+          "actionKind": "TRIGGERED",
+          "mandatory": "MATCH",
+          "deferredTiming": false,
+          "delayedTrigger": false,
+          "timingAndConditions": [
+            "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null"
+          ],
+          "sourceMustRemainOnBattlefield": false,
+          "objectRestrictions": [],
+          "repeatability": "Per native matching trigger/event and retained conditions; future trigger availability is not guaranteed",
+          "resourceAssumptions": "Legal choices/resources must exist; no gameplay outcome guaranteed"
+        },
+        "unresolved": [],
+        "movesOriginalCard": false,
+        "ownerScope": "ANY",
+        "tokenCreation": {
+          "creature": "MATCH",
+          "quantity": {
+            "type": "Fixed",
+            "amount": 1,
+            "description": "1"
+          },
+          "positiveQuantity": "MATCH",
+          "templateReference": "Native creature template: Spirit",
+          "copySource": null,
+          "creationEvent": "script.triggeredAbilities[0].effect",
+          "characteristics": [
+            "Creature",
+            "colors=[]",
+            "subtypes=[Spirit]",
+            "P/T=1/1",
+            "entry/delayed riders and granted abilities retained in native node"
+          ]
+        },
+        "sacrificeChoice": null,
+        "cardEntry": null
+      }
+    ],
+    "translationAssurance": [],
+    "conditionalArrivals": [],
+    "eventOutcomes": [
+      {
+        "id": "Forbidden Orchard|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect|TOKEN",
+        "card": "Forbidden Orchard",
+        "face": "front",
+        "actionId": "Forbidden Orchard|front|script.triggeredAbilities[0]",
+        "path": "script.triggeredAbilities[0].effect",
+        "event": {
+          "trigger": {
+            "type": "LandTappedForMana",
+            "player": {
+              "type": "You"
+            },
+            "landFilter": null,
+            "description": "You taps a land for mana"
+          },
+          "binding": "SELF",
+          "activeZones": [
+            "Battlefield"
+          ],
+          "sourceIsCreature": false,
+          "nativeAbility": {
+            "id": "Forbidden Orchard:2",
+            "trigger": {
+              "type": "LandTappedForMana",
+              "player": {
+                "type": "You"
+              }
+            },
+            "effect": {
+              "type": "CreateToken",
+              "power": 1,
+              "toughness": 1,
+              "colors": [],
+              "creatureTypes": [
+                "Spirit"
+              ],
+              "controller": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            },
+            "targetRequirement": {
+              "type": "TargetOpponent",
+              "id": "t0"
+            },
+            "descriptionOverride": "Whenever you tap this land for mana, target opponent creates a 1/1 colorless Spirit creature token."
+          },
+          "confidence": "MATCH",
+          "requirements": [
+            "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+            "InterveningIf=null; restriction=null; cap=null",
+            "Native active-zone rules and last-known information must permit triggering; trigger/turn limits must remain; actual resolution is not guaranteed"
+          ]
+        },
+        "kind": "CREATE_TOKEN",
+        "quantity": {
+          "type": "Fixed",
+          "amount": 1,
+          "description": "1"
+        },
+        "recipient": "OPPONENT",
+        "confidence": "MATCH",
+        "positiveQuantity": "MATCH",
+        "optional": false,
+        "prerequisites": [
+          "Trigger=LandTappedForMana(player=You, landFilter=null); binding=SELF; activeZones=[BATTLEFIELD]",
+          "InterveningIf=null; restriction=null; cap=null",
+          "Native action costs, choices, timing and legal resources must be satisfied; source face must be available",
+          "Quantity must evaluate strictly positive at resolution: Fixed(amount=1); a conditional capability is not a guaranteed outcome",
+          "Native token template/copiable values, entry/delayed riders and replacement effects apply; no gameplay outcome is guaranteed"
+        ],
+        "native": {
+          "type": "CreateToken",
+          "power": 1,
+          "toughness": 1,
+          "colors": [],
+          "creatureTypes": [
+            "Spirit"
+          ],
+          "controller": {
+            "type": "BoundVariable",
+            "name": "t0"
+          }
+        },
+        "token": {
+          "creature": "MATCH",
+          "quantity": {
+            "type": "Fixed",
+            "amount": 1,
+            "description": "1"
+          },
+          "positiveQuantity": "MATCH",
+          "templateReference": "Native creature template: Spirit",
+          "copySource": null,
+          "creationEvent": "script.triggeredAbilities[0].effect",
+          "characteristics": [
+            "Creature",
+            "colors=[]",
+            "subtypes=[Spirit]",
+            "P/T=1/1",
+            "entry/delayed riders and granted abilities retained in native node"
+          ]
+        },
+        "factId": "Forbidden Orchard|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect|CREATE_TOKEN",
+        "mechanism": "TRIGGERED_ABILITY",
+        "linkage": "SAME_TRIGGER_BRANCH",
+        "unresolved": []
+      }
+    ],
+    "selfReturns": []
+  }
+}

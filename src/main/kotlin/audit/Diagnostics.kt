@@ -192,6 +192,12 @@ fun examine(cards: List<CardDefinition>, report: DiscoveryReport, benchmark: Ben
     val beforeStageCounts: Map<String,Int> = emptyMap(), val afterStageCounts: Map<String,Int> = emptyMap(),
     val limitations: List<String> = listOf("Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.","No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.","Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."))
 fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageReport? = null, newCoverage: CoverageReport? = null): ChangeReport {
+    return diffRecorded(before, after, oldCoverage, newCoverage)
+}
+
+internal fun diffRecorded(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageReport? = null,
+    newCoverage: CoverageReport? = null, beforeNodes: Map<ResultEvidence, JsonObject> = emptyMap(),
+    afterNodes: Map<ResultEvidence, JsonObject> = emptyMap()): ChangeReport {
     val changes=mutableListOf<Change>()
     fun decisions(r: ResultEvidence,basis: String)=r.decisions.filter { it.basis==basis }.map { Triple(it.stage,it.basis,it.verdict) }
     fun constraintChange(b: ResultEvidence,a: ResultEvidence)=b.prerequisites!=a.prerequisites || b.circumstances!=a.circumstances || b.dependency!=a.dependency
@@ -210,7 +216,7 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
             if(b?.format!=a?.format || b?.deck!=a?.deck) return listOf("COMMANDER_ELIGIBILITY")
             return listOf("MECHANICAL_EXTRACTION_OR_PATH_RESTRUCTURING")
         }
-        val b=auditReader.decodeFromJsonElement<ResultEvidence>(old);val a=auditReader.decodeFromJsonElement<ResultEvidence>(now)
+        val b=recordedResultCore(old);val a=recordedResultCore(now)
         return buildList {
             if(mechanicalVerdict(b)!=mechanicalVerdict(a) || decisions(b,"MECHANICAL")!=decisions(a,"MECHANICAL")) add("COMPATIBILITY_FILTERING")
             if(decisions(b,"POLICY")!=decisions(a,"POLICY")) add("DISCOVERY_POLICY")
@@ -219,6 +225,7 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
             if(b.commanderLegality!=a.commanderLegality || b.deckEligibility!=a.deckEligibility) add("COMMANDER_ELIGIBILITY")
             if(constraintChange(b,a)) add("CONDITIONS_OR_CONSTRAINTS")
             if(b.contributionClassification!=a.contributionClassification) add("CONTRIBUTION_CLASSIFICATION")
+            if(recordedPayloadChanged(old.jsonObject,now.jsonObject)) add("RECORDED_OPAQUE_EVIDENCE")
             if(isEmpty()) add("EXPLANATION_ONLY")
         }
     }
@@ -240,8 +247,8 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
     }
     val oldPaths=paths(before); val newPaths=paths(after)
     require(oldPaths.size == before.results.size && newPaths.size == after.results.size) { "Pathway comparison identity collision" }
-    fun tree(v: ResultEvidence)=JsonObject(reportJson.encodeToJsonElement(v).jsonObject.filterKeys { it != "provenance" })
-    compare("PATHWAY",oldPaths.mapValues { tree(it.value) },newPaths.mapValues { tree(it.value) })
+    fun tree(v: ResultEvidence,nodes:Map<ResultEvidence,JsonObject>)=JsonObject((nodes[v] ?: reportJson.encodeToJsonElement(v).jsonObject).filterKeys { it != "provenance" })
+    compare("PATHWAY",oldPaths.mapValues { tree(it.value,beforeNodes) },newPaths.mapValues { tree(it.value,afterNodes) })
     fun cardClasses(r: DiscoveryReport)=r.results.filter { it.verdict == Verdict.MATCH }.groupBy { it.card }.mapValues { (_,v)-> JsonArray(v.map { it.branch.name }.distinct().sorted().map(::JsonPrimitive)) }
     compare("ACCEPTED_CARD_CLASSIFICATIONS",cardClasses(before),cardClasses(after))
     compare("ELIGIBILITY",before.eligibility.associate { it.card to buildJsonObject { put("format",it.format.name);put("deck",it.deck.name);put("identity",reportJson.encodeToJsonElement(it.identity)) } },after.eligibility.associate { it.card to buildJsonObject { put("format",it.format.name);put("deck",it.deck.name);put("identity",reportJson.encodeToJsonElement(it.identity)) } })
@@ -264,6 +271,8 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
         if(structureChange(o,r)) record("STRUCTURAL_EVIDENCE_CHANGED")
         if(annotationChange(o,r)) record("SUPPORT_STATUS_ANNOTATION_ADDED_OR_REMOVED")
         if(constraintChange(o,r)) record("CONDITIONS_OR_CONSTRAINTS_CHANGED")
+        if(recordedPayloadChanged(beforeNodes[o] ?: reportJson.encodeToJsonElement(o).jsonObject,
+                afterNodes[r] ?: reportJson.encodeToJsonElement(r).jsonObject)) record("RECORDED_OPAQUE_EVIDENCE_CHANGED")
         if(o!=r && o.verdict==r.verdict && o.contributionClassification==r.contributionClassification && decisions(o,"POLICY")==decisions(r,"POLICY") && decisions(o,"MECHANICAL")==decisions(r,"MECHANICAL") && !structureChange(o,r) && !annotationChange(o,r) && !constraintChange(o,r)) record("EXPLANATION_ONLY_CHANGED")
         if(key.substringBefore("|variant:") in ambiguous && o!=r) record("UNRESOLVED_PATHWAY_IDENTITY_CHANGE")
     }
@@ -307,9 +316,9 @@ fun auditCommand(args: List<String>, catalog: () -> Catalog, out: (String)->Unit
             benchmarkDiff(before,after).let { if(json) reportJson.encodeToString(it) else "Same frozen review: ${it.sameFrozenReview}\nBefore: ${it.beforeNumerators} / ${it.beforeDenominators}\nAfter: ${it.afterNumerators} / ${it.afterDenominators}\n"+it.changes.joinToString("\n") { c -> "${c.id}: ${c.beforeStatus} -> ${c.afterStatus}" } }
         }
         "diff" -> {
-            fun load(k: String)=reader.decodeFromString<DiscoveryReport>(Files.readString(Path.of(required(k))))
+            fun load(k: String)=reader.parseToJsonElement(Files.readString(Path.of(required(k)))).jsonObject
             fun cv(k: String)=options[k]?.let { reader.decodeFromString<CoverageReport>(Files.readString(Path.of(it))) }
-            diff(load("--before"),load("--after"),cv("--before-coverage"),cv("--after-coverage")).let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
+            diffSnapshots(load("--before"),load("--after"),cv("--before-coverage"),cv("--after-coverage")).let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
         }
         else -> throw IllegalArgumentException("Unknown audit command: ${args[0]}")
     }
