@@ -36,18 +36,22 @@ test('Phased cost examination preserves source and native failures without indep
   await expect(panel.getByText('Submit valid decision response · Done',{exact:true})).toBeVisible();
   await expect(panel).toContainText('invalid response rejected atomically: true');
   await scenario.selectOption('tap-boundary:mind-stone:0:TAPPED_EXPLICIT');
-  await mkdir('../docs/images/cost-examination',{recursive:true});
+  const screenshots='../generated/cost-examination/screenshots';
+  await mkdir(screenshots,{recursive:true});
   await mkdir('../generated/cost-examination',{recursive:true});
   await writeFile('../generated/cost-examination/browser-measurements.json',JSON.stringify({application:data.applicationRevision,engine:data.engine,phaseFiles:data.phaseFiles,counts:data.counts,potentialTapReach:data.potentialTapReach,executionState:data.executionState,adjudicationState:data.adjudicationState},null,2));
   for(const width of [1440,390]){
     await page.setViewportSize({width,height:width===390?844:1000});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
-    await panel.screenshot({path:`../docs/images/cost-examination/${width}-evidence.png`});
-    await panel.evaluate(el=>el.scrollIntoView({block:'start'}));await page.screenshot({path:`../docs/images/cost-examination/${width}-viewport.png`});
-    await disclosure.click();await panel.screenshot({path:`../docs/images/cost-examination/${width}-summary.png`});await disclosure.click();
+    await panel.screenshot({path:`${screenshots}/${width}-evidence.png`});
+    await panel.evaluate(el=>el.scrollIntoView({block:'start'}));await page.screenshot({path:`${screenshots}/${width}-viewport.png`});
+    await disclosure.click();await panel.screenshot({path:`${screenshots}/${width}-summary.png`});await disclosure.click();
   }
   const index=await (await page.request.get('/api/v1/progress/verification')).json();
-  expect(index.counts.definition_available_cards).toBe(16927);
+  const frozen=await(await page.request.get('/api/v1/progress/verification-baseline')).json();
+  expect(frozen.counts.definition_available_cards).toBe(16927); // Original reference observation remains frozen.
+  expect(index.populationSha256).toBe(frozen.populationSha256);
+  expect(index.counts.definition_available_cards).toBe(21319); // Current native association, already observed by the JDK21 consolidation.
   expect(index.counts.commander_legal_physical_cards).toBe(32109);
   expect(index.counts.source_review_current_cards).toBe(13);
   expect(index.counts.source_review_scopes_current).toBe(14);

@@ -14,6 +14,8 @@ test('Cards Commanders Objectives and reusable fidelity expose actual separate p
   const pilot=await(await page.request.get('/api/v1/progress/pilot')).json();
   const baselineResponse=await page.request.get('/api/v1/progress/global-baseline');expect(baselineResponse.ok()).toBe(true);
   const baseline=await baselineResponse.json();
+  expect(report.global.state,'Launch Explorer with the pinned Oracle snapshot for this source-population check').toBe('MEASURED');
+  expect(report.global.snapshot.sha256).toBe('081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a');
   expect(baseline.records.filter((r:{poolState:string})=>r.poolState==='ELIGIBLE').length).toBe(report.global.counts.eligible_oracle_cards);
   expect(report.global.counts.eligible_oracle_cards).toBeGreaterThan(report.external.counts.eligible_oracle_cards);
   await expect(dashboard.locator('#global-cards')).toContainText(report.global.counts.eligible_oracle_cards.toLocaleString());
@@ -24,9 +26,13 @@ test('Cards Commanders Objectives and reusable fidelity expose actual separate p
   await dashboard.getByLabel('Commander candidate name').fill('Daretti');
   await expect(dashboard.locator('#commander-coverage')).toContainText('native missing');
   await dashboard.getByText('Inspect commander candidates and blockers',{exact:true}).click();
-  expect(objectives.objectives).toHaveLength(4);
+  // Progress keeps its established coverage cohort separate from the death-history Discover objective.
+  expect(objectives.objectives.map((o:{definition:{id:string}})=>o.definition.id)).toEqual([
+    'own-nontoken-creature-deaths','reanimate-own-creatures','create-creature-tokens',
+    'stock-own-graveyard','place-plus-one-counters',
+  ]);
   expect(new Set(objectives.objectives.map((o:{counts:Record<string,number>})=>o.counts.eligible_physical_cards_examined)).size).toBe(1);
-  expect(objectives.population.length).toBe(6111);
+  expect(objectives.population.length).toBe(7728);
   await expect(dashboard.locator('#objectives')).toContainText('Not measured at catalog scale');
   expect(pilot.counts.reviewed_ability_scopes).toBe(6);
   expect(pilot.counts.held_out_native_checks_supported).toBe(2);
