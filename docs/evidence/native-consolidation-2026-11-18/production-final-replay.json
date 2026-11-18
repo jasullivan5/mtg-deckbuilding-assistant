@@ -1,0 +1,99 @@
+{
+  "reviewedApplication": "revision=a309ff546c869c63f057d5550d814618b7cd1108",
+  "finalApplication": "revision=9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "revision=682d4e034a5b9078a6be3146b50258313c9af2fa\nimplementationSha256=a5ebb8c0719ea7b9e18dff04fc238bc17476c61f87d80430018ec3b5b8e87950\nmode=candidate",
+  "heap": "-Xmx1g for all 18 final exports",
+  "reports": [
+    {
+      "report": "judith-create-creature-tokens.json",
+      "reviewedSha256": "af6ec3d55316e58d97826a954273c2d8255513106bc6b3f356b2bf9560dfcb54",
+      "finalSha256": "af6ec3d55316e58d97826a954273c2d8255513106bc6b3f356b2bf9560dfcb54"
+    },
+    {
+      "report": "judith-creature-died-this-turn.json",
+      "reviewedSha256": "9908c5ea18071d7456b421cc0fcdbc20b062201b638c8a63d658e09eb5aaf219",
+      "finalSha256": "9908c5ea18071d7456b421cc0fcdbc20b062201b638c8a63d658e09eb5aaf219"
+    },
+    {
+      "report": "judith-own-nontoken-creature-deaths.json",
+      "reviewedSha256": "c3c3e86e935f114127586d5966abb90120a6f06c5418d37a4bb0aae9a06efb52",
+      "finalSha256": "c3c3e86e935f114127586d5966abb90120a6f06c5418d37a4bb0aae9a06efb52"
+    },
+    {
+      "report": "judith-place-plus-one-counters.json",
+      "reviewedSha256": "08f3eaa0a961a99eea3c9f4273a47b0d7b2091149104616a7c5fcb19a0027092",
+      "finalSha256": "08f3eaa0a961a99eea3c9f4273a47b0d7b2091149104616a7c5fcb19a0027092"
+    },
+    {
+      "report": "judith-reanimate-own-creatures.json",
+      "reviewedSha256": "0b3f099fa1f9b3343486b757a0beac55a9527c7dedba2cd290f4947dc2b3beb5",
+      "finalSha256": "0b3f099fa1f9b3343486b757a0beac55a9527c7dedba2cd290f4947dc2b3beb5"
+    },
+    {
+      "report": "judith-stock-own-graveyard.json",
+      "reviewedSha256": "ff61eb799940cfb4f8602aade53611e9773a98f050ae7d9de11b2bf08ce4e6c4",
+      "finalSha256": "ff61eb799940cfb4f8602aade53611e9773a98f050ae7d9de11b2bf08ce4e6c4"
+    },
+    {
+      "report": "kenrith-create-creature-tokens.json",
+      "reviewedSha256": "d7601abdc1a40093a9451de51928d60b9e029b086e3f3998696bda4bf7dcb63c",
+      "finalSha256": "d7601abdc1a40093a9451de51928d60b9e029b086e3f3998696bda4bf7dcb63c"
+    },
+    {
+      "report": "kenrith-creature-died-this-turn.json",
+      "reviewedSha256": "61c84858488069429d69e6a88e2d0c7dd557df377b2df9d9dacbde6cf7caff0f",
+      "finalSha256": "61c84858488069429d69e6a88e2d0c7dd557df377b2df9d9dacbde6cf7caff0f"
+    },
+    {
+      "report": "kenrith-own-nontoken-creature-deaths.json",
+      "reviewedSha256": "4922c9e1aed3478217a8d01b3f74f1c913915cea7e37d73b0c9400f8a6745771",
+      "finalSha256": "4922c9e1aed3478217a8d01b3f74f1c913915cea7e37d73b0c9400f8a6745771"
+    },
+    {
+      "report": "kenrith-place-plus-one-counters.json",
+      "reviewedSha256": "163f83d5dd116d652410d658fed789777533b62c2a610822902d489a0ea0a2a7",
+      "finalSha256": "163f83d5dd116d652410d658fed789777533b62c2a610822902d489a0ea0a2a7"
+    },
+    {
+      "report": "kenrith-reanimate-own-creatures.json",
+      "reviewedSha256": "974c7adcdf97887e1993b99c9d0a93876c8473002b96355c0478a59b2a812e5e",
+      "finalSha256": "974c7adcdf97887e1993b99c9d0a93876c8473002b96355c0478a59b2a812e5e"
+    },
+    {
+      "report": "kenrith-stock-own-graveyard.json",
+      "reviewedSha256": "0d058e5dc3deec0384bc3bb30bbf7c6c25cb39709757ba4d2ce46d2328a0982a",
+      "finalSha256": "0d058e5dc3deec0384bc3bb30bbf7c6c25cb39709757ba4d2ce46d2328a0982a"
+    },
+    {
+      "report": "krenko-create-creature-tokens.json",
+      "reviewedSha256": "c456ff8a65a446d41e427b7d417d12e571ef773a8c3460851276164609437356",
+      "finalSha256": "c456ff8a65a446d41e427b7d417d12e571ef773a8c3460851276164609437356"
+    },
+    {
+      "report": "krenko-creature-died-this-turn.json",
+      "reviewedSha256": "b2a3f235ca69516d73d77bcd551cae495733b384d5dc1a359ed156d04073ac7d",
+      "finalSha256": "b2a3f235ca69516d73d77bcd551cae495733b384d5dc1a359ed156d04073ac7d"
+    },
+    {
+      "report": "krenko-own-nontoken-creature-deaths.json",
+      "reviewedSha256": "6a8bed727e3c2e6d226155467aa9d5ae1119fcae14825a9139d33b0c3dc0f581",
+      "finalSha256": "6a8bed727e3c2e6d226155467aa9d5ae1119fcae14825a9139d33b0c3dc0f581"
+    },
+    {
+      "report": "krenko-place-plus-one-counters.json",
+      "reviewedSha256": "72775ddfa76846b55bbe0840fb80e274898f0ecce557139d30cf473a81bd31d7",
+      "finalSha256": "72775ddfa76846b55bbe0840fb80e274898f0ecce557139d30cf473a81bd31d7"
+    },
+    {
+      "report": "krenko-reanimate-own-creatures.json",
+      "reviewedSha256": "47a79e85294429044f484ac2a3bf2258a4e405899b8f2346ce893b4640da4a05",
+      "finalSha256": "47a79e85294429044f484ac2a3bf2258a4e405899b8f2346ce893b4640da4a05"
+    },
+    {
+      "report": "krenko-stock-own-graveyard.json",
+      "reviewedSha256": "39187395912bfd70fbc188370f6c246a1ed72c66567d9c83efbff26a5790461f",
+      "finalSha256": "39187395912bfd70fbc188370f6c246a1ed72c66567d9c83efbff26a5790461f"
+    }
+  ],
+  "interpretation": "All eighteen final production reports are byte-identical to the reviewed intermediate reports. The streaming export changes allocation, not report data. Packaged final revision is independently recorded."
+}

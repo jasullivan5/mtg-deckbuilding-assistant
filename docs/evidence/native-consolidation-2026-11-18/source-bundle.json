@@ -1,0 +1,135 @@
+{
+  "application": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "path": "src\\test\\resources\\cards\\native-adoption-sources.json",
+  "sha256": "629ea0bdffd21233f44126ac22f7afe7529a796bdc87e878b0bebb4139bf7ee7",
+  "observations": [
+    {
+      "name": "Spined Tyrranax",
+      "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+      "printingId": "bb589caa-bba4-4d23-bdfe-7fc37f19bfd6",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Spined+Tyrranax&set=j25",
+      "sourceSha256": "3471999d4b90f4a20aafc0648dd523c10df08040e8ba915f4170de6add1b34ae",
+      "rulingsUri": "https://api.scryfall.com/cards/bb589caa-bba4-4d23-bdfe-7fc37f19bfd6/rulings",
+      "rulingsSha256": "a844be7c9d46afc7f4222430e9cf87fb0832fbb795811bf7d87c61e2d7c450e5"
+    },
+    {
+      "name": "Might of Murasa",
+      "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+      "printingId": "42914fd9-e56e-4c3e-a445-fdfa45a45178",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Might+of+Murasa&set=znr",
+      "sourceSha256": "ecb2179e2ee5e4a76ff3adc30231aef05937627f4c979e503d3456100ce3d648",
+      "rulingsUri": "https://api.scryfall.com/cards/42914fd9-e56e-4c3e-a445-fdfa45a45178/rulings",
+      "rulingsSha256": "4ae062e4606f4d01016f54c4ef0a4b0a9a47e2cfb9a7fc2e45f3cc50d4e02354"
+    },
+    {
+      "name": "Labyrinth of Skophos",
+      "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "printingId": "ff0dd221-2660-43f6-8e28-8000e3fe72a4",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Labyrinth+of+Skophos&set=thb",
+      "sourceSha256": "963b20aafd2f936d9228588676576332798e31428a7e83d6bfd946af88a834d7",
+      "rulingsUri": "https://api.scryfall.com/cards/ff0dd221-2660-43f6-8e28-8000e3fe72a4/rulings",
+      "rulingsSha256": "2c785a79457d109e8fc870e7b8c6800cc88838b02524cff9de8f7ae0aa5a13cf"
+    },
+    {
+      "name": "Galadhrim Ambush",
+      "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+      "printingId": "e69e06f0-6142-4f80-9208-362b3e74d51d",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Galadhrim+Ambush&set=ltc",
+      "sourceSha256": "e8e928382d72efbc8beb394486bb6267a9f263357400439cae5ccb7351bcb4f6",
+      "rulingsUri": "https://api.scryfall.com/cards/e69e06f0-6142-4f80-9208-362b3e74d51d/rulings",
+      "rulingsSha256": "0c2ce854cb674d5b58dcd455b983c6aade63fbb631f48cd7a1279462366b7404"
+    },
+    {
+      "name": "Hour of Promise",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "printingId": "c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Hour+of+Promise&set=hou",
+      "sourceSha256": "be23a478e4738654ed7785af9c7b612985a09dad5347acb5bb3dc06002def19d",
+      "rulingsUri": "https://api.scryfall.com/cards/c5ee374f-31dc-4b2c-beba-431d5b1126d0/rulings",
+      "rulingsSha256": "f5c4ff4f8db0756fe759de8011daa3032ea5c18785fcda9a36b4f3d13145b571"
+    },
+    {
+      "name": "Throne of Makindi",
+      "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+      "printingId": "d5a0563e-c83b-40df-abf6-51c83bf6792d",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Throne+of+Makindi&set=znr",
+      "sourceSha256": "d19864011d015236d6b1bfd721f00ffc81953e3aef6c2296aea0e236fc565a57",
+      "rulingsUri": "https://api.scryfall.com/cards/d5a0563e-c83b-40df-abf6-51c83bf6792d/rulings",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10"
+    },
+    {
+      "name": "Planewide Celebration",
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "printingId": "11016840-56b6-4759-bde6-3dc0e339e87e",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Planewide+Celebration&set=war",
+      "sourceSha256": "efbc243b1ac390a71d5e1ed7eee63080b95295f595e39ad8e5ceee10e1897960",
+      "rulingsUri": "https://api.scryfall.com/cards/11016840-56b6-4759-bde6-3dc0e339e87e/rulings",
+      "rulingsSha256": "4affc392e1edeffc155a61001fb4705870dfb118cd83e5fab2b161044a38259c"
+    },
+    {
+      "name": "Tyrite Sanctum",
+      "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+      "printingId": "309ff3bf-acd3-4bea-b518-6e25f6cfce61",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Tyrite+Sanctum&set=khm",
+      "sourceSha256": "bbfcda26de7adae212e30b2f6277cea0ea85ffcad86ad197404bb258b2ed4aab",
+      "rulingsUri": "https://api.scryfall.com/cards/309ff3bf-acd3-4bea-b518-6e25f6cfce61/rulings",
+      "rulingsSha256": "54711a63da81ee70d185658234fda1f1147564d3dba3f66fb0f8b7186b9129d1"
+    },
+    {
+      "name": "Krenko's Command",
+      "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+      "printingId": "84df41e9-e973-4441-b17f-434517134d46",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Krenko%27s+Command&set=m13",
+      "sourceSha256": "ba9e3437b5798e7c35d74af3516124d3648a3f2295e0d5b1e9a4a44bda193a69",
+      "rulingsUri": "https://api.scryfall.com/cards/84df41e9-e973-4441-b17f-434517134d46/rulings",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10"
+    },
+    {
+      "name": "Bitterblossom",
+      "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+      "printingId": "8145fed6-6b51-420a-84cf-4ea5e0aa1883",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Bitterblossom&set=mor",
+      "sourceSha256": "aec768148a3943c94e67e86f413c7c903ba6054488cd6b9b05c44d53e73784e1",
+      "rulingsUri": "https://api.scryfall.com/cards/8145fed6-6b51-420a-84cf-4ea5e0aa1883/rulings",
+      "rulingsSha256": "88464af58cf2d355437b392e823e83382dde490c06c489b04b0ea92026dbf215"
+    },
+    {
+      "name": "Judith, the Scourge Diva",
+      "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+      "printingId": "0a742125-730d-4082-bfd8-5feb7733def4",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Judith%2C+the+Scourge+Diva&set=rna",
+      "sourceSha256": "985157e73f1af667d310a034a2c0bc9c2b4698fd5e957c1e962c953097ff4ddd",
+      "rulingsUri": "https://api.scryfall.com/cards/0a742125-730d-4082-bfd8-5feb7733def4/rulings",
+      "rulingsSha256": "f55ec2ef2a55cdbcf65129b6d964122be2589204c94878fc99b99ca903d94375"
+    },
+    {
+      "name": "Oviya Pashiri, Sage Lifecrafter",
+      "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+      "printingId": "27eb9d40-958b-41b8-b04b-7f45adc0a862",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Oviya+Pashiri%2C+Sage+Lifecrafter&set=kld",
+      "sourceSha256": "aef3bebec0cc97ca89c20a34c839e46c5851a94072f4024c1878347f13aa403e",
+      "rulingsUri": "https://api.scryfall.com/cards/27eb9d40-958b-41b8-b04b-7f45adc0a862/rulings",
+      "rulingsSha256": "f34201c34b0fb6ef347bd455f5064423728143374d5ef0beb59fb6c8fd398651"
+    },
+    {
+      "name": "Sunforger",
+      "oracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "printingId": "c8d5e027-aa74-444b-a945-1bafa9bdec4c",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Sunforger&set=rav",
+      "sourceSha256": "82f22fae386dc79f408b05fdf7035a50fbc80648a824a4ac08883a7a518ce1b6",
+      "rulingsUri": "https://api.scryfall.com/cards/c8d5e027-aa74-444b-a945-1bafa9bdec4c/rulings",
+      "rulingsSha256": "a8bbfe57084bf019ab5bb2b02e497927397bcba77a32ad8f215e703826fb32ad"
+    },
+    {
+      "name": "Predatory Urge",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "printingId": "d7f8adaa-2852-4e9c-b91d-ce80a21859c9",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Predatory+Urge&set=zen",
+      "sourceSha256": "620883641da79531f7b86a743ac786e42f6e170025d1f7785c885388c8faeb12",
+      "rulingsUri": "https://api.scryfall.com/cards/d7f8adaa-2852-4e9c-b91d-ce80a21859c9/rulings",
+      "rulingsSha256": "b2a7ea8215363140ab1dd33cd3c7b8551f6eaa7fe00423534ea659f4ae13a0d8"
+    }
+  ],
+  "qualification": "Dated source observations; not independent whole-card qualification."
+}

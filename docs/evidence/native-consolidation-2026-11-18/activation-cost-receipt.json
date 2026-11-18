@@ -1,0 +1,17 @@
+{
+  "application": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "executedAt": "2026-11-18T08:56:49.190716400Z",
+  "rawReceiptSha256": "65b2e0a5f75bdd17c3157d3ee9da8bfa1fae3edb46fbcbf3e6bb9a88a7d73763",
+  "gzipSha256": "9c0dead531422645375482666e12ec1a4972a60a8ab83c03eafec3a657cf9b71",
+  "observationsByResult": {
+    "AGREES": 22,
+    "INCOMPLETE": 1,
+    "UNRESOLVED": 1,
+    "DIFFERS": 2
+  },
+  "requirementsSha256": "de73dc9fea4e306e6da5ce971f243225b30afdb93d3c0218275ed1054f1d730f",
+  "bindingsSha256": "399582d2d8aee3d682fa91f82bbe8ba2c96bc348029044b3203f55503d24dd04",
+  "harnessSha256": "082a9272e71c52c278a0352f5e02cf6131fd62b58724fae78e35c13e6756ea09",
+  "limits": "Printed payment only; INCOMPLETE and UNRESOLVED are retained. Mutant DIFFERS observations discriminate missing printed costs, not production-card failures. No independent qualification."
+}

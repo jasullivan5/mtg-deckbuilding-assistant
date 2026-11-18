@@ -1,0 +1,214 @@
+{
+  "application": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "sourceTest": "src/test/kotlin/assurance/TranslationMutationTest.kt",
+  "sourceTestSha256": "f92f43cef316f728c39e69d1d77087ddece3cbcee35e34fa5e7ddcafc4693bfe",
+  "rawObservationSha256": "b2694c7fe09d613acdd95e300242d6eb527942045a1b8698a9d1d67dc63b8e79",
+  "observations": [
+    {
+      "id": "M1",
+      "defect": "live reference loses last-known damage",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "interpretation": "HISTORICAL_MUTATION_NO_LONGER_DISCRIMINATES_THIS_SCOPE",
+      "sourceProbeKind": "HISTORICAL_SYNTACTIC_PROXY_NOT_CURRENT_FIDELITY_JUDGMENT",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU4"
+      ],
+      "executionDetected": false,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "MISSED",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M10",
+      "defect": "recipient substituted for the original host as damage source",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU4-source-is-host"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<9597a459-9807-4982-87c1-ad6ae21446b6> but was:<35b4f8fb-ef04-4de9-87f1-0bde1dd7529c>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M2",
+      "defect": "tap cost omitted",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "PU1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<true> but was:<false>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M3",
+      "defect": "optional search made mandatory",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-optional"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "Expected null but actual was \"Invalid selection: 494fc659-18b0-4daf-88d8-d61d4edb6f20 is not a valid option\"",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M4",
+      "defect": "targeted player's choice assigned to controller",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-controller"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<e1> but was:<e0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M5",
+      "defect": "condition moved before fetched lands",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M6",
+      "defect": "fetched cards go to hand instead of battlefield",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "HP1"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<2> but was:<0>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M7",
+      "defect": "counter prohibition omitted",
+      "oracleId": "9505f124-f152-48ce-b0d3-097abdda8e3e",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "TK2"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "expected:<0> but was:<1>",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M8",
+      "defect": "nontargeting choice replaced by a target",
+      "oracleId": "7a8baaf9-e21f-41a0-9f15-80764f6e5e68",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "SJ3"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "SJ3 is nontargeting at resolution",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    },
+    {
+      "id": "M9",
+      "defect": "required reveal omitted",
+      "oracleId": "24f1f0e9-8c9b-4f32-95ec-7af883bbeef4",
+      "productionRegistered": false,
+      "interpretation": "CURRENT_ADVERSARIAL_CONTROL",
+      "sourceProbeKind": "BOUNDED_SOURCE_PROBE",
+      "validatorErrors": 0,
+      "validatorWarnings": [],
+      "controlValidatorWarnings": [],
+      "sourceProbeViolations": [
+        "LW1-reveal"
+      ],
+      "executionDetected": true,
+      "executionConfounded": false,
+      "controlAssertion": "",
+      "assertion": "Expected null but actual was \"Invalid selection: 8d0bfc36-ee01-4cef-a182-0c3110fccf7e is not a valid option\"",
+      "controlPassed": true,
+      "qualificationWithoutIndependentApproval": "PROVISIONAL"
+    }
+  ],
+  "historicalResourceSha256": {
+    "src\\test\\resources\\assurance\\engine-compatibility-41332418.json": "dd69d2a1a2e7aa13d9a2770c7b3b9551378fa45908136fb00126a1e4ae63967e",
+    "src\\test\\resources\\assurance\\source-led-execution.json": "b081949ea515606a0f00716a7258721874f7c4fa4ca105d1bc39a088aca74d8a"
+  },
+  "interpretation": "M1 is explicitly historical non-discrimination under current LKI. M10 checks actual departed-host damage-source identity. Author controls are bounded evidence; no whole-card or independent qualification."
+}

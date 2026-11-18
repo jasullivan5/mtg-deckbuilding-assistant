@@ -1,0 +1,14 @@
+{
+  "sourceSnapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "historicalArtifactSha256": "c22434d2abf3f5f1443508bf03b18c20ebf10e774436fde6c162d92abe185911",
+  "currentObservationSha256": "bbef5717b63248982ada5b2502779123ce7f0724a7d1bb1b7d1c748652f3cc71",
+  "sameExternalPopulation": true,
+  "sameLegalityAndPoolStates": true,
+  "historicalConfident": 16927,
+  "currentConfident": 21319,
+  "lostPreviouslyConfident": [],
+  "nativeProjectionVersion": "sdk-physical-v2-omen",
+  "nativeIdentitySha256": "125ca07b849a9e2da3cfbe8a476d37064c437301f2493cab66f7e4993f378509",
+  "application": "dda45c75a614ad40271eaa777e262c0e73bfa4b5",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa"
+}

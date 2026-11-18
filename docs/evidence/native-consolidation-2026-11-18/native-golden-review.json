@@ -1,0 +1,129 @@
+{
+  "base": "a4ada00f7aa8c21d73e2ed3bb63ffcb2ebbb8f44",
+  "changedCards": 13,
+  "changes": [
+    {
+      "card": "Hour of Promise",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/HOU.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Spined Tyrranax",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/J25.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Tyrite Sanctum",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/KHM.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Oviya Pashiri, Sage Lifecrafter",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/KLD.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Galadhrim Ambush",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/LTC.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Krenko's Command",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/M13.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Bitterblossom",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/MOR.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Sunforger",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/RAV.json",
+      "fields": [
+        ".colorIdentityOverride.length",
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId",
+        ".script.activatedAbilities[0].effect.effects[2]",
+        ".script.activatedAbilities[0].effect.effects[3]",
+        ".script.activatedAbilities[0].effect.effects[4]"
+      ]
+    },
+    {
+      "card": "Judith, the Scourge Diva",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/RNA.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Labyrinth of Skophos",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/THB.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Planewide Celebration",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/WAR.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Might of Murasa",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/ZNR.json",
+      "fields": [
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    },
+    {
+      "card": "Throne of Makindi",
+      "snapshot": "mtg-sets/src/test/resources/snapshots/cards/ZNR.json",
+      "fields": [
+        ".colorIdentityOverride",
+        ".metadata.releaseDate",
+        ".metadata.scryfallId",
+        ".oracleId"
+      ]
+    }
+  ],
+  "unrelatedCardChanges": 0
+}

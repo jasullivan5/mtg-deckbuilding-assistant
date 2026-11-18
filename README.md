@@ -40,6 +40,8 @@ PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have ex
 
 The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The [counter-placement increment](docs/COUNTER_PLACEMENT_DISCOVERY.md) extends application interpretation and Discover on the unchanged engine.
 
+The [native upstream consolidation delivery](docs/NATIVE_CONSOLIDATION_2026-11-18.md) records the verified application/engine pair, twelve retired duplicate scripts, preserved historical assurance, and the coordinated draft PRs. It includes full verification receipts and measured discovery changes.
+
 ## Two sibling repositories
 
 ```text

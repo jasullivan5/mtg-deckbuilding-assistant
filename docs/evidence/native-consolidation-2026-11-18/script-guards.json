@@ -1,0 +1,33 @@
+{
+  "sourceApplication": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "scriptSha256": {
+    "scripts/setup.sh": "6effbac3bba670a2cf5f30d5b4421abdb2fb7b6da4ba2d0338b6cb0c28a90148",
+    "scripts/setup.ps1": "13b295d8084af9438d81a0ab53aa8c6cc93d894a81125feaac73a4189fbd43eb",
+    "scripts/test-bootstrap.py": "c1f9255bf682379ef2ecef2e37198e7f11db9efb289301167a51ded104349053",
+    "scripts/test-oracle-snapshot.py": "7b252f3b8a21bbe29853fe763c972323d575dc4c21afb50d6fe9892be83f1197",
+    "scripts/test-catalog-comparison.py": "fd03cb8b9c4edc6ef80e72ebe946b334186db2f45316ad58b478ef67d78be121",
+    "scripts/check-catalog.sh": "95003a158e5bd8770cd89e86212a0b578ba972d02339346345c82fd115d26290",
+    "scripts/compare-baseline.py": "b598e77b9c6e0d7d041ec30e9b850a7f421581608750155555bfa0827de3b579"
+  },
+  "bashBootstrap": {
+    "tests": 17,
+    "passed": 17,
+    "logSha256": "741efe95db0c52de8e095745b957daed65ac164a1f72fd120ace1e5d6873c6e8"
+  },
+  "powershellBootstrap": {
+    "tests": 17,
+    "passed": 14,
+    "skippedBashOnlyJavaProbeChecks": 3,
+    "logSha256": "6917dcbbda0184cd0aa0e3351b2ddc9d76f56d64d9b338cbe05fb74773dbebbf"
+  },
+  "oracleSnapshot": {
+    "tests": 3,
+    "passed": 3,
+    "logSha256": "fb03c147ad5a9df5d9ae7148d304cd7ff5dfc76f3cd84619f47f4af878d041e3"
+  },
+  "catalogComparator": {
+    "tests": 5,
+    "passed": 5
+  },
+  "note": "Guard-script contents are unchanged between the observed guard runs and final executable revision; tests use real local Git repositories, both shells and source-integrity fixtures."
+}
