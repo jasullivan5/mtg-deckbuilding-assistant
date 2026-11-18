@@ -8,6 +8,21 @@ import kotlinx.serialization.json.*
 
 /** Injected report/review fixtures test the examiner; the real frozen review is a separate dataset. */
 class ReportDiagnosticsTest : FunSpec({
+    test("audit shape sharing retains quantities controllers and root-local variable identities") {
+        val pool = CanonicalShapePool()
+        val first = Json.parseToJsonElement("""{"type":"Draw","count":{"type":"Fixed","value":1},"controller":{"type":"You"},"storeAs":"cards","description":"display"}""")
+        val second = Json.parseToJsonElement("""{"type":"GainLife","count":{"type":"Fixed","value":1},"controller":{"type":"You"},"storeAs":"life"}""")
+        val a = pool.canonical(first).jsonObject
+        val b = pool.canonical(second).jsonObject
+        a shouldBe Json.parseToJsonElement("""{"controller":{"type":"You"},"count":{"type":"Fixed","value":1},"storeAs":"symbol0","type":"Draw"}""")
+        b shouldBe canonicalShape(second)
+        (a.getValue("count") === b.getValue("count")) shouldBe true
+        (a.getValue("controller") === b.getValue("controller")) shouldBe true
+        val changed = pool.canonical(Json.parseToJsonElement("""{"type":"GainLife","count":{"type":"Fixed","value":2},"controller":{"type":"Opponent"},"storeAs":"other"}""")).jsonObject
+        (changed.getValue("count") == a.getValue("count")) shouldBe false
+        (changed.getValue("controller") == a.getValue("controller")) shouldBe false
+        changed.getValue("storeAs") shouldBe JsonPrimitive("symbol0")
+    }
     val catalog by lazy { Catalog() }
     val report by lazy { discover(catalog,"Judith, the Scourge Diva","name:\"Goblin Bombardment\"") }
     val cost by lazy { report.results.first { it.costOrEffect=="ACTIVATION_COST" } }

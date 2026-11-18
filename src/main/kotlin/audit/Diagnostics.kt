@@ -36,14 +36,25 @@ private val reader = Json { ignoreUnknownKeys = true }
 private fun hash(s: String) = MessageDigest.getInstance("SHA-256").digest(s.toByteArray()).joinToString("") { "%02x".format(it) }.take(20)
 private val incidentalKeys = setOf("description","oracleText","flavorText","imageUri","artist","prompt","rulings","metadata")
 /** Alpha-normalize local variables, not mechanical enums or literal card-property restrictions. */
-fun canonicalShape(value: JsonElement): JsonElement {
+fun canonicalShape(value: JsonElement): JsonElement = canonicalShape(value, null)
+
+/** One audit shares identical immutable subtrees; alpha-renaming remains local to each root. */
+internal class CanonicalShapePool {
+    private val nodes = HashMap<JsonElement, JsonElement>()
+    fun canonical(value: JsonElement): JsonElement = canonicalShape(value, nodes)
+}
+
+private fun canonicalShape(value: JsonElement, nodes: MutableMap<JsonElement, JsonElement>?): JsonElement {
     val names = linkedMapOf<String,String>()
     val idKeys=setOf("id","storeAs","storeSelected","storeRemainder","storeMatching","storeNonMatching","from","collection","variableName")
-    fun walk(v: JsonElement,key: String = ""): JsonElement = when(v) {
+    fun walk(v: JsonElement,key: String = ""): JsonElement {
+        val shaped = when(v) {
         is JsonObject -> JsonObject(v.filterKeys { it !in incidentalKeys }.toSortedMap().mapValues { (k,x) -> walk(x,k) })
         is JsonArray -> JsonArray(v.map { walk(it,key) })
         is JsonPrimitive -> if(v.isString && key in idKeys && v.content !in setOf("Battlefield","Graveyard","Exile","Hand","Library","Stack","Command")) JsonPrimitive(names.getOrPut(v.content) { "symbol${names.size}" }) else v
         else -> v
+        }
+        return nodes?.getOrPut(shaped) { shaped } ?: shaped
     }
     return walk(value)
 }
@@ -104,6 +115,7 @@ fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageRepo
     val actionMap=report.actions.associateBy { it.id }
     val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
     data class Entry(val n: NativeNode,val status: String,val reasons: List<String>,val shape: JsonElement)
+    val shapes = CanonicalShapePool()
     val entries=nodes.map { n ->
         val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
         val matched=Triple(n.card,n.face,n.path) in paths
@@ -121,7 +133,7 @@ fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageRepo
         val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
         if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
         if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
-        Entry(n,state,reasons.distinct().sorted(),canonicalShape(n.native))
+        Entry(n,state,reasons.distinct().sorted(),shapes.canonical(n.native))
     }
     val groups=entries.groupBy { "${it.n.nativeType}|${it.n.context}|${it.status}|${it.reasons}|${it.shape}" }.map { (key,es) ->
         val e=es.first(); val n=e.n
