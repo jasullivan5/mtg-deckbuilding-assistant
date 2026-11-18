@@ -3,7 +3,7 @@ package dev.mtg.assistant.explorer
 import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.audit.CoverageReport
-import dev.mtg.assistant.audit.coverage
+import dev.mtg.assistant.audit.coverageByCard
 import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.*
@@ -93,12 +93,15 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
         nativeCoverageCache.get() ?: buildNativeCoverage().also { nativeCoverageCache = SoftReference(it) }
     }
     private fun buildNativeCoverage(): CoverageReport {
-        val e = extracted
+        val walker = PathwayExtractor(inspectCardEntries = true)
         val report = DiscoveryReport(objective = "catalog-structural-observation", commander = "No commander filter",
             allowedIdentity = emptyList(), conventionalQuery = null, counts = emptyMap(), eligibility = emptyList(),
-            results = emptyList(), actions = e.actions, unsupported = e.unsupported, limitations = emptyList(),
-            structuralSupport = e.structuralSupport, facts = e.facts, mechanicalInputCards = physical.map { it.name })
-        return coverage(physical, report)
+            results = emptyList(), actions = emptyList(), unsupported = emptyList(), limitations = emptyList(),
+            mechanicalInputCards = physical.map { it.name })
+        return coverageByCard(physical, report) { card ->
+            val e = walker.extract(listOf(card))
+            report.copy(actions=e.actions,unsupported=e.unsupported,structuralSupport=e.structuralSupport,facts=e.facts)
+        }
     }
     // An explicit snapshot is optional. Failure is visible and never becomes a zero missing-card count.
     private val snapshotAttempt by lazy { snapshotPath?.let { runCatching { loadOracleSnapshot(it) } } }

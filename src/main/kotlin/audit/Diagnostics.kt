@@ -107,15 +107,16 @@ private fun work(type: String) = when(type) {
     "ModifyStats" -> "Check modifier sign/dynamic amount and target scope before inferring potential toughness death"
     else -> "Review native fields and enclosing action; add a reusable interpreter only with positive and negative tests"
 }
-fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageReport {
-    val explicit=report.structuralSupport.groupBy { Triple(it.card,it.face,it.path) }
-    val resultsByFace=report.results.groupBy { it.card to it.face }
-    val issuesByFace=report.unsupported.groupBy { it.card to it.face }
-    val paths=report.results.map { Triple(it.card,it.face,it.abilityPath) }.toSet()
-    val sources=report.results.associate { it.actionId to it.sourceReferences }
-    val provenanceByCard=report.eligibility.associate { it.card to it.provenance }
-    val actionMap=report.actions.associateBy { it.id }
-    val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
+fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageReport =
+    coverageChunks(sequenceOf(cards to report),report.commander,report.objective)
+
+/** A catalog observation need not retain extraction for every card at the same time. */
+internal fun coverageByCard(cards: List<CardDefinition>, template: DiscoveryReport,
+    project: (CardDefinition) -> DiscoveryReport): CoverageReport =
+    coverageChunks(cards.asSequence().map { listOf(it) to project(it) },template.commander,template.objective)
+
+private fun coverageChunks(chunks: Sequence<Pair<List<CardDefinition>,DiscoveryReport>>,
+    commander: String, objective: String): CoverageReport {
     data class Key(val nativeType: String,val context: String,val status: String,val reasons: List<String>,val shape: JsonElement)
     class Group(val key: Key) {
         var occurrences = 0
@@ -127,41 +128,55 @@ fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageRepo
     // Retain canonical groups and bounded representatives, not every serialized definition tree.
     val accumulated = linkedMapOf<Key, Group>()
     var encounteredTypedNodes = 0
+    var inputCards = 0
+    val factCounts = sortedMapOf<String,Int>()
     val shapes = CanonicalShapePool()
-    visitNativeNodes(cards,report) { n ->
-        encounteredTypedNodes++
-        val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
-        val matched=Triple(n.card,n.face,n.path) in paths
-        val support=explicit[Triple(n.card,n.face,n.path)].orEmpty()
-        val local=resultsByFace[n.card to n.face].orEmpty().filter { it.abilityPath==n.path }
-        val partialChildren=resultsByFace[n.card to n.face].orEmpty().any { it.abilityPath.startsWith(n.path+".") && it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }
-        val state=when { local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() && partialChildren -> "PARTIALLY_SUPPORTED"
-            support.any { it.status==SupportStatus.UNSUPPORTED } -> "UNSUPPORTED"
-            support.any { it.status==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() && issuesByFace[n.card to n.face].orEmpty().any { it.path.startsWith(n.path+".") } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() -> "SUPPORTED"
-            unsupported.isNotEmpty() -> "UNSUPPORTED_OR_UNRESOLVED"; matched -> "PATHWAY_EXTRACTED"; else -> "OBSERVED_WITHOUT_LOCAL_PATHWAY" }
-        val descendants=issuesByFace[n.card to n.face].orEmpty().filter { it.path.startsWith(n.path+".") }
-        val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
-        if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
-        if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
-        val key = Key(n.nativeType,n.context,state,reasons.distinct().sorted(),shapes.canonical(n.native))
-        val group = accumulated.getOrPut(key) { Group(key) }
-        group.occurrences++
-        group.cards += n.card
-        n.actionId?.let { group.actions += it }
-        if(n.actionId in accepted) group.insideAcceptedActions++
-        if(group.representatives.size < 5) group.representatives += CoverageOccurrence(n.card,n.face,n.path,n.actionId,state,key.reasons,
-            sources[n.actionId] ?: listOfNotNull("native:${n.face}.${n.path}", DefinitionSources.paths[n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source))
+    for ((cards,report) in chunks) {
+        inputCards += cards.size
+        report.facts.groupingBy { it.kind.name }.eachCount().forEach { (kind,count) -> factCounts[kind]=(factCounts[kind] ?: 0)+count }
+        val explicit=report.structuralSupport.groupBy { Triple(it.card,it.face,it.path) }
+        val resultsByFace=report.results.groupBy { it.card to it.face }
+        val issuesByFace=report.unsupported.groupBy { it.card to it.face }
+        val paths=report.results.map { Triple(it.card,it.face,it.abilityPath) }.toSet()
+        val sources=report.results.associate { it.actionId to it.sourceReferences }
+        val provenanceByCard=report.eligibility.associate { it.card to it.provenance }
+        val actionMap=report.actions.associateBy { it.id }
+        val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
+        visitNativeNodes(cards,report) { n ->
+            encounteredTypedNodes++
+            val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
+            val matched=Triple(n.card,n.face,n.path) in paths
+            val support=explicit[Triple(n.card,n.face,n.path)].orEmpty()
+            val local=resultsByFace[n.card to n.face].orEmpty().filter { it.abilityPath==n.path }
+            val partialChildren=resultsByFace[n.card to n.face].orEmpty().any { it.abilityPath.startsWith(n.path+".") && it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }
+            val state=when { local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() && partialChildren -> "PARTIALLY_SUPPORTED"
+                support.any { it.status==SupportStatus.UNSUPPORTED } -> "UNSUPPORTED"
+                support.any { it.status==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() && issuesByFace[n.card to n.face].orEmpty().any { it.path.startsWith(n.path+".") } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() -> "SUPPORTED"
+                unsupported.isNotEmpty() -> "UNSUPPORTED_OR_UNRESOLVED"; matched -> "PATHWAY_EXTRACTED"; else -> "OBSERVED_WITHOUT_LOCAL_PATHWAY" }
+            val descendants=issuesByFace[n.card to n.face].orEmpty().filter { it.path.startsWith(n.path+".") }
+            val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
+            if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+            if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
+            val key = Key(n.nativeType,n.context,state,reasons.distinct().sorted(),shapes.canonical(n.native))
+            val group = accumulated.getOrPut(key) { Group(key) }
+            group.occurrences++
+            group.cards += n.card
+            n.actionId?.let { group.actions += it }
+            if(n.actionId in accepted) group.insideAcceptedActions++
+            if(group.representatives.size < 5) group.representatives += CoverageOccurrence(n.card,n.face,n.path,n.actionId,state,key.reasons,
+                sources[n.actionId] ?: listOfNotNull("native:${n.face}.${n.path}", DefinitionSources.paths[n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source))
+        }
     }
     val groups=accumulated.values.map { g ->
         val k=g.key
         CoverageGroup(hash("${k.nativeType}|${k.context}|${k.status}|${k.reasons}|${k.shape}"),k.nativeType,k.context,k.shape,g.occurrences,g.cards.size,
-            g.actions.size,k.status,k.reasons,if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(k.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && k.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(k.nativeType,k.shape),
+            g.actions.size,k.status,k.reasons,if(objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(k.nativeType,objective)) "POTENTIALLY_RELEVANT" else if(objective=="reanimate-own-creatures" && k.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(k.nativeType,k.shape),
             g.insideAcceptedActions,g.representatives,work(k.nativeType))
     }.sortedWith(compareBy<CoverageGroup> { if(it.relevance == "POTENTIALLY_RELEVANT" && it.supportStatus !in setOf("PATHWAY_EXTRACTED","SUPPORTED")) 0 else 1 }.thenByDescending { it.distinctCards }.thenBy { it.fingerprint })
-    return CoverageReport(commander=report.commander,inputCards=cards.size,encounteredTypedNodes=encounteredTypedNodes,groups=groups,objective=report.objective,factCounts=report.facts.groupingBy { it.kind.name }.eachCount().toSortedMap())
+    return CoverageReport(commander=commander,inputCards=inputCards,encounteredTypedNodes=encounteredTypedNodes,groups=groups,objective=objective,factCounts=factCounts)
 }
 fun examine(cards: List<CardDefinition>, report: DiscoveryReport, benchmark: BenchmarkReport? = null): Examination {
     val findings=mutableListOf<Finding>()

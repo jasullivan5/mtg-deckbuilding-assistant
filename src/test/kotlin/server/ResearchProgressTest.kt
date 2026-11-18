@@ -20,6 +20,16 @@ class ResearchProgressTest : FunSpec({
         progressRecords(cards) { it.facts } shouldBe full.facts
         progressRecords(cards) { it.actions } shouldBe full.actions
         progressRecords(cards) { it.unsupported } shouldBe full.unsupported
+        val template = DiscoveryReport(objective="catalog-structural-observation",commander="No commander filter",
+            allowedIdentity=emptyList(),conventionalQuery=null,counts=emptyMap(),eligibility=emptyList(),
+            results=emptyList(),actions=emptyList(),unsupported=emptyList(),limitations=emptyList())
+        val whole = coverage(cards,template.copy(actions=full.actions,unsupported=full.unsupported,
+            structuralSupport=full.structuralSupport,facts=full.facts))
+        val walker = PathwayExtractor(inspectCardEntries=true)
+        coverageByCard(cards,template) { card ->
+            val e = walker.extract(listOf(card))
+            template.copy(actions=e.actions,unsupported=e.unsupported,structuralSupport=e.structuralSupport,facts=e.facts)
+        } shouldBe whole
     }
     fun group(state: String, count: Int) = CoverageGroup(state, "FixtureFamily", "script", JsonNull,
         count, 1, 1, state, emptyList(), "UNRESOLVED", 0, emptyList(), "Review")
