@@ -26,7 +26,7 @@ For explicit candidate validation only, set ARGENTUM_ENGINE_DIR to an absolute c
 
 ## Complete local verification
 
-1. From a clean application checkout, record `git rev-parse HEAD` and `git -C ../argentum-engine rev-parse HEAD`. For a candidate, record the isolated checkout's HEAD instead. Use JDK 21, Python 3, Node and pnpm as described in the [README](../README.md).
+1. From a clean application checkout, record `git rev-parse HEAD` and `git -C ../argentum-engine rev-parse HEAD`. For a candidate, record the isolated checkout's HEAD instead. Use JDK 25, Python 3, Node and pnpm as described in the [README](../README.md).
 2. From the application root, run `bash scripts/bootstrap.sh`, then `python3 scripts/test-bootstrap.py`, `python3 scripts/test-oracle-snapshot.py` and `bash scripts/verify.sh full`. The full gate reruns all Kotlin tests, including the source-discard and source-sacrifice scenarios, installs the CLI and runs the catalog checks. On Windows, `.\scripts\bootstrap.ps1` and `.\dev.ps1 test --rerun` cover setup and Kotlin. Use Bash with the same toolchain for the full catalog gate.
 3. For an engine correction, run the relevant native regressions in the exact engine checkout with `just test-class <ClassName> --rerun` or the broader `just test-rules`. Include `SparkElementalScenarioTest` and source-instance and source-zone regressions for source-identity changes.
 4. Build the Explorer and run `pnpm test:ui` and `pnpm test:live` from `web` using the [browser verification procedure](EXPLORER.md). Live tests require the URL of the freshly built Kotlin service. Check `/api/v1/health` to confirm the application and engine SHAs before testing.

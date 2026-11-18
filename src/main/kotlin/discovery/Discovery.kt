@@ -15,7 +15,7 @@ import kotlinx.serialization.json.encodeToStream
 internal object DefinitionSources {
     val paths: Map<String,String> by lazy {
         val result=mutableMapOf<String,String>()
-        ClassGraph().acceptPackages("com.wingedsheep.mtg.sets.definitions").enableClassInfo().scan(4).use { scan ->
+        ClassGraph().enableClasspath().acceptPackages("com.wingedsheep.mtg.sets.definitions").enableClassInfo().scan(4).use { scan ->
             for(info in scan.allClasses.sortedBy { it.name }) {
                 if(!info.name.endsWith("Kt")) continue
                 val location=info.classpathElementURI.toString().replace('\\','/')

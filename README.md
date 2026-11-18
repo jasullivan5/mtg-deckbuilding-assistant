@@ -4,7 +4,7 @@ A local Commander research application: choose a supported commander and an obje
 
 ## Launch on Windows
 
-Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the launcher also recognizes user tools under `~/Tools/mtg-dev-tools`.
+Install Git, JDK 25, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the launcher also recognizes user tools under `~/Tools/mtg-dev-tools`.
 
 ```powershell
 .\scripts\explorer.ps1
@@ -67,7 +67,7 @@ Commander legality and full color identity precede mechanical extraction. Unknow
 
 ## Build, tests and CLI
 
-Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 21, Bash and Python 3 support the headless tools. Existing work is never reset or silently switched.
+Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 25, Bash and Python 3 support the headless tools. Existing work is never reset or silently switched.
 
 ```powershell
 .\scripts\bootstrap.ps1
