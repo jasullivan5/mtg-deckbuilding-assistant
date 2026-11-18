@@ -150,7 +150,7 @@ class CommanderIntegrationTest : FunSpec({
             reports.map { it.facts }.distinct().size shouldBe 1
             reports.forEach { report ->
                 report.eligibility.single { it.card==OviyaPashiriSageLifecrafter.name }.deck shouldBe Verdict.NO_MATCH
-                report.mechanicalInputCards.contains(OviyaPashiriSageLifecrafter.name) shouldBe false
+                requireNotNull(report.mechanicalInputCards).contains(OviyaPashiriSageLifecrafter.name) shouldBe false
             }
         }
     }
