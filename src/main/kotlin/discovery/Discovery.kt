@@ -9,6 +9,7 @@ import java.lang.reflect.Modifier
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.encodeToStream
 
 /** Source locations are derived from compiled top-level getters, never a card-name table/parser. */
 internal object DefinitionSources {
@@ -151,6 +152,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
         conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts),eventOutcomes=extracted.eventOutcomes,selfReturns=extracted.selfReturns)
 }
 
+@OptIn(kotlinx.serialization.ExperimentalSerializationApi::class)
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {
     var commander: String?=null; var query: String?=null; var output: String?=null
     var objective="own-nontoken-creature-deaths"
@@ -169,6 +171,13 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         }
     }
     val report=discover(catalog,commander ?: throw IllegalArgumentException("discover requires --commander <exact name>"),query,objective)
+    val destination=output?.let { Path.of(it).toAbsolutePath() }
+    destination?.parent?.let(Files::createDirectories)
+    if(json && destination!=null) {
+        Files.newOutputStream(destination).buffered().use { reportJson.encodeToStream(report,it) }
+        out("Wrote $destination")
+        return
+    }
     val text=if(json) reportJson.encodeToString(report) else buildString {
         appendLine("Objective: ${report.objective}")
         appendLine("Commander: ${report.commander}; allowed identity: ${report.allowedIdentity}")
@@ -197,9 +206,7 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         } else appendLine("\nUse --diagnostics for rejected/unknown details; --json exports all decisions, native actions, eligibility and unsupported records.")
         report.limitations.forEach { appendLine("Coverage: $it") }
     }
-    if(output != null) {
-        val destination=Path.of(output)
-        destination.toAbsolutePath().parent?.let(Files::createDirectories)
+    if(destination != null) {
         Files.writeString(destination,text)
         out("Wrote ${destination.toAbsolutePath()}")
     } else out(text)
