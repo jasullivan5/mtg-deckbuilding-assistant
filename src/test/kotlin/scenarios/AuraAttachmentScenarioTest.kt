@@ -67,6 +67,7 @@ class AuraAttachmentScenarioTest : FunSpec({
             observed.hostController shouldBe them
             d.state.getEntity(aura)?.get<AttachedToComponent>()?.targetId shouldBe host
             d.state.projectedState.getPower(host) shouldBe if (name == "Stab Wound") 1 else if (name == "Holy Strength") 4 else 3
+            d.state.projectedState.getToughness(host) shouldBe if (name == "Stab Wound") 1 else if (name == "Holy Strength") 5 else 3
             d.state.projectedState.getToughness(other) shouldBe 3
             d.passPriorityUntil(Step.UPKEEP, them)
             d.resolvePendingActions()
