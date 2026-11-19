@@ -1,0 +1,2116 @@
+{
+  "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "applicationImplementation": "a0521ac6b57815d1c230dc783d79ed2e584b8002",
+  "units": "Physical roots and exact native face/action/declaration paths; candidates do not prove linkage or source fidelity",
+  "summary": {
+    "movementDeclarations": 765,
+    "potentialImmediateSequences": 96,
+    "potentialDeferredSourceFaces": 160,
+    "linkedPileReads": 200,
+    "nativeDurationDeclarations": 25,
+    "physicalCatalogCards": 21699,
+    "catalogFaces": 22487,
+    "candidatePhysicalCards": 383,
+    "candidateFaces": 387,
+    "relationships": 158,
+    "newlySupportedPhysicalCards": 50,
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 108,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 31
+    },
+    "unknownReasons": {
+      "Additional source declarations exceed the isolated two-trigger linked-pile subset": 24,
+      "Continuation is not adjacent in the same ordered native resolution": 53,
+      "Optional, deferred, guarded or unresolved context requires additional continuation evidence": 69,
+      "One unambiguous singular native target binding is required; collections, Self and other references are outside this immediate subset": 42,
+      "Zone sequence is outside bounded battlefield/exile/battlefield linkage": 6,
+      "Native source pile has absent or multiple producers/consumers; ability-specific association not established": 3,
+      "Exile is not a root self-entry trigger": 3,
+      "Exact linked-exile owner-return pipeline not established": 2,
+      "Exiled target does not have one resolved native target requirement": 1,
+      "Return controller binding unresolved": 2,
+      "Source zone or ability controller context unresolved": 1
+    },
+    "unknownPhysicalCards": 101,
+    "unknownFaces": 101,
+    "distinctRelationshipIds": 158,
+    "componentActions": 212,
+    "candidateFacesWithoutRelationshipRecord": 236,
+    "supportedRelationships": 50,
+    "supportedPhysicalCardsOutsideFrozenCohort": 46,
+    "candidateRootActionContainers": 515,
+    "otherMovementDeclarationContainers": 45,
+    "candidateCardsWithoutNativeSourcePath": 0
+  },
+  "rawInventorySha256": "9cc7ebe8f74b1b8be4553a600ffb0eae70132ac3860b42f742c400a25e3c5974",
+  "nativeMovementTypes": {
+    "ExileUntilLeaves": 81,
+    "MoveCollection": 323,
+    "MoveToZone": 332,
+    "MoveUntilSourceLeaves": 25,
+    "ReturnOneFromLinkedExile": 1,
+    "ReturnNotedExileTappedWithAuras": 2,
+    "ExileWithAurasNotingCounters": 1
+  },
+  "supported": [
+    {
+      "card": "Acrobatic Maneuver",
+      "face": "front",
+      "id": "Acrobatic Maneuver|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Acrobatic Maneuver|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Acrobatic Maneuver|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Alabaster Host Intercessor",
+      "face": "front",
+      "id": "Alabaster Host Intercessor|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Alabaster Host Intercessor|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Alabaster Host Intercessor|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "All-Fates Stalker",
+      "face": "front",
+      "id": "All-Fates Stalker|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "All-Fates Stalker|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "All-Fates Stalker|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Annex Sentry",
+      "face": "front",
+      "id": "Annex Sentry|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Annex Sentry|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Annex Sentry|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Banisher Priest",
+      "face": "front",
+      "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Banisher Priest|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Banishing Light",
+      "face": "front",
+      "id": "Banishing Light|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Banishing Light|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Banishing Light|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Borrowed Time",
+      "face": "front",
+      "id": "Borrowed Time|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Borrowed Time|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Borrowed Time|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Cast Out",
+      "face": "front",
+      "id": "Cast Out|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Cast Out|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Cast Out|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Cloudshift",
+      "face": "front",
+      "id": "Cloudshift|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Cloudshift|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Cloudshift|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Conclave Tribunal",
+      "face": "front",
+      "id": "Conclave Tribunal|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Conclave Tribunal|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Conclave Tribunal|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Daydream",
+      "face": "front",
+      "id": "Daydream|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Daydream|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Daydream|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Detention Chariot",
+      "face": "front",
+      "id": "Detention Chariot|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Detention Chariot|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Detention Chariot|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Dimensional Exile",
+      "face": "front",
+      "id": "Dimensional Exile|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Dimensional Exile|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Dimensional Exile|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Distinguished Conjurer",
+      "face": "front",
+      "id": "Distinguished Conjurer|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.activatedAbilities[0].effect.effects[0]",
+      "departureAction": "Distinguished Conjurer|front|script.activatedAbilities[0]",
+      "return": "script.activatedAbilities[0].effect.effects[1]",
+      "returnAction": "Distinguished Conjurer|front|script.activatedAbilities[0]",
+      "unresolved": []
+    },
+    {
+      "card": "Dusk Rose Reliquary",
+      "face": "front",
+      "id": "Dusk Rose Reliquary|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Dusk Rose Reliquary|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Dusk Rose Reliquary|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Earth Kingdom Jailer",
+      "face": "front",
+      "id": "Earth Kingdom Jailer|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Earth Kingdom Jailer|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Earth Kingdom Jailer|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Eldrazi Displacer",
+      "face": "front",
+      "id": "Eldrazi Displacer|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.activatedAbilities[0].effect.effects[0]",
+      "departureAction": "Eldrazi Displacer|front|script.activatedAbilities[0]",
+      "return": "script.activatedAbilities[0].effect.effects[1]",
+      "returnAction": "Eldrazi Displacer|front|script.activatedAbilities[0]",
+      "unresolved": []
+    },
+    {
+      "card": "Emiel the Blessed",
+      "face": "front",
+      "id": "Emiel the Blessed|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.activatedAbilities[0].effect.effects[0]",
+      "departureAction": "Emiel the Blessed|front|script.activatedAbilities[0]",
+      "return": "script.activatedAbilities[0].effect.effects[1]",
+      "returnAction": "Emiel the Blessed|front|script.activatedAbilities[0]",
+      "unresolved": []
+    },
+    {
+      "card": "Essence Flux",
+      "face": "front",
+      "id": "Essence Flux|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Essence Flux|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Essence Flux|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Fairgrounds Warden",
+      "face": "front",
+      "id": "Fairgrounds Warden|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Fairgrounds Warden|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Fairgrounds Warden|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "face": "front",
+      "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Fiend Hunter|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Flicker of Fate",
+      "face": "front",
+      "id": "Flicker of Fate|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Flicker of Fate|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Flicker of Fate|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Glass Casket",
+      "face": "front",
+      "id": "Glass Casket|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Glass Casket|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Glass Casket|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Hallowed Respite",
+      "face": "front",
+      "id": "Hallowed Respite|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Hallowed Respite|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Hallowed Respite|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Henchbots",
+      "face": "front",
+      "id": "Henchbots|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Henchbots|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Henchbots|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Hieromancer's Cage",
+      "face": "front",
+      "id": "Hieromancer's Cage|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Hieromancer's Cage|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Hieromancer's Cage|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Isolation Zone",
+      "face": "front",
+      "id": "Isolation Zone|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Isolation Zone|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Isolation Zone|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Justiciar's Portal",
+      "face": "front",
+      "id": "Justiciar's Portal|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Justiciar's Portal|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Justiciar's Portal|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Lilysplash Mentor",
+      "face": "front",
+      "id": "Lilysplash Mentor|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.activatedAbilities[0].effect.effects[0]",
+      "departureAction": "Lilysplash Mentor|front|script.activatedAbilities[0]",
+      "return": "script.activatedAbilities[0].effect.effects[1]",
+      "returnAction": "Lilysplash Mentor|front|script.activatedAbilities[0]",
+      "unresolved": []
+    },
+    {
+      "card": "Momentary Blink",
+      "face": "front",
+      "id": "Momentary Blink|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Momentary Blink|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Momentary Blink|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Mystical Tether",
+      "face": "front",
+      "id": "Mystical Tether|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Mystical Tether|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Mystical Tether|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Nephalia Smuggler",
+      "face": "front",
+      "id": "Nephalia Smuggler|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.activatedAbilities[0].effect.effects[0]",
+      "departureAction": "Nephalia Smuggler|front|script.activatedAbilities[0]",
+      "return": "script.activatedAbilities[0].effect.effects[1]",
+      "returnAction": "Nephalia Smuggler|front|script.activatedAbilities[0]",
+      "unresolved": []
+    },
+    {
+      "card": "Oblivion Ring",
+      "face": "front",
+      "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Oblivion Ring|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Personify",
+      "face": "front",
+      "id": "Personify|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Personify|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Personify|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Planar Incision",
+      "face": "front",
+      "id": "Planar Incision|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Planar Incision|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Planar Incision|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Portable Hole",
+      "face": "front",
+      "id": "Portable Hole|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Portable Hole|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Portable Hole|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Seal Away",
+      "face": "front",
+      "id": "Seal Away|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Seal Away|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Seal Away|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Seal from Existence",
+      "face": "front",
+      "id": "Seal from Existence|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Seal from Existence|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Seal from Existence|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Seam Rip",
+      "face": "front",
+      "id": "Seam Rip|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Seam Rip|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Seam Rip|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Silkwrap",
+      "face": "front",
+      "id": "Silkwrap|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Silkwrap|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Silkwrap|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Skycoach Conductor",
+      "face": "front.cardFaces[0]:All Aboard",
+      "id": "Skycoach Conductor|front.cardFaces[0]:All Aboard|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Skycoach Conductor|front.cardFaces[0]:All Aboard|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Skycoach Conductor|front.cardFaces[0]:All Aboard|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Slip On the Ring",
+      "face": "front",
+      "id": "Slip On the Ring|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Slip On the Ring|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Slip On the Ring|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Splash Portal",
+      "face": "front",
+      "id": "Splash Portal|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.spellEffect.effects[0]",
+      "departureAction": "Splash Portal|front|script.spell",
+      "return": "script.spellEffect.effects[1]",
+      "returnAction": "Splash Portal|front|script.spell",
+      "unresolved": []
+    },
+    {
+      "card": "Stasis Snare",
+      "face": "front",
+      "id": "Stasis Snare|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Stasis Snare|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Stasis Snare|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Stormplain Detainment",
+      "face": "front",
+      "id": "Stormplain Detainment|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Stormplain Detainment|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Stormplain Detainment|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Super Villain Lockup",
+      "face": "front",
+      "id": "Super Villain Lockup|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Super Villain Lockup|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Super Villain Lockup|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Thopter Arrest",
+      "face": "front",
+      "id": "Thopter Arrest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Thopter Arrest|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Thopter Arrest|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Trapped in the Screen",
+      "face": "front",
+      "id": "Trapped in the Screen|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Trapped in the Screen|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Trapped in the Screen|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Web Up",
+      "face": "front",
+      "id": "Web Up|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "kind": "DEFERRED_SOURCE_LINKED",
+      "departure": "script.triggeredAbilities[0].effect",
+      "departureAction": "Web Up|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[1].effect.effects[1]",
+      "returnAction": "Web Up|front|script.triggeredAbilities[1]",
+      "unresolved": []
+    },
+    {
+      "card": "Y'shtola Rhul",
+      "face": "front",
+      "id": "Y'shtola Rhul|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "kind": "IMMEDIATE_ORDERED",
+      "departure": "script.triggeredAbilities[0].effect.effects[0]",
+      "departureAction": "Y'shtola Rhul|front|script.triggeredAbilities[0]",
+      "return": "script.triggeredAbilities[0].effect.effects[1]",
+      "returnAction": "Y'shtola Rhul|front|script.triggeredAbilities[0]",
+      "unresolved": []
+    }
+  ],
+  "unknown": [
+    {
+      "id": "Aang's Iceberg|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Abuelo, Ancestral Echo|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Aethergeode Miner|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Against All Odds|front|script.spell|script.spellEffect.modes[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Airbender Ascension|front|script.triggeredAbilities[2]|script.triggeredAbilities[2].effect.then.effects[2]|LINK",
+      "reasonCodes": [
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Angel of Condemnation|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Assimilation Aegis|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Astral Slide|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Bishop of Binding|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Bronze Tablet|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[2].then|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Brutal Cathar|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        5,
+        0
+      ]
+    },
+    {
+      "id": "Brutal Cathar|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+      "reasonCodes": [
+        3,
+        5,
+        0
+      ]
+    },
+    {
+      "id": "Buried in the Garden|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Celebrate the Mountain-king|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Chains of Custody|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Charming Prince|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[2].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Circle of Confinement|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Coalstoke Gearhulk|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[4].effect|LINK",
+      "reasonCodes": [
+        1,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Conciliator's Duelist|front|script.triggeredAbilities[1]|script.triggeredAbilities[1].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Conjurer's Closet|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Displacer Kitten|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Djinn of the Fountain|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[1].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Don & Leo, Problem Solvers|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[2]|LINK",
+      "reasonCodes": [
+        6,
+        1
+      ]
+    },
+    {
+      "id": "Don & Leo, Problem Solvers|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[3]|LINK",
+      "reasonCodes": [
+        6,
+        1
+      ]
+    },
+    {
+      "id": "Eerie Interlude|front|script.spell|script.spellEffect.body.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Elrond, Moon-Reader|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.body.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Ennis, Debate Moderator|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Escape Protocol|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.reflexiveEffect.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Explosive Getaway|front|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Faith Unbroken|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Fear of Abduction|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        2
+      ]
+    },
+    {
+      "id": "Felidar Guardian|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Fleeting Spirit|front|script.activatedAbilities[1]|script.activatedAbilities[1].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Flickering Hound|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Galepowder Mage|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Getaway Glamer|front|script.spell|script.spellEffect.modes[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Ghost of Illyria|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Go Ninja Go|front|script.spell|script.spellEffect.modes[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Gossip's Talent|front|script.classLevels[1].triggeredAbilities[0]|script.classLevels[1].triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Guardian of Ghirapur|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Hardlight Containment|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Hide on the Ceiling|front|script.spell|script.spellEffect.body.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Hikari, Twilight Guardian|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Identity Thief|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Journey to Oblivion|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Kykar, Zephyr Awakener|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Lassoed by the Law|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Liberate|front|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Long River Lurker|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Long Road Home|front|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Mardu Siegebreaker|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Meandering Towershell|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Meneldor, Swift Savior|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Meticulous Excavation|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Molten Gatekeeper|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.then.effects[3].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "Morningtide's Light|front|script.spell|script.spellEffect.effects[0].body.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Nezahal, Primal Tide|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Niko, Light of Hope|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Oath of Teferi|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Ojutai Exemplars|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[2].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "Otherworldly Journey|front|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Parting Gust|front|script.spell|script.spellEffect.modes[0].effect.effects[1].effect.effects[0]|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Perilous Snare|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Prison Realm|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Restoration Angel|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Roll-Roll-Roll-Roll|front|script.sagaChapters[0]|script.sagaChapters[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Roll-Roll-Roll-Roll|front|script.sagaChapters[1]|script.sagaChapters[1].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Roll-Roll-Roll-Roll|front|script.sagaChapters[2]|script.sagaChapters[2].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Roll-Roll-Roll-Roll|front|script.sagaChapters[3]|script.sagaChapters[3].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "S.H.I.E.L.D. Flying Car|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Salvation Swan|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect.effects[0]|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+      "reasonCodes": [
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "id": "Scrollshift|front|script.spell|script.spellEffect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Semester's End|front|script.spell|script.spellEffect.body.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Sentinel of the Pearl Trident|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Settle Beyond Reality|front|script.spell|script.spellEffect.modes[1].effect.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Sheltered by Ghosts|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Shorecrasher Elemental|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "Siren's Ruse|front|script.spell|script.spellEffect.then.effects[1].then.effects[0]|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Siren's Ruse|front|script.spell|script.spellEffect.otherwise.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Skyskipper Duo|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Sol'Kanar the Tainted|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[3].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "Solitary Cell|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Static Net|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Static Snare|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Stenn, Paranoid Partisan|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Teferi's Time Twist|front|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Teleportation Circle|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Test of Priorities|front|script.spell|script.spellEffect.modes[1].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Thassa, Deep-Dwelling|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "The Eternal Wanderer|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        6,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "The Mighty Thor, Jane Foster|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "The Mind Stone|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "The Neutrinos|front|script.triggeredAbilities[1]|script.triggeredAbilities[1].effect.effects[1]|LINK",
+      "reasonCodes": [
+        6
+      ]
+    },
+    {
+      "id": "Touch the Spirit Realm|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Touch the Spirit Realm|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Trapjaw Tyrant|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        3
+      ]
+    },
+    {
+      "id": "Twining Twins|front.cardFaces[0]:Swift Spiral|script.spell|script.spellEffect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Unidentified Hovership|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        5,
+        2,
+        9
+      ]
+    },
+    {
+      "id": "Unyielding Gatekeeper|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Vizier of Deferment|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.then.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Voyager Staff|front|script.activatedAbilities[0]|script.activatedAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Waterbender's Restoration|front|script.spell|script.spellEffect.body.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "White Auracite|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+      "reasonCodes": [
+        0
+      ]
+    },
+    {
+      "id": "Wiccan, Rising Magician|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1].effect|LINK",
+      "reasonCodes": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "Wispweaver Angel|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then.effects[1]|LINK",
+      "reasonCodes": [
+        7
+      ]
+    },
+    {
+      "id": "Zuko, Conflicted|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.modes[3].effect.effects[2]|LINK",
+      "reasonCodes": [
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "boundaries": {
+    "unreviewedOutsideFourCardCohort": true,
+    "sourceFidelityDefault": "UNKNOWN",
+    "cohortConcerns": [
+      "Oblivion Ring: source-presence guard prevents Oracle-required late exile",
+      "Banisher Priest: native separate return trigger differs from Oracle duration return"
+    ],
+    "missingNamedControlDefinitions": [],
+    "collectionIdentity": "Native variable/storeMovedAs structures retained; no singular identity inference",
+    "potentialDeferredSourceFaces": "Contains explicit native source-pile producers and reads; may include permissions or other nonreturn consumers"
+  },
+  "unknownReasonCodes": {
+    "0": "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+    "1": "Continuation is not adjacent in the same ordered native resolution",
+    "2": "Exact linked-exile owner-return pipeline not established",
+    "3": "Exile is not a root self-entry trigger",
+    "4": "Exiled target does not have one resolved native target requirement",
+    "5": "Native source pile has absent or multiple producers/consumers; ability-specific association not established",
+    "6": "One unambiguous singular native target binding is required; collections, Self and other references are outside this immediate subset",
+    "7": "Optional, deferred, guarded or unresolved context requires additional continuation evidence",
+    "8": "Return controller binding unresolved",
+    "9": "Source zone or ability controller context unresolved",
+    "10": "Zone sequence is outside bounded battlefield/exile/battlefield linkage"
+  },
+  "uninterpretedCandidateExamples": [
+    {
+      "card": "Aang, at the Crossroads",
+      "face": "front.backFace",
+      "potentialImmediate": [
+        "script.triggeredAbilities[0].effect.effects[3].ability.effect.effects[0:2]"
+      ],
+      "producerPaths": [],
+      "linkedPileReads": []
+    },
+    {
+      "card": "Agatha's Soul Cauldron",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.activatedAbilities[0].effect.effects[0]"
+      ],
+      "linkedPileReads": []
+    },
+    {
+      "card": "Aligned Hedron Network",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [],
+      "linkedPileReads": []
+    },
+    {
+      "card": "All Good Things...",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.sagaChapters[0].effect.effects[1].effects[2]",
+        "script.sagaChapters[1].effect.effects[1].effects[2]",
+        "script.sagaChapters[2].effect.effects[1].effects[2]"
+      ],
+      "linkedPileReads": [
+        "script.sagaChapters[3].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Angel of Sanctions",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.triggeredAbilities[0].effect.then"
+      ],
+      "linkedPileReads": [
+        "script.triggeredAbilities[1].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Angel of Serenity",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.triggeredAbilities[0].effect.then.effects[1]"
+      ],
+      "linkedPileReads": [
+        "script.triggeredAbilities[1].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Another Round",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.spellEffect.effects[0].effects[2]",
+        "script.spellEffect.effects[1].body.effects[2]"
+      ],
+      "linkedPileReads": [
+        "script.spellEffect.effects[0].effects[3].source",
+        "script.spellEffect.effects[1].body.effects[3].source"
+      ]
+    },
+    {
+      "card": "Arcane Bombardment",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.triggeredAbilities[0].effect.effects[2]"
+      ],
+      "linkedPileReads": [
+        "script.triggeredAbilities[0].effect.effects[3].source"
+      ]
+    },
+    {
+      "card": "Ashiok's Erasure",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [],
+      "linkedPileReads": [
+        "script.triggeredAbilities[1].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Asmodeus the Archfiend",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.replacementEffects[0].replacementEffect.effects[1]"
+      ],
+      "linkedPileReads": [
+        "script.activatedAbilities[1].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Aurelia's Vindicator",
+      "face": "front",
+      "potentialImmediate": [],
+      "producerPaths": [
+        "script.triggeredAbilities[0].effect.effects[1]"
+      ],
+      "linkedPileReads": [
+        "script.triggeredAbilities[1].effect.effects[0].source"
+      ]
+    },
+    {
+      "card": "Avacynian Missionaries",
+      "face": "front.backFace",
+      "potentialImmediate": [],
+      "producerPaths": [],
+      "linkedPileReads": []
+    }
+  ],
+  "nativeSources": {
+    "Aang's Iceberg": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AangsIceberg.kt",
+    "Aang, at the Crossroads": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AangAtTheCrossroads.kt",
+    "Abuelo, Ancestral Echo": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/AbueloAncestralEcho.kt",
+    "Acrobatic Maneuver": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/AcrobaticManeuver.kt",
+    "Aethergeode Miner": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/AethergeodeMiner.kt",
+    "Against All Odds": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/AgainstAllOdds.kt",
+    "Agatha's Soul Cauldron": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/AgathasSoulCauldron.kt",
+    "Airbender Ascension": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AirbenderAscension.kt",
+    "Alabaster Host Intercessor": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/AlabasterHostIntercessor.kt",
+    "Aligned Hedron Network": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/AlignedHedronNetwork.kt",
+    "All Good Things...": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/AllGoodThings.kt",
+    "All-Fates Stalker": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/AllFatesStalker.kt",
+    "Angel of Condemnation": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hou/cards/AngelOfCondemnation.kt",
+    "Angel of Sanctions": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/AngelOfSanctions.kt",
+    "Angel of Serenity": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/AngelOfSerenity.kt",
+    "Annex Sentry": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/AnnexSentry.kt",
+    "Another Round": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AnotherRound.kt",
+    "Arcane Bombardment": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/ArcaneBombardment.kt",
+    "Ashiok's Erasure": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/AshioksErasure.kt",
+    "Asmodeus the Archfiend": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/AsmodeusTheArchfiend.kt",
+    "Assimilation Aegis": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AssimilationAegis.kt",
+    "Astral Slide": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/AstralSlide.kt",
+    "Aurelia's Vindicator": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/AureliasVindicator.kt",
+    "Avacynian Missionaries": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/soi/cards/AvacynianMissionaries.kt",
+    "Avatar Kyoshi, Earthbender": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/AvatarKyoshiEarthbender.kt",
+    "Azor's Gateway": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/AzorsGateway.kt",
+    "Azula, Cunning Usurper": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AzulaCunningUsurper.kt",
+    "Ba Sing Se": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BaSingSe.kt",
+    "Badgermole": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/Badgermole.kt",
+    "Badgermole Cub": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BadgermoleCub.kt",
+    "Bag of Holding": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m20/cards/BagOfHolding.kt",
+    "Banisher Priest": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt",
+    "Banishing Light": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jou/cards/BanishingLight.kt",
+    "Beifong's Bounty Hunters": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BeifongsBountyHunters.kt",
+    "Beluna Grandsquall": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/BelunaGrandsquall.kt",
+    "Bishop of Binding": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/BishopOfBinding.kt",
+    "Bitter Work": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BitterWork.kt",
+    "Boggart Mob": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/BoggartMob.kt",
+    "Boiling Rock Rioter": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BoilingRockRioter.kt",
+    "Bomat Courier": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/BomatCourier.kt",
+    "Borg Cube": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/BorgCube.kt",
+    "Borrowed Time": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BorrowedTime.kt",
+    "Bottled Cloister": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/BottledCloister.kt",
+    "Bronze Tablet": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/BronzeTablet.kt",
+    "Brutal Cathar": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BrutalCathar.kt",
+    "Bumi, Eclectic Earthbender": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/BumiEclecticEarthbender.kt",
+    "Bumi, King of Three Trials": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BumiKingOfThreeTrials.kt",
+    "Bumi, Unleashed": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BumiUnleashed.kt",
+    "Buried in the Garden": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/BuriedInTheGarden.kt",
+    "Calix, Destiny's Hand": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/CalixDestinysHand.kt",
+    "Cast Out": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/CastOut.kt",
+    "Celebrate the Mountain-king": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/CelebrateTheMountainKing.kt",
+    "Cemetery Gatekeeper": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CemeteryGatekeeper.kt",
+    "Cemetery Illuminator": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CemeteryIlluminator.kt",
+    "Cemetery Protector": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CemeteryProtector.kt",
+    "Cemetery Prowler": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CemeteryProwler.kt",
+    "Cemetery Tampering": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/CemeteryTampering.kt",
+    "Chains of Custody": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j22/cards/ChainsOfCustody.kt",
+    "Champion of the Clachan": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/ChampionOfTheClachan.kt",
+    "Champion of the Path": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/ChampionOfThePath.kt",
+    "Champion of the Weird": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/ChampionOfTheWeird.kt",
+    "Champions of the Perfect": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/ChampionsOfThePerfect.kt",
+    "Champions of the Shoal": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/ChampionsOfTheShoal.kt",
+    "Changeling Berserker": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ChangelingBerserker.kt",
+    "Changeling Hero": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ChangelingHero.kt",
+    "Changeling Titan": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ChangelingTitan.kt",
+    "Charming Prince": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eld/cards/CharmingPrince.kt",
+    "Chrome Mox": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/ChromeMox.kt",
+    "Circle of Confinement": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CircleOfConfinement.kt",
+    "Circu, Dimir Lobotomist": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/CircuDimirLobotomist.kt",
+    "Citizen's Arrest": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/CitizensArrest.kt",
+    "Clive's Hideaway": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/ClivesHideaway.kt",
+    "Cloak and Dagger, Entwined": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/CloakAndDaggerEntwined.kt",
+    "Cloudshift": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/Cloudshift.kt",
+    "Coalstoke Gearhulk": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/CoalstokeGearhulk.kt",
+    "Colfenor's Plans": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ColfenorsPlans.kt",
+    "Colfenor's Urn": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ColfenorsUrn.kt",
+    "Collector's Cage": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/big/cards/CollectorsCage.kt",
+    "Conciliator's Duelist": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/ConciliatorsDuelist.kt",
+    "Conclave Tribunal": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/ConclaveTribunal.kt",
+    "Conjurer's Closet": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/ConjurersCloset.kt",
+    "Connecting the Dots": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/ConnectingTheDots.kt",
+    "Consulate Crackdown": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/ConsulateCrackdown.kt",
+    "Dai Li Agents": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/DaiLiAgents.kt",
+    "Dai Li Indoctrination": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/DaiLiIndoctrination.kt",
+    "Dawnhand Dissident": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/DawnhandDissident.kt",
+    "Day of the Dragons": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/DayOfTheDragons.kt",
+    "Daydream": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/Daydream.kt",
+    "Deadeye Navigator": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/DeadeyeNavigator.kt",
+    "Deep Space 9": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/DeepSpace9.kt",
+    "Deep-Cavern Bat": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/DeepCavernBat.kt",
+    "Deputy of Detention": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/DeputyOfDetention.kt",
+    "Detention Chariot": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/DetentionChariot.kt",
+    "Dimensional Breach": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/DimensionalBreach.kt",
+    "Dimensional Exile": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/DimensionalExile.kt",
+    "Displace": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/Displace.kt",
+    "Displacer Kitten": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/clb/cards/DisplacerKitten.kt",
+    "Distinguished Conjurer": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j22/cards/DistinguishedConjurer.kt",
+    "Djinn of the Fountain": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/DjinnOfTheFountain.kt",
+    "Don & Leo, Problem Solvers": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/DonAndLeoProblemSolvers.kt",
+    "Driftgloom Coyote": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/DriftgloomCoyote.kt",
+    "Duplicant": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/Duplicant.kt",
+    "Dusk Rose Reliquary": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/DuskRoseReliquary.kt",
+    "Earth Kingdom General": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthKingdomGeneral.kt",
+    "Earth Kingdom Jailer": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthKingdomJailer.kt",
+    "Earth Rumble": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthRumble.kt",
+    "Earth Village Ruffians": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthVillageRuffians.kt",
+    "Earthbender Ascension": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthbenderAscension.kt",
+    "Earthbending Lesson": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthbendingLesson.kt",
+    "Earthbending Student": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/EarthbendingStudent.kt",
+    "Earthen Ally": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthenAlly.kt",
+    "Earthshape": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/Earthshape.kt",
+    "Eater of Virtue": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/EaterOfVirtue.kt",
+    "Eerie Interlude": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ddq/cards/EerieInterlude.kt",
+    "Eldrazi Displacer": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ogw/cards/EldraziDisplacer.kt",
+    "Elrond, Moon-Reader": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/ElrondMoonReader.kt",
+    "Emiel the Blessed": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jmp/cards/EmielTheBlessed.kt",
+    "Emperor of Bones": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/EmperorOfBones.kt",
+    "Endless Sands": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hou/cards/EndlessSands.kt",
+    "Ennis, Debate Moderator": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/EnnisDebateModerator.kt",
+    "Escape Protocol": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/iko/cards/EscapeProtocol.kt",
+    "Essence Flux": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/soi/cards/EssenceFlux.kt",
+    "Estrid's Invocation": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/c18/cards/EstridsInvocation.kt",
+    "Evendo Brushrazer": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoc/cards/EvendoBrushrazer.kt",
+    "Evercoat Ursine": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/EvercoatUrsine.kt",
+    "Expert-Level Safe": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pip/cards/ExpertLevelSafe.kt",
+    "Explosive Getaway": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/ExplosiveGetaway.kt",
+    "Expose the Culprit": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/ExposeTheCulprit.kt",
+    "Extraplanar Lens": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/ExtraplanarLens.kt",
+    "Eye of the Storm": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/EyeOfTheStorm.kt",
+    "Fairgrounds Warden": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/FairgroundsWarden.kt",
+    "Faith Unbroken": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/FaithUnbroken.kt",
+    "Fatal Fissure": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/FatalFissure.kt",
+    "Fear of Abduction": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/FearOfAbduction.kt",
+    "Felidar Guardian": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/FelidarGuardian.kt",
+    "Fiend Hunter": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt",
+    "Fight Rigging": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/FightRigging.kt",
+    "Fleeting Spirit": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/FleetingSpirit.kt",
+    "Flicker of Fate": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/FlickerOfFate.kt",
+    "Flickering Hound": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/FlickeringHound.kt",
+    "Food Coma": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/FoodComa.kt",
+    "Fortune, Loyal Steed": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/FortuneLoyalSteed.kt",
+    "Galepowder Mage": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/GalepowderMage.kt",
+    "Gelatinous Cube": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/GelatinousCube.kt",
+    "Getaway Glamer": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/GetawayGlamer.kt",
+    "Ghost Vacuum": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/GhostVacuum.kt",
+    "Ghost of Illyria": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/GhostOfIllyria.kt",
+    "Ghostly Flicker": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/GhostlyFlicker.kt",
+    "Gisa, Glorious Resurrector": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/GisaGloriousResurrector.kt",
+    "Glass Casket": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eld/cards/GlassCasket.kt",
+    "Glorious Protector": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/GloriousProtector.kt",
+    "Go Ninja Go": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/GoNinjaGo.kt",
+    "Godsend": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jou/cards/Godsend.kt",
+    "Gorex, the Tombshell": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mic/cards/GorexTheTombshell.kt",
+    "Gossip's Talent": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/GossipsTalent.kt",
+    "Grasping Giant": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/GraspingGiant.kt",
+    "Guardian of Ghirapur": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/GuardianOfGhirapur.kt",
+    "Hallowed Respite": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/HallowedRespite.kt",
+    "Hardlight Containment": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/HardlightContainment.kt",
+    "Haru, Hidden Talent": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/HaruHiddenTalent.kt",
+    "Hazel's Brewmaster": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/HazelsBrewmaster.kt",
+    "Hedonist's Trove": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/HedonistsTrove.kt",
+    "Helvault": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/Helvault.kt",
+    "Henchbots": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/Henchbots.kt",
+    "Hew the Entwood": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/HewTheEntwood.kt",
+    "Hide on the Ceiling": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/HideOnTheCeiling.kt",
+    "Hieromancer's Cage": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m19/cards/HieromancersCage.kt",
+    "Hikari, Twilight Guardian": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/HikariTwilightGuardian.kt",
+    "Hixus, Prison Warden": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ori/cards/HixusPrisonWarden.kt",
+    "Hoarding Dragon": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m11/cards/HoardingDragon.kt",
+    "Hofri Ghostforge": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/HofriGhostforge.kt",
+    "Hostage Taker": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/HostageTaker.kt",
+    "Hostile Hostel": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/HostileHostel.kt",
+    "Howltooth Hollow": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/HowltoothHollow.kt",
+    "Identity Thief": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/IdentityThief.kt",
+    "Idol of Endurance": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m21/cards/IdolOfEndurance.kt",
+    "Illusionist's Stratagem": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/IllusionistsStratagem.kt",
+    "In the Trenches": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/InTheTrenches.kt",
+    "Indomitable Creativity": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/IndomitableCreativity.kt",
+    "Induced Amnesia": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/InducedAmnesia.kt",
+    "Intrepid Paleontologist": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/IntrepidPaleontologist.kt",
+    "Isochron Scepter": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/IsochronScepter.kt",
+    "Isolation Zone": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ogw/cards/IsolationZone.kt",
+    "Ixalan's Binding": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/IxalansBinding.kt",
+    "Jacob Hauken, Inspector": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/JacobHaukenInspector.kt",
+    "Journey to Oblivion": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/JourneyToOblivion.kt",
+    "Justiciar's Portal": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/JusticiarsPortal.kt",
+    "Karn Liberated": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nph/cards/KarnLiberated.kt",
+    "Keen-Eyed Curator": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/KeenEyedCurator.kt",
+    "King Narfi's Betrayal": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/KingNarfisBetrayal.kt",
+    "Kitesail Freebooter": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/KitesailFreebooter.kt",
+    "Knowledge Vault": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/leg/cards/KnowledgeVault.kt",
+    "Koh, the Face Stealer": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/KohTheFaceStealer.kt",
+    "Koya, Death from Above": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/KoyaDeathFromAbove.kt",
+    "Krang & Shredder": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/KrangAndShredder.kt",
+    "Kykar, Zephyr Awakener": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fdn/cards/KykarZephyrAwakener.kt",
+    "Kylox's Voltstrider": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/KyloxsVoltstrider.kt",
+    "Lagrella, the Magpie": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/LagrellaTheMagpie.kt",
+    "Lake-town Mariners": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/LaketownMariners.kt",
+    "Lassoed by the Law": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/LassoedByTheLaw.kt",
+    "Lazav, Wearer of Faces": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/LazavWearerOfFaces.kt",
+    "Leyline Binding": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/LeylineBinding.kt",
+    "Liberate": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/Liberate.kt",
+    "Lilysplash Mentor": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/LilysplashMentor.kt",
+    "Liminal Hold": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/LiminalHold.kt",
+    "Living Lore": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/LivingLore.kt",
+    "Long River Lurker": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/LongRiverLurker.kt",
+    "Long Road Home": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/LongRoadHome.kt",
+    "Lumbering Battlement": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/LumberingBattlement.kt",
+    "Makeshift Binding": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/MakeshiftBinding.kt",
+    "Malfunctioning Holodeck": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/MalfunctioningHolodeck.kt",
+    "Maralen, Fae Ascendant": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/MaralenFaeAscendant.kt",
+    "Mardu Siegebreaker": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/MarduSiegebreaker.kt",
+    "Meandering Towershell": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/MeanderingTowershell.kt",
+    "Mechtitan Core": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/MechtitanCore.kt",
+    "Memory Trap": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/MemoryTrap.kt",
+    "Meneldor, Swift Savior": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/MeneldorSwiftSavior.kt",
+    "Meticulous Excavation": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/MeticulousExcavation.kt",
+    "Mirror Golem": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MirrorGolem.kt",
+    "Mistbind Clique": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/MistbindClique.kt",
+    "Molten Gatekeeper": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/MoltenGatekeeper.kt",
+    "Momentary Blink": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/MomentaryBlink.kt",
+    "Moonring Mirror": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/MoonringMirror.kt",
+    "Morningtide's Light": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/MorningtidesLight.kt",
+    "Mosswort Bridge": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/MosswortBridge.kt",
+    "Mourner's Shield": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MournersShield.kt",
+    "Mysterious Limousine": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/MysteriousLimousine.kt",
+    "Mystical Tether": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/MysticalTether.kt",
+    "Nephalia Smuggler": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/NephaliaSmuggler.kt",
+    "Nezahal, Primal Tide": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/NezahalPrimalTide.kt",
+    "Niko, Light of Hope": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/NikoLightOfHope.kt",
+    "Northampton Farm": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/NorthamptonFarm.kt",
+    "Nova Chaser": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/NovaChaser.kt",
+    "Null Summoner": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/NullSummoner.kt",
+    "Oath of Teferi": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/OathOfTeferi.kt",
+    "Oblivion Ring": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt",
+    "Ojutai Exemplars": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/OjutaiExemplars.kt",
+    "Old Stickfingers": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/OldStickfingers.kt",
+    "Omenpath Journey": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/big/cards/OmenpathJourney.kt",
+    "Open the Way": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mat/cards/OpenTheWay.kt",
+    "Ossification": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/Ossification.kt",
+    "Otherworldly Journey": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/OtherworldlyJourney.kt",
+    "Page, Loose Leaf": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/PageLooseLeaf.kt",
+    "Parallel Thoughts": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/scg/cards/ParallelThoughts.kt",
+    "Parting Gust": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/PartingGust.kt",
+    "Patchwork Crawler": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/PatchworkCrawler.kt",
+    "Perilous Snare": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/PerilousSnare.kt",
+    "Personify": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/Personify.kt",
+    "Pinnacle Starcage": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/PinnacleStarcage.kt",
+    "Pit of Offerings": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/PitOfOfferings.kt",
+    "Planar Incision": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/PlanarIncision.kt",
+    "Portable Hole": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/PortableHole.kt",
+    "Prayer of Binding": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/PrayerOfBinding.kt",
+    "Prison Realm": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/PrisonRealm.kt",
+    "Profane Procession": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/ProfaneProcession.kt",
+    "Quarantine Field": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/QuarantineField.kt",
+    "Quintorius, Loremaster": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/QuintoriusLoremaster.kt",
+    "Rabble Rousing": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/RabbleRousing.kt",
+    "Random Encounter": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/RandomEncounter.kt",
+    "Raphael, Most Attitude": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/RaphaelMostAttitude.kt",
+    "Rebellious Captives": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/RebelliousCaptives.kt",
+    "Restoration Angel": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/RestorationAngel.kt",
+    "Roads Go Ever, Ever On": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/RoadsGoEverEverOn.kt",
+    "Rockalanche": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/Rockalanche.kt",
+    "Rogue Class": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/RogueClass.kt",
+    "Roll-Roll-Roll-Roll": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/RollRollRollRoll.kt",
+    "Rona, Disciple of Gix": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/RonaDiscipleOfGix.kt",
+    "S.H.I.E.L.D. Flying Car": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/ShieldFlyingCar.kt",
+    "Safe Haven": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/drk/cards/SafeHaven.kt",
+    "Salvation Swan": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/SalvationSwan.kt",
+    "Sandbenders' Storm": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/SandbendersStorm.kt",
+    "Savior of Ollenbock": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorOfOllenbock.kt",
+    "Scrollshift": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/Scrollshift.kt",
+    "Seal Away": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/SealAway.kt",
+    "Seal from Existence": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/SealFromExistence.kt",
+    "Seam Rip": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/SeamRip.kt",
+    "Secret Invasion": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/SecretInvasion.kt",
+    "Semester's End": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/SemestersEnd.kt",
+    "Sentinel of the Pearl Trident": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/SentinelOfThePearlTrident.kt",
+    "Settle Beyond Reality": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh1/cards/SettleBeyondReality.kt",
+    "Severance Priest": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/SeverancePriest.kt",
+    "Shared Fate": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/SharedFate.kt",
+    "Shell of the Last Kappa": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/ShellOfTheLastKappa.kt",
+    "Shelldock Isle": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ShelldockIsle.kt",
+    "Sheltered by Ghosts": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/ShelteredByGhosts.kt",
+    "Shire Shirriff": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/ShireShirriff.kt",
+    "Shorecrasher Elemental": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/ShorecrasherElemental.kt",
+    "Sigrid, God-Favored": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/SigridGodFavored.kt",
+    "Silkwrap": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/Silkwrap.kt",
+    "Siren's Ruse": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/SirensRuse.kt",
+    "Sisters of Stone Death": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/SistersOfStoneDeath.kt",
+    "Skyclave Apparition": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/SkyclaveApparition.kt",
+    "Skycoach Conductor": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/sos/cards/SkycoachConductor.kt",
+    "Skyskipper Duo": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/SkyskipperDuo.kt",
+    "Slip On the Ring": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/SlipOnTheRing.kt",
+    "Sm\u00e9agol, Helpful Guide": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/SmeagolHelpfulGuide.kt",
+    "Sol'Kanar the Tainted": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/SolKanarTheTainted.kt",
+    "Solitary Cell": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/SolitaryCell.kt",
+    "Sothera, the Supervoid": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/SotheraTheSupervoid.kt",
+    "Soul Foundry": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/SoulFoundry.kt",
+    "Spell Queller": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/SpellQueller.kt",
+    "Spellweaver Helix": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/SpellweaverHelix.kt",
+    "Spinerock Knoll": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/SpinerockKnoll.kt",
+    "Splash Portal": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/SplashPortal.kt",
+    "Stasis Snare": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/StasisSnare.kt",
+    "Static Net": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/StaticNet.kt",
+    "Static Prison": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/StaticPrison.kt",
+    "Static Snare": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/StaticSnare.kt",
+    "Stenn, Paranoid Partisan": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/StennParanoidPartisan.kt",
+    "Steward of the Harvest": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdc/cards/StewardOfTheHarvest.kt",
+    "Stormplain Detainment": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/StormplainDetainment.kt",
+    "Summon: Esper Valigarmanda": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fic/cards/SummonEsperValigarmanda.kt",
+    "Summon: Ixion": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fic/cards/SummonIxion.kt",
+    "Super Villain Lockup": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/SuperVillainLockup.kt",
+    "Suspension Field": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/SuspensionField.kt",
+    "Synod Sanctum": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/SynodSanctum.kt",
+    "Tawnos's Coffin": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/atq/cards/TawnossCoffin.kt",
+    "Teferi's Time Twist": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/TeferisTimeTwist.kt",
+    "Teleportation Circle": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/TeleportationCircle.kt",
+    "Temporary Lockdown": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/TemporaryLockdown.kt",
+    "Territory Forge": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/big/cards/TerritoryForge.kt",
+    "Test of Priorities": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/TestOfPriorities.kt",
+    "Thassa, Deep-Dwelling": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/ThassaDeepDwelling.kt",
+    "The Boulder, Ready to Rumble": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TheBoulderReadyToRumble.kt",
+    "The Cave of Two Lovers": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TheCaveOfTwoLovers.kt",
+    "The Cloning of Shredder": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/TheCloningOfShredder.kt",
+    "The Creation of Avacyn": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/TheCreationOfAvacyn.kt",
+    "The Eternal Wanderer": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/TheEternalWanderer.kt",
+    "The Kenriths' Royal Funeral": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mat/cards/TheKenrithsRoyalFuneral.kt",
+    "The Legend of Kyoshi": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TheLegendOfKyoshi.kt",
+    "The Measure of a Man": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/trk/cards/TheMeasureOfAMan.kt",
+    "The Mighty Thor, Jane Foster": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/TheMightyThorJaneFoster.kt",
+    "The Mind Stone": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/TheMindStone.kt",
+    "The Neutrinos": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/TheNeutrinos.kt",
+    "The Princess Takes Flight": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/ThePrincessTakesFlight.kt",
+    "The Ring Goes South": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/TheRingGoesSouth.kt",
+    "The Spot, Living Portal": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/TheSpotLivingPortal.kt",
+    "The Temporal Anchor": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/TheTemporalAnchor.kt",
+    "Theater of Horrors": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/TheaterOfHorrors.kt",
+    "Thopter Arrest": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/ThopterArrest.kt",
+    "Thought Prison": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/ThoughtPrison.kt",
+    "Thoughtweft Trio": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/ThoughtweftTrio.kt",
+    "Toluz, Clever Conductor": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/ToluzCleverConductor.kt",
+    "Toph, Earthbending Master": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/TophEarthbendingMaster.kt",
+    "Toph, Greatest Earthbender": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/TophGreatestEarthbender.kt",
+    "Toph, Hardheaded Teacher": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TophHardheadedTeacher.kt",
+    "Toph, the Blind Bandit": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TophTheBlindBandit.kt",
+    "Toph, the First Metalbender": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/TophTheFirstMetalbender.kt",
+    "Touch the Spirit Realm": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/TouchTheSpiritRealm.kt",
+    "Trapjaw Tyrant": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/TrapjawTyrant.kt",
+    "Trapped in the Screen": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/TrappedInTheScreen.kt",
+    "Trove Warden": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znc/cards/TroveWarden.kt",
+    "Turncoat Kunoichi": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/TurncoatKunoichi.kt",
+    "Twining Twins": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/TwiningTwins.kt",
+    "Uba Mask": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/UbaMask.kt",
+    "Ugin's Labyrinth": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/UginsLabyrinth.kt",
+    "Underworld Sentinel": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/thb/cards/UnderworldSentinel.kt",
+    "Unidentified Hovership": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/UnidentifiedHovership.kt",
+    "Unlicensed Hearse": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/UnlicensedHearse.kt",
+    "Unyielding Gatekeeper": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/UnyieldingGatekeeper.kt",
+    "Urborg Scavengers": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mat/cards/UrborgScavengers.kt",
+    "Valakut Exploration": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ValakutExploration.kt",
+    "Valki, God of Lies": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/ValkiGodOfLies.kt",
+    "Vault 13: Dweller's Journey": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pip/cards/Vault13DwellersJourney.kt",
+    "Veteran Survivor": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/VeteranSurvivor.kt",
+    "Vindictive Triumph": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/VindictiveTriumph.kt",
+    "Vizier of Deferment": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/VizierOfDeferment.kt",
+    "Voyager Staff": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rav/cards/VoyagerStaff.kt",
+    "Wanderwine Prophets": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/WanderwineProphets.kt",
+    "Waterbender's Restoration": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tle/cards/WaterbendersRestoration.kt",
+    "Web Up": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/WebUp.kt",
+    "Werefox Bodyguard": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/WerefoxBodyguard.kt",
+    "White Auracite": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/WhiteAuracite.kt",
+    "Wiccan, Rising Magician": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/WiccanRisingMagician.kt",
+    "Widespread Thieving": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/WidespreadThieving.kt",
+    "Windbrisk Heights": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/WindbriskHeights.kt",
+    "Wiretapping": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/Wiretapping.kt",
+    "Wispweaver Angel": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/WispweaverAngel.kt",
+    "Wizard's Spellbook": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/WizardsSpellbook.kt",
+    "Wren's Run Packmaster": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/WrensRunPackmaster.kt",
+    "Wrenn and Seven": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/WrennAndSeven.kt",
+    "Y'shtola Rhul": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/YshtolaRhul.kt",
+    "Zuko, Conflicted": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/ZukoConflicted.kt"
+  },
+  "unattributedDeclarations": [
+    {
+      "card": "All Good Things...",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[1].effects[2]"
+    },
+    {
+      "card": "All Good Things...",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[1].effects[2]"
+    },
+    {
+      "card": "All Good Things...",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[1].effects[2]"
+    },
+    {
+      "card": "Asmodeus the Archfiend",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].replacementEffect.effects[1]"
+    },
+    {
+      "card": "Deadeye Navigator",
+      "face": "front",
+      "nativePath": "script.staticAbilities[0].ability.effect.effects[0]"
+    },
+    {
+      "card": "Deadeye Navigator",
+      "face": "front",
+      "nativePath": "script.staticAbilities[0].ability.effect.effects[1]"
+    },
+    {
+      "card": "Estrid's Invocation",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].exceptions.addedTriggeredAbilities[0].effect.then.effects[1]"
+    },
+    {
+      "card": "Estrid's Invocation",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].exceptions.addedTriggeredAbilities[0].effect.then.effects[2]"
+    },
+    {
+      "card": "Gossip's Talent",
+      "face": "front",
+      "nativePath": "script.classLevels[1].triggeredAbilities[0].effect.then.effects[0]"
+    },
+    {
+      "card": "Gossip's Talent",
+      "face": "front",
+      "nativePath": "script.classLevels[1].triggeredAbilities[0].effect.then.effects[1]"
+    },
+    {
+      "card": "King Narfi's Betrayal",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[1]"
+    },
+    {
+      "card": "King Narfi's Betrayal",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[3]"
+    },
+    {
+      "card": "Living Lore",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].effect.effects[2]"
+    },
+    {
+      "card": "Parallel Thoughts",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].replacementEffect.effects[1]"
+    },
+    {
+      "card": "Roads Go Ever, Ever On",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[2]"
+    },
+    {
+      "card": "Roads Go Ever, Ever On",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[2]"
+    },
+    {
+      "card": "Roads Go Ever, Ever On",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[2]"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[0]"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[1].effect"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[0]"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[1].effect"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[0]"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[1].effect"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[3].effect.effects[0]"
+    },
+    {
+      "card": "Roll-Roll-Roll-Roll",
+      "face": "front",
+      "nativePath": "script.sagaChapters[3].effect.effects[1].effect"
+    },
+    {
+      "card": "Shared Fate",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].replacementEffect.effects[1]"
+    },
+    {
+      "card": "Summon: Esper Valigarmanda",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[1]"
+    },
+    {
+      "card": "Summon: Ixion",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect"
+    },
+    {
+      "card": "The Cave of Two Lovers",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[2]"
+    },
+    {
+      "card": "The Cave of Two Lovers",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[3].ability.effect.effects[0]"
+    },
+    {
+      "card": "The Cave of Two Lovers",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[3].ability.effect.effects[1]"
+    },
+    {
+      "card": "The Cloning of Shredder",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[0]"
+    },
+    {
+      "card": "The Creation of Avacyn",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.effects[2]"
+    },
+    {
+      "card": "The Creation of Avacyn",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[1].ifNotEmpty.effects[1].then.effects[0]"
+    },
+    {
+      "card": "The Creation of Avacyn",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[3]"
+    },
+    {
+      "card": "The Legend of Kyoshi",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[3].ability.effect.effects[0]"
+    },
+    {
+      "card": "The Legend of Kyoshi",
+      "face": "front",
+      "nativePath": "script.sagaChapters[1].effect.effects[3].ability.effect.effects[1]"
+    },
+    {
+      "card": "The Measure of a Man",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect"
+    },
+    {
+      "card": "The Measure of a Man",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[1]"
+    },
+    {
+      "card": "The Princess Takes Flight",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect"
+    },
+    {
+      "card": "The Princess Takes Flight",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[1]"
+    },
+    {
+      "card": "Uba Mask",
+      "face": "front",
+      "nativePath": "script.replacementEffects[0].replacementEffect.effects[1]"
+    },
+    {
+      "card": "Vault 13: Dweller's Journey",
+      "face": "front",
+      "nativePath": "script.sagaChapters[0].effect.body"
+    },
+    {
+      "card": "Vault 13: Dweller's Journey",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[2]"
+    },
+    {
+      "card": "Vault 13: Dweller's Journey",
+      "face": "front",
+      "nativePath": "script.sagaChapters[2].effect.effects[3].body.effects[2]"
+    }
+  ]
+}

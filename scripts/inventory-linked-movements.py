@@ -2,6 +2,7 @@
 import collections
 import json
 import pathlib
+import re
 import sys
 
 MOVES = {"MoveToZone", "MoveCollection", "ExileUntilLeaves", "MoveUntilSourceLeaves", "ExileWithAurasNotingCounters", "ReturnOneFromLinkedExile", "ReturnNotedExileTappedWithAuras"}
@@ -59,7 +60,10 @@ def main():
     links=[l for r in rows for l in r["links"]]
     summary=dict(total,physicalCatalogCards=len(all_cards),catalogFaces=all_faces,
         candidatePhysicalCards=len({r["physical"] for r in rows}),candidateFaces=len(rows),
-        candidateMovementActions=len({(r["physical"],r["face"],m["action"]) for r in rows for m in r["movementDeclarations"]}),
+        candidateRootActionContainers=len({(r["physical"],r["face"],m["action"]) for r in rows for m in r["movementDeclarations"]
+            if m["action"]=="script.spell" or re.fullmatch(r"script\.(?:triggeredAbilities|activatedAbilities|stateTriggeredAbilities)\[\d+\]",m["action"])}),
+        otherMovementDeclarationContainers=len({(r["physical"],r["face"],m["action"]) for r in rows for m in r["movementDeclarations"]
+            if m["action"]!="script.spell" and not re.fullmatch(r"script\.(?:triggeredAbilities|activatedAbilities|stateTriggeredAbilities)\[\d+\]",m["action"])}),
         relationships=len(links),newlySupportedPhysicalCards=len({r["physical"] for r in rows if any(l["support"]=="MATCH" for l in r["links"])}),
         relationshipKinds=dict(collections.Counter(l["kind"] for l in links)),
         unknownReasons=dict(collections.Counter(s for l in links for s in l["unresolved"])))

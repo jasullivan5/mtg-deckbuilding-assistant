@@ -1,0 +1,399 @@
+{
+  "applicationBaseline": "ec6e61e6309e7891b61ec88252dd1dc3f33cb9dc",
+  "implementationRevision": "a0521ac6b57815d1c230dc783d79ed2e584b8002",
+  "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "jdk": "Temurin java and javac 25.0.4.1",
+  "kotlinSuite": {
+    "tests": 805,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "newChecks": [
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Cloudshift uses native ordered transitions and renews the selected original card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Cloudshift rejects a land and an opposing creature as targets",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Cloudshift does not invent a return when the sole target becomes illegal",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Cloudshift exiles a token without returning an original card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Cloudshift retains its distinct owner versus controller return semantics",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Momentary Blink uses native ordered transitions and renews the selected original card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Momentary Blink rejects a land and an opposing creature as targets",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Momentary Blink does not invent a return when the sole target becomes illegal",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Momentary Blink exiles a token without returning an original card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Momentary Blink retains its distinct owner versus controller return semantics",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Oblivion Ring establishes an actual native source pile and departure returns its card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Oblivion Ring keeps simultaneous same-name sources independent and removes stale exile membership",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Oblivion Ring departure before entry-trigger resolution records native timing boundary",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Banisher Priest establishes an actual native source pile and departure returns its card",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Banisher Priest keeps simultaneous same-name sources independent and removes stale exile membership",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementScenarioTest",
+      "test": "Banisher Priest departure before entry-trigger resolution records native timing boundary",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "source cohort remains hash bound and has distinct Oracle identities",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "real immediate relationships reference both existing facts without changing their uncertainty",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "different native targets and identical printed names never join",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "separated instructions and a deferred continuation stay UNKNOWN",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "optional sequences and mutually exclusive branches cannot become mandatory links",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "no exile and no return remain distinct from a supported relationship",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "multiple exile-producing ability instances cannot claim an ability-specific source pile",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "a declared exile from an incompatible target zone cannot establish a supported link",
+      "passed": true
+    },
+    {
+      "suite": "dev.mtg.assistant.LinkedMovementTest",
+      "test": "old action JSON decodes with no invented links and current links round trip",
+      "passed": true
+    }
+  ],
+  "nativeObservations": [
+    {
+      "card": "Cloudshift",
+      "kind": "immediate",
+      "observation": {
+        "verdict": "MATCH",
+        "departureObject": {
+          "entityId": "a54cde51-067b-4d76-898c-6de74f95c522",
+          "generation": 95
+        },
+        "intermediateObject": {
+          "entityId": "a54cde51-067b-4d76-898c-6de74f95c522",
+          "generation": 105
+        },
+        "returnedObject": {
+          "entityId": "a54cde51-067b-4d76-898c-6de74f95c522",
+          "generation": 106
+        },
+        "currentResult": true,
+        "reason": "Observed native transition chain; success applies only to this supplied resolution, not future returns"
+      }
+    },
+    {
+      "card": "Momentary Blink",
+      "kind": "immediate",
+      "observation": {
+        "verdict": "MATCH",
+        "departureObject": {
+          "entityId": "a33589a0-c106-4991-893c-952247107913",
+          "generation": 95
+        },
+        "intermediateObject": {
+          "entityId": "a33589a0-c106-4991-893c-952247107913",
+          "generation": 105
+        },
+        "returnedObject": {
+          "entityId": "a33589a0-c106-4991-893c-952247107913",
+          "generation": 106
+        },
+        "currentResult": true,
+        "reason": "Observed native transition chain; success applies only to this supplied resolution, not future returns"
+      }
+    },
+    {
+      "card": "Oblivion Ring",
+      "kind": "deferred",
+      "sourceVisit": {
+        "source": {
+          "entityId": "435f9374-2876-44a5-8bfb-be6eef1cb470",
+          "generation": 98
+        },
+        "battlefieldTimestamp": 1,
+        "controller": "e0"
+      },
+      "startingObject": {
+        "entityId": "d7f2920a-820d-4441-8c4f-956ef35a2d5f",
+        "generation": 95
+      },
+      "returnedObject": {
+        "entityId": "d7f2920a-820d-4441-8c4f-956ef35a2d5f",
+        "generation": 107
+      },
+      "returnedUnderOwner": true
+    },
+    {
+      "card": "Oblivion Ring",
+      "kind": "departure-before-exile",
+      "oracleRequiresLateExile": true,
+      "observedLateExile": false,
+      "sourceGone": true
+    },
+    {
+      "card": "Banisher Priest",
+      "kind": "deferred",
+      "sourceVisit": {
+        "source": {
+          "entityId": "ad877f66-47a3-4f77-9781-f8714039bdc0",
+          "generation": 98
+        },
+        "battlefieldTimestamp": 1,
+        "controller": "e0"
+      },
+      "startingObject": {
+        "entityId": "2b573b17-ab92-4632-8d1c-250ba6b391f4",
+        "generation": 95
+      },
+      "returnedObject": {
+        "entityId": "2b573b17-ab92-4632-8d1c-250ba6b391f4",
+        "generation": 107
+      },
+      "returnedUnderOwner": true
+    },
+    {
+      "card": "Banisher Priest",
+      "kind": "departure-before-exile",
+      "oracleRequiresLateExile": false,
+      "observedLateExile": false,
+      "sourceGone": true
+    }
+  ],
+  "sourceExpectationScope": "Four-card frozen cohort; author scenarios do not independently qualify cards",
+  "nativeDiscrepancies": {
+    "Oblivion Ring": "Oracle requires late exile after departure-first; unchanged executor skips exile when source absent",
+    "Banisher Priest": "Oracle duration return is represented natively by a separate triggered return; no complete timing fidelity claim"
+  },
+  "hashes": {
+    "src/main/kotlin/discovery/LinkedMovements.kt": "c800d7afc3f59beee34a4ef01dc96167a6e81ae1991f3aa6aad939faae211b8e",
+    "src/main/kotlin/discovery/MovementObservation.kt": "c3e740dfa259859feb70efc3168fd45b770fcb40fd44fe90b9b8df4379b2d996",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "4615f62f9b5b01e23b4c55a887dc540be89c678fea17764cbb7ada026f6a29d2",
+    "src/main/kotlin/discovery/Evidence.kt": "a94432f6834113847ad12099aee687e1cc880c50f6cfcd44edbaca90a3fe8346",
+    "src/test/kotlin/LinkedMovementScenarioTest.kt": "72f56d3bf9fa1f73af63c87aabccf1ccb3283c1472c80978f5066c3b5caad0f1",
+    "src/test/kotlin/LinkedMovementTest.kt": "fda918dfaead58f6ba7f88588e07e88ceab935bbc20025e1a271ef33731241f0",
+    "src/test/resources/regression/linked-movement-rulings.json": "dd02511a8002e6da3a00330ecee3ca3f76c879dc5aca13f9c43158a6a4224596",
+    "src/test/resources/regression/linked-movement-sources.json": "9566f813daffa3a88d199b880620793266022ff3741ccbe7c2c4e680a1d3fbf3",
+    "docs/evidence/LinkedMovementInventory.java": "f859487bc030c6f98e7fb128acec94f8fc9efcffe337aaefba956d7682208ef8",
+    "scripts/compare-linked-movements.py": "f729dbb7856347fb91688a93b7ad799cd4179ed9f818d5dae01ad42d08b6ad3f",
+    "scripts/inventory-linked-movements.py": "099c96979f45612653a325ddbcc8b5b673c99b38e48a492fe8a276c2c907b3ca"
+  },
+  "observationCount": 6,
+  "fullLogSha256": "0cc74e90b34ac6f3ba842ee6ff0d5bbf37156d1a9f7af46c0fd9e275c2bf7846",
+  "installedApplicationJarSha256": "024e9d6d40924565dadebe674a0ec4c9c0c467bbf11402410f96fd9a2b80abc5",
+  "catalog": {
+    "mode": "current",
+    "passed": true,
+    "currentChecksPassed": true,
+    "historicalFingerprintsMatch": false,
+    "actualEngineCommit": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    }
+  },
+  "discoverComparison": {
+    "pairs": 18,
+    "allPreexistingFieldsExactlyEqual": true,
+    "receipt": "linked-movement-comparison.json",
+    "sha256": "540be2b5d50a1cac9467b7d83a58614335294098dcd6ecd03f222bef596b6f09"
+  },
+  "historicalDecode": {
+    "report": "merged baseline Krenko create-creature-tokens",
+    "inputSha256": "ec63f9554f646a3dff86212499ed7c8193dc7bd9a9595b4659bb6f6811d33600",
+    "exitCode": 0,
+    "mode": "existing audit coverage at offline 4 GiB allowance",
+    "olderSdkSchema": "LandTappedForMana incompatibility unchanged and not reinvestigated"
+  },
+  "workflowChecks": {
+    "bootstrap": 17,
+    "oracleSnapshot": 3,
+    "catalogComparator": 5,
+    "allPassed": true,
+    "frontendBuild": "passed"
+  },
+  "runtime": {
+    "heap": "1 GiB",
+    "activeProcessorCount": 4,
+    "health": {
+      "status": "ready",
+      "argentumCommit": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "engineMode": "app-stable",
+      "applicationRevision": "a0521ac6b57815d1c230dc783d79ed2e584b8002+dirty"
+    },
+    "checks": [
+      "freshly built frontend served",
+      "cold Progress",
+      "Kenrith direct-reanimation discovery",
+      "four current action-level movement links",
+      "none admitted as reanimation",
+      "retained Progress",
+      "final ready health",
+      "owned server stopped"
+    ],
+    "evidence": [
+      {
+        "card": "Cloudshift",
+        "linkId": "Cloudshift|front|script.spell|script.spellEffect.effects[1]|LINK",
+        "kind": "IMMEDIATE_ORDERED",
+        "support": "MATCH",
+        "reanimationVerdicts": [
+          "NO_MATCH",
+          "NO_MATCH"
+        ]
+      },
+      {
+        "card": "Momentary Blink",
+        "linkId": "Momentary Blink|front|script.spell|script.spellEffect.effects[1]|LINK",
+        "kind": "IMMEDIATE_ORDERED",
+        "support": "MATCH",
+        "reanimationVerdicts": [
+          "NO_MATCH",
+          "NO_MATCH"
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "linkId": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+        "kind": "DEFERRED_SOURCE_LINKED",
+        "support": "MATCH",
+        "reanimationVerdicts": [
+          "UNKNOWN"
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "linkId": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+        "kind": "DEFERRED_SOURCE_LINKED",
+        "support": "MATCH",
+        "reanimationVerdicts": [
+          "UNKNOWN"
+        ]
+      }
+    ]
+  },
+  "unexecuted": [
+    "separate full engine regression suite",
+    "browser automation"
+  ],
+  "intermediateAttempts": [
+    "Initial focused run: 23 checks, five fixture failures (illegal Unsummon target for enchantment; raw control component instead of projected control). Frozen source requirements were not changed.",
+    "Corrected focused run: 23 passed.",
+    "Full attempts interrupted before completion while final guards and retained observations were added. Only final 805-test run counted.",
+    "Sandbox workflow/cache attempts superseded by successful JDK 25 workflow runs with required local process/cache access."
+  ],
+  "inventory": {
+    "receipt": "linked-movement-inventory.json",
+    "sha256": "b826d80db50c4eedc7e72acdc8b96d534915f5ec05b31fc82f893c917d9222f8",
+    "normalHeap": "1 GiB",
+    "nativeSourcePaths": "existing compiled-getter DefinitionSources index; all 383 candidate paths resolve in frozen engine",
+    "outsideRootActionAttribution": "515 root authoring containers and 45 other declaration containers; not 560 bound actions"
+  }
+}
