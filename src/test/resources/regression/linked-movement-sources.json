@@ -1,0 +1,69 @@
+{
+  "applicationBase": "ec6e61e6309e7891b61ec88252dd1dc3f33cb9dc",
+  "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "expectations": {
+    "Cloudshift": "Same selected nontoken card, exile then return under our control; new game object.",
+    "Momentary Blink": "Same selected nontoken card, exile then return under owner control; flashback separate.",
+    "Oblivion Ring": "Separate triggers: departure before entry resolution returns nothing, then exile still occurs. Native presence guard contradicts this.",
+    "Banisher Priest": "Duration return, not independent return trigger. Native extra trigger raises timing fidelity concern."
+  },
+  "cases": {
+    "Cloudshift": {
+      "source": {
+        "name": "Cloudshift",
+        "id": "6dc0c976-26d2-40c9-a571-c370e9139d1d",
+        "oracle_id": "6879f5ce-7a1b-4606-bad1-885779b0d456",
+        "set": "tle",
+        "collector_number": "152",
+        "oracle_text": "Exile target creature you control, then return that card to the battlefield under your control.",
+        "scryfall_uri": "https://scryfall.com/card/tle/152/cloudshift?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/6dc0c976-26d2-40c9-a571-c370e9139d1d/rulings"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/Cloudshift.kt",
+      "nativeLfSha256": "776cb2699b3d6b0c2b18182b6bf2b66a325f5b9caae78ba11c53142f5aa910bb"
+    },
+    "Banisher Priest": {
+      "source": {
+        "name": "Banisher Priest",
+        "id": "0e518f9e-d74d-4a6f-8fde-5e3ec5834e63",
+        "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+        "set": "moc",
+        "collector_number": "173",
+        "oracle_text": "When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield.",
+        "scryfall_uri": "https://scryfall.com/card/moc/173/banisher-priest?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/0e518f9e-d74d-4a6f-8fde-5e3ec5834e63/rulings"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt",
+      "nativeLfSha256": "3a24ad6557275ce7340ff53e3c15d656774a479616ec5e870eca3a404d387000"
+    },
+    "Momentary Blink": {
+      "source": {
+        "name": "Momentary Blink",
+        "id": "619c620d-1920-40d1-98d4-df5607f84d26",
+        "oracle_id": "a3ec6b5d-08ec-4ae0-b1db-c4b87a1849c7",
+        "set": "dmr",
+        "collector_number": "15",
+        "oracle_text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+        "scryfall_uri": "https://scryfall.com/card/dmr/15/momentary-blink?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/619c620d-1920-40d1-98d4-df5607f84d26/rulings"
+      },
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tsp/cards/MomentaryBlink.kt",
+      "nativeLfSha256": "38d6a09129f2bf304e4b9535efb4da121580d85c601c9f36bcd971644ece801b"
+    },
+    "Oblivion Ring": {
+      "source": {
+        "name": "Oblivion Ring",
+        "id": "bff31eba-8ab3-403e-8d82-37a18b279bec",
+        "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+        "set": "mm2",
+        "collector_number": "29",
+        "oracle_text": "When this enchantment enters, exile another target nonland permanent.\nWhen this enchantment leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+        "scryfall_uri": "https://scryfall.com/card/mm2/29/oblivion-ring?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/bff31eba-8ab3-403e-8d82-37a18b279bec/rulings"
+      },
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt",
+      "nativeLfSha256": "303f6b87ac07652885e1ef825f5289c2c5098fb55541ceebc003ea1bf1b2e76f"
+    }
+  }
+}
