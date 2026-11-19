@@ -64,6 +64,8 @@ class AuraAttachmentTest : FunSpec({
                             buildJsonObject {
                                 put("path", dependency.path)
                                 put("kind", dependency.kind.name)
+                                put("nativeType", dependency.native.jsonObject["type"]?.jsonPrimitive?.content)
+                                put("triggerType", dependency.native.jsonObject["trigger"]?.jsonObject?.get("type")?.jsonPrimitive?.content)
                                 put("verdict", dependency.verdict.name)
                                 put("reason", dependency.reason)
                             }
