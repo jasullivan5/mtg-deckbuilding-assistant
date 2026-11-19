@@ -18,7 +18,7 @@ import kotlinx.serialization.json.*
 private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), this)
 private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
-    val movementTargets: MutableMap<String,List<ObjectScope>> = mutableMapOf(),
+    val movementTargets: MutableMap<String,TargetMovement> = mutableMapOf(),
     val collections: MutableMap<String,ObjectScope> = mutableMapOf(), val collectionMax: MutableMap<String,Int?> = mutableMapOf(), val guardConfidence: Verdict = Verdict.MATCH, val factGuard: Verdict = Verdict.MATCH, val resolutionCost: Boolean = false, val selfZone: Zone? = Zone.BATTLEFIELD, val relationship: String = "UNLINKED_RESOLUTION", val optional: Boolean = false, val delayed: Boolean = false, val objectRestrictions: List<String> = emptyList(),
     val directBattlefieldStepTrigger: Boolean = false, val event: EventContext? = null,
     val outcomeGuard: Verdict = Verdict.MATCH, val returnSource: ReturnSourceContext? = null,
@@ -187,7 +187,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     private var stateRootPath: String? = null
     val eventOutcomes = mutableListOf<EventOutcome>()
     val selfReturns = mutableListOf<SelfReturnLink>()
+    val linkedMovements: List<LinkedMovement> get() = actions.flatMap { it.linkedMovements }
     private var sourceReplacementLimits = emptyList<ReturnLimit>()
+    private var linkedExileProducers = 0
     val facts = mutableListOf<MechanicalFact>()
     val pathways = mutableListOf<Pathway>()
     val actions = mutableListOf<ActionEvidence>()
@@ -300,7 +302,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass,f.manaCost,aura=f.typeLine.isAura) }
     }
     private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, manaCost: ManaCost, keywordAbilities: List<KeywordAbility> = emptyList(), aura: Boolean = false) {
-        face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
+        face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts; linkedExileProducers=0
         if (inspectCounters) script.replacementEffects.forEachIndexed { i, effect -> recordCounterReplacement("script.replacementEffects[$i]", effect) }
         sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
         actionId="${card.name}|$label|script"
@@ -495,6 +497,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 } else issue(path,k,"Keyword-granted actions are not expanded")
             }
         }
+        val deferred = deferredMovementLinks(card.name,label,script,facts,linkedExileProducers)
+        if (deferred.isNotEmpty()) actions[attachmentRootIndex] = actions[attachmentRootIndex].copy(linkedMovements=deferred)
         if (aura || script.auraTarget != null) {
             val root = actions[attachmentRootIndex]
             actions[attachmentRootIndex] = root.copy(
@@ -630,7 +634,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         val requirement=when(val t=e.target) { is EffectTarget.ContextTarget->frame.targets.getOrNull(t.index);is EffectTarget.BoundVariable->frame.targets.find { it.id==t.name };else->null }
         val alternatives=(requirement as? TargetObject)?.filter?.clauses()
         val bindingKey=requirement?.id?.let { "target:$it" } ?: e.target.toString()
-        val objects=frame.movementTargets[bindingKey] ?: alternatives?.map { scope(it) } ?: listOf(targetScope(e.target,frame,selfCreature))
+        val previous=frame.movementTargets[bindingKey]
+        val firstFact=facts.size
+        val objects=previous?.scopes ?: alternatives?.map { scope(it) } ?: listOf(targetScope(e.target,frame,selfCreature))
         objects.forEach { raw ->
             val incompatible=e.fromZone!=null && raw.zone!=null && e.fromZone!=raw.zone
             val obj=raw.copy(zone=e.fromZone ?: raw.zone,zonePlayer=if(e.target==EffectTarget.Self && actionKind=="ACTIVATED" && frame.selfZone==Zone.GRAVEYARD) "YOU" else raw.zonePlayer)
@@ -643,10 +649,24 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         }
         // The same bound target is not still in its original zone after an earlier move.
         // Model only successful arrivals; actual replacement/failure remains an assumption.
-        frame.movementTargets[bindingKey]=objects.map { obj -> obj.copy(zone=e.destination,
+        val step=MovementStep(actionId,path,facts.subList(firstFact,facts.size).map { it.id },
+            e.fromZone ?: objects.map { it.zone }.distinct().singleOrNull(),e.destination,
+            if(e.controllerOverride==null) "OWNER" else playerScope(e.controllerOverride!!,frame),e.tree())
+        if(previous!=null) {
+            val link=immediateMovementLink(card.name,face,bindingKey,previous.step,step,
+                requirement is TargetObject && requirement.count==1 && requirement.minCount==1 && !requirement.optional &&
+                    frame.targets.count { it.id==requirement.id }==1,
+                frame.optional || frame.delayed || frame.factGuard!=Verdict.MATCH || frame.guardConfidence!=Verdict.MATCH ||
+                    frame.returnGuard!=Verdict.MATCH || e.faceDown!=null || e.byDestruction || !previous.departureSupported,frame.assumptions)
+            val index=actions.indexOfLast { it.id==actionId }
+            actions[index]=actions[index].copy(linkedMovements=actions[index].linkedMovements+link)
+        }
+        frame.movementTargets[bindingKey]=TargetMovement(objects.map { obj -> obj.copy(zone=e.destination,
             zonePlayer=if(e.destination==Zone.BATTLEFIELD) "UNKNOWN" else "ANY",
             battlefield=e.destination==Zone.BATTLEFIELD,
-            unresolved=listOfNotNull(obj.unresolved,"Later reference requires the same tracked card and successful earlier movement; original targeting restrictions are retained").joinToString("; ")) }
+            unresolved=listOfNotNull(obj.unresolved,"Later reference requires the same tracked card and successful earlier movement; original targeting restrictions are retained").joinToString("; ")) },step,
+            objects.all { it.unresolved==null && it.possible } && !e.byDestruction && e.faceDown==null &&
+                frame.factGuard==Verdict.MATCH && frame.guardConfidence==Verdict.MATCH && !frame.delayed && !frame.optional)
     }
     /** Called only by the shared native effect walk; token facts do not project death pathways. */
     private fun recordToken(e: Effect,path: String,frame: Frame): Boolean {
@@ -902,6 +922,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
 
     private fun walk(e: Effect,path: String,frame: Frame) {
+        if(e is ExileUntilLeavesEffect || e is ExileWithAurasNotingCountersEffect ||
+            e is MoveToZoneEffect && e.linkToSource || e is MoveCollectionEffect && e.linkToSource) linkedExileProducers++
         if (inspectCounters && recordCounterInstruction(e, path, frame)) return
         if(recordToken(e,path,frame)) return
         if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
