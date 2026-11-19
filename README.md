@@ -4,7 +4,7 @@ A local Commander research application: choose a supported commander and an obje
 
 ## Launch on Windows
 
-Install Git, JDK 21, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the launcher also recognizes user tools under `~/Tools/mtg-dev-tools`.
+Install Git, JDK 25, Node 22.12+ and pnpm 11.25.0. Set JAVA_HOME and PATH; the launcher also recognizes user tools under `~/Tools/mtg-dev-tools`.
 
 ```powershell
 .\scripts\explorer.ps1
@@ -40,6 +40,8 @@ PRs #37–42 merged the Lab and later Progress/trust capabilities. M1/M2 have ex
 
 The user owns goals and acceptance; Product Studio examines direction and evidence; Codex implements explicitly approved assignments. Hands-on review is optional when useful. The [native Explicit tap-payment correction](docs/TAP_PAYMENT_CORRECTION.md) merged separately in engine PR #7 and application PR #44, preserving historical failures. The [counter-placement increment](docs/COUNTER_PLACEMENT_DISCOVERY.md) extends application interpretation and Discover on the unchanged engine.
 
+The [JDK 25 integration amendment](docs/JDK25_INTEGRATION_2026-11-18.md) records the current verified application/engine pair, restored upstream tooling, 1 GiB runtime and coordinated draft PRs. The [original native consolidation delivery](docs/NATIVE_CONSOLIDATION_2026-11-18.md) preserves the JDK 21 history, twelve retired duplicate scripts, source/assurance records and earlier discovery changes.
+
 ## Two sibling repositories
 
 ```text
@@ -65,7 +67,7 @@ Commander legality and full color identity precede mechanical extraction. Unknow
 
 ## Build, tests and CLI
 
-Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 21, Bash and Python 3 support the headless tools. Existing work is never reset or silently switched.
+Use the application wrappers; the sibling engine owns Gradle settings. Git, JDK 25, Bash and Python 3 support the headless tools. Existing work is never reset or silently switched.
 
 ```powershell
 .\scripts\bootstrap.ps1

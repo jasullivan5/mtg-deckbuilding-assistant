@@ -9,12 +9,13 @@ import java.lang.reflect.Modifier
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.encodeToStream
 
 /** Source locations are derived from compiled top-level getters, never a card-name table/parser. */
 internal object DefinitionSources {
     val paths: Map<String,String> by lazy {
         val result=mutableMapOf<String,String>()
-        ClassGraph().acceptPackages("com.wingedsheep.mtg.sets.definitions").enableClassInfo().scan(4).use { scan ->
+        ClassGraph().enableClasspath().acceptPackages("com.wingedsheep.mtg.sets.definitions").enableClassInfo().scan(4).use { scan ->
             for(info in scan.allClasses.sortedBy { it.name }) {
                 if(!info.name.endsWith("Kt")) continue
                 val location=info.classpathElementURI.toString().replace('\\','/')
@@ -24,7 +25,7 @@ internal object DefinitionSources {
                 val prefix=if(era == null) "mtg-sets" else "mtg-sets/$era"
                 val source=info.sourceFile ?: continue
                 val path="$prefix/src/main/kotlin/${info.packageName.replace('.','/')}/$source"
-                val clazz=info.loadClass()
+                val clazz=Class.forName(info.name, false, DefinitionSources::class.java.classLoader)
                 for(method in clazz.declaredMethods) {
                     if(Modifier.isPublic(method.modifiers) && Modifier.isStatic(method.modifiers) && method.parameterCount == 0 && method.returnType == CardDefinition::class.java) {
                         val definition=runCatching { method.invoke(null) as CardDefinition }.getOrNull() ?: continue
@@ -151,6 +152,7 @@ fun discover(catalog: Catalog, commanderName: String, conventionalQuery: String?
         conditionalArrivals=conditionalSacrificeArrivals(direct,extracted.facts),eventOutcomes=extracted.eventOutcomes,selfReturns=extracted.selfReturns)
 }
 
+@OptIn(kotlinx.serialization.ExperimentalSerializationApi::class)
 fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) {
     var commander: String?=null; var query: String?=null; var output: String?=null
     var objective="own-nontoken-creature-deaths"
@@ -169,6 +171,13 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         }
     }
     val report=discover(catalog,commander ?: throw IllegalArgumentException("discover requires --commander <exact name>"),query,objective)
+    val destination=output?.let { Path.of(it).toAbsolutePath() }
+    destination?.parent?.let(Files::createDirectories)
+    if(json && destination!=null) {
+        Files.newOutputStream(destination).buffered().use { reportJson.encodeToStream(report,it) }
+        out("Wrote $destination")
+        return
+    }
     val text=if(json) reportJson.encodeToString(report) else buildString {
         appendLine("Objective: ${report.objective}")
         appendLine("Commander: ${report.commander}; allowed identity: ${report.allowedIdentity}")
@@ -197,9 +206,7 @@ fun discoveryCommand(args: List<String>, catalog: Catalog, out: (String)->Unit) 
         } else appendLine("\nUse --diagnostics for rejected/unknown details; --json exports all decisions, native actions, eligibility and unsupported records.")
         report.limitations.forEach { appendLine("Coverage: $it") }
     }
-    if(output != null) {
-        val destination=Path.of(output)
-        destination.toAbsolutePath().parent?.let(Files::createDirectories)
+    if(destination != null) {
         Files.writeString(destination,text)
         out("Wrote ${destination.toAbsolutePath()}")
     } else out(text)

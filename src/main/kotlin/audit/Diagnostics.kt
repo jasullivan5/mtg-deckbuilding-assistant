@@ -36,20 +36,34 @@ private val reader = Json { ignoreUnknownKeys = true }
 private fun hash(s: String) = MessageDigest.getInstance("SHA-256").digest(s.toByteArray()).joinToString("") { "%02x".format(it) }.take(20)
 private val incidentalKeys = setOf("description","oracleText","flavorText","imageUri","artist","prompt","rulings","metadata")
 /** Alpha-normalize local variables, not mechanical enums or literal card-property restrictions. */
-fun canonicalShape(value: JsonElement): JsonElement {
+fun canonicalShape(value: JsonElement): JsonElement = canonicalShape(value, null)
+
+/** One audit shares identical immutable subtrees; alpha-renaming remains local to each root. */
+internal class CanonicalShapePool {
+    private val nodes = HashMap<JsonElement, JsonElement>()
+    fun canonical(value: JsonElement): JsonElement = canonicalShape(value, nodes)
+}
+
+private fun canonicalShape(value: JsonElement, nodes: MutableMap<JsonElement, JsonElement>?): JsonElement {
     val names = linkedMapOf<String,String>()
     val idKeys=setOf("id","storeAs","storeSelected","storeRemainder","storeMatching","storeNonMatching","from","collection","variableName")
-    fun walk(v: JsonElement,key: String = ""): JsonElement = when(v) {
+    fun walk(v: JsonElement,key: String = ""): JsonElement {
+        val shaped = when(v) {
         is JsonObject -> JsonObject(v.filterKeys { it !in incidentalKeys }.toSortedMap().mapValues { (k,x) -> walk(x,k) })
         is JsonArray -> JsonArray(v.map { walk(it,key) })
         is JsonPrimitive -> if(v.isString && key in idKeys && v.content !in setOf("Battlefield","Graveyard","Exile","Hand","Library","Stack","Command")) JsonPrimitive(names.getOrPut(v.content) { "symbol${names.size}" }) else v
         else -> v
+        }
+        return nodes?.getOrPut(shaped) { shaped } ?: shaped
     }
     return walk(value)
 }
 private fun context(path: String) = path.replace(Regex("\\[\\d+\\]"),"[]").substringBefore(".effect").substringBefore(".spellEffect")
 /** This walk starts from CardDefinition serialization, not extracted actions/pathways. */
 fun nativeNodes(cards: List<CardDefinition>, report: DiscoveryReport): List<NativeNode> = buildList {
+    visitNativeNodes(cards, report, ::add)
+}
+private fun visitNativeNodes(cards: List<CardDefinition>, report: DiscoveryReport, visit: (NativeNode) -> Unit) {
     val actionsByCardFace=report.actions.groupBy { it.card to it.face }
     fun face(def: CardDefinition, face: String, rootName: String) {
         val tree=nativeJson.encodeToJsonElement(CardDefinition.serializer(),def).jsonObject
@@ -61,7 +75,7 @@ fun nativeNodes(cards: List<CardDefinition>, report: DiscoveryReport): List<Nati
                         val action=actionsByCardFace[rootName to face].orEmpty()
                             .filter { it.face == face && (path.startsWith(it.path) || it.path == "script.spell" && path.startsWith("script.spellEffect")) }
                             .maxByOrNull { it.path.length }
-                        add(NativeNode(rootName,face,path,context(path),type,v,action?.id))
+                        visit(NativeNode(rootName,face,path,context(path),type,v,action?.id))
                     }
                     v.forEach { (k,x) -> if(k !in setOf("backFace","flipSide","cardFaces") && k !in incidentalKeys) walk(x,if(path.isEmpty()) k else "$path.$k") }
                 }
@@ -93,44 +107,76 @@ private fun work(type: String) = when(type) {
     "ModifyStats" -> "Check modifier sign/dynamic amount and target scope before inferring potential toughness death"
     else -> "Review native fields and enclosing action; add a reusable interpreter only with positive and negative tests"
 }
-fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageReport {
-    val nodes=nativeNodes(cards,report)
-    val explicit=report.structuralSupport.groupBy { Triple(it.card,it.face,it.path) }
-    val resultsByFace=report.results.groupBy { it.card to it.face }
-    val issuesByFace=report.unsupported.groupBy { it.card to it.face }
-    val paths=report.results.map { Triple(it.card,it.face,it.abilityPath) }.toSet()
-    val sources=report.results.associate { it.actionId to it.sourceReferences }
-    val provenanceByCard=report.eligibility.associate { it.card to it.provenance }
-    val actionMap=report.actions.associateBy { it.id }
-    val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
-    data class Entry(val n: NativeNode,val status: String,val reasons: List<String>,val shape: JsonElement)
-    val entries=nodes.map { n ->
-        val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
-        val matched=Triple(n.card,n.face,n.path) in paths
-        val support=explicit[Triple(n.card,n.face,n.path)].orEmpty()
-        val local=resultsByFace[n.card to n.face].orEmpty().filter { it.abilityPath==n.path }
-        val partialChildren=resultsByFace[n.card to n.face].orEmpty().any { it.abilityPath.startsWith(n.path+".") && it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }
-        val state=when { local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() && partialChildren -> "PARTIALLY_SUPPORTED"
-            support.any { it.status==SupportStatus.UNSUPPORTED } -> "UNSUPPORTED"
-            support.any { it.status==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() && issuesByFace[n.card to n.face].orEmpty().any { it.path.startsWith(n.path+".") } -> "PARTIALLY_SUPPORTED"
-            support.isNotEmpty() -> "SUPPORTED"
-            unsupported.isNotEmpty() -> "UNSUPPORTED_OR_UNRESOLVED"; matched -> "PATHWAY_EXTRACTED"; else -> "OBSERVED_WITHOUT_LOCAL_PATHWAY" }
-        val descendants=issuesByFace[n.card to n.face].orEmpty().filter { it.path.startsWith(n.path+".") }
-        val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
-        if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
-        if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
-        Entry(n,state,reasons.distinct().sorted(),canonicalShape(n.native))
+fun coverage(cards: List<CardDefinition>, report: DiscoveryReport): CoverageReport =
+    coverageChunks(sequenceOf(cards to report),report.commander,report.objective)
+
+/** A catalog observation need not retain extraction for every card at the same time. */
+internal fun coverageByCard(cards: List<CardDefinition>, template: DiscoveryReport,
+    project: (CardDefinition) -> DiscoveryReport): CoverageReport =
+    coverageChunks(cards.asSequence().map { listOf(it) to project(it) },template.commander,template.objective)
+
+private fun coverageChunks(chunks: Sequence<Pair<List<CardDefinition>,DiscoveryReport>>,
+    commander: String, objective: String): CoverageReport {
+    data class Key(val nativeType: String,val context: String,val status: String,val reasons: List<String>,val shape: JsonElement)
+    class Group(val key: Key) {
+        var occurrences = 0
+        var insideAcceptedActions = 0
+        val cards = mutableSetOf<String>()
+        val actions = mutableSetOf<String>()
+        val representatives = mutableListOf<CoverageOccurrence>()
     }
-    val groups=entries.groupBy { "${it.n.nativeType}|${it.n.context}|${it.status}|${it.reasons}|${it.shape}" }.map { (key,es) ->
-        val e=es.first(); val n=e.n
-        CoverageGroup(hash(key),n.nativeType,n.context,e.shape,es.size,es.map { it.n.card }.distinct().size,
-            es.mapNotNull { it.n.actionId }.distinct().size,e.status,e.reasons,if(report.objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(n.nativeType,report.objective)) "POTENTIALLY_RELEVANT" else if(report.objective=="reanimate-own-creatures" && n.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(n.nativeType,e.shape),
-            es.count { it.n.actionId in accepted },es.take(5).map { x -> CoverageOccurrence(x.n.card,x.n.face,x.n.path,x.n.actionId,x.status,x.reasons,
-                sources[x.n.actionId] ?: listOfNotNull("native:${x.n.face}.${x.n.path}", DefinitionSources.paths[x.n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[x.n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source)) },work(n.nativeType))
+    // Retain canonical groups and bounded representatives, not every serialized definition tree.
+    val accumulated = linkedMapOf<Key, Group>()
+    var encounteredTypedNodes = 0
+    var inputCards = 0
+    val factCounts = sortedMapOf<String,Int>()
+    val shapes = CanonicalShapePool()
+    for ((cards,report) in chunks) {
+        inputCards += cards.size
+        report.facts.groupingBy { it.kind.name }.eachCount().forEach { (kind,count) -> factCounts[kind]=(factCounts[kind] ?: 0)+count }
+        val explicit=report.structuralSupport.groupBy { Triple(it.card,it.face,it.path) }
+        val resultsByFace=report.results.groupBy { it.card to it.face }
+        val issuesByFace=report.unsupported.groupBy { it.card to it.face }
+        val paths=report.results.map { Triple(it.card,it.face,it.abilityPath) }.toSet()
+        val sources=report.results.associate { it.actionId to it.sourceReferences }
+        val provenanceByCard=report.eligibility.associate { it.card to it.provenance }
+        val actionMap=report.actions.associateBy { it.id }
+        val accepted=report.results.filter { it.verdict == Verdict.MATCH }.flatMap { listOfNotNull(it.actionId,associatedSpellAction(actionMap,it.actionId)) }.toSet()
+        visitNativeNodes(cards,report) { n ->
+            encounteredTypedNodes++
+            val unsupported=issuesByFace[n.card to n.face].orEmpty().filter { it.path == n.path || n.path.startsWith(it.path+".") }
+            val matched=Triple(n.card,n.face,n.path) in paths
+            val support=explicit[Triple(n.card,n.face,n.path)].orEmpty()
+            val local=resultsByFace[n.card to n.face].orEmpty().filter { it.abilityPath==n.path }
+            val partialChildren=resultsByFace[n.card to n.face].orEmpty().any { it.abilityPath.startsWith(n.path+".") && it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }
+            val state=when { local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() && partialChildren -> "PARTIALLY_SUPPORTED"
+                support.any { it.status==SupportStatus.UNSUPPORTED } -> "UNSUPPORTED"
+                support.any { it.status==SupportStatus.PARTIALLY_SUPPORTED } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() && issuesByFace[n.card to n.face].orEmpty().any { it.path.startsWith(n.path+".") } -> "PARTIALLY_SUPPORTED"
+                support.isNotEmpty() -> "SUPPORTED"
+                unsupported.isNotEmpty() -> "UNSUPPORTED_OR_UNRESOLVED"; matched -> "PATHWAY_EXTRACTED"; else -> "OBSERVED_WITHOUT_LOCAL_PATHWAY" }
+            val descendants=issuesByFace[n.card to n.face].orEmpty().filter { it.path.startsWith(n.path+".") }
+            val reasons=(unsupported.map { it.reason }+support.map { it.reason }).toMutableList()
+            if(partialChildren || local.any { it.localSupport==SupportStatus.PARTIALLY_SUPPORTED }) reasons += "A local or nested pathway retains unresolved mechanical compatibility; recognizing the operation is not complete support"
+            if(support.isNotEmpty() && descendants.isNotEmpty()) reasons += "Local interpretation has unresolved descendants: "+descendants.map { it.reason }.distinct().sorted().joinToString("; ")
+            val key = Key(n.nativeType,n.context,state,reasons.distinct().sorted(),shapes.canonical(n.native))
+            val group = accumulated.getOrPut(key) { Group(key) }
+            group.occurrences++
+            group.cards += n.card
+            n.actionId?.let { group.actions += it }
+            if(n.actionId in accepted) group.insideAcceptedActions++
+            if(group.representatives.size < 5) group.representatives += CoverageOccurrence(n.card,n.face,n.path,n.actionId,state,key.reasons,
+                sources[n.actionId] ?: listOfNotNull("native:${n.face}.${n.path}", DefinitionSources.paths[n.card]?.let { "$ARGENTUM_REPOSITORY_URL/blob/$ARGENTUM_SHA/$it" },provenanceByCard[n.card]?.takeIf { it.origin == "APPLICATION_EXTENSION" }?.source))
+        }
+    }
+    val groups=accumulated.values.map { g ->
+        val k=g.key
+        CoverageGroup(hash("${k.nativeType}|${k.context}|${k.status}|${k.reasons}|${k.shape}"),k.nativeType,k.context,k.shape,g.occurrences,g.cards.size,
+            g.actions.size,k.status,k.reasons,if(objective in setOf("reanimate-own-creatures","create-creature-tokens") && suspect(k.nativeType,objective)) "POTENTIALLY_RELEVANT" else if(objective=="reanimate-own-creatures" && k.nativeType in setOf("DealDamage","ModifyStats","Sacrifice","SacrificeSelf","ForceSacrifice")) "LIKELY_UNRELATED" else relevance(k.nativeType,k.shape),
+            g.insideAcceptedActions,g.representatives,work(k.nativeType))
     }.sortedWith(compareBy<CoverageGroup> { if(it.relevance == "POTENTIALLY_RELEVANT" && it.supportStatus !in setOf("PATHWAY_EXTRACTED","SUPPORTED")) 0 else 1 }.thenByDescending { it.distinctCards }.thenBy { it.fingerprint })
-    return CoverageReport(commander=report.commander,inputCards=cards.size,encounteredTypedNodes=nodes.size,groups=groups,objective=report.objective,factCounts=report.facts.groupingBy { it.kind.name }.eachCount().toSortedMap())
+    return CoverageReport(commander=commander,inputCards=inputCards,encounteredTypedNodes=encounteredTypedNodes,groups=groups,objective=objective,factCounts=factCounts)
 }
 fun examine(cards: List<CardDefinition>, report: DiscoveryReport, benchmark: BenchmarkReport? = null): Examination {
     val findings=mutableListOf<Finding>()
@@ -192,6 +238,12 @@ fun examine(cards: List<CardDefinition>, report: DiscoveryReport, benchmark: Ben
     val beforeStageCounts: Map<String,Int> = emptyMap(), val afterStageCounts: Map<String,Int> = emptyMap(),
     val limitations: List<String> = listOf("Attribution labels describe observed field changes, not independently isolated causal experiments. Stable pathway keys: card identity, face, ability path, operation, branch. Duplicate bases use native-operation signatures and occurrence ordinals, never silent map overwrite. Changes to a duplicate variant signature can appear as removal+addition; inspect ambiguousPathwayBases.","No quality score: new/removed matches may be fixes or regressions. Different commanders/pools are explicitly flagged.","Coverage comparison needs --before-coverage and --after-coverage; discovery diff alone cannot reconstruct independent traversal."))
 fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageReport? = null, newCoverage: CoverageReport? = null): ChangeReport {
+    return diffRecorded(before, after, oldCoverage, newCoverage)
+}
+
+internal fun diffRecorded(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageReport? = null,
+    newCoverage: CoverageReport? = null, beforeNodes: Map<ResultEvidence, JsonObject> = emptyMap(),
+    afterNodes: Map<ResultEvidence, JsonObject> = emptyMap()): ChangeReport {
     val changes=mutableListOf<Change>()
     fun decisions(r: ResultEvidence,basis: String)=r.decisions.filter { it.basis==basis }.map { Triple(it.stage,it.basis,it.verdict) }
     fun constraintChange(b: ResultEvidence,a: ResultEvidence)=b.prerequisites!=a.prerequisites || b.circumstances!=a.circumstances || b.dependency!=a.dependency
@@ -210,7 +262,7 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
             if(b?.format!=a?.format || b?.deck!=a?.deck) return listOf("COMMANDER_ELIGIBILITY")
             return listOf("MECHANICAL_EXTRACTION_OR_PATH_RESTRUCTURING")
         }
-        val b=auditReader.decodeFromJsonElement<ResultEvidence>(old);val a=auditReader.decodeFromJsonElement<ResultEvidence>(now)
+        val b=recordedResultCore(old);val a=recordedResultCore(now)
         return buildList {
             if(mechanicalVerdict(b)!=mechanicalVerdict(a) || decisions(b,"MECHANICAL")!=decisions(a,"MECHANICAL")) add("COMPATIBILITY_FILTERING")
             if(decisions(b,"POLICY")!=decisions(a,"POLICY")) add("DISCOVERY_POLICY")
@@ -219,6 +271,7 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
             if(b.commanderLegality!=a.commanderLegality || b.deckEligibility!=a.deckEligibility) add("COMMANDER_ELIGIBILITY")
             if(constraintChange(b,a)) add("CONDITIONS_OR_CONSTRAINTS")
             if(b.contributionClassification!=a.contributionClassification) add("CONTRIBUTION_CLASSIFICATION")
+            if(recordedPayloadChanged(old.jsonObject,now.jsonObject)) add("RECORDED_OPAQUE_EVIDENCE")
             if(isEmpty()) add("EXPLANATION_ONLY")
         }
     }
@@ -240,8 +293,8 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
     }
     val oldPaths=paths(before); val newPaths=paths(after)
     require(oldPaths.size == before.results.size && newPaths.size == after.results.size) { "Pathway comparison identity collision" }
-    fun tree(v: ResultEvidence)=JsonObject(reportJson.encodeToJsonElement(v).jsonObject.filterKeys { it != "provenance" })
-    compare("PATHWAY",oldPaths.mapValues { tree(it.value) },newPaths.mapValues { tree(it.value) })
+    fun tree(v: ResultEvidence,nodes:Map<ResultEvidence,JsonObject>)=JsonObject((nodes[v] ?: reportJson.encodeToJsonElement(v).jsonObject).filterKeys { it != "provenance" })
+    compare("PATHWAY",oldPaths.mapValues { tree(it.value,beforeNodes) },newPaths.mapValues { tree(it.value,afterNodes) })
     fun cardClasses(r: DiscoveryReport)=r.results.filter { it.verdict == Verdict.MATCH }.groupBy { it.card }.mapValues { (_,v)-> JsonArray(v.map { it.branch.name }.distinct().sorted().map(::JsonPrimitive)) }
     compare("ACCEPTED_CARD_CLASSIFICATIONS",cardClasses(before),cardClasses(after))
     compare("ELIGIBILITY",before.eligibility.associate { it.card to buildJsonObject { put("format",it.format.name);put("deck",it.deck.name);put("identity",reportJson.encodeToJsonElement(it.identity)) } },after.eligibility.associate { it.card to buildJsonObject { put("format",it.format.name);put("deck",it.deck.name);put("identity",reportJson.encodeToJsonElement(it.identity)) } })
@@ -264,6 +317,8 @@ fun diff(before: DiscoveryReport, after: DiscoveryReport, oldCoverage: CoverageR
         if(structureChange(o,r)) record("STRUCTURAL_EVIDENCE_CHANGED")
         if(annotationChange(o,r)) record("SUPPORT_STATUS_ANNOTATION_ADDED_OR_REMOVED")
         if(constraintChange(o,r)) record("CONDITIONS_OR_CONSTRAINTS_CHANGED")
+        if(recordedPayloadChanged(beforeNodes[o] ?: reportJson.encodeToJsonElement(o).jsonObject,
+                afterNodes[r] ?: reportJson.encodeToJsonElement(r).jsonObject)) record("RECORDED_OPAQUE_EVIDENCE_CHANGED")
         if(o!=r && o.verdict==r.verdict && o.contributionClassification==r.contributionClassification && decisions(o,"POLICY")==decisions(r,"POLICY") && decisions(o,"MECHANICAL")==decisions(r,"MECHANICAL") && !structureChange(o,r) && !annotationChange(o,r) && !constraintChange(o,r)) record("EXPLANATION_ONLY_CHANGED")
         if(key.substringBefore("|variant:") in ambiguous && o!=r) record("UNRESOLVED_PATHWAY_IDENTITY_CHANGE")
     }
@@ -307,9 +362,9 @@ fun auditCommand(args: List<String>, catalog: () -> Catalog, out: (String)->Unit
             benchmarkDiff(before,after).let { if(json) reportJson.encodeToString(it) else "Same frozen review: ${it.sameFrozenReview}\nBefore: ${it.beforeNumerators} / ${it.beforeDenominators}\nAfter: ${it.afterNumerators} / ${it.afterDenominators}\n"+it.changes.joinToString("\n") { c -> "${c.id}: ${c.beforeStatus} -> ${c.afterStatus}" } }
         }
         "diff" -> {
-            fun load(k: String)=reader.decodeFromString<DiscoveryReport>(Files.readString(Path.of(required(k))))
+            fun load(k: String)=reader.parseToJsonElement(Files.readString(Path.of(required(k)))).jsonObject
             fun cv(k: String)=options[k]?.let { reader.decodeFromString<CoverageReport>(Files.readString(Path.of(it))) }
-            diff(load("--before"),load("--after"),cv("--before-coverage"),cv("--after-coverage")).let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
+            diffSnapshots(load("--before"),load("--after"),cv("--before-coverage"),cv("--after-coverage")).let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
         }
         else -> throw IllegalArgumentException("Unknown audit command: ${args[0]}")
     }

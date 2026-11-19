@@ -1,0 +1,246 @@
+{
+  "applicationRevision": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "heap": "normal Explorer -Xmx1g -XX:ActiveProcessorCount=4",
+  "health": {
+    "status": "ready",
+    "argentumCommit": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+    "engineMode": "candidate",
+    "applicationRevision": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe"
+  },
+  "steps": [
+    {
+      "path": "progress",
+      "durationSeconds": 68.021,
+      "global": {
+        "state": "MEASURED",
+        "reason": "All Commander-legal physical identities; no commander color restriction. Availability is not fidelity.",
+        "snapshot": {
+          "schemaVersion": 1,
+          "bulkType": "oracle_cards",
+          "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+          "updatedAt": "2026-10-26T21:01:59.922+00:00",
+          "downloadedAt": "2026-11-08T02:40:04.607119+00:00",
+          "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+          "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+          "format": "jsonl",
+          "compression": "gzip",
+          "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+          "bytes": 25135745
+        },
+        "commander": "All Commander-legal cards",
+        "counts": {
+          "raw_snapshot_records": 39049,
+          "duplicate_records_collapsed": 0,
+          "distinct_snapshot_records": 39049,
+          "eligible_oracle_cards": 32109,
+          "excluded_records": 6940,
+          "unresolved_pool_records": 0,
+          "confident_oracle_id_matches": 21319,
+          "confident_native_identity_associations": 21319,
+          "existing_native_oracle_id_matches": 23,
+          "enriched_identity_associations": 21296,
+          "native_physical_definitions": 21699,
+          "matched_upstream_definitions": 21309,
+          "matched_application_extensions": 10,
+          "identity_review_required": 28,
+          "identity_conflicts": 0,
+          "native_metadata_discrepancies": 1258,
+          "effective_metadata_discrepancies": 1252,
+          "approved_corrections_in_external_pool": 6,
+          "native_not_evaluated": 32109,
+          "native_mechanical_unresolved_any_objective": 0,
+          "native_eligibility_disagreements": 1258,
+          "missing_investigated": 0,
+          "missing_uninvestigated": 10760,
+          "native_available": 20067,
+          "native_metadata_unresolved": 1252,
+          "native_mechanically_unresolved": 0,
+          "native_definition_missing": 10760,
+          "ambiguous_mapping": 2,
+          "native_identity_review_required": 28,
+          "source_legal_records": 32116,
+          "source_banned_records": 83,
+          "source_not_legal_records": 6850,
+          "source_restricted_records": 0,
+          "source_unknown_legality_records": 0
+        },
+        "exclusions": {
+          "MELD_RESULT_NOT_SEPARATE_PHYSICAL_CARD": 7,
+          "NOT_COMMANDER_LEGAL": 6933
+        }
+      },
+      "native": null
+    },
+    {
+      "path": "progress/commanders",
+      "durationSeconds": 5.073
+    },
+    {
+      "path": "progress/objectives",
+      "durationSeconds": 73.053
+    },
+    {
+      "path": "progress/pilot",
+      "durationSeconds": 16.526
+    },
+    {
+      "path": "progress/verification",
+      "durationSeconds": 19.224
+    },
+    {
+      "path": "progress/activation-costs",
+      "durationSeconds": 0.03
+    },
+    {
+      "path": "progress/cost-examination",
+      "durationSeconds": 0.021
+    },
+    {
+      "path": "progress/global-baseline",
+      "durationSeconds": 0.327,
+      "records": 39049
+    },
+    {
+      "path": "progress/mechanics",
+      "durationSeconds": 20.679,
+      "sha256": "3ce4a387333dae27e3ba8202ce1e40b86415c2c5422656e14e28b1094890e248",
+      "typedNodes": 256022,
+      "groups": 57706
+    },
+    {
+      "path": "discover",
+      "commander": "Kenrith, the Returned King",
+      "objective": "place-plus-one-counters",
+      "durationSeconds": 19.077,
+      "counts": {
+        "authored_physical_cards": 21699,
+        "upstream_authored_physical_cards": 21689,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 22147,
+        "commander_legal_cards": 21033,
+        "format_legality_unknown_cards": 639,
+        "commander_eligible_cards": 20143,
+        "identity_unknown_legal_cards": 890,
+        "mechanical_input_cards_after_conventional_search": 20143,
+        "accepted_counter_pathways": 861,
+        "accepted_counter_cards": 819,
+        "unknown_query_pathways": 887
+      },
+      "rows": 15495
+    },
+    {
+      "path": "discover",
+      "commander": "Kenrith, the Returned King",
+      "objective": "own-nontoken-creature-deaths",
+      "durationSeconds": 45.307,
+      "counts": {
+        "authored_physical_cards": 21699,
+        "upstream_authored_physical_cards": 21689,
+        "application_extension_physical_cards": 10,
+        "registry_names_including_faces": 22147,
+        "commander_legal_cards": 21033,
+        "format_legality_unknown_cards": 639,
+        "commander_eligible_cards": 20143,
+        "identity_unknown_legal_cards": 890,
+        "mechanical_input_cards_after_conventional_search": 20143,
+        "extracted_potential_death_operations": 6135,
+        "potential_creature_death_pathways": 2687,
+        "our_creature_pathways": 2425,
+        "our_nontoken_creature_pathways": 2411,
+        "mechanically_compatible_direct_pathways": 2411,
+        "mechanically_compatible_policy_rejected_pathways": 1431,
+        "accepted_direct_pathways": 976,
+        "accepted_direct_cards": 931,
+        "accepted_self_toughness_exchange_pathways": 37,
+        "mandatory_unlinked_sacrifice_pathways": 320,
+        "policy_unknown_compatible_pathways": 4,
+        "accepted_death_enhanced_removal_pathways": 35,
+        "accepted_death_enhanced_removal_cards": 35,
+        "policy_rejected_removal_pathways": 1431,
+        "controller_incompatible_pathways": 363,
+        "nontoken_incompatible_pathways": 14,
+        "accepted_creature_input_pathways": 26,
+        "accepted_creature_input_cards": 26,
+        "unknown_creature_input_pathways": 148,
+        "accepted_death_response_pathways": 254,
+        "accepted_death_response_cards": 225,
+        "unknown_death_response_pathways": 295,
+        "unknown_query_pathways": 1660,
+        "pathways_with_any_unknown_decision": 3583,
+        "unsupported_structure_records": 32251,
+        "cards_with_unsupported_structures": 15495
+      },
+      "rows": 17605
+    },
+    {
+      "path": "progress/mechanics-after-discover",
+      "durationSeconds": 27.808,
+      "sha256": "3ce4a387333dae27e3ba8202ce1e40b86415c2c5422656e14e28b1094890e248",
+      "typedNodes": 256022,
+      "groups": 57706
+    },
+    {
+      "path": "progress-after-discover",
+      "durationSeconds": 0.018,
+      "global": {
+        "state": "MEASURED",
+        "reason": "All Commander-legal physical identities; no commander color restriction. Availability is not fidelity.",
+        "snapshot": {
+          "schemaVersion": 1,
+          "bulkType": "oracle_cards",
+          "bulkId": "27bf3214-1271-490b-bdfe-c0be6c23d02e",
+          "updatedAt": "2026-10-26T21:01:59.922+00:00",
+          "downloadedAt": "2026-11-08T02:40:04.607119+00:00",
+          "sourceUri": "https://api.scryfall.com/bulk-data/oracle_cards",
+          "downloadUri": "https://data.scryfall.io/oracle-cards/oracle-cards-20261026210159.jsonl.gz",
+          "format": "jsonl",
+          "compression": "gzip",
+          "sha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+          "bytes": 25135745
+        },
+        "commander": "All Commander-legal cards",
+        "counts": {
+          "raw_snapshot_records": 39049,
+          "duplicate_records_collapsed": 0,
+          "distinct_snapshot_records": 39049,
+          "eligible_oracle_cards": 32109,
+          "excluded_records": 6940,
+          "unresolved_pool_records": 0,
+          "confident_oracle_id_matches": 21319,
+          "confident_native_identity_associations": 21319,
+          "existing_native_oracle_id_matches": 23,
+          "enriched_identity_associations": 21296,
+          "native_physical_definitions": 21699,
+          "matched_upstream_definitions": 21309,
+          "matched_application_extensions": 10,
+          "identity_review_required": 28,
+          "identity_conflicts": 0,
+          "native_metadata_discrepancies": 1258,
+          "effective_metadata_discrepancies": 1252,
+          "approved_corrections_in_external_pool": 6,
+          "native_not_evaluated": 32109,
+          "native_mechanical_unresolved_any_objective": 0,
+          "native_eligibility_disagreements": 1258,
+          "missing_investigated": 0,
+          "missing_uninvestigated": 10760,
+          "native_available": 20067,
+          "native_metadata_unresolved": 1252,
+          "native_mechanically_unresolved": 0,
+          "native_definition_missing": 10760,
+          "ambiguous_mapping": 2,
+          "native_identity_review_required": 28,
+          "source_legal_records": 32116,
+          "source_banned_records": 83,
+          "source_not_legal_records": 6850,
+          "source_restricted_records": 0,
+          "source_unknown_legality_records": 0
+        },
+        "exclusions": {
+          "MELD_RESULT_NOT_SEPARATE_PHYSICAL_CARD": 7,
+          "NOT_COMMANDER_LEGAL": 6933
+        }
+      }
+    }
+  ]
+}

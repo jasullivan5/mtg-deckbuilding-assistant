@@ -1,0 +1,15 @@
+{
+  "source": "identity/development-oracle.json",
+  "historicalExpectations": "identity/development-expectations.json",
+  "scope": "Physical association and native availability; not source-fidelity or execution qualification",
+  "cases": [
+    {
+      "externalOracleId": "8e356df5-ca92-4be2-871e-8965c2510fbe",
+      "externalName": "Tempt with Vengeance",
+      "historicalExpected": "MISSING",
+      "expected": "CONFIDENT",
+      "nativeName": "Tempt with Vengeance",
+      "basis": "The integrated native corpus now supplies the same physical name, mana cost and type from the retained source. Original missing observation remains unchanged in the historical review."
+    }
+  ]
+}

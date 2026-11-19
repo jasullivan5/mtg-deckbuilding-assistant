@@ -1,0 +1,7 @@
+{
+  "originalBytes": 11246881,
+  "originalSha256": "6518bdaae0e03684be737ca6bebd64ea887284b845af528d4300d5e6f66fe289",
+  "gzip": "retained-projection-histogram.txt.gz",
+  "gzipSha256": "c60b601079c94fad86fdb403fa4f7aca751580c1fe83358ff6040b0abc35cfbd",
+  "qualification": "Text file is a concise preview; gzip preserves every original diagnostic byte."
+}

@@ -36,20 +36,21 @@ test('Complete costs keep payment depth separate from reviewed cards and whole-a
   await scope.selectOption('caustic-caterpillar:0');
   const mutant=panel.locator('summary').filter({hasText:'Remove required {1}{G}, retain sacrifice'});
   await mutant.click();await expect(panel).toContainText('Mandatory fixed payment');
-  await mkdir('../docs/images/activation-cost',{recursive:true});
+  const screenshots='../generated/activation-cost/screenshots';
+  await mkdir(screenshots,{recursive:true});
   await mkdir('../generated/activation-cost',{recursive:true});
   await writeFile('../generated/activation-cost/browser-measurements.json',JSON.stringify({application:data.applicationRevision,engine:data.engine,counts:data.counts,potentialReach:data.potentialReach,requirementsSha256:data.requirementsSha256,bindingsSha256:data.bindingsSha256,executionState:data.executionState},null,2));
   for(const width of [1440,390]){
     await page.setViewportSize({width,height:width===390?844:1000});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
-    await panel.screenshot({path:`../docs/images/activation-cost/${width}-evidence.png`});
+    await panel.screenshot({path:`${screenshots}/${width}-evidence.png`});
     await inspect.click();
-    await panel.screenshot({path:`../docs/images/activation-cost/${width}-summary.png`});
+    await panel.screenshot({path:`${screenshots}/${width}-summary.png`});
     await inspect.click();
     await panel.evaluate(el=>el.scrollIntoView({block:'start'}));
-    await page.screenshot({path:`../docs/images/activation-cost/${width}-viewport.png`});
+    await page.screenshot({path:`${screenshots}/${width}-viewport.png`});
     await page.evaluate(()=>window.scrollTo(0,0));
-    await page.screenshot({path:`../docs/images/activation-cost/${width}-overview.png`});
+    await page.screenshot({path:`${screenshots}/${width}-overview.png`});
   }
   await page.getByRole('button',{name:'Primer',exact:true}).click();
   await expect(page.getByRole('heading',{name:/How Card Integration Works/i})).toBeVisible();

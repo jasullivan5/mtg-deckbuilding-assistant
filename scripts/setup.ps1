@@ -5,7 +5,7 @@ $SourceDir = if ($env:ARGENTUM_ENGINE_DIR) { [IO.Path]::GetFullPath($env:ARGENTU
 $Repository = 'https://github.com/jasullivan5/argentum-engine.git'
 function Git-Checked { & git @args; if ($LASTEXITCODE -ne 0) { throw "Git failed: $args" } }
 Get-Command git,java -ErrorAction Stop | Out-Null
-if ((& java --version | Out-String) -notmatch '(?m)^(openjdk|java) 21[. ]') { throw 'JDK 21 is required. Set JAVA_HOME and PATH.' }
+if ((& java --version | Out-String) -notmatch '(?m)^(openjdk|java) 25[. ]') { throw 'JDK 25 is required. Set JAVA_HOME and PATH.' }
 if (-not (Test-Path -LiteralPath $SourceDir)) {
     if ($env:ARGENTUM_CANDIDATE_REVISION) { throw 'Candidate checkout must already exist.' }
     Git-Checked clone --branch app-stable --single-branch $Repository $SourceDir

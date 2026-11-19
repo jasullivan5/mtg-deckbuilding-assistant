@@ -1,0 +1,28 @@
+{
+  "application": "b975029995366a631db2c082162ae201b34b5485",
+  "passed": 38,
+  "failed": 3,
+  "requiredUi8AndLive18Passed": true,
+  "failures": [
+    "cost-examination: frozen 16927 incorrectly asserted as current 21319",
+    "verification: frozen 16927 incorrectly asserted as current 21319",
+    "global-coverage: explicit Oracle snapshot not selected"
+  ],
+  "historicalScreenshotsRestoredFromGit": [
+    "docs/images/activation-cost/1440-evidence.png",
+    "docs/images/activation-cost/1440-overview.png",
+    "docs/images/activation-cost/1440-summary.png",
+    "docs/images/activation-cost/1440-viewport.png",
+    "docs/images/activation-cost/390-evidence.png",
+    "docs/images/activation-cost/390-overview.png",
+    "docs/images/activation-cost/390-summary.png",
+    "docs/images/activation-cost/390-viewport.png",
+    "docs/images/cost-examination/1440-evidence.png",
+    "docs/images/cost-examination/1440-summary.png",
+    "docs/images/cost-examination/1440-viewport.png",
+    "docs/images/cost-examination/390-evidence.png",
+    "docs/images/cost-examination/390-summary.png",
+    "docs/images/cost-examination/390-viewport.png"
+  ],
+  "freshScreenshotsPreservedIn": "generated/jdk25-integration/browser-first-run-artifacts"
+}

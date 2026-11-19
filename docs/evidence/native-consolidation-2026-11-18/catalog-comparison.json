@@ -1,0 +1,42 @@
+{
+  "mode": "current",
+  "passed": true,
+  "currentChecksPassed": true,
+  "historicalFingerprintsMatch": false,
+  "actualEngineCommit": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+  "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+  "checks": {
+    "judith-a": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "judith-b": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "judith-c": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "krenko-a": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "krenko-b": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "krenko-c": {
+      "sameActualEngineAcrossRuns": true,
+      "sameCompleteReportExceptDeclaredProvenance": false,
+      "zeroConfirmedBenchmarkMismatches": true
+    },
+    "identicalDiffEmpty": true
+  }
+}

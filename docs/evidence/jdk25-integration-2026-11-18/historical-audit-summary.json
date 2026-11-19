@@ -1,0 +1,253 @@
+{
+  "application": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "heap": "-Xmx4g for two-report offline audits, as in earlier verification; production exports remain -Xmx1g",
+  "reports": [
+    {
+      "report": "judith-create-creature-tokens.json",
+      "sha256": "8c59bdf7919a675a112bba6ba1a210409dfdfbcb3af5406223fff2d41de3d2c7",
+      "counts": {
+        "PATHWAY_CHANGED": 840
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 840
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "judith-creature-died-this-turn.json",
+      "sha256": "114a49c9108d24dd3eefa53538a0642f201ca46daebeb4f261ee37f2c8518bce",
+      "counts": {
+        "PATHWAY_CHANGED": 22
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 22
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "judith-own-nontoken-creature-deaths.json",
+      "sha256": "39aa06a193b3974dd37192e8a6bccb45f338ed43f9fc6744ef6ef94ca872c9d7",
+      "counts": {
+        "PATHWAY_CHANGED": 4483
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 4483,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 5
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "SOI:139:To the Slaughter|front|script.spellEffect.gate.condition|SACRIFICE|DEATH_ENHANCED_REMOVAL",
+        "WOE:90:Faerie Fencing|front|script.spellEffect.gate.condition|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL"
+      ]
+    },
+    {
+      "report": "judith-place-plus-one-counters.json",
+      "sha256": "f1372f3fb9d996ede0f6373a664cbfea336f9e0f049b8f47ca5f3cce63fa2e7d",
+      "counts": {
+        "PATHWAY_CHANGED": 727
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 727
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "judith-reanimate-own-creatures.json",
+      "sha256": "82b5162c4cb2b2239bae3f692de407f9fc99b8fa3b69f2df47e8f48d66ae8f81",
+      "counts": {
+        "PATHWAY_CHANGED": 2675
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2675,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+      ]
+    },
+    {
+      "report": "judith-stock-own-graveyard.json",
+      "sha256": "4f32b3ad08390625eaa2b7631c65aecbf788ea07acd4848dfd72cc2211c05dc5",
+      "counts": {
+        "PATHWAY_CHANGED": 1811
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 1811,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+      ]
+    },
+    {
+      "report": "kenrith-create-creature-tokens.json",
+      "sha256": "70ab747b37c4c59802d5b7a4e43a15b074f55e7d12a9483e3c2d39c2895420ea",
+      "counts": {
+        "PATHWAY_CHANGED": 2519
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2519
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "kenrith-creature-died-this-turn.json",
+      "sha256": "7a0d0145cc4b69d89c5f91d4196c50c71b05c31128e943138e22e17090f792c8",
+      "counts": {
+        "PATHWAY_CHANGED": 42
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 42
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "kenrith-own-nontoken-creature-deaths.json",
+      "sha256": "6a4b1849d65bb3cd4a60360cf8000fa65b161adc476ade41eafd0d2f6720bd72",
+      "counts": {
+        "PATHWAY_CHANGED": 7732
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 7732,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 5
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "SOI:139:To the Slaughter|front|script.spellEffect.gate.condition|SACRIFICE|DEATH_ENHANCED_REMOVAL",
+        "WOE:90:Faerie Fencing|front|script.spellEffect.gate.condition|TOUGHNESS_REDUCTION|DEATH_ENHANCED_REMOVAL"
+      ]
+    },
+    {
+      "report": "kenrith-place-plus-one-counters.json",
+      "sha256": "f5b15052f6274a500e745c3df9b275feb59235d0c1aaaca613d45dad8ffda414",
+      "counts": {
+        "PATHWAY_CHANGED": 2546
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2546
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "kenrith-reanimate-own-creatures.json",
+      "sha256": "3a6c649fe27e9ce13d2338ad5e871bc58ce8334d3c319242cec3eff7843086d4",
+      "counts": {
+        "PATHWAY_CHANGED": 7366
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 7366,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+      ]
+    },
+    {
+      "report": "kenrith-stock-own-graveyard.json",
+      "sha256": "ec29a75c8714f6bafaa2848416eeb98eff91f28f4c333335b443bf26c24e4593",
+      "counts": {
+        "PATHWAY_CHANGED": 3334
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 3334,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+      ]
+    },
+    {
+      "report": "krenko-create-creature-tokens.json",
+      "sha256": "c423c46deeacaf09ea9f8e16184d372df87bdbde9d39666b393fdbb9b3e98bab",
+      "counts": {
+        "PATHWAY_CHANGED": 463
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 463
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "krenko-creature-died-this-turn.json",
+      "sha256": "34a203685650ad02a1788c38964bba1f68005e017bf6245b767e6a3394dae319",
+      "counts": {
+        "PATHWAY_CHANGED": 2
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "krenko-own-nontoken-creature-deaths.json",
+      "sha256": "6648bea26b506a217725faf512f6ca7dd8694641913c1334f97fe27f78a2c5d7",
+      "counts": {
+        "PATHWAY_CHANGED": 2325
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2325
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "krenko-place-plus-one-counters.json",
+      "sha256": "6e45c3ea4c3b393b4cd2b57d35b3cbb601e5c9b58c1c95fa3d7d7dd437e3f802",
+      "counts": {
+        "PATHWAY_CHANGED": 359
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 359
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": []
+    },
+    {
+      "report": "krenko-reanimate-own-creatures.json",
+      "sha256": "e5288d9384ec81975ff375f33eebd57c78fddfbbb5efa5b2a4e26b15a0f74e8f",
+      "counts": {
+        "PATHWAY_CHANGED": 1061
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 1061,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "FIN:159:Sorceress's Schemes|front|script.spellEffect.effects[0]|MOVE_OBJECT|REANIMATE_OWN_CREATURE",
+        "TLA:125:Bumi Bash|front|script.spellEffect.modes[1].effect|MOVE_OBJECT|REANIMATE_OWN_CREATURE"
+      ]
+    },
+    {
+      "report": "krenko-stock-own-graveyard.json",
+      "sha256": "024b8ac0fe8cf4d4d0763b002cef933e41f674354c57d331af508271d602abb9",
+      "counts": {
+        "PATHWAY_CHANGED": 790
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 790,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      },
+      "comparablePool": true,
+      "ambiguousPathwayBases": [
+        "BLB:151:Sazacap's Brew|front|script.additionalCosts[0].atom|DISCARD|GRAVEYARD_CREATURE_ARRIVAL"
+      ]
+    }
+  ],
+  "qualification": "All changed rows have explanation-only attribution; existing duplicate pathway identity warnings remain disclosed and unresolved."
+}

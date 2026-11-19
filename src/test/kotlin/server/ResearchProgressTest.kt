@@ -10,6 +10,27 @@ import io.kotest.assertions.throwables.shouldThrow
 import kotlinx.serialization.json.*
 
 class ResearchProgressTest : FunSpec({
+    test("bounded Progress projections retain complete instruction and fact order") {
+        val catalog = Catalog()
+        val cards = listOf("Judith, the Scourge Diva", "Kenrith, the Returned King", "Pit Raptor",
+            "Planewide Celebration", "Sunforger", "Tyrite Sanctum", "Spark Elemental")
+            .map { requireNotNull(catalog.card(it)) }
+        val full = PathwayExtractor(inspectCardEntries = true).extract(cards)
+        progressRecords(cards) { it.structuralSupport } shouldBe full.structuralSupport
+        progressRecords(cards) { it.facts } shouldBe full.facts
+        progressRecords(cards) { it.actions } shouldBe full.actions
+        progressRecords(cards) { it.unsupported } shouldBe full.unsupported
+        val template = DiscoveryReport(objective="catalog-structural-observation",commander="No commander filter",
+            allowedIdentity=emptyList(),conventionalQuery=null,counts=emptyMap(),eligibility=emptyList(),
+            results=emptyList(),actions=emptyList(),unsupported=emptyList(),limitations=emptyList())
+        val whole = coverage(cards,template.copy(actions=full.actions,unsupported=full.unsupported,
+            structuralSupport=full.structuralSupport,facts=full.facts))
+        val walker = PathwayExtractor(inspectCardEntries=true)
+        coverageByCard(cards,template) { card ->
+            val e = walker.extract(listOf(card))
+            template.copy(actions=e.actions,unsupported=e.unsupported,structuralSupport=e.structuralSupport,facts=e.facts)
+        } shouldBe whole
+    }
     fun group(state: String, count: Int) = CoverageGroup(state, "FixtureFamily", "script", JsonNull,
         count, 1, 1, state, emptyList(), "UNRESOLVED", 0, emptyList(), "Review")
     test("typed-node distribution is disjoint while cards and type families can overlap") {

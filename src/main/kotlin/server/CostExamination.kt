@@ -84,7 +84,7 @@ internal object CostExamination {
         val phases=inputs+mapOf("hash-bindings.json" to evidenceTextDigest(text("hash-bindings.json")))+
             (if(adjudication!=null) mapOf("adjudication.json" to evidenceTextDigest(text("adjudication.json"))) else emptyMap())+
             (if(currentAdjudication!=null) mapOf("adjudication-current.json" to evidenceTextDigest(text("adjudication-current.json"))) else emptyMap())
-        val eligible=retainedGlobalBaseline().records.filter { it.poolState=="ELIGIBLE" && it.association=="CONFIDENT" }.mapNotNull { it.nativeName?.let(catalog::card) }
+        val eligible=currentVerificationBaseline().records.filter { it.poolState=="ELIGIBLE" && it.association=="CONFIDENT" }.mapNotNull { it.nativeName?.let(catalog::card) }
         val tap=eligible.flatMap { card->card.activatedAbilities.map { card.name to canonicalActivationCost(projectActivationCost(it.cost)) } }.filter { it.second?.contains("TAP_SELF")==true }
         val observations=if(current) receipt!!.scenarios else emptyList()
         return CostExaminationReport(applicationRevision=revision,engine=EngineBuild.revision,sourceState=if(sourceCurrent) "CURRENT_SOURCE_BINDINGS" else "STALE_SOURCE_BINDINGS",

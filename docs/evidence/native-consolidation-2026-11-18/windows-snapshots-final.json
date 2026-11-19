@@ -1,0 +1,8 @@
+{
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "sourceGoldenFiles": 213,
+  "filesWithCrlf": [],
+  "mode": "NORMAL_SOURCE_AND_PROCESS_TEST_RESOURCES_NO_CANONICALIZING_HOOK",
+  "rawCatalogTests": 493,
+  "nativeGoldenReview": "native-golden-review.json (13 intentionally changed definitions only)"
+}

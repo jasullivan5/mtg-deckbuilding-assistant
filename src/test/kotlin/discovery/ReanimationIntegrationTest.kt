@@ -58,7 +58,7 @@ class ReanimationIntegrationTest : FunSpec({
     test("normal combined catalog retains Judith as death consumer") {
         val x=e("Judith, the Scourge Diva");creatureDeathPathways(x.pathways).where(canAffectCreature()).where(canAffectController(Controller.YOU)).where(canAffectTokenStatus(TokenStatus.NONTOKEN)).where(satisfiesDeathGenerationPolicy()).execute().none { it.verdict==Verdict.MATCH } shouldBe true
         rows("Judith, the Scourge Diva").isEmpty() shouldBe true
-        catalog.provenance("Judith, the Scourge Diva").origin shouldBe "APPLICATION_EXTENSION"
+        catalog.provenance("Judith, the Scourge Diva").origin shouldBe "UPSTREAM_ARGENTUM"
     }
     test("requested unavailable examples are real corpus gaps") {
         listOf("Persist","Necromancy","Exhume").forEach { catalog.card(it) shouldBe null }

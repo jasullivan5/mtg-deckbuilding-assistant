@@ -1,0 +1,515 @@
+{
+  "applicationRevision": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "executedAt": "2026-11-18T20:22:29.660750600Z",
+  "requirementsSha256": "de73dc9fea4e306e6da5ce971f243225b30afdb93d3c0218275ed1054f1d730f",
+  "bindingsSha256": "399582d2d8aee3d682fa91f82bbe8ba2c96bc348029044b3203f55503d24dd04",
+  "harnessSha256": "082a9272e71c52c278a0352f5e02cf6131fd62b58724fae78e35c13e6756ea09",
+  "definitions": {
+    "mogg-fanatic:0": "95099722c46c0bd4c49108391f8b191ecfa58aa93cdd4271f10630caceec2bc2",
+    "caustic-caterpillar:0": "1407eae6dd6dab3e8ac23974781868f31c1328ea1245fb2291b2dd1fc470f03b",
+    "evolving-wilds:0": "ec1f3ed98c25b27295ad986a313c18180d3e4bb1836cf8720eb40fb67c4d2c49",
+    "hapless-researcher:0": "1f3f111739d8d646fa4257742df3b25c0e0fb8cd17b779fb8c2585f9bba93bd9",
+    "sakura-tribe-elder:0": "856e48e3138408ad356c3f5591c8c8976079a5176c5c85db71c350e9e242e8f6",
+    "burnished-hart:0": "ede482de1b44007d5b4875eac883a03d99d57e24591d6443392de7a16b3bbbe8",
+    "mind-stone:1": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+    "viscera-seer:0": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+    "greed:0": "056c94965519032b03bb90773fdfe0d85ad3abeb267ee67a66632edbcb728fdd",
+    "mind-stone:0": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55"
+  },
+  "mutationDefinitions": {
+    "missing-mana": "2588b2850f21116fccfdbefe361cea0de3c5b349cf8c36b2414b59e515be8c08",
+    "wrong-mana-amount": "48c14018568687aef13094e3e57c0bbb7a8cb26dac071b3c513cabeb223b3af2",
+    "wrong-mana-color": "4fbc444a422cf16912ac96ff1fa3abe684da08d653417823c33560f23e9f3440",
+    "generic-not-colorless": "2db45671e18b6aedd5a8748b58e25b97f64ac85414c87fef6a13eadd74579dd4",
+    "missing-sacrifice": "2612bc94febe5cbb3c1482f5f18f697dcefc245317fa074861df416e3b795898",
+    "missing-tap": "8f8b374fbd1dbb298fffe226d96aa5f21df01cea3520d6ce50b1b1fbef0983b6",
+    "wrong-sacrifice-source": "bfa5e18fec884eeb72923dbb9e4059cf75858fbdf91fc82df04bc60639f3fb1a",
+    "wrong-sacrifice-selection": "21d000a91cc1bfebceba166d86ec52af84dcb44e5ad017ab9a25fbf7b2885b31",
+    "cost-to-effect": "9ac7f027d3f19a6094c7d4c0bff1710899405359091ee2fabdd79d5a1b177593",
+    "alternative-not-combined": "2214ef5f25d5f5289a16df8edbe970f1a05ad47271591cbe2ef6167e4008b182",
+    "wrong-life": "8e16650676f19140e8f3aed06bab2af576fdad47ce83812ce20df4ecfd3eb3bc",
+    "wrong-target-effect": "2c7ede9c6e4478ff02467caee3f600ecc14b2b12ef8275ed20c132d7577ebeb1"
+  },
+  "supportDefinitions": {
+    "Mogg Fanatic": "95099722c46c0bd4c49108391f8b191ecfa58aa93cdd4271f10630caceec2bc2",
+    "Lifespark Spellbomb": "3a74c92dd0791e6433a754b7383777b12049c6f706b80707b3b95e3040aef2d6"
+  },
+  "rawJsonSha256": "7d16a71969c224d2e02d9ce79dad6da570642ed0f592ee686237e24c3ca71ac2",
+  "counts": {
+    "AGREES": 22,
+    "INCOMPLETE": 1,
+    "UNRESOLVED": 1,
+    "DIFFERS": 2
+  },
+  "observations": [
+    {
+      "scenarioId": "activation-cost:mogg-fanatic:0:SUFFICIENT",
+      "scopeId": "mogg-fanatic:0",
+      "card": "Mogg Fanatic",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "95099722c46c0bd4c49108391f8b191ecfa58aa93cdd4271f10630caceec2bc2",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:SUFFICIENT",
+      "scopeId": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "1407eae6dd6dab3e8ac23974781868f31c1328ea1245fb2291b2dd1fc470f03b",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:NO_MANA",
+      "scopeId": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "1407eae6dd6dab3e8ac23974781868f31c1328ea1245fb2291b2dd1fc470f03b",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:WRONG_COLOR",
+      "scopeId": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "1407eae6dd6dab3e8ac23974781868f31c1328ea1245fb2291b2dd1fc470f03b",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:evolving-wilds:0:SUFFICIENT",
+      "scopeId": "evolving-wilds:0",
+      "card": "Evolving Wilds",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "ec1f3ed98c25b27295ad986a313c18180d3e4bb1836cf8720eb40fb67c4d2c49",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:evolving-wilds:0:TAPPED",
+      "scopeId": "evolving-wilds:0",
+      "card": "Evolving Wilds",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "ec1f3ed98c25b27295ad986a313c18180d3e4bb1836cf8720eb40fb67c4d2c49",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:hapless-researcher:0:SUFFICIENT",
+      "scopeId": "hapless-researcher:0",
+      "card": "Hapless Researcher",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "1f3f111739d8d646fa4257742df3b25c0e0fb8cd17b779fb8c2585f9bba93bd9",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:sakura-tribe-elder:0:SUFFICIENT",
+      "scopeId": "sakura-tribe-elder:0",
+      "card": "Sakura-Tribe Elder",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "856e48e3138408ad356c3f5591c8c8976079a5176c5c85db71c350e9e242e8f6",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:burnished-hart:0:SUFFICIENT",
+      "scopeId": "burnished-hart:0",
+      "card": "Burnished Hart",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "ede482de1b44007d5b4875eac883a03d99d57e24591d6443392de7a16b3bbbe8",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:burnished-hart:0:NO_MANA",
+      "scopeId": "burnished-hart:0",
+      "card": "Burnished Hart",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "ede482de1b44007d5b4875eac883a03d99d57e24591d6443392de7a16b3bbbe8",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:SUFFICIENT",
+      "scopeId": "mind-stone:1",
+      "card": "Mind Stone",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:NO_MANA",
+      "scopeId": "mind-stone:1",
+      "card": "Mind Stone",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:1:TAPPED",
+      "scopeId": "mind-stone:1",
+      "card": "Mind Stone",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:SUFFICIENT",
+      "scopeId": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:SELF_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:BORROWED_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:ILLEGAL_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "mutant": false,
+      "variant": null,
+      "result": "INCOMPLETE",
+      "executed": true,
+      "definitionSha256": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+      "checks": {
+        "native_rejection": false,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": "Sacrifice target does not match the required filter"
+    },
+    {
+      "scenarioId": "activation-cost:viscera-seer:0:UNANNOUNCED_SELECTION",
+      "scopeId": "viscera-seer:0",
+      "card": "Viscera Seer",
+      "mutant": false,
+      "variant": null,
+      "result": "UNRESOLVED",
+      "executed": true,
+      "definitionSha256": "33356402d85e44122761cc8d706173d9ff99beb10441be8380941b3a65c5723d",
+      "checks": {
+        "native_transaction_recorded": true
+      },
+      "problem": "No curated response for SelectCardsDecision."
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:SUFFICIENT",
+      "scopeId": "greed:0",
+      "card": "Greed",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "056c94965519032b03bb90773fdfe0d85ad3abeb267ee67a66632edbcb728fdd",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:NO_MANA",
+      "scopeId": "greed:0",
+      "card": "Greed",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "056c94965519032b03bb90773fdfe0d85ad3abeb267ee67a66632edbcb728fdd",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:WRONG_COLOR",
+      "scopeId": "greed:0",
+      "card": "Greed",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "056c94965519032b03bb90773fdfe0d85ad3abeb267ee67a66632edbcb728fdd",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:greed:0:NO_LIFE",
+      "scopeId": "greed:0",
+      "card": "Greed",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "056c94965519032b03bb90773fdfe0d85ad3abeb267ee67a66632edbcb728fdd",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:0:SUFFICIENT",
+      "scopeId": "mind-stone:0",
+      "card": "Mind Stone",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": true,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:mind-stone:0:TAPPED",
+      "scopeId": "mind-stone:0",
+      "card": "Mind Stone",
+      "mutant": false,
+      "variant": null,
+      "result": "AGREES",
+      "executed": true,
+      "definitionSha256": "60dfad888680c4e4f6ec52bfaaf466c32add8afaa38cc8f8ab3e437be084ae55",
+      "checks": {
+        "native_rejection": true,
+        "no_state_or_payment_changes": true,
+        "no_sacrifice_events": true
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:NO_MANA:mutant-missing-mana",
+      "scopeId": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "mutant": true,
+      "variant": "missing-mana",
+      "result": "DIFFERS",
+      "executed": true,
+      "definitionSha256": "2588b2850f21116fccfdbefe361cea0de3c5b349cf8c36b2414b59e515be8c08",
+      "checks": {
+        "native_rejection": false,
+        "no_state_or_payment_changes": false,
+        "no_sacrifice_events": false
+      },
+      "problem": null
+    },
+    {
+      "scenarioId": "activation-cost:caustic-caterpillar:0:SUFFICIENT:mutant-missing-sacrifice",
+      "scopeId": "caustic-caterpillar:0",
+      "card": "Caustic Caterpillar",
+      "mutant": true,
+      "variant": "missing-sacrifice",
+      "result": "DIFFERS",
+      "executed": true,
+      "definitionSha256": "2612bc94febe5cbb3c1482f5f18f697dcefc245317fa074861df416e3b795898",
+      "checks": {
+        "native_activation_completed": true,
+        "fixed_mana_actually_spent": true,
+        "life_actually_paid": true,
+        "tap_actually_observed": true,
+        "exact_sacrifice_and_owner_destination": false,
+        "unrelated_objects_preserved": true,
+        "ordinary_effects_remain_on_stack": true
+      },
+      "problem": null
+    }
+  ],
+  "priorResultAndChecksEqual": true,
+  "qualification": "Fresh bounded execution; historical observations and provisional qualification remain unchanged."
+}

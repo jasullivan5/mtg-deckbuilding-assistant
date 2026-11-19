@@ -16,10 +16,14 @@ class EligibilityCorrectionsCatalogTest : FunSpec({
     for((i,name) in names.withIndex()) test("reviewed real metadata and source association: $name") {
         val c=catalog.card(name)!!;val r=catalog.eligibility.resolve(c)
         r.identity shouldBe expected[i];r.commanderLegality shouldBe Verdict.MATCH
-        r.corrections.single().state shouldBe "APPLIED"
-        val record=r.corrections.single().record
+        if(name=="Sunforger") {
+            r.corrections shouldBe emptyList()
+            c.colorIdentityOverride shouldBe setOf(Color.RED,Color.WHITE)
+        } else r.corrections.single().state shouldBe "APPLIED"
+        val record=if(name=="Sunforger") ApprovedEligibility.historicalPlan.corrections.single { it.native.name==name } else r.corrections.single().record
         record.oracleId shouldBe ApprovedEligibility.plan.sources.single { it.name==name }.oracleId
-        record.definitionSha256 shouldBe eligibilityDefinitionDigest(c)
+        if(name!="Sunforger") record.definitionSha256 shouldBe eligibilityDefinitionDigest(c)
+        else (record.definitionSha256==eligibilityDefinitionDigest(c)) shouldBe false
         c shouldBe catalog.registry.requireCard(name)
     }
     test("observed native Firescreamer identity is black and already excludes Krenko") {
@@ -29,8 +33,8 @@ class EligibilityCorrectionsCatalogTest : FunSpec({
         selectedCommanderEligibility(c,setOf(Color.RED),catalog.eligibility.resolve(c)) shouldBe Verdict.NO_MATCH
     }
     test("all three production CLI objectives apply only reviewed corrections to the legal pool") {
-        val expectedRemoved=mapOf("Judith, the Scourge Diva" to setOf("Heartwood Shard","Sunforger","Toxrill, the Corrosive"),
-            "Krenko, Mob Boss" to setOf("Heartwood Shard","Hooded Kavu","Sunforger"),"Oviya Pashiri, Sage Lifecrafter" to setOf("Sunforger"))
+        val expectedRemoved=mapOf("Judith, the Scourge Diva" to setOf("Heartwood Shard","Toxrill, the Corrosive"),
+            "Krenko, Mob Boss" to setOf("Heartwood Shard","Hooded Kavu"),"Oviya Pashiri, Sage Lifecrafter" to emptySet())
         for((commander,removed) in expectedRemoved) for(objective in coverageObjectives) {
             val output=mutableListOf<String>()
             runCli(arrayOf("discover","--commander",commander,"--objective",objective,"--search","name:Academy","--json"),{catalog},output::add) shouldBe 0
@@ -62,7 +66,7 @@ class EligibilityCorrectionsCatalogTest : FunSpec({
         catalog.search("name:Sunforger id<=r").map { it.name } shouldBe emptyList()
         catalog.search("name:Sunforger id:rw").map { it.name } shouldBe listOf("Sunforger")
         catalog.search("name:Afterthought f:commander").map { it.name } shouldBe listOf("Afterthought Sentry")
-        catalog.card("Sunforger")!!.colorIdentityOverride shouldBe emptySet()
+        catalog.card("Sunforger")!!.colorIdentityOverride shouldBe setOf(Color.RED,Color.WHITE)
         commanderFormatLegality(catalog.card("Afterthought Sentry")!!) shouldBe Verdict.UNKNOWN
     }
     test("coverage cannot silently activate an approval against another source version") {
@@ -74,7 +78,7 @@ class EligibilityCorrectionsCatalogTest : FunSpec({
         val plan=ApprovedEligibility.plan
         val snapshot=OracleSnapshot(plan.snapshot,plan.sources,plan.sources.size,0,0)
         val r=catalogCoverage(catalog,snapshot,"Judith, the Scourge Diva",listOf("create-creature-tokens"))
-        r.eligibilityCorrections.size shouldBe 7
+        r.eligibilityCorrections.size shouldBe 6
         r.records.single { it.external.name=="Firescreamer" }.mapping.let {
             it.metadata!!.nativeIdentity shouldBe setOf("B")
             it.metadata!!.issues shouldBe listOf("NATIVE_EXTERNAL_IDENTITY_DISAGREEMENT")

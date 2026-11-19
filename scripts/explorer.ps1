@@ -33,7 +33,7 @@ if ([Environment]::OSVersion.Platform -eq [PlatformID]::Win32NT) {
             if ($NodeInstall) { $ToolPaths = @($NodeInstall.FullName) + $ToolPaths }
         }
         if (-not $env:JAVA_HOME) {
-            $JavaInstall = Get-ChildItem -LiteralPath $LocalTools -Directory -Filter 'jdk-21*' |
+            $JavaInstall = Get-ChildItem -LiteralPath $LocalTools -Directory -Filter 'jdk-25*' |
                 Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'bin/java.exe') } |
                 Sort-Object LastWriteTime -Descending | Select-Object -First 1
             if ($JavaInstall) {
@@ -46,11 +46,11 @@ if ([Environment]::OSVersion.Platform -eq [PlatformID]::Win32NT) {
 }
 foreach ($Tool in @('git','node','pnpm','java')) {
     if (-not (Get-Command $Tool -ErrorAction SilentlyContinue)) {
-        throw "Missing $Tool. Install Git, JDK 21, Node 22.12+ and pnpm 11 before launching."
+        throw "Missing $Tool. Install Git, JDK 25, Node 22.12+ and pnpm 11 before launching."
     }
 }
-if ((& java --version | Out-String) -notmatch '(?m)^(openjdk|java) 21[. ]') {
-    throw 'JDK 21 is required. Set JAVA_HOME and PATH as described in README.'
+if ((& java --version | Out-String) -notmatch '(?m)^(openjdk|java) 25[. ]') {
+    throw 'JDK 25 is required. Set JAVA_HOME and PATH as described in README.'
 }
 $NodeVersion = (& node -p 'process.versions.node').Split('.')
 if ([int]$NodeVersion[0] -lt 22 -or ([int]$NodeVersion[0] -eq 22 -and [int]$NodeVersion[1] -lt 12)) {

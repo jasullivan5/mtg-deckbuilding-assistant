@@ -1,6 +1,6 @@
 # Mechanical Verification Lab
 
-From the application checkout, run `.\scripts\explorer.ps1` with JDK 21 and the clean maintained sibling on `app-stable`. Open [Explorer](http://127.0.0.1:8787) when the launcher prints **Explorer ready**.
+From the application checkout, run `.\scripts\explorer.ps1` with JDK 25 and the clean maintained sibling on `app-stable`. Open [Explorer](http://127.0.0.1:8787) when the launcher prints **Explorer ready**.
 
 ## Three investigations
 

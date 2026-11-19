@@ -20,7 +20,8 @@ import java.util.zip.GZIPOutputStream
     val limits: List<String> = listOf("Availability only, not source-fidelity, execution or independent qualification.",
         "Single-candidate inventory uses the existing bounded SDK predicate; full legal commander/configuration denominator is not measured.",
         "Objective reach is a separate Judith-native population with overlapping categories; correctness is not measured at catalog scale.",
-        "Historical Judith comparisons use different revisions and remain separate from this first global baseline."))
+        "Historical Judith comparisons use different revisions and remain separate from this first global baseline."),
+    val nativeProjectionVersion:String="sdk-physical-v1")
 
 fun globalBaseline(catalog: Catalog, snapshot: OracleSnapshot, applicationRevision: String): GlobalBaseline {
     val report = catalogCoverage(catalog,snapshot,null)
@@ -39,7 +40,8 @@ fun globalBaseline(catalog: Catalog, snapshot: OracleSnapshot, applicationRevisi
         identityAlgorithm=report.enrichment!!.algorithm,nativeIdentitySha256=report.enrichment.nativeIdentitySha256,
         populationPolicy=report.populationPolicy,counts=report.counts,exclusions=report.poolExclusions,records=entries,
         unresolvedWithoutOracleId=snapshot.cards.count { it.oracleId == null },commanders=commanderInventory(catalog,report),
-        objectiveScope=objectives,pilotRequirementsSha256=SacrificePilot.requirementsHash)
+        objectiveScope=objectives,pilotRequirementsSha256=SacrificePilot.requirementsHash,
+        nativeProjectionVersion=NATIVE_IDENTITY_PROJECTION_VERSION)
 }
 
 @Serializable data class GlobalCoverageChange(val beforeSnapshot: String, val afterSnapshot: String,
@@ -62,6 +64,7 @@ fun compareGlobalBaselines(before: GlobalBaseline, after: GlobalBaseline): Globa
         if(before.measurementDefinition != after.measurementDefinition) add("Measurement definition changed")
         if(before.populationPolicy != after.populationPolicy) add("Physical population policy changed")
         if(before.identityAlgorithm != after.identityAlgorithm) add("Identity matching algorithm changed")
+        if(before.nativeProjectionVersion != after.nativeProjectionVersion) add("Native physical projection version changed")
         if(before.snapshot.sha256 == after.snapshot.sha256 && (old.keys != now.keys || before.records.any { prior -> now[prior.oracleId]?.let { it.legality != prior.legality || it.poolState != prior.poolState } == true }))
             add("Same source hash but different source identity population, legality or physical roles")
     }

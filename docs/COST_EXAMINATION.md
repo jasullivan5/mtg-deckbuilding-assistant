@@ -67,7 +67,7 @@ The application owns the compact phase/evidence projection and index joins. Arge
 
 ## Reproduction and next decision
 
-Use JDK 21 and the clean sibling app-stable checkout. New research output paths are required; existing records are not silently replaced.
+Use JDK 25 and the clean sibling app-stable checkout. New research output paths are required; existing records are not silently replaced.
 
 ```powershell
 .\dev.ps1 test

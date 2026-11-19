@@ -1,0 +1,12 @@
+{
+  "priorExecutable": "b975029995366a631db2c082162ae201b34b5485",
+  "application": "263c46d8f6ba8eb263f46e622184e55c4973c9d6",
+  "changedFiles": [
+    "web/tests/activation-cost.spec.ts",
+    "web/tests/cost-examination.spec.ts",
+    "web/tests/global-coverage.spec.ts",
+    "web/tests/verification.spec.ts"
+  ],
+  "productionBackendFrontendResourcesAndKotlinTestsUnchanged": true,
+  "purpose": "Separate original frozen 16927 associations from current 21319; preserve the five-objective Progress cohort separately from all six Discover objectives; require explicit frozen Oracle snapshot; write fresh screenshots only to generated outputs."
+}

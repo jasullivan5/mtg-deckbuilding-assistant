@@ -1,0 +1,143 @@
+[
+  {
+    "stage": "merged-baseline-focused",
+    "application": "a150cdd66bf227f4c88a406b04620e56a7aed275",
+    "engine": "cf6d6bdf00023208b6bc6a7bc915c75b125966fe",
+    "checks": {
+      "tests": 14,
+      "failures": 5,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failures": [
+      {
+        "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+        "test": "every registered extension retains independent source identity and native registry compatibility",
+        "message": "java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten"
+      },
+      {
+        "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+        "test": "token mode is interpreted without pretending graveyard to hand is reanimation",
+        "message": "java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten"
+      },
+      {
+        "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+        "test": "token production remains inspectable and retrace is not direct reanimation",
+        "message": "java.lang.IllegalArgumentException: Extension identity collision: Spined Tyrranax; no authored definition was overwritten"
+      },
+      {
+        "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+        "test": "retained controlled discovery evidence is unchanged across all supported contexts",
+        "message": "java.lang.IllegalArgumentException: Extension identity collision: Judith, the Scourge Diva; no authored definition was overwritten"
+      },
+      {
+        "class": "dev.mtg.assistant.TranslationMutationTest",
+        "test": "M1 structurally valid semantic defect detected with unchanged control",
+        "message": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>"
+      }
+    ]
+  },
+  {
+    "stage": "first-application",
+    "application": "5138aecab83f4c77f36bd0b565eb92f60caaf906",
+    "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+    "counts": {
+      "tests": 759,
+      "failures": 13,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failedCases": [
+      {
+        "class": "dev.mtg.assistant.ActivationCostFidelityTest",
+        "test": "source-first bound complete costs support held-outs without whole-ability approval",
+        "message": "java.lang.IllegalArgumentException: Native identity inventory changed; re-establish source associations explicitly before measuring verification coverage"
+      },
+      {
+        "class": "dev.mtg.assistant.ActivationCostFidelityTest",
+        "test": "real native payment checks retain positive negative borrowed choice and deliberately incorrect observations",
+        "message": "org.opentest4j.AssertionFailedError: expected:<1> but was:<0>"
+      },
+      {
+        "class": "dev.mtg.assistant.CommanderIntegrationTest",
+        "test": "Oviya metadata and Oracle text match archived independently retrieved source",
+        "message": "org.opentest4j.AssertionFailedError: expected:<[PIONEER, MODERN, LEGACY, VINTAGE, COMMANDER, BRAWL]> but was:<[BRAWL, COMMANDER, LEGACY, MODERN, PIONEER, VINTAGE, HIGHLANDER, CANADIAN_HIGHLANDER]>"
+      },
+      {
+        "class": "dev.mtg.assistant.CommanderIntegrationTest",
+        "test": "Judith and Krenko retain complete eligible pools and controlled A B C evidence",
+        "message": "org.opentest4j.AssertionFailedError: Element differ at index: [13097, 13098, 13099, 13100, 13101, 13102, 13103, 13104, 13105, 13106, 13107, 13108, 13109, 13110, 13111, 13112, 13113, 13114, 13115, 13116, ...and 8581 more (set 'kotest.assertions.collec"
+      },
+      {
+        "class": "dev.mtg.assistant.DiscoveryDiagnosticsTest",
+        "test": "Judith has verified original printing metadata and authoritative eligibility",
+        "message": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>"
+      },
+      {
+        "class": "dev.mtg.assistant.DiscoveryDiagnosticsTest",
+        "test": "extension requires verified identity and legality",
+        "message": "java.util.NoSuchElementException: Collection contains no element matching the predicate."
+      },
+      {
+        "class": "dev.mtg.assistant.ExplorerServerTest",
+        "test": "all HTTP discovery objectives agree with CLI full reports and evidence",
+        "message": "java.lang.OutOfMemoryError: Java heap space"
+      },
+      {
+        "class": "dev.mtg.assistant.ExtensionIntegrationTest",
+        "test": "the two complete Assay scripts agree after normalizing only ability ids",
+        "message": "org.opentest4j.AssertionFailedError: Values differed at keys activatedAbilities"
+      },
+      {
+        "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+        "test": "source-led real catalog review: Tempt with Vengeance 8e356df5-ca92-4be2-871e-8965c2510fbe",
+        "message": "org.opentest4j.AssertionFailedError: expected:<MISSING> but was:<CONFIDENT>"
+      },
+      {
+        "class": "dev.mtg.assistant.OracleEnrichmentCatalogTest",
+        "test": "real color metadata errors do not invalidate physical identity or mutate native eligibility",
+        "message": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>"
+      },
+      {
+        "class": "dev.mtg.assistant.TokenCardIntegrationTest",
+        "test": "translated definitions retain independent printing identity legality Oracle text and native validation",
+        "message": "org.opentest4j.AssertionFailedError: expected:<[MODERN, LEGACY, VINTAGE, COMMANDER, BRAWL, PAUPER]> but was:<[BRAWL, COMMANDER, LEGACY, MODERN, PAUPER, VINTAGE, HIGHLANDER, CANADIAN_HIGHLANDER]>"
+      },
+      {
+        "class": "dev.mtg.assistant.TriggeredOperationTest",
+        "test": "the live catalog distinguishes forced sacrifice, draw, damage, loss and gain",
+        "message": "org.opentest4j.AssertionFailedError: Expected null but actual was Grave Pact {1}{B}{B}{B}"
+      },
+      {
+        "class": "dev.mtg.assistant.VerificationCoverageTest",
+        "test": "reference global baseline remains immutable and source scopes cannot silently qualify cards",
+        "message": "java.lang.IllegalArgumentException: Native identity inventory changed; re-establish source associations explicitly before measuring verification coverage"
+      }
+    ],
+    "rawObservations": "generated/native-consolidation/first-application/junit (preserved)"
+  },
+  {
+    "stage": "second-application",
+    "application": "a309ff546c869c63f057d5550d814618b7cd1108",
+    "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+    "counts": {
+      "tests": 761,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failedCases": [
+      {
+        "class": "dev.mtg.assistant.CommanderIntegrationTest",
+        "test": "Judith and Krenko retain complete eligible pools and controlled A B C evidence",
+        "message": "org.opentest4j.AssertionFailedError: expected:<21700> but was:<21699>"
+      },
+      {
+        "class": "dev.mtg.assistant.TokenCardIntegrationTest",
+        "test": "translated definitions retain independent printing identity legality Oracle text and native validation",
+        "message": "org.opentest4j.AssertionFailedError: Element differ at index: [0, 1, 2]"
+      }
+    ],
+    "rawObservations": "generated/native-consolidation/second-application/junit (preserved)"
+  }
+]

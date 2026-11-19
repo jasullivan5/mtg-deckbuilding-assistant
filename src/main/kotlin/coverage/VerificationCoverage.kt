@@ -40,7 +40,8 @@ import java.util.zip.GZIPInputStream
     val limits:List<String> = listOf("Evidence categories overlap and are not a cumulative funnel. Distinct physical cards, native records, scopes, requirement applications and scenarios are different units.",
         "A current observation means its recorded bindings still agree, not that it executed on this page load. Native execution is explicit and receipts retain their original date.",
         "The denominator is the immutable PR39 source population, not a silently refreshed external source. Interpretation is an application walk of native structures, not an Oracle completeness audit.",
-        "Inherited definitions are not implicitly reviewed. Test file references and card-level execution claims without attributable scenario observations are retained as references, not execution passes."))
+        "Inherited definitions are not implicitly reviewed. Test file references and card-level execution claims without attributable scenario observations are retained as references, not execution passes."),
+    val nativeProjectionVersion:String="sdk-physical-v1")
 
 /** Observation ID includes its original receipt identity; repeated ingestion is idempotent, conflicting IDs fail closed. */
 fun uniqueVerificationRecords(records:List<VerificationRecord>):List<VerificationRecord> = records.groupBy { it.id }.map { (id,rows) ->
@@ -68,8 +69,25 @@ private val verificationReferenceBaseline:GlobalBaseline by lazy { GlobalBaselin
 /** One immutable packaged population, shared by the index and scoped methods. No live source refresh. */
 fun retainedGlobalBaseline():GlobalBaseline = verificationReferenceBaseline
 
+/** Explicitly re-associated view of the same immutable source universe; historical observations stay intact. */
+private val currentVerificationReference:GlobalBaseline by lazy {
+    val current=GlobalBaseline::class.java.getResourceAsStream("/global-commander-native-associations.json.gz")!!.let {
+        GZIPInputStream(it).bufferedReader().use { reader->reportJson.decodeFromString<GlobalBaseline>(reader.readText()) }
+    }
+    val original=retainedGlobalBaseline()
+    compareGlobalBaselines(current,current)
+    require(current.snapshot.sha256==original.snapshot.sha256 && current.identityAlgorithm==original.identityAlgorithm &&
+        current.populationPolicy==original.populationPolicy &&
+        current.records.map { Triple(it.oracleId,it.legality,it.poolState) }==original.records.map { Triple(it.oracleId,it.legality,it.poolState) }) {
+        "Current verification associations changed the frozen source universe or identity policy"
+    }
+    current
+}
+fun currentVerificationBaseline():GlobalBaseline = currentVerificationReference
+
 fun requireVerificationIdentityBinding(baseline:GlobalBaseline,identities:List<NativeIdentity>) {
-    require(baseline.identityAlgorithm==IDENTITY_ALGORITHM && baseline.populationPolicy=="physical-format-population-v1") { "Verification reference identity/population policy changed; select an explicitly reviewed compatible baseline" }
+    require(baseline.identityAlgorithm==IDENTITY_ALGORITHM && baseline.populationPolicy=="physical-format-population-v1" &&
+        baseline.nativeProjectionVersion==NATIVE_IDENTITY_PROJECTION_VERSION) { "Verification reference identity/population policy changed; select an explicitly reviewed compatible baseline" }
     require(baseline.nativeIdentitySha256==nativeIdentityDigest(identities)) { "Native identity inventory changed; re-establish source associations explicitly before measuring verification coverage" }
 }
 
@@ -82,7 +100,7 @@ fun hasNativeExecutionTrace(value:JsonElement):Boolean = when(value) {
 fun ledgerVerificationKind(state:FidelityState)=if(state==FidelityState.UNREVIEWED) "LEDGER_REFERENCE" else "SOURCE_REVIEW"
 
 internal fun verificationCoverage(catalog:Catalog,revision:String,structural:List<StructuralSupport>,pilot:FidelityPilot,
-    challenge:SacrificeChallengeReport,baseline:GlobalBaseline=retainedGlobalBaseline(),activationCosts:ActivationCostReport?=null,costExamination:CostExaminationReport?=null):VerificationCoverage {
+    challenge:SacrificeChallengeReport,baseline:GlobalBaseline=currentVerificationBaseline(),activationCosts:ActivationCostReport?=null,costExamination:CostExaminationReport?=null):VerificationCoverage {
     // Validate the immutable population through the existing comparison contract.
     compareGlobalBaselines(baseline,baseline)
     requireVerificationIdentityBinding(baseline,physicalCards(catalog.cards).map { nativeIdentity(it,catalog.provenance(it.name).origin) })
@@ -202,7 +220,8 @@ internal fun verificationCoverage(catalog:Catalog,revision:String,structural:Lis
             "The five Lab positions are already represented by their pilot receipt observations; reading the registry again does not create five more observations.",
             "Adversarial mutant definitions are method-challenge evidence only. They are not production-card failures or newly available cards."),challenge=challenge,
         nativeReviewDefinitions=native.filterKeys { id->inPopulation.any { it.record.oracleId==id } }.values.associate { it.name to reportJson.parseToJsonElement(CardExporter.exportToJson(it)) },
-        qualifiedScopes=assurances.filter { it.evidenceCurrent && it.qualification==QualificationState.QUALIFIED && it.oracleId in legal }.map { "${it.oracleId}:ledger-unspecified:${bundleDigest(it.evidence!!)}" }.sorted(),activationCosts=activationCosts,costExamination=costExamination)
+        qualifiedScopes=assurances.filter { it.evidenceCurrent && it.qualification==QualificationState.QUALIFIED && it.oracleId in legal }.map { "${it.oracleId}:ledger-unspecified:${bundleDigest(it.evidence!!)}" }.sorted(),activationCosts=activationCosts,costExamination=costExamination,
+        nativeProjectionVersion=baseline.nativeProjectionVersion)
 }
 
 @Serializable data class VerificationChange(val comparable:Boolean,val definitionChanges:List<String>,val newSourceScopes:List<String>,
@@ -220,6 +239,7 @@ fun compareVerification(before:VerificationCoverage,after:VerificationCoverage):
     val changes=buildList {
         if(before.schemaVersion!=after.schemaVersion || before.measurementDefinition!=after.measurementDefinition) add("Evidence schema/measurement changed")
         if(before.populationPolicy!=after.populationPolicy) add("Population policy changed")
+        if(before.nativeProjectionVersion!=after.nativeProjectionVersion) add("Native physical projection version changed")
         if(before.snapshot.sha256==after.snapshot.sha256 && before.populationSha256!=after.populationSha256) add("Same source snapshot but changed reference population")
     }
     val old=before.evidence.associateBy { it.record.id };val comparable=changes.isEmpty()

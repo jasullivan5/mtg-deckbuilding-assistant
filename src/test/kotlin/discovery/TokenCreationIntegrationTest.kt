@@ -63,12 +63,17 @@ class TokenCreationIntegrationTest : FunSpec({
             r.fact.tokenCreation!!.quantity shouldBe com.wingedsheep.sdk.scripting.values.DynamicAmount.Fixed(q)
         }
     }
-    test("candidate examples missing from pinned upstream remain recorded gaps despite later extensions") {
+    test("new native token definitions replace the old gaps while unimplemented examples stay explicit") {
         val upstream = Catalog(emptyList())
-        listOf("Krenko's Command","Bitterblossom","Tempt with Vengeance").forEach { upstream.card(it) shouldBe null }
+        for(name in listOf("Krenko's Command","Bitterblossom")) {
+            upstream.card(name) shouldBe catalog.card(name)
+            rows(name).isNotEmpty() shouldBe true
+        }
+        // Availability is distinct from whether this interpreter supports the tempting-offer tree.
+        (upstream.card("Tempt with Vengeance")!!.script.spellEffect!=null) shouldBe true
     }
-    test("Judith remains an extension consumer without token-generation fact") {
+    test("native Judith remains a death consumer without a token-generation fact") {
         rows("Judith, the Scourge Diva").isEmpty() shouldBe true
-        catalog.provenance("Judith, the Scourge Diva").origin shouldBe "APPLICATION_EXTENSION"
+        catalog.provenance("Judith, the Scourge Diva").origin shouldBe "UPSTREAM_ARGENTUM"
     }
 })

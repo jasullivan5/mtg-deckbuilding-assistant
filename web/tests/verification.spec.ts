@@ -18,7 +18,8 @@ test('Verification separates reference cards partial scopes dated observations a
   const costBaseline=await (await page.request.get('/api/v1/progress/verification-cost-baseline')).json();
   expect(costBaseline.counts.execution_observations_current).toBe(39); // Immutable Increment 4 baseline; fresh boundary observations are additive.
   expect(data.counts.commander_legal_physical_cards).toBe(32109);
-  expect(data.counts.definition_available_cards).toBe(16927);
+  expect(baseline.counts.definition_available_cards).toBe(16927); // Frozen reference native availability is not rewritten.
+  expect(data.counts.definition_available_cards).toBe(21319); // Separate current native association.
   expect(data.counts.source_review_current_cards).toBe(13);
   const sameEngine=data.engine===costBaseline.engine;
   expect(data.counts.execution_current_cards).toBe(sameEngine?13:0);

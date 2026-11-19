@@ -1,0 +1,142 @@
+[
+  {
+    "file": ".gitattributes",
+    "bytes": 37,
+    "sha256": "c2ec880c9441db945b17147536d05482427ff3c22acc5e5934094357aecf73a0"
+  },
+  {
+    "file": "activation-cost-execution.json.gz",
+    "bytes": 43531,
+    "sha256": "9c0dead531422645375482666e12ec1a4972a60a8ab83c03eafec3a657cf9b71"
+  },
+  {
+    "file": "activation-cost-receipt.json",
+    "bytes": 922,
+    "sha256": "f47824beb24396f86f3a417a92f51f4b66cbd3eaaea48f5d2f5841346a5e6471"
+  },
+  {
+    "file": "browser-summary.json",
+    "bytes": 6624,
+    "sha256": "db567bc33a3693682eeb8c667ac217d6f9abdd6d7cc950f7794b6b11261d9571"
+  },
+  {
+    "file": "built-in-audit-receipt.json",
+    "bytes": 12685,
+    "sha256": "4209cb127e3ff3bdb9c8f134b1f5103050b6036c702b8f2641d08403f5520335"
+  },
+  {
+    "file": "catalog-comparison.json",
+    "bytes": 1502,
+    "sha256": "8290a3cd933b4391603c92d78f5c9d55015f5041e19b32b330be9d7b036cb064"
+  },
+  {
+    "file": "compact-consolidation-comparison.py",
+    "bytes": 2345,
+    "sha256": "2bd519f7f7e1b4b21580501d1ee073b5a099e875824bbb33bd6705795374e827"
+  },
+  {
+    "file": "compare-production-consolidation.py",
+    "bytes": 3822,
+    "sha256": "67cfde051c2a037fb4622d4157c205a8b348a4ceb4303e8e968c4db608bd1659"
+  },
+  {
+    "file": "CompareProductionPopulation.java",
+    "bytes": 1579,
+    "sha256": "3466d1546ba1dd99d5d20c629d5293f3241f7ae4a03a1a4f79b380c33da2c8b6"
+  },
+  {
+    "file": "devout-harpist-source-comparison.json",
+    "bytes": 813,
+    "sha256": "03c5bf4cf8997681d4249df2fa8c131b55c5ba5ee24d1fbe23eb7133c2975291"
+  },
+  {
+    "file": "explorer-health.json",
+    "bytes": 186,
+    "sha256": "cf587f21cefe428e13ac657fd67c794407d5037f4f1b2c80f8814c3b8b7f62f8"
+  },
+  {
+    "file": "intermediate-observations.json",
+    "bytes": 7364,
+    "sha256": "778d900dcb2bf1024abce17d0535b62e044d6281e5782d7f9b997b955c4b0a0c"
+  },
+  {
+    "file": "junit.zip",
+    "bytes": 6066303,
+    "sha256": "8fe84efc13b5677846e2e15bb335a70538d07b0d6e5411bdbf3ddfae6a858396"
+  },
+  {
+    "file": "kenrith-runtime-1g.json",
+    "bytes": 1948,
+    "sha256": "4770fe05d97a004ad4f6a570bafaa2fc817b9973e2f05d4fc322c37238ddde16"
+  },
+  {
+    "file": "log-manifest.json",
+    "bytes": 7764,
+    "sha256": "b417df02cfa799aff891c8adbb6c9715d18baa97bf040e7b17ddd46bbf6f9501"
+  },
+  {
+    "file": "native-golden-review.json",
+    "bytes": 3413,
+    "sha256": "ca15f921506421820634d0e94725b1857834b251e9db367c8ed5321a5b0fcd63"
+  },
+  {
+    "file": "production-comparison-receipt.json",
+    "bytes": 247828,
+    "sha256": "7cbd95099733ce10b05deee2317cc5324758fe35c070de7ef637c2c9eec4360b"
+  },
+  {
+    "file": "production-final-replay.json",
+    "bytes": 5085,
+    "sha256": "c12c9ad89a241f37434eb47731e63fa1d2b1b248c198ffd2462814005bfff71e"
+  },
+  {
+    "file": "README.md",
+    "bytes": 4431,
+    "sha256": "dd267124237c1a55598f36c182e2380bfb66ff7b6edad67a883a4fbab5553c5b"
+  },
+  {
+    "file": "resource-preservation.json",
+    "bytes": 853,
+    "sha256": "d02a03389333b5faab3450fbfd779f3d955f0e45d229aac89c0730337aaa8f4e"
+  },
+  {
+    "file": "review-production-decisions.py",
+    "bytes": 1877,
+    "sha256": "0a27d725684f83ee1fe8ea1049806f98d60775cee2daf29f20912f4188ce7ee2"
+  },
+  {
+    "file": "script-guards.json",
+    "bytes": 1537,
+    "sha256": "f9c491e278f672cfe16a6f0b62f167e034fe876de346ab94513d3fcf700b9444"
+  },
+  {
+    "file": "source-bundle.json",
+    "bytes": 7900,
+    "sha256": "30e563179755add3be7e043fb20bd27a6d7101131ff4910eff756bf20c540fc2"
+  },
+  {
+    "file": "source-reassociation-review.json",
+    "bytes": 721,
+    "sha256": "e0583b0671e5243f60c0394ab6d16acb83b564747a6c17a2b793e71a30345184"
+  },
+  {
+    "file": "test-summary.json",
+    "bytes": 26565,
+    "sha256": "9168023eb29d085a8aa88158307fe91ea329a0566cbd60088eb1dc6eb8c9e661"
+  },
+  {
+    "file": "translation-mutation-receipt.json",
+    "bytes": 8063,
+    "sha256": "43deb50f4ee929c97df7c85ef2f6e20147bdacc8f95bc4d6dd8bf9c9252f2d92"
+  },
+  {
+    "file": "verification.just",
+    "bytes": 922,
+    "sha256": "eaaea91243fb2089eff5dceae57befacc1a64f2e8664fbd2b60055614f8bb0e9"
+  },
+  {
+    "file": "windows-snapshots-final.json",
+    "bytes": 310,
+    "sha256": "ee47174e721c55c5d85450ca8577e4fccad377bc1f99a5bc5d82e6a12262ad66"
+  }
+]

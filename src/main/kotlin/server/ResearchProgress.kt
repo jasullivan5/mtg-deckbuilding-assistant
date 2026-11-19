@@ -3,11 +3,12 @@ package dev.mtg.assistant.explorer
 import dev.mtg.assistant.Catalog
 import dev.mtg.assistant.EngineBuild
 import dev.mtg.assistant.audit.CoverageReport
-import dev.mtg.assistant.audit.coverage
+import dev.mtg.assistant.audit.coverageByCard
 import dev.mtg.assistant.coverage.*
 import dev.mtg.assistant.discovery.*
 import dev.mtg.assistant.extensions.*
 import kotlinx.serialization.Serializable
+import java.lang.ref.SoftReference
 import java.nio.file.Path
 import java.time.Instant
 
@@ -47,20 +48,60 @@ internal fun progressAssurance(population: Int, records: List<TranslationAssuran
         QualificationState.entries.associate { state -> state.name to records.count { it.qualification == state } }, records)
 }
 
+/** These records are local to each definition; discard the walker's other projections per card. */
+internal fun <T> progressRecords(cards: List<com.wingedsheep.sdk.model.CardDefinition>,
+    select: (PathwayExtractor) -> List<T>): List<T> {
+    val walker = PathwayExtractor(inspectCardEntries = true)
+    return cards.flatMap { select(walker.extract(listOf(it))) }
+}
+
 /** Cached per server/build. Uses the existing walker and independent catalog audit, never another interpreter. */
 internal class ResearchProgressService(private val catalog: Catalog, private val revision: String,
     private val snapshotPath: Path? = null) {
     private val physical by lazy { physicalCards(catalog.cards) }
-    private val extracted by lazy { PathwayExtractor(inspectCardEntries = true).extract(physical) }
-    val instructionRecords get() = extracted.structuralSupport.toList()
-    val factRecords get() = extracted.facts.toList()
-    val nativeCoverage: CoverageReport by lazy {
-        val e = extracted
+    // These complete projections can be reproduced from the immutable catalog. They must not
+    // permanently pin their JSON trees while the 1 GiB service computes another discovery run.
+    private data class Extraction(val actions: List<ActionEvidence>, val unsupported: List<Unsupported>,
+        val structuralSupport: List<StructuralSupport>, val facts: List<MechanicalFact>)
+    private fun extractProgress(): Extraction {
+        val actions = mutableListOf<ActionEvidence>()
+        val unsupported = mutableListOf<Unsupported>()
+        val support = mutableListOf<StructuralSupport>()
+        val facts = mutableListOf<MechanicalFact>()
+        val walker = PathwayExtractor(inspectCardEntries = true)
+        for (card in physical) {
+            walker.extract(listOf(card))
+            actions.addAll(walker.actions)
+            unsupported.addAll(walker.unsupported)
+            support.addAll(walker.structuralSupport)
+            facts.addAll(walker.facts)
+        }
+        return Extraction(actions,unsupported,support,facts)
+    }
+    private var extractedCache = SoftReference<Extraction>(null)
+    private val extracted: Extraction get() = synchronized(this) {
+        extractedCache.get() ?: extractProgress().also {
+            extractedCache = SoftReference(it)
+        }
+    }
+    val instructionRecords get() = extractedCache.get()?.structuralSupport?.toList()
+        ?: progressRecords(physical) { it.structuralSupport }
+    val factRecords get() = extractedCache.get()?.facts?.toList()
+        ?: progressRecords(physical) { it.facts }
+    private var nativeCoverageCache = SoftReference<CoverageReport>(null)
+    val nativeCoverage: CoverageReport get() = synchronized(this) {
+        nativeCoverageCache.get() ?: buildNativeCoverage().also { nativeCoverageCache = SoftReference(it) }
+    }
+    private fun buildNativeCoverage(): CoverageReport {
+        val walker = PathwayExtractor(inspectCardEntries = true)
         val report = DiscoveryReport(objective = "catalog-structural-observation", commander = "No commander filter",
             allowedIdentity = emptyList(), conventionalQuery = null, counts = emptyMap(), eligibility = emptyList(),
-            results = emptyList(), actions = e.actions, unsupported = e.unsupported, limitations = emptyList(),
-            structuralSupport = e.structuralSupport, facts = e.facts, mechanicalInputCards = physical.map { it.name })
-        coverage(physical, report)
+            results = emptyList(), actions = emptyList(), unsupported = emptyList(), limitations = emptyList(),
+            mechanicalInputCards = physical.map { it.name })
+        return coverageByCard(physical, report) { card ->
+            val e = walker.extract(listOf(card))
+            report.copy(actions=e.actions,unsupported=e.unsupported,structuralSupport=e.structuralSupport,facts=e.facts)
+        }
     }
     // An explicit snapshot is optional. Failure is visible and never becomes a zero missing-card count.
     private val snapshotAttempt by lazy { snapshotPath?.let { runCatching { loadOracleSnapshot(it) } } }
@@ -77,6 +118,7 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
     val costExamination: CostExaminationReport by lazy { CostExamination.report(catalog,revision) }
     val verification: VerificationCoverage by lazy { verificationCoverage(catalog,revision,instructionRecords,pilot,SacrificeChallenge.report(),activationCosts=activationCosts,costExamination=costExamination) }
     val report: ResearchProgress by lazy {
+        val extraction = extracted
         val audit = nativeCoverage
         val records = physical.mapNotNull { catalog.translationAssurance(it.name) }
         val assurance = progressAssurance(physical.size, records)
@@ -96,8 +138,8 @@ internal class ResearchProgressService(private val catalog: Catalog, private val
             families = audit.groups.groupBy { it.nativeType }.map { (type, groups) ->
                 ProgressFamily(type, groups.sumOf { it.occurrences }, groups.filter { it.supportStatus == "SUPPORTED" }.sumOf { it.occurrences })
             }.sortedWith(compareByDescending<ProgressFamily> { it.supported }.thenBy { it.nativeType }),
-            factKinds = extracted.facts.groupingBy { it.kind.name }.eachCount().toSortedMap(),
-            factConfidence = Verdict.entries.associate { it.name to extracted.facts.count { f -> f.confidence == it } },
+            factKinds = extraction.facts.groupingBy { it.kind.name }.eachCount().toSortedMap(),
+            factConfidence = Verdict.entries.associate { it.name to extraction.facts.count { f -> f.confidence == it } },
             assurance = assurance,
             execution = "Not measured at catalog scale as whole-card verification. The scoped verification index above reconciles attributable source and execution observations against the retained Commander universe. The extension ledger's historical card-level execution claims do not supply new scenario passes. Curated Lab reads are not execution. Missing evidence is not failure; retained observations keep their original date and engine revision.",
             obstacles = listOf(

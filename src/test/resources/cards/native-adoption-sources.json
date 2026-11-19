@@ -1,0 +1,1108 @@
+{
+  "fetchedAt": "2026-11-17T23:13:23.970849+00:00",
+  "mode": "DATED_SOURCE_OBSERVATIONS_NOT_INDEPENDENT_QUALIFICATION",
+  "cards": [
+    {
+      "symbol": "SpinedTyrranax",
+      "name": "Spined Tyrranax",
+      "oracleId": "2d09e689-c163-48c5-af5d-766f110d041e",
+      "printingId": "bb589caa-bba4-4d23-bdfe-7fc37f19bfd6",
+      "set": "j25",
+      "collectorNumber": "26",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Spined+Tyrranax&set=j25",
+      "sourceSha256": "3471999d4b90f4a20aafc0648dd523c10df08040e8ba915f4170de6add1b34ae",
+      "rulingsUri": "https://api.scryfall.com/cards/bb589caa-bba4-4d23-bdfe-7fc37f19bfd6/rulings",
+      "rulingsSha256": "a844be7c9d46afc7f4222430e9cf87fb0832fbb795811bf7d87c61e2d7c450e5",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "bb589caa-bba4-4d23-bdfe-7fc37f19bfd6",
+        "oracle_id": "2d09e689-c163-48c5-af5d-766f110d041e",
+        "name": "Spined Tyrranax",
+        "set": "j25",
+        "collector_number": "26",
+        "released_at": "2024-11-15",
+        "mana_cost": "{4}{G}",
+        "type_line": "Creature — Dinosaur Beast",
+        "oracle_text": "At the beginning of combat on your turn, you may pay {2}{G}. When you do, put a +1/+1 counter on target creature. That creature gains trample until end of turn. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+        "power": "5",
+        "toughness": "5",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "not_legal",
+          "modern": "not_legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "not_legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "not_legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/j25/26/spined-tyrranax?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "2d09e689-c163-48c5-af5d-766f110d041e",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "You don't choose a target for Spiked Tyrranax's ability at the time it triggers. Rather, a second \"reflexive\" ability triggers when you pay {2}{G} this way. You choose a target for that ability as it goes on the stack. Each player may respond to this triggered ability as normal."
+        }
+      ]
+    },
+    {
+      "symbol": "MightOfMurasa",
+      "name": "Might of Murasa",
+      "oracleId": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+      "printingId": "42914fd9-e56e-4c3e-a445-fdfa45a45178",
+      "set": "znr",
+      "collectorNumber": "194",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Might+of+Murasa&set=znr",
+      "sourceSha256": "ecb2179e2ee5e4a76ff3adc30231aef05937627f4c979e503d3456100ce3d648",
+      "rulingsUri": "https://api.scryfall.com/cards/42914fd9-e56e-4c3e-a445-fdfa45a45178/rulings",
+      "rulingsSha256": "4ae062e4606f4d01016f54c4ef0a4b0a9a47e2cfb9a7fc2e45f3cc50d4e02354",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "42914fd9-e56e-4c3e-a445-fdfa45a45178",
+        "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+        "name": "Might of Murasa",
+        "set": "znr",
+        "collector_number": "194",
+        "released_at": "2020-09-25",
+        "mana_cost": "{1}{G}",
+        "type_line": "Instant",
+        "oracle_text": "Kicker {2}{G} (You may pay an additional {2}{G} as you cast this spell.)\nTarget creature gets +3/+3 until end of turn. If this spell was kicked, that creature gets +5/+5 until end of turn instead.",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/znr/194/might-of-murasa?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "If a spell's kicker cost was paid, the spell is \"kicked.\""
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "The kicker ability doesn't let you pay a kicker cost more than once."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "If you put a permanent with a kicker ability onto the battlefield without casting it, you can't kick it."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "If you copy a kicked spell on the stack, the copy is also kicked. If the copied spell is a permanent spell, the token the copy of that spell becomes when it enters is also kicked."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "If a card or token enters as a copy of a permanent, the new permanent isn't kicked, even if the original was."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "902eb71f-62b3-40cb-816b-f6b7e92e91e7",
+          "source": "wotc",
+          "published_at": "2024-11-08",
+          "comment": "To determine a spell's total cost, start with the mana cost (or an alternative cost if another card's effect allows you to pay one instead), add any cost increases (such as kicker), then apply any cost reductions. The spell's mana value remains unchanged, no matter what the total cost to cast it was."
+        }
+      ]
+    },
+    {
+      "symbol": "LabyrinthOfSkophos",
+      "name": "Labyrinth of Skophos",
+      "oracleId": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+      "printingId": "ff0dd221-2660-43f6-8e28-8000e3fe72a4",
+      "set": "thb",
+      "collectorNumber": "243",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Labyrinth+of+Skophos&set=thb",
+      "sourceSha256": "963b20aafd2f936d9228588676576332798e31428a7e83d6bfd946af88a834d7",
+      "rulingsUri": "https://api.scryfall.com/cards/ff0dd221-2660-43f6-8e28-8000e3fe72a4/rulings",
+      "rulingsSha256": "2c785a79457d109e8fc870e7b8c6800cc88838b02524cff9de8f7ae0aa5a13cf",
+      "colorIdentity": [],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "ff0dd221-2660-43f6-8e28-8000e3fe72a4",
+        "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+        "name": "Labyrinth of Skophos",
+        "set": "thb",
+        "collector_number": "243",
+        "released_at": "2020-01-24",
+        "mana_cost": "",
+        "type_line": "Land",
+        "oracle_text": "{T}: Add {C}.\n{4}, {T}: Remove target attacking or blocking creature from combat.",
+        "color_identity": [],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/thb/243/labyrinth-of-skophos?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+          "source": "wotc",
+          "published_at": "2020-01-24",
+          "comment": "A creature removed from combat by Labyrinth of Skophos remains tapped if it was tapped."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+          "source": "wotc",
+          "published_at": "2020-01-24",
+          "comment": "If a blocking creature is removed from combat, the creature it blocked remains blocked. Unless that creature has trample, it won't deal combat damage."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "9ec5a487-d8ed-459a-8f58-56f6e9a2dfe8",
+          "source": "wotc",
+          "published_at": "2020-01-24",
+          "comment": "Once creatures attack or block, they remain attacking or blocking creatures through the end of combat step unless removed from combat (by Labyrinth of Skophos or a similar effect)."
+        }
+      ]
+    },
+    {
+      "symbol": "GaladhrimAmbush",
+      "name": "Galadhrim Ambush",
+      "oracleId": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+      "printingId": "e69e06f0-6142-4f80-9208-362b3e74d51d",
+      "set": "ltc",
+      "collectorNumber": "38",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Galadhrim+Ambush&set=ltc",
+      "sourceSha256": "e8e928382d72efbc8beb394486bb6267a9f263357400439cae5ccb7351bcb4f6",
+      "rulingsUri": "https://api.scryfall.com/cards/e69e06f0-6142-4f80-9208-362b3e74d51d/rulings",
+      "rulingsSha256": "0c2ce854cb674d5b58dcd455b983c6aade63fbb631f48cd7a1279462366b7404",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "e69e06f0-6142-4f80-9208-362b3e74d51d",
+        "oracle_id": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+        "name": "Galadhrim Ambush",
+        "set": "ltc",
+        "collector_number": "38",
+        "released_at": "2023-06-23",
+        "mana_cost": "{3}{G}",
+        "type_line": "Instant",
+        "oracle_text": "Create X 1/1 green Elf Warrior creature tokens, where X is the number of attacking creatures.\nPrevent all combat damage that would be dealt this turn by non-Elf creatures.",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "not_legal",
+          "timeless": "not_legal",
+          "gladiator": "not_legal",
+          "pioneer": "not_legal",
+          "modern": "not_legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "not_legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "not_legal",
+          "competitivebrawl": "not_legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "not_legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/ltc/38/galadhrim-ambush?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "3b22d21f-e19a-40df-840b-a2b7f11f79c2",
+          "source": "wotc",
+          "published_at": "2023-06-16",
+          "comment": "Galadhrim Ambush counts all attacking creatures no matter which player, planeswalker, or battle they're attacking, including attacking creatures you control if Galadhrim Ambush is cast during your combat phase."
+        }
+      ]
+    },
+    {
+      "symbol": "HourOfPromise",
+      "name": "Hour of Promise",
+      "oracleId": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+      "printingId": "c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+      "set": "hou",
+      "collectorNumber": "120",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Hour+of+Promise&set=hou",
+      "sourceSha256": "be23a478e4738654ed7785af9c7b612985a09dad5347acb5bb3dc06002def19d",
+      "rulingsUri": "https://api.scryfall.com/cards/c5ee374f-31dc-4b2c-beba-431d5b1126d0/rulings",
+      "rulingsSha256": "f5c4ff4f8db0756fe759de8011daa3032ea5c18785fcda9a36b4f3d13145b571",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "c5ee374f-31dc-4b2c-beba-431d5b1126d0",
+        "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+        "name": "Hour of Promise",
+        "set": "hou",
+        "collector_number": "120",
+        "released_at": "2017-07-14",
+        "mana_cost": "{4}{G}",
+        "type_line": "Sorcery",
+        "oracle_text": "Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle. Then if you control three or more Deserts, create two 2/2 black Zombie creature tokens.",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "not_legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/hou/120/hour-of-promise?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+          "source": "wotc",
+          "published_at": "2018-01-19",
+          "comment": "There are many important moments in the story, but the most crucial—called \"story spotlights\"—are shown on cards. These cards have the Planeswalker symbol in their text box; this symbol has no effect on gameplay. You can read more about these events in the official Magic fiction at http://www.mtgstory.com."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "51ff3e53-90bb-41bf-80e4-bb3fd51d574a",
+          "source": "wotc",
+          "published_at": "2017-07-14",
+          "comment": "When Hour of Promise checks the number of Deserts you control, it includes any Deserts you found earlier with Hour of Promise."
+        }
+      ]
+    },
+    {
+      "symbol": "ThroneOfMakindi",
+      "name": "Throne of Makindi",
+      "oracleId": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+      "printingId": "d5a0563e-c83b-40df-abf6-51c83bf6792d",
+      "set": "znr",
+      "collectorNumber": "265",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Throne+of+Makindi&set=znr",
+      "sourceSha256": "d19864011d015236d6b1bfd721f00ffc81953e3aef6c2296aea0e236fc565a57",
+      "rulingsUri": "https://api.scryfall.com/cards/d5a0563e-c83b-40df-abf6-51c83bf6792d/rulings",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "colorIdentity": [],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "d5a0563e-c83b-40df-abf6-51c83bf6792d",
+        "oracle_id": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+        "name": "Throne of Makindi",
+        "set": "znr",
+        "collector_number": "265",
+        "released_at": "2020-09-25",
+        "mana_cost": "",
+        "type_line": "Land",
+        "oracle_text": "{T}: Add {C}.\n{1}, {T}: Put a charge counter on this land.\n{T}, Remove a charge counter from this land: Add two mana of any one color. Spend this mana only to cast kicked spells.",
+        "color_identity": [],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/znr/265/throne-of-makindi?utm_source=api"
+      },
+      "rulings": []
+    },
+    {
+      "symbol": "PlanewideCelebration",
+      "name": "Planewide Celebration",
+      "oracleId": "af23d348-adc9-451e-af08-bf9b1986c591",
+      "printingId": "11016840-56b6-4759-bde6-3dc0e339e87e",
+      "set": "war",
+      "collectorNumber": "172",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Planewide+Celebration&set=war",
+      "sourceSha256": "efbc243b1ac390a71d5e1ed7eee63080b95295f595e39ad8e5ceee10e1897960",
+      "rulingsUri": "https://api.scryfall.com/cards/11016840-56b6-4759-bde6-3dc0e339e87e/rulings",
+      "rulingsSha256": "4affc392e1edeffc155a61001fb4705870dfb118cd83e5fab2b161044a38259c",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "11016840-56b6-4759-bde6-3dc0e339e87e",
+        "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+        "name": "Planewide Celebration",
+        "set": "war",
+        "collector_number": "172",
+        "released_at": "2019-05-03",
+        "mana_cost": "{5}{G}{G}",
+        "type_line": "Sorcery",
+        "oracle_text": "Choose four. You may choose the same mode more than once.\n• Create a 2/2 Citizen creature token that's all colors.\n• Return target permanent card from your graveyard to your hand.\n• Proliferate.\n• You gain 4 life.",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "not_legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/war/172/planewide-celebration?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "If a permanent ever has both +1/+1 counters and -1/-1 counters on it at the same time, they're removed in pairs as a state-based action so that the permanent has only one of those kinds of counters on it."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "If a player or permanent has more than one kind of counter on it, and you choose for it to get additional counters, it must get one of each kind of counter it already has. You can't have it get just one kind of counter it already has and not the others."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "An ability that triggers \"Whenever you proliferate\" triggers even if you chose no permanents or players while doing so."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "Players can respond to a spell or ability whose effect includes proliferating. Once that spell or ability starts to resolve, however, and its controller chooses which permanents and players will get new counters, it's too late for anyone to respond."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "To proliferate, you can choose any permanent that has a counter, including ones controlled by opponents. You can choose any player who has a counter, including opponents. You can't choose cards in any zone other than the battlefield, even if they have counters on them."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2023-02-04",
+          "comment": "You don't have to choose every permanent or player that has a counter, only the ones you want to add another counter to. Since \"any number\" includes zero, you don't have to choose any permanents at all, and you don't have to choose any players at all."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2019-05-03",
+          "comment": "A permanent card is an artifact, creature, enchantment, land, or planeswalker card."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2019-05-03",
+          "comment": "If the second mode is chosen at least once, and every target permanent card is an illegal target by the time Planewide Celebration tries to resolve, the spell doesn't resolve. None of the other chosen modes happen. If only some of the targets are illegal targets but at least one is still legal, you still do as much as you can and the illegal targets aren't affected."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "af23d348-adc9-451e-af08-bf9b1986c591",
+          "source": "wotc",
+          "published_at": "2019-05-03",
+          "comment": "No matter which combination of modes you choose, you always follow the instructions of Planewide Celebration in the order they are written. If a mode is chosen more than once, you perform that mode's instruction that many times sequentially."
+        }
+      ]
+    },
+    {
+      "symbol": "TyriteSanctum",
+      "name": "Tyrite Sanctum",
+      "oracleId": "38c83332-2d21-450c-ae97-34109b565f59",
+      "printingId": "309ff3bf-acd3-4bea-b518-6e25f6cfce61",
+      "set": "khm",
+      "collectorNumber": "272",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Tyrite+Sanctum&set=khm",
+      "sourceSha256": "bbfcda26de7adae212e30b2f6277cea0ea85ffcad86ad197404bb258b2ed4aab",
+      "rulingsUri": "https://api.scryfall.com/cards/309ff3bf-acd3-4bea-b518-6e25f6cfce61/rulings",
+      "rulingsSha256": "54711a63da81ee70d185658234fda1f1147564d3dba3f66fb0f8b7186b9129d1",
+      "colorIdentity": [],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "309ff3bf-acd3-4bea-b518-6e25f6cfce61",
+        "oracle_id": "38c83332-2d21-450c-ae97-34109b565f59",
+        "name": "Tyrite Sanctum",
+        "set": "khm",
+        "collector_number": "272",
+        "released_at": "2021-02-05",
+        "mana_cost": "",
+        "type_line": "Land",
+        "oracle_text": "{T}: Add {C}.\n{2}, {T}: Target legendary creature becomes a God in addition to its other types. Put a +1/+1 counter on it.\n{4}, {T}, Sacrifice this land: Put an indestructible counter on target God.",
+        "color_identity": [],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/khm/272/tyrite-sanctum?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "38c83332-2d21-450c-ae97-34109b565f59",
+          "source": "wotc",
+          "published_at": "2021-02-05",
+          "comment": "You can activate the middle ability targeting a legendary creature that's already a God. You'll put a +1/+1 counter on it."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "38c83332-2d21-450c-ae97-34109b565f59",
+          "source": "wotc",
+          "published_at": "2021-02-05",
+          "comment": "An indestructible counter on a permanent gives that permanent indestructible."
+        }
+      ]
+    },
+    {
+      "symbol": "KrenkosCommand",
+      "name": "Krenko's Command",
+      "oracleId": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+      "printingId": "84df41e9-e973-4441-b17f-434517134d46",
+      "set": "m13",
+      "collectorNumber": "139",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Krenko%27s+Command&set=m13",
+      "sourceSha256": "ba9e3437b5798e7c35d74af3516124d3648a3f2295e0d5b1e9a4a44bda193a69",
+      "rulingsUri": "https://api.scryfall.com/cards/84df41e9-e973-4441-b17f-434517134d46/rulings",
+      "rulingsSha256": "6959514f6cea4012b6cceb5fe573de3433c3927da3183236a64ab122bc02ef10",
+      "colorIdentity": [
+        "R"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "84df41e9-e973-4441-b17f-434517134d46",
+        "oracle_id": "9cfe86ae-eebe-44aa-a956-4b3e9e621105",
+        "name": "Krenko's Command",
+        "set": "m13",
+        "collector_number": "139",
+        "released_at": "2012-07-13",
+        "mana_cost": "{1}{R}",
+        "type_line": "Sorcery",
+        "oracle_text": "Create two 1/1 red Goblin creature tokens.",
+        "color_identity": [
+          "R"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "not_legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "legal",
+          "vintage": "legal",
+          "penny": "not_legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/m13/139/krenkos-command?utm_source=api"
+      },
+      "rulings": []
+    },
+    {
+      "symbol": "Bitterblossom",
+      "name": "Bitterblossom",
+      "oracleId": "fb868840-09fa-49b1-85cb-b08ad065e972",
+      "printingId": "8145fed6-6b51-420a-84cf-4ea5e0aa1883",
+      "set": "mor",
+      "collectorNumber": "58",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Bitterblossom&set=mor",
+      "sourceSha256": "aec768148a3943c94e67e86f413c7c903ba6054488cd6b9b05c44d53e73784e1",
+      "rulingsUri": "https://api.scryfall.com/cards/8145fed6-6b51-420a-84cf-4ea5e0aa1883/rulings",
+      "rulingsSha256": "88464af58cf2d355437b392e823e83382dde490c06c489b04b0ea92026dbf215",
+      "colorIdentity": [
+        "B"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "8145fed6-6b51-420a-84cf-4ea5e0aa1883",
+        "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+        "name": "Bitterblossom",
+        "set": "mor",
+        "collector_number": "58",
+        "released_at": "2008-02-01",
+        "mana_cost": "{1}{B}",
+        "type_line": "Kindred Enchantment — Faerie",
+        "oracle_text": "At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.",
+        "color_identity": [
+          "B"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "not_legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/mor/58/bitterblossom?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+          "source": "wotc",
+          "published_at": "2024-06-07",
+          "comment": "This cards was originally printed with the \"tribal\" card type. That card type has been replaced with \"kindred\". This change does not affect the gameplay function of this card."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+          "source": "wotc",
+          "published_at": "2024-06-07",
+          "comment": "Kindred is a card type that allows noncreature cards to have creature types. For example, Echoes of Eternity is an Eldrazi (although not a creature) while on the battlefield and an Eldrazi card (although not a creature card) in zones other than the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+          "source": "wotc",
+          "published_at": "2024-06-07",
+          "comment": "While it appears only on cards that already have other card types, kindred is a card type and will be counted by effects that refer to the number of card types among cards in a zone."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+          "source": "wotc",
+          "published_at": "2008-04-01",
+          "comment": "The effect is mandatory. You'll lose 1 life even if you have only 1 life left."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "fb868840-09fa-49b1-85cb-b08ad065e972",
+          "source": "wotc",
+          "published_at": "2008-04-01",
+          "comment": "The life loss isn't a payment. You'll get a token even if you had 0 life (and another effect is stopping you from losing the game)."
+        }
+      ]
+    },
+    {
+      "symbol": "JudithTheScourgeDiva",
+      "name": "Judith, the Scourge Diva",
+      "oracleId": "c01516e0-eec3-4370-b935-7674982e8850",
+      "printingId": "0a742125-730d-4082-bfd8-5feb7733def4",
+      "set": "rna",
+      "collectorNumber": "185",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Judith%2C+the+Scourge+Diva&set=rna",
+      "sourceSha256": "985157e73f1af667d310a034a2c0bc9c2b4698fd5e957c1e962c953097ff4ddd",
+      "rulingsUri": "https://api.scryfall.com/cards/0a742125-730d-4082-bfd8-5feb7733def4/rulings",
+      "rulingsSha256": "f55ec2ef2a55cdbcf65129b6d964122be2589204c94878fc99b99ca903d94375",
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "0a742125-730d-4082-bfd8-5feb7733def4",
+        "oracle_id": "c01516e0-eec3-4370-b935-7674982e8850",
+        "name": "Judith, the Scourge Diva",
+        "set": "rna",
+        "collector_number": "185",
+        "released_at": "2019-01-25",
+        "mana_cost": "{1}{B}{R}",
+        "type_line": "Legendary Creature — Human Shaman",
+        "oracle_text": "Other creatures you control get +1/+0.\nWhenever a nontoken creature you control dies, Judith deals 1 damage to any target.",
+        "power": "2",
+        "toughness": "2",
+        "color_identity": [
+          "B",
+          "R"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/rna/185/judith-the-scourge-diva?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "c01516e0-eec3-4370-b935-7674982e8850",
+          "source": "wotc",
+          "published_at": "2019-01-25",
+          "comment": "Judith's last ability triggers when Judith dies if it's not a token."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "c01516e0-eec3-4370-b935-7674982e8850",
+          "source": "wotc",
+          "published_at": "2019-01-25",
+          "comment": "If Judith dies at the same time as one or more other nontoken creatures you control, Judith's ability triggers for each of them."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "c01516e0-eec3-4370-b935-7674982e8850",
+          "source": "wotc",
+          "published_at": "2019-01-25",
+          "comment": "If your life total is brought to 0 or less at the same time that nontoken creatures you control are dealt lethal damage, you lose the game before Judith's triggered ability goes on the stack."
+        }
+      ]
+    },
+    {
+      "symbol": "OviyaPashiriSageLifecrafter",
+      "name": "Oviya Pashiri, Sage Lifecrafter",
+      "oracleId": "41e03224-bcdd-4127-a19a-fe66196339b9",
+      "printingId": "27eb9d40-958b-41b8-b04b-7f45adc0a862",
+      "set": "kld",
+      "collectorNumber": "165",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Oviya+Pashiri%2C+Sage+Lifecrafter&set=kld",
+      "sourceSha256": "aef3bebec0cc97ca89c20a34c839e46c5851a94072f4024c1878347f13aa403e",
+      "rulingsUri": "https://api.scryfall.com/cards/27eb9d40-958b-41b8-b04b-7f45adc0a862/rulings",
+      "rulingsSha256": "f34201c34b0fb6ef347bd455f5064423728143374d5ef0beb59fb6c8fd398651",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "27eb9d40-958b-41b8-b04b-7f45adc0a862",
+        "oracle_id": "41e03224-bcdd-4127-a19a-fe66196339b9",
+        "name": "Oviya Pashiri, Sage Lifecrafter",
+        "set": "kld",
+        "collector_number": "165",
+        "released_at": "2016-09-30",
+        "mana_cost": "{G}",
+        "type_line": "Legendary Creature — Human Artificer",
+        "oracle_text": "{2}{G}, {T}: Create a 1/1 colorless Servo artifact creature token.\n{4}{G}, {T}: Create an X/X colorless Construct artifact creature token, where X is the number of creatures you control.",
+        "power": "1",
+        "toughness": "2",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "legal",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "not_legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/kld/165/oviya-pashiri-sage-lifecrafter?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "41e03224-bcdd-4127-a19a-fe66196339b9",
+          "source": "wotc",
+          "published_at": "2016-09-20",
+          "comment": "The value of X is determined only as Oviya Pashiri's last ability resolves. The token's power and toughness won't change as the number of creatures you control changes."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "41e03224-bcdd-4127-a19a-fe66196339b9",
+          "source": "wotc",
+          "published_at": "2016-09-20",
+          "comment": "The Construct token you're creating doesn't count towards X for the ability that creates it."
+        }
+      ]
+    },
+    {
+      "symbol": "Sunforger",
+      "name": "Sunforger",
+      "oracleId": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+      "printingId": "c8d5e027-aa74-444b-a945-1bafa9bdec4c",
+      "set": "rav",
+      "collectorNumber": "272",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Sunforger&set=rav",
+      "sourceSha256": "82f22fae386dc79f408b05fdf7035a50fbc80648a824a4ac08883a7a518ce1b6",
+      "rulingsUri": "https://api.scryfall.com/cards/c8d5e027-aa74-444b-a945-1bafa9bdec4c/rulings",
+      "rulingsSha256": "a8bbfe57084bf019ab5bb2b02e497927397bcba77a32ad8f215e703826fb32ad",
+      "colorIdentity": [
+        "R",
+        "W"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "c8d5e027-aa74-444b-a945-1bafa9bdec4c",
+        "oracle_id": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+        "name": "Sunforger",
+        "set": "rav",
+        "collector_number": "272",
+        "released_at": "2005-10-07",
+        "mana_cost": "{3}",
+        "type_line": "Artifact — Equipment",
+        "oracle_text": "Equipped creature gets +4/+0.\n{R}{W}, Unattach this Equipment: Search your library for a red or white instant card with mana value 4 or less and cast that card without paying its mana cost. Then shuffle.\nEquip {3}",
+        "color_identity": [
+          "R",
+          "W"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "not_legal",
+          "timeless": "not_legal",
+          "gladiator": "not_legal",
+          "pioneer": "not_legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "not_legal",
+          "competitivebrawl": "not_legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "legal",
+          "tlr": "legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/rav/272/sunforger?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "source": "wotc",
+          "published_at": "2020-08-07",
+          "comment": "You can't pay the cost of unattaching Sunforger unless Sunforger is attached to a creature."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "source": "wotc",
+          "published_at": "2020-08-07",
+          "comment": "If you cast a spell \"without paying its mana cost,\" you can't choose to cast it for any alternative costs. You can, however, pay additional costs. If the card has any mandatory additional costs, those must be paid to cast the spell."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "d1421070-a3cc-4af3-bf91-0f97372f4161",
+          "source": "wotc",
+          "published_at": "2020-08-07",
+          "comment": "If a spell has {X} in its mana cost, you must choose 0 as the value of X when casting it without paying its mana cost."
+        }
+      ]
+    },
+    {
+      "symbol": "PredatoryUrge",
+      "name": "Predatory Urge",
+      "oracleId": "f6175cca-0e19-4db8-a175-3369fb650f24",
+      "printingId": "d7f8adaa-2852-4e9c-b91d-ce80a21859c9",
+      "set": "zen",
+      "collectorNumber": "175",
+      "sourceUri": "https://api.scryfall.com/cards/named?exact=Predatory+Urge&set=zen",
+      "sourceSha256": "620883641da79531f7b86a743ac786e42f6e170025d1f7785c885388c8faeb12",
+      "rulingsUri": "https://api.scryfall.com/cards/d7f8adaa-2852-4e9c-b91d-ce80a21859c9/rulings",
+      "rulingsSha256": "b2a7ea8215363140ab1dd33cd3c7b8551f6eaa7fe00423534ea659f4ae13a0d8",
+      "colorIdentity": [
+        "G"
+      ],
+      "commanderLegality": "legal",
+      "physicalSource": {
+        "id": "d7f8adaa-2852-4e9c-b91d-ce80a21859c9",
+        "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+        "name": "Predatory Urge",
+        "set": "zen",
+        "collector_number": "175",
+        "released_at": "2009-10-02",
+        "mana_cost": "{3}{G}",
+        "type_line": "Enchantment — Aura",
+        "oracle_text": "Enchant creature\nEnchanted creature has \"{T}: This creature deals damage equal to its power to target creature. That creature deals damage equal to its power to this creature.\"",
+        "color_identity": [
+          "G"
+        ],
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "not_legal",
+          "timeless": "not_legal",
+          "gladiator": "not_legal",
+          "pioneer": "not_legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "not_legal",
+          "vintage": "legal",
+          "penny": "legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "not_legal",
+          "competitivebrawl": "not_legal",
+          "alchemy": "not_legal",
+          "paupercommander": "not_legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "not_legal",
+          "predh": "legal",
+          "tlr": "not_legal"
+        },
+        "scryfall_uri": "https://scryfall.com/card/zen/175/predatory-urge?utm_source=api"
+      },
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+          "source": "wotc",
+          "published_at": "2009-10-01",
+          "comment": "The controller of the enchanted creature may activate the ability, not the controller of Predatory Urge."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+          "source": "wotc",
+          "published_at": "2009-10-01",
+          "comment": "If the enchanted creature’s ability is activated, that creature is the one that will deal and be dealt damage when the ability resolves. It doesn’t matter if Predatory Urge leaves the battlefield or somehow becomes attached to another creature by that time."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+          "source": "wotc",
+          "published_at": "2009-10-01",
+          "comment": "If the targeted creature leaves the battlefield (or otherwise becomes an illegal target) before the ability resolves, the ability doesn’t resolve. The enchanted creature isn’t dealt damage."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+          "source": "wotc",
+          "published_at": "2009-10-01",
+          "comment": "On the other hand, if the enchanted creature leaves the battlefield before the ability resolves, the ability continues to resolve. The enchanted creature deals damage to the targeted creature equal to the power the enchanted creature had as it last existed on the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "f6175cca-0e19-4db8-a175-3369fb650f24",
+          "source": "wotc",
+          "published_at": "2009-10-01",
+          "comment": "You may have the enchanted creature target itself with its own ability. If you do, it will deal damage to itself equal to its power, then immediately do it again."
+        }
+      ]
+    }
+  ]
+}

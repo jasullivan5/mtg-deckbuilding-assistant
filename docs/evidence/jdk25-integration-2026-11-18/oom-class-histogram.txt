@@ -1,0 +1,42 @@
+17008:
+ num     #instances         #bytes  class name (module)
+-------------------------------------------------------
+   1:       4835482      251451616  [B (java.base@25.0.4.1)
+   2:       4095047      163801880  java.util.LinkedHashMap$Entry (java.base@25.0.4.1)
+   3:       4831370      115952880  java.lang.String (java.base@25.0.4.1)
+   4:       1251826       90903776  [Ljava.util.HashMap$Node; (java.base@25.0.4.1)
+   5:       1337867       85623488  java.util.LinkedHashMap (java.base@25.0.4.1)
+   6:        674072       34661584  [Ljava.lang.Object; (java.base@25.0.4.1)
+   7:       1336834       32084016  kotlinx.serialization.json.JsonLiteral
+   8:       1056671       25360104  java.util.ArrayList (java.base@25.0.4.1)
+   9:       1076266       17220256  kotlinx.serialization.json.JsonObject
+  10:        129683       15952768  java.lang.Class (java.base@25.0.4.1)
+  11:        360593        8654232  java.util.LinkedHashMap$LinkedEntrySet (java.base@25.0.4.1)
+  12:         49109        5893080  com.wingedsheep.sdk.model.CardDefinition
+  13:        236975        5687400  java.util.Collections$SingletonList (java.base@25.0.4.1)
+  14:         89554        4298592  java.lang.invoke.MemberName (java.base@25.0.4.1)
+  15:         89205        4281840  dev.mtg.assistant.coverage.MetadataAgreement
+  16:        170287        4086888  kotlin.SynchronizedLazyImpl
+  17:         95354        3814160  dev.mtg.assistant.audit.CoverageOccurrence
+  18:         78098        3748704  dev.mtg.assistant.coverage.GlobalBaselineEntry
+  19:         57706        3693184  dev.mtg.assistant.audit.CoverageGroup
+  20:         24086        3468384  com.wingedsheep.sdk.model.CardScript
+  21:        216275        3460400  kotlinx.serialization.json.JsonArray
+  22:         86173        3446920  java.lang.invoke.DirectMethodHandle (java.base@25.0.4.1)
+  23:         81901        3276040  java.lang.invoke.BoundMethodHandle$Species_L (java.base@25.0.4.1)
+  24:         57391        3213896  dev.mtg.assistant.discovery.ActionEvidence
+  25:         39063        3125040  dev.mtg.assistant.coverage.OracleIdentity
+  26:         95175        3045600  java.util.concurrent.ConcurrentHashMap$Node (java.base@25.0.4.1)
+  27:         90371        2891872  java.util.HashMap$Node (java.base@25.0.4.1)
+  28:         37989        2735208  com.wingedsheep.sdk.model.Printing
+  29:         46946        2628976  com.wingedsheep.sdk.model.ScryfallMetadata
+  30:        151701        2427216  java.util.LinkedHashSet (java.base@25.0.4.1)
+  31:         93477        2243448  java.util.LinkedHashMap$LinkedKeySet (java.base@25.0.4.1)
+  32:         44937        2156976  dev.mtg.assistant.coverage.NativeMapping
+  33:         29956        2156832  dev.mtg.assistant.coverage.NativeIdentity
+  34:         85595        2054280  java.lang.invoke.ResolvedMethodName (java.base@25.0.4.1)
+  35:         50645        2025800  dev.mtg.assistant.discovery.StructuralSupport
+  36:         17618        1973216  dev.mtg.assistant.discovery.MechanicalFact
+  37:        120047        1920752  java.util.Collections$SingletonSet (java.base@25.0.4.1)
+  38:         44937        1797480  dev.mtg.assistant.coverage.CoverageCard
+  39:         66660        1599840  java.util.LinkedHashMap$LinkedValues (java.base@25.0.4.1)

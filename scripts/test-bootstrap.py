@@ -56,7 +56,7 @@ class BootstrapGuards(unittest.TestCase):
         if self.shell != "bash":
             self.skipTest("Bash Java probe regression")
         tools = self.base / "test-bin"
-        tools.mkdir()
+        tools.mkdir(exist_ok=True)
         java = tools / "java"
         java.write_text(
             "#!/usr/bin/env bash\n"
@@ -68,21 +68,23 @@ class BootstrapGuards(unittest.TestCase):
         java.chmod(0o755)
         self.env["PATH"] = str(tools) + os.pathsep + self.env["PATH"]
 
-    def test_bash_accepts_jdk21_with_verbose_properties(self):
-        self.fake_java("21")
+    def test_bash_accepts_jdk25_with_verbose_properties(self):
+        self.fake_java("25")
         self.succeeds()
 
     def test_bash_rejects_unsupported_jdk(self):
-        self.fake_java("210")
-        result = self.setup()
-        self.assertEqual(result.returncode, 1)
-        self.assertIn("JDK 21 is required", result.stderr)
+        for unsupported in ("21", "26", "250"):
+            with self.subTest(java=unsupported):
+                self.fake_java(unsupported)
+                result = self.setup()
+                self.assertEqual(result.returncode, 1)
+                self.assertIn("JDK 25 is required", result.stderr)
 
-    def test_bash_rejects_failed_java_probe_even_with_jdk21_output(self):
-        self.fake_java("21", status=3)
+    def test_bash_rejects_failed_java_probe_even_with_jdk25_output(self):
+        self.fake_java("25", status=3)
         result = self.setup()
         self.assertEqual(result.returncode, 1)
-        self.assertIn("JDK 21 is required", result.stderr)
+        self.assertIn("JDK 25 is required", result.stderr)
     def test_new_app_stable_commit_needs_no_pin_approval(self):
         (self.repo / "source").write_text("compatible change")
         self.g("commit", "-qam", "next")

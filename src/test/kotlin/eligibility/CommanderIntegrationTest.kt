@@ -28,19 +28,19 @@ class CommanderIntegrationTest : FunSpec({
         r.mechanicalReview shouldBe MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
     }
     test("missing pinned definition is distinct from Magic card nonexistence and retains exact lookup") {
-        upstreamOnly.card(OviyaPashiriSageLifecrafter.name) shouldBe null
-        val r=inspectCommander(upstreamOnly,OviyaPashiriSageLifecrafter.name)
+        val r=inspectCommander(upstreamOnly,"Unrepresented Commander Fixture")
         r.availability shouldBe DefinitionAvailability.MISSING_FROM_PINNED_CATALOG
         r.blockers.single().code shouldBe CommanderBlocker.MISSING_DEFINITION
         r.blockers.single().reason shouldContain "does not establish"
         inspectCommander(catalog,"oviya pashiri, sage lifecrafter").selectable shouldBe false
     }
-    test("application commander exposes verified provenance and bounded scenario record") {
+    test("adopted native commander preserves identity and historical assurance without inherited execution") {
         val r=inspectCommander(catalog,OviyaPashiriSageLifecrafter.name)
-        r.availability shouldBe DefinitionAvailability.APPLICATION_EXTENSION
-        r.provenance!!.verifiedAt shouldBe "2026-10-26"
-        r.mechanicalReview shouldBe MechanicalReviewStatus.ENGINE_SCENARIOS_RECORDED
-        r.scenarioReferences.size shouldBe 1
+        r.availability shouldBe DefinitionAvailability.UPSTREAM_NATIVE
+        r.provenance!!.origin shouldBe "UPSTREAM_ARGENTUM"
+        r.mechanicalReview shouldBe MechanicalReviewStatus.NOT_INDEPENDENTLY_VERIFIED
+        r.translationAssurance!!.evidence!!.oracleId shouldBe OviyaPashiriSageLifecrafter.oracleId
+        r.translationAssurance!!.evidenceCurrent shouldBe false
         r.selectable shouldBe true
         fullIdentity(resolveCommander(catalog,r.requestedName)) shouldBe setOf(Color.GREEN)
     }
@@ -124,7 +124,8 @@ class CommanderIntegrationTest : FunSpec({
         c.metadata.scryfallId shouldBe source.getValue("id").jsonPrimitive.content
         c.metadata.artist shouldBe source.getValue("artist").jsonPrimitive.content
         c.metadata.rarity.name.lowercase() shouldBe source.getValue("rarity").jsonPrimitive.content
-        c.legalFormats shouldBe DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
+        c.legalFormats.filter { it.scryfallKey in source.getValue("legalities").jsonObject }.toSet() shouldBe
+            DeckFormat.entries.filter { source.getValue("legalities").jsonObject[it.scryfallKey]?.jsonPrimitive?.content=="legal" }.toSet()
         fullIdentity(c).map { it.symbol.toString() }.toSet() shouldBe source.getValue("color_identity").jsonArray.map { it.jsonPrimitive.content }.toSet()
         val rulings=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/cards/oviya-pashiri-sage-lifecrafter-rulings.json"))).jsonObject.getValue("data").jsonArray
         c.metadata.rulings.map { it.date to it.text } shouldBe rulings.map { it.jsonObject.getValue("published_at").jsonPrimitive.content to it.jsonObject.getValue("comment").jsonPrimitive.content }
@@ -140,17 +141,17 @@ class CommanderIntegrationTest : FunSpec({
         reports.last().results.count { it.verdict==Verdict.MATCH && it.card==commander.name } shouldBe 2
         reports.take(2).all { it.results.none { r -> r.verdict==Verdict.MATCH && r.card==commander.name } } shouldBe true
     }
-    test("Judith and Krenko retain complete eligible pools and controlled A B C evidence") {
-        val previous=Catalog(Extensions.all.filter { it.definition.name!=OviyaPashiriSageLifecrafter.name })
-        for(who in listOf("Judith, the Scourge Diva","Krenko, Mob Boss")) for(objective in listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")) {
-            val before=discover(previous,who,"name:Kuldotha",objective)
-            val after=discover(catalog,who,"name:Kuldotha",objective)
-            after.eligibility.filterNot { it.card==OviyaPashiriSageLifecrafter.name } shouldBe before.eligibility
-            after.counts["commander_eligible_cards"] shouldBe before.counts["commander_eligible_cards"]
-            after.mechanicalInputCards shouldBe before.mechanicalInputCards
-            after.facts shouldBe before.facts;after.actions shouldBe before.actions;after.results shouldBe before.results
-            after.unsupported shouldBe before.unsupported
-            after.counts["authored_physical_cards"] shouldBe before.counts["authored_physical_cards"]!!+1
+    test("native Oviya has one representation and remains excluded from Judith and Krenko across objectives") {
+        catalog.cards.count { it.oracleId==OviyaPashiriSageLifecrafter.oracleId } shouldBe 1
+        for(who in listOf("Judith, the Scourge Diva","Krenko, Mob Boss")) {
+            val reports=listOf("own-nontoken-creature-deaths","reanimate-own-creatures","create-creature-tokens")
+                .map { discover(catalog,who,"name:Kuldotha",it) }
+            reports.map { it.eligibility }.distinct().size shouldBe 1
+            reports.map { it.facts }.distinct().size shouldBe 1
+            reports.forEach { report ->
+                report.eligibility.single { it.card==OviyaPashiriSageLifecrafter.name }.deck shouldBe Verdict.NO_MATCH
+                requireNotNull(report.mechanicalInputCards).contains(OviyaPashiriSageLifecrafter.name) shouldBe false
+            }
         }
     }
 })

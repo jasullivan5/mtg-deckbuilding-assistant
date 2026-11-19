@@ -1,0 +1,52 @@
+27624:
+ num     #instances         #bytes  class name (module)
+-------------------------------------------------------
+   1:       4579116      232287496  [B (java.base@25.0.4.1)
+   2:       3449329      137973160  java.util.LinkedHashMap$Entry (java.base@25.0.4.1)
+   3:       4574993      109799832  java.lang.String (java.base@25.0.4.1)
+   4:        892139       77345992  [Ljava.util.HashMap$Node; (java.base@25.0.4.1)
+   5:        978726       62638464  java.util.LinkedHashMap (java.base@25.0.4.1)
+   6:        575615       32136864  [Ljava.lang.Object; (java.base@25.0.4.1)
+   7:        997567       23941608  kotlinx.serialization.json.JsonLiteral
+   8:        957281       22974744  java.util.ArrayList (java.base@25.0.4.1)
+   9:        129897       15979064  java.lang.Class (java.base@25.0.4.1)
+  10:        699503       11192048  kotlinx.serialization.json.JsonObject
+  11:         49109        5893080  com.wingedsheep.sdk.model.CardDefinition
+  12:        237591        5702184  java.util.Collections$SingletonList (java.base@25.0.4.1)
+  13:         89738        4307424  java.lang.invoke.MemberName (java.base@25.0.4.1)
+  14:         89205        4281840  dev.mtg.assistant.coverage.MetadataAgreement
+  15:        170298        4087152  kotlin.SynchronizedLazyImpl
+  16:         78098        3748704  dev.mtg.assistant.coverage.GlobalBaselineEntry
+  17:         24086        3468384  com.wingedsheep.sdk.model.CardScript
+  18:         86317        3452680  java.lang.invoke.DirectMethodHandle (java.base@25.0.4.1)
+  19:         81966        3278640  java.lang.invoke.BoundMethodHandle$Species_L (java.base@25.0.4.1)
+  20:         39063        3125040  dev.mtg.assistant.coverage.OracleIdentity
+  21:         95477        3055264  java.util.concurrent.ConcurrentHashMap$Node (java.base@25.0.4.1)
+  22:         53039        2970184  dev.mtg.assistant.discovery.ActionEvidence
+  23:         90513        2896416  java.util.HashMap$Node (java.base@25.0.4.1)
+  24:         37989        2735208  com.wingedsheep.sdk.model.Printing
+  25:         46946        2628976  com.wingedsheep.sdk.model.ScryfallMetadata
+  26:        151701        2427216  java.util.LinkedHashSet (java.base@25.0.4.1)
+  27:        151370        2421920  kotlinx.serialization.json.JsonArray
+  28:         93477        2243448  java.util.LinkedHashMap$LinkedKeySet (java.base@25.0.4.1)
+  29:         44937        2156976  dev.mtg.assistant.coverage.NativeMapping
+  30:         29956        2156832  dev.mtg.assistant.coverage.NativeIdentity
+  31:         85715        2057160  java.lang.invoke.ResolvedMethodName (java.base@25.0.4.1)
+  32:        120021        1920336  java.util.Collections$SingletonSet (java.base@25.0.4.1)
+  33:         46245        1849800  dev.mtg.assistant.discovery.StructuralSupport
+  34:         16061        1798832  dev.mtg.assistant.discovery.MechanicalFact
+  35:         44937        1797480  dev.mtg.assistant.coverage.CoverageCard
+  36:         66660        1599840  java.util.LinkedHashMap$LinkedValues (java.base@25.0.4.1)
+  37:         39063        1562520  dev.mtg.assistant.coverage.OracleSource
+  38:         64611        1550664  java.util.LinkedHashMap$LinkedEntrySet (java.base@25.0.4.1)
+  39:         38640        1545600  dev.mtg.assistant.coverage.ObjectiveCardReach
+  40:         38319        1532760  java.lang.ref.SoftReference (java.base@25.0.4.1)
+  41:            20        1448280  [Ljdk.internal.vm.FillerElement; (java.base@25.0.4.1)
+  42:         22089        1413696  kotlinx.serialization.descriptors.SerialDescriptorImpl
+  43:         86527        1384432  java.lang.Object (java.base@25.0.4.1)
+  44:         53852        1292448  java.util.Arrays$ArrayList (java.base@25.0.4.1)
+  45:         32251        1290040  dev.mtg.assistant.discovery.Unsupported
+  46:         79440        1271040  kotlin.jvm.internal.ClassReference
+  47:          7732        1237120  dev.mtg.assistant.discovery.ResultEvidence
+
+Full original diagnostic bytes are preserved in retained-projection-histogram.txt.gz; see retained-projection-histogram-original.json. Text-preview whitespace is normalized.

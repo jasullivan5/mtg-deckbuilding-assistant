@@ -1,0 +1,14 @@
+{
+  "sourceSnapshot": "oracle-cards-20261026210159.jsonl.gz",
+  "sourceSnapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "source": {
+    "id": "985b5c60-8a5e-4473-ba43-583aef50f19e",
+    "oracle_id": "f57901c2-80c6-49d6-8de3-c96aaeb72bbf",
+    "name": "Devout Harpist",
+    "oracle_text": "{T}: Destroy target Aura attached to a creature.",
+    "type_line": "Creature \u2014 Human"
+  },
+  "beforeEngine": "bd26b756b8b4d347f19e92bc77ef020919ebfa48",
+  "afterEngine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "observedDifference": "The native target changes from a creature to an Aura enchantment attached to a creature. Recorded mechanicalCompatibility MATCH becomes UNKNOWN; the final objective verdict remains NO_MATCH. The source snapshot specifies the Aura target."
+}

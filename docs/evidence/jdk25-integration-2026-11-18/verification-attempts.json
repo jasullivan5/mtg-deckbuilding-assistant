@@ -1,0 +1,47 @@
+{
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "finalApplication": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+  "attempts": [
+    {
+      "application": "22ed44c4ffa5a1631fe31340b24085eaf20f793d",
+      "result": "COMPILE_FAILED",
+      "reason": "ClassGraph 6 removed ClassInfo.loadClass; changed to upstream-style Class.forName at b975029"
+    },
+    {
+      "application": "b975029995366a631db2c082162ae201b34b5485",
+      "result": "APPLICATION_764_PASSED_BROWSER_38_OF_41",
+      "reason": "Required UI8/live18 passed; three supplementary population/snapshot checks repaired separately; historical screenshots restored"
+    },
+    {
+      "application": "263c46d8f6ba8eb263f46e622184e55c4973c9d6",
+      "result": "APPLICATION_764_PASSED_COLD_SOURCE_PROGRESS_OOM",
+      "reason": "Full-source supplementary workload exceeded unchanged 1 GiB heap; native audit canonical shapes were duplicated"
+    },
+    {
+      "application": "e4bd3fe852c789db80e4b50b11878db7c7cacf46",
+      "result": "COLD_PROGRESS_PASSED_LATER_DISCOVER_FAILED_FULL_APPLICATION_CANCELLED",
+      "reason": "Sharing fixed cold Progress; strong retained complete projections still exhausted later navigation. Cancelled only obsolete task-owned test client; not counted as a full-suite pass"
+    },
+    {
+      "application": "a5ce2395b67bfd4cbc440e4c2b8b21a77b77e3d0",
+      "result": "EXTENDED_NAVIGATION_PASSED_VERIFICATION_TIMEOUT_FULL_APPLICATION_CANCELLED",
+      "reason": "Cold source Progress and two Kenrith runs passed. Verification rebuilt unnecessary full extraction under heap pressure; HTTP504 at 120 seconds. Only obsolete owned test client cancelled; no shared daemon stopped"
+    },
+    {
+      "application": "cbfdcea4d5237dec3bdbc8408d2c2532bc6dea32",
+      "result": "BROWSER40_OF41_DETAIL_AUDIT_OOM_FULL_APPLICATION_AND_CATALOG_CANCELLED",
+      "reason": "All required UI8/live18 passed. Full detailed native audit rebuild after retained discovery exhausted the unchanged heap; superseded test/catalog clients cancelled and preserved, not counted as final passes."
+    },
+    {
+      "application": "63e1b0be60eb281a4350dfe1130231ac6d5bc2c1",
+      "result": "FULL_AUDIT_BYTE_EQUAL_COLD_PASS_RETAINED_RUN_DETAIL_OOM",
+      "reason": "Streaming native-node grouping preserved the90MBaudit exactly at1g. Retained-run stress identified remaining all-card input extraction peak."
+    },
+    {
+      "application": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+      "result": "FOCUSED15_FULL_AUDIT_BYTE_EQUAL_EXTENDED1G_STRESS_PASSED",
+      "reason": "Full source, verification/cost views, complete detailed mechanics, two Kenrith runs, then detailed mechanics again with the exact90MBhash and Progress revisit all passed. Final full-suite/browser/CLI receipts record their results separately."
+    }
+  ],
+  "note": "Do not sum intermediate attempts as final passing tests. Retained raw log manifest includes failures, startup probes and deliberate cancellations; final evidence is revision-bound."
+}

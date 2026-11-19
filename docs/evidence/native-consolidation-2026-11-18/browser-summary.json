@@ -1,0 +1,258 @@
+{
+  "application": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "mode": "LIVE_KOTLIN_NORMAL_CATALOG_EDGE",
+  "heap": "-Xmx1g",
+  "rawResultsSha256": "a3fda5b506bcf6ff49ef6042d6aa976921c061a20f94112285ce75781cb99aed",
+  "stats": {
+    "startTime": "2026-11-18T08:57:23.201Z",
+    "duration": 345742.74600000004,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "live.spec.ts",
+      "line": 14,
+      "test": "Mechanical Verification Lab connects real discovery, cost payment and target rejection",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 53202,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 61,
+      "test": "Mechanical Verification Lab shows the deceptive land and both Spark outcomes at 390 pixels",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2364,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 92,
+      "test": "independent graveyard discovery finds mill discard and sacrifice through Kotlin",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 38656,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 182,
+      "test": "discover conditional graveyard contributions from native Judith results",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 32066,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 232,
+      "test": "all existing objectives changed commanders and blocked selections still execute genuine Kotlin discovery",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 49522,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 254,
+      "test": "commander and objective disclosures work before discovery with precise review fields at 390 pixels",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1829,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 294,
+      "test": "five representative cards retain concise conditions honest evidence and investigable concerns",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 24094,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 355,
+      "test": "keyboard card selection focuses the compact inspector without a jump link at 390 pixels",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 19937,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 370,
+      "test": "source investigation distinguishes death sources removal policy and new non-removal responses",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 27633,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 411,
+      "test": "sacrifice type boundaries retain real restrictions and renewable creatures stay within existing coverage",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 33701,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 455,
+      "test": "Discovery Coverage counts and filters the fixed cohort and inspects recognized, omitted and unresolved cards",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 20637,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 507,
+      "test": "Integration Change Case Study compares historical records and preserves live discovery",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 15458,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 553,
+      "test": "Primer distinguishes objective questions relationships and implemented coverage at 1440px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2034,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 553,
+      "test": "Primer distinguishes objective questions relationships and implemented coverage at 390px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1803,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 621,
+      "test": "contribution study compares roles against the same mechanics without a new discovery run",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1323,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 664,
+      "test": "contribution follow-up distinguishes state access from scaling and keeps mechanics stable across lenses",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1127,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 700,
+      "test": "Primary navigation preserves live discovery at desktop and 390 px",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 16720,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "file": "live.spec.ts",
+      "line": 717,
+      "test": "event-to-state research distinguishes observed death and checkpoint state",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1844,
+          "retry": 0
+        }
+      ]
+    }
+  ],
+  "syntheticUi": {
+    "tests": 8,
+    "passed": 8,
+    "mode": "MOCKED_API_RENDERER_CHECKS_SEPARATE_FROM_LIVE",
+    "logSha256": "01a9f95a2bc60d7f6d28fd7d5295c100b14203d21bf43e5302393fbe7444e260"
+  },
+  "frontendBuildLogSha256": "693fbc1159f0269d5c927fe53ef43e16e8539ee6b05cdae6e9e280332f922330"
+}

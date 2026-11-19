@@ -1,0 +1,371 @@
+{
+  "application": "9304f480e43a59ebece781ece4e5aa2ad2687d6a",
+  "engine": "682d4e034a5b9078a6be3146b50258313c9af2fa",
+  "mode": "BUILT_IN_AUDIT_DIFF_UNMODIFIED_ARCHIVED_PRODUCTION_REPORTS",
+  "inputNote": "After input is the preserved 5aae report set, byte-identical to all final 9304 exports; exact hashes are in production-final-replay.json. Whole pools differ; common-name comparisons are separately controlled.",
+  "reports": [
+    {
+      "report": "judith-create-creature-tokens.json",
+      "sha256": "8540dc9f0d1f0a2b1e82b85d098715045a804a2f142fefcafa7ce9abdcd6101e",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 109,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 192,
+        "PATHWAY_CHANGED": 648,
+        "UNSUPPORTED_ADDED": 2611,
+        "UNSUPPORTED_REMOVED": 31
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 229,
+        "EXPLANATION_ONLY_CHANGED": 417,
+        "STRUCTURAL_EVIDENCE_CHANGED": 2
+      }
+    },
+    {
+      "report": "judith-creature-died-this-turn.json",
+      "sha256": "33c15fbae11a177abc6e3a310e0440da9ed91510fbc6a0ece100547f5c88826c",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 2,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 5,
+        "PATHWAY_CHANGED": 17,
+        "UNSUPPORTED_ADDED": 2611,
+        "UNSUPPORTED_REMOVED": 31
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 8,
+        "EXPLANATION_ONLY_CHANGED": 9,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 9
+      }
+    },
+    {
+      "report": "judith-own-nontoken-creature-deaths.json",
+      "sha256": "c8591c5666df6b21413e8ab76b6a3c7553f99e157e78983106d461f96eb029b2",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 113,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 971,
+        "PATHWAY_CHANGED": 3512,
+        "PATHWAY_REMOVED": 13,
+        "UNSUPPORTED_ADDED": 2611,
+        "UNSUPPORTED_REMOVED": 31
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 833,
+        "EXPLANATION_ONLY_CHANGED": 2678,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 272,
+        "STRUCTURAL_EVIDENCE_CHANGED": 2,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      }
+    },
+    {
+      "report": "judith-place-plus-one-counters.json",
+      "sha256": "aeebec65441ac66e75d6bd0564a08bc06e9948e9cb69f860bffa25010621da19",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 38,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 171,
+        "PATHWAY_CHANGED": 556,
+        "PATHWAY_REMOVED": 1,
+        "UNSUPPORTED_ADDED": 2530,
+        "UNSUPPORTED_REMOVED": 32
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 128,
+        "EXPLANATION_ONLY_CHANGED": 428,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 228,
+        "STRUCTURAL_EVIDENCE_CHANGED": 1
+      }
+    },
+    {
+      "report": "judith-reanimate-own-creatures.json",
+      "sha256": "54c25429700bcc4875a8e81949b3306029d3ebd26e1db806702752fa0bc340a2",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 32,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 629,
+        "PATHWAY_CHANGED": 2046,
+        "PATHWAY_REMOVED": 10,
+        "UNSUPPORTED_ADDED": 2502,
+        "UNSUPPORTED_REMOVED": 31
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 556,
+        "EXPLANATION_ONLY_CHANGED": 1490,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      }
+    },
+    {
+      "report": "judith-stock-own-graveyard.json",
+      "sha256": "bc1f049a93c8644c922eabcc312780f3b955e07ddc00fa27c3f1bee0c58be900",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 101,
+        "ACCEPTED_CARD_CLASSIFICATIONS_REMOVED": 2,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 376,
+        "PATHWAY_CHANGED": 1435,
+        "PATHWAY_REMOVED": 11,
+        "UNSUPPORTED_ADDED": 2559,
+        "UNSUPPORTED_REMOVED": 31
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 224,
+        "EXPLANATION_ONLY_CHANGED": 1211,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      }
+    },
+    {
+      "report": "kenrith-create-creature-tokens.json",
+      "sha256": "6d9eaa004e8003550f376b0890ac34f05f832f47caf0bffce2c9e2946aeac679",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 383,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 586,
+        "PATHWAY_CHANGED": 1933,
+        "PATHWAY_REMOVED": 1,
+        "UNSUPPORTED_ADDED": 7709,
+        "UNSUPPORTED_REMOVED": 114
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 740,
+        "EXPLANATION_ONLY_CHANGED": 1189,
+        "STRUCTURAL_EVIDENCE_CHANGED": 5
+      }
+    },
+    {
+      "report": "kenrith-creature-died-this-turn.json",
+      "sha256": "f0ad56ec319e5310af2d273d10bc21eaeb5e28a7a674c2b73b0bfd1ff551a063",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 5,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 11,
+        "PATHWAY_CHANGED": 31,
+        "UNSUPPORTED_ADDED": 7709,
+        "UNSUPPORTED_REMOVED": 114
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 10,
+        "EXPLANATION_ONLY_CHANGED": 21,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 13
+      }
+    },
+    {
+      "report": "kenrith-own-nontoken-creature-deaths.json",
+      "sha256": "044b3fd010ccfe4f1397f1c74c0be70e9417110192c2147fa611240cef29658b",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 208,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 1661,
+        "PATHWAY_CHANGED": 6071,
+        "PATHWAY_REMOVED": 23,
+        "UNSUPPORTED_ADDED": 7709,
+        "UNSUPPORTED_REMOVED": 114
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 1382,
+        "EXPLANATION_ONLY_CHANGED": 4687,
+        "MECHANICAL_STAGE_VERDICT_CHANGED": 1,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 532,
+        "STRUCTURAL_EVIDENCE_CHANGED": 3,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      }
+    },
+    {
+      "report": "kenrith-place-plus-one-counters.json",
+      "sha256": "34c0a9ce66634db025f90bed0174107ac0bd97b373bd3d268c4b2a339ccd96b4",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 153,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 592,
+        "PATHWAY_CHANGED": 1954,
+        "PATHWAY_REMOVED": 5,
+        "UNSUPPORTED_ADDED": 7458,
+        "UNSUPPORTED_REMOVED": 114
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 535,
+        "EXPLANATION_ONLY_CHANGED": 1412,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 974,
+        "STRUCTURAL_EVIDENCE_CHANGED": 8
+      }
+    },
+    {
+      "report": "kenrith-reanimate-own-creatures.json",
+      "sha256": "00175e0176df0036c0d375ee916758451026ea219b1b07eacd94c4189f793519",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 53,
+        "ACCEPTED_CARD_CLASSIFICATIONS_REMOVED": 1,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 1733,
+        "PATHWAY_CHANGED": 5634,
+        "PATHWAY_REMOVED": 27,
+        "UNSUPPORTED_ADDED": 7340,
+        "UNSUPPORTED_REMOVED": 110
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 1612,
+        "EXPLANATION_ONLY_CHANGED": 4020,
+        "MECHANICAL_STAGE_VERDICT_CHANGED": 3,
+        "STRUCTURAL_EVIDENCE_CHANGED": 4,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      }
+    },
+    {
+      "report": "kenrith-stock-own-graveyard.json",
+      "sha256": "ae4f28af0188d3e7bbd9511a4eb3a2275ea75ce6f9f777b169992b9b8d40e0aa",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 231,
+        "ACCEPTED_CARD_CLASSIFICATIONS_REMOVED": 3,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 683,
+        "PATHWAY_CHANGED": 2651,
+        "PATHWAY_REMOVED": 16,
+        "UNSUPPORTED_ADDED": 7524,
+        "UNSUPPORTED_REMOVED": 114
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 410,
+        "EXPLANATION_ONLY_CHANGED": 2241,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      }
+    },
+    {
+      "report": "krenko-create-creature-tokens.json",
+      "sha256": "a6ace63a065f27d5c12e3dddb020527896b91feda41250a7b263db51134a56f9",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 59,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 101,
+        "PATHWAY_CHANGED": 362,
+        "UNSUPPORTED_ADDED": 1397,
+        "UNSUPPORTED_REMOVED": 15
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 114,
+        "EXPLANATION_ONLY_CHANGED": 247,
+        "STRUCTURAL_EVIDENCE_CHANGED": 1
+      }
+    },
+    {
+      "report": "krenko-creature-died-this-turn.json",
+      "sha256": "7e35e826fae47520f4842b6389747f15a10ad17ebabd9272bce934f57e7e12e9",
+      "comparableWholePool": false,
+      "counts": {
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_CHANGED": 2,
+        "UNSUPPORTED_ADDED": 1397,
+        "UNSUPPORTED_REMOVED": 15
+      },
+      "transitions": {
+        "EXPLANATION_ONLY_CHANGED": 2
+      }
+    },
+    {
+      "report": "krenko-own-nontoken-creature-deaths.json",
+      "sha256": "f4e8b9cbfc060ff2977120456b0d47f129b6deb684d06449b1fe069c9ab60cc6",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 33,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 461,
+        "PATHWAY_CHANGED": 1864,
+        "PATHWAY_REMOVED": 3,
+        "UNSUPPORTED_ADDED": 1397,
+        "UNSUPPORTED_REMOVED": 15
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 350,
+        "EXPLANATION_ONLY_CHANGED": 1513,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 82,
+        "STRUCTURAL_EVIDENCE_CHANGED": 1
+      }
+    },
+    {
+      "report": "krenko-place-plus-one-counters.json",
+      "sha256": "645800c2e229a6a0e1387c8f597c04f3a7ccd806b0083c5fbb40c65e3e201418",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 13,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 72,
+        "PATHWAY_CHANGED": 287,
+        "UNSUPPORTED_ADDED": 1362,
+        "UNSUPPORTED_REMOVED": 16
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 64,
+        "EXPLANATION_ONLY_CHANGED": 223,
+        "RECORDED_OPAQUE_EVIDENCE_CHANGED": 107
+      }
+    },
+    {
+      "report": "krenko-reanimate-own-creatures.json",
+      "sha256": "0acbde9c87747f4f18959bf63527399323872d209df692c27429b8e2cd02febd",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 2,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 198,
+        "PATHWAY_CHANGED": 863,
+        "PATHWAY_REMOVED": 2,
+        "UNSUPPORTED_ADDED": 1375,
+        "UNSUPPORTED_REMOVED": 15
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 241,
+        "EXPLANATION_ONLY_CHANGED": 622,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 4
+      }
+    },
+    {
+      "report": "krenko-stock-own-graveyard.json",
+      "sha256": "670656b1e77b7377b54946e5c46f13468fe131935efe41221fded39189921ea6",
+      "comparableWholePool": false,
+      "counts": {
+        "ACCEPTED_CARD_CLASSIFICATIONS_ADDED": 43,
+        "ELIGIBILITY_ADDED": 4682,
+        "ELIGIBILITY_CHANGED": 12,
+        "PATHWAY_ADDED": 119,
+        "PATHWAY_CHANGED": 671,
+        "PATHWAY_REMOVED": 2,
+        "UNSUPPORTED_ADDED": 1387,
+        "UNSUPPORTED_REMOVED": 15
+      },
+      "transitions": {
+        "CONDITIONS_OR_CONSTRAINTS_CHANGED": 72,
+        "EXPLANATION_ONLY_CHANGED": 599,
+        "UNRESOLVED_PATHWAY_IDENTITY_CHANGE": 2
+      }
+    }
+  ]
+}
