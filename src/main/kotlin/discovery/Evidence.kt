@@ -23,7 +23,8 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
     val prerequisites: List<String>, val native: JsonElement, val associatedActionId: String? = null,
     @EncodeDefault(EncodeDefault.Mode.NEVER) val classAvailability: ClassAvailability? = null,
     @EncodeDefault(EncodeDefault.Mode.NEVER) val conditionalCosts: List<ConditionalCost> = emptyList(),
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val targetSelection: TargetSelection? = null)
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val targetSelection: TargetSelection? = null,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val attachment: AuraAttachment? = null)
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
     val reason: String, val actionId: String)
 data class Pathway(val card: CardDefinition, val face: String, val actionId: String, val path: String,
