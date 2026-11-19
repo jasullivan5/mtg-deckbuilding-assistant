@@ -294,16 +294,18 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             removal.effect.tree(),dependency=dependency,dependencyVerdict=all(listOf(dep.first,improvement,targetCompatible,removal.confidence,frame.guardConfidence)),circumstances=circumstances("DEPENDENCY",dep.second,frame))
     }
     private fun inspectDefinition(def: CardDefinition, label: String) {
-        inspectScript(def.script,label,def.isCreature,def.isClass,def.manaCost,def.keywordAbilities)
+        inspectScript(def.script,label,def.isCreature,def.isClass,def.manaCost,def.keywordAbilities,def.isAura)
         def.backFace?.let { inspectDefinition(it,"$label.backFace") }
         def.flipSide?.let { inspectDefinition(it,"$label.flipSide") }
-        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass,f.manaCost) }
+        def.cardFaces.forEachIndexed { i,f -> inspectScript(f.script,"$label.cardFaces[$i]:${f.name}",f.typeLine.isCreature,f.typeLine.isClass,f.manaCost,aura=f.typeLine.isAura) }
     }
-    private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, manaCost: ManaCost, keywordAbilities: List<KeywordAbility> = emptyList()) {
+    private fun inspectScript(script: CardScript, label: String, creature: Boolean, isClass: Boolean, manaCost: ManaCost, keywordAbilities: List<KeywordAbility> = emptyList(), aura: Boolean = false) {
         face=label; selfCreature=creature; baseCastingCosts=script.additionalCosts
         if (inspectCounters) script.replacementEffects.forEachIndexed { i, effect -> recordCounterReplacement("script.replacementEffects[$i]", effect) }
         sourceReplacementLimits=script.replacementEffects.mapIndexed { i,r -> ReturnLimit("SOURCE_REPLACEMENT_UNRESOLVED","script.replacementEffects[$i]","An intrinsic source replacement effect may constrain entry or later reuse; it is not fully interpreted.",nativeJson.encodeToJsonElement(ReplacementEffect.serializer(),r)) }
         actionId="${card.name}|$label|script"
+        val attachmentRootIndex = actions.size
+        val attachmentOutcomeStart = eventOutcomes.size
         actions += ActionEvidence(actionId,card.name,label,"script",emptyList(),nativeJson.encodeToJsonElement(CardScript.serializer(),script))
         fun action(path: String, value: JsonElement, effect: Effect?, targets: List<TargetRequirement>,
                    assumptions: List<String>, sourceZone: Zone? = Zone.BATTLEFIELD,
@@ -492,6 +494,15 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                         "Casting cost route only; associated native script supplies effect/targets. Keyword timing/lowering/execution not exhaustively interpreted")
                 } else issue(path,k,"Keyword-granted actions are not expanded")
             }
+        }
+        if (aura || script.auraTarget != null) {
+            val root = actions[attachmentRootIndex]
+            actions[attachmentRootIndex] = root.copy(
+                targetSelection = script.auraTarget?.let {
+                    TargetSelection(root.id, listOf(it), origin = TargetRequirementOrigin.AURA_ENCHANT)
+                },
+                attachment = auraAttachment(root, script,
+                eventOutcomes.subList(attachmentOutcomeStart, eventOutcomes.size)))
         }
     }
     private fun sourceCardCreature(): Boolean? = selfCreature.takeIf {

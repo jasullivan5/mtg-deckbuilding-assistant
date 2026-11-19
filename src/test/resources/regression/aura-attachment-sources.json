@@ -1,0 +1,63 @@
+{
+  "applicationBase": "767c609",
+  "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "snapshotSha256": "081a50ef82c767523f955e914153cf988ff045a72e3765b6aa2382567f9eb53a",
+  "cases": {
+    "Wanderlust": {
+      "source": {
+        "name": "Wanderlust",
+        "id": "089b7137-8824-449b-890f-97e761950a17",
+        "oracle_id": "73bddfdb-d1fb-4038-b676-201f6b82beb0",
+        "set": "me1",
+        "collector_number": "137",
+        "oracle_text": "Enchant creature\nAt the beginning of the upkeep of enchanted creature's controller, this Aura deals 1 damage to that player.",
+        "scryfall_uri": "https://scryfall.com/card/me1/137/wanderlust?utm_source=api"
+      },
+      "nativePath": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/Wanderlust.kt",
+      "nativeLfSha256": "8904aa2d164f1048ea44dcb85fe5bb113b44262a2ed8c85cbe36047d5e1ea395",
+      "expected": "Creature host; host controller upkeep causes one damage to that player. Damage remains distinct from life loss."
+    },
+    "Holy Strength": {
+      "source": {
+        "name": "Holy Strength",
+        "id": "ac0987b8-755e-42f1-bd6d-1401fecd4171",
+        "oracle_id": "9357de36-f8be-4f49-b2c8-9fe9eaf82b07",
+        "set": "m11",
+        "collector_number": "16",
+        "oracle_text": "Enchant creature\nEnchanted creature gets +1/+2.",
+        "scryfall_uri": "https://scryfall.com/card/m11/16/holy-strength?utm_source=api"
+      },
+      "nativePath": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lea/cards/HolyStrength.kt",
+      "nativeLfSha256": "97ac7558fb9c42f7553738288db8ab26b88714c0e79ac103f47fb3d41ca78923",
+      "expected": "Creature host; continuous +1/+2. No life-loss trigger."
+    },
+    "Burning Anger": {
+      "source": {
+        "name": "Burning Anger",
+        "id": "3d5a8f92-4418-4993-9f56-0b2f5069597c",
+        "oracle_id": "a2c76ac2-5ab1-450c-b64e-e9a6c4dad1ca",
+        "set": "cmr",
+        "collector_number": "166",
+        "oracle_text": "Enchant creature\nEnchanted creature has \"{T}: This creature deals damage equal to its power to any target.\"",
+        "scryfall_uri": "https://scryfall.com/card/cmr/166/burning-anger?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m15/cards/BurningAnger.kt",
+      "nativeLfSha256": "41723e2bbe9dc24a26e6b31c608dab3fa1970ca88653855ecfb9fb73b5d36708",
+      "expected": "Creature host gains a tap ability with the host as source. Granted-ability execution remains unresolved."
+    },
+    "Stab Wound": {
+      "source": {
+        "name": "Stab Wound",
+        "id": "cbe656e7-ae71-45c2-a263-588b73f70d73",
+        "oracle_id": "aad212b2-57ba-4e70-869b-636842eb7a88",
+        "set": "rvr",
+        "collector_number": "93",
+        "oracle_text": "Enchant creature\nEnchanted creature gets -2/-2.\nAt the beginning of the upkeep of enchanted creature's controller, that player loses 2 life.",
+        "scryfall_uri": "https://scryfall.com/card/rvr/93/stab-wound?utm_source=api"
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/StabWound.kt",
+      "nativeLfSha256": "c9defcaa24fd6323ea6f25d684ac9171cbbe79102146cd1e46bd3bfd0d246560",
+      "expected": "Creature host; continuous -2/-2; host controller upkeep causes that player to lose two life."
+    }
+  }
+}

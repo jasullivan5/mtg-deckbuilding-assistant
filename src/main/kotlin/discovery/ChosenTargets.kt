@@ -20,8 +20,10 @@ import com.wingedsheep.sdk.scripting.predicates.StatePredicate
 import com.wingedsheep.sdk.scripting.targets.TargetObject
 import com.wingedsheep.sdk.scripting.targets.TargetRequirement
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.EncodeDefault
 
 @Serializable enum class TargetCheckpoint { CAST_ANNOUNCEMENT }
+@Serializable enum class TargetRequirementOrigin { EXPLICIT_SPELL, AURA_ENCHANT }
 @Serializable enum class TargetQuantifier { ANY_SELECTED }
 
 @Serializable data class ChosenTargetCondition(
@@ -32,7 +34,8 @@ import kotlinx.serialization.Serializable
 @Serializable data class TargetSelection(
     val actionId: String,
     val requirements: List<TargetRequirement>,
-    val checkpoint: TargetCheckpoint = TargetCheckpoint.CAST_ANNOUNCEMENT
+    val checkpoint: TargetCheckpoint = TargetCheckpoint.CAST_ANNOUNCEMENT,
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val origin: TargetRequirementOrigin = TargetRequirementOrigin.EXPLICIT_SPELL
 ) {
     internal fun potential(condition: ChosenTargetCondition): Verdict =
         if (requirements.isNotEmpty() && requirements.all { it is TargetObject && it.supportsFixedBinding() } &&
@@ -48,9 +51,16 @@ import kotlinx.serialization.Serializable
         evaluator: PredicateEvaluator,
         condition: ChosenTargetCondition
     ): SelectedTargetAssessment {
+        val nativeRequirements = when (origin) {
+            TargetRequirementOrigin.EXPLICIT_SPELL -> definition.script.targetRequirements
+            TargetRequirementOrigin.AURA_ENCHANT -> {
+                if (definition.script.targetRequirements.isNotEmpty()) return SelectedTargetAssessment(Verdict.UNKNOWN)
+                listOfNotNull(definition.script.auraTarget)
+            }
+        }
         if (action.id != actionId || action.targetSelection != this || action.card != definition.name ||
             state.getEntity(cast.cardId)?.get<CardComponent>()?.name != definition.name ||
-            definition.script.targetRequirements != requirements ||
+            nativeRequirements != requirements ||
             cast.chosenModes.isNotEmpty() || cast.castFaceDown || cast.castPrototyped || cast.castFused || cast.declaredCostSlot != null ||
             cast.alternativePayment != null || cast.useAlternativeCost || cast.faceIndex != null || cast.splicedCardIds.isNotEmpty()) return SelectedTargetAssessment(Verdict.UNKNOWN)
         val binding = TargetValidator(evaluator).bindTargetGroups(
