@@ -27,9 +27,11 @@ class AuraAttachmentScenarioTest : FunSpec({
         static.stats?.powerBonus shouldBe -2
         static.stats?.toughnessBonus shouldBe -2
         static.verdict shouldBe Verdict.MATCH
+        static.actionId shouldBe "Stab Wound|front|script.staticAbilities[0]"
         val trigger = a.dependencies.single { it.kind == AttachmentOperationKind.TRIGGERED_OPERATION }
         trigger.verdict shouldBe Verdict.MATCH
         trigger.timingPlayer shouldBe Player.You
+        trigger.timingUsesHostController shouldBe true
         trigger.recipient shouldBe EffectTarget.PlayerRef(Player.TriggeringPlayer)
         trigger.eventOutcomeIds.size shouldBe 1
         root("Burning Anger").attachment?.dependencies?.single()?.verdict shouldBe Verdict.UNKNOWN

@@ -2,6 +2,8 @@ package dev.mtg.assistant
 
 import com.wingedsheep.sdk.scripting.GameObjectFilter
 import com.wingedsheep.sdk.scripting.ModifyStats
+import com.wingedsheep.sdk.scripting.effects.DealDamageEffect
+import com.wingedsheep.sdk.scripting.targets.EffectTarget
 import com.wingedsheep.sdk.scripting.filters.unified.GroupFilter
 import com.wingedsheep.sdk.scripting.filters.unified.TargetFilter
 import com.wingedsheep.sdk.scripting.targets.TargetObject
@@ -32,6 +34,17 @@ class AuraAttachmentTest : FunSpec({
         val dependency = checkNotNull(root.attachment).dependencies.single()
         dependency.verdict shouldBe Verdict.UNKNOWN
         dependency.stats shouldBe null
+    }
+
+    test("an unresolved damage source remains unresolved even with a supported host-controller step") {
+        val base = checkNotNull(catalog.card("Wanderlust"))
+        val original = base.script.triggeredAbilities.single()
+        val damage = original.effect as DealDamageEffect
+        val fixture = base.copy(script = base.script.copy(triggeredAbilities = listOf(
+            original.copy(effect = damage.copy(damageSource = EffectTarget.EnchantedCreature))
+        )))
+        val root = PathwayExtractor().extract(listOf(fixture)).actions.single { it.path == "script" }
+        checkNotNull(root.attachment).dependencies.single().verdict shouldBe Verdict.UNKNOWN
     }
 
     test("inventory all native Aura candidates one definition at a time") {

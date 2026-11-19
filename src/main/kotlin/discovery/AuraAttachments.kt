@@ -13,6 +13,7 @@ import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.model.EntityId
 import com.wingedsheep.sdk.model.CardScript
 import com.wingedsheep.sdk.scripting.*
+import com.wingedsheep.sdk.scripting.effects.DealDamageEffect
 import com.wingedsheep.sdk.scripting.filters.unified.GroupFilter
 import com.wingedsheep.sdk.scripting.filters.unified.Scope
 import com.wingedsheep.sdk.scripting.filters.unified.TargetFilter
@@ -38,6 +39,8 @@ import kotlinx.serialization.json.JsonElement
     val stats: ModifyStats? = null,
     val eventOutcomeIds: List<String> = emptyList(),
     val timingPlayer: Player? = null,
+    val triggerBinding: TriggerBinding? = null,
+    val timingUsesHostController: Boolean? = null,
     val recipient: EffectTarget? = null
 )
 
@@ -111,7 +114,7 @@ internal fun auraAttachment(
             val stats = ability as? ModifyStats
             val attached = stats?.filter?.scope == Scope.AttachedTo
             val supported = attached && stats?.filter == GroupFilter.attachedCreature() && support == Verdict.MATCH
-            add(AttachmentDependency(path, root.id,
+            add(AttachmentDependency(path, "$prefix|$path",
                 if (attached) AttachmentOperationKind.CONTINUOUS_STATS else AttachmentOperationKind.UNRESOLVED,
                 AttachmentCheckpoint.CONTINUOUS_EVALUATION,
                 if (supported) Verdict.MATCH else Verdict.UNKNOWN,
@@ -126,7 +129,9 @@ internal fun auraAttachment(
             val event = ability.trigger as? EventPattern.StepEvent
             val linked = outcomes.filter { it.actionId == action }
             val recipient = linked.singleOrNull()?.playerBinding?.target
-            val supported = support == Verdict.MATCH && event?.player == Player.You &&
+            val damage = ability.effect as? DealDamageEffect
+            val supportedSource = damage == null || damage.damageSource == null || damage.damageSource == EffectTarget.Self
+            val supported = supportedSource && support == Verdict.MATCH && event?.player == Player.You &&
                 ability.activeZones == setOf(Zone.BATTLEFIELD) && ability.interveningIf == null &&
                 ability.triggerRestriction == null && ability.elseEffect == null &&
                 !ability.controlledByTriggeringEntityController &&
@@ -140,7 +145,8 @@ internal fun auraAttachment(
                 if (supported) "At trigger detection, the attached host's controller determines the step. TriggeringPlayer is retained for resolution; the Aura controls its ability."
                 else "Attachment-bound trigger retained; event, branch or recipient remains unresolved",
                 nativeJson.encodeToJsonElement(TriggeredAbility.serializer(), ability),
-                eventOutcomeIds = linked.map { it.id }, timingPlayer = event?.player, recipient = recipient))
+                eventOutcomeIds = linked.map { it.id }, timingPlayer = event?.player,
+                triggerBinding = ability.binding, timingUsesHostController = true.takeIf { supported }, recipient = recipient))
         }
     }
     return AuraAttachment(root.id, restriction = script.auraTarget,
