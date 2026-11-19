@@ -130,6 +130,23 @@ class AuraAttachmentScenarioTest : FunSpec({
         d.getLifeTotal(d.player2) shouldBe 18
     }
 
+    test("a legal cast fails to attach when its host leaves before resolution") {
+        val d = scenarioDriver(card("Stab Wound"), card("Hill Giant"), card("Unsummon"))
+        val me = d.player1
+        val host = d.putCreatureOnBattlefield(d.player2, "Hill Giant")
+        d.giveMana(me, Color.BLACK, 3)
+        val auraSpell = d.putCardInHand(me, "Stab Wound")
+        d.submit(CastSpell(me, auraSpell, listOf(ChosenTarget.Permanent(host)),
+            paymentStrategy = PaymentStrategy.FromPool)).error shouldBe null
+        d.giveMana(me, Color.BLUE, 1)
+        d.submit(CastSpell(me, d.putCardInHand(me, "Unsummon"), listOf(ChosenTarget.Permanent(host)),
+            paymentStrategy = PaymentStrategy.FromPool)).error shouldBe null
+        d.resolvePendingActions()
+        d.getPermanents(me).isEmpty() shouldBe true
+        d.state.getGraveyard(me).any { d.state.getEntity(it)?.get<CardComponent>()?.name == "Stab Wound" } shouldBe true
+        d.getHand(d.player2).any { d.state.getEntity(it)?.get<CardComponent>()?.name == "Hill Giant" } shouldBe true
+    }
+
     test("an unattached source is different from an unsupported enchant restriction") {
         val d = scenarioDriver(card("Burning Anger"))
         val source = d.putCardInHand(d.player1, "Burning Anger")
