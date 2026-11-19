@@ -1,0 +1,24 @@
+{
+  "application": "cbfdcea4d5237dec3bdbc8408d2c2532bc6dea32",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "stats": {
+    "startTime": "2026-11-18T19:15:38.595Z",
+    "duration": 756001.757,
+    "expected": 40,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "requiredUi8AndLive18Passed": true,
+  "failure": "Progress opens without discovery: detailed mechanical groups absent after90seconds. Server logged Java heap space while complete native audit was rebuilt beside retained discovery/source/verification projections.",
+  "followup": "63e1b0be60eb281a4350dfe1130231ac6d5bc2c1 groups native nodes during independent traversal, preserving exact group keys, counters, reasons and bounded representative order. Complete Progress extraction keeps required fields per card without unused walker outputs.",
+  "preservedFullNativeAuditBefore": {
+    "bytes": 90426831,
+    "sha256": "3ce4a387333dae27e3ba8202ce1e40b86415c2c5422656e14e28b1094890e248",
+    "physicalCards": 21699,
+    "typedNodes": 256022,
+    "groups": 57706,
+    "heap": "-Xmx1g"
+  },
+  "obsoleteApplicationAndCatalogRuns": "Cancelled and retained; not counted as completed final gates."
+}

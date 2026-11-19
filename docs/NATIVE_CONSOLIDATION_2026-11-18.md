@@ -1,5 +1,7 @@
 # Native upstream consolidation — Product Studio delivery
 
+> **JDK 25 amendment:** [Current JDK 25 verification and platform decision](JDK25_INTEGRATION_2026-11-18.md) supersede this report's JDK 21 compatibility decision. The original verification history below remains intact.
+
 This follow-up restores the normal application catalog by adopting twelve native Argentum definitions and retiring their competing application scripts. It preserves the historical failures and provisional assurance. This is an operational integration and bounded source/behavior review, not independent whole-card qualification.
 
 ## Revisions and operational outcome

@@ -1,0 +1,12 @@
+[
+  {
+    "classFile": "mtg-sdk/build/classes/kotlin/main/com/wingedsheep/sdk/model/CardDefinition.class",
+    "major": 69,
+    "javaTarget": 25
+  },
+  {
+    "classFile": "mtg-sets/core/build/classes/kotlin/main/com/wingedsheep/mtg/sets/discovery/CardDiscovery.class",
+    "major": 69,
+    "javaTarget": 25
+  }
+]

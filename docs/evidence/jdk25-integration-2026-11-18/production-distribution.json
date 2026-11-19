@@ -1,0 +1,138 @@
+{
+  "application": "529a78ea38b12b13598fd3c06f2e59ec9a4e9abe",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "directory": "mtg-native-consolidation\\generated\\jdk25-integration\\cli-529a78e",
+  "jars": [
+    {
+      "file": "1993-1999.jar",
+      "bytes": 6344776,
+      "sha256": "9c626183dd1c4705c64925a02b240e07b0110cdb9d17addb4c02ae793fe55f00"
+    },
+    {
+      "file": "2000-2002.jar",
+      "bytes": 2626263,
+      "sha256": "5eb9c83692bc8eaeb87bb8c87529119e85a47452f526e142e6f074ea8083f7d6"
+    },
+    {
+      "file": "2003-2007.jar",
+      "bytes": 5386002,
+      "sha256": "cdb509ff0e36d354f5b75b78367a99d827b375d03faa25756cb56b45eee5df2c"
+    },
+    {
+      "file": "2008-2016.jar",
+      "bytes": 12483887,
+      "sha256": "2103a23051ff67299ac43986a871b99103bbb948889cf13df655e2f928e2d1e9"
+    },
+    {
+      "file": "2017-2022.jar",
+      "bytes": 25088146,
+      "sha256": "30f33be169e44de5962888f554af37658235d44ba8c2c526fda754b8ea461137"
+    },
+    {
+      "file": "2023.jar",
+      "bytes": 6135052,
+      "sha256": "6c483fb0a33c189f9b9adae439e8daa9d342e4418a48584c4f638ec1aa116452"
+    },
+    {
+      "file": "2024.jar",
+      "bytes": 7982362,
+      "sha256": "8cb73a41d3222880a5f5e709086756e1a0d71b63124a46661eb737dd4d84829c"
+    },
+    {
+      "file": "2025.jar",
+      "bytes": 6347035,
+      "sha256": "c1bf69f44f6dd1fe14ada2e566ff5897d98a6ffea28aba8b50e4c2706520749c"
+    },
+    {
+      "file": "2026.jar",
+      "bytes": 5630761,
+      "sha256": "a6e66c927d61dc01b024edccde541d8b141440d8675e8b58b33afdf6c65e1868"
+    },
+    {
+      "file": "annotations-23.0.0.jar",
+      "bytes": 29371,
+      "sha256": "7b0f19724082cbfcbc66e5abea2b9bc92cf08a1ea11e191933ed43801eb3cd05"
+    },
+    {
+      "file": "assistant.jar",
+      "bytes": 10714644,
+      "sha256": "1ce79866408f1eea87ba38e18b147e474b32488ed3bbd096d5420bd1dca4fbb7"
+    },
+    {
+      "file": "classgraph-6.0.1.jar",
+      "bytes": 314156,
+      "sha256": "e716789d500a9130e3ade37c6d4eb629023ede58dc302a3fb673d09faf61db55"
+    },
+    {
+      "file": "classgraph-base-6.0.1.jar",
+      "bytes": 70380,
+      "sha256": "f5ded73da56a9e58704f6e81f5f5f8dd2c6f0b08f09db8fb2025b37a7b18d7f2"
+    },
+    {
+      "file": "classgraph-classpath-6.0.1.jar",
+      "bytes": 127237,
+      "sha256": "8097f0dedf747e506916b4d3de8033122f05c6c74b0309d29fcf0a5ea908d9bb"
+    },
+    {
+      "file": "classgraph-vfs-6.0.1.jar",
+      "bytes": 197491,
+      "sha256": "df60db658d85f2654157f73a68452997722bb81fde16e337f653db508acdd381"
+    },
+    {
+      "file": "core.jar",
+      "bytes": 85510,
+      "sha256": "f65c16f4efddebc39d5df9172f0fd8eba2baf36eff781d8e9aa4eef5a959440f"
+    },
+    {
+      "file": "kotlin-stdlib-2.4.21.jar",
+      "bytes": 1853315,
+      "sha256": "bd8250210584cb659847dce9cda660f8e9906e5def7fbebcea93dc6dcb6a88a3"
+    },
+    {
+      "file": "kotlinx-coroutines-core-jvm-1.11.0.jar",
+      "bytes": 1577052,
+      "sha256": "d1d75aa01dffbb4d1c520e67e4c4e7f5f6174718e7cb4632412503f2f0e604fa"
+    },
+    {
+      "file": "kotlinx-datetime-jvm-0.8.0.jar",
+      "bytes": 724820,
+      "sha256": "ee44b51f8977c2f51d575299a4fc6782ab3700eba4cfc7fad548cced1543936a"
+    },
+    {
+      "file": "kotlinx-serialization-core-jvm-1.12.0.jar",
+      "bytes": 416396,
+      "sha256": "bcfddcac76159058ba0953af05938c17111d238cd41be7191874656454d62f1a"
+    },
+    {
+      "file": "kotlinx-serialization-json-jvm-1.12.0.jar",
+      "bytes": 306230,
+      "sha256": "879eb73e46cb63253ab0fa7cca4448f5c96bca1a16ff377abcb71ebab60e0631"
+    },
+    {
+      "file": "mtg-sdk-tooling.jar",
+      "bytes": 146597,
+      "sha256": "ba1ab59a9ab73db0e11b37805d86562e4c71e8548b59ca87edf2ff921e433886"
+    },
+    {
+      "file": "mtg-sdk.jar",
+      "bytes": 13212594,
+      "sha256": "16ae2cfa62acb3c6d8f1a04b2a4d8cfa563e80bbfa9cbdfdd118e1d7969579cd"
+    },
+    {
+      "file": "mtg-search-jvm.jar",
+      "bytes": 121020,
+      "sha256": "af1a568b56542baf62e54411d383229f7e6d43e2024598c3fa25841d74e06e53"
+    },
+    {
+      "file": "mtg-sets.jar",
+      "bytes": 606292,
+      "sha256": "ee0bba9e1b89ba8b4356c51174ca91b939732f7ed532bfb7ce71bf177582d126"
+    },
+    {
+      "file": "rules-engine.jar",
+      "bytes": 18520344,
+      "sha256": "853cfe8a68c69513057f8f9bd56efe6149b837f6b080fb330f1da2495839ba00"
+    }
+  ],
+  "note": "Immutable normal installDist with bounded per-definition audit input and streaming coverage grouping; no fields, heap or deadlines changed."
+}

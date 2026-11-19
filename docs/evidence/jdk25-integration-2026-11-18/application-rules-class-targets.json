@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "application",
+    "classFile": "build/classes/kotlin/main/dev/mtg/assistant/discovery/DefinitionSources.class",
+    "classfileMajor": 69,
+    "javaTarget": 25
+  },
+  {
+    "repository": "application",
+    "classFile": "build/classes/kotlin/main/dev/mtg/assistant/explorer/ResearchProgressService.class",
+    "classfileMajor": 69,
+    "javaTarget": 25
+  },
+  {
+    "repository": "engine",
+    "classFile": "rules-engine/build/classes/kotlin/main/com/wingedsheep/engine/core/ActionProcessor.class",
+    "classfileMajor": 69,
+    "javaTarget": 25
+  }
+]

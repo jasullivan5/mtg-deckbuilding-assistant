@@ -1,0 +1,16 @@
+{
+  "application": "a5ce2395b67bfd4cbc440e4c2b8b21a77b77e3d0",
+  "engine": "3969d0f6dca34fe79eb52d8ba703366ea4004121",
+  "heap": "normal -Xmx1g",
+  "passed": "Cold full-source Progress, objectives, pilot, two Kenrith Discover runs and Progress revisit",
+  "failed": "Supplementary activation-cost browser check: progress/verification returned HTTP 504 after 120.105 seconds; dependent panel absent at unchanged 220 second assertion deadline",
+  "diagnostic": "The verification worker rebuilt full PathwayExtractor output to obtain instructionRecords after its soft cache was reclaimed. Heap sample used 1,042,818 KiB of 1,048,576 KiB. No Java OutOfMemoryError was observed on this attempt; this is a timeout/pressure observation.",
+  "followup": "cbfdcea4d5237dec3bdbc8408d2c2532bc6dea32 extracts standalone instruction/fact projections one definition at a time when the complete cache is absent. Native extraction and record fields are unchanged.",
+  "artifacts": {
+    "class-histogram.txt": "6518bdaae0e03684be737ca6bebd64ea887284b845af528d4300d5e6f66fe289",
+    "thread-second.txt": "2d1e0de9cb3176de10b060bdd41e4e89fe84224e7ba77d1d62324423e4d53ab9",
+    "thread-third.txt": "6c90bd7a293e873e807a232ab5931c005af784d9c5ab80ba643a59d8fbedc938",
+    "thread.txt": "b2286b20badcc8ea44eedab7c02ac3e7d2eb10a2288b1bdc99e3e7c12c32f1c9"
+  },
+  "termination": "Browser run and owned Explorer stopped after first confirmed failure. Concurrent obsolete application test client cancelled; not counted as passing."
+}

@@ -1,0 +1,7 @@
+{
+  "originalBytes": 17725,
+  "originalSha256": "6c90bd7a293e873e807a232ab5931c005af784d9c5ab80ba643a59d8fbedc938",
+  "gzip": "retained-projection-thread.txt.gz",
+  "gzipSha256": "3a930c7c29a8dfca8c808be3b243dbeabcbf3ce6413b2de73f1a4f0ebb940cea",
+  "qualification": "Text file is a concise preview; gzip preserves every original diagnostic byte."
+}
