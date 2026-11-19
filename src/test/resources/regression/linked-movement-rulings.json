@@ -59,7 +59,10 @@
         "comment": "If a card with flashback is put into your graveyard during your turn, you can cast it if it's legal to do so before any other player can take any actions."
       }
     ],
-    "retrievedUtc": "2026-11-19T12:46:10.4905514Z"
+    "retrievedUtc": "2026-11-19T12:46:10.4905514Z",
+    "cardUrl": "https://api.scryfall.com/cards/619c620d-1920-40d1-98d4-df5607f84d26",
+    "liveOracleText": "Exile target creature you control, then return it to the battlefield under its owner's control.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "sameOracleTextAsFrozen": true
   },
   "Oblivion Ring": {
     "url": "https://api.scryfall.com/cards/bff31eba-8ab3-403e-8d82-37a18b279bec/rulings",
@@ -93,7 +96,10 @@
         "comment": "If there are no nonland permanents on the battlefield other than an Oblivion Ring, and the card it exiled was another Oblivion Ring, casting a third Oblivion Ring will result in an involuntary infinite loop that will end the game in a draw (unless someone chooses to break it by putting another nonland permanent onto the battlefield or destroying one of the Oblivion Rings, for example)."
       }
     ],
-    "retrievedUtc": "2026-11-19T12:46:10.6406841Z"
+    "retrievedUtc": "2026-11-19T12:46:10.6406841Z",
+    "cardUrl": "https://api.scryfall.com/cards/bff31eba-8ab3-403e-8d82-37a18b279bec",
+    "liveOracleText": "When this enchantment enters, exile another target nonland permanent.\nWhen this enchantment leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+    "sameOracleTextAsFrozen": true
   },
   "Banisher Priest": {
     "url": "https://api.scryfall.com/cards/0e518f9e-d74d-4a6f-8fde-5e3ec5834e63/rulings",
@@ -127,7 +133,10 @@
         "comment": "If an Aura is exiled this way, its owner chooses what it will enchant as it returns to the battlefield. An Aura put onto the battlefield this way doesn't target anything (so it could be attached to a permanent with shroud, for example), but the Aura's enchant ability restricts what it can be attached to. If the Aura can't legally be attached to anything, it remains in exile for the rest of the game."
       }
     ],
-    "retrievedUtc": "2026-11-19T12:46:09.0728309Z"
+    "retrievedUtc": "2026-11-19T12:46:09.0728309Z",
+    "cardUrl": "https://api.scryfall.com/cards/0e518f9e-d74d-4a6f-8fde-5e3ec5834e63",
+    "liveOracleText": "When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield.",
+    "sameOracleTextAsFrozen": true
   },
   "Cloudshift": {
     "url": "https://api.scryfall.com/cards/6dc0c976-26d2-40c9-a571-c370e9139d1d/rulings",
@@ -161,6 +170,9 @@
         "comment": "When an effect returns the exiled card \"under your control,\" you control it indefinitely after that. In a multiplayer game, if a player leaves the game, all cards that player owns leave as well. If you leave the game, any creatures you control from Cloudshift's effect are exiled."
       }
     ],
-    "retrievedUtc": "2026-11-19T12:46:08.8972654Z"
+    "retrievedUtc": "2026-11-19T12:46:08.8972654Z",
+    "cardUrl": "https://api.scryfall.com/cards/6dc0c976-26d2-40c9-a571-c370e9139d1d",
+    "liveOracleText": "Exile target creature you control, then return that card to the battlefield under your control.",
+    "sameOracleTextAsFrozen": true
   }
 }
