@@ -665,7 +665,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             zonePlayer=if(e.destination==Zone.BATTLEFIELD) "UNKNOWN" else "ANY",
             battlefield=e.destination==Zone.BATTLEFIELD,
             unresolved=listOfNotNull(obj.unresolved,"Later reference requires the same tracked card and successful earlier movement; original targeting restrictions are retained").joinToString("; ")) },step,
-            objects.all { it.unresolved==null && it.possible } && !e.byDestruction && e.faceDown==null &&
+            objects.all { it.unresolved==null && it.possible } &&
+                facts.subList(firstFact,facts.size).all { it.confidence==Verdict.MATCH && it.unresolved.isEmpty() } && !e.byDestruction && e.faceDown==null &&
                 frame.factGuard==Verdict.MATCH && frame.guardConfidence==Verdict.MATCH && !frame.delayed && !frame.optional)
     }
     /** Called only by the shared native effect walk; token facts do not project death pathways. */

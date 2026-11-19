@@ -82,6 +82,16 @@ class LinkedMovementTest : FunSpec({
         links.size shouldBe 2
         links.all { it.support==Verdict.UNKNOWN } shouldBe true
     }
+    test("a declared exile from an incompatible target zone cannot establish a supported link") {
+        val base=card("Cloudshift")
+        val target=base.script.targetRequirements.single() as TargetObject
+        val sequence=base.script.spellEffect as CompositeEffect
+        val first=sequence.effects[0] as MoveToZoneEffect
+        val fixture=base.copy(script=base.script.copy(
+            targetRequirements=listOf(target.copy(filter=target.filter.copy(zone=Zone.HAND))),
+            spellEffect=sequence.copy(effects=listOf(first.copy(fromZone=Zone.BATTLEFIELD),sequence.effects[1]))))
+        PathwayExtractor().extract(listOf(fixture)).linkedMovements.single().support shouldBe Verdict.UNKNOWN
+    }
     test("old action JSON decodes with no invented links and current links round trip") {
         val x=PathwayExtractor().extract(listOf(card("Cloudshift")))
         val a=x.actions.single { it.path=="script.spell" }
