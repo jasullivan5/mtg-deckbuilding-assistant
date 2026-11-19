@@ -46,14 +46,16 @@ def main():
                 elif a.get("type") == b.get("type") == "MoveCollection" and (a.get("storeMovedAs") or a.get("from")) == b.get("from"):
                     immediate.append(f"{p}.effects[{i}:{i+2}]")
         producers=[p for p,n in movements if n.get("type") in {"ExileUntilLeaves","ExileWithAurasNotingCounters"} or n.get("linkToSource") is True]
-        if not immediate and not linked_reads and not producers and not row["links"]: continue
+        special=[(p,n) for p,n in movements if n.get("type") not in {"MoveToZone","MoveCollection"}]
+        if not immediate and not linked_reads and not producers and not special and not row["links"]: continue
         row.pop("script")
         row.update(movementDeclarations=[{"path":p,"action":action(p),"native":n} for p,n in movements],
             potentialImmediate=immediate, sourceLinkedProducers=producers,
             linkedPileReads=[{"path":p,"native":n} for p,n in linked_reads])
         rows.append(row)
         total.update(movementDeclarations=len(movements),potentialImmediateSequences=len(immediate),
-            potentialDeferredSourceFaces=int(bool(producers and linked_reads)),linkedPileReads=len(linked_reads))
+            potentialDeferredSourceFaces=int(bool(producers and linked_reads)),linkedPileReads=len(linked_reads),
+            nativeDurationDeclarations=sum(n.get("type")=="MoveUntilSourceLeaves" for _,n in movements))
     links=[l for r in rows for l in r["links"]]
     summary=dict(total,physicalCatalogCards=len(all_cards),catalogFaces=all_faces,
         candidatePhysicalCards=len({r["physical"] for r in rows}),candidateFaces=len(rows),

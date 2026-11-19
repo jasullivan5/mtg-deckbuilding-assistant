@@ -61,6 +61,9 @@ internal fun deferredMovementLinks(card: String, face: String, script: CardScrip
         val problems = listOfNotNull(
             if (event?.to != Zone.BATTLEFIELD || ability.binding != TriggerBinding.SELF) "Exile is not a root self-entry trigger" else null,
             if (departures.size != 1 || returns.size != 1 || producerCount != 1) "Native source pile has absent or multiple producers/consumers; ability-specific association not established" else null,
+            if (script.triggeredAbilities.size!=2 || script.activatedAbilities.isNotEmpty() || script.spellEffect!=null ||
+                script.staticAbilities.isNotEmpty() || script.replacementEffects.isNotEmpty())
+                "Additional source declarations exceed the isolated two-trigger linked-pile subset" else null,
             if (returnFact == null || destination?.zone != Zone.BATTLEFIELD || move?.underOwnersControl != true || move.filter != null) "Exact linked-exile owner-return pipeline not established" else null,
             if (!bound || target?.count!=1 || target.filter.alternatives.isNotEmpty()) "Exiled target does not have one resolved native target requirement" else null,
             if (ability.activeZones!=setOf(Zone.BATTLEFIELD) || ret?.second?.activeZones!=setOf(Zone.BATTLEFIELD) ||

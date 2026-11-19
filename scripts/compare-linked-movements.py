@@ -2,6 +2,7 @@
 import argparse
 from collections import Counter
 import json
+import hashlib
 from pathlib import Path
 from runpy import run_path
 
@@ -47,6 +48,8 @@ def main():
             if inventory is None:
                 inventory = records
             assert inventory == records, (commander, objective)
+            summary["baselineSha256"]=hashlib.sha256((args.baseline/name).read_bytes()).hexdigest()
+            summary["candidateSha256"]=hashlib.sha256((args.candidate/name).read_bytes()).hexdigest()
             reports.append(summary)
         output[commander] = {"reports": reports}
     args.output.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
