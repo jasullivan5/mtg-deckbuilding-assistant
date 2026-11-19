@@ -1,0 +1,494 @@
+{
+  "kenrith": {
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1201,
+            "pathways": 1291
+          },
+          "UNKNOWN": {
+            "cards": 1456,
+            "pathways": 1660
+          },
+          "NO_MATCH": {
+            "cards": 4023,
+            "pathways": 4781
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "8c97124e900470a4761765b7042a32f8299a5f5915eb3a932b155127499a049b",
+        "candidateSha256": "74bce7cfa9bbd5bcfb898f55441251f25a6b000e523a5776ce56c3f0fb9d44ab"
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 22,
+            "pathways": 22
+          },
+          "UNKNOWN": {
+            "cards": 20,
+            "pathways": 20
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "5fab9a2d83e98315fd27cc0137f1ae79933f6b676693754d99197b5d2bceecc1",
+        "candidateSha256": "4f0fde0a1e73deb466f2e728abe858458d6adbc02fa262a76d515ae4c1bb4fe6"
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 228,
+            "pathways": 232
+          },
+          "UNKNOWN": {
+            "cards": 498,
+            "pathways": 528
+          },
+          "NO_MATCH": {
+            "cards": 5137,
+            "pathways": 6608
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "e9473b9f3546b5274f2729f51d809cf30b7c5c2f07fef13db8a569890a589ced",
+        "candidateSha256": "290dbe5e0b7419e38057cc5939f88238a3020018bd55fc324305a613ff31f76d"
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1526,
+            "pathways": 1636
+          },
+          "UNKNOWN": {
+            "cards": 283,
+            "pathways": 319
+          },
+          "NO_MATCH": {
+            "cards": 517,
+            "pathways": 565
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "7233d528e7d664b66656e8fb9fb5342c8189fc0c3af5ecd34d4ae85d39313ae0",
+        "candidateSha256": "7af824f563a2877c4dc0556f69b87139e576fcd0763186ac08e74d4cccfaecd2"
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1277,
+            "pathways": 1351
+          },
+          "UNKNOWN": {
+            "cards": 1175,
+            "pathways": 1308
+          },
+          "NO_MATCH": {
+            "cards": 635,
+            "pathways": 675
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "cc19c696cb4eba5328184f1ad32fd1aa29365605ad747a9748a85fe3579eaf7c",
+        "candidateSha256": "e80dba8ed6536392565656fbb31b003e2977ba6e6bd504303065a8f236946337"
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 819,
+            "pathways": 861
+          },
+          "UNKNOWN": {
+            "cards": 827,
+            "pathways": 887
+          },
+          "NO_MATCH": {
+            "cards": 702,
+            "pathways": 801
+          }
+        },
+        "relationships": 151,
+        "relationshipCards": 144,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 102,
+          "IMMEDIATE_ORDERED": 19,
+          "DEFERRED_SOURCE_LINKED": 30
+        },
+        "baselineSha256": "f0a8d0ac3316bb3e0b13e12d8589c7f37bbe879825e97d9506d9b37726dd0cef",
+        "candidateSha256": "417ac0dfeeabe81583fc8ced1be465d6cdd2e29a34b60f3135073aa10e88a435"
+      }
+    ]
+  },
+  "judith": {
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 698,
+            "pathways": 753
+          },
+          "UNKNOWN": {
+            "cards": 670,
+            "pathways": 762
+          },
+          "NO_MATCH": {
+            "cards": 2434,
+            "pathways": 2968
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "d01fc2868091bef4d1c95f9a254e103168ee69ddce26722303a8b792aaa5ec0f",
+        "candidateSha256": "c9b7f6756b5ef9fde2543ea4157069b47d05c9e729254fefcf9f13b6f86c02fd"
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 11,
+            "pathways": 11
+          },
+          "UNKNOWN": {
+            "cards": 11,
+            "pathways": 11
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "c6cc560a463c8f26555de85b43855716b275c72222c50bba3dc9b15b8690dac3",
+        "candidateSha256": "87c0efa8ef065e7314bbef12ca9df3d8868f2bb009b814bd9c65ce151b3d6268"
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 136,
+            "pathways": 138
+          },
+          "UNKNOWN": {
+            "cards": 124,
+            "pathways": 134
+          },
+          "NO_MATCH": {
+            "cards": 1997,
+            "pathways": 2403
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "4a99786204cef53b36e9eeafce62435d5458f7c3171768e27f59974b45e634ff",
+        "candidateSha256": "0ea629d91f8ca34573d43cf3a92173f39fa87d1877f30f819cad6249b041d8f0"
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 455,
+            "pathways": 478
+          },
+          "UNKNOWN": {
+            "cards": 75,
+            "pathways": 87
+          },
+          "NO_MATCH": {
+            "cards": 256,
+            "pathways": 275
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "383a9e848e6d2fd37317de125b7afac84404dc291f1c30a0cd8e5fa9002fd8af",
+        "candidateSha256": "daa68c96eabda9fae53b4e70cdae42d3f8487c1358713aee5585a7f48dd74fcb"
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 607,
+            "pathways": 639
+          },
+          "UNKNOWN": {
+            "cards": 691,
+            "pathways": 770
+          },
+          "NO_MATCH": {
+            "cards": 375,
+            "pathways": 402
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "95b7f8b2f29a0976b5a7c4865f0c9671be5d657d0a65b286688994898e8b15ac",
+        "candidateSha256": "00e621c6620b214e4c5d8d6e341d3d3bcc82c3c70959a33ae716d0b75eee32d1"
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 214,
+            "pathways": 222
+          },
+          "UNKNOWN": {
+            "cards": 187,
+            "pathways": 192
+          },
+          "NO_MATCH": {
+            "cards": 270,
+            "pathways": 314
+          }
+        },
+        "relationships": 4,
+        "relationshipCards": 4,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 4
+        },
+        "baselineSha256": "33eae46d291748d36e2cd943ec5e5c8bd0391a17563a5181459d59e6edf69429",
+        "candidateSha256": "1dc592d21b6faca1477a5ff39397546c1231ad9a4773d6fd1ed8b2b225aeb553"
+      }
+    ]
+  },
+  "krenko": {
+    "reports": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 261,
+            "pathways": 268
+          },
+          "UNKNOWN": {
+            "cards": 282,
+            "pathways": 313
+          },
+          "NO_MATCH": {
+            "cards": 1402,
+            "pathways": 1744
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "18edc12281e762202fb9b13755ffaf99e6eeaf605eaaaf3220f7b831cc5049c8",
+        "candidateSha256": "bb88039f8a4641543d06564599b39180059c3f05cebf5d5e72edd05cf2e17b94"
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "7ce8d91a750de124ac6b9ff952c3336a66e643e863a18f9957960254cb4615ef",
+        "candidateSha256": "96b32ebb8d6faa33da4ccb62fef1652243d355b2f7cff2c21dccfa0a4302c909"
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 20,
+            "pathways": 21
+          },
+          "UNKNOWN": {
+            "cards": 42,
+            "pathways": 46
+          },
+          "NO_MATCH": {
+            "cards": 841,
+            "pathways": 994
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "bb1877af2cdd24cb09aaf5b8f307b66d2ef92642bfb127a9226e578cbf62453d",
+        "candidateSha256": "45d32d8b0635630bb26e471c2e7365e08aef273d51a3c9c9336f2feefbd7413d"
+      },
+      {
+        "objective": "create-creature-tokens",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 241,
+            "pathways": 253
+          },
+          "UNKNOWN": {
+            "cards": 41,
+            "pathways": 50
+          },
+          "NO_MATCH": {
+            "cards": 148,
+            "pathways": 160
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "ec63f9554f646a3dff86212499ed7c8193dc7bd9a9595b4659bb6f6811d33600",
+        "candidateSha256": "2e28aa762d4bfb4306720d719b314c1fcd2f5bfdfea3fc9ea79f84173bff00ab"
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 273,
+            "pathways": 284
+          },
+          "UNKNOWN": {
+            "cards": 289,
+            "pathways": 307
+          },
+          "NO_MATCH": {
+            "cards": 188,
+            "pathways": 199
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "c9443579c449533b01927821bfd3c301a921c073e567d51b547dd2c560d9d41c",
+        "candidateSha256": "34171787851c5ae29c3c0b609b25c13e6b83996e7ebdc79cc476a11fac7ad984"
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "population": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 96,
+            "pathways": 101
+          },
+          "UNKNOWN": {
+            "cards": 84,
+            "pathways": 87
+          },
+          "NO_MATCH": {
+            "cards": 144,
+            "pathways": 172
+          }
+        },
+        "relationships": 2,
+        "relationshipCards": 2,
+        "kinds": {
+          "UNRESOLVED_POSSIBLE": 2
+        },
+        "baselineSha256": "07589c53ac9f20536bf1d16e4b42ad8bd61caba201b4692451b2d213ec2050e1",
+        "candidateSha256": "7a4f653b8dd4083146b947f54ce025736d9e54ef9dfaa7900ec2161474608f85"
+      }
+    ]
+  }
+}
