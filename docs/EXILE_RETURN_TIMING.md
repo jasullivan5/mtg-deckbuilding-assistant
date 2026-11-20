@@ -26,10 +26,26 @@ Existing effects, unsupported records and provenance remain available. The durat
 
 Structural support, actual execution, scoped source agreement and whole-card qualification remain separate. Relationship source fidelity stays UNKNOWN in ordinary extraction; the revision-bound scenario receipt supplies bounded new observations. No whole card is independently qualified. Neither family broadens direct graveyard reanimation, intrinsic creature supply or any other Discover admission policy.
 
+## Controlled Discover comparison
+
+All six objectives were compared for Judith, Krenko and Kenrith using clean merged application `d2240321f4b32e176fbbed69f7e2a2ac012aa49a` with engine `4e72523c`, and tested application `1874b558b4481212827454ca3038312f2a72bd3b` with clean candidate engine `0c5be6cd9d9c7594d5cc35e5ff68366a982a014f`. Installed CLI libraries produced both populations at one GiB. The [comparison checker](../scripts/compare-exile-timing.py) normalizes only current native file/repository URL revisions and current relationship engine revisions. Historical assurance is compared before normalization and must remain exact.
+
+All 18 comparisons passed. Eligibility, physical projections, every MATCH result/admission, historical assurance, intrinsic creature returns, and unrelated facts/actions/targets/attachments/prerequisites are unchanged. Only Ring and Priest have changes outside the additive relationship field. Ring gains its ordinary exile movement fact alongside the existing return fact. Priest loses the obsolete departure action and collection-return fact; its implicit duration return is represented without inventing a new legacy fact. Corresponding unsupported/structural-support records change with those declarations.
+
+Seventeen result arrays remain exact after current-source provenance normalization. Kenrith reanimation has one removed Priest UNKNOWN return row and one added Ring NO_MATCH exile row: MATCH remains 232, UNKNOWN changes 528 → 527, and NO_MATCH changes 6,608 → 6,609. No prior UNKNOWN was promoted to reanimation. Unsupported records decrease by three in the affected Kenrith diagnostic scopes; other count fields retain their existing definitions.
+
+| Commander | Eligible physical cards | Relationship records, before → after | Current immediate / independent / duration / UNKNOWN |
+| --- | ---: | ---: | --- |
+| Judith | 7,728 | 4 → 6 | 0 / 0 / 0 / 6 |
+| Krenko | 4,308 | 2 → 3 | 0 / 0 / 0 / 3 |
+| Kenrith | 20,143 | 151 → 161 | 19 / 29 / 3 / 110 |
+
+The pools overlap. Each commander's six relationship inventories agree. Priest changes category; existing native duration declarations also gain annotations. Ossification and Sigrid, God-Favored have newly supported structural duration records. Sigrid is not a new source-qualified control. Eight additional Kenrith relationships remain UNKNOWN for collection bindings, nonentry triggers or additional source abilities. Those annotations preserve native provenance and uncertainty; they do not expand collection interpretation or any objective policy. Full exports stay under ignored `generated/exile-timing`; compact receipts retain their hashes and attributed changes.
+
 ## Verification and remaining scope
 
 Final revision-bound results and controlled comparison measurements accompany the delivery receipt. Native tests cover departure-first ordering, actual response checkpoints, same-name independent sources, source renewal, stale exile generations, target legality, tokens and attachment/counter/damage cleanup. Real spells establish exile, bounce, flicker, return and priority behavior. Token/counter/damage setup and intervening hand/exile movements are explicit native fixtures, not demonstrations of spells that produce those states.
 
-Fiend Hunter's ordinary exile/return and optional-decline scenarios protect neighboring independent-trigger behavior. Its unchanged guarded helper still warrants a separate departure-first fidelity investigation; ordinary success is not adverse timing qualification. Ossification protects an existing automatic duration implementation, including return before a subsequent instruction. Mirror Golem protects graveyard exile and later pile-derived protection. Other old-helper declarations remain individually unreviewed; the previous 81/25 declaration counts were inventories, not verified translations.
+Fiend Hunter's ordinary exile/return and optional-decline scenarios protect neighboring independent-trigger execution. Its unchanged guarded helper still warrants a separate departure-first fidelity investigation; ordinary success is not adverse timing qualification. Its optional-target representation also needs separate review of the choice checkpoint. These are retained concerns, not additional corrections in this increment. Ossification protects an existing automatic duration implementation, including return before a subsequent instruction. Mirror Golem protects graveyard exile and later pile-derived protection. Other old-helper declarations remain individually unreviewed; the previous 81/25 declaration counts were inventories, not verified translations.
 
 Both corrections are suitable for an eventual upstream contribution because they compose existing upstream primitives and add reusable scenario invariants. No upstream synchronization or submission occurs here. Broader collection-linked interpretation and granted-ability source attribution remain possible next assignments; this correction does not begin either.

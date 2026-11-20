@@ -1,0 +1,3107 @@
+{
+  "judith-create-creature-tokens": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 87,
+      "NO_MATCH": 275,
+      "MATCH": 478
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 87,
+      "NO_MATCH": 275,
+      "MATCH": 478
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "daa68c96eabda9fae53b4e70cdae42d3f8487c1358713aee5585a7f48dd74fcb",
+    "candidateSha256": "213006c86fe32c19d34cee15e3a4e9cd88315ec7e5cbd0f41e215b6611e48486"
+  },
+  "judith-creature-died-this-turn": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 11,
+      "MATCH": 11
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 11,
+      "MATCH": 11
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "87c0efa8ef065e7314bbef12ca9df3d8868f2bb009b814bd9c65ce151b3d6268",
+    "candidateSha256": "df269fad8b51b6a7cc68ea25eaa2f4605fd8c7716b8172750eb41fabaa0001b1"
+  },
+  "judith-own-nontoken-creature-deaths": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "NO_MATCH": 2968,
+      "MATCH": 753,
+      "UNKNOWN": 762
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 2968,
+      "MATCH": 753,
+      "UNKNOWN": 762
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "c9b7f6756b5ef9fde2543ea4157069b47d05c9e729254fefcf9f13b6f86c02fd",
+    "candidateSha256": "b7ec210b802a0c1053f817d150afdbd211dfac45d85bd0b816c2aba999fba399"
+  },
+  "judith-place-plus-one-counters": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 192,
+      "NO_MATCH": 314,
+      "MATCH": 222
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 192,
+      "NO_MATCH": 314,
+      "MATCH": 222
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "1dc592d21b6faca1477a5ff39397546c1231ad9a4773d6fd1ed8b2b225aeb553",
+    "candidateSha256": "582714d4c810ac6ecf698fb05f50a75469bb89b79c9cd851581dadd7ff2def18"
+  },
+  "judith-reanimate-own-creatures": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "NO_MATCH": 2403,
+      "MATCH": 138,
+      "UNKNOWN": 134
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 2403,
+      "MATCH": 138,
+      "UNKNOWN": 134
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "0ea629d91f8ca34573d43cf3a92173f39fa87d1877f30f819cad6249b041d8f0",
+    "candidateSha256": "9e84394c742d122d67c1911fd030ea774e56b9b000b6d442c1805a69ed0c9a0e"
+  },
+  "judith-stock-own-graveyard": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 770,
+      "MATCH": 639,
+      "NO_MATCH": 402
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 770,
+      "MATCH": 639,
+      "NO_MATCH": 402
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "00e621c6620b214e4c5d8d6e341d3d3bcc82c3c70959a33ae716d0b75eee32d1",
+    "candidateSha256": "c5abb139c52bb69d4c107caac464c9b32ea97495bb10e086237a717ed3fec878"
+  },
+  "kenrith-create-creature-tokens": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "MATCH": 1636,
+      "UNKNOWN": 319,
+      "NO_MATCH": 565
+    },
+    "verdictsAfter": {
+      "MATCH": 1636,
+      "UNKNOWN": 319,
+      "NO_MATCH": 565
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          32251,
+          32248
+        ]
+      },
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 5,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 5,
+          "afterRows": 4
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "7af824f563a2877c4dc0556f69b87139e576fcd0763186ac08e74d4cccfaecd2",
+    "candidateSha256": "fd504b3a3fc3dd7acd8bfcff5d2136c4bd99df062df45f79fc8fbfa53c34b5ec"
+  },
+  "kenrith-creature-died-this-turn": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "UNKNOWN": 20,
+      "MATCH": 22
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 20,
+      "MATCH": 22
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          32251,
+          32248
+        ]
+      },
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 5,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 5,
+          "afterRows": 4
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "4f0fde0a1e73deb466f2e728abe858458d6adbc02fa262a76d515ae4c1bb4fe6",
+    "candidateSha256": "eeb5e22e46b5c1178fe482fad94cab88ffe2df0baca13228505a5ecde65e99b8"
+  },
+  "kenrith-own-nontoken-creature-deaths": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 4781,
+      "UNKNOWN": 1660,
+      "MATCH": 1291
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 4781,
+      "UNKNOWN": 1660,
+      "MATCH": 1291
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          32251,
+          32248
+        ]
+      },
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 5,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 5,
+          "afterRows": 4
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "74bce7cfa9bbd5bcfb898f55441251f25a6b000e523a5776ce56c3f0fb9d44ab",
+    "candidateSha256": "1a876de82932404a3efcb1735a26ce480dfda81b7b61165743e5deb32054b3fe"
+  },
+  "kenrith-place-plus-one-counters": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "UNKNOWN": 887,
+      "NO_MATCH": 801,
+      "MATCH": 861
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 887,
+      "NO_MATCH": 801,
+      "MATCH": 861
+    },
+    "attributedChanges": {
+      "counts": {},
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 5,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 5,
+          "afterRows": 4
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "417ac0dfeeabe81583fc8ced1be465d6cdd2e29a34b60f3135073aa10e88a435",
+    "candidateSha256": "14bcb579284da3846aa7cecbd83e7f56113f7484c66ea54ef6dd2d3436f8dc57"
+  },
+  "kenrith-reanimate-own-creatures": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 6608,
+      "UNKNOWN": 528,
+      "MATCH": 232
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 6609,
+      "UNKNOWN": 527,
+      "MATCH": 232
+    },
+    "attributedChanges": {
+      "counts": {
+        "unknown_query_pathways": [
+          528,
+          527
+        ],
+        "unsupported_structure_records": [
+          30701,
+          30698
+        ],
+        "rejected_movement_pathways": [
+          6608,
+          6609
+        ]
+      },
+      "results": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ],
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 6,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 6,
+          "afterRows": 6
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "290dbe5e0b7419e38057cc5939f88238a3020018bd55fc324305a613ff31f76d",
+    "candidateSha256": "fa332dddd5e35de5bb376092078c928ae2121e63b55a0ea1241a0a8d5791cd9d"
+  },
+  "kenrith-stock-own-graveyard": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 675,
+      "UNKNOWN": 1308,
+      "MATCH": 1351
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 675,
+      "UNKNOWN": 1308,
+      "MATCH": 1351
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          31501,
+          31498
+        ]
+      },
+      "actions": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 3,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 3,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 5,
+          "afterRows": 1
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 5,
+          "afterRows": 4
+        }
+      ],
+      "facts": [
+        {
+          "card": "Banisher Priest",
+          "beforeRows": 1,
+          "afterRows": 0
+        },
+        {
+          "card": "Oblivion Ring",
+          "beforeRows": 1,
+          "afterRows": 2
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Banisher Priest",
+        "before": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Banisher Priest|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Banisher Priest|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Consulate Crackdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Consulate Crackdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Gelatinous Cube",
+        "before": [],
+        "after": [
+          {
+            "id": "Gelatinous Cube|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Grasping Giant",
+        "before": [],
+        "after": [
+          {
+            "id": "Grasping Giant|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Hixus, Prison Warden",
+        "before": [],
+        "after": [
+          {
+            "id": "Hixus, Prison Warden|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Duration establishment trigger or source context unresolved"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Ixalan's Binding",
+        "before": [],
+        "after": [
+          {
+            "id": "Ixalan's Binding|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Oblivion Ring",
+        "before": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Oblivion Ring|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Oblivion Ring|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Ossification",
+        "before": [],
+        "after": [
+          {
+            "id": "Ossification|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Pinnacle Starcage",
+        "before": [],
+        "after": [
+          {
+            "id": "Pinnacle Starcage|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved",
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Sigrid, God-Favored",
+        "before": [],
+        "after": [
+          {
+            "id": "Sigrid, God-Favored|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "DURATION_BOUND",
+            "support": "MATCH",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Temporary Lockdown",
+        "before": [],
+        "after": [
+          {
+            "id": "Temporary Lockdown|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "e80dba8ed6536392565656fbb31b003e2977ba6e6bd504303065a8f236946337",
+    "candidateSha256": "ad17272ad2dd8330b3ed87f509d9687293dea6154538caf351c873df500c61e8"
+  },
+  "krenko-create-creature-tokens": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "MATCH": 253,
+      "NO_MATCH": 160,
+      "UNKNOWN": 50
+    },
+    "verdictsAfter": {
+      "MATCH": 253,
+      "NO_MATCH": 160,
+      "UNKNOWN": 50
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "2e28aa762d4bfb4306720d719b314c1fcd2f5bfdfea3fc9ea79f84173bff00ab",
+    "candidateSha256": "ba0837ea5d772e357d7738ae9b16ebd64640981fed1893e1f01be9bd4bca7c04"
+  },
+  "krenko-creature-died-this-turn": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "UNKNOWN": 1,
+      "MATCH": 1
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 1,
+      "MATCH": 1
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "96b32ebb8d6faa33da4ccb62fef1652243d355b2f7cff2c21dccfa0a4302c909",
+    "candidateSha256": "c3887adb4b20289eed0da6eb05504f54a633c5eefddee05c9a0c1110abf6f90b"
+  },
+  "krenko-own-nontoken-creature-deaths": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 1744,
+      "MATCH": 268,
+      "UNKNOWN": 313
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 1744,
+      "MATCH": 268,
+      "UNKNOWN": 313
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "bb88039f8a4641543d06564599b39180059c3f05cebf5d5e72edd05cf2e17b94",
+    "candidateSha256": "2ae356f03358481af035ffe72e4aeffcb59e8690f931dbf23d03936ceba54834"
+  },
+  "krenko-place-plus-one-counters": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 172,
+      "MATCH": 101,
+      "UNKNOWN": 87
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 172,
+      "MATCH": 101,
+      "UNKNOWN": 87
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "7a4f653b8dd4083146b947f54ce025736d9e54ef9dfaa7900ec2161474608f85",
+    "candidateSha256": "5acc2f499cca99ce973afa81b630bd5cd6080c796920136285a641f785781ada"
+  },
+  "krenko-reanimate-own-creatures": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 994,
+      "MATCH": 21,
+      "UNKNOWN": 46
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 994,
+      "MATCH": 21,
+      "UNKNOWN": 46
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "45d32d8b0635630bb26e471c2e7365e08aef273d51a3c9c9336f2feefbd7413d",
+    "candidateSha256": "45a11985dc10c54d9ee754b909383174f16e5cccb12d1efb8581db999f04d6d5"
+  },
+  "krenko-stock-own-graveyard": {
+    "engineBefore": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+    "engineAfter": "0c5be6cd9d9c7594d5cc35e5ff68366a982a014f",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "MATCH": 284,
+      "NO_MATCH": 199,
+      "UNKNOWN": 307
+    },
+    "verdictsAfter": {
+      "MATCH": 284,
+      "NO_MATCH": 199,
+      "UNKNOWN": 307
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Aligned Hedron Network",
+        "before": [],
+        "after": [
+          {
+            "id": "Aligned Hedron Network|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": null,
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Duration requires one bound battlefield target; other zones and collections remain unresolved"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "34171787851c5ae29c3c0b609b25c13e6b83996e7ebdc79cc476a11fac7ad984",
+    "candidateSha256": "f197b1bbe53cc650012c01755df38df868c3ae3eb454f89a2e19cb5c74825afd"
+  }
+}

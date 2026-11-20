@@ -119,4 +119,3 @@ class ExileReturnTimingScenarioTest : FunSpec({
         link.linkedExileNow(d.state,controlled)?.isEmpty() shouldBe true
     }
 })
-

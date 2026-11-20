@@ -20,8 +20,10 @@ def normalize(value, old, new):
         return [normalize(v, old, new) for v in value]
     if isinstance(value, str):
         for kind in ("blob", "tree"):
-            value = value.replace(f"https://github.com/jasullivan5/argentum-engine/{kind}/{new}/",
-                                  f"https://github.com/jasullivan5/argentum-engine/{kind}/{old}/")
+            current = f"https://github.com/jasullivan5/argentum-engine/{kind}/{new}"
+            previous = f"https://github.com/jasullivan5/argentum-engine/{kind}/{old}"
+            if value == current or value.startswith(current + "/"):
+                value = previous + value[len(current):]
     return value
 
 
