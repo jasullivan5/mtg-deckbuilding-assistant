@@ -32,6 +32,14 @@ def grouped(rows):
     return result
 
 
+def relationship_summary(rows):
+    return [{"id":r["id"],"kind":r["kind"],"support":r["support"],
+             "departureType":r["departure"]["native"].get("type"),
+             "continuationAction":(r.get("continuation") or {}).get("actionId"),
+             "durationReturn":r.get("durationReturn"),"unresolved":r["unresolved"]}
+            for row in rows for r in row.get("linkedMovements", [])]
+
+
 def compare(before, after):
     assert before.keys() == after.keys()
     # Historical evidence is never normalized or refreshed by a new engine build.
@@ -60,7 +68,7 @@ def compare(before, after):
                             assert all(new_links.get(k) == v for k,v in old_links.items()), (card,"old relationship drift")
                             assert all(r["departure"]["native"].get("type") in ("MoveUntilSourceLeaves","MoveToZone")
                                        for k,r in new_links.items() if k not in old_links), (card,"unrelated relationship family")
-                        links.append({"card": card, "before": lx, "after": ly})
+                        links.append({"card": card, "before": relationship_summary(x), "after": relationship_summary(y)})
                     x = [{k:v for k,v in r.items() if k != "linkedMovements"} for r in x]
                     y = [{k:v for k,v in r.items() if k != "linkedMovements"} for r in y]
                 if x != y:
