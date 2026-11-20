@@ -42,6 +42,9 @@ class LegacyExileTest : FunSpec({
         link.support shouldBe Verdict.MATCH
         x.facts.any { it.id==link.departure.factIds.single() && it.path.endsWith(".then") } shouldBe true
         val gated=fixture.script.triggeredAbilities.first().effect as GatedEffect
+        val legacy=fixture.copy(script=fixture.script.copy(triggeredAbilities=listOf(entry.copy(
+            effect=Effects.May(Effects.ExileUntilLeaves((entry.effect as MoveToZoneEffect).target))))+base.script.triggeredAbilities.drop(1)))
+        PathwayExtractor().extract(listOf(legacy)).linkedMovements.isEmpty() shouldBe true
         for(unsupported in listOf(gated.copy(otherwise=Effects.GainLife(1)),
             gated.copy(decisionMaker=com.wingedsheep.sdk.scripting.targets.EffectTarget.Self),
             gated.copy(gate=Gate.MayDecide(inlineOnTrigger=true)),

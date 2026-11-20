@@ -52,7 +52,10 @@ internal fun deferredMovementLinks(card: String, face: String, script: CardScrip
         Triple(i, ability, move)
     }
     val departures = script.triggeredAbilities.withIndex().filter {
-        val effect=(it.value.effect as? GatedEffect)?.then ?: it.value.effect
+        val root=it.value.effect
+        // The wrapped subset needs ordinary exile's resolving-source-visit binding.
+        // Do not extend the legacy helper's unverified instance semantics through a gate.
+        val effect=if(root is GatedEffect) root.then as? MoveToZoneEffect else root
         effect is ExileUntilLeavesEffect || returns.isNotEmpty() && effect is MoveToZoneEffect &&
             effect.destination==Zone.EXILE && effect.linkToSource
     }
