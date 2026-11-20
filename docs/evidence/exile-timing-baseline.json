@@ -1,0 +1,580 @@
+{
+  "applicationProductionBase": "d2240321f4b32e176fbbed69f7e2a2ac012aa49a",
+  "probeCommit": "043b67cb8353183cb8cacbd3a5df91c0c2c6b1aa",
+  "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "expectedSourceFailures": [
+    {
+      "name": "Oblivion Ring independently exiles after its earlier empty return resolved",
+      "failure": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>"
+    },
+    {
+      "name": "Banisher Priest returns before a player can respond to an independent return trigger",
+      "failure": "org.opentest4j.AssertionFailedError: expected:<true> but was:<false>"
+    }
+  ],
+  "passedControls": [
+    "a control change preserves the duration source visit and exposes its projected controller"
+  ],
+  "observations": [
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "ring-entry-trigger-pending",
+      "source": {
+        "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "a9e9f482-69ad-42f4-870b-ed3d89feefba",
+        "generation": 95
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "stack": [
+        {
+          "id": "e82",
+          "source": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "ExileUntilLeaves",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            }
+          },
+          "spell": null
+        }
+      ],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": []
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "ring-departed-both-triggers-pending",
+      "source": {
+        "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "a9e9f482-69ad-42f4-870b-ed3d89feefba",
+        "generation": 95
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "stack": [
+        {
+          "id": "e82",
+          "source": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "ExileUntilLeaves",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            }
+          },
+          "spell": null
+        },
+        {
+          "id": "e83",
+          "source": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          },
+          "spell": null
+        }
+      ],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+          "entityName": "Oblivion Ring",
+          "fromZone": "Battlefield",
+          "toZone": "Hand",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+            "power": null,
+            "toughness": null,
+            "subtypes": [],
+            "supertypes": [],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "counters": {},
+            "keywords": [],
+            "lostAllAbilities": false,
+            "battlefieldEntryTimestamp": 1,
+            "typeLine": "Enchantment",
+            "cardDefinitionId": "Oblivion Ring",
+            "copiableCard": {
+              "cardDefinitionId": "Oblivion Ring",
+              "name": "Oblivion Ring",
+              "manaCost": "{2}{W}",
+              "typeLine": "Enchantment",
+              "oracleText": "When this enchantment enters, exile another target nonland permanent.\nWhen this enchantment leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+              "baseStats": null,
+              "baseKeywords": [],
+              "baseFlags": [],
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0",
+              "spellEffect": null,
+              "imageUri": null,
+              "backFaceImageUri": null,
+              "printingSetCode": null,
+              "hasNonManaActivatedAbility": false,
+              "hasActivatedAbility": false,
+              "hasCycling": false,
+              "hasKicker": false,
+              "originalSetCode": "LRW",
+              "hasAdventure": false,
+              "isDoubleFaced": false,
+              "manaValueOverride": null,
+              "flipSide": null,
+              "copyNumericKeywords": [],
+              "copyStaticAbilities": [],
+              "copyTriggeredAbilities": [],
+              "copyActivatedAbilities": [],
+              "copyWardCosts": [],
+              "manaSpendingGrants": [],
+              "startingLoyaltyOverride": null
+            },
+            "name": "Oblivion Ring",
+            "copyOfOriginalName": null,
+            "attachedTo": null,
+            "wasEquipped": false,
+            "attachmentIds": [],
+            "wasEnchanted": false,
+            "wasModified": false,
+            "wasCast": true,
+            "castFromZone": "Hand",
+            "blockingOrBlockedByIds": [],
+            "wasAttacking": false,
+            "wasBlocking": false,
+            "attackedDefenderId": null,
+            "wasTapped": false,
+            "wasToken": false,
+            "createdBy": null,
+            "wasSuspected": false,
+            "damageDealtByPlayers": {},
+            "damageSources": [],
+            "castX": null,
+            "chosenCreature": null,
+            "wasFaceDown": false,
+            "enteredOnTurn": 1,
+            "copyTriggeredAbilities": [],
+            "objectRef": {
+              "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+              "generation": 98
+            },
+            "manaValue": 3,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+            "generation": 98
+          },
+          "newObject": {
+            "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+            "generation": 102
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Hand",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false
+        },
+        {
+          "entityId": "85c176d4-4af5-4dcc-9be1-c3a1d999bf5b",
+          "entityName": "Boomerang",
+          "fromZone": "Stack",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "lastKnown": null,
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "85c176d4-4af5-4dcc-9be1-c3a1d999bf5b",
+            "generation": 101
+          },
+          "newObject": {
+            "entityId": "85c176d4-4af5-4dcc-9be1-c3a1d999bf5b",
+            "generation": 103
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Graveyard",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false
+        }
+      ]
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "ring-empty-return-resolved",
+      "source": {
+        "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "a9e9f482-69ad-42f4-870b-ed3d89feefba",
+        "generation": 95
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "stack": [
+        {
+          "id": "e82",
+          "source": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "ExileUntilLeaves",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            }
+          },
+          "spell": null
+        }
+      ],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": []
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "ring-late-exile-resolved",
+      "source": {
+        "entityId": "e3ca8a9a-f167-4515-bb1d-0e12d22dfca1",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "a9e9f482-69ad-42f4-870b-ed3d89feefba",
+        "generation": 95
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "stack": [],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e33, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e16, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e25, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e18, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e2, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e22, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e30, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=CastSpell(playerId=e0, cardId=e3ca8a9a-f167-4515-bb1d-0e12d22dfca1, targets=[], xValue=null, paymentStrategy=AutoPay, alternativePayment=null, additionalCostPayment=null, castFaceDown=false, castPrototyped=false, declaredCostSlot=null, declaredCostTimes=1, declaredCostIndices=[], additionalCostChoices={}, wasWaterbendPaid=false, additionalManaForCounters=0, optionalCostPayments=[], giftRecipient=null, splicedCardIds=[], damageDistribution=null, useAlternativeCost=false, chosenModes=[], modeTargetsOrdered=[], modeDamageDistribution={}, graveyardLifeCost=0, graveyardCastRider=null, conspiredCreatures=[], casualtyCreature=null, faceIndex=null, castFused=false, useWithoutPayingManaCost=false, alternativeCostType=null, beamMeUpSource=null, escapeAbility=null, targetGroupCounts=null), actionType=CastSpell, description=Cast Oblivion Ring, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString={2}{W}, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": []
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "priest-duration-established",
+      "source": {
+        "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "1cefc0a0-c9bc-4f42-863a-d0b3809a6544",
+        "generation": 100
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "stack": [],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e9, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e20, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e18, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e41, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e15, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e24, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=PlayLand(playerId=e0, cardId=e26, asBackFace=false), actionType=PlayLand, description=Play Forest, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": []
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "priest-next-priority-after-departure",
+      "source": {
+        "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+        "generation": 104
+      },
+      "target": {
+        "entityId": "1cefc0a0-c9bc-4f42-863a-d0b3809a6544",
+        "generation": 100
+      },
+      "sourceZone": "HAND",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "stack": [
+        {
+          "id": "e83",
+          "source": "6d65d333-0960-43cf-b268-5acd49a69a37",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          },
+          "spell": null
+        }
+      ],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)",
+        "LegalAction(action=CastSpell(playerId=e0, cardId=70398ce6-dd6e-40fe-9add-7870bd535fea, targets=[], xValue=null, paymentStrategy=AutoPay, alternativePayment=null, additionalCostPayment=null, castFaceDown=false, castPrototyped=false, declaredCostSlot=null, declaredCostTimes=1, declaredCostIndices=[], additionalCostChoices={}, wasWaterbendPaid=false, additionalManaForCounters=0, optionalCostPayments=[], giftRecipient=null, splicedCardIds=[], damageDistribution=null, useAlternativeCost=false, chosenModes=[], modeTargetsOrdered=[], modeDamageDistribution={}, graveyardLifeCost=0, graveyardCastRider=null, conspiredCreatures=[], casualtyCreature=null, faceIndex=null, castFused=false, useWithoutPayingManaCost=false, alternativeCostType=null, beamMeUpSource=null, escapeAbility=null, targetGroupCounts=null), actionType=CastSpell, description=Cast Opt, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString={U}, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+          "entityName": "Banisher Priest",
+          "fromZone": "Battlefield",
+          "toZone": "Hand",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+            "power": 2,
+            "toughness": 2,
+            "subtypes": [
+              "Human",
+              "Cleric"
+            ],
+            "supertypes": [],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "counters": {},
+            "keywords": [],
+            "lostAllAbilities": false,
+            "battlefieldEntryTimestamp": 1,
+            "typeLine": "Creature \u2014 Human Cleric",
+            "cardDefinitionId": "Banisher Priest",
+            "copiableCard": {
+              "cardDefinitionId": "Banisher Priest",
+              "name": "Banisher Priest",
+              "manaCost": "{1}{W}{W}",
+              "typeLine": "Creature \u2014 Human Cleric",
+              "oracleText": "When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield.",
+              "baseStats": {
+                "power": 2,
+                "toughness": 2
+              },
+              "baseKeywords": [],
+              "baseFlags": [],
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0",
+              "spellEffect": null,
+              "imageUri": null,
+              "backFaceImageUri": null,
+              "printingSetCode": null,
+              "hasNonManaActivatedAbility": false,
+              "hasActivatedAbility": false,
+              "hasCycling": false,
+              "hasKicker": false,
+              "originalSetCode": "M14",
+              "hasAdventure": false,
+              "isDoubleFaced": false,
+              "manaValueOverride": null,
+              "flipSide": null,
+              "copyNumericKeywords": [],
+              "copyStaticAbilities": [],
+              "copyTriggeredAbilities": [],
+              "copyActivatedAbilities": [],
+              "copyWardCosts": [],
+              "manaSpendingGrants": [],
+              "startingLoyaltyOverride": null
+            },
+            "name": "Banisher Priest",
+            "copyOfOriginalName": null,
+            "attachedTo": null,
+            "wasEquipped": false,
+            "attachmentIds": [],
+            "wasEnchanted": false,
+            "wasModified": false,
+            "wasCast": true,
+            "castFromZone": "Hand",
+            "blockingOrBlockedByIds": [],
+            "wasAttacking": false,
+            "wasBlocking": false,
+            "attackedDefenderId": null,
+            "wasTapped": false,
+            "wasToken": false,
+            "createdBy": null,
+            "wasSuspected": false,
+            "damageDealtByPlayers": {},
+            "damageSources": [],
+            "castX": null,
+            "chosenCreature": null,
+            "wasFaceDown": false,
+            "enteredOnTurn": 1,
+            "copyTriggeredAbilities": [],
+            "objectRef": {
+              "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+              "generation": 98
+            },
+            "manaValue": 3,
+            "basePower": 2,
+            "baseToughness": 2,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+            "generation": 98
+          },
+          "newObject": {
+            "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+            "generation": 104
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Hand",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false
+        },
+        {
+          "entityId": "386f1b2d-e2bb-4616-a6ff-fe0d2f76bc82",
+          "entityName": "Boomerang",
+          "fromZone": "Stack",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "lastKnown": null,
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "386f1b2d-e2bb-4616-a6ff-fe0d2f76bc82",
+            "generation": 103
+          },
+          "newObject": {
+            "entityId": "386f1b2d-e2bb-4616-a6ff-fe0d2f76bc82",
+            "generation": 105
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Graveyard",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false
+        }
+      ]
+    },
+    {
+      "engine": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+      "checkpoint": "priest-player-response-announced",
+      "source": {
+        "entityId": "6d65d333-0960-43cf-b268-5acd49a69a37",
+        "generation": 104
+      },
+      "target": {
+        "entityId": "1cefc0a0-c9bc-4f42-863a-d0b3809a6544",
+        "generation": 100
+      },
+      "sourceZone": "HAND",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "stack": [
+        {
+          "id": "e83",
+          "source": "6d65d333-0960-43cf-b268-5acd49a69a37",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          },
+          "spell": null
+        },
+        {
+          "id": "70398ce6-dd6e-40fe-9add-7870bd535fea",
+          "spell": "Opt"
+        }
+      ],
+      "legalActions": [
+        "LegalAction(action=PassPriority(playerId=e0), actionType=PassPriority, description=Pass priority, affordable=true, validTargets=null, requiresTargets=false, targetCount=1, minTargets=1, targetDescription=null, targetRequirements=null, xConstrainsTargetManaValue=false, xConstrainsTargetManaValueExactly=false, xConstrainsTargetPower=false, xConstrainsTargetCount=false, xConstrainsTargetCountExactly=false, validAttackers=null, mandatoryAttackers=null, loneAttackers=null, validAttackTargets=null, attackTargetsByAttacker=null, validBlockers=null, blockableAttackers=null, proposedBlockerAssignments=null, blockerMaxBlockCounts=null, mandatoryBlockerAssignments=null, manaCostString=null, manaCostByTargetCount=null, hasXCost=false, maxAffordableX=null, minX=0, maxAdditionalManaForCounters=null, additionalCostInfo=null, hasConvoke=false, convokeCreatures=null, hasDelve=false, delveCards=null, minDelveNeeded=null, hasTapForGeneric=false, tapForGenericPermanents=null, tapForGenericAmount=null, tapForGenericLabel=null, tapForGenericRequired=null, hasHarmonize=false, harmonizeCreatures=null, isManaAbility=false, requiresManaColorChoice=false, availableManaColors=null, autoTapPreview=null, requiresDamageDistribution=false, totalDamageToDistribute=null, totalDamageByX=null, minDamagePerTarget=null, distributionUnit=null, distributionTargetGroup=null, sourceZone=null, castsTransformed=false, tapForPower=false, tapForPowerRequired=null, tapForPowerCreatures=null, maxRepeatableActivations=null, requiresForage=false, additionalLifeCost=0, modalEnumeration=null, holdPriority=false, inertReason=null)"
+      ],
+      "zoneEvents": []
+    }
+  ],
+  "testLfSha256": "0b00eb9abc1756fb0e6df68be73c4d83e6072e2c4fb5ee2333da37c2d4b964d7"
+}
