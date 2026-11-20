@@ -66,7 +66,7 @@ class ExileReturnTimingScenarioTest : FunSpec({
         d.getExile(d.player2).contains(target) shouldBe true
         d.stackSize shouldBe 0
     }
-    test("Banisher Priest returns before an opponent can respond to an independent return trigger") {
+    test("Banisher Priest returns before a player can respond to an independent return trigger") {
         val d=scenarioDriver(card("Banisher Priest"),card("Hill Giant"),card("Boomerang"),card("Opt"))
         val target=d.putCreatureOnBattlefield(d.player2,"Hill Giant")
         val before=checkNotNull(d.state.objectRef(target))
@@ -102,9 +102,9 @@ class ExileReturnTimingScenarioTest : FunSpec({
         val decision=d.pendingDecision as ChooseTargetsDecision
         d.submitTargetSelection(decision.playerId,listOf(target));d.bothPass()
         val original=checkNotNull(captureLinkedSource(d.state,checkNotNull(d.state.objectRef(source))))
+        d.passPriorityUntil(com.wingedsheep.sdk.core.Step.PRECOMBAT_MAIN,activePlayer=d.player2)
         d.giveMana(d.player2,Color.BLUE,4)
         val control=d.putCardInHand(d.player2,"Control Magic")
-        d.passPriority(d.player1).error shouldBe null
         d.submit(CastSpell(d.player2,control,listOf(ChosenTarget.Permanent(source)),paymentStrategy=PaymentStrategy.FromPool)).error shouldBe null
         d.bothPass().error shouldBe null
         val controlled=checkNotNull(captureLinkedSource(d.state,checkNotNull(d.state.objectRef(source))))
@@ -113,8 +113,10 @@ class ExileReturnTimingScenarioTest : FunSpec({
         controlled.controller shouldBe d.player2
         val link=PathwayExtractor().extract(listOf(card("Banisher Priest"))).linkedMovements.single()
         link.linkedExileNow(d.state,controlled)?.map { it.entityId } shouldBe listOf(target)
+        d.passPriority(d.player2).error shouldBe null
         d.cast("Boomerang",source);d.resolvePendingActions()
         d.getPermanents(d.player2).contains(target) shouldBe true
         link.linkedExileNow(d.state,controlled)?.isEmpty() shouldBe true
     }
 })
+
