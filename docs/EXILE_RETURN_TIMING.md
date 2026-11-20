@@ -44,7 +44,27 @@ The pools overlap. Each commander's six relationship inventories agree. Priest c
 
 ## Verification and remaining scope
 
-Final revision-bound results and controlled comparison measurements accompany the delivery receipt. Native tests cover departure-first ordering, actual response checkpoints, same-name independent sources, source renewal, stale exile generations, target legality, tokens and attachment/counter/damage cleanup. Real spells establish exile, bounce, flicker, return and priority behavior. Token/counter/damage setup and intervening hand/exile movements are explicit native fixtures, not demonstrations of spells that produce those states.
+[Verification receipt](evidence/exile-timing-verification.json) and [all 18 comparison receipts](evidence/exile-timing-comparison.json) retain exact revisions, source/test hashes, actual native checkpoints, populations, report hashes and attributed differences. The Kotlin/runtime implementation was tested at `1874b558b4481212827454ca3038312f2a72bd3b`; later delivery changes contain comparison normalization, retained evidence/documentation and removal of a trailing test-file blank line. Runtime sources and probe assertions are unchanged. The engine stayed clean at `0c5be6cd9d9c7594d5cc35e5ff68366a982a014f`. Java and javac are Temurin 25.0.4.1; native/application wrappers use Gradle 9.8.2/9.6.1 respectively. Live application main and engine app-stable remained at the recorded baselines; neither repository was merged or advanced automatically.
+
+| Check | Observed result |
+| --- | --- |
+| Focused native source/zone/exile controls | 76 passed; included again in the broader suites |
+| Full SDK | 713 passed; one opt-in tail-report writer skipped |
+| Full rules engine | 9,479 passed; no failures, errors or skips |
+| All nine card-era scenario suites | 23,479 passed; no failures, errors or skips |
+| Strict native catalog, including snapshots and lint | 493 passed; update mode disabled |
+| Complete Kotlin application suite | 811 passed; no failures, errors or skips |
+| Bootstrap / Oracle snapshot / catalog comparator checks | 17 / 3 / 5 passed |
+| Installed distribution and current catalog gate | Passed; zero confirmed benchmark mismatches and empty self-diff |
+| Frontend build / Edge interface / live Edge checks | Passed / 8 passed / 18 passed |
+| Normal Explorer | Startup, cold/retained Progress and four exact relationship kinds passed; actual maximum heap 1,073,741,824 bytes |
+| Health | Application `1874b558`, clean candidate engine `0c5be6cd`; same installed libraries used for candidate exports |
+| Existing AI-reading diagnostic | Ring 2/2 and Priest 1/1 abilities read fully; no AI changes |
+| Historical current-SDK report | Typed decode succeeded, current-catalog pin guard correctly rejected reprocessing, and offline self-diff was empty |
+
+The old whole-report fingerprints remain frozen and do not match the current catalog, as before this correction; the current catalog gate passes independently. The older archived `LandTappedForMana` SDK incompatibility remains outside this work. Historical assurance and qualification are not refreshed. The original native console capture stopped during the paused session, while later XML receipts completed. The resumed complete gate confirmed current inputs and finished successfully; the interrupted capture and full receipts remain retained under ignored generated output.
+
+Native tests cover departure-first ordering, actual response checkpoints, same-name independent sources, source renewal, stale exile generations, target legality, tokens and attachment/counter/damage cleanup. Real spells establish exile, bounce, flicker, return and priority behavior. Token/counter/damage setup and intervening hand/exile movements are explicit native fixtures, not demonstrations of spells that produce those states.
 
 Fiend Hunter's ordinary exile/return and optional-decline scenarios protect neighboring independent-trigger execution. Its unchanged guarded helper still warrants a separate departure-first fidelity investigation; ordinary success is not adverse timing qualification. Its optional-target representation also needs separate review of the choice checkpoint. These are retained concerns, not additional corrections in this increment. Ossification protects an existing automatic duration implementation, including return before a subsequent instruction. Mirror Golem protects graveyard exile and later pile-derived protection. Other old-helper declarations remain individually unreviewed; the previous 81/25 declaration counts were inventories, not verified translations.
 
