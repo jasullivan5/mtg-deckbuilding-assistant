@@ -15,9 +15,9 @@ import kotlinx.serialization.json.*
 class ExileReturnTimingScenarioTest : FunSpec({
     val catalog by lazy { Catalog() }
     fun card(name: String)=checkNotNull(catalog.card(name))
-    fun GameTestDriver.cast(name: String, target: EntityId?=null): EntityId {
+    fun GameTestDriver.cast(name: String, target: EntityId?=null, existing: EntityId?=null): EntityId {
         giveMana(player1,Color.WHITE,5);giveMana(player1,Color.BLUE,5)
-        val id=putCardInHand(player1,name)
+        val id=existing ?: putCardInHand(player1,name)
         submit(CastSpell(player1,id,target?.let { listOf(ChosenTarget.Permanent(it)) } ?: emptyList(),
             paymentStrategy=PaymentStrategy.FromPool)).error shouldBe null
         return id
@@ -77,6 +77,7 @@ class ExileReturnTimingScenarioTest : FunSpec({
         d.bothPass().error shouldBe null
         d.getExile(d.player2).contains(target) shouldBe true
         d.record("priest-duration-established",source,target)
+        val response=d.putCardInHand(d.player1,"Opt")
         d.cast("Boomerang",source)
         val departure=d.bothPass()
         departure.error shouldBe null
@@ -84,7 +85,7 @@ class ExileReturnTimingScenarioTest : FunSpec({
         val returnedBeforePriority=d.getPermanents(d.player2).contains(target)
         val stackBeforeResponse=d.stackSize
         // Prove an actual player action is possible at this checkpoint, not only a stack count.
-        d.cast("Opt")
+        d.cast("Opt",existing=response)
         d.record("priest-player-response-announced",source,target)
         returnedBeforePriority shouldBe true
         stackBeforeResponse shouldBe 0
@@ -93,5 +94,27 @@ class ExileReturnTimingScenarioTest : FunSpec({
         departure.events.filterIsInstance<ZoneChangeEvent>().any {
             it.entityId==target && it.transitionCause==ZoneTransitionCause.DURATION_RETURN
         } shouldBe true
+    }
+    test("a control change preserves the duration source visit and exposes its projected controller") {
+        val d=scenarioDriver(card("Banisher Priest"),card("Hill Giant"),card("Control Magic"),card("Boomerang"))
+        val target=d.putCreatureOnBattlefield(d.player2,"Hill Giant")
+        val source=d.cast("Banisher Priest");d.bothPass()
+        val decision=d.pendingDecision as ChooseTargetsDecision
+        d.submitTargetSelection(decision.playerId,listOf(target));d.bothPass()
+        val original=checkNotNull(captureLinkedSource(d.state,checkNotNull(d.state.objectRef(source))))
+        d.giveMana(d.player2,Color.BLUE,4)
+        val control=d.putCardInHand(d.player2,"Control Magic")
+        d.passPriority(d.player1).error shouldBe null
+        d.submit(CastSpell(d.player2,control,listOf(ChosenTarget.Permanent(source)),paymentStrategy=PaymentStrategy.FromPool)).error shouldBe null
+        d.bothPass().error shouldBe null
+        val controlled=checkNotNull(captureLinkedSource(d.state,checkNotNull(d.state.objectRef(source))))
+        controlled.source shouldBe original.source
+        controlled.battlefieldTimestamp shouldBe original.battlefieldTimestamp
+        controlled.controller shouldBe d.player2
+        val link=PathwayExtractor().extract(listOf(card("Banisher Priest"))).linkedMovements.single()
+        link.linkedExileNow(d.state,controlled)?.map { it.entityId } shouldBe listOf(target)
+        d.cast("Boomerang",source);d.resolvePendingActions()
+        d.getPermanents(d.player2).contains(target) shouldBe true
+        link.linkedExileNow(d.state,controlled)?.isEmpty() shouldBe true
     }
 })

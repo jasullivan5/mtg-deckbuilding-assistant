@@ -497,7 +497,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 } else issue(path,k,"Keyword-granted actions are not expanded")
             }
         }
-        val deferred = deferredMovementLinks(card.name,label,script,facts,linkedExileProducers)
+        val deferred = deferredMovementLinks(card.name,label,script,facts,linkedExileProducers) + durationMovementLinks(card.name,label,script)
         if (deferred.isNotEmpty()) actions[attachmentRootIndex] = actions[attachmentRootIndex].copy(linkedMovements=deferred)
         if (aura || script.auraTarget != null) {
             val root = actions[attachmentRootIndex]

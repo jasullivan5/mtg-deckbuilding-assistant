@@ -8,7 +8,6 @@ import com.wingedsheep.engine.state.ObjectRef
 import com.wingedsheep.engine.handlers.EffectContext
 import com.wingedsheep.engine.handlers.effects.linkedexile.LinkedExileLookup
 import com.wingedsheep.engine.state.components.battlefield.BattlefieldEntryTimestampComponent
-import com.wingedsheep.engine.state.components.identity.ControllerComponent
 import com.wingedsheep.sdk.model.EntityId
 import com.wingedsheep.sdk.core.Zone
 import kotlinx.serialization.Serializable
@@ -25,12 +24,16 @@ fun captureLinkedSource(state: GameState, source: ObjectRef): LinkedSourceVisit?
     if (!state.isCurrentObject(source) || source.entityId !in state.getBattlefield()) return null
     val entity=state.getEntity(source.entityId) ?: return null
     return LinkedSourceVisit(source,entity.get<BattlefieldEntryTimestampComponent>()?.timestamp ?: return null,
-        entity.get<ControllerComponent>()?.playerId ?: return null)
+        state.projectedState.getController(source.entityId) ?: return null)
 }
 
 /** Read Argentum's existing live/departed pile. An empty pile is only empty now: it is never
  * a promise to consume cards exiled after an earlier return operation resolved. */
 fun LinkedMovement.linkedExileNow(state: GameState, visit: LinkedSourceVisit): List<ObjectRef>? {
+    if (kind==MovementLinkKind.DURATION_BOUND && support==Verdict.MATCH) {
+        return state.zoneReturns.filter { it.source==visit.source && state.isCurrentObject(it.movedObject) &&
+            state.logicalZone(it.movedObject.entityId)?.zoneType==Zone.EXILE }.map { it.movedObject }
+    }
     if (kind!=MovementLinkKind.DEFERRED_SOURCE_LINKED || support!=Verdict.MATCH) return null
     val context=EffectContext(controllerId=visit.controller,sourceId=visit.source.entityId,
         sourceBattlefieldTimestamp=visit.battlefieldTimestamp)
