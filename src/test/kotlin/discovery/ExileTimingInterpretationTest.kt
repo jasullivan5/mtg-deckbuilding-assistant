@@ -45,5 +45,9 @@ class ExileTimingInterpretationTest : FunSpec({
         val effect=ability.effect as MoveUntilSourceLeavesEffect
         val fixture=base.copy(script=base.script.copy(triggeredAbilities=listOf(ability.copy(effect=effect.copy(anchor=EffectTarget.ContextTarget(0))))))
         PathwayExtractor().extract(listOf(fixture)).linkedMovements.single().support shouldBe Verdict.UNKNOWN
+        val otherZone=base.copy(script=base.script.copy(triggeredAbilities=listOf(ability.copy(effect=effect.copy(destination=Zone.HAND)))))
+        val unresolved=PathwayExtractor().extract(listOf(otherZone)).linkedMovements.single()
+        unresolved.support shouldBe Verdict.UNKNOWN
+        unresolved.departure.to shouldBe Zone.HAND
     }
 })

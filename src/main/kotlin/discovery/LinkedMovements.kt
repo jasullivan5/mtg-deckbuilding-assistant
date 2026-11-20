@@ -119,7 +119,7 @@ internal fun durationMovementLinks(card: String, face: String, script: CardScrip
         val action="$card|$face|script.triggeredAbilities[$i]"
         LinkedMovement("$action|DURATION_LINK",card,face,
             if(problems.isEmpty()) MovementLinkKind.DURATION_BOUND else MovementLinkKind.UNRESOLVED_POSSIBLE,
-            MovementStep(action,"script.triggeredAbilities[$i].effect",emptyList(),target?.filter?.zone,Zone.EXILE,"ANY",nativeJson.encodeToJsonElement(Effect.serializer(),effect)),
+            MovementStep(action,"script.triggeredAbilities[$i].effect",emptyList(),target?.filter?.zone,effect.destination,"ANY",nativeJson.encodeToJsonElement(Effect.serializer(),effect)),
             null,"MoveUntilSourceLeaves -> exact source ObjectRef and moved ObjectRef -> native ZoneReturn",
             if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,
             listOf("Legal selected original nontoken card and successful primary exile are prerequisites",

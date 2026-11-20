@@ -54,6 +54,12 @@ def compare(before, after):
                     lx = [(r["id"], r.get("linkedMovements", [])) for r in x]
                     ly = [(r["id"], r.get("linkedMovements", [])) for r in y]
                     if lx != ly:
+                        if card not in CORRECTED:
+                            old_links = {r["id"]:r for row in x for r in row.get("linkedMovements", [])}
+                            new_links = {r["id"]:r for row in y for r in row.get("linkedMovements", [])}
+                            assert all(new_links.get(k) == v for k,v in old_links.items()), (card,"old relationship drift")
+                            assert all(r["departure"]["native"].get("type") in ("MoveUntilSourceLeaves","MoveToZone")
+                                       for k,r in new_links.items() if k not in old_links), (card,"unrelated relationship family")
                         links.append({"card": card, "before": lx, "after": ly})
                     x = [{k:v for k,v in r.items() if k != "linkedMovements"} for r in x]
                     y = [{k:v for k,v in r.items() if k != "linkedMovements"} for r in y]
