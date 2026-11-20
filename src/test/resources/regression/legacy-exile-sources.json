@@ -1,0 +1,684 @@
+{
+  "applicationBase": "90a6e31fe5a4f1613bdadaed8b8c47c3687ed810",
+  "engineBase": "23b91dfe270620a58dca1530dd5341951829b1c8",
+  "priorDelivery": "dcdea1db033013e883b970e4d4a518d859223f20",
+  "scope": "Six source-led investigations; production corrections require fresh failing native evidence. No whole-card qualification.",
+  "rules": {
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+    "sha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "verifiedSections": [
+      "113.7a",
+      "400.7",
+      "601.2c",
+      "603.3d",
+      "603.5",
+      "608.2b",
+      "608.2d",
+      "610.3",
+      "610.3b",
+      "610.3c"
+    ]
+  },
+  "cases": {
+    "Fiend Hunter": {
+      "family": "A_INDEPENDENT_WITH_MAY",
+      "source": {
+        "url": "https://api.scryfall.com/cards/isd/15",
+        "printingId": "f1e4c7d8-11a5-40fe-962b-7e938bf08616",
+        "oracleId": "cb9d557a-fc06-428c-8be6-7d28add33028",
+        "set": "isd",
+        "collectorNumber": "15",
+        "oracleText": "When this creature enters, you may exile another target creature.\nWhen this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+        "retrievedUtc": "2026-11-20T19:43:58.282551+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/f1e4c7d8-11a5-40fe-962b-7e938bf08616/rulings",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "In a multiplayer game, if you lose the game, the creature exiled with Fiend Hunter remains exiled indefinitely. This is also different from abilities on other cards that exile a permanent \"until\" something happens."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "Once the exiled creature returns, it's considered a new object with no relation to the object that it was. Auras attached to the exiled creature will be put into their owners' graveyards. Equipment attached to the exiled creature will become unattached and remain on the battlefield. Any counters on the exiled creature will cease to exist."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "If a token is exiled this way, it won't return to the battlefield."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "If Fiend Hunter leaves the battlefield before its first ability has resolved, its second ability will trigger and do nothing. Then its first ability will resolve and exile the target creature indefinitely. This is different from abilities on other cards that exile a permanent \"until\" something happens."
+          }
+        ]
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt",
+      "baselineNativeLfSha256": "09d7b2693f33e9487eeac9959656434f572af20f5c8eb148be180b8e3cdd9ee6",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Fiend Hunter:1",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "to": "Battlefield"
+            },
+            "effect": {
+              "type": "ExileUntilLeaves",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "optional": true,
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ]
+                },
+                "excludeSelf": true
+              },
+              "id": "t0"
+            }
+          },
+          {
+            "id": "Fiend Hunter:2",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "from": "Battlefield"
+            },
+            "effect": {
+              "type": "Composite",
+              "effects": [
+                {
+                  "type": "GatherCards",
+                  "source": {
+                    "type": "FromLinkedExile"
+                  },
+                  "storeAs": "linked_return"
+                },
+                {
+                  "type": "MoveCollection",
+                  "from": "linked_return",
+                  "destination": {
+                    "type": "ToZone",
+                    "zone": "Battlefield"
+                  },
+                  "underOwnersControl": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "requirements": [
+        "One other legal creature target is mandatory when the entry trigger is stacked, even when intending to decline.",
+        "Choose whether to exile only at resolution; declining establishes no link.",
+        "After source departure and an empty return, the original entry trigger may still exile its legal target; no future return obligation.",
+        "No legal target removes the trigger; an illegal sole target prevents resolution and the may choice."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING"
+    },
+    "Savior of Ollenbock": {
+      "family": "C_COMPLEX_INDEPENDENT_TRAINING_CROSS_ZONE",
+      "source": {
+        "url": "https://api.scryfall.com/cards/vow/34",
+        "printingId": "ba77e83b-1846-4c42-bea0-2e304429fbe0",
+        "oracleId": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+        "set": "vow",
+        "collectorNumber": "34",
+        "oracleText": "Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)\nWhenever this creature trains, exile up to one other target creature from the battlefield or creature card from a graveyard.\nWhen this creature leaves the battlefield, put the exiled cards onto the battlefield under their owners' control.",
+        "retrievedUtc": "2026-11-20T19:43:59.865037+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/ba77e83b-1846-4c42-bea0-2e304429fbe0/rulings",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+            "source": "wotc",
+            "published_at": "2021-11-19",
+            "comment": "A creature \u201ctrains\u201d when a +1/+1 counter is put onto it at as a result of its training ability resolving."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+            "source": "wotc",
+            "published_at": "2021-11-19",
+            "comment": "A creature's training ability triggers only when both that creature and a creature with greater power are declared as attackers. Increasing a creature's power after attackers are declared won't cause a training ability to trigger."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+            "source": "wotc",
+            "published_at": "2021-11-19",
+            "comment": "Once a creature's training ability has triggered, destroying the other attacking creature or reducing its power won't stop the creature with training from getting a +1/+1 counter."
+          }
+        ]
+      },
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorOfOllenbock.kt",
+      "baselineNativeLfSha256": "4e673281dac10d55fb93b3b34536f833c5d70d3a4ba6f3e2c08f277b348a1344",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Savior of Ollenbock:1",
+            "trigger": {
+              "type": "AttackEvent",
+              "requires": [
+                {
+                  "type": "AttacksAlongsideGreaterPower"
+                }
+              ]
+            },
+            "effect": {
+              "type": "Composite",
+              "effects": [
+                {
+                  "type": "AddCounters",
+                  "counterType": "PLUS_ONE_PLUS_ONE",
+                  "count": 1,
+                  "target": {
+                    "type": "Self"
+                  }
+                },
+                {
+                  "type": "EmitKeywordCounterEvent",
+                  "keyword": "TRAINING"
+                }
+              ]
+            },
+            "descriptionOverride": "Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)"
+          },
+          {
+            "id": "Savior of Ollenbock:2",
+            "trigger": {
+              "type": "TrainedEvent"
+            },
+            "effect": {
+              "type": "ExileUntilLeaves",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "optional": true,
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ]
+                },
+                "excludeSelf": true,
+                "alternatives": [
+                  {
+                    "baseFilter": {
+                      "cardPredicates": [
+                        {
+                          "type": "IsCreature"
+                        }
+                      ]
+                    },
+                    "zone": "Graveyard"
+                  }
+                ]
+              },
+              "id": "t0"
+            }
+          },
+          {
+            "id": "Savior of Ollenbock:3",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "from": "Battlefield"
+            },
+            "effect": {
+              "type": "Composite",
+              "effects": [
+                {
+                  "type": "GatherCards",
+                  "source": {
+                    "type": "FromLinkedExile"
+                  },
+                  "storeAs": "linked_return"
+                },
+                {
+                  "type": "MoveCollection",
+                  "from": "linked_return",
+                  "destination": {
+                    "type": "ToZone",
+                    "zone": "Battlefield"
+                  },
+                  "underOwnersControl": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "requirements": [
+        "Up to one is a genuinely optional target: another battlefield creature or a creature card from any graveyard.",
+        "Source departure does not cancel a pending training-triggered exile.",
+        "Independent departure returns this source visit's still-linked exiled cards under owners' control; an earlier empty return creates no future obligation."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING"
+    },
+    "Werefox Bodyguard": {
+      "family": "B_DURATION_WITH_OPTIONAL_TARGET_AND_SACRIFICE",
+      "source": {
+        "url": "https://api.scryfall.com/cards/woe/39",
+        "printingId": "4494dfa1-1343-417e-b0c5-2b096442dd0e",
+        "oracleId": "d5ee2ced-29f4-430f-962e-2f930b92624c",
+        "set": "woe",
+        "collectorNumber": "39",
+        "oracleText": "Flash\nWhen this creature enters, exile up to one other target non-Fox creature until this creature leaves the battlefield.\n{1}{W}, Sacrifice this creature: You gain 2 life.",
+        "retrievedUtc": "2026-11-20T19:43:59.394806+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/4494dfa1-1343-417e-b0c5-2b096442dd0e/rulings",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "d5ee2ced-29f4-430f-962e-2f930b92624c",
+            "source": "wotc",
+            "published_at": "2023-09-01",
+            "comment": "If Werefox Bodyguard leaves the battlefield before its triggered ability resolves, the target creature won't be exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "d5ee2ced-29f4-430f-962e-2f930b92624c",
+            "source": "wotc",
+            "published_at": "2023-09-01",
+            "comment": "Auras attached to the exiled creature will be put into their owners' graveyards. Any Equipment will become unattached and remain on the battlefield. Any counters on the exiled creature will cease to exist. When the card returns to the battlefield, it will be a new object with no connection to the card that was exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "d5ee2ced-29f4-430f-962e-2f930b92624c",
+            "source": "wotc",
+            "published_at": "2023-09-01",
+            "comment": "If a token is exiled this way, it will cease to exist and won't return to the battlefield."
+          }
+        ]
+      },
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/WerefoxBodyguard.kt",
+      "baselineNativeLfSha256": "95cb46b4b91095f72318776005847f366d5f05066ee53fae2f882e79ff7c53de",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Werefox Bodyguard:1",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "to": "Battlefield"
+            },
+            "effect": {
+              "type": "ExileUntilLeaves",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              }
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "optional": true,
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    },
+                    {
+                      "type": "NotSubtype",
+                      "subtype": "Fox"
+                    }
+                  ]
+                },
+                "excludeSelf": true
+              },
+              "id": "t0"
+            },
+            "descriptionOverride": "When this creature enters, exile up to one other target non-Fox creature until this creature leaves the battlefield."
+          },
+          {
+            "id": "Werefox Bodyguard:2",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "from": "Battlefield"
+            },
+            "effect": {
+              "type": "Composite",
+              "effects": [
+                {
+                  "type": "GatherCards",
+                  "source": {
+                    "type": "FromLinkedExile"
+                  },
+                  "storeAs": "linked_return"
+                },
+                {
+                  "type": "MoveCollection",
+                  "from": "linked_return",
+                  "destination": {
+                    "type": "ToZone",
+                    "zone": "Battlefield"
+                  },
+                  "underOwnersControl": true
+                }
+              ]
+            }
+          }
+        ],
+        "activatedAbilities": [
+          {
+            "id": "Werefox Bodyguard:3",
+            "cost": {
+              "type": "CostComposite",
+              "costs": [
+                {
+                  "type": "CostAtomWrapper",
+                  "atom": {
+                    "type": "AtomMana",
+                    "cost": "{1}{W}"
+                  }
+                },
+                {
+                  "type": "CostSacrificeSelf"
+                }
+              ]
+            },
+            "effect": {
+              "type": "GainLife",
+              "amount": {
+                "type": "Fixed",
+                "amount": 2
+              }
+            },
+            "descriptionOverride": "{1}{W}, Sacrifice this creature: You gain 2 life."
+          }
+        ]
+      },
+      "requirements": [
+        "Up to one other non-Fox creature is a genuinely optional target, including a friendly creature.",
+        "No exile is established after the original source battlefield visit has departed.",
+        "Sacrificing the source as an activation cost ends the duration before the life-gain ability resolves and before priority, without a return trigger."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING",
+      "metadataConcern": "Native rarity COMMON differs from canonical printing RARE. Separate metadata concern retained; not corrected by this mechanical increment."
+    },
+    "Oblivion Ring": {
+      "family": "A_INDEPENDENT_CONTROL",
+      "source": {
+        "url": "https://api.scryfall.com/cards/lrw/34",
+        "printingId": "1c7fffe8-709c-4cb4-bbad-e4a0c35b616a",
+        "oracleId": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+        "set": "lrw",
+        "collectorNumber": "34",
+        "oracleText": "When this enchantment enters, exile another target nonland permanent.\nWhen this enchantment leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+        "retrievedUtc": "2026-11-20T19:44:00.778742+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/1c7fffe8-709c-4cb4-bbad-e4a0c35b616a/rulings",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2012-07-01",
+            "comment": "Auras attached to the exiled permanent will be put into their owners\u2019 graveyards. Equipment attached to the exiled permanent will become unattached and remain on the battlefield. Any counters on the exiled permanent will cease to exist."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2008-10-01",
+            "comment": "If the exiled card is an Aura, that card\u2019s owner chooses what it will enchant as it comes back onto the battlefield. An Aura put onto the battlefield this way doesn\u2019t target anything, but the Aura\u2019s enchant ability restricts what it can be attached to. If the Aura can\u2019t legally be attached to anything, it remains exiled forever."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2007-10-01",
+            "comment": "If Oblivion Ring leaves the battlefield before its first ability has resolved, its second ability will trigger and do nothing. Then its first ability will resolve and exile the targeted nonland permanent forever."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2007-10-01",
+            "comment": "If there are no nonland permanents on the battlefield other than an Oblivion Ring, and the card it exiled was another Oblivion Ring, casting a third Oblivion Ring will result in an involuntary infinite loop that will end the game in a draw (unless someone chooses to break it by putting another nonland permanent onto the battlefield or destroying one of the Oblivion Rings, for example)."
+          }
+        ]
+      },
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt",
+      "baselineNativeLfSha256": "66df2a70307e6f1fa22e4cfcdbb0ed0d4ec0a62db25b58fec045cd2a246f28b7",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Oblivion Ring:1",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "to": "Battlefield"
+            },
+            "effect": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile",
+              "linkToSource": true
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsNonland"
+                    },
+                    {
+                      "type": "IsPermanent"
+                    }
+                  ]
+                },
+                "excludeSelf": true
+              },
+              "id": "t0"
+            }
+          },
+          {
+            "id": "Oblivion Ring:2",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "from": "Battlefield"
+            },
+            "effect": {
+              "type": "Composite",
+              "effects": [
+                {
+                  "type": "GatherCards",
+                  "source": {
+                    "type": "FromLinkedExile"
+                  },
+                  "storeAs": "linked_return"
+                },
+                {
+                  "type": "MoveCollection",
+                  "from": "linked_return",
+                  "destination": {
+                    "type": "ToZone",
+                    "zone": "Battlefield"
+                  },
+                  "underOwnersControl": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "requirements": [
+        "Departure-first empty return resolves independently; a later legal exile still occurs.",
+        "Ordinary subsequent source departure stacks an independent return trigger."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING"
+    },
+    "Banisher Priest": {
+      "family": "B_DURATION_CONTROL",
+      "source": {
+        "url": "https://api.scryfall.com/cards/m14/7",
+        "printingId": "06823bf8-2fca-49e1-ba40-9b61c9ae55b3",
+        "oracleId": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+        "set": "m14",
+        "collectorNumber": "7",
+        "oracleText": "When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield.",
+        "retrievedUtc": "2026-11-20T19:44:01.314804+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/06823bf8-2fca-49e1-ba40-9b61c9ae55b3/rulings",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If Banisher Priest leaves the battlefield before its triggered ability resolves, the target permanent won't be exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "Auras attached to the exiled permanent will be put into their owners' graveyards. Any Equipment will become unattached and remain on the battlefield. Any counters on the exiled permanent will cease to exist. When the card returns to the battlefield, it will be a new object with no connection to the card that was exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If a token is exiled this way, it will cease to exist and won't return to the battlefield."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If an Aura is exiled this way, its owner chooses what it will enchant as it returns to the battlefield. An Aura put onto the battlefield this way doesn't target anything (so it could be attached to a permanent with shroud, for example), but the Aura's enchant ability restricts what it can be attached to. If the Aura can't legally be attached to anything, it remains in exile for the rest of the game."
+          }
+        ]
+      },
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt",
+      "baselineNativeLfSha256": "18eda19f433004885951230f3f18f3a7acf9246924505ecec34fd4a01e2b14f0",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Banisher Priest:1",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "to": "Battlefield"
+            },
+            "effect": {
+              "type": "MoveUntilSourceLeaves",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile"
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {
+                  "cardPredicates": [
+                    {
+                      "type": "IsCreature"
+                    }
+                  ],
+                  "controllerPredicate": {
+                    "type": "ControlledByOpponent"
+                  }
+                }
+              },
+              "id": "t0"
+            }
+          }
+        ]
+      },
+      "requirements": [
+        "An absent or renewed source cannot establish an old duration.",
+        "Established exile ends during source departure before priority without a return trigger."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING"
+    },
+    "Mirror Golem": {
+      "family": "C_LINKED_GRAVEYARD_CAPABILITY_CONTROL",
+      "source": {
+        "url": "https://api.scryfall.com/cards/mrd/208",
+        "printingId": "d9467839-b2a2-4cfe-a60e-12766e2ba983",
+        "oracleId": "3460e86f-c182-4ca9-bd90-7949b0759c98",
+        "set": "mrd",
+        "collectorNumber": "208",
+        "oracleText": "Imprint \u2014 When this creature enters, you may exile target card from a graveyard.\nThis creature has protection from each of the exiled card's card types. (Artifact, battle, creature, enchantment, instant, kindred, land, planeswalker, and sorcery are card types.)",
+        "retrievedUtc": "2026-11-20T19:44:02.091560+00:00",
+        "rulingsUrl": "https://api.scryfall.com/cards/d9467839-b2a2-4cfe-a60e-12766e2ba983/rulings",
+        "rulings": []
+      },
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MirrorGolem.kt",
+      "baselineNativeLfSha256": "30268143a7546f55d1399238b2472b63c9eea01ab5528b61ba62da5f9e9bba9a",
+      "baselineNativeScript": {
+        "triggeredAbilities": [
+          {
+            "id": "Mirror Golem:1",
+            "trigger": {
+              "type": "ZoneChangeEvent",
+              "to": "Battlefield"
+            },
+            "effect": {
+              "type": "Gated",
+              "gate": {
+                "type": "Gate.MayDecide"
+              },
+              "then": {
+                "type": "MoveToZone",
+                "target": {
+                  "type": "BoundVariable",
+                  "name": "t0"
+                },
+                "destination": "Exile",
+                "linkToSource": true
+              },
+              "descriptionOverride": "Imprint \ufffd When this creature enters, you may exile target card from a graveyard."
+            },
+            "targetRequirement": {
+              "type": "TargetObject",
+              "filter": {
+                "baseFilter": {},
+                "zone": "Graveyard"
+              },
+              "id": "t0"
+            },
+            "descriptionOverride": "Imprint \ufffd When this creature enters, you may exile target card from a graveyard."
+          }
+        ],
+        "staticAbilities": [
+          {
+            "type": "GrantProtectionFromLinkedExiledCardTypes"
+          }
+        ]
+      },
+      "requirements": [
+        "A mandatory graveyard-card target is chosen before the resolution-time may decision.",
+        "Accepted exile supplies protection from the source visit's linked card types; decline supplies none.",
+        "This linked-pile capability reader is not a return instruction."
+      ],
+      "preimplementationStatus": "SOURCE_EXPECTATION_FROZEN; FRESH_ADVERSE_EXECUTION_PENDING"
+    }
+  }
+}
