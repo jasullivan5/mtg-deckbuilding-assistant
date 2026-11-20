@@ -108,8 +108,8 @@ class LinkedMovementScenarioTest : FunSpec({
             d.state.isCurrentObject(old) shouldBe false
             d.getController(host) shouldBe d.player2
             relation(name).linkedExileNow(d.state,visit)?.isEmpty() shouldBe true
-            println("LINKED_OBSERVATION " + buildJsonObject { put("card",name);put("kind","deferred");put("sourceVisit",reportJson.encodeToJsonElement(LinkedSourceVisit.serializer(),visit));put("startingObject",reportJson.encodeToJsonElement(ObjectRef.serializer(),old));put("returnedObject",reportJson.encodeToJsonElement(ObjectRef.serializer(),checkNotNull(d.state.objectRef(host))));put("returnedUnderOwner",d.getController(host)==d.player2) })
-            relation(name).kind shouldBe MovementLinkKind.DEFERRED_SOURCE_LINKED
+            println("LINKED_OBSERVATION " + buildJsonObject { put("card",name);put("kind",relation(name).kind.name);put("sourceVisit",reportJson.encodeToJsonElement(LinkedSourceVisit.serializer(),visit));put("startingObject",reportJson.encodeToJsonElement(ObjectRef.serializer(),old));put("returnedObject",reportJson.encodeToJsonElement(ObjectRef.serializer(),checkNotNull(d.state.objectRef(host))));put("returnedUnderOwner",d.getController(host)==d.player2) })
+            relation(name).kind shouldBe if(name=="Oblivion Ring") MovementLinkKind.DEFERRED_SOURCE_LINKED else MovementLinkKind.DURATION_BOUND
         }
         test("$name keeps simultaneous same-name sources independent and removes stale exile membership") {
             val d=scenarioDriver(card(name),card("Hill Giant"),card("Boomerang"))
@@ -147,9 +147,10 @@ class LinkedMovementScenarioTest : FunSpec({
             val source=d.getPermanents(d.player1).single { d.state.getEntity(it)?.get<CardComponent>()?.name==name }
             d.cast("Boomerang",source);d.resolvePendingActions()
             println("LINKED_OBSERVATION " + buildJsonObject { put("card",name);put("kind","departure-before-exile");put("oracleRequiresLateExile",name=="Oblivion Ring");put("observedLateExile",d.getExile(d.player2).contains(host));put("sourceGone",!d.getPermanents(d.player1).contains(source)) })
-            // Observed engine behavior. Correct for Priest's no-exile boundary, contradicts Ring's frozen Oracle requirement.
-            d.getPermanents(d.player2).contains(host) shouldBe true
-            d.getExile(d.player2).contains(host) shouldBe false
+            // The 4e72523 historical failure remains in the immutable PR #63 receipt.
+            // Current assertions follow the same frozen Oracle requirements.
+            d.getPermanents(d.player2).contains(host) shouldBe (name!="Oblivion Ring")
+            d.getExile(d.player2).contains(host) shouldBe (name=="Oblivion Ring")
         }
     }
 })
