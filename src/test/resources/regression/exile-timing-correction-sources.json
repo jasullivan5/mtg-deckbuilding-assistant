@@ -1,0 +1,210 @@
+{
+  "engineBase": "4e72523c8832ecee30c9b142cd91c63acdb7af39",
+  "expectations": {
+    "priest": "Source must remain the same battlefield object at establishment; return immediately on departure, before priority, with no return trigger",
+    "scope": "No full-card qualification; other reviewed native controls are not blanket migrations",
+    "ring": "Empty independent return resolves first; still-legal entry trigger subsequently exiles indefinitely, only for its original source visit"
+  },
+  "previousRequirements": "linked-movement-sources.json",
+  "previousObservations": "../../../../docs/evidence/linked-movement-verification.json",
+  "rules": {
+    "sha256": "524f5195a1e5f54bb13c735edf399ac717a4458e2713f398d1a3e6877186b829",
+    "verifiedSections": [
+      "113.7a",
+      "117.5",
+      "400.7",
+      "607.2a",
+      "610.3",
+      "610.3b",
+      "610.3c"
+    ],
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt"
+  },
+  "applicationBase": "d2240321f4b32e176fbbed69f7e2a2ac012aa49a",
+  "cases": {
+    "Banisher Priest": {
+      "family": "DURATION",
+      "source": {
+        "url": "https://api.scryfall.com/cards/m14/7",
+        "oracleId": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+        "retrievedUtc": "2026-11-20T00:16:06.7960264Z",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If Banisher Priest leaves the battlefield before its triggered ability resolves, the target permanent won't be exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "Auras attached to the exiled permanent will be put into their owners' graveyards. Any Equipment will become unattached and remain on the battlefield. Any counters on the exiled permanent will cease to exist. When the card returns to the battlefield, it will be a new object with no connection to the card that was exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If a token is exiled this way, it will cease to exist and won't return to the battlefield."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "9f560b83-32d4-4bb4-a956-8f5db18599db",
+            "source": "wotc",
+            "published_at": "2013-07-01",
+            "comment": "If an Aura is exiled this way, its owner chooses what it will enchant as it returns to the battlefield. An Aura put onto the battlefield this way doesn't target anything (so it could be attached to a permanent with shroud, for example), but the Aura's enchant ability restricts what it can be attached to. If the Aura can't legally be attached to anything, it remains in exile for the rest of the game."
+          }
+        ],
+        "collectorNumber": "7",
+        "set": "m14",
+        "id": "06823bf8-2fca-49e1-ba40-9b61c9ae55b3",
+        "oracleText": "When this creature enters, exile target creature an opponent controls until this creature leaves the battlefield."
+      },
+      "baselineNativeLfSha256": "3a24ad6557275ce7340ff53e3c15d656774a479616ec5e870eca3a404d387000",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt"
+    },
+    "Ossification": {
+      "family": "DURATION_EXISTING_CONTROL",
+      "source": {
+        "url": "https://api.scryfall.com/cards/one/26",
+        "oracleId": "e29bfd62-286f-4982-813f-7086573c333b",
+        "retrievedUtc": "2026-11-20T00:16:07.5152212Z",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "e29bfd62-286f-4982-813f-7086573c333b",
+            "source": "wotc",
+            "published_at": "2023-02-04",
+            "comment": "If Ossification leaves the battlefield before its triggered ability resolves, the target permanent won't be exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "e29bfd62-286f-4982-813f-7086573c333b",
+            "source": "wotc",
+            "published_at": "2023-02-04",
+            "comment": "Auras attached to the exiled permanent will be put into their owners' graveyards. Any Equipment will become unattached and remain on the battlefield. Any counters on the exiled permanent will cease to exist. When the card returns to the battlefield, it will be a new object with no connection to the card that was exiled."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "e29bfd62-286f-4982-813f-7086573c333b",
+            "source": "wotc",
+            "published_at": "2023-02-04",
+            "comment": "If a token is exiled this way, it will cease to exist and won't return to the battlefield."
+          }
+        ],
+        "collectorNumber": "26",
+        "set": "one",
+        "id": "0da03224-c1af-438f-96c2-b0e41e1070b7",
+        "oracleText": "Enchant basic land you control\nWhen this Aura enters, exile target creature or planeswalker an opponent controls until this Aura leaves the battlefield."
+      },
+      "baselineNativeLfSha256": "c74101f7e8cbd79bce269e693035b95ef58c4f880dce9288ff5ce6bd487a4bc4",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/Ossification.kt"
+    },
+    "Mirror Golem": {
+      "family": "LINKED_GRAVEYARD_CONSUMER",
+      "source": {
+        "url": "https://api.scryfall.com/cards/mrd/208",
+        "oracleId": "3460e86f-c182-4ca9-bd90-7949b0759c98",
+        "retrievedUtc": "2026-11-20T00:16:07.8686686Z",
+        "rulings": [],
+        "collectorNumber": "208",
+        "set": "mrd",
+        "id": "d9467839-b2a2-4cfe-a60e-12766e2ba983",
+        "oracleText": "Imprint — When this creature enters, you may exile target card from a graveyard.\nThis creature has protection from each of the exiled card's card types. (Artifact, battle, creature, enchantment, instant, kindred, land, planeswalker, and sorcery are card types.)"
+      },
+      "baselineNativeLfSha256": "30268143a7546f55d1399238b2472b63c9eea01ab5528b61ba62da5f9e9bba9a",
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MirrorGolem.kt"
+    },
+    "Oblivion Ring": {
+      "family": "INDEPENDENT_TRIGGERS",
+      "source": {
+        "url": "https://api.scryfall.com/cards/lrw/34",
+        "oracleId": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+        "retrievedUtc": "2026-11-20T00:16:06.3739815Z",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2012-07-01",
+            "comment": "Auras attached to the exiled permanent will be put into their owners’ graveyards. Equipment attached to the exiled permanent will become unattached and remain on the battlefield. Any counters on the exiled permanent will cease to exist."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2008-10-01",
+            "comment": "If the exiled card is an Aura, that card’s owner chooses what it will enchant as it comes back onto the battlefield. An Aura put onto the battlefield this way doesn’t target anything, but the Aura’s enchant ability restricts what it can be attached to. If the Aura can’t legally be attached to anything, it remains exiled forever."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2007-10-01",
+            "comment": "If Oblivion Ring leaves the battlefield before its first ability has resolved, its second ability will trigger and do nothing. Then its first ability will resolve and exile the targeted nonland permanent forever."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7",
+            "source": "wotc",
+            "published_at": "2007-10-01",
+            "comment": "If there are no nonland permanents on the battlefield other than an Oblivion Ring, and the card it exiled was another Oblivion Ring, casting a third Oblivion Ring will result in an involuntary infinite loop that will end the game in a draw (unless someone chooses to break it by putting another nonland permanent onto the battlefield or destroying one of the Oblivion Rings, for example)."
+          }
+        ],
+        "collectorNumber": "34",
+        "set": "lrw",
+        "id": "1c7fffe8-709c-4cb4-bbad-e4a0c35b616a",
+        "oracleText": "When this enchantment enters, exile another target nonland permanent.\nWhen this enchantment leaves the battlefield, return the exiled card to the battlefield under its owner's control."
+      },
+      "baselineNativeLfSha256": "303f6b87ac07652885e1ef825f5289c2c5098fb55541ceebc003ea1bf1b2e76f",
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt"
+    },
+    "Fiend Hunter": {
+      "family": "INDEPENDENT_TRIGGERS_UNMIGRATED_CONTROL",
+      "source": {
+        "url": "https://api.scryfall.com/cards/isd/15",
+        "oracleId": "cb9d557a-fc06-428c-8be6-7d28add33028",
+        "retrievedUtc": "2026-11-20T00:16:07.1535985Z",
+        "rulings": [
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "In a multiplayer game, if you lose the game, the creature exiled with Fiend Hunter remains exiled indefinitely. This is also different from abilities on other cards that exile a permanent \"until\" something happens."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "Once the exiled creature returns, it's considered a new object with no relation to the object that it was. Auras attached to the exiled creature will be put into their owners' graveyards. Equipment attached to the exiled creature will become unattached and remain on the battlefield. Any counters on the exiled creature will cease to exist."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "If a token is exiled this way, it won't return to the battlefield."
+          },
+          {
+            "object": "ruling",
+            "oracle_id": "cb9d557a-fc06-428c-8be6-7d28add33028",
+            "source": "wotc",
+            "published_at": "2018-12-07",
+            "comment": "If Fiend Hunter leaves the battlefield before its first ability has resolved, its second ability will trigger and do nothing. Then its first ability will resolve and exile the target creature indefinitely. This is different from abilities on other cards that exile a permanent \"until\" something happens."
+          }
+        ],
+        "collectorNumber": "15",
+        "set": "isd",
+        "id": "f1e4c7d8-11a5-40fe-962b-7e938bf08616",
+        "oracleText": "When this creature enters, you may exile another target creature.\nWhen this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control."
+      },
+      "baselineNativeLfSha256": "09d7b2693f33e9487eeac9959656434f572af20f5c8eb148be180b8e3cdd9ee6",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt"
+    }
+  }
+}
