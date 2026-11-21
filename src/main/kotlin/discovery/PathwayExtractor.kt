@@ -971,7 +971,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions[a]=actions[a].copy(collectionUses=actions[a].collectionUses+uses)
     }
 
-    private fun traceCollectionProduction(e: Effect,path: String,frame: Frame) {
+    private fun traceCollectionProduction(e: Effect,path: String,frame: Frame,movementFactIds: List<String>) {
         val a=actions.indexOfLast { it.id==actionId }
         fun stage(variable: String,membership: CollectionMembership,input: CollectionStage?,maximum: Int?,zone: Zone?,
                   destination: Zone?=null,problems: List<String> = emptyList()) {
@@ -981,7 +981,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 if(maximum==null) "Unbounded or dynamic collection cardinality" else null)
             val record=CollectionStage("$actionId|$path|COLLECTION|$variable|${actions[a].collectionStages.size}",actionId,path,variable,
                 membership,input?.id,maximum=maximum,sourceZone=zone,destinationZone=destination,
-                movementFactIds=facts.filter { it.actionId==actionId && it.path==path && it.kind==FactKind.MOVE_OBJECT }.map { it.id },
+                movementFactIds=movementFactIds,
                 prerequisites=frame.assumptions+"Structural membership may be empty; native execution owns actual selection and movement results"+
                     "Requested-zone arrivals require actual transition evidence; native moved results may contain redirected moves",
                 support=if(unresolved.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,unresolved=unresolved,
@@ -1047,6 +1047,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
 
     private fun walk(e: Effect,path: String,frame: Frame) {
+        val instructionFactStart=facts.size
         traceCollectionUse(e,path,frame)
         if(e is ExileUntilLeavesEffect || e is ExileWithAurasNotingCountersEffect ||
             e is MoveToZoneEffect && e.linkToSource || e is MoveCollectionEffect && e.linkToSource) linkedExileProducers++
@@ -1329,10 +1330,14 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     issue(path,e,"Effect not interpreted; native action retained (may contain further capabilities)")
             }
         }
-        traceCollectionProduction(e,path,frame)
+        // Inspect only facts emitted by this instruction, rather than rescanning the catalog's
+        // growing fact list for every collection stage and consumer.
+        val movements=facts.subList(instructionFactStart,facts.size).filter {
+            it.actionId==actionId && it.path==path && it.kind==FactKind.MOVE_OBJECT
+        }.map { it.id }
+        traceCollectionProduction(e,path,frame,movements)
         val collectionAction=actions.indexOfLast { it.id==actionId }
         if(collectionAction>=0 && actions[collectionAction].collectionUses.any { it.path==path }) {
-            val movements=facts.filter { it.actionId==actionId && it.path==path && it.kind==FactKind.MOVE_OBJECT }.map { it.id }
             actions[collectionAction]=actions[collectionAction].copy(collectionUses=actions[collectionAction].collectionUses.map { if(it.path==path) it.copy(movementFactIds=movements) else it })
         }
     }
