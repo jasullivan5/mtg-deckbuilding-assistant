@@ -30,6 +30,8 @@ def census(native_path, evidence_path):
     cohort = json.loads(Path('src/test/resources/regression/collection-movement-sources.json').read_text(encoding='utf-8'))
     frozen = {c['name'] for c in cohort['cases']}
     cohort_declarations = []
+    moved_paths = {}
+    union_paths = {}
     for line in native_path.open(encoding='utf-8-sig'):
         if not line.startswith('{'): continue
         row = json.loads(line)
@@ -52,8 +54,14 @@ def census(native_path, evidence_path):
                 declarations[category].append((card, face, path))
                 if card in frozen:
                     cohort_declarations.append(dict(card=card, face=face, path=path, category=category, native=node))
+            identity = (card, face, path)
+            if 'movedResultProducers' in categories:
+                moved_paths[identity] = dict(card=card,face=face,path=path,nativePath=row.get('nativePath'))
+            if 'unionTargets' in categories:
+                union_paths[(card,face,declaration(path))] = dict(card=card,face=face,path=path,nativePath=row.get('nativePath'))
     interpreted = defaultdict(list)
     moved_continuations = []
+    seen_moves, seen_unions = set(), set()
     unknown = Counter()
     for line in evidence_path.open(encoding='utf-8-sig'):
         if not line.startswith('{'): continue
@@ -62,6 +70,11 @@ def census(native_path, evidence_path):
         for key in ('unionTargets', 'collectionStages', 'collectionUses'):
             for record in action.get(key, []):
                 interpreted[key].append((action['card'], action['face'], action['id'], record))
+                # Named component faces retain their authoring-container prefix before ':'.
+                face = action['face'].split(':',1)[0]
+                if key == 'collectionStages' and record['membership'] == 'NATIVE_MOVED_RESULT':
+                    seen_moves.add((action['card'],face,record['path']))
+                if key == 'unionTargets': seen_unions.add((action['card'],face,action['path']))
                 if record['support'] == 'UNKNOWN': unknown.update(set(record['unresolved']))
                 if key == 'collectionUses' and record['support'] == 'MATCH' and stages.get(record['producerId'], {}).get('membership') == 'NATIVE_MOVED_RESULT':
                     moved_continuations.append((action['card'], action['face'], action['id'], record))
@@ -80,6 +93,8 @@ def census(native_path, evidence_path):
                 supportedMovedResultContinuations=dict(units(moved_continuations),actions=len({r[2] for r in moved_continuations}),
                     consumerKinds=dict(Counter(r[3]['consumer'] for r in moved_continuations))),
                 interpretedUnionZones=dict(units(cross_zone),support=dict(Counter(r[3]['support'] for r in cross_zone))),
+                uninterpretedMovedResultDeclarations=[row for key,row in moved_paths.items() if key not in seen_moves],
+                uninterpretedUnionDeclarations=[row for key,row in union_paths.items() if key not in seen_unions],
                 unknownReasons=dict(unknown), cohortDeclarations=cohort_declarations)
 
 
