@@ -128,6 +128,17 @@ class CollectionMovementScenarioTest : FunSpec({
         d.state.getEntity(coat)?.get<AttachedToComponent>() shouldBe null
         d.getPermanents(d.player1).count { d.state.getEntity(it)?.has<FaceDownComponent>()==true } shouldBe 0
     }
+    test("a later same-name source with an empty collection cannot reuse an earlier Coat's moved member") {
+        val d=scenarioDriver(card("Cryptic Coat"))
+        val top=d.putCardOnTopOfLibrary(d.player1,"Forest")
+        val first=d.cast("Cryptic Coat");d.resolvePendingActions()
+        val key=ZoneKey(d.player1,Zone.LIBRARY)
+        d.replaceState(d.state.copy(zones=d.state.zones+(key to emptyList())))
+        val second=d.cast("Cryptic Coat");d.resolvePendingActions()
+        d.state.getEntity(first)?.get<AttachedToComponent>()?.targetId shouldBe top
+        d.state.getEntity(second)?.get<AttachedToComponent>() shouldBe null
+        (first!=second) shouldBe true
+    }
     for(indestructible in listOf(false,true)) test("Come Back Wrong only returns the successfully destroyed original: indestructible=$indestructible") {
         val d=scenarioDriver(card("Come Back Wrong"),card("Darksteel Myr"))
         val victim=d.putCreatureOnBattlefield(d.player2,if(indestructible) "Darksteel Myr" else "Hill Giant")
