@@ -1,0 +1,1292 @@
+{
+  "engine": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+  "application": "5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a",
+  "scope": "Fresh native observations and application reads of native source piles; no whole-card qualification",
+  "cases": {
+    "Fiend Hunter": {
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt",
+      "currentDefinitionLfSha256": "a809a0c455f9cc8d31b2f615ff235c652f6679cad47b28b3e9cfda6aa22106a1",
+      "testPath": "mtg-sets/2008-2016/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/FiendHunterScenarioTest.kt",
+      "testLfSha256": "902deb42db4f87eecd8a2420642dd9f9cb20763cf91842902000c456a1c4b132",
+      "passedCases": [
+        "multiple legal creatures require one selected target before choosing the exile effect",
+        "without another legal creature the entry trigger cannot be announced",
+        "owner return renews a stolen creature without old attachments counters damage or modifiers",
+        "source requirement - a legal target is mandatory even when intending to decline",
+        "source requirement - selection precedes the resolution-time choice to decline",
+        "source requirement - departure and empty return do not cancel accepted late exile",
+        "exiles a creature on enter and returns it when Fiend Hunter dies",
+        "may decline the exile when a legal target exists",
+        "a renewed source keeps its new pile separate from the old visit's late exile",
+        "same-name sources have independent linked piles",
+        "target departure and renewal before resolution invalidate the old target object",
+        "entry targeting excludes lands and the source itself",
+        "a card leaving exile and entering it again has lost the old link",
+        "an exiled token is not returned as an original card"
+      ]
+    },
+    "Savior of Ollenbock": {
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorOfOllenbock.kt",
+      "currentDefinitionLfSha256": "6ffa66ee053f5ae82f839af71519ede60068273862fb18108cab77400d3da7b0",
+      "testPath": "mtg-sets/2017-2022/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/SaviorOfOllenbockScenarioTest.kt",
+      "testLfSha256": "1ccf07c3b5bffd2156a044597f9b9563a7ca814d325762451a9f92aca7a7003d",
+      "passedCases": [
+        "graveyard exile returns a renewed original under its owner through the separate departure trigger",
+        "a renewed Savior cannot inherit its old training trigger's late graveyard exile",
+        "a graveyard card that leaves exile cannot return through its stale training link",
+        "source requirement - pending training exile survives departure, graveyard=false",
+        "source requirement - pending training exile survives departure, graveyard=true",
+        "train exiles an opponent's creature; destroying the Savior returns it to the battlefield",
+        "training may exile nothing (\"up to one\") \u2014 the Savior still gets its counter"
+      ]
+    },
+    "Werefox Bodyguard": {
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/WerefoxBodyguard.kt",
+      "currentDefinitionLfSha256": "585872c6ea81a599ba0fd22a8aa314fc7026226f56c44bc973e231fe8b00bc1f",
+      "testPath": "mtg-sets/2023/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/WerefoxBodyguardScenarioTest.kt",
+      "testLfSha256": "be8734bd191149544747afab4623b59ddfc0fccc8dba59760fa5333bce08139f",
+      "passedCases": [
+        "up to one permits no target while another Fox and the source itself remain ineligible",
+        "source requirement - paying the source sacrifice cost ends exile before priority",
+        "duration returns in the departure action before a player response is possible",
+        "source departure before exile resolves prevents the initial movement",
+        "renewed source cannot establish the duration of its former visit",
+        "two same-name Bodyguards have independent durations",
+        "stale exile generation is not returned by the old duration",
+        "a friendly creature is legal but an invalidated target cannot establish the duration",
+        "duration return does not preserve the departed object's Aura counters or damage",
+        "exiling a token never schedules its recreation as an original card"
+      ]
+    },
+    "Oblivion Ring": {
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt",
+      "currentDefinitionLfSha256": "66df2a70307e6f1fa22e4cfcdbb0ed0d4ec0a62db25b58fec045cd2a246f28b7",
+      "testPath": "mtg-sets/2003-2007/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/OblivionRingScenarioTest.kt",
+      "testLfSha256": "e63562cf5758096aa8f1fb02a06e3fea4375bad06449fd2deea5652238911057",
+      "passedCases": [
+        "ordinary exile and later independent return renew the target under its owner",
+        "departure and empty return before entry resolution do not cancel the legal late exile",
+        "a renewed source keeps its new pile separate from the old visit's late exile",
+        "same-name sources have independent linked piles",
+        "target departure and renewal before resolution invalidate the old target object",
+        "entry targeting excludes lands and the source itself",
+        "a card leaving exile and entering it again has lost the old link",
+        "an exiled token is not returned as an original card"
+      ]
+    },
+    "Banisher Priest": {
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt",
+      "currentDefinitionLfSha256": "18eda19f433004885951230f3f18f3a7acf9246924505ecec34fd4a01e2b14f0",
+      "testPath": "mtg-sets/2008-2016/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/BanisherPriestScenarioTest.kt",
+      "testLfSha256": "adfa0d0166488223a17fe49b066c626fba8150102c0a9b448b01317cadb7a76b",
+      "passedCases": [
+        "exiles an opponent's creature until the Priest leaves, then the creature returns",
+        "duration returns in the departure action before a player response is possible",
+        "source departure before exile resolves prevents the initial movement",
+        "renewed source cannot establish the duration of its former visit",
+        "two same-name Priests have independent durations",
+        "stale exile generation is not returned by the old duration",
+        "own creatures and an invalidated target cannot establish the duration",
+        "duration return does not preserve the departed object's Aura counters or damage",
+        "exiling a token never schedules its recreation as an original card"
+      ]
+    },
+    "Mirror Golem": {
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MirrorGolem.kt",
+      "currentDefinitionLfSha256": "30268143a7546f55d1399238b2472b63c9eea01ab5528b61ba62da5f9e9bba9a",
+      "testPath": "mtg-sets/2003-2007/tests/src/test/kotlin/com/wingedsheep/engine/scenarios/MirrorGolemScenarioTest.kt",
+      "testLfSha256": "d38bda0b35e64459b879afb943aafcdd08c0b41ea2c552c28a6a129aaeb4e035",
+      "passedCases": [
+        "an imprinted instant card grants protection from instants and nothing else",
+        "an imprinted artifact creature card grants protection from both of its card types",
+        "declining the imprint leaves the Golem with no protection at all"
+      ]
+    }
+  },
+  "observations": [
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "target-announcement",
+      "source": {
+        "entityId": "73ef9855-7d87-466a-857a-1872dceaa600",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "50c68a29-0086-4bde-b35f-357b77f558ac",
+        "generation": 95
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": "ChooseTargetsDecision",
+      "stack": [],
+      "zoneEvents": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "attempted-targetless-announcement",
+      "source": {
+        "entityId": "73ef9855-7d87-466a-857a-1872dceaa600",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "50c68a29-0086-4bde-b35f-357b77f558ac",
+        "generation": 95
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": "ChooseTargetsDecision",
+      "stack": [],
+      "zoneEvents": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "entry-resolution-choice",
+      "source": {
+        "entityId": "0a15249f-9b69-48d6-affb-239a6c0e4367",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "71a40f0e-f742-4295-8140-b52503580fd7",
+        "generation": 95
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e1",
+      "decision": "YesNoDecision",
+      "stack": [
+        {
+          "id": "e82",
+          "source": "0a15249f-9b69-48d6-affb-239a6c0e4367",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Gated",
+            "gate": {
+              "type": "Gate.MayDecide"
+            },
+            "then": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile",
+              "linkToSource": true
+            }
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "entry-pending",
+      "source": {
+        "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+        "generation": 98
+      },
+      "target": {
+        "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+        "generation": 95
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e82",
+          "source": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Gated",
+            "gate": {
+              "type": "Gate.MayDecide"
+            },
+            "then": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile",
+              "linkToSource": true
+            }
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "departed",
+      "source": {
+        "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+        "generation": 95
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e82",
+          "source": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Gated",
+            "gate": {
+              "type": "Gate.MayDecide"
+            },
+            "then": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile",
+              "linkToSource": true
+            }
+          }
+        },
+        {
+          "id": "e83",
+          "source": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          }
+        }
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+          "entityName": "Fiend Hunter",
+          "fromZone": "Battlefield",
+          "toZone": "Hand",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+            "power": 1,
+            "toughness": 3,
+            "subtypes": [
+              "Human",
+              "Cleric"
+            ],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "battlefieldEntryTimestamp": 1,
+            "typeLine": "Creature \u2014 Human Cleric",
+            "cardDefinitionId": "Fiend Hunter",
+            "copiableCard": {
+              "cardDefinitionId": "Fiend Hunter",
+              "name": "Fiend Hunter",
+              "manaCost": "{1}{W}{W}",
+              "typeLine": "Creature \u2014 Human Cleric",
+              "oracleText": "When this creature enters, you may exile another target creature.\nWhen this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+              "baseStats": {
+                "power": 1,
+                "toughness": 3
+              },
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0"
+            },
+            "name": "Fiend Hunter",
+            "wasCast": true,
+            "castFromZone": "Hand",
+            "enteredOnTurn": 1,
+            "objectRef": {
+              "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+              "generation": 98
+            },
+            "manaValue": 3,
+            "basePower": 1,
+            "baseToughness": 3,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "oldObject": {
+            "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+            "generation": 98
+          },
+          "newObject": {
+            "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+            "generation": 102
+          }
+        },
+        {
+          "entityId": "12fa78ca-16f4-4bcb-a94f-ff9c62ae94d4",
+          "entityName": "Boomerang",
+          "fromZone": "Stack",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "oldObject": {
+            "entityId": "12fa78ca-16f4-4bcb-a94f-ff9c62ae94d4",
+            "generation": 101
+          },
+          "newObject": {
+            "entityId": "12fa78ca-16f4-4bcb-a94f-ff9c62ae94d4",
+            "generation": 103
+          }
+        }
+      ]
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "empty-return-resolved",
+      "source": {
+        "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+        "generation": 95
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e82",
+          "source": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+          "sourceVisit": 1,
+          "effect": {
+            "type": "Gated",
+            "gate": {
+              "type": "Gate.MayDecide"
+            },
+            "then": {
+              "type": "MoveToZone",
+              "target": {
+                "type": "BoundVariable",
+                "name": "t0"
+              },
+              "destination": "Exile",
+              "linkToSource": true
+            }
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Fiend Hunter",
+      "checkpoint": "late-entry-resolved",
+      "source": {
+        "entityId": "3270ec47-2d92-45b9-ad4a-e2687c135fe2",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+        "generation": 105
+      },
+      "sourceZone": "HAND",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "decision": null,
+      "stack": [],
+      "zoneEvents": [
+        {
+          "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+          "entityName": "Hill Giant",
+          "fromZone": "Battlefield",
+          "toZone": "Exile",
+          "ownerId": "e1",
+          "lastKnown": {
+            "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+            "power": 3,
+            "toughness": 3,
+            "subtypes": [
+              "Giant"
+            ],
+            "controllerId": "e1",
+            "ownerId": "e1",
+            "typeLine": "Creature \u2014 Giant",
+            "cardDefinitionId": "Hill Giant",
+            "copiableCard": {
+              "cardDefinitionId": "Hill Giant",
+              "name": "Hill Giant",
+              "manaCost": "{3}{R}",
+              "typeLine": "Creature \u2014 Giant",
+              "baseStats": {
+                "power": 3,
+                "toughness": 3
+              },
+              "colors": [
+                "RED"
+              ],
+              "ownerId": "e1"
+            },
+            "name": "Hill Giant",
+            "objectRef": {
+              "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+              "generation": 95
+            },
+            "manaValue": 4,
+            "basePower": 3,
+            "baseToughness": 3,
+            "colors": [
+              "RED"
+            ]
+          },
+          "oldObject": {
+            "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "bac79964-9353-4cce-a9e4-24a3ed21ca8e",
+            "generation": 105
+          }
+        }
+      ]
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "training-exile-pending",
+      "source": {
+        "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+        "generation": 95
+      },
+      "target": {
+        "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+        "generation": 97
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "departed-before-exile",
+      "source": {
+        "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+        "generation": 97
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        },
+        {
+          "id": "e84",
+          "source": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+          "sourceVisit": null,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          }
+        }
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+          "entityName": "Savior of Ollenbock",
+          "fromZone": "Battlefield",
+          "toZone": "Hand",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+            "power": 2,
+            "toughness": 3,
+            "subtypes": [
+              "Human",
+              "Soldier"
+            ],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "counters": {
+              "PLUS_ONE_PLUS_ONE": 1
+            },
+            "keywords": [
+              "TRAINING"
+            ],
+            "typeLine": "Creature \u2014 Human Soldier",
+            "cardDefinitionId": "Savior of Ollenbock",
+            "copiableCard": {
+              "cardDefinitionId": "Savior of Ollenbock",
+              "name": "Savior of Ollenbock",
+              "manaCost": "{1}{W}{W}",
+              "typeLine": "Creature \u2014 Human Soldier",
+              "oracleText": "Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)\nWhenever this creature trains, exile up to one other target creature from the battlefield or creature card from a graveyard.\nWhen this creature leaves the battlefield, put the exiled cards onto the battlefield under their owners' control.",
+              "baseStats": {
+                "power": 1,
+                "toughness": 2
+              },
+              "baseKeywords": [
+                "TRAINING"
+              ],
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0"
+            },
+            "name": "Savior of Ollenbock",
+            "wasModified": true,
+            "wasAttacking": true,
+            "attackedDefenderId": "e1",
+            "wasTapped": true,
+            "objectRef": {
+              "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+              "generation": 95
+            },
+            "manaValue": 3,
+            "basePower": 1,
+            "baseToughness": 2,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "oldObject": {
+            "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+            "generation": 102
+          }
+        },
+        {
+          "entityId": "90bf00d7-e136-4d9c-a153-c3421945abb4",
+          "entityName": "Boomerang",
+          "fromZone": "Stack",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "oldObject": {
+            "entityId": "90bf00d7-e136-4d9c-a153-c3421945abb4",
+            "generation": 101
+          },
+          "newObject": {
+            "entityId": "90bf00d7-e136-4d9c-a153-c3421945abb4",
+            "generation": 103
+          }
+        }
+      ]
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "empty-return-resolved",
+      "source": {
+        "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+        "generation": 97
+      },
+      "sourceZone": "HAND",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "late-exile-resolved",
+      "source": {
+        "entityId": "a91ae6cc-466b-4059-8652-08ba349b2c10",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+        "generation": 105
+      },
+      "sourceZone": "HAND",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "decision": null,
+      "stack": [],
+      "zoneEvents": [
+        {
+          "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+          "entityName": "Centaur Courser",
+          "fromZone": "Battlefield",
+          "toZone": "Exile",
+          "ownerId": "e1",
+          "lastKnown": {
+            "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+            "power": 3,
+            "toughness": 3,
+            "subtypes": [
+              "Centaur",
+              "Warrior"
+            ],
+            "controllerId": "e1",
+            "ownerId": "e1",
+            "typeLine": "Creature \u2014 Centaur Warrior",
+            "cardDefinitionId": "Centaur Courser",
+            "copiableCard": {
+              "cardDefinitionId": "Centaur Courser",
+              "name": "Centaur Courser",
+              "manaCost": "{2}{G}",
+              "typeLine": "Creature \u2014 Centaur Warrior",
+              "baseStats": {
+                "power": 3,
+                "toughness": 3
+              },
+              "colors": [
+                "GREEN"
+              ],
+              "ownerId": "e1"
+            },
+            "name": "Centaur Courser",
+            "objectRef": {
+              "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+              "generation": 97
+            },
+            "manaValue": 3,
+            "basePower": 3,
+            "baseToughness": 3,
+            "colors": [
+              "GREEN"
+            ]
+          },
+          "oldObject": {
+            "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+            "generation": 97
+          },
+          "newObject": {
+            "entityId": "e489778a-a469-4c63-a902-32c2146968b5",
+            "generation": 105
+          }
+        }
+      ]
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "training-exile-pending",
+      "source": {
+        "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+        "generation": 95
+      },
+      "target": {
+        "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+        "generation": 97
+      },
+      "sourceZone": "BATTLEFIELD",
+      "targetZone": "GRAVEYARD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "departed-before-exile",
+      "source": {
+        "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+        "generation": 97
+      },
+      "sourceZone": "HAND",
+      "targetZone": "GRAVEYARD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        },
+        {
+          "id": "e84",
+          "source": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+          "sourceVisit": null,
+          "effect": {
+            "type": "Composite",
+            "effects": [
+              {
+                "type": "GatherCards",
+                "source": {
+                  "type": "FromLinkedExile"
+                },
+                "storeAs": "linked_return"
+              },
+              {
+                "type": "MoveCollection",
+                "from": "linked_return",
+                "destination": {
+                  "type": "ToZone",
+                  "zone": "Battlefield"
+                },
+                "underOwnersControl": true
+              }
+            ]
+          }
+        }
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+          "entityName": "Savior of Ollenbock",
+          "fromZone": "Battlefield",
+          "toZone": "Hand",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+            "power": 2,
+            "toughness": 3,
+            "subtypes": [
+              "Human",
+              "Soldier"
+            ],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "counters": {
+              "PLUS_ONE_PLUS_ONE": 1
+            },
+            "keywords": [
+              "TRAINING"
+            ],
+            "typeLine": "Creature \u2014 Human Soldier",
+            "cardDefinitionId": "Savior of Ollenbock",
+            "copiableCard": {
+              "cardDefinitionId": "Savior of Ollenbock",
+              "name": "Savior of Ollenbock",
+              "manaCost": "{1}{W}{W}",
+              "typeLine": "Creature \u2014 Human Soldier",
+              "oracleText": "Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)\nWhenever this creature trains, exile up to one other target creature from the battlefield or creature card from a graveyard.\nWhen this creature leaves the battlefield, put the exiled cards onto the battlefield under their owners' control.",
+              "baseStats": {
+                "power": 1,
+                "toughness": 2
+              },
+              "baseKeywords": [
+                "TRAINING"
+              ],
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0"
+            },
+            "name": "Savior of Ollenbock",
+            "wasModified": true,
+            "wasAttacking": true,
+            "attackedDefenderId": "e1",
+            "wasTapped": true,
+            "objectRef": {
+              "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+              "generation": 95
+            },
+            "manaValue": 3,
+            "basePower": 1,
+            "baseToughness": 2,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "oldObject": {
+            "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+            "generation": 102
+          }
+        },
+        {
+          "entityId": "3dba46a2-a3ae-4df2-b0e4-99190442c0ff",
+          "entityName": "Boomerang",
+          "fromZone": "Stack",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "oldObject": {
+            "entityId": "3dba46a2-a3ae-4df2-b0e4-99190442c0ff",
+            "generation": 101
+          },
+          "newObject": {
+            "entityId": "3dba46a2-a3ae-4df2-b0e4-99190442c0ff",
+            "generation": 103
+          }
+        }
+      ]
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "empty-return-resolved",
+      "source": {
+        "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+        "generation": 97
+      },
+      "sourceZone": "HAND",
+      "targetZone": "GRAVEYARD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83",
+          "source": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+          "sourceVisit": null,
+          "effect": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        }
+      ],
+      "zoneEvents": []
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "checkpoint": "late-exile-resolved",
+      "source": {
+        "entityId": "ac7a97ce-0c4b-4682-8fc2-27c48aaabfa9",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+        "generation": 105
+      },
+      "sourceZone": "HAND",
+      "targetZone": "EXILE",
+      "priority": "e0",
+      "decision": null,
+      "stack": [],
+      "zoneEvents": [
+        {
+          "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+          "entityName": "Centaur Courser",
+          "fromZone": "Graveyard",
+          "toZone": "Exile",
+          "ownerId": "e1",
+          "oldObject": {
+            "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+            "generation": 97
+          },
+          "newObject": {
+            "entityId": "5dbae25b-910d-4be6-924a-563df42def8f",
+            "generation": 105
+          }
+        }
+      ]
+    },
+    {
+      "card": "Werefox Bodyguard",
+      "checkpoint": "source-sacrificed-for-cost",
+      "source": {
+        "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "87b3523c-d0dd-4772-940b-ff962e7c46e1",
+        "generation": 103
+      },
+      "sourceZone": "GRAVEYARD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83"
+        }
+      ],
+      "zoneEvents": [
+        {
+          "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+          "entityName": "Werefox Bodyguard",
+          "fromZone": "Battlefield",
+          "toZone": "Graveyard",
+          "ownerId": "e0",
+          "lastKnown": {
+            "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+            "power": 2,
+            "toughness": 2,
+            "subtypes": [
+              "Elf",
+              "Fox",
+              "Knight"
+            ],
+            "controllerId": "e0",
+            "ownerId": "e0",
+            "keywords": [
+              "FLASH"
+            ],
+            "battlefieldEntryTimestamp": 1,
+            "typeLine": "Creature \u2014 Elf Fox Knight",
+            "cardDefinitionId": "Werefox Bodyguard",
+            "copiableCard": {
+              "cardDefinitionId": "Werefox Bodyguard",
+              "name": "Werefox Bodyguard",
+              "manaCost": "{1}{W}{W}",
+              "typeLine": "Creature \u2014 Elf Fox Knight",
+              "oracleText": "Flash\nWhen this creature enters, exile up to one other target non-Fox creature until this creature leaves the battlefield.\n{1}{W}, Sacrifice this creature: You gain 2 life.",
+              "baseStats": {
+                "power": 2,
+                "toughness": 2
+              },
+              "baseKeywords": [
+                "FLASH"
+              ],
+              "colors": [
+                "WHITE"
+              ],
+              "ownerId": "e0",
+              "hasNonManaActivatedAbility": true,
+              "hasActivatedAbility": true
+            },
+            "name": "Werefox Bodyguard",
+            "wasCast": true,
+            "castFromZone": "Hand",
+            "enteredOnTurn": 1,
+            "objectRef": {
+              "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+              "generation": 98
+            },
+            "manaValue": 3,
+            "basePower": 2,
+            "baseToughness": 2,
+            "colors": [
+              "WHITE"
+            ]
+          },
+          "wasSacrificed": true,
+          "oldObject": {
+            "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+            "generation": 98
+          },
+          "newObject": {
+            "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+            "generation": 102
+          }
+        },
+        {
+          "entityId": "87b3523c-d0dd-4772-940b-ff962e7c46e1",
+          "entityName": "Hill Giant",
+          "fromZone": "Exile",
+          "toZone": "Battlefield",
+          "ownerId": "e1",
+          "enteredBattlefieldTimestamp": 3,
+          "oldObject": {
+            "entityId": "87b3523c-d0dd-4772-940b-ff962e7c46e1",
+            "generation": 100
+          },
+          "newObject": {
+            "entityId": "87b3523c-d0dd-4772-940b-ff962e7c46e1",
+            "generation": 103
+          },
+          "transitionCause": "DURATION_RETURN"
+        }
+      ]
+    },
+    {
+      "card": "Werefox Bodyguard",
+      "checkpoint": "response-announced",
+      "source": {
+        "entityId": "eced3d02-3475-4818-9d90-81cf90e25ef8",
+        "generation": 102
+      },
+      "target": {
+        "entityId": "87b3523c-d0dd-4772-940b-ff962e7c46e1",
+        "generation": 103
+      },
+      "sourceZone": "GRAVEYARD",
+      "targetZone": "BATTLEFIELD",
+      "priority": "e0",
+      "decision": null,
+      "stack": [
+        {
+          "id": "e83"
+        },
+        {
+          "id": "a5b89a00-af01-446d-be0f-876fa3a94a6c"
+        }
+      ],
+      "zoneEvents": []
+    }
+  ],
+  "applicationObservations": [
+    {
+      "engine": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+      "acceptAtResolution": false,
+      "relationship": {
+        "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+        "card": "Fiend Hunter",
+        "face": "front",
+        "kind": "DEFERRED_SOURCE_LINKED",
+        "departure": {
+          "actionId": "Fiend Hunter|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "factIds": [
+            "Fiend Hunter|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then|MOVE_OBJECT|0"
+          ],
+          "from": "Battlefield",
+          "to": "Exile",
+          "controller": "ANY",
+          "native": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        },
+        "continuation": {
+          "actionId": "Fiend Hunter|front|script.triggeredAbilities[1]",
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "factIds": [
+            "Fiend Hunter|front|script.triggeredAbilities[1]|script.triggeredAbilities[1].effect.effects[1]|MOVE_OBJECT|0"
+          ],
+          "from": "Exile",
+          "to": "Battlefield",
+          "controller": "OWNER",
+          "native": {
+            "type": "MoveCollection",
+            "from": "linked_return",
+            "destination": {
+              "type": "ToZone",
+              "zone": "Battlefield"
+            },
+            "underOwnersControl": true
+          }
+        },
+        "binding": "MoveToZone(linkToSource) -> resolving source visit -> FromLinkedExile -> MoveCollection",
+        "support": "MATCH",
+        "prerequisites": [
+          "Successful native exile links to the original resolving source visit even after departure; a newer source visit cannot inherit it",
+          "Separate self-departure trigger gathers only cards still in this source visit's linked exile at its resolution",
+          "Return resolving before establishment consumes no future link; no guaranteed return",
+          "Initial source zone/target restrictions are retained on the originating native action",
+          "Departure and return reference the existing movement facts; both triggers retain independent resolution checkpoints",
+          "Target selection occurs at trigger announcement according to the native target requirement; the acting player may decline exile at resolution; acceptance and successful exile establish the link"
+        ],
+        "unresolved": [],
+        "checkpoint": "Independent entry and departure trigger resolutions; not an automatic duration return",
+        "sourceInstance": "Exact native battlefield visit: source ObjectRef plus sourceBattlefieldTimestamp; departedLinkedExile lookup; no sharing with another source or later visit",
+        "originalSubject": "Same original nontoken card; tokens and copies are not original-card returns",
+        "resultIdentity": "Each successful zone change creates a new ObjectRef generation; former attachments, counters, damage, targets, modifiers and source obligations do not persist by identity",
+        "evidenceScope": "Native declaration relationship; neither execution success nor whole-card source fidelity",
+        "sourceFidelity": "UNKNOWN",
+        "engineRevision": "98492f6691401c14e1444c5a6ecb4fa3d305c730"
+      },
+      "sourceVisit": {
+        "source": {
+          "entityId": "45adefb5-2885-4556-a693-bb41bc363724",
+          "generation": 98
+        },
+        "battlefieldTimestamp": 1,
+        "controller": "e0"
+      },
+      "original": {
+        "entityId": "f533e948-3043-4514-a446-ad25dc456b21",
+        "generation": 95
+      },
+      "result": {
+        "entityId": "f533e948-3043-4514-a446-ad25dc456b21",
+        "generation": 95
+      }
+    },
+    {
+      "engine": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+      "acceptAtResolution": true,
+      "relationship": {
+        "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+        "card": "Fiend Hunter",
+        "face": "front",
+        "kind": "DEFERRED_SOURCE_LINKED",
+        "departure": {
+          "actionId": "Fiend Hunter|front|script.triggeredAbilities[0]",
+          "path": "script.triggeredAbilities[0].effect.then",
+          "factIds": [
+            "Fiend Hunter|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.then|MOVE_OBJECT|0"
+          ],
+          "from": "Battlefield",
+          "to": "Exile",
+          "controller": "ANY",
+          "native": {
+            "type": "MoveToZone",
+            "target": {
+              "type": "BoundVariable",
+              "name": "t0"
+            },
+            "destination": "Exile",
+            "linkToSource": true
+          }
+        },
+        "continuation": {
+          "actionId": "Fiend Hunter|front|script.triggeredAbilities[1]",
+          "path": "script.triggeredAbilities[1].effect.effects[1]",
+          "factIds": [
+            "Fiend Hunter|front|script.triggeredAbilities[1]|script.triggeredAbilities[1].effect.effects[1]|MOVE_OBJECT|0"
+          ],
+          "from": "Exile",
+          "to": "Battlefield",
+          "controller": "OWNER",
+          "native": {
+            "type": "MoveCollection",
+            "from": "linked_return",
+            "destination": {
+              "type": "ToZone",
+              "zone": "Battlefield"
+            },
+            "underOwnersControl": true
+          }
+        },
+        "binding": "MoveToZone(linkToSource) -> resolving source visit -> FromLinkedExile -> MoveCollection",
+        "support": "MATCH",
+        "prerequisites": [
+          "Successful native exile links to the original resolving source visit even after departure; a newer source visit cannot inherit it",
+          "Separate self-departure trigger gathers only cards still in this source visit's linked exile at its resolution",
+          "Return resolving before establishment consumes no future link; no guaranteed return",
+          "Initial source zone/target restrictions are retained on the originating native action",
+          "Departure and return reference the existing movement facts; both triggers retain independent resolution checkpoints",
+          "Target selection occurs at trigger announcement according to the native target requirement; the acting player may decline exile at resolution; acceptance and successful exile establish the link"
+        ],
+        "unresolved": [],
+        "checkpoint": "Independent entry and departure trigger resolutions; not an automatic duration return",
+        "sourceInstance": "Exact native battlefield visit: source ObjectRef plus sourceBattlefieldTimestamp; departedLinkedExile lookup; no sharing with another source or later visit",
+        "originalSubject": "Same original nontoken card; tokens and copies are not original-card returns",
+        "resultIdentity": "Each successful zone change creates a new ObjectRef generation; former attachments, counters, damage, targets, modifiers and source obligations do not persist by identity",
+        "evidenceScope": "Native declaration relationship; neither execution success nor whole-card source fidelity",
+        "sourceFidelity": "UNKNOWN",
+        "engineRevision": "98492f6691401c14e1444c5a6ecb4fa3d305c730"
+      },
+      "sourceVisit": {
+        "source": {
+          "entityId": "e3796164-1889-418a-ac22-830c9be759d6",
+          "generation": 98
+        },
+        "battlefieldTimestamp": 1,
+        "controller": "e0"
+      },
+      "original": {
+        "entityId": "ce6871e8-6c36-49eb-8fed-00f020a79216",
+        "generation": 95
+      },
+      "result": {
+        "entityId": "ce6871e8-6c36-49eb-8fed-00f020a79216",
+        "generation": 106
+      }
+    }
+  ]
+}

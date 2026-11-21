@@ -38,7 +38,7 @@ import kotlinx.serialization.json.JsonElement
 
 internal data class TargetMovement(val scopes: List<ObjectScope>, val step: MovementStep, val departureSupported: Boolean)
 
-/** Exact root declarations only. The existing walker supplies return facts; no recursive effect
+/** Root declarations and one explicit resolution gate. The existing walker supplies movement facts; no recursive effect
  * walk or application exile ledger. The engine's pile is source-visit scoped, not ability scoped. */
 internal fun deferredMovementLinks(card: String, face: String, script: CardScript,
     facts: List<MechanicalFact>, producerCount: Int): List<LinkedMovement> {
@@ -52,17 +52,24 @@ internal fun deferredMovementLinks(card: String, face: String, script: CardScrip
         Triple(i, ability, move)
     }
     val departures = script.triggeredAbilities.withIndex().filter {
-        val effect=it.value.effect
+        val root=it.value.effect
+        // The wrapped subset needs ordinary exile's resolving-source-visit binding.
+        // Do not extend the legacy helper's unverified instance semantics through a gate.
+        val effect=if(root is GatedEffect) root.then as? MoveToZoneEffect else root
         effect is ExileUntilLeavesEffect || returns.isNotEmpty() && effect is MoveToZoneEffect &&
             effect.destination==Zone.EXILE && effect.linkToSource
     }
     return departures.map { (i, ability) ->
-        val effect = ability.effect
+        val wrapper = ability.effect as? GatedEffect
+        val effect = wrapper?.then ?: ability.effect
+        val choice = wrapper?.gate as? Gate.MayDecide
+        val supportedChoice = wrapper != null && choice != null && choice.sourceRequiredZone == null &&
+            !choice.inlineOnTrigger && choice.feasibility == null && wrapper.otherwise == null && wrapper.decisionMaker == null
         val reference = when(effect) { is ExileUntilLeavesEffect -> effect.target; is MoveToZoneEffect -> effect.target; else -> error("Unselected linked exile") }
         val ordinary = effect is MoveToZoneEffect
         val event = ability.trigger as? EventPattern.ZoneChangeEvent
         val action = "$card|$face|script.triggeredAbilities[$i]"
-        val path = "script.triggeredAbilities[$i].effect"
+        val path = "script.triggeredAbilities[$i].effect" + if(wrapper != null) ".then" else ""
         val departureFacts=facts.filter { it.actionId==action && it.path==path && it.kind==FactKind.MOVE_OBJECT }
         val ret = returns.singleOrNull()
         val returnAction = ret?.let { "$card|$face|script.triggeredAbilities[${it.first}]" }
@@ -72,6 +79,7 @@ internal fun deferredMovementLinks(card: String, face: String, script: CardScrip
         val target=ability.allTargetRequirements.singleOrNull() as? TargetObject
         val bound=when(val t=reference) { is EffectTarget.BoundVariable -> target?.id==t.name; is EffectTarget.ContextTarget -> t.index==0 && target!=null; else -> false }
         val problems = listOfNotNull(
+            if (wrapper != null && !supportedChoice) "Resolution gate, alternate branch or decision-maker exceeds the singular optional-exile subset" else null,
             if (event?.to != Zone.BATTLEFIELD || ability.binding != TriggerBinding.SELF) "Exile is not a root self-entry trigger" else null,
             if (departures.size != 1 || returns.size != 1 || producerCount != 1) "Native source pile has absent or multiple producers/consumers; ability-specific association not established" else null,
             if (script.triggeredAbilities.size!=2 || script.activatedAbilities.isNotEmpty() || script.spellEffect!=null ||
@@ -95,7 +103,8 @@ internal fun deferredMovementLinks(card: String, face: String, script: CardScrip
                 "Return resolving before establishment consumes no future link; no guaranteed return",
                 "Initial source zone/target restrictions are retained on the originating native action",
                 if(ordinary) "Departure and return reference the existing movement facts; both triggers retain independent resolution checkpoints"
-                else "ExileUntilLeaves has no legacy MOVE_OBJECT fact; return references the existing collection movement fact"),
+                else "ExileUntilLeaves has no legacy MOVE_OBJECT fact; return references the existing collection movement fact") +
+                (if(supportedChoice) listOf("Target selection occurs at trigger announcement according to the native target requirement; the acting player may decline exile at resolution; acceptance and successful exile establish the link") else emptyList()),
             problems, "Independent entry and departure trigger resolutions; not an automatic duration return",
             "Exact native battlefield visit: source ObjectRef plus sourceBattlefieldTimestamp; departedLinkedExile lookup; no sharing with another source or later visit")
     }

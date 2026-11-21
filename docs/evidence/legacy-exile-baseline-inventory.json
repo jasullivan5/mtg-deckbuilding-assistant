@@ -1,0 +1,1400 @@
+{
+  "units": "Native physical roots; script authoring containers are not necessarily printed faces. Declaration paths include saga chapters, not invented runtime action IDs. No source fidelity or execution inferred.",
+  "summary": {
+    "nativePhysicalCards": 21689,
+    "scriptAuthoringContainers": 22477,
+    "affectedPhysicalCards": 75,
+    "affectedFaceContainers": 75,
+    "abilityDeclarations": 78,
+    "effectInstances": 79,
+    "relatedEffectInstances": {
+      "MoveToZone": 47,
+      "MoveUntilSourceLeaves": 26
+    },
+    "sourceReviewedLegacyPhysicalCards": 3,
+    "unreviewedLegacyPhysicalCards": 72
+  },
+  "rows": [
+    {
+      "physical": "Aang's Iceberg",
+      "face": "front",
+      "faceName": "Aang's Iceberg",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AangsIceberg.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "3f8fb147b75f42dc77745a5562160d922dcec69c5c7015a6b1115ac38e376ef8",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Alabaster Host Intercessor",
+      "face": "front",
+      "faceName": "Alabaster Host Intercessor",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/AlabasterHostIntercessor.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "5db267a288533a3a2118ceb6eca42a0024a3580a1a7f702c144e13c29eda59d7",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "All-Fates Stalker",
+      "face": "front",
+      "faceName": "All-Fates Stalker",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/AllFatesStalker.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "87b4ec8f1a9455b604c9df2a0a396b0921377d9e3efd736989b56a2e2824023c",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Angel of Sanctions",
+      "face": "front",
+      "faceName": "Angel of Sanctions",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/AngelOfSanctions.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.then",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "0d9974023af58f853461739d365b1b0e0f9478f6068b963a7687675c8e2301b8",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Annex Sentry",
+      "face": "front",
+      "faceName": "Annex Sentry",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/one/cards/AnnexSentry.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "2fad2dc901f06371c07d7cdf808b05c9c6209fccfb88942ed840ab00321d4492",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Assimilation Aegis",
+      "face": "front",
+      "faceName": "Assimilation Aegis",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/AssimilationAegis.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "956cefb854326348dfd727151e9bf995671d49748df581ef036701b68a25cc84",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Banishing Light",
+      "face": "front",
+      "faceName": "Banishing Light",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jou/cards/BanishingLight.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "cc08236ceae16df1e9b2f6fb9a339067f0f2e1be916e0f9808b64aa21292df20",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Bishop of Binding",
+      "face": "front",
+      "faceName": "Bishop of Binding",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/BishopOfBinding.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "f35d21033a425ae7ac22fe4e7dc781bbdfa45d873c59d5d7f8e3441e9a69b6e6",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Borrowed Time",
+      "face": "front",
+      "faceName": "Borrowed Time",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BorrowedTime.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "8a5bb9830dfa8d865251e91730221efc32517d41f0d2d6824ac6bf119eeaae00",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Brutal Cathar",
+      "face": "front",
+      "faceName": "Brutal Cathar",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BrutalCathar.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "3094b8f70a3e68735addef613d70a32951369ac5abebbe9f49e189008dcaa6da",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Brutal Cathar",
+      "face": "front",
+      "faceName": "Brutal Cathar",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mid/cards/BrutalCathar.kt",
+      "declaration": "script.triggeredAbilities[1]",
+      "path": "script.triggeredAbilities[1].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t1"
+        }
+      },
+      "declarationSha256": "98f55cf4cd1b6edecf27c89e4382c7d42e6b5543c45c95bb09a57eb6b4342fe9",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Buried in the Garden",
+      "face": "front",
+      "faceName": "Buried in the Garden",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/BuriedInTheGarden.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "6f77c9ef848b7a0f9ba7ff5bb02bfb1eec8fab7343c10975f8c8b71683dfe16b",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Cast Out",
+      "face": "front",
+      "faceName": "Cast Out",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/CastOut.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "e529b4e958c0acceff2c29962c6e85a2d3a483e935932d9a69ff97b436d64433",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Celebrate the Mountain-king",
+      "face": "front",
+      "faceName": "Celebrate the Mountain-king",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/hob/cards/CelebrateTheMountainKing.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "80675d46d682698cf33f858767c17e57873d2f7a5f309daf271da68d38db9328",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Chains of Custody",
+      "face": "front",
+      "faceName": "Chains of Custody",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/j22/cards/ChainsOfCustody.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "a9962e91302a353a0e442717efa4d8d1277e46a324905d52ecafff8c06908bbb",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Circle of Confinement",
+      "face": "front",
+      "faceName": "Circle of Confinement",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/CircleOfConfinement.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "f0983596a0e42b6e68f3c047b024a492678c57c1ec09026ecd69723ff2ef16bf",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Cloak and Dagger, Entwined",
+      "face": "front",
+      "faceName": "Cloak and Dagger, Entwined",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/CloakAndDaggerEntwined.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[1].then.choices[1].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t1"
+        }
+      },
+      "declarationSha256": "b0c29987435fdb05c488b6fc57365f8ab3c0f2a8652757ab08fd44c1d07c7257",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Conclave Tribunal",
+      "face": "front",
+      "faceName": "Conclave Tribunal",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/ConclaveTribunal.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "16df026a779d6fb88b4a2a2fd358e521acad3d443e270246a057f46008d52ca0",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Detention Chariot",
+      "face": "front",
+      "faceName": "Detention Chariot",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/DetentionChariot.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "3240dde2c49d96dd639cf9813fa37191da5518686d24a5fc9e009e79f9c93347",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Dimensional Exile",
+      "face": "front",
+      "faceName": "Dimensional Exile",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/DimensionalExile.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "346c69bc4d9f1efd3f6c377c8c13a22a4e3565a3b03ab5d57669a129c9ca1491",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Driftgloom Coyote",
+      "face": "front",
+      "faceName": "Driftgloom Coyote",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blb/cards/DriftgloomCoyote.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "8248e004b483249ae881cc6cfd51c6da7fbba377815acf4358d56c385b9b443c",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Dusk Rose Reliquary",
+      "face": "front",
+      "faceName": "Dusk Rose Reliquary",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/DuskRoseReliquary.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "6a4b9b5e4c95191ee20c7b4b93ea4af6384b23638b04b53eff29b1ffbefa0fe4",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Earth Kingdom Jailer",
+      "face": "front",
+      "faceName": "Earth Kingdom Jailer",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/EarthKingdomJailer.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "52bc611f5a603c60416ba937a81ee95d816b8953def5a52855a91676c345aa69",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Fairgrounds Warden",
+      "face": "front",
+      "faceName": "Fairgrounds Warden",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/kld/cards/FairgroundsWarden.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "dab86e372ab79af01e564d86b792795596aa0b5ea78b27428bf464d618fe8b6d",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Faith Unbroken",
+      "face": "front",
+      "faceName": "Faith Unbroken",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/emn/cards/FaithUnbroken.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "1d0cf4fe3b01f0a9d88974a272bc3dbfe88605eefd329e45292496db37c28bbe",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Fear of Abduction",
+      "face": "front",
+      "faceName": "Fear of Abduction",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/FearOfAbduction.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "8fd38aed281aec943888ca167fcb8d65c8d8957bebcb231e3c5535c87fa7e99e",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Fiend Hunter",
+      "face": "front",
+      "faceName": "Fiend Hunter",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "edef5cbed2caa41a4f2fc332959bda15642314a3525f087968e48d25d34c5305",
+      "review": "SOURCE_REQUIREMENTS_FROZEN",
+      "family": "A_INDEPENDENT_WITH_MAY"
+    },
+    {
+      "physical": "Food Coma",
+      "face": "front",
+      "faceName": "Food Coma",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/FoodComa.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "aab66f4f45b39fef378c34b7a6b5d54648965dac148cb99657222462c34f68a4",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Glass Casket",
+      "face": "front",
+      "faceName": "Glass Casket",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eld/cards/GlassCasket.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "bbcc5b77d6583f2b31667b8d2b5c03becc67d1abfdfb27a4b61587f420e78dd9",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Glorious Protector",
+      "face": "front",
+      "faceName": "Glorious Protector",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/GloriousProtector.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[2].body",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "IterationEntity"
+        }
+      },
+      "declarationSha256": "38c886f9cb60759d779a8618763ecf7e76446f6660ecaf2aaabf78828da3b1f2",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Hardlight Containment",
+      "face": "front",
+      "faceName": "Hardlight Containment",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/HardlightContainment.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "76cea06df9d588752186618e9308f0c79997d4a6c33a5d78a60e85577cc96536",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Helvault",
+      "face": "front",
+      "faceName": "Helvault",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/Helvault.kt",
+      "declaration": "script.activatedAbilities[0]",
+      "path": "script.activatedAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "ee5fe7ed9271453035017091774fcac6752443e681d334652cfbe103d7e2e6e4",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Helvault",
+      "face": "front",
+      "faceName": "Helvault",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dka/cards/Helvault.kt",
+      "declaration": "script.activatedAbilities[1]",
+      "path": "script.activatedAbilities[1].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t1"
+        }
+      },
+      "declarationSha256": "ef2c5f86dc29d86fb9c099e4c213435a4e650fb697124ac707b6646e60f0ad1e",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Henchbots",
+      "face": "front",
+      "faceName": "Henchbots",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/Henchbots.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "1e4f2ab73e6fd9f77bbce948ade69701d23826b4f78c8dcca2d5625ecd732f79",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Hieromancer's Cage",
+      "face": "front",
+      "faceName": "Hieromancer's Cage",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m19/cards/HieromancersCage.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "f08bd83abd0021e7a09f29190ee24d548189e35bbe570903343c05e73eb71f4b",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Hostage Taker",
+      "face": "front",
+      "faceName": "Hostage Taker",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/xln/cards/HostageTaker.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "c8e07abdd0eb730b32c4df5e1fd5301c8f608d0f6163bd7500628616efa8e0ed",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Isolation Zone",
+      "face": "front",
+      "faceName": "Isolation Zone",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ogw/cards/IsolationZone.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "2add65a6a519649b62604620e1218eb22a7af41af0edc91709a897e1cbd38dea",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Journey to Oblivion",
+      "face": "front",
+      "faceName": "Journey to Oblivion",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/JourneyToOblivion.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "842d9fe077abd2c3cf065730de9a068362b33be25eb301c5a0943a1991abc1a9",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Lagrella, the Magpie",
+      "face": "front",
+      "faceName": "Lagrella, the Magpie",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/LagrellaTheMagpie.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.body",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "ContextTarget",
+          "index": 0
+        }
+      },
+      "declarationSha256": "99c1cd658590c5a98a32cd595a25b8fddb6e8d6345beee7acf64aa2c37e76ba2",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Lassoed by the Law",
+      "face": "front",
+      "faceName": "Lassoed by the Law",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/LassoedByTheLaw.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "3beca3bf9995424edd8a4ffc973770b07316554dff7687368a8210b6146d6508",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Liminal Hold",
+      "face": "front",
+      "faceName": "Liminal Hold",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ecl/cards/LiminalHold.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "19af1f7ea5d97203ee0d132ede06c140298b3d152aede4bc174919f8119188b3",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Lumbering Battlement",
+      "face": "front",
+      "faceName": "Lumbering Battlement",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rna/cards/LumberingBattlement.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[2].body",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "IterationEntity"
+        }
+      },
+      "declarationSha256": "b4df6867850a59b3e8ddfd5dd8b37a65d4630e6b07b27ccd2386bb091cfea588",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Makeshift Binding",
+      "face": "front",
+      "faceName": "Makeshift Binding",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/MakeshiftBinding.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "a9c700ce07914d9353ebaad059459e8039779692609040f6dffa156bbb742358",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Mardu Siegebreaker",
+      "face": "front",
+      "faceName": "Mardu Siegebreaker",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/MarduSiegebreaker.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "80fdd1453744beaf9ae9c44db833af2eb15cdc56e91173a98b52dba65ab33b4d",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Mysterious Limousine",
+      "face": "front",
+      "faceName": "Mysterious Limousine",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/MysteriousLimousine.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "fee128f5d717e14eb3e674ffa9760583c478eddbf008f49480d3d169f0d1f1bb",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Mysterious Limousine",
+      "face": "front",
+      "faceName": "Mysterious Limousine",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/snc/cards/MysteriousLimousine.kt",
+      "declaration": "script.triggeredAbilities[1]",
+      "path": "script.triggeredAbilities[1].effect.effects[1]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t1"
+        }
+      },
+      "declarationSha256": "d5c1799b40888dceeeeee9bd0e115809b950b592083144fa66246697f70eaccf",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Mystical Tether",
+      "face": "front",
+      "faceName": "Mystical Tether",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/MysticalTether.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "90b91358a34b0d5074fff5104dc924f6c62cb7f99d5019fe2536751b4363cd8d",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Perilous Snare",
+      "face": "front",
+      "faceName": "Perilous Snare",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dft/cards/PerilousSnare.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "c94a384b492b0705af072d4640e23bce92a6ed78b21cb5b84c600a06054e9a95",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Portable Hole",
+      "face": "front",
+      "faceName": "Portable Hole",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/PortableHole.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "2274ab71dd6ee1465573214685ec71f9faa6a68ecbfd0debea497e22899129a8",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Prayer of Binding",
+      "face": "front",
+      "faceName": "Prayer of Binding",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/PrayerOfBinding.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "7f3be347742b4a12682a9cb9605a3f41d2ad3c2cbc8ed058f3dcfaeb82f1a1b8",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Prison Realm",
+      "face": "front",
+      "faceName": "Prison Realm",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/PrisonRealm.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "4858774129c5206d5a7be59a80d5d6585bdfa07e5cb5cb089b366f8f6ef4fa7a",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Savior of Ollenbock",
+      "face": "front",
+      "faceName": "Savior of Ollenbock",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorOfOllenbock.kt",
+      "declaration": "script.triggeredAbilities[1]",
+      "path": "script.triggeredAbilities[1].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "f1a18af70cfd8f34e420e5cd59b9f27d5c3e870b54d22294be7f6e2cefc6a976",
+      "review": "SOURCE_REQUIREMENTS_FROZEN",
+      "family": "C_COMPLEX_INDEPENDENT_TRAINING_CROSS_ZONE"
+    },
+    {
+      "physical": "Seal Away",
+      "face": "front",
+      "faceName": "Seal Away",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dom/cards/SealAway.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "cc42ead1355fb6e3e8c839ae7230ead2d21d77ef6ad9fff3d11302ebcadbbce6",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Seal from Existence",
+      "face": "front",
+      "faceName": "Seal from Existence",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/SealFromExistence.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "b4cd09272a20c6977264acf859f468312cf5afb001533cdd738d18e863bd0497",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Seam Rip",
+      "face": "front",
+      "faceName": "Seam Rip",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/eoe/cards/SeamRip.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "6e5a1beecce20c000e71199654004c5cabca5c57e94118a4a61d1a1a32bef1b2",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Secret Invasion",
+      "face": "front",
+      "faceName": "Secret Invasion",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/SecretInvasion.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "24be3ee6bc27576a635aadbf776c3057f2c3f3e89fc6f59c8f52765b0f13b42d",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Sheltered by Ghosts",
+      "face": "front",
+      "faceName": "Sheltered by Ghosts",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/ShelteredByGhosts.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "ab440882a724356e0cd2d11d835a7dbea5f6d76748cb90cd11043eecd4e311c8",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Shire Shirriff",
+      "face": "front",
+      "faceName": "Shire Shirriff",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ltr/cards/ShireShirriff.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.reflexiveEffect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "e8129401651ef57ff97a6017d10d119ad98d57cedda36bb971ad07e27b362838",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Silkwrap",
+      "face": "front",
+      "faceName": "Silkwrap",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dtk/cards/Silkwrap.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "a95a98d67c19df401461944904ec1abfee6721264db79d8a13e6386d7f28e113",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Solitary Cell",
+      "face": "front",
+      "faceName": "Solitary Cell",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fra/cards/SolitaryCell.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "e02b5aa6de17a76ec906c727bf95c87c6342639d30a4c93719c434dad9fc5fde",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Stasis Snare",
+      "face": "front",
+      "faceName": "Stasis Snare",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bfz/cards/StasisSnare.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "c71fe7f9ba6b50c27418e54074deed34f2d21c39825538056502b4df072c26b0",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Static Net",
+      "face": "front",
+      "faceName": "Static Net",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/bro/cards/StaticNet.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "9e93c472bb5de11ab9f6895d10bd9c22964fef4614ddae3e852f692a100e01fc",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Static Prison",
+      "face": "front",
+      "faceName": "Static Prison",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/StaticPrison.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "7768bc4110466ead1621e9abf2819278ebcb33dcbae892529226eb12e11b4351",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Static Snare",
+      "face": "front",
+      "faceName": "Static Snare",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/StaticSnare.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "b8039881624313113b595dd82a3856b60c415d0862af4f4259f227dd4e66fa15",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Stormplain Detainment",
+      "face": "front",
+      "faceName": "Stormplain Detainment",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tdm/cards/StormplainDetainment.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "d8343b5f71cf64a2134d31d6a4c67907fc83a4d0d61eb50cb147dc90c707e3f4",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Super Villain Lockup",
+      "face": "front",
+      "faceName": "Super Villain Lockup",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/msh/cards/SuperVillainLockup.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "384a24a80b1aeb6454a97064d13d2f20d5d25b30a55f57691af8a2a085d8464e",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Suspension Field",
+      "face": "front",
+      "faceName": "Suspension Field",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/SuspensionField.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.then",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "41cde9ed8d9c2c6c635d68a15c79e579842b538571899091c24667d63bb07399",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "The Spot, Living Portal",
+      "face": "front",
+      "faceName": "The Spot, Living Portal",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/TheSpotLivingPortal.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "34124300358d9b345958ab9e1fd18b08798c683bca238c26470d2b98c9974602",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "The Spot, Living Portal",
+      "face": "front",
+      "faceName": "The Spot, Living Portal",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/TheSpotLivingPortal.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t1"
+        }
+      },
+      "declarationSha256": "34124300358d9b345958ab9e1fd18b08798c683bca238c26470d2b98c9974602",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Thopter Arrest",
+      "face": "front",
+      "faceName": "Thopter Arrest",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/ThopterArrest.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "f1412d7cb0b7cbf2a68eb81455185b36db5bfcbf452edba53de46506152a453c",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Touch the Spirit Realm",
+      "face": "front",
+      "faceName": "Touch the Spirit Realm",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/TouchTheSpiritRealm.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "9388f760975248cbd5ff402f9f2daf148be54c7a41e763a70b63b86d6d2f60b7",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Trapjaw Tyrant",
+      "face": "front",
+      "faceName": "Trapjaw Tyrant",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rix/cards/TrapjawTyrant.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "94e95e161bd102e9c5f13d9023b9c0299cc6ef2f358e8aa7174d1d3c03a77b95",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Trapped in the Screen",
+      "face": "front",
+      "faceName": "Trapped in the Screen",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/TrappedInTheScreen.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "4cb854feea2adc96936008399acc8993b997e88577f768b0ca94648e4c6b2c1d",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Turncoat Kunoichi",
+      "face": "front",
+      "faceName": "Turncoat Kunoichi",
+      "nativePath": "mtg-sets/2026/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tmt/cards/TurncoatKunoichi.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect.otherwise",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "3925acd8e8d85556324cab41adbeb0cc7e68c05a67d36f698076e695b40ef6c5",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Unidentified Hovership",
+      "face": "front",
+      "faceName": "Unidentified Hovership",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/UnidentifiedHovership.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "441172eb4d54dffb8e4e98691656ebd3c95f52db12e21d0700411ec67089e830",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Vault 13: Dweller's Journey",
+      "face": "front",
+      "faceName": "Vault 13: Dweller's Journey",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pip/cards/Vault13DwellersJourney.kt",
+      "declaration": "script.sagaChapters[0]",
+      "path": "script.sagaChapters[0].effect.body",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "ContextTarget",
+          "index": 0
+        }
+      },
+      "declarationSha256": "976b4a5ea63d6b2e6ba4f71959e871994bbea38bd06afb8c3824659b11074820",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Web Up",
+      "face": "front",
+      "faceName": "Web Up",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/spm/cards/WebUp.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "dfd2588d6160e67d29fa2e8c50a240c73199d055120c28f91b9f746f4dc5e091",
+      "review": "UNREVIEWED"
+    },
+    {
+      "physical": "Werefox Bodyguard",
+      "face": "front",
+      "faceName": "Werefox Bodyguard",
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/WerefoxBodyguard.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "45b2942d0511c09f0e24d41cdf087cfe1765d23fe001f7e8efea800d913821c0",
+      "review": "SOURCE_REQUIREMENTS_FROZEN",
+      "family": "B_DURATION_WITH_OPTIONAL_TARGET_AND_SACRIFICE"
+    },
+    {
+      "physical": "White Auracite",
+      "face": "front",
+      "faceName": "White Auracite",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/WhiteAuracite.kt",
+      "declaration": "script.triggeredAbilities[0]",
+      "path": "script.triggeredAbilities[0].effect",
+      "native": {
+        "type": "ExileUntilLeaves",
+        "target": {
+          "type": "BoundVariable",
+          "name": "t0"
+        }
+      },
+      "declarationSha256": "862cb5b736e7ea45a0f03f97cdb6107f19735899df8b55e648d805d8651e58db",
+      "review": "UNREVIEWED"
+    }
+  ],
+  "sourceCohort": {
+    "requirementsLfSha256": "226312107e92c8dc90f791bb739bd044f0d5624a200c71a871b931d880c2d990",
+    "engineBase": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "cases": {
+      "Fiend Hunter": {
+        "family": "A_INDEPENDENT_WITH_MAY",
+        "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/isd/cards/FiendHunter.kt",
+        "oracleId": "cb9d557a-fc06-428c-8be6-7d28add33028"
+      },
+      "Savior of Ollenbock": {
+        "family": "C_COMPLEX_INDEPENDENT_TRAINING_CROSS_ZONE",
+        "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorOfOllenbock.kt",
+        "oracleId": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c"
+      },
+      "Werefox Bodyguard": {
+        "family": "B_DURATION_WITH_OPTIONAL_TARGET_AND_SACRIFICE",
+        "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/WerefoxBodyguard.kt",
+        "oracleId": "d5ee2ced-29f4-430f-962e-2f930b92624c"
+      },
+      "Oblivion Ring": {
+        "family": "A_INDEPENDENT_CONTROL",
+        "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lrw/cards/OblivionRing.kt",
+        "oracleId": "bd9b9772-f5f9-4c6b-913e-7193bea5d0a7"
+      },
+      "Banisher Priest": {
+        "family": "B_DURATION_CONTROL",
+        "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m14/cards/BanisherPriest.kt",
+        "oracleId": "9f560b83-32d4-4bb4-a956-8f5db18599db"
+      },
+      "Mirror Golem": {
+        "family": "C_LINKED_GRAVEYARD_CAPABILITY_CONTROL",
+        "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/MirrorGolem.kt",
+        "oracleId": "3460e86f-c182-4ca9-bd90-7949b0759c98"
+      }
+    },
+    "scope": "Frozen source classification only; native execution observations are retained separately. Not whole-card qualification."
+  }
+}
