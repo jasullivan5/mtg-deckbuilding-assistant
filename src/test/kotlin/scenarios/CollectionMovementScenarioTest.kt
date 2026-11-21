@@ -102,6 +102,20 @@ class CollectionMovementScenarioTest : FunSpec({
         d.getHand(d.player2).contains(victim) shouldBe true
         LinkedExileLookup.exiledCards(d.state,source) shouldBe emptyList()
     }
+    test("the battlefield selection cannot become a new graveyard selection of the same original card") {
+        val d=scenarioDriver(card("Savior of Ollenbock"),card("Murder"))
+        val source=d.cast("Savior of Ollenbock");d.resolvePendingActions()
+        val victim=d.putCreatureOnBattlefield(d.player2,"Hill Giant")
+        val original=checkNotNull(d.state.objectRef(victim))
+        d.training(source)
+        d.submitTargetSelection(d.player1,listOf(victim)).error shouldBe null
+        d.cast("Murder",victim);d.resolvePendingActions()
+        d.getGraveyard(d.player2).contains(victim) shouldBe true
+        d.state.isCurrentObject(original) shouldBe false
+        LinkedExileLookup.exiledCards(d.state,source) shouldBe emptyList()
+        val union=PathwayExtractor().extract(listOf(card("Savior of Ollenbock"))).actions.flatMap { it.unionTargets }.single()
+        union.observeSelection(d.state,listOf(original)).subjects.single().sourceZone shouldBe null
+    }
     test("Cryptic Coat attaches to the actual cloaked original with a new battlefield generation") {
         val d=scenarioDriver(card("Cryptic Coat"))
         val top=d.putCardOnTopOfLibrary(d.player1,"Forest")
