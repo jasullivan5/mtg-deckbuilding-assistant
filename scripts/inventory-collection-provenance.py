@@ -7,6 +7,7 @@ import argparse
 from collections import Counter, defaultdict
 import hashlib
 import json
+import re
 from pathlib import Path
 from runpy import run_path
 
@@ -14,6 +15,13 @@ nodes = run_path(str(Path(__file__).with_name('inventory-legacy-exile.py')))['no
 KINDS = {'GatherCards': 'producers', 'SelectFromCollection': 'selections',
          'FilterCollection': 'filters', 'MoveCollection': 'movements',
          'ConditionalOnCollection': 'conditions', 'PipelineTarget': 'indexedConsumers'}
+
+
+def declaration(path):
+    root = re.match(r'script\.(?:triggeredAbilities|activatedAbilities|stateTriggeredAbilities|sagaChapters)\[\d+\]', path)
+    if root: return root.group()
+    if path.startswith(('script.spellEffect', 'script.targetRequirements')): return 'script.spell'
+    return path.split('.effect', 1)[0]
 
 
 def census(native_path, evidence_path):
@@ -43,25 +51,32 @@ def census(native_path, evidence_path):
                 if card in frozen:
                     cohort_declarations.append(dict(card=card, face=face, path=path, category=category, native=node))
     interpreted = defaultdict(list)
+    moved_continuations = []
     unknown = Counter()
     for line in evidence_path.open(encoding='utf-8-sig'):
         if not line.startswith('{'): continue
         action = json.loads(line)
+        stages = {s['id']:s for s in action.get('collectionStages', [])}
         for key in ('unionTargets', 'collectionStages', 'collectionUses'):
             for record in action.get(key, []):
                 interpreted[key].append((action['card'], action['face'], action['id'], record))
-                if record['support'] == 'UNKNOWN': unknown.update(record['unresolved'])
+                if record['support'] == 'UNKNOWN': unknown.update(set(record['unresolved']))
+                if key == 'collectionUses' and record['support'] == 'MATCH' and stages.get(record['producerId'], {}).get('membership') == 'NATIVE_MOVED_RESULT':
+                    moved_continuations.append((action['card'], action['face'], action['id'], record))
     def units(rows):
         return dict(physicalCards=len({r[0] for r in rows}), faceContainers=len({r[:2] for r in rows}), declarations=len(rows))
     return dict(engineRevision=cohort['engineRevision'],
                 inputs={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (native_path, evidence_path)},
                 units='Distinct physical roots and script face containers; declarations and action-local relationships are separate, overlapping units. No source fidelity inferred.',
                 catalog=dict(physicalCards=len(cards), faceContainers=len(faces)),
-                native={key: units(rows) for key, rows in sorted(declarations.items())},
+                native={key: dict(units(rows),actionOrAbilityContainers=len({(r[0],r[1],declaration(r[2])) for r in rows})) for key, rows in sorted(declarations.items())},
                 interpreted={key: dict(units(rows), actions=len({r[2] for r in rows}),
                     support=dict(Counter(r[3]['support'] for r in rows)),
                     kinds=dict(Counter(r[3].get('membership', r[3].get('consumer', 'UNION')) for r in rows)))
-                    for key, rows in interpreted.items()}, unknownReasons=dict(unknown), cohortDeclarations=cohort_declarations)
+                    for key, rows in interpreted.items()},
+                supportedMovedResultContinuations=dict(units(moved_continuations),actions=len({r[2] for r in moved_continuations}),
+                    consumerKinds=dict(Counter(r[3]['consumer'] for r in moved_continuations))),
+                unknownReasons=dict(unknown), cohortDeclarations=cohort_declarations)
 
 
 if __name__ == '__main__':
