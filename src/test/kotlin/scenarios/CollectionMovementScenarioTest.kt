@@ -50,6 +50,13 @@ class CollectionMovementScenarioTest : FunSpec({
         choice.legalTargets[0].orEmpty().contains(victim) shouldBe true
         choice.legalTargets[0].orEmpty().contains(source) shouldBe false
         d.submitTargetSelection(d.player1,listOf(victim)).error shouldBe null
+        val union=PathwayExtractor().extract(listOf(card("Savior of Ollenbock"))).actions.flatMap { it.unionTargets }.single()
+        val selected=union.observeSelection(d.state,listOf(original))
+        selected.subjects.single().sourceZone shouldBe actualZone
+        selected.subjects.single().owner shouldBe d.player2
+        selected.subjects.single().zoneClauseIndices shouldBe listOf(if(graveyard) 1 else 0)
+        selected.sourceZoneCompatibility shouldBe Verdict.MATCH
+        selected.nativeLegality shouldBe Verdict.UNKNOWN
         d.resolvePendingActions()
         d.getExile(d.player2).contains(victim) shouldBe true
         LinkedExileLookup.exiledCards(d.state,source) shouldBe listOf(victim)
@@ -61,6 +68,7 @@ class CollectionMovementScenarioTest : FunSpec({
         d.state.isCurrentObject(original) shouldBe false
         println("COLLECTION_NATIVE "+buildJsonObject {
             put("case","union-$graveyard");put("engine",EngineBuild.revision)
+            put("selection",reportJson.encodeToJsonElement(UnionSelectionObservation.serializer(),selected))
             put("original",reportJson.encodeToJsonElement(ObjectRef.serializer(),original))
             put("exile",reportJson.encodeToJsonElement(ZoneChangeEvent.serializer(),exile))
             put("result",reportJson.encodeToJsonElement(ObjectRef.serializer(),checkNotNull(d.state.objectRef(victim))))
@@ -77,6 +85,9 @@ class CollectionMovementScenarioTest : FunSpec({
         (d.submitTargetSelection(d.player1,listOf(land)).error!=null) shouldBe true
         val mark=d.events.size
         d.submitTargetSelection(d.player1,emptyList()).error shouldBe null
+        val union=PathwayExtractor().extract(listOf(card("Savior of Ollenbock"))).actions.flatMap { it.unionTargets }.single()
+        union.observeSelection(d.state,emptyList()).subjects shouldBe emptyList()
+        union.observeSelection(d.state,emptyList()).countCompatibility shouldBe Verdict.MATCH
         d.resolvePendingActions()
         LinkedExileLookup.exiledCards(d.state,source) shouldBe emptyList()
         d.events.drop(mark).filterIsInstance<ZoneChangeEvent>().none { it.toZone==Zone.EXILE } shouldBe true

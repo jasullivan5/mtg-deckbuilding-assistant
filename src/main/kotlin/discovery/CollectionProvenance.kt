@@ -13,6 +13,8 @@ import com.wingedsheep.engine.core.ZoneTransitionCause
 import com.wingedsheep.engine.state.GameState
 import com.wingedsheep.engine.state.ObjectRef
 import com.wingedsheep.sdk.model.EntityId
+import com.wingedsheep.engine.state.components.identity.CardComponent
+import com.wingedsheep.engine.state.components.identity.OwnerComponent
 
 /** Alternative clauses belong to ONE requirement. Neither selection nor movement is asserted. */
 @Serializable data class UnionTarget(
@@ -38,6 +40,32 @@ internal fun unionTargets(actionId: String, targets: List<TargetRequirement>, ch
             t.count.takeUnless { t.unlimited || t.dynamicMaxCount != null },checkpoint,
             if (problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,problems)
     }
+
+@Serializable data class UnionSelectedObject(val objectRef: ObjectRef, val current: Boolean,
+    val sourceZone: Zone?, val zonePlayer: EntityId?, val owner: EntityId?, val controller: EntityId?,
+    val zoneClauseIndices: List<Int>)
+
+@Serializable data class UnionSelectionObservation(val actionId: String, val requirementIndex: Int,
+    val checkpoint: String, val subjects: List<UnionSelectedObject>, val countCompatibility: Verdict,
+    val sourceZoneCompatibility: Verdict, val nativeLegality: Verdict = Verdict.UNKNOWN,
+    val scope: String = "Current selected generations and permitted source-zone clauses only. Native target validation owns filters, restrictions, choices and resolution legality; this observation establishes neither successful movement nor a future return.")
+
+/** Observe immediately at selection, using objects from the native selection transaction.
+ * An old generation is never recaptured through its entity ID. No targeting solver is added. */
+fun UnionTarget.observeSelection(state: GameState, selected: List<ObjectRef>): UnionSelectionObservation {
+    val subjects=selected.map { ref ->
+        val current=state.isCurrentObject(ref)
+        val key=state.logicalZone(ref.entityId).takeIf { current }
+        val entity=state.getEntity(ref.entityId).takeIf { current }
+        UnionSelectedObject(ref,current,key?.zoneType,key?.playerId,
+            entity?.get<OwnerComponent>()?.playerId ?: entity?.get<CardComponent>()?.ownerId,
+            if(key?.zoneType==Zone.BATTLEFIELD) state.projectedState.getController(ref.entityId) else null,
+            clauses.indices.filter { clauses[it].zone==key?.zoneType })
+    }
+    return UnionSelectionObservation(actionId,requirementIndex,checkpoint,subjects,
+        if(maximum==null) Verdict.UNKNOWN else if(selected.size in minimum..maximum) Verdict.MATCH else Verdict.NO_MATCH,
+        if(subjects.isEmpty()) Verdict.NO_MATCH else if(subjects.all { it.current && it.zoneClauseIndices.isNotEmpty() }) Verdict.MATCH else Verdict.UNKNOWN)
+}
 
 @Serializable enum class CollectionMembership { GATHERED, SELECTED, MATCHING, COMPLEMENT, ALIAS, NATIVE_MOVED_RESULT, RETAINED_INPUT }
 
