@@ -97,3 +97,7 @@ The first focused correction run found a test-setup NPE: a seeded Savior had no 
 The correction is suitable for an eventual upstream contribution: three canonical definitions and their regressions compose existing SDK/source-visit/duration facilities. No generic handler, SDK compatibility layer or extra ledger is maintained. No upstream revisions were integrated or upstream PR submitted, and neither review PR is automatically merged.
 
 The most consequential remaining foundation work is another bounded, source-led audit of helper users with separate departure triggers, rather than treating the remaining 72 as verified. For a subsequent Card Integration increment, bounded collection-linked movement and union-target provenance now have a useful native anchor in Savior's tested graveyard/training cases. Granted-ability attribution remains a separate candidate; this audit supplies stronger immediate evidence for the collection/union direction. No follow-on assignment is started.
+
+## Coordinated review
+
+[Engine PR #11](https://github.com/jasullivan5/argentum-engine/pull/11) targets pp-stable; [application PR #65](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/65) targets main. Both remain open for review. The engine source and tested application revisions above are the compatibility pair; delivery-only documentation/evidence commits do not refresh qualification. Neither PR is automatically merged.
