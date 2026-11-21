@@ -22,10 +22,11 @@ class CollectionProvenanceTest : FunSpec({
     fun use(variable: String="moved", index: Int=0)=Effects.Move(EffectTarget.PipelineTarget(variable,index),Zone.HAND)
     test("frozen four-card source cohort is bound to the actual native definitions") {
         val root=Path.of(System.getProperty("assistant.projectRoot"))
+        val engine=System.getenv("ARGENTUM_ENGINE_DIR")?.let(Path::of) ?: root.parent.resolve("argentum-engine")
         val sources=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/regression/collection-movement-sources.json"))).jsonObject
         sources.getValue("engineRevision").jsonPrimitive.content.length shouldBe 40
         for(c in sources.getValue("cases").jsonArray.map { it.jsonObject }) {
-            val source=Files.readString(root.parent.resolve("argentum-engine").resolve(c.getValue("nativePath").jsonPrimitive.content)).replace("\r\n","\n").toByteArray()
+            val source=Files.readString(engine.resolve(c.getValue("nativePath").jsonPrimitive.content)).replace("\r\n","\n").toByteArray()
             MessageDigest.getInstance("SHA-256").digest(source).joinToString("") { "%02x".format(it) } shouldBe c.getValue("nativeLfSha256").jsonPrimitive.content
         }
     }
