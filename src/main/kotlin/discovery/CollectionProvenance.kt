@@ -57,7 +57,7 @@ fun UnionTarget.observeSelection(state: GameState, selected: List<ObjectRef>): U
         val current=state.isCurrentObject(ref)
         val key=state.logicalZone(ref.entityId).takeIf { current }
         val entity=state.getEntity(ref.entityId).takeIf { current }
-        UnionSelectedObject(ref,current,key?.zoneType,key?.playerId,
+        UnionSelectedObject(ref,current,key?.zoneType,key?.ownerId,
             entity?.get<OwnerComponent>()?.playerId ?: entity?.get<CardComponent>()?.ownerId,
             if(key?.zoneType==Zone.BATTLEFIELD) state.projectedState.getController(ref.entityId) else null,
             clauses.indices.filter { clauses[it].zone==key?.zoneType })
