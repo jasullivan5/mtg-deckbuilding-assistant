@@ -345,5 +345,18 @@
       "scripts/explorer.ps1 -Port 8811 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz"
     ]
   },
-  "runtimeSourcesUnchangedSinceTestedApplication": true
+  "runtimeSourcesUnchangedSinceTestedApplication": true,
+  "deliveryWhitespaceCleanup": {
+    "docs/evidence/LegacyExileInventory.java": {
+      "testedLfSha256": "f87f1588b72b7f9861a6a78c41b97b3b5b9c3bebd8c130039382198605652a0c",
+      "deliveryLfSha256": "947309d23c4157f73771578e146372006748ec1230d862f810938160a9cd2413",
+      "change": "Trailing empty line removed; non-whitespace source identical"
+    },
+    "src/test/kotlin/LegacyExileTest.kt": {
+      "testedLfSha256": "3d92eaee625d3ceb9ee57d579b3fcc47a921f9a6fdb5ec1d9a8716a339ee2dfe",
+      "deliveryLfSha256": "bd1300d84b76ca94500170f59b6e33c5e2909a94c8618072506ad2be8a400dee",
+      "change": "Trailing empty line removed; non-whitespace source identical"
+    }
+  },
+  "applicationTestAssertionsUnchangedSinceTestedRevision": true
 }

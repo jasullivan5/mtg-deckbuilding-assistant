@@ -53,7 +53,7 @@ Werefox's native `COMMON` rarity disagrees with the frozen printing's `RARE` met
 
 ## Verification and delivery
 
-The tested application is `5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a`, against clean engine `98492f6691401c14e1444c5a6ecb4fa3d305c730`. Later delivery commits only retain evidence and documentation; runtime and test sources are unchanged. Java/javac are Temurin 25.0.4.1. [Verification receipt](evidence/legacy-exile-verification.json) retains exact module counts, commands, hashes, retries, skips and unexecuted checks. [Current execution](evidence/legacy-exile-current-execution.json) retains all 51 passing cohort scenarios, source/test bindings, 17 native checkpoints and two application observations of the native pile. The additional Ossification and generic source/zone controls are included in the focused and full gates.
+The tested application is `5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a`, against clean engine `98492f6691401c14e1444c5a6ecb4fa3d305c730`. Later delivery commits retain evidence/documentation and trim trailing empty lines in the diagnostic driver and application linkage test. Runtime sources and test assertions are unchanged; the receipt records both LF hashes for the whitespace cleanup. Java/javac are Temurin 25.0.4.1. [Verification receipt](evidence/legacy-exile-verification.json) retains exact module counts, commands, hashes, retries, skips and unexecuted checks. [Current execution](evidence/legacy-exile-current-execution.json) retains all 51 passing cohort scenarios, source/test bindings, 17 native checkpoints and two application observations of the native pile. The additional Ossification and generic source/zone controls are included in the focused and full gates.
 
 | Check | Result |
 | --- | --- |

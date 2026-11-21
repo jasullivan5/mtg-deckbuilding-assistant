@@ -68,4 +68,3 @@ class LegacyExileTest : FunSpec({
         extract("Mirror Golem").linkedMovements.isEmpty() shouldBe true
     }
 })
-

@@ -28,5 +28,3 @@ public class LegacyExileInventory {
         for(var card:EligibilityKt.physicalCards(c.getCards()))emit(card,card,"front");
     }
 }
-
-
