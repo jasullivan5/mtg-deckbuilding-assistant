@@ -47,7 +47,7 @@ def census(native_path, evidence_path):
                 if len(zones(node['filter'])) > 1: categories.append('unionZoneTargets')
             if kind == 'MoveCollection' and node.get('storeMovedAs'): categories.append('movedResultProducers')
             if kind == 'FromVariable' and path.endswith('.source'): categories.append('variableConsumers')
-            if kind == 'Collection' and path.endswith('.space'): categories.append('iterationConsumers')
+            if kind == 'IterationSpace.Collection' and path.endswith('.space'): categories.append('iterationConsumers')
             for category in categories:
                 declarations[category].append((card, face, path))
                 if card in frozen:
@@ -67,6 +67,7 @@ def census(native_path, evidence_path):
                     moved_continuations.append((action['card'], action['face'], action['id'], record))
     def units(rows):
         return dict(physicalCards=len({r[0] for r in rows}), faceContainers=len({r[:2] for r in rows}), declarations=len(rows))
+    cross_zone = [r for r in interpreted['unionTargets'] if len({c['zone'] for c in r[3]['clauses']}) > 1]
     return dict(engineRevision=cohort['engineRevision'],
                 inputs={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (native_path, evidence_path)},
                 units='Distinct physical roots and script face containers; declarations and action-local relationships are separate, overlapping units. No source fidelity inferred.',
@@ -78,6 +79,7 @@ def census(native_path, evidence_path):
                     for key, rows in interpreted.items()},
                 supportedMovedResultContinuations=dict(units(moved_continuations),actions=len({r[2] for r in moved_continuations}),
                     consumerKinds=dict(Counter(r[3]['consumer'] for r in moved_continuations))),
+                interpretedUnionZones=dict(units(cross_zone),support=dict(Counter(r[3]['support'] for r in cross_zone))),
                 unknownReasons=dict(unknown), cohortDeclarations=cohort_declarations)
 
 
