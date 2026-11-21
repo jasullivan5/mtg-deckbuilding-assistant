@@ -1,0 +1,349 @@
+{
+  "baselineApplication": "90a6e31fe5a4f1613bdadaed8b8c47c3687ed810",
+  "baselineEngine": "23b91dfe270620a58dca1530dd5341951829b1c8",
+  "testedApplication": "5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a",
+  "testedEngine": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+  "sourceFreezeCommit": "915278bad9097186bc12b1ecdb6bb482c39b8013",
+  "nativeProbeCommit": "45c511279fcafefd9b2bbc148a5776cc6598a967",
+  "sourceRequirementsLfSha256": "226312107e92c8dc90f791bb739bd044f0d5624a200c71a871b931d880c2d990",
+  "originalFailureReceiptSha256": "4c956b0de902b245db0cdaabfa6b1a7901e8d25c1669afe1e52c0cf71f3d3cb4",
+  "currentExecutionReceiptSha256": "195275c9ba4edc870c429a4ed7a8391f1dd1dcd1c4e3a3b5e9c970f7db79dadf",
+  "toolchain": {
+    "java": "Temurin 25.0.4.1",
+    "nativeGradle": "9.8.2",
+    "applicationGradle": "9.6.1",
+    "platform": "Windows; PowerShell and Git Bash"
+  },
+  "nativeFull": {
+    "mtg-sdk": {
+      "tests": 714,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 713,
+      "skippedCases": [
+        "com.wingedsheep.sdk.surface.SdkTailReport / write the SDK tail report"
+      ]
+    },
+    "rules-engine": {
+      "tests": 9479,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 9479,
+      "skippedCases": []
+    },
+    "mtg-sets/1993-1999/tests": {
+      "tests": 1768,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1768,
+      "skippedCases": []
+    },
+    "mtg-sets/2000-2002/tests": {
+      "tests": 659,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 659,
+      "skippedCases": []
+    },
+    "mtg-sets/2003-2007/tests": {
+      "tests": 2151,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 2151,
+      "skippedCases": []
+    },
+    "mtg-sets/2008-2016/tests": {
+      "tests": 2501,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 2501,
+      "skippedCases": []
+    },
+    "mtg-sets/2017-2022/tests": {
+      "tests": 6396,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 6396,
+      "skippedCases": []
+    },
+    "mtg-sets/2023/tests": {
+      "tests": 2783,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 2783,
+      "skippedCases": []
+    },
+    "mtg-sets/2024/tests": {
+      "tests": 3475,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 3475,
+      "skippedCases": []
+    },
+    "mtg-sets/2025/tests": {
+      "tests": 1737,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1737,
+      "skippedCases": []
+    },
+    "mtg-sets/2026/tests": {
+      "tests": 2036,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 2036,
+      "skippedCases": []
+    },
+    "mtg-sets": {
+      "tests": 493,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 493,
+      "skippedCases": []
+    }
+  },
+  "nativeMandatoryPassed": 34191,
+  "aiDiagnostic": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 1,
+    "skippedCases": []
+  },
+  "focusedNative": {
+    "revision": "8a6d93d6e192f57141fe6e8827b0a648fa3257b6",
+    "scope": "Focused gates; unchanged control XML can remain up-to-date from the preceding 0e2b6a92 run. Final native full verification will execute the complete final candidate.",
+    "modules": {
+      "rules-engine": {
+        "tests": 43,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "mtg-sets/2003-2007/tests": {
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "mtg-sets/2008-2016/tests": {
+        "tests": 23,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "mtg-sets/2017-2022/tests": {
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "mtg-sets/2023/tests": {
+        "tests": 21,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "total": 105
+  },
+  "applicationFull": {
+    "tests": 816,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 816,
+    "skippedCases": []
+  },
+  "nativeGenericComponentsChanged": [],
+  "newSdkTypes": [],
+  "correctedDefinitions": [
+    "Fiend Hunter",
+    "Savior of Ollenbock",
+    "Werefox Bodyguard"
+  ],
+  "snapshotFiles": [
+    "mtg-sets/src/test/resources/snapshots/cards/ISD.json",
+    "mtg-sets/src/test/resources/snapshots/cards/VOW.json",
+    "mtg-sets/src/test/resources/snapshots/cards/WOE.json"
+  ],
+  "baselineInventory": {
+    "nativePhysicalCards": 21689,
+    "scriptAuthoringContainers": 22477,
+    "affectedPhysicalCards": 75,
+    "affectedFaceContainers": 75,
+    "abilityDeclarations": 78,
+    "effectInstances": 79,
+    "relatedEffectInstances": {
+      "MoveToZone": 47,
+      "MoveUntilSourceLeaves": 26
+    },
+    "sourceReviewedLegacyPhysicalCards": 3,
+    "unreviewedLegacyPhysicalCards": 72
+  },
+  "candidateInventory": {
+    "nativePhysicalCards": 21689,
+    "scriptAuthoringContainers": 22477,
+    "affectedPhysicalCards": 72,
+    "affectedFaceContainers": 72,
+    "abilityDeclarations": 75,
+    "effectInstances": 76,
+    "relatedEffectInstances": {
+      "MoveToZone": 49,
+      "MoveUntilSourceLeaves": 27
+    },
+    "sourceReviewedLegacyPhysicalCards": 0,
+    "unreviewedLegacyPhysicalCards": 72
+  },
+  "rawBaselineInventorySha256": "c30ef1b75e60162f01c470223b673202466aa249a8d104916b092de5bc43a40a",
+  "rawCandidateInventorySha256": "26298627258a466e19957be2be19f79646b144a1771304290dd227b461e08ae5",
+  "comparison": {
+    "pairs": 18,
+    "receiptSha256": "844da61cbfb6f6f685b68be1e66e9e30a7e2f4ada3e5b9316c7db2da58b872c6",
+    "checkerLfSha256": "26806ed87263e41db1dd26c1e8df98c7d3d15766c69fa1394d4ffb9451ef50b7",
+    "baseCheckerLfSha256": "177ec9148de39f7edb956ee30897a54b68edd01cbe8707ae53854107f7907333",
+    "allAdmissionsUnchanged": true,
+    "eligibilityAndHistoricalAssuranceUnchanged": true,
+    "unrelatedMechanicalRecordsUnchanged": true
+  },
+  "catalog": {
+    "mode": "current",
+    "passed": true,
+    "currentChecksPassed": true,
+    "historicalFingerprintsMatch": false,
+    "actualEngineCommit": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    }
+  },
+  "workflowChecks": {
+    "bootstrap": 17,
+    "oracleSnapshot": 3,
+    "catalogComparator": 5
+  },
+  "frontend": {
+    "build": "PASS",
+    "interfaceChecks": 8,
+    "liveChecks": 18,
+    "browser": "msedge",
+    "targetedCardInspection": {
+      "browser": "msedge",
+      "rows": [
+        {
+          "card": "Fiend Hunter",
+          "kind": "DEFERRED_SOURCE_LINKED",
+          "checkpointEvidence": "may decline exile at resolution",
+          "screenshot": "generated/legacy-exile/ui-fiend-hunter.png"
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "kind": "UNRESOLVED_POSSIBLE",
+          "checkpointEvidence": "TrainedEvent",
+          "screenshot": "generated/legacy-exile/ui-savior-of-ollenbock.png"
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "kind": "UNRESOLVED_POSSIBLE",
+          "checkpointEvidence": "ZoneReturnService",
+          "screenshot": "generated/legacy-exile/ui-werefox-bodyguard.png"
+        }
+      ],
+      "pageErrors": []
+    }
+  },
+  "runtime": {
+    "health": {
+      "status": "ready",
+      "argentumCommit": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+      "engineMode": "candidate",
+      "applicationRevision": "5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a"
+    },
+    "maxHeapBytes": 1073741824,
+    "coldAndRetainedProgress": "PASS",
+    "eightCurrentEvidenceControls": "PASS",
+    "noExileReturnAdmittedAsDirectReanimation": true,
+    "temporaryOwnedServerStopped": true
+  },
+  "historicalReports": {
+    "supportedCurrentSdkReportDecoded": true,
+    "offlineSelfDiffChanges": 0,
+    "currentCatalogPinGuard": "EXPECTED_SNAPSHOT_PIN_MISMATCH",
+    "olderLandTappedForManaSdkIssue": "UNCHANGED_OUT_OF_SCOPE"
+  },
+  "sourceFidelity": "The tested Oracle timing, choice and identity requirements have fresh scoped evidence. LinkedMovement.sourceFidelity stays UNKNOWN and no whole-card qualification is granted.",
+  "remainingConcerns": [
+    "72 physical legacy-helper cards remain source-unreviewed",
+    "Werefox native COMMON rarity disagrees with frozen RARE printing; metadata unchanged",
+    "Training/union target and additional-duration-ability relationships retain application UNKNOWN"
+  ],
+  "workflowRetries": [
+    "Default Bash initially selected WSL; native Git Bash was selected explicitly",
+    "Initial workflow check inherited a non-25 JDK; final JDK25 checks passed",
+    "Assay Windows batch launcher mishandled workspace ampersand; built Java CLI parse/explain passed for all three cards",
+    "One new Savior renewal test seeded no battlefield timestamp; replaced seed with native casting and retained all identity assertions; focused and full reruns passed",
+    "An additional UI inspection command initially was not executed because automatic approval review hit a usage limit; same escalated action approved and passed after Continue"
+  ],
+  "unexecuted": [
+    "Native game-client manual GUI playthrough; native stack/priority/decision behavior was tested through real GameTestDriver actions instead",
+    "Opt-in SDK tail-report writer was skipped by its existing condition"
+  ],
+  "commands": {
+    "native": "just Windows recipe -> scripts/gradle-locked :mtg-sdk:test --rerun :rules-engine:test --rerun :mtg-sets:scenarioTest :mtg-sets:test :ai:test --tests *.AiCardReport -DaiCard=Fiend Hunter|Savior of Ollenbock|Werefox Bodyguard --continue --no-daemon --no-configuration-cache --max-workers=2 -PkotlinCompileParallelism=1",
+    "application": [
+      "scripts/bootstrap.ps1",
+      "dev.ps1 test --rerun",
+      "dev.ps1 installDist",
+      "bash scripts/check-catalog.sh current",
+      "pnpm --dir web build",
+      "pnpm --dir web test:ui",
+      "pnpm --dir web test:live",
+      "scripts/explorer.ps1 -Port 8811 -OracleSnapshot generated/oracle/oracle-cards-20261026210159.jsonl.gz"
+    ]
+  },
+  "runtimeSourcesUnchangedSinceTestedApplication": true
+}

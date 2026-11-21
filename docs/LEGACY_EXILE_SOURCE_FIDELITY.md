@@ -33,7 +33,7 @@ The three card definitions compose existing effects. Fiend Hunter uses a mandato
 
 No SDK types, generic executors, source-pile ledgers or return services are added or changed. In particular, the legacy helper's source-presence guard remains intact for unreviewed uses. The independent form uses `LinkedExileLookup` and the resolving source battlefield timestamp; the duration form uses native `ZoneReturnService` entries with exact source and moved `ObjectRef`s.
 
-Original card identity does not preserve the departed permanent. Exile and return create successive object generations. Tests distinguish old source visits from renewed sources, stale exile objects from current membership, tokens from original nontoken cards, and owner from prior controller. Attachment, counter, marked-damage and temporary-effect setup is identified as fixture state; native spells perform the observed exile, bounce, flicker and return actions.
+Original card identity does not preserve the departed permanent. Exile and return create successive object generations. Tests distinguish old source visits from renewed sources, stale exile objects from current membership, tokens from original nontoken cards, and owner from prior controller. Attachment, counter, marked-damage and temporary-effect setup is identified as fixture state; native spells and triggered/activated abilities perform the observed exile, bounce, flicker and return actions.
 
 ## Shared application interpretation
 
@@ -53,4 +53,47 @@ Werefox's native `COMMON` rarity disagrees with the frozen printing's `RARE` met
 
 ## Verification and delivery
 
-Current corrected verification is in progress. Final revision-bound counts, comparisons, runtime checks and coordinated PR links will be retained here before delivery.
+The tested application is `5a01cfbc633eb792213c6a8ad99d9ef8ebcec48a`, against clean engine `98492f6691401c14e1444c5a6ecb4fa3d305c730`. Later delivery commits only retain evidence and documentation; runtime and test sources are unchanged. Java/javac are Temurin 25.0.4.1. [Verification receipt](evidence/legacy-exile-verification.json) retains exact module counts, commands, hashes, retries, skips and unexecuted checks. [Current execution](evidence/legacy-exile-current-execution.json) retains all 51 passing cohort scenarios, source/test bindings, 17 native checkpoints and two application observations of the native pile. The additional Ossification and generic source/zone controls are included in the focused and full gates.
+
+| Check | Result |
+| --- | --- |
+| Focused native / application linkage gates | 105 / 8 passed |
+| Full SDK | 713 passed; one existing opt-in tail-report writer skipped |
+| Full rules engine | 9,479 passed |
+| All nine era scenario suites | 23,506 passed; no failures, errors or skips |
+| Strict native catalog, snapshots and lint | 493 passed; snapshot update mode disabled |
+| Mandatory native total | 34,191 passed; no failures or errors |
+| AI diagnostic | One report test passed; Fiend 2/2, Savior 3/3 and Werefox 2/2 abilities read fully |
+| Full application Kotlin suite | 816 passed; no failures, errors or skips |
+| Bootstrap / Oracle snapshot / catalog comparator safeguards | 17 / 3 / 5 passed |
+| Installed CLI and current catalog gate | Passed; zero confirmed benchmark mismatches, empty self-diff |
+| Frontend / existing Edge interface / live Edge suite | Build passed / 8 passed / 18 passed |
+| Normal Explorer | Exact pair confirmed by health; actual maximum heap 1,073,741,824 bytes |
+| Live evidence | Cold/retained Progress, eight evidence controls and three rendered card inspections passed |
+| Supported historical report | Typed decode and empty offline self-diff passed; current-catalog reprocessing correctly rejected by snapshot pin |
+
+The [current inventory](evidence/legacy-exile-candidate-inventory.json) contains 76 legacy effects in 75 ability declarations, on 72 physical cards/faces. The native physical population remains 21,689. Source-linked ordinary movement declarations increase from 47 to 49 and source-duration declarations from 26 to 27. Exactly the three corrected cards leave the old-helper inventory; the remaining 72 cards are still unreviewed. Six source investigations, three corrected definitions, four demonstrated mechanical discrepancies and six failed baseline assertions are different units, not a catalog-wide fidelity score.
+
+## Controlled Discover comparison
+
+[All 18 comparisons](evidence/legacy-exile-comparison.json) use the same eligible physical populations and exact six objectives. Every MATCH pathway remains byte-equivalent after declared current-engine provenance normalization. Eligibility, historical assurance, source-bound self-return relationships, chosen-target/attachment/cost evidence and unrelated mechanical records remain unchanged.
+
+| Commander | Eligible mechanical input cards | Objective pairs |
+| --- | ---: | ---: |
+| Judith, the Scourge Diva | 7,728 | 6 |
+| Krenko, Mob Boss | 4,308 | 6 |
+| Kenrith, the Returned King | 20,143 | 6 |
+
+Only Kenrith's six reports include the three white corrected cards. Fiend gains the inner conditional ordinary movement fact; Savior gains two source-zone alternatives; Werefox loses the separately declared return fact/action and retains implicit duration evidence. This gives a net two additional movement facts. Werefox's generated native activated-ability ID changes from `:3` to `:2` after its spurious trigger is removed; the application action path remains `script.activatedAbilities[0]`.
+
+For Kenrith reanimation specifically, movement facts change 7,368 → 7,370, rejected movement pathways 6,609 → 6,612, and UNKNOWN pathways 527 → 526. No MATCH is added or removed. The removed Werefox return declaration and newly explicit exile movements account for these changes; exile → battlefield is never admitted as direct graveyard → battlefield. The detailed receipt attributes every changed action, fact, unsupported structure and relationship to the corrected cohort.
+
+The original whole-report benchmark fingerprints remain frozen and unequal, as before; the current catalog gate passes independently. The older archived `LandTappedForMana` SDK incompatibility remains outside this increment. Source requirements, past failures, concern history and qualification decisions are unchanged.
+
+The first focused correction run found a test-setup NPE: a seeded Savior had no native battlefield-visit timestamp. The renewal control now casts the Savior through the engine; the identity assertions were preserved, and focused/full reruns pass. Workflow retries for native Git Bash/JDK selection and the Windows Assay launcher are recorded separately from rules discrepancies. Assay reads Werefox whole but declines portions of the independent-trigger cards; it remains a diagnostic, not a source or execution oracle. A paused additional UI inspection was initially not executed when automatic approval review hit a usage limit; the same action was later approved and passed. The native game-client GUI was not manually played; stack/priority/decision behavior was verified through real native test-driver actions, with application UI verification reported separately.
+
+## Maintenance and next opportunity
+
+The correction is suitable for an eventual upstream contribution: three canonical definitions and their regressions compose existing SDK/source-visit/duration facilities. No generic handler, SDK compatibility layer or extra ledger is maintained. No upstream revisions were integrated or upstream PR submitted, and neither review PR is automatically merged.
+
+The most consequential remaining foundation work is another bounded, source-led audit of helper users with separate departure triggers, rather than treating the remaining 72 as verified. For a subsequent Card Integration increment, bounded collection-linked movement and union-target provenance now have a useful native anchor in Savior's tested graveyard/training cases. Granted-ability attribution remains a separate candidate; this audit supplies stronger immediate evidence for the collection/union direction. No follow-on assignment is started.

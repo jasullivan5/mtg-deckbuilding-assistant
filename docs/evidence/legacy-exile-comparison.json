@@ -1,0 +1,1514 @@
+{
+  "judith-create-creature-tokens": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 87,
+      "NO_MATCH": 275,
+      "MATCH": 478
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 87,
+      "NO_MATCH": 275,
+      "MATCH": 478
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "023e878f2ff4b502c70027f2a9d063809f13c265f28be0ab9db5d9c54682363c",
+    "candidateSha256": "0925e27d867a550d944c219da52bd06fed225140429f85fc474d00fa4263a3de"
+  },
+  "judith-creature-died-this-turn": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 11,
+      "MATCH": 11
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 11,
+      "MATCH": 11
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "6989a7c622c0435d6fd639cefa37ef050cc2572c9a79e56b188e51f24d072831",
+    "candidateSha256": "9b50f10bd4c34df2fc9463c6ba826ff973f50950f35ce7040d7c7928a4d36fa8"
+  },
+  "judith-own-nontoken-creature-deaths": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "NO_MATCH": 2968,
+      "MATCH": 753,
+      "UNKNOWN": 762
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 2968,
+      "MATCH": 753,
+      "UNKNOWN": 762
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "90cc1c3c181a5b4607c074ae7da4c6ec1f07dc4de0bf13595fadeb935e673fb5",
+    "candidateSha256": "5aeca6e56a38f5a0a55d1ffcc7fcc07931915c6bd074f0a6359aaef564c36bed"
+  },
+  "judith-place-plus-one-counters": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 192,
+      "NO_MATCH": 314,
+      "MATCH": 222
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 192,
+      "NO_MATCH": 314,
+      "MATCH": 222
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "9f3820ae7f6f4754b32bc2356197b7e457f282d20d9da83d8b8b3ff268ae60c2",
+    "candidateSha256": "9773ad6c63c0d9834149d5dfbbb20e3ef5e12c39df9168bdb7cda7b8e56f4e78"
+  },
+  "judith-reanimate-own-creatures": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "NO_MATCH": 2403,
+      "MATCH": 138,
+      "UNKNOWN": 134
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 2403,
+      "MATCH": 138,
+      "UNKNOWN": 134
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "73dc4d3f0e2b26e654cdb9650398e6b862881b2b4e82f45645d48ebe7e4928ba",
+    "candidateSha256": "dc0a7c7f8e3e8dcc79a4a5c4557ea7ed9e3a33d7444c5a503c95f1395a6a3549"
+  },
+  "judith-stock-own-graveyard": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 7728,
+    "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+    "verdictsBefore": {
+      "UNKNOWN": 770,
+      "MATCH": 639,
+      "NO_MATCH": 402
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 770,
+      "MATCH": 639,
+      "NO_MATCH": 402
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 6
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "d03f7c0219c2bcaa2b21de21decbe9bc518e5edd9935d266872b1fbfb2feed77",
+    "candidateSha256": "bf4ebe8f7469c36cb7c9e180cb0cfd636e0042c23d8d9b4dcf47c772e4d86d57"
+  },
+  "kenrith-create-creature-tokens": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "MATCH": 1636,
+      "UNKNOWN": 319,
+      "NO_MATCH": 565
+    },
+    "verdictsAfter": {
+      "MATCH": 1636,
+      "UNKNOWN": 319,
+      "NO_MATCH": 565
+    },
+    "attributedChanges": {
+      "counts": {
+        "mechanical_facts": [
+          16055,
+          16057
+        ],
+        "unsupported_structure_records": [
+          32248,
+          32244
+        ]
+      },
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 7,
+          "afterRows": 6
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 6,
+          "afterRows": 2
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "64522f5416aed948517d142974cf18518821b5d29e65a4cb286d8305a405b0b1",
+    "candidateSha256": "c40bf87c94ff954864561747544bd53d676468102bbcbd801dc56261c3d1253f"
+  },
+  "kenrith-creature-died-this-turn": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "UNKNOWN": 20,
+      "MATCH": 22
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 20,
+      "MATCH": 22
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          32248,
+          32244
+        ]
+      },
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 7,
+          "afterRows": 6
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 6,
+          "afterRows": 2
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "92c61767985430d031904302b761cee46bc4d3606e397e4642fd7ec34726bc00",
+    "candidateSha256": "8376fb9d6201566ba67c978ecbc686892935622327b2561866e27523166945b3"
+  },
+  "kenrith-own-nontoken-creature-deaths": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 4781,
+      "UNKNOWN": 1660,
+      "MATCH": 1291
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 4781,
+      "UNKNOWN": 1660,
+      "MATCH": 1291
+    },
+    "attributedChanges": {
+      "counts": {
+        "unsupported_structure_records": [
+          32248,
+          32244
+        ]
+      },
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 7,
+          "afterRows": 6
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 6,
+          "afterRows": 2
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "0fdb12f2058c2af745967dfa477145e3d912adddbf34c84f8a874a363bd36f23",
+    "candidateSha256": "f0b16d41edda480d3260e7234616297d4838887916b672a4fd601629b74677cd"
+  },
+  "kenrith-place-plus-one-counters": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "UNKNOWN": 887,
+      "NO_MATCH": 801,
+      "MATCH": 861
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 887,
+      "NO_MATCH": 801,
+      "MATCH": 861
+    },
+    "attributedChanges": {
+      "counts": {},
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 7,
+          "afterRows": 6
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 6,
+          "afterRows": 2
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "370108391b332fff0292e177dec690217bb4e3676d4a0e2e75673979fcba1f5b",
+    "candidateSha256": "ea40c06d71d7933c5cd594419520ad972b4a2df9f09a20e6f842777edabe401c"
+  },
+  "kenrith-reanimate-own-creatures": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 6609,
+      "UNKNOWN": 527,
+      "MATCH": 232
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 6612,
+      "UNKNOWN": 526,
+      "MATCH": 232
+    },
+    "attributedChanges": {
+      "counts": {
+        "movement_facts": [
+          7368,
+          7370
+        ],
+        "unsupported_structure_records": [
+          30698,
+          30694
+        ],
+        "mechanical_facts": [
+          16055,
+          16057
+        ],
+        "unknown_query_pathways": [
+          527,
+          526
+        ],
+        "rejected_movement_pathways": [
+          6609,
+          6612
+        ]
+      },
+      "results": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 1,
+          "afterRows": 0
+        }
+      ],
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 6,
+          "afterRows": 6
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 8,
+          "afterRows": 8
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 7,
+          "afterRows": 2
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "cadfc08a0fe5a2490ec1c555a993891d212d334909ec407b2b963ec1a2859b39",
+    "candidateSha256": "a55dfc8b0696476eaa28b01b2b66343fe6a9a411ef62a7e4e3139b7f14f2d20e"
+  },
+  "kenrith-stock-own-graveyard": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 20143,
+    "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+    "verdictsBefore": {
+      "NO_MATCH": 675,
+      "UNKNOWN": 1308,
+      "MATCH": 1351
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 675,
+      "UNKNOWN": 1308,
+      "MATCH": 1351
+    },
+    "attributedChanges": {
+      "counts": {
+        "mechanical_facts": [
+          16335,
+          16337
+        ],
+        "unsupported_structure_records": [
+          31498,
+          31494
+        ]
+      },
+      "actions": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 3
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 4,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 3
+        }
+      ],
+      "unsupported": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 3,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 4,
+          "afterRows": 2
+        }
+      ],
+      "structuralSupport": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 5,
+          "afterRows": 4
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 7,
+          "afterRows": 6
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 7,
+          "afterRows": 3
+        }
+      ],
+      "facts": [
+        {
+          "card": "Fiend Hunter",
+          "beforeRows": 1,
+          "afterRows": 2
+        },
+        {
+          "card": "Savior of Ollenbock",
+          "beforeRows": 1,
+          "afterRows": 3
+        },
+        {
+          "card": "Werefox Bodyguard",
+          "beforeRows": 2,
+          "afterRows": 1
+        }
+      ]
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 110,
+      "IMMEDIATE_ORDERED": 19,
+      "DEFERRED_SOURCE_LINKED": 29,
+      "DURATION_BOUND": 3
+    },
+    "relationshipChanges": [
+      {
+        "card": "Fiend Hunter",
+        "before": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ],
+        "after": [
+          {
+            "id": "Fiend Hunter|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "DEFERRED_SOURCE_LINKED",
+            "support": "MATCH",
+            "departureType": "MoveToZone",
+            "continuationAction": "Fiend Hunter|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": []
+          }
+        ]
+      },
+      {
+        "card": "Savior of Ollenbock",
+        "before": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Savior of Ollenbock|front|script.triggeredAbilities[1]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveToZone",
+            "continuationAction": "Savior of Ollenbock|front|script.triggeredAbilities[2]",
+            "durationReturn": null,
+            "unresolved": [
+              "Exile is not a root self-entry trigger",
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset",
+              "Exiled target does not have one resolved native target requirement"
+            ]
+          }
+        ]
+      },
+      {
+        "card": "Werefox Bodyguard",
+        "before": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DEFERRED_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "ExileUntilLeaves",
+            "continuationAction": "Werefox Bodyguard|front|script.triggeredAbilities[1]",
+            "durationReturn": null,
+            "unresolved": [
+              "Additional source declarations exceed the isolated two-trigger linked-pile subset"
+            ]
+          }
+        ],
+        "after": [
+          {
+            "id": "Werefox Bodyguard|front|script.triggeredAbilities[0]|DURATION_LINK",
+            "kind": "UNRESOLVED_POSSIBLE",
+            "support": "UNKNOWN",
+            "departureType": "MoveUntilSourceLeaves",
+            "continuationAction": null,
+            "durationReturn": {
+              "anchor": {
+                "type": "Self"
+              },
+              "returnTo": "Battlefield",
+              "controller": "OWNER",
+              "mechanism": "ZoneReturnService",
+              "checkpoint": "SOURCE_OBJECT_DEPARTURE_BEFORE_NEXT_INSTRUCTION_OR_PRIORITY"
+            },
+            "unresolved": [
+              "Additional source declarations exceed the isolated root-duration subset"
+            ]
+          }
+        ]
+      }
+    ],
+    "baselineSha256": "1db6ebefefe394ebb0be916361ae0f02dc514f71c6bec22929fc24e8f7e5b08b",
+    "candidateSha256": "1f30bb36f8b547e36d5ee5bbbf9f1502cd3826b53ef7e2c0ceebc60b8c01c888"
+  },
+  "krenko-create-creature-tokens": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "MATCH": 253,
+      "NO_MATCH": 160,
+      "UNKNOWN": 50
+    },
+    "verdictsAfter": {
+      "MATCH": 253,
+      "NO_MATCH": 160,
+      "UNKNOWN": 50
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "cdee3ae3b3a536e86e10012279b5ddd7ddb1eecf4f36a8669a7cb6258ca3cdf1",
+    "candidateSha256": "3d464ff19aae2ed214560f03c632654cc2b2046bd0537cc130a7834758ec7a32"
+  },
+  "krenko-creature-died-this-turn": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "UNKNOWN": 1,
+      "MATCH": 1
+    },
+    "verdictsAfter": {
+      "UNKNOWN": 1,
+      "MATCH": 1
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "d632e9b22374a38f2351b070ab27277531cc1dc04a60ab5a76dc23f1e03c62ed",
+    "candidateSha256": "5625bff1c95f31db83bd186015b1029ee105f6b459a77cd70c6f1f298ef73547"
+  },
+  "krenko-own-nontoken-creature-deaths": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 1744,
+      "MATCH": 268,
+      "UNKNOWN": 313
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 1744,
+      "MATCH": 268,
+      "UNKNOWN": 313
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "55ada0630a4a7f849b543dd70cd65491c9d17c5e048a6a3115904a81e113969d",
+    "candidateSha256": "82e7c89a09a60ae4679aa5b533b4ffbd4fd390d301431a047adc1bfd553f1b89"
+  },
+  "krenko-place-plus-one-counters": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 172,
+      "MATCH": 101,
+      "UNKNOWN": 87
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 172,
+      "MATCH": 101,
+      "UNKNOWN": 87
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "fe862bcbda6910440b2b505b26e28cb548a65d23e3b27a03cae4c26b69856f2a",
+    "candidateSha256": "fc6d943c8a3ce37054e3cab441ed3fc2363d1397cff081cb4f9644f6eeccd27a"
+  },
+  "krenko-reanimate-own-creatures": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "NO_MATCH": 994,
+      "MATCH": 21,
+      "UNKNOWN": 46
+    },
+    "verdictsAfter": {
+      "NO_MATCH": 994,
+      "MATCH": 21,
+      "UNKNOWN": 46
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "bc5b57f5b858cf15ada43622bd3511162a7b88c2fbe8c78f8194e8b6130e768f",
+    "candidateSha256": "f8ce1d1634f11522fb5dcd1ce83545831306ab05d1b8c3721fc3d3dd18f9c669"
+  },
+  "krenko-stock-own-graveyard": {
+    "engineBefore": "23b91dfe270620a58dca1530dd5341951829b1c8",
+    "engineAfter": "98492f6691401c14e1444c5a6ecb4fa3d305c730",
+    "population": 4308,
+    "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+    "verdictsBefore": {
+      "MATCH": 284,
+      "NO_MATCH": 199,
+      "UNKNOWN": 307
+    },
+    "verdictsAfter": {
+      "MATCH": 284,
+      "NO_MATCH": 199,
+      "UNKNOWN": 307
+    },
+    "attributedChanges": {
+      "counts": {}
+    },
+    "relationshipKinds": {
+      "UNRESOLVED_POSSIBLE": 3
+    },
+    "relationshipChanges": [],
+    "baselineSha256": "6b976736c7a49aef09f3ac013f3542193d7629eca4c7dff66c26ede76747f58a",
+    "candidateSha256": "8da2fb2cf6d4c1612027df9f0a70193b8b15d35775f5e4790b083f71535cb4e9"
+  }
+}
