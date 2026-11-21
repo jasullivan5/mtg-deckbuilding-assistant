@@ -100,4 +100,4 @@ The most consequential remaining foundation work is another bounded, source-led 
 
 ## Coordinated review
 
-[Engine PR #11](https://github.com/jasullivan5/argentum-engine/pull/11) targets pp-stable; [application PR #65](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/65) targets main. Both remain open for review. The engine source and tested application revisions above are the compatibility pair; delivery-only documentation/evidence commits do not refresh qualification. Neither PR is automatically merged.
+[Engine PR #11](https://github.com/jasullivan5/argentum-engine/pull/11) targets `app-stable`; [application PR #65](https://github.com/jasullivan5/mtg-deckbuilding-assistant/pull/65) targets `main`. Both remain open for review. The engine source and tested application revisions above are the compatibility pair; delivery-only documentation/evidence commits do not refresh qualification. Neither PR is automatically merged.
