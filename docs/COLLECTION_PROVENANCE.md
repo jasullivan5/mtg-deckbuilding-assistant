@@ -35,12 +35,53 @@ The first focused attempt encountered stale compiled types while the observation
 
 ## Verification and retained measurements
 
-Final revision-bound checks, census and Discover comparisons are retained with the delivery receipt. Bulk JSONL inventories, all 36 Discover reports, logs and installed libraries remain under ignored `generated/collection-movements/`.
+Verified implementation: `45d5275208d40a5cba8ec17e149a981644472ad0`, with maintained engine `0878d800edbec56f0c82dac080ae4fec32816b5f` and implementation fingerprint `0b0439c946d9d3f1a60581a8250a298f37bea8ee465ca8e5c64c12b080045b9f`. The delivery commit adds documentation and compact evidence after this tested implementation. [Verification receipt](evidence/collection-provenance-verification.json) · [native observations](evidence/collection-provenance-native-observations.json) · [census](evidence/collection-provenance-inventory.json) · [18 comparisons](evidence/collection-provenance-discover-comparison.json).
 
-The native-only census uses the existing face-aware `LegacyExileInventory.java` against the exact installed baseline. `CollectionProvenanceInventory.java` streams one production extraction per physical card at 1 GiB. `inventory-collection-provenance.py` distinguishes physical roots, authoring face containers, native declarations, actions and producer-consumer records; matching variable text alone never creates a relationship. `compare-collection-provenance.py` permits only the three additive evidence fields and requires all existing report content to remain equal.
+| Check | Observed result |
+| --- | --- |
+| Complete Kotlin suite, JDK 25.0.4.1 | 842 passed; zero failures, errors or skips; 118 classes |
+| New bounded evidence | 13 structural tests and 13 native scenario tests: 11 real-card scenarios, two isolated executor scenarios |
+| Bootstrap / installed distribution / CLI | Passed; bootstrap guards 17, snapshot helper 3, catalog-comparison guards 5 |
+| Current installed catalog gate | Passed. Frozen historical fingerprint is different; it was preserved rather than refreshed |
+| Supported historical decoding | Three historical-wire tests pass; installed CLI identical-snapshot diff has zero changes; old action fields default new evidence to empty |
+| Frontend / browser | Frontend build and 8 interface checks pass; 18 live Edge checks pass on the pre-optimization implementation, followed by a passing final-revision live smoke check |
+| Normal Explorer | Exact clean application/engine SHAs confirmed by health; `MaxHeapSize=1073741824`; API inspection exposes the new evidence for all four controls |
+| Final controlled Discover | All 18 pairs preserve every pre-existing report field, including eligibility, facts, links, targets, verdicts, prerequisites, unsupported structures and assurance |
+
+The source cohort exercises both starting zones, optional zero targets, illegal targets, owner/controller distinctions, actual result-member attachment and keyword consumers, failed destruction, filtered subsets, empty libraries and separate same-name collection contexts. A creature selected on the battlefield and subsequently destroyed cannot become a new graveyard selection of the same original card. A separate structural control prevents a reflexive selection from inheriting the root union binding even when its target descriptor is reused. Native execution demonstrated these bounded expectations without an engine correction. Delayed sacrifice and other whole-card behavior remain outside this evidence.
+
+The candidate's 18 complete reports are also byte identical to the pre-optimization reports. The complete integrated interpretation stream has the same SHA-256 before and after replacing repeated growing-fact-list searches with the current instruction's fact range: `4c7b3f76b050e5fce18388cef2e7a23be287ec011978518dfc293f8c222b989d`. Timings came from overlapping local checks and are not a controlled speed benchmark. The change avoids an additional growing-list scan; it adds no movement state or catalog interpretation pass.
+
+Judith's effective population remains 7,728, Krenko's 4,308, and Kenrith's 20,143 for each of their six objectives. The only added report fields are `ActionEvidence.unionTargets`, `collectionStages` and `collectionUses`. Reanimation, intrinsic input supply, attachments, chosen targets, counter interpretation and historical qualification are unchanged. No native rules-engine or era-wide suite rerun is claimed because the engine is unchanged; fresh native execution is exercised in the complete application suite.
+
+Bulk JSONL inventories, the baseline/final 36 reports, 18 additional pre-optimization reports, logs and installed libraries remain under ignored `generated/collection-movements/`. Source guards retain both original byte hashes and canonical LF hashes. One installed-build attempt caught an incorrect zone-key field in the new observer; it was corrected before final verification. The earlier observer failure and interim complete-suite passes of 839 and 840 tests are retained as verification history, not substituted for the final pass.
+
+The native-only census uses the existing face-aware `LegacyExileInventory.java` against the exact installed baseline, supplemented with the ten application-native extension declarations. `CollectionProvenanceInventory.java` streams one production extraction per physical card at 1 GiB. `inventory-collection-provenance.py` distinguishes physical roots, authoring face containers, native declarations, actions and producer-consumer records; matching variable text alone never creates a relationship. `compare-collection-provenance.py` permits only the three additive evidence fields and requires all existing report content to remain equal.
+
+The measured integrated population is **21,699 physical cards**, comprising 21,689 engine definitions and ten application extensions, with **22,487 authored face containers**. Containers include aggregate roots and are not a count of printed card faces. These are catalog observations, not source review or qualification counts.
+
+| Native shape | Physical cards | Declarations | Action/ability containers |
+| --- | ---: | ---: | ---: |
+| Explicit union filters | 12 | 12 | 12 |
+| Union filters spanning distinct zones | 8 | 8 | 8 |
+| Gather producers | 3,888 | 4,683 | 4,226 |
+| Collection selections | 2,678 | 3,154 | 2,821 |
+| Collection filters | 300 | 394 | 309 |
+| Collection movements | 3,666 | 5,045 | 3,937 |
+| Named moved-result producers | 183 | 198 | 193 |
+| Indexed pipeline target declarations | 286 | 370 | 298 |
+| Explicit `FromVariable` source readers | 7 | 7 | 7 |
+| Collection iterations | 125 | 132 | 126 |
+| Collection-dependent conditions | 225 | 242 | 236 |
+
+The walker emits 13,140 collection stages and 8,446 consumer records. Of the consumer records, 3,348 have supported conditional bindings and 5,098 remain UNKNOWN. **63 supported consumers refer specifically to native moved-result producers**, across **47 physical cards, 48 face containers and 52 actions**: ten iterations, twenty conditions, eight indexed consumers, twelve filters, ten selections and three further movements. These categories overlap by card and cannot be summed into a card count. They describe producer-consumer bindings, not guaranteed execution or complete consumer semantics.
+
+Ten union records are emitted: eight supported and two UNKNOWN, including same-zone alternatives. Seven records span zones; five are supported and two remain UNKNOWN for multi-target/dynamic restrictions. The remaining cross-zone candidate uses a scaled target wrapper. A modal local union declaration is also outside the root matcher. All exact paths are retained.
+
+Of 198 native moved-result declarations, 190 receive stage records. Eight declarations on seven cards remain untraversed: granted/static ability bodies, replacement-added triggers or replacement effects, an overload variant, and repeat loops. This is an uninterpreted structure, not a missing definition. Principal UNKNOWN reasons include dynamic/unbounded cardinality, uncertain post-movement input membership, unresolved producers, complements, source-linked piles, extra selection restrictions and deferred consumers. Reason counts are nonexclusive record counts; the retained census supplies exact units and paths. No source-fidelity percentage is inferred from these measurements.
 
 ## Remaining research boundaries
 
 Dynamic/unbounded collection algebra, complements, correlated target restrictions, unsupported chooser binding, general deferred consumers and arbitrary pile consumers remain incomplete. Structural potential is distinct from actual native execution and source fidelity. Face-down characteristics remain outside the legacy movement predicate's supported subset even when an explicit producer-consumer binding is understood. Source fidelity remains UNKNOWN beyond the bounded fresh scenarios, and no whole-card qualification is issued.
 
-Granted-ability source attribution remains a strong next research candidate: collection continuations already expose exact native binding points, while attribution of abilities granted to resulting objects requires a separate source/context model. More complex collection continuations should be chosen only from the remaining measured native shapes. No follow-on increment is begun here.
+Granted-ability source attribution is the strongest next Card Integration candidate. Three untraversed moved-result declarations already occur in granted/static or replacement-added ability contexts; understanding the granting source and resulting ability instance would benefit more than this collection subset. More complex collection continuations remain a useful later direction, particularly multi-zone producers and bounded continuations currently blocked by missing provenance. Replacement, copy/meld and redirected-arrival fidelity beyond the fresh controls remain unverified. No follow-on increment is begun here.

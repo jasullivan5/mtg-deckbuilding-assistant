@@ -1,0 +1,650 @@
+{
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "inputs": {
+    "generated\\collection-movements\\integrated-declarations.jsonl": "566ec01ba8a77a7145a7bf87f9181c6bce7e055bc78563798ed3e5d17b8e4b4f",
+    "generated\\collection-movements\\interpretation-final.jsonl": "4c7b3f76b050e5fce18388cef2e7a23be287ec011978518dfc293f8c222b989d"
+  },
+  "units": "Distinct physical roots and script face containers; declarations and action-local relationships are separate, overlapping units. No source fidelity inferred.",
+  "catalog": {
+    "physicalCards": 21699,
+    "faceContainers": 22487,
+    "populations": {
+      "engineDefinitions": 21689,
+      "applicationExtensions": 10
+    }
+  },
+  "native": {
+    "conditions": {
+      "physicalCards": 225,
+      "faceContainers": 225,
+      "declarations": 242,
+      "actionOrAbilityContainers": 236
+    },
+    "filters": {
+      "physicalCards": 300,
+      "faceContainers": 300,
+      "declarations": 394,
+      "actionOrAbilityContainers": 309
+    },
+    "indexedConsumers": {
+      "physicalCards": 286,
+      "faceContainers": 286,
+      "declarations": 370,
+      "actionOrAbilityContainers": 298
+    },
+    "iterationConsumers": {
+      "physicalCards": 125,
+      "faceContainers": 125,
+      "declarations": 132,
+      "actionOrAbilityContainers": 126
+    },
+    "movedResultProducers": {
+      "physicalCards": 183,
+      "faceContainers": 184,
+      "declarations": 198,
+      "actionOrAbilityContainers": 193
+    },
+    "movements": {
+      "physicalCards": 3666,
+      "faceContainers": 3702,
+      "declarations": 5045,
+      "actionOrAbilityContainers": 3937
+    },
+    "producers": {
+      "physicalCards": 3888,
+      "faceContainers": 3926,
+      "declarations": 4683,
+      "actionOrAbilityContainers": 4226
+    },
+    "selections": {
+      "physicalCards": 2678,
+      "faceContainers": 2692,
+      "declarations": 3154,
+      "actionOrAbilityContainers": 2821
+    },
+    "unionTargets": {
+      "physicalCards": 12,
+      "faceContainers": 12,
+      "declarations": 12,
+      "actionOrAbilityContainers": 12
+    },
+    "unionZoneTargets": {
+      "physicalCards": 8,
+      "faceContainers": 8,
+      "declarations": 8,
+      "actionOrAbilityContainers": 8
+    },
+    "variableConsumers": {
+      "physicalCards": 7,
+      "faceContainers": 7,
+      "declarations": 7,
+      "actionOrAbilityContainers": 7
+    }
+  },
+  "interpreted": {
+    "collectionStages": {
+      "physicalCards": 3799,
+      "faceContainers": 3839,
+      "declarations": 13140,
+      "actions": 4113,
+      "support": {
+        "UNKNOWN": 9570,
+        "MATCH": 3570
+      },
+      "kinds": {
+        "GATHERED": 4359,
+        "SELECTED": 2889,
+        "RETAINED_INPUT": 4711,
+        "COMPLEMENT": 609,
+        "NATIVE_MOVED_RESULT": 190,
+        "MATCHING": 375,
+        "ALIAS": 7
+      }
+    },
+    "collectionUses": {
+      "physicalCards": 3826,
+      "faceContainers": 3865,
+      "declarations": 8446,
+      "actions": 4108,
+      "support": {
+        "UNKNOWN": 5098,
+        "MATCH": 3348
+      },
+      "kinds": {
+        "SELECTION": 2889,
+        "MOVEMENT": 4711,
+        "FILTER": 375,
+        "COLLECTION_CONDITION": 182,
+        "ITERATION": 131,
+        "INDEXED_OBJECT": 151,
+        "FROM_VARIABLE": 7
+      }
+    },
+    "unionTargets": {
+      "physicalCards": 10,
+      "faceContainers": 10,
+      "declarations": 10,
+      "actions": 10,
+      "support": {
+        "UNKNOWN": 2,
+        "MATCH": 8
+      },
+      "kinds": {
+        "UNION": 10
+      }
+    }
+  },
+  "supportedMovedResultContinuations": {
+    "physicalCards": 47,
+    "faceContainers": 48,
+    "declarations": 63,
+    "actions": 52,
+    "consumerKinds": {
+      "ITERATION": 10,
+      "COLLECTION_CONDITION": 20,
+      "INDEXED_OBJECT": 8,
+      "FILTER": 12,
+      "SELECTION": 10,
+      "MOVEMENT": 3
+    }
+  },
+  "interpretedUnionZones": {
+    "physicalCards": 7,
+    "faceContainers": 7,
+    "declarations": 7,
+    "support": {
+      "UNKNOWN": 2,
+      "MATCH": 5
+    }
+  },
+  "uninterpretedMovedResultDeclarations": [
+    {
+      "card": "Estrid's Invocation",
+      "face": "front",
+      "path": "script.replacementEffects[0].exceptions.addedTriggeredAbilities[0].effect.then.effects[1]",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/c18/cards/EstridsInvocation.kt"
+    },
+    {
+      "card": "Etrata, Deadly Fugitive",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability.effect.otherwise.effects[1]",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/EtrataDeadlyFugitive.kt"
+    },
+    {
+      "card": "Kasmina, Enigma Sage",
+      "face": "front",
+      "path": "script.staticAbilities[2].ability.effect.effects[2]",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/stx/cards/KasminaEnigmaSage.kt"
+    },
+    {
+      "card": "Lim-Dûl's Vault",
+      "face": "front",
+      "path": "script.spellEffect.effects[0].body.effects[2].then.effects[0]",
+      "nativePath": "mtg-sets/1993-1999/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/all/cards/LimDulsVault.kt"
+    },
+    {
+      "card": "Mizzix's Mastery",
+      "face": "front",
+      "path": "script.overloadSpellEffect.effects[1]",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/c15/cards/MizzixsMastery.kt"
+    },
+    {
+      "card": "Rescuer Sphinx",
+      "face": "front",
+      "path": "script.replacementEffects[0].then.effects[1]",
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/war/cards/RescuerSphinx.kt"
+    },
+    {
+      "card": "Sin, Spira's Punishment",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.body.effects[2]",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/SinSpirasPunishment.kt"
+    },
+    {
+      "card": "Sin, Spira's Punishment",
+      "face": "front",
+      "path": "script.triggeredAbilities[1].effect.body.effects[2]",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/fin/cards/SinSpirasPunishment.kt"
+    }
+  ],
+  "uninterpretedUnionDeclarations": [
+    {
+      "card": "Aang, Swift Savior",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].targetRequirement.baseRequirement",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/AangSwiftSavior.kt"
+    },
+    {
+      "card": "Bumi Bash",
+      "face": "front",
+      "path": "script.spellEffect.modes[1].targetRequirements[0]",
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/BumiBash.kt"
+    }
+  ],
+  "unknownReasons": {
+    "Unbounded or dynamic collection cardinality": 4914,
+    "Post-movement input membership and mixed zones require native observation": 4854,
+    "Producer membership or bounds unresolved": 4736,
+    "Complement membership unresolved": 1098,
+    "Collection source not interpreted: FromLinkedExile": 389,
+    "Unresolved target requirement: TargetOther": 21,
+    "Collection source not interpreted: LastKnownCombatPairedWithSource": 2,
+    "Additional native selection restriction or chooser": 603,
+    "Collection-relative predicate unresolved": 217,
+    "Dynamic selection count": 146,
+    "Unsupported native selection mode": 11,
+    "Collection source not interpreted: FromMultipleZones": 194,
+    "Original input IDs are not a successful-movement subset; current zones require native observation": 214,
+    "No producer in this action and branch": 356,
+    "Complement predicate unresolved": 119,
+    "Unbound filter source": 111,
+    "Collection source not interpreted: AttachedTo": 30,
+    "Multiple/absent chosen-target collection not unified": 50,
+    "Unbound movement source": 160,
+    "Only one fixed object-target requirement is supported": 2,
+    "Cross-zone target union requires branch-specific interpretation": 4,
+    "Deferred consumer is outside action-local continuation support": 73,
+    "Additional target restriction requires native validation": 1,
+    "Unbound selection source": 19,
+    "Collection source not interpreted: ExiledAsCost": 5,
+    "Deferred producer outside action-local scope": 73,
+    "Collection source not interpreted: CreaturesThatCrewedOrSaddledSource": 14,
+    "Collection source not interpreted: BottomOfLibrary": 4,
+    "Dynamic destination unresolved": 1,
+    "Unresolved target: TriggeringEntity": 29,
+    "Collection source not interpreted: TappedAsCost": 1,
+    "Collection source not interpreted: SourceLinkedBattlefield": 4,
+    "Unbound variable source": 4,
+    "Unresolved target: EnchantedPermanent": 1,
+    "Unresolved target: EnchantedCreature": 1,
+    "Collection source not interpreted: CreaturesThatConvokedSource": 1,
+    "Collection source not interpreted: EnteredViaThisResolution": 2,
+    "Collection source not interpreted: SacrificedThisWay": 2,
+    "Collection source not interpreted: CraftedMaterials": 3,
+    "Unresolved target: EquippedCreature": 1,
+    "Collection source not interpreted: LastKnownEquipmentAttachedToSource": 2
+  },
+  "cohortDeclarations": [
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[0]",
+      "category": "producers",
+      "native": {
+        "type": "GatherCards",
+        "source": {
+          "type": "ChosenTargets"
+        },
+        "storeAs": "gathered0"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[1]",
+      "category": "movements",
+      "native": {
+        "type": "MoveCollection",
+        "from": "gathered0",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "moveType": "Destroy",
+        "storeMovedAs": "moved1"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[1]",
+      "category": "movedResultProducers",
+      "native": {
+        "type": "MoveCollection",
+        "from": "gathered0",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Graveyard"
+        },
+        "moveType": "Destroy",
+        "storeMovedAs": "moved1"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[2]",
+      "category": "selections",
+      "native": {
+        "type": "SelectFromCollection",
+        "from": "moved1",
+        "selection": {
+          "type": "SelectAll"
+        },
+        "filter": {
+          "cardPredicates": [
+            {
+              "type": "IsCreature"
+            },
+            {
+              "type": "IsNontoken"
+            }
+          ]
+        },
+        "storeSelected": "selected2"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[3]",
+      "category": "movements",
+      "native": {
+        "type": "MoveCollection",
+        "from": "selected2",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "storeMovedAs": "moved3"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[3]",
+      "category": "movedResultProducers",
+      "native": {
+        "type": "MoveCollection",
+        "from": "selected2",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "storeMovedAs": "moved3"
+      }
+    },
+    {
+      "card": "Come Back Wrong",
+      "face": "front",
+      "path": "script.spellEffect.effects[4].effect.target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved3"
+      }
+    },
+    {
+      "card": "Cryptic Coat",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.effects[0]",
+      "category": "producers",
+      "native": {
+        "type": "GatherCards",
+        "source": {
+          "type": "TopOfLibrary",
+          "count": {
+            "type": "Fixed",
+            "amount": 1
+          }
+        },
+        "storeAs": "gathered0"
+      }
+    },
+    {
+      "card": "Cryptic Coat",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "category": "movements",
+      "native": {
+        "type": "MoveCollection",
+        "from": "gathered0",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "faceDown": "CLOAK",
+        "storeMovedAs": "moved1"
+      }
+    },
+    {
+      "card": "Cryptic Coat",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.effects[1]",
+      "category": "movedResultProducers",
+      "native": {
+        "type": "MoveCollection",
+        "from": "gathered0",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "faceDown": "CLOAK",
+        "storeMovedAs": "moved1"
+      }
+    },
+    {
+      "card": "Cryptic Coat",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.effects[2].target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved1"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[0]",
+      "category": "producers",
+      "native": {
+        "type": "GatherCards",
+        "source": {
+          "type": "FromZone",
+          "zone": "Graveyard",
+          "filter": {
+            "cardPredicates": [
+              {
+                "type": "IsCreature"
+              }
+            ]
+          }
+        },
+        "storeAs": "gathered0"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[1]",
+      "category": "selections",
+      "native": {
+        "type": "SelectFromCollection",
+        "from": "gathered0",
+        "selection": {
+          "type": "Random",
+          "count": {
+            "type": "Fixed",
+            "amount": 1
+          }
+        },
+        "storeSelected": "selected1"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[2]",
+      "category": "movements",
+      "native": {
+        "type": "MoveCollection",
+        "from": "selected1",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "storeMovedAs": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[2]",
+      "category": "movedResultProducers",
+      "native": {
+        "type": "MoveCollection",
+        "from": "selected1",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "storeMovedAs": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[3].target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[4].target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[5].target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[6].effect.target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved2"
+      }
+    },
+    {
+      "card": "Kheru Lich Lord",
+      "face": "front",
+      "path": "script.triggeredAbilities[0].effect.then.effects[7].target",
+      "category": "indexedConsumers",
+      "native": {
+        "type": "PipelineTarget",
+        "collectionName": "moved2"
+      }
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "face": "front",
+      "path": "script.triggeredAbilities[1].targetRequirement",
+      "category": "unionTargets",
+      "native": {
+        "type": "TargetObject",
+        "optional": true,
+        "filter": {
+          "baseFilter": {
+            "cardPredicates": [
+              {
+                "type": "IsCreature"
+              }
+            ]
+          },
+          "excludeSelf": true,
+          "alternatives": [
+            {
+              "baseFilter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsCreature"
+                  }
+                ]
+              },
+              "zone": "Graveyard"
+            }
+          ]
+        },
+        "id": "t0"
+      }
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "face": "front",
+      "path": "script.triggeredAbilities[1].targetRequirement",
+      "category": "unionZoneTargets",
+      "native": {
+        "type": "TargetObject",
+        "optional": true,
+        "filter": {
+          "baseFilter": {
+            "cardPredicates": [
+              {
+                "type": "IsCreature"
+              }
+            ]
+          },
+          "excludeSelf": true,
+          "alternatives": [
+            {
+              "baseFilter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsCreature"
+                  }
+                ]
+              },
+              "zone": "Graveyard"
+            }
+          ]
+        },
+        "id": "t0"
+      }
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "face": "front",
+      "path": "script.triggeredAbilities[2].effect.effects[0]",
+      "category": "producers",
+      "native": {
+        "type": "GatherCards",
+        "source": {
+          "type": "FromLinkedExile"
+        },
+        "storeAs": "linked_return"
+      }
+    },
+    {
+      "card": "Savior of Ollenbock",
+      "face": "front",
+      "path": "script.triggeredAbilities[2].effect.effects[1]",
+      "category": "movements",
+      "native": {
+        "type": "MoveCollection",
+        "from": "linked_return",
+        "destination": {
+          "type": "ToZone",
+          "zone": "Battlefield"
+        },
+        "underOwnersControl": true
+      }
+    }
+  ]
+}
