@@ -26,6 +26,7 @@ def declaration(path):
 
 def census(native_path, evidence_path):
     cards, faces, declarations = set(), set(), defaultdict(list)
+    populations = defaultdict(set)
     cohort = json.loads(Path('src/test/resources/regression/collection-movement-sources.json').read_text(encoding='utf-8'))
     frozen = {c['name'] for c in cohort['cases']}
     cohort_declarations = []
@@ -34,6 +35,7 @@ def census(native_path, evidence_path):
         row = json.loads(line)
         card, face = row['physical'], row['face']
         cards.add(card); faces.add((card, face))
+        populations['applicationExtensions' if (row.get('nativePath') or '').startswith('src/main/kotlin/extensions/') else 'engineDefinitions'].add(card)
         for path, node in nodes(row['script']):
             kind = node.get('type')
             categories = []
@@ -68,7 +70,7 @@ def census(native_path, evidence_path):
     return dict(engineRevision=cohort['engineRevision'],
                 inputs={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (native_path, evidence_path)},
                 units='Distinct physical roots and script face containers; declarations and action-local relationships are separate, overlapping units. No source fidelity inferred.',
-                catalog=dict(physicalCards=len(cards), faceContainers=len(faces)),
+                catalog=dict(physicalCards=len(cards), faceContainers=len(faces),populations={key:len(value) for key,value in populations.items()}),
                 native={key: dict(units(rows),actionOrAbilityContainers=len({(r[0],r[1],declaration(r[2])) for r in rows})) for key, rows in sorted(declarations.items())},
                 interpreted={key: dict(units(rows), actions=len({r[2] for r in rows}),
                     support=dict(Counter(r[3]['support'] for r in rows)),
