@@ -111,4 +111,12 @@ class CollectionProvenanceTest : FunSpec({
         encoded.contains("collectionStages") shouldBe false
         reportJson.decodeFromString(ActionEvidence.serializer(),encoded) shouldBe old
     }
+    test("a reflexive selection never consumes the original union target even when its descriptor is reused") {
+        val target=PathwayExtractor().extract(listOf(checkNotNull(catalog.card("Savior of Ollenbock")))).actions.flatMap { it.unionTargets }.single().requirement
+        val base=checkNotNull(catalog.card("Cloudshift"))
+        val effect=CompositeEffect(listOf(Effects.Exile(EffectTarget.ContextTarget(0)),
+            ReflexiveTriggerEffect(action=Effects.GainLife(1),reflexiveEffect=Effects.Move(EffectTarget.ContextTarget(0),Zone.HAND),reflexiveTargetRequirements=listOf(target))))
+        val x=PathwayExtractor().extract(listOf(base.copy(script=base.script.copy(targetRequirements=listOf(target),spellEffect=effect))))
+        x.actions.flatMap { it.unionTargets }.single().operationPaths.size shouldBe 1
+    }
 })

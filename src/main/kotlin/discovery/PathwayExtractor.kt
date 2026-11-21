@@ -17,6 +17,7 @@ import kotlinx.serialization.json.*
 
 private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), this)
 private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
+    val rootTargetSelection: Boolean = true,
     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
     val movementTargets: MutableMap<String,TargetMovement> = mutableMapOf(),
     val collectionBindings: MutableMap<String,String> = mutableMapOf(),
@@ -651,8 +652,13 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         // The same bound target is not still in its original zone after an earlier move.
         // Model only successful arrivals; actual replacement/failure remains an assumption.
         val actionIndex=actions.indexOfLast { it.id==actionId }
-        if(actionIndex>=0) actions[actionIndex]=actions[actionIndex].copy(unionTargets=actions[actionIndex].unionTargets.map { u ->
-            if(frame.targets.getOrNull(u.requirementIndex)==requirement) u.copy(operationPaths=u.operationPaths+path,movementFactIds=u.movementFactIds+facts.subList(firstFact,facts.size).map { it.id }) else u
+        val selectedRequirementIndex=when(val target=e.target) {
+            is EffectTarget.ContextTarget -> target.index
+            is EffectTarget.BoundVariable -> frame.targets.indices.filter { frame.targets[it].id==target.name }.singleOrNull()
+            else -> null
+        }
+        if(actionIndex>=0 && frame.rootTargetSelection) actions[actionIndex]=actions[actionIndex].copy(unionTargets=actions[actionIndex].unionTargets.map { u ->
+            if(u.requirementIndex==selectedRequirementIndex && u.requirement===requirement) u.copy(operationPaths=u.operationPaths+path,movementFactIds=u.movementFactIds+facts.subList(firstFact,facts.size).map { it.id }) else u
         })
         val step=MovementStep(actionId,path,facts.subList(firstFact,facts.size).map { it.id },
             e.fromZone ?: objects.map { it.zone }.distinct().singleOrNull(),e.destination,
@@ -1303,7 +1309,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             }
             is ReflexiveTriggerEffect -> {
                 walk(e.action,"$path.action",frame.copy(collectionBindings=frame.collectionBindings.toMutableMap(),returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Reflexive action optional=${e.optional}",relationship="REFLEXIVE_ACTION_ENABLES_OUTCOME"))
-                walk(e.reflexiveEffect,"$path.reflexiveEffect",frame.copy(collectionBindings=mutableMapOf(),returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,targets=e.reflexiveTargetRequirements,
+                walk(e.reflexiveEffect,"$path.reflexiveEffect",frame.copy(rootTargetSelection=false,collectionBindings=mutableMapOf(),returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,targets=e.reflexiveTargetRequirements,
                     assumptions=frame.assumptions+"Reflexive trigger after successful action"))
             }
             is CreateDelayedTriggerEffect -> walk(e.effect,"$path.effect",frame.copy(collectionBindings=frame.collectionBindings.toMutableMap(),returnGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Delayed trigger: $e",delayed=true))
