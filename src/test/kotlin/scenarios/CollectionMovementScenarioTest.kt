@@ -137,6 +137,13 @@ class CollectionMovementScenarioTest : FunSpec({
         d.state.isCurrentObject(old) shouldBe indestructible
         val moves=d.events.drop(mark).filterIsInstance<ZoneChangeEvent>().filter { it.entityId==victim }
         moves.map { it.toZone } shouldBe if(indestructible) emptyList() else listOf(Zone.GRAVEYARD,Zone.BATTLEFIELD)
+        println("COLLECTION_NATIVE "+buildJsonObject {
+            put("case","come-back-wrong-$indestructible");put("engine",EngineBuild.revision)
+            put("original",reportJson.encodeToJsonElement(ObjectRef.serializer(),old))
+            put("transitions",JsonArray(moves.map { reportJson.encodeToJsonElement(ZoneChangeEvent.serializer(),it) }))
+            put("result",reportJson.encodeToJsonElement(ObjectRef.serializer(),checkNotNull(d.state.objectRef(victim))))
+            put("returnedController",d.getController(victim).toString())
+        })
     }
     test("native moved-result excludes failed members in a mixed destruction batch; original input stays separate") {
         val d=scenarioDriver(card("Darksteel Myr"))
@@ -177,6 +184,13 @@ class CollectionMovementScenarioTest : FunSpec({
         d.state.isCurrentObject(old) shouldBe false
         for(keyword in listOf(Keyword.FLYING,Keyword.TRAMPLE,Keyword.HASTE))
             d.state.projectedState.hasKeyword(creature,keyword) shouldBe true
+        println("COLLECTION_NATIVE "+buildJsonObject {
+            put("case","kheru-paid-random-one");put("engine",EngineBuild.revision)
+            put("original",reportJson.encodeToJsonElement(ObjectRef.serializer(),old))
+            put("result",reportJson.encodeToJsonElement(ObjectRef.serializer(),checkNotNull(d.state.objectRef(creature))))
+            put("returnedController",d.getController(creature).toString())
+            put("keywords",JsonArray(listOf("FLYING","TRAMPLE","HASTE").map(::JsonPrimitive)))
+        })
     }
     test("movement's positive filter produces only matching actual members") {
         val d=scenarioDriver()
