@@ -38,7 +38,8 @@
       "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorofOllenbock.kt",
       "nativeSha256": "ad12497e2fa4dcdd35be4d24d7aaad8bb706a5c23b03e4db3a8c30c5ecd52f13",
       "expectation": "Union of one optional battlefield/graveyard target; independent source-linked return; training remains a prerequisite.",
-      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified."
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "6ffa66ee053f5ae82f839af71519ede60068273862fb18108cab77400d3da7b0"
     },
     {
       "name": "Come Back Wrong",
@@ -61,7 +62,8 @@
       "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/ComeBackWrong.kt",
       "nativeSha256": "d1a54f3ab2b56d22f260b4f0e4f6f64609d0f1342ce473012ff67ff29eacb213",
       "expectation": "Chosen-target gather; destroyed-result subset; nontoken selection; battlefield movement; delayed sacrifice retained outside continuation support.",
-      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified."
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "4febe6932ea8d0264d963d1fc4f410b8ded02dc8884b12bef1b4e63c1e54606d"
     },
     {
       "name": "Cryptic Coat",
@@ -189,7 +191,8 @@
       "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/CrypticCoat.kt",
       "nativeSha256": "191014179135182861f79990b26307fa83dae1304fe896a2318cbe3e71feb893",
       "expectation": "Top-one library gather; tracked face-down battlefield arrival; indexed attachment to actual arrival; empty library produces no object.",
-      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified."
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "4c3080b8112d66a7831315c169b9f1eabca018ff92905b9ba62a28973127c2de"
     },
     {
       "name": "Kheru Lich Lord",
@@ -254,7 +257,8 @@
       "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/KheruLichLord.kt",
       "nativeSha256": "375f44d5cd65d4861c944695c467f6d44c3c7d3af95124186c74d7df5befdad5",
       "expectation": "Optional upkeep payment; creature graveyard gather; random-one subset; tracked return; immediate keyword consumers; delayed and replacement context retained.",
-      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified."
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "3a9d73a6e581a600838fc383a5ded4a849d81751ae798c179553181ca8bdb642"
     }
   ]
 }

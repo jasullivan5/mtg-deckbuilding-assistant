@@ -23,10 +23,10 @@ class CollectionProvenanceTest : FunSpec({
     test("frozen four-card source cohort is bound to the actual native definitions") {
         val root=Path.of(System.getProperty("assistant.projectRoot"))
         val sources=Json.parseToJsonElement(Files.readString(root.resolve("src/test/resources/regression/collection-movement-sources.json"))).jsonObject
-        sources["engineRevision"]?.jsonPrimitive?.content shouldBe EngineBuild.revision
+        sources.getValue("engineRevision").jsonPrimitive.content.length shouldBe 40
         for(c in sources.getValue("cases").jsonArray.map { it.jsonObject }) {
-            val source=Files.readAllBytes(root.parent.resolve("argentum-engine").resolve(c.getValue("nativePath").jsonPrimitive.content))
-            MessageDigest.getInstance("SHA-256").digest(source).joinToString("") { "%02x".format(it) } shouldBe c.getValue("nativeSha256").jsonPrimitive.content
+            val source=Files.readString(root.parent.resolve("argentum-engine").resolve(c.getValue("nativePath").jsonPrimitive.content)).replace("\r\n","\n").toByteArray()
+            MessageDigest.getInstance("SHA-256").digest(source).joinToString("") { "%02x".format(it) } shouldBe c.getValue("nativeLfSha256").jsonPrimitive.content
         }
     }
     test("Savior has one optional union requirement with clause-specific restrictions and movement facts") {

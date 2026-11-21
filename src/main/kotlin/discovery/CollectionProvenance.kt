@@ -73,7 +73,8 @@ fun CollectionStage.observeMovement(state: GameState, input: List<ObjectRef>, ev
         .mapNotNull { event -> event.newObject?.takeIf { it.entityId==event.oldObject?.entityId && it!=event.oldObject } }
     val invalid=membership!=CollectionMembership.NATIVE_MOVED_RESULT || destinationZone==null ||
         transitions.any { it.lastKnown?.wasToken==true || (it.fromZone==Zone.BATTLEFIELD && it.lastKnown==null) ||
-            (sourceZone!=null && it.fromZone!=sourceZone) || it.newObject==null || it.meldedPermanent!=null } ||
+            (sourceZone!=null && it.fromZone!=sourceZone) || it.newObject==null ||
+            it.newObject?.entityId!=it.oldObject?.entityId || it.meldedPermanent!=null } ||
         (nativeStoredIds==null && input.isNotEmpty() && transitions.isEmpty()) ||
         nativeStoredIds?.any { id -> transitions.none { it.newObject?.entityId==id } }==true
     return CollectionMovementObservation(id,input,transitions,nativeStoredIds,arrivals,

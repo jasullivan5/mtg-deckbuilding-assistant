@@ -964,7 +964,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             val maximum=listOfNotNull(producer?.maximum,frame.collectionMax[variable]).minOrNull()
             val impossible=index!=null && (index<0 || maximum?.let { index>=it }==true)
             CollectionUse(actionId,path,variable,producer?.id,kind,index,
-                if(impossible) Verdict.NO_MATCH else if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,
+                if(index!=null && index<0) Verdict.NO_MATCH else if(problems.isNotEmpty()) Verdict.UNKNOWN else if(impossible) Verdict.NO_MATCH else Verdict.MATCH,
                 frame.assumptions+listOfNotNull(if(index!=null) "Member $index must exist in the actual collection and still reference the appropriate current game object" else null,
                     "Native choices, filters, successful transitions and replacements determine actual membership; no movement or continuation is guaranteed"),problems)
         }
@@ -1017,6 +1017,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 val fixed=(count as? DynamicAmount.Fixed)?.amount?.coerceAtLeast(0)
                 val max=if(fixed==null) upper(e.from) else upper(e.from)?.let { minOf(it,fixed) } ?: fixed
                 val problems=listOfNotNull(if(parent==null) "Unbound selection source" else null,
+                    if(e.selection !is SelectionMode.ChooseExactly && e.selection !is SelectionMode.ChooseUpTo && e.selection !is SelectionMode.Random &&
+                        e.selection!=SelectionMode.All && e.selection!=SelectionMode.ChooseAnyNumber) "Unsupported native selection mode" else null,
                     if(count!=null && fixed==null) "Dynamic selection count" else null,
                     if(e.restrictions.isNotEmpty() || e.matchChosenCreatureType || e.chooser!=Chooser.Controller) "Additional native selection restriction or chooser" else null)
                 stage(e.storeSelected,CollectionMembership.SELECTED,parent,max,parent?.destinationZone ?: parent?.sourceZone,problems=problems)
