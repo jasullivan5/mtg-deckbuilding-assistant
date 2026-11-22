@@ -38,7 +38,9 @@ def census(source):
                 if kind=='GrantActivatedAbility':
                     categories.append('temporaryActivatedGrants' if effect else 'staticActivatedGrants')
                     if not effect:
-                        scope=node.get('filter',{}).get('scope',{}).get('type','Battlefield')
+                        # GrantActivatedAbility's omitted filter defaults to attachedCreature;
+                        # an explicit GroupFilter's omitted scope defaults to Battlefield.
+                        scope=node['filter'].get('scope',{}).get('type','Battlefield') if 'filter' in node else 'AttachedTo'
                         if scope=='AttachedTo':categories.append('auraActivatedGrants' if row['aura'] else 'equipmentActivatedGrants' if row['equipment'] else 'otherAttachmentActivatedGrants')
                         elif scope=='Battlefield':categories.append('filterGroupActivatedGrants')
                         else:categories.append('otherStaticActivatedGrants')

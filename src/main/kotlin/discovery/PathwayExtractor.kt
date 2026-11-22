@@ -473,7 +473,9 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 val staticIndex=actions.indexOfLast { it.id==actionId }
                 val declarationAction=actions[staticIndex]
                 val problems=grantRecipientProblems(card,label,a)
-                val body=PathwayExtractor(inspectCardEntries,inspectStateDependencies,inspectCounters)
+                // Keep this additive shared evidence independent of the requesting objective's
+                // optional projections. Complex counter/state bodies retain native uncertainty.
+                val body=PathwayExtractor()
                     .grantedBody(card,label,"script.staticAbilities[$i].ability",a,declarationAction.id)
                 actions[staticIndex]=declarationAction.copy(grantedAbilities=listOf(GrantedAbility(
                     "${declarationAction.id}|GRANT",declarationAction.id,card.name,label,"script.staticAbilities[$i]",i,

@@ -111,7 +111,7 @@ class GrantedAbilityScenarioTest : FunSpec({
         d.available(g,aura,host).instance?.recipientController shouldBe d.player1
     }
     test("native equip moves the Longbow grant and the host is the deathtouch damage source") {
-        val d=driver("Viridian Longbow","Typhoid Rats")
+        val d=driver("Viridian Longbow","Typhoid Rats","Unsummon")
         val first=d.putCreatureOnBattlefield(d.player1,"Typhoid Rats");d.removeSummoningSickness(first)
         val second=d.putCreatureOnBattlefield(d.player1,"Hill Giant");d.removeSummoningSickness(second)
         val victim=d.putCreatureOnBattlefield(d.player2,"Hill Giant")
@@ -133,6 +133,13 @@ class GrantedAbilityScenarioTest : FunSpec({
         d.available(g,bow,first).verdict shouldBe Verdict.NO_MATCH
         d.available(g,bow,second).verdict shouldBe Verdict.MATCH
         (d.submit(ActivateAbility(d.player1,first,g.declaration.ability.id,listOf(ChosenTarget.Player(d.player2)))).error!=null) shouldBe true
+        val old=checkNotNull(d.available(g,bow,second).instance)
+        d.cast("Unsummon",second);d.resolvePendingActions()
+        d.priority(d.player1)
+        d.submit(CastSpell(d.player1,second,paymentStrategy=PaymentStrategy.FromPool)).error shouldBe null
+        d.resolvePendingActions()
+        d.state.isCurrentObject(old.recipient) shouldBe false
+        d.available(g,bow,second).verdict shouldBe Verdict.NO_MATCH
     }
     test("Rite independently grants multiple creatures native mana activations without a response stack") {
         val d=driver("Cryptolith Rite","Boomerang")

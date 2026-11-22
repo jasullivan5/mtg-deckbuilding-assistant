@@ -83,5 +83,12 @@ class GrantedAbilityTest : FunSpec({
         val old=JsonObject(reportJson.encodeToJsonElement(ActionEvidence.serializer(),action).jsonObject-"grantedAbilities")
         reportJson.decodeFromJsonElement(ActionEvidence.serializer(),old).grantedAbilities shouldBe emptyList()
     }
+    test("grant interpretation is independent of optional objective projections") {
+        for(name in listOf("Presence of Gond","Burning Anger","Etrata, Deadly Fugitive")) {
+            val projected=PathwayExtractor(inspectCardEntries=true,inspectStateDependencies=true,inspectCounters=true)
+                .extract(listOf(card(name))).actions.flatMap { it.grantedAbilities }.single()
+            projected shouldBe grant(name)
+        }
+    }
 })
 
