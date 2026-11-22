@@ -8,13 +8,16 @@ shared=run_path(str(Path(__file__).with_name('compare-counter-placement.py')))
 OBJECTIVES=(*shared['OBJECTIVES'],'place-plus-one-counters')
 
 
-def compare(before,after):
+def compare(before,after,seen=None):
     assert before.keys()==after.keys()
     assert all(before[k]==after[k] for k in before if k!='actions'),(after['commander'],after['objective'])
     grants=[]
     for old,new in zip(before['actions'],after['actions'],strict=True):
         assert old=={k:v for k,v in new.items() if k!='grantedAbilities'},new['id']
         for grant in new.get('grantedAbilities',[]):
+            if seen is not None:
+                if grant['id'] in seen:assert seen[grant['id']]==grant,('objective-dependent grant',grant['id'])
+                else:seen[grant['id']]=grant
             assert grant['actionId']==new['id']
             body=grant['body'];action=body['action']
             assert action['associatedActionId']==new['id']
@@ -30,11 +33,11 @@ def compare(before,after):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('baseline','candidate','output'):p.add_argument(name,type=Path)
-    args=p.parse_args();result={}
+    args=p.parse_args();result={};seen={}
     for commander in ('judith','krenko','kenrith'):
         result[commander]=[]
         for objective in OBJECTIVES:
             name=f'{commander}-{objective}.json'
-            result[commander].append(compare(shared['read'](args.baseline/name),shared['read'](args.candidate/name)))
+            result[commander].append(compare(shared['read'](args.baseline/name),shared['read'](args.candidate/name),seen))
             print(commander,objective,'existing evidence unchanged')
     args.output.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
