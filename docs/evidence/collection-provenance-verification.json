@@ -1,0 +1,82 @@
+{
+  "baselineApplication": "58c58deac9da5bda012a71480a4fd129b788422d",
+  "testedApplication": "45d5275208d40a5cba8ec17e149a981644472ad0",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "engineMode": "app-stable",
+  "toolchain": "Temurin JDK 25.0.4.1 / existing Gradle wrapper",
+  "normalExplorerMaxHeapBytes": 1073741824,
+  "fullKotlin": {
+    "tests": 842,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 118
+  },
+  "nativeScenarioTests": 13,
+  "realCardNativeScenarios": 11,
+  "isolatedExecutorScenarios": 2,
+  "structuralTests": 13,
+  "sourceLfSha256": {
+    "src/main/kotlin/discovery/CollectionProvenance.kt": "919ae2681142912407a3452fcb5ea38e3cb97542b861cd98c607dba96112901f",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "58b3bad7f1d332484651a8407a11c4fa3fad1826e59ec034c055697370f9be57",
+    "src/main/kotlin/discovery/Evidence.kt": "dd6140a1f0800d1e29790e2829c851a89c6c37c4872c69aa4746de8cb6fcb77c",
+    "src/test/kotlin/CollectionProvenanceTest.kt": "7032fa6c88636420074cd2156d6f87c00fb31349e1d0ab7d7dddacafbcea9560",
+    "src/test/kotlin/scenarios/CollectionMovementScenarioTest.kt": "794dfbf9da212e277bdf829000ebd78c4a4de44a578208f567937ce334e23565",
+    "src/test/resources/regression/collection-movement-sources.json": "4ffbc29e33960b59276b77b7ec6ea2b1eced919ab78156257a94032db52dc2ec"
+  },
+  "scope": "Implementation verification; historical failures and independent qualification are unchanged. Delivery may add only documentation and compact retained evidence after this tested revision.",
+  "checks": {
+    "installedDistribution": "PASS",
+    "currentCatalogGate": "PASS",
+    "discoverPairs": 18,
+    "existingDiscoverEvidence": "UNCHANGED; only unionTargets, collectionStages, collectionUses added",
+    "historicalSnapshotDecoding": "PASS at supported current/opaque-native wire boundary",
+    "frontendBuild": "PASS",
+    "interfaceChecks": 8,
+    "preOptimizationLiveChecks": 18,
+    "finalLiveSmokeChecks": 1,
+    "normalExplorerHealth": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "45d5275208d40a5cba8ec17e149a981644472ad0"
+    },
+    "catalogInterpretationByteIdenticalToPreOptimization": true,
+    "completeReportsByteIdenticalToPreOptimization": true,
+    "finalExplorerControls": {
+      "Savior of Ollenbock": 2,
+      "Cryptic Coat": 1,
+      "Come Back Wrong": 1,
+      "Kheru Lich Lord": 1
+    },
+    "historicalDiffChanges": 0,
+    "historicalCatalogFingerprints": "Not equal to the frozen historical engine fingerprint; current gate passes. Historical evidence is unchanged, not refreshed.",
+    "supportedHistoricalTests": 3
+  },
+  "verificationNotes": [
+    "Initial baseline export used a wrong distribution path; rerun used mtg-assistant and all 18 succeeded.",
+    "One early focused compile used stale observation types while editing; rerun compiled the complete types.",
+    "One focused observer check failed because it required battlefield last-known information for library departure; native movement/attachment was correct and the observer was corrected.",
+    "One installed build caught ZoneKey.playerId instead of ownerId in the new observer; corrected before final verification.",
+    "Intermediate complete suites passed 839 and 840 tests; the final suite includes the additional selection-checkpoint and cross-zone renewal controls.",
+    "Final fact-range lookup removes repeated scans of the growing fact list; full integrated emitted evidence is byte identical before/after.",
+    "Engine production code, source definitions and native revisions were not changed; no full native-suite rerun or whole-card certification is claimed."
+  ],
+  "logs": {
+    "full-test-optimized.log": "950258051434284393d4951738e2682c0bb02e87ad2b1e449c7fef1c76658920",
+    "catalog-gate-final.log": "d77c126bb5aee60504066777f19ebc1b625d19b53fb18bc2bce92b7b9a2951b7",
+    "browser-final-smoke.log": "bcd6ecde67e5c874a37020bf7f53895dd36715ba9856504359c58f25a60df416",
+    "frontend-build.log": "9bcdb9fb401b05c5553e06aa721ac17a2d41e0b9091fa0b2ef0a73477385dd56",
+    "frontend-ui.log": "1417fae97b73363a7d4e3db7cc774ec73fdf101c6d2652bb8190051f9082351c",
+    "bootstrap-guards.log": "2c0b9fdb8d1036afee0cdad96cb0757be95e4906ad12cf497b364dd4d756d8b0",
+    "oracle-snapshot-test.log": "59cb65c525d96ec3dc45a0363b91f6456664e797232132d080f6a4c210e7ad79",
+    "health-final.json": "eda10fcbe494423c4eb2264851a11fa07c90ac11ab65136be6110f33beef4278"
+  },
+  "engineImplementationSha256": "0b0439c946d9d3f1a60581a8250a298f37bea8ee465ca8e5c64c12b080045b9f",
+  "artifactSha256": {
+    "inventory-final.json": "0a5b747fb28e48d1d59a20545750cd8e8fe2861abbbd60752b3e034c23f14661",
+    "discover-comparison.json": "574fc7277379409c799e64123e15d15206ca4547322c4728a5c927fc16e0dcf3",
+    "native-observations.json": "b8c0835884878486c4c9dc3a289ab472aa910a33a665266e9dd6d49059221e23",
+    "optimization-report-equality.json": "2697d75eb11a5fd9cddd97b51bb4f40227fbfc1f107da14566beafec91bd04d6"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "applicationBase": "58c58deac9da5bda012a71480a4fd129b788422d",
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "scope": "Frozen source requirements before interpretation changes; no whole-card qualification",
+  "cases": [
+    {
+      "name": "Savior of Ollenbock",
+      "printingId": "ba77e83b-1846-4c42-bea0-2e304429fbe0",
+      "oracleId": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+      "set": "vow",
+      "collectorNumber": "34",
+      "oracleText": "Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)\nWhenever this creature trains, exile up to one other target creature from the battlefield or creature card from a graveyard.\nWhen this creature leaves the battlefield, put the exiled cards onto the battlefield under their owners' control.",
+      "sourceUrl": "https://api.scryfall.com/cards/vow/34",
+      "retrievedUtc": "2026-11-21T16:53:41.718443+00:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+          "source": "wotc",
+          "published_at": "2021-11-19",
+          "comment": "A creature “trains” when a +1/+1 counter is put onto it at as a result of its training ability resolving."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+          "source": "wotc",
+          "published_at": "2021-11-19",
+          "comment": "A creature's training ability triggers only when both that creature and a creature with greater power are declared as attackers. Increasing a creature's power after attackers are declared won't cause a training ability to trigger."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "1857dc32-8ff1-4519-b1ca-480a5c2d3b3c",
+          "source": "wotc",
+          "published_at": "2021-11-19",
+          "comment": "Once a creature's training ability has triggered, destroying the other attacking creature or reducing its power won't stop the creature with training from getting a +1/+1 counter."
+        }
+      ],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/SaviorofOllenbock.kt",
+      "nativeSha256": "ad12497e2fa4dcdd35be4d24d7aaad8bb706a5c23b03e4db3a8c30c5ecd52f13",
+      "expectation": "Union of one optional battlefield/graveyard target; independent source-linked return; training remains a prerequisite.",
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "6ffa66ee053f5ae82f839af71519ede60068273862fb18108cab77400d3da7b0"
+    },
+    {
+      "name": "Come Back Wrong",
+      "printingId": "72ee3b45-aa4e-4c5b-a9e6-608bfbd93f8b",
+      "oracleId": "2a9783c5-084b-4cd3-b7fa-ae9d7fed51d1",
+      "set": "dsk",
+      "collectorNumber": "86",
+      "oracleText": "Destroy target creature. If a creature card is put into a graveyard this way, return it to the battlefield under your control. Sacrifice it at the beginning of your next end step.",
+      "sourceUrl": "https://api.scryfall.com/cards/dsk/86",
+      "retrievedUtc": "2026-11-21T16:53:42.991756+00:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "2a9783c5-084b-4cd3-b7fa-ae9d7fed51d1",
+          "source": "wotc",
+          "published_at": "2024-09-20",
+          "comment": "Players can't take actions in between the time you destroy the target creature and the time it returns to the battlefield under your control. Notably, they can't try to remove that creature card from the graveyard to stop it from returning to the battlefield."
+        }
+      ],
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dsk/cards/ComeBackWrong.kt",
+      "nativeSha256": "d1a54f3ab2b56d22f260b4f0e4f6f64609d0f1342ce473012ff67ff29eacb213",
+      "expectation": "Chosen-target gather; destroyed-result subset; nontoken selection; battlefield movement; delayed sacrifice retained outside continuation support.",
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "4febe6932ea8d0264d963d1fc4f410b8ded02dc8884b12bef1b4e63c1e54606d"
+    },
+    {
+      "name": "Cryptic Coat",
+      "printingId": "0c3d7e2c-a104-4757-9984-fb31088f92c4",
+      "oracleId": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+      "set": "mkm",
+      "collectorNumber": "50",
+      "oracleText": "When this Equipment enters, cloak the top card of your library, then attach this Equipment to it. (To cloak a card, put it onto the battlefield face down as a 2/2 creature with ward {2}. Turn it face up any time for its mana cost if it's a creature card.)\nEquipped creature gets +1/+0 and can't be blocked.\n{1}{U}: Return this Equipment to its owner's hand.",
+      "sourceUrl": "https://api.scryfall.com/cards/mkm/50",
+      "retrievedUtc": "2026-11-21T16:53:44.939857+00:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "You'll still cloak the top card of your library even if Cryptic Coat isn't on the battlefield as its first ability resolves."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Cryptic Coat has no equip ability. Without assistance from other cards, there's no way to attach it to a creature other than with its first triggered ability. How cryptic!"
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "To cloak a card, put it onto the battlefield face down. It becomes a 2/2 face-down creature card with ward {2} and no name, mana cost, or creature types. It's colorless and has a mana value of 0. Other effects that apply to the permanent can still grant it any characteristics it doesn't have or change the characteristics it does have."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Any time you have priority, you can turn a cloaked permanent you control face-up by revealing that it's a creature card (ignoring any copy effects or type-changing effects that might be applying to it) and paying its mana cost. This is a special action. It doesn't use the stack and can't be responded to."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a cloaked creature would have disguise (or morph) if it were face up, you may also turn it face up by paying its disguise (or morph) cost."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Unlike a face-down creature that was cast using a disguise or morph ability, a cloaked creature may still be turned face up after it loses its abilities if it's a creature card."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a double-faced card is cloaked, it will be put onto the battlefield face down. While face down, it can't transform. If the front face of the card is a creature card, you can turn it face up by paying its mana cost. If you do, its front face will be up."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "At any time, you can look at a face-down spell or permanent you control. You can't look at face-down permanents or spells you don't control unless an effect instructs or allows you to do so."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a face-down creature loses its abilities, it can't be turned face up with a disguise ability because it will no longer have a disguise ability (or a disguise cost) once face up."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Because the permanent is on the battlefield both before and after it's turned face up, turning a permanent face up doesn't cause any enters-the-battlefield abilities to trigger."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Because face-down creatures don't have a name, they can't have the same name as any other creature, even another face-down creature."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "A permanent that turns face up or face down changes characteristics but is otherwise the same permanent. Spells and abilities that were targeting that permanent and Auras and Equipment that were attached to that permanent aren't affected unless the new characteristics of the object change the legality of those targets or attachments."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Turning a permanent face up or face down doesn't change whether that permanent is tapped or untapped."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a face-down spell leaves the stack and goes to any zone other than the battlefield (if it was countered, for example), you must reveal it. Similarly, if a face-down permanent leaves the battlefield, you must reveal it. You must also reveal all face-down spells and permanents you control if you leave the game or the game ends."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "You must ensure that your face-down spells and permanents can be easily differentiated from each other. You're not allowed to mix up the cards that represent them on the battlefield to confuse other players. The order in which they entered the battlefield should remain clear, as well as what ability caused them to be face down. (This includes disguise, cloak, and in games involving older cards, morph and manifest, as well as a few other effects that turn cards face down.) Common methods for doing this include using markers or dice, or simply placing them in order on the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "73b8adea-1786-44fc-b190-bf240b07f5b6",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If something tries to turn a face-down instant or sorcery card on the battlefield face up, reveal that card to show all players it's an instant or sorcery card. The permanent remains on the battlefield face down. Abilities that trigger when a permanent turns face up won't trigger, because even though you revealed the card, it never turned face up."
+        }
+      ],
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/CrypticCoat.kt",
+      "nativeSha256": "191014179135182861f79990b26307fa83dae1304fe896a2318cbe3e71feb893",
+      "expectation": "Top-one library gather; tracked face-down battlefield arrival; indexed attachment to actual arrival; empty library produces no object.",
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "4c3080b8112d66a7831315c169b9f1eabca018ff92905b9ba62a28973127c2de"
+    },
+    {
+      "name": "Kheru Lich Lord",
+      "printingId": "e7fbca8d-34a3-4df1-986a-36fca142a758",
+      "oracleId": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+      "set": "ktk",
+      "collectorNumber": "182",
+      "oracleText": "At the beginning of your upkeep, you may pay {2}{B}. If you do, return a creature card at random from your graveyard to the battlefield. It gains flying, trample, and haste. Exile that card at the beginning of your next end step. If it would leave the battlefield, exile it instead of putting it anywhere else.",
+      "sourceUrl": "https://api.scryfall.com/cards/ktk/182",
+      "retrievedUtc": "2026-11-21T16:53:45.381625+00:00",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "You decide whether to pay {2}{B} as the ability resolves."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "The creature card returned to the battlefield is chosen at random as the ability resolves. If any player responds to the ability, that player won’t yet know what card will be returned."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "Because the ability doesn’t target any creature card, any creature card (including Kheru Lich Lord itself) put into the graveyard in response to that ability may be returned to the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "The ability that exiles the card at the beginning of your next end step is a delayed triggered ability. If the delayed triggered ability is countered, the creature will stay on the battlefield and the ability won’t trigger again. However, the replacement effect will still exile the creature when it eventually leaves the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "Kheru Lich Lord grants flying, trample, and haste to the creature that’s returned to the battlefield. However, neither of the “exile” abilities is granted to that creature. If that creature loses all its abilities, it will still be exiled at the beginning of your next end step, and if it would leave the battlefield, it is still exiled instead."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "If a creature card returned to the battlefield with Kheru Lich Lord would leave the battlefield for any reason, it’s exiled instead. However, if that creature is already being exiled, then the replacement effect won’t apply. If the spell or ability that exiles it later returns it to the battlefield (as Suspension Field might, for example), the creature card will return to the battlefield as a new object with no relation to its previous existence. The effects from Kheru Lich Lord will no longer apply to it."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+          "source": "wotc",
+          "published_at": "2014-09-20",
+          "comment": "The exiled creature is never put into the graveyard. Any abilities the creature has that trigger when it dies won’t trigger."
+        }
+      ],
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ktk/cards/KheruLichLord.kt",
+      "nativeSha256": "375f44d5cd65d4861c944695c467f6d44c3c7d3af95124186c74d7df5befdad5",
+      "expectation": "Optional upkeep payment; creature graveyard gather; random-one subset; tracked return; immediate keyword consumers; delayed and replacement context retained.",
+      "uncertainty": "Structural potential is distinct from execution. Broader delayed behavior and whole-card fidelity are not certified.",
+      "nativeLfSha256": "3a9d73a6e581a600838fc383a5ded4a849d81751ae798c179553181ca8bdb642"
+    }
+  ]
+}

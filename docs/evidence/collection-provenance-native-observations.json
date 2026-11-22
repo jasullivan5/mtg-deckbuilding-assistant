@@ -1,0 +1,395 @@
+{
+  "applicationRevision": "45d5275208d40a5cba8ec17e149a981644472ad0",
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "scope": "Fresh bounded native actions; two isolated executor cases supplement the four-card cohort. No whole-card qualification. Native target legality is asserted by transactions, not the selection observation helper.",
+  "scenarioTests": [
+    "native optional union selects the opponent's creature from the correct zone: graveyard=false",
+    "native optional union selects the opponent's creature from the correct zone: graveyard=true",
+    "optional zero-target training has no selected-object movement and invalid noncreatures are rejected",
+    "a union target leaving its chosen zone before resolution is not reidentified by its raw ID",
+    "the battlefield selection cannot become a new graveyard selection of the same original card",
+    "Cryptic Coat attaches to the actual cloaked original with a new battlefield generation",
+    "empty library creates no cloaked member or attachment",
+    "a later same-name source with an empty collection cannot reuse an earlier Coat's moved member",
+    "Come Back Wrong only returns the successfully destroyed original: indestructible=false",
+    "Come Back Wrong only returns the successfully destroyed original: indestructible=true",
+    "native moved-result excludes failed members in a mixed destruction batch; original input stays separate",
+    "Kheru's paid native upkeep grants abilities to its actual random-one returned original",
+    "movement's positive filter produces only matching actual members"
+  ],
+  "observations": [
+    {
+      "case": "union-false",
+      "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "selection": {
+        "actionId": "Savior of Ollenbock|front|script.triggeredAbilities[1]",
+        "requirementIndex": 0,
+        "checkpoint": "TRIGGER_OR_ABILITY_ANNOUNCEMENT",
+        "subjects": [
+          {
+            "objectRef": {
+              "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+              "generation": 98
+            },
+            "current": true,
+            "sourceZone": "Battlefield",
+            "zonePlayer": "e1",
+            "owner": "e1",
+            "controller": "e1",
+            "zoneClauseIndices": [
+              0
+            ]
+          }
+        ],
+        "countCompatibility": "MATCH",
+        "sourceZoneCompatibility": "MATCH",
+        "nativeLegality": "UNKNOWN",
+        "scope": "Current selected generations and permitted source-zone clauses only. Native target validation owns filters, restrictions, choices and resolution legality; this observation establishes neither successful movement nor a future return."
+      },
+      "original": {
+        "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+        "generation": 98
+      },
+      "exile": {
+        "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+        "entityName": "Hill Giant",
+        "fromZone": "Battlefield",
+        "toZone": "Exile",
+        "ownerId": "e1",
+        "enteredBattlefieldTimestamp": null,
+        "copyOfOriginalName": null,
+        "xValue": null,
+        "wasSacrificed": false,
+        "craftMaterial": false,
+        "emergeSacrifice": false,
+        "oldObject": {
+          "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+          "generation": 98
+        },
+        "newObject": {
+          "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+          "generation": 102
+        },
+        "transitionCause": "PRIMARY",
+        "requestedDestination": "Exile",
+        "meldedPermanent": null,
+        "fromFaceDownExile": false,
+        "lastKnown": {
+          "name": "Hill Giant",
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "wasToken": false,
+          "objectRef": {
+            "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+            "generation": 98
+          },
+          "cardDefinitionId": "Hill Giant"
+        }
+      },
+      "result": {
+        "entityId": "6037e829-11d0-4d2d-9e59-5bed5f3e71c7",
+        "generation": 108
+      }
+    },
+    {
+      "case": "union-true",
+      "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "selection": {
+        "actionId": "Savior of Ollenbock|front|script.triggeredAbilities[1]",
+        "requirementIndex": 0,
+        "checkpoint": "TRIGGER_OR_ABILITY_ANNOUNCEMENT",
+        "subjects": [
+          {
+            "objectRef": {
+              "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+              "generation": 98
+            },
+            "current": true,
+            "sourceZone": "Graveyard",
+            "zonePlayer": "e1",
+            "owner": "e1",
+            "controller": null,
+            "zoneClauseIndices": [
+              1
+            ]
+          }
+        ],
+        "countCompatibility": "MATCH",
+        "sourceZoneCompatibility": "MATCH",
+        "nativeLegality": "UNKNOWN",
+        "scope": "Current selected generations and permitted source-zone clauses only. Native target validation owns filters, restrictions, choices and resolution legality; this observation establishes neither successful movement nor a future return."
+      },
+      "original": {
+        "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+        "generation": 98
+      },
+      "exile": {
+        "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+        "entityName": "Hill Giant",
+        "fromZone": "Graveyard",
+        "toZone": "Exile",
+        "ownerId": "e1",
+        "enteredBattlefieldTimestamp": null,
+        "copyOfOriginalName": null,
+        "xValue": null,
+        "wasSacrificed": false,
+        "craftMaterial": false,
+        "emergeSacrifice": false,
+        "oldObject": {
+          "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+          "generation": 98
+        },
+        "newObject": {
+          "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+          "generation": 102
+        },
+        "transitionCause": "PRIMARY",
+        "requestedDestination": "Exile",
+        "meldedPermanent": null,
+        "fromFaceDownExile": false,
+        "lastKnown": null
+      },
+      "result": {
+        "entityId": "bb4ff127-ef07-4af4-b638-b4dc99892baa",
+        "generation": 108
+      }
+    },
+    {
+      "stageId": "Cryptic Coat|front|script.triggeredAbilities[0]|script.triggeredAbilities[0].effect.effects[1]|COLLECTION|moved1|2",
+      "input": [
+        {
+          "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+          "generation": 95
+        }
+      ],
+      "transitions": [
+        {
+          "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+          "entityName": "Forest",
+          "fromZone": "Library",
+          "toZone": "Battlefield",
+          "ownerId": "e0",
+          "enteredBattlefieldTimestamp": 3,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+            "generation": 100
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Battlefield",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false,
+          "lastKnown": null
+        }
+      ],
+      "nativeStoredIds": null,
+      "arrived": [
+        {
+          "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+          "generation": 100
+        }
+      ],
+      "currentArrivals": [
+        {
+          "entityId": "9abe3697-ebd9-45a7-9084-2affdcf223e4",
+          "generation": 100
+        }
+      ],
+      "verdict": "MATCH",
+      "reason": "Observed only the supplied instruction and generations. Stored native movement results and requested-zone arrivals remain distinct; empty input creates no object. No whole-card source fidelity or future continuation is established."
+    },
+    {
+      "case": "come-back-wrong-false",
+      "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "original": {
+        "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+        "generation": 95
+      },
+      "transitions": [
+        {
+          "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+          "entityName": "Hill Giant",
+          "fromZone": "Battlefield",
+          "toZone": "Graveyard",
+          "ownerId": "e1",
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+            "generation": 98
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Graveyard",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false,
+          "lastKnown": {
+            "name": "Hill Giant",
+            "controllerId": "e1",
+            "ownerId": "e1",
+            "wasToken": false,
+            "objectRef": {
+              "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+              "generation": 95
+            },
+            "cardDefinitionId": "Hill Giant"
+          }
+        },
+        {
+          "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+          "entityName": "Hill Giant",
+          "fromZone": "Graveyard",
+          "toZone": "Battlefield",
+          "ownerId": "e1",
+          "enteredBattlefieldTimestamp": 1,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+            "generation": 98
+          },
+          "newObject": {
+            "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+            "generation": 99
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Battlefield",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false,
+          "lastKnown": null
+        }
+      ],
+      "result": {
+        "entityId": "3f2ded4e-d6fd-41dc-8952-f4bfd8f08ea2",
+        "generation": 99
+      },
+      "returnedController": "e0"
+    },
+    {
+      "case": "come-back-wrong-true",
+      "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "original": {
+        "entityId": "b2d79e5b-441d-4500-9960-80ca36c5221f",
+        "generation": 95
+      },
+      "transitions": [],
+      "result": {
+        "entityId": "b2d79e5b-441d-4500-9960-80ca36c5221f",
+        "generation": 95
+      },
+      "returnedController": "e1"
+    },
+    {
+      "stageId": "isolated",
+      "input": [
+        {
+          "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+          "generation": 95
+        },
+        {
+          "entityId": "7e8acfd5-4f8f-4385-bc8a-cdb6c473d3d6",
+          "generation": 96
+        }
+      ],
+      "transitions": [
+        {
+          "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+          "entityName": "Hill Giant",
+          "fromZone": "Battlefield",
+          "toZone": "Graveyard",
+          "ownerId": "e1",
+          "enteredBattlefieldTimestamp": null,
+          "copyOfOriginalName": null,
+          "xValue": null,
+          "wasSacrificed": false,
+          "craftMaterial": false,
+          "emergeSacrifice": false,
+          "oldObject": {
+            "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+            "generation": 95
+          },
+          "newObject": {
+            "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+            "generation": 97
+          },
+          "transitionCause": "PRIMARY",
+          "requestedDestination": "Graveyard",
+          "meldedPermanent": null,
+          "fromFaceDownExile": false,
+          "lastKnown": {
+            "name": "Hill Giant",
+            "controllerId": "e1",
+            "ownerId": "e1",
+            "wasToken": false,
+            "objectRef": {
+              "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+              "generation": 95
+            },
+            "cardDefinitionId": "Hill Giant"
+          }
+        }
+      ],
+      "nativeStoredIds": [
+        "cebbf751-a856-4833-b7bd-f87046fa3e18"
+      ],
+      "arrived": [
+        {
+          "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+          "generation": 97
+        }
+      ],
+      "currentArrivals": [
+        {
+          "entityId": "cebbf751-a856-4833-b7bd-f87046fa3e18",
+          "generation": 97
+        }
+      ],
+      "verdict": "MATCH",
+      "reason": "Observed only the supplied instruction and generations. Stored native movement results and requested-zone arrivals remain distinct; empty input creates no object. No whole-card source fidelity or future continuation is established."
+    },
+    {
+      "case": "kheru-paid-random-one",
+      "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "original": {
+        "entityId": "5c664050-2c48-4161-9c18-f07f0718cf4f",
+        "generation": 96
+      },
+      "result": {
+        "entityId": "5c664050-2c48-4161-9c18-f07f0718cf4f",
+        "generation": 101
+      },
+      "returnedController": "e0",
+      "keywords": [
+        "FLYING",
+        "TRAMPLE",
+        "HASTE"
+      ]
+    }
+  ],
+  "sourceLfSha256": {
+    "src/main/kotlin/discovery/CollectionProvenance.kt": "919ae2681142912407a3452fcb5ea38e3cb97542b861cd98c607dba96112901f",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "58b3bad7f1d332484651a8407a11c4fa3fad1826e59ec034c055697370f9be57",
+    "src/main/kotlin/discovery/Evidence.kt": "dd6140a1f0800d1e29790e2829c851a89c6c37c4872c69aa4746de8cb6fcb77c",
+    "src/test/kotlin/CollectionProvenanceTest.kt": "7032fa6c88636420074cd2156d6f87c00fb31349e1d0ab7d7dddacafbcea9560",
+    "src/test/kotlin/scenarios/CollectionMovementScenarioTest.kt": "794dfbf9da212e277bdf829000ebd78c4a4de44a578208f567937ce334e23565",
+    "src/test/resources/regression/collection-movement-sources.json": "4ffbc29e33960b59276b77b7ec6ea2b1eced919ab78156257a94032db52dc2ec"
+  }
+}
