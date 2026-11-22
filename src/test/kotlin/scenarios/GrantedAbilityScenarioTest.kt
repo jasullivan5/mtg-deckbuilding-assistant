@@ -3,6 +3,7 @@ package dev.mtg.assistant
 import com.wingedsheep.engine.core.*
 import com.wingedsheep.engine.state.components.stack.ChosenTarget
 import com.wingedsheep.engine.state.components.stack.ActivatedAbilityOnStackComponent
+import com.wingedsheep.engine.state.components.player.ManaPoolComponent
 import com.wingedsheep.engine.support.GameTestDriver
 import com.wingedsheep.sdk.core.*
 import com.wingedsheep.sdk.model.EntityId
@@ -150,10 +151,15 @@ class GrantedAbilityScenarioTest : FunSpec({
         d.available(g,rite,opponent).verdict shouldBe Verdict.NO_MATCH
         val a=d.available(g,rite,first).instance;val b=d.available(g,rite,second).instance
         (a!=b) shouldBe true
+        val redBefore=checkNotNull(d.state.getEntity(d.player1)?.get<ManaPoolComponent>()).red
         d.activate(g,rite,first,d.player1);d.stackSize shouldBe 0
         d.activate(g,rite,second,d.player1);d.stackSize shouldBe 0
+        val pool=checkNotNull(d.state.getEntity(d.player1)?.get<ManaPoolComponent>())
+        pool.red shouldBe redBefore+2
+        pool.manaBySource[first] shouldBe 1;pool.manaBySource[second] shouldBe 1
         d.isTapped(first) shouldBe true;d.isTapped(second) shouldBe true;d.isTapped(rite) shouldBe false
         d.events.filterIsInstance<ManaAbilityResolvedEvent>().takeLast(2).map { it.sourceId } shouldBe listOf(first,second)
+        d.events.filterIsInstance<ManaAbilityResolvedEvent>().takeLast(2).map { it.amount } shouldBe listOf(1,1)
         d.cast("Boomerang",rite);d.resolvePendingActions()
         d.available(g,rite,first).verdict shouldBe Verdict.NO_MATCH
     }
