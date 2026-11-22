@@ -22,6 +22,8 @@ def census(source):
     problems=Counter()
     collection_stages=Counter()
     collection_uses=Counter()
+    collection_cards=set()
+    fact_cards=set()
     cohort_names={c['name'] for c in json.loads(Path('src/test/resources/regression/granted-ability-sources.json').read_text())['cases']}
     cohort=[]
     for line in source.open(encoding='utf-8-sig'):
@@ -63,6 +65,8 @@ def census(source):
             relationships.append(identity)
             problems.update(grant['unresolved'])
             body=grant['body']
+            if body['facts']:fact_cards.add(card)
+            if body['action'].get('collectionStages') or body['action'].get('collectionUses'):collection_cards.add(card)
             body_facts.update(f['kind'] for f in body['facts'])
             body_unsupported.update(u.get('reason','UNKNOWN') for u in body['unsupported'])
             collection_stages.update(s['membership'] for s in body['action'].get('collectionStages',[]))
@@ -76,6 +80,7 @@ def census(source):
             unknownRecipientBindings=units([r for r in relationships if r['support']!='MATCH']),
             byKind={kind:units([r for r in relationships if r['kind']==kind]) for kind in sorted({r['kind'] for r in relationships})},
             unresolvedReasons=dict(problems),newBodyFacts=dict(body_facts),bodyUnsupported=dict(body_unsupported),
+            bodyFactCards=len(fact_cards),collectionBodyCards=sorted(collection_cards),
             collectionStages=dict(collection_stages),collectionUses=dict(collection_uses)),cohort=cohort,
         inputSha256=hashlib.sha256(source.read_bytes()).hexdigest(),
         boundaries='Recipient binding MATCH is structural; body support, actual activation, source fidelity and whole-card qualification are independent. Copy-added counts are native exception declarations, not a universal copy-ability census.')
