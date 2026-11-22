@@ -1,0 +1,134 @@
+{
+  "baselineApplication": "1f58707a2e5e8bc650fec959df43dd51536e18f9",
+  "mergedMain": "384665fa2e6064109493b5d3a7a3bf586f273dd5",
+  "baselineTreesIdentical": true,
+  "testedApplication": "e840093620711ed7fa209fa05c4cae09cfbd6d46",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "engineMode": "app-stable",
+  "engineImplementationSha256": "0b0439c946d9d3f1a60581a8250a298f37bea8ee465ca8e5c64c12b080045b9f",
+  "toolchain": "Temurin JDK 25.0.4.1 / existing Gradle wrapper",
+  "fullKotlin": {
+    "tests": 863,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 120
+  },
+  "structuralTests": 9,
+  "nativeScenarioTests": 12,
+  "realCardNativeScenarios": 11,
+  "isolatedNativeScenarios": 1,
+  "normalExplorerMaxHeapBytes": 1073741824,
+  "lfSha256": {
+    "src/main/kotlin/discovery/GrantedAbilities.kt": "343a6bb0c5437eb16ec79e7932ba7b12cf870c0819a6d3a486a89368aa0c27fc",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "5cd9b4070005e64b091dc0358b382486253e1d8281dee5e200659a072fafc3f0",
+    "src/main/kotlin/discovery/Evidence.kt": "0042833f07ace10de239968069d31f863076f2d501ef6067c0946bf6bf78b5e4",
+    "src/main/kotlin/discovery/ChosenTargets.kt": "15c2253eef15289f47f44b8b1490e177a5c70053da0bbefe82f8c74907c42866",
+    "src/test/kotlin/GrantedAbilityTest.kt": "26caec2ffa841f0c3aea396fc050d7eddbd90c6cfb2b2589e1c80f34ae51151f",
+    "src/test/kotlin/scenarios/GrantedAbilityScenarioTest.kt": "1e65c6cc0a6a4ec222f14199763c13ae97837e5320b021f0bc47e57b5d6b49b6",
+    "src/test/resources/regression/granted-ability-sources.json": "3304a755e934e18d900b1c5c6d1546b7cd4ecc52f555247f44d0cc0c78837371",
+    "docs/evidence/GrantedAbilityInventory.java": "e85e7f3d520b01d59e1bc3b74f228f4cf8b87c65b1cd86b84eb480a7a040239b",
+    "scripts/inventory-granted-abilities.py": "47ea1fc13a9664486475d8b708b35fa93ca367bf6c7bb61e7736f0237a0b6c4d",
+    "scripts/compare-granted-abilities.py": "0b5fc5744bdac3d339a3fd39c38dcee1907d71e1d70db29d92ccdd59ee639135"
+  },
+  "checks": {
+    "bootstrap": "PASS",
+    "installedDistribution": "PASS",
+    "installedCli": "PASS",
+    "bootstrapGuards": 17,
+    "oracleSnapshotGuards": 3,
+    "currentCatalogGate": "PASS",
+    "discoverPairs": 18,
+    "existingDiscoverEvidence": "Every pre-existing field unchanged; only grantedAbilities added",
+    "grantEvidenceObjectiveIndependent": true,
+    "supportedHistoricalDecoding": "PASS; three historical wire tests and installed identical-snapshot diff",
+    "frontendBuild": "PASS",
+    "interfaceBrowserChecks": 8,
+    "liveBrowserChecks": 18,
+    "normalExplorerHealth": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "e840093620711ed7fa209fa05c4cae09cfbd6d46"
+    },
+    "explorerGrantEvidence": "Four principal controls inspected through the real API",
+    "finalInventoryByteIdentical": true,
+    "preGuardReportsByteIdentical": 18,
+    "explorerCohort": [
+      {
+        "card": "Burning Anger",
+        "kind": "AURA_HOST",
+        "recipientSupport": "MATCH",
+        "bodyFactKinds": [
+          "DAMAGE"
+        ],
+        "collectionStages": 0
+      },
+      {
+        "card": "Presence of Gond",
+        "kind": "AURA_HOST",
+        "recipientSupport": "MATCH",
+        "bodyFactKinds": [
+          "CREATE_TOKEN"
+        ],
+        "collectionStages": 0
+      },
+      {
+        "card": "Viridian Longbow",
+        "kind": "EQUIPMENT_HOST",
+        "recipientSupport": "MATCH",
+        "bodyFactKinds": [
+          "DAMAGE"
+        ],
+        "collectionStages": 0
+      },
+      {
+        "card": "Cryptolith Rite",
+        "kind": "FILTER_GROUP",
+        "recipientSupport": "MATCH",
+        "bodyFactKinds": [
+          "OTHER_OPERATION"
+        ],
+        "collectionStages": 0
+      },
+      {
+        "card": "Etrata, Deadly Fugitive",
+        "kind": "FILTER_GROUP",
+        "recipientSupport": "UNKNOWN",
+        "bodyFactKinds": [
+          "MOVE_OBJECT"
+        ],
+        "collectionStages": 3
+      }
+    ]
+  },
+  "notes": [
+    "PR #66 was open at investigation and merged by the repository owner during work. Baseline and merged-main trees are identical; delivery targets main.",
+    "Initial focused attempts caught fixture/runner errors and the native equal-ID grant deduplication boundary. No native production defect was established; engine unchanged.",
+    "Bootstrap attempts hit sandbox MSYS restrictions, a wrong shell selection and a missing JDK environment. Final explicit Git Bash/JDK25 run passed all 17 with no skips.",
+    "Intermediate full suite at implementation 8e45db860df1b9afc372ef78954554ea66c97b1e passed 861 tests. Final candidate adds objective-independence, Equipment renewal and native mana outcome assertions.",
+    "Pre-guard candidate c6c0d4173ff15abcadabb90b5022b2a19f0d03d3 passed 862 tests, 18 Discover comparisons, current catalog gate, 18 live browser checks and API cohort inspection. Final review added the same-source same-ID declaration guard and isolated native scenario; all complete checks were repeated for the final candidate.",
+    "The two-worker export receipt wrapper exited one after Receive-Job promoted informational JVM stderr to a terminating PowerShell error. All 18 reports were generated; the first 16 exits were checked as their loops advanced. Both workers final commands were rerun with explicit zero-exit checks and byte-identical output, then all 18 reports passed strict comparison. The wrapper was corrected without changing application code or source requirements.",
+    "No full native-engine/era-suite rerun is claimed because engine production code and definitions are unchanged. New native execution runs in the application suite.",
+    "Source fidelity remains UNKNOWN at the shared declaration level; bounded current execution does not independently qualify a whole card. Old failures, concerns and benchmark fingerprints are preserved.",
+    "Delivery adds only architecture/limitations documentation and compact retained evidence after the tested implementation."
+  ],
+  "logs": {
+    "full-test.log": "050478c2fb30005fad80ef59024bdad66ba8f512e899ca9dc076126c145f1821",
+    "full-test-final.log": "56e8e9bbcb9b922d4f5513ab2a0e339572670faffa5948b1662a5bb030dccb60",
+    "full-test-guard.log": "182b59ca2248099d3161103bf8a22d687bc7a31630fce1de45aada0b32671576",
+    "focused-declaration-guard.log": "777bcbf422f3b882dd6440278529f8e7e14cc8241e18d5bda59486dff31b6bea",
+    "bootstrap-guard.log": "65afb92d3d75cc240ec31c72e6dcd9b6fd6d790f6f2ccc0cbe43b04e9e0fceac",
+    "catalog-gate-guard.log": "0fb1798f32da3a25eead8874d6e017e5dc04367c9aadcd6fbe9c0ecd1c5588a4",
+    "discover-guard-comparison.log": "d3b026a12015cfa630391ce380533a2b10aed6a66bbc061bb429e5f92663b080",
+    "frontend-build.log": "e4d2c45ddfd2f98357db0a8ab0aca388166398271d226ce5c61469da3b985095",
+    "browser-ui.log": "1bb6610fd6388e22b6ea9c751f841e0600023de22e827de9092746eeebd79081",
+    "browser-live-guard.log": "8c1f4638b840309e827ed082ce52da9b0ad70f1253a9c0b2b9cfca1462ee588d",
+    "bootstrap-guards-jdk25.log": "95689d534dde55ef3e7a2e910512e97586dc58b6a41f0900d1af00bcc440de94",
+    "oracle-guards.log": "51ed45fc1238ce403fe6d714832da910cc092fe798aa35662dea705d8f3cf2e4",
+    "health.json": "7111867687857cf42860c8c1c8ffda020750f4b3beee73dd2717f59c4ef82791",
+    "historical-diff-guard.json": "648c48c0bd51c7627a6733a4c1e9f00eecfabe38d559356bc478de87c61bda3d",
+    "guard-export.log": "49b82af76592e2362398bd88a9dc8a92611fda7a97b6fabfd88ca5d9d17c822f",
+    "explorer-evidence-check-guard.log": "c919401413142dbb91f27378b027d6e8f4fe9ddfd486a61d4357b8cd85024e0b"
+  }
+}
