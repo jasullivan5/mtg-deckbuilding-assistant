@@ -22,8 +22,8 @@ import com.wingedsheep.sdk.scripting.targets.TargetRequirement
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.EncodeDefault
 
-@Serializable enum class TargetCheckpoint { CAST_ANNOUNCEMENT }
-@Serializable enum class TargetRequirementOrigin { EXPLICIT_SPELL, AURA_ENCHANT }
+@Serializable enum class TargetCheckpoint { CAST_ANNOUNCEMENT, ACTIVATION_ANNOUNCEMENT }
+@Serializable enum class TargetRequirementOrigin { EXPLICIT_SPELL, AURA_ENCHANT, GRANTED_ACTIVATED }
 @Serializable enum class TargetQuantifier { ANY_SELECTED }
 
 @Serializable data class ChosenTargetCondition(
@@ -52,6 +52,7 @@ import kotlinx.serialization.EncodeDefault
         condition: ChosenTargetCondition
     ): SelectedTargetAssessment {
         val nativeRequirements = when (origin) {
+            TargetRequirementOrigin.GRANTED_ACTIVATED -> return SelectedTargetAssessment(Verdict.UNKNOWN)
             TargetRequirementOrigin.EXPLICIT_SPELL -> definition.script.targetRequirements
             TargetRequirementOrigin.AURA_ENCHANT -> {
                 if (definition.script.targetRequirements.isNotEmpty()) return SelectedTargetAssessment(Verdict.UNKNOWN)

@@ -1,0 +1,275 @@
+{
+  "applicationBase": "1f58707a2e5e8bc650fec959df43dd51536e18f9",
+  "dependencyPullRequest": 66,
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "scope": "Frozen source requirements before production changes; bounded execution is not whole-card qualification.",
+  "rules": {
+    "url": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.pdf",
+    "sections": [
+      "113.7",
+      "113.7a",
+      "302.6",
+      "602.2",
+      "605.1a",
+      "605.3",
+      "608.2h"
+    ]
+  },
+  "cases": [
+    {
+      "name": "Burning Anger",
+      "printingId": "2058a7eb-0f78-46a4-bea5-afdfe920264f",
+      "oracleId": "a2c76ac2-5ab1-450c-b64e-e9a6c4dad1ca",
+      "set": "m15",
+      "collectorNumber": "133",
+      "sourceUrl": "https://api.scryfall.com/cards/m15/133",
+      "oracleText": "Enchant creature\nEnchanted creature has \"{T}: This creature deals damage equal to its power to any target.\"",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "a2c76ac2-5ab1-450c-b64e-e9a6c4dad1ca",
+          "source": "wotc",
+          "published_at": "2020-11-10",
+          "comment": "Use the power of the enchanted creature as the activated ability resolves to determine how much damage is dealt. If the creature isn't on the battlefield at that time, use its power as it last existed on the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "a2c76ac2-5ab1-450c-b64e-e9a6c4dad1ca",
+          "source": "wotc",
+          "published_at": "2020-11-10",
+          "comment": "The enchanted creature is the source of the activated ability, not Burning Anger. For example, if the enchanted creature is green, you could activate the ability choosing a creature with protection from red as the target."
+        }
+      ],
+      "retrievedUtc": "2026-11-22T03:11:22.711740+00:00",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/m15/cards/BurningAnger.kt",
+      "nativeSha256": "734e83950c4e38cd3326c490d39d3de70cbc641ca3febdd5129246874907cc69",
+      "nativeLfSha256": "41723e2bbe9dc24a26e6b31c608dab3fa1970ca88653855ecfb9fb73b5d36708",
+      "declarationPath": "script.staticAbilities[0]",
+      "abilityPath": "script.staticAbilities[0].ability",
+      "expected": "Aura host pays tap; host controller activates; host power and host damage source; current power or native last-known power at resolution.",
+      "uncertainty": "Declaration, current grant, activation, resolution, and source fidelity remain separate. General layers, temporary/copy/loyalty semantics are outside the bounded control."
+    },
+    {
+      "name": "Presence of Gond",
+      "printingId": "546c647d-8d0a-4b88-804e-ce0348eb772a",
+      "oracleId": "ab42398c-f0a1-4b94-ac5f-b8768e1b4e05",
+      "set": "shm",
+      "collectorNumber": "125",
+      "sourceUrl": "https://api.scryfall.com/cards/shm/125",
+      "oracleText": "Enchant creature\nEnchanted creature has \"{T}: Create a 1/1 green Elf Warrior creature token.\"",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "ab42398c-f0a1-4b94-ac5f-b8768e1b4e05",
+          "source": "wotc",
+          "published_at": "2008-05-01",
+          "comment": "The creature's controller, not Presence of Gond's controller, is the one who can activate the ability, so that's the player who will get the token."
+        }
+      ],
+      "retrievedUtc": "2026-11-22T03:11:22.991001+00:00",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/PresenceofGond.kt",
+      "nativeSha256": "fcb01de96166daa719b301929aa5240d113ddb56a9c21c1dd53648d5d3d86113",
+      "nativeLfSha256": "22da0d4a9d4b35b02249abca5fe80e1f99aff2c1eca1a01b4d5263bd9bd5cf44",
+      "declarationPath": "script.staticAbilities[0]",
+      "abilityPath": "script.staticAbilities[0].ability",
+      "expected": "Aura host taps; host controller activates and controls token even when Aura controller differs.",
+      "uncertainty": "Declaration, current grant, activation, resolution, and source fidelity remain separate. General layers, temporary/copy/loyalty semantics are outside the bounded control."
+    },
+    {
+      "name": "Viridian Longbow",
+      "printingId": "be892d73-d1f4-4c36-b674-01ae21ff1484",
+      "oracleId": "8b9119b0-9948-497f-aa92-2879d07bed1c",
+      "set": "mrd",
+      "collectorNumber": "270",
+      "sourceUrl": "https://api.scryfall.com/cards/mrd/270",
+      "oracleText": "Equipped creature has \"{T}: This creature deals 1 damage to any target.\"\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "rulings": [],
+      "retrievedUtc": "2026-11-22T03:11:23.243928+00:00",
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mrd/cards/ViridianLongbow.kt",
+      "nativeSha256": "037be390f0f2365428ee185665f19e7e71e1784e28a1d1e4c6338fdc02647530",
+      "nativeLfSha256": "335c5b3133185f7eea2ed037e2cf51469563e3bfa24cccb603eebf1f0f01018a",
+      "declarationPath": "script.staticAbilities[0]",
+      "abilityPath": "script.staticAbilities[0].ability",
+      "expected": "Equipment host taps and deals damage; native equip establishes attachment; moving Equipment changes future grants, not existing stack abilities.",
+      "uncertainty": "Declaration, current grant, activation, resolution, and source fidelity remain separate. General layers, temporary/copy/loyalty semantics are outside the bounded control."
+    },
+    {
+      "name": "Cryptolith Rite",
+      "printingId": "2910adcd-882a-46af-8236-ca1a9e2c19ab",
+      "oracleId": "043f869d-b11c-4c0d-9591-2bf0df7bde55",
+      "set": "soi",
+      "collectorNumber": "200",
+      "sourceUrl": "https://api.scryfall.com/cards/soi/200",
+      "oracleText": "Creatures you control have \"{T}: Add one mana of any color.\"",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "043f869d-b11c-4c0d-9591-2bf0df7bde55",
+          "source": "wotc",
+          "published_at": "2016-04-08",
+          "comment": "If a creature has multiple mana abilities with a cost of {T}, such as if you control two Cryptolith Rites, you can only activate one of them at a time. Tapping the creature doesn’t produce multiple mana."
+        }
+      ],
+      "retrievedUtc": "2026-11-22T03:11:23.537101+00:00",
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/soi/cards/CryptolithRite.kt",
+      "nativeSha256": "9b0e258d59236583fffcded01732e812ee675b1e1ed24086e5c795969b816db1",
+      "nativeLfSha256": "11410eaf426e6625e3280ca5ddcaad79bcbd369167707b0b92cb6048cc1b45fb",
+      "declarationPath": "script.staticAbilities[0]",
+      "abilityPath": "script.staticAbilities[0].ability",
+      "expected": "Each currently qualifying creature controlled by granter controller independently gains tap mana ability; native mana timing, no ordinary stack object.",
+      "uncertainty": "Declaration, current grant, activation, resolution, and source fidelity remain separate. General layers, temporary/copy/loyalty semantics are outside the bounded control."
+    },
+    {
+      "name": "Etrata, Deadly Fugitive",
+      "printingId": "4410db5a-62af-43ac-979d-88a7c975f7bd",
+      "oracleId": "87957d09-7e22-40fe-8770-ff66d1934a38",
+      "set": "mkm",
+      "collectorNumber": "200",
+      "sourceUrl": "https://api.scryfall.com/cards/mkm/200",
+      "oracleText": "Deathtouch\nFace-down creatures you control have \"{2}{U}{B}: Turn this creature face up. If you can't, exile it, then you may cast the exiled card without paying its mana cost.\"\nWhenever an Assassin you control deals combat damage to an opponent, cloak the top card of that player's library.",
+      "rulings": [
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "You might be unable to turn a face-down creature face up because it's an instant or sorcery. Alternatively, abilities such as that of Karlov Watchdog might prevent you from turning face-down creatures face up altogether. In those cases, you'll exile that creature, and then you'll choose whether or not to cast that card without paying its mana cost."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If you cast a spell \"without paying its mana cost\", you can't choose to cast it for any alternative costs. You can, however, pay additional costs, such as kicker costs. If the card has any mandatory additional costs, such as that of Demand Answers, those must be paid to cast the spell."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If the spell you cast has {X} in its mana cost, you must choose 0 as the value of X when casting it without paying its mana cost."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Your opponents can't look at cards they own that you cloaked."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "In a multiplayer game, if an opponent leaves the game, all of the cards they own that you cloaked leave as well. If you leave the game, the creatures you cloaked with Etrata, Deadly Fugitive's triggered ability are exiled."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "To cloak a card, put it onto the battlefield face down. It becomes a 2/2 face-down creature card with ward {2} and no name, mana cost, or creature types. It's colorless and has a mana value of 0. Other effects that apply to the permanent can still grant it any characteristics it doesn't have or change the characteristics it does have."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Any time you have priority, you can turn a cloaked permanent you control face-up by revealing that it's a creature card (ignoring any copy effects or type-changing effects that might be applying to it) and paying its mana cost. This is a special action. It doesn't use the stack and can't be responded to."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a cloaked creature would have disguise (or morph) if it were face up, you may also turn it face up by paying its disguise (or morph) cost."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Unlike a face-down creature that was cast using a disguise or morph ability, a cloaked creature may still be turned face up after it loses its abilities if it's a creature card."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a double-faced card is cloaked, it will be put onto the battlefield face down. While face down, it can't transform. If the front face of the card is a creature card, you can turn it face up by paying its mana cost. If you do, its front face will be up."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "At any time, you can look at a face-down spell or permanent you control. You can't look at face-down permanents or spells you don't control unless an effect instructs or allows you to do so."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a face-down creature loses its abilities, it can't be turned face up with a disguise ability because it will no longer have a disguise ability (or a disguise cost) once face up."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Because the permanent is on the battlefield both before and after it's turned face up, turning a permanent face up doesn't cause any enters-the-battlefield abilities to trigger."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Because face-down creatures don't have a name, they can't have the same name as any other creature, even another face-down creature."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "A permanent that turns face up or face down changes characteristics but is otherwise the same permanent. Spells and abilities that were targeting that permanent and Auras and Equipment that were attached to that permanent aren't affected unless the new characteristics of the object change the legality of those targets or attachments."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "Turning a permanent face up or face down doesn't change whether that permanent is tapped or untapped."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If a face-down spell leaves the stack and goes to any zone other than the battlefield (if it was countered, for example), you must reveal it. Similarly, if a face-down permanent leaves the battlefield, you must reveal it. You must also reveal all face-down spells and permanents you control if you leave the game or the game ends."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "You must ensure that your face-down spells and permanents can be easily differentiated from each other. You're not allowed to mix up the cards that represent them on the battlefield to confuse other players. The order in which they entered the battlefield should remain clear, as well as what ability caused them to be face down. (This includes disguise, cloak, and in games involving older cards, morph and manifest, as well as a few other effects that turn cards face down.) Common methods for doing this include using markers or dice, or simply placing them in order on the battlefield."
+        },
+        {
+          "object": "ruling",
+          "oracle_id": "87957d09-7e22-40fe-8770-ff66d1934a38",
+          "source": "wotc",
+          "published_at": "2024-02-02",
+          "comment": "If something tries to turn a face-down instant or sorcery card on the battlefield face up, reveal that card to show all players it's an instant or sorcery card. The permanent remains on the battlefield face down. Abilities that trigger when a permanent turns face up won't trigger, because even though you revealed the card, it never turned face up."
+        }
+      ],
+      "retrievedUtc": "2026-11-22T03:11:23.820666+00:00",
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mkm/cards/EtrataDeadlyFugitive.kt",
+      "nativeSha256": "c98cdcfba3044b18c91328142e1c8498d809ee9d25907a79033f68974c0dae54",
+      "nativeLfSha256": "b5f436e3784a39284a36c3e2eca7da31ba6328a520621a11c2eafb485d301a79",
+      "declarationPath": "script.staticAbilities[0]",
+      "abilityPath": "script.staticAbilities[0].ability",
+      "expected": "Boundary: face-down recipient and turn-face-up success gate remain UNKNOWN; inspect receiver-relative collection movement and explicit moved-result continuation without source substitution.",
+      "uncertainty": "Declaration, current grant, activation, resolution, and source fidelity remain separate. General layers, temporary/copy/loyalty semantics are outside the bounded control."
+    }
+  ]
+}
