@@ -83,6 +83,8 @@ fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, rec
     val definition=services.cardRegistry.getCard(source.cardDefinitionId) ?: return result(Verdict.UNKNOWN,"No native definition")
     if(face!="front" || definition.name!=card || definition.script.staticAbilities.getOrNull(staticIndex)!=declaration)
         return result(Verdict.UNKNOWN,"Native source definition/face/declaration does not match")
+    if(definition.script.staticAbilities.filterIsInstance<GrantActivatedAbility>().count { it.ability.id==declaration.ability.id }!=1)
+        return result(Verdict.UNKNOWN,"Native lookup does not distinguish same-ID declarations on one granter")
     if(support!=Verdict.MATCH) return result(Verdict.UNKNOWN,"Structural recipient binding is unresolved")
     if(kind==GrantRecipientKind.AURA_HOST) {
         val root=attachmentAction ?: return result(Verdict.UNKNOWN,"Existing Aura attachment evidence required")

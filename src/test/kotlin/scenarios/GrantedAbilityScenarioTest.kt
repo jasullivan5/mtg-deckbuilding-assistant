@@ -7,6 +7,9 @@ import com.wingedsheep.engine.state.components.player.ManaPoolComponent
 import com.wingedsheep.engine.support.GameTestDriver
 import com.wingedsheep.sdk.core.*
 import com.wingedsheep.sdk.model.EntityId
+import com.wingedsheep.sdk.dsl.Effects
+import com.wingedsheep.sdk.scripting.*
+import com.wingedsheep.sdk.scripting.filters.unified.GroupFilter
 import dev.mtg.assistant.discovery.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -231,5 +234,26 @@ class GrantedAbilityScenarioTest : FunSpec({
         (renewed.granter!=a.granter) shouldBe true
         renewed.recipient shouldBe a.recipient
         g.observeAvailability(d.state,a.granter,a.recipient,d.services).verdict shouldBe Verdict.NO_MATCH
+    }
+    test("one granter's equal-ID declarations cannot borrow each other's recipient binding") {
+        val shared=ActivatedAbility(id=AbilityId("isolated-shared-grant"),cost=AbilityCost.Tap,
+            effect=Effects.AddManaOfChoice(),isManaAbility=true,timing=TimingRule.ManaAbility)
+        val source=com.wingedsheep.sdk.dsl.card("Isolated shared grant") {
+            manaCost="{1}";typeLine="Enchantment"
+            staticAbility { ability=GrantActivatedAbility(shared,GroupFilter(GameObjectFilter.Creature.youControl())) }
+            staticAbility { ability=GrantActivatedAbility(shared,GroupFilter(GameObjectFilter.Creature)) }
+        }
+        val d=scenarioDriver(source)
+        val granter=d.putPermanentOnBattlefield(d.player1,source.name)
+        val host=d.putCreatureOnBattlefield(d.player2,"Hill Giant");d.removeSummoningSickness(host)
+        val declarations=PathwayExtractor().extract(listOf(source)).actions.flatMap { it.grantedAbilities }
+        declarations.size shouldBe 2
+        for(g in declarations) {
+            g.support shouldBe Verdict.MATCH
+            g.observeAvailability(d.state,checkNotNull(d.state.objectRef(granter)),checkNotNull(d.state.objectRef(host)),d.services).verdict shouldBe Verdict.UNKNOWN
+        }
+        d.priority(d.player2)
+        d.submit(ActivateAbility(d.player2,host,shared.id,manaColorChoice=Color.RED)).error shouldBe null
+        d.stackSize shouldBe 0
     }
 })
