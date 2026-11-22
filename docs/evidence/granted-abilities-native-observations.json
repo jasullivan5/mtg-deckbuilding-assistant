@@ -1,0 +1,219 @@
+{
+  "applicationRevision": "e840093620711ed7fa209fa05c4cae09cfbd6d46",
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "scenarioTests": 12,
+  "realCardScenarios": 11,
+  "isolatedNativeScenarios": 1,
+  "cases": [
+    "Burning Anger uses an opponent host's controller tap and resolution-time power as its damage source",
+    "Burning Anger survives grant removal and resolves after its recipient leaves using native last-known power",
+    "Presence of Gond creates for the activating host controller and keeps an activated ability after grant loss",
+    "tap grant availability is distinct from sickness haste and already-tapped activation legality",
+    "host controller changes alter future activators but preserve the already-activated ability controller",
+    "native equip moves the Longbow grant and the host is the deathtouch damage source",
+    "Rite independently grants multiple creatures native mana activations without a response stack",
+    "group-grant controller and recipient changes use current projected control",
+    "bounced and recast original recipient cannot inherit an old attachment or grant instance",
+    "a noncreature land gains and loses the group grant through native animation expiry",
+    "same-name granters retain native selected-supplier provenance and renewed source generations",
+    "one granter's equal-ID declarations cannot borrow each other's recipient binding"
+  ],
+  "acceptedActivationObservations": [
+    {
+      "verdict": "MATCH",
+      "declarationId": "Burning Anger|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Burning Anger|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "813e8d69-fa2f-4794-8a46-be086dbc9166",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "77aab260-75dd-43c7-bb3b-b3c18f5e42f0",
+          "generation": 95
+        },
+        "abilityId": "Burning Anger:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "activator": "e1",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "manaAbility": false,
+      "reason": "Accepted native activation captured recipient source, activator, granter and ability; future grant loss does not erase this stack object. Resolution and LKI remain native."
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Burning Anger|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Burning Anger|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "925f68de-b842-441c-b4be-d07d7609c059",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "0d4bc31f-107e-4868-a5c0-def1320c345c",
+          "generation": 95
+        },
+        "abilityId": "Burning Anger:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "activator": "e1",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 99
+      },
+      "manaAbility": false,
+      "reason": "Accepted native activation captured recipient source, activator, granter and ability; future grant loss does not erase this stack object. Resolution and LKI remain native."
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "086c455d-8586-4025-9c15-625763599670",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "05bb7514-3cdf-4c2d-a580-6067e558224d",
+          "generation": 95
+        },
+        "abilityId": "Presence of Gond:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "activator": "e1",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 99
+      },
+      "manaAbility": false,
+      "reason": "Accepted native activation captured recipient source, activator, granter and ability; future grant loss does not erase this stack object. Resolution and LKI remain native."
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "37a39cb0-a052-4f43-ba53-3e9c43bb4982",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "6b7c30c9-6166-4a46-b1b6-89f385a8f95a",
+          "generation": 95
+        },
+        "abilityId": "Presence of Gond:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e0",
+        "recipientController": "e0"
+      },
+      "activator": "e0",
+      "stackObject": {
+        "entityId": "e83",
+        "generation": 103
+      },
+      "manaAbility": false,
+      "reason": "Accepted native activation captured recipient source, activator, granter and ability; future grant loss does not erase this stack object. Resolution and LKI remain native."
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "da27d503-5db5-471f-9387-22c3207ba2d1",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "43318334-6122-45eb-ace3-4cc0f203e0a8",
+          "generation": 96
+        },
+        "abilityId": "Presence of Gond:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "activator": "e1",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "manaAbility": false,
+      "reason": "Accepted native activation captured recipient source, activator, granter and ability; future grant loss does not erase this stack object. Resolution and LKI remain native."
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Cryptolith Rite|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Cryptolith Rite|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "f642e8c9-4330-4dee-98e7-60b0d8685991",
+          "generation": 100
+        },
+        "recipient": {
+          "entityId": "8a0cd6bc-2adb-4700-951f-5126b62a3a3d",
+          "generation": 95
+        },
+        "abilityId": "Cryptolith Rite:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e0",
+        "recipientController": "e0"
+      },
+      "activator": "e0",
+      "stackObject": null,
+      "manaAbility": true,
+      "reason": "Native mana activation/resolution checkpoint; pauses and unsupported mana continuations remain unresolved"
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Cryptolith Rite|front|script.staticAbilities[0]|GRANT",
+      "instance": {
+        "declarationId": "Cryptolith Rite|front|script.staticAbilities[0]|GRANT",
+        "granter": {
+          "entityId": "f642e8c9-4330-4dee-98e7-60b0d8685991",
+          "generation": 100
+        },
+        "recipient": {
+          "entityId": "058491ae-4ac2-498a-9005-a8a144e29d9f",
+          "generation": 96
+        },
+        "abilityId": "Cryptolith Rite:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e0",
+        "recipientController": "e0"
+      },
+      "activator": "e0",
+      "stackObject": null,
+      "manaAbility": true,
+      "reason": "Native mana activation/resolution checkpoint; pauses and unsupported mana continuations remain unresolved"
+    }
+  ],
+  "lfSha256": {
+    "src/main/kotlin/discovery/GrantedAbilities.kt": "343a6bb0c5437eb16ec79e7932ba7b12cf870c0819a6d3a486a89368aa0c27fc",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "5cd9b4070005e64b091dc0358b382486253e1d8281dee5e200659a072fafc3f0",
+    "src/main/kotlin/discovery/Evidence.kt": "0042833f07ace10de239968069d31f863076f2d501ef6067c0946bf6bf78b5e4",
+    "src/main/kotlin/discovery/ChosenTargets.kt": "15c2253eef15289f47f44b8b1490e177a5c70053da0bbefe82f8c74907c42866",
+    "src/test/kotlin/GrantedAbilityTest.kt": "26caec2ffa841f0c3aea396fc050d7eddbd90c6cfb2b2589e1c80f34ae51151f",
+    "src/test/kotlin/scenarios/GrantedAbilityScenarioTest.kt": "1e65c6cc0a6a4ec222f14199763c13ae97837e5320b021f0bc47e57b5d6b49b6",
+    "src/test/resources/regression/granted-ability-sources.json": "3304a755e934e18d900b1c5c6d1546b7cd4ecc52f555247f44d0cc0c78837371",
+    "docs/evidence/GrantedAbilityInventory.java": "e85e7f3d520b01d59e1bc3b74f228f4cf8b87c65b1cd86b84eb480a7a040239b",
+    "scripts/inventory-granted-abilities.py": "47ea1fc13a9664486475d8b708b35fa93ca367bf6c7bb61e7736f0237a0b6c4d",
+    "scripts/compare-granted-abilities.py": "0b5fc5744bdac3d339a3fd39c38dcee1907d71e1d70db29d92ccdd59ee639135"
+  },
+  "scope": "Author/source-led native execution, not independent whole-card qualification. Each native game/accepted transaction scopes its entity IDs; no cross-game identity join is claimed. Etrata is a structural boundary only."
+}

@@ -17,7 +17,7 @@ import kotlinx.serialization.json.*
 
 private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), this)
 private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
-    val rootTargetSelection: Boolean = true,
+    val rootTargetSelection: Boolean = true, val receivingSource: ObjectScope? = null,
     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
     val movementTargets: MutableMap<String,TargetMovement> = mutableMapOf(),
     val collectionBindings: MutableMap<String,String> = mutableMapOf(),
@@ -82,7 +82,7 @@ private fun scope(filter: com.wingedsheep.sdk.scripting.filters.unified.TargetFi
     if(filter.alternatives.isEmpty()) ObjectScope(filter.baseFilter,battlefield = filter.zone == Zone.BATTLEFIELD,zone=filter.zone,zonePlayer=if(filter.zone==Zone.BATTLEFIELD) "UNKNOWN" else "ANY")
     else ObjectScope(unresolved = "Cross-zone target union requires branch-specific interpretation")
 private fun targetScope(target: EffectTarget, frame: Frame, selfCreature: Boolean): ObjectScope = when(target) {
-    EffectTarget.Self -> ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN")
+    EffectTarget.Self -> frame.receivingSource ?: ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN")
     is EffectTarget.ContextTarget -> requirementScope(frame.targets.getOrNull(target.index))
     is EffectTarget.BoundVariable -> requirementScope(frame.targets.find { it.id == target.name })
     is EffectTarget.FilteredTarget -> scope(target.filter)
@@ -200,6 +200,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     private lateinit var card: CardDefinition
     private var face = ""
     private var selfCreature = false
+    private var grantedSource = false
     private var actionId = ""
     private var rootEffect: Effect? = null
     private var baseCastingCosts: List<AdditionalCost> = emptyList()
@@ -468,6 +469,21 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                         deathDependency(CreatureDiedThisTurnCondition),it,Frame(script.targetRequirements,assumptions=listOf("Cost gating=${a.gating}")),Verdict.MATCH) }
                 } else issue("script.staticAbilities[$i]",a,"Static cost dependency not interpreted")
             } else issue("script.staticAbilities[$i]",a,"Static ability not interpreted for this objective")
+            if(a is GrantActivatedAbility) {
+                val staticIndex=actions.indexOfLast { it.id==actionId }
+                val declarationAction=actions[staticIndex]
+                val problems=grantRecipientProblems(card,label,a)
+                // Keep this additive shared evidence independent of the requesting objective's
+                // optional projections. Complex counter/state bodies retain native uncertainty.
+                val body=PathwayExtractor()
+                    .grantedBody(card,label,"script.staticAbilities[$i].ability",a,declarationAction.id)
+                actions[staticIndex]=declarationAction.copy(grantedAbilities=listOf(GrantedAbility(
+                    "${declarationAction.id}|GRANT",declarationAction.id,card.name,label,"script.staticAbilities[$i]",i,
+                    grantRecipientKind(card,a),a,if(card.isAura) "${card.name}|$label|script" else null,
+                    if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,problems,
+                    listOf("Active native granter and eligible current recipient; no recipient, payment, activation or outcome guaranteed",
+                        "Availability uses granter-relative filters; the granted body uses recipient Self and activator-relative YOU"),body)))
+            }
         }
         actionId="${card.name}|$label|script.unsupported"
         val scriptTree=nativeJson.encodeToJsonElement(CardScript.serializer(),script).jsonObject
@@ -511,7 +527,30 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 eventOutcomes.subList(attachmentOutcomeStart, eventOutcomes.size)))
         }
     }
-    private fun sourceCardCreature(): Boolean? = selfCreature.takeIf {
+    /** Interpret one native granted declaration with a receiving source, using this same walker.
+     * Its output stays inside the grant relationship and never enters intrinsic objective inputs. */
+    internal fun grantedBody(origin: CardDefinition,label: String,path: String,grant: GrantActivatedAbility,parent: String): GrantedBody {
+        card=origin;face=label;selfCreature=false;grantedSource=true
+        actionId="${origin.name}|$label|$path";actionKind="GRANTED_ACTIVATED";rootEffect=grant.ability.effect
+        actionNative=nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),grant.ability)
+        val assumptions=listOf("Granted source is the receiving object; granting card supplies provenance only",
+            "YOU/Controller and player resources belong to the activator, not necessarily the granter's controller",
+            "Current recipient and native availability, activation costs, timing and legal targets required",
+            "Timing=${grant.ability.timing}; restrictions=${grant.ability.restrictions}; mana=${grant.ability.isManaAbility}")
+        actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
+            targetSelection=grant.ability.targetRequirements.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.ACTIVATION_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_ACTIVATED) },
+            unionTargets=unionTargets(actionId,grant.ability.targetRequirements,"ACTIVATION_ANNOUNCEMENT"))
+        val receiver=ObjectScope(filter=if(grantRecipientProblems(origin,label,grant).isEmpty()) GameObjectFilter.Creature else GameObjectFilter.Any,
+            actor="YOU",printedSelfCreature=null,battlefield=true,zone=grant.recipientZone,
+            details=listOf("Current recipient of $parent; printed characteristics of the granting card are not recipient characteristics"),
+            unresolved=if(grantRecipientProblems(origin,label,grant).isEmpty()) null else "Recipient characteristics/binding unresolved")
+        val frame=Frame(grant.ability.targetRequirements,receivingSource=receiver,selfZone=grant.ability.activateFromZone,assumptions=assumptions)
+        abilityCost(grant.ability.cost,"$path.cost",frame)
+        walk(grant.ability.effect,"$path.effect",frame)
+        return GrantedBody(actions.first(),facts.toList(),unsupported.toList(),structuralSupport.toList())
+    }
+
+    private fun sourceCardCreature(): Boolean? = if(grantedSource) null else selfCreature.takeIf {
         card.layout == CardLayout.NORMAL && card.backFace == null && card.flipSide == null && card.cardFaces.isEmpty()
     }
 
@@ -717,7 +756,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             }
             is CreateTokenCopyOfSourceEffect -> {
                 amount=DynamicAmount.Fixed(e.count);copySource="Self copiable values"
-                creature=copiedType(e.copyExceptions,if(selfCreature) Verdict.MATCH else Verdict.NO_MATCH)
+                creature=copiedType(e.copyExceptions,if(grantedSource) Verdict.UNKNOWN else if(selfCreature) Verdict.MATCH else Verdict.NO_MATCH)
                 template="Native source copy; merged exceptions=${e.copyExceptions}"
             }
             is CreateTokenCopyOfTargetEffect -> {
@@ -1058,6 +1097,11 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         if(e is ExileUntilLeavesEffect || e is ExileWithAurasNotingCountersEffect ||
             e is MoveToZoneEffect && e.linkToSource || e is MoveCollectionEffect && e.linkToSource) linkedExileProducers++
         if (inspectCounters && recordCounterInstruction(e, path, frame)) return
+        if(grantedSource && (e is AddManaEffect || e is AddManaOfChoiceEffect || e is AddColorlessManaEffect || e is AddDynamicManaEffect)) {
+            add(path,"MANA_PRODUCTION","EFFECT",ObjectScope(battlefield=false,actor="YOU"),e.tree(),frame)
+            support(path,e,SupportStatus.SUPPORTED,"Native mana production declaration retained in receiving-source context; actual amount, color choices and payment remain native")
+            return
+        }
         if(recordToken(e,path,frame)) return
         if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
         if(e is DrawCardsEffect && frame.event!=null) {

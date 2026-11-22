@@ -1,0 +1,273 @@
+{
+  "population": {
+    "physicalCards": 21699,
+    "authoringContainers": 22487
+  },
+  "native": {
+    "auraActivatedGrants": {
+      "physicalCards": 43,
+      "authoringContainers": 43,
+      "declarations": 44
+    },
+    "copyAddedActivatedAbilities": {
+      "physicalCards": 1,
+      "authoringContainers": 1,
+      "declarations": 1
+    },
+    "copyAddedTriggeredAbilities": {
+      "physicalCards": 6,
+      "authoringContainers": 6,
+      "declarations": 6
+    },
+    "donorDerivedActivatedGrants": {
+      "physicalCards": 17,
+      "authoringContainers": 17,
+      "declarations": 17
+    },
+    "equipmentActivatedGrants": {
+      "physicalCards": 21,
+      "authoringContainers": 21,
+      "declarations": 23
+    },
+    "explicitActivatedBodies": {
+      "physicalCards": 190,
+      "authoringContainers": 190,
+      "declarations": 199
+    },
+    "filterGroupActivatedGrants": {
+      "physicalCards": 90,
+      "authoringContainers": 90,
+      "declarations": 93
+    },
+    "nestedStaticActivatedGrants": {
+      "physicalCards": 14,
+      "authoringContainers": 14,
+      "declarations": 15
+    },
+    "otherAttachmentActivatedGrants": {
+      "physicalCards": 2,
+      "authoringContainers": 2,
+      "declarations": 3
+    },
+    "otherStaticAbilityGrants": {
+      "physicalCards": 10,
+      "authoringContainers": 10,
+      "declarations": 11
+    },
+    "otherStaticActivatedGrants": {
+      "physicalCards": 5,
+      "authoringContainers": 5,
+      "declarations": 5
+    },
+    "rootStaticActivatedGrants": {
+      "physicalCards": 147,
+      "authoringContainers": 147,
+      "declarations": 153
+    },
+    "stateTriggeredGrants": {
+      "physicalCards": 1,
+      "authoringContainers": 1,
+      "declarations": 1
+    },
+    "staticActivatedGrants": {
+      "physicalCards": 161,
+      "authoringContainers": 161,
+      "declarations": 168
+    },
+    "staticTriggeredGrants": {
+      "physicalCards": 108,
+      "authoringContainers": 108,
+      "declarations": 112
+    },
+    "temporaryActivatedGrants": {
+      "physicalCards": 19,
+      "authoringContainers": 19,
+      "declarations": 20
+    },
+    "temporaryGroupActivatedGrants": {
+      "physicalCards": 10,
+      "authoringContainers": 10,
+      "declarations": 11
+    },
+    "temporaryStaticAbilityGrants": {
+      "physicalCards": 55,
+      "authoringContainers": 55,
+      "declarations": 61
+    },
+    "temporaryTriggeredGrants": {
+      "physicalCards": 107,
+      "authoringContainers": 108,
+      "declarations": 116
+    }
+  },
+  "interpretation": {
+    "relationships": {
+      "physicalCards": 147,
+      "authoringContainers": 147,
+      "declarations": 153
+    },
+    "supportedRecipientBindings": {
+      "physicalCards": 52,
+      "authoringContainers": 52,
+      "declarations": 54
+    },
+    "unknownRecipientBindings": {
+      "physicalCards": 95,
+      "authoringContainers": 95,
+      "declarations": 99
+    },
+    "byKind": {
+      "AURA_HOST": {
+        "physicalCards": 41,
+        "authoringContainers": 41,
+        "declarations": 42
+      },
+      "EQUIPMENT_HOST": {
+        "physicalCards": 20,
+        "authoringContainers": 20,
+        "declarations": 22
+      },
+      "FILTER_GROUP": {
+        "physicalCards": 84,
+        "authoringContainers": 84,
+        "declarations": 87
+      },
+      "UNRESOLVED": {
+        "physicalCards": 2,
+        "authoringContainers": 2,
+        "declarations": 2
+      }
+    },
+    "unresolvedReasons": {
+      "Group filter beyond plain creatures / creatures you control": 77,
+      "Aura recipient is not a bounded creature enchant restriction": 20,
+      "Granted loyalty semantics outside supported subset": 14,
+      "Recipient scope outside bounded attachment/group grants": 2,
+      "Concrete observation requires exact front-definition binding": 3,
+      "Additional attached recipient restrictions": 2,
+      "Nonbattlefield recipient/activation zone": 3
+    },
+    "newBodyFacts": {
+      "OTHER_OPERATION": 63,
+      "DAMAGE": 18,
+      "SACRIFICE": 20,
+      "CREATE_TOKEN": 9,
+      "MOVE_OBJECT": 16,
+      "TOUGHNESS_CHANGE": 1
+    },
+    "bodyUnsupported": {
+      "Effect not interpreted; native action retained (may contain further capabilities)": 73,
+      "Activation cost not interpreted": 10,
+      "Recipient characteristics/binding unresolved": 2,
+      "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; [Complex/contradictory copy-source selection restrictions require correlated interpretation]": 1,
+      "Positive per-card filter propagated; relative/complement membership unresolved": 1,
+      "Selection provenance known; restrictions/count remain unresolved": 1,
+      "Cost atom not interpreted": 2,
+      "Collection source not interpreted: TopOfLibrary": 2
+    },
+    "bodyFactCards": 105,
+    "collectionBodyCards": [
+      "Etrata, Deadly Fugitive",
+      "Gleam of Authority",
+      "Hard Cover",
+      "Kasmina, Enigma Sage",
+      "Mindwhip Sliver",
+      "Screaming Shield",
+      "Way of the Deathbringer"
+    ],
+    "collectionStages": {
+      "GATHERED": 7,
+      "RETAINED_INPUT": 6,
+      "NATIVE_MOVED_RESULT": 2,
+      "MATCHING": 1,
+      "SELECTED": 5
+    },
+    "collectionUses": {
+      "UNKNOWN": 7,
+      "MATCH": 5
+    }
+  },
+  "cohort": [
+    {
+      "card": "Burning Anger",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Burning Anger|front|script.staticAbilities[0]|GRANT",
+      "kind": "AURA_HOST",
+      "support": "MATCH",
+      "bodyFactKinds": [
+        "DAMAGE"
+      ],
+      "bodyUnsupported": 0,
+      "collectionStages": 0,
+      "collectionUses": 0
+    },
+    {
+      "card": "Cryptolith Rite",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Cryptolith Rite|front|script.staticAbilities[0]|GRANT",
+      "kind": "FILTER_GROUP",
+      "support": "MATCH",
+      "bodyFactKinds": [
+        "OTHER_OPERATION"
+      ],
+      "bodyUnsupported": 0,
+      "collectionStages": 0,
+      "collectionUses": 0
+    },
+    {
+      "card": "Etrata, Deadly Fugitive",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Etrata, Deadly Fugitive|front|script.staticAbilities[0]|GRANT",
+      "kind": "FILTER_GROUP",
+      "support": "UNKNOWN",
+      "bodyFactKinds": [
+        "MOVE_OBJECT"
+      ],
+      "bodyUnsupported": 4,
+      "collectionStages": 3,
+      "collectionUses": 1
+    },
+    {
+      "card": "Presence of Gond",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Presence of Gond|front|script.staticAbilities[0]|GRANT",
+      "kind": "AURA_HOST",
+      "support": "MATCH",
+      "bodyFactKinds": [
+        "CREATE_TOKEN"
+      ],
+      "bodyUnsupported": 0,
+      "collectionStages": 0,
+      "collectionUses": 0
+    },
+    {
+      "card": "Viridian Longbow",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Viridian Longbow|front|script.staticAbilities[0]|GRANT",
+      "kind": "EQUIPMENT_HOST",
+      "support": "MATCH",
+      "bodyFactKinds": [
+        "DAMAGE"
+      ],
+      "bodyUnsupported": 0,
+      "collectionStages": 0,
+      "collectionUses": 0
+    }
+  ],
+  "inputSha256": "04b7ec9f719c3f5db92c1a842bf489e5a21792a169985e42b1467f9e9c22cb80",
+  "boundaries": "Recipient binding MATCH is structural; body support, actual activation, source fidelity and whole-card qualification are independent. Copy-added counts are native exception declarations, not a universal copy-ability census.",
+  "otherUntraversedNativeShapes": [
+    {
+      "card": "Koh, the Face Stealer",
+      "face": "front",
+      "source": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/KohTheFaceStealer.kt",
+      "path": "script.staticAbilities[0]",
+      "type": "HasAbilitiesOfChosenLinkedExiledCard"
+    }
+  ]
+}
