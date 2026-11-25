@@ -1,0 +1,263 @@
+{
+  "population": {
+    "physicalCards": 21699,
+    "faceContainers": 22487
+  },
+  "native": {
+    "temporaryTriggered": {
+      "physicalCards": 107,
+      "faceContainers": 108,
+      "declarations": 116
+    },
+    "staticTriggered": {
+      "physicalCards": 108,
+      "faceContainers": 108,
+      "declarations": 112
+    },
+    "root": {
+      "physicalCards": 101,
+      "faceContainers": 101,
+      "declarations": 103
+    },
+    "aura": {
+      "physicalCards": 39,
+      "faceContainers": 39,
+      "declarations": 41
+    },
+    "filterGroup": {
+      "physicalCards": 31,
+      "faceContainers": 31,
+      "declarations": 31
+    },
+    "equipment": {
+      "physicalCards": 29,
+      "faceContainers": 29,
+      "declarations": 30
+    },
+    "nested": {
+      "physicalCards": 8,
+      "faceContainers": 8,
+      "declarations": 9
+    },
+    "otherScope": {
+      "physicalCards": 7,
+      "faceContainers": 7,
+      "declarations": 7
+    },
+    "untraversed": {
+      "physicalCards": 8,
+      "faceContainers": 8,
+      "declarations": 9
+    },
+    "otherAttached": {
+      "physicalCards": 3,
+      "faceContainers": 3,
+      "declarations": 3
+    }
+  },
+  "untraversedNativePaths": [
+    {
+      "card": "Darkblade Agent",
+      "face": "front",
+      "path": "script.staticAbilities[1].ability",
+      "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/DarkbladeAgent.kt"
+    },
+    {
+      "card": "Essence Leak",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability",
+      "source": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/EssenceLeak.kt"
+    },
+    {
+      "card": "Expedition Diviner",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability",
+      "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ExpeditionDiviner.kt"
+    },
+    {
+      "card": "Fire Nation Cadets",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability",
+      "source": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/FireNationCadets.kt"
+    },
+    {
+      "card": "Helm of the Ghastlord",
+      "face": "front",
+      "path": "script.staticAbilities[1].ability",
+      "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt"
+    },
+    {
+      "card": "Helm of the Ghastlord",
+      "face": "front",
+      "path": "script.staticAbilities[3].ability",
+      "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt"
+    },
+    {
+      "card": "Oculus Whelp",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability",
+      "source": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/OculusWhelp.kt"
+    },
+    {
+      "card": "Relic Vial",
+      "face": "front",
+      "path": "script.staticAbilities[0].ability",
+      "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/RelicVial.kt"
+    },
+    {
+      "card": "Triton Wavebreaker",
+      "face": "front",
+      "path": "script.staticAbilities[1].ability",
+      "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/TritonWavebreaker.kt"
+    }
+  ],
+  "interpretation": {
+    "relationships": {
+      "physicalCards": 101,
+      "faceContainers": 101,
+      "declarations": 103
+    },
+    "supportedRecipients": {
+      "physicalCards": 71,
+      "faceContainers": 71,
+      "declarations": 73
+    },
+    "supportedEventControllers": {
+      "physicalCards": 56,
+      "faceContainers": 56,
+      "declarations": 56
+    },
+    "unknownRecipients": {
+      "physicalCards": 30,
+      "faceContainers": 30,
+      "declarations": 30
+    },
+    "unknownEvents": {
+      "physicalCards": 25,
+      "faceContainers": 25,
+      "declarations": 26
+    },
+    "byKind": {
+      "AURA_HOST": {
+        "physicalCards": 37,
+        "faceContainers": 37,
+        "declarations": 38
+      },
+      "EQUIPMENT_HOST": {
+        "physicalCards": 29,
+        "faceContainers": 29,
+        "declarations": 30
+      },
+      "FILTER_GROUP": {
+        "physicalCards": 31,
+        "faceContainers": 31,
+        "declarations": 31
+      },
+      "UNRESOLVED": {
+        "physicalCards": 4,
+        "faceContainers": 4,
+        "declarations": 4
+      }
+    },
+    "recipientUncertainties": {
+      "Group filter or pairing membership unresolved": 22,
+      "Aura enchant restriction outside bounded creature hosts": 4,
+      "Recipient scope beyond bounded attachment/creature groups": 4
+    },
+    "bodyFacts": {
+      "CREATE_TOKEN:CREATE_TOKEN": 15,
+      "OTHER_OPERATION:DRAW_CARDS": 22,
+      "DAMAGE:DAMAGE_POTENTIALLY_LETHAL": 4,
+      "SACRIFICE:SACRIFICE": 14,
+      "MOVE_OBJECT:MOVE_OBJECT": 15,
+      "OTHER_OPERATION:DESTROY": 6
+    },
+    "bodyEventOutcomes": {
+      "CREATE_TOKEN": 15,
+      "DRAW_CARDS": 22,
+      "DEAL_PLAYER_DAMAGE": 3,
+      "LOSE_LIFE": 7,
+      "FORCED_SACRIFICE": 1,
+      "GAIN_LIFE": 6
+    },
+    "bodyCards": 66,
+    "collectionStages": 24,
+    "collectionUses": 22,
+    "bodyUnsupported": {
+      "Collection source not interpreted: AttachedTo": 1,
+      "Positive per-card filter propagated; relative/complement membership unresolved": 3,
+      "Effect not interpreted; native action retained (may contain further capabilities)": 58,
+      "Reflexive continuation is a separate trigger; source/granter references retained without composing the triggers": 4,
+      "Unresolved token variant: creature=MATCH; controller=YOU; quantity=UNKNOWN; []": 1,
+      "Collection source not interpreted: TopOfLibrary": 1,
+      "Collection source not interpreted: TopOfLibrary; Battlefield-to-battlefield movement/control semantics unresolved": 1,
+      "Complement collection filter not solved": 2,
+      "Unresolved token variant: creature=NO_MATCH; controller=YOU; quantity=UNKNOWN; []": 1,
+      "Unresolved token variant: creature=UNKNOWN; controller=YOU; quantity=MATCH; []": 1
+    }
+  },
+  "cohort": [
+    {
+      "card": "Combat Research",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Combat Research|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "kind": "AURA_HOST",
+      "recipientSupport": "MATCH",
+      "eventSupport": "MATCH",
+      "bodyFacts": 1,
+      "eventOutcomes": 1,
+      "bodyUnsupported": 0
+    },
+    {
+      "card": "Custody Battle",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "kind": "AURA_HOST",
+      "recipientSupport": "MATCH",
+      "eventSupport": "MATCH",
+      "bodyFacts": 1,
+      "eventOutcomes": 0,
+      "bodyUnsupported": 1
+    },
+    {
+      "card": "Dire Flail",
+      "face": "front.backFace",
+      "path": "script.staticAbilities[1]",
+      "id": "Dire Flail|front.backFace|script.staticAbilities[1]|TRIGGER_GRANT",
+      "kind": "EQUIPMENT_HOST",
+      "recipientSupport": "MATCH",
+      "eventSupport": "MATCH",
+      "bodyFacts": 2,
+      "eventOutcomes": 0,
+      "bodyUnsupported": 2
+    },
+    {
+      "card": "Sixth Sense",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "kind": "AURA_HOST",
+      "recipientSupport": "MATCH",
+      "eventSupport": "MATCH",
+      "bodyFacts": 1,
+      "eventOutcomes": 1,
+      "bodyUnsupported": 0
+    },
+    {
+      "card": "Tandem Lookout",
+      "face": "front",
+      "path": "script.staticAbilities[0]",
+      "id": "Tandem Lookout|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "kind": "UNRESOLVED",
+      "recipientSupport": "UNKNOWN",
+      "eventSupport": "MATCH",
+      "bodyFacts": 1,
+      "eventOutcomes": 1,
+      "bodyUnsupported": 0
+    }
+  ],
+  "inputSha256": "2100c7f0cf89f36e127d0fb20221567631234f3221b249ba414649e4de3630d6",
+  "scope": "Declaration/recipient/event support is structural potential. Native detection, exact supplier binding, stack persistence, source fidelity and whole-card qualification are separate. Face containers include aggregate roots; counts overlap."
+}
