@@ -17,7 +17,7 @@ import kotlinx.serialization.json.*
 
 private fun Effect.tree() = nativeJson.encodeToJsonElement(Effect.serializer(), this)
 private data class Frame(val targets: List<TargetRequirement>, val tokenController: String? = null, val tokenEvent: String? = null, val actor: String = "YOU",
-    val rootTargetSelection: Boolean = true, val receivingSource: ObjectScope? = null,
+    val rootTargetSelection: Boolean = true, val receivingSource: ObjectScope? = null, val grantingSource: ObjectScope? = null,
     val iteration: ObjectScope? = null, val assumptions: List<String> = emptyList(),
     val movementTargets: MutableMap<String,TargetMovement> = mutableMapOf(),
     val collectionBindings: MutableMap<String,String> = mutableMapOf(),
@@ -83,6 +83,7 @@ private fun scope(filter: com.wingedsheep.sdk.scripting.filters.unified.TargetFi
     else ObjectScope(unresolved = "Cross-zone target union requires branch-specific interpretation")
 private fun targetScope(target: EffectTarget, frame: Frame, selfCreature: Boolean): ObjectScope = when(target) {
     EffectTarget.Self -> frame.receivingSource ?: ObjectScope(actor="YOU",printedSelfCreature=selfCreature,battlefield=frame.selfZone == Zone.BATTLEFIELD,zone=frame.selfZone,zonePlayer=if(frame.selfZone==Zone.GRAVEYARD) "ANY" else "UNKNOWN")
+    EffectTarget.GrantingSource -> frame.grantingSource ?: ObjectScope(unresolved="Unresolved target: ${target.javaClass.simpleName}")
     is EffectTarget.ContextTarget -> requirementScope(frame.targets.getOrNull(target.index))
     is EffectTarget.BoundVariable -> requirementScope(frame.targets.find { it.id == target.name })
     is EffectTarget.FilteredTarget -> scope(target.filter)
@@ -484,6 +485,15 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     listOf("Active native granter and eligible current recipient; no recipient, payment, activation or outcome guaranteed",
                         "Availability uses granter-relative filters; the granted body uses recipient Self and activator-relative YOU"),body)))
             }
+            if(a is GrantTriggeredAbility) {
+                val index=actions.indexOfLast { it.id==actionId };val parent=actions[index]
+                val definition=grantFace(card,label);val problems=triggerRecipientProblems(definition,a)
+                val nested=PathwayExtractor().grantedTriggerBody(card,label,"script.staticAbilities[$i].ability",a,parent.id,definition,problems.isEmpty())
+                actions[index]=parent.copy(grantedTriggers=listOf(GrantedTrigger("${parent.id}|TRIGGER_GRANT",parent.id,card.name,label,definition?.name,
+                    "script.staticAbilities[$i]",i,a,definition?.let { grantRecipientKind(it,a.filter) } ?: GrantRecipientKind.UNRESOLVED,
+                    if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,grantedEventSupport(a.ability),problems,
+                    if(definition?.isAura==true) "${card.name}|$label|script" else null,nested.first,nested.second)))
+            }
         }
         actionId="${card.name}|$label|script.unsupported"
         val scriptTree=nativeJson.encodeToJsonElement(CardScript.serializer(),script).jsonObject
@@ -548,6 +558,37 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         abilityCost(grant.ability.cost,"$path.cost",frame)
         walk(grant.ability.effect,"$path.effect",frame)
         return GrantedBody(actions.first(),facts.toList(),unsupported.toList(),structuralSupport.toList())
+    }
+
+    internal fun grantedTriggerBody(origin: CardDefinition,label: String,path: String,grant: GrantTriggeredAbility,
+        parent: String,definition: CardDefinition?,recipientKnown: Boolean): Pair<GrantedBody,List<EventOutcome>> {
+        card=origin;face=label;selfCreature=false;grantedSource=true
+        val ability=grant.ability;actionId="${origin.name}|$label|$path";actionKind="GRANTED_TRIGGERED";rootEffect=ability.effect
+        actionNative=nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability)
+        val targets=listOfNotNull(ability.targetRequirement)+ability.additionalTargetRequirements
+        val assumptions=listOf("Triggered source Self is the receiving object; GrantingSource is the distinct native granter",
+            "YOU/Controller refer to the captured native trigger controller, not automatically the granter or current host controller",
+            "Native grant, qualifying event and detection required; no occurrence or resolution implied",
+            "triggerRestriction=${ability.triggerRestriction} at detection; interveningIf=${ability.interveningIf} at detection AND resolution",
+            "Targets/chooser at stack placement; effect gates/choices at resolution; cap=${ability.perTurnTriggerCap}; lifetime=${ability.triggersOnce}")
+        actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
+            targetSelection=targets.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.TRIGGER_STACK_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_TRIGGERED) },
+            unionTargets=unionTargets(actionId,targets,"TRIGGER_STACK_ANNOUNCEMENT"))
+        val receiver=ObjectScope(filter=if(recipientKnown) GameObjectFilter.Creature else GameObjectFilter.Any,
+            actor="YOU",printedSelfCreature=null,battlefield=true,zone=Zone.BATTLEFIELD,
+            details=listOf("Receiving object of $parent; printed granter characteristics are not source characteristics"),
+            unresolved=if(recipientKnown) null else "Recipient source binding unresolved")
+        val provider=ObjectScope(filter=when { definition?.isEquipment==true -> GameObjectFilter.Artifact; definition?.isAura==true -> GameObjectFilter.Enchantment; else -> GameObjectFilter.Any },
+            actor="GRANTER_CONTROLLER",printedSelfCreature=definition?.isCreature,battlefield=true,zone=Zone.BATTLEFIELD,
+            details=listOf("Native granterId of $parent, distinct from receiving source"))
+        val confidence=if(recipientKnown && grantedEventSupport(ability)==Verdict.MATCH && ability.triggerRestriction==null && ability.interveningIf==null) Verdict.MATCH else Verdict.UNKNOWN
+        val event=EventContext(ability.trigger,ability.binding,ability.activeZones,recipientKnown,actionNative,confidence,assumptions)
+        val frame=Frame(targets,receivingSource=receiver,grantingSource=provider,event=event,assumptions=assumptions)
+        walk(ability.effect,"$path.effect",frame)
+        ability.elseEffect?.let { walk(it,"$path.elseEffect",frame.copy(rootTargetSelection=false,outcomeGuard=Verdict.UNKNOWN,
+            assumptions=assumptions+"Announcement-time target selection produced nothing; alternate effect")) }
+        return GrantedBody(actions.first(),facts.toList(),unsupported.toList(),structuralSupport.toList(),controller="TRIGGER_CONTROLLER",
+            playerReferences="YOU/Controller are the native controller captured when the trigger fired; Self/source characteristics use the recipient; GrantingSource uses the recorded granter.") to eventOutcomes.toList()
     }
 
     private fun sourceCardCreature(): Boolean? = if(grantedSource) null else selfCreature.takeIf {
@@ -1105,6 +1146,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         if(recordToken(e,path,frame)) return
         if (e is DealDamageEffect) recordPlayerOperation(e, path, frame)
         if(e is DrawCardsEffect && frame.event!=null) {
+            if(actionKind=="GRANTED_TRIGGERED") add(path,"DRAW_CARDS","EFFECT",ObjectScope(battlefield=false,actor=playerScope(e.target,frame)),e.tree(),frame)
             val context=frame.event
             val recipient=playerScope(e.target,frame)
             val confidence=all(listOf(frame.guardConfidence,frame.factGuard,frame.outcomeGuard,context.confidence,
@@ -1352,6 +1394,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                 else issue(path, e, "Effect not interpreted; native action retained (may contain further capabilities)")
             }
             is ReflexiveTriggerEffect -> {
+                if(actionKind=="GRANTED_TRIGGERED") issue(path,e,"Reflexive continuation is a separate trigger; source/granter references retained without composing the triggers",SupportStatus.PARTIALLY_SUPPORTED)
                 walk(e.action,"$path.action",frame.copy(collectionBindings=frame.collectionBindings.toMutableMap(),returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,assumptions=frame.assumptions+"Reflexive action optional=${e.optional}",relationship="REFLEXIVE_ACTION_ENABLES_OUTCOME"))
                 walk(e.reflexiveEffect,"$path.reflexiveEffect",frame.copy(rootTargetSelection=false,collectionBindings=mutableMapOf(),returnGuard=Verdict.UNKNOWN,outcomeGuard=Verdict.UNKNOWN,targets=e.reflexiveTargetRequirements,
                     assumptions=frame.assumptions+"Reflexive trigger after successful action"))

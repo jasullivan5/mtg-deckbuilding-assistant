@@ -1,0 +1,190 @@
+{
+  "applicationBaseline": "c4350e5894d1518460b79fb86a728c65586ddbb1",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "retrievedAt": "2026-11-23T01:37:55.968488+00:00",
+  "rulesUri": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+  "ruleSections": [
+    "113.7",
+    "113.7a",
+    "400.7",
+    "603.2",
+    "603.3a",
+    "603.3d",
+    "603.4",
+    "603.5",
+    "608.2h"
+  ],
+  "cases": [
+    {
+      "name": "Sixth Sense",
+      "printingId": "e564db6b-0b8b-4c67-9135-5da76d2225fe",
+      "oracleId": "25d35e3e-ece8-4c94-9dbc-d076a52fca0d",
+      "set": "akh",
+      "collectorNumber": "187",
+      "oracleText": "Enchant creature\nEnchanted creature has \"Whenever this creature deals combat damage to a player, you may draw a card.\"",
+      "sourceUri": "https://scryfall.com/card/akh/187/sixth-sense?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/akh/187",
+      "rulingsUri": "https://api.scryfall.com/cards/e564db6b-0b8b-4c67-9135-5da76d2225fe/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/akh/cards/SixthSense.kt",
+      "nativeSha256": "7186cf64dd49834e1ddd99f72ee0fae93ac602546244d24c4c0131863128c56b",
+      "nativeLfSha256": "eae4c7c419f0f9d9118fde9dee142ca5051f46b4f0f4bc73154f5f2f74196c4b",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "AURA_HOST",
+      "expected": "Recipient SELF combat damage to a player; recipient controller controls trigger; controller may draw at resolution.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    },
+    {
+      "name": "Combat Research",
+      "printingId": "6c44738c-706f-40b2-a09d-b21cd0889049",
+      "oracleId": "fbfd7f38-be9a-49bf-8769-79e1e7e8dfdc",
+      "set": "dmu",
+      "collectorNumber": "44",
+      "oracleText": "Enchant creature\nEnchanted creature has \"Whenever this creature deals combat damage to a player, draw a card.\"\nAs long as enchanted creature is legendary, it gets +1/+1 and has ward {1}. (Whenever enchanted creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)",
+      "sourceUri": "https://scryfall.com/card/dmu/44/combat-research?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/dmu/44",
+      "rulingsUri": "https://api.scryfall.com/cards/6c44738c-706f-40b2-a09d-b21cd0889049/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2022-09-09",
+          "source": "wotc",
+          "comment": "Because the card-draw ability is granted to the creature, if an opponent takes control of the enchanted creature and it deals combat damage while they control it, that opponent will draw a card."
+        }
+      ],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/dmu/cards/CombatResearch.kt",
+      "nativeSha256": "b2d2493d7a692d95813bbf4d823f342ee5412bc14160fa1bd3558e90632226c1",
+      "nativeLfSha256": "cbba9c2feb8377f6615a0b53c18fe14ac1ea79892e5bcc689768bb5ca2e8290f",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "AURA_HOST",
+      "expected": "Recipient SELF combat damage to a player draws for trigger controller. Legendary stat/ward statics are separate.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    },
+    {
+      "name": "Custody Battle",
+      "printingId": "b72257f5-0cf9-45ca-8dc7-a1a93bd7dd1e",
+      "oracleId": "9a9664d7-2299-43dc-89b6-d74fe69e0e4a",
+      "set": "ons",
+      "collectorNumber": "197",
+      "oracleText": "Enchant creature\nEnchanted creature has \"At the beginning of your upkeep, target opponent gains control of this creature unless you sacrifice a land.\"",
+      "sourceUri": "https://scryfall.com/card/ons/197/custody-battle?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/ons/197",
+      "rulingsUri": "https://api.scryfall.com/cards/b72257f5-0cf9-45ca-8dc7-a1a93bd7dd1e/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/CustodyBattle.kt",
+      "nativeSha256": "2c7a0fdd8df1f44d325e41cafa0a5fdf1a3505773b3e1e08f95cd8fefe873b63",
+      "nativeLfSha256": "7f93150804875c7e5e011eaea3d57627a15b768a5ff365b2fdc67472736a893b",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "AURA_HOST",
+      "expected": "Recipient controller upkeep creates recipient-source trigger controlled by that controller; opponent selected at announcement, sacrifice-land decision at resolution. Existing trigger controller does not follow later control changes.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    },
+    {
+      "name": "Dire Flail // Dire Blunderbuss",
+      "printingId": "0d2d98ae-fe02-4a86-9e80-7b95e08de21c",
+      "oracleId": "5a043512-fa56-4361-bb92-0a0f229f34d3",
+      "set": "lci",
+      "collectorNumber": "145",
+      "oracleText": [
+        {
+          "name": "Dire Flail",
+          "oracleText": "Equipped creature gets +2/+0.\nEquip {1}\nCraft with artifact {3}{R}{R} ({3}{R}{R}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)"
+        },
+        {
+          "name": "Dire Blunderbuss",
+          "oracleText": "Equipped creature gets +3/+0 and has \"Whenever this creature attacks, you may sacrifice an artifact other than Dire Blunderbuss. When you do, this creature deals damage equal to its power to target creature.\"\nEquip {1}"
+        }
+      ],
+      "sourceUri": "https://scryfall.com/card/lci/145/dire-flail-dire-blunderbuss?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/lci/145",
+      "rulingsUri": "https://api.scryfall.com/cards/0d2d98ae-fe02-4a86-9e80-7b95e08de21c/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "You don't choose a target for the triggered ability granted by Dire Blunderbuss at the time it triggers. Rather, a second \"reflexive\" ability triggers when you sacrifice another artifact this way. You choose targets for that ability as it goes on the stack. Each player may respond to this triggered ability as normal."
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "Use the equipped creature's power as the reflexive triggered ability granted by Dire Blunderbuss resolves to determine how much damage is dealt. If the equipped creature is no longer on the battlefield at that time, use its power as it last existed on the battlefield."
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "If the equipped creature isn't on the battlefield as the reflexive triggered ability granted by Dire Blunderbuss resolves but it had lifelink when it left the battlefield, you will gain life."
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "The back faces of some cards with craft refer to cards \"used to craft\" it. This refers to the cards exiled as part of the cost of the craft ability of the front face. Those cards are considered to be \"used to craft\" that permanent as long as they remain exiled and the permanent remains on the battlefield, even if the permanent's controller changes or some of its characteristics change (because of a copy effect, for example.)"
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "If the materials required include multiple objects, you may exile some of them from among permanents you control and the rest from among cards in your graveyard. You don't have to choose all permanents or all cards from your graveyard."
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "You may exile tokens you control as part of the materials required. However, because they aren't cards and won't stay in exile, any abilities that refer to what you \"used to craft\" the back faces won't refer to anything."
+        },
+        {
+          "publishedAt": "2023-11-10",
+          "source": "wotc",
+          "comment": "If a card that isn't a transforming double-faced card becomes a copy of a card with craft, it'll stay in exile if you activate the craft ability. It won't return to the battlefield."
+        }
+      ],
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/DireFlail.kt",
+      "nativeSha256": "bb19195d7f94e78ea9030b0b41e50b4771fc617f23b5cf4d7291805f962db94e",
+      "nativeLfSha256": "8d24a3171c7e86ea138a5f148c73ccfc7da7292d9a7af6fed1fb9f377e48fc04",
+      "declarationPath": "script.backFace.staticAbilities[1]",
+      "relationship": "EQUIPMENT_HOST",
+      "expected": "Back Equipment grants SELF attack trigger; attacking creature is source and controller. Granter is the specific Equipment; sacrifice excludes it. Reflexive continuation remains separately bounded.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    },
+    {
+      "name": "Tandem Lookout",
+      "printingId": "83564e67-2677-4955-a3b9-3b221dbb100b",
+      "oracleId": "1576f031-57ca-4894-b461-8ea57b6cefdc",
+      "set": "avr",
+      "collectorNumber": "80",
+      "oracleText": "Soulbond (You may pair this creature with another unpaired creature when either enters. They remain paired for as long as you control both of them.)\nAs long as Tandem Lookout is paired with another creature, each of those creatures has \"Whenever this creature deals damage to an opponent, draw a card.\"",
+      "sourceUri": "https://scryfall.com/card/avr/80/tandem-lookout?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/avr/80",
+      "rulingsUri": "https://api.scryfall.com/cards/83564e67-2677-4955-a3b9-3b221dbb100b/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2017-03-14",
+          "source": "wotc",
+          "comment": "If Tandem Lookout or the creature it’s paired with is dealt lethal damage at the same time that either deals damage to an opponent, its ability triggers. You’ll draw a card even though that creature no longer has the ability."
+        }
+      ],
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/avr/cards/TandemLookout.kt",
+      "nativeSha256": "cbb7613dcf6a30e7e55db8757b4bd1dd16e3f5b51afab26ad0287cfd62d2604d",
+      "nativeLfSha256": "c0085a97b05014014de06ea7b6a5e220e13476640271803a5ba16cf72bc16b71",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "UNRESOLVED",
+      "expected": "Paired creatures each watch their own damage to an opponent, including noncombat damage. Soulbond membership remains UNKNOWN in bounded application model.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    },
+    {
+      "name": "Stab Wound",
+      "printingId": "7b562269-e6ec-4f8d-844e-26b272248d9d",
+      "oracleId": "aad212b2-57ba-4e70-869b-636842eb7a88",
+      "set": "rtr",
+      "collectorNumber": "78",
+      "oracleText": "Enchant creature\nEnchanted creature gets -2/-2.\nAt the beginning of the upkeep of enchanted creature's controller, that player loses 2 life.",
+      "sourceUri": "https://scryfall.com/card/rtr/78/stab-wound?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/rtr/78",
+      "rulingsUri": "https://api.scryfall.com/cards/7b562269-e6ec-4f8d-844e-26b272248d9d/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/rtr/cards/StabWound.kt",
+      "nativeSha256": "5d1f1d21fdcf84fd7cd4d5bb72dcc595463f9183fa9506ca0a51c20767a55e0c",
+      "nativeLfSha256": "c9defcaa24fd6323ea6f25d684ac9171cbbe79102146cd1e46bd3bfd0d246560",
+      "declarationPath": "script.triggeredAbilities[0]",
+      "relationship": "INTRINSIC_NEGATIVE",
+      "expected": "Aura owns the upkeep trigger, source/controller are Aura; attached creature controller is affected player. Not a grant.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Native granter stamping may not distinguish equal-ID declarations or group providers; missing binding stays UNKNOWN."
+    }
+  ]
+}
