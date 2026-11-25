@@ -7,6 +7,7 @@ import com.wingedsheep.engine.support.GameTestDriver
 import com.wingedsheep.sdk.core.*
 import com.wingedsheep.sdk.model.EntityId
 import com.wingedsheep.sdk.scripting.*
+import com.wingedsheep.sdk.scripting.filters.unified.GroupFilter
 import dev.mtg.assistant.discovery.*
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -223,6 +224,29 @@ class GrantedTriggerScenarioTest : FunSpec({
         d.available(g,aura,host).verdict shouldBe Verdict.UNKNOWN
         val mark=d.events.size;d.combat(listOf(host))
         d.events.drop(mark).filterIsInstance<AbilityTriggeredEvent>().isNotEmpty() shouldBe true
+    }
+    test("native group availability does not invent an unexposed supplying granter on the stack") {
+        val ability=(card("Sixth Sense").script.staticAbilities.single() as GrantTriggeredAbility).ability
+        val source=com.wingedsheep.sdk.dsl.card("Isolated plain triggered group grant") {
+            manaCost="{1}";typeLine="Enchantment"
+            staticAbility { this.ability=GrantTriggeredAbility(ability,GroupFilter(GameObjectFilter.Creature.youControl())) }
+        }
+        val d=scenarioDriver(source)
+        val granter=d.putPermanentOnBattlefield(d.player1,source.name)
+        val host=d.putCreatureOnBattlefield(d.player1,"Hill Giant");d.removeSummoningSickness(host)
+        val other=d.putCreatureOnBattlefield(d.player2,"Hill Giant")
+        val g=PathwayExtractor().extract(listOf(source)).actions.flatMap { it.grantedTriggers }.single()
+        fun available(target: EntityId)=g.observeAvailability(d.state,checkNotNull(d.state.objectRef(granter)),checkNotNull(d.state.objectRef(target)),d.services)
+        available(other).verdict shouldBe Verdict.NO_MATCH
+        val instance=checkNotNull(available(host).instance);val before=d.state;val mark=d.events.size
+        d.combat(listOf(host),d.player1)
+        val event=d.events.drop(mark).filterIsInstance<AbilityTriggeredEvent>().single()
+        event.sourceId shouldBe host
+        val ref=checkNotNull(d.state.objectRef(checkNotNull(event.abilityEntityId)))
+        d.state.getEntity(ref.entityId)?.get<TriggeredAbilityOnStackComponent>()?.granterId shouldBe null
+        val observed=g.observeStack(before,d.state,d.events.drop(mark),instance,ref,d.services)
+        observed.verdict shouldBe Verdict.UNKNOWN
+        println("GRANTED_TRIGGER_NATIVE "+reportJson.encodeToString(GrantedTriggerObservation.serializer(),observed))
     }
     test("Dire Blunderbuss native craft equip and attack identify the host and granting Equipment separately") {
         val d=driver("Dire Flail","Sol Ring")
