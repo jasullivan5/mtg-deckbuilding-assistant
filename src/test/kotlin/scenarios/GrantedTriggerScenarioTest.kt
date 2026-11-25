@@ -72,6 +72,9 @@ class GrantedTriggerScenarioTest : FunSpec({
             g.observeStack(before,d.state,emptyList(),instance,checkNotNull(observed.stackObject),d.services,root(g)).verdict shouldBe Verdict.UNKNOWN
             val cause=d.events.drop(mark).filterIsInstance<DamageDealtEvent>().single()
             g.observeStack(before,d.state,d.events.drop(mark)+cause,instance,checkNotNull(observed.stackObject),d.services,root(g)).verdict shouldBe Verdict.UNKNOWN
+            val wrongVisit=cause.copy(sourceLastKnown=checkNotNull(cause.sourceLastKnown).copy(objectRef=instance.recipient.copy(generation=instance.recipient.generation+1)))
+            val wrongEvents=d.events.drop(mark).map { if(it===cause) wrongVisit else it }
+            g.observeStack(before,d.state,wrongEvents,instance,checkNotNull(observed.stackObject),d.services,root(g)).verdict shouldBe Verdict.UNKNOWN
             val hand=d.getHandSize(d.player2);d.drawChoice(accept,d.player2)
             d.getHandSize(d.player2) shouldBe hand+if(accept) 1 else 0
             d.getLifeTotal(d.player1) shouldBe 17

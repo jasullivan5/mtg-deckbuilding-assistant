@@ -143,11 +143,12 @@ fun GrantedTrigger.observeStack(before: GameState, after: GameState, events: Lis
     if(!after.isCurrentObject(instance.granter)) return result(Verdict.UNKNOWN,"Granter visit changed within event/placement; no captured native granter generation")
     val context=stack.triggerContext ?: return result(Verdict.UNKNOWN,"No native trigger context")
     val causes=events.filter { e -> when(val pattern=declaration.ability.trigger) {
-        is EventPattern.DealsDamageEvent -> e is DamageDealtEvent && context.damageSourceId==instance.recipient.entityId && e.sourceId==context.damageSourceId && e.targetId==context.damageRecipientId && e.amount==context.damageAmount
+        is EventPattern.DealsDamageEvent -> e is DamageDealtEvent && context.damageSourceId==instance.recipient.entityId && e.sourceId==context.damageSourceId && e.targetId==context.damageRecipientId && e.amount==context.damageAmount &&
+            (e.sourceLastKnown?.objectRef ?: instance.recipient.takeIf { after.isCurrentObject(it) })==instance.recipient
         // A native attack event is a batch, not a singular triggeringEntityId. The captured
         // SELF source and attacker's player bind this recipient to that actual batch.
-        is EventPattern.AttackEvent -> e is AttackersDeclaredEvent && stack.sourceId in e.attackers && context.triggeringPlayerId==e.attackingPlayerId
-        is EventPattern.StepEvent -> e is StepChangedEvent && e.newStep==pattern.step && context.step==pattern.step && (context.triggeringPlayerId ?: after.activePlayerId)==stack.controllerId
+        is EventPattern.AttackEvent -> e is AttackersDeclaredEvent && stack.sourceId in e.attackers && context.triggeringPlayerId==e.attackingPlayerId && after.isCurrentObject(instance.recipient)
+        is EventPattern.StepEvent -> e is StepChangedEvent && e.newStep==pattern.step && context.step==pattern.step && (context.triggeringPlayerId ?: after.activePlayerId)==stack.controllerId && after.isCurrentObject(instance.recipient)
         else -> false
     } }
     val visit=before.getEntity(instance.recipient.entityId)?.get<BattlefieldEntryTimestampComponent>()?.timestamp
