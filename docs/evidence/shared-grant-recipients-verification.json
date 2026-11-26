@@ -1,0 +1,166 @@
+{
+  "baselineApplication": "d8aafe4c588bc8cb36ff2b6fb2b4b5acc1c97d0c",
+  "baselineTreeMatchesVerifiedDelivery": "a690646442184a2e2eb4d04984c3b799de7e934d",
+  "testedApplication": "b84f9f764baaeb42173a8fd3221bc217b62c475b",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "engineMode": "app-stable",
+  "java": "Temurin 25.0.4.1",
+  "normalExplorerHeapBytes": 1073741824,
+  "kotlin": {
+    "tests": 898,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 124
+  },
+  "nativeCases": [
+    "Gemhide crosses controllers but Manaweft qualifies its own controller and requires Sliver subtype",
+    "Unctus uses projected color, projected control and explicit exclusion",
+    "Deadeye grants blink to both native pair members and the renewed receiver loses its old grant",
+    "Tandem receives separate source triggers and the stacked draws survive partner departure",
+    "native soulbond ends after projected type loss or a controller change",
+    "two Synapse Sliver providers yield independent native triggers without exact supplying IDs",
+    "a renewed Synapse provider does not restore the old generation or change trigger counts"
+  ],
+  "bootstrapGuards": 17,
+  "oracleSnapshotGuards": 3,
+  "catalog": {
+    "mode": "current",
+    "passed": true,
+    "currentChecksPassed": true,
+    "historicalFingerprintsMatch": false,
+    "actualEngineCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    }
+  },
+  "discoverPairs": 18,
+  "archivedReportChanges": 0,
+  "interfaceBrowserChecks": 8,
+  "liveBrowserChecks": 18,
+  "explorer": {
+    "health": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "b84f9f764baaeb42173a8fd3221bc217b62c475b"
+    },
+    "commander": "Kenrith, the Returned King",
+    "objective": "create-creature-tokens",
+    "cards": [
+      {
+        "card": "Gemhide Sliver",
+        "route": "card",
+        "path": "script.staticAbilities[0]",
+        "kind": "FILTER_GROUP",
+        "support": "MATCH",
+        "eventSupport": null
+      },
+      {
+        "card": "Manaweft Sliver",
+        "route": "card",
+        "path": "script.staticAbilities[0]",
+        "kind": "FILTER_GROUP",
+        "support": "MATCH",
+        "eventSupport": null
+      },
+      {
+        "card": "Unctus, Grand Metatect",
+        "route": "report",
+        "effectiveDeckEligibility": "UNKNOWN",
+        "includedInMechanicalInput": false
+      },
+      {
+        "card": "Deadeye Navigator",
+        "route": "card",
+        "path": "script.staticAbilities[0]",
+        "kind": "SOULBOND_PAIR",
+        "support": "MATCH",
+        "eventSupport": null
+      },
+      {
+        "card": "Tandem Lookout",
+        "route": "card",
+        "path": "script.staticAbilities[0]",
+        "kind": "SOULBOND_PAIR",
+        "support": "MATCH",
+        "eventSupport": "MATCH"
+      },
+      {
+        "card": "Synapse Sliver",
+        "route": "card",
+        "path": "script.staticAbilities[0]",
+        "kind": "FILTER_GROUP",
+        "support": "MATCH",
+        "eventSupport": "MATCH"
+      }
+    ]
+  },
+  "finalInventoryMatchesEarlierExtractionByteForByte": true,
+  "lfSha256": {
+    "src/main/kotlin/discovery/GrantRecipients.kt": "895335ef6992fc99c4d6706ab162e78653e57d5025f7df6cf2bda59ce00f8898",
+    "src/main/kotlin/discovery/GrantedAbilities.kt": "33e48c443a3b3aff7bbe9f17f74b91063ad442173dac03a454a234b5b03644ec",
+    "src/main/kotlin/discovery/GrantedTriggers.kt": "4ebd59cca5332bc9c07dac30e394eab90fc9389821af37dbc6ac9abb2732cea3",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "ec37f83339bb4c5f40c10673eab18daf1e7ef1c2954eb615bd69169ded6a8fa8",
+    "src/test/kotlin/discovery/SharedGrantRecipientTest.kt": "9756e581b4a09555064da8ef11da0d9835fd9e6020fb7c428d2a07de7b72aa02",
+    "src/test/kotlin/scenarios/SharedGrantRecipientScenarioTest.kt": "e9800e1c36063c2672c62e5b03485c595f42315d28d78ab25ec7ea4bf35d2e9c",
+    "src/test/resources/regression/shared-grant-recipient-sources.json": "95a7b8c17bdac0085e69614ef4c302f8041863504a2d9b2a5e6c22a88e9173f2",
+    "scripts/compare-shared-grant-recipients.py": "199f1ef9bc8e52569997c445d1cc2337c8cdc9f43d58625ab052e14f5e8c28aa"
+  },
+  "logSha256": {
+    "bootstrap-final.log": "fbeffacf3ebdf40e9931044c058fb1396b2560b34923658b930728a699922062",
+    "focused-frozen.log": "986af65d50c8c1546c33e5906a4c6ce7bb837063f56317dae6951ed27381bcf1",
+    "full.log": "e3786784ea6c1a016bfd28246d9e03229985d0e35852edb6251138f0cd61af27",
+    "catalog-gate-final.log": "b0a4cc2d4d6a0db35b717a105ea7e8b73233bb5af47d0eb1c4488774082845ef",
+    "frontend.log": "c4e5802ee6970c4b21967262ef229d3bb687161b12653373179f0bd45b5201c5",
+    "browser-ui.log": "fbde86b099b0c818e5156eedd7f18cfa68f5653df4c1c38f851fe4a716dfce9d",
+    "browser-live.log": "ff1aced0e71479584895bbd1321d041916c2557991b180a5bf6856d129883efa",
+    "heap.log": "4e08a34276efff91681f31f446d2bd70bfd0fb1f6c336a301406fc6d25be37fd",
+    "api-final.log": "8e0da4c49e3b41a9d1a1e0d7611c9cf320c42452c7767e2389ceb2f3a87b6d76",
+    "comparison.log": "02233694fc9071bd3a121f92c449051e532fb028b55968f0d4a8cf186ca61604",
+    "historical-final.log": "0237455cc330791173c147925b34270a0f0d6f99a8945bc9bd146b608f8bbefb"
+  },
+  "verificationLimits": [
+    "Native regression scenarios ran in the full application suite on the stable engine. No separate engine suite or engine candidate was needed.",
+    "Synapse combat places separate triggers with receiving generations and controller. Missing provider stamps leave exact attribution UNKNOWN.",
+    "Source fidelity and whole-card qualification retain their existing scope."
+  ],
+  "retries": [
+    "The initial focused tests failed to compile because of a missing native target import and a vararg of a Kotlin value class. The reported run uses corrected fixtures.",
+    "A compile started while the paired-partner observation was being edited and saw mixed source versions. The reported run uses the clean committed revision.",
+    "An intermediate catalog run and Kenrith export overlapped the distribution replacement. Both were rerun after the final installation.",
+    "The first API probes expected all six controls to appear in the Kenrith report. Final inspection records five grant records plus the existing UNKNOWN deck-eligibility boundary for Unctus."
+  ]
+}
