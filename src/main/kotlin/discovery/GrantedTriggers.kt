@@ -2,7 +2,6 @@ package dev.mtg.assistant.discovery
 
 import com.wingedsheep.engine.core.*
 import com.wingedsheep.engine.event.*
-import com.wingedsheep.engine.handlers.PredicateContext
 import com.wingedsheep.engine.state.*
 import com.wingedsheep.engine.state.components.identity.*
 import com.wingedsheep.engine.state.components.battlefield.BattlefieldEntryTimestampComponent
@@ -13,7 +12,6 @@ import com.wingedsheep.sdk.model.EntityId
 import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.filters.unified.*
 import com.wingedsheep.sdk.scripting.references.Player
-import com.wingedsheep.sdk.scripting.targets.TargetObject
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 
@@ -28,13 +26,9 @@ internal fun grantFace(card: CardDefinition, face: String): CardDefinition? = wh
 
 internal fun triggerRecipientProblems(card: CardDefinition?, grant: GrantTriggeredAbility): List<String> {
     if(card==null) return listOf("Exact native definition face unresolved")
-    val kind=grantRecipientKind(card,grant.filter)
-    return listOfNotNull(
-        if(kind==GrantRecipientKind.UNRESOLVED) "Recipient scope beyond bounded attachment/creature groups" else null,
-        if(kind==GrantRecipientKind.AURA_HOST && card.script.auraTarget !in listOf(TargetObject(filter=TargetFilter.Creature),TargetObject(filter=TargetFilter.Creature.youControl()))) "Aura enchant restriction outside bounded creature hosts" else null,
-        if(kind in setOf(GrantRecipientKind.AURA_HOST,GrantRecipientKind.EQUIPMENT_HOST) && grant.filter!=GroupFilter.attachedCreature()) "Additional attached recipient restrictions" else null,
-        if(kind==GrantRecipientKind.FILTER_GROUP && grant.filter.copy(excludeSelf=false) !in listOf(GroupFilter(GameObjectFilter.Creature),GroupFilter(GameObjectFilter.Creature.youControl()))) "Group filter or pairing membership unresolved" else null,
-        if(grant.ability.activeZones!=setOf(Zone.BATTLEFIELD)) "Nonbattlefield/union active zones" else null)
+    return sharedGrantRecipientProblems(card, grant.filter) + listOfNotNull(
+        if (grant.ability.activeZones != setOf(Zone.BATTLEFIELD)) "Nonbattlefield/union active zones" else null
+    )
 }
 
 internal fun grantedEventSupport(a: TriggeredAbility): Verdict = when {
@@ -99,12 +93,11 @@ fun GrantedTrigger.observeAvailability(state: GameState, granter: ObjectRef, rec
     val native=resolver.getTriggeredAbilities(recipient.entityId,host.cardDefinitionId,state)
     val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unknown")
     val rc=state.projectedState.getController(recipient.entityId) ?: return result(Verdict.UNKNOWN,"Recipient controller unknown")
-    if(kind==GrantRecipientKind.FILTER_GROUP) {
+    if(kind==GrantRecipientKind.FILTER_GROUP || kind==GrantRecipientKind.SOULBOND_PAIR) {
         val providers=BattlefieldStaticsIndex.build(state,services.cardRegistry,services.predicateEvaluator).triggerGrantProviders
         if(providers.none { it.sourceEntityId==granter.entityId && it.grant==declaration }) return result(Verdict.NO_MATCH,"Native grant provider absent")
-        if(declaration.filter.excludeSelf && granter.entityId==recipient.entityId ||
-            !services.predicateEvaluator.matches(state,state.projectedState,recipient.entityId,declaration.filter.baseFilter,PredicateContext(controllerId=gc,sourceId=granter.entityId)))
-            return result(Verdict.NO_MATCH,"Native recipient predicate does not qualify")
+        if (!matchesSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc))
+            return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     } else if(granter.entityId !in resolver.resolveGranterIds(state,recipient.entityId,declaration.ability.id))
         return result(Verdict.NO_MATCH,"Native attachment grant lookup does not expose this granter")
     if(native.none { it==declaration.ability }) return result(Verdict.UNKNOWN,"Native resolved rule differs or is not exposed; caps/text changes require extra binding")

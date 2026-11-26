@@ -10,6 +10,7 @@ import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.conditions.*
 import com.wingedsheep.sdk.scripting.costs.*
 import com.wingedsheep.sdk.scripting.effects.*
+import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import com.wingedsheep.sdk.scripting.references.Player
 import com.wingedsheep.sdk.scripting.targets.*
 import com.wingedsheep.sdk.scripting.values.DynamicAmount
@@ -480,7 +481,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                     .grantedBody(card,label,"script.staticAbilities[$i].ability",a,declarationAction.id)
                 actions[staticIndex]=declarationAction.copy(grantedAbilities=listOf(GrantedAbility(
                     "${declarationAction.id}|GRANT",declarationAction.id,card.name,label,"script.staticAbilities[$i]",i,
-                    grantRecipientKind(card,a),a,if(card.isAura) "${card.name}|$label|script" else null,
+                    grantRecipientKind(card,a.filter),a,if(card.isAura) "${card.name}|$label|script" else null,
                     if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,problems,
                     listOf("Active native granter and eligible current recipient; no recipient, payment, activation or outcome guaranteed",
                         "Availability uses granter-relative filters; the granted body uses recipient Self and activator-relative YOU"),body)))
@@ -550,10 +551,11 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=grant.ability.targetRequirements.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.ACTIVATION_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_ACTIVATED) },
             unionTargets=unionTargets(actionId,grant.ability.targetRequirements,"ACTIVATION_ANNOUNCEMENT"))
-        val receiver=ObjectScope(filter=if(grantRecipientProblems(origin,label,grant).isEmpty()) GameObjectFilter.Creature else GameObjectFilter.Any,
+        val recipientSupported = grantRecipientProblems(origin, label, grant).isEmpty()
+        val receiver=ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientSupported),
             actor="YOU",printedSelfCreature=null,battlefield=true,zone=grant.recipientZone,
             details=listOf("Current recipient of $parent; printed characteristics of the granting card are not recipient characteristics"),
-            unresolved=if(grantRecipientProblems(origin,label,grant).isEmpty()) null else "Recipient characteristics/binding unresolved")
+            unresolved=if(recipientSupported) null else "Recipient characteristics/binding unresolved")
         val frame=Frame(grant.ability.targetRequirements,receivingSource=receiver,selfZone=grant.ability.activateFromZone,assumptions=assumptions)
         abilityCost(grant.ability.cost,"$path.cost",frame)
         walk(grant.ability.effect,"$path.effect",frame)
@@ -574,7 +576,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=targets.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.TRIGGER_STACK_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_TRIGGERED) },
             unionTargets=unionTargets(actionId,targets,"TRIGGER_STACK_ANNOUNCEMENT"))
-        val receiver=ObjectScope(filter=if(recipientKnown) GameObjectFilter.Creature else GameObjectFilter.Any,
+        val receiver=ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientKnown),
             actor="YOU",printedSelfCreature=null,battlefield=true,zone=Zone.BATTLEFIELD,
             details=listOf("Receiving object of $parent; printed granter characteristics are not source characteristics"),
             unresolved=if(recipientKnown) null else "Recipient source binding unresolved")
@@ -582,7 +584,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             actor="GRANTER_CONTROLLER",printedSelfCreature=definition?.isCreature,battlefield=true,zone=Zone.BATTLEFIELD,
             details=listOf("Native granterId of $parent, distinct from receiving source"))
         val confidence=if(recipientKnown && grantedEventSupport(ability)==Verdict.MATCH && ability.triggerRestriction==null && ability.interveningIf==null) Verdict.MATCH else Verdict.UNKNOWN
-        val event=EventContext(ability.trigger,ability.binding,ability.activeZones,recipientKnown,actionNative,confidence,assumptions)
+        val recipientIsCreature = CardPredicate.IsCreature in receiver.filter.cardPredicates
+        val event=EventContext(ability.trigger,ability.binding,ability.activeZones,recipientIsCreature,actionNative,confidence,assumptions)
         val frame=Frame(targets,receivingSource=receiver,grantingSource=provider,event=event,assumptions=assumptions)
         walk(ability.effect,"$path.effect",frame)
         ability.elseEffect?.let { walk(it,"$path.elseEffect",frame.copy(rootTargetSelection=false,outcomeGuard=Verdict.UNKNOWN,
