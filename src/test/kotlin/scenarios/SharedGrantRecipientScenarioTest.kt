@@ -106,7 +106,7 @@ class SharedGrantRecipientScenarioTest : FunSpec({
         val grant = activated("Deadeye Navigator")
         game.available(grant, navigator, navigator).verdict shouldBe Verdict.NO_MATCH
         val partner = game.pairByCastingPartner()
-        game.available(grant, navigator, navigator).verdict shouldBe Verdict.MATCH
+        game.available(grant, navigator, navigator).instance?.pairedPartner shouldBe game.ref(partner)
         game.available(grant, navigator, unrelated).verdict shouldBe Verdict.NO_MATCH
         val instance = checkNotNull(game.available(grant, navigator, partner).instance)
         game.fund(game.player1)
@@ -130,7 +130,9 @@ class SharedGrantRecipientScenarioTest : FunSpec({
         val partner = game.pairByCastingPartner()
         game.removeSummoningSickness(lookout)
         game.removeSummoningSickness(partner)
-        for (member in listOf(lookout, partner)) game.available(grant, lookout, member).verdict shouldBe Verdict.MATCH
+        for (member in listOf(lookout, partner)) {
+            game.available(grant, lookout, member).instance?.pairedPartner shouldBe game.ref(partner)
+        }
         val mark = game.events.size
         game.dealCombatDamage(listOf(lookout, partner))
         val triggers = game.events.drop(mark).filterIsInstance<AbilityTriggeredEvent>()

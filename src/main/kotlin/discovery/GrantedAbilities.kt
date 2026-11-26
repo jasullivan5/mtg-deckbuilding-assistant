@@ -52,7 +52,9 @@ internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: G
 
 @Serializable data class GrantedAbilityInstance(val declarationId: String, val granter: ObjectRef,
     val recipient: ObjectRef, val abilityId: AbilityId, val granterOwner: EntityId?, val granterController: EntityId,
-    val recipientOwner: EntityId?, val recipientController: EntityId)
+    val recipientOwner: EntityId?, val recipientController: EntityId,
+    @kotlinx.serialization.EncodeDefault(kotlinx.serialization.EncodeDefault.Mode.NEVER)
+    val pairedPartner: ObjectRef? = null)
 
 @Serializable data class GrantAvailabilityObservation(val verdict: Verdict, val instance: GrantedAbilityInstance? = null,
     val reason: String, val activationLegality: Verdict = Verdict.UNKNOWN)
@@ -90,11 +92,11 @@ fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, rec
         return result(Verdict.UNKNOWN,"Recipient ability removal/layer interactions require native activation validation")
     val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unresolved")
     val rc=state.projectedState.getController(recipient.entityId) ?: return result(Verdict.UNKNOWN,"Recipient controller unresolved")
-    if (!matchesSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc))
-        return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
+    val match = matchSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc)
+        ?: return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     fun owner(id: EntityId)=state.getEntity(id)?.get<OwnerComponent>()?.playerId
     return GrantAvailabilityObservation(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,
-        owner(granter.entityId),gc,owner(recipient.entityId),rc),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks")
+        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks")
 }
 
 @Serializable data class GrantedActivationObservation(val verdict: Verdict, val declarationId: String,

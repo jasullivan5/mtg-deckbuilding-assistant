@@ -96,13 +96,14 @@ fun GrantedTrigger.observeAvailability(state: GameState, granter: ObjectRef, rec
     if(kind==GrantRecipientKind.FILTER_GROUP || kind==GrantRecipientKind.SOULBOND_PAIR) {
         val providers=BattlefieldStaticsIndex.build(state,services.cardRegistry,services.predicateEvaluator).triggerGrantProviders
         if(providers.none { it.sourceEntityId==granter.entityId && it.grant==declaration }) return result(Verdict.NO_MATCH,"Native grant provider absent")
-        if (!matchesSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc))
-            return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     } else if(granter.entityId !in resolver.resolveGranterIds(state,recipient.entityId,declaration.ability.id))
         return result(Verdict.NO_MATCH,"Native attachment grant lookup does not expose this granter")
+    val match = matchSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc)
+        ?: return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     if(native.none { it==declaration.ability }) return result(Verdict.UNKNOWN,"Native resolved rule differs or is not exposed; caps/text changes require extra binding")
     fun owner(id: EntityId)=state.getEntity(id)?.get<OwnerComponent>()?.playerId
-    return GrantedTriggerAvailability(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,owner(granter.entityId),gc,owner(recipient.entityId),rc),"Current native grant; no detection, targets, choice or outcome implied")
+    return GrantedTriggerAvailability(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,
+        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Current native grant; no detection, targets, choice or outcome implied")
 }
 
 @Serializable data class GrantedTriggerObservation(val verdict: Verdict, val declarationId: String,

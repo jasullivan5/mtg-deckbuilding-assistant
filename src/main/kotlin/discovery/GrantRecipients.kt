@@ -4,6 +4,7 @@ import com.wingedsheep.engine.core.EngineServices
 import com.wingedsheep.engine.handlers.PredicateContext
 import com.wingedsheep.engine.mechanics.SoulbondPairing
 import com.wingedsheep.engine.state.GameState
+import com.wingedsheep.engine.state.ObjectRef
 import com.wingedsheep.sdk.core.Zone
 import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.model.EntityId
@@ -61,22 +62,24 @@ internal fun grantBodyRecipientFilter(group: GroupFilter, supported: Boolean): G
     return group.baseFilter.copy(controllerPredicate = null)
 }
 
-internal fun matchesSharedGrantRecipient(
+internal data class CurrentGrantRecipient(val pairedPartner: ObjectRef? = null)
+
+internal fun matchSharedGrantRecipient(
     state: GameState, services: EngineServices, filter: GroupFilter, granter: EntityId, recipient: EntityId,
     granterController: EntityId
-): Boolean = when (filter.scope) {
-    Scope.Battlefield -> (!filter.excludeSelf || granter != recipient) &&
+): CurrentGrantRecipient? = when (filter.scope) {
+    Scope.Battlefield -> if ((!filter.excludeSelf || granter != recipient) &&
         services.predicateEvaluator.matches(
             state, state.projectedState, recipient, filter.baseFilter,
             PredicateContext(controllerId = granterController, sourceId = granter)
-        )
+        )) CurrentGrantRecipient() else null
     // The native helper rejects asymmetric/departed links. The continuous validity conditions
     // also matter before an SBA pass has cleaned a changed controller/type from the components.
-    Scope.SoulbondPair -> SoulbondPairing.partnerOf(state, granter)?.let { partner ->
+    Scope.SoulbondPair -> SoulbondPairing.partnerOf(state, granter)?.takeIf { partner ->
         (recipient == granter || recipient == partner) &&
             state.projectedState.isCreature(granter) && state.projectedState.isCreature(partner) &&
             state.projectedState.getController(partner) == granterController
-    } ?: false
-    Scope.AttachedTo -> state.projectedState.isCreature(recipient)
-    else -> false
+    }?.let(state::objectRef)?.let(::CurrentGrantRecipient)
+    Scope.AttachedTo -> if (state.projectedState.isCreature(recipient)) CurrentGrantRecipient() else null
+    else -> null
 }
