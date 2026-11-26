@@ -1,0 +1,198 @@
+{
+  "baselineApplication": "60de24454646395b8239c6b834fbd8993efee9f5",
+  "testedApplication": "a6033a4e683b74c9ba3f2fde8b0245b48c29edc3",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "engineMode": "app-stable",
+  "baselineTreeMatchesVerifiedDelivery": "4d92ccfad79e47ebac0d96a5b0e32bae6f2e0089",
+  "jdk": "Temurin 25.0.4.1",
+  "fullKotlin": {
+    "tests": 910,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 126
+  },
+  "addedCases": {
+    "ConditionalGrantScenarioTest": [
+      "Helm's two independent grants follow all four host color combinations and the host controller",
+      "Villainous Ogre activates from itself and gets a regeneration shield after its Demon leaves",
+      "Relic Vial reads the native pre-death grant when sacrificing its final Cleric",
+      "Relic Vial attributes both triggers in a simultaneous batch that removes its final Cleric",
+      "Fire Nation Cadets retain an established attack trigger after the enabling Lesson is exiled",
+      "Darkblade Agent's native surveil history enables its draw trigger for that turn",
+      "two conditional Auras supply separate triggers and a recast granter cannot claim the earlier trigger",
+      "Oculus Whelp's simultaneous departure carries an enabled native grant despite structural uncertainty"
+    ],
+    "ConditionalGrantTest": [
+      "frozen conditional cohort binds six printings and exact native file hashes",
+      "Helm exposes independent exact wrappers and nested bodies without adding intrinsic facts",
+      "unsupported conditions are retained and ordinary grant reports decode without a wrapper",
+      "same-ID conditional declarations cannot use the native rule as a declaration index"
+    ]
+  },
+  "scenarioObservationUnits": {
+    "attributedActivations": 1,
+    "attributedTriggerPlacements": 11,
+    "additionalNativeTriggerPlacementWithUnknownCondition": 1
+  },
+  "bootstrapGuards": 17,
+  "oracleSnapshotGuards": 3,
+  "catalog": {
+    "mode": "current",
+    "passed": true,
+    "currentChecksPassed": true,
+    "historicalFingerprintsMatch": false,
+    "actualEngineCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    }
+  },
+  "historicalReportChanges": 0,
+  "discoverPairs": 18,
+  "interfaceBrowserChecks": 8,
+  "liveBrowserChecks": 18,
+  "normalExplorerMaxHeapBytes": 1073741824,
+  "explorer": {
+    "health": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "a6033a4e683b74c9ba3f2fde8b0245b48c29edc3"
+    },
+    "commander": "Kenrith, the Returned King",
+    "objective": "create-creature-tokens",
+    "cards": [
+      {
+        "card": "Helm of the Ghastlord",
+        "effectiveFormatEligibility": "MATCH",
+        "effectiveDeckEligibility": "UNKNOWN",
+        "included": false
+      },
+      {
+        "card": "Fire Nation Cadets",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.staticAbilities[0].ability",
+            "condition": "MATCH",
+            "checkpoint": "TRIGGER_EVENT"
+          }
+        ]
+      },
+      {
+        "card": "Relic Vial",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.staticAbilities[0].ability",
+            "condition": "MATCH",
+            "checkpoint": "PRE_DEPARTURE"
+          }
+        ]
+      },
+      {
+        "card": "Darkblade Agent",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.staticAbilities[1].ability",
+            "condition": "MATCH",
+            "checkpoint": "TRIGGER_EVENT"
+          }
+        ]
+      },
+      {
+        "card": "Oculus Whelp",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.staticAbilities[0].ability",
+            "condition": "UNKNOWN",
+            "checkpoint": "PRE_DEPARTURE"
+          }
+        ]
+      },
+      {
+        "card": "Villainous Ogre",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.staticAbilities[1].ability",
+            "condition": "MATCH",
+            "checkpoint": "ACTIVATION_AVAILABILITY"
+          }
+        ]
+      }
+    ]
+  },
+  "lfSha256": {
+    "src/main/kotlin/discovery/ConditionalGrants.kt": "0369f30dd7602153aaee60452660063ebd31a8abaabe7198232cee748c87c064",
+    "src/main/kotlin/discovery/GrantRecipients.kt": "ebcc07b19e2852d841b226bce6be08791975da3fd7c75d3b4ae7a56b82e5254b",
+    "src/main/kotlin/discovery/GrantedTriggers.kt": "c9d5411c84f1b7609cbe55f8338e1ba52adb27341dff68e3230183919b485d60",
+    "src/main/kotlin/discovery/GrantedAbilities.kt": "333bd2521db5e63a9ee9f0cdb430204c190e312e6617692cb1179ce2bdbf2da5",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "c9a3f088ca62492e717fbcae408062d697bbc1c162cc9875bf083734ad12bdcd",
+    "src/test/kotlin/discovery/ConditionalGrantTest.kt": "673bfde7008008a8729211796d20788e034108c3f6fd630a73843211d287f3dc",
+    "src/test/kotlin/scenarios/ConditionalGrantScenarioTest.kt": "74d2b68af38430fb76f03d5d20187c2c475d907631e01b4338fde6da9f3d49c1",
+    "src/test/resources/regression/conditional-grant-sources.json": "01eba08df4a34d06271965231b34428c0753ad387c8322dd40271d2d10beda21",
+    "scripts/compare-conditional-grants.py": "2b826d6d2608b32401494b1280fd331b54005d8afdf4cba21cc5fcb101e323b7",
+    "scripts/inventory-conditional-grants.py": "48fe105ab46d842a7fc0934d6f8990c20832207fcb8d769339d910c6d6d72b87"
+  },
+  "logSha256": {
+    "bootstrap.log": "ed9b23611e1b834565c5cc1c324977cc83078fd1a3af2fc9aa5364272f990fc5",
+    "full.log": "74314a555aaf28d349477fae7763de62333732d2e790f17400525405259ed03f",
+    "focused-controls.log": "73879a1786c513587c23ebcf3b8c3990cddfe22b630e2c315d6e349e10e6f149",
+    "inventory.log": "25b06c640b69bba60335524d09f5651b2168cb878feee722b5347d577ceb96f2",
+    "catalog-gate.log": "6a7e61a940213bcb377f6dce266a2d1b5eb375bff5e84c0df53230c1fd93dde5",
+    "comparison.log": "d099a5f5826f17508ae7df1936ab7c58b9fb99d6d5a5ed1dc0595c3db062e1e0",
+    "frontend.log": "430c16d47b07532591ac74c2a02d344f4f373207bdc9e85c848ed3ee80c79f79",
+    "browser-ui.log": "809b5ac008de3ba1ebce626c7e0bce13600a3775a4764903bb4e2f47bc8ebae5",
+    "browser-live.log": "9f7270e330123851a19283314cdbc0aeb8ac6dc537c8ad6f3d3060685b291ddf",
+    "api.log": "c91c6372f06af85b16a49951d4eb7fb79aa5cdf36a3d6f9083810e73cb9656b0",
+    "heap.log": "08e97282be8314938536e45388439476f27df2a9834f39e719e2e4b0c66904bf",
+    "historical-diff.json": "648c48c0bd51c7627a6733a4c1e9f00eecfabe38d559356bc478de87c61bda3d"
+  },
+  "retries": [
+    "The first compile lacked the native AdditionalCostPayment fixture import.",
+    "The initial playthrough advanced past the black host Black Knight\u2019s first-strike trigger. The final fixture uses an ordinary damage-step black host and answers any native trigger ordering decision.",
+    "Firebending creates native combat-duration mana entries. The final scenario asserts the two red entries rather than requiring a particular generic event.",
+    "The initial Kenrith probe hit the server deadline while verification jobs overlapped. The first live Edge test then encountered the occupied research worker. The browser suite and the API probe were rerun separately."
+  ],
+  "boundary": "Engine source unchanged. The full application suite exercises real native actions. Independent full engine verification is outside this application-only delivery. Existing source-fidelity and qualification records retain their original scope."
+}
