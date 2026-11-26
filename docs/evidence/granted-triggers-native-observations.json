@@ -1,0 +1,1348 @@
+{
+  "applicationRevision": "97a498f5cad6448491197830cb4c18ba826c17d6",
+  "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "scenarioTests": 14,
+  "realCardScenarioTests": 11,
+  "isolatedNativeScenarioTests": 3,
+  "cases": [
+    "Sixth Sense on an opponent creature binds source damage subject controller and optional draw",
+    "recipient noncombat damage does not trigger Sixth Sense despite a current grant",
+    "Combat Research draws for its recipient and ignores an unrelated same-name creature",
+    "removing the grant after detection preserves the stacked trigger but prevents future triggers",
+    "Custody Battle follows recipient upkeeps and transfers control after the native choice",
+    "recipient renewal cannot replace the captured source of an established trigger",
+    "granter renewal and reattachment cannot supply an earlier trigger declaration instance",
+    "control changes affect future grants while an existing trigger keeps its controller",
+    "two equal-name granters and multiple recipients retain actual native supplying IDs",
+    "equal-ID declarations on a single granter remain ambiguous even when native triggers exist",
+    "intrinsic triggers cannot borrow a matching granted declaration identity",
+    "native group availability does not invent an unexposed supplying granter on the stack",
+    "Dire Blunderbuss native craft equip and attack identify the host and granting Equipment separately",
+    "Stab Wound's own Aura trigger does not become a creature-source grant"
+  ],
+  "observations": [
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "f909c542-87ce-41f7-aa7b-ac14d852b067",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "0af4a01b-aaf3-44b8-a330-3d685450767d",
+          "generation": 95
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "controller": "e1",
+      "nativeGranterId": "f909c542-87ce-41f7-aa7b-ac14d852b067",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "0af4a01b-aaf3-44b8-a330-3d685450767d",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "0af4a01b-aaf3-44b8-a330-3d685450767d",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "f909c542-87ce-41f7-aa7b-ac14d852b067"
+        ],
+        "sourceLastKnown": {
+          "entityId": "0af4a01b-aaf3-44b8-a330-3d685450767d",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "f909c542-87ce-41f7-aa7b-ac14d852b067"
+          ],
+          "attachments": [
+            {
+              "entityId": "f909c542-87ce-41f7-aa7b-ac14d852b067",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "0af4a01b-aaf3-44b8-a330-3d685450767d",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "dc30598a-ce93-4ee5-8110-113885ea7812",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "f3fcb192-5bd3-44bd-b64b-447961671825",
+          "generation": 95
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "controller": "e1",
+      "nativeGranterId": "dc30598a-ce93-4ee5-8110-113885ea7812",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "f3fcb192-5bd3-44bd-b64b-447961671825",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "f3fcb192-5bd3-44bd-b64b-447961671825",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "dc30598a-ce93-4ee5-8110-113885ea7812"
+        ],
+        "sourceLastKnown": {
+          "entityId": "f3fcb192-5bd3-44bd-b64b-447961671825",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "dc30598a-ce93-4ee5-8110-113885ea7812"
+          ],
+          "attachments": [
+            {
+              "entityId": "dc30598a-ce93-4ee5-8110-113885ea7812",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "f3fcb192-5bd3-44bd-b64b-447961671825",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Combat Research|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Combat Research|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "70f6f3c4-65dc-41f5-9eba-50401167a2e8",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "20c549ca-f720-4179-88fc-cbf38f60ba6a",
+          "generation": 95
+        },
+        "abilityId": "Combat Research:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 105
+      },
+      "controller": "e1",
+      "nativeGranterId": "70f6f3c4-65dc-41f5-9eba-50401167a2e8",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "20c549ca-f720-4179-88fc-cbf38f60ba6a",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "20c549ca-f720-4179-88fc-cbf38f60ba6a",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "70f6f3c4-65dc-41f5-9eba-50401167a2e8"
+        ],
+        "sourceLastKnown": {
+          "entityId": "20c549ca-f720-4179-88fc-cbf38f60ba6a",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "70f6f3c4-65dc-41f5-9eba-50401167a2e8"
+          ],
+          "attachments": [
+            {
+              "entityId": "70f6f3c4-65dc-41f5-9eba-50401167a2e8",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "20c549ca-f720-4179-88fc-cbf38f60ba6a",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "321cf3c7-717b-4eb0-9eda-5b3fa144c897",
+          "generation": 98
+        },
+        "recipient": {
+          "entityId": "36c56a2e-cd6d-44ad-8cbd-9a34e5985b36",
+          "generation": 95
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "controller": "e1",
+      "nativeGranterId": "321cf3c7-717b-4eb0-9eda-5b3fa144c897",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "36c56a2e-cd6d-44ad-8cbd-9a34e5985b36",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "36c56a2e-cd6d-44ad-8cbd-9a34e5985b36",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "321cf3c7-717b-4eb0-9eda-5b3fa144c897"
+        ],
+        "sourceLastKnown": {
+          "entityId": "36c56a2e-cd6d-44ad-8cbd-9a34e5985b36",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "321cf3c7-717b-4eb0-9eda-5b3fa144c897"
+          ],
+          "attachments": [
+            {
+              "entityId": "321cf3c7-717b-4eb0-9eda-5b3fa144c897",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "36c56a2e-cd6d-44ad-8cbd-9a34e5985b36",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "a01a6e70-2102-44af-9087-fd0c53feabd6",
+          "generation": 95
+        },
+        "abilityId": "Custody Battle:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 100
+      },
+      "controller": "e1",
+      "nativeGranterId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e1",
+        "step": "UPKEEP"
+      },
+      "event": {
+        "type": "StepChangedEvent",
+        "newStep": "UPKEEP"
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": {
+        "targets": [
+          {
+            "type": "Player",
+            "playerId": "e0"
+          }
+        ],
+        "targetRequirements": [
+          {
+            "type": "TargetOpponent",
+            "count": 1,
+            "optional": false,
+            "unlimited": false,
+            "id": "t0",
+            "restriction": null,
+            "descriptionOverride": null,
+            "description": "target opponent"
+          }
+        ],
+        "targetEntryStamps": {}
+      }
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "a01a6e70-2102-44af-9087-fd0c53feabd6",
+          "generation": 95
+        },
+        "abilityId": "Custody Battle:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e83",
+        "generation": 106
+      },
+      "controller": "e1",
+      "nativeGranterId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e1",
+        "step": "UPKEEP"
+      },
+      "event": {
+        "type": "StepChangedEvent",
+        "newStep": "UPKEEP"
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": {
+        "targets": [
+          {
+            "type": "Player",
+            "playerId": "e0"
+          }
+        ],
+        "targetRequirements": [
+          {
+            "type": "TargetOpponent",
+            "count": 1,
+            "optional": false,
+            "unlimited": false,
+            "id": "t0",
+            "restriction": null,
+            "descriptionOverride": null,
+            "description": "target opponent"
+          }
+        ],
+        "targetEntryStamps": {}
+      }
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Custody Battle|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "a01a6e70-2102-44af-9087-fd0c53feabd6",
+          "generation": 95
+        },
+        "abilityId": "Custody Battle:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e0"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e85",
+        "generation": 109
+      },
+      "controller": "e0",
+      "nativeGranterId": "f57d6a58-14f5-4ee1-af87-f14ffa9ef8e2",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "step": "UPKEEP"
+      },
+      "event": {
+        "type": "StepChangedEvent",
+        "newStep": "UPKEEP"
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": {
+        "targets": [
+          {
+            "type": "Player",
+            "playerId": "e1"
+          }
+        ],
+        "targetRequirements": [
+          {
+            "type": "TargetOpponent",
+            "count": 1,
+            "optional": false,
+            "unlimited": false,
+            "id": "t0",
+            "restriction": null,
+            "descriptionOverride": null,
+            "description": "target opponent"
+          }
+        ],
+        "targetEntryStamps": {}
+      }
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "959b51d0-5ebf-4401-9666-57dd66631711",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "245085e8-749a-4b05-9d56-e61446ffe67a",
+          "generation": 96
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 101
+      },
+      "controller": "e1",
+      "nativeGranterId": "959b51d0-5ebf-4401-9666-57dd66631711",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "245085e8-749a-4b05-9d56-e61446ffe67a",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "245085e8-749a-4b05-9d56-e61446ffe67a",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "959b51d0-5ebf-4401-9666-57dd66631711"
+        ],
+        "sourceLastKnown": {
+          "entityId": "245085e8-749a-4b05-9d56-e61446ffe67a",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "959b51d0-5ebf-4401-9666-57dd66631711"
+          ],
+          "attachments": [
+            {
+              "entityId": "959b51d0-5ebf-4401-9666-57dd66631711",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "245085e8-749a-4b05-9d56-e61446ffe67a",
+            "generation": 96
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "1c109bd9-17d7-4da3-a4bd-590a2a2eb659",
+          "generation": 100
+        },
+        "recipient": {
+          "entityId": "2ee81f6d-b787-4c94-896a-22cd766d7929",
+          "generation": 96
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 102
+      },
+      "controller": "e1",
+      "nativeGranterId": "1c109bd9-17d7-4da3-a4bd-590a2a2eb659",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "2ee81f6d-b787-4c94-896a-22cd766d7929",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "2ee81f6d-b787-4c94-896a-22cd766d7929",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "1c109bd9-17d7-4da3-a4bd-590a2a2eb659"
+        ],
+        "sourceLastKnown": {
+          "entityId": "2ee81f6d-b787-4c94-896a-22cd766d7929",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "1c109bd9-17d7-4da3-a4bd-590a2a2eb659"
+          ],
+          "attachments": [
+            {
+              "entityId": "1c109bd9-17d7-4da3-a4bd-590a2a2eb659",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "2ee81f6d-b787-4c94-896a-22cd766d7929",
+            "generation": 96
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "63396c0e-845d-4416-a06d-c21d0cd14149",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "ee6062d9-69bf-4545-a8d7-0811257f4d4d",
+          "generation": 96
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 101
+      },
+      "controller": "e1",
+      "nativeGranterId": "63396c0e-845d-4416-a06d-c21d0cd14149",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "ee6062d9-69bf-4545-a8d7-0811257f4d4d",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "ee6062d9-69bf-4545-a8d7-0811257f4d4d",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "63396c0e-845d-4416-a06d-c21d0cd14149"
+        ],
+        "sourceLastKnown": {
+          "entityId": "ee6062d9-69bf-4545-a8d7-0811257f4d4d",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "63396c0e-845d-4416-a06d-c21d0cd14149"
+          ],
+          "attachments": [
+            {
+              "entityId": "63396c0e-845d-4416-a06d-c21d0cd14149",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "ee6062d9-69bf-4545-a8d7-0811257f4d4d",
+            "generation": 96
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+          "generation": 99
+        },
+        "recipient": {
+          "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+          "generation": 95
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 107
+      },
+      "controller": "e1",
+      "nativeGranterId": "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+          "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d"
+        ],
+        "sourceLastKnown": {
+          "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+            "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d"
+          ],
+          "attachments": [
+            {
+              "entityId": "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            },
+            {
+              "entityId": "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d",
+          "generation": 102
+        },
+        "recipient": {
+          "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+          "generation": 95
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e83",
+        "generation": 108
+      },
+      "controller": "e1",
+      "nativeGranterId": "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+          "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d"
+        ],
+        "sourceLastKnown": {
+          "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+            "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d"
+          ],
+          "attachments": [
+            {
+              "entityId": "a78369d1-22f0-4658-a966-c5f07c9ec23e",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            },
+            {
+              "entityId": "4e0193d4-b95f-4ae3-90e2-75b0106ccc3d",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "c6bf8eeb-fdd0-4ded-9cce-445f212b529b",
+            "generation": 95
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Sixth Sense|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "0d013f27-124f-4a6a-a4b4-d9ee9cc4fb95",
+          "generation": 105
+        },
+        "recipient": {
+          "entityId": "a9bc25d1-27e6-46bb-86c0-9d3f6153517a",
+          "generation": 96
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e1",
+        "recipientController": "e1"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e84",
+        "generation": 109
+      },
+      "controller": "e1",
+      "nativeGranterId": "0d013f27-124f-4a6a-a4b4-d9ee9cc4fb95",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e0",
+        "damageAmount": 3,
+        "damageSourceId": "a9bc25d1-27e6-46bb-86c0-9d3f6153517a",
+        "damageRecipientId": "e0",
+        "damageSourceControllerId": "e1"
+      },
+      "event": {
+        "type": "DamageDealtEvent",
+        "sourceId": "a9bc25d1-27e6-46bb-86c0-9d3f6153517a",
+        "targetId": "e0",
+        "amount": 3,
+        "isCombatDamage": true,
+        "sourceName": "Hill Giant",
+        "targetName": "Player",
+        "targetIsPlayer": true,
+        "sourceAttachmentIds": [
+          "0d013f27-124f-4a6a-a4b4-d9ee9cc4fb95"
+        ],
+        "sourceLastKnown": {
+          "entityId": "a9bc25d1-27e6-46bb-86c0-9d3f6153517a",
+          "power": 3,
+          "toughness": 3,
+          "subtypes": [
+            "Giant"
+          ],
+          "controllerId": "e1",
+          "ownerId": "e1",
+          "typeLine": "Creature \u2014 Giant",
+          "cardDefinitionId": "Hill Giant",
+          "copiableCard": {
+            "cardDefinitionId": "Hill Giant",
+            "name": "Hill Giant",
+            "manaCost": "{3}{R}",
+            "typeLine": "Creature \u2014 Giant",
+            "baseStats": {
+              "power": 3,
+              "toughness": 3
+            },
+            "colors": [
+              "RED"
+            ],
+            "ownerId": "e1"
+          },
+          "name": "Hill Giant",
+          "attachmentIds": [
+            "0d013f27-124f-4a6a-a4b4-d9ee9cc4fb95"
+          ],
+          "attachments": [
+            {
+              "entityId": "0d013f27-124f-4a6a-a4b4-d9ee9cc4fb95",
+              "controllerId": "e0",
+              "subtypes": [
+                "Aura"
+              ]
+            }
+          ],
+          "wasAttacking": true,
+          "wasTapped": true,
+          "objectRef": {
+            "entityId": "a9bc25d1-27e6-46bb-86c0-9d3f6153517a",
+            "generation": 96
+          },
+          "manaValue": 4,
+          "basePower": 3,
+          "baseToughness": 3,
+          "colors": [
+            "RED"
+          ]
+        }
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    },
+    {
+      "verdict": "UNKNOWN",
+      "declarationId": "Isolated plain triggered group grant|front|script.staticAbilities[0]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Isolated plain triggered group grant|front|script.staticAbilities[0]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "3ee16e16-004c-42f1-8c96-c7c5f2faae0f",
+          "generation": 95
+        },
+        "recipient": {
+          "entityId": "b9605672-f56b-4e73-8ea8-4130a4858119",
+          "generation": 96
+        },
+        "abilityId": "Sixth Sense:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e0",
+        "recipientController": "e0"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e82",
+        "generation": 98
+      },
+      "controller": "e0",
+      "nativeGranterId": null,
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringEntityId": "e1",
+        "damageAmount": 3,
+        "damageSourceId": "b9605672-f56b-4e73-8ea8-4130a4858119",
+        "damageRecipientId": "e1",
+        "damageSourceControllerId": "e0"
+      },
+      "event": null,
+      "eventCandidates": 0,
+      "lastKnownSource": null,
+      "reason": "Captured native source/controller/granter/rules do not prove this declaration",
+      "targets": null
+    },
+    {
+      "verdict": "MATCH",
+      "declarationId": "Dire Flail|front.backFace|script.staticAbilities[1]|TRIGGER_GRANT",
+      "instance": {
+        "declarationId": "Dire Flail|front.backFace|script.staticAbilities[1]|TRIGGER_GRANT",
+        "granter": {
+          "entityId": "5d0d8723-739a-41ba-b2c0-255d9114f271",
+          "generation": 100
+        },
+        "recipient": {
+          "entityId": "4ecf095c-e29d-4157-8505-46e0d2f690ae",
+          "generation": 101
+        },
+        "abilityId": "Dire Blunderbuss:1",
+        "granterOwner": "e0",
+        "granterController": "e0",
+        "recipientOwner": "e0",
+        "recipientController": "e0"
+      },
+      "checkpoint": "NATIVE_STACK_PLACEMENT",
+      "stackObject": {
+        "entityId": "e85",
+        "generation": 105
+      },
+      "controller": "e0",
+      "nativeGranterId": "5d0d8723-739a-41ba-b2c0-255d9114f271",
+      "sourceBattlefieldTimestamp": null,
+      "context": {
+        "triggeringPlayerId": "e0"
+      },
+      "event": {
+        "type": "AttackersDeclaredEvent",
+        "attackers": [
+          "4ecf095c-e29d-4157-8505-46e0d2f690ae"
+        ],
+        "attackerNames": [
+          "Hill Giant"
+        ],
+        "attackingPlayerId": "e0",
+        "firstTimeAttackers": [
+          "4ecf095c-e29d-4157-8505-46e0d2f690ae"
+        ],
+        "attackersAgainstPlayer": [
+          "4ecf095c-e29d-4157-8505-46e0d2f690ae"
+        ],
+        "attackersAloneAgainstPlayer": [
+          "4ecf095c-e29d-4157-8505-46e0d2f690ae"
+        ]
+      },
+      "eventCandidates": 1,
+      "lastKnownSource": null,
+      "reason": "Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",
+      "targets": null
+    }
+  ],
+  "note": "Native event/context null and empty members omitted for compactness; top-level missing granter/timestamp/snapshot values retained. MATCH is source/event/stack attribution, not resolution or whole-card qualification. Noncombat, optionality, persistence, renewal, control and ambiguity outcomes are separately asserted by the revision-bound native tests. Tandem Lookout is a structural UNKNOWN boundary, not a native execution claim."
+}

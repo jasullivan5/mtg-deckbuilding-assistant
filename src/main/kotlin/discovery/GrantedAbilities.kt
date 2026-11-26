@@ -44,10 +44,11 @@ import kotlinx.serialization.Serializable
     val resolution: String = "An accepted nonmana activation has its own stack object and captured native ability. Losing the grant prevents future activations, not automatic cancellation of that stack object. Native source/LKI and target legality still govern resolution.",
     val sourceFidelity: Verdict = Verdict.UNKNOWN)
 
-internal fun grantRecipientKind(card: CardDefinition, grant: GrantActivatedAbility): GrantRecipientKind = when {
-    grant.filter.scope==Scope.AttachedTo && card.isAura -> GrantRecipientKind.AURA_HOST
-    grant.filter.scope==Scope.AttachedTo && card.isEquipment -> GrantRecipientKind.EQUIPMENT_HOST
-    grant.filter.scope==Scope.Battlefield -> GrantRecipientKind.FILTER_GROUP
+internal fun grantRecipientKind(card: CardDefinition, grant: GrantActivatedAbility) = grantRecipientKind(card,grant.filter)
+internal fun grantRecipientKind(card: CardDefinition, filter: GroupFilter): GrantRecipientKind = when {
+    filter.scope==Scope.AttachedTo && card.isAura -> GrantRecipientKind.AURA_HOST
+    filter.scope==Scope.AttachedTo && card.isEquipment -> GrantRecipientKind.EQUIPMENT_HOST
+    filter.scope==Scope.Battlefield -> GrantRecipientKind.FILTER_GROUP
     else -> GrantRecipientKind.UNRESOLVED
 }
 

@@ -1,0 +1,210 @@
+{
+  "baselineApplication": "c4350e5894d1518460b79fb86a728c65586ddbb1",
+  "testedApplication": "97a498f5cad6448491197830cb4c18ba826c17d6",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "engineMode": "app-stable",
+  "engineUnchanged": true,
+  "engineImplementationSha256": "0b0439c946d9d3f1a60581a8250a298f37bea8ee465ca8e5c64c12b080045b9f",
+  "toolchain": "Temurin JDK 25.0.4.1 / existing Gradle wrapper",
+  "fullKotlin": {
+    "tests": 888,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 122
+  },
+  "structuralTests": 11,
+  "nativeScenarioTests": 14,
+  "realCardNativeScenarioTests": 11,
+  "isolatedNativeScenarioTests": 3,
+  "lfSha256": {
+    "src/main/kotlin/discovery/GrantedTriggers.kt": "80c93be7217af8bfdea00017e39da0c6d3c2427d2c6f9404cb6609fa3a528010",
+    "src/main/kotlin/discovery/GrantedAbilities.kt": "6429b42ac0daa51f18de747b2619c7daff6b3ec46cfcb76be7826e95bb84870b",
+    "src/main/kotlin/discovery/ChosenTargets.kt": "490d56918906c292e6e05a8b409ac337413ff985b03c0be5d2193e44b6322d5b",
+    "src/main/kotlin/discovery/Evidence.kt": "1bb3e16c3190ba34fe29228bd38ede6cf14e63fa883a4c4e349a9c54fb09a526",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "faac133c765eb76f17c79052e37e0c813916a664bc9cf006c4cf673622d48fd0",
+    "src/test/kotlin/GrantedTriggerTest.kt": "cfc21bfab5d8de13d2544cf505a9795e577e5e6c2d874ad12203144a33d1c1ec",
+    "src/test/kotlin/scenarios/GrantedTriggerScenarioTest.kt": "d35c7126ac7dc4d0c2f64144175af86d58b57d3d42497ecd5d34c99d59505390",
+    "src/test/resources/regression/granted-trigger-sources.json": "5837ae49961d2d80f75fe8b8dc2f322fa25518a9f2d61e76fc32fd4a8aea76e8",
+    "docs/evidence/GrantedTriggerInventory.java": "dad56765b430e46793e7d73e4771fc47a18dcb9374d270e2c2d8ee3c0b3d0277",
+    "scripts/inventory-granted-triggers.py": "ecb4507de5b8323b2362f5030f4b4d41b6be77afe15841d0e2d9dc362cd91a22",
+    "scripts/compare-granted-triggers.py": "ea38d79e073b972dbc87142ab83abfbe7b2a4e0d12f22420fc3feee2ecb6f80e"
+  },
+  "checks": {
+    "bootstrap": "PASS",
+    "installedDistribution": "PASS",
+    "bootstrapGuards": 17,
+    "oracleSnapshotGuards": 3,
+    "currentCatalogGate": {
+      "mode": "current",
+      "passed": true,
+      "currentChecksPassed": true,
+      "historicalFingerprintsMatch": false,
+      "actualEngineCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+      "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+      "checks": {
+        "judith-a": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "judith-b": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "judith-c": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "krenko-a": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "krenko-b": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "krenko-c": {
+          "sameActualEngineAcrossRuns": true,
+          "sameCompleteReportExceptDeclaredProvenance": false,
+          "zeroConfirmedBenchmarkMismatches": true
+        },
+        "identicalDiffEmpty": true
+      }
+    },
+    "discoverPairs": 18,
+    "existingDiscoverEvidence": "Every pre-existing field unchanged; only nested grantedTriggers added",
+    "supportedHistoricalDecoding": "PASS; three historical-wire tests plus installed identical archived-snapshot diff",
+    "frontendBuild": "PASS",
+    "interfaceBrowserChecks": 8,
+    "liveBrowserChecks": 18,
+    "normalExplorerHealth": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "97a498f5cad6448491197830cb4c18ba826c17d6"
+    },
+    "normalExplorerMaxHeapBytes": 1073741824,
+    "explorerCohort": {
+      "execution": "FRESH_STRUCTURAL_DISCOVERY",
+      "applicationRevision": "97a498f5cad6448491197830cb4c18ba826c17d6",
+      "engineRevision": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "commander": "Kenrith, the Returned King",
+      "objective": "create-creature-tokens",
+      "cards": [
+        {
+          "card": "Sixth Sense",
+          "grants": 1,
+          "declarations": [
+            {
+              "path": "script.staticAbilities[0]",
+              "face": "front",
+              "recipientSupport": "MATCH",
+              "eventSupport": "MATCH",
+              "bodyFacts": 1,
+              "eventOutcomes": 1
+            }
+          ]
+        },
+        {
+          "card": "Combat Research",
+          "grants": 1,
+          "declarations": [
+            {
+              "path": "script.staticAbilities[0]",
+              "face": "front",
+              "recipientSupport": "MATCH",
+              "eventSupport": "MATCH",
+              "bodyFacts": 1,
+              "eventOutcomes": 1
+            }
+          ]
+        },
+        {
+          "card": "Custody Battle",
+          "grants": 1,
+          "declarations": [
+            {
+              "path": "script.staticAbilities[0]",
+              "face": "front",
+              "recipientSupport": "MATCH",
+              "eventSupport": "MATCH",
+              "bodyFacts": 1,
+              "eventOutcomes": 0
+            }
+          ]
+        },
+        {
+          "card": "Dire Flail",
+          "grants": 1,
+          "declarations": [
+            {
+              "path": "script.staticAbilities[1]",
+              "face": "front.backFace",
+              "recipientSupport": "MATCH",
+              "eventSupport": "MATCH",
+              "bodyFacts": 2,
+              "eventOutcomes": 0
+            }
+          ]
+        },
+        {
+          "card": "Tandem Lookout",
+          "grants": 1,
+          "declarations": [
+            {
+              "path": "script.staticAbilities[0]",
+              "face": "front",
+              "recipientSupport": "UNKNOWN",
+              "eventSupport": "MATCH",
+              "bodyFacts": 1,
+              "eventOutcomes": 1
+            }
+          ]
+        },
+        {
+          "card": "Stab Wound",
+          "grants": 0,
+          "declarations": []
+        }
+      ],
+      "scope": "Live structural API evidence; not fresh game execution or whole-card qualification."
+    },
+    "toolingGuardsScope": "17 setup and 3 snapshot helper tests passed before the observation-only guards; their source is unchanged. Final bootstrap and normal Explorer startup pass on the exact tested revision.",
+    "interfaceScope": "Eight interface checks use unchanged frontend source; the final normal startup rebuilds it, and all eighteen live checks use the exact tested backend."
+  },
+  "nativeIndependentEngineSuite": "Not rerun: production engine and SDK unchanged; focused actual native execution is within the full application suite.",
+  "retryHistory": [
+    "Initial focused compile used a ScenarioTestBase helper unavailable on GameTestDriver; changed to native confirmCombatDamage.",
+    "Refreshed runner Git config lacked GIT_CONFIG_VALUE_0; process-local GIT_CONFIG_COUNT=0 restored normal builds.",
+    "Focused observations initially demanded unavailable fixture visit timestamps and a singular attack entity; corrected to captured source ObjectRefs and actual native attack batches. Structural assertions now decode native JSON before comparing defaults and retain Dire Pipeline without inventing a collection stage.",
+    "First interface browser run lacked the default Chromium binary; all eight checks passed with installed Edge.",
+    "Superseded intermediate full suite was intentionally stopped after adding final generation and group-supplier controls. Its partial log and twelve intermediate exports remain ignored evidence; final full suite and all eighteen final comparisons use the immutable tested revision.",
+    "The first installed historical diff received the fixture wrapper, not its embedded snapshot; extracting snapshot without changing the frozen fixture produced a zero-change diff."
+  ],
+  "recordedAt": "2026-11-25T21:27:41.064889+00:00",
+  "assurance": "Bounded source- and revision-bound evidence only. Source fidelity remains UNKNOWN; historical failures, frozen requirements and whole-card qualification remain unchanged.",
+  "logSha256": {
+    "focused-final.log": "4555783cc251f8a6232f03b8f1a7431f719c10b1b87f72d7f889725d5f39c7db",
+    "full-final-test.log": "22759437984468f66fe89a546f3bfca9f2892bdbaad358622b29d52df5c913d2",
+    "final-bootstrap.log": "17d05d1b9a04c95e113a137275762b8187699856f641573aae82a8a48dee0069",
+    "bootstrap-guards.log": "65c1794a9bafaaf02a15e58629d52f6acd3b6ed391d31961356d5827d0d634c0",
+    "oracle-guards.log": "841d193d2648701341153bfa2ccac376b845dfeb84d754282fec114013d647b0",
+    "catalog-gate.log": "17f66fc672537ed325626f0694f5efeddd9a4798f013d5fa0aaa0af8fb17fb09",
+    "discover-comparison.log": "d3b026a12015cfa630391ce380533a2b10aed6a66bbc061bb429e5f92663b080",
+    "inventory.log": "2994f92c1621b446dd46ca7a962363573b8c6fd50d36cc2092258e1985a2ec8f",
+    "frontend-build.log": "b1d3e6bd2fc8aecf4d8c5687b2c77c31ea5b00ade988293775443a836565975f",
+    "frontend-ui-edge.log": "d119fc22bfab6887b055f02bac87b0dd4213a19ebc163059fb2d8babbd823075",
+    "browser-live.log": "3f822e41799966fda2cc6b5bc8fb17e8444fab5318031766fa6a420b4a20714a",
+    "explorer.log": "1b7d7ceb31157d4307df9a96fe736642a72bc3490916f5b10436ea44538feed1",
+    "api-check.log": "20289ea3fe361f4968a89d7d0c0cf4cac80293cfbfc2bafa948b6c0e579e5895",
+    "historical-diff.json": "648c48c0bd51c7627a6733a4c1e9f00eecfabe38d559356bc478de87c61bda3d",
+    "explorer-health.json": "b91168ce95d64efe5a6907aaa0f89fd82e7ba1875eb080268eed6b9309a75e29",
+    "explorer-vm-flags.log": "78d96dc3591ef9a500557fb61f9221f121d1292e2c673d1bc182f3d0a6a1b80a"
+  }
+}
