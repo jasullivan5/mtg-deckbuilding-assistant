@@ -5,7 +5,6 @@ import com.wingedsheep.engine.core.ActivateAbility
 import com.wingedsheep.engine.core.AbilityActivatedEvent
 import com.wingedsheep.engine.core.GameEvent
 import com.wingedsheep.engine.core.ManaAbilityResolvedEvent
-import com.wingedsheep.engine.handlers.PredicateContext
 import com.wingedsheep.engine.state.GameState
 import com.wingedsheep.engine.state.ObjectRef
 import com.wingedsheep.engine.state.components.identity.CardComponent
@@ -18,10 +17,9 @@ import com.wingedsheep.sdk.model.CardDefinition
 import com.wingedsheep.sdk.model.EntityId
 import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.filters.unified.*
-import com.wingedsheep.sdk.scripting.targets.TargetObject
 import kotlinx.serialization.Serializable
 
-@Serializable enum class GrantRecipientKind { AURA_HOST, EQUIPMENT_HOST, FILTER_GROUP, UNRESOLVED }
+@Serializable enum class GrantRecipientKind { AURA_HOST, EQUIPMENT_HOST, FILTER_GROUP, SOULBOND_PAIR, UNRESOLVED }
 
 /** Existing action/fact/collection vocabulary, interpreted with a receiving source. These facts
  * are intentionally separate from intrinsic Discover inputs and carry no admission decision. */
@@ -44,29 +42,19 @@ import kotlinx.serialization.Serializable
     val resolution: String = "An accepted nonmana activation has its own stack object and captured native ability. Losing the grant prevents future activations, not automatic cancellation of that stack object. Native source/LKI and target legality still govern resolution.",
     val sourceFidelity: Verdict = Verdict.UNKNOWN)
 
-internal fun grantRecipientKind(card: CardDefinition, grant: GrantActivatedAbility) = grantRecipientKind(card,grant.filter)
-internal fun grantRecipientKind(card: CardDefinition, filter: GroupFilter): GrantRecipientKind = when {
-    filter.scope==Scope.AttachedTo && card.isAura -> GrantRecipientKind.AURA_HOST
-    filter.scope==Scope.AttachedTo && card.isEquipment -> GrantRecipientKind.EQUIPMENT_HOST
-    filter.scope==Scope.Battlefield -> GrantRecipientKind.FILTER_GROUP
-    else -> GrantRecipientKind.UNRESOLVED
-}
-
-internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: GrantActivatedAbility): List<String> {
-    val kind=grantRecipientKind(card,grant)
-    return listOfNotNull(
-        if(grant.recipientZone!=Zone.BATTLEFIELD || grant.ability.activateFromZone!=Zone.BATTLEFIELD) "Nonbattlefield recipient/activation zone" else null,
-        if(kind==GrantRecipientKind.UNRESOLVED) "Recipient scope outside bounded attachment/group grants" else null,
-        if(kind==GrantRecipientKind.AURA_HOST && card.script.auraTarget !in listOf(TargetObject(filter=TargetFilter.Creature),TargetObject(filter=TargetFilter.Creature.youControl()))) "Aura recipient is not a bounded creature enchant restriction" else null,
-        if(kind in setOf(GrantRecipientKind.AURA_HOST,GrantRecipientKind.EQUIPMENT_HOST) && grant.filter!=GroupFilter.attachedCreature()) "Additional attached recipient restrictions" else null,
-        if(kind==GrantRecipientKind.FILTER_GROUP && grant.filter.copy(excludeSelf=false) !in listOf(GroupFilter(GameObjectFilter.Creature),GroupFilter(GameObjectFilter.Creature.youControl()))) "Group filter beyond plain creatures / creatures you control" else null,
-        if(grant.ability.isPlaneswalkerAbility) "Granted loyalty semantics outside supported subset" else null,
-        if(face!="front") "Concrete observation requires exact front-definition binding" else null)
-}
+internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: GrantActivatedAbility): List<String> =
+    sharedGrantRecipientProblems(card, grant.filter) + listOfNotNull(
+        if (grant.recipientZone != Zone.BATTLEFIELD || grant.ability.activateFromZone != Zone.BATTLEFIELD)
+            "Nonbattlefield recipient/activation zone" else null,
+        if (grant.ability.isPlaneswalkerAbility) "Granted loyalty semantics outside supported subset" else null,
+        if (face != "front") "Concrete observation requires exact front-definition binding" else null
+    )
 
 @Serializable data class GrantedAbilityInstance(val declarationId: String, val granter: ObjectRef,
     val recipient: ObjectRef, val abilityId: AbilityId, val granterOwner: EntityId?, val granterController: EntityId,
-    val recipientOwner: EntityId?, val recipientController: EntityId)
+    val recipientOwner: EntityId?, val recipientController: EntityId,
+    @kotlinx.serialization.EncodeDefault(kotlinx.serialization.EncodeDefault.Mode.NEVER)
+    val pairedPartner: ObjectRef? = null)
 
 @Serializable data class GrantAvailabilityObservation(val verdict: Verdict, val instance: GrantedAbilityInstance? = null,
     val reason: String, val activationLegality: Verdict = Verdict.UNKNOWN)
@@ -104,12 +92,11 @@ fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, rec
         return result(Verdict.UNKNOWN,"Recipient ability removal/layer interactions require native activation validation")
     val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unresolved")
     val rc=state.projectedState.getController(recipient.entityId) ?: return result(Verdict.UNKNOWN,"Recipient controller unresolved")
-    if(!services.predicateEvaluator.matches(state,state.projectedState,recipient.entityId,GameObjectFilter.Creature,
-            PredicateContext(controllerId=gc,sourceId=granter.entityId)))
-        return result(Verdict.NO_MATCH,"The current recipient is not a projected creature")
+    val match = matchSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc)
+        ?: return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     fun owner(id: EntityId)=state.getEntity(id)?.get<OwnerComponent>()?.playerId
     return GrantAvailabilityObservation(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,
-        owner(granter.entityId),gc,owner(recipient.entityId),rc),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks")
+        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks")
 }
 
 @Serializable data class GrantedActivationObservation(val verdict: Verdict, val declarationId: String,

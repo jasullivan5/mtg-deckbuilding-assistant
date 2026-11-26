@@ -62,7 +62,7 @@ class GrantedTriggerTest : FunSpec({
         val x=extract("Stab Wound")
         x.actions.flatMap { it.grantedTriggers }.isEmpty() shouldBe true
         x.actions.any { it.path.startsWith("script.triggeredAbilities") } shouldBe true
-        grant("Tandem Lookout").recipientSupport shouldBe Verdict.UNKNOWN
+        grant("Tandem Lookout").recipientSupport shouldBe Verdict.MATCH
     }
     test("granted bodies are not intrinsic facts actions pathways or triggered outcomes") {
         val x=extract("Combat Research");val g=x.actions.flatMap { it.grantedTriggers }.single()

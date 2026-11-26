@@ -1,0 +1,363 @@
+{
+  "application": "b84f9f764baaeb42173a8fd3221bc217b62c475b",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "activated": {
+    "population": {
+      "physicalCards": 21699,
+      "authoringContainers": 22487
+    },
+    "native": {
+      "auraActivatedGrants": {
+        "physicalCards": 43,
+        "authoringContainers": 43,
+        "declarations": 44
+      },
+      "copyAddedActivatedAbilities": {
+        "physicalCards": 1,
+        "authoringContainers": 1,
+        "declarations": 1
+      },
+      "copyAddedTriggeredAbilities": {
+        "physicalCards": 6,
+        "authoringContainers": 6,
+        "declarations": 6
+      },
+      "donorDerivedActivatedGrants": {
+        "physicalCards": 17,
+        "authoringContainers": 17,
+        "declarations": 17
+      },
+      "equipmentActivatedGrants": {
+        "physicalCards": 21,
+        "authoringContainers": 21,
+        "declarations": 23
+      },
+      "explicitActivatedBodies": {
+        "physicalCards": 190,
+        "authoringContainers": 190,
+        "declarations": 199
+      },
+      "filterGroupActivatedGrants": {
+        "physicalCards": 90,
+        "authoringContainers": 90,
+        "declarations": 93
+      },
+      "nestedStaticActivatedGrants": {
+        "physicalCards": 14,
+        "authoringContainers": 14,
+        "declarations": 15
+      },
+      "otherAttachmentActivatedGrants": {
+        "physicalCards": 2,
+        "authoringContainers": 2,
+        "declarations": 3
+      },
+      "otherStaticAbilityGrants": {
+        "physicalCards": 10,
+        "authoringContainers": 10,
+        "declarations": 11
+      },
+      "otherStaticActivatedGrants": {
+        "physicalCards": 5,
+        "authoringContainers": 5,
+        "declarations": 5
+      },
+      "rootStaticActivatedGrants": {
+        "physicalCards": 147,
+        "authoringContainers": 147,
+        "declarations": 153
+      },
+      "stateTriggeredGrants": {
+        "physicalCards": 1,
+        "authoringContainers": 1,
+        "declarations": 1
+      },
+      "staticActivatedGrants": {
+        "physicalCards": 161,
+        "authoringContainers": 161,
+        "declarations": 168
+      },
+      "staticTriggeredGrants": {
+        "physicalCards": 108,
+        "authoringContainers": 108,
+        "declarations": 112
+      },
+      "temporaryActivatedGrants": {
+        "physicalCards": 19,
+        "authoringContainers": 19,
+        "declarations": 20
+      },
+      "temporaryGroupActivatedGrants": {
+        "physicalCards": 10,
+        "authoringContainers": 10,
+        "declarations": 11
+      },
+      "temporaryStaticAbilityGrants": {
+        "physicalCards": 55,
+        "authoringContainers": 55,
+        "declarations": 61
+      },
+      "temporaryTriggeredGrants": {
+        "physicalCards": 107,
+        "authoringContainers": 108,
+        "declarations": 116
+      }
+    },
+    "baselineJsonlSha256": "04b7ec9f719c3f5db92c1a842bf489e5a21792a169985e42b1467f9e9c22cb80",
+    "candidateJsonlSha256": "d0401676edb445edf10bc4c04444a15846179d352bca7cf157248edb9ac1e740",
+    "beforeSupported": {
+      "declarations": 54,
+      "physicalCards": 52,
+      "authoringContainers": 52
+    },
+    "afterSupported": {
+      "declarations": 93,
+      "physicalCards": 91,
+      "authoringContainers": 91
+    },
+    "remainingUnknown": {
+      "declarations": 60,
+      "physicalCards": 56,
+      "authoringContainers": 56
+    },
+    "newlySupported": {
+      "declarations": 39,
+      "physicalCards": 39,
+      "authoringContainers": 39
+    },
+    "newClauseOccurrences": {
+      "IsPermanent": 19,
+      "excludeSelf": 2,
+      "ControlledByYou": 20,
+      "IsCreature": 11,
+      "HasSubtype": 32,
+      "IsArtifact": 9,
+      "SOULBOND_PAIR": 1,
+      "HasColor": 1
+    },
+    "afterByKind": {
+      "AURA_HOST": {
+        "declarations": 22,
+        "physicalCards": 22,
+        "authoringContainers": 22
+      },
+      "EQUIPMENT_HOST": {
+        "declarations": 22,
+        "physicalCards": 20,
+        "authoringContainers": 20
+      },
+      "FILTER_GROUP": {
+        "declarations": 48,
+        "physicalCards": 48,
+        "authoringContainers": 48
+      },
+      "SOULBOND_PAIR": {
+        "declarations": 1,
+        "physicalCards": 1,
+        "authoringContainers": 1
+      },
+      "UNRESOLVED": {
+        "declarations": 0,
+        "physicalCards": 0,
+        "authoringContainers": 0
+      }
+    },
+    "remainingReasons": {
+      "Aura enchant restriction outside bounded creature hosts": 18,
+      "Group filter requires unsupported or correlated predicates": 39,
+      "Granted loyalty semantics outside supported subset": 14,
+      "Concrete observation requires exact front-definition binding": 3,
+      "Additional attached recipient restrictions": 2,
+      "Nonbattlefield recipient/activation zone": 3,
+      "Recipient scope outside bounded attachment, battlefield and soulbond grants": 1
+    }
+  },
+  "triggered": {
+    "population": {
+      "physicalCards": 21699,
+      "faceContainers": 22487
+    },
+    "native": {
+      "temporaryTriggered": {
+        "physicalCards": 107,
+        "faceContainers": 108,
+        "declarations": 116
+      },
+      "staticTriggered": {
+        "physicalCards": 108,
+        "faceContainers": 108,
+        "declarations": 112
+      },
+      "root": {
+        "physicalCards": 101,
+        "faceContainers": 101,
+        "declarations": 103
+      },
+      "aura": {
+        "physicalCards": 39,
+        "faceContainers": 39,
+        "declarations": 41
+      },
+      "filterGroup": {
+        "physicalCards": 31,
+        "faceContainers": 31,
+        "declarations": 31
+      },
+      "equipment": {
+        "physicalCards": 29,
+        "faceContainers": 29,
+        "declarations": 30
+      },
+      "nested": {
+        "physicalCards": 8,
+        "faceContainers": 8,
+        "declarations": 9
+      },
+      "otherScope": {
+        "physicalCards": 7,
+        "faceContainers": 7,
+        "declarations": 7
+      },
+      "untraversed": {
+        "physicalCards": 8,
+        "faceContainers": 8,
+        "declarations": 9
+      },
+      "otherAttached": {
+        "physicalCards": 3,
+        "faceContainers": 3,
+        "declarations": 3
+      }
+    },
+    "baselineJsonlSha256": "2100c7f0cf89f36e127d0fb20221567631234f3221b249ba414649e4de3630d6",
+    "candidateJsonlSha256": "91bd4fd091afed73b5ee7549ba52a8dd1b45a8567d7deb930e47783d5b6dcc47",
+    "beforeSupported": {
+      "declarations": 73,
+      "physicalCards": 71,
+      "authoringContainers": 71
+    },
+    "afterSupported": {
+      "declarations": 90,
+      "physicalCards": 88,
+      "authoringContainers": 88
+    },
+    "remainingUnknown": {
+      "declarations": 13,
+      "physicalCards": 13,
+      "authoringContainers": 13
+    },
+    "newlySupported": {
+      "declarations": 17,
+      "physicalCards": 17,
+      "authoringContainers": 17
+    },
+    "newClauseOccurrences": {
+      "IsArtifact": 3,
+      "IsCreature": 6,
+      "ControlledByYou": 10,
+      "IsPermanent": 10,
+      "HasSubtype": 11,
+      "excludeSelf": 2,
+      "SOULBOND_PAIR": 1,
+      "HasColor": 1
+    },
+    "afterByKind": {
+      "AURA_HOST": {
+        "declarations": 34,
+        "physicalCards": 33,
+        "authoringContainers": 33
+      },
+      "EQUIPMENT_HOST": {
+        "declarations": 30,
+        "physicalCards": 29,
+        "authoringContainers": 29
+      },
+      "FILTER_GROUP": {
+        "declarations": 25,
+        "physicalCards": 25,
+        "authoringContainers": 25
+      },
+      "SOULBOND_PAIR": {
+        "declarations": 1,
+        "physicalCards": 1,
+        "authoringContainers": 1
+      },
+      "UNRESOLVED": {
+        "declarations": 0,
+        "physicalCards": 0,
+        "authoringContainers": 0
+      }
+    },
+    "remainingReasons": {
+      "Group filter requires unsupported or correlated predicates": 6,
+      "Aura enchant restriction outside bounded creature hosts": 4,
+      "Recipient scope outside bounded attachment, battlefield and soulbond grants": 3
+    },
+    "beforeRecipientAndEvent": {
+      "physicalCards": 56,
+      "faceContainers": 56,
+      "declarations": 56
+    },
+    "afterRecipientAndEvent": {
+      "physicalCards": 69,
+      "faceContainers": 69,
+      "declarations": 69
+    },
+    "untraversedPaths": [
+      {
+        "card": "Darkblade Agent",
+        "face": "front",
+        "path": "script.staticAbilities[1].ability",
+        "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/DarkbladeAgent.kt"
+      },
+      {
+        "card": "Essence Leak",
+        "face": "front",
+        "path": "script.staticAbilities[0].ability",
+        "source": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/EssenceLeak.kt"
+      },
+      {
+        "card": "Expedition Diviner",
+        "face": "front",
+        "path": "script.staticAbilities[0].ability",
+        "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ExpeditionDiviner.kt"
+      },
+      {
+        "card": "Fire Nation Cadets",
+        "face": "front",
+        "path": "script.staticAbilities[0].ability",
+        "source": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/FireNationCadets.kt"
+      },
+      {
+        "card": "Helm of the Ghastlord",
+        "face": "front",
+        "path": "script.staticAbilities[1].ability",
+        "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt"
+      },
+      {
+        "card": "Helm of the Ghastlord",
+        "face": "front",
+        "path": "script.staticAbilities[3].ability",
+        "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt"
+      },
+      {
+        "card": "Oculus Whelp",
+        "face": "front",
+        "path": "script.staticAbilities[0].ability",
+        "source": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/OculusWhelp.kt"
+      },
+      {
+        "card": "Relic Vial",
+        "face": "front",
+        "path": "script.staticAbilities[0].ability",
+        "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/RelicVial.kt"
+      },
+      {
+        "card": "Triton Wavebreaker",
+        "face": "front",
+        "path": "script.staticAbilities[1].ability",
+        "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/TritonWavebreaker.kt"
+      }
+    ]
+  }
+}
