@@ -362,9 +362,19 @@ fun auditCommand(args: List<String>, catalog: () -> Catalog, out: (String)->Unit
             benchmarkDiff(before,after).let { if(json) reportJson.encodeToString(it) else "Same frozen review: ${it.sameFrozenReview}\nBefore: ${it.beforeNumerators} / ${it.beforeDenominators}\nAfter: ${it.afterNumerators} / ${it.afterDenominators}\n"+it.changes.joinToString("\n") { c -> "${c.id}: ${c.beforeStatus} -> ${c.afterStatus}" } }
         }
         "diff" -> {
-            fun load(k: String)=reader.parseToJsonElement(Files.readString(Path.of(required(k)))).jsonObject
+            // Retain only the recorded comparison inputs between reads. The report's action and
+            // fact trees can be much larger than its decisions, and comparing them is not this audit's job.
+            fun load(path: Path): Pair<DiscoveryReport,Map<ResultEvidence,JsonObject>> {
+                val snapshot = discoverySnapshot(reader.parseToJsonElement(Files.readString(path)).jsonObject)
+                return snapshot.report to snapshot.resultNodes
+            }
+            val beforePath = Path.of(required("--before"))
+            val afterPath = Path.of(required("--after"))
+            val before = load(beforePath)
+            val after = if (Files.isSameFile(beforePath,afterPath)) before else load(afterPath)
             fun cv(k: String)=options[k]?.let { reader.decodeFromString<CoverageReport>(Files.readString(Path.of(it))) }
-            diffSnapshots(load("--before"),load("--after"),cv("--before-coverage"),cv("--after-coverage")).let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
+            diffRecorded(before.first,after.first,cv("--before-coverage"),cv("--after-coverage"),before.second,after.second)
+                .let { if(json) reportJson.encodeToString(it) else "Pool comparable: ${it.comparablePool}; ${it.beforeCommander} -> ${it.afterCommander}\n${it.counts}\nTransitions: ${it.transitions}\nStage counts before: ${it.beforeStageCounts}\nStage counts after: ${it.afterStageCounts}\n"+it.changes.take(60).joinToString("\n") { c -> "${c.kind}: ${c.key}" } }
         }
         else -> throw IllegalArgumentException("Unknown audit command: ${args[0]}")
     }
