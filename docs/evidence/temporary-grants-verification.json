@@ -1,0 +1,203 @@
+{
+  "mergedBaseline": "e0eaddbc1c9e611ef2f0628b9212fb871fc8bb4c",
+  "equivalentBaselineTree": "5b91ee50e1bc3908164be1f1201bef4e73a1029e",
+  "testedApplication": "e99b422613fb5367177fa3cb5d290d4b49b3d839",
+  "initialGrantImplementation": "06399c089aaf322d09a3054776dc4a9dde307eee",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "jdk": "Temurin 25.0.4.1",
+  "fullKotlin": {
+    "tests": 919,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": 128
+  },
+  "cases": {
+    "TemporaryGrantScenarioTest": [
+      "Run Wild grants an opponent's creature regeneration, pays from its controller and expires at cleanup",
+      "Run Wild cannot bind a fizzled target or the renewed receiving object",
+      "Run Wild activation remains stacked after recipient renewal and duplicate providers remain ambiguous",
+      "Glorious Sunrise creates only the chosen land mode and its recipient taps for three mana",
+      "Trash the Town creates a trigger for the opposing host, survives a blink after placement and expires independently",
+      "Commando Raid uses the receiving creature's combat event, target and power",
+      "Commando Raid does not trigger when the recipient deals noncombat damage"
+    ],
+    "TemporaryGrantTest": [
+      "source-frozen cards bind their native instruction, source hash and nested body",
+      "old action JSON needs no temporary grant field and new modal bodies stay nested"
+    ]
+  },
+  "assertions": {
+    "attributedCreations": 9,
+    "attributedActivations": 3,
+    "attributedManaActivations": 1,
+    "attributedTriggerPlacements": 3,
+    "nativeCleanupExpiries": 4,
+    "stackPersistenceAfterRecipientRenewal": 2
+  },
+  "bootstrapGuards": 17,
+  "oracleSnapshotGuards": 3,
+  "catalog": {
+    "mode": "current",
+    "passed": true,
+    "currentChecksPassed": true,
+    "historicalFingerprintsMatch": false,
+    "actualEngineCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+    "historicalBaselineEngineCommit": "4133241856227d1d36269e92aaba633bbaf93f5c",
+    "normalization": "Only runtime/native URL revision and declared exact path relocations; historical evidence contents and mechanical fields untouched",
+    "checks": {
+      "judith-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "judith-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-a": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-b": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "krenko-c": {
+        "sameActualEngineAcrossRuns": true,
+        "sameCompleteReportExceptDeclaredProvenance": false,
+        "zeroConfirmedBenchmarkMismatches": true
+      },
+      "identicalDiffEmpty": true
+    }
+  },
+  "historicalReport": {
+    "path": "Distinct PR #70 and temporary-grant full Judith create-creature-tokens exports",
+    "changes": 0
+  },
+  "discoverPairs": 18,
+  "interfaceBrowserChecks": 8,
+  "liveBrowserChecks": 18,
+  "normalExplorerMaxHeapBytes": 1073741824,
+  "explorer": {
+    "health": {
+      "status": "ready",
+      "argentumCommit": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+      "engineMode": "app-stable",
+      "applicationRevision": "e99b422613fb5367177fa3cb5d290d4b49b3d839"
+    },
+    "commander": "Kenrith, the Returned King",
+    "objective": "create-creature-tokens",
+    "cards": [
+      {
+        "card": "Run Wild",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.spellEffect.effects[1]",
+            "support": "MATCH",
+            "duration": {
+              "type": "EndOfTurn"
+            },
+            "checkpoint": "NATIVE_TURN_CLEANUP"
+          }
+        ]
+      },
+      {
+        "card": "Commando Raid",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.spellEffect",
+            "support": "MATCH",
+            "duration": {
+              "type": "EndOfTurn"
+            },
+            "checkpoint": "NATIVE_TURN_CLEANUP"
+          }
+        ]
+      },
+      {
+        "card": "Glorious Sunrise",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.triggeredAbilities[0].effect.modes[1].effect",
+            "support": "MATCH",
+            "duration": {
+              "type": "EndOfTurn"
+            },
+            "checkpoint": "NATIVE_TURN_CLEANUP"
+          }
+        ]
+      },
+      {
+        "card": "Trash the Town",
+        "included": true,
+        "route": "card",
+        "grants": [
+          {
+            "path": "script.spellEffect.modes[2].effect",
+            "support": "MATCH",
+            "duration": {
+              "type": "EndOfTurn"
+            },
+            "checkpoint": "NATIVE_TURN_CLEANUP"
+          }
+        ]
+      },
+      {
+        "card": "Quicksmith Spy",
+        "effectiveFormatEligibility": "MATCH",
+        "effectiveDeckEligibility": "UNKNOWN",
+        "included": false
+      }
+    ]
+  },
+  "lfSha256": {
+    "docs/evidence/TemporaryGrantInventory.java": "be7187c8d2cb6545848d339dc6d73ee09713e6517df6f4c610bf4518bdd912d9",
+    "scripts/compare-temporary-grants.py": "80a093dbec53605a7c28457f8e1c3386557879667e98823fc7dc1ddfaccf5be9",
+    "scripts/inventory-temporary-grants.py": "f99207f7158c89a576ae5cc84b067cae20c4d74292904b5cf0fd101c443a3031",
+    "src/main/kotlin/audit/Diagnostics.kt": "0e781f7cd34701b229b8735fb3454d3bae34b51af93737b624227c7855d7a136",
+    "src/main/kotlin/discovery/Evidence.kt": "9a3b14720b361f408c120f56d195aa05194d22ef75a87a4e47be2900b652897a",
+    "src/main/kotlin/discovery/PathwayExtractor.kt": "94b1a2d1135392e4b5f9cd679bf4bb8d6c129dd9c1332e4229ae0e3daba5b416",
+    "src/main/kotlin/discovery/TemporaryGrants.kt": "741f9403c97045f18845ff081fa06024c38d8b83c906d26266068e04c8db6e91",
+    "src/test/kotlin/diagnostics/HistoricalDiscoverySnapshotTest.kt": "58ea8026954fad779e2c8cfb55a5e601f195fc3d70ea162f651868d67b5824e5",
+    "src/test/kotlin/discovery/TemporaryGrantTest.kt": "3171b836b792ba79bff781d44a48bf7c570907592c062bf2cb9f19a8e54262c0",
+    "src/test/kotlin/scenarios/TemporaryGrantScenarioTest.kt": "81c7f0edf700c3f3e06b0c83124961d2f5fea756f1524457fe2f7964438252ca",
+    "src/test/resources/regression/temporary-grant-sources.json": "ecc13fb984a7aa99aa7176b21b643c3faf209e9fa8fb953693062836530d57bb"
+  },
+  "logSha256": {
+    "bootstrap.log": "9dcb2d9a1539dce37dce8d5f558f3793c69a851db9cfc07a811e2de3d7430c00",
+    "full.log": "47238314c84efa461494d355bd44061ecb0e47e9459b4ee31655f0554653cef3",
+    "focused-final.log": "2732b01da2cdd1dc48fef53f5e7a966e42b71a58029dab3667ddd0198e67c399",
+    "inventory.log": "7fa15eeabcf0fed79bebe4cac8f2167f6e2a8f86081e581439999de1adb798cb",
+    "catalog-gate.log": "1edeba6f4bc7ef8de7e8bd6e9ef203bc2f0e3ebe5d2e99d9f5197b0213d637bf",
+    "comparison-final.log": "d099a5f5826f17508ae7df1936ab7c58b9fb99d6d5a5ed1dc0595c3db062e1e0",
+    "catalog-gate-initial.log": "36d403baf8b6089a51db009236560f0f7ac3e10c5b58c6b69d80b701abc45921",
+    "full-initial.log": "66db4e4eb5511316215d04866c24c9a29d08d02f5d24c685faf36db92e872065",
+    "frontend.log": "3349c4d8ae70a215a0fe08f910ff24e57770388d84a9ef42a197c123971ae072",
+    "browser-ui.log": "b9a64ae360d2a4ad0f262a866379bc1c37fba6bb2a92567ddf8adb834673bfc4",
+    "browser-live.log": "8039680d7495851e42696849b680e051ba3be4f781a61e6d638d0f59d9965158",
+    "api.log": "108c7c07cd9cc354644160a1177782d126b552948468b96494888fec80756a61",
+    "heap.log": "b46eca85049c561f98b7bb8f101194324b08119fd78b18b741b5025adcc9810e",
+    "historical-diff.json": "a0f32f68e1b653a809c53eafff74c4a3c48ef8ca2a48ddd766f3603647fafe45"
+  },
+  "retries": [
+    "The first compile used the wrong native damage-pattern property. The final observer uses the SDK DamageType and Recipient.",
+    "The first focused run expected a generic modal prompt and did not answer discard to hand size during cleanup. The final scenarios use the native option prompt and complete the cleanup transaction.",
+    "The initial catalog gate exceeded 1 GiB holding two whole report trees in audit diff. The final CLI retains only the decoded comparison inputs and shares one read for a self-diff. Both the distinct-report check and gate were rerun."
+  ],
+  "boundary": "Engine source unchanged. Real native actions were verified through the application. Source-fidelity decisions remain historical."
+}

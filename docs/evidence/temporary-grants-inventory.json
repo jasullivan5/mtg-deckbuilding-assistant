@@ -1,0 +1,2957 @@
+{
+  "application": "e99b422613fb5367177fa3cb5d290d4b49b3d839",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "baseline": "e0eaddbc1c9e611ef2f0628b9212fb871fc8bb4c",
+  "before": {
+    "physicalCards": 21699,
+    "authoringContainers": 22487,
+    "families": {
+      "activated": {
+        "declarations": 20,
+        "physicalCards": 19,
+        "authoringContainers": 19,
+        "durations": {
+          "EndOfTurn": 8,
+          "UntilSourceCastFromExile": 6,
+          "Permanent": 4,
+          "WhileYouControlSource": 2
+        },
+        "recipients": {
+          "BoundVariable": 14,
+          "IterationEntity": 1,
+          "Self": 4,
+          "PipelineTarget": 1
+        },
+        "traversed": 0,
+        "creationMatch": 0,
+        "bodyWithFacts": 0,
+        "bodyWithoutUnsupportedNodes": 0,
+        "unresolved": {
+          "Native instruction outside the existing effect walk": 20
+        }
+      },
+      "triggered": {
+        "declarations": 116,
+        "physicalCards": 107,
+        "authoringContainers": 108,
+        "durations": {
+          "Permanent": 55,
+          "EndOfTurn": 60,
+          "WhileAffectedHasCounter": 1
+        },
+        "recipients": {
+          "BoundVariable": 84,
+          "Self": 16,
+          "TriggeringEntity": 2,
+          "IterationEntity": 10,
+          "ContextTarget": 2,
+          "PipelineTarget": 2
+        },
+        "traversed": 0,
+        "creationMatch": 0,
+        "bodyWithFacts": 0,
+        "bodyWithoutUnsupportedNodes": 0,
+        "unresolved": {
+          "Native instruction outside the existing effect walk": 116
+        }
+      },
+      "groupActivated": {
+        "declarations": 11,
+        "physicalCards": 10,
+        "authoringContainers": 10,
+        "durations": {
+          "EndOfTurn": 9,
+          "UntilYourNextTurn": 2
+        },
+        "recipients": {
+          "GroupFilter": 11
+        },
+        "traversed": 0,
+        "creationMatch": 0,
+        "bodyWithFacts": 0,
+        "bodyWithoutUnsupportedNodes": 0,
+        "unresolved": {
+          "Native instruction outside the existing effect walk": 11
+        }
+      }
+    }
+  },
+  "after": {
+    "physicalCards": 21699,
+    "authoringContainers": 22487,
+    "families": {
+      "activated": {
+        "declarations": 20,
+        "physicalCards": 19,
+        "authoringContainers": 19,
+        "durations": {
+          "EndOfTurn": 8,
+          "UntilSourceCastFromExile": 6,
+          "Permanent": 4,
+          "WhileYouControlSource": 2
+        },
+        "recipients": {
+          "BoundVariable": 14,
+          "IterationEntity": 1,
+          "Self": 4,
+          "PipelineTarget": 1
+        },
+        "traversed": 20,
+        "creationMatch": 5,
+        "bodyWithFacts": 14,
+        "bodyWithoutUnsupportedNodes": 15,
+        "unresolved": {
+          "Native duration is outside end-of-turn cleanup": 12,
+          "Creation path is outside a root action, ordered effect or root mode": 5,
+          "Recipient lacks a bounded single battlefield target or source binding": 2,
+          "Granted ability has a nonbattlefield availability zone": 1
+        }
+      },
+      "triggered": {
+        "declarations": 116,
+        "physicalCards": 107,
+        "authoringContainers": 108,
+        "durations": {
+          "Permanent": 55,
+          "EndOfTurn": 60,
+          "WhileAffectedHasCounter": 1
+        },
+        "recipients": {
+          "BoundVariable": 84,
+          "Self": 16,
+          "TriggeringEntity": 2,
+          "IterationEntity": 10,
+          "ContextTarget": 2,
+          "PipelineTarget": 2
+        },
+        "traversed": 116,
+        "creationMatch": 41,
+        "bodyWithFacts": 97,
+        "bodyWithoutUnsupportedNodes": 33,
+        "unresolved": {
+          "Native duration is outside end-of-turn cleanup": 56,
+          "Creation path is outside a root action, ordered effect or root mode": 37,
+          "Recipient lacks a bounded single battlefield target or source binding": 25,
+          "Granted ability has a nonbattlefield availability zone": 3
+        }
+      },
+      "groupActivated": {
+        "declarations": 11,
+        "physicalCards": 10,
+        "authoringContainers": 10,
+        "durations": {
+          "EndOfTurn": 9,
+          "UntilYourNextTurn": 2
+        },
+        "recipients": {
+          "GroupFilter": 11
+        },
+        "traversed": 0,
+        "creationMatch": 0,
+        "bodyWithFacts": 0,
+        "bodyWithoutUnsupportedNodes": 0,
+        "unresolved": {
+          "Native instruction outside the existing effect walk": 11
+        }
+      }
+    },
+    "declarations": {
+      "activated": [
+        {
+          "card": "Defiling Tears",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Emrakul, the Exigent Doom",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Flame Fusillade",
+          "face": "front",
+          "path": "script.spellEffect.body",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Glamorous Outlaw",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Glorious Sunrise",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.modes[1].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Iron Fist, Living Weapon",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Life Matrix",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Masked Bandits",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Q, Stacking the Deck",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "PipelineTarget",
+            "collectionName": "matched1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup",
+            "Granted ability has a nonbattlefield availability zone"
+          ]
+        },
+        {
+          "card": "Quicksmith Rebel",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "WhileYouControlSource",
+            "sourceDescription": "this creature"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Quicksmith Spy",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "WhileYouControlSource",
+            "sourceDescription": "this creature"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Rakish Revelers",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Run Wild",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Scorn-Blade Berserker",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Shattered Seraph",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Spara's Adjudicators",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "UntilSourceCastFromExile"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Urza's Saga",
+          "face": "front",
+          "path": "script.sagaChapters[0].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Urza's Saga",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Voldaren Thrillseeker",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Wandering Fumarole",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        }
+      ],
+      "triggered": [
+        {
+          "card": "Aang, at the Crossroads",
+          "face": "front.backFace",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Abnormal Endurance",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Archpriest of Shadows",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Ascendant Spirit",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect.then.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Ashnod's Intervention",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Ashnod's Intervention",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Avatar Kyoshi, Earthbender",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Ba Sing Se",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Badgermole",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Badgermole Cub",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Beifong's Bounty Hunters",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Bitter Work",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Bola Slinger",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Bumi, Eclectic Earthbender",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Bumi, King of Three Trials",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.modes[2].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Bumi, Unleashed",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Carnage, Crimson Chaos",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Cherished Hatchling",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "TriggeringEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Clavileño, First of the Blessed",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Commando Raid",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Cosima, God of the Voyage",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.then.then",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 3,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup",
+            "Granted ability has a nonbattlefield availability zone"
+          ]
+        },
+        {
+          "card": "Cruel Deceiver",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Dai Li Agents",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Dai Li Agents",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[5].effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Dai Li Indoctrination",
+          "face": "front",
+          "path": "script.spellEffect.modes[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Demonic Gifts",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Den of the Bugbear",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Doomskar Warrior",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 4,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Down in the Valley",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Dreadmaw's Ire",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Driven // Despair",
+          "face": "front.cardFaces[0]:Driven",
+          "path": "script.spellEffect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Driven // Despair",
+          "face": "front.cardFaces[1]:Despair",
+          "path": "script.spellEffect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Dropkick Bomber",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Earth Kingdom General",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earth Rumble",
+          "face": "front",
+          "path": "script.spellEffect.action.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earth Village Ruffians",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earthbender Ascension",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earthbending Lesson",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earthbending Student",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earthen Ally",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Earthshape",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Elemental Expressionist",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Enduring Bondwarden",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Fake Your Own Death",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 2,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Fall of Gil-galad",
+          "face": "front",
+          "path": "script.sagaChapters[2].effect.effects[0]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Fatal Fissure",
+          "face": "front",
+          "path": "script.spellEffect.effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Feign Death",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Fire Nation Palace",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Flash Conscription",
+          "face": "front",
+          "path": "script.spellEffect.effects[3].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Frodo, Sauron's Bane",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.then.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Furnace Reins",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Galuf's Final Act",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Glyph of Delusion",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Great Hall of the Biblioplex",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect.then.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Hangar Scrounger",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Haru, Hidden Talent",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Herd Heirloom",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Hive of the Eye Tyrant",
+          "face": "front",
+          "path": "script.activatedAbilities[1].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Infuse with Vitality",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Kaya the Inexorable",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Kaya the Inexorable",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Kellan, Planar Trailblazer",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.then.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 3,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Lyra, Tolarian Archangel",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Makeshift Mannequin",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "WhileAffectedHasCounter",
+            "counterType": "MANNEQUIN"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Malakir Rebirth",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Nimble Trapfinder",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.body",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Nog, Ambitious Cadet",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.then.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Not Dead After All",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 2,
+          "unresolved": []
+        },
+        {
+          "card": "Open into Wonder",
+          "face": "front",
+          "path": "script.spellEffect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "ContextTarget",
+            "index": 0
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Pain 101",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Perigee Beckoner",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Presumed Dead",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 2,
+          "unresolved": []
+        },
+        {
+          "card": "Rabid Attack",
+          "face": "front",
+          "path": "script.spellEffect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "ContextTarget",
+            "index": 0
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Raging Ravine",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Rebellious Captives",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1].effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Reckless Pyrosurfer",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Requiem Monolith",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[0]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Return to Action",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Rivaz of the Claw",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "TriggeringEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Rockalanche",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Root Manipulation",
+          "face": "front",
+          "path": "script.spellEffect.body.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Sandbenders' Storm",
+          "face": "front",
+          "path": "script.spellEffect.modes[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Shackles of Treachery",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Sozin's Comet",
+          "face": "front",
+          "path": "script.spellEffect.body",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Storm the Citadel",
+          "face": "front",
+          "path": "script.spellEffect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Strength of Will",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Summon: Primal Odin",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Supernatural Stamina",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Sygg, Wanderwine Wisdom",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Sygg, Wanderwine Wisdom",
+          "face": "front",
+          "path": "script.triggeredAbilities[1].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Symbiote Spider-Man",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 3,
+          "bodyUnresolved": 4,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Terminal Velocity",
+          "face": "front",
+          "path": "script.spellEffect.effects[1].ifNotEmpty.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "PipelineTarget",
+            "collectionName": "putting"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Terminal Velocity",
+          "face": "front",
+          "path": "script.spellEffect.effects[1].ifNotEmpty.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "PipelineTarget",
+            "collectionName": "putting"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "The Boulder, Ready to Rumble",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "The Cave of Two Lovers",
+          "face": "front",
+          "path": "script.sagaChapters[2].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "The Legend of Kyoshi",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "The Pride of Hull Clade",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Thief of Existence",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[1].then",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Toph, Earthbending Master",
+          "face": "front",
+          "path": "script.triggeredAbilities[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Toph, Greatest Earthbender",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Toph, Hardheaded Teacher",
+          "face": "front",
+          "path": "script.triggeredAbilities[1].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Toph, the Blind Bandit",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Toph, the First Metalbender",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.effects[3]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 2,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Native duration is outside end-of-turn cleanup"
+          ]
+        },
+        {
+          "card": "Trash the Town",
+          "face": "front",
+          "path": "script.spellEffect.modes[2].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t2"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Undying Malice",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 2,
+          "unresolved": []
+        },
+        {
+          "card": "Unnatural Moonrise",
+          "face": "front",
+          "path": "script.spellEffect.effects[3]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 0,
+          "unresolved": []
+        },
+        {
+          "card": "Uvilda, Dean of Perfection",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[3].body.effects[1]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup",
+            "Granted ability has a nonbattlefield availability zone"
+          ]
+        },
+        {
+          "card": "Uvilda, Dean of Perfection",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.effects[3].body.effects[2]",
+          "duration": {
+            "type": "Permanent"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding",
+            "Native duration is outside end-of-turn cleanup",
+            "Granted ability has a nonbattlefield availability zone"
+          ]
+        },
+        {
+          "card": "Verdant Rebirth",
+          "face": "front",
+          "path": "script.spellEffect.effects[0]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Vigorous Charge",
+          "face": "front",
+          "path": "script.spellEffect.effects[1].then",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode"
+          ]
+        },
+        {
+          "card": "Vincent's Limit Break",
+          "face": "front",
+          "path": "script.spellEffect.modes[0].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t0"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Vincent's Limit Break",
+          "face": "front",
+          "path": "script.spellEffect.modes[1].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t1"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Vincent's Limit Break",
+          "face": "front",
+          "path": "script.spellEffect.modes[2].effect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "BoundVariable",
+            "name": "t2"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 1,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Vorpal Sword",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "Self"
+          },
+          "traversed": true,
+          "creation": "MATCH",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": []
+        },
+        {
+          "card": "Vraska, Scheming Gorgon",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect.body.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": 1,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        },
+        {
+          "card": "Whisperwood Elemental",
+          "face": "front",
+          "path": "script.activatedAbilities[0].effect.body",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "type": "IterationEntity"
+          },
+          "traversed": true,
+          "creation": "UNKNOWN",
+          "bodyFacts": 1,
+          "bodyUnresolved": 2,
+          "unresolved": [
+            "Creation path is outside a root action, ordered effect or root mode",
+            "Recipient lacks a bounded single battlefield target or source binding"
+          ]
+        }
+      ],
+      "groupActivated": [
+        {
+          "card": "Divergent Growth",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsLand"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Dragonrage",
+          "face": "front",
+          "path": "script.spellEffect.effects[1]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ],
+              "statePredicates": [
+                {
+                  "type": "IsAttacking"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Firja's Retribution",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Angel"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Gruesome Slaughter",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "IsColorless"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Lorehold Apprentice",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Spirit"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Psychic Trance",
+          "face": "front",
+          "path": "script.spellEffect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Wizard"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Shade's Breath",
+          "face": "front",
+          "path": "script.spellEffect.effects[2]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": null,
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Song of Freyalise",
+          "face": "front",
+          "path": "script.sagaChapters[0].effect",
+          "duration": {
+            "type": "UntilYourNextTurn"
+          },
+          "recipient": null,
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Song of Freyalise",
+          "face": "front",
+          "path": "script.sagaChapters[1].effect",
+          "duration": {
+            "type": "UntilYourNextTurn"
+          },
+          "recipient": null,
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Sorin, Vampire Lord",
+          "face": "front",
+          "path": "script.activatedAbilities[2].effect",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": {
+            "baseFilter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Vampire"
+                }
+              ],
+              "controllerPredicate": {
+                "type": "ControlledByYou"
+              }
+            }
+          },
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        },
+        {
+          "card": "Vorinclex",
+          "face": "front.backFace",
+          "path": "script.sagaChapters[2].effect.effects[0]",
+          "duration": {
+            "type": "EndOfTurn"
+          },
+          "recipient": null,
+          "traversed": false,
+          "creation": "UNKNOWN",
+          "bodyFacts": 0,
+          "bodyUnresolved": null,
+          "unresolved": [
+            "Native instruction outside the existing effect walk"
+          ]
+        }
+      ]
+    }
+  }
+}
