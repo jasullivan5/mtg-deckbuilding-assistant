@@ -24,18 +24,19 @@ internal fun grantFace(card: CardDefinition, face: String): CardDefinition? = wh
     else -> null
 }
 
-internal fun triggerRecipientProblems(card: CardDefinition?, grant: GrantTriggeredAbility): List<String> {
+internal fun triggerRecipientProblems(card: CardDefinition?, grant: GrantTriggeredAbility, conditional: Boolean = false): List<String> {
     if(card==null) return listOf("Exact native definition face unresolved")
-    return sharedGrantRecipientProblems(card, grant.filter) + listOfNotNull(
+    return sharedGrantRecipientProblems(card, grant.filter, conditional) + listOfNotNull(
         if (grant.ability.activeZones != setOf(Zone.BATTLEFIELD)) "Nonbattlefield/union active zones" else null
     )
 }
 
-internal fun grantedEventSupport(a: TriggeredAbility): Verdict = when {
+internal fun grantedEventSupport(a: TriggeredAbility, conditionalSelf: Boolean = false): Verdict = when {
     a.controlledByTriggeringEntityController -> Verdict.UNKNOWN
     a.trigger is EventPattern.DealsDamageEvent && a.binding==TriggerBinding.SELF -> Verdict.MATCH
     a.trigger is EventPattern.AttackEvent && a.binding==TriggerBinding.SELF -> Verdict.MATCH
     a.trigger is EventPattern.StepEvent && a.binding==TriggerBinding.ANY && (a.trigger as EventPattern.StepEvent).player==Player.You -> Verdict.MATCH
+    conditionalSelf && a.trigger.isBoundedGrantDeath() && a.binding in setOf(TriggerBinding.SELF, TriggerBinding.ANY) -> Verdict.MATCH
     else -> Verdict.UNKNOWN
 }
 
@@ -58,20 +59,23 @@ internal fun StaticAbility.triggerDeclarations(): List<GrantTriggeredAbility> = 
     val controllerBinding: String = "NATIVE_CONTROLLER_CAPTURED_AT_DETECTION",
     val checkpoints: List<String> = listOf("Current grant at event; no event or recipient implied", "Native event matching and triggerRestriction at detection", "Native interveningIf at detection AND resolution", "Targets/chooser at stack announcement", "Effect gates and optional choices at resolution"),
     val persistence: String = "Native pending/stack snapshots retain source, controller, rules and event. Future grant loss does not erase an established trigger; later legality, conditions and resolution remain native.",
-    val sourceFidelity: Verdict = Verdict.UNKNOWN)
+    val sourceFidelity: Verdict = Verdict.UNKNOWN,
+    @kotlinx.serialization.EncodeDefault(kotlinx.serialization.EncodeDefault.Mode.NEVER)
+    val conditional: ConditionalGrant? = null)
 
-@Serializable data class GrantedTriggerAvailability(val verdict: Verdict, val instance: GrantedAbilityInstance?=null, val reason: String)
+@Serializable data class GrantedTriggerAvailability(val verdict: Verdict, val instance: GrantedAbilityInstance?=null, val reason: String, val condition: GrantConditionObservation? = null)
 
 /** Read the same native resolver/index used by the detector. No trigger is created here. */
 fun GrantedTrigger.observeAvailability(state: GameState, granter: ObjectRef, recipient: ObjectRef,
     services: EngineServices, attachmentAction: ActionEvidence?=null): GrantedTriggerAvailability {
-    fun result(v: Verdict,s: String)=GrantedTriggerAvailability(v,reason=s)
+    var condition: GrantConditionObservation? = null
+    fun result(v: Verdict,s: String)=GrantedTriggerAvailability(v,reason=s,condition=condition)
     if(!state.isCurrentObject(granter) || !state.isCurrentObject(recipient) ||
         state.logicalZone(granter.entityId)?.zoneType!=Zone.BATTLEFIELD || state.logicalZone(recipient.entityId)?.zoneType!=Zone.BATTLEFIELD)
         return result(Verdict.NO_MATCH,"Granter or recipient is not the supplied battlefield generation")
     val source=state.getEntity(granter.entityId)?.get<CardComponent>() ?: return result(Verdict.UNKNOWN,"No source card identity")
     val def=services.cardRegistry.getCard(source.cardDefinitionId) ?: return result(Verdict.UNKNOWN,"No native source definition")
-    if(def.name!=faceName || def.script.staticAbilities.getOrNull(staticIndex)!=declaration)
+    if(def.name!=faceName || !matchesGrantDeclaration(def.script.staticAbilities.getOrNull(staticIndex), declaration, staticIndex, path, conditional))
         return result(Verdict.UNKNOWN,"Native face/declaration binding does not match")
     if(def.script.staticAbilities.flatMap { it.triggerDeclarations() }.count { it.ability.id==declaration.ability.id }!=1)
         return result(Verdict.UNKNOWN,"Equal-ID declarations on one granter lack a native declaration index")
@@ -93,17 +97,19 @@ fun GrantedTrigger.observeAvailability(state: GameState, granter: ObjectRef, rec
     val native=resolver.getTriggeredAbilities(recipient.entityId,host.cardDefinitionId,state)
     val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unknown")
     val rc=state.projectedState.getController(recipient.entityId) ?: return result(Verdict.UNKNOWN,"Recipient controller unknown")
+    condition = conditional?.observeCondition(state, services, granter, recipient, gc)
+    condition?.takeIf { it.verdict != Verdict.MATCH }?.let { return result(it.verdict, "Conditional grant enabling condition not established") }
     if(kind==GrantRecipientKind.FILTER_GROUP || kind==GrantRecipientKind.SOULBOND_PAIR) {
         val providers=BattlefieldStaticsIndex.build(state,services.cardRegistry,services.predicateEvaluator).triggerGrantProviders
         if(providers.none { it.sourceEntityId==granter.entityId && it.grant==declaration }) return result(Verdict.NO_MATCH,"Native grant provider absent")
-    } else if(granter.entityId !in resolver.resolveGranterIds(state,recipient.entityId,declaration.ability.id))
+    } else if(kind != GrantRecipientKind.SELF && granter.entityId !in resolver.resolveGranterIds(state,recipient.entityId,declaration.ability.id))
         return result(Verdict.NO_MATCH,"Native attachment grant lookup does not expose this granter")
     val match = matchSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc)
         ?: return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     if(native.none { it==declaration.ability }) return result(Verdict.UNKNOWN,"Native resolved rule differs or is not exposed; caps/text changes require extra binding")
     fun owner(id: EntityId)=state.getEntity(id)?.get<OwnerComponent>()?.playerId
     return GrantedTriggerAvailability(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,
-        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Current native grant; no detection, targets, choice or outcome implied")
+        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Current native grant; no detection, targets, choice or outcome implied",condition)
 }
 
 @Serializable data class GrantedTriggerObservation(val verdict: Verdict, val declarationId: String,
@@ -129,12 +135,16 @@ fun GrantedTrigger.observeStack(before: GameState, after: GameState, events: Lis
         return result(Verdict.UNKNOWN,"No newly created native trigger stack object")
     val emitted=events.filterIsInstance<AbilityTriggeredEvent>().singleOrNull { it.abilityEntityId==stackObject.entityId }
         ?: return result(Verdict.UNKNOWN,"No unique native stack-placement event")
+    val selfGrant = kind == GrantRecipientKind.SELF && conditional != null && instance.granter == instance.recipient
+    val expectedGranter = if (selfGrant) null else instance.granter.entityId
     if(stack.sourceId!=instance.recipient.entityId || emitted.sourceId!=stack.sourceId ||
         stack.controllerId!=instance.recipientController || emitted.controllerId!=stack.controllerId ||
-        stack.granterId!=instance.granter.entityId || stack.resolvingTriggeredAbility!=declaration.ability ||
+        stack.granterId!=expectedGranter || stack.resolvingTriggeredAbility!=declaration.ability ||
         stack.objectReferences.origin!=instance.recipient)
         return result(Verdict.UNKNOWN,"Captured native source/controller/granter/rules do not prove this declaration")
-    if(!after.isCurrentObject(instance.granter)) return result(Verdict.UNKNOWN,"Granter visit changed within event/placement; no captured native granter generation")
+    val departureGrant = selfGrant && conditional?.checkpoint == ConditionalGrantCheckpoint.PRE_DEPARTURE
+    if(!departureGrant && !after.isCurrentObject(instance.granter))
+        return result(Verdict.UNKNOWN,"Granter visit changed within event/placement; no captured native granter generation")
     val context=stack.triggerContext ?: return result(Verdict.UNKNOWN,"No native trigger context")
     val causes=events.filter { e -> when(val pattern=declaration.ability.trigger) {
         is EventPattern.DealsDamageEvent -> e is DamageDealtEvent && context.damageSourceId==instance.recipient.entityId && e.sourceId==context.damageSourceId && e.targetId==context.damageRecipientId && e.amount==context.damageAmount &&
@@ -143,6 +153,18 @@ fun GrantedTrigger.observeStack(before: GameState, after: GameState, events: Lis
         // SELF source and attacker's player bind this recipient to that actual batch.
         is EventPattern.AttackEvent -> e is AttackersDeclaredEvent && stack.sourceId in e.attackers && context.triggeringPlayerId==e.attackingPlayerId && after.isCurrentObject(instance.recipient)
         is EventPattern.StepEvent -> e is StepChangedEvent && e.newStep==pattern.step && context.step==pattern.step && (context.triggeringPlayerId ?: after.activePlayerId)==stack.controllerId && after.isCurrentObject(instance.recipient)
+        is EventPattern.ZoneChangeEvent -> departureGrant && e is ZoneChangeEvent &&
+            e.isBattlefieldDeparture && e.toZone == Zone.GRAVEYARD && e.oldObject != null &&
+            context.triggeringOrigin == e.oldObject && context.triggeringEntityId == e.entityId &&
+            before.isCurrentObject(checkNotNull(e.oldObject)) &&
+            e.lastKnown?.lookBackGrants?.let { frozen ->
+                if (e.oldObject == instance.recipient) {
+                    declaration.ability.id in frozen.conditionalSelfGrantIds
+                } else {
+                    after.isCurrentObject(instance.recipient) &&
+                        declaration.ability.id in frozen.observerSelfGrantIds[instance.recipient.entityId].orEmpty()
+                }
+            } == true
         else -> false
     } }
     val visit=before.getEntity(instance.recipient.entityId)?.get<BattlefieldEntryTimestampComponent>()?.timestamp
@@ -150,7 +172,9 @@ fun GrantedTrigger.observeStack(before: GameState, after: GameState, events: Lis
     // above still proves the exact source generation; never synthesize a timestamp.
     if(visit!=stack.sourceBattlefieldTimestamp || eventSupport!=Verdict.MATCH || causes.size!=1)
         return result(Verdict.UNKNOWN,"Native trigger captured, but visit/event association is incomplete or nonunique",causes)
-    return result(Verdict.MATCH,"Native source, supplying granter, captured controller, rules, source visit and unique event context established; resolution is a separate checkpoint",causes)
+    val evidence = if (departureGrant) "Native pre-departure grant IDs and captured source generation establish the historical grant"
+        else "Native source, supplying granter, captured controller, rules, source visit and unique event context established"
+    return result(Verdict.MATCH, "$evidence; resolution is a separate checkpoint", causes)
 }
 
 /** Once placement was witnessed, consult that stack snapshot, never the live grant. */

@@ -16,17 +16,18 @@ import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import com.wingedsheep.sdk.scripting.predicates.ControllerPredicate
 import com.wingedsheep.sdk.scripting.targets.TargetObject
 
-internal fun grantRecipientKind(card: CardDefinition, filter: GroupFilter): GrantRecipientKind = when {
+internal fun grantRecipientKind(card: CardDefinition, filter: GroupFilter, conditional: Boolean = false): GrantRecipientKind = when {
     filter.scope == Scope.AttachedTo && card.isAura -> GrantRecipientKind.AURA_HOST
     filter.scope == Scope.AttachedTo && card.isEquipment -> GrantRecipientKind.EQUIPMENT_HOST
     filter.scope == Scope.Battlefield -> GrantRecipientKind.FILTER_GROUP
+    filter.scope == Scope.Self && conditional -> GrantRecipientKind.SELF
     filter.scope == Scope.SoulbondPair -> GrantRecipientKind.SOULBOND_PAIR
     else -> GrantRecipientKind.UNRESOLVED
 }
 
 /** Recognize whole bounded shapes. Native predicates remain the authority for current membership. */
-internal fun sharedGrantRecipientProblems(card: CardDefinition, filter: GroupFilter): List<String> {
-    val problem = when (grantRecipientKind(card, filter)) {
+internal fun sharedGrantRecipientProblems(card: CardDefinition, filter: GroupFilter, conditional: Boolean = false): List<String> {
+    val problem = when (grantRecipientKind(card, filter, conditional)) {
         GrantRecipientKind.AURA_HOST, GrantRecipientKind.EQUIPMENT_HOST -> when {
             filter != GroupFilter.attachedCreature() -> "Additional attached recipient restrictions"
             card.isAura && card.script.auraTarget !in listOf(
@@ -34,6 +35,7 @@ internal fun sharedGrantRecipientProblems(card: CardDefinition, filter: GroupFil
             ) -> "Aura enchant restriction outside bounded creature hosts"
             else -> null
         }
+        GrantRecipientKind.SELF -> if (filter == GroupFilter.source()) null else "Additional self recipient restrictions"
         GrantRecipientKind.SOULBOND_PAIR ->
             if (filter == GroupFilter.soulbondPair()) null else "Additional soulbond recipient restrictions"
         GrantRecipientKind.FILTER_GROUP ->
@@ -58,6 +60,7 @@ private fun boundedBattlefieldGrant(group: GroupFilter): Boolean {
 /** Body-relative YOU is the recipient's controller. Granter-relative constraints stay on the declaration. */
 internal fun grantBodyRecipientFilter(group: GroupFilter, supported: Boolean): GameObjectFilter {
     if (!supported) return GameObjectFilter.Any
+    if (group.scope == Scope.Self) return group.baseFilter
     if (group.scope != Scope.Battlefield) return GameObjectFilter.Creature
     return group.baseFilter.copy(controllerPredicate = null)
 }
@@ -80,6 +83,7 @@ internal fun matchSharedGrantRecipient(
             state.projectedState.isCreature(granter) && state.projectedState.isCreature(partner) &&
             state.projectedState.getController(partner) == granterController
     }?.let(state::objectRef)?.let(::CurrentGrantRecipient)
+    Scope.Self -> if (granter == recipient) CurrentGrantRecipient() else null
     Scope.AttachedTo -> if (state.projectedState.isCreature(recipient)) CurrentGrantRecipient() else null
     else -> null
 }

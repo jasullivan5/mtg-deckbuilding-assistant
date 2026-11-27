@@ -19,7 +19,7 @@ import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.filters.unified.*
 import kotlinx.serialization.Serializable
 
-@Serializable enum class GrantRecipientKind { AURA_HOST, EQUIPMENT_HOST, FILTER_GROUP, SOULBOND_PAIR, UNRESOLVED }
+@Serializable enum class GrantRecipientKind { AURA_HOST, EQUIPMENT_HOST, FILTER_GROUP, SOULBOND_PAIR, UNRESOLVED, SELF }
 
 /** Existing action/fact/collection vocabulary, interpreted with a receiving source. These facts
  * are intentionally separate from intrinsic Discover inputs and carry no admission decision. */
@@ -40,10 +40,12 @@ import kotlinx.serialization.Serializable
     val costBinding: String = "Tap/Self costs use the recipient; player resources use the activator. Other explicit cost bindings remain native declarations.",
     val availability: String = "Current native projection and grant lookup; active battlefield granter, eligible current recipient and actual attachment/filter required. Availability is separate from legal activation.",
     val resolution: String = "An accepted nonmana activation has its own stack object and captured native ability. Losing the grant prevents future activations, not automatic cancellation of that stack object. Native source/LKI and target legality still govern resolution.",
-    val sourceFidelity: Verdict = Verdict.UNKNOWN)
+    val sourceFidelity: Verdict = Verdict.UNKNOWN,
+    @kotlinx.serialization.EncodeDefault(kotlinx.serialization.EncodeDefault.Mode.NEVER)
+    val conditional: ConditionalGrant? = null)
 
-internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: GrantActivatedAbility): List<String> =
-    sharedGrantRecipientProblems(card, grant.filter) + listOfNotNull(
+internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: GrantActivatedAbility, conditional: Boolean = false): List<String> =
+    sharedGrantRecipientProblems(card, grant.filter, conditional) + listOfNotNull(
         if (grant.recipientZone != Zone.BATTLEFIELD || grant.ability.activateFromZone != Zone.BATTLEFIELD)
             "Nonbattlefield recipient/activation zone" else null,
         if (grant.ability.isPlaneswalkerAbility) "Granted loyalty semantics outside supported subset" else null,
@@ -57,22 +59,23 @@ internal fun grantRecipientProblems(card: CardDefinition, face: String, grant: G
     val pairedPartner: ObjectRef? = null)
 
 @Serializable data class GrantAvailabilityObservation(val verdict: Verdict, val instance: GrantedAbilityInstance? = null,
-    val reason: String, val activationLegality: Verdict = Verdict.UNKNOWN)
+    val reason: String, val activationLegality: Verdict = Verdict.UNKNOWN, val condition: GrantConditionObservation? = null)
 
 /** Uses the engine's projected state and static grant lookup, not an application layer engine.
  * The caller selects an exact recipient generation; no recipient count or activation is invented. */
 fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, recipient: ObjectRef,
     services: EngineServices, attachmentAction: ActionEvidence? = null): GrantAvailabilityObservation {
-    fun result(v: Verdict, why: String)=GrantAvailabilityObservation(v,reason=why)
+    var condition: GrantConditionObservation? = null
+    fun result(v: Verdict, why: String)=GrantAvailabilityObservation(v,reason=why,condition=condition)
     if(!state.isCurrentObject(granter) || !state.isCurrentObject(recipient) ||
         state.logicalZone(granter.entityId)?.zoneType!=Zone.BATTLEFIELD ||
         state.logicalZone(recipient.entityId)?.zoneType!=declaration.recipientZone)
         return result(Verdict.NO_MATCH,"Source or recipient is no longer the supplied battlefield generation")
     val source=state.getEntity(granter.entityId)?.get<CardComponent>() ?: return result(Verdict.UNKNOWN,"No native card identity")
     val definition=services.cardRegistry.getCard(source.cardDefinitionId) ?: return result(Verdict.UNKNOWN,"No native definition")
-    if(face!="front" || definition.name!=card || definition.script.staticAbilities.getOrNull(staticIndex)!=declaration)
+    if(face!="front" || definition.name!=card || !matchesGrantDeclaration(definition.script.staticAbilities.getOrNull(staticIndex), declaration, staticIndex, path, conditional))
         return result(Verdict.UNKNOWN,"Native source definition/face/declaration does not match")
-    if(definition.script.staticAbilities.filterIsInstance<GrantActivatedAbility>().count { it.ability.id==declaration.ability.id }!=1)
+    if(definition.script.staticAbilities.mapNotNull { (if (it is ConditionalStaticAbility) it.ability else it) as? GrantActivatedAbility }.count { it.ability.id==declaration.ability.id }!=1)
         return result(Verdict.UNKNOWN,"Native lookup does not distinguish same-ID declarations on one granter")
     if(support!=Verdict.MATCH) return result(Verdict.UNKNOWN,"Structural recipient binding is unresolved")
     if(kind==GrantRecipientKind.AURA_HOST) {
@@ -82,6 +85,9 @@ fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, rec
             ?: return result(Verdict.UNKNOWN,"No existing Aura attachment relationship")
         if(attachment.verdict!=Verdict.MATCH) return result(attachment.verdict,"Existing Aura current-host query does not establish this recipient")
     }
+    val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unresolved")
+    condition = conditional?.observeCondition(state, services, granter, recipient, gc)
+    condition?.takeIf { it.verdict != Verdict.MATCH }?.let { return result(it.verdict, "Conditional grant enabling condition not established") }
     val grants=services.castPermissionUtils.getStaticGrantedAbilitiesWithGranter(recipient.entityId,state)
     if(grants.none { it.granterId==granter.entityId && it.ability==declaration.ability } &&
         grants.any { it.ability.id==declaration.ability.id })
@@ -90,13 +96,12 @@ fun GrantedAbility.observeAvailability(state: GameState, granter: ObjectRef, rec
         return result(Verdict.NO_MATCH,"Native projected static grant is absent for this exact granter and recipient")
     if(state.projectedState.hasLostAllAbilities(recipient.entityId))
         return result(Verdict.UNKNOWN,"Recipient ability removal/layer interactions require native activation validation")
-    val gc=state.projectedState.getController(granter.entityId) ?: return result(Verdict.UNKNOWN,"Granter controller unresolved")
     val rc=state.projectedState.getController(recipient.entityId) ?: return result(Verdict.UNKNOWN,"Recipient controller unresolved")
     val match = matchSharedGrantRecipient(state, services, declaration.filter, granter.entityId, recipient.entityId, gc)
         ?: return result(Verdict.NO_MATCH, "Current native recipient restriction does not qualify")
     fun owner(id: EntityId)=state.getEntity(id)?.get<OwnerComponent>()?.playerId
     return GrantAvailabilityObservation(Verdict.MATCH,GrantedAbilityInstance(id,granter,recipient,declaration.ability.id,
-        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks")
+        owner(granter.entityId),gc,owner(recipient.entityId),rc,match.pairedPartner),"Native current grant exists; costs, priority, sickness, targets and activation restrictions remain native checks", condition=condition)
 }
 
 @Serializable data class GrantedActivationObservation(val verdict: Verdict, val declarationId: String,

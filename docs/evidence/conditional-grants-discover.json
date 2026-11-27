@@ -1,0 +1,427 @@
+{
+  "application": "a6033a4e683b74c9ba3f2fde8b0245b48c29edc3",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "baseline": "60de24454646395b8239c6b834fbd8993efee9f5",
+  "comparisons": {
+    "judith": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 698,
+            "pathways": 753
+          },
+          "UNKNOWN": {
+            "cards": 670,
+            "pathways": 762
+          },
+          "NO_MATCH": {
+            "cards": 2434,
+            "pathways": 2968
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 11,
+            "pathways": 11
+          },
+          "UNKNOWN": {
+            "cards": 11,
+            "pathways": 11
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 136,
+            "pathways": 138
+          },
+          "UNKNOWN": {
+            "cards": 124,
+            "pathways": 134
+          },
+          "NO_MATCH": {
+            "cards": 1997,
+            "pathways": 2403
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      },
+      {
+        "objective": "create-creature-tokens",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 455,
+            "pathways": 478
+          },
+          "UNKNOWN": {
+            "cards": 75,
+            "pathways": 87
+          },
+          "NO_MATCH": {
+            "cards": 256,
+            "pathways": 275
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 607,
+            "pathways": 639
+          },
+          "UNKNOWN": {
+            "cards": 691,
+            "pathways": 770
+          },
+          "NO_MATCH": {
+            "cards": 375,
+            "pathways": 402
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "eligiblePhysicalCards": 7728,
+        "populationSha256": "4450a2b58254fdd720eea81accf9830fce0a13c550125dfbfc854f3c8b46ffd3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 214,
+            "pathways": 222
+          },
+          "UNKNOWN": {
+            "cards": 187,
+            "pathways": 192
+          },
+          "NO_MATCH": {
+            "cards": 270,
+            "pathways": 314
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 2
+        }
+      }
+    ],
+    "krenko": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 261,
+            "pathways": 268
+          },
+          "UNKNOWN": {
+            "cards": 282,
+            "pathways": 313
+          },
+          "NO_MATCH": {
+            "cards": 1402,
+            "pathways": 1744
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "UNKNOWN": {
+            "cards": 1,
+            "pathways": 1
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 20,
+            "pathways": 21
+          },
+          "UNKNOWN": {
+            "cards": 42,
+            "pathways": 46
+          },
+          "NO_MATCH": {
+            "cards": 841,
+            "pathways": 994
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      },
+      {
+        "objective": "create-creature-tokens",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 241,
+            "pathways": 253
+          },
+          "UNKNOWN": {
+            "cards": 41,
+            "pathways": 50
+          },
+          "NO_MATCH": {
+            "cards": 148,
+            "pathways": 160
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 273,
+            "pathways": 284
+          },
+          "UNKNOWN": {
+            "cards": 289,
+            "pathways": 307
+          },
+          "NO_MATCH": {
+            "cards": 188,
+            "pathways": 199
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "eligiblePhysicalCards": 4308,
+        "populationSha256": "338137eb6178cedd79b1c56840270270b2d6805f8725cb95e43248c37a71ccf3",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 96,
+            "pathways": 101
+          },
+          "UNKNOWN": {
+            "cards": 84,
+            "pathways": 87
+          },
+          "NO_MATCH": {
+            "cards": 144,
+            "pathways": 172
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedTriggers": 2,
+          "grantedAbilities": 1
+        }
+      }
+    ],
+    "kenrith": [
+      {
+        "objective": "own-nontoken-creature-deaths",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1201,
+            "pathways": 1291
+          },
+          "UNKNOWN": {
+            "cards": 1456,
+            "pathways": 1660
+          },
+          "NO_MATCH": {
+            "cards": 4023,
+            "pathways": 4781
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      },
+      {
+        "objective": "creature-died-this-turn",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 22,
+            "pathways": 22
+          },
+          "UNKNOWN": {
+            "cards": 20,
+            "pathways": 20
+          },
+          "NO_MATCH": {
+            "cards": 0,
+            "pathways": 0
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      },
+      {
+        "objective": "reanimate-own-creatures",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 228,
+            "pathways": 232
+          },
+          "UNKNOWN": {
+            "cards": 496,
+            "pathways": 526
+          },
+          "NO_MATCH": {
+            "cards": 5140,
+            "pathways": 6612
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      },
+      {
+        "objective": "create-creature-tokens",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1526,
+            "pathways": 1636
+          },
+          "UNKNOWN": {
+            "cards": 283,
+            "pathways": 319
+          },
+          "NO_MATCH": {
+            "cards": 517,
+            "pathways": 565
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      },
+      {
+        "objective": "stock-own-graveyard",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 1277,
+            "pathways": 1351
+          },
+          "UNKNOWN": {
+            "cards": 1175,
+            "pathways": 1308
+          },
+          "NO_MATCH": {
+            "cards": 635,
+            "pathways": 675
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      },
+      {
+        "objective": "place-plus-one-counters",
+        "eligiblePhysicalCards": 20143,
+        "populationSha256": "6854380e7e37c3dea8e57480d74f2e4e40586a127a1f96c64a4d15a08f5780f2",
+        "unchangedResults": {
+          "MATCH": {
+            "cards": 819,
+            "pathways": 861
+          },
+          "UNKNOWN": {
+            "cards": 827,
+            "pathways": 887
+          },
+          "NO_MATCH": {
+            "cards": 702,
+            "pathways": 801
+          }
+        },
+        "addedConditionalGrants": {
+          "grantedAbilities": 8,
+          "grantedTriggers": 7
+        }
+      }
+    ]
+  }
+}

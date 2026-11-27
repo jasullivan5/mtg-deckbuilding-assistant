@@ -10,6 +10,7 @@ import com.wingedsheep.sdk.scripting.*
 import com.wingedsheep.sdk.scripting.conditions.*
 import com.wingedsheep.sdk.scripting.costs.*
 import com.wingedsheep.sdk.scripting.effects.*
+import com.wingedsheep.sdk.scripting.filters.unified.GroupFilter
 import com.wingedsheep.sdk.scripting.predicates.CardPredicate
 import com.wingedsheep.sdk.scripting.references.Player
 import com.wingedsheep.sdk.scripting.targets.*
@@ -471,29 +472,35 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
                         deathDependency(CreatureDiedThisTurnCondition),it,Frame(script.targetRequirements,assumptions=listOf("Cost gating=${a.gating}")),Verdict.MATCH) }
                 } else issue("script.staticAbilities[$i]",a,"Static cost dependency not interpreted")
             } else issue("script.staticAbilities[$i]",a,"Static ability not interpreted for this objective")
-            if(a is GrantActivatedAbility) {
+            val wrapper = a as? ConditionalStaticAbility
+            val grant = wrapper?.ability ?: a
+            val staticPath = "script.staticAbilities[$i]"
+            val conditional = wrapper?.takeIf { grant is GrantActivatedAbility || grant is GrantTriggeredAbility }
+                ?.let { conditionalGrantEvidence(staticPath, it.condition, grant) }
+            val grantPath = conditional?.innerPath ?: staticPath
+            if(grant is GrantActivatedAbility) {
                 val staticIndex=actions.indexOfLast { it.id==actionId }
                 val declarationAction=actions[staticIndex]
-                val problems=grantRecipientProblems(card,label,a)
+                val problems=grantRecipientProblems(card,label,grant,conditional!=null)
                 // Keep this additive shared evidence independent of the requesting objective's
                 // optional projections. Complex counter/state bodies retain native uncertainty.
                 val body=PathwayExtractor()
-                    .grantedBody(card,label,"script.staticAbilities[$i].ability",a,declarationAction.id)
+                    .grantedBody(card,label,"$grantPath.ability",grant,declarationAction.id,conditional)
                 actions[staticIndex]=declarationAction.copy(grantedAbilities=listOf(GrantedAbility(
-                    "${declarationAction.id}|GRANT",declarationAction.id,card.name,label,"script.staticAbilities[$i]",i,
-                    grantRecipientKind(card,a.filter),a,if(card.isAura) "${card.name}|$label|script" else null,
+                    "${declarationAction.id}|${if (conditional == null) "GRANT" else "CONDITIONAL_GRANT"}",declarationAction.id,card.name,label,grantPath,i,
+                    grantRecipientKind(card,grant.filter,conditional!=null),grant,if(card.isAura) "${card.name}|$label|script" else null,
                     if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,problems,
                     listOf("Active native granter and eligible current recipient; no recipient, payment, activation or outcome guaranteed",
-                        "Availability uses granter-relative filters; the granted body uses recipient Self and activator-relative YOU"),body)))
+                        "Availability uses granter-relative filters; the granted body uses recipient Self and activator-relative YOU"),body,conditional=conditional)))
             }
-            if(a is GrantTriggeredAbility) {
+            if(grant is GrantTriggeredAbility) {
                 val index=actions.indexOfLast { it.id==actionId };val parent=actions[index]
-                val definition=grantFace(card,label);val problems=triggerRecipientProblems(definition,a)
-                val nested=PathwayExtractor().grantedTriggerBody(card,label,"script.staticAbilities[$i].ability",a,parent.id,definition,problems.isEmpty())
-                actions[index]=parent.copy(grantedTriggers=listOf(GrantedTrigger("${parent.id}|TRIGGER_GRANT",parent.id,card.name,label,definition?.name,
-                    "script.staticAbilities[$i]",i,a,definition?.let { grantRecipientKind(it,a.filter) } ?: GrantRecipientKind.UNRESOLVED,
-                    if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,grantedEventSupport(a.ability),problems,
-                    if(definition?.isAura==true) "${card.name}|$label|script" else null,nested.first,nested.second)))
+                val definition=grantFace(card,label);val problems=triggerRecipientProblems(definition,grant,conditional!=null)
+                val nested=PathwayExtractor().grantedTriggerBody(card,label,"$grantPath.ability",grant,parent.id,definition,problems.isEmpty(),conditional)
+                actions[index]=parent.copy(grantedTriggers=listOf(GrantedTrigger("${parent.id}|${if (conditional == null) "TRIGGER_GRANT" else "CONDITIONAL_TRIGGER_GRANT"}",parent.id,card.name,label,definition?.name,
+                    grantPath,i,grant,definition?.let { grantRecipientKind(it,grant.filter,conditional!=null) } ?: GrantRecipientKind.UNRESOLVED,
+                    if(problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,grantedEventSupport(grant.ability,conditional!=null && grant.filter == GroupFilter.source()),problems,
+                    if(definition?.isAura==true) "${card.name}|$label|script" else null,nested.first,nested.second,conditional=conditional)))
             }
         }
         actionId="${card.name}|$label|script.unsupported"
@@ -540,18 +547,19 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
     /** Interpret one native granted declaration with a receiving source, using this same walker.
      * Its output stays inside the grant relationship and never enters intrinsic objective inputs. */
-    internal fun grantedBody(origin: CardDefinition,label: String,path: String,grant: GrantActivatedAbility,parent: String): GrantedBody {
+    internal fun grantedBody(origin: CardDefinition,label: String,path: String,grant: GrantActivatedAbility,parent: String, conditional: ConditionalGrant? = null): GrantedBody {
         card=origin;face=label;selfCreature=false;grantedSource=true
         actionId="${origin.name}|$label|$path";actionKind="GRANTED_ACTIVATED";rootEffect=grant.ability.effect
         actionNative=nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),grant.ability)
         val assumptions=listOf("Granted source is the receiving object; granting card supplies provenance only",
             "YOU/Controller and player resources belong to the activator, not necessarily the granter's controller",
             "Current recipient and native availability, activation costs, timing and legal targets required",
-            "Timing=${grant.ability.timing}; restrictions=${grant.ability.restrictions}; mana=${grant.ability.isManaAbility}")
+            "Timing=${grant.ability.timing}; restrictions=${grant.ability.restrictions}; mana=${grant.ability.isManaAbility}") +
+            listOfNotNull(conditional?.let { "Native grant condition at ${it.wrapperPath}.condition governs activation availability" })
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=grant.ability.targetRequirements.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.ACTIVATION_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_ACTIVATED) },
             unionTargets=unionTargets(actionId,grant.ability.targetRequirements,"ACTIVATION_ANNOUNCEMENT"))
-        val recipientSupported = grantRecipientProblems(origin, label, grant).isEmpty()
+        val recipientSupported = grantRecipientProblems(origin, label, grant, conditional!=null).isEmpty()
         val receiver=ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientSupported),
             actor="YOU",printedSelfCreature=null,battlefield=true,zone=grant.recipientZone,
             details=listOf("Current recipient of $parent; printed characteristics of the granting card are not recipient characteristics"),
@@ -563,7 +571,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
 
     internal fun grantedTriggerBody(origin: CardDefinition,label: String,path: String,grant: GrantTriggeredAbility,
-        parent: String,definition: CardDefinition?,recipientKnown: Boolean): Pair<GrantedBody,List<EventOutcome>> {
+        parent: String,definition: CardDefinition?,recipientKnown: Boolean, conditional: ConditionalGrant? = null): Pair<GrantedBody,List<EventOutcome>> {
         card=origin;face=label;selfCreature=false;grantedSource=true
         val ability=grant.ability;actionId="${origin.name}|$label|$path";actionKind="GRANTED_TRIGGERED";rootEffect=ability.effect
         actionNative=nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability)
@@ -572,7 +580,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
             "YOU/Controller refer to the captured native trigger controller, not automatically the granter or current host controller",
             "Native grant, qualifying event and detection required; no occurrence or resolution implied",
             "triggerRestriction=${ability.triggerRestriction} at detection; interveningIf=${ability.interveningIf} at detection AND resolution",
-            "Targets/chooser at stack placement; effect gates/choices at resolution; cap=${ability.perTurnTriggerCap}; lifetime=${ability.triggersOnce}")
+            "Targets/chooser at stack placement; effect gates/choices at resolution; cap=${ability.perTurnTriggerCap}; lifetime=${ability.triggersOnce}") +
+            listOfNotNull(conditional?.let { "Native grant condition at ${it.wrapperPath}.condition is checked at ${it.checkpoint}" })
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=targets.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.TRIGGER_STACK_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_TRIGGERED) },
             unionTargets=unionTargets(actionId,targets,"TRIGGER_STACK_ANNOUNCEMENT"))
@@ -583,7 +592,10 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         val provider=ObjectScope(filter=when { definition?.isEquipment==true -> GameObjectFilter.Artifact; definition?.isAura==true -> GameObjectFilter.Enchantment; else -> GameObjectFilter.Any },
             actor="GRANTER_CONTROLLER",printedSelfCreature=definition?.isCreature,battlefield=true,zone=Zone.BATTLEFIELD,
             details=listOf("Native granterId of $parent, distinct from receiving source"))
-        val confidence=if(recipientKnown && grantedEventSupport(ability)==Verdict.MATCH && ability.triggerRestriction==null && ability.interveningIf==null) Verdict.MATCH else Verdict.UNKNOWN
+        val conditionalSelf = conditional != null && grant.filter == GroupFilter.source()
+        val confidence = if (recipientKnown && grantedEventSupport(ability, conditionalSelf) == Verdict.MATCH &&
+            conditional?.support != Verdict.UNKNOWN && ability.triggerRestriction == null && ability.interveningIf == null
+        ) Verdict.MATCH else Verdict.UNKNOWN
         val recipientIsCreature = CardPredicate.IsCreature in receiver.filter.cardPredicates
         val event=EventContext(ability.trigger,ability.binding,ability.activeZones,recipientIsCreature,actionNative,confidence,assumptions)
         val frame=Frame(targets,receivingSource=receiver,grantingSource=provider,event=event,assumptions=assumptions)

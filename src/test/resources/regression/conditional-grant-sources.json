@@ -1,0 +1,213 @@
+{
+  "applicationBaseline": "60de24454646395b8239c6b834fbd8993efee9f5",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "retrievedAt": "2026-11-26T22:51:39.403662+00:00",
+  "rulesUri": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+  "ruleSections": [
+    "113.7",
+    "113.7a",
+    "400.7",
+    "603.2",
+    "603.3a",
+    "603.3d",
+    "603.4",
+    "603.5",
+    "603.10a",
+    "608.2h"
+  ],
+  "cases": [
+    {
+      "name": "Helm of the Ghastlord",
+      "printingId": "653dd5b7-1ad3-4df1-bd2a-4e6ae362a8a2",
+      "oracleId": "66fa528f-0e3a-450f-9035-1ba5a8a921e6",
+      "set": "shm",
+      "collectorNumber": "166",
+      "oracleText": "Enchant creature\nAs long as enchanted creature is blue, it gets +1/+1 and has \"Whenever this creature deals damage to an opponent, draw a card.\"\nAs long as enchanted creature is black, it gets +1/+1 and has \"Whenever this creature deals damage to an opponent, that player discards a card.\"",
+      "sourceUri": "https://scryfall.com/card/shm/166/helm-of-the-ghastlord?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/shm/166",
+      "rulingsUri": "https://api.scryfall.com/cards/653dd5b7-1ad3-4df1-bd2a-4e6ae362a8a2/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2008-05-01",
+          "source": "wotc",
+          "comment": "If the enchanted creature is both of the listed colors, it will get both bonuses."
+        },
+        {
+          "publishedAt": "2008-05-01",
+          "source": "wotc",
+          "comment": "With regards to the two triggered abilities that Helm of the Ghastlord grants to the enchanted creature, the point when damage is actually dealt is the only time it matters what color the creature is. If the creature is blue or black at that time, the appropriate ability or abilities will trigger. They’ll resolve even if the creature changes color or loses its Aura."
+        },
+        {
+          "publishedAt": "2008-05-01",
+          "source": "wotc",
+          "comment": "The two abilities trigger when the enchanted creature deals damage to an opponent of the creature’s controller, not when it deals damage to an opponent of the Helm’s controller. They trigger from any damage, not just combat damage."
+        }
+      ],
+      "nativePath": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmoftheGhastlord.kt",
+      "nativeSha256": "8c2365768d5e409f792d4a2dc0bce4c994b6e0d372d2e9c777dbe54a8c492ddb",
+      "nativeLfSha256": "65aebda813d8b77157652edeb87b6bb4c30b24777268315e39a608e9c3da191f",
+      "declarationPath": "script.staticAbilities[1,3]",
+      "relationship": "CONDITIONAL_ATTACHMENT",
+      "expected": "Blue and black host conditions operate independently. The host is the damage source and its controller controls the triggers.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Fire Nation Cadets",
+      "printingId": "1a3a862c-9c9a-41cd-94d1-2d0cff22a6cd",
+      "oracleId": "5ebfa3f5-f80a-4845-bba7-75c4ddb88682",
+      "set": "tla",
+      "collectorNumber": "134",
+      "oracleText": "This creature has firebending 2 as long as there's a Lesson card in your graveyard. (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\n{2}: This creature gets +1/+0 until end of turn.",
+      "sourceUri": "https://scryfall.com/card/tla/134/fire-nation-cadets?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/tla/134",
+      "rulingsUri": "https://api.scryfall.com/cards/1a3a862c-9c9a-41cd-94d1-2d0cff22a6cd/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "You must have a Lesson card in your graveyard while you attack with Fire Nation Cadets in order for the firebending 2 ability to trigger. If you put a Lesson card into your graveyard after Fire Nation Cadets has attacked, Fire Nation Cadets will still gain firebending 2, but the ability will not trigger."
+        },
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "Mana from firebending abilities isn't lost until you leave combat and go to your second main phase. It can be used at any time during combat, even after combat damage has been dealt."
+        },
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "Any other mana you add during combat will still be lost as normal when moving between steps of combat."
+        },
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "Firebending abilities aren't mana abilities. They use the stack and can be responded to."
+        },
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "\"Firebending N\" is a keyword that represents the ability \"Whenever this creature attacks, add N {R}. Until end of combat, you don't lose this mana as steps end.\""
+        },
+        {
+          "publishedAt": "2025-10-02",
+          "source": "wotc",
+          "comment": "Multiple instances of firebending on the same creature trigger separately, each granting you the appropriate amount of mana."
+        }
+      ],
+      "nativePath": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/FireNationCadets.kt",
+      "nativeSha256": "30728bc547bc3ec27a8e79336852b0e3ddb6363d32f9652c609e35a8e8c45a78",
+      "nativeLfSha256": "3a3770d4d29a96d65db300dd29705641bbf3d4452f9038fcf931b585cc8d02cc",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "CONDITIONAL_SELF",
+      "expected": "Only a Lesson in the source controller graveyard enables its attack trigger. Removing the card after triggering leaves the ability on the stack.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Relic Vial",
+      "printingId": "4b9ae607-e0bc-4415-ad58-65944848bbe9",
+      "oracleId": "7e86d4a6-e4cd-418a-8bbc-72cdad753e3a",
+      "set": "znr",
+      "collectorNumber": "250",
+      "oracleText": "{2}, {T}, Sacrifice a creature: Draw a card.\nAs long as you control a Cleric, this artifact has \"Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.\"",
+      "sourceUri": "https://scryfall.com/card/znr/250/relic-vial?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/znr/250",
+      "rulingsUri": "https://api.scryfall.com/cards/4b9ae607-e0bc-4415-ad58-65944848bbe9/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2020-09-25",
+          "source": "wotc",
+          "comment": "Once Relic Vial’s ability has triggered, that ability resolves even if you no longer control a Cleric."
+        },
+        {
+          "publishedAt": "2020-09-25",
+          "source": "wotc",
+          "comment": "If you sacrifice the only Cleric you control to activate Relic Vial’s first ability, the triggered ability it gives itself triggers."
+        },
+        {
+          "publishedAt": "2020-09-25",
+          "source": "wotc",
+          "comment": "If Relic Vial leaves the battlefield at the same time as each Cleric you control, the triggered ability triggers for any creatures you control that die at the same time (possibly including those Clerics)."
+        },
+        {
+          "publishedAt": "2020-09-25",
+          "source": "wotc",
+          "comment": "In a Two-Headed Giant game, Relic Vial’s ability causes the opposing team to lose 2 life and you to gain 1 life."
+        }
+      ],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/RelicVial.kt",
+      "nativeSha256": "c199a57dfa347407fb013f5395536f8c410e7010958225741dfe42d62fb3191a",
+      "nativeLfSha256": "a38edb9f00a5211d859e3f101acf849f11d93d7405e54ed762a8b4bce293b2aa",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "CONDITIONAL_SELF",
+      "expected": "The pre-death presence of a Cleric enables the trigger even if the sole Cleric is the dying creature.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Darkblade Agent",
+      "printingId": "f0b610c5-61e5-43df-a87b-3eaaa915402b",
+      "oracleId": "9a293c87-ad40-4c6c-9fa4-9a8b5f081ac9",
+      "set": "grn",
+      "collectorNumber": "164",
+      "oracleText": "As long as you've surveilled this turn, this creature has deathtouch and \"Whenever this creature deals combat damage to a player, you draw a card.\"",
+      "sourceUri": "https://scryfall.com/card/grn/164/darkblade-agent?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/grn/164",
+      "rulingsUri": "https://api.scryfall.com/cards/f0b610c5-61e5-43df-a87b-3eaaa915402b/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/DarkbladeAgent.kt",
+      "nativeSha256": "bcc25283e1677f797d88067f971f8cae1b948c6208aa90e4e2dfeb7968be8641",
+      "nativeLfSha256": "43a9e0f278a562e9fa5e762188662d2d305d5e26c2b4786d6a910e02b83a3597",
+      "declarationPath": "script.staticAbilities[1]",
+      "relationship": "CONDITIONAL_SELF",
+      "expected": "Only combat damage after the source controller surveils that turn can trigger the draw. Other statics remain separate.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Oculus Whelp",
+      "printingId": "58b35399-79af-49fa-989e-867a85320cc2",
+      "oracleId": "89ff1b0a-0cf3-455e-a381-1d93ef86a41b",
+      "set": "mom",
+      "collectorNumber": "69",
+      "oracleText": "Flying\nAs long as you control a transformed permanent, this creature has \"When this creature dies, draw a card.\"",
+      "sourceUri": "https://scryfall.com/card/mom/69/oculus-whelp?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/mom/69",
+      "rulingsUri": "https://api.scryfall.com/cards/58b35399-79af-49fa-989e-867a85320cc2/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2023-04-14",
+          "source": "wotc",
+          "comment": "A “transformed permanent” is a double-faced permanent with its back face up. Notably, modal double-faced permanents and melded permanents are never transformed permanents, no matter which faces are up."
+        },
+        {
+          "publishedAt": "2023-04-14",
+          "source": "wotc",
+          "comment": "If Oculus Whelp dies at the same time as your transformed permanents, its ability will trigger, and you’ll draw a card. (This wouldn’t be true if the ability were worded differently, in case you were wondering.)"
+        }
+      ],
+      "nativePath": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/OculusWhelp.kt",
+      "nativeSha256": "5cdeceb1b5636a7dc392918263229a73f50dc97a7772e98e8fada48d5d032c6b",
+      "nativeLfSha256": "6e40b45014db356f4c40379c9d5e530b36c13f9b29881a50d5d6f9d2bc3dd02f",
+      "declarationPath": "script.staticAbilities[0]",
+      "relationship": "CONDITIONAL_SELF",
+      "expected": "The transformed permanent may leave simultaneously with the Whelp. Native pre-departure evidence governs the dies trigger.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Villainous Ogre",
+      "printingId": "0277c1ba-eae4-442b-8b80-20869ba20568",
+      "oracleId": "30b54308-73c7-4352-a62c-10f69ab6ff22",
+      "set": "chk",
+      "collectorNumber": "148",
+      "oracleText": "This creature can't block.\nAs long as you control a Demon, this creature has \"{B}: Regenerate this creature.\"",
+      "sourceUri": "https://scryfall.com/card/chk/148/villainous-ogre?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/chk/148",
+      "rulingsUri": "https://api.scryfall.com/cards/0277c1ba-eae4-442b-8b80-20869ba20568/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/VillainousOgre.kt",
+      "nativeSha256": "f6b92b7f45d52ec5bb33fbc203328e13a179ea1af2153bb7b817d12e83ad97d0",
+      "nativeLfSha256": "1ace347163788cb4be78bccc45488e0cda9a040211ec8ca2bb030514af6630a9",
+      "declarationPath": "script.staticAbilities[1]",
+      "relationship": "CONDITIONAL_SELF",
+      "expected": "A Demon controlled by the source controller enables the Ogre to pay black mana for its own regeneration. The stack ability survives removal of the Demon.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    }
+  ]
+}

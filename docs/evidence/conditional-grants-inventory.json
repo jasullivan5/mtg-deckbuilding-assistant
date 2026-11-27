@@ -1,0 +1,676 @@
+{
+  "application": "a6033a4e683b74c9ba3f2fde8b0245b48c29edc3",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "baseline": "60de24454646395b8239c6b834fbd8993efee9f5",
+  "before": {
+    "activated": {
+      "physicalCards": 21699,
+      "authoringContainers": 22487,
+      "nestedDeclarations": 15,
+      "nestedPhysicalCards": 14,
+      "directConditional": 8,
+      "traversed": 0,
+      "conditionSupport": {},
+      "recipientSupport": {},
+      "bothSupported": 0,
+      "sourceSha256": "d0401676edb445edf10bc4c04444a15846179d352bca7cf157248edb9ac1e740"
+    },
+    "triggered": {
+      "physicalCards": 21699,
+      "authoringContainers": 22487,
+      "nestedDeclarations": 9,
+      "nestedPhysicalCards": 8,
+      "directConditional": 9,
+      "traversed": 0,
+      "conditionSupport": {},
+      "recipientSupport": {},
+      "bothSupported": 0,
+      "sourceSha256": "91bd4fd091afed73b5ee7549ba52a8dd1b45a8567d7deb930e47783d5b6dcc47"
+    }
+  },
+  "after": {
+    "activated": {
+      "physicalCards": 21699,
+      "authoringContainers": 22487,
+      "nestedDeclarations": 15,
+      "nestedPhysicalCards": 14,
+      "directConditional": 8,
+      "traversed": 8,
+      "conditionSupport": {
+        "MATCH": 2,
+        "UNKNOWN": 6
+      },
+      "recipientSupport": {
+        "UNKNOWN": 3,
+        "MATCH": 5
+      },
+      "bothSupported": 1,
+      "sourceSha256": "7d24dd9e3415775944f65c10974a533950681defcc353514a2221b714d126450",
+      "declarations": [
+        {
+          "card": "Alchemist's Talent",
+          "face": "front",
+          "path": "script.classLevels[0].staticAbilities[0]",
+          "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/AlchemistsTalent.kt",
+          "directConditional": false,
+          "wrapper": null,
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Careful Cultivation",
+          "face": "front",
+          "path": "script.staticAbilities[2].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/neo/cards/CarefulCultivation.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "EnchantedPermanent"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "UNKNOWN",
+          "conditionSupport": "MATCH",
+          "eventSupport": null,
+          "unresolved": [
+            "Aura enchant restriction outside bounded creature hosts"
+          ]
+        },
+        {
+          "card": "Fledgling Dragon",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/jud/cards/FledglingDragon.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Compare",
+            "left": {
+              "type": "Count",
+              "player": {
+                "type": "You"
+              },
+              "zone": "Graveyard"
+            },
+            "operator": "GTE",
+            "right": {
+              "type": "Fixed",
+              "amount": 7
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": []
+        },
+        {
+          "card": "Goddric, Cloaked Reveler",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability.abilities[3]",
+          "source": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/woe/cards/GoddricCloakedReveler.kt",
+          "directConditional": false,
+          "wrapper": "CompositeStaticAbility",
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Gourmand's Talent",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/blc/cards/GourmandsTalent.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "IsYourTurn"
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": []
+        },
+        {
+          "card": "Harold and Bob, First Numens",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.grantedStaticAbilities[0]",
+          "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/pip/cards/HaroldAndBobFirstNumens.kt",
+          "directConditional": false,
+          "wrapper": "PutOntoBattlefieldAsAura",
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Honored Hierarch",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ori/cards/HonoredHierarch.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "Self"
+            },
+            "filter": {
+              "statePredicates": [
+                {
+                  "type": "IsRenowned"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": []
+        },
+        {
+          "card": "Huatli, Poet of Unity",
+          "face": "front.backFace",
+          "path": "script.sagaChapters[1].effect.ability",
+          "source": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/lci/cards/HuatliPoetOfUnity.kt",
+          "directConditional": false,
+          "wrapper": "GrantStaticAbility",
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Nature's Embrace",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/NaturesEmbrace.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "EnchantedPermanent"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsLand"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "UNKNOWN",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": [
+            "Aura enchant restriction outside bounded creature hosts"
+          ]
+        },
+        {
+          "card": "Old-Growth Troll",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.grantedStaticAbilities[0]",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/OldGrowthTroll.kt",
+          "directConditional": false,
+          "wrapper": "PutOntoBattlefieldAsAura",
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Old-Growth Troll",
+          "face": "front",
+          "path": "script.triggeredAbilities[0].effect.grantedStaticAbilities[1]",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/OldGrowthTroll.kt",
+          "directConditional": false,
+          "wrapper": "PutOntoBattlefieldAsAura",
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "Puresteel Paladin",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/nph/cards/PuresteelPaladin.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Compare",
+            "left": {
+              "type": "AggregateBattlefield",
+              "player": {
+                "type": "You"
+              },
+              "filter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsArtifact"
+                  }
+                ]
+              }
+            },
+            "operator": "GTE",
+            "right": {
+              "type": "Fixed",
+              "amount": 3
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": []
+        },
+        {
+          "card": "Sorcerer Class",
+          "face": "front",
+          "path": "script.classLevels[0].staticAbilities[0]",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/afr/cards/SorcererClass.kt",
+          "directConditional": false,
+          "wrapper": null,
+          "nativeCondition": null,
+          "traversed": false,
+          "recipientSupport": null,
+          "conditionSupport": null,
+          "eventSupport": null,
+          "unresolved": null
+        },
+        {
+          "card": "The World Tree",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/khm/cards/TheWorldTree.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Compare",
+            "left": {
+              "type": "AggregateBattlefield",
+              "player": {
+                "type": "You"
+              },
+              "filter": {
+                "cardPredicates": [
+                  {
+                    "type": "IsLand"
+                  }
+                ]
+              }
+            },
+            "operator": "GTE",
+            "right": {
+              "type": "Fixed",
+              "amount": 6
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "UNKNOWN",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": null,
+          "unresolved": [
+            "Group filter requires unsupported or correlated predicates"
+          ]
+        },
+        {
+          "card": "Villainous Ogre",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2003-2007/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/chk/cards/VillainousOgre.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Exists",
+            "player": {
+              "type": "You"
+            },
+            "zone": "Battlefield",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Demon"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": null,
+          "unresolved": []
+        }
+      ]
+    },
+    "triggered": {
+      "physicalCards": 21699,
+      "authoringContainers": 22487,
+      "nestedDeclarations": 9,
+      "nestedPhysicalCards": 8,
+      "directConditional": 9,
+      "traversed": 9,
+      "conditionSupport": {
+        "MATCH": 7,
+        "UNKNOWN": 2
+      },
+      "recipientSupport": {
+        "MATCH": 8,
+        "UNKNOWN": 1
+      },
+      "bothSupported": 7,
+      "sourceSha256": "26ce6aebca6051914bf1c960654148dc9d4e1c6b0b2a1224c8cd08d302d1c0c9",
+      "declarations": [
+        {
+          "card": "Darkblade Agent",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/grn/cards/DarkbladeAgent.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Compare",
+            "left": {
+              "type": "TurnTracking",
+              "player": {
+                "type": "You"
+              },
+              "tracker": "SURVEILED"
+            },
+            "operator": "GTE",
+            "right": {
+              "type": "Fixed",
+              "amount": 1
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Essence Leak",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/inv/cards/EssenceLeak.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "EnchantedPermanent"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                },
+                {
+                  "type": "Or",
+                  "predicates": [
+                    {
+                      "type": "HasColor",
+                      "color": "RED"
+                    },
+                    {
+                      "type": "HasColor",
+                      "color": "GREEN"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "UNKNOWN",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": "MATCH",
+          "unresolved": [
+            "Aura enchant restriction outside bounded creature hosts"
+          ]
+        },
+        {
+          "card": "Expedition Diviner",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/ExpeditionDiviner.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Exists",
+            "player": {
+              "type": "You"
+            },
+            "zone": "Battlefield",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Wizard"
+                }
+              ]
+            },
+            "excludeSelf": true
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Fire Nation Cadets",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2025/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/tla/cards/FireNationCadets.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Exists",
+            "player": {
+              "type": "You"
+            },
+            "zone": "Graveyard",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Lesson"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Helm of the Ghastlord",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "EnchantedPermanent"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "HasColor",
+                  "color": "BLUE"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Helm of the Ghastlord",
+          "face": "front",
+          "path": "script.staticAbilities[3].ability",
+          "source": "mtg-sets/2008-2016/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/shm/cards/HelmOfTheGhastlord.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "EnchantedPermanent"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                },
+                {
+                  "type": "HasColor",
+                  "color": "BLACK"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Oculus Whelp",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2023/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mom/cards/OculusWhelp.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Exists",
+            "player": {
+              "type": "You"
+            },
+            "zone": "Battlefield",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                }
+              ],
+              "statePredicates": [
+                {
+                  "type": "IsTransformed"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "UNKNOWN",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Relic Vial",
+          "face": "front",
+          "path": "script.staticAbilities[0].ability",
+          "source": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/znr/cards/RelicVial.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "Exists",
+            "player": {
+              "type": "You"
+            },
+            "zone": "Battlefield",
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsPermanent"
+                },
+                {
+                  "type": "HasSubtype",
+                  "subtype": "Cleric"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "MATCH",
+          "unresolved": []
+        },
+        {
+          "card": "Triton Wavebreaker",
+          "face": "front",
+          "path": "script.staticAbilities[1].ability",
+          "source": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/mh3/cards/TritonWavebreaker.kt",
+          "directConditional": true,
+          "wrapper": "ConditionalStaticAbility",
+          "nativeCondition": {
+            "type": "EntityMatches",
+            "entity": {
+              "type": "Self"
+            },
+            "filter": {
+              "cardPredicates": [
+                {
+                  "type": "IsCreature"
+                }
+              ]
+            }
+          },
+          "traversed": true,
+          "recipientSupport": "MATCH",
+          "conditionSupport": "MATCH",
+          "eventSupport": "UNKNOWN",
+          "unresolved": []
+        }
+      ]
+    }
+  }
+}
