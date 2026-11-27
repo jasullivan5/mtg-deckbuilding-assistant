@@ -547,7 +547,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
     /** Interpret one native granted declaration with a receiving source, using this same walker.
      * Its output stays inside the grant relationship and never enters intrinsic objective inputs. */
-    internal fun grantedBody(origin: CardDefinition,label: String,path: String,grant: GrantActivatedAbility,parent: String, conditional: ConditionalGrant? = null): GrantedBody {
+    internal fun grantedBody(origin: CardDefinition,label: String,path: String,grant: GrantActivatedAbility,parent: String,
+        conditional: ConditionalGrant? = null, temporaryReceiver: ObjectScope? = null): GrantedBody {
         card=origin;face=label;selfCreature=false;grantedSource=true
         actionId="${origin.name}|$label|$path";actionKind="GRANTED_ACTIVATED";rootEffect=grant.ability.effect
         actionNative=nativeJson.encodeToJsonElement(ActivatedAbility.serializer(),grant.ability)
@@ -559,8 +560,8 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=grant.ability.targetRequirements.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.ACTIVATION_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_ACTIVATED) },
             unionTargets=unionTargets(actionId,grant.ability.targetRequirements,"ACTIVATION_ANNOUNCEMENT"))
-        val recipientSupported = grantRecipientProblems(origin, label, grant, conditional!=null).isEmpty()
-        val receiver=ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientSupported),
+        val recipientSupported = temporaryReceiver != null || grantRecipientProblems(origin, label, grant, conditional!=null).isEmpty()
+        val receiver=temporaryReceiver ?: ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientSupported),
             actor="YOU",printedSelfCreature=null,battlefield=true,zone=grant.recipientZone,
             details=listOf("Current recipient of $parent; printed characteristics of the granting card are not recipient characteristics"),
             unresolved=if(recipientSupported) null else "Recipient characteristics/binding unresolved")
@@ -571,12 +572,14 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
     }
 
     internal fun grantedTriggerBody(origin: CardDefinition,label: String,path: String,grant: GrantTriggeredAbility,
-        parent: String,definition: CardDefinition?,recipientKnown: Boolean, conditional: ConditionalGrant? = null): Pair<GrantedBody,List<EventOutcome>> {
+        parent: String,definition: CardDefinition?,recipientKnown: Boolean, conditional: ConditionalGrant? = null,
+        temporaryReceiver: ObjectScope? = null): Pair<GrantedBody,List<EventOutcome>> {
         card=origin;face=label;selfCreature=false;grantedSource=true
         val ability=grant.ability;actionId="${origin.name}|$label|$path";actionKind="GRANTED_TRIGGERED";rootEffect=ability.effect
         actionNative=nativeJson.encodeToJsonElement(TriggeredAbility.serializer(),ability)
         val targets=listOfNotNull(ability.targetRequirement)+ability.additionalTargetRequirements
-        val assumptions=listOf("Triggered source Self is the receiving object; GrantingSource is the distinct native granter",
+        val assumptions=listOf(if(temporaryReceiver == null) "Triggered source Self is the receiving object; GrantingSource is the distinct native granter"
+            else "Triggered source Self is the receiving object; the originating effect is separate and supplies no static granter binding",
             "YOU/Controller refer to the captured native trigger controller, not automatically the granter or current host controller",
             "Native grant, qualifying event and detection required; no occurrence or resolution implied",
             "triggerRestriction=${ability.triggerRestriction} at detection; interveningIf=${ability.interveningIf} at detection AND resolution",
@@ -585,7 +588,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         actions+=ActionEvidence(actionId,origin.name,label,path,assumptions,actionNative,associatedActionId=parent,
             targetSelection=targets.takeIf { it.isNotEmpty() }?.let { TargetSelection(actionId,it,TargetCheckpoint.TRIGGER_STACK_ANNOUNCEMENT,TargetRequirementOrigin.GRANTED_TRIGGERED) },
             unionTargets=unionTargets(actionId,targets,"TRIGGER_STACK_ANNOUNCEMENT"))
-        val receiver=ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientKnown),
+        val receiver=temporaryReceiver ?: ObjectScope(filter=grantBodyRecipientFilter(grant.filter, recipientKnown),
             actor="YOU",printedSelfCreature=null,battlefield=true,zone=Zone.BATTLEFIELD,
             details=listOf("Receiving object of $parent; printed granter characteristics are not source characteristics"),
             unresolved=if(recipientKnown) null else "Recipient source binding unresolved")
@@ -598,12 +601,60 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
         ) Verdict.MATCH else Verdict.UNKNOWN
         val recipientIsCreature = CardPredicate.IsCreature in receiver.filter.cardPredicates
         val event=EventContext(ability.trigger,ability.binding,ability.activeZones,recipientIsCreature,actionNative,confidence,assumptions)
-        val frame=Frame(targets,receivingSource=receiver,grantingSource=provider,event=event,assumptions=assumptions)
+        val frame=Frame(targets,receivingSource=receiver,grantingSource=provider.takeIf { temporaryReceiver == null },event=event,assumptions=assumptions)
         walk(ability.effect,"$path.effect",frame)
         ability.elseEffect?.let { walk(it,"$path.elseEffect",frame.copy(rootTargetSelection=false,outcomeGuard=Verdict.UNKNOWN,
             assumptions=assumptions+"Announcement-time target selection produced nothing; alternate effect")) }
         return GrantedBody(actions.first(),facts.toList(),unsupported.toList(),structuralSupport.toList(),controller="TRIGGER_CONTROLLER",
-            playerReferences="YOU/Controller are the native controller captured when the trigger fired; Self/source characteristics use the recipient; GrantingSource uses the recorded granter.") to eventOutcomes.toList()
+            playerReferences=if (temporaryReceiver == null)
+                "YOU/Controller are the native controller captured when the trigger fired; Self/source characteristics use the recipient; GrantingSource uses the recorded granter."
+            else "YOU/Controller are the native controller captured when the trigger fired; Self/source characteristics use the recipient.") to eventOutcomes.toList()
+    }
+
+    private fun recordTemporaryGrant(effect: Effect, path: String, frame: Frame) {
+        if (grantedSource || (effect !is GrantActivatedAbilityEffect && effect !is GrantTriggeredAbilityEffect)) return
+        val index = actions.indexOfLast { it.id == actionId }
+        if (index == -1) return
+        val parent = actions[index]
+        val target = when (effect) {
+            is GrantActivatedAbilityEffect -> effect.target
+            is GrantTriggeredAbilityEffect -> effect.target
+            else -> return
+        }
+        val requirement = targetRequirement(target,frame) as? TargetObject
+        val route = temporaryRoute(parent.path,path).takeUnless { frame.delayed || frame.iteration != null }
+        val self = target == EffectTarget.Self && frame.selfZone == Zone.BATTLEFIELD
+        val recipientKnown = self || temporaryTargetSlot(target,frame.targets) != null
+        val duration = when (effect) {
+            is GrantActivatedAbilityEffect -> effect.duration
+            is GrantTriggeredAbilityEffect -> effect.duration
+            else -> return
+        }
+        val problems = listOfNotNull(
+            if (route == null) "Creation path is outside a root action, ordered effect or root mode" else null,
+            if (!recipientKnown) "Recipient lacks a bounded single battlefield target or source binding" else null,
+            if (duration != Duration.EndOfTurn) "Native duration is outside end-of-turn cleanup" else null,
+            if (effect is GrantActivatedAbilityEffect && effect.ability.activateFromZone != Zone.BATTLEFIELD ||
+                effect is GrantTriggeredAbilityEffect && effect.ability.activeZones != setOf(Zone.BATTLEFIELD))
+                "Granted ability has a nonbattlefield availability zone" else null
+        )
+        val receiving = targetScope(target,frame,selfCreature).let { scope ->
+            val filter = if (self && selfCreature) GameObjectFilter.Creature else scope.filter
+            ObjectScope(filter = filter.copy(controllerPredicate = null,statePredicates = emptyList()), actor = "YOU", zone = Zone.BATTLEFIELD,
+                unresolved = if (recipientKnown) null else "Temporary receiving object binding unresolved")
+        }
+        val walker = PathwayExtractor()
+        val (body, outcomes) = when (effect) {
+            is GrantActivatedAbilityEffect -> walker.grantedBody(card,face,"$path.ability",GrantActivatedAbility(effect.ability,
+                GroupFilter.source()),parent.id,temporaryReceiver=receiving) to emptyList()
+            is GrantTriggeredAbilityEffect -> walker.grantedTriggerBody(card,face,"$path.ability",GrantTriggeredAbility(effect.ability,
+                GroupFilter.source()),parent.id,null,recipientKnown,temporaryReceiver=receiving)
+            else -> return
+        }
+        val grant = TemporaryGrant("${parent.id}|$path|TEMPORARY_GRANT",parent.id,card.name,face,parent.path,path,
+            effect,target,requirement,duration,route?.mode,if (problems.isEmpty()) Verdict.MATCH else Verdict.UNKNOWN,
+            frame.assumptions,problems,body,outcomes)
+        actions[index] = parent.copy(temporaryGrants=parent.temporaryGrants+grant)
     }
 
     private fun sourceCardCreature(): Boolean? = if(grantedSource) null else selfCreature.takeIf {
@@ -1149,6 +1200,7 @@ class PathwayExtractor(private val inspectCardEntries: Boolean = false, private 
 
     private fun walk(e: Effect,path: String,frame: Frame) {
         val instructionFactStart=facts.size
+        recordTemporaryGrant(e,path,frame)
         traceCollectionUse(e,path,frame)
         if(e is ExileUntilLeavesEffect || e is ExileWithAurasNotingCountersEffect ||
             e is MoveToZoneEffect && e.linkToSource || e is MoveCollectionEffect && e.linkToSource) linkedExileProducers++

@@ -30,7 +30,8 @@ val nativeJson = Json { encodeDefaults = false; prettyPrint = false }
     @EncodeDefault(EncodeDefault.Mode.NEVER) val collectionStages: List<CollectionStage> = emptyList(),
     @EncodeDefault(EncodeDefault.Mode.NEVER) val collectionUses: List<CollectionUse> = emptyList(),
     @EncodeDefault(EncodeDefault.Mode.NEVER) val grantedAbilities: List<GrantedAbility> = emptyList(),
-    @EncodeDefault(EncodeDefault.Mode.NEVER) val grantedTriggers: List<GrantedTrigger> = emptyList())
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val grantedTriggers: List<GrantedTrigger> = emptyList(),
+    @EncodeDefault(EncodeDefault.Mode.NEVER) val temporaryGrants: List<TemporaryGrant> = emptyList())
 @Serializable data class Unsupported(val card: String, val face: String, val path: String, val nativeType: String,
     val reason: String, val actionId: String)
 data class Pathway(val card: CardDefinition, val face: String, val actionId: String, val path: String,

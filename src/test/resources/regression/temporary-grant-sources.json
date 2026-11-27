@@ -1,0 +1,203 @@
+{
+  "applicationBaseline": "e0eaddbc1c9e611ef2f0628b9212fb871fc8bb4c",
+  "engine": "0878d800edbec56f0c82dac080ae4fec32816b5f",
+  "retrievedAt": "2026-11-27T16:31:41.439353+00:00",
+  "rulesUri": "https://media.wizards.com/2026/downloads/MagicCompRules%2020261106.txt",
+  "ruleSections": [
+    "113.7",
+    "113.7a",
+    "400.7",
+    "508.1",
+    "514.2",
+    "603.2",
+    "603.3a",
+    "605.3b",
+    "608.2b",
+    "611.2a"
+  ],
+  "cases": [
+    {
+      "name": "Run Wild",
+      "printingId": "939a7354-162c-489d-955d-4df17b930e1c",
+      "oracleId": "91d69d6a-3832-4d20-a02b-1e83c08ac723",
+      "set": "ons",
+      "collectorNumber": "279",
+      "oracleText": "Until end of turn, target creature gains trample and \"{G}: Regenerate this creature.\"",
+      "sourceUri": "https://scryfall.com/card/ons/279/run-wild?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/ons/279",
+      "rulingsUri": "https://api.scryfall.com/cards/939a7354-162c-489d-955d-4df17b930e1c/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/RunWild.kt",
+      "nativeSha256": "738181d66256fcc2b2cfa5c9233874c48c1e02af58db883fa0e5646f00216f16",
+      "nativeLfSha256": "35899b4db95c3c4f833d08e1a618baae18b886454a7a0e2de79812552dd2962a",
+      "declarationPath": "script.spellEffect.effects[1]",
+      "relationship": "ACTIVATED",
+      "expected": "Target creature, any controller; independent trample. Recipient activates with its controller’s green mana and regenerates itself. End-of-turn cleanup ends future availability.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Commando Raid",
+      "printingId": "bb237330-ac2e-411d-836c-6628f96f3262",
+      "oracleId": "3bd57758-00a6-4d49-b1fc-b14f8203da0b",
+      "set": "ons",
+      "collectorNumber": "195",
+      "oracleText": "Until end of turn, target creature you control gains \"When this creature deals combat damage to a player, you may have it deal damage equal to its power to target creature that player controls.\"",
+      "sourceUri": "https://scryfall.com/card/ons/195/commando-raid?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/ons/195",
+      "rulingsUri": "https://api.scryfall.com/cards/bb237330-ac2e-411d-836c-6628f96f3262/rulings",
+      "rulings": [],
+      "nativePath": "mtg-sets/2000-2002/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/ons/cards/CommandoRaid.kt",
+      "nativeSha256": "6b5969fcd57254d76828a5cf93fb91d64b125ee9d12e434ddfe9e0b5b1ff6a3f",
+      "nativeLfSha256": "0ab5650e47d1e1c65a73f82bc1bc8fdda31e8fcaff6950177cffbc47a3e89e1b",
+      "declarationPath": "script.spellEffect",
+      "relationship": "TRIGGERED",
+      "expected": "Target creature you control receives a self combat-damage trigger until cleanup. Target a creature controlled by the damaged player and optionally deal receiving-source power damage. Native opponent filter may be broader in multiplayer.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Glorious Sunrise",
+      "printingId": "a2caf73e-c3eb-4fa8-996a-d3d18b2ffaeb",
+      "oracleId": "844c1024-db80-4287-9770-3b10e53d0fc8",
+      "set": "vow",
+      "collectorNumber": "200",
+      "oracleText": "At the beginning of combat on your turn, choose one —\n• Creatures you control get +1/+1 and gain trample until end of turn.\n• Target land gains \"{T}: Add {G}{G}{G}\" until end of turn.\n• Draw a card if you control a creature with power 3 or greater.\n• You gain 3 life.",
+      "sourceUri": "https://scryfall.com/card/vow/200/glorious-sunrise?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/vow/200",
+      "rulingsUri": "https://api.scryfall.com/cards/a2caf73e-c3eb-4fa8-996a-d3d18b2ffaeb/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2021-11-19",
+          "source": "wotc",
+          "comment": "Glorious Sunrise's third mode may be chosen even if you don't control any creatures with power 3 or greater as the ability goes on the stack. If you control a creature with power 3 or greater when it resolves, you will draw a card. If not, it will do nothing as it resolves."
+        }
+      ],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/vow/cards/GloriousSunrise.kt",
+      "nativeSha256": "5e7b7b576de3e72dc42037efd6d2742a7e10da62805921043bc7862e61d946d6",
+      "nativeLfSha256": "3ee9047c656856ad2380bc72c3a30015d40d9bd5af794ada0d8389d846481517",
+      "declarationPath": "script.triggeredAbilities[0].effect.modes[1].effect",
+      "relationship": "ACTIVATED",
+      "expected": "Only the land mode of the beginning-of-combat trigger grants the land a tap-for-three-green mana ability. The land’s controller uses it.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Trash the Town",
+      "printingId": "eda59f99-1d6d-4051-ac89-b7cbfa19262e",
+      "oracleId": "b47f7f1e-2d81-4b1b-870d-4c1a4f020505",
+      "set": "otj",
+      "collectorNumber": "186",
+      "oracleText": "Spree (Choose one or more additional costs.)\n+ {2} — Put two +1/+1 counters on target creature.\n+ {1} — Target creature gains trample until end of turn.\n+ {1} — Until end of turn, target creature gains \"Whenever this creature deals combat damage to a player, draw two cards.\"",
+      "sourceUri": "https://scryfall.com/card/otj/186/trash-the-town?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/otj/186",
+      "rulingsUri": "https://api.scryfall.com/cards/eda59f99-1d6d-4051-ac89-b7cbfa19262e/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "Spells with spree have a + (plus sign) indicator in the upper right corner of the card frame. This has no rules meaning and serves only to remind players that at least one additional cost is required to cast the spell."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "Each additional cost and associated mode in the text box is also preceded with a + indicator. These symbols also have no rules meaning and serve only to remind players that the listed costs are additional costs."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "You must choose at least one of the listed modes and pay its associated additional cost in order to cast a spell with spree."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "You choose the modes as you cast the spell with spree. Once modes are chosen, they can’t be changed."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "If a mode requires a target, you can select that mode only if there’s a legal target available. Ignore the targeting requirements for modes you don’t choose."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "No matter which modes you choose, you always follow the instructions in the order they are written."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "You can’t choose the same mode more than once."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "The mana value of a spell with spree is determined only by its mana cost (in the upper right corner of the card). It doesn’t matter which modes you choose or which additional costs you pay, including any additional costs imposed by other effects."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "No player can cast spells or activate abilities in between the modes of a resolving spell. Any abilities that trigger won’t be put onto the stack until the spell is done resolving."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "If a spell with spree is copied, the effect that creates the copy may allow you to choose new targets. You cannot choose new modes."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "If all targets for the chosen modes become illegal before a spell with spree resolves, the spell won’t resolve and none of its effects will happen. If at least one target is still legal, the spell will resolve but will have no effect on any illegal targets."
+        },
+        {
+          "publishedAt": "2024-04-12",
+          "source": "wotc",
+          "comment": "If an effect allows you to cast a spell with spree “without paying its mana cost,” you must still choose at least one mode and pay the associated additional costs."
+        }
+      ],
+      "nativePath": "mtg-sets/2024/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/otj/cards/TrashtheTown.kt",
+      "nativeSha256": "1b4f206a7e581f3974ef79781fdf04533f2e3ab0f1ef65b82e736e0031a46cf1",
+      "nativeLfSha256": "f7c806182cf77a0468833bb30c756d9c7d23d90842a203852d26a19beea60e49",
+      "declarationPath": "script.spellEffect.modes[2].effect",
+      "relationship": "TRIGGERED",
+      "expected": "Only the final spree mode grants target creature the combat-damage draw-two ability. Its controller draws. Multiple paid modes can have independent targets.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    },
+    {
+      "name": "Quicksmith Spy",
+      "printingId": "0f922e87-1744-4966-9e3a-54917f7f3d9e",
+      "oracleId": "54250029-1bd7-4caf-a839-9497607ce725",
+      "set": "aer",
+      "collectorNumber": "41",
+      "oracleText": "When this creature enters, target artifact you control gains \"{T}: Draw a card\" for as long as you control this creature.",
+      "sourceUri": "https://scryfall.com/card/aer/41/quicksmith-spy?utm_source=api",
+      "apiUri": "https://api.scryfall.com/cards/aer/41",
+      "rulingsUri": "https://api.scryfall.com/cards/0f922e87-1744-4966-9e3a-54917f7f3d9e/rulings",
+      "rulings": [
+        {
+          "publishedAt": "2017-02-09",
+          "source": "wotc",
+          "comment": "If Quicksmith Spy leaves the battlefield, you no longer control it."
+        },
+        {
+          "publishedAt": "2017-02-09",
+          "source": "wotc",
+          "comment": "If another player gains control of Quicksmith Spy, the artifact will no longer have the card-drawing ability, even if you regain control of Quicksmith Spy."
+        },
+        {
+          "publishedAt": "2017-02-09",
+          "source": "wotc",
+          "comment": "If Quicksmith Spy leaves the battlefield while its ability is on the stack, the artifact never gains the card-drawing ability."
+        },
+        {
+          "publishedAt": "2017-02-09",
+          "source": "wotc",
+          "comment": "If Quicksmith Spy or the artifact leaves the battlefield while the card-drawing ability is on the stack, that ability resolves as normal."
+        }
+      ],
+      "nativePath": "mtg-sets/2017-2022/src/main/kotlin/com/wingedsheep/mtg/sets/definitions/aer/cards/QuicksmithSpy.kt",
+      "nativeSha256": "f25de458b757602bb0447b3d1f037116be860af1e4ea7c278c597eba33c34021",
+      "nativeLfSha256": "2acbc98e5ee8edb6ed52f5891cc7492c1ba68246e80a187afbf2718dbd25bd6f",
+      "declarationPath": "script.triggeredAbilities[0].effect",
+      "relationship": "UNSUPPORTED_DURATION",
+      "expected": "Source-control duration is unrelated to end-of-turn cleanup. Preserve the native grant and its duration without interpreting expiry.",
+      "uncertainties": "Bounded author/source evidence, not whole-card qualification. Unsupported condition semantics and missing native provenance remain UNKNOWN."
+    }
+  ]
+}

@@ -54,6 +54,19 @@ class HistoricalDiscoverySnapshotTest : FunSpec({
         change.attribution shouldContain "RECORDED_OPAQUE_EVIDENCE"
         diff.transitions["RECORDED_OPAQUE_EVIDENCE_CHANGED"] shouldBe 1
         change.after!!.jsonObject.getValue("verdict").jsonPrimitive.content shouldBe "NO_MATCH"
+        val beforePath = Files.createTempFile("historical-before-", ".json")
+        val afterPath = Files.createTempFile("historical-after-", ".json")
+        try {
+            Files.writeString(beforePath,before.toString())
+            Files.writeString(afterPath,after.toString())
+            val output = mutableListOf<String>()
+            runCli(arrayOf("audit","diff","--before",beforePath.toString(),"--after",afterPath.toString(),"--json"),
+                { error("Historical diff must not construct a live catalog") },output::add) shouldBe 0
+            reportJson.decodeFromString<ChangeReport>(output.single()) shouldBe diff
+        } finally {
+            Files.deleteIfExists(beforePath)
+            Files.deleteIfExists(afterPath)
+        }
     }
 
     test("missing historical revision and unknown application decision values still fail closed") {
